@@ -42,35 +42,35 @@ const Solution = () => {
       number: "1️⃣",
       title: "Strategy & Analysis",
       subtitle: "Powered by Market Insights & SEO Data",
-      description: "We analyze market trends, competitors, and customer behavior to craft a high-impact web strategy. Every decision is driven by data & expert insights—enhancing visibility and engagement.",
+      description: "We analyze market trends, competitors, and customer behavior to craft a high-impact web strategy.",
       icon: BarChart
     },
     {
       number: "2️⃣",
       title: "Web Design & UX",
       subtitle: "Tailored Design, Enhanced by Technology",
-      description: "We design visually stunning and conversion-optimized websites that reflect your brand identity. Every element—from colors to UX—enhances usability and brand engagement.",
+      description: "We design visually stunning and conversion-optimized websites that reflect your brand identity.",
       icon: Zap
     },
     {
       number: "3️⃣",
       title: "Development & Performance",
       subtitle: "Optimized for Speed, Security & Scalability",
-      description: "We build high-performance websites with top-tier security, fast loading speeds, and future scalability—ensuring seamless user experiences on all devices.",
+      description: "We build high-performance websites with top-tier security and fast loading speeds for all devices.",
       icon: Code
     },
     {
       number: "4️⃣",
       title: "Content & SEO Optimization",
-      subtitle: "SEO & Content That Gets You Found—And Drives Action",
-      description: "SEO-driven content designed to engage audiences, increase rankings, and drive conversions—blending expert writing with data-backed insights.",
+      subtitle: "SEO & Content That Gets You Found",
+      description: "SEO-driven content designed to engage audiences, increase rankings, and drive conversions.",
       icon: FileText
     },
     {
       number: "5️⃣",
       title: "Launch, Tracking & Support",
       subtitle: "Long-Term Success Through Data & Expertise",
-      description: "We track, analyze, and optimize website performance over time—ensuring continuous growth and adaptability.",
+      description: "We track, analyze, and optimize website performance over time to ensure continuous growth.",
       icon: LineChart
     }
   ];
@@ -79,17 +79,12 @@ const Solution = () => {
     {
       name: "ChatGPT-4",
       icon: "/chatgpt-logo.svg",
-      description: "AI-powered content & automation"
+      description: "Content & automation"
     },
     {
       name: "Midjourney",
       icon: "/midjourney-logo.svg",
-      description: "AI-generated images & branding"
-    },
-    {
-      name: "Sora AI",
-      icon: "/sora-logo.svg",
-      description: "AI-driven video production"
+      description: "Design & branding"
     },
     {
       name: "Ahrefs",
@@ -97,9 +92,9 @@ const Solution = () => {
       description: "Advanced SEO analytics"
     },
     {
-      name: "Google Ads AI",
+      name: "Google Ads",
       icon: "/google-ads-logo.svg",
-      description: "AI-optimized ad campaigns"
+      description: "Optimized ad campaigns"
     }
   ];
 
@@ -114,11 +109,11 @@ const Solution = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            How Our Webdesign Agency Builds Websites That Work—Not Just Look Good
+            Our Web Design Agency Process: Strategy, Performance & Growth
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            As an experienced Webdesign Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. Whether you're launching a new business or upgrading an outdated website, our expert team delivers results. We focus on creativity, experience, and data-driven decisions to ensure your website's success.
+            As an experienced Web Design Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. We focus on creativity, experience, and data-driven decisions to ensure your website's success.
           </p>
         </div>
         
@@ -145,12 +140,12 @@ const Solution = () => {
                              transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full
                              flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-backgroundAlt text-brand-primary 
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-brand-backgroundAlt text-brand-primary 
                                  group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
                       <span className="text-lg font-bold">{index + 1}</span>
                     </div>
-                    <div className="p-2 bg-brand-backgroundAlt rounded-full">
-                      <step.icon className="h-5 w-5 text-brand-primary" />
+                    <div className="p-2.5 bg-brand-backgroundAlt rounded-full">
+                      <step.icon className="h-6 w-6 text-brand-primary" />
                     </div>
                   </div>
                   
@@ -166,14 +161,14 @@ const Solution = () => {
         <div className="mt-16 rounded-2xl p-8 ai-tools-section">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
-              Smart Tools That Boost Website Performance—Powered by Strategy
+              Strategic Technology for Smarter Websites
             </p>
             <p className="text-base text-brand-text mt-2">
-              At ooliv Webdesign Agency, we use industry-leading technologies to enhance website performance, SEO, and user engagement—combining automation with expert strategy.
+              At ooliv Web Design Agency, we leverage powerful technologies to enhance website performance, SEO, and user engagement—guided by expert strategy and human creativity.
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
             {techLogos.map((logo, index) => (
               <div key={index} className="group flex flex-col items-center transition-all duration-300 hover:-translate-y-1">
                 <div className="w-20 h-20 flex items-center justify-center p-4 rounded-full bg-brand-backgroundAlt group-hover:bg-white group-hover:shadow-md transition-all duration-300">
@@ -192,13 +187,13 @@ const Solution = () => {
         
         <div className="mt-16 text-center rounded-2xl p-8 cta-section">
           <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
-            Your Website Should Be Your Best Salesperson—Let's Make That Happen. From strategy to execution, our Webdesign Agency ensures every element drives measurable results.
+            Your Website Should Work for You—Let's Build One That Delivers Results. From strategy to execution, our Web Design Agency ensures every element drives measurable business success.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="group">
               <Link to="/contact" className="inline-flex items-center">
-                Start Your Project
+                Start Your Website Project
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>

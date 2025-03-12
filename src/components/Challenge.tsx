@@ -14,7 +14,7 @@ const Challenge = () => {
     {
       problem: "Outdated Website Design",
       painPoint: "An outdated website damages credibility and loses customers.",
-      solution: "As a Webdesign Agency, we specialize in modern, conversion-focused websites that elevate brand perception and increase engagement.",
+      solution: "As a Web Design Agency, we specialize in modern, conversion-focused websites that elevate brand perception and increase engagement.",
       icon: AlertCircle,
       color: "from-red-50/40 to-orange-50/30"
     },
@@ -26,9 +26,9 @@ const Challenge = () => {
       color: "from-brand-background/60 to-brand-backgroundAlt/40"
     },
     {
-      problem: "Website Too Slow? Every Second Costs You Money.",
+      problem: "Your Website Loads Too Slowly? Every Second Costs You Money.",
       painPoint: "A slow website can reduce conversions by up to 7% per second of delay.",
-      solution: "We implement advanced speed optimization techniques to ensure lightning-fast load times—improving both SEO rankings and user experience.",
+      solution: "We optimize for lightning-fast speeds—boosting SEO and conversions.",
       icon: AlertCircle,
       color: "from-green-50/40 to-emerald-50/30"
     },
@@ -42,7 +42,7 @@ const Challenge = () => {
     {
       problem: "Your Website Gets Traffic—But No Sales?",
       painPoint: "Getting traffic isn't enough—your site needs to convert visitors into leads & customers.",
-      solution: "We implement expert-driven conversion strategies—including UX testing, smart CTAs, and optimized user flows—to turn visitors into customers.",
+      solution: "Smart UX, CTAs, and conversion-focused design turn visitors into customers.",
       icon: LineChart,
       color: "from-brand-backgroundAlt/60 to-brand-background/40"
     }

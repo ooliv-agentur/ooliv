@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { BarChart, ArrowRight, Users, Zap, LineChart } from "lucide-react";
@@ -101,7 +102,7 @@ const Hero = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight tracking-wider space-y-3 text-left">
             <div className="flex items-center gap-2">
               <span className="text-brand-primary">ooliv</span> 
-              <span>Webdesign Agency</span>
+              <span>Web Design Agency</span>
             </div>
             <div>Building High-Performance Websites</div>
             <div className="flex items-center text-brand-primary">
@@ -114,7 +115,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg lg:text-xl text-gray-100 text-left">
-            At ooliv, we create websites that rank higher, convert better, and drive measurable business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers results.
+            We create websites that rank higher, convert better, and drive real business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
