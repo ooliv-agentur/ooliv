@@ -22,9 +22,9 @@ export const translations = {
     'nav.scheduleCall': 'Schedule Call',
     
     // Hero
-    'hero.title': "Webdesign Agency for Business Growth – Let's Build It Right.",
-    'hero.subtitle': "We Make Sure It Does.",
-    'hero.description': "Your website is more than just design—it's a strategic tool for success. As a Webdesign Agency, we create high-performance websites that attract customers, build trust, and generate measurable results—whether you need a complete relaunch or a brand-new online presence.",
+    'hero.title': "ooliv: Webdesign Agency That Builds High-Performance Websites for SEO & Conversions",
+    'hero.subtitle': "At ooliv, we create websites that rank higher, convert better, and drive measurable business success.",
+    'hero.description': "We create high-performance websites that drive leads, rank higher, and turn visitors into customers. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable business success.",
     'hero.startProject': "Start Your Website Project",
     'hero.seeWork': "See Our Work",
     
@@ -83,9 +83,9 @@ export const translations = {
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': "Webdesign Agentur für Geschäftswachstum – Lassen Sie uns es richtig machen.",
-    'hero.subtitle': "Wir sorgen dafür.",
-    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Als Webdesign Agentur erstellen wir leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern – ob Sie einen kompletten Relaunch oder eine neue Online-Präsenz benötigen.",
+    'hero.title': "ooliv: Webdesign Agentur, die leistungsstarke Websites für SEO & Konversionen erstellt",
+    'hero.subtitle': "Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen.",
+    'hero.description': "Wir erstellen leistungsstarke Websites, die Leads generieren, besser ranken und Besucher in Kunden verwandeln. Ob Relaunch oder neue Website, wir sorgen dafür, dass Ihre Website messbaren Geschäftserfolg bringt.",
     'hero.startProject': "Starten Sie Ihr Website-Projekt",
     'hero.seeWork': "Unsere Arbeiten ansehen",
     

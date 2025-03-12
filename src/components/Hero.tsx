@@ -105,9 +105,9 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
           <h1 className="text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight max-w-4xl mx-auto">
-            <div className="mb-2">Webdesign Agency That Builds Websites</div>
+            <div className="mb-2">ooliv: Webdesign Agency That Builds High-Performance Websites</div>
             <div className="flex items-center justify-center gap-1 text-brand-primary">
-              For{' '}
+              for{' '}
               <span className="relative text-white">
                 {displayText}
                 <span className="absolute -right-4 top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
@@ -119,7 +119,7 @@ const Hero = () => {
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-gray-100">
-            We create high-performance websites that drive leads, rank higher, and turn visitors into customers. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable business success.
+            At ooliv, we create websites that rank higher, convert better, and drive measurable business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
