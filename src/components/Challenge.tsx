@@ -56,7 +56,7 @@ const Challenge = () => {
             {t('challenge.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Common challenges that might be holding your business back and how we solve them.
+            Here's what might be holding your business back—and how we fix it.
           </p>
         </div>
 
