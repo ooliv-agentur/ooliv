@@ -50,14 +50,14 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="cases" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="cases" className="py-20 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
             {t('testimonials.title')} 
-            <span className="text-blue-600"> {t('testimonials.subtitle')}</span>
+            <span className="text-brand-primary"> {t('testimonials.subtitle')}</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8">
             Real results from real clients. See how we've helped businesses like yours achieve measurable growth through strategic web design and development.
           </p>
         </div>
@@ -114,7 +114,7 @@ const Testimonials = () => {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="font-bold text-lg">{testimonial.client}</h3>
-                      <p className="text-sm text-gray-600">{testimonial.industry}</p>
+                      <p className="text-sm text-brand-text">{testimonial.industry}</p>
                     </div>
                     <div className="flex">
                       {[...Array(testimonial.stars)].map((_, i) => (
@@ -123,7 +123,7 @@ const Testimonials = () => {
                     </div>
                   </div>
                   
-                  <blockquote className="text-gray-700 italic mb-6">"{testimonial.quote}"</blockquote>
+                  <blockquote className="text-brand-text italic mb-6">"{testimonial.quote}"</blockquote>
                   
                   <div className="space-y-2 mb-6">
                     {testimonial.impact.map((item, i) => (
@@ -136,7 +136,7 @@ const Testimonials = () => {
                   
                   <Button 
                     variant="link" 
-                    className="text-blue-600 p-0 hover:text-blue-800 transition-colors group/btn"
+                    className="text-brand-primary p-0 hover:text-brand-primaryHover transition-colors group/btn"
                   >
                     Read Full Case Study 
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
@@ -153,7 +153,7 @@ const Testimonials = () => {
                 key={index} 
                 onClick={() => setActiveIndex(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === activeIndex ? 'bg-blue-600' : 'bg-gray-300'
+                  index === activeIndex ? 'bg-brand-primary' : 'bg-gray-300'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
