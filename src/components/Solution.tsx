@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Zap, BarChart, Code, FileText, LineChart } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Solution = () => {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       number: "1️⃣",
@@ -42,16 +45,16 @@ const Solution = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section id="process" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             We Build Websites That Grow Your Business—
             <br />
-            <span className="text-blue-600">With Smart, AI-Driven Solutions.</span>
+            <span className="text-brand-primary">With Smart, AI-Driven Solutions.</span>
           </h2>
           
-          <p className="max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="max-w-3xl mx-auto text-lg text-brand-text">
             Whether you're launching a new business or upgrading an outdated website, we use AI-powered tools to create websites that rank better, load faster, and convert more visitors into customers.
           </p>
         </div>
@@ -63,12 +66,12 @@ const Solution = () => {
               className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col items-center text-center border border-gray-100"
             >
               <div className="mb-4 text-2xl">{step.number}</div>
-              <div className="p-3 bg-blue-100 rounded-full mb-4 group-hover:bg-blue-200 transition-colors">
-                <step.icon className="h-6 w-6 text-blue-600" />
+              <div className="p-3 bg-brand-backgroundAlt rounded-full mb-4 group-hover:bg-brand-background transition-colors">
+                <step.icon className="h-6 w-6 text-brand-primary" />
               </div>
-              <h3 className="font-bold text-lg mb-1 text-gray-900">{step.title}</h3>
-              <p className="text-blue-600 text-sm mb-2">{step.subtitle}</p>
-              <p className="text-gray-600 text-sm">{step.description}</p>
+              <h3 className="font-bold text-lg mb-1 text-brand-heading">{step.title}</h3>
+              <p className="text-brand-primary text-sm mb-2">{step.subtitle}</p>
+              <p className="text-brand-text text-sm">{step.description}</p>
             </div>
           ))}
         </div>
@@ -76,7 +79,7 @@ const Solution = () => {
         <div className="mt-12 text-center">
           <a 
             href="#process" 
-            className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+            className="inline-flex items-center text-brand-primary hover:text-brand-primaryHover transition-colors"
           >
             <span>Learn more about our process</span>
             <Zap className="ml-2 h-4 w-4" />
