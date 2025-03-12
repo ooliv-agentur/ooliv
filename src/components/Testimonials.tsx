@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,8 +7,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const Testimonials = () => {
   const { t } = useLanguage();
-  const [activeIndex, setActiveIndex] = useState(0);
   
+  // Expanded testimonials data with 5 items
   const testimonials = [
     {
       client: "Scheurich",
@@ -63,21 +63,47 @@ const Testimonials = () => {
         name: "Julia Müller",
         position: "Digital Manager, Weisenburger"
       }
+    },
+    {
+      client: "PopBird",
+      industry: "E-Commerce & Retail",
+      title: "35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling",
+      logo: "/placeholder.svg",
+      quote: "Working with ooliv completely transformed our online presence. Our customers now have a seamless experience from discovery to purchase.",
+      impact: [
+        "35% sales growth through emotional storytelling approach",
+        "42% increase in average order value with improved UX",
+        "60% higher customer retention with personalized email workflows"
+      ],
+      deviceImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f",
+      headerImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
+      author: {
+        name: "Sarah Johnson",
+        position: "Marketing Lead, PopBird"
+      }
+    },
+    {
+      client: "GreenTech",
+      industry: "Renewable Energy",
+      title: "200+ qualified leads per month with targeted SEO & content strategy",
+      logo: "/placeholder.svg",
+      quote: "The results exceeded our expectations. Our web presence now truly reflects our brand values and converts visitors efficiently.",
+      impact: [
+        "200+ qualified leads per month with targeted strategy",
+        "First page Google rankings for 30+ industry keywords",
+        "68% reduction in cost per acquisition through organic channels"
+      ],
+      deviceImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      headerImage: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
+      author: {
+        name: "Daniel Krause",
+        position: "Growth Director, GreenTech"
+      }
     }
   ];
 
-  const nextSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const currentTestimonial = testimonials[activeIndex];
-
   return (
-    <section id="cases" className="py-20 bg-gradient-to-br from-brand-background to-white">
+    <section id="cases" className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6 font-sans">
@@ -89,97 +115,93 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left Column - Dark Background with Content */}
-          <div className="bg-brand-footer rounded-xl p-8 text-white shadow-xl">
-            <div className="mb-6">
-              <img 
-                src={currentTestimonial.logo} 
-                alt={`${currentTestimonial.client} logo`} 
-                className="h-10 bg-white p-2 rounded"
-              />
-            </div>
-            
-            <h3 className="text-2xl font-bold mb-4">
-              {currentTestimonial.title}
-            </h3>
-            
-            <div className="space-y-6 mt-8">
-              {currentTestimonial.impact.map((point, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="mr-4 mt-1">
-                    <Check className="text-brand-primary h-5 w-5" />
+        <div className="space-y-24">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+            >
+              {/* Content Side - Alternates between left and right */}
+              <div className={`${index % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
+                <div className="bg-brand-footer rounded-xl p-8 text-white shadow-xl">
+                  <div className="mb-6">
+                    <img 
+                      src={testimonial.logo} 
+                      alt={`${testimonial.client} logo`} 
+                      className="h-10 bg-white p-2 rounded"
+                    />
                   </div>
-                  <p className="text-white/90">{point}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-12 border-t border-white/10 pt-6">
-              <blockquote className="italic text-white/80 mb-4">
-                "{currentTestimonial.quote}"
-              </blockquote>
-              <div className="flex items-center">
-                <div className="mr-4">
-                  <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">
-                    {currentTestimonial.author.name.charAt(0)}
+                  
+                  <h3 className="text-2xl font-bold mb-4">
+                    {testimonial.title}
+                  </h3>
+                  
+                  <div className="space-y-6 mt-8">
+                    {testimonial.impact.map((point, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <div className="mr-4 mt-1">
+                          <Check className="text-brand-primary h-5 w-5" />
+                        </div>
+                        <p className="text-white/90">{point}</p>
+                      </div>
+                    ))}
                   </div>
-                </div>
-                <div>
-                  <p className="font-medium">{currentTestimonial.author.name}</p>
-                  <p className="text-sm text-white/70">{currentTestimonial.author.position}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Right Column - Device Images */}
-          <div className="relative">
-            <div className="relative h-full flex items-center justify-center">
-              {/* Mobile Device */}
-              <div className="absolute z-10 -left-6 bottom-10 md:bottom-20 w-40 md:w-64 transform rotate-6">
-                <div className="rounded-3xl overflow-hidden border-8 border-black shadow-2xl">
-                  <img 
-                    src={currentTestimonial.deviceImage} 
-                    alt="Mobile view" 
-                    className="w-full"
-                  />
+                  
+                  <div className="mt-12 border-t border-white/10 pt-6">
+                    <blockquote className="italic text-white/80 mb-4">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center">
+                      <div className="mr-4">
+                        <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">
+                          {testimonial.author.name.charAt(0)}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium">{testimonial.author.name}</p>
+                        <p className="text-sm text-white/70">{testimonial.author.position}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
-              {/* Tablet/Desktop Device */}
-              <div className="absolute top-10 right-0 w-56 md:w-80 shadow-2xl rounded-lg transform -rotate-3">
-                <img 
-                  src={currentTestimonial.headerImage} 
-                  alt="Desktop view" 
-                  className="w-full rounded-lg"
-                />
-              </div>
-              
-              {/* Background Elements */}
-              <div className="absolute inset-0 z-0 opacity-10">
-                <div className="absolute top-10 right-20 w-20 h-20 rounded-full bg-brand-primary"></div>
-                <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-brand-primaryHover"></div>
+              {/* Image Side - Alternates between right and left */}
+              <div className={`relative min-h-[400px] ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
+                <div className="relative h-full flex items-center justify-center">
+                  {/* Mobile Device */}
+                  <div className={`absolute z-10 ${index % 2 === 0 ? '-left-6' : '-right-6'} bottom-10 md:bottom-20 w-40 md:w-64 transform ${index % 2 === 0 ? 'rotate-6' : '-rotate-6'}`}>
+                    <div className="rounded-3xl overflow-hidden border-8 border-black shadow-2xl">
+                      <img 
+                        src={testimonial.deviceImage} 
+                        alt="Mobile view" 
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Tablet/Desktop Device */}
+                  <div className={`absolute top-10 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-56 md:w-80 shadow-2xl rounded-lg transform ${index % 2 === 0 ? '-rotate-3' : 'rotate-3'}`}>
+                    <img 
+                      src={testimonial.headerImage} 
+                      alt="Desktop view" 
+                      className="w-full rounded-lg"
+                    />
+                  </div>
+                  
+                  {/* Background Elements */}
+                  <div className="absolute inset-0 z-0 opacity-10">
+                    <div className={`absolute top-10 ${index % 2 === 0 ? 'right-20' : 'left-20'} w-20 h-20 rounded-full bg-brand-primary`}></div>
+                    <div className={`absolute bottom-10 ${index % 2 === 0 ? 'left-10' : 'right-10'} w-32 h-32 rounded-full bg-brand-primaryHover`}></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
         
-        {/* Navigation Controls */}
-        <div className="flex justify-between mt-10">
-          <div className="flex space-x-2">
-            {testimonials.map((_, index) => (
-              <button 
-                key={index} 
-                onClick={() => setActiveIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  index === activeIndex ? 'bg-brand-primary' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-          
+        {/* Call to Action */}
+        <div className="flex justify-center mt-16">
           <Button 
             variant="outline" 
             className="group hover:bg-brand-primary hover:text-white"
