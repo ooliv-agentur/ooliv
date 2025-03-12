@@ -35,10 +35,10 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section id="faq" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             {t('faq.title')}
           </h2>
         </div>
@@ -53,14 +53,14 @@ const FAQ = () => {
                 onClick={() => toggleFaq(index)}
                 className="flex justify-between items-center w-full text-left py-4 px-0 focus:outline-none group"
               >
-                <h3 className="text-lg font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-medium text-brand-heading group-hover:text-brand-primary transition-colors">
                   {faq.question}
                 </h3>
                 <div className="ml-4 flex-shrink-0">
                   {openIndex === index ? (
-                    <ChevronUp className="h-5 w-5 text-blue-600" />
+                    <ChevronUp className="h-5 w-5 text-brand-primary" />
                   ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-500 group-hover:text-blue-600 transition-colors" />
+                    <ChevronDown className="h-5 w-5 text-gray-500 group-hover:text-brand-primary transition-colors" />
                   )}
                 </div>
               </button>
@@ -74,7 +74,7 @@ const FAQ = () => {
         </div>
 
         <div className="max-w-3xl mx-auto mt-12 text-center">
-          <button className="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+          <button className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
             Didn't Find Your Question? Contact Us →
           </button>
         </div>
@@ -82,7 +82,7 @@ const FAQ = () => {
         {/* Chat Support Icon */}
         <div className="fixed bottom-6 right-6 z-50">
           <button 
-            className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+            className="bg-brand-primary text-brand-text p-4 rounded-full shadow-lg hover:bg-brand-primaryHover transition-colors"
             aria-label="Chat support"
           >
             <MessageSquare className="h-6 w-6" />

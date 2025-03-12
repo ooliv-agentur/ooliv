@@ -8,7 +8,7 @@ const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-brand-text text-white pt-16 pb-8">
+    <footer className="bg-brand-footer text-white pt-16 pb-8">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

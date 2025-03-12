@@ -8,7 +8,7 @@ const CTA = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-24 bg-blue-600 text-white">
+    <section className="py-24 bg-brand-backgroundAlt text-brand-text">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -23,7 +23,7 @@ const CTA = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-blue-50 border-white text-base py-6 font-medium"
+              className="bg-white text-brand-heading hover:bg-brand-background border-brand-primary text-base py-6 font-medium"
             >
               <FileCheck className="mr-2 h-5 w-5" />
               {t('cta.audit')}
@@ -32,7 +32,7 @@ const CTA = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-blue-50 border-white text-base py-6 font-medium"
+              className="bg-white text-brand-heading hover:bg-brand-background border-brand-primary text-base py-6 font-medium"
             >
               <PhoneCall className="mr-2 h-5 w-5" />
               {t('cta.call')}
@@ -41,7 +41,7 @@ const CTA = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-blue-50 border-white text-base py-6 font-medium"
+              className="bg-white text-brand-heading hover:bg-brand-background border-brand-primary text-base py-6 font-medium"
             >
               <LayoutGrid className="mr-2 h-5 w-5" />
               {t('cta.work')}
@@ -49,7 +49,7 @@ const CTA = () => {
           </div>
           
           <div className="mt-8 text-center">
-            <p className="text-sm text-white">
+            <p className="text-sm text-brand-text">
               <span className="font-bold">100+ successful projects completed</span> • 
               <span className="mx-2">Trusted by leading companies</span> • 
               <span className="font-bold">AI-powered strategy for maximum efficiency</span>

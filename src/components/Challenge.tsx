@@ -23,7 +23,7 @@ const Challenge = () => {
       solution: "Fully responsive, mobile-first design that works perfectly on all devices",
       description: "60% of users access websites on mobile - is yours optimized?",
       icon: Zap,
-      color: "from-blue-50 to-purple-50"
+      color: "from-brand-background to-brand-backgroundAlt"
     },
     {
       problem: "Slow Loading Speed",
@@ -44,7 +44,7 @@ const Challenge = () => {
       solution: "Strategic CTA placement and conversion optimization",
       description: "Is your website turning visitors into customers?",
       icon: LineChart,
-      color: "from-purple-50 to-pink-50"
+      color: "from-brand-backgroundAlt to-brand-background"
     }
   ];
 
@@ -52,7 +52,7 @@ const Challenge = () => {
     <section id="solutions" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             {t('challenge.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -70,12 +70,12 @@ const Challenge = () => {
             >
               <Alert className={`h-full transition-all duration-500 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden bg-gradient-to-br ${item.color}`}>
                 <div className="flex items-start">
-                  <item.icon className={`h-5 w-5 mt-0.5 ${hoveredIndex === index ? 'text-blue-600' : 'text-gray-600'}`} />
+                  <item.icon className={`h-5 w-5 mt-0.5 ${hoveredIndex === index ? 'text-brand-primary' : 'text-gray-600'}`} />
                   <div className="ml-2">
-                    <AlertTitle className="text-gray-900 mb-2 font-semibold">{item.problem}</AlertTitle>
+                    <AlertTitle className="text-brand-heading mb-2 font-semibold">{item.problem}</AlertTitle>
                     <p className="text-gray-600 text-sm mb-2">{item.description}</p>
                     <AlertDescription 
-                      className={`text-blue-600 font-medium transition-all duration-300 ${
+                      className={`text-brand-primary font-medium transition-all duration-300 ${
                         hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                       }`}
                     >
@@ -84,7 +84,7 @@ const Challenge = () => {
                   </div>
                 </div>
                 {hoveredIndex === index && (
-                  <MousePointer2 className="absolute bottom-4 right-4 h-4 w-4 text-blue-600 animate-pulse" />
+                  <MousePointer2 className="absolute bottom-4 right-4 h-4 w-4 text-brand-primary animate-pulse" />
                 )}
               </Alert>
             </div>
@@ -100,7 +100,7 @@ const Challenge = () => {
           <Button 
             variant="default" 
             size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-medium group"
+            className="bg-brand-primary hover:bg-brand-primaryHover text-brand-text font-medium group"
           >
             How We Fix This 
             <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
