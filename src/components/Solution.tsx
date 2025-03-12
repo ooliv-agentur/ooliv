@@ -22,17 +22,20 @@ const Solution = () => {
   useEffect(() => {
     if (!emblaApi) return;
     
-    emblaApi.on('pointerDown', () => {
+    const onPointerDown = () => {
       isDragging.current = false;
-    });
+    };
     
-    emblaApi.on('pointerMove', () => {
+    const onDragMove = () => {
       isDragging.current = true;
-    });
+    };
+    
+    emblaApi.on('pointerDown', onPointerDown);
+    emblaApi.on('dragMove', onDragMove);
     
     return () => {
-      emblaApi.off('pointerDown');
-      emblaApi.off('pointerMove');
+      emblaApi.off('pointerDown', onPointerDown);
+      emblaApi.off('dragMove', onDragMove);
     };
   }, [emblaApi]);
   
