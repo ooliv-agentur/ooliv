@@ -51,7 +51,6 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
-              <li className="font-semibold">Uli Schönleber</li>
               <li>ooliv Werbeagentur</li>
               <li className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
@@ -61,10 +60,6 @@ const Footer = () => {
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
                 06131 – 63 67 801
-              </li>
-              <li className="flex items-center">
-                <MessageCircle className="h-4 w-4 mr-2" />
-                0176 80 16 76 41 (WhatsApp)
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
