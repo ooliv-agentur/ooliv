@@ -21,7 +21,7 @@ export const translations = {
     'nav.scheduleCall': 'Schedule Call',
     
     // Hero
-    'hero.title': "Your Website Should Drive Business Growth. Let's Build It Right.",
+    'hero.title': "Webdesign Agency for Business Growth – Let's Build It Right.",
     'hero.subtitle': "We Make Sure It Does.",
     'hero.description': "Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.",
     'hero.startProject': "Start Your Website Project",
@@ -82,7 +82,7 @@ export const translations = {
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': "Ihre Website sollte Ihr Geschäftswachstum fördern. Lassen Sie uns sie richtig bauen.",
+    'hero.title': "Webdesign Agentur für Geschäftswachstum – Lassen Sie uns es richtig machen.",
     'hero.subtitle': "Wir sorgen dafür.",
     'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, wir nutzen KI-gestützte Tools, um Websites zu erstellen, die besser ranken, schneller laden und mehr Besucher in Kunden umwandeln.",
     'hero.startProject': "Starten Sie Ihr Website-Projekt",
