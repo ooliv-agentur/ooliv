@@ -1,7 +1,7 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -31,6 +31,7 @@ const menuVariants = {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { t } = useLanguage();
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -48,6 +49,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     };
   }, [isOpen, onClose]);
 
+  const toggleServices = () => {
+    setServicesOpen(!servicesOpen);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -58,7 +63,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
             onClick={onClose}
           />
           
@@ -68,73 +73,104 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-white z-50 flex flex-col"
+            className="fixed inset-0 bg-gray-900/95 z-50 flex flex-col overflow-auto"
           >
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-xl font-semibold">Menu</h2>
-              <Button variant="ghost" size="icon" onClick={onClose}>
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <h2 className="text-xl font-semibold text-white">Menu</h2>
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={onClose}>
                 <X className="h-6 w-6" />
               </Button>
             </div>
 
             <div className="flex-1 flex flex-col justify-center items-center py-8 px-6 overflow-y-auto">
               <nav className="space-y-8 text-center w-full">
-                <a href="#" className="block text-4xl font-bold hover:text-primary transition-colors">
+                <a href="#" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
                   Home
                 </a>
                 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold hover:text-primary transition-colors">
+                  <button 
+                    onClick={toggleServices}
+                    className="flex items-center justify-center gap-2 text-4xl font-bold text-white hover:text-primary transition-colors mx-auto"
+                  >
                     Services
-                  </h3>
-                  <div className="space-y-4">
-                    <a href="#" className="block text-xl hover:text-primary transition-colors">
-                      Website Relaunch & Design
-                    </a>
-                    <a href="#" className="block text-xl hover:text-primary transition-colors">
-                      SEO & Performance
-                    </a>
-                    <a href="#" className="block text-xl hover:text-primary transition-colors">
-                      AI-Powered Content
-                    </a>
-                    <a href="#" className="block text-xl hover:text-primary transition-colors">
-                      Lead Generation
-                    </a>
-                  </div>
+                    {servicesOpen ? (
+                      <ChevronUp className="w-6 h-6" />
+                    ) : (
+                      <ChevronDown className="w-6 h-6" />
+                    )}
+                  </button>
+                  
+                  {servicesOpen && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="space-y-4 py-2"
+                    >
+                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                        Website Relaunch
+                      </a>
+                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                        SEO
+                      </a>
+                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                        AI Solutions
+                      </a>
+                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                        Lead Generation
+                      </a>
+                    </motion.div>
+                  )}
                 </div>
                 
-                <a href="#cases" className="block text-4xl font-bold hover:text-primary transition-colors">
+                <a href="#cases" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
                   Case Studies
                 </a>
                 
-                <a href="#about" className="block text-4xl font-bold hover:text-primary transition-colors">
+                <a href="#about" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
                   About Us
                 </a>
                 
-                <a href="#" className="block text-4xl font-bold hover:text-primary transition-colors">
+                <a href="#" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
                   Contact
                 </a>
                 
-                <a href="#careers" className="block text-4xl font-bold hover:text-primary transition-colors">
+                <a href="#careers" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
                   Careers
                 </a>
               </nav>
             </div>
 
-            <div className="mt-auto border-t p-6 space-y-6">
-              <Button className="w-full justify-between group text-lg py-6" size="lg">
+            <div className="mt-auto border-t border-white/10 p-6 space-y-6">
+              <Button 
+                className="w-full justify-between group text-lg py-6 bg-primary hover:bg-primary/90 text-white" 
+                size="lg"
+              >
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <div className="grid grid-cols-3 gap-4">
-                <Button variant="outline" size="lg" className="w-full py-6">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full py-6 border-white/20 text-white hover:bg-white/10"
+                >
                   <MessageCircle className="h-6 w-6" />
                 </Button>
-                <Button variant="outline" size="lg" className="w-full py-6">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full py-6 border-white/20 text-white hover:bg-white/10"
+                >
                   <Mail className="h-6 w-6" />
                 </Button>
-                <Button variant="outline" size="lg" className="w-full py-6">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full py-6 border-white/20 text-white hover:bg-white/10"
+                >
                   <Phone className="h-6 w-6" />
                 </Button>
               </div>

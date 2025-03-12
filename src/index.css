@@ -49,6 +49,10 @@
     backdrop-filter: blur(8px);
   }
   
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+  
   /* Hero video responsiveness */
   .hero-video-container {
     position: relative;
