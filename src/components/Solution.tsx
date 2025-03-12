@@ -26,16 +26,17 @@ const Solution = () => {
       isDragging.current = false;
     };
     
-    const onDragStart = () => {
+    const onDragMove = () => {
       isDragging.current = true;
     };
     
     emblaApi.on('pointerDown', onPointerDown);
-    emblaApi.on('dragStart', onDragStart);
+    // Using proper event types from embla-carousel
+    emblaApi.on('drag', onDragMove);
     
     return () => {
       emblaApi.off('pointerDown', onPointerDown);
-      emblaApi.off('dragStart', onDragStart);
+      emblaApi.off('drag', onDragMove);
     };
   }, [emblaApi]);
   
