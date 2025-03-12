@@ -29,7 +29,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
       document.body.style.overflow = 'hidden';
-      // Add slight delay to prevent immediate closing when opening
       setTimeout(() => {
         document.addEventListener('mousedown', handleClickOutside);
       }, 100);
@@ -46,7 +45,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     onClose();
   };
 
-  // Improved animation variants with better easing
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
@@ -67,7 +65,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       marginTop: 16,
       transition: { 
         duration: 0.3,
-        ease: [0.4, 0.0, 0.2, 1] // Improved easing function
+        ease: [0.4, 0.0, 0.2, 1] 
       } 
     },
     exit: { 
@@ -81,7 +79,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     }
   };
 
-  // Add touch swipe handling
   const handleTouchStart = useRef<number | null>(null);
   const handleTouchMove = useRef<number | null>(null);
 
@@ -97,23 +94,22 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     if (!handleTouchStart.current || !handleTouchMove.current) return;
     
     const diff = handleTouchStart.current - handleTouchMove.current;
-    const threshold = 100; // Minimum swipe distance
-    
+    const threshold = 100;
+
     if (diff > threshold) {
-      onClose(); // Swipe left to close
+      onClose();
     }
     
     handleTouchStart.current = null;
     handleTouchMove.current = null;
   };
 
-  // Navigation links data
   const navigationLinks = [
-    { title: 'Home', path: '/' },
+    { title: 'Home', path: '/', addSpaceAfter: true },
     { title: 'Web Design & Development', path: '/web-design-development' },
     { title: 'SEO & Performance Optimization', path: '/seo-performance-optimization' },
     { title: 'AI-Powered Solutions', path: '/ai-powered-solutions' },
-    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation' },
+    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation', addSpaceAfter: true },
     { title: 'Case Studies', path: '/case-studies' },
     { title: 'About Us', path: '/about-us' },
     { title: 'Contact', path: '/contact' },
@@ -144,7 +140,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-brand-footer/95 backdrop-blur-sm">
               <h2 className="text-xl font-semibold text-white font-sans">Menu</h2>
               <Button 
@@ -158,23 +153,22 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </Button>
             </div>
             
-            {/* Navigation links */}
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
               <nav className="space-y-6 text-center w-full">
                 {navigationLinks.map((link, index) => (
-                  <Link 
-                    key={index}
-                    to={link.path}
-                    className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
-                    onClick={onClose}
-                  >
-                    {link.title}
-                  </Link>
+                  <div key={index} className={cn(link.addSpaceAfter && "mb-12")}>
+                    <Link 
+                      to={link.path}
+                      className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
+                      onClick={onClose}
+                    >
+                      {link.title}
+                    </Link>
+                  </div>
                 ))}
               </nav>
             </div>
             
-            {/* Footer */}
             <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-brand-footer/95 backdrop-blur-sm">
               <Button 
                 className="w-full justify-between group text-lg py-6 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
