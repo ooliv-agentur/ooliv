@@ -14,8 +14,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold font-sans">{t('footer.about')}</h3>
-            <p className="text-gray-300 text-sm font-sans">
+            <h3 className="text-lg font-semibold font-sans text-white">{t('footer.about')}</h3>
+            <p className="text-white text-sm font-sans">
               {t('footer.aboutText')}
             </p>
             <Button 
@@ -28,7 +28,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.services')}</h3>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
               <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.webDesign')}</a></li>
               <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.seo')}</a></li>
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.company')}</h3>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
               <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.aboutUs')}</a></li>
               <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.caseStudies')}</a></li>
@@ -49,19 +49,26 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.contactInfo')}</h3>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
+              <li className="font-semibold">Uli Schönleber</li>
+              <li>ooliv Werbeagentur</li>
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2" />
-                contact@ooliv.com
+                <MapPin className="h-4 w-4 mr-2" />
+                Mombacher Str. 25<br />
+                55122 Mainz
               </li>
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
-                +49 123 456 7890
+                06131 – 63 67 801
               </li>
               <li className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2" />
-                {t('footer.location')}
+                <MessageCircle className="h-4 w-4 mr-2" />
+                0176 80 16 76 41 (WhatsApp)
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-4 w-4 mr-2" />
+                Info@ooliv.de
               </li>
             </ul>
           </div>
