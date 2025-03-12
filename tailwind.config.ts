@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,7 +52,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom color scheme
         brand: {
           background: "#E8ECE3", // Soft pastel green
           primary: "#A9B590",    // Olive green
@@ -62,6 +60,15 @@ export default {
           text: "#333333",       // Soft black/charcoal
           muted: "#D4D4D4",      // Muted gray
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["'Playfair Display'", "serif"],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "fade-up": {
