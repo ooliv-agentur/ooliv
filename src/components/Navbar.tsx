@@ -21,7 +21,7 @@ const Navbar = () => {
             <Button 
               variant="ghost" 
               size="icon"
-              className="group"
+              className="group relative z-50"
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
             >

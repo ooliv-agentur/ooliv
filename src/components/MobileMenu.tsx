@@ -44,7 +44,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100]"
             onClick={onClose}
           />
           
@@ -54,7 +54,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed inset-0 bg-gray-900/95 z-50 flex flex-col overflow-y-auto"
+            className="fixed inset-0 bg-gray-900/95 z-[101] flex flex-col overflow-y-auto"
           >
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
