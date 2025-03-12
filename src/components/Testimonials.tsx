@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
@@ -19,8 +20,7 @@ const Testimonials = () => {
         "45% higher conversion rate with improved user experience",
         "2x lead generation through strategic conversion points"
       ],
-      deviceImage: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb",
-      headerImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       author: {
         name: "Michael Schmidt",
         position: "Marketing Director, Scheurich"
@@ -37,8 +37,7 @@ const Testimonials = () => {
         "3x website traffic with improved visibility and content",
         "40% lower bounce rate with enhanced user experience"
       ],
-      deviceImage: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f",
-      headerImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       author: {
         name: "Thomas Weber",
         position: "CEO, COBUS"
@@ -55,8 +54,7 @@ const Testimonials = () => {
         "60% more inquiries through improved user journey",
         "4.9/5 user satisfaction with new digital experience"
       ],
-      deviceImage: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6",
-      headerImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       author: {
         name: "Julia Müller",
         position: "Digital Manager, Weisenburger"
@@ -73,8 +71,7 @@ const Testimonials = () => {
         "42% increase in average order value with improved UX",
         "60% higher customer retention with personalized email workflows"
       ],
-      deviceImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f",
-      headerImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
+      image: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
       author: {
         name: "Sarah Johnson",
         position: "Marketing Lead, PopBird"
@@ -91,8 +88,7 @@ const Testimonials = () => {
         "First page Google rankings for 30+ industry keywords",
         "68% reduction in cost per acquisition through organic channels"
       ],
-      deviceImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      headerImage: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
+      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
       author: {
         name: "Daniel Krause",
         position: "Growth Director, GreenTech"
@@ -113,87 +109,77 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-20">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
-              <div className={`${index % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
-                <div className="bg-brand-footer rounded-xl p-8 text-white shadow-xl">
-                  <div className="mb-6">
-                    <img 
-                      src={testimonial.logo} 
-                      alt={`${testimonial.client} logo`} 
-                      className="h-10 bg-white p-2 rounded"
-                    />
+              {/* Text content */}
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4">
+                      <img 
+                        src={testimonial.logo} 
+                        alt={`${testimonial.client} logo`} 
+                        className="h-10 w-auto"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-brand-heading">{testimonial.client}</h3>
+                      <p className="text-sm text-gray-500">{testimonial.industry}</p>
+                    </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h4 className="text-lg font-medium mb-6">
                     {testimonial.title}
-                  </h3>
+                  </h4>
                   
-                  <div className="space-y-6 mt-8">
+                  <div className="space-y-3 mb-6">
                     {testimonial.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-4 mt-1">
-                          <Check className="text-brand-primary h-5 w-5" />
+                        <div className="mr-3 mt-1 text-brand-primary">
+                          <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-white/90">{point}</p>
+                        <p className="text-sm text-gray-600">{point}</p>
                       </div>
                     ))}
                   </div>
                   
-                  <div className="mt-12 border-t border-white/10 pt-6">
-                    <blockquote className="italic text-white/80 mb-4">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div className="flex items-center">
-                      <div className="mr-4">
-                        <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">
-                          {testimonial.author.name.charAt(0)}
-                        </div>
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                    <div className="mr-3">
+                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        {testimonial.author.name.charAt(0)}{testimonial.author.name.split(' ')[1]?.charAt(0)}
                       </div>
-                      <div>
-                        <p className="font-medium">{testimonial.author.name}</p>
-                        <p className="text-sm text-white/70">{testimonial.author.position}</p>
-                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">{testimonial.author.name}</p>
+                      <p className="text-xs text-gray-500">{testimonial.author.position}</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className={`relative min-h-[400px] ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
-                <div className="relative h-full flex items-center justify-center">
-                  <div className={`absolute z-10 ${index % 2 === 0 ? '-left-6' : '-right-6'} bottom-10 md:bottom-20 w-40 md:w-64 transform ${index % 2 === 0 ? 'rotate-6' : '-rotate-6'}`}>
-                    <div className="rounded-3xl overflow-hidden border-8 border-black shadow-2xl">
-                      <img 
-                        src={testimonial.deviceImage} 
-                        alt="Mobile view" 
-                        className="w-full"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className={`absolute top-10 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-56 md:w-80 shadow-2xl rounded-lg transform ${index % 2 === 0 ? '-rotate-3' : 'rotate-3'}`}>
-                    <img 
-                      src={testimonial.headerImage} 
-                      alt="Desktop view" 
-                      className="w-full rounded-lg"
-                    />
-                  </div>
-                  
-                  <div className="absolute inset-0 z-0 opacity-10">
-                    <div className={`absolute top-10 ${index % 2 === 0 ? 'right-20' : 'left-20'} w-20 h-20 rounded-full bg-brand-primary`}></div>
-                    <div className={`absolute bottom-10 ${index % 2 === 0 ? 'left-10' : 'right-10'} w-32 h-32 rounded-full bg-brand-primaryHover`}></div>
-                  </div>
+              {/* Image */}
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src={testimonial.image} 
+                    alt={`${testimonial.client} case study`} 
+                    className="w-full h-80 object-cover"
+                  />
                 </div>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-20">
           <Button 
             variant="outline" 
             className="group hover:bg-brand-primary hover:text-white"
