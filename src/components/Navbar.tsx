@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, MessageCircle, Mail, Phone } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import LanguageSwitch from './LanguageSwitch';
@@ -12,14 +12,14 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll effect for navbar
-  useState(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   return (
     <>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 key={index}
                 variant="outline" 
                 size="icon" 
-                className="bg-white/90 backdrop-blur-sm border-primary/20 text-primary hover:bg-primary/10 shadow-md h-12 w-12 rounded-full"
+                className="bg-white/90 backdrop-blur-sm border-primary/20 text-primary hover:bg-primary/10 shadow-md h-12 w-12 rounded-full hover:scale-110 transition-transform"
                 aria-label={contact.label}
               >
                 <contact.icon className="h-5 w-5" />
