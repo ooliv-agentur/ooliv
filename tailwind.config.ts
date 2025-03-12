@@ -53,12 +53,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          background: "#E8ECE3", // Soft pastel green
-          primary: "#A9B590",    // Olive green
-          primaryHover: "#8F9E77", // Darker olive green
-          heading: "#4C7A79",    // Dark teal
-          text: "#333333",       // Soft black/charcoal
-          muted: "#D4D4D4",      // Muted gray
+          background: "#F5F3EF",    // Soft beige
+          backgroundAlt: "#E8ECE3",  // Soft pastel green
+          primary: "#A5B79C",       // Soft green
+          primaryHover: "#94A68B",  // Darker soft green
+          heading: "#4A4A49",       // Dark gray for headings
+          text: "#333333",          // Soft black/charcoal
+          muted: "#D4D4D4",         // Muted gray
+          footer: "#2C2C2B",        // Dark footer background
         },
       },
       fontFamily: {
