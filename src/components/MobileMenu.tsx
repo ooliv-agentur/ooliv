@@ -1,8 +1,8 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { X, Mail, Phone, ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-scroll';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface MobileMenuProps {
@@ -33,13 +33,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
-  const handleLinkClick = (sectionId: string) => {
+  const handleLinkClick = () => {
     onClose();
-    // Smooth scroll to the section
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -73,21 +68,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               {/* Menu Content */}
               <div className="p-6">
                 <nav className="space-y-4">
-                  <button onClick={() => handleLinkClick('solutions')} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer w-full text-left">
-                    {t('nav.solutions')}
-                  </button>
-                  <button onClick={() => handleLinkClick('process')} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer w-full text-left">
-                    {t('nav.process')}
-                  </button>
-                  <button onClick={() => handleLinkClick('cases')} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer w-full text-left">
-                    {t('nav.cases')}
-                  </button>
-                  <button onClick={() => handleLinkClick('faq')} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer w-full text-left">
-                    {t('nav.faq')}
-                  </button>
-                  <button onClick={() => handleLinkClick('contact')} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer w-full text-left">
-                    {t('nav.contact')}
-                  </button>
+                  <Link to="solutions" smooth={true} duration={500} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer" onClick={handleLinkClick}>{t('nav.solutions')}</Link>
+                  <Link to="process" smooth={true} duration={500} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer" onClick={handleLinkClick}>{t('nav.process')}</Link>
+                  <Link to="cases" smooth={true} duration={500} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer" onClick={handleLinkClick}>{t('nav.cases')}</Link>
+                  <Link to="faq" smooth={true} duration={500} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer" onClick={handleLinkClick}>{t('nav.faq')}</Link>
+                  <Link to="contact" smooth={true} duration={500} className="block text-lg hover:text-primary transition-colors duration-200 cursor-pointer" onClick={handleLinkClick}>{t('nav.contact')}</Link>
                 </nav>
               </div>
 
@@ -96,7 +81,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 <Button 
                   className="w-full justify-between group text-lg py-6 bg-white hover:bg-gray-100 text-gray-900 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02]" 
                   size="lg"
-                  onClick={() => handleLinkClick('contact')}
+                  onClick={handleLinkClick}
                 >
                   {t('footer.startProject')}
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
