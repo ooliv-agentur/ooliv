@@ -55,21 +55,21 @@ const Solution = () => {
       number: "3️⃣",
       title: "Development & Performance",
       subtitle: "Optimized for Speed, Security & Scalability",
-      description: "Our websites are built for speed, accessibility, and future expansion. AI enhances technical efficiency, but our development team ensures stability, security, and flawless functionality.",
+      description: "As an expert Webdesign Agency, we build websites for speed, accessibility, and future expansion. AI enhances technical efficiency, but our development team ensures stability, security, and flawless functionality.",
       icon: Code
     },
     {
       number: "4️⃣",
       title: "Content & SEO Optimization",
       subtitle: "Strategic Messaging That Ranks & Converts",
-      description: "SEO-driven content designed to engage your audience and increase visibility. AI assists with research and structuring—but persuasive storytelling remains in expert hands.",
+      description: "Our Webdesign Agency delivers SEO-driven content designed to engage your audience and increase visibility. AI assists with research and structuring—but persuasive storytelling remains in expert hands.",
       icon: FileText
     },
     {
       number: "5️⃣",
       title: "Launch, Tracking & Support",
       subtitle: "Long-Term Success Through Data & Expertise",
-      description: "We monitor website performance, analyze user behavior, and fine-tune strategies over time. AI streamlines reporting—but ongoing success is shaped by expert refinement and business intelligence.",
+      description: "As your dedicated Webdesign Agency, we monitor website performance, analyze user behavior, and fine-tune strategies over time. AI streamlines reporting—but ongoing success is shaped by expert refinement and business intelligence.",
       icon: LineChart
     }
   ];

@@ -11,7 +11,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What industries does ooliv specialize in as a Webdesign Agency?",
-      answer: "As a Webdesign Agency, we focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
+      answer: "As a specialized Webdesign Agency, we focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
     },
     {
       question: "What project management approach does our Webdesign Agency use?",
@@ -23,7 +23,7 @@ const FAQ = () => {
     },
     {
       question: "What certifications & recognitions has ooliv Webdesign Agency received?",
-      answer: "Our expertise as a Webdesign Agency has been recognized through Google Partner Certification, features in leading digital marketing publications, and strategic partnerships with major B2B brands."
+      answer: "Our expertise as a leading Webdesign Agency has been recognized through Google Partner Certification, features in leading digital marketing publications, and strategic partnerships with major B2B brands."
     },
     {
       question: "Does ooliv Webdesign Agency provide long-term website maintenance?",
@@ -31,7 +31,7 @@ const FAQ = () => {
     },
     {
       question: "How does our Webdesign Agency ensure SEO success?",
-      answer: "We use data-driven SEO strategies that include technical SEO audits & speed optimization, AI-enhanced content strategy, and local & international SEO for B2B visibility. As a Webdesign Agency focusing on results, we constantly monitor and adjust our approach based on performance data."
+      answer: "As a data-driven Webdesign Agency, we use proven SEO strategies that include technical SEO audits & speed optimization, AI-enhanced content strategy, and local & international SEO for B2B visibility. We constantly monitor and adjust our approach based on performance data."
     },
     {
       question: "What web technologies does ooliv Webdesign Agency use?",
@@ -39,7 +39,7 @@ const FAQ = () => {
     },
     {
       question: "How does our Webdesign Agency improve lead generation through web design?",
-      answer: "We implement conversion-driven strategies, including AI-powered forms & chatbots for higher engagement, heatmap & A/B testing to optimize conversions, and CRM & automation tools for lead nurturing. As a results-focused Webdesign Agency, we prioritize designs that convert visitors into leads."
+      answer: "As a results-focused Webdesign Agency, we implement conversion-driven strategies, including AI-powered forms & chatbots for higher engagement, heatmap & A/B testing to optimize conversions, and CRM & automation tools for lead nurturing. We prioritize designs that convert visitors into leads."
     },
     {
       question: "How does web design from a professional Webdesign Agency impact brand strategy?",
@@ -63,7 +63,7 @@ const FAQ = () => {
             {t('faq.title')}
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            Common questions about our Webdesign Agency services and approach
+            Common questions about our professional Webdesign Agency services and approach
           </p>
         </div>
 
