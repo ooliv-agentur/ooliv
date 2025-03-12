@@ -1,26 +1,32 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
 
   const faqs = [
     {
-      question: "Why choose ooliv?",
-      answer: "We combine AI-powered efficiency with 16+ years of industry experience to deliver full-service web solutions that drive measurable business growth. Our approach focuses on performance, aesthetics, and conversion optimization."
+      question: "What services does ooliv offer as a digital agency?",
+      answer: "We provide comprehensive web solutions, including: Website Relaunch & Redesign, SEO & Performance Optimization, Google Ads & Online Marketing, Branding & Corporate Design, and Full-Service Digital Strategy. We create future-proof, modern websites tailored to your brand with targeted campaigns for measurable success."
     },
     {
-      question: "How long does it take to develop a website?",
-      answer: "Standard websites typically take 4-6 weeks from concept to launch. More complex projects with custom functionality or e-commerce capabilities may require 8+ weeks. We'll provide a detailed timeline during our initial consultation."
+      question: "How long does it take to develop a website with ooliv?",
+      answer: "The timeline depends on the project's complexity: Standard websites: 4-6 weeks, Larger corporate websites: 6-8 weeks, E-commerce platforms & complex integrations: 8+ weeks. We prioritize quality, performance, and user experience to deliver high-performing websites efficiently."
     },
     {
-      question: "What AI tools do you use in your web development?",
-      answer: "We leverage cutting-edge AI technologies including ChatGPT-4 for content creation, Midjourney for unique image generation, and Sora AI for video production. These tools enhance efficiency while maintaining quality and personalization."
+      question: "Why should I choose ooliv over other agencies?",
+      answer: "We specialize in high-performance websites that drive business growth. Our clients choose us for our 16+ years of experience in digital strategy, web design & marketing, our full-service approach from concept to development to marketing, and our AI-powered efficiency with cutting-edge tools like ChatGPT-4, Midjourney, Sora AI, and Ahrefs & Google Ads. We also understand the needs of mid-sized businesses (KMUs)."
     },
     {
-      question: "Can I update my website easily after it's built?",
-      answer: "Absolutely! We build our sites on user-friendly platforms like WordPress, Webflow, or Shopify, depending on your specific needs. We'll provide training so your team can make routine updates, while we're always available for more complex changes."
+      question: "What are the benefits of Local SEO?",
+      answer: "Local SEO ensures that your business is highly visible to customers in your region. You'll get higher rankings for local search queries, increased website traffic from nearby customers, and an optimized Google My Business profile helping you appear in Google Maps & search results. Our strategies have helped businesses achieve +45% visibility and double their local leads within six months."
+    },
+    {
+      question: "What makes ooliv's website designs unique?",
+      answer: "Our web design approach is customized, user-focused, and results-driven. We ensure that your website is visually impressive with professional, modern designs that represent your brand, SEO-optimized and built with best practices for high Google rankings, fast & responsive for all devices with lightning-fast performance, and easy to update using CMS solutions like WordPress, Webflow, and Shopify."
     }
   ];
 
@@ -33,7 +39,7 @@ const FAQ = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            {t('faq.title')}
           </h2>
         </div>
 
@@ -65,6 +71,12 @@ const FAQ = () => {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-12 text-center">
+          <button className="text-blue-600 font-medium hover:text-blue-800 transition-colors">
+            Didn't Find Your Question? Contact Us →
+          </button>
         </div>
 
         {/* Chat Support Icon */}

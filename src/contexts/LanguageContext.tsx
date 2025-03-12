@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'de';
@@ -22,11 +21,11 @@ export const translations = {
     'nav.scheduleCall': 'Schedule Call',
     
     // Hero
-    'hero.title': 'Your Website Should Drive Business Growth. Let\'s Build It Right.',
-    'hero.subtitle': 'We Make Sure It Does.',
+    'hero.title': "Your Website Should Drive Business Growth. Let's Build It Right.",
+    'hero.subtitle': "We Make Sure It Does.",
     'hero.description': "Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.",
-    'hero.startProject': 'Start Your Website Project',
-    'hero.seeWork': 'See Our Work',
+    'hero.startProject': "Start Your Website Project",
+    'hero.seeWork': "See Our Work",
     
     // Challenge
     'challenge.title': 'Your Website Should Work for You—Not Against You.',
@@ -83,11 +82,11 @@ export const translations = {
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': 'Ihre Website sollte Ihr Geschäftswachstum fördern. Lassen Sie uns sie richtig bauen.',
-    'hero.subtitle': 'Wir sorgen dafür.',
-    'hero.description': 'Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie einen kompletten Relaunch oder eine brandneue Online-Präsenz benötigen, wir erstellen leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern.',
-    'hero.startProject': 'Starten Sie Ihr Website-Projekt',
-    'hero.seeWork': 'Unsere Arbeiten ansehen',
+    'hero.title': "Ihre Website sollte Ihr Geschäftswachstum fördern. Lassen Sie uns sie richtig bauen.",
+    'hero.subtitle': "Wir sorgen dafür.",
+    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie einen kompletten Relaunch oder eine brandneue Online-Präsenz benötigen, wir erstellen leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern.",
+    'hero.startProject': "Starten Sie Ihr Website-Projekt",
+    'hero.seeWork': "Unsere Arbeiten ansehen",
     
     // Challenge
     'challenge.title': 'Ihre Website sollte für Sie arbeiten – nicht gegen Sie.',
