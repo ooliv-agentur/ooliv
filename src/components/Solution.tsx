@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Zap, BarChart, Code, FileText, LineChart, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -15,10 +14,8 @@ const Solution = () => {
     containScroll: 'trimSnaps'
   });
 
-  // Reference to control drag vs. click behavior
   const isDragging = useRef(false);
   
-  // Handle drag detection for links
   useEffect(() => {
     if (!emblaApi) return;
     
@@ -44,14 +41,14 @@ const Solution = () => {
       number: "1️⃣",
       title: "Strategy & Analysis",
       subtitle: "Powered by Market Insights & SEO Data",
-      description: "We analyze competitors, market trends, and customer behavior to craft a website strategy that enhances visibility and engagement. AI supports data analysis—but every decision is driven by industry expertise.",
+      description: "As your Webdesign Agency partner, we analyze competitors, market trends, and customer behavior to craft a website strategy that enhances visibility and engagement. AI supports data analysis—but every decision is driven by industry expertise.",
       icon: BarChart
     },
     {
       number: "2️⃣",
       title: "Web Design & UX",
       subtitle: "Tailored Design, Enhanced by Technology",
-      description: "We create visually compelling and highly functional websites that reflect your brand identity. Advanced tools refine layouts, colors, and imagery—but human creativity ensures a seamless experience.",
+      description: "Our Webdesign Agency creates visually compelling and highly functional websites that reflect your brand identity. Advanced tools refine layouts, colors, and imagery—but human creativity ensures a seamless experience.",
       icon: Zap
     },
     {
@@ -105,7 +102,6 @@ const Solution = () => {
     }
   ];
 
-  // Handle click only if not dragging
   const handleCardClick = (event: React.MouseEvent, card: HTMLDivElement) => {
     if (isDragging.current) {
       event.preventDefault();
@@ -123,11 +119,10 @@ const Solution = () => {
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. AI enhances efficiency—but creativity, experience, and data-driven decisions are at the core of our approach.
+            As an experienced Webdesign Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. Whether you're launching a new business or upgrading an outdated website, our expert team delivers results. AI enhances efficiency—but creativity, experience, and data-driven decisions are at the core of our approach.
           </p>
         </div>
         
-        {/* Carousel Indicators */}
         <div className="flex justify-center gap-2 mb-6">
           {steps.map((_, index) => (
             <button
@@ -139,7 +134,6 @@ const Solution = () => {
           ))}
         </div>
         
-        {/* Embla Carousel */}
         <div className="overflow-hidden mb-16" ref={emblaRef}>
           <div className="flex gap-6">
             {steps.map((step, index) => (
@@ -151,7 +145,6 @@ const Solution = () => {
                 <div className="bg-white rounded-xl shadow-lg p-6 backdrop-blur-sm bg-opacity-90 border border-gray-100 
                              transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full
                              flex flex-col">
-                  {/* Step Number & Icon */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-backgroundAlt text-brand-primary 
                                  group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
@@ -162,7 +155,6 @@ const Solution = () => {
                     </div>
                   </div>
                   
-                  {/* Card Content */}
                   <h3 className="font-bold text-xl mb-2 text-brand-heading">{step.title}</h3>
                   <p className="text-brand-primary text-sm font-medium mb-3">{step.subtitle}</p>
                   <p className="text-brand-text text-sm flex-grow">{step.description}</p>
@@ -172,11 +164,10 @@ const Solution = () => {
           </div>
         </div>
         
-        {/* Tech Logos Section - REMOVING BACKGROUND HERE */}
         <div className="mt-16 rounded-2xl p-8 ai-tools-section">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
-              We integrate cutting-edge technologies to enhance website performance, SEO, and automation.
+              At ooliv, a premier Webdesign Agency, we integrate cutting-edge technologies to enhance website performance, SEO, and automation.
             </p>
           </div>
           
@@ -197,10 +188,9 @@ const Solution = () => {
           </div>
         </div>
         
-        {/* CTA Section - REMOVING BACKGROUND HERE */}
         <div className="mt-16 text-center rounded-2xl p-8 cta-section">
           <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
-            Your website should be a powerful business tool—designed with strategy, built for performance, and enhanced with smart technology. Let's create a website that works for your business.
+            Partner with ooliv, a leading Webdesign Agency, to transform your website into a powerful business tool—designed with strategy, built for performance, and enhanced with smart technology. Let's create a website that works for your business.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
