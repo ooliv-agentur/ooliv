@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight } from "lucide-react";
+import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight, MousePointer2 } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import BeforeAfterSlider from './BeforeAfterSlider';
 
 const Challenge = () => {
   const { t } = useLanguage();
@@ -11,29 +12,39 @@ const Challenge = () => {
   
   const challenges = [
     {
-      problem: "Your business doesn't have a website yet—you're missing opportunities.",
-      solution: "We design high-performance websites that attract and convert customers.",
-      icon: AlertCircle
+      problem: "Outdated Website Design",
+      solution: "Modern, conversion-focused design that represents your brand professionally",
+      description: "Your current website might be holding back your business growth",
+      icon: AlertCircle,
+      color: "from-red-50 to-orange-50"
     },
     {
-      problem: "Your website looks outdated and doesn't represent your brand.",
-      solution: "A modern, professional design strengthens trust and credibility.",
-      icon: Zap
+      problem: "Poor Mobile Experience",
+      solution: "Fully responsive, mobile-first design that works perfectly on all devices",
+      description: "60% of users access websites on mobile - is yours optimized?",
+      icon: Zap,
+      color: "from-blue-50 to-purple-50"
     },
     {
-      problem: "Your site is slow, hard to update, and not optimized for mobile.",
-      solution: "We create lightning-fast, mobile-friendly websites with easy management tools.",
-      icon: CheckCircle2
+      problem: "Slow Loading Speed",
+      solution: "Lightning-fast performance with optimized code and assets",
+      description: "Every second delay reduces conversions by 7%",
+      icon: CheckCircle2,
+      color: "from-green-50 to-emerald-50"
     },
     {
-      problem: "Low Google rankings mean customers can't find you.",
-      solution: "SEO optimization ensures your business is highly visible in search results.",
-      icon: Search
+      problem: "Low Search Rankings",
+      solution: "SEO optimization for higher Google rankings and more organic traffic",
+      description: "90% of users don't look past the first page of Google",
+      icon: Search,
+      color: "from-yellow-50 to-amber-50"
     },
     {
-      problem: "Your website isn't generating leads or sales.",
-      solution: "Our conversion-driven approach turns visitors into customers.",
-      icon: LineChart
+      problem: "Poor Conversion Rate",
+      solution: "Strategic CTA placement and conversion optimization",
+      description: "Is your website turning visitors into customers?",
+      icon: LineChart,
+      color: "from-purple-50 to-pink-50"
     }
   ];
 
@@ -45,26 +56,27 @@ const Challenge = () => {
             {t('challenge.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('challenge.description')}
+            Common challenges that might be holding your business back. Hover over each card to see our solution.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {challenges.map((item, index) => (
             <div 
               key={index} 
-              className="group"
+              className="group relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <Alert className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative overflow-hidden">
+              <Alert className={`h-full transition-all duration-500 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden bg-gradient-to-br ${item.color}`}>
                 <div className="flex items-start">
-                  <item.icon className="h-5 w-5 mt-0.5" />
+                  <item.icon className={`h-5 w-5 mt-0.5 ${hoveredIndex === index ? 'text-blue-600' : 'text-gray-600'}`} />
                   <div className="ml-2">
-                    <AlertTitle className="text-red-600 mb-2">{item.problem}</AlertTitle>
+                    <AlertTitle className="text-gray-900 mb-2 font-semibold">{item.problem}</AlertTitle>
+                    <p className="text-gray-600 text-sm mb-2">{item.description}</p>
                     <AlertDescription 
-                      className={`text-green-600 transition-opacity duration-300 ${
-                        hoveredIndex === index ? 'opacity-100' : 'opacity-70'
+                      className={`text-blue-600 font-medium transition-all duration-300 ${
+                        hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                       }`}
                     >
                       {item.solution}
@@ -72,19 +84,26 @@ const Challenge = () => {
                   </div>
                 </div>
                 {hoveredIndex === index && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 animate-fade-in" />
+                  <MousePointer2 className="absolute bottom-4 right-4 h-4 w-4 text-blue-600 animate-pulse" />
                 )}
               </Alert>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8">See the Difference</h3>
+          <BeforeAfterSlider />
+        </div>
+
+        <div className="text-center">
           <Button 
-            variant="link" 
-            className="text-blue-600 font-medium hover:text-blue-800 transition-colors"
+            variant="default" 
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium group"
           >
-            How We Fix This <ArrowRight className="h-4 w-4 ml-1" />
+            How We Fix This 
+            <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </div>
