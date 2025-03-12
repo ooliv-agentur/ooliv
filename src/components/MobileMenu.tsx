@@ -34,18 +34,23 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     setServicesOpen(!servicesOpen);
   };
 
+  const handleLinkClick = () => {
+    onClose();
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <div className="fixed inset-0 w-full h-full" style={{ zIndex: 9999 }}>
           {/* Backdrop overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100]"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-md"
             onClick={onClose}
+            style={{ zIndex: 1 }}
           />
           
           {/* Menu content */}
@@ -53,8 +58,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed inset-0 bg-gray-900/95 z-[101] flex flex-col overflow-y-auto"
+            transition={{ type: "tween", duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="fixed inset-0 bg-gray-900/95 flex flex-col overflow-y-auto"
+            style={{ zIndex: 2 }}
           >
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
@@ -75,7 +81,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <a 
                   href="#" 
                   className="block text-4xl font-bold text-white hover:text-primary transition-colors"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                 >
                   Home
                 </a>
@@ -103,28 +109,28 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       <a 
                         href="#" 
                         className="block text-xl text-white hover:text-primary transition-colors"
-                        onClick={onClose}
+                        onClick={handleLinkClick}
                       >
                         Website Relaunch
                       </a>
                       <a 
                         href="#" 
                         className="block text-xl text-white hover:text-primary transition-colors"
-                        onClick={onClose}
+                        onClick={handleLinkClick}
                       >
                         SEO
                       </a>
                       <a 
                         href="#" 
                         className="block text-xl text-white hover:text-primary transition-colors"
-                        onClick={onClose}
+                        onClick={handleLinkClick}
                       >
                         AI Solutions
                       </a>
                       <a 
                         href="#" 
                         className="block text-xl text-white hover:text-primary transition-colors"
-                        onClick={onClose}
+                        onClick={handleLinkClick}
                       >
                         Lead Generation
                       </a>
@@ -135,7 +141,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <a 
                   href="#cases" 
                   className="block text-4xl font-bold text-white hover:text-primary transition-colors"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                 >
                   Case Studies
                 </a>
@@ -143,7 +149,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <a 
                   href="#about" 
                   className="block text-4xl font-bold text-white hover:text-primary transition-colors"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                 >
                   About Us
                 </a>
@@ -151,7 +157,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <a 
                   href="#" 
                   className="block text-4xl font-bold text-white hover:text-primary transition-colors"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                 >
                   Contact
                 </a>
@@ -159,7 +165,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 <a 
                   href="#careers" 
                   className="block text-4xl font-bold text-white hover:text-primary transition-colors"
-                  onClick={onClose}
+                  onClick={handleLinkClick}
                 >
                   Careers
                 </a>
@@ -201,7 +207,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </div>
             </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );
