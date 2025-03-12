@@ -188,7 +188,12 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         variants={servicesVariants}
                         className="space-y-4 py-2 px-4 bg-gray-800/50 rounded-lg backdrop-blur-sm"
                       >
-                        {['Website Relaunch', 'SEO', 'AI Solutions', 'Lead Generation'].map((service, index) => (
+                        {[
+                          'Web Design & Development', 
+                          'SEO & Performance Optimization', 
+                          'AI-Powered Solutions', 
+                          'Lead Generation & Conversion Optimization'
+                        ].map((service, index) => (
                           <a 
                             key={index}
                             href="#" 
