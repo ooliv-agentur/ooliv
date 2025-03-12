@@ -1,30 +1,54 @@
 
+import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (videoRef.current) {
+      if (videoRef.current.readyState >= 3) {
+        setVideoLoaded(true);
+      } else {
+        videoRef.current.addEventListener('loadeddata', () => {
+          setVideoLoaded(true);
+        });
+      }
+    }
+  }, []);
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-0">
+        {/* Initial loading state - dark background */}
+        <div className={`absolute inset-0 bg-gray-900 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}></div>
+        
         <video 
-          className="absolute inset-0 w-full h-full object-cover"
+          ref={videoRef}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           autoPlay 
           muted 
           loop 
           playsInline
+          onError={() => setVideoLoaded(false)}
         >
           <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-team-working-on-computers-in-an-office-environment-33172-large.mp4" type="video/mp4" />
-          {/* Fallback image if video fails to load */}
+        </video>
+        
+        {/* Fallback image only shows if video fails to load */}
+        {!videoLoaded && (
           <img 
             src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
             alt="Digital Transformation" 
             className="absolute inset-0 w-full h-full object-cover"
           />
-        </video>
+        )}
+        
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
       </div>
