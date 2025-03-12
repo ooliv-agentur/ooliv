@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
   const { t } = useLanguage();
@@ -13,32 +13,56 @@ const Testimonials = () => {
     {
       client: "Scheurich",
       industry: "Ceramic & Lifestyle Brand",
-      result: "120% increase in organic traffic after full website optimization",
-      quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
-      impact: ["120% more organic traffic", "45% higher conversion rate", "2x lead generation"],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      title: "120% mehr organischen Traffic durch komplette Website-Optimierung",
       logo: "/placeholder.svg",
-      stars: 5
+      quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
+      impact: [
+        "120% more organic traffic after full website optimization",
+        "45% higher conversion rate with improved user experience",
+        "2x lead generation through strategic conversion points"
+      ],
+      deviceImage: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb",
+      headerImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      author: {
+        name: "Michael Schmidt",
+        position: "Marketing Director, Scheurich"
+      }
     },
     {
       client: "COBUS",
       industry: "ERP & IT Solutions",
-      result: "Lead generation improved by 80% with a new website & conversion strategy",
-      quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
-      impact: ["80% more leads", "3x website traffic", "40% lower bounce rate"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      title: "Lead generation improved by 80% with a new website & conversion strategy",
       logo: "/placeholder.svg",
-      stars: 5
+      quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
+      impact: [
+        "80% more leads through targeted conversion strategy",
+        "3x website traffic with improved visibility and content",
+        "40% lower bounce rate with enhanced user experience"
+      ],
+      deviceImage: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f",
+      headerImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      author: {
+        name: "Thomas Weber",
+        position: "CEO, COBUS"
+      }
     },
     {
       client: "Weisenburger",
       industry: "Construction & Real Estate",
-      result: "Seamless CRM integration & scalable web infrastructure",
-      quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
-      impact: ["95% faster load time", "60% more inquiries", "4.9/5 user satisfaction"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      title: "Seamless CRM integration & scalable web infrastructure",
       logo: "/placeholder.svg",
-      stars: 5
+      quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
+      impact: [
+        "95% faster load time with optimized architecture",
+        "60% more inquiries through improved user journey",
+        "4.9/5 user satisfaction with new digital experience"
+      ],
+      deviceImage: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6",
+      headerImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      author: {
+        name: "Julia Müller",
+        position: "Digital Manager, Weisenburger"
+      }
     }
   ];
 
@@ -49,6 +73,8 @@ const Testimonials = () => {
   const prevSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
+
+  const currentTestimonial = testimonials[activeIndex];
 
   return (
     <section id="cases" className="py-20 bg-gradient-to-br from-brand-background to-white">
@@ -63,119 +89,106 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative">
-          {/* Desktop Navigation Controls */}
-          <div className="hidden md:block">
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white hover:text-brand-primary"
-              onClick={prevSlide}
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Left Column - Dark Background with Content */}
+          <div className="bg-brand-footer rounded-xl p-8 text-white shadow-xl">
+            <div className="mb-6">
+              <img 
+                src={currentTestimonial.logo} 
+                alt={`${currentTestimonial.client} logo`} 
+                className="h-10 bg-white p-2 rounded"
+              />
+            </div>
             
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white hover:text-brand-primary"
-              onClick={nextSlide}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-
-          {/* Testimonials Carousel */}
-          <div 
-            className="grid md:grid-cols-3 gap-6 transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className={`bg-white rounded-xl shadow-lg transition-all duration-500 hover:shadow-xl group ${
-                  index === activeIndex ? 'md:scale-105 z-10' : 'md:scale-100'
-                }`}
-              >
-                <div className="relative h-48 rounded-t-xl overflow-hidden">
-                  <img 
-                    src={testimonial.image} 
-                    alt={`${testimonial.client} project`} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <img 
-                    src={testimonial.logo} 
-                    alt={`${testimonial.client} logo`} 
-                    className="absolute bottom-4 left-4 h-8 w-auto"
-                  />
+            <h3 className="text-2xl font-bold mb-4">
+              {currentTestimonial.title}
+            </h3>
+            
+            <div className="space-y-6 mt-8">
+              {currentTestimonial.impact.map((point, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="mr-4 mt-1">
+                    <Check className="text-brand-primary h-5 w-5" />
+                  </div>
+                  <p className="text-white/90">{point}</p>
                 </div>
-                
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="font-bold text-lg font-sans">{testimonial.client}</h3>
-                      <p className="text-sm text-brand-text font-sans">{testimonial.industry}</p>
-                    </div>
-                    <div className="flex">
-                      {[...Array(testimonial.stars)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 border-t border-white/10 pt-6">
+              <blockquote className="italic text-white/80 mb-4">
+                "{currentTestimonial.quote}"
+              </blockquote>
+              <div className="flex items-center">
+                <div className="mr-4">
+                  <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">
+                    {currentTestimonial.author.name.charAt(0)}
                   </div>
-                  
-                  <blockquote className="text-brand-text italic mb-6 font-sans">"{testimonial.quote}"</blockquote>
-                  
-                  <div className="space-y-2 mb-6">
-                    {testimonial.impact.map((item, i) => (
-                      <div key={i} className="flex items-center text-sm text-green-700 font-sans">
-                        <CheckCircle className="h-4 w-4 mr-2" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <Button 
-                    variant="link" 
-                    className="text-brand-primary p-0 hover:text-brand-primaryHover transition-colors group/btn"
-                  >
-                    Read Full Case Study 
-                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                  </Button>
+                </div>
+                <div>
+                  <p className="font-medium">{currentTestimonial.author.name}</p>
+                  <p className="text-sm text-white/70">{currentTestimonial.author.position}</p>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
           
-          {/* Mobile Navigation */}
-          <div className="flex justify-center mt-6 md:hidden gap-2">
+          {/* Right Column - Device Images */}
+          <div className="relative">
+            <div className="relative h-full flex items-center justify-center">
+              {/* Mobile Device */}
+              <div className="absolute z-10 -left-6 bottom-10 md:bottom-20 w-40 md:w-64 transform rotate-6">
+                <div className="rounded-3xl overflow-hidden border-8 border-black shadow-2xl">
+                  <img 
+                    src={currentTestimonial.deviceImage} 
+                    alt="Mobile view" 
+                    className="w-full"
+                  />
+                </div>
+              </div>
+              
+              {/* Tablet/Desktop Device */}
+              <div className="absolute top-10 right-0 w-56 md:w-80 shadow-2xl rounded-lg transform -rotate-3">
+                <img 
+                  src={currentTestimonial.headerImage} 
+                  alt="Desktop view" 
+                  className="w-full rounded-lg"
+                />
+              </div>
+              
+              {/* Background Elements */}
+              <div className="absolute inset-0 z-0 opacity-10">
+                <div className="absolute top-10 right-20 w-20 h-20 rounded-full bg-brand-primary"></div>
+                <div className="absolute bottom-10 left-10 w-32 h-32 rounded-full bg-brand-primaryHover"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Navigation Controls */}
+        <div className="flex justify-between mt-10">
+          <div className="flex space-x-2">
             {testimonials.map((_, index) => (
               <button 
                 key={index} 
                 onClick={() => setActiveIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
                   index === activeIndex ? 'bg-brand-primary' : 'bg-gray-300'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
-        </div>
-        
-        <div className="text-center mt-12 space-x-4">
-          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white" asChild>
-            <Link to="/case-studies">
-              Read More Success Stories
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          
           <Button 
             variant="outline" 
             className="group hover:bg-brand-primary hover:text-white"
-            onClick={() => window.open('https://maps.app.goo.gl/AkPnsohm5MnBfXtf8', '_blank')}
+            asChild
           >
-            Read All Google Reviews
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Link to="/case-studies">
+              View All Case Studies
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </div>
