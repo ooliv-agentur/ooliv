@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { FileCheck, PhoneCall, LayoutGrid } from 'lucide-react';
+import { FileCheck, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactForm from './ContactForm';
 
@@ -27,7 +27,7 @@ const CTA = () => {
             {t('cta.subtitle')}
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Button 
               variant="outline" 
               size="lg" 
@@ -46,16 +46,6 @@ const CTA = () => {
             >
               <PhoneCall className="mr-2 h-5 w-5" />
               {t('cta.call')}
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
-              onClick={() => handleOpenForm('work')}
-            >
-              <LayoutGrid className="mr-2 h-5 w-5" />
-              {t('cta.work')}
             </Button>
           </div>
           
