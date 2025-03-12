@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
   const { t } = useLanguage();
@@ -161,11 +163,17 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center mt-12 space-x-4">
-          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white">
-            Read More Success Stories
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white" asChild>
+            <Link to="/case-studies">
+              Read More Success Stories
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
-          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white">
+          <Button 
+            variant="outline" 
+            className="group hover:bg-brand-primary hover:text-white"
+            onClick={() => window.open('https://maps.app.goo.gl/AkPnsohm5MnBfXtf8', '_blank')}
+          >
             Read All Google Reviews
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, ExternalLink, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -21,8 +22,11 @@ const Footer = () => {
             <Button 
               variant="outline" 
               className="bg-brand-primary text-white border-brand-primary hover:bg-brand-primaryHover"
+              asChild
             >
-              {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+              <Link to="/contact">
+                {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </div>
 
@@ -30,20 +34,20 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.branding')}</a></li>
+              <li><Link to="/web-design-development" className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</Link></li>
+              <li><Link to="/seo-performance-optimization" className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</Link></li>
+              <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</Link></li>
+              <li><Link to="/ai-powered-solutions" className="text-white hover:text-brand-background transition-colors">{t('footer.branding')}</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.caseStudies')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</a></li>
-              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.jobs')}</a></li>
+              <li><Link to="/about-us" className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/case-studies" className="text-white hover:text-brand-background transition-colors">{t('footer.caseStudies')}</Link></li>
+              <li><Link to="/contact" className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</Link></li>
+              <li><Link to="/careers" className="text-white hover:text-brand-background transition-colors">{t('footer.jobs')}</Link></li>
             </ul>
           </div>
 
@@ -76,8 +80,8 @@ const Footer = () => {
               {t('footer.copyright')}
             </div>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</a>
-              <a href="#" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</a>
+              <Link to="/data-privacy" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</Link>
+              <Link to="/legal-notice" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</Link>
             </div>
           </div>
         </div>
@@ -91,8 +95,11 @@ const Footer = () => {
             variant="outline" 
             size="sm"
             className="bg-white text-brand-primary border-white hover:bg-gray-100 hover:text-brand-primary"
+            asChild
           >
-            {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+            <Link to="/contact">
+              {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>

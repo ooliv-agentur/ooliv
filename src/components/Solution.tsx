@@ -2,6 +2,7 @@
 import React from 'react';
 import { Zap, BarChart, Code, FileText, LineChart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Solution = () => {
   const { t } = useLanguage();
@@ -130,13 +131,13 @@ const Solution = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <a 
-            href="#process" 
+          <Link 
+            to="/ai-powered-solutions"
             className="inline-flex items-center text-brand-primary hover:text-brand-primaryHover transition-colors"
           >
             <span>Learn more about our process</span>
             <Zap className="ml-2 h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

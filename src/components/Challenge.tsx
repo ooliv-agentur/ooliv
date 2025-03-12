@@ -1,9 +1,11 @@
+
 import React, { useState } from 'react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight, MousePointer2 } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import { Link } from 'react-router-dom';
 
 const Challenge = () => {
   const { t } = useLanguage();
@@ -101,9 +103,12 @@ const Challenge = () => {
             variant="default" 
             size="lg"
             className="bg-brand-primary hover:bg-brand-primaryHover text-brand-text font-medium group"
+            asChild
           >
-            How We Fix This 
-            <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+            <Link to="/web-design-development">
+              How We Fix This 
+              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
         </div>
       </div>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -74,9 +75,9 @@ const FAQ = () => {
         </div>
 
         <div className="max-w-3xl mx-auto mt-12 text-center">
-          <button className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
+          <Link to="/contact" className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
             Didn't Find Your Question? Contact Us →
-          </button>
+          </Link>
         </div>
 
         {/* Chat Support Icon */}
