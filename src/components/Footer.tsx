@@ -8,7 +8,7 @@ const Footer = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-brand-text text-white pt-16 pb-8">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <Button 
               variant="outline" 
-              className="text-gray-900 bg-white border-white hover:bg-white hover:text-black"
+              className="bg-brand-primary text-brand-text border-brand-primary hover:bg-brand-primaryHover"
             >
               {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -82,20 +82,18 @@ const Footer = () => {
       </div>
 
       {/* Sticky CTA Banner */}
-      <div className="fixed bottom-0 left-0 right-0 bg-blue-600 py-3 px-4 z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-brand-primary py-3 px-4 z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-white text-sm md:text-base">Let's Talk About Your Website Relaunch</p>
+          <p className="text-brand-text text-sm md:text-base font-medium">Let's Talk About Your Website Relaunch</p>
           <Button 
             variant="outline" 
             size="sm"
-            className="text-gray-900 bg-white border-white hover:bg-white hover:text-black"
+            className="bg-white text-brand-text border-white hover:bg-gray-100"
           >
             {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
-
-      {/* Fixed Contact Icons - removed to avoid duplication with Navbar */}
     </footer>
   );
 };

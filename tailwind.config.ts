@@ -53,6 +53,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom color scheme
+        brand: {
+          background: "#E8ECE3", // Soft pastel green
+          primary: "#A9B590",    // Olive green
+          primaryHover: "#8F9E77", // Darker olive green
+          heading: "#4C7A79",    // Dark teal
+          text: "#333333",       // Soft black/charcoal
+          muted: "#D4D4D4",      // Muted gray
+        },
       },
       keyframes: {
         "fade-up": {
