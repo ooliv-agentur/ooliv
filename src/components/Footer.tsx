@@ -30,20 +30,20 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.webDesign')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.seo')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.ads')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.branding')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.branding')}</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.aboutUs')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.caseStudies')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.contact')}</a></li>
-              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.jobs')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.caseStudies')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</a></li>
+              <li><a href="#" className="text-white hover:text-brand-background transition-colors">{t('footer.jobs')}</a></li>
             </ul>
           </div>
 
