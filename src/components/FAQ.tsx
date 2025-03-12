@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,24 +9,44 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What services does ooliv offer as a digital agency?",
-      answer: "We provide comprehensive web solutions, including: Website Relaunch & Redesign, SEO & Performance Optimization, Google Ads & Online Marketing, Branding & Corporate Design, and Full-Service Digital Strategy. We create future-proof, modern websites tailored to your brand with targeted campaigns for measurable success."
+      question: "What industries does ooliv specialize in?",
+      answer: "We focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
     },
     {
-      question: "How long does it take to develop a website with ooliv?",
-      answer: "The timeline depends on the project's complexity: Standard websites: 4-6 weeks, Larger corporate websites: 6-8 weeks, E-commerce platforms & complex integrations: 8+ weeks. We prioritize quality, performance, and user experience to deliver high-performing websites efficiently."
+      question: "What project management approach does ooliv use?",
+      answer: "We use structured Agile & Scrum methodologies to ensure transparency and efficiency. This includes regular updates & feedback loops, dedicated project manager for every client, and Basecamp for seamless file sharing & communication."
     },
     {
-      question: "Why should I choose ooliv over other agencies?",
-      answer: "We specialize in high-performance websites that drive business growth. Our clients choose us for our 16+ years of experience in digital strategy, web design & marketing, our full-service approach from concept to development to marketing, and our AI-powered efficiency with cutting-edge tools like ChatGPT-4, Midjourney, Sora AI, and Ahrefs & Google Ads. We also understand the needs of mid-sized businesses (KMUs)."
+      question: "How does ooliv integrate AI-powered tools into web design?",
+      answer: "We leverage AI-driven technologies like ChatGPT-4 for content optimization & automation, Midjourney & Sora AI for AI-generated visuals & videos, and Ahrefs & SEMrush for advanced SEO & performance tracking."
     },
     {
-      question: "What are the benefits of Local SEO?",
-      answer: "Local SEO ensures that your business is highly visible to customers in your region. You'll get higher rankings for local search queries, increased website traffic from nearby customers, and an optimized Google My Business profile helping you appear in Google Maps & search results. Our strategies have helped businesses achieve +45% visibility and double their local leads within six months."
+      question: "What certifications & recognitions has ooliv received?",
+      answer: "Our expertise has been recognized through Google Partner Certification, features in leading digital marketing publications, and strategic partnerships with major B2B brands."
     },
     {
-      question: "What makes ooliv's website designs unique?",
-      answer: "Our web design approach is customized, user-focused, and results-driven. We ensure that your website is visually impressive with professional, modern designs that represent your brand, SEO-optimized and built with best practices for high Google rankings, fast & responsive for all devices with lightning-fast performance, and easy to update using CMS solutions like WordPress, Webflow, and Shopify."
+      question: "Does ooliv provide long-term website maintenance?",
+      answer: "Yes! We offer ongoing support & maintenance including regular security updates & performance monitoring, AI-powered analytics & tracking, and content updates & conversion optimization."
+    },
+    {
+      question: "How does ooliv ensure SEO success?",
+      answer: "We use data-driven SEO strategies that include technical SEO audits & speed optimization, AI-enhanced content strategy, and local & international SEO for B2B visibility."
+    },
+    {
+      question: "What web technologies does ooliv use?",
+      answer: "We build future-proof websites with Headless CMS (Strapi, Contentful) for flexibility, WordPress & Webflow for easy management, Shopify & WooCommerce for eCommerce, and React & Next.js for high-performance web applications."
+    },
+    {
+      question: "How does ooliv improve lead generation through web design?",
+      answer: "We implement conversion-driven strategies, including AI-powered forms & chatbots for higher engagement, heatmap & A/B testing to optimize conversions, and CRM & automation tools for lead nurturing."
+    },
+    {
+      question: "How does web design impact brand strategy?",
+      answer: "Your website is the digital foundation of your brand. We ensure strong brand consistency across design & messaging, strategic UX/UI design that reinforces credibility, and seamless integration with marketing automation tools."
+    },
+    {
+      question: "Why choose ooliv over other web design agencies?",
+      answer: "We specialize in B2B clients (not generic web design), offer AI-powered efficiency for smarter, faster results, take a strategic approach focusing on business growth, and build long-term partnerships, not just one-time projects."
     }
   ];
 
@@ -80,7 +99,6 @@ const FAQ = () => {
           </Link>
         </div>
 
-        {/* Chat Support Icon */}
         <div className="fixed bottom-6 right-6 z-50">
           <button 
             className="bg-brand-primary text-brand-text p-4 rounded-full shadow-lg hover:bg-brand-primaryHover transition-colors"
