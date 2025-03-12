@@ -1,12 +1,40 @@
 
-import React from 'react';
-import { Zap, BarChart, Code, FileText, LineChart } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { Zap, BarChart, Code, FileText, LineChart, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Solution = () => {
   const { t } = useLanguage();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: 'start',
+    loop: false,
+    dragFree: true,
+    containScroll: 'trimSnaps'
+  });
+
+  // Reference to control drag vs. click behavior
+  const isDragging = useRef(false);
+  
+  // Handle drag detection for links
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    emblaApi.on('pointerDown', () => {
+      isDragging.current = false;
+    });
+    
+    emblaApi.on('pointerMove', () => {
+      isDragging.current = true;
+    });
+    
+    return () => {
+      emblaApi.off('pointerDown');
+      emblaApi.off('pointerMove');
+    };
+  }, [emblaApi]);
   
   const steps = [
     {
@@ -74,8 +102,15 @@ const Solution = () => {
     }
   ];
 
+  // Handle click only if not dragging
+  const handleCardClick = (event: React.MouseEvent, card: HTMLDivElement) => {
+    if (isDragging.current) {
+      event.preventDefault();
+    }
+  };
+
   return (
-    <section id="process" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+    <section id="process" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
@@ -89,32 +124,45 @@ const Solution = () => {
           </p>
         </div>
         
-        {/* Horizontal Timeline Layout with Progress Flow */}
-        <div className="relative mb-12">
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-brand-backgroundAlt transform -translate-y-1/2 z-0 rounded-full"></div>
-          
-          <div className="grid md:grid-cols-5 gap-8 relative z-10">
+        {/* Carousel Indicators */}
+        <div className="flex justify-center gap-2 mb-6">
+          {steps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${emblaApi?.selectedScrollSnap() === index ? 'bg-brand-primary w-8' : 'bg-brand-muted'}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+        
+        {/* Embla Carousel */}
+        <div className="overflow-hidden mb-16" ref={emblaRef}>
+          <div className="flex gap-6">
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className="group relative"
+                className="flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0 group"
+                onClick={(e) => handleCardClick(e, e.currentTarget)}
               >
-                {/* Step Number Circle */}
-                <div className="absolute left-1/2 -top-6 transform -translate-x-1/2 md:static md:left-auto md:top-auto md:transform-none flex justify-center mb-6">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-brand-primary text-brand-primary shadow-lg group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
-                    <span className="text-lg font-bold">{index + 1}</span>
-                  </div>
-                </div>
-                
-                {/* Card Content */}
-                <div className="bg-white rounded-xl shadow-lg p-6 backdrop-blur-sm bg-opacity-90 border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
-                  <div className="p-3 bg-brand-backgroundAlt rounded-full mb-4 inline-block">
-                    <step.icon className="h-6 w-6 text-brand-primary" />
+                <div className="bg-white rounded-xl shadow-lg p-6 backdrop-blur-sm bg-opacity-90 border border-gray-100 
+                             transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full
+                             flex flex-col">
+                  {/* Step Number & Icon */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-backgroundAlt text-brand-primary 
+                                 group-hover:bg-brand-primary group-hover:text-white transition-all duration-300">
+                      <span className="text-lg font-bold">{index + 1}</span>
+                    </div>
+                    <div className="p-2 bg-brand-backgroundAlt rounded-full">
+                      <step.icon className="h-5 w-5 text-brand-primary" />
+                    </div>
                   </div>
                   
+                  {/* Card Content */}
                   <h3 className="font-bold text-xl mb-2 text-brand-heading">{step.title}</h3>
                   <p className="text-brand-primary text-sm font-medium mb-3">{step.subtitle}</p>
-                  <p className="text-brand-text">{step.description}</p>
+                  <p className="text-brand-text text-sm flex-grow">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -122,7 +170,7 @@ const Solution = () => {
         </div>
         
         {/* Tech Logos Section */}
-        <div className="mt-20 bg-white rounded-2xl shadow-md p-8 backdrop-blur-sm bg-opacity-80">
+        <div className="mt-16 bg-white rounded-2xl shadow-md p-8 backdrop-blur-sm bg-opacity-80">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
               We integrate cutting-edge technologies to enhance website performance, SEO, and automation.
@@ -155,13 +203,13 @@ const Solution = () => {
             <Button asChild size="lg" className="group">
               <Link to="/contact" className="inline-flex items-center">
                 Start Your Project
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button variant="outline" asChild size="lg" className="group">
               <Link to="/case-studies" className="inline-flex items-center">
                 See How We Work
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
