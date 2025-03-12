@@ -26,16 +26,16 @@ const Solution = () => {
       isDragging.current = false;
     };
     
-    const onDragMove = () => {
+    const onDragStart = () => {
       isDragging.current = true;
     };
     
     emblaApi.on('pointerDown', onPointerDown);
-    emblaApi.on('dragMove', onDragMove);
+    emblaApi.on('dragStart', onDragStart);
     
     return () => {
       emblaApi.off('pointerDown', onPointerDown);
-      emblaApi.off('dragMove', onDragMove);
+      emblaApi.off('dragStart', onDragStart);
     };
   }, [emblaApi]);
   
