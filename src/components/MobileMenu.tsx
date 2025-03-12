@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -14,7 +13,6 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { t } = useLanguage();
-  const [servicesOpen, setServicesOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -43,10 +41,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen, onClose]);
-
-  const toggleServices = () => {
-    setServicesOpen(!servicesOpen);
-  };
 
   const handleLinkClick = () => {
     onClose();
@@ -113,16 +107,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
-  // Service links data
-  const serviceLinks = [
+  // Navigation links data
+  const navigationLinks = [
+    { title: 'Home', path: '/' },
     { title: 'Web Design & Development', path: '/web-design-development' },
     { title: 'SEO & Performance Optimization', path: '/seo-performance-optimization' },
     { title: 'AI-Powered Solutions', path: '/ai-powered-solutions' },
-    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation' }
-  ];
-
-  // Main navigation links
-  const mainLinks = [
+    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation' },
     { title: 'Case Studies', path: '/case-studies' },
     { title: 'About Us', path: '/about-us' },
     { title: 'Contact', path: '/contact' },
@@ -142,7 +133,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           role="dialog"
           aria-label="Mobile menu"
         >
-          {/* Content container with swipe handling */}
           <motion.div
             ref={menuRef}
             className="bg-brand-footer flex flex-col w-full h-full max-h-[100dvh] overflow-hidden"
@@ -154,7 +144,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            {/* Header with close button - sticky */}
+            {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-brand-footer/95 backdrop-blur-sm">
               <h2 className="text-xl font-semibold text-white font-sans">Menu</h2>
               <Button 
@@ -168,79 +158,28 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </Button>
             </div>
             
-            {/* Navigation links with improved scrolling */}
+            {/* Navigation links */}
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
               <nav className="space-y-6 text-center w-full">
-                <Link 
-                  to="/" 
-                  className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
-                  onClick={handleLinkClick}
-                  tabIndex={0}
-                >
-                  Home
-                </Link>
-                
-                <div className="space-y-3">
-                  <button 
-                    onClick={toggleServices}
-                    className="flex items-center justify-center gap-2 mx-auto py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md w-full hover:scale-105 transition-transform font-sans"
-                    aria-expanded={servicesOpen}
-                    aria-controls="services-dropdown"
-                  >
-                    Services
-                    {servicesOpen ? (
-                      <ChevronUp className="w-6 h-6" />
-                    ) : (
-                      <ChevronDown className="w-6 h-6" />
-                    )}
-                  </button>
-                  
-                  <AnimatePresence initial={false}>
-                    {servicesOpen && (
-                      <motion.div 
-                        id="services-dropdown"
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={servicesVariants}
-                        className="space-y-4 py-2 px-4 bg-brand-backgroundAlt/20 rounded-lg backdrop-blur-sm"
-                      >
-                        {serviceLinks.map((service, index) => (
-                          <Link 
-                            key={index}
-                            to={service.path}
-                            className="block py-3 text-xl text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
-                            onClick={handleLinkClick}
-                            tabIndex={0}
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-                
-                {mainLinks.map((item, index) => (
+                {navigationLinks.map((link, index) => (
                   <Link 
                     key={index}
-                    to={item.path}
+                    to={link.path}
                     className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
-                    onClick={handleLinkClick}
-                    tabIndex={0}
+                    onClick={onClose}
                   >
-                    {item.title}
+                    {link.title}
                   </Link>
                 ))}
               </nav>
             </div>
             
-            {/* Footer with contact icons and CTA - sticky */}
+            {/* Footer */}
             <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-brand-footer/95 backdrop-blur-sm">
               <Button 
                 className="w-full justify-between group text-lg py-6 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
                 size="lg"
-                onClick={handleLinkClick}
+                onClick={onClose}
               >
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
