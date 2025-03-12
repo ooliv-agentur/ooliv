@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold">ooliv</h1>
+              <h1 className="text-xl font-bold font-sans">ooliv</h1>
             </div>
             
             <div className="flex items-center gap-3">
@@ -70,7 +70,7 @@ const Navbar = () => {
                 key={index}
                 variant="outline" 
                 size="icon" 
-                className="bg-white/90 backdrop-blur-sm border-primary/20 text-primary hover:bg-primary/10 shadow-md h-12 w-12 rounded-full hover:scale-110 transition-transform"
+                className="bg-white/90 backdrop-blur-sm border-brand-primary/20 text-brand-primary hover:bg-brand-primary hover:text-white shadow-md h-12 w-12 rounded-full hover:scale-110 transition-transform"
                 aria-label={contact.label}
               >
                 <contact.icon className="h-5 w-5" />
