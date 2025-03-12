@@ -35,6 +35,31 @@ const cases: CaseStudy[] = [
     title: 'Immowelt',
     subtitle: 'Web | Marketing',
     logo: '/placeholder.svg'
+  },
+  // Cloned cases for carousel testing
+  {
+    id: 'scheurich-2',
+    title: 'Scheurich',
+    subtitle: 'Web | Brand',
+    logo: '/placeholder.svg'
+  },
+  {
+    id: 'cobus-2',
+    title: 'COBUS Consulting',
+    subtitle: 'Web | Development',
+    logo: '/placeholder.svg'
+  },
+  {
+    id: 'weisenburger-2',
+    title: 'Weisenburger',
+    subtitle: 'Web | Development',
+    logo: '/placeholder.svg'
+  },
+  {
+    id: 'immowelt-2',
+    title: 'Immowelt',
+    subtitle: 'Web | Marketing',
+    logo: '/placeholder.svg'
   }
 ];
 
@@ -80,7 +105,7 @@ const CaseStudiesShowcase = () => {
                         className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-brand-primary"
                         asChild
                       >
-                        <Link to={`/case-studies/${caseStudy.id}`}>
+                        <Link to={`/case-studies/${caseStudy.id.split('-')[0]}`}>
                           View Case
                         </Link>
                       </Button>
