@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -40,26 +41,20 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 w-full h-full" style={{ zIndex: 50 }}>
-          {/* Backdrop overlay */}
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-75 flex flex-col z-[100]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {/* Content container */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
-            onClick={onClose}
-            style={{ zIndex: 1 }}
-          />
-          
-          {/* Menu content */}
-          <motion.div
+            className="bg-gray-900 flex flex-col w-full h-full overflow-auto"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed inset-0 bg-gray-900/95 flex flex-col overflow-y-auto"
-            style={{ zIndex: 2 }}
           >
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
@@ -206,7 +201,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
