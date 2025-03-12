@@ -5,6 +5,7 @@ import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } fro
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -112,6 +113,22 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
+  // Service links data
+  const serviceLinks = [
+    { title: 'Web Design & Development', path: '/web-design-development' },
+    { title: 'SEO & Performance Optimization', path: '/seo-performance-optimization' },
+    { title: 'AI-Powered Solutions', path: '/ai-powered-solutions' },
+    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation' }
+  ];
+
+  // Main navigation links
+  const mainLinks = [
+    { title: 'Case Studies', path: '/case-studies' },
+    { title: 'About Us', path: '/about-us' },
+    { title: 'Contact', path: '/contact' },
+    { title: 'Careers', path: '/careers' }
+  ];
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -154,14 +171,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             {/* Navigation links with improved scrolling */}
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
               <nav className="space-y-6 text-center w-full">
-                <a 
-                  href="#" 
+                <Link 
+                  to="/" 
                   className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
                   onClick={handleLinkClick}
                   tabIndex={0}
                 >
                   Home
-                </a>
+                </Link>
                 
                 <div className="space-y-3">
                   <button 
@@ -188,37 +205,32 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         variants={servicesVariants}
                         className="space-y-4 py-2 px-4 bg-brand-backgroundAlt/20 rounded-lg backdrop-blur-sm"
                       >
-                        {[
-                          'Web Design & Development', 
-                          'SEO & Performance Optimization', 
-                          'AI-Powered Solutions', 
-                          'Lead Generation & Conversion Optimization'
-                        ].map((service, index) => (
-                          <a 
+                        {serviceLinks.map((service, index) => (
+                          <Link 
                             key={index}
-                            href="#" 
+                            to={service.path}
                             className="block py-3 text-xl text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
                             onClick={handleLinkClick}
                             tabIndex={0}
                           >
-                            {service}
-                          </a>
+                            {service.title}
+                          </Link>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
                 
-                {['Case Studies', 'About Us', 'Contact', 'Careers'].map((item, index) => (
-                  <a 
+                {mainLinks.map((item, index) => (
+                  <Link 
                     key={index}
-                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                    to={item.path}
                     className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
                     onClick={handleLinkClick}
                     tabIndex={0}
                   >
-                    {item}
-                  </a>
+                    {item.title}
+                  </Link>
                 ))}
               </nav>
             </div>
