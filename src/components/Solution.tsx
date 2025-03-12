@@ -80,11 +80,11 @@ const Solution = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             We Build Websites That Grow Your Business—
             <br />
-            <span className="text-brand-primary">With Smart, AI-Driven Solutions.</span>
+            <span className="text-brand-primary">With Strategic Expertise & AI-Powered Efficiency</span>
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            Whether you're launching a new business or upgrading an outdated website, we use AI-powered tools to create websites that rank better, load faster, and convert more visitors into customers.
+            Whether you're launching a new business or upgrading an outdated website, our expert team leverages AI tools to enhance strategy, speed up processes, and optimize results—always guided by professional experience and industry best practices.
           </p>
         </div>
         

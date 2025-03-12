@@ -33,8 +33,8 @@ export const translations = {
     
     // Solution
     'solution.title': 'We Build Websites That Grow Your Business—',
-    'solution.subtitle': 'With Smart, AI-Driven Solutions.',
-    'solution.description': "Whether you're launching a new business or upgrading an outdated website, we use AI-powered tools to create websites that rank better, load faster, and convert more visitors into customers.",
+    'solution.subtitle': 'With Strategic Expertise & AI-Powered Efficiency',
+    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team leverages AI tools to enhance strategy, speed up processes, and optimize results—always guided by professional experience and industry best practices.",
     'solution.learnMore': 'Learn more about our process',
     
     // Testimonials
@@ -94,8 +94,8 @@ export const translations = {
     
     // Solution
     'solution.title': 'Wir erstellen Websites, die Ihr Geschäft wachsen lassen –',
-    'solution.subtitle': 'Mit intelligenten, KI-gestützten Lösungen.',
-    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, wir nutzen KI-gestützte Tools, um Websites zu erstellen, die besser ranken, schneller laden und mehr Besucher in Kunden umwandeln.',
+    'solution.subtitle': 'Mit strategischer Expertise & KI-gestützter Effizienz',
+    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam nutzt KI-Tools, um Strategie zu verbessern, Prozesse zu beschleunigen und Ergebnisse zu optimieren – stets geleitet von professioneller Erfahrung und Branchenstandards.',
     'solution.learnMore': 'Mehr über unseren Prozess erfahren',
     
     // Testimonials
