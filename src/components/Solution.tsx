@@ -44,6 +44,34 @@ const Solution = () => {
     }
   ];
 
+  const techLogos = [
+    {
+      name: "ChatGPT-4",
+      icon: "/chatgpt-logo.svg",
+      description: "AI-powered content & automation"
+    },
+    {
+      name: "Midjourney",
+      icon: "/midjourney-logo.svg",
+      description: "AI-generated images & branding"
+    },
+    {
+      name: "Sora AI",
+      icon: "/sora-logo.svg",
+      description: "AI-driven video production"
+    },
+    {
+      name: "Ahrefs",
+      icon: "/ahrefs-logo.svg",
+      description: "Advanced SEO analytics"
+    },
+    {
+      name: "Google Ads AI",
+      icon: "/google-ads-logo.svg",
+      description: "AI-optimized ad campaigns"
+    }
+  ];
+
   return (
     <section id="process" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,6 +102,31 @@ const Solution = () => {
               <p className="text-brand-text text-sm">{step.description}</p>
             </div>
           ))}
+        </div>
+        
+        {/* Tech Logos Section */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <p className="text-lg text-brand-heading">
+              We integrate cutting-edge AI technologies to enhance website performance, SEO, and automation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+            {techLogos.map((logo, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="w-20 h-20 flex items-center justify-center transition-all duration-300 hover:opacity-80 hover:scale-105">
+                  <img 
+                    src={logo.icon} 
+                    alt={`${logo.name} logo`} 
+                    className="max-w-full max-h-full object-contain filter grayscale opacity-70 hover:opacity-100 transition-all"
+                  />
+                </div>
+                <p className="mt-2 text-sm text-brand-heading font-medium">{logo.name}</p>
+                <p className="text-xs text-brand-text mt-1">{logo.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mt-12 text-center">
