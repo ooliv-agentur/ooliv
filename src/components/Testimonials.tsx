@@ -2,14 +2,18 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+  
   const testimonials = [
     {
       client: "Scheurich",
       industry: "Ceramic & Lifestyle Brand",
       result: "120% increase in organic traffic after full website optimization.",
       quote: "Thanks to ooliv, our website is now a growth engine.",
+      image: "/placeholder.svg",
       stars: 5
     },
     {
@@ -17,6 +21,7 @@ const Testimonials = () => {
       industry: "ERP & IT Solutions",
       result: "Lead generation improved by 80% with a new website & conversion strategy.",
       quote: "Professional, strategic, and results-driven.",
+      image: "/placeholder.svg",
       stars: 5
     },
     {
@@ -24,6 +29,7 @@ const Testimonials = () => {
       industry: "Construction & Real Estate",
       result: "Seamless CRM integration & scalable web infrastructure.",
       quote: "More leads, better conversions, seamless collaboration.",
+      image: "/placeholder.svg",
       stars: 5
     }
   ];
@@ -33,9 +39,12 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            We Create Websites That Deliver 
-            <span className="text-blue-600"> Real Business Results.</span>
+            {t('testimonials.title')} 
+            <span className="text-blue-600"> {t('testimonials.subtitle')}</span>
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            We don't just build websites—we create digital success stories. See how we've helped companies like yours achieve measurable growth, better engagement, and increased conversions.
+          </p>
         </div>
 
         <div className="relative">
@@ -67,6 +76,14 @@ const Testimonials = () => {
                 key={index}
                 className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
               >
+                <div className="mb-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={`${testimonial.client} project`} 
+                    className="w-full h-32 object-cover rounded-md mb-4"
+                  />
+                </div>
+                
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                     <span className="text-blue-600 font-bold">{testimonial.client.charAt(0)}</span>
@@ -95,6 +112,10 @@ const Testimonials = () => {
                     <p className="ml-2 text-sm font-medium text-green-700">{testimonial.result}</p>
                   </div>
                 </div>
+                
+                <button className="mt-4 text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors">
+                  Read Full Case Study →
+                </button>
               </div>
             ))}
           </div>
@@ -110,6 +131,15 @@ const Testimonials = () => {
               ))}
             </div>
           </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button variant="outline" className="mx-2">
+            Read More Success Stories →
+          </Button>
+          <Button variant="outline" className="mx-2">
+            Read All Google Reviews →
+          </Button>
         </div>
       </div>
     </section>

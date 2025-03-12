@@ -84,7 +84,7 @@ export const translations = {
     // Hero
     'hero.title': "Ihre Website sollte Ihr Geschäftswachstum fördern. Lassen Sie uns sie richtig bauen.",
     'hero.subtitle': "Wir sorgen dafür.",
-    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie einen kompletten Relaunch oder eine brandneue Online-Präsenz benötigen, wir erstellen leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern.",
+    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, wir nutzen KI-gestützte Tools, um Websites zu erstellen, die besser ranken, schneller laden und mehr Besucher in Kunden umwandeln.",
     'hero.startProject': "Starten Sie Ihr Website-Projekt",
     'hero.seeWork': "Unsere Arbeiten ansehen",
     
