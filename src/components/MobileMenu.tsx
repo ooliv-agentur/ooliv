@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, Mail, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -58,17 +58,17 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
             onClick={onClose}
           />
           
-          {/* Menu Panel */}
+          {/* Menu Panel - Full screen overlay */}
           <motion.div
             variants={menuVariants}
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed top-0 right-0 bottom-0 w-full sm:w-[400px] bg-white z-50 flex flex-col"
+            className="fixed inset-0 bg-white z-50 flex flex-col"
           >
             <div className="flex items-center justify-between p-4 border-b">
               <h2 className="text-xl font-semibold">Menu</h2>
@@ -77,57 +77,65 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </Button>
             </div>
 
-            <div className="flex-1 overflow-y-auto py-8 px-6">
-              <nav className="space-y-6">
-                <a href="#" className="block text-2xl font-medium hover:text-primary transition-colors">
+            <div className="flex-1 flex flex-col justify-center items-center py-8 px-6 overflow-y-auto">
+              <nav className="space-y-8 text-center w-full">
+                <a href="#" className="block text-4xl font-bold hover:text-primary transition-colors">
                   Home
                 </a>
-                <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold hover:text-primary transition-colors">
                     Services
                   </h3>
-                  <div className="space-y-3 pl-4">
-                    <a href="#" className="block text-lg hover:text-primary transition-colors">
+                  <div className="space-y-4">
+                    <a href="#" className="block text-xl hover:text-primary transition-colors">
                       Website Relaunch & Design
                     </a>
-                    <a href="#" className="block text-lg hover:text-primary transition-colors">
+                    <a href="#" className="block text-xl hover:text-primary transition-colors">
                       SEO & Performance
                     </a>
-                    <a href="#" className="block text-lg hover:text-primary transition-colors">
+                    <a href="#" className="block text-xl hover:text-primary transition-colors">
                       AI-Powered Content
                     </a>
-                    <a href="#" className="block text-lg hover:text-primary transition-colors">
+                    <a href="#" className="block text-xl hover:text-primary transition-colors">
                       Lead Generation
                     </a>
                   </div>
                 </div>
-                <a href="#cases" className="block text-2xl font-medium hover:text-primary transition-colors">
+                
+                <a href="#cases" className="block text-4xl font-bold hover:text-primary transition-colors">
                   Case Studies
                 </a>
-                <a href="#about" className="block text-2xl font-medium hover:text-primary transition-colors">
+                
+                <a href="#about" className="block text-4xl font-bold hover:text-primary transition-colors">
                   About Us
                 </a>
-                <a href="#careers" className="block text-2xl font-medium hover:text-primary transition-colors">
+                
+                <a href="#" className="block text-4xl font-bold hover:text-primary transition-colors">
+                  Contact
+                </a>
+                
+                <a href="#careers" className="block text-4xl font-bold hover:text-primary transition-colors">
                   Careers
                 </a>
               </nav>
             </div>
 
             <div className="mt-auto border-t p-6 space-y-6">
-              <Button className="w-full justify-between group" size="lg">
+              <Button className="w-full justify-between group text-lg py-6" size="lg">
                 Start Your Project
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <div className="grid grid-cols-3 gap-4">
-                <Button variant="outline" size="lg" className="w-full">
-                  <MessageCircle className="h-5 w-5" />
+                <Button variant="outline" size="lg" className="w-full py-6">
+                  <MessageCircle className="h-6 w-6" />
                 </Button>
-                <Button variant="outline" size="lg" className="w-full">
-                  <Mail className="h-5 w-5" />
+                <Button variant="outline" size="lg" className="w-full py-6">
+                  <Mail className="h-6 w-6" />
                 </Button>
-                <Button variant="outline" size="lg" className="w-full">
-                  <Phone className="h-5 w-5" />
+                <Button variant="outline" size="lg" className="w-full py-6">
+                  <Phone className="h-6 w-6" />
                 </Button>
               </div>
             </div>

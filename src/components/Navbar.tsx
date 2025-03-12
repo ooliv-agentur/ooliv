@@ -23,6 +23,7 @@ const Navbar = () => {
               size="icon"
               className="group"
               onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
             >
               <Menu className="h-6 w-6 transition-transform group-hover:scale-110" />
             </Button>

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,5 +43,9 @@
 @layer utilities {
   .backdrop-blur-xl {
     backdrop-filter: blur(24px);
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
   }
 }
