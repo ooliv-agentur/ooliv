@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -16,7 +15,6 @@ const Index = () => {
       <Hero />
       <Challenge />
       <Solution />
-      <CaseStudiesShowcase />
       <Testimonials />
       <FAQ />
       <CTA />
