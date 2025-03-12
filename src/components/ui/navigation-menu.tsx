@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
@@ -285,25 +284,6 @@ const NavigationMenuIndicator = React.forwardRef<
 ))
 NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName
-
-// Add a new hook to handle media queries
-const useMediaQuery = (query: string): boolean => {
-  const [matches, setMatches] = React.useState(false)
-  
-  React.useEffect(() => {
-    const media = window.matchMedia(query)
-    if (media.matches !== matches) {
-      setMatches(media.matches)
-    }
-    
-    const listener = () => setMatches(media.matches)
-    media.addEventListener("change", listener)
-    
-    return () => media.removeEventListener("change", listener)
-  }, [matches, query])
-  
-  return matches
-}
 
 // Create a ContactBar component for persistent contact options
 const ContactBar = ({
