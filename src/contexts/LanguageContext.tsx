@@ -23,7 +23,7 @@ export const translations = {
     // Hero
     'hero.title': "Webdesign Agency for Business Growth – Let's Build It Right.",
     'hero.subtitle': "We Make Sure It Does.",
-    'hero.description': "Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.",
+    'hero.description': "Your website is more than just design—it's a strategic tool for success. As a Webdesign Agency, we create high-performance websites that attract customers, build trust, and generate measurable results—whether you need a complete relaunch or a brand-new online presence.",
     'hero.startProject': "Start Your Website Project",
     'hero.seeWork': "See Our Work",
     
@@ -84,7 +84,7 @@ export const translations = {
     // Hero
     'hero.title': "Webdesign Agentur für Geschäftswachstum – Lassen Sie uns es richtig machen.",
     'hero.subtitle': "Wir sorgen dafür.",
-    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, wir nutzen KI-gestützte Tools, um Websites zu erstellen, die besser ranken, schneller laden und mehr Besucher in Kunden umwandeln.",
+    'hero.description': "Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Als Webdesign Agentur erstellen wir leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern – ob Sie einen kompletten Relaunch oder eine neue Online-Präsenz benötigen.",
     'hero.startProject': "Starten Sie Ihr Website-Projekt",
     'hero.seeWork': "Unsere Arbeiten ansehen",
     
