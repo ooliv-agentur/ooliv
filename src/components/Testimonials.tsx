@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -128,7 +127,7 @@ const Testimonials = () => {
                   <div className="space-y-2 mb-6">
                     {testimonial.impact.map((item, i) => (
                       <div key={i} className="flex items-center text-sm text-green-700">
-                        <CheckCircle2 className="h-4 w-4 mr-2" />
+                        <CheckCircle className="h-4 w-4 mr-2" />
                         {item}
                       </div>
                     ))}
