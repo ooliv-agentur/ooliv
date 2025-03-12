@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,8 +15,8 @@ const Testimonials = () => {
       result: "120% increase in organic traffic after full website optimization",
       quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
       impact: ["120% more organic traffic", "45% higher conversion rate", "2x lead generation"],
-      image: "/case-studies/scheurich.jpg",
-      logo: "/logos/scheurich.svg",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      logo: "/placeholder.svg",
       stars: 5
     },
     {
@@ -24,8 +25,8 @@ const Testimonials = () => {
       result: "Lead generation improved by 80% with a new website & conversion strategy",
       quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
       impact: ["80% more leads", "3x website traffic", "40% lower bounce rate"],
-      image: "/case-studies/cobus.jpg",
-      logo: "/logos/cobus.svg",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      logo: "/placeholder.svg",
       stars: 5
     },
     {
@@ -34,8 +35,8 @@ const Testimonials = () => {
       result: "Seamless CRM integration & scalable web infrastructure",
       quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
       impact: ["95% faster load time", "60% more inquiries", "4.9/5 user satisfaction"],
-      image: "/case-studies/weisenburger.jpg",
-      logo: "/logos/weisenburger.svg",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      logo: "/placeholder.svg",
       stars: 5
     }
   ];
