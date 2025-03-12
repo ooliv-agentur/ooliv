@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -52,11 +53,11 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Leading Webdesign Agency for Business Growth – Let's Build It Right
+            Webdesign Agency That Turns Websites Into Growth Engines – Let's Build It Right
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-gray-100">
-            Your website is more than just design—it's a strategic tool for success. As a specialized Webdesign Agency, we create high-performance websites that attract customers, build trust, and generate measurable results—whether you need a complete relaunch or a brand-new online presence.
+            As a Webdesign Agency, we don't just create websites—we build digital tools that generate leads, improve search rankings, and drive measurable business growth. Whether you need a website relaunch or a brand-new online presence, our expert team ensures that your website performs, converts, and stands out.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

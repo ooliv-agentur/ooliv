@@ -13,36 +13,36 @@ const Challenge = () => {
   const challenges = [
     {
       problem: "Outdated Website Design",
-      painPoint: "Your website looks old and doesn't reflect your business success.",
-      solution: "A modern, conversion-optimized design that strengthens your brand and builds trust.",
+      painPoint: "An outdated website damages credibility and loses customers.",
+      solution: "As a Webdesign Agency, we specialize in modern, conversion-focused websites that elevate brand perception and increase engagement.",
       icon: AlertCircle,
       color: "from-red-50/40 to-orange-50/30"
     },
     {
       problem: "Poor Mobile Experience",
-      painPoint: "60% of users browse on mobile, but your site isn't responsive.",
-      solution: "Mobile-first, fully responsive design that works flawlessly on all devices.",
+      painPoint: "60%+ of website traffic comes from mobile—if your site isn't optimized, you're losing conversions.",
+      solution: "We design fully responsive, mobile-optimized websites that ensure a seamless experience across all devices—improving conversion rates and user engagement.",
       icon: Zap,
       color: "from-brand-background/60 to-brand-backgroundAlt/40"
     },
     {
       problem: "Slow Loading Speed",
-      painPoint: "Every second of delay costs you conversions.",
-      solution: "AI-powered speed optimization for lightning-fast performance and better SEO rankings.",
+      painPoint: "A slow website can reduce conversions by up to 7% per second of delay.",
+      solution: "We implement advanced speed optimization techniques to ensure lightning-fast load times—improving both SEO rankings and user experience.",
       icon: AlertCircle,
       color: "from-green-50/40 to-emerald-50/30"
     },
     {
       problem: "Low Google Rankings",
-      painPoint: "90% of users never go beyond page 1—can they find you?",
-      solution: "SEO-driven web design with optimized content, smart keyword placement, and fast performance.",
+      painPoint: "If your site isn't ranking, you're invisible to 90% of potential customers.",
+      solution: "Our SEO-optimized websites use strategic keyword placement, technical SEO, and structured content to improve rankings and organic traffic.",
       icon: Search,
       color: "from-yellow-50/40 to-amber-50/30"
     },
     {
       problem: "Poor Conversion Rate",
-      painPoint: "Your visitors don't turn into customers.",
-      solution: "AI-driven heatmaps and conversion optimization to boost engagement and increase sales.",
+      painPoint: "Getting traffic isn't enough—your site needs to convert visitors into leads & customers.",
+      solution: "We implement expert-driven conversion strategies—including UX testing, smart CTAs, and optimized user flows—to turn visitors into customers.",
       icon: LineChart,
       color: "from-brand-backgroundAlt/60 to-brand-background/40"
     }
@@ -53,7 +53,7 @@ const Challenge = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            {t('challenge.title')}
+            Common Website Challenges – and How Our Webdesign Agency Fixes Them
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Here's what might be holding your business back—and how we fix it.

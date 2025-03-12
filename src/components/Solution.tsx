@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Zap, BarChart, Code, FileText, LineChart, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -41,35 +42,35 @@ const Solution = () => {
       number: "1️⃣",
       title: "Strategy & Analysis",
       subtitle: "Powered by Market Insights & SEO Data",
-      description: "As your Webdesign Agency partner, we analyze competitors, market trends, and customer behavior to craft a website strategy that enhances visibility and engagement. AI supports data analysis—but every decision is driven by industry expertise.",
+      description: "We analyze market trends, competitors, and customer behavior to craft a high-impact web strategy. Every decision is driven by data & expert insights—enhancing visibility and engagement.",
       icon: BarChart
     },
     {
       number: "2️⃣",
       title: "Web Design & UX",
       subtitle: "Tailored Design, Enhanced by Technology",
-      description: "Our Webdesign Agency creates visually compelling and highly functional websites that reflect your brand identity. Advanced tools refine layouts, colors, and imagery—but human creativity ensures a seamless experience.",
+      description: "We design visually stunning and conversion-optimized websites that reflect your brand identity. Every element—from colors to UX—enhances usability and brand engagement.",
       icon: Zap
     },
     {
       number: "3️⃣",
       title: "Development & Performance",
       subtitle: "Optimized for Speed, Security & Scalability",
-      description: "As an expert Webdesign Agency, we build websites for speed, accessibility, and future expansion. AI enhances technical efficiency, but our development team ensures stability, security, and flawless functionality.",
+      description: "We build high-performance websites with top-tier security, fast loading speeds, and future scalability—ensuring seamless user experiences on all devices.",
       icon: Code
     },
     {
       number: "4️⃣",
       title: "Content & SEO Optimization",
       subtitle: "Strategic Messaging That Ranks & Converts",
-      description: "Our Webdesign Agency delivers SEO-driven content designed to engage your audience and increase visibility. AI assists with research and structuring—but persuasive storytelling remains in expert hands.",
+      description: "SEO-driven content designed to engage audiences, increase rankings, and drive conversions—blending expert writing with data-backed insights.",
       icon: FileText
     },
     {
       number: "5️⃣",
       title: "Launch, Tracking & Support",
       subtitle: "Long-Term Success Through Data & Expertise",
-      description: "As your dedicated Webdesign Agency, we monitor website performance, analyze user behavior, and fine-tune strategies over time. AI streamlines reporting—but ongoing success is shaped by expert refinement and business intelligence.",
+      description: "We track, analyze, and optimize website performance over time—ensuring continuous growth and adaptability.",
       icon: LineChart
     }
   ];
@@ -113,13 +114,11 @@ const Solution = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            We Build Websites That Elevate Your Business—
-            <br />
-            <span className="text-brand-primary">With Strategy, Expertise & Smart Technology</span>
+            Our Webdesign Agency Process – From Strategy to Growth
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            As an experienced Webdesign Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. Whether you're launching a new business or upgrading an outdated website, our expert team delivers results. AI enhances efficiency—but creativity, experience, and data-driven decisions are at the core of our approach.
+            As an experienced Webdesign Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. Whether you're launching a new business or upgrading an outdated website, our expert team delivers results. We focus on creativity, experience, and data-driven decisions to ensure your website's success.
           </p>
         </div>
         
@@ -167,7 +166,10 @@ const Solution = () => {
         <div className="mt-16 rounded-2xl p-8 ai-tools-section">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
-              At ooliv, a premier Webdesign Agency, we integrate cutting-edge technologies to enhance website performance, SEO, and automation.
+              Strategic Technology to Optimize Website Performance
+            </p>
+            <p className="text-base text-brand-text mt-2">
+              At ooliv Webdesign Agency, we use industry-leading technologies to enhance website performance, SEO, and user engagement—combining automation with expert strategy.
             </p>
           </div>
           
@@ -190,7 +192,7 @@ const Solution = () => {
         
         <div className="mt-16 text-center rounded-2xl p-8 cta-section">
           <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
-            Partner with ooliv, a leading Webdesign Agency, to transform your website into a powerful business tool—designed with strategy, built for performance, and enhanced with smart technology. Let's create a website that works for your business.
+            Let's build a website that doesn't just look good—it delivers real business impact. From strategy to execution, our Webdesign Agency ensures every element drives measurable results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
