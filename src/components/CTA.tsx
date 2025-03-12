@@ -1,11 +1,19 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { FileCheck, PhoneCall, LayoutGrid } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ContactForm from './ContactForm';
 
 const CTA = () => {
   const { t } = useLanguage();
+  const [openForm, setOpenForm] = useState(false);
+  const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
+  
+  const handleOpenForm = (type: 'audit' | 'call' | 'work') => {
+    setFormType(type);
+    setOpenForm(true);
+  };
   
   return (
     <section className="py-24 bg-brand-backgroundAlt text-brand-text">
@@ -24,6 +32,7 @@ const CTA = () => {
               variant="outline" 
               size="lg" 
               className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
+              onClick={() => handleOpenForm('audit')}
             >
               <FileCheck className="mr-2 h-5 w-5" />
               {t('cta.audit')}
@@ -33,6 +42,7 @@ const CTA = () => {
               variant="outline" 
               size="lg" 
               className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
+              onClick={() => handleOpenForm('call')}
             >
               <PhoneCall className="mr-2 h-5 w-5" />
               {t('cta.call')}
@@ -42,6 +52,7 @@ const CTA = () => {
               variant="outline" 
               size="lg" 
               className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
+              onClick={() => handleOpenForm('work')}
             >
               <LayoutGrid className="mr-2 h-5 w-5" />
               {t('cta.work')}
@@ -57,6 +68,13 @@ const CTA = () => {
           </div>
         </div>
       </div>
+      
+      {/* Contact Form Dialog */}
+      <ContactForm 
+        open={openForm} 
+        onOpenChange={setOpenForm} 
+        formType={formType}
+      />
     </section>
   );
 };
