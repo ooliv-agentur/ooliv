@@ -172,8 +172,8 @@ const Solution = () => {
           </div>
         </div>
         
-        {/* Tech Logos Section */}
-        <div className="mt-16 bg-white rounded-2xl shadow-md p-8 backdrop-blur-sm bg-opacity-80">
+        {/* Tech Logos Section - REMOVING BACKGROUND HERE */}
+        <div className="mt-16 rounded-2xl p-8 ai-tools-section">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
               We integrate cutting-edge technologies to enhance website performance, SEO, and automation.
@@ -197,7 +197,8 @@ const Solution = () => {
           </div>
         </div>
         
-        <div className="mt-16 text-center bg-white rounded-2xl shadow-md p-8 backdrop-blur-sm bg-opacity-90">
+        {/* CTA Section - REMOVING BACKGROUND HERE */}
+        <div className="mt-16 text-center rounded-2xl p-8 cta-section">
           <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
             Your website should be a powerful business tool—designed with strategy, built for performance, and enhanced with smart technology. Let's create a website that works for your business.
           </p>

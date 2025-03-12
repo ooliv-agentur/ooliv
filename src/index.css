@@ -87,4 +87,12 @@
       width: auto;
     }
   }
+  
+  /* Remove background only from the AI Tools & CTA sections */
+  .ai-tools-section,
+  .cta-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
 }
