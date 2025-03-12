@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
@@ -179,18 +178,6 @@ const Testimonials = () => {
           ))}
         </div>
         
-        <div className="flex justify-center mt-20">
-          <Button 
-            variant="outline" 
-            className="group hover:bg-brand-primary hover:text-white"
-            asChild
-          >
-            <Link to="/case-studies">
-              View All Case Studies
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-        </div>
       </div>
     </section>
   );
