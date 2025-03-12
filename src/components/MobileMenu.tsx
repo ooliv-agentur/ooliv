@@ -10,25 +10,6 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-const menuVariants = {
-  closed: {
-    x: "100%",
-    transition: {
-      type: "tween",
-      duration: 0.4,
-      ease: [0.4, 0, 0.2, 1]
-    }
-  },
-  open: {
-    x: 0,
-    transition: {
-      type: "tween",
-      duration: 0.4,
-      ease: [0.4, 0, 0.2, 1]
-    }
-  }
-};
-
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { t } = useLanguage();
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -57,7 +38,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -67,24 +48,35 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onClick={onClose}
           />
           
-          {/* Menu Panel - Full screen overlay */}
+          {/* Menu content */}
           <motion.div
-            variants={menuVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
-            className="fixed inset-0 bg-gray-900/95 z-50 flex flex-col overflow-auto"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            className="fixed inset-0 bg-gray-900/95 z-50 flex flex-col overflow-y-auto"
           >
+            {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
               <h2 className="text-xl font-semibold text-white">Menu</h2>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10" onClick={onClose}>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-white hover:bg-white/10" 
+                onClick={onClose}
+              >
                 <X className="h-6 w-6" />
               </Button>
             </div>
-
-            <div className="flex-1 flex flex-col justify-center items-center py-8 px-6 overflow-y-auto">
+            
+            {/* Navigation links */}
+            <div className="flex-1 flex flex-col justify-center items-center py-8 px-6">
               <nav className="space-y-8 text-center w-full">
-                <a href="#" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
+                <a 
+                  href="#" 
+                  className="block text-4xl font-bold text-white hover:text-primary transition-colors"
+                  onClick={onClose}
+                >
                   Home
                 </a>
                 
@@ -108,40 +100,73 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       exit={{ opacity: 0, height: 0 }}
                       className="space-y-4 py-2"
                     >
-                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                      <a 
+                        href="#" 
+                        className="block text-xl text-white hover:text-primary transition-colors"
+                        onClick={onClose}
+                      >
                         Website Relaunch
                       </a>
-                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                      <a 
+                        href="#" 
+                        className="block text-xl text-white hover:text-primary transition-colors"
+                        onClick={onClose}
+                      >
                         SEO
                       </a>
-                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                      <a 
+                        href="#" 
+                        className="block text-xl text-white hover:text-primary transition-colors"
+                        onClick={onClose}
+                      >
                         AI Solutions
                       </a>
-                      <a href="#" className="block text-xl text-white hover:text-primary transition-colors">
+                      <a 
+                        href="#" 
+                        className="block text-xl text-white hover:text-primary transition-colors"
+                        onClick={onClose}
+                      >
                         Lead Generation
                       </a>
                     </motion.div>
                   )}
                 </div>
                 
-                <a href="#cases" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
+                <a 
+                  href="#cases" 
+                  className="block text-4xl font-bold text-white hover:text-primary transition-colors"
+                  onClick={onClose}
+                >
                   Case Studies
                 </a>
                 
-                <a href="#about" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
+                <a 
+                  href="#about" 
+                  className="block text-4xl font-bold text-white hover:text-primary transition-colors"
+                  onClick={onClose}
+                >
                   About Us
                 </a>
                 
-                <a href="#" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
+                <a 
+                  href="#" 
+                  className="block text-4xl font-bold text-white hover:text-primary transition-colors"
+                  onClick={onClose}
+                >
                   Contact
                 </a>
                 
-                <a href="#careers" className="block text-4xl font-bold text-white hover:text-primary transition-colors">
+                <a 
+                  href="#careers" 
+                  className="block text-4xl font-bold text-white hover:text-primary transition-colors"
+                  onClick={onClose}
+                >
                   Careers
                 </a>
               </nav>
             </div>
-
+            
+            {/* Footer with contact icons and CTA */}
             <div className="mt-auto border-t border-white/10 p-6 space-y-6">
               <Button 
                 className="w-full justify-between group text-lg py-6 bg-primary hover:bg-primary/90 text-white" 
