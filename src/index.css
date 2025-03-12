@@ -39,3 +39,13 @@
     scroll-behavior: smooth;
   }
 }
+
+.custom-cursor * {
+  cursor: none !important; 
+}
+
+@media (max-width: 768px) {
+  .custom-cursor * {
+    cursor: auto !important;
+  }
+}
