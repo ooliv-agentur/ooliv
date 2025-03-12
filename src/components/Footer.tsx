@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
-              <li>ooliv Werbeagentur</li>
+              <li>ooliv Webdesign Agency</li>
               <li className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
                 Mombacher Str. 25<br />
