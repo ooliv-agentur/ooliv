@@ -221,7 +221,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             {/* Footer with contact icons and CTA - sticky */}
             <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-gray-900/95 backdrop-blur-sm">
               <Button 
-                className="w-full justify-between group text-lg py-6 bg-primary hover:bg-primary/90 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02]" 
+                className="w-full justify-between group text-lg py-6 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02]" 
                 size="lg"
                 onClick={handleLinkClick}
               >
@@ -239,7 +239,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-white/20 text-white hover:bg-white/10 hover:text-blue-400 transition-all duration-200 hover:border-primary/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-white/20 text-white bg-gray-800/50 hover:bg-white/10 hover:text-blue-400 transition-all duration-200 hover:border-primary/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 flex items-center justify-center"
                     aria-label={contact.label}
                   >
                     <contact.icon className="h-6 w-6" />

@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Floating contact buttons for quick access */}
+      {/* Floating contact buttons for quick access (only visible on desktop) */}
       <AnimatePresence>
         {!isOpen && (
           <motion.div 

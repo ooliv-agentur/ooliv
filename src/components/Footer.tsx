@@ -95,33 +95,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Fixed Contact Icons */}
-      <div className="fixed bottom-24 right-6 flex flex-col gap-3 z-50">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="rounded-full bg-green-500 text-white hover:bg-green-600 border-0"
-          title="WhatsApp"
-        >
-          <MessageCircle className="h-5 w-5" />
-        </Button>
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="rounded-full bg-blue-600 text-white hover:bg-blue-700 border-0"
-          title="Email"
-        >
-          <Mail className="h-5 w-5" />
-        </Button>
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="rounded-full bg-blue-600 text-white hover:bg-blue-700 border-0"
-          title="Phone"
-        >
-          <Phone className="h-5 w-5" />
-        </Button>
-      </div>
+      {/* Fixed Contact Icons - removed to avoid duplication with Navbar */}
     </footer>
   );
 };
