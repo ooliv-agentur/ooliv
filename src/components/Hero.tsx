@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, BarChart, Users, Zap } from "lucide-react";
@@ -38,17 +37,13 @@ const Hero = () => {
     }
   }, []);
   
-  // Typing effect implementation
   useEffect(() => {
     const handleTyping = () => {
-      // Get current text based on the loop number
       const currentProp = valueProps[loopNum % valueProps.length];
       const fullText = currentProp.text;
       
-      // Set typing speed based on whether we're deleting or typing
       let updatedSpeed = isDeleting ? 50 : 80;
       
-      // If deleting, remove a character, otherwise add one
       if (isDeleting) {
         setDisplayText(fullText.substring(0, displayText.length - 1));
       } else {
@@ -57,16 +52,14 @@ const Hero = () => {
       
       setTypingSpeed(updatedSpeed);
       
-      // Handle the typing/deleting transitions
       if (!isDeleting && displayText === fullText) {
-        // Pause at the end of typing before starting to delete
-        setTypingSpeed(2000); // Pause for 2 seconds
+        setTypingSpeed(2000);
         setIsDeleting(true);
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
         setCurrentIcon(valueProps[(loopNum + 1) % valueProps.length].icon);
-        setTypingSpeed(500); // Pause before typing the next phrase
+        setTypingSpeed(500);
       }
     };
     
@@ -104,12 +97,12 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
-          <h1 className="text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight max-w-4xl mx-auto">
-            <div className="mb-2">ooliv: Webdesign Agency That Builds High-Performance Websites</div>
-            <div className="flex items-center justify-center gap-1 text-brand-primary">
-              for{' '}
-              <span className="relative text-white">
-                {displayText}
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-wider max-w-4xl mx-auto space-y-2">
+            <div>ooliv: Webdesign Agency That Builds</div>
+            <div>High-Performance Websites</div>
+            <div className="flex items-center justify-center text-brand-primary mt-2">
+              <span className="relative text-white flex items-center">
+                <span className="mr-1">for</span> {displayText}
                 <span className="absolute -right-4 top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
                 <span className="transition-opacity duration-300 ease-in">
                   {currentIcon}
