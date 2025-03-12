@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Zap, BarChart, Code, FileText, LineChart, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -30,7 +31,6 @@ const Solution = () => {
     };
     
     emblaApi.on('pointerDown', onPointerDown);
-    // Using proper event types from embla-carousel
     emblaApi.on('select', onDragMove);
     
     return () => {
