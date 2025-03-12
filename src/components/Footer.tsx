@@ -14,13 +14,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{t('footer.about')}</h3>
-            <p className="text-gray-300 text-sm">
+            <h3 className="text-lg font-semibold font-sans">{t('footer.about')}</h3>
+            <p className="text-gray-300 text-sm font-sans">
               {t('footer.aboutText')}
             </p>
             <Button 
               variant="outline" 
-              className="bg-brand-primary text-brand-text border-brand-primary hover:bg-brand-primaryHover"
+              className="bg-brand-primary text-white border-brand-primary hover:bg-brand-primaryHover"
             >
               {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -28,29 +28,29 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.services')}</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.webDesign')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.seo')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.ads')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.branding')}</a></li>
+            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.services')}</h3>
+            <ul className="space-y-2 text-white text-sm font-sans">
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.webDesign')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.seo')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.ads')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.branding')}</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.company')}</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.aboutUs')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.caseStudies')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.contact')}</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">{t('footer.jobs')}</a></li>
+            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.company')}</h3>
+            <ul className="space-y-2 text-white text-sm font-sans">
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.aboutUs')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.caseStudies')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.contact')}</a></li>
+              <li><a href="#" className="hover:text-brand-background transition-colors">{t('footer.jobs')}</a></li>
             </ul>
           </div>
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h3>
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <h3 className="text-lg font-semibold mb-4 font-sans">{t('footer.contactInfo')}</h3>
+            <ul className="space-y-3 text-white text-sm font-sans">
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
                 contact@ooliv.com
@@ -70,12 +70,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-white font-sans">
               {t('footer.copyright')}
             </div>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{t('footer.legal.privacy')}</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{t('footer.legal.imprint')}</a>
+              <a href="#" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</a>
+              <a href="#" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</a>
             </div>
           </div>
         </div>
@@ -84,11 +84,11 @@ const Footer = () => {
       {/* Sticky CTA Banner */}
       <div className="fixed bottom-0 left-0 right-0 bg-brand-primary py-3 px-4 z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-brand-text text-sm md:text-base font-medium">Let's Talk About Your Website Relaunch</p>
+          <p className="text-white text-sm md:text-base font-medium font-sans">Let's Talk About Your Website Relaunch</p>
           <Button 
             variant="outline" 
             size="sm"
-            className="bg-white text-brand-text border-white hover:bg-gray-100"
+            className="bg-white text-brand-primary border-white hover:bg-gray-100 hover:text-brand-primary"
           >
             {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

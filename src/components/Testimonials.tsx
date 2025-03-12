@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, ArrowRight, MousePointer2, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -53,11 +52,11 @@ const Testimonials = () => {
     <section id="cases" className="py-20 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6 font-sans">
             {t('testimonials.title')} 
             <span className="text-brand-primary"> {t('testimonials.subtitle')}</span>
           </h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8 font-sans">
             Real results from real clients. See how we've helped businesses like yours achieve measurable growth through strategic web design and development.
           </p>
         </div>
@@ -68,7 +67,7 @@ const Testimonials = () => {
             <Button
               variant="outline"
               size="icon"
-              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white"
+              className="absolute -left-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white hover:text-brand-primary"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
@@ -77,7 +76,7 @@ const Testimonials = () => {
             <Button
               variant="outline"
               size="icon"
-              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white"
+              className="absolute -right-12 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white hover:text-brand-primary"
               onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
@@ -113,8 +112,8 @@ const Testimonials = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="font-bold text-lg">{testimonial.client}</h3>
-                      <p className="text-sm text-brand-text">{testimonial.industry}</p>
+                      <h3 className="font-bold text-lg font-sans">{testimonial.client}</h3>
+                      <p className="text-sm text-brand-text font-sans">{testimonial.industry}</p>
                     </div>
                     <div className="flex">
                       {[...Array(testimonial.stars)].map((_, i) => (
@@ -123,11 +122,11 @@ const Testimonials = () => {
                     </div>
                   </div>
                   
-                  <blockquote className="text-brand-text italic mb-6">"{testimonial.quote}"</blockquote>
+                  <blockquote className="text-brand-text italic mb-6 font-sans">"{testimonial.quote}"</blockquote>
                   
                   <div className="space-y-2 mb-6">
                     {testimonial.impact.map((item, i) => (
-                      <div key={i} className="flex items-center text-sm text-green-700">
+                      <div key={i} className="flex items-center text-sm text-green-700 font-sans">
                         <CheckCircle className="h-4 w-4 mr-2" />
                         {item}
                       </div>
@@ -162,11 +161,11 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center mt-12 space-x-4">
-          <Button variant="outline" className="group">
+          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white">
             Read More Success Stories
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" className="group">
+          <Button variant="outline" className="group hover:bg-brand-primary hover:text-white">
             Read All Google Reviews
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
