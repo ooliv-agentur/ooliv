@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
@@ -8,7 +7,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Testimonials = () => {
   const { t } = useLanguage();
   
-  // Expanded testimonials data with 5 items
   const testimonials = [
     {
       client: "Scheurich",
@@ -121,7 +119,6 @@ const Testimonials = () => {
               key={index} 
               className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
             >
-              {/* Content Side - Alternates between left and right */}
               <div className={`${index % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
                 <div className="bg-brand-footer rounded-xl p-8 text-white shadow-xl">
                   <div className="mb-6">
@@ -166,10 +163,8 @@ const Testimonials = () => {
                 </div>
               </div>
               
-              {/* Image Side - Alternates between right and left */}
               <div className={`relative min-h-[400px] ${index % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
                 <div className="relative h-full flex items-center justify-center">
-                  {/* Mobile Device */}
                   <div className={`absolute z-10 ${index % 2 === 0 ? '-left-6' : '-right-6'} bottom-10 md:bottom-20 w-40 md:w-64 transform ${index % 2 === 0 ? 'rotate-6' : '-rotate-6'}`}>
                     <div className="rounded-3xl overflow-hidden border-8 border-black shadow-2xl">
                       <img 
@@ -180,7 +175,6 @@ const Testimonials = () => {
                     </div>
                   </div>
                   
-                  {/* Tablet/Desktop Device */}
                   <div className={`absolute top-10 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-56 md:w-80 shadow-2xl rounded-lg transform ${index % 2 === 0 ? '-rotate-3' : 'rotate-3'}`}>
                     <img 
                       src={testimonial.headerImage} 
@@ -189,7 +183,6 @@ const Testimonials = () => {
                     />
                   </div>
                   
-                  {/* Background Elements */}
                   <div className="absolute inset-0 z-0 opacity-10">
                     <div className={`absolute top-10 ${index % 2 === 0 ? 'right-20' : 'left-20'} w-20 h-20 rounded-full bg-brand-primary`}></div>
                     <div className={`absolute bottom-10 ${index % 2 === 0 ? 'left-10' : 'right-10'} w-32 h-32 rounded-full bg-brand-primaryHover`}></div>
@@ -200,7 +193,6 @@ const Testimonials = () => {
           ))}
         </div>
         
-        {/* Call to Action */}
         <div className="flex justify-center mt-16">
           <Button 
             variant="outline" 

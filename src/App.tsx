@@ -12,7 +12,6 @@ import SEO from "./pages/SEO";
 import AISolutions from "./pages/AISolutions";
 import LeadGeneration from "./pages/LeadGeneration";
 import CaseStudies from "./pages/CaseStudies";
-import CaseStudyDetail from "./pages/CaseStudyDetail";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
@@ -35,7 +34,6 @@ const App = () => (
             <Route path="/ai-powered-solutions" element={<AISolutions />} />
             <Route path="/lead-generation" element={<LeadGeneration />} />
             <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
