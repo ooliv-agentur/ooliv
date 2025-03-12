@@ -104,15 +104,18 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Webdesign Agency That Builds Websites for{' '}
-            <span className="relative">
-              {displayText}
-              <span className="absolute -right-4 top-0 h-full w-0.5 bg-white animate-pulse opacity-75">|</span>
-              <span className="transition-opacity duration-300 ease-in">
-                {currentIcon}
+          <h1 className="text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight max-w-4xl mx-auto">
+            <div className="mb-2">Webdesign Agency That Builds Websites</div>
+            <div className="flex items-center justify-center gap-1 text-brand-primary">
+              For{' '}
+              <span className="relative text-white">
+                {displayText}
+                <span className="absolute -right-4 top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
+                <span className="transition-opacity duration-300 ease-in">
+                  {currentIcon}
+                </span>
               </span>
-            </span>
+            </div>
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-gray-100">
