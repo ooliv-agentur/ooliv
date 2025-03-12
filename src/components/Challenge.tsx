@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight, MousePointer2 } from "lucide-react";
+import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight, MousePointer2, X, Check } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import BeforeAfterSlider from './BeforeAfterSlider';
@@ -9,41 +9,40 @@ import { Link } from 'react-router-dom';
 
 const Challenge = () => {
   const { t } = useLanguage();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   const challenges = [
     {
       problem: "Outdated Website Design",
-      solution: "Modern, conversion-focused design that represents your brand professionally",
-      description: "Your current website might be holding back your business growth",
+      painPoint: "Your website looks old and doesn't reflect your business success.",
+      solution: "A modern, conversion-optimized design that strengthens your brand and builds trust.",
       icon: AlertCircle,
       color: "from-red-50 to-orange-50"
     },
     {
       problem: "Poor Mobile Experience",
-      solution: "Fully responsive, mobile-first design that works perfectly on all devices",
-      description: "60% of users access websites on mobile - is yours optimized?",
+      painPoint: "60% of users browse on mobile, but your site isn't responsive.",
+      solution: "Mobile-first, fully responsive design that works flawlessly on all devices.",
       icon: Zap,
       color: "from-brand-background to-brand-backgroundAlt"
     },
     {
       problem: "Slow Loading Speed",
-      solution: "Lightning-fast performance with optimized code and assets",
-      description: "Every second delay reduces conversions by 7%",
+      painPoint: "Every second of delay costs you conversions.",
+      solution: "AI-powered speed optimization for lightning-fast performance and better SEO rankings.",
       icon: CheckCircle2,
       color: "from-green-50 to-emerald-50"
     },
     {
-      problem: "Low Search Rankings",
-      solution: "SEO optimization for higher Google rankings and more organic traffic",
-      description: "90% of users don't look past the first page of Google",
+      problem: "Low Google Rankings",
+      painPoint: "90% of users never go beyond page 1—can they find you?",
+      solution: "SEO-driven web design with optimized content, smart keyword placement, and fast performance.",
       icon: Search,
       color: "from-yellow-50 to-amber-50"
     },
     {
       problem: "Poor Conversion Rate",
-      solution: "Strategic CTA placement and conversion optimization",
-      description: "Is your website turning visitors into customers?",
+      painPoint: "Your visitors don't turn into customers.",
+      solution: "AI-driven heatmaps and conversion optimization to boost engagement and increase sales.",
       icon: LineChart,
       color: "from-brand-backgroundAlt to-brand-background"
     }
@@ -57,7 +56,7 @@ const Challenge = () => {
             {t('challenge.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Common challenges that might be holding your business back. Hover over each card to see our solution.
+            Common challenges that might be holding your business back and how we solve them.
           </p>
         </div>
 
@@ -65,28 +64,36 @@ const Challenge = () => {
           {challenges.map((item, index) => (
             <div 
               key={index} 
-              className="group relative"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="group relative transition-all duration-300 hover:-translate-y-2"
             >
-              <Alert className={`h-full transition-all duration-500 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden bg-gradient-to-br ${item.color}`}>
-                <div className="flex items-start">
-                  <item.icon className={`h-5 w-5 mt-0.5 ${hoveredIndex === index ? 'text-brand-primary' : 'text-gray-600'}`} />
-                  <div className="ml-2">
-                    <AlertTitle className="text-brand-heading mb-2 font-semibold">{item.problem}</AlertTitle>
-                    <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-                    <AlertDescription 
-                      className={`text-brand-primary font-medium transition-all duration-300 ${
-                        hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                      }`}
-                    >
-                      {item.solution}
-                    </AlertDescription>
+              <Alert className={`h-full shadow-md hover:shadow-xl transition-all duration-500 relative overflow-hidden bg-gradient-to-br ${item.color}`}>
+                <div className="flex flex-col">
+                  <div className="flex items-start gap-2 mb-3">
+                    <item.icon className="h-5 w-5 mt-0.5 text-gray-700" />
+                    <AlertTitle className="text-brand-heading font-semibold">
+                      <span className="flex items-center gap-1">
+                        <span className="text-red-600 font-bold">PROBLEM:</span> {item.problem}
+                      </span>
+                    </AlertTitle>
+                  </div>
+                  
+                  <div className="pl-7 mb-4">
+                    <div className="flex items-start gap-2">
+                      <X className="h-4 w-4 flex-shrink-0 text-red-500" />
+                      <p className="text-gray-700 text-sm">{item.painPoint}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="pl-7">
+                    <div className="flex items-start gap-2">
+                      <Check className="h-4 w-4 flex-shrink-0 text-green-600" />
+                      <div>
+                        <p className="text-green-700 font-medium text-sm mb-1">OUR SOLUTION:</p>
+                        <p className="text-gray-700 text-sm">{item.solution}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                {hoveredIndex === index && (
-                  <MousePointer2 className="absolute bottom-4 right-4 h-4 w-4 text-brand-primary animate-pulse" />
-                )}
               </Alert>
             </div>
           ))}
