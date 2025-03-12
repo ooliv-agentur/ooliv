@@ -24,18 +24,18 @@ export const translations = {
     // Hero
     'hero.title': 'Your Website Should Drive Business Growth.',
     'hero.subtitle': 'We Make Sure It Does.',
-    'hero.description': 'Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.',
+    'hero.description': "Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.",
     'hero.startProject': 'Start Your Website Project',
     'hero.seeWork': 'See Our Work',
     
     // Challenge
     'challenge.title': 'Your Website Should Work for You—Not Against You.',
-    'challenge.description': 'Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity.',
+    'challenge.description': "Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity.",
     
     // Solution
     'solution.title': 'We Build Websites That Grow Your Business—',
     'solution.subtitle': 'With Smart, AI-Driven Solutions.',
-    'solution.description': 'Whether you're launching a new business or upgrading an outdated website, we use AI-powered tools to create websites that rank better, load faster, and convert more visitors into customers.',
+    'solution.description': "Whether you're launching a new business or upgrading an outdated website, we use AI-powered tools to create websites that rank better, load faster, and convert more visitors into customers.",
     'solution.learnMore': 'Learn more about our process',
     
     // Testimonials
@@ -46,7 +46,7 @@ export const translations = {
     'faq.title': 'Frequently Asked Questions',
     
     // CTA
-    'cta.title': 'Let's Build a Website That Moves Your Business Forward.',
+    'cta.title': "Let's Build a Website That Moves Your Business Forward.",
     'cta.audit': 'Request a Free Website Audit',
     'cta.call': 'Schedule a Strategy Call',
     'cta.work': 'See Our Work',
@@ -70,7 +70,7 @@ export const translations = {
     'footer.contactInfo': 'Contact',
     'footer.location': 'Mainz, Germany',
     'footer.copyright': '© 2024 ooliv. All rights reserved.',
-    'footer.ctaBanner': 'Need a Website That Grows Your Business? Let's Talk.',
+    'footer.ctaBanner': "Need a Website That Grows Your Business? Let's Talk."
   },
   de: {
     // Navbar
@@ -130,7 +130,7 @@ export const translations = {
     'footer.contactInfo': 'Kontakt',
     'footer.location': 'Mainz, Deutschland',
     'footer.copyright': '© 2024 ooliv. Alle Rechte vorbehalten.',
-    'footer.ctaBanner': 'Brauchen Sie eine Website, die Ihr Geschäft wachsen lässt? Sprechen wir darüber.',
+    'footer.ctaBanner': 'Brauchen Sie eine Website, die Ihr Geschäft wachsen lässt? Sprechen wir darüber.'
   }
 };
 
