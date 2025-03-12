@@ -20,7 +20,7 @@ const Footer = () => {
             </p>
             <Button 
               variant="outline" 
-              className="text-gray-900 bg-white border-white hover:bg-gray-100 hover:text-gray-900"
+              className="text-white border-white hover:bg-white hover:text-gray-900"
             >
               {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -88,7 +88,7 @@ const Footer = () => {
           <Button 
             variant="outline" 
             size="sm"
-            className="text-gray-900 bg-white border-white hover:bg-gray-100 hover:text-gray-900"
+            className="text-white border-white hover:bg-white hover:text-blue-600"
           >
             {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
