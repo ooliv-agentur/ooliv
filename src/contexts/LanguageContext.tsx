@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'de';
@@ -33,8 +34,8 @@ export const translations = {
     
     // Solution
     'solution.title': 'We Build Websites That Grow Your Business—',
-    'solution.subtitle': 'With Strategic Expertise & AI-Powered Efficiency',
-    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team leverages AI tools to enhance strategy, speed up processes, and optimize results—always guided by professional experience and industry best practices.",
+    'solution.subtitle': 'With Strategy, Expertise & Smart Technology',
+    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to build high-performance websites. AI enhances efficiency—but creativity, experience, and data-driven decisions remain at the core of what we do.",
     'solution.learnMore': 'Learn more about our process',
     
     // Testimonials
@@ -94,8 +95,8 @@ export const translations = {
     
     // Solution
     'solution.title': 'Wir erstellen Websites, die Ihr Geschäft wachsen lassen –',
-    'solution.subtitle': 'Mit strategischer Expertise & KI-gestützter Effizienz',
-    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam nutzt KI-Tools, um Strategie zu verbessern, Prozesse zu beschleunigen und Ergebnisse zu optimieren – stets geleitet von professioneller Erfahrung und Branchenstandards.',
+    'solution.subtitle': 'Mit Strategie, Expertise & intelligenter Technologie',
+    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam kombiniert strategisches Denken, nutzerorientiertes Design und modernste Tools, um leistungsstarke Websites zu erstellen. KI verbessert die Effizienz – aber Kreativität, Erfahrung und datengestützte Entscheidungen bleiben im Mittelpunkt unserer Arbeit.',
     'solution.learnMore': 'Mehr über unseren Prozess erfahren',
     
     // Testimonials

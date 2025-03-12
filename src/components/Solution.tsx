@@ -3,6 +3,7 @@ import React from 'react';
 import { Zap, BarChart, Code, FileText, LineChart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 
 const Solution = () => {
   const { t } = useLanguage();
@@ -11,36 +12,36 @@ const Solution = () => {
     {
       number: "1️⃣",
       title: "Strategy & Analysis",
-      subtitle: "Powered by AI SEO Insights",
-      description: "AI-driven competitor research & keyword optimization.",
+      subtitle: "Powered by Market Insights & SEO Data",
+      description: "We analyze your competitors, market trends, and customer behavior to create a website strategy that delivers results. AI-powered insights help optimize search visibility—but every decision is guided by expert analysis.",
       icon: BarChart
     },
     {
       number: "2️⃣",
       title: "Web Design & UX",
-      subtitle: "Enhanced with AI-Generated Visuals",
-      description: "Use Midjourney-generated images for a unique, polished brand look.",
+      subtitle: "Tailored Design, Enhanced by Technology",
+      description: "A unique, polished brand experience designed by experts. We use advanced tools to refine layouts, colors, and visuals—but your brand's identity and user experience always come first.",
       icon: Zap
     },
     {
       number: "3️⃣",
       title: "Development & Performance",
-      subtitle: "Optimized for Speed & Security",
-      description: "AI-enhanced page speed & mobile optimization.",
+      subtitle: "Optimized for Speed, Security & Growth",
+      description: "We build fast, scalable, and secure websites that perform on every device. Our team ensures every site is optimized for mobile, accessibility, and performance—with AI enhancing technical optimizations, not replacing expert development.",
       icon: Code
     },
     {
       number: "4️⃣",
       title: "Content & SEO Optimization",
-      subtitle: "Powered by ChatGPT-4 & Ahrefs",
-      description: "AI-written SEO content & blog automation.",
+      subtitle: "Strategic Content That Ranks & Converts",
+      description: "SEO-friendly, high-quality content written by experts and refined with AI-driven insights. We optimize structure, keywords, and performance—but messaging is crafted for impact, not automation.",
       icon: FileText
     },
     {
       number: "5️⃣",
       title: "Launch, Tracking & Support",
-      subtitle: "AI-Powered Analytics",
-      description: "AI-based performance tracking & real-time insights.",
+      subtitle: "Long-Term Growth & Data-Driven Success",
+      description: "We track performance, analyze visitor behavior, and continuously optimize. AI helps streamline reporting and insights—but strategy and expertise drive long-term results.",
       icon: LineChart
     }
   ];
@@ -80,11 +81,11 @@ const Solution = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             We Build Websites That Grow Your Business—
             <br />
-            <span className="text-brand-primary">With Strategic Expertise & AI-Powered Efficiency</span>
+            <span className="text-brand-primary">With Strategy, Expertise & Smart Technology</span>
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            Whether you're launching a new business or upgrading an outdated website, our expert team leverages AI tools to enhance strategy, speed up processes, and optimize results—always guided by professional experience and industry best practices.
+            Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to build high-performance websites. AI enhances efficiency—but creativity, experience, and data-driven decisions remain at the core of what we do.
           </p>
         </div>
         
@@ -109,7 +110,7 @@ const Solution = () => {
         <div className="mt-20">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading">
-              We integrate cutting-edge AI technologies to enhance website performance, SEO, and automation.
+              We integrate cutting-edge technologies to enhance website performance, SEO, and automation.
             </p>
           </div>
           
@@ -130,14 +131,19 @@ const Solution = () => {
           </div>
         </div>
         
-        <div className="mt-12 text-center">
-          <Link 
-            to="/ai-powered-solutions"
-            className="inline-flex items-center text-brand-primary hover:text-brand-primaryHover transition-colors"
-          >
-            <span>Learn more about our process</span>
-            <Zap className="ml-2 h-4 w-4" />
-          </Link>
+        <div className="mt-16 text-center">
+          <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
+            Your website should be a growth engine—designed with strategy, built for performance, and enhanced with smart tools. Let's build a website that works for your business.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild>
+              <Link to="/contact">Start Your Project →</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link to="/case-studies">See How We Work →</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
