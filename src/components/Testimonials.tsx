@@ -178,7 +178,55 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-        
+      </div>
+      
+      {/* Social Proof Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+        <div className="py-16 bg-gradient-to-br from-brand-background/50 to-white rounded-2xl">
+          <div className="text-center px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-8">
+              Recognized for Excellence in Web Design & Digital Strategy
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-12">
+              Our work has been recognized by industry leaders and trusted by brands like COBUS, Scheurich, and Weisenburger. Our projects have helped businesses achieve measurable success, making ooliv a go-to Webdesign Agency for innovative and strategic solutions.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {/* Partner Recognition */}
+              <div className="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="text-brand-primary mb-6">
+                  <Trophy className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Trusted Partnerships</h3>
+                <p className="text-gray-600">
+                  Strategic partnerships with industry-leading brands and continuous collaboration with innovative businesses.
+                </p>
+              </div>
+              
+              {/* Certifications */}
+              <div className="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="text-brand-primary mb-6">
+                  <BadgeCheck className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Professional Certifications</h3>
+                <p className="text-gray-600">
+                  Google Partner certified with expertise in AI-powered design and digital strategy implementation.
+                </p>
+              </div>
+              
+              {/* Industry Recognition */}
+              <div className="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="text-brand-primary mb-6">
+                  <Award className="h-12 w-12 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">Industry Recognition</h3>
+                <p className="text-gray-600">
+                  Featured in industry publications for innovative web design solutions and measurable business impact.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
