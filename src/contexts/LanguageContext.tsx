@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'de';
@@ -22,7 +21,7 @@ export const translations = {
     'nav.scheduleCall': 'Schedule Call',
     
     // Hero
-    'hero.title': "ooliv: Webdesign Agency That Builds High-Performance Websites for SEO & Conversions",
+    'hero.title': "ooliv Webdesign Agency – Building High-Performance Websites for SEO, Conversions & Growth",
     'hero.subtitle': "At ooliv, we create websites that rank higher, convert better, and drive measurable business success.",
     'hero.description': "We create high-performance websites that drive leads, rank higher, and turn visitors into customers. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable business success.",
     'hero.startProject': "Start Your Website Project",
@@ -83,7 +82,7 @@ export const translations = {
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': "ooliv: Webdesign Agentur, die leistungsstarke Websites für SEO & Konversionen erstellt",
+    'hero.title': "ooliv Werbeagentur – Entwicklung leistungsstarker Websites für SEO, Konversionen & Wachstum",
     'hero.subtitle': "Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen.",
     'hero.description': "Wir erstellen leistungsstarke Websites, die Leads generieren, besser ranken und Besucher in Kunden verwandeln. Ob Relaunch oder neue Website, wir sorgen dafür, dass Ihre Website messbaren Geschäftserfolg bringt.",
     'hero.startProject': "Starten Sie Ihr Website-Projekt",

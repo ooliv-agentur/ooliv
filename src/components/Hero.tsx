@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Award, BarChart, Users, Zap } from "lucide-react";
+import { ArrowRight, BarChart, Users, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
@@ -97,16 +97,17 @@ const Hero = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-wider max-w-4xl mx-auto space-y-2">
-            <div>ooliv: Webdesign Agency That Builds</div>
-            <div>High-Performance Websites</div>
-            <div className="flex items-center justify-center text-brand-primary mt-2">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-wider max-w-4xl mx-auto space-y-3">
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-brand-primary">ooliv</span> 
+              <span>Webdesign Agency</span>
+            </div>
+            <div>Building High-Performance Websites</div>
+            <div className="flex items-center justify-center text-brand-primary">
               <span className="relative text-white flex items-center">
-                <span className="mr-1">for</span> {displayText}
+                for {displayText}
                 <span className="absolute -right-4 top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
-                <span className="transition-opacity duration-300 ease-in">
-                  {currentIcon}
-                </span>
+                {currentIcon}
               </span>
             </div>
           </h1>
