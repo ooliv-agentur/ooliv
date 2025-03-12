@@ -1,7 +1,6 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart, Users, Zap } from "lucide-react";
+import { BarChart, ArrowRight, Users, Zap, LineChart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
@@ -16,12 +15,13 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(80);
 
-  // Value propositions to cycle through
+  // Updated value propositions to cycle through
   const valueProps = [
-    { text: "Maximum Growth & Conversions", icon: <BarChart className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Higher SEO Rankings & More Traffic", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Stronger Branding & User Engagement", icon: <Users className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Seamless User Experience & Performance", icon: <Zap className="inline-block ml-2 h-6 w-6" /> }
+    { text: "Measurable Business Growth & Higher Conversions", icon: <BarChart className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Scalable, High-Performing Digital Experiences", icon: <Zap className="inline-block ml-2 h-6 w-6" /> },
+    { text: "More Visibility, Engagement & Conversions", icon: <Users className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Faster Load Times & Better SEO Rankings", icon: <LineChart className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Lead Generation & Long-Term Success", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> }
   ];
   
   const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
