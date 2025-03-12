@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, ExternalLink, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -82,9 +82,9 @@ const Footer = () => {
       </div>
 
       {/* Sticky CTA Banner */}
-      <div className="fixed bottom-0 left-0 right-0 bg-blue-600 py-3 px-4 z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-blue-600 py-3 px-4 z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-white text-sm md:text-base">{t('footer.ctaBanner')}</p>
+          <p className="text-white text-sm md:text-base">Let's Talk About Your Website Relaunch</p>
           <Button 
             variant="outline" 
             size="sm"
@@ -100,7 +100,16 @@ const Footer = () => {
         <Button 
           variant="outline" 
           size="icon" 
+          className="rounded-full bg-green-500 text-white hover:bg-green-600 border-0"
+          title="WhatsApp"
+        >
+          <MessageCircle className="h-5 w-5" />
+        </Button>
+        <Button 
+          variant="outline" 
+          size="icon" 
           className="rounded-full bg-blue-600 text-white hover:bg-blue-700 border-0"
+          title="Email"
         >
           <Mail className="h-5 w-5" />
         </Button>
@@ -108,6 +117,7 @@ const Footer = () => {
           variant="outline" 
           size="icon" 
           className="rounded-full bg-blue-600 text-white hover:bg-blue-700 border-0"
+          title="Phone"
         >
           <Phone className="h-5 w-5" />
         </Button>
