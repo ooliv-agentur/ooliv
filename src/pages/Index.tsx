@@ -20,11 +20,6 @@ const Index = () => {
 
   return (
     <main className="bg-white">
-      <style jsx global>{`
-        .custom-cursor * {
-          cursor: none !important;
-        }
-      `}</style>
       <Navbar />
       <Hero />
       <Challenge />
