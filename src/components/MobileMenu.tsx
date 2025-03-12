@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -41,7 +40,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 w-full h-full" style={{ zIndex: 9999 }}>
+        <div className="fixed inset-0 w-full h-full" style={{ zIndex: 50 }}>
           {/* Backdrop overlay */}
           <motion.div
             initial={{ opacity: 0 }}
