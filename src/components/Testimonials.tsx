@@ -1,18 +1,19 @@
 
-import React from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Testimonials = () => {
   const { t } = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
   
   const testimonials = [
     {
       client: "Scheurich",
       industry: "Ceramic & Lifestyle Brand",
       result: "120% increase in organic traffic after full website optimization.",
-      quote: "Thanks to ooliv, our website is now a growth engine.",
+      quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
       image: "/placeholder.svg",
       stars: 5
     },
@@ -20,7 +21,7 @@ const Testimonials = () => {
       client: "COBUS",
       industry: "ERP & IT Solutions",
       result: "Lead generation improved by 80% with a new website & conversion strategy.",
-      quote: "Professional, strategic, and results-driven.",
+      quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
       image: "/placeholder.svg",
       stars: 5
     },
@@ -28,11 +29,19 @@ const Testimonials = () => {
       client: "Weisenburger",
       industry: "Construction & Real Estate",
       result: "Seamless CRM integration & scalable web infrastructure.",
-      quote: "More leads, better conversions, seamless collaboration.",
+      quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
       image: "/placeholder.svg",
       stars: 5
     }
   ];
+
+  const nextSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
     <section id="cases" className="py-20 bg-white">
@@ -55,6 +64,7 @@ const Testimonials = () => {
               size="icon"
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 -ml-5 bg-white"
               aria-label="Previous testimonial"
+              onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
@@ -64,6 +74,7 @@ const Testimonials = () => {
               size="icon"
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 -mr-5 bg-white"
               aria-label="Next testimonial"
+              onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
@@ -74,13 +85,15 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
+                className={`bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col ${
+                  index === activeIndex ? 'md:scale-105 z-10' : 'md:scale-100'
+                }`}
               >
                 <div className="mb-4">
                   <img 
                     src={testimonial.image} 
                     alt={`${testimonial.client} project`} 
-                    className="w-full h-32 object-cover rounded-md mb-4"
+                    className="w-full h-32 object-cover rounded-md mb-4 bg-gray-100"
                   />
                 </div>
                 
@@ -113,9 +126,12 @@ const Testimonials = () => {
                   </div>
                 </div>
                 
-                <button className="mt-4 text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors">
-                  Read Full Case Study →
-                </button>
+                <Button 
+                  variant="link" 
+                  className="mt-4 text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors justify-start p-0"
+                >
+                  Read Full Case Study <ArrowRight className="h-4 w-4 ml-1" />
+                </Button>
               </div>
             ))}
           </div>
@@ -124,21 +140,25 @@ const Testimonials = () => {
           <div className="flex justify-center mt-6 md:hidden">
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (
-                <div 
+                <button 
                   key={index} 
-                  className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-blue-600' : 'bg-gray-300'}`}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${index === activeIndex ? 'bg-blue-600' : 'bg-gray-300'}`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>
           </div>
         </div>
         
-        <div className="text-center mt-12">
-          <Button variant="outline" className="mx-2">
-            Read More Success Stories →
+        <div className="text-center mt-12 space-x-4">
+          <Button variant="outline" className="group">
+            Read More Success Stories
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" className="mx-2">
-            Read All Google Reviews →
+          <Button variant="outline" className="group">
+            Read All Google Reviews
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </div>
