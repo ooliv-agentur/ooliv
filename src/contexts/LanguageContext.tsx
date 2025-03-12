@@ -22,7 +22,7 @@ export const translations = {
     'nav.scheduleCall': 'Schedule Call',
     
     // Hero
-    'hero.title': 'Your Website Should Drive Business Growth.',
+    'hero.title': 'Your Website Should Drive Business Growth. Let\'s Build It Right.',
     'hero.subtitle': 'We Make Sure It Does.',
     'hero.description': "Your website is more than just design—it's a strategic tool for success. Whether you need a complete relaunch or a brand-new online presence, we create high-performance websites that attract customers, build trust, and generate measurable results.",
     'hero.startProject': 'Start Your Website Project',
@@ -47,6 +47,7 @@ export const translations = {
     
     // CTA
     'cta.title': "Let's Build a Website That Moves Your Business Forward.",
+    'cta.subtitle': "Your website should be a growth engine, not a limitation. Let's discuss your challenges, analyze your current setup, and create a plan to turn your digital presence into a business asset—efficiently, strategically, and powered by the latest AI-driven insights.",
     'cta.audit': 'Request a Free Website Audit',
     'cta.call': 'Schedule a Strategy Call',
     'cta.work': 'See Our Work',
@@ -82,7 +83,7 @@ export const translations = {
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': 'Ihre Website sollte Ihr Geschäftswachstum fördern.',
+    'hero.title': 'Ihre Website sollte Ihr Geschäftswachstum fördern. Lassen Sie uns sie richtig bauen.',
     'hero.subtitle': 'Wir sorgen dafür.',
     'hero.description': 'Ihre Website ist mehr als nur Design – sie ist ein strategisches Werkzeug für Ihren Erfolg. Ob Sie einen kompletten Relaunch oder eine brandneue Online-Präsenz benötigen, wir erstellen leistungsstarke Websites, die Kunden anziehen, Vertrauen aufbauen und messbare Ergebnisse liefern.',
     'hero.startProject': 'Starten Sie Ihr Website-Projekt',
@@ -107,6 +108,7 @@ export const translations = {
     
     // CTA
     'cta.title': 'Lassen Sie uns eine Website erstellen, die Ihr Unternehmen voranbringt.',
+    'cta.subtitle': 'Ihre Website sollte ein Wachstumsmotor sein, keine Einschränkung. Lassen Sie uns Ihre Herausforderungen besprechen, Ihre aktuelle Einrichtung analysieren und einen Plan erstellen, um Ihre digitale Präsenz in einen Geschäftsvorteil zu verwandeln – effizient, strategisch und mit den neuesten KI-gestützten Erkenntnissen.',
     'cta.audit': 'Kostenlose Website-Prüfung anfordern',
     'cta.call': 'Strategiegespräch vereinbaren',
     'cta.work': 'Unsere Arbeiten ansehen',

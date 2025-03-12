@@ -12,8 +12,6 @@ const Hero = () => {
         <div className="text-center space-y-8 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
             {t('hero.title')}
-            <br />
-            <span className="text-blue-600">{t('hero.subtitle')}</span>
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-gray-600">
