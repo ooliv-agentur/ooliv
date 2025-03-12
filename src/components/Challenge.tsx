@@ -26,7 +26,7 @@ const Challenge = () => {
       color: "from-brand-background/60 to-brand-backgroundAlt/40"
     },
     {
-      problem: "Slow Loading Speed",
+      problem: "Website Too Slow? Every Second Costs You Money.",
       painPoint: "A slow website can reduce conversions by up to 7% per second of delay.",
       solution: "We implement advanced speed optimization techniques to ensure lightning-fast load times—improving both SEO rankings and user experience.",
       icon: AlertCircle,
@@ -40,7 +40,7 @@ const Challenge = () => {
       color: "from-yellow-50/40 to-amber-50/30"
     },
     {
-      problem: "Poor Conversion Rate",
+      problem: "Your Website Gets Traffic—But No Sales?",
       painPoint: "Getting traffic isn't enough—your site needs to convert visitors into leads & customers.",
       solution: "We implement expert-driven conversion strategies—including UX testing, smart CTAs, and optimized user flows—to turn visitors into customers.",
       icon: LineChart,
@@ -53,7 +53,7 @@ const Challenge = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            Common Website Challenges – and How Our Webdesign Agency Fixes Them
+            Website Challenges That Hurt Your Business – Here's How We Fix Them
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Here's what might be holding your business back—and how we fix it.

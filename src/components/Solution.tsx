@@ -62,7 +62,7 @@ const Solution = () => {
     {
       number: "4️⃣",
       title: "Content & SEO Optimization",
-      subtitle: "Strategic Messaging That Ranks & Converts",
+      subtitle: "SEO & Content That Gets You Found—And Drives Action",
       description: "SEO-driven content designed to engage audiences, increase rankings, and drive conversions—blending expert writing with data-backed insights.",
       icon: FileText
     },
@@ -114,7 +114,7 @@ const Solution = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            Our Webdesign Agency Process – From Strategy to Growth
+            How Our Webdesign Agency Builds Websites That Work—Not Just Look Good
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
@@ -166,7 +166,7 @@ const Solution = () => {
         <div className="mt-16 rounded-2xl p-8 ai-tools-section">
           <div className="text-center mb-10">
             <p className="text-lg text-brand-heading font-medium">
-              Strategic Technology to Optimize Website Performance
+              Smart Tools That Boost Website Performance—Powered by Strategy
             </p>
             <p className="text-base text-brand-text mt-2">
               At ooliv Webdesign Agency, we use industry-leading technologies to enhance website performance, SEO, and user engagement—combining automation with expert strategy.
@@ -192,7 +192,7 @@ const Solution = () => {
         
         <div className="mt-16 text-center rounded-2xl p-8 cta-section">
           <p className="max-w-3xl mx-auto text-lg text-brand-text mb-8">
-            Let's build a website that doesn't just look good—it delivers real business impact. From strategy to execution, our Webdesign Agency ensures every element drives measurable results.
+            Your Website Should Be Your Best Salesperson—Let's Make That Happen. From strategy to execution, our Webdesign Agency ensures every element drives measurable results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
