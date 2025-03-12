@@ -1,7 +1,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, BarChart, Users, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,22 @@ const Hero = () => {
   const { t } = useLanguage();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // Typing effect state
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(80);
+
+  // Value propositions to cycle through
+  const valueProps = [
+    { text: "Maximum Growth & Conversions", icon: <BarChart className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Higher SEO Rankings & More Traffic", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Stronger Branding & User Engagement", icon: <Users className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Seamless User Experience & Performance", icon: <Zap className="inline-block ml-2 h-6 w-6" /> }
+  ];
+  
+  const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
   
   useEffect(() => {
     if (videoRef.current) {
@@ -21,6 +37,42 @@ const Hero = () => {
       }
     }
   }, []);
+  
+  // Typing effect implementation
+  useEffect(() => {
+    const handleTyping = () => {
+      // Get current text based on the loop number
+      const currentProp = valueProps[loopNum % valueProps.length];
+      const fullText = currentProp.text;
+      
+      // Set typing speed based on whether we're deleting or typing
+      let updatedSpeed = isDeleting ? 50 : 80;
+      
+      // If deleting, remove a character, otherwise add one
+      if (isDeleting) {
+        setDisplayText(fullText.substring(0, displayText.length - 1));
+      } else {
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+      }
+      
+      setTypingSpeed(updatedSpeed);
+      
+      // Handle the typing/deleting transitions
+      if (!isDeleting && displayText === fullText) {
+        // Pause at the end of typing before starting to delete
+        setTypingSpeed(2000); // Pause for 2 seconds
+        setIsDeleting(true);
+      } else if (isDeleting && displayText === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setCurrentIcon(valueProps[(loopNum + 1) % valueProps.length].icon);
+        setTypingSpeed(500); // Pause before typing the next phrase
+      }
+    };
+    
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, loopNum, typingSpeed, valueProps]);
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -53,7 +105,14 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
         <div className="text-center space-y-8 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Webdesign Agency That Builds Websites for Maximum Growth & Conversions
+            Webdesign Agency That Builds Websites for{' '}
+            <span className="relative">
+              {displayText}
+              <span className="absolute -right-4 top-0 h-full w-0.5 bg-white animate-pulse opacity-75">|</span>
+              <span className="transition-opacity duration-300 ease-in">
+                {currentIcon}
+              </span>
+            </span>
           </h1>
           
           <p className="max-w-2xl mx-auto text-xl text-gray-100">
