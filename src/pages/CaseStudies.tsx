@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ const caseStudies = [
   {
     id: 'scheurich',
     title: 'Scheurich: Ceramic Brand Transformation',
-    description: 'How we increased organic traffic by 120% for Germany's leading ceramic manufacturer',
+    description: "How we increased organic traffic by 120% for Germany's leading ceramic manufacturer",
     category: 'Web Design • SEO',
     image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
     stats: [
@@ -69,7 +68,7 @@ const caseStudies = [
   {
     id: 'aok',
     title: 'AOK: Healthcare Provider',
-    description: 'Digital transformation strategy for Germany's largest health insurance provider',
+    description: "Digital transformation strategy for Germany's largest health insurance provider",
     category: 'Digital Transformation • UX Design',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef',
     stats: [

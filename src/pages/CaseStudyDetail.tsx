@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
@@ -18,7 +17,7 @@ const caseStudiesData = {
     solution: "We developed a multi-phase marketing strategy with targeted Meta Ads, expanding to a comprehensive content strategy.",
     results: [
       "8 Wochen testeten wir, bis wir die richtige Lead-Qualität erreicht haben - daraufhin generierten wir 150 qualifizierte Leads in 10 Tagen",
-      "Der Fahrplan: Mehrstufige Ansprache der Zielgruppe über Meta Ads. Zunächst emotional, daraufhin Erweiterung durch den „Neubauwelt-Guide"",
+      "Der Fahrplan: Mehrstufige Ansprache der Zielgruppe über Meta Ads. Zunächst emotional, daraufhin Erweiterung durch den \"Neubauwelt-Guide\"",
       "Das Neubau-Sales-Team hat nun volle Terminkalender, gibt uns stetig Rückmeldung und wir optimieren den Fahrplan weiter."
     ],
     nextProject: "biertisch"
@@ -277,3 +276,4 @@ const CaseStudyDetail = () => {
 };
 
 export default CaseStudyDetail;
+
