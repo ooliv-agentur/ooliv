@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Zap, AlertCircle, CheckCircle2, Search, LineChart, ArrowRight, MousePointer2 } from "lucide-react";
@@ -92,7 +91,8 @@ const Challenge = () => {
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">See the Difference</h3>
+          <h3 className="text-2xl font-bold text-center mb-4">See the Difference</h3>
+          <p className="text-center text-gray-600 mb-8">Drag the slider to compare outdated and modern website designs</p>
           <BeforeAfterSlider />
         </div>
 
