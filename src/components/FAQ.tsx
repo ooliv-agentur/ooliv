@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -9,44 +10,44 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What industries does ooliv specialize in?",
-      answer: "We focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
+      question: "What industries does ooliv specialize in as a Webdesign Agency?",
+      answer: "As a Webdesign Agency, we focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
     },
     {
-      question: "What project management approach does ooliv use?",
-      answer: "We use structured Agile & Scrum methodologies to ensure transparency and efficiency. This includes regular updates & feedback loops, dedicated project manager for every client, and Basecamp for seamless file sharing & communication."
+      question: "What project management approach does our Webdesign Agency use?",
+      answer: "Our Webdesign Agency uses structured Agile & Scrum methodologies to ensure transparency and efficiency. This includes regular updates & feedback loops, dedicated project manager for every client, and Basecamp for seamless file sharing & communication."
     },
     {
-      question: "How does ooliv integrate AI-powered tools into web design?",
-      answer: "We leverage AI-driven technologies like ChatGPT-4 for content optimization & automation, Midjourney & Sora AI for AI-generated visuals & videos, and Ahrefs & SEMrush for advanced SEO & performance tracking."
+      question: "How does ooliv Webdesign Agency integrate AI-powered tools into web design?",
+      answer: "As a modern Webdesign Agency, we leverage AI-driven technologies like ChatGPT-4 for content optimization & automation, Midjourney & Sora AI for AI-generated visuals & videos, and Ahrefs & SEMrush for advanced SEO & performance tracking."
     },
     {
-      question: "What certifications & recognitions has ooliv received?",
-      answer: "Our expertise has been recognized through Google Partner Certification, features in leading digital marketing publications, and strategic partnerships with major B2B brands."
+      question: "What certifications & recognitions has ooliv Webdesign Agency received?",
+      answer: "Our expertise as a Webdesign Agency has been recognized through Google Partner Certification, features in leading digital marketing publications, and strategic partnerships with major B2B brands."
     },
     {
-      question: "Does ooliv provide long-term website maintenance?",
-      answer: "Yes! We offer ongoing support & maintenance including regular security updates & performance monitoring, AI-powered analytics & tracking, and content updates & conversion optimization."
+      question: "Does ooliv Webdesign Agency provide long-term website maintenance?",
+      answer: "Yes! As a full-service Webdesign Agency, we offer ongoing support & maintenance including regular security updates & performance monitoring, AI-powered analytics & tracking, and content updates & conversion optimization."
     },
     {
-      question: "How does ooliv ensure SEO success?",
-      answer: "We use data-driven SEO strategies that include technical SEO audits & speed optimization, AI-enhanced content strategy, and local & international SEO for B2B visibility."
+      question: "How does our Webdesign Agency ensure SEO success?",
+      answer: "We use data-driven SEO strategies that include technical SEO audits & speed optimization, AI-enhanced content strategy, and local & international SEO for B2B visibility. As a Webdesign Agency focusing on results, we constantly monitor and adjust our approach based on performance data."
     },
     {
-      question: "What web technologies does ooliv use?",
-      answer: "We build future-proof websites with Headless CMS (Strapi, Contentful) for flexibility, WordPress & Webflow for easy management, Shopify & WooCommerce for eCommerce, and React & Next.js for high-performance web applications."
+      question: "What web technologies does ooliv Webdesign Agency use?",
+      answer: "As an innovative Webdesign Agency, we build future-proof websites with Headless CMS (Strapi, Contentful) for flexibility, WordPress & Webflow for easy management, Shopify & WooCommerce for eCommerce, and React & Next.js for high-performance web applications."
     },
     {
-      question: "How does ooliv improve lead generation through web design?",
-      answer: "We implement conversion-driven strategies, including AI-powered forms & chatbots for higher engagement, heatmap & A/B testing to optimize conversions, and CRM & automation tools for lead nurturing."
+      question: "How does our Webdesign Agency improve lead generation through web design?",
+      answer: "We implement conversion-driven strategies, including AI-powered forms & chatbots for higher engagement, heatmap & A/B testing to optimize conversions, and CRM & automation tools for lead nurturing. As a results-focused Webdesign Agency, we prioritize designs that convert visitors into leads."
     },
     {
-      question: "How does web design impact brand strategy?",
-      answer: "Your website is the digital foundation of your brand. We ensure strong brand consistency across design & messaging, strategic UX/UI design that reinforces credibility, and seamless integration with marketing automation tools."
+      question: "How does web design from a professional Webdesign Agency impact brand strategy?",
+      answer: "Your website is the digital foundation of your brand. Our Webdesign Agency ensures strong brand consistency across design & messaging, strategic UX/UI design that reinforces credibility, and seamless integration with marketing automation tools."
     },
     {
       question: "Why choose ooliv over other web design agencies?",
-      answer: "We specialize in B2B clients (not generic web design), offer AI-powered efficiency for smarter, faster results, take a strategic approach focusing on business growth, and build long-term partnerships, not just one-time projects."
+      answer: "As a specialized Webdesign Agency, we focus exclusively on B2B clients (not generic web design), offer AI-powered efficiency for smarter, faster results, take a strategic approach focusing on business growth, and build long-term partnerships, not just one-time projects."
     }
   ];
 
@@ -61,6 +62,9 @@ const FAQ = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
             {t('faq.title')}
           </h2>
+          <p className="max-w-3xl mx-auto text-lg text-brand-text">
+            Common questions about our Webdesign Agency services and approach
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -95,14 +99,14 @@ const FAQ = () => {
 
         <div className="max-w-3xl mx-auto mt-12 text-center">
           <Link to="/contact" className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
-            Didn't Find Your Question? Contact Us →
+            Have more questions about our Webdesign Agency services? Contact Us →
           </Link>
         </div>
 
         <div className="fixed bottom-6 right-6 z-50">
           <button 
             className="bg-brand-primary text-brand-text p-4 rounded-full shadow-lg hover:bg-brand-primaryHover transition-colors"
-            aria-label="Chat support"
+            aria-label="Chat with our Webdesign Agency"
           >
             <MessageSquare className="h-6 w-6" />
           </button>
