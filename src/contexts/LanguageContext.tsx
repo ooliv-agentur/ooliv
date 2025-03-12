@@ -33,9 +33,9 @@ export const translations = {
     'challenge.description': "Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity.",
     
     // Solution
-    'solution.title': 'We Build Websites That Grow Your Business—',
+    'solution.title': 'We Build Websites That Elevate Your Business—',
     'solution.subtitle': 'With Strategy, Expertise & Smart Technology',
-    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to build high-performance websites. AI enhances efficiency—but creativity, experience, and data-driven decisions remain at the core of what we do.",
+    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. AI enhances efficiency—but creativity, experience, and data-driven decisions are at the core of our approach.",
     'solution.learnMore': 'Learn more about our process',
     
     // Testimonials
@@ -94,9 +94,9 @@ export const translations = {
     'challenge.description': 'Viele Unternehmen kämpfen mit Websites, die nicht performant sind – sei es, weil sie veraltet, zu langsam sind oder noch gar nicht existieren. Eine Website, die keine Leads generiert, kein Vertrauen aufbaut oder bei Google nicht gut rankt, ist eine verpasste Chance.',
     
     // Solution
-    'solution.title': 'Wir erstellen Websites, die Ihr Geschäft wachsen lassen –',
+    'solution.title': 'Wir erstellen Websites, die Ihr Unternehmen voranbringen—',
     'solution.subtitle': 'Mit Strategie, Expertise & intelligenter Technologie',
-    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam kombiniert strategisches Denken, nutzerorientiertes Design und modernste Tools, um leistungsstarke Websites zu erstellen. KI verbessert die Effizienz – aber Kreativität, Erfahrung und datengestützte Entscheidungen bleiben im Mittelpunkt unserer Arbeit.',
+    'solution.description': 'Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam kombiniert strategisches Denken, nutzerorientiertes Design und modernste Tools, um leistungsstarke digitale Erlebnisse zu schaffen. KI verbessert die Effizienz – aber Kreativität, Erfahrung und datengestützte Entscheidungen stehen im Mittelpunkt unseres Ansatzes.',
     'solution.learnMore': 'Mehr über unseren Prozess erfahren',
     
     // Testimonials
