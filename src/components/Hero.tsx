@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart, Users, Zap } from "lucide-react";
@@ -68,7 +69,7 @@ const Hero = () => {
   }, [displayText, isDeleting, loopNum, typingSpeed, valueProps]);
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full z-0">
         <div className={`absolute inset-0 bg-gray-900 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}></div>
         
@@ -95,28 +96,28 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20">
-        <div className="text-center space-y-8 animate-fade-up">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight tracking-wider max-w-4xl mx-auto space-y-3">
-            <div className="flex items-center justify-center gap-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20 w-full">
+        <div className="space-y-8 animate-fade-up md:max-w-3xl lg:max-w-4xl">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight tracking-wider space-y-3 text-left">
+            <div className="flex items-center gap-2">
               <span className="text-brand-primary">ooliv</span> 
               <span>Webdesign Agency</span>
             </div>
             <div>Building High-Performance Websites</div>
-            <div className="flex items-center justify-center text-brand-primary">
+            <div className="flex items-center text-brand-primary">
               <span className="relative text-white flex items-center">
                 for {displayText}
-                <span className="absolute -right-4 top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
+                <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
                 {currentIcon}
               </span>
             </div>
           </h1>
           
-          <p className="max-w-2xl mx-auto text-xl text-gray-100">
+          <p className="text-lg lg:text-xl text-gray-100 text-left">
             At ooliv, we create websites that rank higher, convert better, and drive measurable business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers results.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Button size="lg" className="group" asChild>
               <Link to="/contact">
                 {t('hero.startProject')}
