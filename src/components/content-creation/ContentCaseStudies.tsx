@@ -12,7 +12,7 @@ const caseStudies = [
       { icon: BarChart, stat: '+120%', description: 'organic traffic increase' },
       { icon: Users, stat: '+45%', description: 'time on site improvement' }
     ],
-    description: 'Vollständiger Text-, Bild- und SEO-Relaunch'
+    description: 'Complete text, image, and SEO relaunch'
   },
   {
     title: 'COBUS – ERP Solutions',
@@ -21,7 +21,7 @@ const caseStudies = [
       { icon: BarChart, stat: '3x', description: 'better landing page conversion' },
       { icon: Users, stat: 'Clearer', description: 'messaging & structure' }
     ],
-    description: 'Technisches Storytelling durch Content, Illustration & Grafik'
+    description: 'Technical storytelling through content, illustration & graphics'
   }
 ];
 
@@ -30,7 +30,7 @@ const ContentCaseStudies = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Erfolgreiche Content-Projekte
+          Successful Content Projects
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
@@ -73,7 +73,7 @@ const ContentCaseStudies = () => {
         <div className="text-center mt-12">
           <Button size="lg" className="group" asChild>
             <Link to="/case-studies">
-              Alle Case Studies ansehen
+              View All Case Studies
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

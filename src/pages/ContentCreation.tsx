@@ -16,24 +16,24 @@ const ContentCreation = () => {
   // Custom FAQ items for Content Creation page
   const contentFaqs = [
     {
-      question: "Wie läuft die Content-Erstellung bei ooliv ab?",
-      answer: "Wir starten mit einer klaren Content-Strategie und liefern alle Website-Inhalte: Text, Bild, Video und Illustration – schnell, SEO-optimiert und im Corporate Design."
+      question: "How does the content creation process work at ooliv?",
+      answer: "We start with a clear content strategy and deliver all website content: text, image, video, and illustration – fast, SEO-optimized and aligned with your corporate design."
     },
     {
-      question: "Welche Tools nutzt ooliv zur Content-Produktion?",
-      answer: "Wir kombinieren KI-Tools wie ChatGPT, Midjourney und Sora mit manueller Kontrolle – für maximale Effizienz und Qualität."
+      question: "What tools does ooliv use for content production?",
+      answer: "We combine AI tools like ChatGPT, Midjourney and Sora with manual review – for maximum efficiency and quality."
     },
     {
-      question: "Kann ich nur Content ohne Webdesign buchen?",
-      answer: "Ja. Wir liefern auch Content für bestehende Websites oder als Unterstützung für Inhouse-Teams und Agenturen."
+      question: "Can I order content without web design?",
+      answer: "Yes. We also deliver content for existing websites or as support for in-house teams and agencies."
     },
     {
-      question: "Erhalte ich Texte in mehreren Sprachen?",
-      answer: "Klar. Wir bieten Content in Deutsch, Englisch und auf Wunsch auch in weiteren Sprachen."
+      question: "Do I receive texts in multiple languages?",
+      answer: "Of course. We offer content in English, German, and other languages upon request."
     },
     {
-      question: "Was ist, wenn ich noch kein Logo oder Bilder habe?",
-      answer: "Kein Problem – unser Design-Team entwickelt alle nötigen Assets für Ihren Markenauftritt."
+      question: "What if I don't have a logo or images yet?",
+      answer: "No problem – our design team develops all necessary assets for your brand presence."
     }
   ];
   
@@ -46,10 +46,10 @@ const ContentCreation = () => {
       <ContentCaseStudies />
       <FAQ customFaqs={contentFaqs} />
       <CTA 
-        title="Website-Inhalte, die verkaufen statt nur zu informieren"
-        subtitle="Ob komplette Website-Texte, passgenaue Bilder oder Videos – wir liefern den Content, der wirkt."
-        primaryCta="Jetzt unverbindlich beraten lassen"
-        secondaryCta="Beispielprojekt anfragen"
+        title="Website Content That Sells, Not Just Informs"
+        subtitle="Whether complete website texts, perfect images or videos – we deliver content that works."
+        primaryCta="Get a Free Consultation"
+        secondaryCta="Request a Sample Project"
       />
     </PageLayout>
   );

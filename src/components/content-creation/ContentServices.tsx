@@ -7,42 +7,42 @@ const services = [
   {
     icon: FileText,
     title: 'Text & Messaging',
-    description: 'Suchmaschinenoptimierte, überzeugende Texte für alle Seitentypen – erstellt mit GPT-basierten Workflows und geschärft durch erfahrene Copywriter.',
+    description: 'Search engine optimized, persuasive texts for all page types – created with GPT-based workflows and refined by experienced copywriters.',
     features: [
-      'Startseitentexte, Leistungsseiten, FAQs',
-      'Conversionstarke Headlines & CTAs',
-      'SEO-optimierte Landingpages',
+      'Homepage text, service pages, FAQs',
+      'Conversion-focused headlines & CTAs',
+      'SEO-optimized landing pages',
       'UX Microcopy'
     ]
   },
   {
     icon: Image,
-    title: 'Foto & Bildwelten',
-    description: 'Custom-Fotowelten, generiert mit Midjourney und veredelt durch manuelle Retusche – perfekt abgestimmt auf Markenstil & Website-Layout.',
+    title: 'Photo & Imagery',
+    description: 'Custom image worlds, generated with Midjourney and enhanced through manual retouching – perfectly aligned with brand style & website layout.',
     features: [
-      'Markenbezogene Bildästhetik',
-      'Bildkonzepte für Start- und Unterseiten',
-      'Auflösung & Format direkt passend für Web'
+      'Brand-related imagery aesthetics',
+      'Visual concepts for home and sub-pages',
+      'Resolution & format suitable for web'
     ]
   },
   {
     icon: PenTool,
-    title: 'Illustration & Logo-Design',
-    description: 'Unsere Illustrator:innen & Designer entwickeln Icons, visuelle Assets und Logos für unverwechselbare Markenauftritte.',
+    title: 'Illustration & Logo Design',
+    description: 'Our illustrators & designers develop icons, visual assets and logos for distinctive brand appearances.',
     features: [
-      'Vektorgrafiken & UI-Icons',
-      'Website-Illustrationen',
-      'Logo-Redesigns & -Entwicklung'
+      'Vector graphics & UI icons',
+      'Website illustrations',
+      'Logo redesigns & development'
     ]
   },
   {
     icon: Video,
     title: 'Video & Animation',
-    description: 'Kurze Erklärvideos, Background Visuals oder hero section Videos – per Sora oder integriertem Partnernetzwerk.',
+    description: 'Short explainer videos, background visuals or hero section videos – via Sora or integrated partner network.',
     features: [
-      'Storyboard + Umsetzung',
-      'Passend zu Website und Zielgruppe',
-      'SEO-freundliche Videostruktur'
+      'Storyboard + implementation',
+      'Matched to website and target audience',
+      'SEO-friendly video structure'
     ]
   }
 ];

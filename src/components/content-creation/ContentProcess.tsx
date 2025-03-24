@@ -6,32 +6,32 @@ const steps = [
   {
     icon: CalendarCheck,
     number: '01',
-    title: 'Kickoff & Content-Planung',
-    description: 'Wir definieren Ziele, Tonalität und Formate – abgestimmt auf SEO und User Journey.'
+    title: 'Kickoff & Content Planning',
+    description: 'We define goals, tone of voice, and formats – aligned with SEO and user journey.'
   },
   {
     icon: PenTool,
     number: '02',
-    title: 'Content Design & Produktion',
-    description: 'Texte, Bilder, Videos, Illustrationen: Alles entsteht modular und markengerecht.'
+    title: 'Content Design & Production',
+    description: 'Text, images, videos, illustrations: Everything is created modularly and on-brand.'
   },
   {
     icon: Monitor,
     number: '03',
-    title: 'Freigabe & Integration',
-    description: 'Direkte Umsetzung im CMS oder durch unser Dev-Team – technisch sauber & visuell konsistent.'
+    title: 'Approval & Integration',
+    description: 'Direct implementation in the CMS or by our dev team – technically clean & visually consistent.'
   },
   {
     icon: CheckCircle,
     number: '04',
-    title: 'Launch-Check',
-    description: 'Finales Testing: Responsivität, SEO, Ladezeiten, Barrierefreiheit.'
+    title: 'Launch Check',
+    description: 'Final testing: Responsiveness, SEO, loading times, accessibility.'
   },
   {
     icon: RefreshCw,
     number: '05',
     title: 'Ongoing Support',
-    description: 'Kontinuierliche Pflege, Optimierung & Erweiterung. Optional auch mit monatlichem Content-Paket.'
+    description: 'Continuous maintenance, optimization & expansion. Optionally with monthly content package.'
   }
 ];
 
@@ -40,7 +40,7 @@ const ContentProcess = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Unser Content-Prozess
+          Our Content Process
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

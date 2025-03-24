@@ -5,23 +5,23 @@ import { FileText, Target, Users, Paintbrush } from 'lucide-react';
 const benefits = [
   {
     icon: FileText,
-    problem: 'Kein Content, keine Wirkung',
-    solution: 'Wir liefern komplette Website-Inhalte – von Text bis Bild – für starke Markenauftritte.'
+    problem: 'No Content, No Impact',
+    solution: 'We deliver complete website content – from text to visuals – for powerful brand presence.'
   },
   {
     icon: Target,
-    problem: 'Generischer Content, null Wiedererkennung',
-    solution: 'Individuelle Texte, Fotos und Illustrationen, die exakt zur Marken-DNA passen.'
+    problem: 'Generic Content, Zero Recognition',
+    solution: 'Custom texts, photos, and illustrations that perfectly align with your brand DNA.'
   },
   {
     icon: Users,
-    problem: 'Texte dauern zu lange – oder fehlen komplett',
-    solution: 'Effiziente Content-Produktion durch KI-Tools wie ChatGPT, Midjourney & Sora – mit menschlicher Qualitätskontrolle.'
+    problem: 'Content Takes Too Long – Or Missing Entirely',
+    solution: 'Efficient content production using AI tools like ChatGPT, Midjourney & Sora – with human quality control.'
   },
   {
     icon: Paintbrush,
-    problem: 'Kein Corporate Design sichtbar',
-    solution: 'Unsere Inhouse-Grafiker gestalten Logos, Icons & Illustrationen für konsistente Markenauftritte.'
+    problem: 'No Visible Corporate Design',
+    solution: 'Our in-house graphic designers create logos, icons & illustrations for consistent brand appearances.'
   }
 ];
 
