@@ -13,6 +13,7 @@ import ContentCreation from "./pages/ContentCreation";
 import SEO from "./pages/SEO";
 import LeadGeneration from "./pages/LeadGeneration";
 import AISolutions from "./pages/AISolutions";
+import AiTechnologies from "./pages/AiTechnologies";
 import CaseStudies from "./pages/CaseStudies";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/seo-optimization" element={<SEO />} />
             <Route path="/lead-generation" element={<LeadGeneration />} />
             <Route path="/ai-powered-solutions" element={<AISolutions />} />
+            <Route path="/ai-technologies" element={<AiTechnologies />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about-ooliv" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
