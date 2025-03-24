@@ -11,10 +11,10 @@ const WebDesignHero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const valueProps = [
-    'higher conversions',
-    'better user experience',
-    'increased visibility',
-    'stronger brand presence',
+    'strategic business growth',
+    'measurable ROI',
+    'increased conversions',
+    'stronger market positioning',
   ];
 
   useEffect(() => {
@@ -46,20 +46,20 @@ const WebDesignHero = () => {
   }, [displayText, isDeleting, loopNum, typingSpeed, valueProps]);
 
   return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt opacity-90" />
-        <div className="absolute inset-0 bg-[url('/abstract-web-bg.jpg')] opacity-10" />
+        <div className="absolute inset-0 bg-[url('/abstract-web-bg.jpg')] bg-cover bg-center opacity-20" />
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-20 w-full">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-heading animate-fade-in">
-            Professional Web Design & Development for B2B Companies
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-brand-heading animate-fade-in">
+            Strategic Web Design for B2B Growth
           </h1>
           
           <p className="text-xl max-w-2xl mb-6 text-brand-text">
-            Custom websites designed for{' '}
+            Custom websites engineered for{' '}
             <span className="text-brand-primary font-medium">
               {displayText}
               <span className="animate-pulse">|</span>
@@ -67,16 +67,25 @@ const WebDesignHero = () => {
           </p>
           
           <p className="max-w-2xl mb-8 text-brand-text">
-            At ooliv, we create high-performing, visually appealing, and responsive websites 
-            tailored specifically to your business objectives.
+            For mid-sized B2B companies and digital-focused enterprises that need more than just a website. 
+            We build strategic digital platforms that generate leads, establish credibility, and drive business growth.
           </p>
           
-          <Button size="lg" className="group" asChild>
-            <Link to="/contact">
-              Start Your Project
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="group" asChild>
+              <Link to="/contact">
+                Start Your Web Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            
+            <Button variant="outline" size="lg" className="group" asChild>
+              <Link to="/case-studies">
+                View Case Studies
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
