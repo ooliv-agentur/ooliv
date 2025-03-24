@@ -6,7 +6,7 @@ const benefits = [
   {
     icon: Target,
     title: 'Strategic Business Focus',
-    description: 'We align your website with your core business objectives—whether that's lead generation, market positioning, or customer retention.'
+    description: "We align your website with your core business objectives—whether that's lead generation, market positioning, or customer retention."
   },
   {
     icon: Rocket,
