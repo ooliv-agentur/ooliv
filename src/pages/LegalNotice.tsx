@@ -4,7 +4,7 @@ import PageLayout from '@/components/PageLayout';
 
 const LegalNotice = () => {
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="text-center mb-16 pt-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Legal Notice</h1>
