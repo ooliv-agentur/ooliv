@@ -49,13 +49,13 @@ const Challenge = () => {
   ];
 
   return (
-    <section id="solutions" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="solutions" className="section-standard">
+      <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+          <h2 className="heading-standard">
             Website Challenges That Hurt Your Business – Here's How We Fix Them
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="subheading-standard">
             Here's what might be holding your business back—and how we fix it.
           </p>
         </div>
@@ -64,36 +64,31 @@ const Challenge = () => {
           {challenges.map((item, index) => (
             <div 
               key={index} 
-              className="group relative transition-all duration-300 hover:-translate-y-1"
+              className="card-standard group relative transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={cn(
-                "h-full shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden",
-                "rounded-xl border border-gray-100 bg-white p-6"
-              )}>
-                <div className="flex flex-col h-full">
-                  <div className="mb-5">
-                    <div className="inline-flex items-center gap-2 mb-3">
-                      <span className="text-red-500">
-                        <item.icon className="h-5 w-5 stroke-[2px]" />
-                      </span>
-                      <h3 className="text-brand-heading font-medium text-base">
-                        <span className="text-red-500 font-bold">PROBLEM:</span> {item.problem}
-                      </h3>
-                    </div>
-                    
-                    <div className="flex items-start gap-2 mb-5 pl-7">
-                      <X className="h-4 w-4 flex-shrink-0 text-red-400 stroke-[2px]" />
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.painPoint}</p>
-                    </div>
+              <div className="flex flex-col h-full">
+                <div className="mb-5">
+                  <div className="inline-flex items-center gap-2 mb-3">
+                    <span className="text-red-500">
+                      <item.icon className="h-5 w-5 stroke-[2px]" />
+                    </span>
+                    <h3 className="text-brand-heading font-medium text-base">
+                      <span className="text-red-500 font-bold">PROBLEM:</span> {item.problem}
+                    </h3>
                   </div>
                   
-                  <div className="mt-auto">
-                    <div className="flex items-start gap-2 pl-7">
-                      <Check className="h-4 w-4 flex-shrink-0 text-green-500 stroke-[2px]" />
-                      <div>
-                        <p className="text-green-600 font-medium text-sm mb-1">OUR SOLUTION:</p>
-                        <p className="text-gray-700 text-sm leading-relaxed">{item.solution}</p>
-                      </div>
+                  <div className="flex items-start gap-2 mb-5 pl-7">
+                    <X className="h-4 w-4 flex-shrink-0 text-red-400 stroke-[2px]" />
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.painPoint}</p>
+                  </div>
+                </div>
+                
+                <div className="mt-auto">
+                  <div className="flex items-start gap-2 pl-7">
+                    <Check className="h-4 w-4 flex-shrink-0 text-green-500 stroke-[2px]" />
+                    <div>
+                      <p className="text-green-600 font-medium text-sm mb-1">OUR SOLUTION:</p>
+                      <p className="text-gray-700 text-sm leading-relaxed">{item.solution}</p>
                     </div>
                   </div>
                 </div>
@@ -114,7 +109,7 @@ const Challenge = () => {
           <Button 
             variant="default" 
             size="lg"
-            className="bg-brand-primary hover:bg-brand-primaryHover text-white font-medium group"
+            className="button-primary group"
             asChild
           >
             <Link to="/web-design-development">
