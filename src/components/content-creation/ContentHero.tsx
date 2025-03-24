@@ -19,32 +19,26 @@ const ContentHero = () => {
           
           {/* Main heading with emphasis */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-heading mb-6 leading-tight">
-            Content Creation
-            <span className="block mt-2">Building Compelling Brand Stories</span>
+            Tailored Website Content That Converts
           </h1>
           
           {/* Subheading */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-brand-heading/80 mb-8">
-            for More Engagement, Trust & Conversions
-          </h2>
-          
-          {/* Description paragraph */}
-          <p className="text-lg text-brand-text max-w-3xl mx-auto mb-10">
-            We create content that resonates with your audience, tells your brand story effectively, and drives meaningful connections. Whether it's website copy, blog posts, or marketing materials, we ensure your content delivers measurable results.
+          <p className="text-xl md:text-2xl text-brand-heading/80 mb-8">
+            From sharp messaging to standout visuals — we create the content your website needs to generate trust, leads, and long-term relevance.
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="group" asChild>
               <Link to="/contact">
-                Start Your Content Project
+                Start Your Project
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             
             <Button variant="outline" size="lg" className="group" asChild>
               <Link to="/case-studies">
-                See Our Work
+                View Case Studies
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

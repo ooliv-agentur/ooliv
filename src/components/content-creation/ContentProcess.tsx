@@ -1,32 +1,37 @@
 
 import React from 'react';
-import { Search, FileText, Edit, CheckCircle, ArrowRight } from 'lucide-react';
+import { CalendarCheck, PenTool, Monitor, CheckCircle, RefreshCw } from 'lucide-react';
 
 const steps = [
   {
-    icon: Search,
-    title: 'Research & Strategy',
-    description: 'We analyze your audience, competition, and goals to develop a targeted content strategy.'
+    icon: CalendarCheck,
+    number: '01',
+    title: 'Kickoff & Content-Planung',
+    description: 'Wir definieren Ziele, Tonalität und Formate – abgestimmt auf SEO und User Journey.'
   },
   {
-    icon: FileText,
-    title: 'Content Planning',
-    description: 'We outline topics, formats, and messaging that align with your brand and business objectives.'
+    icon: PenTool,
+    number: '02',
+    title: 'Content Design & Produktion',
+    description: 'Texte, Bilder, Videos, Illustrationen: Alles entsteht modular und markengerecht.'
   },
   {
-    icon: Edit,
-    title: 'Content Creation',
-    description: 'Our writers craft compelling, SEO-optimized content tailored to your voice and goals.'
+    icon: Monitor,
+    number: '03',
+    title: 'Freigabe & Integration',
+    description: 'Direkte Umsetzung im CMS oder durch unser Dev-Team – technisch sauber & visuell konsistent.'
   },
   {
     icon: CheckCircle,
-    title: 'Review & Refinement',
-    description: 'We collaborate with you to ensure the content perfectly represents your brand.'
+    number: '04',
+    title: 'Launch-Check',
+    description: 'Finales Testing: Responsivität, SEO, Ladezeiten, Barrierefreiheit.'
   },
   {
-    icon: ArrowRight,
-    title: 'Publication & Measurement',
-    description: 'We help implement the content and track its performance against key metrics.'
+    icon: RefreshCw,
+    number: '05',
+    title: 'Ongoing Support',
+    description: 'Kontinuierliche Pflege, Optimierung & Erweiterung. Optional auch mit monatlichem Content-Paket.'
   }
 ];
 
@@ -35,7 +40,7 @@ const ContentProcess = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Our Content Development Process
+          Unser Content-Prozess
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
@@ -59,7 +64,7 @@ const ContentProcess = () => {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-brand-heading flex items-center gap-2">
                       <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-primary text-white text-sm">
-                        {index + 1}
+                        {step.number.split('')[1]}
                       </span>
                       {step.title}
                     </h3>

@@ -1,28 +1,49 @@
 
 import React from 'react';
-import { FileText, BookOpen, MessageSquare, PenTool } from 'lucide-react';
+import { FileText, Image, PenTool, Video } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const services = [
   {
     icon: FileText,
-    title: 'Website Copywriting',
-    description: 'Strategic, conversion-focused copy for your entire website that drives action and reflects your brand voice.'
+    title: 'Text & Messaging',
+    description: 'Suchmaschinenoptimierte, überzeugende Texte für alle Seitentypen – erstellt mit GPT-basierten Workflows und geschärft durch erfahrene Copywriter.',
+    features: [
+      'Startseitentexte, Leistungsseiten, FAQs',
+      'Conversionstarke Headlines & CTAs',
+      'SEO-optimierte Landingpages',
+      'UX Microcopy'
+    ]
   },
   {
-    icon: BookOpen,
-    title: 'Blog & Article Creation',
-    description: 'SEO-optimized, engaging blog posts and articles that establish authority and drive organic traffic.'
-  },
-  {
-    icon: MessageSquare,
-    title: 'Brand Messaging',
-    description: 'Clear, consistent brand messaging frameworks that resonate with your target audience across all channels.'
+    icon: Image,
+    title: 'Foto & Bildwelten',
+    description: 'Custom-Fotowelten, generiert mit Midjourney und veredelt durch manuelle Retusche – perfekt abgestimmt auf Markenstil & Website-Layout.',
+    features: [
+      'Markenbezogene Bildästhetik',
+      'Bildkonzepte für Start- und Unterseiten',
+      'Auflösung & Format direkt passend für Web'
+    ]
   },
   {
     icon: PenTool,
-    title: 'Content Strategy',
-    description: 'Comprehensive content plans aligned with your business goals, audience needs, and marketing objectives.'
+    title: 'Illustration & Logo-Design',
+    description: 'Unsere Illustrator:innen & Designer entwickeln Icons, visuelle Assets und Logos für unverwechselbare Markenauftritte.',
+    features: [
+      'Vektorgrafiken & UI-Icons',
+      'Website-Illustrationen',
+      'Logo-Redesigns & -Entwicklung'
+    ]
+  },
+  {
+    icon: Video,
+    title: 'Video & Animation',
+    description: 'Kurze Erklärvideos, Background Visuals oder hero section Videos – per Sora oder integriertem Partnernetzwerk.',
+    features: [
+      'Storyboard + Umsetzung',
+      'Passend zu Website und Zielgruppe',
+      'SEO-freundliche Videostruktur'
+    ]
   }
 ];
 
@@ -31,7 +52,7 @@ const ContentServices = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Content Creation Services at a Glance
+          What We Deliver
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
@@ -48,7 +69,15 @@ const ContentServices = () => {
                 <CardTitle className="text-xl font-bold text-brand-heading">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-brand-text">{service.description}</p>
+                <p className="text-brand-text mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-baseline">
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-primary mr-2 mt-1.5 flex-shrink-0"></span>
+                      <span className="text-sm text-brand-text">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}

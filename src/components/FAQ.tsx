@@ -4,11 +4,18 @@ import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
-const FAQ = () => {
+interface FAQProps {
+  customFaqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+const FAQ = ({ customFaqs }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { t } = useLanguage();
 
-  const faqs = [
+  const defaultFaqs = [
     {
       question: "What industries does ooliv specialize in as a Webdesign Agency?",
       answer: "As a specialized Webdesign Agency, we focus exclusively on B2B clients, helping mid-sized companies, enterprises, and startups improve their digital presence. Our expertise covers industries like: IT & SaaS Solutions, Manufacturing & Engineering, Professional Services & Consulting, Finance & Legal, Real Estate & Construction."
@@ -50,6 +57,9 @@ const FAQ = () => {
       answer: "As a specialized Webdesign Agency, we focus exclusively on B2B clients (not generic web design), offer AI-powered efficiency for smarter, faster results, take a strategic approach focusing on business growth, and build long-term partnerships, not just one-time projects."
     }
   ];
+
+  // Use custom FAQs if provided, otherwise use the default FAQs
+  const faqs = customFaqs || defaultFaqs;
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

@@ -6,22 +6,22 @@ import { Link } from 'react-router-dom';
 
 const caseStudies = [
   {
-    title: 'B2B Tech Company',
-    services: 'Website Copy, Blog Content, Case Studies',
+    title: 'Scheurich – Lifestyle Brand',
+    services: 'Complete Text, Image, and SEO Relaunch',
     results: [
-      { icon: BarChart, stat: '+156%', description: 'organic traffic increase' },
-      { icon: Users, stat: '+43%', description: 'conversion rate improvement' }
+      { icon: BarChart, stat: '+120%', description: 'organic traffic increase' },
+      { icon: Users, stat: '+45%', description: 'time on site improvement' }
     ],
-    description: 'Complete content strategy and implementation for a SaaS company targeting enterprise clients.'
+    description: 'Vollständiger Text-, Bild- und SEO-Relaunch'
   },
   {
-    title: 'E-Commerce Brand',
-    services: 'Product Descriptions, Email Campaigns, Social Content',
+    title: 'COBUS – ERP Solutions',
+    services: 'Content, Illustration & Graphics',
     results: [
-      { icon: BarChart, stat: '+68%', description: 'email engagement' },
-      { icon: Users, stat: '+22%', description: 'product page conversions' }
+      { icon: BarChart, stat: '3x', description: 'better landing page conversion' },
+      { icon: Users, stat: 'Clearer', description: 'messaging & structure' }
     ],
-    description: 'Conversion-focused content across multiple channels for a growing D2C brand.'
+    description: 'Technisches Storytelling durch Content, Illustration & Grafik'
   }
 ];
 
@@ -30,7 +30,7 @@ const ContentCaseStudies = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Real Results Through Strategic Content
+          Erfolgreiche Content-Projekte
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
@@ -73,7 +73,7 @@ const ContentCaseStudies = () => {
         <div className="text-center mt-12">
           <Button size="lg" className="group" asChild>
             <Link to="/case-studies">
-              View All Case Studies
+              Alle Case Studies ansehen
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

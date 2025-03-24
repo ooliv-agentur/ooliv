@@ -1,22 +1,27 @@
 
 import React from 'react';
-import { FileText, Target, Users } from 'lucide-react';
+import { FileText, Target, Users, Paintbrush } from 'lucide-react';
 
 const benefits = [
   {
     icon: FileText,
-    title: 'Outdated Content Strategy?',
-    description: "Content that doesn't connect with your audience or drive meaningful engagement."
+    problem: 'Kein Content, keine Wirkung',
+    solution: 'Wir liefern komplette Website-Inhalte – von Text bis Bild – für starke Markenauftritte.'
   },
   {
     icon: Target,
-    title: 'Inconsistent Brand Voice?',
-    description: "Mixed messaging that confuses customers and dilutes your brand identity."
+    problem: 'Generischer Content, null Wiedererkennung',
+    solution: 'Individuelle Texte, Fotos und Illustrationen, die exakt zur Marken-DNA passen.'
   },
   {
     icon: Users,
-    title: 'Low Content Engagement?',
-    description: "Content that fails to convert visitors into leads or customers."
+    problem: 'Texte dauern zu lange – oder fehlen komplett',
+    solution: 'Effiziente Content-Produktion durch KI-Tools wie ChatGPT, Midjourney & Sora – mit menschlicher Qualitätskontrolle.'
+  },
+  {
+    icon: Paintbrush,
+    problem: 'Kein Corporate Design sichtbar',
+    solution: 'Unsere Inhouse-Grafiker gestalten Logos, Icons & Illustrationen für konsistente Markenauftritte.'
   }
 ];
 
@@ -36,7 +41,7 @@ const ContentBenefits = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
@@ -48,9 +53,9 @@ const ContentBenefits = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                    {benefit.title}
+                    {benefit.problem}
                   </h3>
-                  <p className="text-brand-text">{benefit.description}</p>
+                  <p className="text-brand-text">{benefit.solution}</p>
                 </div>
               </div>
             </div>

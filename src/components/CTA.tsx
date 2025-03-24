@@ -5,7 +5,19 @@ import { FileCheck, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ContactForm from './ContactForm';
 
-const CTA = () => {
+interface CTAProps {
+  title?: string;
+  subtitle?: string;
+  primaryCta?: string;
+  secondaryCta?: string;
+}
+
+const CTA = ({ 
+  title, 
+  subtitle, 
+  primaryCta, 
+  secondaryCta 
+}: CTAProps) => {
   const { t } = useLanguage();
   const [openForm, setOpenForm] = useState(false);
   const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
@@ -20,11 +32,11 @@ const CTA = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
-            {t('cta.title')}
+            {title || t('cta.title')}
           </h2>
           
           <p className="max-w-3xl mx-auto text-lg mb-8 font-sans">
-            {t('cta.subtitle')}
+            {subtitle || t('cta.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -35,7 +47,7 @@ const CTA = () => {
               onClick={() => handleOpenForm('audit')}
             >
               <FileCheck className="mr-2 h-5 w-5" />
-              {t('cta.audit')}
+              {primaryCta || t('cta.audit')}
             </Button>
             
             <Button 
@@ -45,7 +57,7 @@ const CTA = () => {
               onClick={() => handleOpenForm('call')}
             >
               <PhoneCall className="mr-2 h-5 w-5" />
-              {t('cta.call')}
+              {secondaryCta || t('cta.call')}
             </Button>
           </div>
           
