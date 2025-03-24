@@ -1,9 +1,9 @@
-
-import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
-import { BarChart, ArrowRight, Users, Zap, LineChart } from "lucide-react";
+import { ArrowRight, BarChart, Zap, Users, LineChart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -98,13 +98,16 @@ const Hero = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-20 w-full">
-        <div className="space-y-8 animate-fade-up md:max-w-3xl lg:max-w-4xl">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight tracking-wider space-y-3 text-left">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto md:text-left md:items-start animate-fade-up">
+          <div className="inline-flex items-center bg-blue-600/20 text-white rounded-full px-4 py-1.5 text-sm font-medium mb-6 self-start">
+            <span>Web Design Agency</span>
+          </div>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             <div className="flex items-center gap-2">
               <span className="text-brand-primary">ooliv</span> 
-              <span>Web Design Agency</span>
+              <span>Building High-Performance Websites</span>
             </div>
-            <div>Building High-Performance Websites</div>
             <div className="flex items-center text-brand-primary">
               <span className="relative text-white flex items-center">
                 for {displayText}
@@ -114,11 +117,11 @@ const Hero = () => {
             </div>
           </h1>
           
-          <p className="text-lg lg:text-xl text-gray-100 text-left">
+          <p className="text-xl max-w-2xl mb-6 text-gray-100">
             We create websites that rank higher, convert better, and drive real business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable results.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button size="lg" className="group" asChild>
               <Link to="/contact">
                 {t('hero.startProject')}
@@ -128,6 +131,7 @@ const Hero = () => {
             <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-white/10 border-white" asChild>
               <Link to="/case-studies">
                 {t('hero.seeWork')}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
