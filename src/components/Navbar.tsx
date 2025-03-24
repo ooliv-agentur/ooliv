@@ -67,7 +67,7 @@ const Navbar = () => {
             {/* Lead Generation CTA Button (new) */}
             <Button
               onClick={() => setShowLeadForm(true)}
-              className="bg-brand-primary text-white hover:bg-brand-primary/90 shadow-lg h-14 w-14 rounded-full hover:scale-110 transition-transform"
+              className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg h-14 w-14 rounded-full hover:scale-110 transition-transform"
               aria-label="Start your project"
             >
               <Send className="h-6 w-6" />
@@ -83,7 +83,7 @@ const Navbar = () => {
                 key={index}
                 variant="outline" 
                 size="icon" 
-                className="bg-white/90 backdrop-blur-sm border-brand-primary/20 text-brand-primary hover:bg-brand-primary hover:text-white shadow-md h-12 w-12 rounded-full hover:scale-110 transition-transform"
+                className="bg-white/90 backdrop-blur-sm border-blue-600/20 text-blue-600 hover:bg-blue-600 hover:text-white shadow-md h-12 w-12 rounded-full hover:scale-110 transition-transform"
                 aria-label={contact.label}
               >
                 <contact.icon className="h-5 w-5" />

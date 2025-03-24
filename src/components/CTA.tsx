@@ -28,22 +28,21 @@ const CTA = ({
   };
   
   return (
-    <section className="py-24 bg-brand-backgroundAlt text-brand-text">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="section-padding bg-brand-backgroundAlt text-brand-text">
+      <div className="section-container text-center">
         <div className="animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
+          <h2 className="section-title">
             {title || t('cta.title')}
           </h2>
           
-          <p className="max-w-3xl mx-auto text-lg mb-8 font-sans">
+          <p className="section-subtitle">
             {subtitle || t('cta.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Button 
-              variant="outline" 
               size="lg" 
-              className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-base py-6 font-medium font-sans"
               onClick={() => handleOpenForm('audit')}
             >
               <FileCheck className="mr-2 h-5 w-5" />
@@ -53,7 +52,7 @@ const CTA = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white text-brand-heading hover:bg-brand-primary hover:text-white border-brand-primary text-base py-6 font-medium font-sans"
+              className="bg-white text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 text-base py-6 font-medium font-sans"
               onClick={() => handleOpenForm('call')}
             >
               <PhoneCall className="mr-2 h-5 w-5" />

@@ -44,7 +44,37 @@
     @apply text-brand-heading font-sans;
   }
   a {
-    @apply text-brand-heading hover:text-brand-primary transition-colors font-sans;
+    @apply text-brand-heading hover:text-blue-600 transition-colors font-sans;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4 text-brand-heading;
+  }
+  
+  .section-subtitle {
+    @apply text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text;
+  }
+  
+  .card-layout {
+    @apply bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .icon-background {
+    @apply p-3 rounded-full bg-brand-backgroundAlt inline-flex mb-3;
+  }
+  
+  .feature-card {
+    @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
   }
 }
 

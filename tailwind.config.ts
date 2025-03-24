@@ -63,6 +63,11 @@ export default {
           muted: "#D4D4D4",         // Muted gray
           footer: "#2C2C2B",        // Dark footer background
         },
+        blue: {
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
+        },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
