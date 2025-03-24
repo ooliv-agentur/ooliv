@@ -1,6 +1,6 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import PageHero from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
@@ -106,31 +106,21 @@ const partnerLogos = [
 const CaseStudies = () => {
   return (
     <PageLayout>
+      <PageHero
+        badge="Made with love."
+        title="Success stories you can touch."
+        subtitle="Behind every project lies a story with an introduction, climax, and happy ending. Only one question remains: Which success story do we want to write together?"
+        primaryCta={{
+          text: "Let's talk",
+          link: "/contact"
+        }}
+        secondaryCta={{
+          text: "Discover cases",
+          link: "#case-studies"
+        }}
+      />
+      
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Hero Section with Intro Content */}
-        <div className="py-24 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-lg text-brand-primary font-medium mb-4">Made with love.</h2>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Success stories you can touch.</h1>
-            <p className="text-xl mb-10">
-              Behind every project lies a story with an introduction, climax, and happy ending. Only one question remains: Which success story do we want to write together?
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <Button size="lg" asChild>
-                <Link to="/contact">Let's talk</Link>
-              </Button>
-              <Button variant="outline" size="lg">
-                Discover cases
-              </Button>
-            </div>
-
-            <p className="text-brand-primary font-medium mt-6">
-              Limited spots currently available.
-            </p>
-          </div>
-        </div>
-        
         {/* Partner Logos */}
         <div className="py-12 border-t border-b border-gray-200">
           <div className="text-center mb-8">
@@ -158,8 +148,8 @@ const CaseStudies = () => {
           </p>
         </div>
 
-        {/* Case Studies Section (using the same style as Testimonials) */}
-        <div className="py-16">
+        {/* Case Studies Section */}
+        <div className="py-16" id="case-studies">
           <div className="space-y-20">
             {caseStudies.map((caseStudy, index) => (
               <div 
