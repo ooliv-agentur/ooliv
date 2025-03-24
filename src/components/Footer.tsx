@@ -34,17 +34,18 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><Link to="/web-design-development" className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</Link></li>
-              <li><Link to="/seo-performance-optimization" className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</Link></li>
-              <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</Link></li>
-              <li><Link to="/ai-powered-solutions" className="text-white hover:text-brand-background transition-colors">{t('footer.branding')}</Link></li>
+              <li><Link to="/web-design" className="text-white hover:text-brand-background transition-colors">Web Design</Link></li>
+              <li><Link to="/web-development" className="text-white hover:text-brand-background transition-colors">Web Development</Link></li>
+              <li><Link to="/content-creation" className="text-white hover:text-brand-background transition-colors">Content Creation</Link></li>
+              <li><Link to="/seo-optimization" className="text-white hover:text-brand-background transition-colors">SEO Optimization</Link></li>
+              <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">Lead Generation & Conversion</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
-              <li><Link to="/about-us" className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/about-ooliv" className="text-white hover:text-brand-background transition-colors">About ooliv</Link></li>
               <li><Link to="/case-studies" className="text-white hover:text-brand-background transition-colors">{t('footer.caseStudies')}</Link></li>
               <li><Link to="/contact" className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</Link></li>
               <li><Link to="/careers" className="text-white hover:text-brand-background transition-colors">{t('footer.jobs')}</Link></li>

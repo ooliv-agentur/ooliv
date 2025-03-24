@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -105,15 +106,15 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   };
 
   const navigationLinks = [
-    { title: 'Home', path: '/', addSpaceAfter: true },
-    { title: 'Web Design & Development', path: '/web-design-development' },
-    { title: 'SEO & Performance Optimization', path: '/seo-performance-optimization' },
-    { title: 'AI-Powered Solutions', path: '/ai-powered-solutions' },
-    { title: 'Lead Generation & Conversion Optimization', path: '/lead-generation', addSpaceAfter: true },
+    { title: 'Home', path: '/' },
+    { title: 'Web Design', path: '/web-design' },
+    { title: 'Web Development', path: '/web-development' },
+    { title: 'Content Creation', path: '/content-creation' },
+    { title: 'SEO Optimization', path: '/seo-optimization' },
+    { title: 'Lead Generation & Conversion', path: '/lead-generation' },
     { title: 'Case Studies', path: '/case-studies' },
-    { title: 'About Us', path: '/about-us' },
-    { title: 'Contact', path: '/contact' },
-    { title: 'Careers', path: '/careers' }
+    { title: 'About ooliv', path: '/about-ooliv' },
+    { title: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -156,7 +157,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
               <nav className="space-y-6 text-center w-full">
                 {navigationLinks.map((link, index) => (
-                  <div key={index} className={cn(link.addSpaceAfter && "mb-12")}>
+                  <div key={index} className={cn()}>
                     <Link 
                       to={link.path}
                       className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
@@ -174,9 +175,12 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 className="w-full justify-between group text-lg py-6 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
                 size="lg"
                 onClick={onClose}
+                asChild
               >
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <Link to="/contact">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
               </Button>
               
               <div className="grid grid-cols-3 gap-4">

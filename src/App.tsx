@@ -8,9 +8,11 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import WebDesign from "./pages/WebDesign";
+import WebDevelopment from "./pages/WebDevelopment";
+import ContentCreation from "./pages/ContentCreation";
 import SEO from "./pages/SEO";
-import AISolutions from "./pages/AISolutions";
 import LeadGeneration from "./pages/LeadGeneration";
+import AISolutions from "./pages/AISolutions";
 import CaseStudies from "./pages/CaseStudies";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -29,12 +31,14 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/web-design-development" element={<WebDesign />} />
-            <Route path="/seo-performance-optimization" element={<SEO />} />
-            <Route path="/ai-powered-solutions" element={<AISolutions />} />
+            <Route path="/web-design" element={<WebDesign />} />
+            <Route path="/web-development" element={<WebDevelopment />} />
+            <Route path="/content-creation" element={<ContentCreation />} />
+            <Route path="/seo-optimization" element={<SEO />} />
             <Route path="/lead-generation" element={<LeadGeneration />} />
+            <Route path="/ai-powered-solutions" element={<AISolutions />} />
             <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/about-ooliv" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/legal-notice" element={<LegalNotice />} />
