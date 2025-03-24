@@ -1,56 +1,94 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { useLanguage } from '@/contexts/LanguageContext';
-import LeadGenHero from '@/components/lead-generation/LeadGenHero';
-import LeadGenBenefits from '@/components/lead-generation/LeadGenBenefits';
-import LeadGenServices from '@/components/lead-generation/LeadGenServices';
-import LeadGenProcess from '@/components/lead-generation/LeadGenProcess';
-import LeadGenCaseStudies from '@/components/lead-generation/LeadGenCaseStudies';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
+import { Button } from '@/components/ui/button';
+import { Target, Users, TrendingUp, BarChart2 } from 'lucide-react';
 
 const LeadGeneration = () => {
-  const { t } = useLanguage();
-  
-  // Custom FAQ items for Lead Generation page
-  const leadGenFaqs = [
-    {
-      question: "How do you define a qualified lead?",
-      answer: "We define leads based on your specific criteria, focusing on contact information from prospects who match your target market and show genuine interest in your solutions."
-    },
-    {
-      question: "Which lead generation channels work best?",
-      answer: "The most effective channels vary by industry and target audience. We typically see strong results from LinkedIn for B2B, Google Ads for services, and Facebook/Instagram for B2C."
-    },
-    {
-      question: "What's your approach to lead nurturing?",
-      answer: "We implement multi-touch sequences across email, retargeting, and content marketing to guide leads through awareness to decision stages."
-    },
-    {
-      question: "How do you measure lead generation success?",
-      answer: "Beyond lead volume, we track quality metrics like qualification rate, sales-accepted leads, conversion rates, cost per acquisition, and ultimately ROI."
-    },
-    {
-      question: "Do you handle both B2B and B2C lead generation?",
-      answer: "Yes, we have specialized teams and processes for both B2B (typically higher-value, consultative) and B2C (higher-volume, transactional) lead generation."
-    }
-  ];
-  
   return (
-    <PageLayout className="overflow-x-hidden">
-      <LeadGenHero />
-      <LeadGenBenefits />
-      <LeadGenServices />
-      <LeadGenProcess />
-      <LeadGenCaseStudies />
-      <FAQ customFaqs={leadGenFaqs} />
-      <CTA 
-        title="Start Generating Better Leads Today"
-        subtitle="From strategy to execution—we'll build a lead generation system that delivers qualified prospects ready to buy."
-        primaryCta="Discuss Your Lead Gen Strategy"
-        secondaryCta="Schedule a Consultation"
-      />
+    <PageLayout>
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
+        <div className="text-center mb-16 pt-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Lead Generation & Conversion Optimization</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Turn visitors into leads and leads into loyal customers
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl font-bold mb-6">Maximize Your Conversion Potential</h2>
+            <p className="text-lg mb-6">
+              Our lead generation and conversion optimization services are designed to 
+              help you attract qualified leads and turn them into customers through 
+              data-driven strategies and continuous optimization.
+            </p>
+            <ul className="space-y-4">
+              {[
+                'Strategic lead capture and nurturing systems',
+                'Conversion funnel optimization',
+                'A/B testing and data analysis',
+                'User experience and interface improvements'
+              ].map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-brand-primary mr-2">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Button className="mt-8" size="lg">Boost Your Conversions</Button>
+          </div>
+          <div className="bg-gray-100 rounded-lg p-8 h-[400px] flex items-center justify-center order-1 md:order-2">
+            <p className="text-gray-500">Conversion Funnel Image</p>
+          </div>
+        </div>
+
+        <div className="mb-24">
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Lead Generation Services</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { 
+                icon: <Target className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: 'Lead Capture',
+                description: 'Strategic lead capture systems that attract qualified prospects'
+              },
+              { 
+                icon: <Users className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: 'Audience Targeting',
+                description: 'Precise targeting to reach your ideal customers'
+              },
+              { 
+                icon: <TrendingUp className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: 'Conversion Rate Optimization',
+                description: 'Data-driven strategies to increase your conversion rates'
+              },
+              { 
+                icon: <BarChart2 className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: 'Performance Tracking',
+                description: 'Comprehensive analytics to measure and improve results'
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                {service.icon}
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-brand-backgroundAlt rounded-lg p-10">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">Ready to Generate More Leads?</h2>
+            <p className="text-lg max-w-2xl mx-auto">
+              Let our team help you develop a comprehensive lead generation strategy
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <Button size="lg">Get Started Today</Button>
+          </div>
+        </div>
+      </div>
     </PageLayout>
   );
 };
