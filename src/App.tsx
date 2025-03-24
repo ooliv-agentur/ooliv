@@ -11,6 +11,7 @@ import WebDesign from "./pages/WebDesign";
 import SEO from "./pages/SEO";
 import AISolutions from "./pages/AISolutions";
 import LeadGeneration from "./pages/LeadGeneration";
+import ConversionOptimization from "./pages/ConversionOptimization";
 import CaseStudies from "./pages/CaseStudies";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/seo-performance-optimization" element={<SEO />} />
             <Route path="/ai-powered-solutions" element={<AISolutions />} />
             <Route path="/lead-generation" element={<LeadGeneration />} />
+            <Route path="/conversion-optimization" element={<ConversionOptimization />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />

@@ -37,6 +37,7 @@ const Footer = () => {
               <li><Link to="/web-design-development" className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</Link></li>
               <li><Link to="/seo-performance-optimization" className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</Link></li>
               <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</Link></li>
+              <li><Link to="/conversion-optimization" className="text-white hover:text-brand-background transition-colors">Conversion Optimization</Link></li>
               <li><Link to="/ai-powered-solutions" className="text-white hover:text-brand-background transition-colors">{t('footer.branding')}</Link></li>
             </ul>
           </div>
