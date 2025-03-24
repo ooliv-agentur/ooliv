@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -120,7 +121,7 @@ const CaseStudies = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="section-container">
         {/* Partner Logos */}
         <div className="py-12 border-t border-b border-gray-200">
           <div className="text-center mb-8">
@@ -142,14 +143,14 @@ const CaseStudies = () => {
         </div>
         
         {/* Strategy Text */}
-        <div className="py-16 text-center">
+        <div className="section-padding text-center">
           <p className="text-xl max-w-4xl mx-auto">
             Strategy meets storytelling: We transform brands into scalable success stories. With individual roadmaps, proven systems, and creative strategies, we implement sustainable growth in your business. But see for yourself…
           </p>
         </div>
 
         {/* Case Studies Section */}
-        <div className="py-16" id="case-studies">
+        <div className="section-padding" id="case-studies">
           <div className="space-y-20">
             {caseStudies.map((caseStudy, index) => (
               <div 
@@ -158,7 +159,7 @@ const CaseStudies = () => {
               >
                 {/* Text content */}
                 <div className="w-full md:w-1/2">
-                  <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="card-standard">
                     <div className="flex items-center mb-6">
                       <div className="mr-4">
                         <img 

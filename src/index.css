@@ -76,6 +76,47 @@
   .feature-card {
     @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
   }
+  
+  /* New standardized section styles based on content-creation page */
+  .section-standard {
+    @apply py-24 bg-white;
+  }
+  
+  .section-gradient {
+    @apply py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt;
+  }
+  
+  .section-alt {
+    @apply py-24 bg-brand-backgroundAlt;
+  }
+  
+  .heading-standard {
+    @apply text-3xl font-bold text-center mb-4 text-brand-heading;
+  }
+  
+  .subheading-standard {
+    @apply text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text;
+  }
+  
+  .card-standard {
+    @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .icon-standard {
+    @apply p-3 rounded-full bg-brand-backgroundAlt inline-flex mb-3;
+  }
+  
+  .grid-standard {
+    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
+  }
+  
+  .button-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md transition-all;
+  }
+  
+  .button-secondary {
+    @apply border-2 border-blue-600 bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white transition-all;
+  }
 }
 
 @layer utilities {
@@ -116,6 +157,23 @@
       height: 100%;
       width: auto;
     }
+  }
+  
+  /* Section dividers and shape styles */
+  .curve-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .curve-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 65px;
   }
   
   /* Remove background only from the AI Tools & CTA sections */

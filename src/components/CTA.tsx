@@ -28,21 +28,21 @@ const CTA = ({
   };
   
   return (
-    <section className="section-padding bg-brand-backgroundAlt text-brand-text">
+    <section className="section-alt text-brand-text">
       <div className="section-container text-center">
         <div className="animate-fade-in">
-          <h2 className="section-title">
+          <h2 className="heading-standard">
             {title || t('cta.title')}
           </h2>
           
-          <p className="section-subtitle">
+          <p className="subheading-standard">
             {subtitle || t('cta.subtitle')}
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white text-base py-6 font-medium font-sans"
+              className="button-primary text-base py-6 font-medium font-sans"
               onClick={() => handleOpenForm('audit')}
             >
               <FileCheck className="mr-2 h-5 w-5" />
@@ -52,7 +52,7 @@ const CTA = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 text-base py-6 font-medium font-sans"
+              className="button-secondary text-base py-6 font-medium font-sans"
               onClick={() => handleOpenForm('call')}
             >
               <PhoneCall className="mr-2 h-5 w-5" />
