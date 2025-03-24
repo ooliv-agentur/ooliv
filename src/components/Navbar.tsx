@@ -1,16 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Menu, MessageCircle, Mail, Phone, Send } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import LanguageSwitch from './LanguageSwitch';
 import MobileMenu from './MobileMenu';
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LeadGenerationOverlay from './LeadGenerationOverlay';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showLeadForm, setShowLeadForm] = useState(false);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -62,6 +64,16 @@ const Navbar = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Lead Generation CTA Button (new) */}
+            <Button
+              onClick={() => setShowLeadForm(true)}
+              className="bg-brand-primary text-white hover:bg-brand-primary/90 shadow-lg h-14 w-14 rounded-full hover:scale-110 transition-transform"
+              aria-label="Start your project"
+            >
+              <Send className="h-6 w-6" />
+            </Button>
+            
+            {/* Original contact buttons */}
             {[
               { icon: MessageCircle, label: "WhatsApp" },
               { icon: Mail, label: "Email" },
@@ -80,6 +92,12 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      
+      {/* Lead Generation Overlay */}
+      <LeadGenerationOverlay 
+        open={showLeadForm} 
+        onOpenChange={setShowLeadForm} 
+      />
 
       <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
