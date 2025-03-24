@@ -1,6 +1,6 @@
 
 import PageLayout from "@/components/PageLayout";
-import Hero from "@/components/Hero";
+import PageHero from "@/components/PageHero";
 import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
 import Testimonials from "@/components/Testimonials";
@@ -10,7 +10,19 @@ import CTA from "@/components/CTA";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <Hero />
+      <PageHero
+        badge="Web Design Agency"
+        title="Building High-Performance Websites for Measurable Business Growth"
+        subtitle="We create websites that rank higher, convert better, and drive real business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable results."
+        primaryCta={{
+          text: "Start Your Website Project",
+          link: "/contact"
+        }}
+        secondaryCta={{
+          text: "See Our Work",
+          link: "/case-studies"
+        }}
+      />
       <Challenge />
       <Solution />
       <Testimonials />
