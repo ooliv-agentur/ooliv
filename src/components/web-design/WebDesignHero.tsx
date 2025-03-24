@@ -11,10 +11,10 @@ const WebDesignHero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const valueProps = [
-    'strategic business growth',
-    'measurable ROI',
-    'increased conversions',
-    'stronger market positioning',
+    'higher conversions',
+    'lead generation',
+    'better brand positioning',
+    'measurable business growth',
   ];
 
   useEffect(() => {
@@ -55,11 +55,11 @@ const WebDesignHero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-20 w-full">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-brand-heading animate-fade-in">
-            Strategic Web Design for B2B Growth
+            Strategic Web Design That Delivers Results
           </h1>
           
           <p className="text-xl max-w-2xl mb-6 text-brand-text">
-            Custom websites engineered for{' '}
+            We build websites that attract the right visitors, earn trust, and convert—tailored for{' '}
             <span className="text-brand-primary font-medium">
               {displayText}
               <span className="animate-pulse">|</span>
@@ -67,8 +67,8 @@ const WebDesignHero = () => {
           </p>
           
           <p className="max-w-2xl mb-8 text-brand-text">
-            For mid-sized B2B companies and digital-focused enterprises that need more than just a website. 
-            We build strategic digital platforms that generate leads, establish credibility, and drive business growth.
+            For growing B2B and B2C brands that need more than just a pretty website. 
+            We create strategic digital platforms that generate leads, establish credibility, and drive business growth.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">

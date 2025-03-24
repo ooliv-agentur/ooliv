@@ -1,27 +1,27 @@
 
 import React from 'react';
-import { BarChart, ShieldCheck, Rocket, Target } from 'lucide-react';
+import { Target, Rocket, BarChart, ShieldCheck } from 'lucide-react';
 
 const benefits = [
   {
     icon: Target,
-    title: 'Strategic Business Focus',
-    description: "We align your website with your core business objectives—whether that's lead generation, market positioning, or customer retention."
+    title: 'Business-First Approach',
+    description: "Your goals drive the design: leads, sales, or better positioning. We align every element with your core business objectives."
   },
   {
     icon: Rocket,
-    title: 'Performance-Driven Design',
-    description: 'Every design decision is made with conversion optimization and user engagement in mind, resulting in measurable business impact.'
+    title: 'Conversion-Friendly Design',
+    description: 'We design with clicks, scrolls, and actions in mind. Every decision aims to guide visitors toward becoming customers.'
   },
   {
     icon: BarChart,
-    title: 'Data-Backed Approach',
-    description: 'We use analytics and user behavior insights to make strategic design decisions that drive results and maximize ROI.'
+    title: 'Built for Speed & Growth',
+    description: 'Fast, scalable websites that evolve with you. We use analytics and user behavior insights to drive results that scale with your business.'
   },
   {
     icon: ShieldCheck,
-    title: 'Long-Term Partnership',
-    description: 'Beyond launch, we provide ongoing support, optimization, and scaling strategies as your business grows and evolves.'
+    title: 'Long-Term Support',
+    description: 'We stay by your side—even after launch. Our team provides ongoing optimization and scaling strategies as your business grows.'
   }
 ];
 
@@ -30,7 +30,7 @@ const WebDesignBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Choose ooliv for B2B Web Design
+          Why Businesses Choose ooliv for Web Design
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

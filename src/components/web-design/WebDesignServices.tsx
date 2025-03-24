@@ -1,37 +1,44 @@
 
 import React from 'react';
-import { Monitor, Code, Paintbrush, Cog, ShoppingCart, LayoutGrid } from 'lucide-react';
+import { Paintbrush, Code, FileText, Search, Cog, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
     icon: Paintbrush,
-    title: 'Strategic Web Design',
-    description: 'Conversion-focused designs that align with your business objectives and resonate with your B2B audience.',
+    title: 'Web Design',
+    description: 'Custom designs that reflect your brand and make an impact, focused on user experience and conversion optimization.',
     link: '/web-design',
-    features: ['User Research & Analysis', 'Wireframing & Prototyping', 'Visual Identity Integration', 'Conversion-Optimized UI']
+    features: ['Brand-aligned visuals', 'Responsive layouts', 'UI/UX design', 'Conversion-focused elements']
   },
   {
     icon: Code,
-    title: 'Web Development',
-    description: 'Robust, scalable development solutions tailored to your specific business requirements and workflows.',
+    title: 'Development',
+    description: 'Reliable builds with WordPress, Headless CMS, or Shopify tailored to your specific business requirements.',
     link: '/web-development',
-    features: ['Custom Web Applications', 'WordPress & Headless CMS', 'API Integration', 'Performance Optimization']
+    features: ['WordPress & Webflow', 'Headless CMS', 'Custom functionality', 'API integrations']
   },
   {
-    icon: LayoutGrid,
-    title: 'UX Optimization',
-    description: 'Data-driven UX improvements that enhance user engagement, reduce friction, and increase conversions.',
-    link: '/web-design',
-    features: ['User Journey Mapping', 'A/B Testing', 'Heat Mapping', 'Usability Testing']
+    icon: FileText,
+    title: 'Content & Structure',
+    description: 'We help define your site structure, write the words, and place them for clarity and engagement.',
+    link: '/content-creation',
+    features: ['Information architecture', 'Content strategy', 'Copywriting', 'User journey mapping']
+  },
+  {
+    icon: Search,
+    title: 'SEO-Ready Foundations',
+    description: 'Built to be found—on Google and by real users with technical optimization from day one.',
+    link: '/seo-optimization',
+    features: ['Technical SEO setup', 'Speed optimization', 'Structured data', 'Analytics integration']
   },
   {
     icon: Cog,
-    title: 'Website Maintenance',
-    description: 'Proactive support and optimization to keep your digital presence secure, up-to-date, and performing at its best.',
+    title: 'Maintenance & Support',
+    description: 'Security updates, speed checks, and content refreshes to keep your digital presence performing at its best.',
     link: '/web-development',
-    features: ['Security Updates', 'Performance Monitoring', 'Content Updates', 'Technical Support']
+    features: ['Security monitoring', 'Performance updates', 'Content management', 'Technical support']
   }
 ];
 
@@ -39,11 +46,11 @@ const specializedServices = [
   {
     icon: ShoppingCart,
     title: 'Shopify Development',
-    description: 'Custom Shopify stores optimized for B2B sales, with tailored workflows and integrations.',
+    description: 'Custom Shopify stores optimized for both B2B and B2C sales, with tailored workflows and integrations.',
     link: '/web-development'
   },
   {
-    icon: Monitor,
+    icon: Cog,
     title: 'WordPress Maintenance',
     description: 'Dedicated WordPress care plans to keep your site secure, updated, and performing optimally.',
     link: '/web-development'
@@ -55,14 +62,14 @@ const WebDesignServices = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Comprehensive Web Solutions for B2B Companies
+          What We Offer – All from One Partner
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
           From initial concept to ongoing optimization, we provide end-to-end web services tailored to your business goals.
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div 
               key={index}

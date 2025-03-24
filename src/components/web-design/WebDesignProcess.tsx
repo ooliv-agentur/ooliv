@@ -12,38 +12,38 @@ import { FileSearch, PencilRuler, Code, TestTube, Rocket } from 'lucide-react';
 const steps = [
   {
     number: "01",
-    title: "Discovery & Strategy",
-    description: "We analyze your business goals, target audience, and competitive landscape to create a strategic foundation for your web project.",
+    title: "Strategy & Planning",
+    description: "We get to know your business and goals to create a strategic foundation for your web project.",
     icon: FileSearch,
-    deliverables: ["Business Goals Analysis", "Competitor Research", "User Persona Development", "Project Roadmap"]
+    deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
   },
   {
     number: "02",
-    title: "UX Design & Wireframing",
-    description: "We design intuitive user flows and information architecture that guide visitors toward your business objectives.",
+    title: "Structure & Design",
+    description: "We map your pages and design around your users to create intuitive user flows that guide visitors toward your objectives.",
     icon: PencilRuler,
-    deliverables: ["Sitemap Creation", "User Flow Mapping", "Wireframing", "Interactive Prototypes"]
+    deliverables: ["Sitemap Creation", "User Flows", "Wireframes", "Visual Design"]
   },
   {
     number: "03",
-    title: "Development & Integration",
-    description: "We build your website with clean, efficient code and integrate all necessary systems and third-party tools.",
+    title: "Development",
+    description: "We build fast, clean websites on the right platform with all necessary integrations and functionality.",
     icon: Code,
-    deliverables: ["Frontend Development", "CMS Implementation", "API Integrations", "Performance Optimization"]
+    deliverables: ["Frontend Build", "CMS Setup", "Integrations", "Performance Tuning"]
   },
   {
     number: "04",
-    title: "Testing & Quality Assurance",
-    description: "We rigorously test your website across devices, browsers, and user scenarios to ensure flawless performance.",
+    title: "Testing",
+    description: "Everything works on every screen, every browser to ensure flawless performance for all users.",
     icon: TestTube,
-    deliverables: ["Cross-Browser Testing", "Mobile Responsiveness", "Load Speed Optimization", "Security Checks"]
+    deliverables: ["Browser Testing", "Mobile Checks", "Speed Tests", "Functionality Checks"]
   },
   {
     number: "05",
-    title: "Launch & Continuous Improvement",
-    description: "We deploy your website and implement ongoing analytics and optimization to continuously improve performance.",
+    title: "Launch & Support",
+    description: "We go live and stay in touch, implementing ongoing analytics and optimizations to continuously improve performance.",
     icon: Rocket,
-    deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Performance Monitoring"]
+    deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
   }
 ];
 
@@ -52,11 +52,11 @@ const WebDesignProcess = () => {
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Our Results-Driven Web Design Process
+          From Idea to Launch – How We Work Together
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          A systematic approach that turns your business objectives into measurable digital results.
+          A clear, collaborative approach that turns your business objectives into a website that works.
         </p>
         
         <Carousel
@@ -83,7 +83,7 @@ const WebDesignProcess = () => {
                         <p className="text-brand-text text-sm mb-4">{step.description}</p>
                         
                         <div className="bg-brand-backgroundAlt p-3 rounded-md">
-                          <p className="text-xs font-medium text-brand-primary mb-2">DELIVERABLES:</p>
+                          <p className="text-xs font-medium text-brand-primary mb-2">WHAT WE DELIVER:</p>
                           <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
                             {step.deliverables.map((deliverable, idx) => (
                               <li key={idx} className="text-xs text-brand-text flex items-center">
