@@ -82,7 +82,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Button size="lg" asChild>
-              <Link to="#contact-form">Start Your Project</Link>
+              <a href="#contact-form">Start Your Project</a>
             </Button>
             <Button variant="outline" size="lg">
               Request a Callback
