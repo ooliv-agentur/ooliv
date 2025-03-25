@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight, FileText, Palette, BarChart2, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface StatItem {
   value: string;
@@ -16,6 +17,8 @@ interface TeamImpactSectionProps {
 }
 
 const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSectionProps = {}) => {
+  const { language } = useLanguage();
+
   const services = [
     {
       title: "Strategy & UX",
@@ -46,6 +49,35 @@ const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSe
   ];
 
   const displayStats = stats || defaultStats;
+
+  // Basecamp text based on language
+  const basecampTitle = language === 'de' 
+    ? "Projektkoordination mit Struktur – per Basecamp"
+    : "Organized Collaboration with Basecamp";
+  
+  const basecampDescription = language === 'de'
+    ? "Für alle Projekte nutzen wir Basecamp als zentrale Plattform. Hier laufen Kommunikation, Aufgaben und Dateien zusammen – DSGVO-konform, transparent und effizient."
+    : "We use Basecamp as our central project hub. All tasks, feedback, and files are shared transparently — GDPR-compliant and accessible to everyone involved.";
+  
+  const basecampBenefitsTitle = language === 'de' ? "Ihre Vorteile:" : "Your Benefits:";
+  
+  const basecampBenefits = language === 'de'
+    ? [
+        "Gemeinsame Aufgabenlisten und Meilensteine",
+        "Klar dokumentierte Feedback-Schleifen",
+        "Zugriff für alle Projektbeteiligten",
+        "Kein E-Mail-Chaos",
+        "Asynchrone Kommunikation spart Zeit",
+        "Alles an einem Ort: Inhalte, Dateien, Freigaben"
+      ]
+    : [
+        "Shared to-do lists and milestones",
+        "Documented feedback and decisions",
+        "Access for internal and external stakeholders",
+        "No email chaos",
+        "Asynchronous communication for efficient workflows",
+        "Everything in one place: tasks, files, approvals"
+      ];
 
   return (
     <section className="py-24 bg-white">
@@ -83,6 +115,24 @@ const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSe
               ))}
             </div>
           )}
+
+          {/* Basecamp section */}
+          <div className="bg-brand-background rounded-lg p-8 mb-12">
+            <h3 className="text-xl font-bold mb-3">{basecampTitle}</h3>
+            <p className="mb-4">{basecampDescription}</p>
+            
+            <div>
+              <p className="font-medium mb-2">{basecampBenefitsTitle}</p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+                {basecampBenefits.map((benefit, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="w-1.5 h-1.5 bg-brand-primary rounded-full mr-2 flex-shrink-0"></span>
+                    <span className="text-sm">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           
           <div className="text-center">
             <Link to="/about-ooliv" className="inline-flex items-center text-brand-primary font-medium hover:underline">

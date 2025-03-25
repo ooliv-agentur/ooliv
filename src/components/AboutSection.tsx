@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface AboutSectionProps {
   title?: string;
@@ -10,6 +11,13 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({ title, description, values }: AboutSectionProps = {}) => {
+  const { language } = useLanguage();
+  
+  // Basecamp text based on language
+  const basecampText = language === 'de' 
+    ? "Wir arbeiten mit Basecamp – für klare Aufgaben, smarte Kommunikation und vollständige Transparenz im Projektverlauf."
+    : "We use Basecamp to manage tasks, communication, and feedback — with full transparency and efficiency.";
+  
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,6 +86,10 @@ const AboutSection = ({ title, description, values }: AboutSectionProps = {}) =>
                   </div>
                 </>
               )}
+            </div>
+            
+            <div className="p-4 bg-brand-background/50 rounded-lg mb-8">
+              <p className="text-brand-text italic">{basecampText}</p>
             </div>
             
             <div className="flex space-x-4">

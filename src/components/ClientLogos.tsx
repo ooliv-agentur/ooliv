@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ClientLogosProps {
   title?: string;
@@ -6,6 +8,13 @@ interface ClientLogosProps {
 }
 
 const ClientLogos = ({ title, description }: ClientLogosProps = {}) => {
+  const { language } = useLanguage();
+  
+  // Basecamp text based on language
+  const basecampText = language === 'de' 
+    ? "Wir arbeiten mit Basecamp – für klare Aufgaben, smarte Kommunikation und vollständige Transparenz im Projektverlauf."
+    : "We use Basecamp to manage tasks, communication, and feedback — with full transparency and efficiency.";
+  
   return (
     <section className="py-16 bg-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,6 +34,13 @@ const ClientLogos = ({ title, description }: ClientLogosProps = {}) => {
               <div className="w-24 h-10 bg-gray-200/50 rounded animate-pulse"></div>
             </div>
           ))}
+        </div>
+        
+        {/* Basecamp information */}
+        <div className="mt-12 text-center border-t border-gray-100 pt-10">
+          <p className="text-brand-text italic max-w-3xl mx-auto">
+            {basecampText}
+          </p>
         </div>
       </div>
     </section>
