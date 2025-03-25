@@ -7,7 +7,7 @@ const SEOHero = () => {
     <PageHero
       badge="Search Engine Optimization"
       title="SEO Optimization That Drives B2B Growth"
-      subtitle="We turn your website into a traffic magnet. Strategy-led SEO services that boost visibility, attract qualified leads, and deliver measurable growth."
+      subtitle="We turn your website into a traffic magnet. Strategy-led SEO services that boost visibility, attract qualified leads, and deliver measurable growth in Mainz and beyond."
       primaryCta={{
         text: "Start Your SEO Strategy",
         link: "/contact"
