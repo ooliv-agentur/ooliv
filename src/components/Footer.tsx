@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, ArrowRight, ExternalLink, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -12,12 +12,12 @@ const Footer = () => {
     <footer className="bg-brand-footer text-white pt-16 pb-8">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-sans text-white">{t('footer.about')}</h3>
             <p className="text-white text-sm font-sans">
-              {t('footer.aboutText')}
+              We create high-performance websites that drive business growth. With 16+ years of experience, AI-powered strategies, and a results-driven approach, we help businesses succeed in the digital world.
             </p>
             <Button 
               variant="outline" 
@@ -30,7 +30,7 @@ const Footer = () => {
             </Button>
           </div>
 
-          {/* Quick Links */}
+          {/* Services Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
@@ -39,9 +39,11 @@ const Footer = () => {
               <li><Link to="/content-creation" className="text-white hover:text-brand-background transition-colors">Content Creation</Link></li>
               <li><Link to="/seo-optimization" className="text-white hover:text-brand-background transition-colors">SEO Optimization</Link></li>
               <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">Lead Generation & Conversion</Link></li>
+              <li><Link to="/ai-powered-solutions" className="text-white hover:text-brand-background transition-colors">AI-Powered Solutions</Link></li>
             </ul>
           </div>
 
+          {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
@@ -52,23 +54,31 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Legal Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">Legal</h3>
+            <ul className="space-y-2 text-white text-sm font-sans">
+              <li><Link to="/privacy-policy" className="text-white hover:text-brand-background transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/legal-notice" className="text-white hover:text-brand-background transition-colors">Legal Notice</Link></li>
+            </ul>
+          </div>
+
           {/* Contact Information */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
-              <li>ooliv Web Design Agency</li>
-              <li className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2" />
-                Mombacher Str. 25<br />
-                55122 Mainz
+              <li className="font-medium">ooliv Web Design Agency</li>
+              <li className="flex items-start">
+                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
+                <span>Mombacher Str. 25<br />55122 Mainz</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2" />
-                06131 – 63 67 801
+                <Phone className="h-4 w-4 mr-2 shrink-0" />
+                <span>06131 – 63 67 801</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2" />
-                Info@ooliv.de
+                <Mail className="h-4 w-4 mr-2 shrink-0" />
+                <span>info@ooliv.de</span>
               </li>
             </ul>
           </div>
@@ -81,7 +91,7 @@ const Footer = () => {
               {t('footer.copyright')}
             </div>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <Link to="/data-privacy" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</Link>
+              <Link to="/privacy-policy" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</Link>
               <Link to="/legal-notice" className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</Link>
             </div>
           </div>
