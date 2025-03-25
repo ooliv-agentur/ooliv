@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -44,6 +45,24 @@ const AboutUs = () => {
               <br />United by one mindset:
               <br /><strong>Every website should create real business value.</strong>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Stay Small Section - NEW */}
+      <section className="section-gradient">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center">Why We Stay Small—on Purpose</h2>
+            <p className="text-lg mb-8">
+              At ooliv, you won't find 50 people assigned to your project. You'll work with the 4 or 5 who actually make it happen. Our compact structure means strategy, UX, content, SEO, and development all work hand in hand—from the start.
+            </p>
+            <p className="text-lg mb-8">
+              Fewer handovers. Fewer delays. Better results.
+            </p>
+            <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-center mb-6">
+              "Our structure is our strength. Direct, fast, and focused."
+            </blockquote>
           </div>
         </div>
       </section>

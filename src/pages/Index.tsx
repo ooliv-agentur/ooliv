@@ -2,6 +2,7 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import AboutSection from "@/components/AboutSection";
+import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
 import Testimonials from "@/components/Testimonials";
@@ -27,6 +28,7 @@ const Index = () => {
         }}
       />
       <AboutSection />
+      <TeamImpactSection />
       <Challenge />
       <Solution />
       <TeamTeaser />
