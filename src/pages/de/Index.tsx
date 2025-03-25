@@ -11,6 +11,10 @@ import CTA from "@/components/CTA";
 import TeamTeaser from "@/components/TeamTeaser";
 import ClientLogos from "@/components/ClientLogos";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import SEOCaseStudies from "@/components/seo/SEOCaseStudies";
+import WebDevCaseStudies from "@/components/web-development/WebDevCaseStudies"; 
+import ContentCaseStudies from "@/components/content-creation/ContentCaseStudies";
+import WebDesignCaseStudies from "@/components/web-design/WebDesignCaseStudies";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
@@ -84,15 +88,15 @@ const GermanIndex = () => {
         title="Wir entwickeln Websites, die Ihre Unternehmensziele unterstützen."
         subtitle="Mit Strategie, Expertise & intelligenter Technologie"
         description={
-          <>
+          <span>
             Ob Start-up, Mittelstand oder B2B-Unternehmen – wir liefern keine Templates, sondern maßgeschneiderte Lösungen, die Ihre Zielgruppe erreichen. 
-            Vertrauen Sie auf unsere Expertise in <Link to="/de/webdesign" className="text-brand-primary hover:underline">Webdesign</Link>, 
-            <Link to="/de/webentwicklung" className="text-brand-primary hover:underline"> Webentwicklung</Link>, 
-            <Link to="/de/content-erstellung" className="text-brand-primary hover:underline"> Content-Erstellung</Link>, 
-            <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline"> SEO-Optimierung</Link>, 
-            <Link to="/de/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> und 
-            <Link to="/de/ki-technologien" className="text-brand-primary hover:underline"> KI-Technologien</Link>.
-          </>
+            Vertrauen Sie auf unsere Expertise in <Link to="/de/webdesign" className="text-brand-primary hover:underline">Webdesign</Link>, {' '}
+            <Link to="/de/webentwicklung" className="text-brand-primary hover:underline">Webentwicklung</Link>, {' '}
+            <Link to="/de/content-erstellung" className="text-brand-primary hover:underline">Content-Erstellung</Link>, {' '}
+            <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline">SEO-Optimierung</Link>, {' '}
+            <Link to="/de/google-ads" className="text-brand-primary hover:underline">Google Ads</Link> und {' '}
+            <Link to="/de/ki-technologien" className="text-brand-primary hover:underline">KI-Technologien</Link>.
+          </span>
         }
         solutions={[
           "Strategisch durchdacht",
@@ -126,6 +130,10 @@ const GermanIndex = () => {
       />
       <TeamTeaser />
       <ClientLogos />
+      <SEOCaseStudies />
+      <WebDevCaseStudies />
+      <ContentCaseStudies />
+      <WebDesignCaseStudies />
       <Testimonials 
         title="Was unsere Kunden sagen:"
         testimonials={[
