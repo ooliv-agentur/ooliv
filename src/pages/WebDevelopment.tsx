@@ -32,7 +32,7 @@ const webDevFaqs = [
   },
   {
     question: "Can you improve our existing site?",
-    answer: "Absolutely. We often take on redesigns, speed fixes, and CMS cleanups."
+    answer: "Absolutely. We also take on redesigns, speed fixes, and CMS cleanups."
   }
 ];
 

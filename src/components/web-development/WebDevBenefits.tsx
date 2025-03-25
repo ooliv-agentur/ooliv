@@ -20,7 +20,7 @@ const benefits = [
   },
   {
     icon: TrendingUp,
-    title: "Future-Proof Architecture",
+    title: "Built to Grow With You",
     description: "From multilingual scaling to integrations — your site is built to support your next step, not hold you back."
   }
 ];
@@ -30,7 +30,7 @@ const WebDevBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Businesses Trust ooliv for Development
+          Why Businesses Trust ooliv for Web Development
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

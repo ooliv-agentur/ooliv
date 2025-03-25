@@ -9,7 +9,7 @@ const WebDevHero = () => {
       <PageHero
         badge="Custom Development Solutions"
         title="Web Development That Drives Business Growth"
-        subtitle="Scalable, secure, and conversion-focused websites — custom-built to match your business, tools, and long-term goals."
+        subtitle="Scalable, secure, and conversion-focused websites — built to match your business, tools, and long-term goals."
         primaryCta={{
           text: "Start Your Project",
           link: "/contact"
