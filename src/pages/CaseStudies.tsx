@@ -109,15 +109,15 @@ const CaseStudies = () => {
     <PageLayout>
       <PageHero
         badge="Made with love."
-        title="Success stories you can touch."
-        subtitle="Behind every project lies a story with an introduction, climax, and happy ending. Only one question remains: Which success story do we want to write together?"
+        title="Success Stories That Drive Business Results"
+        subtitle="See how we've helped businesses like yours achieve measurable growth through strategic web design and development."
         primaryCta={{
-          text: "Let's talk",
-          link: "/contact"
+          text: "View All Case Studies",
+          link: "#case-studies"
         }}
         secondaryCta={{
-          text: "Discover cases",
-          link: "#case-studies"
+          text: "Start Your Project",
+          link: "/contact"
         }}
       />
       

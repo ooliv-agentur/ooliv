@@ -1,6 +1,6 @@
 
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero";
+import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
@@ -14,19 +14,7 @@ import ClientLogos from "@/components/ClientLogos";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <PageHero
-        badge="Strategy, Performance & Growth"
-        title="Building High-Performance Websites That Drive Growth"
-        subtitle="We design and develop websites that rank higher, convert better, and create measurable business success. Whether it's a relaunch or a fresh build — your site will deliver results."
-        primaryCta={{
-          text: "Start Your Website Project",
-          link: "/contact"
-        }}
-        secondaryCta={{
-          text: "See Our Work",
-          link: "/case-studies"
-        }}
-      />
+      <Hero />
       <AboutSection />
       <TeamImpactSection />
       <Challenge />
@@ -35,7 +23,12 @@ const Index = () => {
       <ClientLogos />
       <Testimonials />
       <FAQ />
-      <CTA />
+      <CTA 
+        title="Ready to transform your digital presence?"
+        subtitle="Let's discuss how our team can help your business achieve its online goals."
+        primaryCta="Start Your Website Project"
+        secondaryCta="See Our Work"
+      />
     </PageLayout>
   );
 };

@@ -8,8 +8,8 @@ const WebDesignHero = () => {
     <div className="relative">
       <PageHero
         badge="Strategic Webdesign for Business Growth"
-        title="Strategic Web Design That Delivers Results"
-        subtitle="We design websites that bring in the right people, build trust, and generate real business growth — with clear structure, strong content, and fast performance."
+        title="Webdesign Services That Deliver Results"
+        subtitle="We build websites that attract the right visitors, convert leads, and help you grow. Every design is strategically aligned with your business goals."
         primaryCta={{
           text: "Start Your Web Project",
           link: "/contact"

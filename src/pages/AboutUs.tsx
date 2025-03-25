@@ -16,10 +16,10 @@ const AboutUs = () => {
       {/* Hero Section using PageHero component */}
       <PageHero 
         badge="About ooliv"
-        title="The Agency Behind Your Digital Growth"
-        subtitle="From local roots to 100+ successful projects—ooliv blends creativity, strategy, and technology to build high-performance websites that move businesses forward."
+        title="Digital Marketing Agency"
+        subtitle="We combine creativity, strategy, and technology to build websites that drive business growth. You'll always work directly with our founder."
         primaryCta={{
-          text: "Let's Talk",
+          text: "Start Your Project",
           link: "/contact"
         }}
         secondaryCta={{

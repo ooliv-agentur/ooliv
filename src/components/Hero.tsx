@@ -108,7 +108,7 @@ const Hero = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             <div className="flex items-center gap-2">
               <span className="text-brand-primary">ooliv</span> 
-              <span>Building High-Performance Websites</span>
+              <span>Web Design Agency</span>
             </div>
             <div className="flex items-center text-brand-primary">
               <span className="relative text-white flex items-center">
@@ -120,19 +120,19 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl max-w-2xl mb-6 text-gray-100">
-            We create <Link to="/seo-optimization" className="text-brand-primary hover:underline">SEO-driven websites</Link> that rank higher, convert better, and drive real business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/lead-generation" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
+            We create high-performance websites that rank higher, convert better, and drive measurable business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/lead-generation" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button size="lg" className="group" asChild>
               <Link to="/contact">
-                {t('hero.startProject')}
+                Start Your Website Project
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent text-white hover:bg-white/10 border-white" asChild>
               <Link to="/case-studies">
-                {t('hero.seeWork')}
+                See Our Work
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

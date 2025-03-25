@@ -48,7 +48,7 @@ const LeadGeneration = () => {
       {/* Hero Section */}
       <PageHero
         badge="Traffic to Leads to Results"
-        title="Lead Generation & Conversion Optimization with Google Ads"
+        title="Google Ads in Mainz That Turn Traffic to Leads"
         subtitle="We help B2B companies attract qualified leads and turn traffic into measurable results — through high-performance Google Ads campaigns, AI-powered targeting, and conversion-optimized landing pages."
         primaryCta={{
           text: "Start Your Campaign",

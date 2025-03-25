@@ -82,14 +82,14 @@ const Contact = () => {
     <PageLayout>
       {/* Hero Section */}
       <PageHero
-        title="Let's Talk About Your Next Project"
-        subtitle="Whether you already have a clear vision or don't know where to start—we're here to listen, guide, and build something valuable together."
+        title="Contact ooliv for Your Next Project"
+        subtitle="Let's talk about how we can turn your digital challenges into measurable business growth. Reach out to our CEO directly for a fast, strategic conversation."
         primaryCta={{
           text: "Start Your Project",
           link: "#contact-form"
         }}
         secondaryCta={{
-          text: "Request a Callback",
+          text: "Book a Strategy Call",
           link: "#"
         }}
       />

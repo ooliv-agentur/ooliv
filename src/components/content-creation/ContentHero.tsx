@@ -8,7 +8,7 @@ const ContentHero = () => {
     <div className="relative">
       <PageHero
         badge="Web Content Strategy & Creation"
-        title="Strategic Web Content That Drives Business Results"
+        title="Web Content Strategy & Creation"
         subtitle="From tailored text and visuals to SEO-focused structure — we create content that builds trust, boosts visibility, and generates qualified leads."
         primaryCta={{
           text: "Start Your Content Project",
