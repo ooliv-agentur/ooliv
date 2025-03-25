@@ -72,7 +72,10 @@ const Hero = () => {
   }, [displayText, isDeleting, loopNum, typingSpeed, valueProps]);
   
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      {/* Background pattern/gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      
       <div className="absolute inset-0 w-full h-full z-0">
         <div className={`absolute inset-0 bg-gray-900 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}></div>
         
