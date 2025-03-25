@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ interface ProcessStep {
 interface SolutionProps {
   title?: string;
   subtitle?: string;
-  description?: string;
+  description?: string | ReactNode;
   solutions?: string[];
   process?: ProcessStep[];
   learnMoreText?: string;
@@ -39,9 +39,9 @@ const Solution = ({
           <h3 className="text-xl font-normal mb-6 text-brand-heading">
             {subtitle || "With Strategy, Expertise & Smart Technology"}
           </h3>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+          <div className="text-lg text-brand-text max-w-3xl mx-auto">
             {description || "Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences."}
-          </p>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto mb-12">
