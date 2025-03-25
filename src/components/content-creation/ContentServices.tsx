@@ -2,47 +2,51 @@
 import React from 'react';
 import { FileText, Image, PenTool, Video } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
 const services = [
   {
     icon: FileText,
     title: 'Text & Messaging',
-    description: 'Search engine optimized, persuasive texts for all page types – created with GPT-based workflows and refined by experienced copywriters.',
+    description: 'SEO-optimized website copy, built with GPT-based workflows and refined by our editorial team.',
     features: [
-      'Homepage text, service pages, FAQs',
-      'Conversion-focused headlines & CTAs',
-      'SEO-optimized landing pages',
-      'UX Microcopy'
+      'Headlines, landing pages, FAQs, CTAs',
+      'Conversion-focused copywriting',
+      'SEO-optimized content structure',
+      'Brand voice consistency'
     ]
   },
   {
     icon: Image,
     title: 'Photo & Imagery',
-    description: 'Custom image worlds, generated with Midjourney and enhanced through manual retouching – perfectly aligned with brand style & website layout.',
+    description: 'Custom Midjourney image prompts, art-directed and retouched by our designers — optimized for layout, mood, and resolution.',
     features: [
-      'Brand-related imagery aesthetics',
-      'Visual concepts for home and sub-pages',
-      'Resolution & format suitable for web'
+      'Brand-aligned image aesthetics',
+      'Custom photography direction',
+      'AI-enhanced image creation',
+      'Web-optimized formats'
     ]
   },
   {
     icon: PenTool,
     title: 'Illustration & Logo Design',
-    description: 'Our illustrators & designers develop icons, visual assets and logos for distinctive brand appearances.',
+    description: 'Icons, logos, and visual assets that support structure and reinforce brand personality — all created in-house.',
     features: [
       'Vector graphics & UI icons',
+      'Brand identity design',
       'Website illustrations',
-      'Logo redesigns & development'
+      'Visual system development'
     ]
   },
   {
     icon: Video,
     title: 'Video & Animation',
-    description: 'Short explainer videos, background visuals or hero section videos – via Sora or integrated partner network.',
+    description: 'Short-form videos, motion assets, explainer animations — created via Sora or partner production, tailored for your brand and goals.',
     features: [
-      'Storyboard + implementation',
-      'Matched to website and target audience',
-      'SEO-friendly video structure'
+      'Hero section background videos',
+      'Product demonstrations',
+      'Process explanations',
+      'Social media teasers'
     ]
   }
 ];
@@ -52,16 +56,16 @@ const ContentServices = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          What We Deliver
+          Web Content That Works on Every Level
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          Comprehensive content solutions tailored to your brand voice and business objectives.
+          We deliver content that doesn't just fill pages — it moves people. Every element is created for clarity, conversion, and long-term relevance.
         </p>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none md:snap-none md:overflow-visible">
           {services.map((service, index) => (
-            <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 min-w-[280px] snap-center md:snap-align-none">
               <CardHeader className="pb-2">
                 <div className="p-3 rounded-full bg-brand-backgroundAlt inline-flex mb-3">
                   <service.icon className="h-6 w-6 text-brand-primary" />
@@ -84,9 +88,9 @@ const ContentServices = () => {
         </div>
         
         <div className="text-center mt-10">
-          <p className="text-brand-primary italic">
-            Not sure what content you need? Let's talk strategy →
-          </p>
+          <Button variant="link" className="text-brand-primary">
+            Need help defining your content? Let's talk strategy →
+          </Button>
         </div>
       </div>
     </section>

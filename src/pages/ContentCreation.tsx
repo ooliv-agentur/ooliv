@@ -1,39 +1,37 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { useLanguage } from '@/contexts/LanguageContext';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
+import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
 import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
 const ContentCreation = () => {
-  const { t } = useLanguage();
-  
-  // Custom FAQ items for Content Creation page
+  // Custom FAQ items for Content Creation page with web content focus
   const contentFaqs = [
     {
-      question: "How does the content creation process work at ooliv?",
-      answer: "We start with a clear content strategy and deliver all website content: text, image, video, and illustration – fast, SEO-optimized and aligned with your corporate design."
+      question: "How does ooliv create content for websites?",
+      answer: "We develop a full content strategy based on keyword research, then deliver modular, conversion-focused assets: text, images, video, illustrations — ready to launch."
     },
     {
-      question: "What tools does ooliv use for content production?",
-      answer: "We combine AI tools like ChatGPT, Midjourney and Sora with manual review – for maximum efficiency and quality."
+      question: "Can I order just content without design?",
+      answer: "Yes. Our content packages work standalone or in combination with design and development projects."
     },
     {
-      question: "Can I order content without web design?",
-      answer: "Yes. We also deliver content for existing websites or as support for in-house teams and agencies."
+      question: "What if I don't have a logo or brand visuals yet?",
+      answer: "We can create those for you — from scratch or as a rebranding process."
     },
     {
-      question: "Do I receive texts in multiple languages?",
-      answer: "Of course. We offer content in English, German, and other languages upon request."
+      question: "Do you use AI for content?",
+      answer: "Yes — we use ChatGPT, Midjourney, and Sora to boost speed and quality. But every result is reviewed and refined by our team."
     },
     {
-      question: "What if I don't have a logo or images yet?",
-      answer: "No problem – our design team develops all necessary assets for your brand presence."
+      question: "Do you optimize content for SEO?",
+      answer: "Always. We start every project with keyword research (via Ahrefs) so the content ranks from day one."
     }
   ];
   
@@ -43,12 +41,13 @@ const ContentCreation = () => {
       <ContentBenefits />
       <ContentServices />
       <ContentProcess />
+      <ContentExpertInsight />
       <ContentCaseStudies />
       <FAQ customFaqs={contentFaqs} />
       <CTA 
-        title="Website Content That Sells, Not Just Informs"
-        subtitle="Whether complete website texts, perfect images or videos – we deliver content that works."
-        primaryCta="Get a Free Consultation"
+        title="Let's Create Content That Converts"
+        subtitle="We're not just filling pages — we're building momentum. Let's create content that ranks, resonates, and drives real business results."
+        primaryCta="Get a Free Content Strategy Call"
         secondaryCta="Request a Sample Project"
       />
     </PageLayout>

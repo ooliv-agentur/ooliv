@@ -5,23 +5,23 @@ import { FileText, Target, Users, Paintbrush } from 'lucide-react';
 const benefits = [
   {
     icon: FileText,
-    problem: 'No Content, No Impact',
-    solution: 'We deliver complete website content – from text to visuals – for powerful brand presence.'
+    problem: 'No Content, No Results',
+    solution: 'We create complete web content — from text to visuals — for maximum impact and lead generation.'
   },
   {
     icon: Target,
-    problem: 'Generic Content, Zero Recognition',
-    solution: 'Custom texts, photos, and illustrations that perfectly align with your brand DNA.'
+    problem: 'Generic Messaging',
+    solution: 'We develop content that sounds like you — sharp, on-brand, and impossible to ignore.'
   },
   {
     icon: Users,
-    problem: 'Content Takes Too Long – Or Missing Entirely',
-    solution: 'Efficient content production using AI tools like ChatGPT, Midjourney & Sora – with human quality control.'
+    problem: 'Content Gaps or Delays',
+    solution: 'We combine AI tools like ChatGPT, Midjourney & Sora with strategic workflows to deliver high-quality content, fast.'
   },
   {
     icon: Paintbrush,
-    problem: 'No Visible Corporate Design',
-    solution: 'Our in-house graphic designers create logos, icons & illustrations for consistent brand appearances.'
+    problem: 'Visual Inconsistency',
+    solution: 'Our designers craft logos, icons & illustrations to unify your brand across every touchpoint.'
   }
 ];
 
@@ -32,8 +32,8 @@ const ContentBenefits = () => {
         {/* Two-tone heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            Content Challenges That Hurt Your 
-            <span className="block text-brand-primary"> Business — Here's How We Fix Them</span>
+            Content Problems That Cost You Business 
+            <span className="block text-brand-primary"> — We Fix Them</span>
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">

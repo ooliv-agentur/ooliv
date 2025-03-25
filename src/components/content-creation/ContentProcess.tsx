@@ -6,32 +6,32 @@ const steps = [
   {
     icon: CalendarCheck,
     number: '01',
-    title: 'Kickoff & Content Planning',
-    description: 'We define goals, tone of voice, and formats – aligned with SEO and user journey.'
+    title: 'Strategy & Kickoff',
+    description: 'We start with your goals, brand tone, and SEO research using Ahrefs — to ensure the right message reaches the right audience.'
   },
   {
     icon: PenTool,
     number: '02',
-    title: 'Content Design & Production',
-    description: 'Text, images, videos, illustrations: Everything is created modularly and on-brand.'
+    title: 'Creation & Design',
+    description: 'Copy, visuals, video — all content is modular, on-brand, and user-journey ready.'
   },
   {
     icon: Monitor,
     number: '03',
-    title: 'Approval & Integration',
-    description: 'Direct implementation in the CMS or by our dev team – technically clean & visually consistent.'
+    title: 'Review & Integration',
+    description: 'Approved content is delivered or directly implemented into the CMS — by us or your team.'
   },
   {
     icon: CheckCircle,
     number: '04',
-    title: 'Launch Check',
-    description: 'Final testing: Responsiveness, SEO, loading times, accessibility.'
+    title: 'Testing & Launch',
+    description: 'SEO checks, speed, structure, and accessibility are validated before go-live.'
   },
   {
     icon: RefreshCw,
     number: '05',
-    title: 'Ongoing Support',
-    description: 'Continuous maintenance, optimization & expansion. Optionally with monthly content package.'
+    title: 'Ongoing Content Support',
+    description: 'We offer monthly content packages for long-term relevance, SEO growth, and lead generation.'
   }
 ];
 
@@ -40,19 +40,19 @@ const ContentProcess = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Our Content Process
+          From Content Chaos to Clarity — Here's How We Work
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          From strategy to publication—how we create content that drives results.
+          A proven process that ensures your content strategy delivers measurable business results.
         </p>
         
-        <div className="overflow-x-auto pb-6">
-          <div className="flex flex-col md:flex-row gap-6 min-w-max md:min-w-0">
+        <div className="overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none md:overflow-visible">
+          <div className="flex flex-nowrap gap-6 min-w-max md:grid md:grid-cols-5 md:min-w-0">
             {steps.map((step, index) => (
               <div 
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex-1 min-w-[280px]"
+                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex-1 min-w-[280px] snap-center"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex flex-col items-center">
@@ -74,6 +74,16 @@ const ContentProcess = () => {
               </div>
             ))}
           </div>
+        </div>
+        
+        {/* Scroll indicator for mobile */}
+        <div className="flex justify-center gap-2 mt-6 md:hidden">
+          {steps.map((_, i) => (
+            <div 
+              key={i} 
+              className={`h-1.5 rounded-full ${i === 0 ? 'w-6 bg-brand-primary' : 'w-2 bg-gray-300'}`}
+            ></div>
+          ))}
         </div>
       </div>
     </section>
