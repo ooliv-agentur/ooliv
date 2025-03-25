@@ -77,8 +77,7 @@ const ClientLogos = () => {
         <div className="mb-12 text-center">
           <h2 className="section-title">Trusted by Industry Leaders</h2>
           <p className="section-subtitle max-w-3xl mx-auto">
-            ooliv Kunden erkennt man daran, dass sie mit ihrer Agentur zufrieden sind.<br />
-            Hier eine Auswahl von Marken, die uns ihr Vertrauen schenken.
+            You can tell when clients trust their agency. Here's a selection of brands that trust us — many of them for years.
           </p>
         </div>
 
