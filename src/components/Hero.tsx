@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -75,32 +74,6 @@ const Hero = () => {
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
-      
-      <div className="absolute inset-0 w-full h-full z-0">
-        <div className={`absolute inset-0 bg-gray-900 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}></div>
-        
-        <video 
-          ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          onError={() => setVideoLoaded(false)}
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-team-working-on-computers-in-an-office-environment-33172-large.mp4" type="video/mp4" />
-        </video>
-        
-        {!videoLoaded && (
-          <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
-            alt="Digital Transformation" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        )}
-        
-        <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
-      </div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
