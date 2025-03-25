@@ -30,7 +30,13 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-xl font-bold font-sans">ooliv</Link>
+              <Link to="/" className="flex items-center">
+                <img 
+                  src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
+                  alt="ooliv" 
+                  className="h-8 w-auto"
+                />
+              </Link>
             </div>
             
             <div className="flex items-center gap-3">
