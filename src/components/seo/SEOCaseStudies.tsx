@@ -12,7 +12,7 @@ const caseStudies = [
       { icon: BarChart, stat: '+120%', description: 'more organic traffic in 4 months' },
       { icon: Users, stat: 'Top 10', description: 'rankings for target keywords' }
     ],
-    description: 'Full technical SEO audit and implementation plus content optimization'
+    description: 'Full technical SEO audit and implementation plus content optimization for Mainz-based manufacturer'
   },
   {
     title: 'COBUS – Ranking for Niche Keywords',
@@ -21,7 +21,7 @@ const caseStudies = [
       { icon: BarChart, stat: 'Top 3', description: 'Google rankings in competitive B2B market' },
       { icon: Users, stat: '+80%', description: 'increase in organic leads' }
     ],
-    description: 'Targeting high-value B2B software keywords with strategic content'
+    description: 'Targeting high-value B2B software keywords with strategic content and backlink campaigns'
   }
 ];
 
@@ -30,11 +30,11 @@ const SEOCaseStudies = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          SEO Success Stories
+          SEO That Delivers Real Business Results
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          See how our SEO strategies drive measurable business outcomes.
+          See how our Mainz-based SEO strategies drive measurable business outcomes.
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">

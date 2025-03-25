@@ -5,8 +5,8 @@ import { BarChart2, Clock, FileText, Shield } from 'lucide-react';
 const benefits = [
   {
     icon: BarChart2,
-    problem: 'Your website gets traffic, but no leads',
-    solution: 'We optimize for intent, not just keywords—bringing in the right visitors ready to convert.'
+    problem: 'Your site gets traffic, but no leads',
+    solution: 'We optimize for intent, not just keywords — bringing in visitors ready to convert.'
   },
   {
     icon: Clock,
@@ -15,13 +15,13 @@ const benefits = [
   },
   {
     icon: FileText,
-    problem: 'Outdated content and poor structure',
-    solution: 'We revamp your site architecture and create high-value, search-friendly content.'
+    problem: 'Outdated content & poor structure',
+    solution: 'We create search-friendly content and restructure pages for better performance.'
   },
   {
     icon: Shield,
     problem: 'Technical issues hurt your rankings',
-    solution: 'Our audits cover every SEO-relevant detail—speed, indexing, core vitals, and more.'
+    solution: 'Our audits cover speed, indexing, Core Web Vitals & more — clean code included.'
   }
 ];
 
@@ -37,7 +37,7 @@ const SEOBenefits = () => {
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
-            Here's what might be preventing your website from ranking—and how we solve it.
+            Our SEO services in Mainz address the most common challenges businesses face with search visibility.
           </p>
         </div>
         

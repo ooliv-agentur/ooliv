@@ -14,19 +14,19 @@ const SEO = () => {
   const seoFaqs = [
     {
       question: "How long does SEO take to show results?",
-      answer: "Some results appear within weeks (e.g., technical fixes), but sustainable growth typically takes 3–6 months."
+      answer: "First results often appear within weeks (e.g. technical fixes), long-term growth typically takes 3–6 months."
     },
     {
-      question: "What makes ooliv's SEO different?",
-      answer: "We align SEO with business goals and measure success in leads and conversions—not just rankings."
+      question: "What makes ooliv's SEO approach different?",
+      answer: "We combine deep keyword strategy, scalable content, and smart link-building — all aligned with business goals in Mainz and beyond."
     },
     {
-      question: "Do you offer SEO audits separately?",
-      answer: "Yes. We offer standalone audits with actionable insights—no strings attached."
+      question: "Do you offer local SEO services?",
+      answer: "Yes. We use specialized tools to manage local citations and business directories for better regional visibility in Mainz and the Rhein-Main area."
     },
     {
-      question: "Do you support international SEO?",
-      answer: "Absolutely. We optimize multilingual websites and structure content for global markets."
+      question: "Is backlink building part of your SEO services?",
+      answer: "Absolutely — we plan link architecture and coordinate contextual backlink campaigns with trusted partners to boost your site's authority."
     }
   ];
   
@@ -40,7 +40,7 @@ const SEO = () => {
       <FAQ customFaqs={seoFaqs} />
       <CTA 
         title="Let's Make Your Website Work Smarter"
-        subtitle="SEO isn't a checkbox—it's a growth lever. Let's find out where your site stands and how far it can go."
+        subtitle="SEO isn't a checkbox—it's a growth lever. Let's unlock the full potential of your site with a strategy built for results."
         primaryCta="Request Your Free SEO Audit"
         secondaryCta="Schedule a Strategy Call"
       />

@@ -6,26 +6,26 @@ const steps = [
   {
     icon: FileSearch,
     number: '01',
-    title: 'Site Audit & Strategy',
+    title: 'Audit & Strategy',
     description: 'We start with a full SEO audit and define a tailored roadmap based on your KPIs.'
   },
   {
     icon: Wrench,
     number: '02',
-    title: 'Technical & On-Page Fixes',
+    title: 'Fix & Structure',
     description: 'We clean up technical issues and restructure your site for Google and users alike.'
   },
   {
     icon: FileEdit,
     number: '03',
-    title: 'Content & Keyword Implementation',
+    title: 'Keyword & Content',
     description: 'We revise or create content around relevant keywords and semantic structures.'
   },
   {
     icon: LinkIcon,
     number: '04',
     title: 'Authority Building',
-    description: 'We implement internal linking strategies and advise on smart backlinking.'
+    description: 'We implement internal linking strategies and coordinate backlink campaigns.'
   },
   {
     icon: BarChart3,
@@ -40,11 +40,11 @@ const SEOProcess = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Our SEO Process
+          From Audit to Authority — Our Proven SEO Flow
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          From audit to results—how we improve your organic performance
+          Our SEO experts in Mainz follow a systematic approach to improve your organic performance
         </p>
         
         <div className="overflow-x-auto pb-6">
