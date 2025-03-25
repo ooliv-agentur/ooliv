@@ -5,9 +5,9 @@ import PageHero from '@/components/PageHero';
 const AiTechHero = () => {
   return (
     <PageHero
-      badge="Responsible AI Implementation"
+      badge="Responsible, Strategic, Human-Led"
       title="AI Technologies That Power Our Work"
-      subtitle="We integrate powerful AI technologies into your website projects—not to replace expertise, but to scale it. From fast content production to dynamic design and video, our AI stack supports the creative process without compromising quality."
+      subtitle="We use AI to accelerate web design, content, and development workflows—without replacing human expertise. Every ooliv project combines the speed of AI with the precision of strategic thinking."
       primaryCta={{
         text: "Start Your Project",
         link: "/contact"

@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const AiTechCaseStudies = () => {
@@ -16,16 +16,16 @@ const AiTechCaseStudies = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-2">Examples of AI-Enhanced Projects</h2>
+          <h2 className="text-3xl font-bold mb-2">🚀 Coming Soon: AI Use Cases</h2>
           <p className="text-lg text-gray-600">
-            Coming Soon: We'll showcase specific use cases of how AI helped reduce project timelines, improve UX, or scale multilingual content efforts.
+            We're preparing detailed case studies that show how AI helped us reduce project timelines, scale multilingual content, and improve UX. Stay tuned.
           </p>
         </motion.div>
 
         <div className="flex justify-center mt-8">
           <Button asChild variant="outline" size="lg" className="px-6 font-medium">
             <Link to="/case-studies">
-              View All Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+              Explore Case Studies <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

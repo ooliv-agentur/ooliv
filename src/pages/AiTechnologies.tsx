@@ -16,19 +16,19 @@ const AiTechnologies = () => {
   const aiTechFaqs = [
     {
       question: "Does ooliv replace copywriters with ChatGPT?",
-      answer: "No. We use ChatGPT to generate structured drafts and ideas—but all content is reviewed, refined, and customized by real people."
+      answer: "No. We use ChatGPT for structured drafts—but every word is refined by our editorial team."
     },
     {
-      question: "Is AI-generated content good for SEO?",
-      answer: "Only when done right. We combine AI speed with SEO strategy and editorial review to ensure top performance and compliance."
+      question: "Is AI-generated content SEO-compliant?",
+      answer: "Yes—when used strategically. We follow SEO best practices and optimize all outputs for search intent and clarity."
     },
     {
       question: "Will my website look like 'AI art'?",
-      answer: "Not at ooliv. We use Midjourney to inspire unique designs, not to mass-produce them. Final visuals are aligned with your brand."
+      answer: "No. We use AI tools selectively, always within your brand identity. The result is custom, not generic."
     },
     {
-      question: "How do you protect client data when using AI tools?",
-      answer: "We follow strict data protection protocols and never use client-sensitive information with public AI tools. Your data stays private and secure."
+      question: "How is my data protected when AI tools are used?",
+      answer: "We never upload sensitive data to open platforms and use secure, controlled environments for AI-assisted work."
     }
   ];
   
