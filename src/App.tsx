@@ -23,9 +23,18 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // Import German pages
 import GermanIndex from "./pages/de/Index";
-import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
 import GermanWebDesign from "./pages/de/WebDesign";
+import GermanWebDevelopment from "./pages/de/WebDevelopment";
+import GermanContentCreation from "./pages/de/ContentCreation";
+import GermanSEO from "./pages/de/SEO";
+import GermanGoogleAds from "./pages/de/GoogleAds";
+import GermanAiTechnologies from "./pages/de/AiTechnologies";
+import GermanCaseStudies from "./pages/de/CaseStudies";
+import GermanAboutUs from "./pages/de/AboutUs";
 import GermanContact from "./pages/de/Contact";
+import GermanCareers from "./pages/de/Careers";
+import GermanLegalNotice from "./pages/de/LegalNotice";
+import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -57,7 +66,16 @@ const App = () => (
             {/* German Routes */}
             <Route path="/de" element={<GermanIndex />} />
             <Route path="/de/webdesign" element={<GermanWebDesign />} />
+            <Route path="/de/webentwicklung" element={<GermanWebDevelopment />} />
+            <Route path="/de/content-erstellung" element={<GermanContentCreation />} />
+            <Route path="/de/seo-optimierung" element={<GermanSEO />} />
+            <Route path="/de/google-ads" element={<GermanGoogleAds />} />
+            <Route path="/de/ki-technologien" element={<GermanAiTechnologies />} />
+            <Route path="/de/referenzen" element={<GermanCaseStudies />} />
+            <Route path="/de/ueber-ooliv" element={<GermanAboutUs />} />
             <Route path="/de/kontakt" element={<GermanContact />} />
+            <Route path="/de/karriere" element={<GermanCareers />} />
+            <Route path="/de/impressum" element={<GermanLegalNotice />} />
             <Route path="/de/datenschutz" element={<GermanPrivacyPolicy />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
