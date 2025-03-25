@@ -3,7 +3,13 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  title?: string;
+  description?: string;
+  values?: string[];
+}
+
+const AboutSection = ({ title, description, values }: AboutSectionProps = {}) => {
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,40 +31,53 @@ const AboutSection = () => {
           
           <div className="order-1 md:order-2">
             <h2 className="text-3xl font-bold mb-6 text-brand-heading">
-              We Build Websites That Actually Work for Your Business
+              {title || "We Build Websites That Actually Work for Your Business"}
             </h2>
             
             <p className="text-lg mb-6 text-brand-text">
-              At ooliv, we don't just design pretty websites—we create strategic digital platforms with a clear focus on conversion, SEO, and the metrics that matter to your business.
+              {description || "At ooliv, we don't just design pretty websites—we create strategic digital platforms with a clear focus on conversion, SEO, and the metrics that matter to your business."}
             </p>
             
             <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                  <span className="text-brand-primary font-bold text-sm">1</span>
-                </div>
-                <p className="text-brand-text">
-                  We blend strategic thinking with technical expertise to create websites that attract your ideal customers and turn them into leads or customers.
-                </p>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                  <span className="text-brand-primary font-bold text-sm">2</span>
-                </div>
-                <p className="text-brand-text">
-                  Our approach integrates <Link to="/seo-optimization" className="text-brand-primary hover:underline">SEO</Link>, user experience, and content strategy—all focused on delivering measurable business outcomes.
-                </p>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
-                  <span className="text-brand-primary font-bold text-sm">3</span>
-                </div>
-                <p className="text-brand-text">
-                  From strategy to launch, you'll work directly with our CEO and a focused team of specialists—with no unnecessary layers of management.
-                </p>
-              </div>
+              {values ? (
+                values.map((value, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                      <span className="text-brand-primary font-bold text-sm">{index + 1}</span>
+                    </div>
+                    <p className="text-brand-text">{value}</p>
+                  </div>
+                ))
+              ) : (
+                <>
+                  <div className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                      <span className="text-brand-primary font-bold text-sm">1</span>
+                    </div>
+                    <p className="text-brand-text">
+                      We blend strategic thinking with technical expertise to create websites that attract your ideal customers and turn them into leads or customers.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                      <span className="text-brand-primary font-bold text-sm">2</span>
+                    </div>
+                    <p className="text-brand-text">
+                      Our approach integrates <Link to="/seo-optimization" className="text-brand-primary hover:underline">SEO</Link>, user experience, and content strategy—all focused on delivering measurable business outcomes.
+                    </p>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                      <span className="text-brand-primary font-bold text-sm">3</span>
+                    </div>
+                    <p className="text-brand-text">
+                      From strategy to launch, you'll work directly with our CEO and a focused team of specialists—with no unnecessary layers of management.
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
             
             <div className="flex space-x-4">

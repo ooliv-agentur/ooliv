@@ -3,7 +3,19 @@ import React from 'react';
 import { ArrowRight, FileText, Palette, BarChart2, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const TeamImpactSection = () => {
+interface StatItem {
+  value: string;
+  label: string;
+}
+
+interface TeamImpactSectionProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  stats?: StatItem[];
+}
+
+const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSectionProps = {}) => {
   const services = [
     {
       title: "Strategy & UX",
@@ -27,15 +39,24 @@ const TeamImpactSection = () => {
     }
   ];
 
+  const defaultStats = [
+    { value: "16+", label: "years of experience" },
+    { value: "100+", label: "satisfied customers" },
+    { value: "200+", label: "successful projects" }
+  ];
+
+  const displayStats = stats || defaultStats;
+
   return (
     <section className="py-24 bg-white">
       <div className="section-container">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            Small Team. Big Impact.
+            {title || "Small Team. Big Impact."}
           </h2>
           <p className="text-xl text-center mb-12 text-brand-text/80">
-            At ooliv, you don't get passed around. Every project is led directly by the CEO—and executed by a focused team of experts in strategy, content, design, and development. One point of contact. Full in-house precision.
+            {subtitle && <span className="block mb-2">{subtitle}</span>}
+            {description || "At ooliv, you don't get passed around. Every project is led directly by the CEO—and executed by a focused team of experts in strategy, content, design, and development. One point of contact. Full in-house precision."}
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -51,6 +72,17 @@ const TeamImpactSection = () => {
               </div>
             ))}
           </div>
+          
+          {displayStats && displayStats.length > 0 && (
+            <div className="grid grid-cols-3 gap-6 mb-12">
+              {displayStats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
+                  <div className="text-sm text-brand-text/80">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          )}
           
           <div className="text-center">
             <Link to="/about-ooliv" className="inline-flex items-center text-brand-primary font-medium hover:underline">

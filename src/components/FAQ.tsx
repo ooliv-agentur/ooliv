@@ -4,14 +4,19 @@ import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
-interface FAQProps {
+export interface FAQProps {
+  title?: string;
   customFaqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  faqs?: Array<{
     question: string;
     answer: string;
   }>;
 }
 
-const FAQ = ({ customFaqs }: FAQProps) => {
+const FAQ = ({ title, customFaqs, faqs }: FAQProps = {}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const { t } = useLanguage();
 
@@ -58,8 +63,8 @@ const FAQ = ({ customFaqs }: FAQProps) => {
     }
   ];
 
-  // Use custom FAQs if provided, otherwise use the default FAQs
-  const faqs = customFaqs || defaultFaqs;
+  // Use custom FAQs if provided via either prop, otherwise use the default FAQs
+  const displayFaqs = faqs || customFaqs || defaultFaqs;
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -70,7 +75,7 @@ const FAQ = ({ customFaqs }: FAQProps) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            {t('faq.title')}
+            {title || t('faq.title')}
           </h2>
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
             Common questions about our professional Webdesign Agency services and approach
@@ -78,7 +83,7 @@ const FAQ = ({ customFaqs }: FAQProps) => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
+          {displayFaqs.map((faq, index) => (
             <div 
               key={index}
               className="mb-4 border-b border-gray-200 pb-4 last:border-0 last:pb-0"

@@ -1,12 +1,20 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Zap, BarChart, Code, FileText, LineChart, ArrowRight } from 'lucide-react';
+import { Zap, BarChart, Code, FileText, LineChart, ArrowRight, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import useEmblaCarousel from 'embla-carousel-react';
 
-const Solution = () => {
+interface SolutionProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  solutions?: string[];
+  learnMoreText?: string;
+}
+
+const Solution = ({ title, subtitle, description, solutions, learnMoreText }: SolutionProps = {}) => {
   const { t } = useLanguage();
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     align: 'start',
@@ -109,13 +117,38 @@ const Solution = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            Our Web Design Agency Process: Strategy, Performance & Growth
+            {title || "Our Web Design Agency Process: Strategy, Performance & Growth"}
           </h2>
           
+          {subtitle && <h3 className="text-xl text-brand-primary mb-4">{subtitle}</h3>}
+          
           <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            As an experienced Web Design Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. We focus on creativity, experience, and data-driven decisions to ensure your website's success.
+            {description || "As an experienced Web Design Agency, we combine strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. We focus on creativity, experience, and data-driven decisions to ensure your website's success."}
           </p>
         </div>
+        
+        {solutions && solutions.length > 0 && (
+          <div className="bg-white rounded-lg p-8 mb-16">
+            <h3 className="text-xl font-semibold mb-4">Our Solutions</h3>
+            <ul className="space-y-3">
+              {solutions.map((solution, index) => (
+                <li key={index} className="flex">
+                  <div className="mr-3 text-brand-primary mt-1">
+                    <Check className="h-5 w-5" />
+                  </div>
+                  <p>{solution}</p>
+                </li>
+              ))}
+            </ul>
+            {learnMoreText && (
+              <div className="mt-6">
+                <Link to="/process" className="text-brand-primary hover:underline flex items-center">
+                  {learnMoreText} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
         
         <div className="flex justify-center gap-2 mb-6">
           {steps.map((_, index) => (

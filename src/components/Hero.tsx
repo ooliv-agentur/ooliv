@@ -7,7 +7,21 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from 'react';
 import ScrollIndicator from './ScrollIndicator';
 
-const Hero = () => {
+interface HeroProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  startProjectText?: string;
+  seeWorkText?: string;
+}
+
+const Hero = ({ 
+  title, 
+  subtitle, 
+  description, 
+  startProjectText, 
+  seeWorkText 
+}: HeroProps = {}) => {
   const { t } = useLanguage();
   
   // Typing effect state
@@ -72,36 +86,43 @@ const Hero = () => {
             
             {/* Main heading with emphasis */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              <span className="text-brand-primary">ooliv</span> Web Design Agency
+              {title || <><span className="text-brand-primary">ooliv</span> Web Design Agency</>}
               
               {/* Animation container with fixed width to prevent line breaks on desktop */}
-              <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
-                <span className="mr-2">for</span>
-                <div className="relative inline-flex items-center">
-                  <span className="whitespace-nowrap text-gray-800">{displayText}</span>
-                  <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
-                  {currentIcon}
+              {!subtitle && (
+                <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
+                  <span className="mr-2">for</span>
+                  <div className="relative inline-flex items-center">
+                    <span className="whitespace-nowrap text-gray-800">{displayText}</span>
+                    <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
+                    {currentIcon}
+                  </div>
                 </div>
-              </div>
+              )}
+              {subtitle && <div className="mt-4">{subtitle}</div>}
             </h1>
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              We create high-performance websites that rank higher, convert better, and drive measurable business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/google-ads" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
+              {description || (
+                <>
+                  We create high-performance websites that rank higher, convert better, and drive measurable business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/google-ads" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
+                </>
+              )}
             </p>
             
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group" asChild>
                 <Link to="/contact">
-                  Start Your Website Project
+                  {startProjectText || "Start Your Website Project"}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               
               <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
                 <Link to="/case-studies">
-                  See Our Work
+                  {seeWorkText || "See Our Work"}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

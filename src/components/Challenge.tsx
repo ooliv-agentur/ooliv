@@ -7,10 +7,16 @@ import BeforeAfterSlider from './BeforeAfterSlider';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
-const Challenge = () => {
+interface ChallengeProps {
+  title?: string;
+  description?: string;
+  challenges?: string[];
+}
+
+const Challenge = ({ title, description, challenges }: ChallengeProps = {}) => {
   const { t } = useLanguage();
   
-  const challenges = [
+  const defaultChallenges = [
     {
       problem: "Outdated Website Design",
       painPoint: "An outdated website hurts your credibility and loses customers.",
@@ -53,45 +59,65 @@ const Challenge = () => {
       <div className="section-container max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="heading-standard text-3xl md:text-4xl font-bold mb-4">
-            Website Challenges That Hurt Your Business — Here's How We Fix Them
+            {title || "Website Challenges That Hurt Your Business — Here's How We Fix Them"}
           </h2>
           <p className="subheading-standard text-lg max-w-3xl mx-auto">
-            Here's what might be holding your business back — and how we fix it.
+            {description || "Here's what might be holding your business back — and how we fix it."}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {challenges.map((item, index) => (
-            <div 
-              key={index} 
-              className="card-standard group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="flex flex-col h-full p-6">
-                <div className="mb-5">
-                  <div className="flex flex-col items-start gap-2 mb-4">
-                    <div className="icon-standard">
-                      <item.icon className="h-5 w-5 text-brand-primary" />
-                    </div>
-                    <h3 className="text-brand-heading font-semibold text-xl mb-2">
-                      {item.problem}
-                    </h3>
-                    <p className="text-gray-600">{item.painPoint}</p>
-                  </div>
-                </div>
-                
-                <div className="mt-auto pt-4 border-t border-gray-100">
-                  <div className="flex items-start gap-2">
-                    <div className="p-1 rounded-full bg-green-50">
-                      <Check className="h-4 w-4 text-green-500" />
-                    </div>
-                    <div>
-                      <p className="text-gray-700">{item.solution}</p>
+          {challenges ? (
+            challenges.map((challenge, index) => (
+              <div 
+                key={index} 
+                className="card-standard group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="flex flex-col h-full p-6">
+                  <div className="mb-5">
+                    <div className="flex flex-col items-start gap-2 mb-4">
+                      <div className="icon-standard">
+                        <AlertCircle className="h-5 w-5 text-brand-primary" />
+                      </div>
+                      <p className="text-gray-600">{challenge}</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            defaultChallenges.map((item, index) => (
+              <div 
+                key={index} 
+                className="card-standard group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="flex flex-col h-full p-6">
+                  <div className="mb-5">
+                    <div className="flex flex-col items-start gap-2 mb-4">
+                      <div className="icon-standard">
+                        <item.icon className="h-5 w-5 text-brand-primary" />
+                      </div>
+                      <h3 className="text-brand-heading font-semibold text-xl mb-2">
+                        {item.problem}
+                      </h3>
+                      <p className="text-gray-600">{item.painPoint}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-auto pt-4 border-t border-gray-100">
+                    <div className="flex items-start gap-2">
+                      <div className="p-1 rounded-full bg-green-50">
+                        <Check className="h-4 w-4 text-green-500" />
+                      </div>
+                      <div>
+                        <p className="text-gray-700">{item.solution}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="text-center">
