@@ -23,8 +23,9 @@ const TeamTeaser = () => {
   const featuredTeamMembers: TeamMember[] = [
     {
       name: "Uli Schönleber",
-      role: "CEO – Consulting, Concept, AI",
+      role: "CEO – Your direct point of contact",
       initials: "US",
+      tooltip: "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
@@ -50,8 +51,7 @@ const TeamTeaser = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">Meet the Team Behind ooliv</h2>
           <p className="section-subtitle max-w-3xl mx-auto">
-            Designers, developers, strategists, and creatives — all working toward one goal:<br />
-            To build websites that drive measurable business value.
+            Led by the CEO who handles all client communication, our team of designers, developers, and strategists works behind the scenes to deliver websites that drive measurable business value.
           </p>
         </div>
 

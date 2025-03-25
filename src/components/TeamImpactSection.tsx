@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { ArrowRight, FileText, Palette, BarChart2, Users } from 'lucide-react';
+import { ArrowRight, FileText, Palette, BarChart2, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TeamImpactSection = () => {
   const services = [
     {
       title: "Strategy & UX",
-      description: "Clear structure, user journeys, and measurable goals",
+      description: "Clear structures, data-backed decisions, B2B-ready",
       icon: BarChart2
     },
     {
@@ -17,13 +17,13 @@ const TeamImpactSection = () => {
     },
     {
       title: "Design & Development",
-      description: "Custom-built, clean-coded, and performance-focused",
+      description: "Custom-coded, conversion-optimized, built to scale",
       icon: Palette
     },
     {
-      title: "Collaboration",
-      description: "Fast, transparent, and reliable—since day one",
-      icon: Users
+      title: "Direct Communication",
+      description: "You speak directly with the CEO—no middle layers",
+      icon: MessageCircle
     }
   ];
 
@@ -35,7 +35,7 @@ const TeamImpactSection = () => {
             Small Team. Big Impact.
           </h2>
           <p className="text-xl text-center mb-12 text-brand-text/80">
-            We're not a big agency with layers of project managers. We're a tight-knit team of strategists, designers, and developers who work closely across disciplines. Everything your website needs—nothing it doesn't.
+            At ooliv, you don't get passed around. Every project is led directly by the CEO—and executed by a focused team of experts in strategy, content, design, and development. One point of contact. Full in-house precision.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -54,7 +54,7 @@ const TeamImpactSection = () => {
           
           <div className="text-center">
             <Link to="/about-ooliv" className="inline-flex items-center text-brand-primary font-medium hover:underline">
-              Meet the team <ArrowRight className="ml-1 h-4 w-4" />
+              Meet the team behind the results <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
         </div>

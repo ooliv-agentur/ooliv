@@ -49,19 +49,19 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Why We Stay Small Section - NEW */}
+      {/* Why We Stay Small Section - UPDATED */}
       <section className="section-gradient">
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center">Why We Stay Small—on Purpose</h2>
             <p className="text-lg mb-8">
-              At ooliv, you won't find 50 people assigned to your project. You'll work with the 4 or 5 who actually make it happen. Our compact structure means strategy, UX, content, SEO, and development all work hand in hand—from the start.
+              At ooliv, you work directly with the founder—not an account manager. Behind the scenes, a tightly coordinated team handles UX, SEO, content, and development. That means fewer delays, better focus, and smarter results.
             </p>
             <p className="text-lg mb-8">
-              Fewer handovers. Fewer delays. Better results.
+              It's how we combine clarity, speed, and trust in every project.
             </p>
             <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-center mb-6">
-              "Our structure is our strength. Direct, fast, and focused."
+              "One point of contact. One focused team. One shared goal."
             </blockquote>
           </div>
         </div>
