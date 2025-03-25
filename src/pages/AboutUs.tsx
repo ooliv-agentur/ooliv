@@ -28,6 +28,53 @@ const AboutUs = () => {
         }}
       />
 
+      {/* Who we are and how we work Section - NEW */}
+      <section className="section-standard">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">More than a web agency – your strategic partner</h2>
+            <p className="text-lg mb-8">
+              We combine creative thinking, technical precision, and honest collaboration. No ego, no layers – just results.
+            </p>
+            <ul className="space-y-2 text-left max-w-xl mx-auto mb-8">
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Founded in 2008 by Uli Schönleber</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Based in Mainz, working with B2B clients across Europe</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Family-run studio with a lean, expert team</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>All communication handled by Uli – from first call to final launch</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Transparent process via Basecamp (one place for feedback, tasks, and files)</span>
+              </li>
+            </ul>
+            <Button size="lg" className="button-primary" asChild>
+              <Link to="/contact">Let's work together – fast, focused, and personal.</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Our Story Section - UPDATED */}
       <section className="section-standard">
         <div className="section-container">

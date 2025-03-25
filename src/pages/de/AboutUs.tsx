@@ -36,6 +36,53 @@ const GermanAboutUs = () => {
         }}
       />
 
+      {/* Who we are and how we work Section - NEW */}
+      <section className="section-standard">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">Mehr als eine Webagentur – Ihr strategischer Sparringspartner</h2>
+            <p className="text-lg mb-8">
+              Kreativ, technisch präzise und partnerschaftlich. Ohne Hierarchien, ohne Buzzwords – mit echtem Ergebnisfokus.
+            </p>
+            <ul className="space-y-2 text-left max-w-xl mx-auto mb-8">
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Gegründet 2008 von Uli Schönleber</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Standort Mainz, Kunden europaweit</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Inhabergeführtes Studio mit fokussiertem Expertenteam</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Kommunikation direkt mit dem Gründer – von Start bis Go-Live</span>
+              </li>
+              <li className="flex items-center">
+                <span className="h-6 w-6 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3">
+                  <CheckCircle className="h-3 w-3 text-brand-primary" />
+                </span>
+                <span>Klarer Projektablauf über Basecamp (Feedback, Aufgaben, Dateien an einem Ort)</span>
+              </li>
+            </ul>
+            <Button size="lg" className="button-primary" asChild>
+              <Link to="/de/kontakt">Lassen Sie uns zusammenarbeiten – schnell, direkt und strategisch.</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Our Story Section */}
       <section className="section-standard">
         <div className="section-container">
