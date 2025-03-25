@@ -478,6 +478,7 @@ const GermanIndex = () => {
         </div>
       </section>
       
+      {/* Using the standard Testimonials component instead of the duplicate section */}
       <Testimonials 
         testimonials={[
           {
@@ -557,4 +558,3 @@ const GermanIndex = () => {
 };
 
 export default GermanIndex;
-
