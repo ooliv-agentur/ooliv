@@ -26,26 +26,24 @@ const AboutUs = () => {
         }}
       />
 
-      {/* Our Story Section */}
+      {/* Our Story Section - UPDATED */}
       <section className="section-standard">
         <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Where Passion Meets Performance</h2>
-              <p className="text-lg mb-6">
-                What started with a bold opportunity became a long-term success story. In 2008, after a leading Mainz agency closed its doors, a handful of loyal clients asked: "Can you continue on your own?" That moment sparked the beginning of ooliv.
-              </p>
-              <p className="text-lg">
-                Since then, we've grown into a tight-knit team of 6—designers, strategists, developers, and content creators. United by a shared mindset: <strong>Every website should create real business value</strong>.
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Where Passion Meets Performance</h2>
+            <div className="flex justify-center mb-6">
+              <Globe className="h-8 w-8 text-brand-primary opacity-70" />
             </div>
-            <div className="bg-brand-backgroundAlt rounded-xl overflow-hidden shadow-sm">
-              <AspectRatio ratio={16/9}>
-                <div className="h-full w-full flex items-center justify-center">
-                  <p className="text-gray-500">Team Photo</p>
-                </div>
-              </AspectRatio>
-            </div>
+            <p className="text-lg mb-6">
+              What started with a bold opportunity became a long-term success story. In 2008, after a leading Mainz agency closed its doors, a handful of loyal clients asked:
+              <br /><em className="font-medium">"Can you continue on your own?"</em>
+              <br />That moment sparked the beginning of ooliv.
+            </p>
+            <p className="text-lg">
+              Since then, we've grown into a remote-first, tight-knit team — designers, strategists, developers, and content creators based across different parts of the world.
+              <br />United by one mindset:
+              <br /><strong>Every website should create real business value.</strong>
+            </p>
           </div>
         </div>
       </section>
