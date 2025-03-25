@@ -1,7 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
+import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import { 
   Target, 
   LineChart, 
@@ -90,6 +90,9 @@ const GoogleAds = () => {
           </div>
         </div>
       </section>
+
+      {/* Lead Generation Section */}
+      <GoogleAdsLeadGeneration />
 
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-brand-backgroundAlt">
