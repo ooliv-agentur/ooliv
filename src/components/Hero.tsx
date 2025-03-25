@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -8,8 +9,6 @@ import ScrollIndicator from './ScrollIndicator';
 
 const Hero = () => {
   const { t } = useLanguage();
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   
   // Typing effect state
   const [displayText, setDisplayText] = useState("");
@@ -27,18 +26,6 @@ const Hero = () => {
   ];
   
   const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
-  
-  useEffect(() => {
-    if (videoRef.current) {
-      if (videoRef.current.readyState >= 3) {
-        setVideoLoaded(true);
-      } else {
-        videoRef.current.addEventListener('loadeddata', () => {
-          setVideoLoaded(true);
-        });
-      }
-    }
-  }, []);
   
   useEffect(() => {
     const handleTyping = () => {
@@ -79,24 +66,24 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {/* Tag line above heading */}
-            <div className="inline-flex items-center bg-blue-600/20 text-white rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-blue-600/20 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <span>Web Design Agency</span>
             </div>
             
             {/* Main heading with emphasis */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               <span className="text-brand-primary">ooliv</span> Web Design Agency
-              <div className="text-white flex items-center mt-2">
-                for <span className="relative text-white flex items-center">
+              <div className="text-gray-800 flex items-center justify-center mt-2">
+                for <span className="ml-2 relative text-gray-800 flex items-center">
                   {displayText}
-                  <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-white animate-pulse opacity-75"></span>
+                  <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
                   {currentIcon}
                 </span>
               </div>
             </h1>
             
             {/* Subheading */}
-            <p className="text-xl md:text-2xl text-white/80 mb-8">
+            <p className="text-xl md:text-2xl text-gray-700 mb-8">
               We create high-performance websites that rank higher, convert better, and drive measurable business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/google-ads" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
             </p>
             
@@ -109,7 +96,7 @@ const Hero = () => {
                 </Link>
               </Button>
               
-              <Button variant="outline" size="lg" className="bg-transparent text-white hover:bg-white/10 border-white" asChild>
+              <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
                 <Link to="/case-studies">
                   See Our Work
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
