@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiTechCaseStudies from '@/components/ai-technologies/AiTechCaseStudies';
 import FAQ from '@/components/FAQ';
@@ -16,6 +17,25 @@ const GermanAiTechnologies = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+  
+  // AI tools data in German
+  const aiTools = [
+    {
+      name: "ChatGPT",
+      logoSrc: "/chatgpt-logo.svg",
+      description: "Zur Entwicklung erster Content-Entwürfe, Meta-Daten, FAQs und SEO-Snippets – finalisiert und geprüft durch unser Redaktionsteam."
+    },
+    {
+      name: "Midjourney",
+      logoSrc: "/midjourney-logo.svg",
+      description: "Für einzigartige Bildwelten, die Ihre Marke visuell aufwerten – besonders hilfreich, wenn keine Fotos vorliegen."
+    },
+    {
+      name: "Sora (Video-KI)",
+      logoSrc: "/sora-logo.svg",
+      description: "Zum Erstellen kurzer Bewegtbildsequenzen oder Hintergrundvideos – stimmungsvoll, markengerecht, effizient."
+    }
+  ];
   
   // Custom FAQ items for AI Technologies page with focus on "ki agentur"
   const aiTechFaqs = [
@@ -49,6 +69,12 @@ const GermanAiTechnologies = () => {
     <PageLayout className="overflow-x-hidden">
       <AiTechHero />
       <AiTechBenefits />
+      <AiToolsSection 
+        title="KI im Einsatz – aber nie ohne Menschenverstand"
+        subtitle="Wir setzen KI nur dort ein, wo sie wirklich Zeit spart und Qualität fördert – nicht als Ersatz für Expertise."
+        tools={aiTools}
+        note="KI ist für uns ein Kreativ-Turbo – aber kein Ersatz für Strategie, Handschrift oder finale Qualität."
+      />
       <AiTechServices />
       <AiTechCaseStudies />
       <FAQ customFaqs={aiTechFaqs} />

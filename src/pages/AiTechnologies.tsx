@@ -3,6 +3,7 @@ import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiTechCaseStudies from '@/components/ai-technologies/AiTechCaseStudies';
 import FAQ from '@/components/FAQ';
@@ -11,6 +12,25 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const AiTechnologies = () => {
   const { t } = useLanguage();
+  
+  // AI tools data
+  const aiTools = [
+    {
+      name: "ChatGPT",
+      logoSrc: "/chatgpt-logo.svg",
+      description: "Used for content drafts, metadata, FAQs and SEO snippets – always refined and finalized by our editorial team."
+    },
+    {
+      name: "Midjourney",
+      logoSrc: "/midjourney-logo.svg",
+      description: "For expressive, custom visuals that go beyond stock photos – especially when no photo assets exist."
+    },
+    {
+      name: "Sora (Video AI)",
+      logoSrc: "/sora-logo.svg",
+      description: "Ideal for short motion clips or atmospheric video backgrounds – tailored to your brand and message."
+    }
+  ];
   
   // Custom FAQ items for AI Technologies page based on prompt
   const aiTechFaqs = [
@@ -36,6 +56,12 @@ const AiTechnologies = () => {
     <PageLayout className="overflow-x-hidden">
       <AiTechHero />
       <AiTechBenefits />
+      <AiToolsSection 
+        title="AI-powered – human-led"
+        subtitle="We integrate AI where it saves time and adds value – not to replace expertise."
+        tools={aiTools}
+        note="We use AI as a creative accelerator – never as a shortcut. Final quality and strategy always come from people."
+      />
       <AiTechServices />
       <AiTechCaseStudies />
       <FAQ customFaqs={aiTechFaqs} />
