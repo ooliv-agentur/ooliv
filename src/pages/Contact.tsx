@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Input } from '@/components/ui/input';
@@ -123,7 +122,7 @@ const Contact = () => {
                         <MapPin className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-lg">ooliv Web Design Agency</h3>
+                        <h3 className="font-bold text-lg">ooliv GmbH</h3>
                         <p className="text-gray-600">
                           Mombacher Str. 25<br />
                           55122 Mainz, Germany
