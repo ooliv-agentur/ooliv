@@ -6,10 +6,9 @@ import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
-import WebDesignCaseStudies from '@/components/web-design/WebDesignCaseStudies';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
-import { Link } from 'react-router-dom';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const WebDesign = () => {
   return (
@@ -19,7 +18,17 @@ const WebDesign = () => {
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />
       <WebDesignProcess />
-      <WebDesignCaseStudies />
+      
+      {/* Full Case Studies Section with all 5 cases */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Web Design Success Stories
+          </h2>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
       <WebDesignFAQ />
       
       {/* Final CTA Section */}

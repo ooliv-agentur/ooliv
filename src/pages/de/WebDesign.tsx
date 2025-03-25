@@ -10,6 +10,7 @@ import WebDesignCaseStudies from '@/components/web-design/WebDesignCaseStudies';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanWebDesign = () => {
   const { setLanguage } = useLanguage();
@@ -26,12 +27,22 @@ const GermanWebDesign = () => {
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />
       <WebDesignProcess />
-      <WebDesignCaseStudies />
+      
+      {/* Full Case Studies Section with all 5 cases */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Webdesign-Erfolgsgeschichten
+          </h2>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
       <WebDesignFAQ />
       
       {/* Final CTA Section */}
       <CTA 
-        title="Lassen Sie uns über Ihr Website-Projekt sprechen"
+        title="Sprechen wir über Ihr Website-Projekt"
         subtitle="Wir helfen Ihnen, etwas Schnelleres, Intelligenteres und Effektiveres zu bauen als das, was Sie jetzt haben."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"

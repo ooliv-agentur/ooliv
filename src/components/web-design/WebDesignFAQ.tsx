@@ -2,9 +2,46 @@
 import React from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDesignFAQ = () => {
-  const faqItems = [
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  const faqItems = isGerman ? [
+    {
+      question: "Wie läuft ein typisches Projekt ab?",
+      answer: "Wir beginnen mit Struktur. Planung der Seiten und Erstellung zielgerichteter Inhalte ist immer der erste Schritt."
+    },
+    {
+      question: "Arbeitet ihr mit Templates?",
+      answer: "Niemals. Jedes Design wird individuell auf Ihre Ziele und Marke zugeschnitten."
+    },
+    {
+      question: "Ist SEO inklusive?",
+      answer: "Ja. Wir optimieren Inhalte, Struktur und Performance von Anfang an."
+    },
+    {
+      question: "Arbeitet ihr mit WordPress?",
+      answer: "Ja – es ist unsere meistgenutzte Plattform für individuelle B2B-Websites."
+    },
+    {
+      question: "Was ist mit komplexeren Websites?",
+      answer: "Wir entwickeln auch maßgeschneiderte Websites mit HTML, CSS und JavaScript – für vollständige Kontrolle ohne CMS."
+    },
+    {
+      question: "Könnt ihr die Inhalte für uns erstellen?",
+      answer: "Absolut. Unser Team kümmert sich um Texte, Visuals und sogar Videos. Siehe unsere /content-erstellung Seite."
+    },
+    {
+      question: "Wie lange dauert ein Website-Projekt?",
+      answer: "In der Regel 6–10 Wochen. Den genauen Zeitplan definieren wir in unserer Projektplanung."
+    },
+    {
+      question: "Könnt ihr unsere bestehende Website verbessern statt neu zu starten?",
+      answer: "Ja – wir übernehmen auch Redesigns und Optimierungsprojekte."
+    }
+  ] : [
     {
       question: "What's the first step in a web design project?",
       answer: "Structure. We start by planning your pages and writing smart, goal-driven content."
@@ -39,11 +76,22 @@ const WebDesignFAQ = () => {
     }
   ];
 
+  const translations = {
+    en: {
+      title: "Web Design — Questions People Ask Us"
+    },
+    de: {
+      title: "Webdesign – Häufige Fragen"
+    }
+  };
+  
+  const t = isGerman ? translations.de : translations.en;
+
   return (
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
-          Web Design — Questions People Ask Us
+          {t.title}
         </h2>
         
         <div className="max-w-4xl mx-auto space-y-4">
