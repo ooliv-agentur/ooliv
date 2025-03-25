@@ -12,7 +12,7 @@ interface ProcessStep {
 interface SolutionProps {
   title?: string;
   subtitle?: string;
-  description?: string;
+  description?: string | React.ReactNode;  // Allow both string and ReactNode
   solutions?: string[];
   process?: ProcessStep[];
   learnMoreText?: string;
