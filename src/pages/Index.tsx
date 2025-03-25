@@ -11,9 +11,9 @@ const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <PageHero
-        badge="Web Design Agency"
-        title="Building High-Performance Websites for Measurable Business Growth"
-        subtitle="We create websites that rank higher, convert better, and drive real business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable results."
+        badge="Strategy, Performance & Growth"
+        title="Building High-Performance Websites That Drive Growth"
+        subtitle="We design and develop websites that rank higher, convert better, and create measurable business success. Whether it's a relaunch or a fresh build — your site will deliver results."
         primaryCta={{
           text: "Start Your Website Project",
           link: "/contact"
