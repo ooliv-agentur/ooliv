@@ -3,7 +3,7 @@ import React from 'react';
 import { Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 // Map of English to German URL paths
 const pathMapping: Record<string, string> = {
@@ -32,6 +32,19 @@ const reversePathMapping: Record<string, string> = Object.entries(pathMapping).r
 const LanguageSwitch: React.FC = () => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Make sure language state is synchronized with URL on mount and URL changes
+  React.useEffect(() => {
+    const currentPath = location.pathname;
+    const isGermanPath = currentPath.startsWith('/de');
+    
+    if (isGermanPath && language !== 'de') {
+      setLanguage('de');
+    } else if (!isGermanPath && language !== 'en') {
+      setLanguage('en');
+    }
+  }, [location.pathname, language, setLanguage]);
 
   const toggleLanguage = () => {
     const currentPath = window.location.pathname;

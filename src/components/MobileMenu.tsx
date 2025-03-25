@@ -13,7 +13,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -42,9 +42,66 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     };
   }, [isOpen, onClose]);
 
-  const handleLinkClick = () => {
-    onClose();
+  const handleTouchStart = useRef<number | null>(null);
+  const handleTouchMove = useRef<number | null>(null);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    handleTouchStart.current = e.touches[0].clientX;
   };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    handleTouchMove.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!handleTouchStart.current || !handleTouchMove.current) return;
+    
+    const diff = handleTouchStart.current - handleTouchMove.current;
+    const threshold = 100;
+
+    if (diff > threshold) {
+      onClose();
+    }
+    
+    handleTouchStart.current = null;
+    handleTouchMove.current = null;
+  };
+
+  // Define navigation links based on current language
+  const getNavigationLinks = () => {
+    if (language === 'de') {
+      return [
+        { title: 'Home', path: '/de' },
+        { title: 'Webdesign', path: '/de/webdesign' },
+        { title: 'Webentwicklung', path: '/de/webentwicklung' },
+        { title: 'Content-Erstellung', path: '/de/content-erstellung' },
+        { title: 'SEO-Optimierung', path: '/de/seo-optimierung' },
+        { title: 'Google Ads', path: '/de/google-ads' },
+        { title: 'KI-Technologien', path: '/de/ki-technologien' },
+        { title: 'Referenzen', path: '/de/referenzen' },
+        { title: 'Über ooliv', path: '/de/ueber-ooliv' },
+        { title: 'Kontakt', path: '/de/kontakt' }
+      ];
+    } else {
+      return [
+        { title: 'Home', path: '/' },
+        { title: 'Web Design', path: '/web-design' },
+        { title: 'Web Development', path: '/web-development' },
+        { title: 'Content Creation', path: '/content-creation' },
+        { title: 'SEO Optimization', path: '/seo-optimization' },
+        { title: 'Google Ads', path: '/google-ads' },
+        { title: 'AI Technologies', path: '/ai-technologies' },
+        { title: 'Case Studies', path: '/case-studies' },
+        { title: 'About ooliv', path: '/about-ooliv' },
+        { title: 'Contact', path: '/contact' }
+      ];
+    }
+  };
+
+  const navigationLinks = getNavigationLinks();
+  
+  // Project button text based on language
+  const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
 
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -80,44 +137,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     }
   };
 
-  const handleTouchStart = useRef<number | null>(null);
-  const handleTouchMove = useRef<number | null>(null);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    handleTouchStart.current = e.touches[0].clientX;
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    handleTouchMove.current = e.touches[0].clientX;
-  };
-
-  const onTouchEnd = () => {
-    if (!handleTouchStart.current || !handleTouchMove.current) return;
-    
-    const diff = handleTouchStart.current - handleTouchMove.current;
-    const threshold = 100;
-
-    if (diff > threshold) {
-      onClose();
-    }
-    
-    handleTouchStart.current = null;
-    handleTouchMove.current = null;
-  };
-
-  const navigationLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'Web Design', path: '/web-design' },
-    { title: 'Web Development', path: '/web-development' },
-    { title: 'Content Creation', path: '/content-creation' },
-    { title: 'SEO Optimization', path: '/seo-optimization' },
-    { title: 'Google Ads', path: '/google-ads' },
-    { title: 'AI Technologies', path: '/ai-technologies' },
-    { title: 'Case Studies', path: '/case-studies' },
-    { title: 'About ooliv', path: '/about-ooliv' },
-    { title: 'Contact', path: '/contact' }
-  ];
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -143,13 +162,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchEnd={onTouchEnd}
           >
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-brand-footer/95 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold text-white font-sans">Menu</h2>
+              <h2 className="text-xl font-semibold text-white font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
               <Button 
                 variant="ghost" 
                 size="icon" 
                 className="text-white hover:bg-white/10 w-14 h-14 rounded-full flex items-center justify-center" 
                 onClick={onClose}
-                aria-label="Close menu"
+                aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
               >
                 <X className="h-8 w-8" />
               </Button>
@@ -178,8 +197,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 onClick={onClose}
                 asChild
               >
-                <Link to="/contact">
-                  Start Your Project
+                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+                  {startProjectText}
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -187,8 +206,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               <div className="grid grid-cols-3 gap-4">
                 {[
                   { icon: MessageCircle, label: "WhatsApp" },
-                  { icon: Mail, label: "Email" },
-                  { icon: Phone, label: "Phone" }
+                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email" },
+                  { icon: Phone, label: language === 'de' ? "Telefon" : "Phone" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}
