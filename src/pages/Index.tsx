@@ -45,8 +45,8 @@ const Index = () => {
       <TeamTeaser />
       <ClientLogos />
       
-      {/* Unified Case Studies Section */}
-      <CaseStudiesSection maxCases={2} showCta={true} />
+      {/* Show all 5 case studies with no limitation */}
+      <CaseStudiesSection showAll={true} showCta={true} />
       
       <FAQ />
       <CTA 

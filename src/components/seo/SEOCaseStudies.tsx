@@ -10,10 +10,10 @@ const SEOCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Select SEO-focused case studies for display (first and last case)
+  // Use all 5 case studies instead of just selected ones
   const relevantCases = isGerman 
-    ? [caseStudiesData.de[0], caseStudiesData.de[4]]
-    : [caseStudiesData.en[0], caseStudiesData.en[4]];
+    ? caseStudiesData.de
+    : caseStudiesData.en;
   
   const translations = {
     en: {

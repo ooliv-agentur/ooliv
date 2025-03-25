@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -7,7 +6,6 @@ import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import TeamTeaser from "@/components/TeamTeaser";
 import ClientLogos from "@/components/ClientLogos";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
@@ -158,8 +156,8 @@ const GermanIndex = () => {
       
       <ClientLogos />
       
-      {/* Unified Case Studies Section */}
-      <CaseStudiesSection maxCases={2} showCta={true} />
+      {/* Show all 5 case studies with no limitation */}
+      <CaseStudiesSection showAll={true} showCta={true} />
       
       <FAQ 
         title="Häufig gestellte Fragen – zur Werbeagentur ooliv in Mainz"

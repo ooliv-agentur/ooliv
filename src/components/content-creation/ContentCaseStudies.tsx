@@ -10,10 +10,10 @@ const ContentCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Select content-related case studies for display (first two cases)
+  // Use all 5 case studies instead of just the first 2
   const relevantCases = isGerman 
-    ? caseStudiesData.de.slice(0, 2)
-    : caseStudiesData.en.slice(0, 2);
+    ? caseStudiesData.de
+    : caseStudiesData.en;
   
   const translations = {
     en: {

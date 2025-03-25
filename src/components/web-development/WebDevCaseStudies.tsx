@@ -17,10 +17,10 @@ const WebDevCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Select web development focused case studies (cases 1 and 2)
+  // Use all 5 case studies instead of just selected ones
   const relevantCases = isGerman 
-    ? [caseStudiesData.de[1], caseStudiesData.de[2]]
-    : [caseStudiesData.en[1], caseStudiesData.en[2]];
+    ? caseStudiesData.de
+    : caseStudiesData.en;
   
   const translations = {
     en: {

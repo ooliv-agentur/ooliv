@@ -189,11 +189,12 @@ interface CaseStudiesSectionProps {
   showCta?: boolean;
 }
 
-const CaseStudiesSection = ({ showAll = false, maxCases = 2, showCta = true }: CaseStudiesSectionProps) => {
+const CaseStudiesSection = ({ showAll = false, maxCases = 5, showCta = true }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
   
-  const displayCases = showAll ? cases : cases.slice(0, maxCases);
+  // Always display all 5 case studies, regardless of showAll or maxCases props
+  const displayCases = cases;
   
   const translations = {
     en: {
