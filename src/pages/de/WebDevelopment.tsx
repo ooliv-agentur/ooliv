@@ -7,6 +7,7 @@ import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevProcess from '@/components/web-development/WebDevProcess';
 import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
+import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -49,6 +50,7 @@ const GermanWebDevelopment = () => {
     <PageLayout className="overflow-x-hidden">
       <WebDevHero />
       <WebDevBenefits />
+      <WebDevCmsVsStaticDE />
       <WebDevProcess />
       <WebDevServices />
       <WebDevCaseStudies />

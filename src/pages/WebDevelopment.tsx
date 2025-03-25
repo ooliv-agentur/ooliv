@@ -6,6 +6,7 @@ import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevProcess from '@/components/web-development/WebDevProcess';
 import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
+import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
 import FAQ from '@/components/FAQ';
 
@@ -41,6 +42,7 @@ const WebDevelopment = () => {
     <PageLayout className="overflow-x-hidden">
       <WebDevHero />
       <WebDevBenefits />
+      <WebDevCmsVsStatic />
       <WebDevProcess />
       <WebDevServices />
       <WebDevCaseStudies />
