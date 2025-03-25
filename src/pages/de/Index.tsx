@@ -1,3 +1,4 @@
+
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -125,9 +126,7 @@ const GermanIndex = () => {
       />
       <TeamTeaser />
       <ClientLogos />
-      
       <Testimonials 
-        title="Was unsere Kunden sagen:"
         testimonials={[
           {
             quote: "ooliv hat unsere alte Website in einen Wachstumsmotor verwandelt. Die Conversion-Rate ist um 40 % gestiegen.",
