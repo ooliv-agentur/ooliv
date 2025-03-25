@@ -73,12 +73,15 @@ const Hero = () => {
             {/* Main heading with emphasis */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               <span className="text-brand-primary">ooliv</span> Web Design Agency
-              <div className="text-gray-800 flex items-center justify-center mt-2">
-                for <span className="ml-2 relative text-gray-800 flex items-center">
-                  {displayText}
+              
+              {/* Animation container with fixed width to prevent line breaks on desktop */}
+              <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
+                <span className="mr-2">for</span>
+                <div className="relative inline-flex items-center">
+                  <span className="whitespace-nowrap text-gray-800">{displayText}</span>
                   <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
                   {currentIcon}
-                </span>
+                </div>
               </div>
             </h1>
             
