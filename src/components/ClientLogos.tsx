@@ -17,11 +17,6 @@ interface ClientLogosProps {
 const ClientLogos = ({ title, description, technologies, note }: ClientLogosProps = {}) => {
   const { language } = useLanguage();
   
-  // Basecamp text based on language
-  const basecampText = language === 'de' 
-    ? "Wir arbeiten mit Basecamp – für klare Aufgaben, smarte Kommunikation und vollständige Transparenz im Projektverlauf."
-    : "All projects are managed transparently and efficiently via Basecamp – our GDPR-compliant platform for files, tasks and feedback loops.";
-  
   const defaultTechnologies = language === 'de' 
     ? [
         {
@@ -96,19 +91,14 @@ const ClientLogos = ({ title, description, technologies, note }: ClientLogosProp
           ))}
         </div>
         
-        {/* Note or Basecamp information */}
+        {/* Note section */}
         <div className="mt-12 text-center border-t border-gray-100 pt-10">
           <p className="text-brand-text italic max-w-3xl mx-auto">
             {note || defaultNote}
           </p>
         </div>
         
-        {/* Prominent Basecamp information */}
-        <div className="mt-10 p-6 bg-blue-50 rounded-lg border border-blue-100">
-          <p className="text-brand-text text-center font-medium">
-            {basecampText}
-          </p>
-        </div>
+        {/* Removed Basecamp information block */}
       </div>
     </section>
   );
