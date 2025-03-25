@@ -23,7 +23,7 @@ const WebDesignBenefits = () => {
     {
       icon: HeadphonesIcon,
       title: 'We're Still There After Launch',
-      description: 'We don\'t disappear — we support, optimize, and grow with you over time.'
+      description: "We don't disappear — we support, optimize, and grow with you over time."
     }
   ];
 
