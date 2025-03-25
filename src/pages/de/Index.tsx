@@ -25,20 +25,20 @@ const GermanIndex = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Hero 
-        title="ooliv Werbeagentur Mainz – Hochleistungs-Websites für SEO, Konversionen & Wachstum"
-        subtitle="Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen."
-        description="Wir erstellen leistungsstarke Websites, die Leads generieren, besser ranken und Besucher in Kunden verwandeln. Ob Relaunch oder neue Website, wir sorgen dafür, dass Ihre Website messbaren Geschäftserfolg bringt."
+        title="Werbeagentur Mainz für messbare Ergebnisse im Web"
+        subtitle="Wir entwickeln Websites, die mehr können: besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen. Seit 2008 ist ooliv Ihre Webdesign-Agentur für leistungsstarke Lösungen – made in Mainz."
         startProjectText="Projekt starten"
-        seeWorkText="Unsere Arbeiten ansehen"
+        seeWorkText="Arbeiten ansehen"
       />
       <AboutSection 
-        title="Über ooliv"
-        description="Wir sind eine spezialisierte Digitalagentur in Mainz, die seit 2008 hochwertige Websites und digitale Lösungen für anspruchsvolle Kunden entwickelt. Unser Team verbindet strategisches Denken mit technischer Expertise und kreativem Flair."
+        title="Klein, fokussiert, effektiv – Ihre Webagentur aus Mainz."
+        description="ooliv ist keine anonyme Full-Service-Agentur, sondern ein eingespieltes Expertenteam mit klarer Spezialisierung: Strategie, Webdesign, Entwicklung, SEO und Content – alles aus einer Hand. Sie kommunizieren direkt mit dem Gründer. Wir liefern Ergebnisse, keine Buzzwords."
         values={[
           "Strategie vor Design",
           "Qualität vor Quantität",
           "Ergebnisse vor Ästhetik"
         ]}
+        additionalText="Was das für Sie bedeutet: Kurze Wege, tiefes Verständnis, maßgeschneiderte Lösungen."
       />
       <TeamImpactSection
         title="Klein, aber schlagkräftig"
@@ -51,97 +51,162 @@ const GermanIndex = () => {
         ]}
       />
       <Challenge 
-        title="Ihre Website sollte für Sie arbeiten – nicht gegen Sie."
-        description="Viele Unternehmen kämpfen mit Websites, die nicht performant sind – sei es, weil sie veraltet, zu langsam sind oder noch gar nicht existieren. Eine Website, die keine Leads generiert, kein Vertrauen aufbaut oder bei Google nicht gut rankt, ist eine verpasste Chance."
+        title="Ihre Website ist online – aber sie arbeitet nicht für Sie?"
+        description="Viele Unternehmen kämpfen mit Webseiten, die gut aussehen, aber nichts bringen. Wir zeigen, woran es liegt – und wie wir es besser machen."
         challenges={[
-          "Veraltetes Design, das nicht mehr den aktuellen Standards entspricht",
-          "Langsame Ladezeiten, die Besucher frustrieren und zur Abwanderung führen",
-          "Mangelnde Mobile-Optimierung trotz steigender mobiler Nutzung",
-          "Fehlende Conversion-Elemente, die Besucher zu Kunden machen",
-          "Schlechtes Ranking bei Google durch technische SEO-Probleme",
-          "Fehlende Strategie, die Ihre Geschäftsziele unterstützt"
+          "Veraltetes Design",
+          "Langsame Ladezeiten",
+          "Schlechte Sichtbarkeit bei Google",
+          "Fehlende Mobile-Optimierung",
+          "Keine Conversion-Elemente",
+          "Kein strategischer Aufbau"
+        ]}
+        solutions={[
+          "Zielgruppengerechte Gestaltung mit klarer Markenbotschaft",
+          "Technisch optimierte Entwicklung mit Fokus auf Performance",
+          "Technische & inhaltliche SEO-Strategie mit lokalem Fokus",
+          "Mobile-first Design für alle Endgeräte",
+          "Durchdachte UX mit klaren Calls-to-Action",
+          "Struktur & Inhalte nach Nutzerverhalten und Suchintention"
         ]}
       />
       <div className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Sehen Sie den Unterschied einer strategischen Website</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">
+            Sehen Sie den Unterschied: Strategie statt Kosmetik
+          </h2>
           <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            Ziehen Sie den Schieberegler, um veraltete Designs mit modernen, konversionsorientierten Websites zu vergleichen, die echte Geschäftsergebnisse liefern.
+            Ziehen Sie den Regler und vergleichen Sie selbst: So verwandeln wir veraltete, nicht performante Webseiten in digitale Vertriebsmaschinen – mit mehr Sichtbarkeit, mehr Leads und besserer Nutzerführung.
           </p>
           <BeforeAfterSlider />
         </div>
       </div>
       <Solution 
-        title="Wir erstellen Websites, die Ihr Unternehmen voranbringen—"
+        title="Wir entwickeln Websites, die Ihre Unternehmensziele unterstützen."
         subtitle="Mit Strategie, Expertise & intelligenter Technologie"
-        description="Ob Sie ein neues Unternehmen gründen oder eine veraltete Website aktualisieren, unser Expertenteam kombiniert strategisches Denken, nutzerorientiertes Design und modernste Tools, um leistungsstarke digitale Erlebnisse zu schaffen. KI verbessert die Effizienz – aber Kreativität, Erfahrung und datengestützte Entscheidungen stehen im Mittelpunkt unseres Ansatzes."
+        description="Ob Start-up, Mittelstand oder B2B-Unternehmen – wir liefern keine Templates, sondern maßgeschneiderte Lösungen, die Ihre Zielgruppe erreichen."
         solutions={[
-          "Strategiegeleitete Website-Entwicklung, die Ihre Geschäftsziele unterstützt",
-          "Nutzerorientiertes Design, das Besucher zu Kunden konvertiert",
-          "Technisch optimierte Websites für schnelle Ladezeiten und SEO-Erfolg",
-          "Maßgeschneiderte Content-Strategien, die Ihre Zielgruppe ansprechen",
-          "Kontinuierliche Analyse und Optimierung für messbaren Erfolg"
+          "Strategisch durchdacht",
+          "Für Menschen & Maschinen optimiert",
+          "Technisch auf dem neuesten Stand",
+          "Entwickelt für Wachstum – nicht für kurzfristige Trends"
+        ]}
+        process={[
+          {
+            title: "Strategie & Analyse",
+            description: "Zielgruppen, Märkte, Suchverhalten – wir starten mit datenbasierten Erkenntnissen statt Bauchgefühl."
+          },
+          {
+            title: "Content & SEO",
+            description: "Wir erstellen Inhalte, die nicht nur gut klingen, sondern auch gefunden werden – in mehreren Sprachen, bei Bedarf KI-gestützt."
+          },
+          {
+            title: "UX & Webdesign",
+            description: "Visuelles Konzept, Benutzerführung & Conversion – perfekt abgestimmt auf Ihre Marke und Ihre Ziele."
+          },
+          {
+            title: "Technische Umsetzung",
+            description: "Programmierung mit HTML, CSS und JavaScript – ohne CMS, wenn Sie volle Kontrolle und Geschwindigkeit wünschen. Oder mit WordPress, wenn redaktionelle Pflege gefragt ist."
+          },
+          {
+            title: "Launch, Tracking & Support",
+            description: "Wir begleiten Sie über den Launch hinaus: mit sauberem Tracking, kontinuierlicher Optimierung und klarer Betreuung über Basecamp."
+          }
         ]}
         learnMoreText="Mehr über unseren Prozess erfahren"
       />
       <TeamTeaser />
       <ClientLogos 
-        title="Vertrauen Sie uns, wie diese Unternehmen"
-        description="Wir sind stolz auf unsere langjährigen Kundenbeziehungen mit namhaften Unternehmen verschiedener Branchen."
+        title="Technologien, die Website-Performance messbar verbessern."
+        description="Wir kombinieren menschliche Expertise mit leistungsstarken Tools – ohne Abkürzungen, ohne blinden KI-Einsatz."
+        technologies={[
+          {
+            name: "ChatGPT",
+            description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert."
+          },
+          {
+            name: "Midjourney",
+            description: "Individuelle Visuals statt Stockfotos."
+          },
+          {
+            name: "Ahrefs",
+            description: "Keyword-Analysen & Wettbewerbsrecherche."
+          },
+          {
+            name: "Basecamp",
+            description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt – intern und mit Ihnen."
+          }
+        ]}
+        note="Wichtig: Bei ooliv behalten Menschen die Kontrolle. KI ist ein Werkzeug – keine Lösung."
       />
       <Testimonials 
-        title="Wir erstellen Websites, die"
-        subtitle="echte Geschäftsergebnisse liefern."
+        title="Was unsere Kunden sagen:"
         testimonials={[
           {
-            quote: "ooliv hat uns nicht nur eine neue Website geliefert, sondern einen echten Wachstumsmotor für unser Geschäft. Die Conversion-Rate ist um 40% gestiegen.",
+            quote: "ooliv hat unsere alte Website in einen Wachstumsmotor verwandelt. Die Conversion-Rate ist um 40 % gestiegen.",
             author: "Michael Schmidt",
-            role: "Geschäftsführer, TechSolutions GmbH"
+            role: "TechSolutions GmbH"
           },
           {
-            quote: "Endlich eine Agentur, die nicht nur über Strategie spricht, sondern diese auch liefert. Unsere neue Website generiert dreimal so viele qualifizierte Leads wie die alte.",
+            quote: "Endlich eine Agentur, die wirklich strategisch arbeitet. Wir generieren dreimal so viele qualifizierte Leads wie vorher.",
             author: "Sabine Müller",
-            role: "Marketing Direktorin, Innovate AG"
+            role: "Innovate AG"
           },
           {
-            quote: "Die Zusammenarbeit mit ooliv war unkompliziert und effizient. Das Ergebnis ist eine Website, die perfekt zu unserem Unternehmen passt und unsere Vertriebsziele unterstützt.",
+            quote: "Unkompliziert, effizient und auf den Punkt. Das Ergebnis passt exakt zu unserem Vertrieb.",
             author: "Thomas Weber",
-            role: "Vertriebsleiter, ProService GmbH"
+            role: "ProService GmbH"
           }
         ]}
       />
       <FAQ 
-        title="Häufig gestellte Fragen"
-        faqs={[
+        title="Häufig gestellte Fragen – zur Werbeagentur ooliv in Mainz"
+        customFaqs={[
           {
-            question: "Wie läuft ein typisches Website-Projekt bei der Werbeagentur ooliv in Mainz ab?",
-            answer: "Unsere Projekte beginnen mit einem Strategiegespräch, gefolgt von einer Konzeptphase. Nach Ihrer Freigabe gestalten und entwickeln wir die Website schrittweise mit regelmäßigem Feedback. Als Werbeagentur in Mainz legen wir Wert auf transparente Prozesse und klare Kommunikation vom ersten Gespräch bis zum Launch."
+            question: "Was macht ooliv als Werbeagentur in Mainz besonders?",
+            answer: "Wir arbeiten strategisch, sprechen Klartext und liefern Ergebnisse – ohne Umwege über Zwischenebenen. Sie sprechen direkt mit dem Gründer."
           },
           {
-            question: "Wie lange dauert die Entwicklung einer Website mit eurer Werbeagentur?",
-            answer: "Die meisten Projekte werden innerhalb von 8-12 Wochen abgeschlossen, abhängig vom Umfang und der Komplexität. Als erfahrene Werbeagentur in Mainz arbeiten wir effizient und strukturiert, um Ihre Website zeitnah zu launchen."
+            question: "Für wen ist ooliv die richtige Agentur?",
+            answer: "Für B2B-Unternehmen, Start-ups oder Mittelstand, die Wert auf Performance, SEO und einen professionellen Webauftritt legen."
           },
           {
-            question: "Was kostet eine Website von der Werbeagentur ooliv?",
-            answer: "Die Investition hängt von Ihren spezifischen Anforderungen ab. Unsere Projekte beginnen typischerweise bei 8.000 € für kleinere Websites und können je nach Funktionsumfang und Komplexität variieren. Als seriöse Werbeagentur in Mainz bieten wir faire, transparente Preise ohne versteckte Kosten."
+            question: "Wie lange dauert ein typisches Projekt?",
+            answer: "Je nach Umfang 4 bis 10 Wochen – mit klaren Meilensteinen und transparenter Planung über Basecamp."
           },
           {
-            question: "Was unterscheidet ooliv von anderen Werbeagenturen in Mainz?",
-            answer: "Anders als viele Werbeagenturen arbeiten Sie bei uns direkt mit dem Gründer zusammen, während ein spezialisiertes Team im Hintergrund für exzellente Umsetzung sorgt. Wir kombinieren strategisches Denken mit technischer Expertise und setzen KI-Tools sinnvoll ein, um bessere Ergebnisse zu erzielen."
+            question: "Arbeitet ihr mit WordPress oder ohne CMS?",
+            answer: "Beides – je nach Ziel. Für maximale Kontrolle programmieren wir direkt mit HTML, CSS, JS. Für redaktionelle Flexibilität setzen wir auf WordPress."
           },
           {
-            question: "Bietet die Werbeagentur ooliv auch laufende Betreuung nach dem Launch?",
-            answer: "Ja, wir bieten verschiedene Wartungs- und Betreuungspakete an, um Ihre Website aktuell, sicher und leistungsstark zu halten. Als zuverlässige Werbeagentur in Mainz stehen wir für langfristige Partnerschaften und kontinuierliche Unterstützung."
+            question: "Bietet ihr auch SEO-Optimierung an?",
+            answer: "Ja, von Keyword-Recherche über technische Onpage-Optimierung bis zu lokalem SEO in Mainz."
           },
           {
-            question: "Arbeitet eure Werbeagentur auch mit bestehenden Websites?",
-            answer: "Absolut. Wir übernehmen Relaunches, Redesigns und Optimierungen bestehender Websites. Als erfahrene Werbeagentur in Mainz analysieren wir Ihre aktuelle Präsenz und entwickeln maßgeschneiderte Lösungen, um Ihre Online-Ziele zu erreichen."
+            question: "Wie läuft die Zusammenarbeit ab?",
+            answer: "Klar strukturiert über Basecamp – mit festem Zeitplan, klarer Kommunikation und direkter Ansprechpartnerin: dem Gründer."
+          },
+          {
+            question: "Was kostet eine Website bei euch?",
+            answer: "Unsere Projekte starten bei ca. 5.000 €. Final hängt der Preis vom Umfang, CMS-Wunsch und Funktionsumfang ab."
+          },
+          {
+            question: "Kann ich auch Google Ads mit euch umsetzen?",
+            answer: "Ja. Wir bieten professionelle Kampagnensteuerung über Google Ads – inklusive Landingpages und Conversion-Tracking."
+          },
+          {
+            question: "Arbeitet ihr auch mit externen Designern oder Partnern?",
+            answer: "Nein – alle Leistungen entstehen intern, abgestimmt im Team, gesteuert vom Gründer."
+          },
+          {
+            question: "Was bringt mir eine Zusammenarbeit mit einer lokalen Werbeagentur in Mainz?",
+            answer: "Kurze Wege, regionale Marktkenntnis und ein Team, das wirklich versteht, was Sie brauchen."
           }
         ]}
       />
       <CTA 
-        title="Bereit, Ihre digitale Präsenz zu transformieren?"
-        subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
+        title="Bereit, mit einer echten Werbeagentur in Mainz durchzustarten?"
+        subtitle="Lassen Sie uns in einem kostenfreien Gespräch besprechen, wie wir Ihre Website zum Wachstumstreiber machen."
         primaryCta="Projekt starten"
         secondaryCta="Unsere Arbeiten ansehen"
       />

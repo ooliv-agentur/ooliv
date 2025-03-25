@@ -1,138 +1,71 @@
 
 import React from 'react';
-import { AlertCircle, Smartphone, Zap, Search, LineChart, ArrowRight, X, Check } from "lucide-react";
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from '@/components/ui/button';
-import BeforeAfterSlider from './BeforeAfterSlider';
-import { Link } from 'react-router-dom';
-import { cn } from '@/lib/utils';
+import { Check, X } from 'lucide-react';
 
 interface ChallengeProps {
   title?: string;
   description?: string;
   challenges?: string[];
+  solutions?: string[];
 }
 
-const Challenge = ({ title, description, challenges }: ChallengeProps = {}) => {
-  const { t } = useLanguage();
+const Challenge = ({ title, description, challenges, solutions }: ChallengeProps) => {
+  const hasProblemsAndSolutions = challenges && solutions && challenges.length > 0 && solutions.length > 0;
   
-  const defaultChallenges = [
-    {
-      problem: "Outdated Website Design",
-      painPoint: "An outdated website hurts your credibility and loses customers.",
-      solution: "We create modern, conversion-focused websites that build trust and drive engagement.",
-      icon: AlertCircle,
-      color: "from-red-50/40 to-orange-50/30"
-    },
-    {
-      problem: "Poor Mobile Experience",
-      painPoint: "Over 60% of traffic is mobile — a bad experience costs you conversions.",
-      solution: "We build fully responsive websites that perform seamlessly across all devices.",
-      icon: Smartphone,
-      color: "from-brand-background/60 to-brand-backgroundAlt/40"
-    },
-    {
-      problem: "Slow Load Speeds",
-      painPoint: "Every second of delay reduces conversions by up to 7%.",
-      solution: "We optimize for lightning-fast performance that boosts SEO and UX.",
-      icon: Zap,
-      color: "from-green-50/40 to-emerald-50/30"
-    },
-    {
-      problem: "Low Google Rankings",
-      painPoint: "If you don't rank, 90% of your potential customers won't find you.",
-      solution: "Our SEO-driven websites improve visibility, structure, and relevance.",
-      icon: Search,
-      color: "from-yellow-50/40 to-amber-50/30"
-    },
-    {
-      problem: "No Conversions Despite Traffic?",
-      painPoint: "Traffic alone doesn't pay the bills — conversions do.",
-      solution: "Through strategic UX and clear CTAs, we turn visitors into leads and customers.",
-      icon: LineChart,
-      color: "from-brand-backgroundAlt/60 to-brand-background/40"
-    }
-  ];
-
   return (
-    <section id="solutions" className="section-standard bg-muted py-24">
-      <div className="section-container max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="heading-standard text-3xl md:text-4xl font-bold mb-4">
-            {title || "Website Challenges That Hurt Your Business — Here's How We Fix Them"}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-brand-heading mb-4">
+            {title || "Your Website Should Work for You—Not Against You."}
           </h2>
-          <p className="subheading-standard text-lg max-w-3xl mx-auto">
-            {description || "Here's what might be holding your business back — and how we fix it."}
+          <p className="text-xl text-brand-text max-w-3xl mx-auto">
+            {description || "Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity."}
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {challenges ? (
-            challenges.map((challenge, index) => (
-              <div 
-                key={index} 
-                className="card-standard group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="flex flex-col h-full p-6">
-                  <div className="mb-5">
-                    <div className="flex flex-col items-start gap-2 mb-4">
-                      <div className="icon-standard">
-                        <AlertCircle className="h-5 w-5 text-brand-primary" />
-                      </div>
-                      <p className="text-gray-600">{challenge}</p>
-                    </div>
-                  </div>
-                </div>
+        
+        {hasProblemsAndSolutions ? (
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-red-50 p-8 rounded-lg">
+              <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center">
+                <X className="mr-2 h-5 w-5" />
+                Probleme
+              </h3>
+              <ul className="space-y-4">
+                {challenges.map((challenge, index) => (
+                  <li key={index} className="flex">
+                    <X className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-1" />
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-green-50 p-8 rounded-lg">
+              <h3 className="text-xl font-bold text-green-700 mb-4 flex items-center">
+                <Check className="mr-2 h-5 w-5" />
+                Unsere Lösungen
+              </h3>
+              <ul className="space-y-4">
+                {solutions.map((solution, index) => (
+                  <li key={index} className="flex">
+                    <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                    <span>{solution}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto">
+            {challenges && challenges.map((challenge, index) => (
+              <div key={index} className="flex items-start">
+                <X className="h-5 w-5 text-red-500 mr-3 flex-shrink-0 mt-1" />
+                <p>{challenge}</p>
               </div>
-            ))
-          ) : (
-            defaultChallenges.map((item, index) => (
-              <div 
-                key={index} 
-                className="card-standard group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="flex flex-col h-full p-6">
-                  <div className="mb-5">
-                    <div className="flex flex-col items-start gap-2 mb-4">
-                      <div className="icon-standard">
-                        <item.icon className="h-5 w-5 text-brand-primary" />
-                      </div>
-                      <h3 className="text-brand-heading font-semibold text-xl mb-2">
-                        {item.problem}
-                      </h3>
-                      <p className="text-gray-600">{item.painPoint}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 border-t border-gray-100">
-                    <div className="flex items-start gap-2">
-                      <div className="p-1 rounded-full bg-green-50">
-                        <Check className="h-4 w-4 text-green-500" />
-                      </div>
-                      <div>
-                        <p className="text-gray-700">{item.solution}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-
-        <div className="text-center">
-          <Button 
-            variant="default" 
-            size="lg"
-            className="button-primary group"
-            asChild
-          >
-            <Link to="/web-design-development">
-              See How We Solve These Challenges 
-              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
