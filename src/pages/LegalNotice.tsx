@@ -1,58 +1,121 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import LegalHero from '@/components/legal/LegalHero';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const LegalNotice = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <div className="text-center mb-16 pt-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Legal Notice</h1>
-        </div>
+      <LegalHero
+        title="Legal Notice & Company Details"
+        subtitle="Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv GmbH."
+        primaryCta={{
+          text: "Start Your Project",
+          link: "/contact"
+        }}
+        secondaryCta={{
+          text: "Contact Us",
+          link: "/contact"
+        }}
+      />
 
-        <div className="prose max-w-none">
-          <h2>Company Information</h2>
-          <p>
-            ooliv GmbH<br />
-            Sample Street 123<br />
-            12345 City<br />
-            Country
-          </p>
-          
-          <p>
-            Phone: +1 (123) 456-7890<br />
-            Email: info@ooliv.com
-          </p>
-          
-          <h2>Registration</h2>
-          <p>
-            Commercial Register: Sample Commercial Court<br />
-            Registration Number: 123456789<br />
-            VAT ID: DE123456789
-          </p>
-          
-          <h2>Represented by</h2>
-          <p>
-            John Doe, CEO
-          </p>
-          
-          <h2>Disclaimer</h2>
-          <h3>Liability for Content</h3>
-          <p>
-            The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents' accuracy, completeness, or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this context, please note that we are accordingly not obliged to monitor merely the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).
-          </p>
-          
-          <h3>Liability for Links</h3>
-          <p>
-            Our offer includes links to external third-party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents. The linked websites had been checked for possible violations of law at the time of the establishment of the link. Illegal contents were not detected at the time of the linking. A permanent monitoring of the contents of linked websites cannot be imposed without reasonable indications that there has been a violation of law. Upon notification of violations, we will remove such links immediately.
-          </p>
-          
-          <h3>Copyright</h3>
-          <p>
-            The contents and works on these pages created by the site operators are subject to copyright law. The duplication, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of these pages are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you still be aware of a copyright infringement, please inform us accordingly. Upon notification of violations, we will remove such contents immediately.
-          </p>
+      <section className="section-standard">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Company Details Column */}
+            <div>
+              <Card className="card-layout h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <Building className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Company Details</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <p className="text-lg font-semibold text-brand-heading">ooliv GmbH</p>
+                    <p className="text-brand-text">
+                      Eduard von Heuss Str. 29<br />
+                      55294 Bodenheim<br />
+                      Germany
+                    </p>
+                    
+                    <div className="flex items-center text-brand-text space-x-2">
+                      <Phone className="h-4 w-4 text-brand-primary" />
+                      <span>06131 – 63 67 801</span>
+                    </div>
+                    
+                    <div className="flex items-center text-brand-text space-x-2">
+                      <Mail className="h-4 w-4 text-brand-primary" />
+                      <span>info@ooliv.de</span>
+                    </div>
+                    
+                    <div className="pt-4">
+                      <p className="font-medium">Represented by:</p>
+                      <p>Uli Schönleber</p>
+                    </div>
+                    
+                    <div className="pt-2">
+                      <p className="font-medium">Commercial Register:</p>
+                      <p>Amtsgericht Mainz</p>
+                      <p>HRB 50933</p>
+                    </div>
+                    
+                    <div className="pt-2">
+                      <p className="font-medium">VAT ID:</p>
+                      <p>DE265704357</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Legal Notices Column */}
+            <div className="space-y-6">
+              <Card className="card-layout">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Copyright Notice</h3>
+                  </div>
+                  
+                  <p className="text-brand-text">
+                    All content and media on this website are protected by German copyright and ancillary copyright law. Any form of reuse, reproduction or distribution outside the limits of copyright law requires written consent. Unauthorized use will be legally pursued.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-layout">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <AlertTriangle className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Objection to Promotional Emails</h3>
+                  </div>
+                  
+                  <p className="text-brand-text">
+                    We object to the use of our published contact information for unsolicited advertising. We reserve the right to take legal action in the case of unrequested promotional emails (spam).
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <div className="flex justify-center md:justify-start pt-4">
+                <Button variant="outline" asChild>
+                  <Link to="/privacy-policy">View Privacy Policy →</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </PageLayout>
   );
 };

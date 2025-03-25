@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import LegalNotice from "./pages/LegalNotice";
 import DataPrivacy from "./pages/DataPrivacy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/careers" element={<Careers />} />
             <Route path="/legal-notice" element={<LegalNotice />} />
             <Route path="/data-privacy" element={<DataPrivacy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
