@@ -39,9 +39,8 @@ const AiTechBenefits = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold mb-6">Human Expertise First. AI Second.</h3>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-            Every ooliv project is led by digital strategists and designers. We use AI where it helps—and go full human when it matters. Creativity, quality, and business goals come first.
+            Creativity, quality, and business goals come first. We use AI where it helps—and go full human when it matters.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">

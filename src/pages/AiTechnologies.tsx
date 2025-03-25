@@ -12,23 +12,23 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const AiTechnologies = () => {
   const { t } = useLanguage();
   
-  // Custom FAQ items for AI Technologies page
+  // Custom FAQ items for AI Technologies page based on prompt
   const aiTechFaqs = [
     {
-      question: "Does ooliv replace copywriters with ChatGPT?",
-      answer: "No. We use ChatGPT for structured drafts—but every word is refined by our editorial team."
+      question: "Does ooliv replace writers with ChatGPT?",
+      answer: "No. We use ChatGPT to generate drafts, but all content is reviewed and refined by humans."
     },
     {
-      question: "Is AI-generated content SEO-compliant?",
-      answer: "Yes—when used strategically. We follow SEO best practices and optimize all outputs for search intent and clarity."
+      question: "Is AI-generated content good for SEO?",
+      answer: "Yes — when used properly. We follow SEO best practices and ensure every word matches your goals."
     },
     {
-      question: "Will my website look like 'AI art'?",
-      answer: "No. We use AI tools selectively, always within your brand identity. The result is custom, not generic."
+      question: "Will my site look like it was made by AI?",
+      answer: "No. We use AI to speed up creative work — but all visuals, text, and design are tailored to your brand."
     },
     {
-      question: "How is my data protected when AI tools are used?",
-      answer: "We never upload sensitive data to open platforms and use secure, controlled environments for AI-assisted work."
+      question: "Is my data safe with AI tools?",
+      answer: "Yes. We use secure environments and never upload sensitive data to public platforms."
     }
   ];
   
@@ -40,8 +40,8 @@ const AiTechnologies = () => {
       <AiTechCaseStudies />
       <FAQ customFaqs={aiTechFaqs} />
       <CTA 
-        title="Ready to Build Smarter?"
-        subtitle="Let's use AI the right way—fast, strategic, and always human-driven."
+        title="Let's Use AI the Right Way"
+        subtitle="With ooliv, AI speeds up the process — but never replaces quality or strategy. Let's create something better, faster, and smarter."
         primaryCta="Start Your Project"
         secondaryCta="Request a Free Demo"
       />

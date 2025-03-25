@@ -9,42 +9,45 @@ const AiTechServices = () => {
     {
       icon: <MessageSquare className="h-10 w-10 text-blue-500" />,
       title: "Content Creation with ChatGPT",
-      description: "We use ChatGPT to accelerate ideation and scale content production—especially for multilingual, SEO-focused, or large-scale sites.",
+      description: "We use ChatGPT to create content outlines, multilingual drafts, and messaging frameworks — always refined by our editorial team.",
       features: [
         "Structured SEO outlines",
-        "Multilingual content scaffolds",
-        "Idea generation for messaging & blog content",
-        "Always refined by human editors and strategists"
+        "Multilingual content drafts",
+        "Messaging frameworks",
+        "Always human-reviewed and refined"
       ]
     },
     {
       icon: <Image className="h-10 w-10 text-purple-500" />,
       title: "Visuals with Midjourney",
-      description: "Midjourney helps us develop brand-specific illustrations, image concepts, and design direction faster than traditional sourcing.",
+      description: "Midjourney helps us create stunning, brand-specific images and illustrations — no stock photos needed.",
       features: [
         "Custom hero visuals",
-        "Illustration-based UI elements",
-        "Unique brand imagery for key sections"
+        "Brand-specific illustrations",
+        "Unique imagery for key sections",
+        "Consistent with your brand identity"
       ]
     },
     {
       icon: <Video className="h-10 w-10 text-red-500" />,
       title: "Motion & Video with Sora",
-      description: "We use Sora and similar tools to generate short-form videos and animations for web—fast, on-brand, and impactful.",
+      description: "From explainer videos to background loops, Sora allows us to generate dynamic video content — fast, branded, and engaging.",
       features: [
-        "Hero animations & loop backgrounds",
-        "Explainer formats for complex products",
-        "Conceptual visual storytelling"
+        "Hero animations & loops",
+        "Explainer videos",
+        "Dynamic visual storytelling",
+        "Perfect for landing pages"
       ]
     },
     {
       icon: <Layout className="h-10 w-10 text-green-500" />,
-      title: "AI for Web Components & Development",
-      description: "AI accelerates technical production and testing—from UI variants to component libraries.",
+      title: "AI in Development",
+      description: "We use AI-assisted tools to generate UI components, test layouts, and speed up frontend development — while keeping everything strategic and human-checked.",
       features: [
-        "Faster prototyping and wireframes",
-        "AI-assisted code snippets",
-        "Smarter versioning for assets and design files"
+        "Faster prototyping",
+        "Component generation",
+        "Code optimization",
+        "Quality-assured by developers"
       ]
     }
   ];
@@ -53,7 +56,7 @@ const AiTechServices = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">How We Use AI — Our Stack</h2>
+          <h2 className="text-3xl font-bold mb-4">How We Use AI to Accelerate Results</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
