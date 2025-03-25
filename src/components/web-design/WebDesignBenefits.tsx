@@ -53,7 +53,7 @@ const WebDesignBenefits = () => {
                     {benefit.title}
                   </h3>
                   <p className="text-brand-text">
-                    {benefit.index === 2 ? (
+                    {index === 2 ? (
                       <>
                         We build for performance — fast load times, <Link to="/seo-optimization" className="text-brand-primary hover:underline">mobile-first</Link>, easy to find on Google.
                       </>
