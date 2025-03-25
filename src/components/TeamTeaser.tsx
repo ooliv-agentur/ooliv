@@ -4,12 +4,19 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface TeamMember {
   name: string;
   role: string;
   image?: string;
   initials: string;
+  tooltip?: string;
 }
 
 const TeamTeaser = () => {
@@ -28,6 +35,12 @@ const TeamTeaser = () => {
       name: "Dorinel Nedelcu",
       role: "Creation",
       initials: "DN",
+    },
+    {
+      name: "Parveen Thakur",
+      role: "Web Development",
+      initials: "PT",
+      tooltip: "On the team for over 20 years"
     }
   ];
 
@@ -42,15 +55,26 @@ const TeamTeaser = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
           {featuredTeamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20">
-                <AvatarImage src={member.image} alt={member.name} />
-                <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
-                  {member.initials}
-                </AvatarFallback>
-              </Avatar>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20">
+                      <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} />
+                      <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
+                        {member.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                  </TooltipTrigger>
+                  {member.tooltip && (
+                    <TooltipContent>
+                      <p>{member.tooltip}</p>
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              </TooltipProvider>
               <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
               <p className="text-sm text-brand-text/80">{member.role}</p>
             </div>
