@@ -5,7 +5,6 @@ import AboutSection from "@/components/AboutSection";
 import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
-import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import TeamTeaser from "@/components/TeamTeaser";
@@ -478,26 +477,6 @@ const GermanIndex = () => {
         </div>
       </section>
       
-      {/* Using the standard Testimonials component instead of the duplicate section */}
-      <Testimonials 
-        testimonials={[
-          {
-            quote: "ooliv hat unsere alte Website in einen Wachstumsmotor verwandelt. Die Conversion-Rate ist um 40 % gestiegen.",
-            author: "Michael Schmidt",
-            role: "TechSolutions GmbH"
-          },
-          {
-            quote: "Endlich eine Agentur, die wirklich strategisch arbeitet. Wir generieren dreimal so viele qualifizierte Leads wie vorher.",
-            author: "Sabine Müller",
-            role: "Innovate AG"
-          },
-          {
-            quote: "Unkompliziert, effizient und auf den Punkt. Das Ergebnis passt exakt zu unserem Vertrieb.",
-            author: "Thomas Weber",
-            role: "ProService GmbH"
-          }
-        ]}
-      />
       <FAQ 
         title="Häufig gestellte Fragen – zur Werbeagentur ooliv in Mainz"
         customFaqs={[
@@ -519,39 +498,19 @@ const GermanIndex = () => {
           },
           {
             question: "Bietet ihr auch SEO-Optimierung an?",
-            answer: "Ja, von Keyword-Recherche über technische Onpage-Optimierung bis zu lokalem SEO in Mainz. Als Werbeagentur verstehen wir, dass Sichtbarkeit der Schlüssel zum Erfolg ist."
+            answer: "Ja, von Keyword-Recherche über technische Optimierung bis hin zu Content-Strategie. SEO ist integraler Bestandteil aller Projekte."
           },
           {
-            question: "Wie läuft die Zusammenarbeit ab?",
-            answer: "Klar strukturiert über Basecamp – mit festem Zeitplan, klarer Kommunikation und direkter Ansprechpartnerin: dem Gründer."
-          },
-          {
-            question: "Was kostet eine Website bei euch?",
-            answer: "Unsere Projekte starten bei ca. 5.000 €. Final hängt der Preis vom Umfang, CMS-Wunsch und Funktionsumfang ab."
-          },
-          {
-            question: "Kann ich auch Google Ads mit euch umsetzen?",
-            answer: "Ja. Wir bieten professionelle Kampagnensteuerung über Google Ads – inklusive Landingpages und Conversion-Tracking."
-          },
-          {
-            question: "Arbeitet ihr auch mit externen Designern oder Partnern?",
-            answer: "Nein – alle Leistungen entstehen intern, abgestimmt im Team, gesteuert vom Gründer."
-          },
-          {
-            question: "Was bringt mir eine Zusammenarbeit mit einer lokalen Werbeagentur in Mainz?",
-            answer: "Kurze Wege, regionale Marktkenntnis und ein Team, das wirklich versteht, was Sie brauchen. Eine Werbeagentur vor Ort in Mainz ermöglicht persönlichen Kontakt, besseres Verständnis des lokalen Marktes und schnellere Reaktionszeiten."
-          },
-          {
-            question: "Wie sorgt ooliv als Werbeagentur in Mainz für lokale Sichtbarkeit bei Google?",
-            answer: "Wir kombinieren lokale Keyword-Strategien mit technischer Optimierung und hochwertigen Inhalten – damit Sie dort gefunden werden, wo Ihre Zielgruppe sucht."
+            question: "Wie funktioniert die Kommunikation während eines Projekts?",
+            answer: "Strukturiert und transparent. Wir nutzen Basecamp für Projektmanagement, haben wöchentliche Check-ins und bieten schnelle Antworten per E-Mail oder Telefon."
           }
         ]}
       />
       <CTA 
-        title="Bereit, mit einer echten Werbeagentur in Mainz durchzustarten?"
-        subtitle="Lassen Sie uns in einem kostenfreien Gespräch besprechen, wie wir Ihre Website zum Wachstumstreiber machen."
+        title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
+        subtitle="Lassen Sie uns gemeinsam eine Lösung entwickeln, die zu Ihren Zielen passt und messbare Ergebnisse liefert."
         primaryCta="Projekt starten"
-        secondaryCta="Unsere Arbeiten ansehen"
+        secondaryCta="Kostenlose Website-Prüfung anfordern"
       />
     </PageLayout>
   );
