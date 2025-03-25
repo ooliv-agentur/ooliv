@@ -6,7 +6,6 @@ import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
-import WebDesignCaseStudies from '@/components/web-design/WebDesignCaseStudies';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -42,8 +41,8 @@ const GermanWebDesign = () => {
       
       {/* Final CTA Section */}
       <CTA 
-        title="Sprechen wir über Ihr Website-Projekt"
-        subtitle="Wir helfen Ihnen, etwas Schnelleres, Intelligenteres und Effektiveres zu bauen als das, was Sie jetzt haben."
+        title="Sprechen wir über Ihr Webdesign-Projekt"
+        subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
       />

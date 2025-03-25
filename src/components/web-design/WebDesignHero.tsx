@@ -11,13 +11,13 @@ const WebDesignHero = () => {
   const translations = {
     en: {
       badge: "Strategic Web Design for Business Growth",
-      title: "Webdesign Services That Deliver Results",
-      subtitle: "We build websites that attract the right visitors, convert leads, and help you grow. Every design is strategically aligned with your business goals."
+      title: "Webdesign That Helps B2B Companies Grow",
+      subtitle: "We design websites that improve your Google visibility, drive qualified leads, and align with your business goals. Our webdesign services are built on strategy – not on templates."
     },
     de: {
-      badge: "Webdesign für nachhaltiges Unternehmenswachstum",
-      title: "Webdesign, das messbare Ergebnisse liefert",
-      subtitle: "Wir entwickeln Websites, die gezielt neue Kunden gewinnen, starke Marken aufbauen und Ihre Unternehmensziele unterstützen – ohne Templates, ohne Umwege."
+      badge: "Strategisches Webdesign für Unternehmenswachstum",
+      title: "Webdesign Mainz für B2B-Unternehmen mit Wachstumskurs",
+      subtitle: "Wir entwickeln maßgeschneiderte Websites, die Ihre Sichtbarkeit in Google stärken, mehr Leads generieren und Ihre Marke digital positionieren. Unser Webdesign für Unternehmen aus Mainz und darüber hinaus basiert auf Strategie, nicht auf Templates."
     }
   };
   

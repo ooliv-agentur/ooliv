@@ -9,52 +9,52 @@ const WebDesignBenefits = () => {
   
   const translations = {
     en: {
-      title: "Why Companies Choose ooliv for Web Design",
+      title: "Why Companies Choose ooliv for Webdesign",
       features: [
         {
           icon: Target,
-          title: "Business Goals First",
-          description: "Every design starts with your goals — more leads, stronger brand, better results."
+          title: "Strategy Before Design",
+          description: "Every project starts with your goals – leads, visibility, results."
         },
         {
           icon: ArrowRight,
-          title: "Built for Action",
-          description: "Our designs guide visitors toward the next step — from click to contact."
+          title: "Built to Convert",
+          description: "UX design that guides visitors toward action."
         },
         {
           icon: Zap,
-          title: "Fast, Mobile, and SEO-Ready",
-          description: "We build for performance — fast load times, mobile-first, easy to find on Google."
+          title: "Mobile-First & SEO-Ready",
+          description: "Fast loading, responsive, and search engine friendly."
         },
         {
           icon: PhoneCall,
-          title: "We're Still There After Launch",
-          description: "We support, optimize, and grow with you beyond the launch."
+          title: "Long-Term Support",
+          description: "We stay involved – optimizing, supporting, and scaling with you."
         }
       ]
     },
     de: {
-      title: "Warum Unternehmen sich für ooliv entscheiden",
+      title: "Warum Unternehmen ooliv für Webdesign Mainz wählen",
       features: [
         {
           icon: Target,
-          title: "Strategisch vor Design",
-          description: "Jede Website basiert auf klaren Zielen – Leads, Sichtbarkeit, Conversion."
+          title: "Strategie statt Standard",
+          description: "Wir gestalten Websites, die auf klare Ziele einzahlen: Leads, Sichtbarkeit, Wachstum."
         },
         {
           icon: ArrowRight,
-          title: "Für Aktion gebaut",
-          description: "UX-optimierte Strukturen führen gezielt zur Anfrage."
+          title: "Conversion im Fokus",
+          description: "UX, die Besucher gezielt zur Anfrage führt."
         },
         {
           icon: Zap,
-          title: "Schnell, mobil & SEO-bereit",
-          description: "Technisch sauber, mobiloptimiert, Google-ready."
+          title: "SEO-ready & mobil optimiert",
+          description: "Technisch sauber, schnell und Google-freundlich."
         },
         {
           icon: PhoneCall,
-          title: "Auch nach dem Launch für Sie da",
-          description: "Kontinuierliche Betreuung & Optimierung."
+          title: "Langfristiger Support",
+          description: "Nach dem Launch begleiten wir Sie weiter – datenbasiert und transparent."
         }
       ]
     }

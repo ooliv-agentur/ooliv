@@ -1,7 +1,11 @@
 
 import React from 'react';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown } from 'lucide-react';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDesignFAQ = () => {
@@ -10,78 +14,78 @@ const WebDesignFAQ = () => {
   
   const faqItems = isGerman ? [
     {
-      question: "Wie läuft ein typisches Projekt ab?",
-      answer: "Wir beginnen mit Struktur. Planung der Seiten und Erstellung zielgerichteter Inhalte ist immer der erste Schritt."
+      question: "Was kostet professionelles Webdesign in Mainz?",
+      answer: "Die Kosten für professionelles Webdesign hängen vom Umfang Ihres Projekts ab. Typische B2B-Websites mit strategischer Planung, Content-Erstellung und SEO beginnen bei etwa 5.000€. Wir erstellen Ihnen gerne ein individuelles Angebot nach einem ersten Gespräch."
     },
     {
-      question: "Arbeitet ihr mit Templates?",
-      answer: "Niemals. Jedes Design wird individuell auf Ihre Ziele und Marke zugeschnitten."
+      question: "Wie sorgt ooliv für SEO-optimiertes Webdesign?",
+      answer: "SEO ist von Anfang an Teil unseres Webdesign-Prozesses. Wir beginnen mit Keyword-Recherche, optimieren Struktur und Inhalte, sorgen für schnelle Ladezeiten und mobile Optimierung. Jede Website wird technisch sauber und Google-freundlich aufgebaut."
     },
     {
-      question: "Ist SEO inklusive?",
-      answer: "Ja. Wir optimieren Inhalte, Struktur und Performance von Anfang an."
+      question: "Arbeitet ihr mit WordPress oder ohne CMS?",
+      answer: "Beides ist möglich. Für die meisten B2B-Websites setzen wir auf ein individuell konfiguriertes WordPress ohne vorgefertigte Themes. Für spezielle Anforderungen entwickeln wir auch statische Websites ohne CMS, die besonders schnell und sicher sind."
     },
     {
-      question: "Arbeitet ihr mit WordPress?",
-      answer: "Ja – es ist unsere meistgenutzte Plattform für individuelle B2B-Websites."
+      question: "Wie lange dauert ein Webdesign-Projekt bei ooliv?",
+      answer: "Von der ersten Planung bis zum Launch dauert ein typisches Webdesign-Projekt 6-10 Wochen. Der genaue Zeitrahmen hängt vom Umfang der Website und Ihrer internen Freigabeprozesse ab. Wir erstellen einen klaren Zeitplan als Teil unseres Angebots."
     },
     {
-      question: "Was ist mit komplexeren Websites?",
-      answer: "Wir entwickeln auch maßgeschneiderte Websites mit HTML, CSS und JavaScript – für vollständige Kontrolle ohne CMS."
+      question: "Könnt ihr bestehende Seiten verbessern?",
+      answer: "Ja, wir übernehmen auch Redesigns und Optimierungsprojekte für bestehende Websites. Häufig beginnen wir mit einer Analyse der aktuellen Seite, um Schwachstellen und Optimierungspotenziale zu identifizieren."
     },
     {
-      question: "Könnt ihr die Inhalte für uns erstellen?",
-      answer: "Absolut. Unser Team kümmert sich um Texte, Visuals und sogar Videos. Siehe unsere /content-erstellung Seite."
+      question: "Ist Responsive Design bei euch Standard?",
+      answer: "Absolut. Alle unsere Websites sind von Grund auf für alle Geräte optimiert – vom Smartphone bis zum Desktop. Mobile-First ist für uns nicht nur ein Schlagwort, sondern Grundlage jedes Designs."
     },
     {
-      question: "Wie lange dauert ein Website-Projekt?",
-      answer: "In der Regel 6–10 Wochen. Den genauen Zeitplan definieren wir in unserer Projektplanung."
+      question: "Wer erstellt die Inhalte für unsere neue Website?",
+      answer: "Wir bieten professionelle Content-Erstellung als Teil unserer Webdesign-Projekte an. Unser Team entwickelt SEO-optimierte Texte, erstellt passende Bilder und organisiert bei Bedarf auch Fotoshootings oder Videoaufnahmen."
     },
     {
-      question: "Könnt ihr unsere bestehende Website verbessern statt neu zu starten?",
-      answer: "Ja – wir übernehmen auch Redesigns und Optimierungsprojekte."
+      question: "Gibt es langfristige Betreuung nach dem Launch?",
+      answer: "Ja, wir bleiben auch nach dem Launch als Partner an Ihrer Seite. Von technischen Updates über Performance-Optimierungen bis hin zu Content-Erweiterungen – wir bieten verschiedene Support-Modelle für die kontinuierliche Betreuung Ihrer Website."
     }
   ] : [
     {
-      question: "What's the first step in a web design project?",
-      answer: "Structure. We start by planning your pages and writing smart, goal-driven content."
+      question: "What's included in your webdesign service?",
+      answer: "Our webdesign service is comprehensive, including strategy, wireframing, content planning, SEO optimization, responsive design, development, testing, and launch support. We focus on creating websites that not only look great but actively contribute to your business goals."
     },
     {
-      question: "Do you use ready-made templates?",
-      answer: "Never. Every design is tailored to your goals and brand."
+      question: "Do you work with WordPress or custom code?",
+      answer: "We work with both. For content-driven B2B websites, we often use custom WordPress builds without prebuilt themes. For specialized projects requiring maximum performance, we can develop fully custom websites using pure HTML, CSS, and JavaScript."
     },
     {
-      question: "Is SEO included?",
-      answer: "Yes. We optimize your content, structure, and performance from the start."
+      question: "Is SEO part of your webdesign offer?",
+      answer: "SEO is integrated into every step of our process. From initial keyword research to technical optimization, content planning, and speed improvements – every website we build is designed to perform well in search engines."
     },
     {
-      question: "Do you work with WordPress?",
-      answer: "Yes — it's our most-used platform for custom B2B sites."
+      question: "Can you help with content creation?",
+      answer: "Yes, content creation is a core part of our webdesign service. Our team develops SEO-optimized copy, creates suitable imagery, and can arrange professional photography or video production when needed."
     },
     {
-      question: "What about complex sites?",
-      answer: "We also build custom websites using HTML, CSS, and JavaScript — for full control, no CMS needed."
+      question: "How long does a typical webdesign project take?",
+      answer: "A typical webdesign project takes 6-10 weeks from planning to launch. The exact timeframe depends on the scope of your website and your internal approval processes. We provide a clear timeline as part of our proposal."
     },
     {
-      question: "Can you create the content for us?",
-      answer: "Absolutely. Our team handles copy, visuals, and even video. See our /content-creation page."
+      question: "Do you offer support after launch?",
+      answer: "Yes, we stay with you as a partner after launch. From technical updates to performance optimizations and content additions – we offer various support models for ongoing website maintenance."
     },
     {
-      question: "How long does a website project take?",
-      answer: "Usually 6–10 weeks. We define the timing in our project roadmap."
+      question: "Is your webdesign mobile-friendly by default?",
+      answer: "Absolutely. All our websites are built from the ground up to be fully responsive across all devices – from smartphones to desktops. Mobile-first isn't just a buzzword for us, it's the foundation of every design."
     },
     {
-      question: "Can you improve our current website instead of starting over?",
-      answer: "Yes — we also handle redesigns and optimization projects."
+      question: "Can you improve our current website?",
+      answer: "Yes, we also handle redesigns and optimization projects for existing websites. We typically start with an analysis of your current site to identify weaknesses and opportunities for improvement."
     }
   ];
 
   const translations = {
     en: {
-      title: "Web Design — Questions People Ask Us"
+      title: "Webdesign – Frequently Asked Questions"
     },
     de: {
-      title: "Webdesign – Häufige Fragen"
+      title: "Häufige Fragen zum Thema Webdesign Mainz"
     }
   };
   
@@ -95,19 +99,18 @@ const WebDesignFAQ = () => {
         </h2>
         
         <div className="max-w-4xl mx-auto space-y-4">
-          {faqItems.map((faq, index) => (
-            <Collapsible key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="border-b border-gray-100">
-                <CollapsibleTrigger className="flex justify-between items-center w-full p-6 text-left">
-                  <h3 className="text-lg font-medium text-brand-heading">{faq.question}</h3>
-                  <ChevronDown className="h-5 w-5 text-brand-primary flex-shrink-0 transition-transform duration-200 ease-out" />
-                </CollapsibleTrigger>
-              </div>
-              <CollapsibleContent className="p-6 pt-4">
-                <p className="text-brand-text">{faq.answer}</p>
-              </CollapsibleContent>
-            </Collapsible>
-          ))}
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                  <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <p className="text-brand-text">{faq.answer}</p>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

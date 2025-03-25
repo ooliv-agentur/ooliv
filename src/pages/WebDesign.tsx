@@ -23,7 +23,7 @@ const WebDesign = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            Web Design Success Stories
+            Webdesign Success Stories
           </h2>
           <CaseStudiesSection showAll={true} showCta={true} />
         </div>
@@ -33,10 +33,10 @@ const WebDesign = () => {
       
       {/* Final CTA Section */}
       <CTA 
-        title="Let's Talk About Your Website Project"
-        subtitle="We'll help you build something faster, smarter, and more effective than what you have now."
-        primaryCta="Start Your Project"
-        secondaryCta="Schedule a Strategy Call"
+        title="Let's Talk About Your Webdesign Project"
+        subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
+        primaryCta="Start Your Web Project"
+        secondaryCta="Book a Strategy Call"
       />
     </PageLayout>
   );

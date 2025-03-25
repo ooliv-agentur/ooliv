@@ -9,54 +9,54 @@ const WebDesignBuildOptions = () => {
   
   const translations = {
     en: {
-      title: "Built for Your Business — No Templates",
-      subtitle: "Not sure what fits? Let's find the right solution.",
+      title: "Webdesign Tailored to Your Business",
+      subtitle: "Not sure what fits? Let's find the right solution for your business.",
       options: [
         {
           icon: Settings,
-          title: "Custom WordPress Websites",
-          description: "Built from scratch, no prebuilt themes"
+          title: "Custom WordPress Builds",
+          description: "Professional websites with full content control"
         },
         {
           icon: ShoppingBag,
           title: "WooCommerce Integration",
-          description: "For shop functionality inside WordPress"
+          description: "E-commerce functionality within WordPress"
         },
         {
           icon: Code,
-          title: "Custom Code (No CMS)",
-          description: "HTML, CSS, JS for full control"
+          title: "Fully Custom (No CMS)",
+          description: "Pure HTML/CSS/JS for maximum performance"
         },
         {
           icon: Database,
-          title: "Shopify for Product-Based Businesses",
-          description: "Lean, scalable, conversion-first"
+          title: "Shopify for Product-Driven Brands",
+          description: "Streamlined e-commerce for B2B businesses"
         }
       ]
     },
     de: {
-      title: "Websites, die zu Ihrem Unternehmen passen – ohne Kompromisse",
-      subtitle: "Nicht sicher, was passt? Wir finden die richtige Lösung.",
+      title: "Webdesign Mainz – maßgeschneidert statt vorgefertigt",
+      subtitle: "Gemeinsam finden wir die passende Lösung für Ihr Unternehmen.",
       options: [
         {
           icon: Settings,
-          title: "Individuelle WordPress-Websites",
-          description: "Ohne Templates, volle Freiheit"
+          title: "Individuelles WordPress-Setup",
+          description: "Professionelle Websites mit voller Inhaltskontrolle"
         },
         {
           icon: ShoppingBag,
-          title: "WooCommerce Integration",
-          description: "Shop-Funktionen bei Bedarf"
+          title: "WooCommerce für kleinere Shops",
+          description: "E-Commerce-Funktionalität innerhalb von WordPress"
         },
         {
           icon: Code,
-          title: "Statischer Code (ohne CMS)",
-          description: "HTML/CSS/JS für maximale Kontrolle"
+          title: "Statische Website mit HTML/CSS/JS",
+          description: "Reiner Code für maximale Performance"
         },
         {
           icon: Database,
-          title: "Shopify für produktfokussierte B2B-Projekte",
-          description: "Schlank, skalierbar"
+          title: "Shopify für ausgewählte B2B-Projekte",
+          description: "Optimierter E-Commerce für produktbasierte Unternehmen"
         }
       ]
     }
