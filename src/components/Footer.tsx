@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
@@ -17,7 +16,7 @@ const Footer = () => {
     'seo-optimization': language === 'de' ? 'seo-optimierung' : 'seo-optimization',
     'google-ads': 'google-ads',
     'ai-technologies': language === 'de' ? 'ki-technologien' : 'ai-technologies',
-    'case-studies': language === 'de' ? 'referenzen' : 'case-studies',
+    'case-studies': language === 'de' ? 'case-studies' : 'case-studies',
     'careers': language === 'de' ? 'karriere' : 'careers',
     'contact': language === 'de' ? 'kontakt' : 'contact',
     'privacy-policy': language === 'de' ? 'datenschutz' : 'privacy-policy',

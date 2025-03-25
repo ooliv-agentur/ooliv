@@ -6,7 +6,7 @@ const DataPrivacy = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Redirect to the new privacy policy page
+    // Redirect to the privacy policy page
     navigate('/privacy-policy');
   }, [navigate]);
 

@@ -14,7 +14,7 @@ const pathMapping: Record<string, string> = {
   '/seo-optimization': '/de/seo-optimierung',
   '/google-ads': '/de/google-ads',
   '/ai-technologies': '/de/ki-technologien',
-  '/case-studies': '/de/referenzen',
+  '/case-studies': '/de/case-studies',
   '/about-ooliv': '/de/ueber-ooliv',
   '/contact': '/de/kontakt',
   '/careers': '/de/karriere',

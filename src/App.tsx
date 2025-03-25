@@ -53,7 +53,6 @@ const App = () => (
             <Route path="/content-creation" element={<ContentCreation />} />
             <Route path="/seo-optimization" element={<SEO />} />
             <Route path="/google-ads" element={<GoogleAds />} />
-            <Route path="/lead-generation" element={<GoogleAds />} /> {/* Redirect old path to new */}
             <Route path="/ai-technologies" element={<AiTechnologies />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/about-ooliv" element={<AboutUs />} />
@@ -71,12 +70,15 @@ const App = () => (
             <Route path="/de/seo-optimierung" element={<GermanSEO />} />
             <Route path="/de/google-ads" element={<GermanGoogleAds />} />
             <Route path="/de/ki-technologien" element={<GermanAiTechnologies />} />
-            <Route path="/de/referenzen" element={<GermanCaseStudies />} />
+            <Route path="/de/case-studies" element={<GermanCaseStudies />} />
             <Route path="/de/ueber-ooliv" element={<GermanAboutUs />} />
             <Route path="/de/kontakt" element={<GermanContact />} />
             <Route path="/de/karriere" element={<GermanCareers />} />
             <Route path="/de/impressum" element={<GermanLegalNotice />} />
             <Route path="/de/datenschutz" element={<GermanPrivacyPolicy />} />
+            
+            {/* Legacy redirects */}
+            <Route path="/lead-generation" element={<GoogleAds />} /> {/* Redirect old path to new */}
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
