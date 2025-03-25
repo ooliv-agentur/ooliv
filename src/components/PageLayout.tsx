@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { cn } from '@/lib/utils';
+import FloatingActionButtons from './FloatingActionButtons';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -17,8 +18,7 @@ const PageLayout = ({ children, className }: PageLayoutProps) => {
         {children}
       </main>
       <Footer />
-
-      {/* Global classes are now defined in index.css */}
+      <FloatingActionButtons />
     </div>
   );
 };
