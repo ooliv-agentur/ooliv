@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
 import TeamSection from '@/components/TeamSection';
+import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import { Users, Target, Briefcase, Globe, Award, CheckCircle } from 'lucide-react';
 
 const AboutUs = () => {
@@ -16,7 +17,7 @@ const AboutUs = () => {
       <PageHero 
         badge="About ooliv"
         title="The Agency Behind Your Digital Growth"
-        subtitle="From local roots to 100+ successful projects: Discover how ooliv blends creativity, strategy, and tech to build websites that move businesses forward."
+        subtitle="From local roots to 100+ successful projects—ooliv blends creativity, strategy, and technology to build high-performance websites that move businesses forward."
         primaryCta={{
           text: "Let's Talk",
           link: "/contact"
@@ -36,13 +37,12 @@ const AboutUs = () => {
               <Globe className="h-8 w-8 text-brand-primary opacity-70" />
             </div>
             <p className="text-lg mb-6">
-              What started with a bold opportunity became a long-term success story. In 2008, after a leading Mainz agency closed its doors, a handful of loyal clients asked:
-              <br /><em className="font-medium">"Can you continue on your own?"</em>
-              <br />That moment sparked the beginning of ooliv.
+              What started with a bold opportunity became a long-term success story. In 2008, when a leading agency in Mainz closed its doors, several loyal clients asked:
+              <br /><em className="font-medium">"Can you continue with us?"</em>
+              <br />That was the beginning of ooliv.
             </p>
             <p className="text-lg">
-              Since then, we've grown into a remote-first, tight-knit team — designers, strategists, developers, and content creators based across different parts of the world.
-              <br />United by one mindset:
+              We've since evolved into a remote-first agency with a highly skilled team spread across regions—united by one mindset:
               <br /><strong>Every website should create real business value.</strong>
             </p>
           </div>
@@ -55,10 +55,10 @@ const AboutUs = () => {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center">Why We Stay Small—on Purpose</h2>
             <p className="text-lg mb-8">
-              At ooliv, you work directly with the founder—not an account manager. Behind the scenes, a tightly coordinated team handles UX, SEO, content, and development. That means fewer delays, better focus, and smarter results.
+              At ooliv, every client works directly with the founder and CEO. Behind the scenes, our compact team covers all areas of strategy, design, content, and development.
             </p>
             <p className="text-lg mb-8">
-              It's how we combine clarity, speed, and trust in every project.
+              This structure means less friction, faster progress, and better outcomes—delivered by people who actually build your site.
             </p>
             <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-center mb-6">
               "One point of contact. One focused team. One shared goal."
@@ -121,21 +121,21 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Team Section */}
+      {/* Our Team Section - UPDATED */}
       <section className="section-alt">
         <div className="section-container">
-          <h2 className="section-title">6 Experts. One Shared Vision.</h2>
+          <h2 className="section-title">Small Team. Full Capabilities.</h2>
           <p className="section-subtitle">
-            We're small by design—and proud of it. You always work directly with the people who shape your website:
+            You collaborate with the CEO—but your project is shaped by a dedicated team of specialists working in sync across:
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: 'UX & UI Designers', icon: Users },
-              { title: 'Web Developers (WordPress & Headless)', icon: Briefcase },
-              { title: 'SEO & Content Strategists', icon: Target },
-              { title: 'Motion Designers & Illustrators', icon: Award },
-              { title: 'Copywriters powered by ChatGPT', icon: Target },
-              { title: 'Logo Designers', icon: Award }
+              { title: 'UX & UI Design', icon: Users },
+              { title: 'WordPress & Headless Development', icon: Briefcase },
+              { title: 'SEO & Content Strategy', icon: Target },
+              { title: 'Motion Design & Illustration', icon: Award },
+              { title: 'AI-Enhanced Copywriting', icon: Target },
+              { title: 'Branding & Visual Identity', icon: Award }
             ].map((role, index) => (
               <div key={index} className="card-layout group">
                 <div className="icon-background text-brand-primary">
@@ -147,14 +147,17 @@ const AboutUs = () => {
           </div>
           <div className="flex justify-center mt-10">
             <Button variant="outline" size="lg" className="button-secondary">
-              Meet the Team
+              Meet the Full Team
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Full Team Section - NEW */}
+      {/* Full Team Section */}
       <TeamSection />
+
+      {/* Added Compact FAQ Section */}
+      <AboutCompactFAQ />
 
       {/* What We Offer Section */}
       <section className="section-standard">
@@ -236,7 +239,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* What's Next Section */}
+      {/* What's Next Section - UPDATED */}
       <section className="section-alt">
         <div className="section-container">
           <h2 className="section-title">Let's Build Something Great Together</h2>
@@ -248,7 +251,7 @@ const AboutUs = () => {
               <Link to="/contact">Start Your Project</Link>
             </Button>
             <Button variant="outline" size="lg" className="button-secondary" asChild>
-              <Link to="/contact">Book a Call</Link>
+              <Link to="/contact">Book a Strategy Call</Link>
             </Button>
           </div>
         </div>
