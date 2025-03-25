@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'de';
@@ -76,16 +77,16 @@ export const translations = {
     // Navbar
     'nav.solutions': 'Lösungen',
     'nav.process': 'Prozess',
-    'nav.cases': 'Projekte',
+    'nav.cases': 'Referenzen',
     'nav.faq': 'FAQ',
     'nav.contact': 'Kontakt',
     'nav.scheduleCall': 'Termin vereinbaren',
     
     // Hero
-    'hero.title': "ooliv Web Design Agency – Entwicklung leistungsstarker Websites für SEO, Konversionen & Wachstum",
+    'hero.title': "Werbeagentur Mainz – Leistungsstarke Websites für SEO, Konversionen & Wachstum",
     'hero.subtitle': "Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen.",
     'hero.description': "Wir erstellen leistungsstarke Websites, die Leads generieren, besser ranken und Besucher in Kunden verwandeln. Ob Relaunch oder neue Website, wir sorgen dafür, dass Ihre Website messbaren Geschäftserfolg bringt.",
-    'hero.startProject': "Starten Sie Ihr Website-Projekt",
+    'hero.startProject': "Projekt starten",
     'hero.seeWork': "Unsere Arbeiten ansehen",
     
     // Challenge
@@ -118,12 +119,14 @@ export const translations = {
     'footer.startProject': 'Projekt starten',
     'footer.services': 'Dienstleistungen',
     'footer.webDesign': 'Webdesign',
+    'footer.webDevelopment': 'Webentwicklung',
+    'footer.contentCreation': 'Content-Erstellung',
     'footer.seo': 'SEO-Optimierung',
     'footer.ads': 'Google Ads',
-    'footer.branding': 'Branding',
+    'footer.aiTechnologies': 'KI-Technologien',
     'footer.company': 'Unternehmen',
     'footer.aboutUs': 'Über uns',
-    'footer.caseStudies': 'Fallstudien',
+    'footer.caseStudies': 'Referenzen',
     'footer.contact': 'Kontakt',
     'footer.jobs': 'Karriere',
     'footer.legal.privacy': 'Datenschutz',
