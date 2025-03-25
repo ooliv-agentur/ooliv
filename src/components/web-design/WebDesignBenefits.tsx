@@ -1,27 +1,28 @@
 
 import React from 'react';
-import { Target, Rocket, BarChart, ShieldCheck } from 'lucide-react';
+import { Target, MousePointer, Smartphone, HeadphonesIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const benefits = [
   {
     icon: Target,
-    title: 'Business-First Webdesign Approach',
-    description: "Your goals drive the design: leads, sales, or better positioning. We align every element with your core business objectives."
+    title: 'Business Goals First',
+    description: "Every design starts with your goals — more leads, stronger brand, better results."
   },
   {
-    icon: Rocket,
-    title: 'Conversion-Friendly Design',
-    description: 'We design with clicks, scrolls, and actions in mind. Every decision aims to guide visitors toward becoming customers.'
+    icon: MousePointer,
+    title: 'Built for Action',
+    description: 'Our designs guide visitors toward the next step — from click to contact.'
   },
   {
-    icon: BarChart,
-    title: 'Built for Speed & Growth',
-    description: 'Fast, scalable websites that evolve with you. We use analytics and user behavior insights to drive results that scale with your business.'
+    icon: Smartphone,
+    title: 'Fast, Mobile, and SEO-Ready',
+    description: 'We build for performance — fast load times, mobile-first, easy to find on Google.'
   },
   {
-    icon: ShieldCheck,
-    title: 'Long-Term Support',
-    description: 'We stay by your side—even after launch. Our team provides ongoing optimization and scaling strategies as your business grows.'
+    icon: HeadphonesIcon,
+    title: 'We're Still There After Launch',
+    description: 'We don't disappear — we support, optimize, and grow with you over time.'
   }
 ];
 
@@ -30,7 +31,7 @@ const WebDesignBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Businesses Choose ooliv for Webdesign
+          Why Companies Choose ooliv for Web Design
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
@@ -51,11 +52,23 @@ const WebDesignBenefits = () => {
                   <h3 className="text-xl font-bold mb-3 text-brand-heading">
                     {benefit.title}
                   </h3>
-                  <p className="text-brand-text">{benefit.description}</p>
+                  <p className="text-brand-text">
+                    {benefit.index === 2 ? (
+                      <>
+                        We build for performance — fast load times, <Link to="/seo-optimization" className="text-brand-primary hover:underline">mobile-first</Link>, easy to find on Google.
+                      </>
+                    ) : benefit.description}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-brand-text">
+            Our focus is on real-world results: <Link to="/lead-generation" className="text-brand-primary hover:underline">more leads</Link>, improved <Link to="/seo-optimization" className="text-brand-primary hover:underline">search visibility</Link>, and enhanced <Link to="/content-creation" className="text-brand-primary hover:underline">content strategy</Link> for sustainable growth.
+          </p>
         </div>
       </div>
     </section>

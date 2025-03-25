@@ -13,35 +13,35 @@ const steps = [
   {
     number: "01",
     title: "Strategy & Planning",
-    description: "We get to know your business and goals to create a strategic foundation for your webdesign project.",
+    description: "We define your goals, study your competitors, and create a clear roadmap.",
     icon: FileSearch,
     deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
   },
   {
     number: "02",
-    title: "Structure & Design",
-    description: "We map your pages and design around your users to create intuitive user flows that guide visitors toward your objectives.",
+    title: "Structure & Content",
+    description: "We plan your pages, write the content, and map out the wireframes.",
     icon: PencilRuler,
-    deliverables: ["Sitemap Creation", "User Flows", "Wireframes", "Visual Design"]
+    deliverables: ["Sitemap Creation", "Content Strategy", "Wireframes", "UX Planning"]
   },
   {
     number: "03",
-    title: "Development",
-    description: "We build fast, clean websites on the right platform with all necessary integrations and functionality.",
+    title: "Design & Development",
+    description: "We build your site cleanly, responsively, and ready to scale.",
     icon: Code,
-    deliverables: ["Frontend Build", "CMS Setup", "Integrations", "Performance Tuning"]
+    deliverables: ["Custom Development", "Responsive Design", "Integrations", "Performance Tuning"]
   },
   {
     number: "04",
-    title: "Testing",
-    description: "Everything works on every screen, every browser to ensure flawless performance for all users.",
+    title: "Testing & QA",
+    description: "We test speed, design, SEO, and mobile experience across all devices.",
     icon: TestTube,
     deliverables: ["Browser Testing", "Mobile Checks", "Speed Tests", "Functionality Checks"]
   },
   {
     number: "05",
     title: "Launch & Support",
-    description: "We go live and stay in touch, implementing ongoing analytics and optimizations to continuously improve performance.",
+    description: "We go live — then stay available for updates, improvements, and scaling.",
     icon: Rocket,
     deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
   }
@@ -49,10 +49,10 @@ const steps = [
 
 const WebDesignProcess = () => {
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          From Idea to Launch – How We Work Together on Webdesign
+          From Strategy to Launch — Here's How We Work Together
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
