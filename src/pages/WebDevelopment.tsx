@@ -12,7 +12,7 @@ import FAQ from '@/components/FAQ';
 const webDevFaqs = [
   {
     question: "What technologies do you use for development?",
-    answer: "We work with WordPress, Webflow, Shopify, and headless stacks like Next.js—always based on your business needs."
+    answer: "We work with WordPress, WooCommerce, Shopify (in select cases), and headless stacks like Next.js—always tailored to your business needs."
   },
   {
     question: "Do you provide support after launch?",

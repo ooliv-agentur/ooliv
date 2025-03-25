@@ -24,6 +24,11 @@ const services = [
   },
   {
     icon: ShoppingBag,
+    title: 'WooCommerce Development',
+    description: 'Small shop solutions fully integrated into your WordPress environment.'
+  },
+  {
+    icon: ShoppingBag,
     title: 'Shopify Development',
     description: 'Sales-driven online shops with custom functionality and fast load times.'
   },
