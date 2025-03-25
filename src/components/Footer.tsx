@@ -38,8 +38,8 @@ const Footer = () => {
               <li><Link to="/web-development" className="text-white hover:text-brand-background transition-colors">Web Development</Link></li>
               <li><Link to="/content-creation" className="text-white hover:text-brand-background transition-colors">Content Creation</Link></li>
               <li><Link to="/seo-optimization" className="text-white hover:text-brand-background transition-colors">SEO Optimization</Link></li>
-              <li><Link to="/lead-generation" className="text-white hover:text-brand-background transition-colors">Lead Generation & Conversion</Link></li>
-              <li><Link to="/ai-powered-solutions" className="text-white hover:text-brand-background transition-colors">AI-Powered Solutions</Link></li>
+              <li><Link to="/google-ads" className="text-white hover:text-brand-background transition-colors">Google Ads</Link></li>
+              <li><Link to="/ai-technologies" className="text-white hover:text-brand-background transition-colors">AI-Powered Solutions</Link></li>
             </ul>
           </div>
 

@@ -111,7 +111,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     { title: 'Web Development', path: '/web-development' },
     { title: 'Content Creation', path: '/content-creation' },
     { title: 'SEO Optimization', path: '/seo-optimization' },
-    { title: 'Lead Generation & Conversion', path: '/lead-generation' },
+    { title: 'Google Ads', path: '/google-ads' },
     { title: 'AI Technologies', path: '/ai-technologies' },
     { title: 'Case Studies', path: '/case-studies' },
     { title: 'About ooliv', path: '/about-ooliv' },
