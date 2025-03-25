@@ -5,8 +5,8 @@ import PageHero from '@/components/PageHero';
 const WebDesignHero = () => {
   return (
     <PageHero
-      badge="Strategic Design for Business Growth"
-      title="Strategic Web Design That Delivers Results"
+      badge="Strategic Webdesign for Business Growth"
+      title="Strategic Webdesign That Delivers Results"
       subtitle="We build websites that attract the right visitors, earn trust, and convert—tailored for higher conversions, lead generation, and measurable business growth."
       primaryCta={{
         text: "Start Your Web Project",

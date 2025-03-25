@@ -9,9 +9,9 @@ const cases = [
     client: "Scheurich – Manufacturing Brand",
     industry: "Manufacturing & Industrial",
     before: "Old website with poor lead generation and high bounce rate on mobile devices.",
-    after: "Strategic redesign with clear user journeys and mobile-optimized experience.",
+    after: "Strategic webdesign with clear user journeys and mobile-optimized experience.",
     result: "120% increase in qualified leads and 45% lower bounce rate.",
-    services: ["Web Design", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
+    services: ["Webdesign", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
     kpis: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
     image: "bg-[url('/case-study-1.jpg')]"
   },
@@ -32,11 +32,11 @@ const WebDesignCaseStudies = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Success Stories
+          Webdesign Success Stories
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          Real results we've delivered for businesses through strategic web design and development.
+          Real results we've delivered for businesses through strategic webdesign and development.
         </p>
         
         <div className="grid md:grid-cols-2 gap-8 mb-12">

@@ -5,7 +5,7 @@ import { Target, Rocket, BarChart, ShieldCheck } from 'lucide-react';
 const benefits = [
   {
     icon: Target,
-    title: 'Business-First Approach',
+    title: 'Business-First Webdesign Approach',
     description: "Your goals drive the design: leads, sales, or better positioning. We align every element with your core business objectives."
   },
   {
@@ -30,7 +30,7 @@ const WebDesignBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Businesses Choose ooliv for Web Design
+          Why Businesses Choose ooliv for Webdesign
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

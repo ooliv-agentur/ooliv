@@ -13,7 +13,7 @@ const steps = [
   {
     number: "01",
     title: "Strategy & Planning",
-    description: "We get to know your business and goals to create a strategic foundation for your web project.",
+    description: "We get to know your business and goals to create a strategic foundation for your webdesign project.",
     icon: FileSearch,
     deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
   },
@@ -52,7 +52,7 @@ const WebDesignProcess = () => {
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          From Idea to Launch – How We Work Together
+          From Idea to Launch – How We Work Together on Webdesign
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
