@@ -32,15 +32,15 @@ const TeamTeaser = () => {
       initials: "LS",
     },
     {
-      name: "Dorinel Nedelcu",
-      role: "Creation",
-      initials: "DN",
-    },
-    {
       name: "Parveen Thakur",
       role: "Web Development",
       initials: "PT",
       tooltip: "On the team for over 20 years"
+    },
+    {
+      name: "Dorinel Nedelcu",
+      role: "Creation",
+      initials: "DN",
     }
   ];
 
