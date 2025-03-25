@@ -1,3 +1,4 @@
+
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -138,6 +139,7 @@ const GermanIndex = () => {
           </div>
           
           <div className="space-y-20">
+            {/* First Case Study - Scheurich */}
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
@@ -205,6 +207,7 @@ const GermanIndex = () => {
               </div>
             </div>
 
+            {/* Second Case Study - COBUS */}
             <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
               <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
@@ -266,6 +269,210 @@ const GermanIndex = () => {
                   <img 
                     src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
                     alt="COBUS case study" 
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Third Case Study - Weisenburger */}
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4">
+                      <img src="/placeholder.svg" alt="Weisenburger logo" className="h-10 w-auto" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-brand-heading">Weisenburger</h3>
+                      <p className="text-sm text-gray-500">Bau & Immobilien</p>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-lg font-medium mb-6">
+                    Nahtlose CRM-Integration & skalierbare Web-Infrastruktur
+                  </h4>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">95% schnellere Ladezeit mit optimierter Architektur</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">60% mehr Anfragen durch verbesserte User Journey</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">4,9/5 Nutzerzufriedenheit mit neuer digitaler Erfahrung</p>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "Ein Game-Changer für unsere Online-Präsenz. Mehr Leads, bessere Konversionen und nahtlose Zusammenarbeit."
+                  </blockquote>
+                  
+                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                    <div className="mr-3">
+                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        JM
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">Julia Müller</p>
+                      <p className="text-xs text-gray-500">Digital Manager, Weisenburger</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+                    alt="Weisenburger case study" 
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Fourth Case Study - PopBird */}
+            <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4">
+                      <img src="/placeholder.svg" alt="PopBird logo" className="h-10 w-auto" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-brand-heading">PopBird</h3>
+                      <p className="text-sm text-gray-500">E-Commerce & Handel</p>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-lg font-medium mb-6">
+                    35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling
+                  </h4>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">35% Umsatzwachstum durch emotionales Storytelling</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">42% höherer durchschnittlicher Bestellwert mit verbessertem UX</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">60% höhere Kundenbindung mit personalisierten E-Mail-Workflows</p>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "Die Zusammenarbeit mit ooliv hat unsere Online-Präsenz komplett verändert. Unsere Kunden haben jetzt ein nahtloses Erlebnis von der Entdeckung bis zum Kauf."
+                  </blockquote>
+                  
+                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                    <div className="mr-3">
+                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        SJ
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">Sarah Johnson</p>
+                      <p className="text-xs text-gray-500">Marketing Lead, PopBird</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556155092-490a1ba16284" 
+                    alt="PopBird case study" 
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* Fifth Case Study - GreenTech */}
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4">
+                      <img src="/placeholder.svg" alt="GreenTech logo" className="h-10 w-auto" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-brand-heading">GreenTech</h3>
+                      <p className="text-sm text-gray-500">Erneuerbare Energien</p>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-lg font-medium mb-6">
+                    200+ qualifizierte Leads pro Monat mit gezielter SEO & Content-Strategie
+                  </h4>
+                  
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">200+ qualifizierte Leads pro Monat mit gezielter Strategie</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">Google-Rankings auf der ersten Seite für 30+ Branchenkeywords</p>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="mr-3 mt-1 text-brand-primary">
+                        <Check className="h-5 w-5" />
+                      </div>
+                      <p className="text-sm text-gray-600">68% Reduzierung der Akquisitionskosten durch organische Kanäle</p>
+                    </div>
+                  </div>
+                  
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "Die Ergebnisse haben unsere Erwartungen übertroffen. Unsere Web-Präsenz spiegelt nun wirklich unsere Markenwerte wider und konvertiert Besucher effizient."
+                  </blockquote>
+                  
+                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                    <div className="mr-3">
+                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        DK
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">Daniel Krause</p>
+                      <p className="text-xs text-gray-500">Growth Director, GreenTech</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516116216624-53e697fedbea" 
+                    alt="GreenTech case study" 
                     className="w-full h-80 object-cover"
                   />
                 </div>
