@@ -6,6 +6,7 @@ import Solution from "@/components/Solution";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import TeamTeaser from "@/components/TeamTeaser";
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
       />
       <Challenge />
       <Solution />
+      <TeamTeaser />
       <Testimonials />
       <FAQ />
       <CTA />

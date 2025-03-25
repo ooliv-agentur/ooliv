@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Link } from 'react-router-dom';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
+import TeamSection from '@/components/TeamSection';
 import { Users, Target, Briefcase, Globe, Award, CheckCircle } from 'lucide-react';
 
 const AboutUs = () => {
@@ -135,6 +135,9 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      {/* Full Team Section - NEW */}
+      <TeamSection />
 
       {/* What We Offer Section */}
       <section className="section-standard">
