@@ -5,23 +5,23 @@ import { Layers, ShieldCheck, LayoutDashboard, TrendingUp } from 'lucide-react';
 const benefits = [
   {
     icon: Layers,
-    title: 'Custom-Built to Fit',
-    description: "Templates limit your growth. We build custom layouts and features—no drag & drop shortcuts."
+    title: "Custom-Built to Fit",
+    description: "We don't use templates or page builders. Everything is designed and coded specifically for your goals."
   },
   {
     icon: ShieldCheck,
-    title: 'Fast, Secure & Scalable',
-    description: "Performance issues hurt SEO & UX. Our code is fast, secure, and optimized for Google and users."
+    title: "Fast, Secure & Scalable",
+    description: "Your site loads fast, runs reliably, and is built to grow with your business."
   },
   {
     icon: LayoutDashboard,
-    title: 'Built for Your Team',
-    description: "The backend is a mess? Clean CMS or Headless setups your team will love to manage."
+    title: "Easy to Manage",
+    description: "Whether you use a CMS or prefer code-only setups, we make sure your website is simple to update and maintain."
   },
   {
     icon: TrendingUp,
-    title: 'Ready for What\'s Next',
-    description: 'Your site can\'t evolve with you? Modular systems that scale as your business grows.'
+    title: "Future-Proof Architecture",
+    description: "From multilingual scaling to integrations — your site is built to support your next step, not hold you back."
   }
 ];
 
@@ -30,7 +30,7 @@ const WebDevBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Businesses Choose ooliv for Web Development
+          Why Businesses Trust ooliv for Development
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

@@ -11,28 +11,28 @@ import FAQ from '@/components/FAQ';
 
 const webDevFaqs = [
   {
-    question: "What technologies do you use for development?",
-    answer: "We primarily work with WordPress, WooCommerce, Headless (e.g. Next.js), and Shopify (select projects)."
+    question: "What platforms do you work with?",
+    answer: "We build both fully coded websites (no CMS) and custom WordPress setups."
   },
   {
-    question: "Do you offer support after launch?",
-    answer: "Yes. We offer ongoing technical support, maintenance, and optimization services post-launch."
+    question: "Can you build something without a CMS?",
+    answer: "Yes — we often develop fully custom websites using just HTML, CSS, and JavaScript. Clean, fast, and secure."
   },
   {
-    question: "Can you build custom features without plugins?",
-    answer: "Absolutely. We prefer writing clean custom code rather than relying on heavy plugins that slow down your site."
+    question: "Can you build shop features?",
+    answer: "Yes — we work with WooCommerce (for WordPress) and Shopify (for select projects)."
   },
   {
-    question: "Do you work with Headless CMS setups?",
-    answer: "Yes, we specialize in Headless architecture using modern frameworks like Next.js paired with various CMS solutions."
+    question: "Do you provide support after launch?",
+    answer: "Yes. We stay available for updates, improvements, and performance monitoring."
   },
   {
-    question: "What's the best setup for scaling internationally?",
-    answer: "For international scaling, we recommend either WordPress multisite with WPML or a Headless approach with localization support, depending on your specific requirements."
+    question: "How do you ensure fast loading times?",
+    answer: "We use lightweight code, optimize every asset, and run performance tests during development."
   },
   {
-    question: "How do you ensure fast loading and SEO readiness?",
-    answer: "We implement technical SEO best practices from the ground up, including optimized asset loading, proper schema markup, and adherence to Core Web Vitals standards."
+    question: "Can you improve our existing site?",
+    answer: "Absolutely. We often take on redesigns, speed fixes, and CMS cleanups."
   }
 ];
 
@@ -41,8 +41,8 @@ const WebDevelopment = () => {
     <PageLayout className="overflow-x-hidden">
       <WebDevHero />
       <WebDevBenefits />
-      <WebDevServices />
       <WebDevProcess />
+      <WebDevServices />
       <WebDevCaseStudies />
       <FAQ customFaqs={webDevFaqs} />
       <WebDevCTA />

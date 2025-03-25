@@ -13,32 +13,32 @@ const steps = [
   {
     icon: Lightbulb,
     number: '01',
-    title: 'Technical Planning',
-    description: 'Tech stack selection, feature scoping, and success definition'
+    title: 'Planning Your Setup',
+    description: 'We define your technical needs, platforms, and features — always based on your business model.'
   },
   {
     icon: Code,
     number: '02',
-    title: 'Modular Development',
-    description: 'Clean, scalable codebase built to evolve over time'
+    title: 'Clean Development',
+    description: 'Your site is coded for speed, clarity, and scale — either CMS-based or with a full code-first structure.'
   },
   {
     icon: Database,
     number: '03',
-    title: 'CMS Setup & Integrations',
-    description: 'Easy-to-use backend with smart integrations (CRM, PIM, etc.)'
+    title: 'Backend or CMS Setup',
+    description: 'If needed, we configure a CMS like WordPress — or build a lightweight backend-free solution.'
   },
   {
     icon: Activity,
     number: '04',
     title: 'Testing & QA',
-    description: 'Speed, SEO, and cross-device testing to ensure stability'
+    description: 'We check for speed, stability, SEO-readiness, and smooth performance across all devices.'
   },
   {
     icon: Rocket,
     number: '05',
     title: 'Launch & Support',
-    description: 'Live deployment, monitoring, and proactive performance optimization'
+    description: 'We deploy your site, monitor results, and stay available for technical support and updates.'
   }
 ];
 
@@ -47,7 +47,7 @@ const WebDevProcess = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          From Planning to Post-Launch—We Build for Longevity
+          How We Build Websites That Last
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

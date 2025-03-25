@@ -13,29 +13,29 @@ import {
 
 const services = [
   {
-    icon: Database,
-    title: 'Headless Development',
-    description: 'Jamstack architecture for fast, scalable websites with design freedom and API-readiness.'
+    icon: Code,
+    title: 'Custom Code (No CMS)',
+    description: 'We build fully coded websites using HTML, CSS, and JavaScript — ideal for fast, flexible, and secure sites with no backend complexity.'
   },
   {
     icon: Layout,
     title: 'WordPress Development',
-    description: 'Flexible WordPress setups—from corporate sites to multisite solutions.'
+    description: 'For content-heavy or marketing-driven sites, we build custom WordPress setups — clean-coded and fully tailored.'
   },
   {
     icon: ShoppingBag,
-    title: 'WooCommerce Development',
-    description: 'Integrated shop functionality for product-based pages or small B2B storefronts.'
+    title: 'WooCommerce Integration',
+    description: 'Want to sell products or services? We integrate WooCommerce directly into your WordPress site.'
   },
   {
-    icon: Code,
-    title: 'Custom Code & API Integrations',
-    description: 'Individual features, clean frontends, or custom interfaces—coded to fit your use case.'
+    icon: Database,
+    title: 'API & Feature Development',
+    description: 'We connect your site to third-party tools and services — or build custom features from scratch.'
   },
   {
     icon: ShoppingBag,
-    title: 'Shopify Development',
-    description: 'Selected Shopify projects for streamlined sales and product showcases.'
+    title: 'Shopify (Selected Projects)',
+    description: 'For product-first B2B clients, we create simple, conversion-ready Shopify storefronts.'
   }
 ];
 
@@ -44,11 +44,11 @@ const WebDevServices = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Flexible Development for Real Business Needs
+          Development Solutions That Fit Your Business
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          From CMS to custom code—we create solutions that are built to last.
+          From custom code to CMS — we create solutions that are built to last.
         </p>
         
         <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">

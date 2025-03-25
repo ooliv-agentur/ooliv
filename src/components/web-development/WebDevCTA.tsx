@@ -17,10 +17,10 @@ const WebDevCTA = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            Let's Build Something That Works—Now and in the Future
+            Let's Build Something That Works — Now and in the Future
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-brand-text">
-            Tell us what your business needs. We'll develop a website that delivers.
+            Tell us what your business needs — we'll develop a custom website that's ready for your next chapter.
           </p>
         </div>
         
