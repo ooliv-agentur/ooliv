@@ -13,34 +13,29 @@ import {
 
 const services = [
   {
-    icon: Code,
-    title: 'Custom Web Applications',
-    description: 'Tailored platforms that map to your workflows—built from the ground up.'
+    icon: Database,
+    title: 'Headless Development',
+    description: 'Jamstack architecture for fast, scalable websites with design freedom and API-readiness.'
   },
   {
     icon: Layout,
     title: 'WordPress Development',
-    description: 'Flexible, scalable WordPress setups—from corporate sites to multisite networks.'
+    description: 'Flexible WordPress setups—from corporate sites to multisite solutions.'
   },
   {
     icon: ShoppingBag,
     title: 'WooCommerce Development',
-    description: 'Small shop solutions fully integrated into your WordPress environment.'
+    description: 'Integrated shop functionality for product-based pages or small B2B storefronts.'
+  },
+  {
+    icon: Code,
+    title: 'Custom Code & API Integrations',
+    description: 'Individual features, clean frontends, or custom interfaces—coded to fit your use case.'
   },
   {
     icon: ShoppingBag,
     title: 'Shopify Development',
-    description: 'Sales-driven online shops with custom functionality and fast load times.'
-  },
-  {
-    icon: Database,
-    title: 'Headless CMS Solutions',
-    description: 'Jamstack architecture for speed, design freedom, and future scalability.'
-  },
-  {
-    icon: Network,
-    title: 'System Architecture & Integrations',
-    description: 'From CRMs to ERPs—your tools, connected and working in sync.'
+    description: 'Selected Shopify projects for streamlined sales and product showcases.'
   }
 ];
 
@@ -49,11 +44,11 @@ const WebDevServices = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          All the Tech. None of the Complexity.
+          Flexible Development for Real Business Needs
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          From web apps to CMS websites—we develop custom solutions that solve real business needs.
+          From CMS to custom code—we create solutions that are built to last.
         </p>
         
         <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">

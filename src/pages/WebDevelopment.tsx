@@ -12,19 +12,27 @@ import FAQ from '@/components/FAQ';
 const webDevFaqs = [
   {
     question: "What technologies do you use for development?",
-    answer: "We work with WordPress, WooCommerce, Shopify (in select cases), and headless stacks like Next.js—always tailored to your business needs."
+    answer: "We primarily work with WordPress, WooCommerce, Headless (e.g. Next.js), and Shopify (select projects)."
   },
   {
-    question: "Do you provide support after launch?",
+    question: "Do you offer support after launch?",
     answer: "Yes. We offer ongoing technical support, maintenance, and optimization services post-launch."
   },
   {
-    question: "Can you integrate external tools like CRMs?",
-    answer: "Absolutely. We specialize in connecting websites to tools like HubSpot, PIM systems, or ERP platforms."
+    question: "Can you build custom features without plugins?",
+    answer: "Absolutely. We prefer writing clean custom code rather than relying on heavy plugins that slow down your site."
   },
   {
-    question: "How is SEO handled during development?",
-    answer: "Technical SEO is part of every build—from performance tuning to structured data and crawlability."
+    question: "Do you work with Headless CMS setups?",
+    answer: "Yes, we specialize in Headless architecture using modern frameworks like Next.js paired with various CMS solutions."
+  },
+  {
+    question: "What's the best setup for scaling internationally?",
+    answer: "For international scaling, we recommend either WordPress multisite with WPML or a Headless approach with localization support, depending on your specific requirements."
+  },
+  {
+    question: "How do you ensure fast loading and SEO readiness?",
+    answer: "We implement technical SEO best practices from the ground up, including optimized asset loading, proper schema markup, and adherence to Core Web Vitals standards."
   }
 ];
 

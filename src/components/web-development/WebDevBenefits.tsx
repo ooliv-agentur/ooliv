@@ -6,22 +6,22 @@ const benefits = [
   {
     icon: Layers,
     title: 'Custom-Built to Fit',
-    description: "Your site adapts to your business—not the other way around. No templates. No shortcuts."
+    description: "Templates limit your growth. We build custom layouts and features—no drag & drop shortcuts."
   },
   {
     icon: ShieldCheck,
     title: 'Fast, Secure & Scalable',
-    description: "We build for speed, stability, and growth—ensuring technical performance across devices."
+    description: "Performance issues hurt SEO & UX. Our code is fast, secure, and optimized for Google and users."
   },
   {
     icon: LayoutDashboard,
     title: 'Built for Your Team',
-    description: "Whether it's WordPress or Headless CMS, your backend will be intuitive and easy to manage."
+    description: "The backend is a mess? Clean CMS or Headless setups your team will love to manage."
   },
   {
     icon: TrendingUp,
     title: 'Ready for What\'s Next',
-    description: 'Our sites are API-ready, SEO-optimized, and flexible enough to scale as you grow.'
+    description: 'Your site can\'t evolve with you? Modular systems that scale as your business grows.'
   }
 ];
 
