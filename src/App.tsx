@@ -21,6 +21,12 @@ import LegalNotice from "./pages/LegalNotice";
 import DataPrivacy from "./pages/DataPrivacy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
+// Import German pages
+import GermanIndex from "./pages/de/Index";
+import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
+import GermanWebDesign from "./pages/de/WebDesign";
+import GermanContact from "./pages/de/Contact";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,6 +37,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            {/* English Routes */}
             <Route path="/" element={<Index />} />
             <Route path="/web-design" element={<WebDesign />} />
             <Route path="/web-development" element={<WebDevelopment />} />
@@ -46,6 +53,13 @@ const App = () => (
             <Route path="/legal-notice" element={<LegalNotice />} />
             <Route path="/data-privacy" element={<DataPrivacy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            
+            {/* German Routes */}
+            <Route path="/de" element={<GermanIndex />} />
+            <Route path="/de/webdesign" element={<GermanWebDesign />} />
+            <Route path="/de/kontakt" element={<GermanContact />} />
+            <Route path="/de/datenschutz" element={<GermanPrivacyPolicy />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

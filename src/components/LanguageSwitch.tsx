@@ -5,6 +5,30 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
 
+// Map of English to German URL paths
+const pathMapping: Record<string, string> = {
+  '/': '/de',
+  '/web-design': '/de/webdesign',
+  '/web-development': '/de/webentwicklung',
+  '/content-creation': '/de/content-erstellung',
+  '/seo-optimization': '/de/seo-optimierung',
+  '/google-ads': '/de/google-ads',
+  '/ai-technologies': '/de/ki-technologien',
+  '/case-studies': '/de/referenzen',
+  '/about-ooliv': '/de/ueber-ooliv',
+  '/contact': '/de/kontakt',
+  '/careers': '/de/karriere',
+  '/legal-notice': '/de/impressum',
+  '/privacy-policy': '/de/datenschutz',
+  '/data-privacy': '/de/datenschutz',
+};
+
+// Map of German to English URL paths (reverse of the above)
+const reversePathMapping: Record<string, string> = Object.entries(pathMapping).reduce(
+  (acc, [key, value]) => ({ ...acc, [value]: key }),
+  {}
+);
+
 const LanguageSwitch: React.FC = () => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
@@ -16,32 +40,30 @@ const LanguageSwitch: React.FC = () => {
       // Switching to German
       setLanguage('de');
       
-      // Create the German path based on the current English path
-      let germanPath = '/de';
-      
-      // Handle root path
-      if (currentPath === '/') {
-        navigate(germanPath);
-        return;
+      // Try to find a mapped path
+      for (const [enPath, dePath] of Object.entries(pathMapping)) {
+        if (currentPath === enPath || currentPath.startsWith(enPath + '/')) {
+          navigate(dePath);
+          return;
+        }
       }
       
-      // Handle other paths by adding /de prefix
-      germanPath = `/de${currentPath}`;
-      navigate(germanPath);
+      // Default fallback if no specific path mapping found
+      navigate('/de');
     } else {
       // Switching to English
       setLanguage('en');
       
-      // Create the English path based on the current German path
-      let englishPath = '/';
-      
-      // If we're on a German path, remove the /de prefix
-      if (currentPath.startsWith('/de')) {
-        englishPath = currentPath.replace('/de', '') || '/';
-        navigate(englishPath);
-      } else {
-        navigate(englishPath);
+      // Try to find a mapped path
+      for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
+        if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
+          navigate(enPath);
+          return;
+        }
       }
+      
+      // Default fallback if no specific path mapping found
+      navigate('/');
     }
   };
 
