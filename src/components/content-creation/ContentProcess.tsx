@@ -7,31 +7,31 @@ const steps = [
     icon: CalendarCheck,
     number: '01',
     title: 'Strategy & Kickoff',
-    description: 'We start with your goals, brand tone, and SEO research using Ahrefs — to ensure the right message reaches the right audience.'
+    description: 'We start by understanding your goals, brand tone, and doing SEO research (using Ahrefs) to ensure we're on the right track.'
   },
   {
     icon: PenTool,
     number: '02',
     title: 'Creation & Design',
-    description: 'Copy, visuals, video — all content is modular, on-brand, and user-journey ready.'
+    description: 'We create your content, including copy, visuals, and video — all designed for conversion and user experience.'
   },
   {
     icon: Monitor,
     number: '03',
     title: 'Review & Integration',
-    description: 'Approved content is delivered or directly implemented into the CMS — by us or your team.'
+    description: 'You review the content, and we integrate it into your site — either directly or through your CMS.'
   },
   {
     icon: CheckCircle,
     number: '04',
     title: 'Testing & Launch',
-    description: 'SEO checks, speed, structure, and accessibility are validated before go-live.'
+    description: 'We ensure SEO checks, speed, and structure before we go live.'
   },
   {
     icon: RefreshCw,
     number: '05',
     title: 'Ongoing Content Support',
-    description: 'We offer monthly content packages for long-term relevance, SEO growth, and lead generation.'
+    description: 'After launch, we offer monthly content packages to keep your site fresh and aligned with your SEO and business goals.'
   }
 ];
 

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const caseStudies = [
   {
     title: 'Scheurich – Lifestyle Brand',
-    services: 'Complete Text, Image, and SEO Relaunch',
+    services: 'Full text, image, and SEO relaunch',
     results: [
       { icon: BarChart, stat: '+120%', description: 'organic traffic increase' },
       { icon: Users, stat: '+45%', description: 'time on site improvement' }
@@ -16,10 +16,10 @@ const caseStudies = [
   },
   {
     title: 'COBUS – ERP Solutions',
-    services: 'Content, Illustration & Graphics',
+    services: 'Content strategy + illustration',
     results: [
       { icon: BarChart, stat: '3x', description: 'better landing page conversion' },
-      { icon: Users, stat: 'Clearer', description: 'messaging & structure' }
+      { icon: Users, stat: 'Clearer', description: 'messaging & improved user experience' }
     ],
     description: 'Technical storytelling through content, illustration & graphics'
   }
@@ -30,7 +30,7 @@ const ContentCaseStudies = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Successful Content Projects
+          Real Results From Real Clients
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

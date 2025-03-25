@@ -14,24 +14,24 @@ const ContentCreation = () => {
   // Custom FAQ items for Content Creation page with web content focus
   const contentFaqs = [
     {
-      question: "How does ooliv create content for websites?",
-      answer: "We develop a full content strategy based on keyword research, then deliver modular, conversion-focused assets: text, images, video, illustrations — ready to launch."
+      question: "How do you create content for websites?",
+      answer: "We create a full content strategy, starting with keyword research, then delivering modular, conversion-focused assets: text, images, video, and illustrations — all ready to launch."
     },
     {
-      question: "Can I order just content without design?",
-      answer: "Yes. Our content packages work standalone or in combination with design and development projects."
+      question: "Can I order content without design?",
+      answer: "Yes — we can deliver just content (text, images, videos), and you can integrate it into your existing website."
     },
     {
-      question: "What if I don't have a logo or brand visuals yet?",
-      answer: "We can create those for you — from scratch or as a rebranding process."
+      question: "What if I don't have a logo or brand visuals?",
+      answer: "We can help with that too. Our team creates logos, icons, and visual systems that align with your brand identity."
     },
     {
       question: "Do you use AI for content?",
-      answer: "Yes — we use ChatGPT, Midjourney, and Sora to boost speed and quality. But every result is reviewed and refined by our team."
+      answer: "Yes, but we don't rely on AI blindly. We use tools like ChatGPT and Midjourney, but everything is refined and curated by our team."
     },
     {
       question: "Do you optimize content for SEO?",
-      answer: "Always. We start every project with keyword research (via Ahrefs) so the content ranks from day one."
+      answer: "Yes. Every piece of content is SEO-friendly, from headlines to the metadata."
     }
   ];
   

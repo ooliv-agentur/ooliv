@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { FileText, Target, Users, Paintbrush } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const benefits = [
   {
     icon: FileText,
     problem: 'No Content, No Results',
-    solution: 'We create complete web content — from text to visuals — for maximum impact and lead generation.'
+    solution: 'We create complete web content — from text to visuals — to make sure your website works.'
   },
   {
     icon: Target,
@@ -16,12 +17,12 @@ const benefits = [
   {
     icon: Users,
     problem: 'Content Gaps or Delays',
-    solution: 'We combine AI tools like ChatGPT, Midjourney & Sora with strategic workflows to deliver high-quality content, fast.'
+    solution: 'Using AI tools like ChatGPT and Midjourney, we create high-quality content faster than ever.'
   },
   {
     icon: Paintbrush,
     problem: 'Visual Inconsistency',
-    solution: 'Our designers craft logos, icons & illustrations to unify your brand across every touchpoint.'
+    solution: 'We ensure your brand's visuals stay consistent across all touchpoints — logos, icons, images.'
   }
 ];
 
@@ -32,7 +33,7 @@ const ContentBenefits = () => {
         {/* Two-tone heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            Content Problems That Cost You Business 
+            Content Challenges That Cost You Business 
             <span className="block text-brand-primary"> — We Fix Them</span>
           </h2>
           
@@ -60,6 +61,20 @@ const ContentBenefits = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-brand-text">
+            Learn more about our{' '}
+            <Link to="/content-creation" className="text-brand-primary hover:underline">
+              Content Creation
+            </Link>{' '}
+            and{' '}
+            <Link to="/seo-optimization" className="text-brand-primary hover:underline">
+              SEO
+            </Link>{' '}
+            services
+          </p>
         </div>
       </div>
     </section>
