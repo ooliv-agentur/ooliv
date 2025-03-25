@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -118,12 +117,44 @@ const GermanIndex = () => {
           },
           {
             title: "Launch, Tracking & Support",
-            description: "Wir begleiten Sie über den Launch hinaus: mit sauberem Tracking, kontinuierlicher Optimierung und klarer Betreuung über Basecamp."
+            description: "Wir begleiten Sie über den Launch hinaus: mit sauberem Tracking, kontinuierlicher Optimierung und klarer Betreuung – ohne Reibungsverluste."
           }
         ]}
         learnMoreText="Mehr über unseren Prozess erfahren"
       />
-      <TeamTeaser />
+      
+      {/* Custom Team Section - shows only Uli and Lisa */}
+      <section className="section-alt py-24">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Das Team hinter ooliv</h2>
+            <p className="section-subtitle max-w-3xl mx-auto">
+              Bei ooliv arbeiten Sie direkt mit dem Gründer und seiner Partnerin zusammen. Uli und Lisa Schönleber vereinen strategisches Denken und kreative Umsetzung – für Websites, die Wirkung zeigen.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            {/* Uli Schönleber */}
+            <div className="flex flex-col items-center text-center">
+              <div className="h-28 w-28 mb-4 border-2 border-brand-primary/20 rounded-full flex items-center justify-center bg-brand-primary/10 text-brand-primary text-xl">
+                US
+              </div>
+              <h3 className="text-xl font-semibold mb-1">Uli Schönleber</h3>
+              <p className="text-sm text-brand-text/80">CEO – Ihr direkter Ansprechpartner</p>
+            </div>
+            
+            {/* Lisa Schönleber */}
+            <div className="flex flex-col items-center text-center">
+              <div className="h-28 w-28 mb-4 border-2 border-brand-primary/20 rounded-full flex items-center justify-center bg-brand-primary/10 text-brand-primary text-xl">
+                LS
+              </div>
+              <h3 className="text-xl font-semibold mb-1">Lisa Schönleber</h3>
+              <p className="text-sm text-brand-text/80">Content</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <ClientLogos />
       
       {/* Case Studies Section - German Version */}
@@ -490,7 +521,7 @@ const GermanIndex = () => {
           },
           {
             question: "Wie lange dauert ein typisches Projekt?",
-            answer: "Je nach Umfang 4 bis 10 Wochen – mit klaren Meilensteinen und transparenter Planung über Basecamp."
+            answer: "Je nach Umfang 4 bis 10 Wochen – mit klaren Meilensteinen und transparenter Planung."
           },
           {
             question: "Arbeitet ihr mit WordPress oder ohne CMS?",
@@ -502,7 +533,27 @@ const GermanIndex = () => {
           },
           {
             question: "Wie funktioniert die Kommunikation während eines Projekts?",
-            answer: "Strukturiert und transparent. Wir nutzen Basecamp für Projektmanagement, haben wöchentliche Check-ins und bieten schnelle Antworten per E-Mail oder Telefon."
+            answer: "Strukturiert und transparent. Wir haben wöchentliche Check-ins und bieten schnelle Antworten per E-Mail oder Telefon."
+          },
+          {
+            question: "Was kostet eine Website bei ooliv?",
+            answer: "Unsere Projekte starten ab ca. 6.000 € netto. Der genaue Preis hängt vom Umfang und der gewünschten Funktionalität ab."
+          },
+          {
+            question: "Welche Branchen betreut ooliv hauptsächlich?",
+            answer: "Wir arbeiten mit Startups, Mittelständlern und B2B-Unternehmen aus Branchen wie Industrie, IT, Bau, Lifestyle, Energie und Handel."
+          },
+          {
+            question: "Bietet ooliv auch Unterstützung nach dem Website-Launch?",
+            answer: "Ja – wir begleiten Sie mit Tracking, Optimierung und Support über einen definierten Zeitraum hinweg."
+          },
+          {
+            question: "Wie sorgt ooliv für Sichtbarkeit bei Google?",
+            answer: "Durch klare Seitenstruktur, gezielte Keyword-Strategien, technische SEO und bei Bedarf durch lokale Suchmaschinenoptimierung."
+          },
+          {
+            question: "Was unterscheidet ooliv von anderen Werbeagenturen in Mainz?",
+            answer: "Direkte Kommunikation mit dem Gründer, ein fokussiertes Spezialisten-Team, und messbare Ergebnisse ohne Buzzwords."
           }
         ]}
       />
