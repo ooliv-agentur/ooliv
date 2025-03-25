@@ -7,22 +7,22 @@ const WebDesignBenefits = () => {
   const benefits = [
     {
       icon: Target,
-      title: 'Business Goals First',
+      title: "Business Goals First",
       description: "Every design starts with your goals — more leads, stronger brand, better results."
     },
     {
       icon: MousePointer,
-      title: 'Built for Action',
-      description: 'Our designs guide visitors toward the next step — from click to contact.'
+      title: "Built for Action",
+      description: "Our designs guide visitors toward the next step — from click to contact."
     },
     {
       icon: Smartphone,
-      title: 'Fast, Mobile, and SEO-Ready',
-      description: 'We build for performance — fast load times, mobile-first, easy to find on Google.'
+      title: "Fast, Mobile, and SEO-Ready",
+      description: "We build for performance — fast load times, mobile-first, easy to find on Google."
     },
     {
       icon: HeadphonesIcon,
-      title: 'We're Still There After Launch',
+      title: "We're Still There After Launch",
       description: "We don't disappear — we support, optimize, and grow with you over time."
     }
   ];
