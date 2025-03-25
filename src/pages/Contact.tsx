@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Input } from '@/components/ui/input';
@@ -18,6 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
+import ConsultationRequestSection from '@/components/contact/ConsultationRequestSection';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -87,6 +89,10 @@ const Contact = () => {
     }, 1000);
   };
 
+  const handleRequestAudit = () => {
+    setShowAuditForm(true);
+  };
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -103,8 +109,11 @@ const Contact = () => {
         }}
       />
 
+      {/* New Consultation Request Section */}
+      <ConsultationRequestSection requestAudit={handleRequestAudit} />
+
       {/* Contact Form Section */}
-      <section className="section-standard">
+      <section className="section-standard" id="contact-form">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-12 mb-24">
             {/* Direct Contact Details Section */}
@@ -164,7 +173,7 @@ const Contact = () => {
             </div>
             
             {/* Contact Form */}
-            <div id="contact-form">
+            <div>
               {!showThankYou ? (
                 <>
                   <h2 className="text-3xl font-bold mb-6">Tell Us About Your Project</h2>
@@ -346,8 +355,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Map Section - Removed as per new design */}
 
       {/* FAQ Section */}
       <section className="section-alt">

@@ -14,9 +14,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
+import ContactForm from '@/components/ContactForm';
+import { useState } from 'react';
 
 const GermanContact = () => {
   const { setLanguage } = useLanguage();
+  const [showAuditForm, setShowAuditForm] = useState(false);
   
   // Set language to German when this page is loaded
   useEffect(() => {
@@ -27,6 +31,10 @@ const GermanContact = () => {
     e.preventDefault();
     console.log('Form submitted');
     // Form submission logic goes here
+  };
+
+  const handleRequestAudit = () => {
+    setShowAuditForm(true);
   };
 
   return (
@@ -45,6 +53,9 @@ const GermanContact = () => {
           </div>
         </div>
       </section>
+
+      {/* New Consultation Request Section in German */}
+      <ConsultationRequestSectionDE requestAudit={handleRequestAudit} />
 
       {/* Contact Info & Form Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -207,6 +218,13 @@ const GermanContact = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Dialogs */}
+      <ContactForm 
+        open={showAuditForm} 
+        onOpenChange={setShowAuditForm} 
+        formType="audit" 
+      />
     </PageLayout>
   );
 };
