@@ -41,7 +41,7 @@ const steps = [
   {
     number: "05",
     title: "Launch & Support",
-    description: "We go live — then stay available for updates, improvements, and scaling.",
+    description: "We go live, track the results, and stay available for technical support and updates.",
     icon: Rocket,
     deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
   }

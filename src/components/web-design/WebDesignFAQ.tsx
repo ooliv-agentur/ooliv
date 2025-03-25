@@ -23,11 +23,11 @@ const WebDesignFAQ = () => {
     },
     {
       question: "What about complex sites?",
-      answer: "We also build headless sites for extra speed, flexibility, and security."
+      answer: "We also build custom websites using HTML, CSS, and JavaScript — for full control, no CMS needed."
     },
     {
       question: "Can you create the content for us?",
-      answer: "Absolutely. Our team creates all the copy, visuals, and even video if needed."
+      answer: "Absolutely. Our team handles copy, visuals, and even video. See our /content-creation page."
     },
     {
       question: "How long does a website project take?",

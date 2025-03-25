@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Database, ShoppingCart, Server, ShoppingBag } from 'lucide-react';
+import { Database, ShoppingCart, Code, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const WebDesignBuildOptions = () => {
@@ -17,14 +17,14 @@ const WebDesignBuildOptions = () => {
       description: 'If you offer products or services, we can add shop functionality right into your WordPress site — without making it feel like a store.'
     },
     {
-      icon: Server,
-      title: 'Headless Development',
-      description: 'For advanced sites, we separate design and content. This makes your site faster, more secure, and easier to scale. (Think: custom frontend, clean backend.)'
+      icon: Code,
+      title: 'Custom Code (No CMS)',
+      description: 'For more control, we build websites without any CMS. Using HTML, CSS, and JavaScript, we create sites that are fast, secure, and fully customizable.'
     },
     {
       icon: ShoppingBag,
       title: 'Shopify for Product-Based Businesses',
-      description: 'For selected B2B clients who need a standalone shop, we offer tailored Shopify setups — simple, focused, and conversion-friendly.'
+      description: 'For selected B2B clients, we offer tailored Shopify setups — simple, focused, and conversion-friendly.'
     }
   ];
 
