@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { BarChart2, Clock, FileText, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const benefits = [
   {
     icon: BarChart2,
     problem: 'Your site gets traffic, but no leads',
-    solution: 'We optimize for intent, not just keywords — bringing in visitors ready to convert.'
+    solution: 'We optimize for search intent and conversions — bringing in visitors who are ready to engage.'
   },
   {
     icon: Clock,
@@ -21,7 +22,7 @@ const benefits = [
   {
     icon: Shield,
     problem: 'Technical issues hurt your rankings',
-    solution: 'Our audits cover speed, indexing, Core Web Vitals & more — clean code included.'
+    solution: 'We audit your site for speed, indexing, and Core Web Vitals — all while keeping the code clean.'
   }
 ];
 
@@ -32,7 +33,7 @@ const SEOBenefits = () => {
         {/* Two-tone heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            SEO Challenges That Hold Your Business Back
+            SEO Challenges That Cost Your Business
             <span className="block text-brand-primary"> — And How We Fix Them</span>
           </h2>
           
@@ -60,6 +61,20 @@ const SEOBenefits = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-brand-text">
+            Learn more about our{' '}
+            <Link to="/content-creation" className="text-brand-primary hover:underline">
+              Content Creation
+            </Link>{' '}
+            and{' '}
+            <Link to="/web-development" className="text-brand-primary hover:underline">
+              Web Development
+            </Link>{' '}
+            services
+          </p>
         </div>
       </div>
     </section>

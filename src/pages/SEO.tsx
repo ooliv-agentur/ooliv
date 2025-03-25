@@ -14,19 +14,23 @@ const SEO = () => {
   const seoFaqs = [
     {
       question: "How long does SEO take to show results?",
-      answer: "First results often appear within weeks (e.g. technical fixes), long-term growth typically takes 3–6 months."
+      answer: "First results often appear within weeks (e.g. technical fixes), but long-term growth typically takes 3–6 months."
     },
     {
       question: "What makes ooliv's SEO approach different?",
-      answer: "We combine deep keyword strategy, scalable content, and smart link-building — all aligned with business goals in Mainz and beyond."
+      answer: "We combine fast fixes with long-term strategies. Our approach is data-driven and focused on business outcomes."
     },
     {
       question: "Do you offer local SEO services?",
-      answer: "Yes. We use specialized tools to manage local citations and business directories for better regional visibility in Mainz and the Rhein-Main area."
+      answer: "Yes, we help businesses improve their visibility in specific regions (e.g. Mainz, Rhein-Main area) through local citations and business listings."
     },
     {
       question: "Is backlink building part of your SEO services?",
-      answer: "Absolutely — we plan link architecture and coordinate contextual backlink campaigns with trusted partners to boost your site's authority."
+      answer: "Yes, we focus on high-quality backlinks to improve your website's authority and drive relevant traffic."
+    },
+    {
+      question: "How do you ensure a website's technical SEO is up to par?",
+      answer: "We check for speed, indexing, and Core Web Vitals, and we fix any issues that affect your rankings."
     }
   ];
   
