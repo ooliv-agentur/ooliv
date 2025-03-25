@@ -1,68 +1,74 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const caseStudies = [
-  {
-    title: 'Scheurich – SEO Relaunch Success',
-    services: 'Complete SEO Strategy & Implementation',
-    results: [
-      { icon: BarChart, stat: '+120%', description: 'more organic traffic in 4 months' },
-      { icon: Users, stat: 'Top 10', description: 'rankings for target keywords' }
-    ],
-    description: 'Full technical SEO audit and implementation plus content optimization for Mainz-based manufacturer'
-  },
-  {
-    title: 'COBUS – Ranking for Niche Keywords',
-    services: 'Technical SEO & Content Strategy',
-    results: [
-      { icon: BarChart, stat: 'Top 3', description: 'Google rankings in competitive B2B market' },
-      { icon: Users, stat: '+80%', description: 'increase in organic leads' }
-    ],
-    description: 'Targeting high-value B2B software keywords with strategic content and backlink campaigns'
-  }
-];
+import { useLanguage } from '@/contexts/LanguageContext';
+import { caseStudiesData } from '@/components/CaseStudiesSection';
 
 const SEOCaseStudies = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  // Select SEO-focused case studies for display (first and last case)
+  const relevantCases = isGerman 
+    ? [caseStudiesData.de[0], caseStudiesData.de[4]]
+    : [caseStudiesData.en[0], caseStudiesData.en[4]];
+  
+  const translations = {
+    en: {
+      title: "Real SEO Results for Real Businesses",
+      subtitle: "See how our Mainz-based SEO strategies drive measurable business outcomes.",
+      viewFull: "View Full Case Study",
+      viewAll: "View All Case Studies"
+    },
+    de: {
+      title: "Echte SEO-Ergebnisse für echte Unternehmen",
+      subtitle: "Sehen Sie, wie unsere SEO-Strategien aus Mainz messbare Geschäftsergebnisse erzielen.",
+      viewFull: "Vollständige Fallstudie ansehen",
+      viewAll: "Alle Fallstudien ansehen"
+    }
+  };
+  
+  const t = isGerman ? translations.de : translations.en;
+  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
+
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Real SEO Results for Real Businesses
+          {t.title}
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          See how our Mainz-based SEO strategies drive measurable business outcomes.
+          {t.subtitle}
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
+          {relevantCases.map((study, index) => (
             <div 
               key={index}
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
             >
-              <h3 className="text-2xl font-bold mb-2 text-brand-heading">{study.title}</h3>
-              <p className="text-brand-primary text-sm font-medium mb-6">{study.services}</p>
+              <h3 className="text-2xl font-bold mb-2 text-brand-heading">{study.client}</h3>
+              <p className="text-brand-primary text-sm font-medium mb-6">{study.industry}</p>
               
               <div className="flex gap-6 mb-6">
-                {study.results.map((result, idx) => (
+                {study.impact.slice(0, 2).map((result, idx) => (
                   <div key={idx} className="flex items-start gap-2">
-                    <result.icon className="h-5 w-5 text-brand-primary mt-1" />
                     <div>
-                      <p className="text-2xl font-bold text-brand-heading">{result.stat}</p>
-                      <p className="text-sm text-brand-text">{result.description}</p>
+                      <p className="text-2xl font-bold text-brand-heading">{result.split(' ')[0]}</p>
+                      <p className="text-sm text-brand-text">{result.split(' ').slice(1).join(' ')}</p>
                     </div>
                   </div>
                 ))}
               </div>
               
-              <p className="text-brand-text mb-6">{study.description}</p>
+              <p className="text-brand-text mb-6">{study.title}</p>
               
               <Button variant="outline" size="sm" className="group" asChild>
-                <Link to="/case-studies">
-                  View Full Case Study
+                <Link to={caseStudiesPath}>
+                  {t.viewFull}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -72,8 +78,8 @@ const SEOCaseStudies = () => {
         
         <div className="text-center mt-12">
           <Button size="lg" className="group" asChild>
-            <Link to="/case-studies">
-              View All Case Studies
+            <Link to={caseStudiesPath}>
+              {t.viewAll}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
