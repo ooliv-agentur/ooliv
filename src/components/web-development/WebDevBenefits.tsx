@@ -1,27 +1,27 @@
 
 import React from 'react';
-import { Layers, Zap, LayoutDashboard, TrendingUp } from 'lucide-react';
+import { Layers, ShieldCheck, LayoutDashboard, TrendingUp } from 'lucide-react';
 
 const benefits = [
   {
     icon: Layers,
     title: 'Custom-Built to Fit',
-    description: "We don't force templates. Your website is developed around your logic, not the other way around."
+    description: "Your site adapts to your business—not the other way around. No templates. No shortcuts."
   },
   {
-    icon: Zap,
-    title: 'Fast, Stable & Secure',
-    description: "We prioritize performance, scalability, and security—so you don't have to worry about technical debt."
+    icon: ShieldCheck,
+    title: 'Fast, Secure & Scalable',
+    description: "We build for speed, stability, and growth—ensuring technical performance across devices."
   },
   {
     icon: LayoutDashboard,
-    title: 'Made to Be Managed',
-    description: "From custom CMS setups to intuitive WordPress dashboards—we build solutions that your team can actually use."
+    title: 'Built for Your Team',
+    description: "Whether it's WordPress or Headless CMS, your backend will be intuitive and easy to manage."
   },
   {
     icon: TrendingUp,
-    title: 'Built for Growth',
-    description: 'API-ready, SEO-optimized, and expandable as your business scales.'
+    title: 'Ready for What\'s Next',
+    description: 'Our sites are API-ready, SEO-optimized, and flexible enough to scale as you grow.'
   }
 ];
 
@@ -30,7 +30,7 @@ const WebDevBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why ooliv for Web Development?
+          Why Businesses Choose ooliv for Web Development
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">

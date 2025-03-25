@@ -13,50 +13,32 @@ const WebDevCTA = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-brand-backgroundAlt rounded-xl p-10 shadow-sm">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-              Let's Build a Platform That Works for You
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto text-brand-text">
-              Let's analyze your current setup, define your requirements, and develop a plan that matches your business—not just a template.
-            </p>
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4 text-brand-heading">
+            Let's Build Something That Works—Now and in the Future
+          </h2>
+          <p className="text-lg max-w-2xl mx-auto text-brand-text">
+            Tell us what your business needs. We'll develop a website that delivers.
+          </p>
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <Button 
+            className="flex-1" 
+            onClick={() => handleOpenForm('call')}
+          >
+            Schedule a Technical Consultation
+          </Button>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                Get a Free Website Audit
-              </h3>
-              <p className="text-brand-text mb-6">
-                We'll analyze your current website and provide actionable insights for improvement.
-              </p>
-              <Button 
-                className="w-full" 
-                onClick={() => handleOpenForm('audit')}
-              >
-                Request Free Audit
-              </Button>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                Discuss Your Project
-              </h3>
-              <p className="text-brand-text mb-6">
-                Schedule a call with our development team to discuss your specific requirements.
-              </p>
-              <Button 
-                variant="outline" 
-                className="w-full"
-                onClick={() => handleOpenForm('call')}
-              >
-                Schedule Strategy Call
-              </Button>
-            </div>
-          </div>
+          <Button 
+            variant="outline" 
+            className="flex-1"
+            onClick={() => handleOpenForm('work')}
+          >
+            Start Your Web Project
+          </Button>
         </div>
       </div>
       

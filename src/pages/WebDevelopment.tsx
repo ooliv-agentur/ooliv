@@ -6,33 +6,29 @@ import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevProcess from '@/components/web-development/WebDevProcess';
 import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
-import { useLanguage } from '@/contexts/LanguageContext';
+import WebDevCTA from '@/components/web-development/WebDevCTA';
 import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
+
+const webDevFaqs = [
+  {
+    question: "What technologies do you use for development?",
+    answer: "We work with WordPress, Webflow, Shopify, and headless stacks like Next.js—always based on your business needs."
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer: "Yes. We offer ongoing technical support, maintenance, and optimization services post-launch."
+  },
+  {
+    question: "Can you integrate external tools like CRMs?",
+    answer: "Absolutely. We specialize in connecting websites to tools like HubSpot, PIM systems, or ERP platforms."
+  },
+  {
+    question: "How is SEO handled during development?",
+    answer: "Technical SEO is part of every build—from performance tuning to structured data and crawlability."
+  }
+];
 
 const WebDevelopment = () => {
-  const { t } = useLanguage();
-  
-  // Custom FAQ items for Web Development page
-  const webDevFaqs = [
-    {
-      question: "Welche Technologien setzt ihr ein?",
-      answer: "Wir arbeiten mit modernen Frameworks wie React, Vue.js und Next.js sowie verschiedenen CMS-Plattformen, je nach Projektanforderungen."
-    },
-    {
-      question: "Bietet ihr auch Wartung und Support nach dem Launch?",
-      answer: "Ja, wir bieten verschiedene Wartungspakete an, die regelmäßige Updates, Sicherheitschecks und technischen Support umfassen."
-    },
-    {
-      question: "Könnt ihr meine bestehende Website verbessern?",
-      answer: "Absolut. Wir analysieren Ihre bestehende Website und schlagen gezielte Verbesserungen vor – von Performance-Optimierung bis Redesign."
-    },
-    {
-      question: "Wie werden SEO-Aspekte bei der Entwicklung berücksichtigt?",
-      answer: "SEO ist von Anfang an Teil unseres Entwicklungsprozesses – von technisch sauberer Struktur über Ladezeiten bis zu strukturierten Daten."
-    }
-  ];
-  
   return (
     <PageLayout className="overflow-x-hidden">
       <WebDevHero />
@@ -41,12 +37,7 @@ const WebDevelopment = () => {
       <WebDevProcess />
       <WebDevCaseStudies />
       <FAQ customFaqs={webDevFaqs} />
-      <CTA 
-        title="Maßgeschneiderte Webentwicklung für Ihr Business"
-        subtitle="Von modernen Websites bis zu komplexen Webapplikationen – wir setzen Ihre Anforderungen technisch perfekt um."
-        primaryCta="Projekt besprechen"
-        secondaryCta="Technische Beratung buchen"
-      />
+      <WebDevCTA />
     </PageLayout>
   );
 };

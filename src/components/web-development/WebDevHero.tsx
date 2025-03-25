@@ -6,10 +6,10 @@ const WebDevHero = () => {
   return (
     <PageHero
       badge="Scalable Technical Solutions"
-      title="Web Development That Grows With Your Business"
-      subtitle="From WordPress to custom web apps—scalable solutions tailored to your workflows and goals."
+      title="Web Development That Drives Business Growth"
+      subtitle="Scalable, secure, and conversion-focused websites—built to match your workflows, tech stack, and long-term goals."
       primaryCta={{
-        text: "Start Your Web Project",
+        text: "Start Your Project",
         link: "/contact"
       }}
       secondaryCta={{
