@@ -4,20 +4,20 @@ import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
-// Case studies data (same as in the Testimonials section)
+// Case studies data 
 const caseStudies = [
   {
     client: "Scheurich",
-    industry: "Ceramic & Lifestyle Brand",
-    title: "120% mehr organischen Traffic durch komplette Website-Optimierung",
+    industry: "Lifestyle & Consumer Products",
+    title: "120% more organic traffic through complete website optimization",
     logo: "/placeholder.svg",
     quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
     impact: [
-      "120% more organic traffic after full website optimization",
-      "45% higher conversion rate with improved user experience",
-      "2x lead generation through strategic conversion points"
+      "+120% organic traffic",
+      "+89% mobile conversion",
+      "Faster content delivery with AI"
     ],
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     author: {
@@ -26,15 +26,15 @@ const caseStudies = [
     }
   },
   {
-    client: "COBUS",
-    industry: "ERP & IT Solutions",
-    title: "Lead generation improved by 80% with a new website & conversion strategy",
+    client: "COBUS ERP",
+    industry: "Software & IT",
+    title: "80% more qualified leads with a new website & conversion strategy",
     logo: "/placeholder.svg",
     quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
     impact: [
-      "80% more leads through targeted conversion strategy",
-      "3x website traffic with improved visibility and content",
-      "40% lower bounce rate with enhanced user experience"
+      "80% more qualified leads",
+      "-3.2s page load time",
+      "SEO landing pages for niche keywords"
     ],
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     author: {
@@ -43,15 +43,15 @@ const caseStudies = [
     }
   },
   {
-    client: "Weisenburger",
-    industry: "Construction & Real Estate",
+    client: "Franchise Portal",
+    industry: "Multi-location Services",
     title: "Seamless CRM integration & scalable web infrastructure",
     logo: "/placeholder.svg",
     quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
     impact: [
-      "95% faster load time with optimized architecture",
-      "60% more inquiries through improved user journey",
-      "4.9/5 user satisfaction with new digital experience"
+      "1 CMS for 17 brands",
+      "+200% SEO visibility",
+      "3x admin efficiency"
     ],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     author: {
@@ -62,13 +62,13 @@ const caseStudies = [
   {
     client: "PopBird",
     industry: "E-Commerce & Retail",
-    title: "35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling",
+    title: "35% sales increase in 6 months through emotional storytelling",
     logo: "/placeholder.svg",
     quote: "Working with ooliv completely transformed our online presence. Our customers now have a seamless experience from discovery to purchase.",
     impact: [
-      "35% sales growth through emotional storytelling approach",
-      "42% increase in average order value with improved UX",
-      "60% higher customer retention with personalized email workflows"
+      "+35% sales growth",
+      "+42% average order value",
+      "+60% customer retention"
     ],
     image: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
     author: {
@@ -83,9 +83,9 @@ const caseStudies = [
     logo: "/placeholder.svg",
     quote: "The results exceeded our expectations. Our web presence now truly reflects our brand values and converts visitors efficiently.",
     impact: [
-      "200+ qualified leads per month with targeted strategy",
-      "First page Google rankings for 30+ industry keywords",
-      "68% reduction in cost per acquisition through organic channels"
+      "200+ qualified leads per month",
+      "First page Google rankings for 30+ keywords",
+      "68% reduction in cost per acquisition"
     ],
     image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
     author: {
@@ -95,28 +95,64 @@ const caseStudies = [
   }
 ];
 
+// Success pillars
+const successPillars = [
+  {
+    title: "Strategy-First Process",
+    description: "Every site starts with clear goals, structure, and KPIs."
+  },
+  {
+    title: "Tailored Design & Content",
+    description: "No templates. We build everything to fit each brand and audience."
+  },
+  {
+    title: "Clean Development & SEO",
+    description: "Fast, scalable, and always optimized for performance and visibility."
+  }
+];
+
+// FAQ items
+const faqItems = [
+  {
+    question: "What types of companies does ooliv work with?",
+    answer: "Mostly B2B — from software to manufacturing, professional services, and education."
+  },
+  {
+    question: "Can I see more details about a specific case?",
+    answer: "Absolutely. Each case study page includes results, process insights, and screenshots."
+  },
+  {
+    question: "Are these results typical?",
+    answer: "Each project is different, but strong outcomes are the result of clear strategy and execution."
+  },
+  {
+    question: "Can I contact references?",
+    answer: "Yes. Upon request, we can connect you with past clients for feedback."
+  }
+];
+
 // Partner logos placeholders
 const partnerLogos = [
-  { id: 'bikesde', name: 'BikesDE' },
-  { id: 'aok', name: 'AOK' },
-  { id: 'apcoa', name: 'APCOA' },
-  { id: 'sbi', name: 'SBI' },
-  { id: 'poppybird', name: 'PoppyBird' }
+  { id: 'scheurich', name: 'Scheurich' },
+  { id: 'cobus', name: 'COBUS' },
+  { id: 'franchise', name: 'Franchise Portal' },
+  { id: 'popbird', name: 'PopBird' },
+  { id: 'greentech', name: 'GreenTech' }
 ];
 
 const CaseStudies = () => {
   return (
     <PageLayout>
       <PageHero
-        badge="Made with love."
-        title="Success Stories That Drive Business Results"
-        subtitle="See how we've helped businesses like yours achieve measurable growth through strategic web design and development."
+        badge="Real Results. Real Clients."
+        title="Marketing Success Stories from Mainz and Beyond"
+        subtitle="See how we've helped B2B companies grow with smart strategy, strong design, and measurable results. These case studies show what's possible with ooliv."
         primaryCta={{
-          text: "View All Case Studies",
-          link: "#case-studies"
+          text: "Start Your Project",
+          link: "/contact"
         }}
         secondaryCta={{
-          text: "Start Your Project",
+          text: "Schedule a Call",
           link: "/contact"
         }}
       />
@@ -142,94 +178,126 @@ const CaseStudies = () => {
           </div>
         </div>
         
-        {/* Strategy Text */}
-        <div className="section-padding text-center">
-          <p className="text-xl max-w-4xl mx-auto">
-            Strategy meets storytelling: We transform brands into scalable success stories. With individual roadmaps, proven systems, and creative strategies, we implement sustainable growth in your business. But see for yourself…
-          </p>
-        </div>
-
-        {/* Case Studies Section */}
-        <div className="section-padding" id="case-studies">
-          <div className="space-y-20">
-            {caseStudies.map((caseStudy, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
-              >
-                {/* Text content */}
-                <div className="w-full md:w-1/2">
-                  <div className="card-standard">
-                    <div className="flex items-center mb-6">
-                      <div className="mr-4">
-                        <img 
-                          src={caseStudy.logo} 
-                          alt={`${caseStudy.client} logo`} 
-                          className="h-10 w-auto"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-brand-heading">{caseStudy.client}</h3>
-                        <p className="text-sm text-gray-500">{caseStudy.industry}</p>
-                      </div>
-                    </div>
-                    
-                    <h4 className="text-lg font-medium mb-6">
-                      {caseStudy.title}
-                    </h4>
-                    
-                    <div className="space-y-3 mb-6">
-                      {caseStudy.impact.map((point, idx) => (
-                        <div key={idx} className="flex items-start">
-                          <div className="mr-3 mt-1 text-brand-primary">
-                            <Check className="h-5 w-5" />
-                          </div>
-                          <p className="text-sm text-gray-600">{point}</p>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
-                      "{caseStudy.quote}"
-                    </blockquote>
-                    
-                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                      <div className="mr-3">
-                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
-                          {caseStudy.author.name.charAt(0)}{caseStudy.author.name.split(' ')[1]?.charAt(0)}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm">{caseStudy.author.name}</p>
-                        <p className="text-xs text-gray-500">{caseStudy.author.position}</p>
-                      </div>
-                    </div>
-                  </div>
+        {/* Grid of Case Studies */}
+        <div className="py-20" id="case-studies">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-heading mb-4">
+              Real Results. Real Clients.
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our work speaks for itself. Here's how we've helped businesses achieve their goals through strategic digital solutions.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all border border-gray-100">
+                <div className="h-48 bg-gray-100 flex items-center justify-center">
+                  <img 
+                    src={study.logo} 
+                    alt={`${study.client} logo`}
+                    className="h-16 w-auto"
+                  />
                 </div>
                 
-                {/* Image */}
-                <div className="w-full md:w-1/2">
-                  <div className="rounded-xl overflow-hidden shadow-lg">
-                    <img 
-                      src={caseStudy.image} 
-                      alt={`${caseStudy.client} case study`} 
-                      className="w-full h-80 object-cover"
-                    />
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
+                    <p className="text-sm text-gray-500">{study.industry}</p>
                   </div>
+                  
+                  <div className="space-y-2 mb-6">
+                    {study.impact.map((kpi, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <Check className="h-4 w-4 text-brand-primary mr-2" />
+                        <span className="text-sm font-medium">{kpi}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 mb-6">{study.title}</p>
+                  
+                  <Button variant="ghost" size="sm" className="group text-brand-primary" asChild>
+                    <Link to="/case-studies">
+                      View Case Study
+                      <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        
+        {/* What Makes These Projects Work */}
+        <div className="py-20 bg-brand-backgroundAlt">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-brand-heading mb-4">
+                Why Our Projects Succeed
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Our consistent results come from a proven approach that puts strategy first and execution second.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {successPillars.map((pillar, index) => (
+                <div key={index} className="bg-white p-8 rounded-lg shadow-sm text-center">
+                  <div className="h-16 w-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-brand-primary">{index + 1}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-brand-heading">{pillar.title}</h3>
+                  <p className="text-gray-600">{pillar.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* FAQ Section */}
+        <div className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-brand-heading mb-4">
+                Case Study & Project Questions
+              </h2>
+              <p className="text-lg text-gray-600">
+                Common questions about our projects and process.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              {faqItems.map((item, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="text-lg font-bold mb-2 text-brand-heading">{item.question}</h3>
+                  <p className="text-gray-600">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
+        {/* Final CTA Section */}
         <div className="mt-24 bg-brand-backgroundAlt rounded-lg p-10 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Ready to Become Our Next Success Story?</h2>
+          <h2 className="text-3xl font-bold mb-4">Let's Create Your Success Story</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Let's discuss how we can help your business achieve similar results
+            Whether you need a relaunch, better conversions, or more qualified leads — we're ready to help. Every ooliv project starts with a strategy conversation.
           </p>
-          <Button size="lg" asChild>
-            <Link to="/contact">Contact Us Today</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link to="/contact">
+                Start Your Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/contact">
+                Book a Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </PageLayout>
