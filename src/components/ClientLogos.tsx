@@ -20,43 +20,93 @@ const ClientLogos = ({ title, description, technologies, note }: ClientLogosProp
   // Basecamp text based on language
   const basecampText = language === 'de' 
     ? "Wir arbeiten mit Basecamp – für klare Aufgaben, smarte Kommunikation und vollständige Transparenz im Projektverlauf."
-    : "We use Basecamp to manage tasks, communication, and feedback — with full transparency and efficiency.";
+    : "All projects are managed transparently and efficiently via Basecamp – our GDPR-compliant platform for files, tasks and feedback loops.";
+  
+  const defaultTechnologies = language === 'de' 
+    ? [
+        {
+          name: "ChatGPT",
+          description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert."
+        },
+        {
+          name: "Midjourney",
+          description: "Individuelle Visuals statt Stockfotos."
+        },
+        {
+          name: "Ahrefs",
+          description: "Keyword-Analysen & Wettbewerbsrecherche."
+        },
+        {
+          name: "Basecamp",
+          description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt – intern und mit Ihnen."
+        }
+      ]
+    : [
+        {
+          name: "ChatGPT",
+          description: "Content ideas, SEO snippets & text variants – human-finalized."
+        },
+        {
+          name: "Midjourney",
+          description: "Custom visuals instead of generic stock photos."
+        },
+        {
+          name: "Ahrefs",
+          description: "Keyword analysis & competitive research."
+        },
+        {
+          name: "Basecamp",
+          description: "Structured collaboration & clear communication throughout the project."
+        }
+      ];
+  
+  // Use provided technologies or fall back to default set
+  const displayTechnologies = technologies || defaultTechnologies;
+  
+  const defaultTitle = language === 'de'
+    ? "Technologien, die Website-Performance messbar verbessern."
+    : "Technologies That Measurably Improve Website Performance";
+    
+  const defaultDescription = language === 'de'
+    ? "Wir kombinieren menschliche Expertise mit leistungsstarken Tools – ohne Abkürzungen, ohne blinden KI-Einsatz."
+    : "We combine human expertise with powerful tools – no shortcuts, no blind AI usage.";
+    
+  const defaultNote = language === 'de'
+    ? "Wichtig: Bei ooliv behalten Menschen die Kontrolle. KI ist ein Werkzeug – keine Lösung."
+    : "Important: At ooliv, humans maintain control. AI is a tool – not a solution.";
   
   return (
     <section className="py-16 bg-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-brand-heading mb-3">
-            {title || "Trusted by Leading Companies"}
+            {title || defaultTitle}
           </h2>
           <p className="text-brand-text max-w-2xl mx-auto">
-            {description || "We're proud of our longstanding client relationships with notable companies across industries."}
+            {description || defaultDescription}
           </p>
         </div>
         
-        {technologies && technologies.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            {technologies.map((tech, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-bold text-lg mb-2">{tech.name}</h3>
-                <p className="text-brand-text text-sm">{tech.description}</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="w-32 h-16 bg-white/50 rounded-md flex items-center justify-center">
-                <div className="w-24 h-10 bg-gray-200/50 rounded animate-pulse"></div>
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          {displayTechnologies.map((tech, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-bold text-lg mb-2">{tech.name}</h3>
+              <p className="text-brand-text text-sm">{tech.description}</p>
+            </div>
+          ))}
+        </div>
         
         {/* Note or Basecamp information */}
         <div className="mt-12 text-center border-t border-gray-100 pt-10">
           <p className="text-brand-text italic max-w-3xl mx-auto">
-            {note || basecampText}
+            {note || defaultNote}
+          </p>
+        </div>
+        
+        {/* Prominent Basecamp information */}
+        <div className="mt-10 p-6 bg-blue-50 rounded-lg border border-blue-100">
+          <p className="text-brand-text text-center font-medium">
+            {basecampText}
           </p>
         </div>
       </div>

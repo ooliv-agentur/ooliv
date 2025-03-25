@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import ScrollIndicator from './ScrollIndicator';
 
 interface HeroProps {
@@ -22,7 +22,7 @@ const Hero = ({
   startProjectText, 
   seeWorkText 
 }: HeroProps = {}) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   // Typing effect state
   const [displayText, setDisplayText] = useState("");
@@ -79,17 +79,30 @@ const Hero = ({
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            {/* Tag line above heading */}
-            <div className="inline-flex items-center bg-blue-600/20 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <span>Web Design Agency</span>
-            </div>
+            {/* Tag line above heading - Only show in English version */}
+            {language === 'en' && (
+              <div className="inline-flex items-center bg-blue-600/20 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <span>Web Design Agency</span>
+              </div>
+            )}
             
             {/* Main heading with emphasis */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              {title || <><span className="text-brand-primary">ooliv</span> Web Design Agency</>}
+              {language === 'de' ? (
+                <div className="flex flex-col">
+                  <span>Werbeagentur Mainz</span>
+                  <span>für messbare Ergebnisse im Web</span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary">Seit 2008 entwickeln wir Websites, die mehr leisten.</span>
+                </div>
+              ) : title || (
+                <div className="flex flex-col">
+                  <span>Web Design Agency Mainz</span>
+                  <span>for Websites That Convert, Rank & Drive Growth</span>
+                </div>
+              )}
               
-              {/* Animation container with fixed width to prevent line breaks on desktop */}
-              {!subtitle && (
+              {/* Animation container with fixed width to prevent line breaks on desktop - only for English without custom title */}
+              {!subtitle && language === 'en' && (
                 <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
                   <span className="mr-2">for</span>
                   <div className="relative inline-flex items-center">
@@ -104,9 +117,15 @@ const Hero = ({
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              {description || (
+              {language === 'de' ? (
                 <>
-                  We create high-performance websites that rank higher, convert better, and drive measurable business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/google-ads" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
+                  Wir entwickeln Websites, die besser ranken, mehr konvertieren<br />
+                  und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
+                </>
+              ) : description || (
+                <>
+                  We build websites that outperform – with clear strategy,<br />
+                  custom design and measurable results from day one.
                 </>
               )}
             </p>
@@ -114,15 +133,15 @@ const Hero = ({
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group" asChild>
-                <Link to="/contact">
-                  {startProjectText || "Start Your Website Project"}
+                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+                  {startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               
               <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
-                <Link to="/case-studies">
-                  {seeWorkText || "See Our Work"}
+                <Link to={language === 'de' ? "/de/referenzen" : "/case-studies"}>
+                  {seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

@@ -13,6 +13,7 @@ import ClientLogos from "@/components/ClientLogos";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
@@ -25,8 +26,6 @@ const GermanIndex = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Hero 
-        title="Werbeagentur Mainz für messbare Ergebnisse im Web"
-        subtitle="Wir entwickeln Websites, die mehr können: besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen. Seit 2008 ist ooliv Ihre Webdesign-Agentur für leistungsstarke Lösungen – made in Mainz."
         startProjectText="Projekt starten"
         seeWorkText="Arbeiten ansehen"
       />
@@ -84,7 +83,17 @@ const GermanIndex = () => {
       <Solution 
         title="Wir entwickeln Websites, die Ihre Unternehmensziele unterstützen."
         subtitle="Mit Strategie, Expertise & intelligenter Technologie"
-        description="Ob Start-up, Mittelstand oder B2B-Unternehmen – wir liefern keine Templates, sondern maßgeschneiderte Lösungen, die Ihre Zielgruppe erreichen."
+        description={
+          <>
+            Ob Start-up, Mittelstand oder B2B-Unternehmen – wir liefern keine Templates, sondern maßgeschneiderte Lösungen, die Ihre Zielgruppe erreichen. 
+            Vertrauen Sie auf unsere Expertise in <Link to="/de/webdesign" className="text-brand-primary hover:underline">Webdesign</Link>, 
+            <Link to="/de/webentwicklung" className="text-brand-primary hover:underline"> Webentwicklung</Link>, 
+            <Link to="/de/content-erstellung" className="text-brand-primary hover:underline"> Content-Erstellung</Link>, 
+            <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline"> SEO-Optimierung</Link>, 
+            <Link to="/de/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> und 
+            <Link to="/de/ki-technologien" className="text-brand-primary hover:underline"> KI-Technologien</Link>.
+          </>
+        }
         solutions={[
           "Strategisch durchdacht",
           "Für Menschen & Maschinen optimiert",
@@ -116,29 +125,7 @@ const GermanIndex = () => {
         learnMoreText="Mehr über unseren Prozess erfahren"
       />
       <TeamTeaser />
-      <ClientLogos 
-        title="Technologien, die Website-Performance messbar verbessern."
-        description="Wir kombinieren menschliche Expertise mit leistungsstarken Tools – ohne Abkürzungen, ohne blinden KI-Einsatz."
-        technologies={[
-          {
-            name: "ChatGPT",
-            description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert."
-          },
-          {
-            name: "Midjourney",
-            description: "Individuelle Visuals statt Stockfotos."
-          },
-          {
-            name: "Ahrefs",
-            description: "Keyword-Analysen & Wettbewerbsrecherche."
-          },
-          {
-            name: "Basecamp",
-            description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt – intern und mit Ihnen."
-          }
-        ]}
-        note="Wichtig: Bei ooliv behalten Menschen die Kontrolle. KI ist ein Werkzeug – keine Lösung."
-      />
+      <ClientLogos />
       <Testimonials 
         title="Was unsere Kunden sagen:"
         testimonials={[
@@ -164,11 +151,11 @@ const GermanIndex = () => {
         customFaqs={[
           {
             question: "Was macht ooliv als Werbeagentur in Mainz besonders?",
-            answer: "Wir arbeiten strategisch, sprechen Klartext und liefern Ergebnisse – ohne Umwege über Zwischenebenen. Sie sprechen direkt mit dem Gründer."
+            answer: "Als Werbeagentur in Mainz arbeiten wir strategisch, sprechen Klartext und liefern messbare Ergebnisse – ohne Umwege über Zwischenebenen. Sie sprechen direkt mit dem Gründer und erhalten maßgeschneiderte Lösungen für Ihre spezifischen Ziele."
           },
           {
             question: "Für wen ist ooliv die richtige Agentur?",
-            answer: "Für B2B-Unternehmen, Start-ups oder Mittelstand, die Wert auf Performance, SEO und einen professionellen Webauftritt legen."
+            answer: "Für B2B-Unternehmen, Start-ups oder Mittelstand, die Wert auf Performance, SEO und einen professionellen Webauftritt legen. Unsere Werbeagentur in Mainz ist spezialisiert auf Kunden, die konkrete Geschäftsziele mit ihrer Website erreichen wollen."
           },
           {
             question: "Wie lange dauert ein typisches Projekt?",
@@ -180,7 +167,7 @@ const GermanIndex = () => {
           },
           {
             question: "Bietet ihr auch SEO-Optimierung an?",
-            answer: "Ja, von Keyword-Recherche über technische Onpage-Optimierung bis zu lokalem SEO in Mainz."
+            answer: "Ja, von Keyword-Recherche über technische Onpage-Optimierung bis zu lokalem SEO in Mainz. Als Werbeagentur verstehen wir, dass Sichtbarkeit der Schlüssel zum Erfolg ist."
           },
           {
             question: "Wie läuft die Zusammenarbeit ab?",
@@ -200,7 +187,11 @@ const GermanIndex = () => {
           },
           {
             question: "Was bringt mir eine Zusammenarbeit mit einer lokalen Werbeagentur in Mainz?",
-            answer: "Kurze Wege, regionale Marktkenntnis und ein Team, das wirklich versteht, was Sie brauchen."
+            answer: "Kurze Wege, regionale Marktkenntnis und ein Team, das wirklich versteht, was Sie brauchen. Eine Werbeagentur vor Ort in Mainz ermöglicht persönlichen Kontakt, besseres Verständnis des lokalen Marktes und schnellere Reaktionszeiten."
+          },
+          {
+            question: "Wie sorgt ooliv als Werbeagentur in Mainz für lokale Sichtbarkeit bei Google?",
+            answer: "Wir kombinieren lokale Keyword-Strategien mit technischer Optimierung und hochwertigen Inhalten – damit Sie dort gefunden werden, wo Ihre Zielgruppe sucht."
           }
         ]}
       />

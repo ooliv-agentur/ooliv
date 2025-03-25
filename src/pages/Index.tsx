@@ -11,6 +11,7 @@ import CTA from "@/components/CTA";
 import TeamTeaser from "@/components/TeamTeaser";
 import ClientLogos from "@/components/ClientLogos";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -28,7 +29,19 @@ const Index = () => {
           <BeforeAfterSlider />
         </div>
       </div>
-      <Solution />
+      <Solution 
+        description={
+          <>
+            We create high-performance websites that rank higher, convert better, and drive measurable business success. Our expertise spans 
+            <Link to="/web-design" className="text-brand-primary hover:underline"> Web Design</Link>, 
+            <Link to="/web-development" className="text-brand-primary hover:underline"> Web Development</Link>, 
+            <Link to="/content-creation" className="text-brand-primary hover:underline"> Content Creation</Link>, 
+            <Link to="/seo-optimization" className="text-brand-primary hover:underline"> SEO Optimization</Link>, 
+            <Link to="/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link>, and 
+            <Link to="/ai-technologies" className="text-brand-primary hover:underline"> AI Technologies</Link>.
+          </>
+        }
+      />
       <TeamTeaser />
       <ClientLogos />
       <Testimonials />
