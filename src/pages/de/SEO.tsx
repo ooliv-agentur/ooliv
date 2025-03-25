@@ -6,6 +6,7 @@ import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
 import SEOProcess from '@/components/seo/SEOProcess';
 import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
+import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -51,6 +52,7 @@ const GermanSEO = () => {
       <SEOHero />
       <SEOBenefits />
       <SEOServices />
+      <SEOApproachDE />
       <SEOProcess />
       <SEOCaseStudies />
       <FAQ customFaqs={seoFaqs} />

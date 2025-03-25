@@ -6,6 +6,7 @@ import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
 import SEOProcess from '@/components/seo/SEOProcess';
 import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
+import SEOApproach from '@/components/seo/SEOApproach';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
@@ -39,6 +40,7 @@ const SEO = () => {
       <SEOHero />
       <SEOBenefits />
       <SEOServices />
+      <SEOApproach />
       <SEOProcess />
       <SEOCaseStudies />
       <FAQ customFaqs={seoFaqs} />

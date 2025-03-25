@@ -7,6 +7,7 @@ import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
 import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
+import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -51,6 +52,7 @@ const GermanContentCreation = () => {
     <PageLayout className="overflow-x-hidden">
       <ContentHero />
       <ContentBenefits />
+      <ContentServiceDE />
       <ContentServices />
       <ContentProcess />
       <ContentExpertInsight />

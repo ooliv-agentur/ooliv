@@ -7,6 +7,7 @@ import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
 import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
+import ContentService from '@/components/content-creation/ContentService';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
@@ -39,6 +40,7 @@ const ContentCreation = () => {
     <PageLayout className="overflow-x-hidden">
       <ContentHero />
       <ContentBenefits />
+      <ContentService />
       <ContentServices />
       <ContentProcess />
       <ContentExpertInsight />
