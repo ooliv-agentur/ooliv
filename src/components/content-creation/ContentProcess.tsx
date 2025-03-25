@@ -7,7 +7,7 @@ const steps = [
     icon: CalendarCheck,
     number: '01',
     title: 'Strategy & Kickoff',
-    description: 'We start by understanding your goals, brand tone, and doing SEO research (using Ahrefs) to ensure we're on the right track.'
+    description: 'We start by understanding your goals, brand tone, and doing SEO research (using Ahrefs) to ensure we\'re on the right track.'
   },
   {
     icon: PenTool,

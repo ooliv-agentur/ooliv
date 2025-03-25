@@ -41,7 +41,7 @@ const services = [
   {
     icon: Video,
     title: 'Video & Animation',
-    description: 'Whether it's explainer videos, short animations, or social media clips, we create engaging video content using tools like Sora — on-brand and easy to use.',
+    description: 'Whether it\'s explainer videos, short animations, or social media clips, we create engaging video content using tools like Sora — on-brand and easy to use.',
     features: [
       'Hero section background videos',
       'Product demonstrations',

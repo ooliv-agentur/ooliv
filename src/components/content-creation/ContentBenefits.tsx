@@ -22,7 +22,7 @@ const benefits = [
   {
     icon: Paintbrush,
     problem: 'Visual Inconsistency',
-    solution: 'We ensure your brand's visuals stay consistent across all touchpoints — logos, icons, images.'
+    solution: 'We ensure your brand\'s visuals stay consistent across all touchpoints — logos, icons, images.'
   }
 ];
 
