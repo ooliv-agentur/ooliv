@@ -1,4 +1,3 @@
-
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -14,11 +13,11 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { Check } from "lucide-react";
 
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
@@ -127,7 +126,6 @@ const GermanIndex = () => {
       <TeamTeaser />
       <ClientLogos />
       
-      {/* Standardized Case Studies Section - Using the same approach as English homepage */}
       <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
@@ -139,7 +137,6 @@ const GermanIndex = () => {
             </p>
           </div>
           
-          {/* Case Studies Content - Matching English Structure */}
           <div className="space-y-20">
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="w-full md:w-1/2">
