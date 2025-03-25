@@ -1,31 +1,76 @@
 
 import React from 'react';
-import { Separator } from "@/components/ui/separator";
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   return (
-    <section className="py-24 bg-brand-background">
-      <div className="section-container">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            👀 People Choose Agencies. Not Just Services.
-          </h2>
-          <p className="text-xl text-center mb-12 text-brand-text/80">
-            We believe strong partnerships build strong websites. That's why working with ooliv feels like working with a close, strategic partner — not just a service provider.
-          </p>
+    <section className="py-24 bg-gradient-to-br from-brand-background to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573164574472-797cdf4a583a?auto=format&fit=crop&q=80&w=800" 
+                alt="ooliv Web Design Agency Team" 
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                <p className="text-sm font-medium text-brand-heading">
+                  <span className="text-brand-primary font-bold">16+ years</span> crafting websites that deliver real business growth
+                </p>
+              </div>
+            </div>
+          </div>
           
-          <div className="space-y-6 text-lg">
-            <p>
-              At ooliv, we work eye to eye with our clients: down-to-earth, transparent, modern. Our team combines creativity, strategy, and cutting-edge tech (like ChatGPT & Midjourney) to craft websites that don't just look good but drive measurable business value.
+          <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-bold mb-6 text-brand-heading">
+              We Build Websites That Actually Work for Your Business
+            </h2>
+            
+            <p className="text-lg mb-6 text-brand-text">
+              At ooliv, we don't just design pretty websites—we create strategic digital platforms with a clear focus on conversion, SEO, and the metrics that matter to your business.
             </p>
-            <p>
-              We move fast, communicate clearly, and make things easy — from kickoff to long-term support. Most of our clients say the same thing: "You're always there when we need you." That's exactly how we like to work.
-            </p>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start">
+                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                  <span className="text-brand-primary font-bold text-sm">1</span>
+                </div>
+                <p className="text-brand-text">
+                  We blend strategic thinking with technical expertise to create websites that attract your ideal customers and turn them into leads or customers.
+                </p>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                  <span className="text-brand-primary font-bold text-sm">2</span>
+                </div>
+                <p className="text-brand-text">
+                  Our approach integrates <Link to="/seo-optimization" className="text-brand-primary hover:underline">SEO</Link>, user experience, and content strategy—all focused on delivering measurable business outcomes.
+                </p>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="h-6 w-6 rounded-full bg-brand-primary/20 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                  <span className="text-brand-primary font-bold text-sm">3</span>
+                </div>
+                <p className="text-brand-text">
+                  From strategy to launch, you'll work directly with our CEO and a focused team of specialists—with no unnecessary layers of management.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex space-x-4">
+              <Link 
+                to="/case-studies" 
+                className="text-brand-primary font-medium hover:underline inline-flex items-center"
+              >
+                See how we work <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-24">
-        <Separator className="w-full max-w-4xl mx-auto" />
       </div>
     </section>
   );

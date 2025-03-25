@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart, Zap, Users, LineChart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from 'react';
+import ScrollIndicator from './ScrollIndicator';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -118,7 +120,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl max-w-2xl mb-6 text-gray-100">
-            We create websites that rank higher, convert better, and drive real business success. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable results.
+            We create <Link to="/seo-optimization" className="text-brand-primary hover:underline">SEO-driven websites</Link> that rank higher, convert better, and drive real business success. Our <Link to="/web-design" className="text-brand-primary hover:underline">Web Design Agency Process</Link> ensures your website delivers measurable results, whether it's a relaunch or <Link to="/lead-generation" className="text-brand-primary hover:underline">conversion-focused landing pages</Link>.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -137,6 +139,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

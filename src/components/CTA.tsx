@@ -46,7 +46,7 @@ const CTA = ({
               onClick={() => handleOpenForm('audit')}
             >
               <FileCheck className="mr-2 h-5 w-5" />
-              {primaryCta || t('cta.audit')}
+              {primaryCta || "Let's Build Something That Performs"}
             </Button>
             
             <Button 
@@ -56,7 +56,7 @@ const CTA = ({
               onClick={() => handleOpenForm('call')}
             >
               <PhoneCall className="mr-2 h-5 w-5" />
-              {secondaryCta || t('cta.call')}
+              {secondaryCta || "Book a Free Strategy Call"}
             </Button>
           </div>
           

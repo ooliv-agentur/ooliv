@@ -25,7 +25,7 @@ const Footer = () => {
               asChild
             >
               <Link to="/contact">
-                {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+                Let's Build Something That Performs <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -81,6 +81,11 @@ const Footer = () => {
                 <span>info@ooliv.de</span>
               </li>
             </ul>
+            <div className="mt-4 pt-4 border-t border-gray-700">
+              <p className="text-sm text-white/80">
+                All communication is handled personally by our founder and CEO — fast, direct, and strategic.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -109,7 +114,7 @@ const Footer = () => {
             asChild
           >
             <Link to="/contact">
-              {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+              Book a Free Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
