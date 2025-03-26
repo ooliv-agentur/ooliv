@@ -1,96 +1,100 @@
 
 import React from 'react';
-import { Search, Layout, Zap, FileText, Link as LinkIcon, RefreshCw, MapPin } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-
-const services = [
-  {
-    icon: <Search className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "Keyword Strategy",
-    description: "We start with in-depth keyword research to target the terms that matter most for your business."
-  },
-  {
-    icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "On-Page SEO",
-    description: "Optimizing metadata, headings, URL structures, and content to improve your rankings."
-  },
-  {
-    icon: <Zap className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "Technical SEO",
-    description: "We fix indexing issues, improve site speed, and align with Core Web Vitals — the foundation for a strong SEO strategy."
-  },
-  {
-    icon: <FileText className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "Content Optimization",
-    description: "We optimize existing content or create new pages to meet user demand and business goals."
-  },
-  {
-    icon: <LinkIcon className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "Link Strategy",
-    description: "Internal linking structure and high-quality backlinks to build authority and drive traffic."
-  },
-  {
-    icon: <MapPin className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "Local SEO",
-    description: "Regional visibility, business listings, and citations for businesses targeting local clients (e.g. in Mainz and the Rhein-Main area)."
-  },
-  {
-    icon: <RefreshCw className="h-10 w-10 mb-4 text-brand-primary" />,
-    title: "SEO for Relaunches",
-    description: "Risk-free relaunches with 301 planning, URL mapping, and ranking preservation."
-  }
-];
+import { ArrowRight, Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
 
 const SEOServices = () => {
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            Our SEO Services Help You Grow for the Long Run
-          </h2>
-          <p className="text-lg max-w-3xl mx-auto text-brand-text">
-            We combine deep keyword research, high-impact content, clean code, and strategic backlinking — all aligned with your business goals.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO Services Built for Long-Term Growth</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-2 pt-6 text-center">
-                <div className="flex justify-center">{service.icon}</div>
-                <CardTitle className="text-xl mt-2">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-brand-text">{service.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-brand-text mt-4">
-            Learn more about our{' '}
-            <Link to="/content-creation" className="text-brand-primary hover:underline">
-              on-page SEO
-            </Link>{' '}
-            and{' '}
-            <Link to="/lead-generation" className="text-brand-primary hover:underline">
-              backlink strategy
-            </Link>{' '}
-            services
-          </p>
-        </div>
-
-        <div className="mt-16 text-center">
-          <div className="inline-block p-6 border border-gray-200 rounded-lg bg-white">
-            <h3 className="text-xl font-bold mb-3">Tech Stack & Tools</h3>
-            <p className="mb-4">We use top-tier tools to inform our strategy—never to replace it.</p>
-            <p className="text-brand-primary font-medium">
-              → Ahrefs, Google Search Console, YoastSEO (for WordPress), ChatGPT (for content), Midjourney (for visuals), Sora (for videos)
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <Search className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Keyword Strategy</h3>
+            <p className="text-brand-text">
+              In-depth research focused on relevant, industry-specific and local search terms.
             </p>
           </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <FileEdit className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">On-Page Optimization</h3>
+            <p className="text-brand-text">
+              Metadata, URLs, headings, and structured content to improve rankings and UX.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <Code className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technical SEO</h3>
+            <p className="text-brand-text">
+              Site speed, Core Web Vitals, clean indexing — the foundation of SEO success.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <FileText className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Content Optimization</h3>
+            <p className="text-brand-text">
+              Improve existing content or build new pages based on user needs and search intent.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <Link2 className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Link Strategy</h3>
+            <p className="text-brand-text">
+              Strategic internal linking and sustainable backlink campaigns to build authority.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-4 text-brand-primary">
+              <MapPin className="h-10 w-10" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Local SEO</h3>
+            <p className="text-brand-text">
+              Boost visibility in Mainz and the Rhein-Main area: Google Business, citations, listings.
+            </p>
+          </div>
+        </div>
+
+        {/* AI-powered tools section */}
+        <div className="mt-16 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold mb-4 text-brand-heading">🧰 Tools That Support — Not Replace — Strategy</h3>
+          <p className="text-brand-text mb-6">
+            We use industry-leading tools to enhance our SEO strategies, but our expertise is what delivers results.
+          </p>
+          
+          <div className="flex flex-wrap gap-3 justify-center">
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Ahrefs</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Google Search Console</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">YoastSEO (WordPress)</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">ChatGPT (for content)</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Midjourney (for visuals)</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Sora (for video)</div>
+          </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <Link to="/content-creation" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+            Learn more about On-Page SEO & Backlink Strategy
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

@@ -1,80 +1,66 @@
 
 import React from 'react';
-import { BarChart2, Clock, FileText, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const benefits = [
-  {
-    icon: BarChart2,
-    problem: 'Your site gets traffic, but no leads',
-    solution: 'We optimize for search intent and conversions — bringing in visitors who are ready to engage.'
-  },
-  {
-    icon: Clock,
-    problem: 'SEO takes too long to show results',
-    solution: 'We combine quick wins with long-term strategies to accelerate ROI.'
-  },
-  {
-    icon: FileText,
-    problem: 'Outdated content & poor structure',
-    solution: 'We create search-friendly content and restructure pages for better performance.'
-  },
-  {
-    icon: Shield,
-    problem: 'Technical issues hurt your rankings',
-    solution: 'We audit your site for speed, indexing, and Core Web Vitals — all while keeping the code clean.'
-  }
-];
+import { ArrowRight, BarChart2, Clock, FileText, ShieldAlert } from 'lucide-react';
 
 const SEOBenefits = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Two-tone heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            SEO Challenges That Cost Your Business
-            <span className="block text-brand-primary"> — And How We Fix Them</span>
-          </h2>
-          
-          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
-            Our SEO services in Mainz address the most common challenges businesses face with search visibility.
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO Challenges That Block Growth — We Fix Them</h2>
+          <p className="text-xl text-brand-text max-w-3xl mx-auto">
+            Our Mainz-based SEO services solve the most common issues holding back your search performance.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="p-3 rounded-full bg-brand-backgroundAlt mb-4">
-                  <benefit.icon className="h-8 w-8 text-brand-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                    {benefit.problem}
-                  </h3>
-                  <p className="text-brand-text">{benefit.solution}</p>
-                </div>
-              </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="mb-4 text-brand-primary">
+              <BarChart2 className="h-8 w-8" />
             </div>
-          ))}
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Traffic but no leads</h3>
+            <p className="text-brand-text mb-4">
+              We optimize for search intent and conversion — to reach users who are ready to act.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="mb-4 text-brand-primary">
+              <Clock className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">SEO takes too long</h3>
+            <p className="text-brand-text mb-4">
+              We deliver quick wins and long-term results — for faster ROI.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="mb-4 text-brand-primary">
+              <FileText className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Outdated content & unclear structure</h3>
+            <p className="text-brand-text mb-4">
+              We revise content and improve page architecture for better ranking and user experience.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="mb-4 text-brand-primary">
+              <ShieldAlert className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technical issues hurt rankings</h3>
+            <p className="text-brand-text mb-4">
+              We fix site speed, indexing, and Core Web Vitals — with clean, SEO-friendly code.
+            </p>
+          </div>
         </div>
-        
-        <div className="mt-8 text-center">
-          <p className="text-brand-text">
-            Learn more about our{' '}
-            <Link to="/content-creation" className="text-brand-primary hover:underline">
-              Content Creation
-            </Link>{' '}
-            and{' '}
-            <Link to="/web-development" className="text-brand-primary hover:underline">
-              Web Development
-            </Link>{' '}
-            services
-          </p>
+
+        <div className="text-center mt-10">
+          <Link to="/content-creation" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+            Explore Content Creation & Web Development Services
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

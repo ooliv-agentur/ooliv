@@ -7,31 +7,31 @@ const steps = [
     icon: FileSearch,
     number: '01',
     title: 'Audit & Strategy',
-    description: 'We start with a full SEO audit and define a tailored roadmap based on your business goals.'
+    description: 'Initial SEO audit + customized roadmap based on your business goals'
   },
   {
     icon: Wrench,
     number: '02',
     title: 'Fix & Structure',
-    description: 'We clean up technical issues and restructure your site for better SEO performance.'
+    description: 'Resolve technical issues and build SEO-ready site structure'
   },
   {
     icon: FileEdit,
     number: '03',
-    title: 'Keyword & Content',
-    description: 'We create and optimize content around your target keywords and ensure your pages are structured for success.'
+    title: 'Keywords & Content',
+    description: 'Create or optimize content around high-potential keywords'
   },
   {
     icon: LinkIcon,
     number: '04',
     title: 'Authority Building',
-    description: 'We implement internal linking strategies and coordinate backlink campaigns to build authority.'
+    description: 'Implement internal link structure and run backlink campaigns'
   },
   {
     icon: BarChart3,
     number: '05',
-    title: 'Monitoring & Scaling',
-    description: 'Using tools like Ahrefs and Google Search Console, we track results and refine your strategy.'
+    title: 'Tracking & Scaling',
+    description: 'Use tools like Ahrefs & Search Console to refine and scale SEO efforts'
   }
 ];
 
@@ -40,11 +40,11 @@ const SEOProcess = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Our Process — From Audit to Authority
+          🔁 Our SEO Process — From Audit to Authority
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          Our SEO experts in Mainz follow a systematic approach to improve your organic performance
+          Our Mainz-based SEO experts follow a systematic approach to improve your organic performance
         </p>
         
         <div className="overflow-x-auto pb-6">
