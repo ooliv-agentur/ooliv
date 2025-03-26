@@ -45,7 +45,7 @@ const GermanContentCreation = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <ContentHero pageTag="Content Erstellung" />
+      <ContentHero />
       <ContentBenefits />
       <ContentServiceDE />
       <ContentServices />

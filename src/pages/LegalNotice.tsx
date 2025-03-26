@@ -21,7 +21,6 @@ const LegalNotice = () => {
           text: "Contact Us",
           link: "/contact"
         }}
-        badge="Imprint"
       />
 
       <section className="section-standard">

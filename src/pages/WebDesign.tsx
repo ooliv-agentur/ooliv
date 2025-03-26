@@ -13,7 +13,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 const WebDesign = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <WebDesignHero pageTag="Web Design" />
+      <WebDesignHero />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />

@@ -50,7 +50,6 @@ const GermanPrivacyPolicy = () => {
           text: "Datenschutzbeauftragten kontaktieren",
           link: "/de/contact"
         }}
-        badge="Datenschutz"
       />
 
       <section className="section-standard" ref={policyRef} id="policy">

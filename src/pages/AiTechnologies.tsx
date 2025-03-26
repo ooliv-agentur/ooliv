@@ -55,7 +55,7 @@ const AiTechnologies = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <AiTechHero pageTag="AI Technologies" />
+      <AiTechHero />
       <AiTechBenefits />
       <AiTechServices />
       
@@ -89,3 +89,4 @@ const AiTechnologies = () => {
 };
 
 export default AiTechnologies;
+

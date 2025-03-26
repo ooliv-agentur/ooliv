@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <Hero pageTag="Startpage" />
+      <Hero />
       <AboutSection />
       <TeamImpactSection />
       <Challenge />

@@ -49,7 +49,7 @@ const GermanSEO = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <SEOHeroDE pageTag="SEO-Optimierung" />
+      <SEOHeroDE />
       <SEOBenefitsDE />
       <SEOServicesDE />
       <SEOApproachDE />

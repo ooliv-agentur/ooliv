@@ -41,7 +41,7 @@ const SEO = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <SEOHero pageTag="SEO Optimization" />
+      <SEOHero />
       <SEOBenefits />
       <SEOServices />
       <SEOApproach />

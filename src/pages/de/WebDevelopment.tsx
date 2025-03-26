@@ -44,7 +44,7 @@ const GermanWebDevelopment = () => {
 
   return (
     <PageLayout className="overflow-x-hidden">
-      <WebDevHero pageTag="Webentwicklung" />
+      <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStaticDE />
       <WebDevProcess />

@@ -36,7 +36,7 @@ const webDevFaqs = [
 const WebDevelopment = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <WebDevHero pageTag="Web Development" />
+      <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStatic />
       <WebDevProcess />
