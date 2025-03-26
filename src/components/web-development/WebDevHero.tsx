@@ -12,8 +12,8 @@ const WebDevHero = () => {
     <div className="relative">
       <PageHero
         badge={isGerman 
-          ? "Maßgeschneiderte Entwicklungslösungen" 
-          : "Custom Development Solutions"
+          ? "Webentwicklung" 
+          : "Web Development"
         }
         title={isGerman 
           ? "WordPress Agentur Mainz für skalierbare Unternehmenslösungen" 

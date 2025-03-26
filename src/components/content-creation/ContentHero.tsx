@@ -11,7 +11,7 @@ const ContentHero = () => {
   return (
     <div className="relative">
       <PageHero
-        badge={isGerman ? "Content Erstellung für Websites" : "Web Content Strategy & Creation"}
+        badge={isGerman ? "Content Erstellung" : "Content Creation"}
         title={isGerman 
           ? "Content Erstellung für Websites – strategisch, visuell, SEO-basiert" 
           : "Web Content Strategy & Creation"

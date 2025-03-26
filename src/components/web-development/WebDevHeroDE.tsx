@@ -7,7 +7,7 @@ const WebDevHeroDE = () => {
   return (
     <div className="relative">
       <PageHero
-        badge="Maßgeschneiderte Entwicklungslösungen"
+        badge="Webentwicklung"
         title="WordPress Agentur Mainz für skalierbare Unternehmenslösungen"
         subtitle="Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code."
         primaryCta={{

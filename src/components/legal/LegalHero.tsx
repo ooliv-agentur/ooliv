@@ -18,7 +18,7 @@ interface LegalHeroProps {
 const LegalHero = ({ title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
   return (
     <PageHero
-      badge="Legal Information"
+      badge="Impressum"
       title={title}
       subtitle={subtitle}
       primaryCta={primaryCta}

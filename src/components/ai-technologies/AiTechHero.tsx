@@ -9,12 +9,12 @@ const AiTechHero = () => {
   // Content based on language
   const content = {
     en: {
-      badge: "Responsible, Strategic, Human-Led",
+      badge: "AI Technologies",
       title: "AI Agency in Mainz — Smarter Web Projects with ooliv",
       subtitle: "We use AI to accelerate design, content, and development workflows — without replacing human expertise. Every project combines the speed of AI with the precision of strategy."
     },
     de: {
-      badge: "Nicht künstlich – sondern intelligent eingesetzt.",
+      badge: "KI-Technologien",
       title: "KI Agentur in Mainz für Webdesign, Content und Strategie",
       subtitle: "Wir kombinieren die Geschwindigkeit von KI mit menschlicher Expertise – für Websites, die schneller live gehen und besser performen."
     }

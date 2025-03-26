@@ -79,12 +79,7 @@ const Hero = ({
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            {/* Tag line above heading - Only show in English version */}
-            {language === 'en' && (
-              <div className="inline-flex items-center bg-blue-600/20 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-                <span>Web Design Agency</span>
-              </div>
-            )}
+            {/* No badge/page tag for homepage */}
             
             {/* Main heading with emphasis */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
