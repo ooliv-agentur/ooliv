@@ -45,7 +45,7 @@ const Index = () => {
       <TeamTeaser />
       <ClientLogos />
       
-      {/* Show all 5 case studies with no limitation */}
+      {/* Show all 5 case studies with standardized headers */}
       <CaseStudiesSection />
       
       <FAQ />
