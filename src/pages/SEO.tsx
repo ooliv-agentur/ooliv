@@ -5,10 +5,10 @@ import SEOHero from '@/components/seo/SEOHero';
 import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
 import SEOProcess from '@/components/seo/SEOProcess';
-import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
 import SEOApproach from '@/components/seo/SEOApproach';
 import FAQ from '@/components/FAQ';
 import SEOCta from '@/components/seo/SEOCta';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const SEO = () => {
   // Custom FAQ items for SEO page
@@ -52,8 +52,11 @@ const SEO = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-brand-heading mb-6">Real Results from Real Clients</h2>
+            <p className="text-lg text-brand-text max-w-3xl mx-auto">
+              See how our Mainz-based SEO strategies drive measurable business outcomes.
+            </p>
           </div>
-          <SEOCaseStudies />
+          <CaseStudiesSection />
         </div>
       </section>
       
