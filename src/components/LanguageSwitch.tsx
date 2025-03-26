@@ -67,13 +67,7 @@ const LanguageSwitch: React.FC = () => {
       // Switching to English
       setLanguage('en');
       
-      // First check for exact path match to handle paths like '/de/google-ads'
-      if (reversePathMapping[currentPath]) {
-        navigate(reversePathMapping[currentPath]);
-        return;
-      }
-      
-      // If not exact match, check for path that starts with the current path
+      // Try to find a mapped path
       for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
         if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
           navigate(enPath);

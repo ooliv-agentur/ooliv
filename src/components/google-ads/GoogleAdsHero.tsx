@@ -5,15 +5,15 @@ import PageHero from '@/components/PageHero';
 const GoogleAdsHero = () => {
   return (
     <PageHero
-      badge="Built for B2B Leads, Not Just Clicks"
-      title="Google Ads Agency in Mainz – Built for B2B Leads, Not Just Clicks"
-      subtitle="We design and optimize Google Ads campaigns that don't just generate traffic — they bring in qualified B2B leads. AI-powered, conversion-driven, and performance-monitored."
+      badge="Traffic to Leads to Results"
+      title="Google Ads in Mainz That Turn Traffic to Leads"
+      subtitle="We help B2B companies attract qualified leads and turn traffic into measurable results — through high-performance Google Ads campaigns, AI-powered targeting, and conversion-optimized landing pages."
       primaryCta={{
-        text: "Launch Your Campaign",
+        text: "Start Your Campaign",
         link: "/contact"
       }}
       secondaryCta={{
-        text: "Request Free Audit",
+        text: "Request a Free Audit",
         link: "/contact"
       }}
     />
@@ -21,4 +21,3 @@ const GoogleAdsHero = () => {
 };
 
 export default GoogleAdsHero;
-
