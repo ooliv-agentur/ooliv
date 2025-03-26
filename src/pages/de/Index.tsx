@@ -1,3 +1,4 @@
+
 import PageLayout from "@/components/PageLayout";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -160,7 +161,7 @@ const GermanIndex = () => {
       <CaseStudiesSection showAll={true} showCta={true} />
       
       <FAQ 
-        title="Häufig gestellte Fragen – zur Werbeagentur ooliv in Mainz"
+        customTitle="Häufig gestellte Fragen – zur Werbeagentur ooliv in Mainz"
         customFaqs={[
           {
             question: "Was macht ooliv als Werbeagentur in Mainz besonders?",
