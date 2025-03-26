@@ -18,22 +18,22 @@ const GermanAiTechnologies = () => {
     setLanguage('de');
   }, [setLanguage]);
 
-  // AI tools data for German page
+  // AI tools data for German page - Updated as requested
   const aiTools = [
     {
       name: "ChatGPT",
       logoSrc: "/chatgpt-logo.svg",
-      description: "Für Inhaltstexte, Metadaten, FAQs und SEO-Snippets – immer von unseren Experten überprüft und überarbeitet."
+      description: "Texte, FAQs, SEO-Snippets und Übersetzungen – entwickelt mit KI, veredelt von unseren Redakteur:innen."
     },
     {
       name: "Midjourney",
       logoSrc: "/midjourney-logo.svg",
-      description: "Für ausdrucksstarke, individuelle Grafiken jenseits von Stock-Fotos – besonders wenn keine Fotoassets existieren."
+      description: "Individuelle Visuals & Illustrationen für Marken, die keine Stockfotos wollen."
     },
     {
       name: "Sora (Video AI)",
       logoSrc: "/sora-logo.svg",
-      description: "Ideal für kurze Bewegtbild-Clips oder atmosphärische Video-Hintergründe – maßgeschneidert für Ihre Marke und Botschaft."
+      description: "Animierte Videoelemente, Hintergrundvideos und Motion Design – auf Ihre Marke zugeschnitten."
     }
   ];
 
@@ -86,7 +86,16 @@ const GermanAiTechnologies = () => {
         subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
         primaryCta="KI-Potenzialanalyse anfordern"
         secondaryCta="Strategiegespräch vereinbaren"
-      />
+      >
+        {/* New claim section */}
+        <section className="mt-12 text-center">
+          <div className="container mx-auto px-4">
+            <p className="text-lg text-brand-text font-medium">
+              100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
+            </p>
+          </div>
+        </section>
+      </CTA>
     </PageLayout>
   );
 };

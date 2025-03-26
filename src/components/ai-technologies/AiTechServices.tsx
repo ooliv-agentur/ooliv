@@ -3,9 +3,57 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Image, Video, Layout } from "lucide-react";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AiTechServices = () => {
-  const services = [
+  const { language } = useLanguage();
+  
+  const services = language === 'de' ? [
+    {
+      icon: <MessageSquare className="h-10 w-10 text-blue-500" />,
+      title: "Content-Erstellung mit ChatGPT",
+      description: "Wir nutzen ChatGPT für Content-Outlines, mehrsprachige Texte und Messaging-Frameworks – immer überarbeitet von unserem Redaktionsteam.",
+      features: [
+        "Strukturierte SEO-Outlines",
+        "Mehrsprachige Content-Entwürfe",
+        "Messaging-Frameworks",
+        "Menschlich überprüft und verfeinert"
+      ]
+    },
+    {
+      icon: <Image className="h-10 w-10 text-purple-500" />,
+      title: "Visuals mit Midjourney",
+      description: "Midjourney hilft uns, beeindruckende, markenspezifische Bilder und Illustrationen zu erstellen – ohne Stockfotos.",
+      features: [
+        "Individuelle Hero-Visuals",
+        "Markenspezifische Illustrationen",
+        "Einzigartige Bilder für Schlüsselbereiche",
+        "Konsistent mit Ihrer Markenidentität"
+      ]
+    },
+    {
+      icon: <Video className="h-10 w-10 text-red-500" />,
+      title: "Motion & Video mit Sora",
+      description: "Von Erklärvideos bis hin zu Hintergrundloops ermöglicht uns Sora, dynamische Videoinhalte zu generieren – schnell, markenkonform und ansprechend.",
+      features: [
+        "Hero-Animationen & Loops",
+        "Erklärvideos",
+        "Dynamisches visuelles Storytelling",
+        "Perfekt für Landing Pages"
+      ]
+    },
+    {
+      icon: <Layout className="h-10 w-10 text-green-500" />,
+      title: "KI in der Webentwicklung",
+      description: "Wir nutzen KI-gestützte Tools, um UI-Komponenten zu generieren, Layouts zu testen und die Entwicklung zu beschleunigen – mit menschlicher Kontrolle und strategischem Anspruch.",
+      features: [
+        "Schnelle Prototypen",
+        "Komponenten-Erstellung",
+        "Code-Optimierung",
+        "Qualitätssicherung durch unsere Entwickler:innen"
+      ]
+    }
+  ] : [
     {
       icon: <MessageSquare className="h-10 w-10 text-blue-500" />,
       title: "Content Creation with ChatGPT",
@@ -56,7 +104,11 @@ const AiTechServices = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">How We Use AI to Accelerate Results</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            {language === 'de' 
+              ? "Wie wir KI für bessere Ergebnisse nutzen" 
+              : "How We Use AI to Accelerate Results"}
+          </h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
