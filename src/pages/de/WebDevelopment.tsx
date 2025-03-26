@@ -5,11 +5,11 @@ import WebDevHero from '@/components/web-development/WebDevHero';
 import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevProcess from '@/components/web-development/WebDevProcess';
-import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
-import WebDevCTA from '@/components/web-development/WebDevCTA';
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
 import FAQ from '@/components/FAQ';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CTA from '@/components/CTA';
 
 const GermanWebDevelopment = () => {
   const { setLanguage } = useLanguage();
@@ -53,9 +53,24 @@ const GermanWebDevelopment = () => {
       <WebDevCmsVsStaticDE />
       <WebDevProcess />
       <WebDevServices />
-      <WebDevCaseStudies />
+      
+      {/* Global Case Studies Section instead of WebDevCaseStudies */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Webentwicklung Erfolgsgeschichten
+          </h2>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
       <FAQ customFaqs={webDevFaqs} />
-      <WebDevCTA />
+      <CTA 
+        title="Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
+        subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
+        primaryCta="Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };
