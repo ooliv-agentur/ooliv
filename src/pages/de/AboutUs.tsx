@@ -3,7 +3,6 @@ import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Link } from 'react-router-dom';
-import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
 import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
@@ -23,7 +22,7 @@ const GermanAboutUs = () => {
       {/* Hero Section using PageHero component */}
       <PageHero 
         badge="Über ooliv"
-        title="Marketing Agentur Mainz mit Strategie, Design und echtem Ergebnisfokus"
+        title="Marketing Agentur Mainz"
         subtitle="Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen."
         primaryCta={{
           text: "Projekt starten",
@@ -35,7 +34,7 @@ const GermanAboutUs = () => {
         }}
       />
 
-      {/* Who we are and how we work Section - NEW */}
+      {/* Who we are and how we work Section */}
       <section className="section-standard">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center">
@@ -186,7 +185,7 @@ const GermanAboutUs = () => {
             {[
               { title: 'UX & UI Design', icon: Users },
               { title: 'WordPress & Headless Entwicklung', icon: Briefcase },
-              { title: 'SEO & Content-Strategie', icon: Target },
+              { title: 'SEO-Optimierung', icon: Target },
               { title: 'Motion Design & Illustration', icon: Award },
               { title: 'KI-gestütztes Copywriting', icon: Target },
               { title: 'Branding & visuelle Identität', icon: Award }
@@ -207,8 +206,20 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Full Team Section */}
-      <TeamSection />
+      {/* Full Team Section with translated headings */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Das ooliv Team</h2>
+            <p className="text-lg max-w-2xl mx-auto text-gray-600">
+              Zusammenarbeit mit ooliv – was Sie erwartet
+            </p>
+          </div>
+          
+          {/* We keep the TeamSection component but will need to translate its contents separately */}
+          <TeamSection />
+        </div>
+      </section>
 
       {/* Added Compact FAQ Section */}
       <AboutCompactFAQ />

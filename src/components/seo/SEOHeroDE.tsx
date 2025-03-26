@@ -6,7 +6,7 @@ const SEOHeroDE = () => {
   return (
     <PageHero
       badge="SEO-Optimierung"
-      title="SEO Agentur Mainz – für messbare Sichtbarkeit & Leads"
+      title="SEO Agentur Mainz"
       subtitle="Wir verwandeln Ihre Website in einen Wachstumstreiber. Strategiegetriebene SEO-Optimierung für bessere Rankings, qualifizierte Anfragen und nachhaltiges Business-Wachstum – in Mainz und darüber hinaus."
       primaryCta={{
         text: "SEO-Strategie starten",
