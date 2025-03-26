@@ -5,7 +5,7 @@ import SEOHero from '@/components/seo/SEOHero';
 import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
 import SEOProcess from '@/components/seo/SEOProcess';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
+import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
 import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -54,8 +54,8 @@ const GermanSEO = () => {
       <SEOServices />
       <SEOApproachDE />
       <SEOProcess />
-      <CaseStudiesSection />
-      <FAQ customFaqs={seoFaqs} customTitle="Häufige Fragen zur SEO Optimierung" />
+      <SEOCaseStudies />
+      <FAQ customFaqs={seoFaqs} />
       <CTA 
         title="Lassen Sie Ihre Website intelligenter arbeiten"
         subtitle="SEO ist keine Checkliste, sondern ein Wachstumshebel. Erschließen wir gemeinsam das volle Potenzial Ihrer Website mit einer auf Ergebnisse ausgerichteten Strategie."
