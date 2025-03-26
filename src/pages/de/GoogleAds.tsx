@@ -6,6 +6,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
+import GoogleAdsLeadGenerationDE from '@/components/google-ads/GoogleAdsLeadGenerationDE';
 import { ArrowRight, CheckCircle, BarChart, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -136,6 +137,9 @@ const GermanGoogleAds = () => {
           </div>
         </div>
       </section>
+      
+      {/* Lead Generation Section */}
+      <GoogleAdsLeadGenerationDE />
 
       {/* Extended Services Section */}
       <section className="py-16 md:py-24 bg-white">
