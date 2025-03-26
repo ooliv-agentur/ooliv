@@ -1,32 +1,109 @@
 
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TeamMember {
   name: string;
-  role: string;
+  role: {
+    en: string;
+    de: string;
+  };
   image?: string;
   initials: string;
 }
 
 const TeamSection = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
   const teamMembers: TeamMember[] = [
-    { name: "Uli Schönleber", role: "CEO · Consulting, Concept, AI", initials: "US" },
-    { name: "Lisa Schönleber", role: "Content", initials: "LS" },
-    { name: "Dorinel Nedelcu", role: "Creation", initials: "DN" },
-    { name: "Parveen Thakur", role: "Web Development", initials: "PT" },
-    { name: "Kamil Lisiewicz", role: "Web Development", initials: "KL" },
-    { name: "Neeraj Kumar", role: "App Development", initials: "NK" },
-    { name: "Paul Becker", role: "SEO Optimization", initials: "PB" },
-    { name: "Giovanni Costa", role: "Corporate Design", initials: "GC" },
-    { name: "Beatriz Morales", role: "Illustrator", initials: "BM" },
-    { name: "Sanja Micro", role: "Print Design", initials: "SM" }
+    { 
+      name: "Uli Schönleber", 
+      role: {
+        en: "CEO · Consulting, Concept, AI",
+        de: "CEO · Beratung, Konzept, KI"
+      }, 
+      initials: "US" 
+    },
+    { 
+      name: "Lisa Schönleber", 
+      role: {
+        en: "Content",
+        de: "Content"
+      }, 
+      initials: "LS" 
+    },
+    { 
+      name: "Dorinel Nedelcu", 
+      role: {
+        en: "Creation",
+        de: "Kreation"
+      }, 
+      initials: "DN" 
+    },
+    { 
+      name: "Parveen Thakur", 
+      role: {
+        en: "Web Development",
+        de: "Webentwicklung"
+      }, 
+      initials: "PT" 
+    },
+    { 
+      name: "Kamil Lisiewicz", 
+      role: {
+        en: "Web Development",
+        de: "Webentwicklung"
+      }, 
+      initials: "KL" 
+    },
+    { 
+      name: "Neeraj Kumar", 
+      role: {
+        en: "App Development",
+        de: "App-Entwicklung"
+      }, 
+      initials: "NK" 
+    },
+    { 
+      name: "Paul Becker", 
+      role: {
+        en: "SEO Optimization",
+        de: "SEO-Optimierung"
+      }, 
+      initials: "PB" 
+    },
+    { 
+      name: "Giovanni Costa", 
+      role: {
+        en: "Corporate Design",
+        de: "Corporate Design"
+      }, 
+      initials: "GC" 
+    },
+    { 
+      name: "Beatriz Morales", 
+      role: {
+        en: "Illustrator",
+        de: "Illustratorin"
+      }, 
+      initials: "BM" 
+    },
+    { 
+      name: "Sanja Micro", 
+      role: {
+        en: "Print Design",
+        de: "Print-Design"
+      }, 
+      initials: "SM" 
+    }
   ];
 
   return (
     <section className="section-alt py-24">
       <div className="section-container">
-        <h2 className="section-title">The ooliv Team</h2>
+        <h2 className="section-title">Das ooliv Team</h2>
         <p className="section-subtitle max-w-3xl mx-auto">
           Gute Leute sind schwer zu finden – wir haben gleich ein ganzes Team davon.<br />
           Unsere Experten vereinen Strategie, Kreativität und Technologie, um Projekte mit Herzblut umzusetzen.
@@ -45,7 +122,7 @@ const TeamSection = () => {
                 </AvatarFallback>
               </Avatar>
               <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-              <p className="text-sm text-brand-text/80 italic">{member.role}</p>
+              <p className="text-sm text-brand-text/80 italic">{isGerman ? member.role.de : member.role.en}</p>
             </div>
           ))}
         </div>

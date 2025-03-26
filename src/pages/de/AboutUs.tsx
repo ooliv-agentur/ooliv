@@ -206,20 +206,8 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Full Team Section with translated headings */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Das ooliv Team</h2>
-            <p className="text-lg max-w-2xl mx-auto text-gray-600">
-              Zusammenarbeit mit ooliv – was Sie erwartet
-            </p>
-          </div>
-          
-          {/* We keep the TeamSection component but will need to translate its contents separately */}
-          <TeamSection />
-        </div>
-      </section>
+      {/* Team Section Component */}
+      <TeamSection />
 
       {/* Added Compact FAQ Section */}
       <AboutCompactFAQ />
@@ -325,7 +313,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* FAQ Section with keyword focus "marketing agentur mainz" - KEPT */}
+      {/* FAQ Section with keyword focus "marketing agentur mainz" */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="text-center mb-12">
@@ -371,3 +359,4 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
