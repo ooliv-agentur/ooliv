@@ -18,7 +18,7 @@ const CTA = ({
   primaryCta, 
   secondaryCta 
 }: CTAProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [openForm, setOpenForm] = useState(false);
   const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
   
@@ -27,46 +27,48 @@ const CTA = ({
     setOpenForm(true);
   };
   
+  const isGerman = language === 'de';
+  
   return (
-    <section className="section-alt text-brand-text">
-      <div className="section-container text-center">
-        <div className="animate-fade-in">
-          <h2 className="heading-standard">
-            {title || t('cta.title')}
-          </h2>
+    <section className="py-24 bg-brand-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-heading">
+          {title || t('cta.title')}
+        </h2>
+        
+        <p className="text-lg mb-12 text-brand-text">
+          {subtitle || t('cta.subtitle')}
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button 
+            size="lg" 
+            className="px-8 py-6 h-auto text-base font-medium rounded-md"
+            onClick={() => handleOpenForm('audit')}
+          >
+            <FileCheck className="mr-2 h-5 w-5" />
+            {primaryCta || (isGerman ? "Projekt starten" : "Start Your Website Project")}
+          </Button>
           
-          <p className="subheading-standard">
-            {subtitle || t('cta.subtitle')}
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="px-8 py-6 h-auto text-base font-medium rounded-md"
+            onClick={() => handleOpenForm('call')}
+          >
+            <PhoneCall className="mr-2 h-5 w-5" />
+            {secondaryCta || (isGerman ? "Unsere Arbeiten sehen" : "See Our Work")}
+          </Button>
+        </div>
+        
+        <div className="mt-8 text-center">
+          <p className="text-sm text-brand-text/80 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center">
+            <span className="font-medium">100+ successful projects completed</span>
+            <span className="hidden sm:inline-block">•</span>
+            <span>Trusted by leading companies</span>
+            <span className="hidden sm:inline-block">•</span>
+            <span className="font-medium">AI-powered strategy for maximum efficiency</span>
           </p>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Button 
-              size="lg" 
-              className="button-primary text-base py-6 font-medium font-sans"
-              onClick={() => handleOpenForm('audit')}
-            >
-              <FileCheck className="mr-2 h-5 w-5" />
-              {primaryCta || "Let's Build Something That Performs"}
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="button-secondary text-base py-6 font-medium font-sans"
-              onClick={() => handleOpenForm('call')}
-            >
-              <PhoneCall className="mr-2 h-5 w-5" />
-              {secondaryCta || "Book a Free Strategy Call"}
-            </Button>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <p className="text-sm text-brand-text font-sans">
-              <span className="font-bold">100+ successful projects completed</span> • 
-              <span className="mx-2">Trusted by leading companies</span> • 
-              <span className="font-bold">AI-powered strategy for maximum efficiency</span>
-            </p>
-          </div>
         </div>
       </div>
       
