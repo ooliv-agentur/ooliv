@@ -50,7 +50,13 @@ const SEO = () => {
       {/* Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection hideHeaderText={true} />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-brand-heading mb-6">Real Results from Real Clients</h2>
+            <p className="text-lg text-brand-text max-w-3xl mx-auto">
+              See how our Mainz-based SEO strategies drive measurable business outcomes.
+            </p>
+          </div>
+          <CaseStudiesSection />
         </div>
       </section>
       
