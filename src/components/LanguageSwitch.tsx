@@ -54,29 +54,37 @@ const LanguageSwitch: React.FC = () => {
       setLanguage('de');
       
       // Try to find a mapped path
+      let foundMapping = false;
       for (const [enPath, dePath] of Object.entries(pathMapping)) {
         if (currentPath === enPath || currentPath.startsWith(enPath + '/')) {
           navigate(dePath);
+          foundMapping = true;
           return;
         }
       }
       
       // Default fallback if no specific path mapping found
-      navigate('/de');
+      if (!foundMapping) {
+        navigate('/de');
+      }
     } else {
       // Switching to English
       setLanguage('en');
       
       // Try to find a mapped path
+      let foundMapping = false;
       for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
         if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
           navigate(enPath);
+          foundMapping = true;
           return;
         }
       }
       
       // Default fallback if no specific path mapping found
-      navigate('/');
+      if (!foundMapping) {
+        navigate('/');
+      }
     }
   };
 
