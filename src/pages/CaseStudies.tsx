@@ -4,13 +4,15 @@ import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Check, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 // Partner logos placeholders
 const partnerLogos = [
   { id: 'scheurich', name: 'Scheurich' },
   { id: 'cobus', name: 'COBUS' },
-  { id: 'franchise', name: 'Franchise Portal' },
+  { id: 'weisenburger', name: 'Weisenburger' },
   { id: 'popbird', name: 'PopBird' },
   { id: 'greentech', name: 'GreenTech' }
 ];
@@ -19,11 +21,11 @@ const partnerLogos = [
 const successPillars = [
   {
     title: "Strategy-First Process",
-    description: "Every site starts with clear goals, structure, and KPIs."
+    description: "Every website begins with clear goals, structure, and KPIs."
   },
   {
-    title: "Tailored Design & Content",
-    description: "No templates. We build everything to fit each brand and audience."
+    title: "Custom Design & Content",
+    description: "No templates. We build everything tailored to each brand and audience."
   },
   {
     title: "Clean Development & SEO",
@@ -31,39 +33,41 @@ const successPillars = [
   }
 ];
 
-// FAQ items
+// FAQ items with focus on "marketing mainz"
 const faqItems = [
   {
-    question: "What types of companies does ooliv work with?",
-    answer: "Mostly B2B — from software to manufacturing, professional services, and education."
+    question: "What types of businesses does ooliv work with?",
+    answer: "Primarily B2B companies – from software to manufacturing, professional services, and education. We understand both regional and international business needs."
   },
   {
-    question: "Can I see more details about a specific case?",
-    answer: "Absolutely. Each case study page includes results, process insights, and screenshots."
+    question: "Can I see more details on a specific project?",
+    answer: "Absolutely. Each case study page includes results, process insights, and screenshots. We meticulously document our projects."
   },
   {
     question: "Are these results typical?",
-    answer: "Each project is different, but strong outcomes are the result of clear strategy and execution."
+    answer: "Each project is different, but strong results are the outcome of clear strategy and implementation. Our expertise has proven effective across many different industries."
   },
   {
     question: "Can I contact references?",
-    answer: "Yes. Upon request, we can connect you with past clients for feedback."
+    answer: "Yes. Upon request, we can connect you with past clients for feedback. Our work speaks for itself, and we're proud of the long-term relationships we build with our clients."
   }
 ];
 
 const CaseStudies = () => {
+  const { language } = useLanguage();
+
   return (
     <PageLayout>
       <PageHero
         badge="Real Results. Real Clients."
-        title="Marketing Success Stories from Mainz and Beyond"
-        subtitle="See how we've helped B2B companies grow with smart strategy, strong design, and measurable results. These case studies show what's possible with ooliv."
+        title="Marketing Success Stories from Around the World"
+        subtitle="See how we help B2B companies grow with intelligent strategy, strong design, and measurable results. These case studies showcase what's possible with ooliv."
         primaryCta={{
-          text: "Start Your Project",
+          text: "Start a Project",
           link: "/contact"
         }}
         secondaryCta={{
-          text: "Schedule a Call",
+          text: "Book a Call",
           link: "/contact"
         }}
       />
@@ -84,13 +88,17 @@ const CaseStudies = () => {
               ))}
             </div>
             <p className="text-lg text-gray-600">
-              Partnerships that inspire and have a lasting impact.
+              Partnerships that inspire and make a lasting impact.
             </p>
           </div>
         </div>
         
-        {/* Case Studies Section */}
-        <CaseStudiesSection showAll={true} showCta={false} />
+        {/* Full Case Studies Section with default titles */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
         
         {/* What Makes These Projects Work */}
         <div className="py-20 bg-brand-backgroundAlt">
@@ -126,7 +134,7 @@ const CaseStudies = () => {
                 Case Study & Project Questions
               </h2>
               <p className="text-lg text-gray-600">
-                Common questions about our projects and process.
+                Common questions about our projects and processes.
               </p>
             </div>
             
@@ -143,19 +151,21 @@ const CaseStudies = () => {
 
         {/* Final CTA Section */}
         <div className="mt-24 bg-brand-backgroundAlt rounded-lg p-10 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Let's Create Your Success Story</h2>
+          <h2 className="text-3xl font-bold mb-4">Let's Write Your Success Story</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Whether you need a relaunch, better conversions, or more qualified leads — we're ready to help. Every ooliv project starts with a strategy conversation.
+            Whether you need a relaunch, better conversions, or more qualified leads, we're ready to help. Every ooliv project starts with a strategy session.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
               <Link to="/contact">
-                Start Your Project
+                Start a Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/contact">
                 Book a Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>

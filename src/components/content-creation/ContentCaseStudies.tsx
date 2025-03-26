@@ -4,37 +4,83 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { caseStudiesData } from '@/components/CaseStudiesSection';
+
+const cases = {
+  en: [
+    {
+      client: "Scheurich – Manufacturing Brand",
+      industry: "Manufacturing & Industrial",
+      before: "Old website with poor lead generation and high bounce rate on mobile devices.",
+      after: "Strategic webdesign with clear user journeys and mobile-optimized experience.",
+      result: "120% increase in qualified leads and 45% lower bounce rate.",
+      services: ["Webdesign", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
+      kpis: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
+      image: "bg-[url('/case-study-1.jpg')]"
+    },
+    {
+      client: "COBUS – Enterprise Software",
+      industry: "B2B SaaS & Technology",
+      before: "Complex product demonstration process with low conversion from demo to sale.",
+      after: "Streamlined website with clearer product positioning and demo request flow.",
+      result: "80% more qualified sales opportunities and significantly improved user satisfaction.",
+      services: ["Website Redesign", "Content Strategy", "UX Research", "CRM Integration"],
+      kpis: ["80% More Qualified Leads", "3.2s Faster Load Time", "92% User Satisfaction"],
+      image: "bg-[url('/case-study-2.jpg')]"
+    }
+  ],
+  de: [
+    {
+      client: "Scheurich – Keramik & Lifestyle",
+      industry: "Fertigung & Industrie",
+      before: "Alte Website mit geringer Lead-Generierung und hoher Absprungrate auf Mobilgeräten.",
+      after: "Strategisches Webdesign mit klaren Nutzerführungen und mobiloptimierter Erfahrung.",
+      result: "120% mehr qualifizierte Leads und 45% niedrigere Absprungrate.",
+      services: ["Webdesign", "UX-Optimierung", "Mobile Redesign", "CMS-Implementierung"],
+      kpis: ["120% mehr Leads", "45% weniger Absprünge", "89% Mobile Conversion"],
+      image: "bg-[url('/case-study-1.jpg')]"
+    },
+    {
+      client: "COBUS – Enterprise Software",
+      industry: "B2B SaaS & Technologie",
+      before: "Komplexer Produktdemonstrationsprozess mit geringer Konversion von Demo zu Verkauf.",
+      after: "Optimierte Website mit klarerer Produktpositionierung und Demo-Anfrage-Fluss.",
+      result: "80% mehr qualifizierte Verkaufschancen und deutlich verbesserte Nutzerzufriedenheit.",
+      services: ["Website-Redesign", "Content-Strategie", "UX-Research", "CRM-Integration"],
+      kpis: ["80% mehr qualifizierte Leads", "3,2s schnellere Ladezeit", "92% Nutzerzufriedenheit"],
+      image: "bg-[url('/case-study-2.jpg')]"
+    }
+  ]
+};
 
 const ContentCaseStudies = () => {
   const { language } = useLanguage();
-  const isGerman = language === 'de';
-  
-  // Use all 5 case studies instead of just the first 2
-  const relevantCases = isGerman 
-    ? caseStudiesData.de
-    : caseStudiesData.en;
+  const displayCases = cases[language as 'en' | 'de'] || cases.en;
   
   const translations = {
     en: {
-      title: "Real Results From Real Clients",
-      subtitle: "See how our content strategies drive measurable business outcomes.",
+      title: "Content Creation Success Stories",
+      subtitle: "See how our strategic content has driven real business results.",
       viewFull: "View Full Case Study",
-      viewAll: "View All Case Studies"
+      viewAll: "View All Case Studies",
+      before: "BEFORE:",
+      after: "AFTER:",
+      whatWeDid: "WHAT WE DID:"
     },
     de: {
-      title: "Echte Ergebnisse von echten Kunden",
-      subtitle: "Sehen Sie, wie unsere Content-Strategien messbare Geschäftsergebnisse erzielen.",
+      title: "Content-Erstellung Erfolgsgeschichten",
+      subtitle: "Sehen Sie, wie unsere strategischen Inhalte echte Geschäftsergebnisse erzielt haben.",
       viewFull: "Vollständige Fallstudie ansehen",
-      viewAll: "Alle Fallstudien ansehen"
+      viewAll: "Alle Fallstudien ansehen",
+      before: "VORHER:",
+      after: "NACHHER:",
+      whatWeDid: "WAS WIR GEMACHT HABEN:"
     }
   };
   
-  const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
+  const t = translations[language as 'en' | 'de'] || translations.en;
 
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
           {t.title}
@@ -44,43 +90,64 @@ const ContentCaseStudies = () => {
           {t.subtitle}
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {relevantCases.map((study, index) => (
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {displayCases.map((study, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-2xl font-bold mb-2 text-brand-heading">{study.client}</h3>
-              <p className="text-brand-primary text-sm font-medium mb-6">{study.industry}</p>
-              
-              <div className="flex gap-6 mb-6">
-                {study.impact.slice(0, 2).map((result, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <div>
-                      <p className="text-2xl font-bold text-brand-heading">{result.split(' ')[0]}</p>
-                      <p className="text-sm text-brand-text">{result.split(' ').slice(1).join(' ')}</p>
-                    </div>
+              <div className={`h-56 ${study.image} bg-cover bg-center`} />
+              <div className="p-6">
+                <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
+                <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>
+                
+                <div className="mb-4 grid grid-cols-2 gap-4">
+                  <div className="bg-brand-backgroundAlt p-3 rounded-md">
+                    <h4 className="text-xs font-bold text-brand-primary mb-1">{t.before}</h4>
+                    <p className="text-xs text-brand-text">{study.before}</p>
                   </div>
-                ))}
-              </div>
-              
-              <p className="text-brand-text mb-6">{study.title}</p>
-              
-              <Button variant="outline" size="sm" className="group" asChild>
-                <Link to={caseStudiesPath}>
-                  {t.viewFull}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <div className="bg-brand-backgroundAlt p-3 rounded-md">
+                    <h4 className="text-xs font-bold text-brand-primary mb-1">{t.after}</h4>
+                    <p className="text-xs text-brand-text">{study.after}</p>
+                  </div>
+                </div>
+                
+                <p className="text-brand-text mb-3 text-sm font-medium">{study.result}</p>
+                
+                <div className="mb-3">
+                  <h4 className="text-xs font-bold text-brand-heading mb-2">{t.whatWeDid}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {study.services.map((service, sidx) => (
+                      <span key={sidx} className="text-xs bg-gray-100 py-1 px-2 rounded-full text-brand-text">
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  {study.kpis.map((kpi, kpiIndex) => (
+                    <div key={kpiIndex} className="text-xs font-medium text-brand-primary bg-brand-backgroundAlt p-2 rounded-md text-center">
+                      {kpi}
+                    </div>
+                  ))}
+                </div>
+                
+                <Link 
+                  to={language === 'de' ? "/de/case-studies" : "/case-studies"} 
+                  className="text-sm font-medium text-brand-primary hover:underline inline-flex items-center"
+                >
+                  {t.viewFull} <ArrowRight className="ml-1 h-3 w-3" />
                 </Link>
-              </Button>
+              </div>
             </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button size="lg" className="group" asChild>
-            <Link to={caseStudiesPath}>
-              {t.viewAll}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        <div className="text-center">
+          <Button variant="outline" asChild>
+            <Link to={language === 'de' ? "/de/case-studies" : "/case-studies"}>
+              {t.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

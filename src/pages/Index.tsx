@@ -46,7 +46,7 @@ const Index = () => {
       <ClientLogos />
       
       {/* Show all 5 case studies with no limitation */}
-      <CaseStudiesSection showAll={true} showCta={true} />
+      <CaseStudiesSection />
       
       <FAQ />
       <CTA 

@@ -27,14 +27,10 @@ const GermanWebDesign = () => {
       <WebDesignBuildOptions />
       <WebDesignProcess />
       
-      {/* Full Case Studies Section with all 5 cases */}
+      {/* Full Case Studies Section with global titles */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection 
-            customTitle="Webdesign-Erfolgsgeschichten" 
-            customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
-            customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
-          />
+          <CaseStudiesSection />
         </div>
       </section>
       

@@ -3,12 +3,12 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
-import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
-import AiTechCaseStudies from '@/components/ai-technologies/AiTechCaseStudies';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanAiTechnologies = () => {
   const { setLanguage } = useLanguage();
@@ -17,51 +17,28 @@ const GermanAiTechnologies = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
-  
-  // AI tools data in German
-  const aiTools = [
+
+  // Custom FAQ items for AI page
+  const aiFaqs = [
     {
-      name: "ChatGPT",
-      logoSrc: "/chatgpt-logo.svg",
-      description: "Zur Entwicklung erster Content-Entwürfe, Meta-Daten, FAQs und SEO-Snippets – finalisiert und geprüft durch unser Redaktionsteam."
+      question: "Wie integrieren wir KI in bestehende Marketingprozesse?",
+      answer: "Wir analysieren Ihre aktuellen Prozesse, identifizieren die größten Effizienzpotenziale und integrieren die passenden KI-Tools nahtlos in Ihren Workflow."
     },
     {
-      name: "Midjourney",
-      logoSrc: "/midjourney-logo.svg",
-      description: "Für einzigartige Bildwelten, die Ihre Marke visuell aufwerten – besonders hilfreich, wenn keine Fotos vorliegen."
+      question: "Bleiben wir bei KI-erstellten Inhalten im rechtlichen Rahmen?",
+      answer: "Absolut. Wir achten auf rechtliche und ethische Compliance, vom Urheberrecht bis zum Datenschutz, und behalten die menschliche Kontrolle über alle Outputs."
     },
     {
-      name: "Sora (Video-KI)",
-      logoSrc: "/sora-logo.svg",
-      description: "Zum Erstellen kurzer Bewegtbildsequenzen oder Hintergrundvideos – stimmungsvoll, markengerecht, effizient."
-    }
-  ];
-  
-  // Custom FAQ items for AI Technologies page with focus on "ki agentur"
-  const aiTechFaqs = [
-    {
-      question: "Ersetzt ooliv als KI Agentur Texter durch ChatGPT?",
-      answer: "Nein. Wir nutzen ChatGPT, um Entwürfe zu generieren, aber alle Inhalte werden von Menschen überprüft und verfeinert. Als verantwortungsvolle KI Agentur setzen wir auf die richtige Balance."
+      question: "Welche konkreten ROI-Vorteile bringt KI im Marketing?",
+      answer: "Typische Vorteile: 70-80% Zeitersparnis bei Content-Erstellung, 30-50% geringere Kosten pro Lead und deutlich schnellere Reaktionszeiten auf Marktveränderungen."
     },
     {
-      question: "Ist KI-generierter Content gut für SEO?",
-      answer: "Ja – wenn er richtig eingesetzt wird. Als KI Agentur folgen wir SEO-Best-Practices und stellen sicher, dass jedes Wort Ihren Zielen entspricht und nicht als maschinell erzeugt erkennbar ist."
+      question: "Ist die Qualität von KI-generiertem Content wirklich gut?",
+      answer: "Mit dem richtigen Prompt-Engineering und menschlicher Nachbearbeitung ist die Qualität hervorragend. KI erstellt den Rohtext, Experten verfeinern ihn für optimale Ergebnisse."
     },
     {
-      question: "Wird meine Website als Produkt einer KI Agentur erkennbar sein?",
-      answer: "Nein. Als KI Agentur nutzen wir KI, um kreative Arbeit zu beschleunigen – aber alle Visuals, Texte und Designs werden auf Ihre Marke zugeschnitten und erhalten eine menschliche Note."
-    },
-    {
-      question: "Sind meine Daten bei einer KI Agentur und deren KI-Tools sicher?",
-      answer: "Ja. Als vertrauenswürdige KI Agentur verwenden wir sichere Umgebungen und laden niemals sensible Daten auf öffentliche Plattformen hoch. Datenschutz ist für uns ein zentrales Anliegen."
-    },
-    {
-      question: "Wie unterscheidet sich eure KI Agentur von anderen Digitalagenturen?",
-      answer: "Als spezialisierte KI Agentur verbinden wir fundiertes Wissen über aktuelle KI-Tools mit jahrelanger Marketingerfahrung. Wir wissen genau, wo KI einen echten Mehrwert bietet und wo menschliche Expertise unersetzlich bleibt."
-    },
-    {
-      question: "Welche KI-Tools setzt eure KI Agentur ein?",
-      answer: "Als fortschrittliche KI Agentur arbeiten wir mit einer breiten Palette an Tools: ChatGPT für Texterstellung, Midjourney für Bildgenerierung, verschiedene Analyse-Tools für Datenauswertung und spezialisierte Lösungen für SEO und Content-Optimierung."
+      question: "Welche KI-Tools setzen wir in unseren Projekten ein?",
+      answer: "Wir nutzen ein breites Spektrum: ChatGPT für Texterstellung, DALL-E und Midjourney für Bildgenerierung, Claude für komplexe Aufgaben und spezialisierte Tools für SEO und Datenanalyse."
     }
   ];
   
@@ -69,20 +46,22 @@ const GermanAiTechnologies = () => {
     <PageLayout className="overflow-x-hidden">
       <AiTechHero />
       <AiTechBenefits />
-      <AiToolsSection 
-        title="KI im Einsatz – aber nie ohne Menschenverstand"
-        subtitle="Wir setzen KI nur dort ein, wo sie wirklich Zeit spart und Qualität fördert – nicht als Ersatz für Expertise."
-        tools={aiTools}
-        note="KI ist für uns ein Kreativ-Turbo – aber kein Ersatz für Strategie, Handschrift oder finale Qualität."
-      />
       <AiTechServices />
-      <AiTechCaseStudies />
-      <FAQ customFaqs={aiTechFaqs} />
+      <AiToolsSection />
+      
+      {/* Add the global Case Studies Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
+      
+      <FAQ customFaqs={aiFaqs} />
       <CTA 
-        title="Lassen Sie uns KI richtig einsetzen"
-        subtitle="Mit ooliv beschleunigt KI den Prozess – ersetzt aber niemals Qualität oder Strategie. Lassen Sie uns gemeinsam etwas Besseres, Schnelleres und Intelligenteres schaffen."
-        primaryCta="Projekt starten"
-        secondaryCta="Kostenlose Demo anfordern"
+        title="KI-basierte Marketinglösungen für Ihr Unternehmen"
+        subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
+        primaryCta="KI-Potenzialanalyse anfordern"
+        secondaryCta="Strategiegespräch vereinbaren"
       />
     </PageLayout>
   );

@@ -45,14 +45,10 @@ const ContentCreation = () => {
       <ContentProcess />
       <ContentExpertInsight />
       
-      {/* Use the custom section for case studies instead of the global one with default titles */}
-      <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+      {/* Use the standardized global CaseStudiesSection */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection 
-            customTitle="Real Results from Real Clients"
-            customSubtitle="We deliver websites and strategies that highlight what makes your business special."
-            customBodyText="See how we've helped businesses achieve measurable growth through tailored messaging, SEO optimization, and visual clarity."
-          />
+          <CaseStudiesSection />
         </div>
       </section>
       

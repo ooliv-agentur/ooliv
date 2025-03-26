@@ -10,6 +10,7 @@ import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -54,7 +55,14 @@ const GermanSEO = () => {
       <SEOServices />
       <SEOApproachDE />
       <SEOProcess />
-      <SEOCaseStudies />
+      
+      {/* Use the standardized global CaseStudiesSection instead of SEOCaseStudies component */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
+      
       <FAQ customFaqs={seoFaqs} />
       <CTA 
         title="Lassen Sie Ihre Website intelligenter arbeiten"
