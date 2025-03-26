@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { FileCheck, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
 import ContactForm from './ContactForm';
+import { Link } from 'react-router-dom';
 
 interface CTAProps {
   title?: string;
@@ -18,7 +18,7 @@ const CTA = ({
   primaryCta, 
   secondaryCta 
 }: CTAProps) => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [openForm, setOpenForm] = useState(false);
   const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
   
@@ -30,46 +30,51 @@ const CTA = ({
   const isGerman = language === 'de';
   
   return (
-    <section className="py-24 bg-brand-background">
+    <section className="py-16 bg-[#f7f7f2]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-heading">
-          {title || t('cta.title')}
-        </h2>
+        {isGerman ? (
+          <>
+            <h2 className="text-3xl md:text-4xl font-semibold text-brand-heading">
+              {title || "Bereit für den nächsten Schritt?"}
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 mt-2 mb-8">
+              {subtitle || "Lassen Sie uns Ihre Website aufs nächste Level bringen."}
+            </p>
+          </>
+        ) : (
+          <>
+            <h2 className="text-3xl md:text-4xl font-semibold text-brand-heading">
+              {title || "Ready to take the next step?"}
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 mt-2 mb-8">
+              {subtitle || "Let's build a website that works for your business."}
+            </p>
+          </>
+        )}
         
-        <p className="text-lg mb-12 text-brand-text">
-          {subtitle || t('cta.subtitle')}
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col md:flex-row justify-center gap-4 mt-6">
           <Button 
-            size="lg" 
-            className="px-8 py-6 h-auto text-base font-medium rounded-md"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 h-auto text-base font-medium rounded-md"
             onClick={() => handleOpenForm('audit')}
           >
-            <FileCheck className="mr-2 h-5 w-5" />
-            {primaryCta || (isGerman ? "Projekt starten" : "Start Your Website Project")}
+            {primaryCta || (isGerman ? "Projekt starten" : "Start Your Project")}
           </Button>
           
           <Button 
             variant="outline" 
-            size="lg" 
-            className="px-8 py-6 h-auto text-base font-medium rounded-md"
+            className="border border-blue-600 text-blue-600 bg-transparent hover:bg-blue-50 px-6 py-3 h-auto text-base font-medium rounded-md"
             onClick={() => handleOpenForm('call')}
           >
-            <PhoneCall className="mr-2 h-5 w-5" />
-            {secondaryCta || (isGerman ? "Unsere Arbeiten sehen" : "See Our Work")}
+            {secondaryCta || (isGerman ? "Unsere Arbeiten ansehen" : "See Our Work")}
           </Button>
         </div>
         
-        <div className="mt-8 text-center">
-          <p className="text-sm text-brand-text/80 flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center">
-            <span className="font-medium">100+ successful projects completed</span>
-            <span className="hidden sm:inline-block">•</span>
-            <span>Trusted by leading companies</span>
-            <span className="hidden sm:inline-block">•</span>
-            <span className="font-medium">AI-powered strategy for maximum efficiency</span>
-          </p>
-        </div>
+        <p className="text-sm text-gray-500 mt-6">
+          {isGerman 
+            ? "100+ Projekte erfolgreich umgesetzt • Vertraut von führenden Unternehmen • KI-gestützte Strategie" 
+            : "100+ successful projects • Trusted by leading companies • AI-powered strategy"
+          }
+        </p>
       </div>
       
       {/* Contact Form Dialog */}
