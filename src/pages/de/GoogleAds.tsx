@@ -6,8 +6,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
-import GoogleAdsLeadGenerationDE from '@/components/google-ads/GoogleAdsLeadGenerationDE';
-import { ArrowRight, CheckCircle, BarChart, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield, X } from 'lucide-react';
+import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -299,7 +298,15 @@ const GermanGoogleAds = () => {
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
         secondaryCta="Kostenlose Analyse anfordern"
-      />
+      >
+        <div className="mt-8 text-center">
+          <p className="text-sm text-brand-text font-sans">
+            <span className="font-bold">100+ erfolgreich umgesetzte Projekte</span> • 
+            <span className="mx-2">Vertraut von führenden Unternehmen</span> • 
+            <span className="font-bold">KI-gestützte Performance-Strategien für maximale Wirkung</span>
+          </p>
+        </div>
+      </CTA>
     </PageLayout>
   );
 };
