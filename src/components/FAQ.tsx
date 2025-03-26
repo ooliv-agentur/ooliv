@@ -1,130 +1,95 @@
 
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import React from 'react';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-export interface FAQProps {
-  title?: string;
-  customFaqs?: Array<{
-    question: string;
-    answer: string;
-  }>;
-  faqs?: Array<{
-    question: string;
-    answer: string;
-  }>;
+interface FAQItem {
+  question: string;
+  answer: string;
 }
 
-const FAQ = ({ title, customFaqs, faqs }: FAQProps = {}) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const { t } = useLanguage();
+interface FAQProps {
+  customFaqs?: FAQItem[];
+  customTitle?: string;
+  customCtaText?: string;
+}
 
+const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
+  const { language, t } = useLanguage();
+  const isGerman = language === 'de';
+  
+  // Default FAQs (used if no custom FAQs are provided)
   const defaultFaqs = [
     {
-      question: "What does ooliv do as a Web Design Agency?",
-      answer: "We create strategy-led, conversion-focused websites for B2B companies — combining UX, SEO, design, and development in one streamlined process."
+      question: isGerman ? "Wie läuft der Webseitenerstellungsprozess ab?" : "What is your website creation process?",
+      answer: isGerman ? "Wir haben einen klaren 5-Schritte-Prozess: 1) Strategie und Konzeption, 2) UX/UI-Design, 3) Entwicklung, 4) Content-Erstellung, 5) Launch und Support." : "We follow a clear 5-step process: 1) Strategy and planning, 2) UX/UI design, 3) Development, 4) Content creation, 5) Launch and support."
     },
     {
-      question: "How long does a website project with ooliv take?",
-      answer: "Most projects take 6–10 weeks, depending on scope. We define timelines clearly in the kickoff phase."
+      question: isGerman ? "Wie viel kostet eine WordPress-Website?" : "How much does a WordPress website cost?",
+      answer: isGerman ? "Die Kosten hängen von Umfang und Komplexität ab. Projekte starten typischerweise bei 5.000 € für kleine Business-Websites und können je nach Funktionsumfang, SEO-Optimierung und Content-Strategie variieren." : "Pricing depends on scope and complexity. Projects typically start at $5,000 for small business sites and vary based on functionality needs, SEO optimization, and content strategy."
     },
     {
-      question: "Will my website be optimized for SEO?",
-      answer: "Yes. SEO strategy is integrated into every stage — from content to code."
+      question: isGerman ? "Wie lange dauert die Erstellung einer Website?" : "How long does it take to build a website?",
+      answer: isGerman ? "Der Zeitrahmen variiert je nach Projektumfang. Kleine Websites können innerhalb von 4-6 Wochen abgeschlossen sein, während komplexere Projekte 2-3 Monate benötigen können." : "Timeframes vary by project scope. Small websites may be completed within 4-6 weeks, while more complex projects might require 2-3 months."
     },
     {
-      question: "Do I work with multiple people at ooliv?",
-      answer: "No. All client communication runs through the CEO, while our team works behind the scenes."
+      question: isGerman ? "Optimiert ihr Websites für Mobilgeräte?" : "Do you optimize websites for mobile devices?",
+      answer: isGerman ? "Absolut, Mobiloptimierung ist Standard. Wir entwickeln nach dem Mobile-First-Prinzip und stellen sicher, dass alle unsere Websites auf allen Geräten perfekt funktionieren." : "Absolutely, mobile optimization is standard. We design using a mobile-first approach and ensure all our websites function perfectly across all devices."
     },
     {
-      question: "What if I need a multilingual website?",
-      answer: "We specialize in multilingual setups — content, design, and SEO are adapted for each language."
-    },
-    {
-      question: "Does ooliv offer custom development?",
-      answer: "Yes. We offer WordPress, Headless, and custom API-based solutions — tailored to your business."
-    },
-    {
-      question: "Do you offer ongoing support?",
-      answer: "Absolutely. We offer post-launch support, analytics, and continuous optimization."
-    },
-    {
-      question: "What kind of companies do you work with?",
-      answer: "Mostly B2B companies: tech, manufacturing, consulting, legal, and real estate."
-    },
-    {
-      question: "Can you also help with content creation?",
-      answer: "Yes — our team creates copy, visuals, video, and SEO content in-house, enhanced by AI tools."
-    },
-    {
-      question: "What makes ooliv different from other agencies?",
-      answer: "We work fast, strategic, and CEO-led — no middle layers, no slow handovers, just results."
+      question: isGerman ? "Bietet ihr laufenden Support nach dem Launch an?" : "Do you offer ongoing support after launch?",
+      answer: isGerman ? "Ja, wir bieten verschiedene Support- und Wartungspakete an, die technischen Support, Sicherheitsupdates, Backups und Content-Updates umfassen können." : "Yes, we offer various support and maintenance packages that can include technical support, security updates, backups, and content updates."
     }
   ];
-
-  // Use custom FAQs if provided via either prop, otherwise use the default FAQs
-  const displayFaqs = faqs || customFaqs || defaultFaqs;
-
-  const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+  
+  // Use custom FAQs if provided, otherwise use default FAQs
+  const faqs = customFaqs || defaultFaqs;
+  
+  // Use custom title if provided, otherwise use default title
+  const title = customTitle || (isGerman ? "Häufig gestellte Fragen" : "Frequently Asked Questions");
+  
+  // Use custom CTA text if provided, otherwise use default
+  const ctaText = customCtaText || (isGerman ? "Haben Sie weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
+  
   return (
-    <section id="faq" className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            {title || t('faq.title')}
-          </h2>
-          <p className="max-w-3xl mx-auto text-lg text-brand-text">
-            Common questions about our professional Webdesign Agency services and approach
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto">
-          {displayFaqs.map((faq, index) => (
-            <div 
-              key={index}
-              className="mb-4 border-b border-gray-200 pb-4 last:border-0 last:pb-0"
+    <section className="py-24 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
+          {title}
+        </h2>
+        
+        <Accordion type="single" collapsible className="space-y-6">
+          {faqs.map((faq, index) => (
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`}
+              className="border border-gray-200 rounded-lg px-6 py-2"
             >
-              <button
-                onClick={() => toggleFaq(index)}
-                className="flex justify-between items-center w-full text-left py-4 px-0 focus:outline-none group"
-              >
-                <h3 className="text-lg font-medium text-brand-heading group-hover:text-brand-primary transition-colors">
-                  {faq.question}
-                </h3>
-                <div className="ml-4 flex-shrink-0">
-                  {openIndex === index ? (
-                    <ChevronUp className="h-5 w-5 text-brand-primary" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5 text-gray-500 group-hover:text-brand-primary transition-colors" />
-                  )}
-                </div>
-              </button>
-              {openIndex === index && (
-                <div className="pb-4 animate-fade-in">
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              )}
-            </div>
+              <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-brand-text pt-2 pb-4">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
-
-        <div className="max-w-3xl mx-auto mt-12 text-center">
-          <Link to="/contact" className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
-            Have more questions about our Webdesign Agency services? Contact Us →
-          </Link>
-        </div>
-
-        <div className="fixed bottom-6 right-6 z-50">
-          <button 
-            className="bg-brand-primary text-brand-text p-4 rounded-full shadow-lg hover:bg-brand-primaryHover transition-colors"
-            aria-label="Chat with our Webdesign Agency"
-          >
-            <MessageSquare className="h-6 w-6" />
-          </button>
+        </Accordion>
+        
+        <div className="mt-12 text-center">
+          <Button asChild variant="outline" className="rounded-full">
+            <Link to={isGerman ? "/de/kontakt" : "/contact"} className="flex items-center gap-2">
+              <Plus className="h-4 w-4" />
+              {ctaText}
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

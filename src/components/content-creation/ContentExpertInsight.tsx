@@ -21,7 +21,7 @@ const ContentExpertInsight = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
             <p className="text-lg mb-6 text-brand-text">
               {isGerman
-                ? "Bei ooliv entwickeln wir individuelle GPTs für jedes Projekt – abgestimmt auf Tonalität, Zielgruppe und Markt. Unsere Tools lernen durch aktives Training und liefern markengerechte Ergebnisse."
+                ? "Bei ooliv entwickeln wir eigene GPTs, abgestimmt auf Ihre Marke. Unsere Tools werden gezielt trainiert – das Ergebnis ist markengerechter Content, der konvertiert."
                 : "At ooliv, we build custom GPTs for each client — designed to match your voice, business goals, and market. We teach our tools through deep research and active guidance, so every output is tailored for your business."
               }
             </p>
@@ -72,12 +72,12 @@ const ContentExpertInsight = () => {
               <p className="text-brand-text">
                 <strong>
                   {isGerman
-                    ? "Alle Inhalte werden von unserem Team geprüft und finalisiert."
+                    ? "Alle Inhalte werden redaktionell geprüft und finalisiert."
                     : "Every piece of content is refined, reviewed, and finalized by our team."
                   }
                 </strong>{' '}
                 {isGerman
-                  ? "KI ist ein Werkzeug – kein Ersatz für unsere Expertise."
+                  ? "KI ist bei uns Unterstützung – kein Ersatz für Qualität."
                   : "We don't rely on AI blindly — we make sure everything works for your brand."
                 }
               </p>

@@ -1,66 +1,121 @@
 
 import React from 'react';
-import { FileText, Image, PenTool, Video, MessageCircle } from 'lucide-react';
+import { FileText, Image, PenTool, Video } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
-const services = [
-  {
-    icon: FileText,
-    title: 'Text & Messaging',
-    description: 'SEO-optimized website copy, created with GPT-based workflows and refined by our editorial team.',
-    features: [
-      'Headlines, landing pages, FAQs, CTAs',
-      'Conversion-focused copywriting',
-      'SEO-optimized content structure',
-      'Brand voice consistency'
-    ]
-  },
-  {
-    icon: Image,
-    title: 'Photo & Imagery',
-    description: 'We create custom images using Midjourney and work with your team to make sure visuals align with your brand.',
-    features: [
-      'Brand-aligned image aesthetics',
-      'Custom photography direction',
-      'AI-enhanced image creation',
-      'Web-optimized formats'
-    ]
-  },
-  {
-    icon: PenTool,
-    title: 'Illustration & Logo Design',
-    description: 'From icons to logos, we create visual assets that reinforce your brand identity and structure.',
-    features: [
-      'Vector graphics & UI icons',
-      'Brand identity design',
-      'Website illustrations',
-      'Visual system development'
-    ]
-  },
-  {
-    icon: Video,
-    title: 'Video & Animation',
-    description: 'Whether it\'s explainer videos, short animations, or social media clips, we create engaging video content using tools like Sora — on-brand and easy to use.',
-    features: [
-      'Hero section background videos',
-      'Product demonstrations',
-      'Process explanations',
-      'Social media teasers'
-    ]
-  }
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentServices = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  const services = isGerman ? [
+    {
+      icon: FileText,
+      title: 'Text & Messaging',
+      description: 'Conversion-fokussierte Texte mit GPT-Workflows und redaktioneller Qualität.',
+      features: [
+        'Headlines, Landingpages, CTAs, FAQs',
+        'SEO-optimierte Inhaltsstruktur',
+        'Conversion-fokussiertes Copywriting',
+        'Konsistente Markensprache'
+      ]
+    },
+    {
+      icon: Image,
+      title: 'Foto & Bildsprache',
+      description: 'Bildästhetik passend zu Ihrer Marke – vom Briefing bis zur KI-gestützten Umsetzung.',
+      features: [
+        'Bildästhetik passend zur Marke',
+        'Individuelle Fotobriefings',
+        'KI-gestützte Bildgenerierung',
+        'Web-optimierte Formate'
+      ]
+    },
+    {
+      icon: PenTool,
+      title: 'Illustration & Logo Design',
+      description: 'Icons, Logos und visuelle Assets zur Verstärkung Ihrer Markenidentität.',
+      features: [
+        'Icons, Logos, visuelle Assets',
+        'Markenidentität gestalten',
+        'Website-Illustrationen',
+        'Visuelle Systeme'
+      ]
+    },
+    {
+      icon: Video,
+      title: 'Video & Animation',
+      description: 'Erklärvideos, Animationen und Social Clips – erstellt mit modernsten Tools wie Sora.',
+      features: [
+        'Erklärvideos, Animationen, Social Clips',
+        'Hero-Hintergrundvideos',
+        'Produkt- & Prozessvisualisierung',
+        'Erstellung mit Tools wie Sora'
+      ]
+    }
+  ] : [
+    {
+      icon: FileText,
+      title: 'Text & Messaging',
+      description: 'SEO-optimized website copy, created with GPT-based workflows and refined by our editorial team.',
+      features: [
+        'Headlines, landing pages, FAQs, CTAs',
+        'Conversion-focused copywriting',
+        'SEO-optimized content structure',
+        'Brand voice consistency'
+      ]
+    },
+    {
+      icon: Image,
+      title: 'Photo & Imagery',
+      description: 'We create custom images using Midjourney and work with your team to make sure visuals align with your brand.',
+      features: [
+        'Brand-aligned image aesthetics',
+        'Custom photography direction',
+        'AI-enhanced image creation',
+        'Web-optimized formats'
+      ]
+    },
+    {
+      icon: PenTool,
+      title: 'Illustration & Logo Design',
+      description: 'From icons to logos, we create visual assets that reinforce your brand identity and structure.',
+      features: [
+        'Vector graphics & UI icons',
+        'Brand identity design',
+        'Website illustrations',
+        'Visual system development'
+      ]
+    },
+    {
+      icon: Video,
+      title: 'Video & Animation',
+      description: 'Whether it\'s explainer videos, short animations, or social media clips, we create engaging video content using tools like Sora — on-brand and easy to use.',
+      features: [
+        'Hero section background videos',
+        'Product demonstrations',
+        'Process explanations',
+        'Social media teasers'
+      ]
+    }
+  ];
+
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Web Content That Doesn't Just Fill Pages — It Moves People
+          {isGerman 
+            ? "Webinhalte, die nicht nur Seiten füllen – sondern Menschen bewegen"
+            : "Web Content That Doesn't Just Fill Pages — It Moves People"
+          }
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          We deliver content that converts. Every element is created for clarity, connection, and long-term relevance.
+          {isGerman
+            ? "Wir liefern Content, der konvertiert. Jedes Element ist gemacht für Klarheit, Verbindung und langfristige Relevanz."
+            : "We deliver content that converts. Every element is created for clarity, connection, and long-term relevance."
+          }
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none md:snap-none md:overflow-visible">
@@ -89,7 +144,10 @@ const ContentServices = () => {
         
         <div className="text-center mt-10">
           <Button variant="link" className="text-brand-primary">
-            Need help defining your content? Let's talk strategy →
+            {isGerman 
+              ? "Content definieren? Jetzt Strategiegespräch starten →" 
+              : "Need help defining your content? Let's talk strategy →"
+            }
           </Button>
         </div>
       </div>

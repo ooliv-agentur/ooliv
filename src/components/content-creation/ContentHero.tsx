@@ -11,10 +11,13 @@ const ContentHero = () => {
   return (
     <div className="relative">
       <PageHero
-        badge={isGerman ? "Web Content Strategie & Erstellung" : "Web Content Strategy & Creation"}
-        title={isGerman ? "Web Content Strategie & Erstellung" : "Web Content Strategy & Creation"}
+        badge={isGerman ? "Content Erstellung für Websites" : "Web Content Strategy & Creation"}
+        title={isGerman 
+          ? "Content Erstellung für Websites – strategisch, visuell, SEO-basiert" 
+          : "Web Content Strategy & Creation"
+        }
         subtitle={isGerman 
-          ? "Von maßgeschneiderten Texten und Visuals bis hin zur SEO-basierten Struktur – wir erstellen Inhalte, die Vertrauen schaffen, Sichtbarkeit erhöhen und qualifizierte Leads generieren."
+          ? "Wir entwickeln Inhalte, die Vertrauen schaffen, bei Google gefunden werden und echte Geschäftsergebnisse liefern – von Text bis Video."
           : "From tailored text and visuals to SEO-focused structure — we create content that builds trust, boosts visibility, and generates qualified leads."
         }
         primaryCta={{

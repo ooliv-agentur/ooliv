@@ -6,10 +6,10 @@ import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
-import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
 import ContentService from '@/components/content-creation/ContentService';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const ContentCreation = () => {
   // Custom FAQ items for Content Creation page with web content focus
@@ -44,8 +44,24 @@ const ContentCreation = () => {
       <ContentServices />
       <ContentProcess />
       <ContentExpertInsight />
-      <ContentCaseStudies />
-      <FAQ customFaqs={contentFaqs} />
+      
+      {/* Use the global case study component instead of the specific ContentCaseStudies */}
+      <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Real Results from Real Clients
+          </h2>
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            See how our content strategies deliver measurable business outcomes through tailored messaging, SEO optimization, and visual clarity.
+          </p>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
+      <FAQ 
+        customFaqs={contentFaqs}
+        customTitle="Frequently Asked Questions about Content Creation" 
+      />
       <CTA 
         title="Let's Create Content That Converts"
         subtitle="We're not just filling pages — we're building momentum. Let's create content that ranks, resonates, and drives real business results."

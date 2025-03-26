@@ -6,7 +6,6 @@ import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
-import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
 import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -25,27 +24,27 @@ const GermanContentCreation = () => {
   const contentFaqs = [
     {
       question: "Wie läuft die Content-Erstellung für Websites ab?",
-      answer: "Wir starten mit Strategie & SEO-Analyse, dann liefern wir modulare Inhalte: Texte, Bilder, Videos, Illustrationen – alles bereit für die Website."
+      answer: "Wir starten mit Strategie & SEO-Analyse und liefern dann Inhalte: Texte, Bilder, Videos – einsatzbereit für Ihre Website."
     },
     {
-      question: "Kann ich nur Content-Erstellung ohne Design beauftragen?",
-      answer: "Ja, wir bieten Content-Strategie & Umsetzung auch unabhängig vom Designprozess an."
+      question: "Kann ich Content-Erstellung ohne Webdesign beauftragen?",
+      answer: "Ja – wir bieten Content auch unabhängig vom Designprozess an."
     },
     {
       question: "Was, wenn ich kein Logo oder visuelle Elemente habe?",
-      answer: "Kein Problem – wir entwickeln auf Wunsch Logos, Icons und Illustrationen passend zu Ihrer Marke."
+      answer: "Wir gestalten Logos, Icons und Illustrationen – abgestimmt auf Ihre Marke."
     },
     {
       question: "Nutzt ihr KI für die Content-Erstellung?",
-      answer: "Ja – aber wir setzen KI wie ChatGPT, Midjourney und Sora gezielt ein und prüfen jedes Ergebnis manuell."
+      answer: "Ja – mit GPT, Midjourney und Sora. Jedes Ergebnis wird manuell geprüft."
     },
     {
       question: "Wird der Content für SEO optimiert?",
-      answer: "Immer. Struktur, Keywords und Lesbarkeit sind zentraler Teil unserer Inhalte."
+      answer: "Ja – Keyword-Strategie, Struktur und Lesbarkeit sind fest integriert."
     },
     {
       question: "Was unterscheidet eure Content-Erstellung von anderen?",
-      answer: "Wir kombinieren individuelle KI-Workflows mit redaktioneller Qualität und strategischer Struktur – für Inhalte, die wirken."
+      answer: "Wir verbinden strategische KI-Nutzung mit redaktioneller Qualität und strukturierter Umsetzung."
     }
   ];
   
@@ -64,11 +63,21 @@ const GermanContentCreation = () => {
           <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
             Echte Ergebnisse von echten Kunden
           </h2>
+          <p className="text-center text-lg mb-8 max-w-3xl mx-auto text-brand-text">
+            Wir erstellen Inhalte, die echten Impact haben
+          </p>
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            Echte Ergebnisse von echten Kunden. Sehen Sie, wie wir Unternehmen mit maßgeschneiderter Content Erstellung, SEO-Strategie und visueller Klarheit zu mehr Sichtbarkeit und Leads verholfen haben.
+          </p>
           <CaseStudiesSection showAll={true} showCta={true} />
         </div>
       </section>
       
-      <FAQ customFaqs={contentFaqs} />
+      <FAQ 
+        customFaqs={contentFaqs} 
+        customTitle="Häufige Fragen zur Content Erstellung"
+        customCtaText="Noch Fragen? Jetzt Kontakt aufnehmen"
+      />
       <CTA 
         title="Lassen Sie uns Inhalte erstellen, die konvertieren"
         subtitle="Wir füllen nicht nur Seiten – wir schaffen Momentum. Inhalte, die ranken, resonieren und Ergebnisse liefern."
