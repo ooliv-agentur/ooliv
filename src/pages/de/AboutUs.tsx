@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -24,7 +23,7 @@ const GermanAboutUs = () => {
       {/* Hero Section using PageHero component */}
       <PageHero 
         badge="Über ooliv"
-        title="Marketing Agentur Mainz"
+        title="Marketing Agentur Mainz mit Strategie, Design und echtem Ergebnisfokus"
         subtitle="Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen."
         primaryCta={{
           text: "Projekt starten",
@@ -294,7 +293,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* What's Next Section */}
+      {/* What's Next Section - Updated with footer microcopy */}
       <section className="section-alt">
         <div className="section-container">
           <h2 className="section-title">Lassen Sie uns gemeinsam etwas Großartiges aufbauen</h2>
@@ -309,10 +308,13 @@ const GermanAboutUs = () => {
               <Link to="/de/kontakt">Strategiegespräch buchen</Link>
             </Button>
           </div>
+          <p className="text-center text-sm text-gray-600 mt-10">
+            100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
+          </p>
         </div>
       </section>
 
-      {/* FAQ Section with keyword focus "marketing agentur mainz" */}
+      {/* FAQ Section with keyword focus "marketing agentur mainz" - KEPT */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="text-center mb-12">
@@ -353,14 +355,6 @@ const GermanAboutUs = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <CTA 
-        title="Bereit, Ihre digitale Präsenz zu transformieren?"
-        subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch buchen"
-      />
     </PageLayout>
   );
 };
