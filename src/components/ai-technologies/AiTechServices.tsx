@@ -106,7 +106,7 @@ const AiTechServices = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">
             {language === 'de' 
-              ? "Wie wir KI für bessere Ergebnisse nutzen" 
+              ? "So nutzen wir KI für messbare Ergebnisse" 
               : "How We Use AI to Accelerate Results"}
           </h2>
         </div>
