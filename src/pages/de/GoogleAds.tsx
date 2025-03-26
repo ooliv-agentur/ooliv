@@ -84,7 +84,7 @@ const GermanGoogleAds = () => {
               {
                 problem: "Falsche Zielgruppe",
                 context: "Besucher springen ohne Aktion ab",
-                solution: "Unsere Kampagnen nutzen KI-Targeting, um Entscheider zu erreichen – keine „Klick-Touristen""
+                solution: "Unsere Kampagnen nutzen KI-Targeting, um Entscheider zu erreichen – keine \"Klick-Touristen\""
               },
               {
                 problem: "Keine Strategie",
