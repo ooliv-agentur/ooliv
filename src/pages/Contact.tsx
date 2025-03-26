@@ -6,7 +6,8 @@ import {
   Mail, 
   Phone,
   MessageCircle,
-  Send
+  Send,
+  ArrowRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -18,12 +19,8 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { useState } from 'react';
 
 const Contact = () => {
-  const [showCallForm, setShowCallForm] = useState(false);
-  const [showWorkForm, setShowWorkForm] = useState(false);
-
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -40,6 +37,40 @@ const Contact = () => {
           link: "#"
         }}
       />
+
+      {/* Lisa – Your First Point of Contact */}
+      <section className="section-standard bg-gray-50">
+        <div className="section-container">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Image column */}
+            <div className="relative h-full flex justify-center md:justify-end">
+              <div className="relative w-full max-w-md lg:max-w-lg">
+                <img 
+                  src="/public/lovable-uploads/343738d2-5fa7-4ca5-a4db-58f6726d3609.png" 
+                  alt="Lisa, Content & First Touch at ooliv" 
+                  className="rounded-lg shadow-lg w-full h-auto"
+                />
+                <div className="absolute inset-0 rounded-lg shadow-inner pointer-events-none"></div>
+              </div>
+            </div>
+            
+            {/* Text column */}
+            <div className="flex flex-col justify-center space-y-4 md:pl-8">
+              <h2 className="text-3xl font-bold text-brand-heading">Lisa – Your First Point of Contact</h2>
+              <p className="text-lg text-brand-text">
+                <strong>You'll speak with Nico — but Lisa makes the first impression.</strong>
+              </p>
+              <p className="text-brand-text">
+                Lisa ensures that every message gets the attention it deserves. From your first inquiry to handoff, she makes sure nothing is missed.
+              </p>
+              <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
+                "We treat every contact as the start of a partnership. That means quick replies, personal attention, and clear next steps."
+                <footer className="text-sm mt-2 font-medium">– Lisa, Content & First Touch</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Direct Contact Section */}
       <section className="section-standard">
@@ -58,7 +89,7 @@ const Contact = () => {
                 <li>Email</li>
                 <li>Phone</li>
               </ul>
-              <p>You choose how we start — and we'll respond quickly.</p>
+              <p>You choose how we start — and we'll respond fast.</p>
             </div>
           </div>
         </div>
@@ -145,7 +176,7 @@ const Contact = () => {
                   How soon will I hear back?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Usually within 24 hours. For urgent inquiries, call us directly.
+                  Usually within 24 hours. For urgent inquiries, just give us a call.
                 </AccordionContent>
               </AccordionItem>
               
@@ -171,16 +202,23 @@ const Contact = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">Start Your Website Project</Link>
+            <Button size="lg" className="group" asChild>
+              <Link to="#">
+                Start Your Website Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
             
             <Button 
               size="lg"
               variant="outline"
+              className="group"
               asChild
             >
-              <Link to="/contact">Book a Strategy Call</Link>
+              <Link to="#">
+                Book a Strategy Call
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -190,4 +228,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
