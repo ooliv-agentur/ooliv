@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -188,6 +187,19 @@ interface CaseStudiesSectionProps {
   hideHeaderText?: boolean;  // New prop to control header visibility
 }
 
+const defaultTranslations = {
+  en: {
+    title: "Real Results from Real Clients",
+    subtitle: "We deliver websites and strategies that highlight what makes your business special.",
+    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
+  },
+  de: {
+    title: "Echte Ergebnisse von echten Kunden",
+    subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
+    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+  }
+};
+
 const CaseStudiesSection = ({ 
   customTitle,
   customSubtitle,
@@ -196,19 +208,6 @@ const CaseStudiesSection = ({
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
-  
-  const defaultTranslations = {
-    en: {
-      title: "Real Results from Real Clients",
-      subtitle: "We deliver websites and strategies that highlight what makes your business special.",
-      bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
-    },
-    de: {
-      title: "Echte Ergebnisse von echten Kunden",
-      subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
-      bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
-    }
-  };
   
   const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
 
