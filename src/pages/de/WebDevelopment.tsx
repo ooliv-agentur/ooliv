@@ -1,10 +1,10 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import WebDevHero from '@/components/web-development/WebDevHero';
-import WebDevBenefits from '@/components/web-development/WebDevBenefits';
-import WebDevServices from '@/components/web-development/WebDevServices';
-import WebDevProcess from '@/components/web-development/WebDevProcess';
+import WebDevHero from '@/components/web-development/WebDevHeroDE';
+import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
+import WebDevServices from '@/components/web-development/WebDevServicesDE';
+import WebDevProcess from '@/components/web-development/WebDevProcessDE';
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -21,28 +21,24 @@ const GermanWebDevelopment = () => {
 
   const webDevFaqs = [
     {
-      question: "Mit welchen Plattformen arbeitet ihr als WordPress Agentur in Mainz?",
-      answer: "Wir entwickeln sowohl vollständig kodierte Websites (ohne CMS) als auch maßgeschneiderte WordPress-Lösungen. Als spezialisierte WordPress Agentur in Mainz bieten wir Ihnen beide Optionen an."
+      question: "Mit welchen Plattformen arbeitet ihr?",
+      answer: "Wir entwickeln vollständig codierte Websites (ohne CMS) und maßgeschneiderte WordPress-Lösungen – je nachdem, was besser zu Ihrem Business passt."
     },
     {
-      question: "Kann eine WordPress Agentur auch Websites ohne CMS erstellen?",
-      answer: "Ja – wir entwickeln oft auch vollständig maßgeschneiderte Websites mit HTML, CSS und JavaScript. Sauber, schnell und sicher. Als WordPress Agentur in Mainz kennen wir die Vor- und Nachteile beider Ansätze."
+      question: "Kann ooliv auch Shops entwickeln?",
+      answer: "Ja – WooCommerce innerhalb von WordPress oder Shopify für gezielte B2B-Cases."
     },
     {
-      question: "Kann eure WordPress Agentur in Mainz auch Shop-Funktionen einbauen?",
-      answer: "Absolut – wir arbeiten mit WooCommerce (für WordPress) und Shopify (für ausgewählte Projekte) und integrieren diese nahtlos in Ihre Website."
+      question: "Ist Performance bei euch Standard?",
+      answer: "Absolut. Unsere Seiten sind schnell, SEO-optimiert und laufen zuverlässig auf allen Geräten."
     },
     {
-      question: "Bietet ihr als WordPress Agentur auch Support nach dem Launch?",
-      answer: "Ja. Wir bleiben für Updates, Verbesserungen und Performance-Monitoring verfügbar. Als verlässliche WordPress Agentur in Mainz lassen wir Sie nicht allein."
+      question: "Gibt es Betreuung nach dem Launch?",
+      answer: "Ja. Wir begleiten Sie weiter mit technischer Betreuung, Updates und Tracking."
     },
     {
-      question: "Wie stellt ihr als WordPress Agentur schnelle Ladezeiten sicher?",
-      answer: "Wir verwenden leichtgewichtigen Code, optimieren jedes Asset und führen während der Entwicklung Performance-Tests durch. Schnelligkeit ist ein zentrales Merkmal unserer Arbeit als WordPress Agentur in Mainz."
-    },
-    {
-      question: "Kann eure WordPress Agentur auch bestehende Websites verbessern?",
-      answer: "Absolut. Wir übernehmen auch Redesigns, Geschwindigkeitsverbesserungen und CMS-Bereinigungen. Als erfahrene WordPress Agentur in Mainz kennen wir die typischen Probleme und deren Lösungen."
+      question: "Könnt ihr bestehende Websites verbessern?",
+      answer: "Ja. Wir analysieren, ob Optimierung sinnvoll ist – oder ein Relaunch effizienter wäre."
     }
   ];
 
@@ -54,11 +50,11 @@ const GermanWebDevelopment = () => {
       <WebDevProcess />
       <WebDevServices />
       
-      {/* Global Case Studies Section instead of WebDevCaseStudies */}
+      {/* Global Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            Webentwicklung Erfolgsgeschichten
+            Erfolgsgeschichten aus der Webentwicklung
           </h2>
           <CaseStudiesSection showAll={true} showCta={true} />
         </div>
