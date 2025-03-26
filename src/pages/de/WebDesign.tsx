@@ -7,9 +7,9 @@ import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureF
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
-import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import CTACompact from '@/components/CTACompact';
 
 const GermanWebDesign = () => {
   const { setLanguage } = useLanguage();
@@ -39,13 +39,8 @@ const GermanWebDesign = () => {
       
       <WebDesignFAQ />
       
-      {/* Final CTA Section */}
-      <CTA 
-        title="Sprechen wir über Ihr Webdesign-Projekt"
-        subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch vereinbaren"
-      />
+      {/* Replace standard CTA with compact CTA */}
+      <CTACompact />
     </PageLayout>
   );
 };

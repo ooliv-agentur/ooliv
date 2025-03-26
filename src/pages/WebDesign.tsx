@@ -7,8 +7,8 @@ import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureF
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
-import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import CTACompact from '@/components/CTACompact';
 
 const WebDesign = () => {
   return (
@@ -31,13 +31,8 @@ const WebDesign = () => {
       
       <WebDesignFAQ />
       
-      {/* Final CTA Section */}
-      <CTA 
-        title="Let's Talk About Your Webdesign Project"
-        subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
-        primaryCta="Start Your Web Project"
-        secondaryCta="Book a Strategy Call"
-      />
+      {/* Replace standard CTA with compact CTA */}
+      <CTACompact />
     </PageLayout>
   );
 };
