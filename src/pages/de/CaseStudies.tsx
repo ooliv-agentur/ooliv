@@ -55,9 +55,9 @@ const GermanCaseStudies = () => {
   return (
     <PageLayout>
       <PageHero
-        badge="Echte Ergebnisse. Echte Kunden."
-        title="Echte Ergebnisse. Echte Kunden."
-        subtitle="Marketing-Erfolgsgeschichten aus Mainz und darüber hinaus. Sehen Sie, wie wir B2B-Unternehmen mit intelligenter Strategie, starkem Design und messbaren Ergebnissen beim Wachstum helfen."
+        badge="Case Studies"
+        title="Marketing aus Mainz mit echten Ergebnissen."
+        subtitle="Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen."
         primaryCta={{
           text: "Projekt starten",
           link: "/de/kontakt"
@@ -131,7 +131,7 @@ const GermanCaseStudies = () => {
           <p className="text-lg max-w-2xl mx-auto mb-8">
             Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button size="lg" asChild>
               <Link to="/de/kontakt">
                 Projekt starten
@@ -145,6 +145,9 @@ const GermanCaseStudies = () => {
               </Link>
             </Button>
           </div>
+          <p className="text-lg text-brand-text font-medium mt-8">
+            100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
+          </p>
         </div>
       </div>
     </PageLayout>
