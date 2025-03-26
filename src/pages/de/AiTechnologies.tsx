@@ -18,6 +18,25 @@ const GermanAiTechnologies = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  // AI tools data for German page
+  const aiTools = [
+    {
+      name: "ChatGPT",
+      logoSrc: "/chatgpt-logo.svg",
+      description: "Für Inhaltstexte, Metadaten, FAQs und SEO-Snippets – immer von unseren Experten überprüft und überarbeitet."
+    },
+    {
+      name: "Midjourney",
+      logoSrc: "/midjourney-logo.svg",
+      description: "Für ausdrucksstarke, individuelle Grafiken jenseits von Stock-Fotos – besonders wenn keine Fotoassets existieren."
+    },
+    {
+      name: "Sora (Video AI)",
+      logoSrc: "/sora-logo.svg",
+      description: "Ideal für kurze Bewegtbild-Clips oder atmosphärische Video-Hintergründe – maßgeschneidert für Ihre Marke und Botschaft."
+    }
+  ];
+
   // Custom FAQ items for AI page
   const aiFaqs = [
     {
@@ -47,7 +66,12 @@ const GermanAiTechnologies = () => {
       <AiTechHero />
       <AiTechBenefits />
       <AiTechServices />
-      <AiToolsSection />
+      <AiToolsSection 
+        title="KI-gesteuert – menschlich geführt"
+        subtitle="Wir integrieren KI dort, wo sie Zeit spart und Mehrwert bietet – nicht um Expertise zu ersetzen."
+        tools={aiTools}
+        note="Wir setzen KI als kreativen Beschleuniger ein – nie als Abkürzung. Qualität und Strategie kommen immer von Menschen."
+      />
       
       {/* Add the global Case Studies Section */}
       <section className="py-24 bg-white">

@@ -17,7 +17,7 @@ interface AiToolsSectionProps {
   note: string;
 }
 
-const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) => {
+const AiToolsSection = ({ title, subtitle, tools = [], note }: AiToolsSectionProps) => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {tools.map((tool, index) => (
+          {Array.isArray(tools) && tools.map((tool, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
