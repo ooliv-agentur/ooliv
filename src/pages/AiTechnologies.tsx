@@ -6,12 +6,13 @@ import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiTechCaseStudies from '@/components/ai-technologies/AiTechCaseStudies';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AiTechnologies = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   // AI tools data
   const aiTools = [
@@ -56,21 +57,40 @@ const AiTechnologies = () => {
     <PageLayout className="overflow-x-hidden">
       <AiTechHero />
       <AiTechBenefits />
+      <AiTechServices />
+      
       <AiToolsSection 
-        title="AI-powered – human-led"
+        title="How We Use AI Without Losing Human Strategy"
         subtitle="We integrate AI where it saves time and adds value – not to replace expertise."
         tools={aiTools}
         note="We use AI as a creative accelerator – never as a shortcut. Final quality and strategy always come from people."
       />
-      <AiTechServices />
+      
       <AiTechCaseStudies />
+      
+      {/* Add the global Case Studies Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
+      
       <FAQ customFaqs={aiTechFaqs} />
       <CTA 
         title="Let's Use AI the Right Way"
         subtitle="With ooliv, AI speeds up the process — but never replaces quality or strategy. Let's create something better, faster, and smarter."
         primaryCta="Start Your Project"
-        secondaryCta="Request a Free Demo"
-      />
+        secondaryCta="Book a Strategy Call"
+      >
+        {/* New claim section */}
+        <section className="mt-12 text-center">
+          <div className="container mx-auto px-4">
+            <p className="text-lg text-brand-text font-medium">
+              100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact
+            </p>
+          </div>
+        </section>
+      </CTA>
     </PageLayout>
   );
 };

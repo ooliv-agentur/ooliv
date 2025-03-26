@@ -10,7 +10,7 @@ const AiTechHero = () => {
   const content = {
     en: {
       badge: "Responsible, Strategic, Human-Led",
-      title: "AI in Mainz — Smarter Web Projects with ooliv",
+      title: "AI Agency in Mainz — Smarter Web Projects with ooliv",
       subtitle: "We use AI to accelerate design, content, and development workflows — without replacing human expertise. Every project combines the speed of AI with the precision of strategy."
     },
     de: {
