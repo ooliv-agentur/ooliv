@@ -12,7 +12,7 @@ const pathMapping: Record<string, string> = {
   '/web-development': '/de/webentwicklung',
   '/content-creation': '/de/content-erstellung',
   '/seo-optimization': '/de/seo-optimierung',
-  '/google-ads': '/de/google-ads', // This mapping needs to be used correctly
+  '/google-ads': '/de/google-ads',
   '/ai-technologies': '/de/ki-technologien',
   '/case-studies': '/de/case-studies',
   '/about-ooliv': '/de/ueber-ooliv',
