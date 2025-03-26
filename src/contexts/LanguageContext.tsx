@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'en' | 'de';
@@ -76,7 +77,7 @@ export const translations = {
     // Navbar
     'nav.solutions': 'Lösungen',
     'nav.process': 'Prozess',
-    'nav.cases': 'Case Studies',
+    'nav.cases': 'Case Studies', // Changed from 'Referenzen' to 'Case Studies' to be consistent
     'nav.faq': 'FAQ',
     'nav.contact': 'Kontakt',
     'nav.scheduleCall': 'Termin vereinbaren',
@@ -125,7 +126,7 @@ export const translations = {
     'footer.aiTechnologies': 'KI-Technologien',
     'footer.company': 'Unternehmen',
     'footer.aboutUs': 'Über uns',
-    'footer.caseStudies': 'Case Studies',
+    'footer.caseStudies': 'Case Studies', // Changed from 'Referenzen' to 'Case Studies' to be consistent
     'footer.contact': 'Kontakt',
     'footer.jobs': 'Karriere',
     'footer.legal.privacy': 'Datenschutz',

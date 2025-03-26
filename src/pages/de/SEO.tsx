@@ -1,16 +1,15 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import SEOHero from '@/components/seo/SEOHero';
-import SEOBenefits from '@/components/seo/SEOBenefits';
-import SEOServices from '@/components/seo/SEOServices';
-import SEOProcess from '@/components/seo/SEOProcess';
-import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
+import SEOHeroDE from '@/components/seo/SEOHeroDE';
+import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
+import SEOServicesDE from '@/components/seo/SEOServicesDE';
+import SEOProcessDE from '@/components/seo/SEOProcessDE';
 import SEOApproachDE from '@/components/seo/SEOApproachDE';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import { useLanguage } from '@/contexts/LanguageContext';
+import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import FAQ from '@/components/FAQ';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -24,52 +23,54 @@ const GermanSEO = () => {
   const seoFaqs = [
     {
       question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
-      answer: "Erste Ergebnisse zeigen sich oft innerhalb weniger Wochen (z.B. technische Korrekturen), aber langfristiges Wachstum benötigt typischerweise 3-6 Monate. Als SEO Agentur in Mainz setzen wir auf eine Kombination aus schnellen Verbesserungen und nachhaltigen Strategien."
+      answer: "Erste Effekte in wenigen Wochen, nachhaltige Ergebnisse meist ab 3 Monaten."
     },
     {
-      question: "Was macht den SEO-Ansatz von ooliv als SEO Agentur in Mainz besonders?",
-      answer: "Wir verbinden schnelle Korrekturen mit langfristigen Strategien. Unser Ansatz ist datengesteuert und fokussiert auf Geschäftsergebnisse. Als SEO Agentur in Mainz verstehen wir sowohl den lokalen als auch den globalen Markt."
+      question: "Was macht euren SEO-Ansatz in Mainz besonders?",
+      answer: "Strategie, Tech-Knowhow und Content – kombiniert in einem skalierbaren Prozess."
     },
     {
-      question: "Bietet eure SEO Agentur auch lokale SEO-Dienste an?",
-      answer: "Ja, wir helfen Unternehmen, ihre Sichtbarkeit in bestimmten Regionen (z.B. Mainz, Rhein-Main-Gebiet) durch lokale Einträge und Unternehmensverzeichnisse zu verbessern. Als SEO Agentur in Mainz kennen wir den lokalen Markt besonders gut."
+      question: "Bietet ihr auch lokale SEO-Dienste an?",
+      answer: "Ja – inkl. Google Business, Branchenverzeichnisse und gezielter Sichtbarkeit in Mainz & Region."
     },
     {
-      question: "Ist Linkaufbau Teil eurer SEO-Dienstleistungen als SEO Agentur?",
-      answer: "Ja, wir konzentrieren uns auf hochwertige Backlinks, um die Autorität Ihrer Website zu verbessern und relevanten Traffic zu generieren. Unsere SEO Agentur in Mainz setzt auf qualitative statt quantitative Linkbuilding-Strategien."
+      question: "Ist Linkaufbau Teil eurer SEO-Leistungen?",
+      answer: "Ja – wir koordinieren nachhaltige Backlink-Kampagnen inkl. Autoritätsaufbau."
     },
     {
-      question: "Wie stellt ihr als SEO Agentur sicher, dass die technische SEO einer Website auf dem neuesten Stand ist?",
-      answer: "Wir prüfen Geschwindigkeit, Indexierung und Core Web Vitals und beheben alle Probleme, die Ihre Rankings beeinträchtigen. Als fortschrittliche SEO Agentur in Mainz bleiben wir stets auf dem neuesten Stand der technischen Entwicklungen."
+      question: "Wie stellt ihr sicher, dass die technische SEO aktuell ist?",
+      answer: "Durch strukturierte Audits, Core Web Vitals Checks und technische Umsetzung durch unser Team."
     },
     {
-      question: "Warum sollte ich eine lokale SEO Agentur in Mainz beauftragen?",
-      answer: "Eine lokale SEO Agentur aus Mainz versteht den regionalen Markt besser und kann persönliche Betreuung bieten. Wir kombinieren diese lokale Expertise mit internationalen Best Practices für optimale Ergebnisse."
+      question: "Warum sollte ich mit einer lokalen SEO Agentur in Mainz arbeiten?",
+      answer: "Weil regionale Marktkenntnis, Sprache und SEO-Taktik einen entscheidenden Unterschied machen."
     }
   ];
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <SEOHero />
-      <SEOBenefits />
-      <SEOServices />
+      <SEOHeroDE />
+      <SEOBenefitsDE />
+      <SEOServicesDE />
       <SEOApproachDE />
-      <SEOProcess />
+      <SEOProcessDE />
       
-      {/* Use the standardized global CaseStudiesSection instead of SEOCaseStudies component */}
+      {/* Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-brand-heading mb-6">Echte Ergebnisse von echten Kunden</h2>
+          </div>
           <CaseStudiesSection />
         </div>
       </section>
       
-      <FAQ customFaqs={seoFaqs} />
-      <CTA 
-        title="Lassen Sie Ihre Website intelligenter arbeiten"
-        subtitle="SEO ist keine Checkliste, sondern ein Wachstumshebel. Erschließen wir gemeinsam das volle Potenzial Ihrer Website mit einer auf Ergebnisse ausgerichteten Strategie."
-        primaryCta="Kostenloses SEO-Audit anfordern"
-        secondaryCta="Strategiegespräch vereinbaren"
+      <FAQ 
+        customFaqs={seoFaqs} 
+        customTitle="Häufige Fragen zur SEO Agentur Mainz"
       />
+      
+      <SEOCtaDE />
     </PageLayout>
   );
 };
