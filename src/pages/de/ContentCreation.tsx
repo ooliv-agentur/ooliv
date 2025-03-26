@@ -57,23 +57,9 @@ const GermanContentCreation = () => {
       <ContentProcess />
       <ContentExpertInsight />
       
-      {/* Use the custom section for case studies instead of the global one with default titles */}
-      <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            Echte Ergebnisse von echten Kunden
-          </h2>
-          <p className="text-center text-lg mb-8 max-w-3xl mx-auto text-brand-text">
-            Wir erstellen Inhalte, die echten Impact haben
-          </p>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            Sehen Sie, wie wir Unternehmen mit maßgeschneiderter Content Erstellung, SEO-Strategie und visueller Klarheit zu mehr Sichtbarkeit und Leads verholfen haben.
-          </p>
-          
-          {/* Pass showTitle={false} to hide the default title in CaseStudiesSection */}
-          <CaseStudiesSection showAll={true} showCta={true} showTitle={false} />
-        </div>
-      </section>
+      <CaseStudiesSection customTitle="Echte Ergebnisse von echten Kunden" 
+                         customSubtitle="Wir erstellen Inhalte, die echten Impact haben"
+                         customBodyText="Sehen Sie, wie wir Unternehmen mit maßgeschneiderter Content Erstellung, SEO-Strategie und visueller Klarheit zu mehr Sichtbarkeit und Leads verholfen haben." />
       
       <FAQ 
         customFaqs={contentFaqs} 
