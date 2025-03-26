@@ -1,14 +1,21 @@
 
 import React from 'react';
 import { FileText, Image, LayoutList } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentService = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            More than text – content that speaks, ranks, and converts
+            {isGerman 
+              ? "Mehr als Text – Inhalte, die überzeugen, gefunden werden und verkaufen" 
+              : "More than text – content that speaks, ranks, and converts"
+            }
           </h2>
         </div>
         
@@ -21,10 +28,13 @@ const ContentService = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                  Text & SEO Copy
+                  {isGerman ? "Texte & SEO-Inhalte" : "Text & SEO Copy"}
                 </h3>
                 <p className="text-brand-text">
-                  We write conversion-optimized copy – for your homepage, service pages, CTAs, and FAQs. All content is keyword-driven and tailored to your brand voice.
+                  {isGerman
+                    ? "Wir erstellen suchmaschinenoptimierte Texte für Startseiten, Leistungsseiten, Calls-to-Action und FAQs – in Ihrer Tonalität, für Ihre Zielgruppe."
+                    : "We write conversion-optimized copy – for your homepage, service pages, CTAs, and FAQs. All content is keyword-driven and tailored to your brand voice."
+                  }
                 </p>
               </div>
             </div>
@@ -38,10 +48,13 @@ const ContentService = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                  Images & Visuals
+                  {isGerman ? "Bilder & Visuals" : "Images & Visuals"}
                 </h3>
                 <p className="text-brand-text">
-                  We work with your existing photo and video assets, and supplement with custom illustrations or AI-enhanced visuals (via Midjourney) if needed.
+                  {isGerman
+                    ? "Wir integrieren vorhandenes Foto- und Videomaterial und ergänzen es bei Bedarf mit Illustrationen oder KI-Visuals (z. B. via Midjourney)."
+                    : "We work with your existing photo and video assets, and supplement with custom illustrations or AI-enhanced visuals (via Midjourney) if needed."
+                  }
                 </p>
               </div>
             </div>
@@ -55,10 +68,13 @@ const ContentService = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                  Structure & Flow
+                  {isGerman ? "Struktur & Content-Flow" : "Structure & Flow"}
                 </h3>
                 <p className="text-brand-text">
-                  We don't just deliver blocks of text. We define layout, content hierarchy, and the full content architecture for your website – including multilingual setup.
+                  {isGerman
+                    ? "Wir liefern keine losen Textblöcke, sondern durchdachte Inhaltsarchitekturen – inkl. Storytelling, Layout-Vorschlägen und ggf. Mehrsprachigkeit."
+                    : "We don't just deliver blocks of text. We define layout, content hierarchy, and the full content architecture for your website – including multilingual setup."
+                  }
                 </p>
               </div>
             </div>

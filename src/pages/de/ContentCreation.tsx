@@ -11,6 +11,7 @@ import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanContentCreation = () => {
   const { setLanguage } = useLanguage();
@@ -24,27 +25,27 @@ const GermanContentCreation = () => {
   const contentFaqs = [
     {
       question: "Wie läuft die Content-Erstellung für Websites ab?",
-      answer: "Bei der Content-Erstellung starten wir mit einer umfassenden Strategie und Keyword-Recherche. Anschließend liefern wir modulare, konversionsorientierte Inhalte: Texte, Bilder, Videos und Illustrationen – alles bereit zum Einsatz."
+      answer: "Wir starten mit Strategie & SEO-Analyse, dann liefern wir modulare Inhalte: Texte, Bilder, Videos, Illustrationen – alles bereit für die Website."
     },
     {
       question: "Kann ich nur Content-Erstellung ohne Design beauftragen?",
-      answer: "Ja – wir können auch ausschließlich Content-Erstellung anbieten (Texte, Bilder, Videos), den Sie dann in Ihre bestehende Website integrieren können."
+      answer: "Ja, wir bieten Content-Strategie & Umsetzung auch unabhängig vom Designprozess an."
     },
     {
-      question: "Was, wenn ich kein Logo oder visuelle Markenelemente für die Content-Erstellung habe?",
-      answer: "Auch dabei können wir helfen. Unser Team erstellt Logos, Icons und visuelle Systeme, die mit Ihrer Markenidentität übereinstimmen und die Content-Erstellung perfekt ergänzen."
+      question: "Was, wenn ich kein Logo oder visuelle Elemente habe?",
+      answer: "Kein Problem – wir entwickeln auf Wunsch Logos, Icons und Illustrationen passend zu Ihrer Marke."
     },
     {
       question: "Nutzt ihr KI für die Content-Erstellung?",
-      answer: "Ja, aber wir verlassen uns nicht blind auf KI. Bei der Content-Erstellung verwenden wir Tools wie ChatGPT und Midjourney als Unterstützung, aber alles wird von unserem Team verfeinert und kuratiert."
+      answer: "Ja – aber wir setzen KI wie ChatGPT, Midjourney und Sora gezielt ein und prüfen jedes Ergebnis manuell."
     },
     {
-      question: "Wird der Content bei der Erstellung für SEO optimiert?",
-      answer: "Ja. Bei der Content-Erstellung ist jedes Element SEO-freundlich, von den Überschriften bis zu den Metadaten. Professionelle Content-Erstellung bedeutet für uns immer auch SEO-Optimierung."
+      question: "Wird der Content für SEO optimiert?",
+      answer: "Immer. Struktur, Keywords und Lesbarkeit sind zentraler Teil unserer Inhalte."
     },
     {
-      question: "Wie unterscheidet sich eure Content-Erstellung von der Konkurrenz?",
-      answer: "Unsere Content-Erstellung verbindet strategisches Denken mit kreativer Umsetzung. Wir fokussieren uns nicht nur auf Ästhetik, sondern auf Content-Erstellung, die messbare Geschäftsergebnisse liefert."
+      question: "Was unterscheidet eure Content-Erstellung von anderen?",
+      answer: "Wir kombinieren individuelle KI-Workflows mit redaktioneller Qualität und strategischer Struktur – für Inhalte, die wirken."
     }
   ];
   
@@ -56,11 +57,21 @@ const GermanContentCreation = () => {
       <ContentServices />
       <ContentProcess />
       <ContentExpertInsight />
-      <ContentCaseStudies />
+      
+      {/* Use the global case study component instead of the specific ContentCaseStudies */}
+      <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Echte Ergebnisse von echten Kunden
+          </h2>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
       <FAQ customFaqs={contentFaqs} />
       <CTA 
-        title="Lassen Sie uns Content erstellen, der konvertiert"
-        subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum auf. Lassen Sie uns Content erstellen, der rankt, resoniert und echte Geschäftsergebnisse liefert."
+        title="Lassen Sie uns Inhalte erstellen, die konvertieren"
+        subtitle="Wir füllen nicht nur Seiten – wir schaffen Momentum. Inhalte, die ranken, resonieren und Ergebnisse liefern."
         primaryCta="Kostenloses Content-Strategie-Gespräch"
         secondaryCta="Beispielprojekt anfordern"
       />
