@@ -138,7 +138,26 @@ const GermanGoogleAds = () => {
       </section>
       
       {/* Lead Generation Section */}
-      <GoogleAdsLeadGenerationDE />
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+              Google Ads für messbare Ergebnisse
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              Von der Strategie bis zur Optimierung – wir kümmern uns um Ihre Google Ads Performance.
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <Button size="lg" className="group" asChild>
+              <Link to="/de/kontakt">
+                Jetzt Ihre Google Ads Kampagne starten
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Extended Services Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -298,15 +317,18 @@ const GermanGoogleAds = () => {
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
         secondaryCta="Kostenlose Analyse anfordern"
-      >
-        <div className="mt-8 text-center">
-          <p className="text-sm text-brand-text font-sans">
+      />
+      
+      {/* Footer text for "100+ projects" we need to add directly to the page instead of as children to CTA */}
+      <div className="bg-brand-backgroundAlt py-6">
+        <div className="container mx-auto px-4">
+          <p className="text-sm text-brand-text font-sans text-center">
             <span className="font-bold">100+ erfolgreich umgesetzte Projekte</span> • 
             <span className="mx-2">Vertraut von führenden Unternehmen</span> • 
             <span className="font-bold">KI-gestützte Performance-Strategien für maximale Wirkung</span>
           </p>
         </div>
-      </CTA>
+      </div>
     </PageLayout>
   );
 };

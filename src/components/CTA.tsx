@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { FileCheck, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,13 +10,15 @@ interface CTAProps {
   subtitle?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  children?: ReactNode;
 }
 
 const CTA = ({ 
   title, 
   subtitle, 
   primaryCta, 
-  secondaryCta 
+  secondaryCta,
+  children
 }: CTAProps) => {
   const { t } = useLanguage();
   const [openForm, setOpenForm] = useState(false);
@@ -60,13 +62,7 @@ const CTA = ({
             </Button>
           </div>
           
-          <div className="mt-8 text-center">
-            <p className="text-sm text-brand-text font-sans">
-              <span className="font-bold">100+ successful projects completed</span> • 
-              <span className="mx-2">Trusted by leading companies</span> • 
-              <span className="font-bold">AI-powered strategy for maximum efficiency</span>
-            </p>
-          </div>
+          {children}
         </div>
       </div>
       
