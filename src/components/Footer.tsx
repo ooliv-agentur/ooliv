@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
@@ -119,26 +120,6 @@ const Footer = () => {
               <Link to={getUrl('legal-notice')} className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</Link>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="fixed bottom-0 left-0 right-0 bg-brand-primary py-3 px-4 z-40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <p className="text-white text-sm md:text-base font-medium font-sans">
-            {language === 'de' 
-              ? 'Sprechen wir über Ihren Website-Relaunch'
-              : "Let's Talk About Your Website Relaunch"}
-          </p>
-          <Button 
-            variant="outline" 
-            size="sm"
-            className="bg-white text-brand-primary border-white hover:bg-gray-100 hover:text-brand-primary"
-            asChild
-          >
-            <Link to={getUrl('contact')}>
-              {language === 'de' ? 'Kostenfreies Beratungsgespräch' : 'Book a Free Strategy Call'} <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </div>
     </footer>
