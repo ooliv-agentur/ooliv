@@ -19,6 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
+import { Separator } from '@/components/ui/separator';
 
 const Contact = () => {
   return (
@@ -72,27 +73,69 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Direct Contact Section */}
-      <section className="section-standard">
+      {/* Direct Contact Section - Redesigned with 2 columns */}
+      <section className="section-standard relative overflow-hidden">
+        {/* Soft wave divider top */}
+        <div className="absolute top-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
+        
         <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">Direct Contact, No Middlemen</h2>
-            <p className="text-lg mb-10 text-center">
-              All communication at ooliv is handled directly by our CEO — fast, strategic, and personal.
-            </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center py-4">
+            {/* Left column: Icon stack */}
+            <div className="flex flex-col items-center md:items-end justify-center space-y-6">
+              <div className="bg-blue-100 rounded-full p-4 shadow-sm">
+                <MessageCircle size={32} className="text-blue-600" />
+              </div>
+              <div className="bg-green-100 rounded-full p-4 shadow-sm">
+                <Send size={32} className="text-green-600" />
+              </div>
+              <div className="bg-amber-100 rounded-full p-4 shadow-sm">
+                <Mail size={32} className="text-amber-600" />
+              </div>
+              <div className="bg-purple-100 rounded-full p-4 shadow-sm">
+                <Phone size={32} className="text-purple-600" />
+              </div>
+            </div>
             
-            <div className="text-center space-y-4">
-              <p>Use the sidebar to reach us via:</p>
-              <ul className="inline-flex flex-col items-center space-y-2">
-                <li>Chatbot</li>
-                <li>Step-by-step Inquiry Form</li>
-                <li>Email</li>
-                <li>Phone</li>
-              </ul>
-              <p>You choose how we start — and we'll respond fast.</p>
+            {/* Right column: Copy */}
+            <div className="flex flex-col justify-center space-y-5">
+              <h2 className="text-3xl font-bold text-brand-heading">Quick Contact. Real Talk. No Middlemen.</h2>
+              <p className="text-lg text-brand-text">
+                All communication at ooliv is personal — not routed through support desks. 
+                You'll always reach out through Lisa, and hear back directly from Uli.
+              </p>
+              <p>We keep it simple and fast.</p>
+              
+              <div className="mt-4">
+                <h3 className="font-semibold mb-3">Choose how you want to start:</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span>💬</span>
+                    <span>Chatbot</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>📝</span>
+                    <span>Step-by-step Inquiry Form</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>✉️</span>
+                    <span>Email</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span>📞</span>
+                    <span>Phone</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <blockquote className="border-l-4 border-brand-primary/30 pl-4 italic text-sm text-brand-text/80 mt-4">
+                We're not fans of contact forms either.
+              </blockquote>
             </div>
           </div>
         </div>
+        
+        {/* Soft wave divider bottom */}
+        <div className="absolute bottom-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
       </section>
 
       {/* Why Work With Us Section */}
