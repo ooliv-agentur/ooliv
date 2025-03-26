@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
@@ -225,7 +224,7 @@ const GoogleAds = () => {
                 <div className="absolute -top-4 -left-4 bg-brand-primary text-white h-10 w-10 rounded-full flex items-center justify-center font-bold">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold mb-2 mt-4">{step.title}</h3>
+                <h3 className="text-xl font-bold mb-4 mt-4">{step.title}</h3>
                 <p>{step.description}</p>
               </div>
             ))}
@@ -296,6 +295,15 @@ const GoogleAds = () => {
         primaryCta="Launch Your Campaign"
         secondaryCta="Request Free Audit"
       />
+
+      {/* New Claim Section */}
+      <section className="bg-brand-backgroundAlt py-12 text-center">
+        <div className="container mx-auto px-4">
+          <p className="text-lg text-brand-text font-medium">
+            100+ successful projects • Trusted by B2B leaders • AI-powered strategies for measurable growth
+          </p>
+        </div>
+      </section>
     </PageLayout>
   );
 };
