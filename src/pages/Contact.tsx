@@ -27,8 +27,8 @@ const Contact = () => {
       {/* Hero Section */}
       <PageHero
         badge="ooliv"
-        title="Contact ooliv for Your Next Website Project"
-        subtitle="Let's talk about your goals. Whether you're planning a relaunch or need expert support to move faster — we'll help you turn ideas into results."
+        title="Let's Get Your Website Moving"
+        subtitle="Whether you're starting from scratch or planning a relaunch — this is where momentum begins."
         primaryCta={{
           text: "Start Your Project",
           link: "#"
@@ -47,7 +47,7 @@ const Contact = () => {
             <div className="relative h-full flex justify-center md:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <img 
-                  src="/lovable-uploads/996a7b08-e2fe-4996-8254-2af3eded918c.png" 
+                  src="/lovable-uploads/8906f535-ee94-4493-8cd8-3a8a6a70ebd9.png" 
                   alt="Lisa, Content & First Touch at ooliv" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
@@ -57,12 +57,12 @@ const Contact = () => {
             
             {/* Text column */}
             <div className="flex flex-col justify-center space-y-4 md:pl-8">
-              <h2 className="text-3xl font-bold text-brand-heading">Meet Lisa – Your First Point of Contact</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">Lisa Will Be the First to Say Hi</h2>
               <p className="text-lg text-brand-text">
-                Lisa is the first person you'll hear from at ooliv. She'll guide your inquiry through our process and make sure nothing gets missed — fast, friendly, and personal.
+                At ooliv, we don't hide behind forms or funnels. You'll start by talking to Lisa — who'll make sure your inquiry lands right where it belongs: with Uli, our CEO.
               </p>
               <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                "Your first message sets the tone. We make sure it lands exactly where it needs to — with care and clarity."
+                "I take every inquiry seriously — because most people already know what they need. They just want someone to finally move things forward."
                 <footer className="text-sm mt-2 font-medium">– Lisa, Content & First Touch</footer>
               </blockquote>
             </div>
@@ -95,20 +95,20 @@ const Contact = () => {
             
             {/* Right column: Copy */}
             <div className="flex flex-col justify-center space-y-5">
-              <h2 className="text-3xl font-bold text-brand-heading">Choose How to Reach Us</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">How to Reach Us (in 10 Seconds or Less)</h2>
               <p className="text-lg text-brand-text">
-                We don't use long forms or slow processes. Our sidebar gives you everything you need:
+                Use the sidebar. No extra clicks. No gatekeeping.
               </p>
               
               <div className="mt-4">
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <span>💬</span>
-                    <span>Chatbot</span>
+                    <span>Chat (for quick check-ins)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📝</span>
-                    <span>Step-by-step Inquiry Form</span>
+                    <span>Inquiry Form (for detailed briefings)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>✉️</span>
@@ -121,7 +121,7 @@ const Contact = () => {
                 </ul>
               </div>
               
-              <p className="mt-2">Pick what works best for you — and we'll be in touch fast.</p>
+              <p className="mt-2">We'll get back to you — personally, quickly, and with clarity.</p>
             </div>
           </div>
         </div>
@@ -133,24 +133,24 @@ const Contact = () => {
       {/* Why ooliv? Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
-          <h2 className="section-title text-center">Why ooliv?</h2>
+          <h2 className="section-title text-center">Why Clients Work With ooliv</h2>
           <div className="max-w-3xl mx-auto">
             <ul className="space-y-3 text-center">
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>Clear communication and fast turnaround</span>
+                <span>You'll speak directly with Uli — no account managers, no friction</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>Strategic thinking, not just implementation</span>
+                <span>You'll move fast — we remove bottlenecks from day one</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>Focus on measurable results</span>
+                <span>You'll get answers, not "we'll look into it"</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>Built by experts who understand business</span>
+                <span>You'll get results — measurable, strategic, and on point</span>
               </li>
             </ul>
           </div>
@@ -181,7 +181,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <p className="mt-4 italic text-sm">Your project will always be handled by the person who leads it: our founder and CEO, Uli.</p>
+                <p className="mt-4 italic text-sm">Uli, our founder and CEO, will lead your project — from kickoff to delivery.</p>
               </CardContent>
             </Card>
           </div>
@@ -197,28 +197,28 @@ const Contact = () => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Who will I speak with at ooliv?
+                  Will I speak with the CEO?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Once your inquiry is received, you'll speak directly with Uli — no handoffs or account managers.
+                  Yes. Every project is managed directly by Uli — no layers in between.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  How soon will I hear back?
+                  How fast do you respond?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Usually within 24 hours. Often much faster.
+                  Usually the same day. Sometimes within the hour.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Do you work with companies outside of Germany?
+                  Do you work internationally?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Yes. We work with clients in Germany, across Europe, and beyond.
+                  Yes. We support clients across Europe and beyond.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -229,9 +229,9 @@ const Contact = () => {
       {/* Final CTA Section */}
       <section className="section-standard">
         <div className="section-container text-center">
-          <h2 className="section-title">Let's Talk About What's Next</h2>
+          <h2 className="section-title">What Happens Next?</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Start a project with a team that works fast, communicates clearly, and delivers results.
+            You reach out. We reply. And together we turn your idea into something that works.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
