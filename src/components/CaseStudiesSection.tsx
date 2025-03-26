@@ -187,9 +187,15 @@ interface CaseStudiesSectionProps {
   showAll?: boolean;
   maxCases?: number;
   showCta?: boolean;
+  showTitle?: boolean;
 }
 
-const CaseStudiesSection = ({ showAll = false, maxCases = 5, showCta = true }: CaseStudiesSectionProps) => {
+const CaseStudiesSection = ({ 
+  showAll = false, 
+  maxCases = 5, 
+  showCta = true,
+  showTitle = true 
+}: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
   
@@ -217,14 +223,16 @@ const CaseStudiesSection = ({ showAll = false, maxCases = 5, showCta = true }: C
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6 font-sans">
-            {t.title}
-          </h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8 font-sans">
-            {t.subtitle}
-          </p>
-        </div>
+        {showTitle && (
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6 font-sans">
+              {t.title}
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8 font-sans">
+              {t.subtitle}
+            </p>
+          </div>
+        )}
         
         <div className="space-y-20">
           {displayCases.map((study, index) => (
