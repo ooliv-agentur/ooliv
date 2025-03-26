@@ -12,7 +12,7 @@ const pathMapping: Record<string, string> = {
   '/web-development': '/de/webentwicklung',
   '/content-creation': '/de/content-erstellung',
   '/seo-optimization': '/de/seo-optimierung',
-  '/google-ads': '/de/google-ads',
+  '/google-ads': '/de/google-ads', // This mapping needs to be used correctly
   '/ai-technologies': '/de/ki-technologien',
   '/case-studies': '/de/case-studies',
   '/about-ooliv': '/de/ueber-ooliv',
@@ -67,7 +67,13 @@ const LanguageSwitch: React.FC = () => {
       // Switching to English
       setLanguage('en');
       
-      // Try to find a mapped path
+      // First check for exact path match to handle paths like '/de/google-ads'
+      if (reversePathMapping[currentPath]) {
+        navigate(reversePathMapping[currentPath]);
+        return;
+      }
+      
+      // If not exact match, check for path that starts with the current path
       for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
         if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
           navigate(enPath);
