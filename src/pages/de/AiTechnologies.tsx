@@ -18,7 +18,7 @@ const GermanAiTechnologies = () => {
     setLanguage('de');
   }, [setLanguage]);
 
-  // AI tools data for German page - Updated as requested
+  // AI tools data for German page
   const aiTools = [
     {
       name: "ChatGPT",
@@ -73,12 +73,7 @@ const GermanAiTechnologies = () => {
         note="Wir setzen KI als kreativen Beschleuniger ein – nie als Abkürzung. Qualität und Strategie kommen immer von Menschen."
       />
       
-      {/* Add the global Case Studies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
-        </div>
-      </section>
+      <CaseStudiesSection />
       
       <FAQ customFaqs={aiFaqs} />
       <CTA 
@@ -101,3 +96,4 @@ const GermanAiTechnologies = () => {
 };
 
 export default GermanAiTechnologies;
+

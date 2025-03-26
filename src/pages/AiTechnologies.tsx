@@ -66,14 +66,7 @@ const AiTechnologies = () => {
         note="We use AI as a creative accelerator – never as a shortcut. Final quality and strategy always come from people."
       />
       
-      <AiTechCaseStudies />
-      
-      {/* Add the global Case Studies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
-        </div>
-      </section>
+      <CaseStudiesSection />
       
       <FAQ customFaqs={aiTechFaqs} />
       <CTA 
@@ -96,3 +89,4 @@ const AiTechnologies = () => {
 };
 
 export default AiTechnologies;
+
