@@ -15,27 +15,27 @@ const services = [
   {
     icon: Code,
     title: 'Custom Code (No CMS)',
-    description: 'We build fully coded websites using HTML, CSS, and JavaScript — ideal for fast, flexible, and secure sites with no backend complexity.'
+    description: 'HTML, CSS, JS – fast, flexible, and lean'
   },
   {
     icon: Layout,
     title: 'WordPress Development',
-    description: 'For content-heavy or marketing-driven sites, we build custom WordPress setups — clean-coded and fully tailored.'
+    description: 'Clean-coded, scalable, and editor-friendly'
   },
   {
     icon: ShoppingBag,
     title: 'WooCommerce Integration',
-    description: 'Want to sell products or services? We integrate WooCommerce directly into your WordPress site.'
+    description: 'Sell products or services directly from your site'
   },
   {
     icon: Database,
-    title: 'API & Feature Development',
-    description: 'We connect your site to third-party tools and services — or build custom features from scratch.'
+    title: 'API & Feature Integration',
+    description: 'Connect third-party tools or build custom features'
   },
   {
     icon: ShoppingBag,
     title: 'Shopify (Selected Projects)',
-    description: 'For product-first B2B clients, we create simple, conversion-ready Shopify storefronts.'
+    description: 'Tailored storefronts for product-first B2B clients'
   }
 ];
 
@@ -44,12 +44,8 @@ const WebDevServices = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Development Solutions That Fit Your Business
+          Technologies & Capabilities
         </h2>
-        
-        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          From custom code to CMS — we create solutions that are built to last.
-        </p>
         
         <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">
           {services.map((service, index) => (
@@ -97,9 +93,12 @@ const WebDevServices = () => {
         </div>
         
         <div className="text-center">
+          <p className="text-lg text-brand-text mb-6">
+            <strong>Not sure what fits?</strong> ➔ Let's talk strategy.
+          </p>
           <Button variant="outline" asChild>
             <Link to="/contact">
-              Not sure what fits your case? Let's talk strategy.
+              Schedule a Strategy Call
             </Link>
           </Button>
         </div>

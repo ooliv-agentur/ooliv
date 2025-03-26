@@ -5,23 +5,23 @@ import { Layers, ShieldCheck, LayoutDashboard, TrendingUp } from 'lucide-react';
 const benefits = [
   {
     icon: Layers,
-    title: "Custom-Built to Fit",
-    description: "We don't use templates or page builders. Everything is designed and coded specifically for your goals."
+    title: "Tailored, Not Templated",
+    description: "No themes, no page builders – every line of code is built around your goals."
   },
   {
     icon: ShieldCheck,
     title: "Fast, Secure & Scalable",
-    description: "Your site loads fast, runs reliably, and is built to grow with your business."
+    description: "Your website loads fast, runs smoothly, and grows with your business."
   },
   {
     icon: LayoutDashboard,
-    title: "Easy to Manage",
-    description: "Whether you use a CMS or prefer code-only setups, we make sure your website is simple to update and maintain."
+    title: "Easy to Maintain",
+    description: "Whether with or without a CMS – you stay in control."
   },
   {
     icon: TrendingUp,
-    title: "Built to Grow With You",
-    description: "From multilingual scaling to integrations — your site is built to support your next step, not hold you back."
+    title: "Built for the Future",
+    description: "Designed for international rollout, integrations, and long-term scalability."
   }
 ];
 
@@ -30,12 +30,8 @@ const WebDevBenefits = () => {
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Why Businesses Trust ooliv for Web Development
+          Why Businesses Choose ooliv for Web Development
         </h2>
-        
-        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          We build robust, scalable technology solutions that align with your business goals and future growth.
-        </p>
         
         <div className="grid md:grid-cols-2 gap-8">
           {benefits.map((benefit, index) => (

@@ -5,35 +5,31 @@ import WebDevHero from '@/components/web-development/WebDevHero';
 import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevProcess from '@/components/web-development/WebDevProcess';
-import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
 import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
 import FAQ from '@/components/FAQ';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const webDevFaqs = [
   {
     question: "What platforms do you work with?",
-    answer: "We build both fully coded websites (no CMS) and custom WordPress setups."
+    answer: "We develop fully coded websites (without CMS) and custom WordPress solutions – depending on what fits your business best."
   },
   {
-    question: "Can you build something without a CMS?",
-    answer: "Yes — we often develop fully custom websites using just HTML, CSS, and JavaScript. Clean, fast, and secure."
+    question: "Can ooliv build online shops?",
+    answer: "Yes – via WooCommerce within WordPress or Shopify for focused B2B use cases."
   },
   {
-    question: "Can you build shop features?",
-    answer: "Yes — we work with WooCommerce (for WordPress) and Shopify (for select projects)."
+    question: "Is performance always included?",
+    answer: "Absolutely. Our websites are fast, SEO-optimized, and stable across all devices."
   },
   {
-    question: "Do you provide support after launch?",
-    answer: "Yes. We stay available for updates, improvements, and performance monitoring."
+    question: "Do you offer support after launch?",
+    answer: "Yes. We provide ongoing technical support, updates, and performance tracking."
   },
   {
-    question: "How do you ensure fast loading times?",
-    answer: "We use lightweight code, optimize every asset, and run performance tests during development."
-  },
-  {
-    question: "Can you improve our existing site?",
-    answer: "Absolutely. We also take on redesigns, speed fixes, and CMS cleanups."
+    question: "Can you improve existing websites?",
+    answer: "Yes. We audit your current setup and advise whether optimization or a full relaunch is the smarter move."
   }
 ];
 
@@ -45,7 +41,17 @@ const WebDevelopment = () => {
       <WebDevCmsVsStatic />
       <WebDevProcess />
       <WebDevServices />
-      <WebDevCaseStudies />
+      
+      {/* Global Case Studies Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            Web Development Case Studies
+          </h2>
+          <CaseStudiesSection showAll={true} showCta={true} />
+        </div>
+      </section>
+      
       <FAQ customFaqs={webDevFaqs} />
       <WebDevCTA />
     </PageLayout>

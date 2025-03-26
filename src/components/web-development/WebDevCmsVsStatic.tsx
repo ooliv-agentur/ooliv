@@ -9,7 +9,7 @@ const WebDevCmsVsStatic = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            Flexible or fast – we develop what fits your setup
+            WordPress or Code-First? We Build What Fits
           </h2>
         </div>
         
@@ -23,8 +23,7 @@ const WebDevCmsVsStatic = () => {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base text-brand-text">
-                Easily editable via CMS. Ideal for teams that update content frequently – blog, news, or service details.
-                <p className="mt-2">Recommended if you want full editorial control without developer support.</p>
+                Ideal for editorial teams: easily editable content, flexible structure.
               </CardDescription>
             </CardContent>
           </Card>
@@ -38,8 +37,7 @@ const WebDevCmsVsStatic = () => {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base text-brand-text">
-                Ultra-fast, secure, and low-maintenance. Perfect when content rarely changes or performance is the top priority.
-                <p className="mt-2">Content updates are handled by our team.</p>
+                Ultra-fast, secure, and low-maintenance – best for stable content setups.
               </CardDescription>
             </CardContent>
           </Card>
@@ -47,7 +45,7 @@ const WebDevCmsVsStatic = () => {
         
         <div className="bg-white p-6 rounded-lg border border-gray-100 text-center mt-6">
           <p className="text-brand-text">
-            We support both approaches – and help you decide what's best based on content needs, team capacity, and SEO goals.
+            We offer honest, technology-agnostic advice. Your website should match your goals, workflows, and SEO strategy – not the other way around.
           </p>
         </div>
       </div>
