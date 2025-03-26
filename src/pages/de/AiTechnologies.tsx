@@ -63,7 +63,7 @@ const GermanAiTechnologies = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <AiTechHero />
+      <AiTechHero pageTag="KI-Technologien" />
       <AiTechBenefits />
       <AiTechServices />
       <AiToolsSection 
@@ -96,4 +96,3 @@ const GermanAiTechnologies = () => {
 };
 
 export default GermanAiTechnologies;
-

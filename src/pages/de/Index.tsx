@@ -25,7 +25,7 @@ const GermanIndex = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <Hero />
+      <Hero pageTag="Startseite" />
       <AboutSection />
       <TeamImpactSection />
       <Challenge />

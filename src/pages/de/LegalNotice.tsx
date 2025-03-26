@@ -27,6 +27,7 @@ const GermanLegalNotice = () => {
           text: "Kontakt aufnehmen",
           link: "/de/kontakt"
         }}
+        badge="Impressum"
       />
       
       <section className="py-16">

@@ -43,6 +43,7 @@ const PrivacyPolicy = () => {
           text: "Contact Data Officer",
           link: "/contact"
         }}
+        badge="Privacy Policy"
       />
 
       <section className="section-standard" ref={policyRef} id="policy">

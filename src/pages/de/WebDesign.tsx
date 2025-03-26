@@ -21,7 +21,7 @@ const GermanWebDesign = () => {
 
   return (
     <PageLayout className="overflow-x-hidden">
-      <WebDesignHero />
+      <WebDesignHero pageTag="Webdesign" />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />
