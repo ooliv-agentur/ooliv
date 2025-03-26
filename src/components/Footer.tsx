@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
@@ -8,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const { t, language } = useLanguage();
   
-  // Create language-specific URL mappings
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
     'web-design': language === 'de' ? 'webdesign' : 'web-design',
@@ -17,31 +15,27 @@ const Footer = () => {
     'seo-optimization': language === 'de' ? 'seo-optimierung' : 'seo-optimization',
     'google-ads': 'google-ads',
     'ai-technologies': language === 'de' ? 'ki-technologien' : 'ai-technologies',
-    'case-studies': language === 'de' ? 'case-studies' : 'case-studies',
+    'case-studies': 'case-studies',
     'careers': language === 'de' ? 'karriere' : 'careers',
     'contact': language === 'de' ? 'kontakt' : 'contact',
     'privacy-policy': language === 'de' ? 'datenschutz' : 'privacy-policy',
     'legal-notice': language === 'de' ? 'impressum' : 'legal-notice',
   };
   
-  // Create language-specific URL prefixes
   const langPrefix = language === 'de' ? '/de' : '';
   
-  // Helper to generate correct URLs
   const getUrl = (path: string) => {
     if (path === '/') return language === 'de' ? '/de' : '/';
     
-    const basePath = path.replace(/^\//,''); // remove leading slash if present
+    const basePath = path.replace(/^\//,'');
     const translatedPath = pathMap[basePath] || basePath;
     return `${langPrefix}/${translatedPath}`;
   };
   
   return (
     <footer className="bg-brand-footer text-white pt-16 pb-8">
-      {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-sans text-white">{t('footer.about')}</h3>
             <p className="text-white text-sm font-sans">
@@ -58,7 +52,6 @@ const Footer = () => {
             </Button>
           </div>
 
-          {/* Services Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
@@ -71,7 +64,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
@@ -82,7 +74,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">Legal</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
@@ -91,7 +82,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Information */}
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
@@ -119,7 +109,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white font-sans">
@@ -133,7 +122,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Sticky CTA Banner */}
       <div className="fixed bottom-0 left-0 right-0 bg-brand-primary py-3 px-4 z-40">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <p className="text-white text-sm md:text-base font-medium font-sans">

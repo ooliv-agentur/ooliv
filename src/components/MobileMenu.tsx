@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -67,7 +66,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
-  // Define navigation links based on current language
   const getNavigationLinks = () => {
     if (language === 'de') {
       return [
@@ -78,7 +76,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         { title: 'SEO-Optimierung', path: '/de/seo-optimierung' },
         { title: 'Google Ads', path: '/de/google-ads' },
         { title: 'KI-Technologien', path: '/de/ki-technologien' },
-        { title: 'Referenzen', path: '/de/referenzen' },
+        { title: 'Case Studies', path: '/de/case-studies' },
         { title: 'Über ooliv', path: '/de/ueber-ooliv' },
         { title: 'Kontakt', path: '/de/kontakt' }
       ];
@@ -100,7 +98,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   const navigationLinks = getNavigationLinks();
   
-  // Project button text based on language
   const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
 
   const backdropVariants = {
