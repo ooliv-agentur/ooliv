@@ -19,7 +19,6 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion';
 import { useState } from 'react';
-import ContactForm from '@/components/ContactForm';
 
 const Contact = () => {
   const [showCallForm, setShowCallForm] = useState(false);
@@ -51,93 +50,82 @@ const Contact = () => {
               All communication at ooliv is handled directly by our CEO — fast, strategic, and personal.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-10">
-              {/* Contact Methods Section */}
-              <div>
-                <p className="mb-6">You can get in touch via sidebar:</p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-3">
-                    <span className="bg-blue-600 text-white p-1 rounded">🟦</span>
-                    <span>Chatbot</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="bg-green-600 text-white p-1 rounded">🟩</span>
-                    <span>Inquiry Step Form</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-brand-primary" />
-                    <span>Email: <a href="mailto:info@ooliv.de" className="font-medium hover:underline">info@ooliv.de</a></span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-brand-primary" />
-                    <span>Phone: 06131 – 63 67 801 or +49 176 80 16 76 41</span>
-                  </li>
-                </ul>
-                <p>Or just use the button that fits your preferred contact method.</p>
-                
-                <div className="flex flex-wrap gap-4 mt-6">
-                  <Button
-                    onClick={() => console.log('Chatbot clicked')}
-                    className="flex items-center gap-2"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    Start Chat
-                  </Button>
-                  <Button
-                    onClick={() => setWorkForm(true)}
-                    className="flex items-center gap-2"
-                  >
-                    <Send className="h-4 w-4" />
-                    Send Inquiry
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => window.location.href = 'mailto:info@ooliv.de'}
-                    className="flex items-center gap-2"
-                  >
-                    <Mail className="h-4 w-4" />
-                    Email Us
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => window.location.href = 'tel:+4961316367801'}
-                    className="flex items-center gap-2"
-                  >
-                    <Phone className="h-4 w-4" />
-                    Call Us
-                  </Button>
-                </div>
-              </div>
-              
-              {/* Why Work With Us Section */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Why work with us?</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="text-brand-primary font-bold">✓</span>
-                    <span>Direct communication with our CEO</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-brand-primary font-bold">✓</span>
-                    <span>Fast response times and decisive action</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-brand-primary font-bold">✓</span>
-                    <span>Strategic thinking, not just implementation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-brand-primary font-bold">✓</span>
-                    <span>Focus on business results, not just design</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="text-center space-y-4">
+              <p>Use the sidebar to reach us via:</p>
+              <ul className="inline-flex flex-col items-center space-y-2">
+                <li>Chatbot</li>
+                <li>Step-by-step Inquiry Form</li>
+                <li>Email</li>
+                <li>Phone</li>
+              </ul>
+              <p>You choose how we start — and we'll respond quickly.</p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Why Work With Us Section */}
+      <section className="section-standard bg-gray-50">
+        <div className="section-container">
+          <h2 className="section-title text-center">Why work with us?</h2>
+          <div className="max-w-3xl mx-auto">
+            <ul className="space-y-3 text-center">
+              <li className="flex items-center justify-center gap-2">
+                <span className="text-brand-primary font-bold">✓</span>
+                <span>Direct communication with our CEO</span>
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <span className="text-brand-primary font-bold">✓</span>
+                <span>Fast response times and decisive action</span>
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <span className="text-brand-primary font-bold">✓</span>
+                <span>Strategic thinking, not just implementation</span>
+              </li>
+              <li className="flex items-center justify-center gap-2">
+                <span className="text-brand-primary font-bold">✓</span>
+                <span>Focus on business results, not just design</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="section-standard">
+        <div className="section-container">
+          <h2 className="section-title text-center">Want to Speak Directly?</h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="mb-6">We're based in Mainz — and ready to talk.</p>
+            
+            <Card className="inline-block">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">ooliv GmbH</h3>
+                <p className="mb-4">
+                  Mombacher Str. 25<br />
+                  55122 Mainz, Germany
+                </p>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 text-brand-primary" />
+                    <span>06131 – 63 67 801</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-3">
+                    <Mail className="h-5 w-5 text-brand-primary" />
+                    <a href="mailto:info@ooliv.de" className="hover:underline">info@ooliv.de</a>
+                  </div>
+                </div>
+                
+                <p className="mt-4 italic text-sm">All communication is handled directly by our CEO — fast, strategic, and personal.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="section-alt">
+      <section className="section-standard bg-gray-50">
         <div className="section-container">
           <h2 className="section-title">Contact FAQs</h2>
           
@@ -166,48 +154,10 @@ const Contact = () => {
                   Do you work with companies outside of Germany?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Yes. We work with clients across Europe and internationally.
+                  Yes. We work with clients in Germany, across Europe, and beyond.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Details Section */}
-      <section className="section-standard">
-        <div className="section-container">
-          <h2 className="section-title">Contact Details</h2>
-          
-          <div className="max-w-3xl mx-auto mt-8">
-            <Card className="overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="flex flex-col">
-                    <h3 className="text-2xl font-bold mb-3">ooliv GmbH</h3>
-                    <p className="mb-6">
-                      Mombacher Str. 25<br />
-                      55122 Mainz, Germany
-                    </p>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <Phone className="h-5 w-5 text-brand-primary" />
-                        <span>06131 – 63 67 801</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Phone className="h-5 w-5 text-brand-primary" />
-                        <span>+49 176 80 16 76 41</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Mail className="h-5 w-5 text-brand-primary" />
-                        <a href="mailto:info@ooliv.de" className="hover:underline">info@ooliv.de</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -216,46 +166,28 @@ const Contact = () => {
       <section className="section-standard">
         <div className="section-container text-center">
           <h2 className="section-title">Let's Talk About What's Next</h2>
-          <p className="section-subtitle">
+          <p className="text-lg max-w-2xl mx-auto mb-8">
             Start a project with a team that works fast, communicates clearly, and delivers results. You'll always speak directly with the person who leads your project.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => setShowWorkForm(true)}
-            >
-              Start Your Website Project
+            <Button size="lg" asChild>
+              <Link to="/contact">Start Your Website Project</Link>
             </Button>
+            
             <Button 
               size="lg"
               variant="outline"
-              onClick={() => setShowCallForm(true)}
+              asChild
             >
-              Book a Strategy Call
+              <Link to="/contact">Book a Strategy Call</Link>
             </Button>
           </div>
-          
-          <p className="mt-8 text-sm text-center text-gray-600">
-            100+ successfully completed projects • Trusted by leading companies • AI strategies that are human and measurable
-          </p>
         </div>
       </section>
-
-      {/* Contact Form Dialogs */}
-      <ContactForm 
-        open={showCallForm} 
-        onOpenChange={setShowCallForm} 
-        formType="call" 
-      />
-      
-      <ContactForm 
-        open={showWorkForm} 
-        onOpenChange={setShowWorkForm} 
-        formType="work" 
-      />
     </PageLayout>
   );
 };
 
 export default Contact;
+
