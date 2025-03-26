@@ -6,11 +6,11 @@ import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
 import Solution from "@/components/Solution";
 import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
 import TeamTeaser from "@/components/TeamTeaser";
 import ClientLogos from "@/components/ClientLogos";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
-import CTACompact from "@/components/CTACompact";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -49,8 +49,12 @@ const Index = () => {
       <CaseStudiesSection showAll={true} showCta={true} />
       
       <FAQ />
-      {/* Replace the standard CTA with our new compact CTA */}
-      <CTACompact />
+      <CTA 
+        title="Ready to transform your digital presence?"
+        subtitle="Let's discuss how our team can help your business achieve its online goals."
+        primaryCta="Start Your Website Project"
+        secondaryCta="See Our Work"
+      />
     </PageLayout>
   );
 };

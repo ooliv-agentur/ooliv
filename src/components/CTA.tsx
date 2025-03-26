@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import { FileCheck, PhoneCall } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import ContactForm from './ContactForm';
-import { Link } from 'react-router-dom';
 
 interface CTAProps {
   title?: string;
@@ -18,7 +18,7 @@ const CTA = ({
   primaryCta, 
   secondaryCta 
 }: CTAProps) => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   const [openForm, setOpenForm] = useState(false);
   const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
   
@@ -27,54 +27,47 @@ const CTA = ({
     setOpenForm(true);
   };
   
-  const isGerman = language === 'de';
-  
   return (
-    <section className="py-16 bg-[#f7f7f2]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {isGerman ? (
-          <>
-            <h2 className="text-3xl md:text-4xl font-semibold text-brand-heading">
-              {title || "Bereit für den nächsten Schritt?"}
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 mt-2 mb-8">
-              {subtitle || "Lassen Sie uns Ihre Website aufs nächste Level bringen."}
-            </p>
-          </>
-        ) : (
-          <>
-            <h2 className="text-3xl md:text-4xl font-semibold text-brand-heading">
-              {title || "Ready to take the next step?"}
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 mt-2 mb-8">
-              {subtitle || "Let's build a website that works for your business."}
-            </p>
-          </>
-        )}
-        
-        <div className="flex flex-col md:flex-row justify-center gap-4 mt-6">
-          <Button 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 h-auto text-base font-medium rounded-md"
-            onClick={() => handleOpenForm('audit')}
-          >
-            {primaryCta || (isGerman ? "Projekt starten" : "Start Your Project")}
-          </Button>
+    <section className="section-alt text-brand-text">
+      <div className="section-container text-center">
+        <div className="animate-fade-in">
+          <h2 className="heading-standard">
+            {title || t('cta.title')}
+          </h2>
           
-          <Button 
-            variant="outline" 
-            className="border border-blue-600 text-blue-600 bg-transparent hover:bg-blue-50 px-6 py-3 h-auto text-base font-medium rounded-md"
-            onClick={() => handleOpenForm('call')}
-          >
-            {secondaryCta || (isGerman ? "Unsere Arbeiten ansehen" : "See Our Work")}
-          </Button>
+          <p className="subheading-standard">
+            {subtitle || t('cta.subtitle')}
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Button 
+              size="lg" 
+              className="button-primary text-base py-6 font-medium font-sans"
+              onClick={() => handleOpenForm('audit')}
+            >
+              <FileCheck className="mr-2 h-5 w-5" />
+              {primaryCta || "Let's Build Something That Performs"}
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="button-secondary text-base py-6 font-medium font-sans"
+              onClick={() => handleOpenForm('call')}
+            >
+              <PhoneCall className="mr-2 h-5 w-5" />
+              {secondaryCta || "Book a Free Strategy Call"}
+            </Button>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-sm text-brand-text font-sans">
+              <span className="font-bold">100+ successful projects completed</span> • 
+              <span className="mx-2">Trusted by leading companies</span> • 
+              <span className="font-bold">AI-powered strategy for maximum efficiency</span>
+            </p>
+          </div>
         </div>
-        
-        <p className="text-sm text-gray-500 mt-6">
-          {isGerman 
-            ? "100+ Projekte erfolgreich umgesetzt • Vertraut von führenden Unternehmen • KI-gestützte Strategie" 
-            : "100+ successful projects • Trusted by leading companies • AI-powered strategy"
-          }
-        </p>
       </div>
       
       {/* Contact Form Dialog */}
