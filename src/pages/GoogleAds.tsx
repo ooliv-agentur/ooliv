@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
@@ -6,39 +7,47 @@ import {
   Target, 
   LineChart, 
   MousePointerClick, 
-  LayoutTemplate, 
+  Layout, 
   Shield,
-  Bot
+  Bot,
+  RefreshCw,
+  X,
+  Search,
+  ArrowRight,
+  CheckCircle
 } from 'lucide-react';
 import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GoogleAds = () => {
   // Custom FAQ items for Google Ads page
   const googleAdsFaqs = [
     {
+      question: "How is ooliv different from other Google Ads agencies?",
+      answer: "We combine B2B strategy with tech expertise — delivering real business impact, not generic ad traffic."
+    },
+    {
+      question: "Do we need Google Ads if SEO is already working well?",
+      answer: "Yes — Google Ads adds visibility and delivers immediate, targeted traffic with conversion focus."
+    },
+    {
+      question: "What's a typical budget for effective Google Ads?",
+      answer: "Most clients start between €1,000–3,000/month — based on goals, market, and competition."
+    },
+    {
+      question: "How soon will we see results from a campaign?",
+      answer: "You'll often see early results in a few days, with full performance in 4–6 weeks."
+    },
+    {
+      question: "Can you help with landing pages and tracking setup?",
+      answer: "Absolutely — we handle everything from page design to full analytics integration."
+    },
+    {
       question: "What platforms do you advertise on?",
       answer: "We focus 100% on Google Ads — including Search, Display, and Performance Max."
-    },
-    {
-      question: "Do you use AI in your campaigns?",
-      answer: "Yes — we use AI tools to improve ad quality, targeting, and performance."
-    },
-    {
-      question: "Can you build the landing pages too?",
-      answer: "Absolutely. We design and develop high-converting landing pages tailored to your business goals."
-    },
-    {
-      question: "How do you protect against click fraud?",
-      answer: "We use fraud detection tools to monitor your campaigns and block invalid clicks, protecting your ad spend."
-    },
-    {
-      question: "Do you only work with B2B clients?",
-      answer: "Yes — we specialize in B2B lead generation and conversion for companies in various industries."
-    },
-    {
-      question: "What's included in your reporting?",
-      answer: "You'll get detailed insights into performance, including metrics on clicks, conversions, and overall campaign success."
     }
   ];
 
@@ -91,15 +100,49 @@ const GoogleAds = () => {
         </div>
       </section>
 
-      {/* Lead Generation Section */}
-      <GoogleAdsLeadGeneration />
-
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-brand-backgroundAlt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              High-Performance Google Ads for B2B Companies
+              Google Ads for Results – Not Just Visibility
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              We use Google Ads to generate qualified leads — not empty clicks.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Search className="h-10 w-10 mb-4 text-brand-primary" />
+              <h3 className="text-xl font-bold mb-4">Search Campaigns</h3>
+              <p>Reach your audience at the right time — with targeted keywords, ad extensions, and tracked conversions.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Layout className="h-10 w-10 mb-4 text-brand-primary" />
+              <h3 className="text-xl font-bold mb-4">Landing Pages</h3>
+              <p>Great ads need great destinations. We create high-performance landing pages built for speed, clarity, and conversion.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <RefreshCw className="h-10 w-10 mb-4 text-brand-primary" />
+              <h3 className="text-xl font-bold mb-4">Continuous Optimization</h3>
+              <p>We test, analyze, and improve your campaigns constantly — lowering cost per lead and increasing results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Generation Section */}
+      <GoogleAdsLeadGeneration />
+
+      {/* Extended Services Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+              Our Tech Stack – Data-Driven Performance
             </h2>
           </div>
 
@@ -116,7 +159,7 @@ const GoogleAds = () => {
                 description: "We use AI tools to improve ad quality, keyword performance, and audience targeting"
               },
               {
-                icon: <LayoutTemplate className="h-10 w-10 mb-4 text-brand-primary" />,
+                icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
                 title: "Landing Page Design & Development",
                 description: "We build landing pages that load fast, communicate clearly, and are built to convert visitors into leads"
               },
@@ -131,7 +174,7 @@ const GoogleAds = () => {
                 description: "We track every action, monitor performance, and protect your budget from invalid clicks"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 {service.icon}
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                 <p>{service.description}</p>
@@ -142,15 +185,15 @@ const GoogleAds = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Our Proven 5-Step Process for Lead Generation
+              Our Campaign Process – From Audit to Growth
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
             {[
               {
                 step: "01",
@@ -178,7 +221,7 @@ const GoogleAds = () => {
                 description: "We iterate and improve your funnel through weekly insights and A/B tests"
               }
             ].map((step, index) => (
-              <div key={index} className="relative bg-brand-backgroundAlt p-6 rounded-lg border-l-4 border-brand-primary">
+              <div key={index} className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary">
                 <div className="absolute -top-4 -left-4 bg-brand-primary text-white h-10 w-10 rounded-full flex items-center justify-center font-bold">
                   {step.step}
                 </div>
@@ -187,11 +230,20 @@ const GoogleAds = () => {
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="link" asChild className="group">
+              <Link to="/web-development" className="flex items-center gap-2 text-brand-primary">
+                Explore our landing page & web development services
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Success Metrics Section */}
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
@@ -217,7 +269,7 @@ const GoogleAds = () => {
                 description: "through better ad copy and keyword alignment"
               }
             ].map((metric, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md text-center">
+              <div key={index} className="bg-brand-backgroundAlt p-8 rounded-lg shadow-md text-center">
                 <div className="inline-flex justify-center">{metric.icon}</div>
                 <h3 className="text-2xl font-bold my-3 text-brand-primary">{metric.metric}</h3>
                 <p>{metric.description}</p>
@@ -226,16 +278,23 @@ const GoogleAds = () => {
           </div>
         </div>
       </section>
+      
+      {/* Case Studies Section */}
+      <section className="py-24 bg-brand-backgroundAlt">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FAQ customFaqs={googleAdsFaqs} />
 
       {/* CTA Section */}
       <CTA 
-        title="Let's Make Your Marketing Measurable"
-        subtitle="You don't need more clicks — you need leads that convert. Let's build a funnel that performs from ad to action."
-        primaryCta="Start Your Campaign"
-        secondaryCta="Request a Free Audit"
+        title="Let's Turn Google Ads Into a Scalable Sales Channel"
+        subtitle="With our data-driven approach, we'll help you improve ROI, lower lead costs, and build campaigns that deliver measurable growth."
+        primaryCta="Launch Your Campaign"
+        secondaryCta="Request Free Audit"
       />
     </PageLayout>
   );

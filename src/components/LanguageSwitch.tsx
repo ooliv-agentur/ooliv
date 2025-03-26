@@ -47,7 +47,7 @@ const LanguageSwitch: React.FC = () => {
   }, [location.pathname, language, setLanguage]);
 
   const toggleLanguage = () => {
-    const currentPath = window.location.pathname;
+    const currentPath = location.pathname;
     
     if (language === 'en') {
       // Switching to German

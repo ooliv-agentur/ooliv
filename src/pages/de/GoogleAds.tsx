@@ -6,7 +6,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
-import { ArrowRight, CheckCircle, BarChart, Search, Layout, RefreshCw } from 'lucide-react';
+import { ArrowRight, CheckCircle, BarChart, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const GermanGoogleAds = () => {
     },
     {
       question: "Was sind typische Budgets für erfolgreiche Google Ads Kampagnen?",
-      answer: "Die meisten unserer Kunden starten mit 500–2.000 € monatlich – angepasst an Branche, Wettbewerb und Ziele."
+      answer: "Die meisten unserer Kunden starten mit 1.000–3.000 € monatlich – angepasst an Branche, Wettbewerb und Ziele."
     },
     {
       question: "Wie lange dauert es, bis eine Google Ads Kampagne Ergebnisse liefert?",
@@ -59,8 +59,52 @@ const GermanGoogleAds = () => {
         }}
       />
       
-      {/* Services Section */}
+      {/* Pain Points Section */}
       <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+              Website-Probleme, die Leads kosten – wir lösen sie
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                problem: "Keine Inbound-Leads",
+                context: "Besucher kommen, aber ohne Kontaktaufnahme",
+                solution: "Wir entwickeln Kampagnen und Landingpages, die B2B-Besucher in echte Kontakte verwandeln"
+              },
+              {
+                problem: "Werbebudget verpufft",
+                context: "ROI unklar, Budget verschwindet",
+                solution: "Wir tracken jeden Klick, optimieren kontinuierlich und schützen mit Click-Fraud-Technologie vor Fake-Traffic"
+              },
+              {
+                problem: "Falsche Zielgruppe",
+                context: "Besucher springen ohne Aktion ab",
+                solution: "Unsere Kampagnen nutzen KI-Targeting, um Entscheider zu erreichen – keine „Klick-Touristen""
+              },
+              {
+                problem: "Keine Strategie",
+                context: "Unkoordinierte Maßnahmen, kein Wachstum",
+                solution: "Wir verbinden Kampagnen, Content und Daten zu einem performanten System mit klarem Ziel"
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-brand-backgroundAlt rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-brand-primary font-bold mb-3">PROBLEM:</div>
+                <h3 className="text-lg font-bold mb-2">{item.problem}</h3>
+                <p className="text-sm text-gray-600 mb-4">{item.context}</p>
+                <div className="text-brand-primary font-bold mb-2">LÖSUNG:</div>
+                <p>{item.solution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Services Section */}
+      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
@@ -93,70 +137,91 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
+      {/* Extended Services Section */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Unser Tech-Stack für bessere Ergebnisse
+              Erweiterte Leistungen für maximale Performance
             </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8">
-              Wir setzen auf Tools und Methoden, die Performance messbar machen und automatisiert verbessern:
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Google Ads (Search, Display, Brand, Remarketing)",
-              "Google Tag Manager",
-              "Consent Mode v2",
-              "Conversion API & Tracking-Setup",
-              "Zielgruppen-Segmentierung über Google Signals",
-              "KI-gestützte Anzeigentexte & Visuals via ChatGPT & Midjourney"
-            ].map((tech, index) => (
-              <div key={index} className="flex items-start bg-white p-5 rounded-lg shadow-sm">
-                <CheckCircle className="h-5 w-5 text-brand-primary mr-3 mt-0.5 flex-shrink-0" />
-                <p>{tech}</p>
+              {
+                icon: <Target className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: "Google Ads (Search, Display & PMax)",
+                description: "Performance-orientierte Kampagnen mit Fokus auf B2B-Keywords und Conversion-Optimierung"
+              },
+              {
+                icon: <Bot className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: "KI-gestützte Kampagnensteuerung",
+                description: "Wir nutzen KI-Tools zur Verbesserung von Anzeigenqualität, Keyword-Performance und Targeting"
+              },
+              {
+                icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: "Landingpage Design & Entwicklung",
+                description: "Wir erstellen Zielseiten, die schnell laden, klar kommunizieren und zu Leads konvertieren"
+              },
+              {
+                icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: "Conversion Rate Optimierung (CRO)",
+                description: "Wir testen jedes Element – von Headlines bis CTAs – um Ihre Conversion-Raten schrittweise zu verbessern"
+              },
+              {
+                icon: <Shield className="h-10 w-10 mb-4 text-brand-primary" />,
+                title: "Analytics, Tracking & Click-Fraud-Schutz",
+                description: "Wir tracken jede Aktion, überwachen Performance und schützen Ihr Budget vor ungültigen Klicks"
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                {service.icon}
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p>{service.description}</p>
               </div>
             ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <p className="text-brand-text italic">
-              Hinweis: Wir nutzen diese Tools zur Unterstützung – nicht als Ersatz für Expertise.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Unser Ablauf – von der Analyse zur skalierbaren Kampagne
+              Unser Kampagnen-Prozess – von Strategie bis Skalierung
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
             {[
               {
                 step: "01",
-                title: "Audit & Setup",
-                description: "Bestehende Kampagnen analysieren, Tracking prüfen, Zieldefinition festlegen"
+                title: "Strategie & Setup",
+                description: "Zielgruppen, Angebote, Budgets und KPIs definieren"
               },
               {
                 step: "02",
-                title: "Kampagnenstruktur & Zielseiten",
-                description: "Klare Anzeigengruppen, Conversion-Fokus, A/B-getestete Landingpages"
+                title: "Landingpage-Erstellung",
+                description: "Mobileoptimierte Seiten mit klarem Nutzen & schneller Ladezeit"
               },
               {
                 step: "03",
-                title: "Optimierung & Skalierung",
-                description: "Laufende Keyword-Optimierung, Budgetsteuerung, Performance-Messung"
+                title: "Kampagnen-Setup",
+                description: "Anzeigen starten – Search, Display & Performance Max"
+              },
+              {
+                step: "04",
+                title: "Tracking & Schutz",
+                description: "Ereignisse erfassen, Klickbetrug blockieren, Datenqualität sichern"
+              },
+              {
+                step: "05",
+                title: "Reporting & Optimierung",
+                description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
               }
             ].map((step, index) => (
-              <div key={index} className="relative bg-brand-backgroundAlt p-6 rounded-lg border-l-4 border-brand-primary">
+              <div key={index} className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary">
                 <div className="absolute -top-4 -left-4 bg-brand-primary text-white h-10 w-10 rounded-full flex items-center justify-center font-bold">
                   {step.step}
                 </div>
@@ -177,8 +242,45 @@ const GermanGoogleAds = () => {
         </div>
       </section>
       
+      {/* Success Metrics Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+              Performance in Zahlen
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Target className="h-10 w-10 mb-4 text-brand-primary" />,
+                metric: "+3x mehr qualifizierte Leads",
+                description: "dank KI-Targeting & strategischer Landingpages"
+              },
+              {
+                icon: <LineChart className="h-10 w-10 mb-4 text-brand-primary" />,
+                metric: "-40% Absprungrate",
+                description: "durch Conversion-optimierte Texte & bessere UX"
+              },
+              {
+                icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
+                metric: "+70% höhere CTR",
+                description: "durch bessere Anzeigentexte & Keyword-Strategie"
+              }
+            ].map((metric, index) => (
+              <div key={index} className="bg-brand-backgroundAlt p-8 rounded-lg shadow-md text-center">
+                <div className="inline-flex justify-center">{metric.icon}</div>
+                <h3 className="text-2xl font-bold my-3 text-brand-primary">{metric.metric}</h3>
+                <p>{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Case Studies Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-brand-backgroundAlt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
@@ -188,49 +290,12 @@ const GermanGoogleAds = () => {
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />
       
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Lassen Sie uns Ihre Google Ads optimieren
-            </h2>
-            <p className="text-xl text-brand-text mb-8">
-              Mit unserer datengesteuerten Herangehensweise verbessern wir Ihren ROI, senken die Kosten pro Lead und machen Ihre Kampagnen zum echten Vertriebskanal.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <Button size="lg" className="group" asChild>
-                <Link to="/de/kontakt">
-                  Kostenlose Kampagnenanalyse
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              
-              <Button variant="outline" size="lg" className="group" asChild>
-                <Link to="/de/kontakt">
-                  Strategiegespräch buchen
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-600">
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-brand-primary" />
-                <span>100+ erfolgreiche Projekte</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-brand-primary" />
-                <span>Vertraut von führenden Unternehmen</span>
-              </div>
-              <div className="flex items-center">
-                <CheckCircle className="h-4 w-4 mr-2 text-brand-primary" />
-                <span>KI-gestützte Performance-Strategien</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title="Lassen Sie uns Ihre Google Ads messbar machen"
+        subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
+        primaryCta="Kampagne starten"
+        secondaryCta="Kostenlose Analyse anfordern"
+      />
     </PageLayout>
   );
 };
