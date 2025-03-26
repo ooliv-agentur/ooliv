@@ -12,14 +12,14 @@ const CTACompact = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between">
           <div className="max-w-md">
             <h2 className="text-2xl md:text-4xl font-bold text-black leading-tight">
               {isGerman ? (
                 <>
-                  Wir sollten<br />
-                  gemeinsam etwas<br />
-                  bauen, das wirkt.
+                  Lassen Sie uns<br />
+                  etwas schaffen, das<br />
+                  wirklich funktioniert.
                 </>
               ) : (
                 <>
@@ -30,6 +30,10 @@ const CTACompact = () => {
               )}
             </h2>
           </div>
+          
+          {/* Horizontal blue line for desktop */}
+          <div className="hidden md:block flex-grow mx-10 border-t border-[#3C5AFE] self-end mb-3"></div>
+          
           <div className="mt-8 md:mt-0">
             <Link 
               to={contactPath}
