@@ -185,12 +185,14 @@ interface CaseStudiesSectionProps {
   customTitle?: string;
   customSubtitle?: string;
   customBodyText?: string;
+  hideHeaderText?: boolean;  // New prop to control header visibility
 }
 
 const CaseStudiesSection = ({ 
   customTitle,
   customSubtitle,
-  customBodyText
+  customBodyText,
+  hideHeaderText = false  // Default to showing header text
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
@@ -213,17 +215,19 @@ const CaseStudiesSection = ({
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-            {customTitle || t.title}
-          </h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
-            {customSubtitle || t.subtitle}
-          </p>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            {customBodyText || t.bodyText}
-          </p>
-        </div>
+        {!hideHeaderText && (
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              {customTitle || t.title}
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
+              {customSubtitle || t.subtitle}
+            </p>
+            <p className="text-lg text-brand-text max-w-3xl mx-auto">
+              {customBodyText || t.bodyText}
+            </p>
+          </div>
+        )}
         
         <div className="space-y-20">
           {cases.map((study, index) => (
