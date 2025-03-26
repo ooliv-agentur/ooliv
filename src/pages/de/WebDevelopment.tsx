@@ -53,10 +53,11 @@ const GermanWebDevelopment = () => {
       {/* Global Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            Erfolgsgeschichten aus der Webentwicklung
-          </h2>
-          <CaseStudiesSection showAll={true} showCta={true} />
+          <CaseStudiesSection 
+            customTitle="Erfolgsgeschichten aus der Webentwicklung"
+            customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
+            customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+          />
         </div>
       </section>
       

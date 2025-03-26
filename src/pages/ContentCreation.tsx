@@ -48,15 +48,11 @@ const ContentCreation = () => {
       {/* Use the custom section for case studies instead of the global one with default titles */}
       <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            Real Results from Real Clients
-          </h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            See how our content strategies deliver measurable business outcomes through tailored messaging, SEO optimization, and visual clarity.
-          </p>
-          
-          {/* Pass showTitle={false} to hide the default title in CaseStudiesSection */}
-          <CaseStudiesSection showAll={true} showCta={true} showTitle={false} />
+          <CaseStudiesSection 
+            customTitle="Real Results from Real Clients"
+            customSubtitle="We deliver websites and strategies that highlight what makes your business special."
+            customBodyText="See how we've helped businesses achieve measurable growth through tailored messaging, SEO optimization, and visual clarity."
+          />
         </div>
       </section>
       

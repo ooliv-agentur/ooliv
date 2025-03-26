@@ -64,7 +64,7 @@ const SEOCaseStudies = () => {
                 ))}
               </div>
               
-              <p className="text-brand-text mb-6">{study.title}</p>
+              <p className="text-brand-text mb-6">{study.headline}</p>
               
               <Button variant="outline" size="sm" className="group" asChild>
                 <Link to={caseStudiesPath}>

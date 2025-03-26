@@ -46,14 +46,14 @@ const WebDevCaseStudies = () => {
   const cases = relevantCases.map(study => ({
     client: study.client,
     industry: study.industry,
-    summary: study.title,
+    summary: study.headline,
     services: [
       "WordPress Development", 
       "ERP Integration", 
       "Performance Optimization"
     ], 
     kpis: study.impact.map(impact => impact.split(' ')[0]),
-    image: `bg-[url('${study.image}')]`
+    image: study.image
   }));
 
   return (
@@ -72,7 +72,7 @@ const WebDevCaseStudies = () => {
             {cases.map((study, index) => (
               <CarouselItem key={index} className="md:basis-full">
                 <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                  <div className={`h-48 ${study.image} bg-cover bg-center`} />
+                  <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${study.image})` }} />
                   <div className="p-6">
                     <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
                     <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>

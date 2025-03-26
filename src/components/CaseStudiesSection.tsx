@@ -1,8 +1,6 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Define the structure for case studies
@@ -11,7 +9,7 @@ export const caseStudiesData = {
     {
       client: "Scheurich",
       industry: "Ceramic & Lifestyle Brand",
-      title: "120% more organic traffic through complete website optimization",
+      headline: "120% more organic traffic through complete website optimization",
       logo: "/placeholder.svg",
       quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
       impact: [
@@ -28,7 +26,7 @@ export const caseStudiesData = {
     {
       client: "COBUS",
       industry: "ERP & IT Solutions",
-      title: "Lead generation improved by 80% with a new website & conversion strategy",
+      headline: "Lead generation improved by 80% with a new website & conversion strategy",
       logo: "/placeholder.svg",
       quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
       impact: [
@@ -45,7 +43,7 @@ export const caseStudiesData = {
     {
       client: "Weisenburger",
       industry: "Construction & Real Estate",
-      title: "Seamless CRM integration & scalable web infrastructure",
+      headline: "Seamless CRM integration & scalable web infrastructure",
       logo: "/placeholder.svg",
       quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
       impact: [
@@ -62,7 +60,7 @@ export const caseStudiesData = {
     {
       client: "PopBird",
       industry: "E-Commerce & Retail",
-      title: "35% sales increase in 6 months through emotional storytelling",
+      headline: "35% sales increase in 6 months through emotional storytelling",
       logo: "/placeholder.svg",
       quote: "Working with ooliv completely transformed our online presence. Our customers now have a seamless experience from discovery to purchase.",
       impact: [
@@ -79,7 +77,7 @@ export const caseStudiesData = {
     {
       client: "GreenTech",
       industry: "Renewable Energy",
-      title: "200+ qualified leads per month with targeted SEO & content strategy",
+      headline: "200+ qualified leads per month with targeted SEO & content strategy",
       logo: "/placeholder.svg",
       quote: "The results exceeded our expectations. Our web presence now truly reflects our brand values and converts visitors efficiently.",
       impact: [
@@ -98,7 +96,7 @@ export const caseStudiesData = {
     {
       client: "Scheurich",
       industry: "Keramik & Lifestyle Marke",
-      title: "120% mehr organischer Traffic durch vollständige Website-Optimierung",
+      headline: "120% mehr organischer Traffic durch vollständige Website-Optimierung",
       logo: "/placeholder.svg",
       quote: "Dank ooliv ist unsere Website jetzt ein Wachstumsmotor. Der Prozess war nahtlos, und die Ergebnisse sprechen für sich.",
       impact: [
@@ -115,7 +113,7 @@ export const caseStudiesData = {
     {
       client: "COBUS",
       industry: "ERP & IT-Lösungen",
-      title: "Lead-Generierung um 80% verbessert mit neuer Website & Konversionsstrategie",
+      headline: "Lead-Generierung um 80% verbessert mit neuer Website & Konversionsstrategie",
       logo: "/placeholder.svg",
       quote: "Professionell, strategisch und ergebnisorientiert. Sie haben genau verstanden, was unser Unternehmen braucht.",
       impact: [
@@ -132,7 +130,7 @@ export const caseStudiesData = {
     {
       client: "Weisenburger",
       industry: "Bau & Immobilien",
-      title: "Nahtlose CRM-Integration & skalierbare Web-Infrastruktur",
+      headline: "Nahtlose CRM-Integration & skalierbare Web-Infrastruktur",
       logo: "/placeholder.svg",
       quote: "Ein Game-Changer für unsere Online-Präsenz. Mehr Leads, bessere Conversions und nahtlose Zusammenarbeit.",
       impact: [
@@ -149,7 +147,7 @@ export const caseStudiesData = {
     {
       client: "PopBird",
       industry: "E-Commerce & Einzelhandel",
-      title: "35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling",
+      headline: "35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling",
       logo: "/placeholder.svg",
       quote: "Die Zusammenarbeit mit ooliv hat unsere Online-Präsenz komplett transformiert. Unsere Kunden haben jetzt ein nahtloses Erlebnis von der Entdeckung bis zum Kauf.",
       impact: [
@@ -166,7 +164,7 @@ export const caseStudiesData = {
     {
       client: "GreenTech",
       industry: "Erneuerbare Energien",
-      title: "200+ qualifizierte Leads pro Monat mit gezielter SEO & Content-Strategie",
+      headline: "200+ qualifizierte Leads pro Monat mit gezielter SEO & Content-Strategie",
       logo: "/placeholder.svg",
       quote: "Die Ergebnisse haben unsere Erwartungen übertroffen. Unsere Webpräsenz spiegelt nun wirklich unsere Markenwerte wider und konvertiert Besucher effizient.",
       impact: [
@@ -184,58 +182,51 @@ export const caseStudiesData = {
 };
 
 interface CaseStudiesSectionProps {
-  showAll?: boolean;
-  maxCases?: number;
-  showCta?: boolean;
-  showTitle?: boolean;
+  customTitle?: string;
+  customSubtitle?: string;
+  customBodyText?: string;
 }
 
 const CaseStudiesSection = ({ 
-  showAll = false, 
-  maxCases = 5, 
-  showCta = true,
-  showTitle = true 
+  customTitle,
+  customSubtitle,
+  customBodyText
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
   
-  // Always display all 5 case studies, regardless of showAll or maxCases props
-  const displayCases = cases;
-  
-  const translations = {
+  const defaultTranslations = {
     en: {
-      title: "We Create Websites That Deliver Real Business Results",
-      subtitle: "Real results from real clients. See how we've helped businesses like yours achieve measurable growth through strategic web design and development.",
-      viewAll: "View All Case Studies",
-      viewCase: "View Case Study"
+      title: "Real Results from Real Clients",
+      subtitle: "We deliver websites and strategies that highlight what makes your business special.",
+      bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
     },
     de: {
-      title: "Wir erstellen Websites, die echte Geschäftsergebnisse liefern",
-      subtitle: "Echte Ergebnisse von echten Kunden. Sehen Sie, wie wir Unternehmen wie Ihrem geholfen haben, durch strategisches Webdesign und Entwicklung messbares Wachstum zu erzielen.",
-      viewAll: "Alle Case Studies ansehen",
-      viewCase: "Case Study ansehen"
+      title: "Echte Ergebnisse von echten Kunden",
+      subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
+      bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
     }
   };
   
-  const t = language === 'de' ? translations.de : translations.en;
-  const caseStudiesPath = language === 'de' ? '/de/case-studies' : '/case-studies';
+  const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
 
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {showTitle && (
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6 font-sans">
-              {t.title}
-            </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-8 font-sans">
-              {t.subtitle}
-            </p>
-          </div>
-        )}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+            {customTitle || t.title}
+          </h2>
+          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
+            {customSubtitle || t.subtitle}
+          </p>
+          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+            {customBodyText || t.bodyText}
+          </p>
+        </div>
         
         <div className="space-y-20">
-          {displayCases.map((study, index) => (
+          {cases.map((study, index) => (
             <div 
               key={index}
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
@@ -258,7 +249,7 @@ const CaseStudiesSection = ({
                   </div>
                   
                   <h4 className="text-lg font-medium mb-6">
-                    {study.title}
+                    {study.headline}
                   </h4>
                   
                   <div className="space-y-3 mb-6">
@@ -303,17 +294,6 @@ const CaseStudiesSection = ({
             </div>
           ))}
         </div>
-        
-        {showCta && (
-          <div className="text-center mt-12">
-            <Button size="lg" className="group" asChild>
-              <Link to={caseStudiesPath}>
-                {t.viewAll}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   );
