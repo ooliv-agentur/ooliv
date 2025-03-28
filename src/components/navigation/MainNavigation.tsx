@@ -41,23 +41,25 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Menu toggle button - positioned in the navbar */}
-            <button 
-              className={cn(
-                "flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
-                "w-10 h-10 min-w-10 min-h-10"
-              )}
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+            {/* Menu toggle button - right-aligned and vertically centered */}
+            <div className="flex items-center">
+              <button 
+                className={cn(
+                  "flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+                  "w-10 h-10 min-w-10 min-h-10"
+                )}
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              >
+                {isOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -81,3 +83,4 @@ const MainNavigation = () => {
 };
 
 export default MainNavigation;
+
