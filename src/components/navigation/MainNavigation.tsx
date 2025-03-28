@@ -30,18 +30,18 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Mobile menu button */}
+            {/* Mobile menu button - DOUBLED IN SIZE */}
             <div className="flex items-center">
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative group h-14 w-14 rounded-full text-[#b1b497] hover:bg-white/20" 
+                className="relative group h-20 w-20 rounded-full text-[#b1b497] hover:bg-white/20" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-16 w-16 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>
