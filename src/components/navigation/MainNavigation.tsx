@@ -41,15 +41,22 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Mobile menu button - 50% smaller */}
+            {/* Mobile menu button - positioned absolutely */}
             <div className="flex items-center">
               <button 
-                className="flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300 w-[2.5rem] h-[2.5rem]" 
+                className="menu-toggle-button flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
-                style={{ width: '2.5rem', height: '2.5rem', minWidth: '2.5rem', minHeight: '2.5rem' }}
+                style={{ 
+                  width: '2.5rem', 
+                  height: '2.5rem', 
+                  minWidth: '2.5rem', 
+                  minHeight: '2.5rem',
+                  position: 'relative',
+                  right: 0
+                }}
               >
                 <Menu className="transition-transform duration-200" style={{ width: '1.5rem', height: '1.5rem' }} />
               </button>

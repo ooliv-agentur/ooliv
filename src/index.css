@@ -48,34 +48,67 @@
 }
 
 @layer components {
-  /* Navigation menu button sizes - with !important to override any conflicting styles */
   .burger-menu-button, 
-  .close-button {
+  .close-button,
+  .menu-toggle-button,
+  button[aria-label="Open menu"],
+  button[aria-label="Close menu"],
+  button[aria-label="Menü schließen"] {
     width: 2.5rem !important;
     height: 2.5rem !important;
     min-width: 2.5rem !important;
     min-height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 9999px !important;
+    background-color: #b1b497 !important;
+    color: white !important;
+    transition: all 0.3s !important;
+    position: relative !important;
+    z-index: 102 !important;
   }
   
   .burger-menu-icon,
-  .close-icon {
+  .close-icon,
+  button[aria-label="Open menu"] svg,
+  button[aria-label="Close menu"] svg,
+  button[aria-label="Menü schließen"] svg {
     width: 1.5rem !important;
     height: 1.5rem !important;
     min-width: 1.5rem !important;
     min-height: 1.5rem !important;
   }
   
-  /* Force close button color to ensure visibility */
-  .close-button {
-    background-color: #b1b497 !important;
-    color: white !important;
-  }
-  
-  .close-button:hover {
+  .burger-menu-button:hover,
+  .close-button:hover,
+  .menu-toggle-button:hover,
+  button[aria-label="Open menu"]:hover,
+  button[aria-label="Close menu"]:hover,
+  button[aria-label="Menü schließen"]:hover {
     background-color: #9a9c83 !important;
   }
+
+  button[aria-label="Close menu"],
+  button[aria-label="Menü schließen"] {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
   
-  /* Updated global section and component styles */
+  .fixed.inset-0.bg-black\/70 {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 100 !important;
+  }
+  
+  .fixed.inset-0.w-full.h-full.bg-\[\#f7fafa\].z-\[101\] {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -92,7 +125,6 @@
     @apply text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text;
   }
   
-  /* Card styles standardized based on content-creation page */
   .card-layout {
     @apply bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
   }
@@ -105,7 +137,6 @@
     @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
   }
   
-  /* New standardized section styles based on content-creation page */
   .section-standard {
     @apply py-24 bg-white;
   }
@@ -138,7 +169,6 @@
     @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
   }
   
-  /* Button styles standardized */
   .button-primary {
     @apply bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md transition-all;
   }
@@ -147,7 +177,6 @@
     @apply border-2 border-blue-600 bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white transition-all;
   }
   
-  /* Global CSS Classes moved from PageLayout.tsx */
   .section-standard {
     @apply py-16 md:py-24;
   }
@@ -194,7 +223,6 @@
     backdrop-filter: blur(12px);
   }
   
-  /* Hero video responsiveness */
   .hero-video-container {
     position: relative;
     width: 100%;
@@ -221,7 +249,6 @@
     }
   }
   
-  /* Section dividers and shape styles */
   .curve-divider {
     position: absolute;
     bottom: 0;
@@ -238,7 +265,6 @@
     height: 65px;
   }
   
-  /* Remove background only from the AI Tools & CTA sections */
   .ai-tools-section,
   .cta-section {
     background-color: transparent !important;
@@ -247,7 +273,6 @@
   }
 }
 
-/* Global CSS to ensure menu button and close button sizes */
 button[aria-label="Open menu"],
 button[aria-label="Close menu"],
 button[aria-label="Menü schließen"] {
@@ -264,10 +289,33 @@ button[aria-label="Menü schließen"] svg {
   height: 1.5rem !important;
 }
 
-/* Ensure mobile menu is full width and height */
 .fixed.inset-0 {
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
+}
+
+.mobile-menu-content, 
+.desktop-menu-content,
+div[class*="motion"] {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.menu-toggle-button,
+button[aria-label="Open menu"] {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+button[aria-label="Close menu"],
+button[aria-label="Menü schließen"] {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 200 !important;
 }

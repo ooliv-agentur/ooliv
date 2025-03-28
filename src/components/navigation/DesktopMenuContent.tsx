@@ -27,10 +27,18 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
     >
       <div className="flex justify-end p-4 border-b border-gray-100">
         <button 
-          className="absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
+          className="flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
-          style={{ width: '2.5rem', height: '2.5rem', minWidth: '2.5rem', minHeight: '2.5rem' }}
+          style={{ 
+            width: '2.5rem', 
+            height: '2.5rem', 
+            minWidth: '2.5rem', 
+            minHeight: '2.5rem',
+            position: 'absolute',
+            right: '1rem',
+            top: '1rem'
+          }}
         >
           <X style={{ width: '1.5rem', height: '1.5rem' }} />
         </button>
