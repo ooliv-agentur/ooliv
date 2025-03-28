@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu } from 'lucide-react';
@@ -9,10 +9,37 @@ import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
 import { useMediaQuery } from '@/hooks/use-media-query';
 
+// Create a style element to ensure our CSS takes precedence
+const injectStyles = () => {
+  const styleId = 'burger-menu-styles';
+  if (!document.getElementById(styleId)) {
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.innerHTML = `
+      .burger-menu-button {
+        width: 5rem !important;
+        height: 5rem !important;
+        min-width: 5rem !important;
+        min-height: 5rem !important;
+      }
+      .burger-menu-icon {
+        width: 4rem !important;
+        height: 4rem !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+};
+
 const MainNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language } = useLanguage();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
+  
+  // Inject CSS styles on component mount
+  useEffect(() => {
+    injectStyles();
+  }, []);
 
   return (
     <>
@@ -32,18 +59,16 @@ const MainNavigation = () => {
             
             {/* Mobile menu button - DOUBLED IN SIZE */}
             <div className="flex items-center">
-              <Button 
-                variant="ghost" 
-                size="icon"
-                className="relative group !h-20 !w-20 rounded-full text-[#b1b497] hover:bg-white/20" 
+              <button 
+                className="burger-menu-button flex items-center justify-center rounded-full text-[#b1b497] hover:bg-white/20" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
-                style={{ height: '5rem', width: '5rem' }} // Adding inline style for emphasis
+                style={{width: '5rem', height: '5rem'}}
               >
-                <Menu className="h-16 w-16 transition-transform duration-200 group-hover:scale-110" />
-              </Button>
+                <Menu className="burger-menu-icon transition-transform duration-200 hover:scale-110" style={{width: '4rem', height: '4rem'}} />
+              </button>
             </div>
           </div>
         </div>

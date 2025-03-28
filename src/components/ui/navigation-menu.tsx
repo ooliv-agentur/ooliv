@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { X, Menu, ChevronDown } from "lucide-react"
@@ -44,8 +45,7 @@ const NavigationMenu = React.forwardRef<
       {isMobile && (
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden !w-20 !h-20 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300"
-          style={{ height: '5rem', width: '5rem' }}
+          className="md:hidden flex items-center justify-center w-[5rem] h-[5rem] rounded-full text-[#b1b497] hover:bg-white/20"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
