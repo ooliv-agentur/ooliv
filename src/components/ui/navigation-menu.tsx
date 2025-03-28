@@ -44,7 +44,8 @@ const NavigationMenu = React.forwardRef<
       {isMobile && (
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden w-20 h-20 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300"
+          className="md:hidden !w-20 !h-20 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300"
+          style={{ height: '5rem', width: '5rem' }}
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >

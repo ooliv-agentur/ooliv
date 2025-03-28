@@ -35,11 +35,12 @@ const MainNavigation = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative group h-20 w-20 rounded-full text-[#b1b497] hover:bg-white/20" 
+                className="relative group !h-20 !w-20 rounded-full text-[#b1b497] hover:bg-white/20" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
+                style={{ height: '5rem', width: '5rem' }} // Adding inline style for emphasis
               >
                 <Menu className="h-16 w-16 transition-transform duration-200 group-hover:scale-110" />
               </Button>
