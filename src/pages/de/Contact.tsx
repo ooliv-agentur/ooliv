@@ -246,37 +246,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="section-standard">
-        <div className="section-container text-center">
-          <h2 className="section-title">Bereit, loszulegen?</h2>
-          <p className="text-lg max-w-2xl mx-auto mb-8">
-            Wir sind schnell, direkt und strategisch – und freuen uns auf Ihr Projekt.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group" asChild>
-              <Link to="#">
-                Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            
-            <Button 
-              size="lg"
-              variant="outline"
-              className="group"
-              asChild
-            >
-              <Link to="#">
-                Strategiegespräch buchen
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form Dialogs */}
       <ContactForm 
         open={showAuditForm} 
