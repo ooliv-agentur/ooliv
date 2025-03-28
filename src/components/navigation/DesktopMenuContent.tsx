@@ -29,15 +29,15 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300"
+          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300 transition-all duration-300"
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
         >
-          <X className="h-6 w-6" />
+          <X className="h-12 w-12" />
         </Button>
       </div>
 
-      <div className="flex flex-col p-6 h-[calc(100%-80px)]">
+      <div className="flex flex-col p-6 h-[calc(100%-80px)] mt-6">
         <div className="flex justify-end mb-6">
           <LanguageSwitcher />
         </div>
@@ -46,7 +46,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
 
         <div className="mt-auto pt-8">
           <Button
-            className="w-full justify-between group text-lg py-6 bg-[#335bff] hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans"
+            className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans"
             size="lg"
             onClick={onClose}
             asChild

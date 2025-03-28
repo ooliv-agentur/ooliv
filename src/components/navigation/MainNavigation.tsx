@@ -19,18 +19,18 @@ const MainNavigation = () => {
       <nav className="w-full z-50 absolute top-0 left-0 right-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24 items-center">
-            {/* Logo */}
+            {/* Logo - 20% smaller */}
             <div className="flex-shrink-0">
               <Link to={language === 'de' ? '/de' : '/'} className="flex items-center">
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-12 md:h-16 w-auto"
+                  className="h-9.6 md:h-12.8 w-auto" // Reduced by 20% from h-12 md:h-16
                 />
               </Link>
             </div>
             
-            {/* Mobile menu button */}
+            {/* Mobile menu button - burger icon double the size */}
             <div className="flex items-center">
               <Button 
                 variant="ghost" 
@@ -41,7 +41,7 @@ const MainNavigation = () => {
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>

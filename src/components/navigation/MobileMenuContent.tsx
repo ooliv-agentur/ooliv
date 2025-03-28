@@ -78,15 +78,15 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300" 
+          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300 transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
         >
-          <X className="h-6 w-6" />
+          <X className="h-12 w-12" />
         </Button>
       </div>
       
-      <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto">
+      <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto mt-6">
         <div className="mb-6 pb-6 border-b border-gray-200">
           <Button 
             variant="outline" 
@@ -106,7 +106,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       
       <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
         <Button 
-          className="w-full justify-between group text-lg py-6 bg-[#335bff] hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
+          className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
           size="lg"
           onClick={onClose}
           asChild
@@ -128,7 +128,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               variant="outline" 
               size="lg"
               onClick={onClose} 
-              className="w-full py-6 min-h-[60px] border-gray-300 text-brand-heading bg-gray-50/50 hover:bg-[#335bff]/10 hover:text-[#335bff] transition-all duration-200 hover:border-[#335bff]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#335bff]/50 flex items-center justify-center"
+              className="w-full py-6 min-h-[60px] border-gray-300 text-brand-heading bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
               aria-label={contact.label}
               asChild
             >
