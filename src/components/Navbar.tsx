@@ -6,10 +6,12 @@ import LanguageSwitch from './LanguageSwitch';
 import MobileMenu from './MobileMenu';
 import { cn } from "@/lib/utils";
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -24,11 +26,13 @@ const Navbar = () => {
   return (
     <>
       <nav className={cn(
-        "fixed w-full backdrop-blur-xl border-b z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 shadow-sm" : "bg-white/80"
+        "fixed w-full z-50 transition-all duration-300",
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-xl shadow-sm py-3" 
+          : "bg-white/80 py-5"
       )}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
+          <div className="flex justify-between items-center">
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center">
                 <img 
@@ -58,7 +62,7 @@ const Navbar = () => {
               <div className="hidden md:block">
                 <Button 
                   asChild 
-                  className="hover:scale-105"
+                  className="hover:scale-105 font-heading font-bold"
                 >
                   <Link to="/de/kontakt">
                     Projekt starten
@@ -92,9 +96,10 @@ const NavLink = ({ children, to }: { children: React.ReactNode, to: string }) =>
   return (
     <Link 
       to={to} 
-      className="text-ooliv-black hover:text-ooliv-orange transition-colors px-3 py-2 text-sm font-medium"
+      className="menu-link text-ooliv-black px-3 py-2 text-sm font-medium font-heading uppercase relative overflow-hidden"
     >
-      {children}
+      <span className="menu-link-text">{children}</span>
+      <span className="menu-link-text-duplicate text-ooliv-orange">{children}</span>
     </Link>
   );
 };

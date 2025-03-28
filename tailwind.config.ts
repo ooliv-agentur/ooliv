@@ -78,6 +78,19 @@ export default {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Bebas Neue", "Impact", "Arial Black", "sans-serif"],
         condensed: ["Bebas Neue", "Impact", "Arial Narrow", "sans-serif"],
+        heading: ["Syne", "'Helvetica Neue'", "sans-serif"],
+      },
+      fontSize: {
+        '2xs': '0.625rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '3.75rem',
+        '7xl': '4.5rem',
+        '8xl': '6rem',
+        'display-sm': '2.5rem',
+        'display-md': '3.5rem',
+        'display-lg': '5rem',
       },
       spacing: {
         'section': '6rem',
@@ -117,12 +130,34 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "menu-open": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" }
+        },
+        "menu-close": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" }
+        },
+        "fade-in-delay": {
+          "0%": { opacity: "0" },
+          "50%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        },
+        "scale-in-delay": {
+          "0%": { transform: "scale(0.9)", opacity: "0" },
+          "50%": { transform: "scale(0.9)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        }
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "menu-open": "menu-open 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "menu-close": "menu-close 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in-delay": "fade-in-delay 0.8s ease-out forwards",
+        "scale-in-delay": "scale-in-delay 0.8s ease-out forwards"
       },
     },
   },

@@ -1,7 +1,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ interface MobileMenuProps {
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const { language, t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -103,21 +104,63 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   const backdropVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
-    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } }
+    visible: { opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
+    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn', delay: 0.3 } }
   };
 
   const menuVariants = {
     hidden: { x: "100%" },
-    visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
-    exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
+    visible: { 
+      x: 0, 
+      transition: { 
+        type: "spring", 
+        damping: 30, 
+        stiffness: 300,
+        mass: 1
+      } 
+    },
+    exit: { 
+      x: "100%", 
+      transition: { 
+        duration: 0.5, 
+        ease: [0.16, 1, 0.3, 1] 
+      } 
+    }
+  };
+
+  const listItemVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: (custom: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.3 + custom * 0.1,
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    }),
+    exit: { opacity: 0, transition: { duration: 0.2 } }
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.6 + navigationLinks.length * 0.1,
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    },
+    exit: { opacity: 0, transition: { duration: 0.2 } }
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black/75 flex flex-col z-[100]"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex flex-col z-[100]"
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -138,7 +181,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchEnd={onTouchEnd}
           >
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-ooliv-black/95 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold text-white font-condensed">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+              <h2 className="text-xl font-semibold text-white font-heading">{language === 'de' ? 'Menü' : 'Menu'}</h2>
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -151,35 +194,70 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             </div>
             
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
-              <nav className="space-y-6 text-center w-full">
+              <motion.nav className="space-y-5 text-left w-full">
                 {navigationLinks.map((link, index) => (
-                  <div key={index} className={cn()}>
-                    <Link 
-                      to={link.path}
-                      className="block py-3 text-4xl font-bold text-white hover:text-ooliv-green transition-colors focus:outline-none focus:text-ooliv-green focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-condensed"
-                      onClick={onClose}
+                  <motion.div 
+                    key={index} 
+                    className={cn()}
+                    variants={listItemVariants}
+                    custom={index}
+                  >
+                    <div 
+                      className="menu-link group"
+                      onMouseEnter={() => setActiveIndex(index)}
+                      onMouseLeave={() => setActiveIndex(null)}
                     >
-                      {link.title}
-                    </Link>
-                  </div>
+                      <Link 
+                        to={link.path}
+                        className="block py-3 text-5xl font-bold text-white hover:text-ooliv-green transition-colors focus:outline-none focus:text-ooliv-green focus-visible:ring-2 focus-visible:ring-white/50 rounded-md font-heading"
+                        onClick={onClose}
+                      >
+                        <span className="menu-link-text">
+                          {link.title}
+                        </span>
+                        <span className="menu-link-text-duplicate text-ooliv-green">
+                          {link.title}
+                        </span>
+                      </Link>
+                      <motion.div 
+                        className="h-px bg-white/20 w-full mt-1"
+                        initial={{ scaleX: 0 }}
+                        animate={{ 
+                          scaleX: activeIndex === index ? 1 : 0,
+                          originX: 0
+                        }}
+                        transition={{ 
+                          duration: 0.4,
+                          ease: [0.16, 1, 0.3, 1]
+                        }}
+                      />
+                    </div>
+                  </motion.div>
                 ))}
-              </nav>
+              </motion.nav>
             </div>
             
             <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-ooliv-black/95 backdrop-blur-sm">
-              <Button 
-                className="w-full justify-between group text-lg py-6 font-condensed" 
-                size="lg"
-                onClick={onClose}
-                asChild
+              <motion.div
+                variants={buttonVariants}
               >
-                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-                  {startProjectText}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                <Button 
+                  className="w-full justify-between group text-lg py-6 font-heading hover:bg-ooliv-green hover:text-ooliv-black" 
+                  size="lg"
+                  onClick={onClose}
+                  asChild
+                >
+                  <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+                    {startProjectText}
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </motion.div>
               
-              <div className="grid grid-cols-3 gap-4">
+              <motion.div 
+                className="grid grid-cols-3 gap-4"
+                variants={buttonVariants}
+              >
                 {[
                   { icon: MessageCircle, label: "WhatsApp" },
                   { icon: Mail, label: language === 'de' ? "E-Mail" : "Email" },
@@ -195,7 +273,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     <contact.icon className="h-6 w-6" />
                   </Button>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>

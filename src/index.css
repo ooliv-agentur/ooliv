@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -43,23 +44,23 @@
   }
   
   h1, h2, h3, h4 {
-    @apply font-condensed uppercase tracking-tight;
+    @apply font-heading uppercase tracking-tight;
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-7xl;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
   }
   
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl;
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
   }
   
   h4 {
-    @apply text-lg md:text-xl;
+    @apply text-lg md:text-xl font-bold;
   }
   
   p {
@@ -72,87 +73,61 @@
 }
 
 @layer components {
-  /* Button Styles */
-  .btn-primary {
-    @apply font-condensed uppercase bg-ooliv-green text-ooliv-black py-3 px-6 rounded-2xl 
-    hover:scale-105 transition-transform duration-300;
+  /* ... keep existing code (button styles, container styles, section styles, etc) */
+  
+  /* New styles inspired by themarketingpractice */
+  .heading-xl {
+    @apply font-heading text-4xl md:text-6xl lg:text-display-lg font-bold leading-tight;
   }
   
-  .btn-secondary {
-    @apply font-condensed uppercase border-2 border-ooliv-black bg-transparent text-ooliv-black 
-    py-3 px-6 rounded-2xl hover:bg-ooliv-black hover:text-ooliv-white transition-colors duration-300;
+  .heading-underline {
+    @apply relative inline-block;
   }
   
-  .btn-outline {
-    @apply font-condensed uppercase border-2 border-ooliv-black bg-transparent text-ooliv-black 
-    py-3 px-6 rounded-2xl hover:bg-ooliv-green hover:border-ooliv-green hover:text-ooliv-black transition-colors duration-300;
+  .heading-underline::after {
+    @apply content-[''] bg-ooliv-orange h-1 w-0 absolute bottom-0 left-0 transition-all duration-300 ease-in-out;
   }
   
-  /* Container Styles */
-  .container-ooliv {
-    @apply mx-auto px-gutter max-w-container;
-  }
-  
-  /* Updated global section and component styles */
-  .section-padding {
-    @apply py-16 md:py-section;
-  }
-  
-  .section-container {
-    @apply container-ooliv;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-condensed uppercase text-center mb-6 text-ooliv-black;
-  }
-  
-  .section-subtitle {
-    @apply text-center text-lg mb-12 max-w-3xl mx-auto text-ooliv-black;
-  }
-  
-  /* Card styles */
-  .card-layout {
-    @apply bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-ooliv-grey/20;
-  }
-  
-  /* New standardized section styles */
-  .section-standard {
-    @apply py-section bg-ooliv-white;
-  }
-  
-  .section-alt {
-    @apply py-section bg-ooliv-warm-grey;
-  }
-  
-  .section-black {
-    @apply py-section bg-ooliv-black text-ooliv-white;
-  }
-  
-  .section-gradient {
-    @apply py-section bg-gradient-to-br from-ooliv-white to-ooliv-warm-grey;
-  }
-  
-  /* Link Styles */
-  .link-underline {
-    @apply relative inline-block text-ooliv-black;
-  }
-  
-  .link-underline::after {
-    @apply content-[''] absolute w-0 h-0.5 bg-ooliv-orange bottom-0 left-0 transition-all duration-300;
-  }
-  
-  .link-underline:hover::after {
+  .heading-underline:hover::after {
     @apply w-full;
   }
   
-  .link-body {
-    @apply text-ooliv-orange hover:underline;
+  /* Menu animation styles */
+  .menu-link {
+    @apply relative overflow-hidden block;
+  }
+  
+  .menu-link-text {
+    @apply block transition-transform duration-300 transform;
+  }
+  
+  .menu-link:hover .menu-link-text {
+    @apply -translate-y-full;
+  }
+  
+  .menu-link-text-duplicate {
+    @apply absolute top-0 left-0 h-full w-full transform translate-y-full transition-transform duration-300;
+  }
+  
+  .menu-link:hover .menu-link-text-duplicate {
+    @apply translate-y-0;
   }
 }
 
 @layer utilities {
+  /* ... keep existing code (utility classes) */
+
+  /* Additional utilities inspired by themarketingpractice */
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-ooliv-black to-ooliv-orange bg-clip-text text-transparent;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .backdrop-blur-xl {
@@ -166,48 +141,37 @@
   .backdrop-blur-md {
     backdrop-filter: blur(12px);
   }
-  
-  /* Hero video responsiveness */
-  .hero-video-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+  /* Enhanced mobile menu animations */
+  .mobile-menu-enter {
+    @apply fixed inset-0 bg-ooliv-black/90 opacity-0 transition-opacity duration-300;
   }
   
-  .hero-video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 0;
+  .mobile-menu-enter-active {
+    @apply opacity-100;
   }
   
-  @media (max-width: 768px) {
-    .hero-video-container video {
-      height: 100%;
-      width: auto;
-    }
+  .mobile-menu-exit {
+    @apply opacity-100 transition-opacity duration-300;
   }
   
-  /* Section dividers and shape styles */
-  .curve-divider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  .mobile-menu-exit-active {
+    @apply opacity-0;
   }
   
-  .curve-divider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 65px;
+  .mobile-menu-content-enter {
+    @apply translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
+  }
+  
+  .mobile-menu-content-enter-active {
+    @apply translate-x-0;
+  }
+  
+  .mobile-menu-content-exit {
+    @apply translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)];
+  }
+  
+  .mobile-menu-content-exit-active {
+    @apply translate-x-full;
   }
 }

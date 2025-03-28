@@ -4,23 +4,40 @@ import * as React from "react"
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean>(
-    typeof window !== 'undefined' ? window.innerWidth < MOBILE_BREAKPOINT : false
-  )
-
+  const [isMobile, setIsMobile] = React.useState<boolean>(false)
+  
   React.useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
-    }
-    
-    // Add event listener
-    window.addEventListener('resize', handleResize)
-    
     // Initial check
-    handleResize()
+    const checkIfMobile = () => {
+      return window.innerWidth < MOBILE_BREAKPOINT;
+    };
+    
+    // Set initial state
+    setIsMobile(checkIfMobile());
+    
+    // Create debounced version of resize handler for better performance
+    let timeoutId: number | null = null;
+    
+    const handleResize = () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+      
+      timeoutId = window.setTimeout(() => {
+        setIsMobile(checkIfMobile());
+      }, 100);
+    };
+    
+    // Add event listener with debounce
+    window.addEventListener('resize', handleResize);
     
     // Cleanup
-    return () => window.removeEventListener('resize', handleResize)
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
   }, [])
 
   return isMobile
