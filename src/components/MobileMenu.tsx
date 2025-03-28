@@ -1,7 +1,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight, Globe } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone, ArrowRight, Globe, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';

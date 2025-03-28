@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { X, AlignJustify } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
@@ -30,18 +30,18 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Mobile menu button - burger icon double the size */}
+            {/* Mobile menu button - using Menu icon instead of AlignJustify */}
             <div className="flex items-center">
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative group h-14 w-14 rounded-full text-gray-800 hover:bg-white/20" 
+                className="relative group h-14 w-14 rounded-full text-[#b1b497] hover:bg-white/20" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <AlignJustify className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>
