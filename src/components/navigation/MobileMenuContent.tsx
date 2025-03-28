@@ -33,32 +33,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     };
   }, [isOpen, onClose]);
 
-  // Touch event handlers for swipe to close
-  const handleTouchStart = useRef<number | null>(null);
-  const handleTouchMove = useRef<number | null>(null);
-
-  const onTouchStartHandler = (e: React.TouchEvent) => {
-    handleTouchStart.current = e.touches[0].clientX;
-  };
-
-  const onTouchMoveHandler = (e: React.TouchEvent) => {
-    handleTouchMove.current = e.touches[0].clientX;
-  };
-
-  const onTouchEndHandler = () => {
-    if (!handleTouchStart.current || !handleTouchMove.current) return;
-    
-    const diff = handleTouchStart.current - handleTouchMove.current;
-    const threshold = 100;
-
-    if (diff > threshold) {
-      onClose();
-    }
-    
-    handleTouchStart.current = null;
-    handleTouchMove.current = null;
-  };
-
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
@@ -96,24 +70,19 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
-      onTouchStart={onTouchStartHandler}
-      onTouchMove={onTouchMoveHandler}
-      onTouchEnd={onTouchEndHandler}
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm h-24">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          onClick={onClose}
+          className="flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300 w-10 h-10 min-w-10 min-h-10"
+          aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
+        >
+          <X className="h-6 w-6" />
+        </Button>
       </div>
-      
-      {/* Close button - explicitly positioned outside of the flex container */}
-      <Button 
-        variant="ghost" 
-        size="icon" 
-        onClick={onClose}
-        className="!fixed !top-4 !right-4 !w-10 !h-10 !min-w-10 !min-h-10 !flex !items-center !justify-center !rounded-full !bg-[#b1b497] !text-white hover:!bg-[#9a9c83] !transition-all !duration-300 !z-[102]"
-        aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
-      >
-        <X className="!h-6 !w-6" />
-      </Button>
       
       <div className="flex flex-col p-6 overflow-y-auto mt-4">
         <div className="container mx-auto">

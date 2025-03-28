@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { Button } from '@/components/ui/button';
 
 const MainNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,10 +42,11 @@ const MainNavigation = () => {
             </div>
             
             {/* Menu toggle button - aligned with logo */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="w-10 h-10 min-w-10 min-h-10 flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300"
+            <button 
+              className={cn(
+                "flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+                "w-10 h-10 min-w-10 min-h-10"
+              )}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
               aria-expanded={isOpen}
@@ -57,7 +57,7 @@ const MainNavigation = () => {
               ) : (
                 <Menu className="w-6 h-6" />
               )}
-            </Button>
+            </button>
           </div>
         </div>
       </nav>
@@ -70,7 +70,7 @@ const MainNavigation = () => {
         />
       )}
 
-      {/* Menu content based on screen size */}
+      {/* Menu content - ensure full width/height */}
       {isDesktop ? (
         <DesktopMenuContent isOpen={isOpen} onClose={() => setIsOpen(false)} />
       ) : (

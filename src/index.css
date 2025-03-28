@@ -53,8 +53,7 @@
   .menu-toggle-button,
   button[aria-label="Open menu"],
   button[aria-label="Close menu"],
-  button[aria-label="Menü schließen"],
-  button[aria-label="Menü öffnen"] {
+  button[aria-label="Menü schließen"] {
     width: 2.5rem !important;
     height: 2.5rem !important;
     min-width: 2.5rem !important;
@@ -66,30 +65,15 @@
     background-color: #b1b497 !important;
     color: white !important;
     transition: all 0.3s !important;
-  }
-  
-  button[aria-label="Open menu"],
-  button[aria-label="Menü öffnen"] {
-    position: absolute !important;
-    top: 1rem !important;
-    right: 1rem !important;
+    position: relative !important;
     z-index: 102 !important;
-  }
-  
-  button[aria-label="Close menu"],
-  button[aria-label="Menü schließen"] {
-    position: fixed !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    z-index: 200 !important;
   }
   
   .burger-menu-icon,
   .close-icon,
   button[aria-label="Open menu"] svg,
   button[aria-label="Close menu"] svg,
-  button[aria-label="Menü schließen"] svg,
-  button[aria-label="Menü öffnen"] svg {
+  button[aria-label="Menü schließen"] svg {
     width: 1.5rem !important;
     height: 1.5rem !important;
     min-width: 1.5rem !important;
@@ -101,19 +85,24 @@
   .menu-toggle-button:hover,
   button[aria-label="Open menu"]:hover,
   button[aria-label="Close menu"]:hover,
-  button[aria-label="Menü schließen"]:hover,
-  button[aria-label="Menü öffnen"]:hover {
+  button[aria-label="Menü schließen"]:hover {
     background-color: #9a9c83 !important;
   }
 
+  button[aria-label="Close menu"],
+  button[aria-label="Menü schließen"] {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+  
   .fixed.inset-0.bg-black\/70 {
     width: 100% !important;
     height: 100% !important;
     z-index: 100 !important;
   }
   
-  .fixed.inset-0.w-full.h-full.bg-\[\#f7fafa\].z-\[101\],
-  motion.div.fixed.inset-0.w-full.h-full.bg-\[\#f7fafa\].z-\[101\] {
+  .fixed.inset-0.w-full.h-full.bg-\[\#f7fafa\].z-\[101\] {
     width: 100% !important;
     height: 100% !important;
     max-width: 100% !important;
@@ -286,8 +275,7 @@
 
 button[aria-label="Open menu"],
 button[aria-label="Close menu"],
-button[aria-label="Menü schließen"],
-button[aria-label="Menü öffnen"] {
+button[aria-label="Menü schließen"] {
   width: 2.5rem !important;
   height: 2.5rem !important;
   min-width: 2.5rem !important;
@@ -296,8 +284,7 @@ button[aria-label="Menü öffnen"] {
 
 button[aria-label="Open menu"] svg,
 button[aria-label="Close menu"] svg,
-button[aria-label="Menü schließen"] svg,
-button[aria-label="Menü öffnen"] svg {
+button[aria-label="Menü schließen"] svg {
   width: 1.5rem !important;
   height: 1.5rem !important;
 }
@@ -318,12 +305,11 @@ div[class*="motion"] {
   max-height: 100% !important;
 }
 
-button[aria-label="Open menu"],
-button[aria-label="Menü öffnen"] {
+.menu-toggle-button,
+button[aria-label="Open menu"] {
   position: absolute !important;
   top: 1rem !important;
   right: 1rem !important;
-  z-index: 102 !important;
 }
 
 button[aria-label="Close menu"],
