@@ -14,7 +14,7 @@ const PageLayout = ({ children, className }: PageLayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      <main className={cn("flex-1 pt-16", className)}>
+      <main className={cn("flex-1", className)}>
         {children}
       </main>
       <Footer />

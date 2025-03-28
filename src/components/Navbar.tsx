@@ -11,15 +11,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full z-50">
+      <nav className="w-full z-50 absolute top-0 left-0 right-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
+          <div className="flex justify-between h-24 items-center"> {/* Increased height for more space */}
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center">
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-8 w-auto"
+                  className="h-10 md:h-12 w-auto" /* Increased logo size */
                 />
               </Link>
             </div>
@@ -28,13 +28,13 @@ const Navbar = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative group h-10 w-10 rounded-full"
+                className="relative group h-12 w-12 rounded-full text-gray-800 hover:bg-white/20" /* Increased size and contrast */
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-8 w-8 transition-transform duration-200 group-hover:scale-110" /> {/* Increased icon size */}
               </Button>
             </div>
           </div>

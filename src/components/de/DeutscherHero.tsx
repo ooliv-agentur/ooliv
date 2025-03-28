@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ScrollIndicator from '@/components/ScrollIndicator';
 
 const DeutscherHero = () => {
   return (
@@ -64,7 +63,17 @@ const DeutscherHero = () => {
         </svg>
       </div>
       
-      <ScrollIndicator />
+      {/* Visual transition indicator */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex flex-col items-center space-y-2 mb-8">
+          <div className="w-1 h-8 bg-gradient-to-b from-gray-300/50 to-gray-400/80 rounded-full animate-pulse"></div>
+          <div className="flex space-x-1">
+            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

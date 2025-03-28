@@ -1,6 +1,9 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Define the structure for case studies
 export const caseStudiesData = {
@@ -191,12 +194,16 @@ const defaultTranslations = {
   en: {
     title: "Real Results from Real Clients",
     subtitle: "We deliver websites and strategies that highlight what makes your business special.",
-    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
+    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization.",
+    ctaText: "What results can we achieve for your business?",
+    startProject: "Start Your Project"
   },
   de: {
     title: "Echte Ergebnisse von echten Kunden",
     subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
-    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
+    ctaText: "Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?",
+    startProject: "Projekt starten"
   }
 };
 
@@ -234,7 +241,6 @@ const CaseStudiesSection = ({
               key={index}
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
-              {/* Text content */}
               <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
                   <div className="flex items-center mb-6">
@@ -284,7 +290,6 @@ const CaseStudiesSection = ({
                 </div>
               </div>
               
-              {/* Image */}
               <div className="w-full md:w-1/2">
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <img 
@@ -296,6 +301,19 @@ const CaseStudiesSection = ({
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-24 text-center">
+          <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
+            {t.ctaText}
+          </h3>
+          
+          <Button size="lg" className="group" asChild>
+            <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+              {t.startProject}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

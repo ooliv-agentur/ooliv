@@ -34,7 +34,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-brand-footer text-white pt-16 pb-8">
+    <footer className="bg-brand-footer text-white pt-20 pb-8"> {/* Added more top padding */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="space-y-4">
@@ -46,7 +46,7 @@ const Footer = () => {
             </p>
             <Button 
               variant="outline" 
-              className="bg-brand-primary text-white border-brand-primary hover:bg-brand-primaryHover"
+              className="bg-white text-brand-footer hover:bg-gray-100 border-white hover:text-brand-footer hover:bg-white"
               asChild
             >
               <Link to={getUrl('contact')}>

@@ -28,28 +28,28 @@ const FloatingActionButtons = () => {
       icon: MessageCircle, 
       label: 'Chat with us', 
       onClick: () => console.log('Chatbot clicked'),
-      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none'
+      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none'
     },
     { 
       id: 'project', 
       icon: Send, 
       label: 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none'
+      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none'
     },
     { 
       id: 'email', 
       icon: Mail, 
       label: 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50 shadow-none'
+      className: 'bg-white text-blue-600 border border-blue-100 hover:bg-blue-50'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50 shadow-none'
+      className: 'bg-white text-blue-600 border border-blue-100 hover:bg-blue-50'
     }
   ];
 
@@ -67,7 +67,7 @@ const FloatingActionButtons = () => {
         {isMobile && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none"
+            className="w-14 h-14 rounded-full bg-blue-600 text-white hover:bg-blue-700 border-none"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
             {isExpanded ? <X className="h-6 w-6" /> : <Plus className="h-6 w-6" />}

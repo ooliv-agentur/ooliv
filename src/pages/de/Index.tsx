@@ -50,7 +50,7 @@ const GermanIndex = () => {
       <FAQ 
         customFaqs={[
           {
-            question: "Wie läuft der Website-Erstellungsprozess ab?",
+            question: "Wie läuft der Website-Erstellungsprozess ab?", // Updated hyphenation
             answer: "Wir haben einen klaren 5-Schritte-Prozess: 1) Strategie und Konzeption, 2) UX/UI-Design, 3) Entwicklung, 4) Content-Erstellung, 5) Launch und Support."
           },
           {
