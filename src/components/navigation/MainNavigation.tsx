@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { X, Menu } from 'lucide-react';
+import { X, AlignJustify } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
@@ -41,7 +41,7 @@ const MainNavigation = () => {
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
+                <AlignJustify className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>

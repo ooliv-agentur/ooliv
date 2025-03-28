@@ -1,17 +1,18 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface NavigationLinksProps {
-  onLinkClick: () => void;
+  onLinkClick?: () => void;
   className?: string;
 }
 
 const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
   const { language } = useLanguage();
-  
+  const location = useLocation();
+
   const getNavigationLinks = () => {
     if (language === 'de') {
       return [
@@ -46,17 +47,26 @@ const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
 
   return (
     <nav className={cn("w-full", className)}>
-      {navigationLinks.map((link, index) => (
-        <div key={index}>
-          <Link 
-            to={link.path}
-            className="block py-2 font-bold text-brand-heading hover:text-blue-600 transition-colors focus:outline-none focus:text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600/50 rounded-md hover:scale-105 transition-transform font-sans text-xl md:text-2xl"
-            onClick={onLinkClick}
-          >
-            {link.title}
-          </Link>
-        </div>
-      ))}
+      {navigationLinks.map((link, index) => {
+        const isActive = location.pathname === link.path;
+        
+        return (
+          <div key={index}>
+            <Link 
+              to={link.path}
+              className={cn(
+                "block py-2 font-bold transition-colors focus:outline-none rounded-md hover:scale-105 transition-transform font-sans",
+                isActive 
+                  ? "text-[#b1b497]" 
+                  : "text-brand-heading hover:text-[#b1b497] focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50"
+              )}
+              onClick={onLinkClick}
+            >
+              {link.title}
+            </Link>
+          </div>
+        );
+      })}
     </nav>
   );
 };

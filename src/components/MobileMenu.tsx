@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, Globe } from 'lucide-react';
@@ -189,7 +190,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                   className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
                 >
                   <div className="flex items-center">
-                    <Globe className="h-4 w-4 mr-2" />
+                    <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
                     <span>{languageButtonText}</span>
                   </div>
                   <span className="text-sm opacity-70">{switchToText}</span>
@@ -205,7 +206,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                     <Link 
                       to={link.path}
                       className={cn(
-                        "block py-2 font-bold text-brand-heading hover:text-blue-600 transition-colors focus:outline-none focus:text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600/50 rounded-md hover:scale-105 transition-transform font-sans",
+                        "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
                         isDesktop ? "text-lg py-2" : "text-3xl py-3"
                       )}
                       onClick={onClose}
@@ -219,31 +220,34 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             
             <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
               <Button 
-                className="w-full justify-between group text-lg py-6 bg-[#335bff] hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
+                className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
                 size="lg"
                 onClick={onClose}
                 asChild
               >
                 <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
                   {startProjectText}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
                 </Link>
               </Button>
               
               <div className="grid grid-cols-3 gap-6">
                 {[
-                  { icon: MessageCircle, label: "WhatsApp" },
-                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email" },
-                  { icon: Phone, label: language === 'de' ? "Telefon" : "Phone" }
+                  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/4961316367801" },
+                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email", href: "mailto:info@ooliv.de" },
+                  { icon: Phone, label: language === 'de' ? "Telefon" : "Phone", href: "tel:+4961316367801" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-gray-300 text-brand-heading bg-gray-50/50 hover:bg-[#335bff]/10 hover:text-[#335bff] transition-all duration-200 hover:border-[#335bff]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#335bff]/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-gray-300 text-brand-heading bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
                     aria-label={contact.label}
+                    asChild
                   >
-                    <contact.icon className="h-6 w-6" />
+                    <a href={contact.href}>
+                      <contact.icon className="h-6 w-6 text-[#b1b497]" />
+                    </a>
                   </Button>
                 ))}
               </div>

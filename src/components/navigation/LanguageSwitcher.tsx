@@ -1,89 +1,50 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Map of English to German URL paths
-  const pathMapping: Record<string, string> = {
-    '/': '/de',
-    '/web-design': '/de/webdesign',
-    '/web-development': '/de/webentwicklung',
-    '/content-creation': '/de/content-erstellung',
-    '/seo-optimization': '/de/seo-optimierung',
-    '/google-ads': '/de/google-ads',
-    '/ai-technologies': '/de/ki-technologien',
-    '/case-studies': '/de/case-studies',
-    '/about-ooliv': '/de/ueber-ooliv',
-    '/contact': '/de/kontakt',
-    '/careers': '/de/karriere',
-    '/legal-notice': '/de/impressum',
-    '/privacy-policy': '/de/datenschutz',
-    '/data-privacy': '/de/datenschutz',
-  };
-
-  // Map of German to English URL paths (reverse of the above)
-  const reversePathMapping: Record<string, string> = Object.entries(pathMapping).reduce(
-    (acc, [key, value]) => ({ ...acc, [value]: key }),
-    {}
-  );
-
+  
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
     if (language === 'en') {
-      // Switching to German
       setLanguage('de');
       
-      // Try to find a mapped path
-      let foundMapping = false;
-      for (const [enPath, dePath] of Object.entries(pathMapping)) {
-        if (currentPath === enPath || currentPath.startsWith(enPath + '/')) {
-          navigate(dePath);
-          foundMapping = true;
-          return;
-        }
-      }
-      
-      // Default fallback if no specific path mapping found
-      if (!foundMapping) {
+      if (currentPath === '/') {
         navigate('/de');
+      } else if (currentPath.startsWith('/')) {
+        const pathWithoutLeadingSlash = currentPath.substring(1);
+        navigate(`/de/${pathWithoutLeadingSlash}`);
       }
     } else {
-      // Switching to English
       setLanguage('en');
       
-      // Try to find a mapped path
-      let foundMapping = false;
-      for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
-        if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
-          navigate(enPath);
-          foundMapping = true;
-          return;
-        }
-      }
-      
-      // Default fallback if no specific path mapping found
-      if (!foundMapping) {
+      if (currentPath === '/de') {
         navigate('/');
+      } else if (currentPath.startsWith('/de/')) {
+        const pathWithoutDe = currentPath.substring(4);
+        navigate(pathWithoutDe);
       }
     }
   };
-
+  
+  const languageButtonText = language === 'de' ? 'EN' : 'DE';
+  
   return (
     <Button 
-      variant="ghost" 
+      variant="outline" 
       onClick={toggleLanguage}
-      className="flex items-center gap-2 text-brand-heading hover:bg-gray-100"
+      className="py-1 px-3 border-gray-300 text-brand-heading hover:text-[#b1b497] hover:border-[#b1b497] transition-all"
+      size="sm"
     >
-      <Globe className="h-4 w-4" />
-      <span>{language === 'en' ? 'Switch to German' : 'Switch to English'}</span>
+      <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
+      <span>{languageButtonText}</span>
     </Button>
   );
 };
