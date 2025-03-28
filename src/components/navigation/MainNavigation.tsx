@@ -19,13 +19,13 @@ const MainNavigation = () => {
       <nav className="w-full z-50 absolute top-0 left-0 right-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-24 items-center">
-            {/* Logo - 20% smaller */}
+            {/* Logo - 50% smaller */}
             <div className="flex-shrink-0">
               <Link to={language === 'de' ? '/de' : '/'} className="flex items-center">
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-9.6 md:h-12.8 w-auto" // Reduced by 20% from h-12 md:h-16
+                  className="h-6 md:h-8 w-auto" // Reduced by 50% from h-12 md:h-16
                 />
               </Link>
             </div>

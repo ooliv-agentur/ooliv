@@ -94,7 +94,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
           >
             <div className="flex items-center">
-              <Globe className="h-4 w-4 mr-2" />
+              <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
               <span>{languageButtonText}</span>
             </div>
             <span className="text-sm opacity-70">{switchToText}</span>
@@ -113,7 +113,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
         >
           <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
             {startProjectText}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
           </Link>
         </Button>
         
@@ -133,7 +133,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               asChild
             >
               <a href={contact.href}>
-                <contact.icon className="h-6 w-6" />
+                <contact.icon className="h-6 w-6 text-[#b1b497]" />
               </a>
             </Button>
           ))}

@@ -87,7 +87,7 @@ const Hero = ({
                 <div className="flex flex-col">
                   <span>Werbeagentur Mainz</span>
                   <span>für messbare Ergebnisse im Web</span>
-                  <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary">Seit 2008 entwickeln wir Websites, die mehr leisten.</span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-[#b1b497]">Seit 2008 entwickeln wir Websites, die mehr leisten.</span>
                 </div>
               ) : title || (
                 <div className="flex flex-col">
