@@ -8,7 +8,7 @@ const Navbar = () => {
       <MainNavigation />
       
       {/* Add global stylesheet to ensure menu buttons are properly positioned */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         /* Force consistent menu button size and position */
         button[aria-label="Open menu"],
         button[aria-label="Close menu"],
@@ -35,7 +35,7 @@ const Navbar = () => {
           width: 1.5rem !important;
           height: 1.5rem !important;
         }
-      `}</style>
+      `}} />
     </div>
   );
 };
