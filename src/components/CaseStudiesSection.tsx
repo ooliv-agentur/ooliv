@@ -1,7 +1,10 @@
 
-import React from 'react';
-import { Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 // Define the structure for case studies
 export const caseStudiesData = {
@@ -185,19 +188,26 @@ interface CaseStudiesSectionProps {
   customTitle?: string;
   customSubtitle?: string;
   customBodyText?: string;
-  hideHeaderText?: boolean;  // New prop to control header visibility
+  hideHeaderText?: boolean;  
+  limitCases?: number;
 }
 
 const defaultTranslations = {
   en: {
     title: "Real Results from Real Clients",
     subtitle: "We deliver websites and strategies that highlight what makes your business special.",
-    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
+    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization.",
+    viewMore: "View All Case Studies",
+    previousCase: "Previous Case Study",
+    nextCase: "Next Case Study"
   },
   de: {
     title: "Echte Ergebnisse von echten Kunden",
     subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
-    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
+    viewMore: "Alle Fallstudien ansehen",
+    previousCase: "Vorherige Fallstudie",
+    nextCase: "Nächste Fallstudie"
   }
 };
 
@@ -205,19 +215,32 @@ const CaseStudiesSection = ({
   customTitle,
   customSubtitle,
   customBodyText,
-  hideHeaderText = false  // Default to showing header text
+  hideHeaderText = false,
+  limitCases
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
+  const isMobile = useIsMobile();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
-  
   const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
+  
+  const [activeIndex, setActiveIndex] = useState(0);
+  const displayedCases = limitCases ? cases.slice(0, limitCases) : cases;
+  const casesPath = language === 'de' ? '/de/case-studies' : '/case-studies';
+
+  const handlePrevious = () => {
+    setActiveIndex(prev => (prev === 0 ? displayedCases.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex(prev => (prev === displayedCases.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+            <h2 className="text-3xl md:text-4xl font-condensed uppercase tracking-tight font-bold text-brand-heading mb-6">
               {customTitle || t.title}
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
@@ -229,75 +252,195 @@ const CaseStudiesSection = ({
           </div>
         )}
         
-        <div className="space-y-20">
-          {cases.map((study, index) => (
-            <div 
-              key={index}
-              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
-            >
-              {/* Text content */}
-              <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="mr-4">
-                      <img 
-                        src={study.logo} 
-                        alt={`${study.client} logo`} 
-                        className="h-10 w-auto"
-                      />
+        {/* Mobile Carousel View */}
+        {isMobile && (
+          <div className="space-y-8">
+            <div className="overflow-hidden">
+              {displayedCases.map((study, index) => (
+                <div 
+                  key={index}
+                  className={`transition-opacity duration-300 ${activeIndex === index ? 'block opacity-100' : 'hidden opacity-0'}`}
+                >
+                  <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100 mb-6">
+                    <div className="flex items-center mb-6">
+                      <div className="mr-4">
+                        <img 
+                          src={study.logo} 
+                          alt={`${study.client} logo`} 
+                          className="h-10 w-auto"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-condensed uppercase text-brand-heading">{study.client}</h3>
+                        <p className="text-sm text-gray-500">{study.industry}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
-                      <p className="text-sm text-gray-500">{study.industry}</p>
-                    </div>
-                  </div>
-                  
-                  <h4 className="text-lg font-medium mb-6">
-                    {study.headline}
-                  </h4>
-                  
-                  <div className="space-y-3 mb-6">
-                    {study.impact.map((point, idx) => (
-                      <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-brand-primary">
-                          <Check className="h-5 w-5" />
+                    
+                    <h4 className="text-lg font-medium mb-6">
+                      {study.headline}
+                    </h4>
+                    
+                    <div className="space-y-3 mb-6">
+                      {study.impact.map((point, idx) => (
+                        <div key={idx} className="flex items-start">
+                          <div className="mr-3 mt-1 text-brand-primary">
+                            <Check className="h-5 w-5" />
+                          </div>
+                          <p className="text-sm text-gray-600">{point}</p>
                         </div>
-                        <p className="text-sm text-gray-600">{point}</p>
+                      ))}
+                    </div>
+                    
+                    <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                      "{study.quote}"
+                    </blockquote>
+                    
+                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                      <div className="mr-3">
+                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-brand-heading font-bold text-xs">
+                          {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
+                        </div>
                       </div>
-                    ))}
+                      <div>
+                        <p className="font-medium text-sm">{study.author.name}</p>
+                        <p className="text-xs text-gray-500">{study.author.position}</p>
+                      </div>
+                    </div>
                   </div>
                   
-                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
-                    "{study.quote}"
-                  </blockquote>
-                  
-                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                    <div className="mr-3">
-                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
-                        {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-medium text-sm">{study.author.name}</p>
-                      <p className="text-xs text-gray-500">{study.author.position}</p>
-                    </div>
+                  <div className="rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src={study.image} 
+                      alt={`${study.client} case study showing results`}
+                      className="w-full h-60 object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
+              ))}
+            </div>
+            
+            {/* Mobile Navigation Controls */}
+            <div className="flex justify-between items-center">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex items-center gap-1" 
+                onClick={handlePrevious}
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {t.previousCase}
+              </Button>
+              
+              <div className="flex gap-2">
+                {displayedCases.map((_, i) => (
+                  <button 
+                    key={i}
+                    className={`w-2 h-2 rounded-full ${activeIndex === i ? 'bg-brand-primary' : 'bg-gray-300'}`}
+                    onClick={() => setActiveIndex(i)}
+                    aria-label={`Go to case study ${i + 1}`}
+                  />
+                ))}
               </div>
               
-              {/* Image */}
-              <div className="w-full md:w-1/2">
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src={study.image} 
-                    alt={`${study.client} case study`} 
-                    className="w-full h-80 object-cover"
-                  />
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex items-center gap-1" 
+                onClick={handleNext}
+              >
+                {t.nextCase}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        )}
+        
+        {/* Desktop Grid View */}
+        {!isMobile && (
+          <div className="space-y-20">
+            {displayedCases.map((study, index) => (
+              <div 
+                key={index}
+                className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center animate-fade-in`}
+              >
+                {/* Text content */}
+                <div className="w-full md:w-1/2">
+                  <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                    <div className="flex items-center mb-6">
+                      <div className="mr-4">
+                        <img 
+                          src={study.logo} 
+                          alt={`${study.client} logo`} 
+                          className="h-10 w-auto"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-condensed uppercase text-brand-heading">{study.client}</h3>
+                        <p className="text-sm text-gray-500">{study.industry}</p>
+                      </div>
+                    </div>
+                    
+                    <h4 className="text-lg font-medium mb-6">
+                      {study.headline}
+                    </h4>
+                    
+                    <div className="space-y-3 mb-6">
+                      {study.impact.map((point, idx) => (
+                        <div key={idx} className="flex items-start">
+                          <div className="mr-3 mt-1 text-brand-primary">
+                            <Check className="h-5 w-5" />
+                          </div>
+                          <p className="text-sm text-gray-600">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                      "{study.quote}"
+                    </blockquote>
+                    
+                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                      <div className="mr-3">
+                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-brand-heading font-bold text-xs">
+                          {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm">{study.author.name}</p>
+                        <p className="text-xs text-gray-500">{study.author.position}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Image */}
+                <div className="w-full md:w-1/2">
+                  <div className="rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src={study.image} 
+                      alt={`${study.client} case study showing ${study.impact[0].toLowerCase()}`}
+                      className="w-full h-80 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
+        
+        {/* View All Case Studies Button */}
+        {limitCases && limitCases < cases.length && (
+          <div className="flex justify-center mt-12">
+            <Button asChild>
+              <Link to={casesPath} className="flex items-center gap-2">
+                {t.viewMore}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
