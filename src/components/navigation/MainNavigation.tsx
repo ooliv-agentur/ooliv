@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
@@ -25,12 +25,12 @@ const MainNavigation = () => {
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-6 md:h-8 w-auto" // Reduced by 50% from h-12 md:h-16
+                  className="h-6 md:h-8 w-auto" 
                 />
               </Link>
             </div>
             
-            {/* Mobile menu button - using Menu icon instead of AlignJustify */}
+            {/* Mobile menu button */}
             <div className="flex items-center">
               <Button 
                 variant="ghost" 

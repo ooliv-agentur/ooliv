@@ -78,11 +78,11 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300 transition-all duration-300" 
+          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300 transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
         >
-          <X className="h-12 w-12 text-[#b1b497]" />
+          <X className="h-12 w-12" />
         </Button>
       </div>
       
@@ -128,12 +128,12 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               variant="outline" 
               size="lg"
               onClick={onClose} 
-              className="w-full py-6 min-h-[60px] border-gray-300 text-brand-heading bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
+              className="w-full py-6 min-h-[60px] border-gray-300 text-[#b1b497] bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
               aria-label={contact.label}
               asChild
             >
               <a href={contact.href}>
-                <contact.icon className="h-6 w-6 text-[#b1b497]" />
+                <contact.icon className="h-6 w-6" />
               </a>
             </Button>
           ))}
