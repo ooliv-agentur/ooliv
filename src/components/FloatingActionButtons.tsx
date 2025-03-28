@@ -21,35 +21,35 @@ const FloatingActionButtons = () => {
     setIsExpanded(prev => !prev);
   };
 
-  // Updated button styles for consistent, flat appearance
+  // Updated button styles for consistent, flat appearance with softer blue
   const buttons = [
     { 
       id: 'chatbot', 
       icon: MessageCircle, 
       label: 'Chat with us', 
       onClick: () => console.log('Chatbot clicked'),
-      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none'
+      className: 'bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none'
     },
     { 
       id: 'project', 
       icon: Send, 
       label: 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none'
+      className: 'bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none'
     },
     { 
       id: 'email', 
       icon: Mail, 
       label: 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-blue-600 border border-blue-100 hover:bg-blue-50'
+      className: 'bg-white text-[#335bff] border border-blue-100 hover:bg-blue-50'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-blue-600 border border-blue-100 hover:bg-blue-50'
+      className: 'bg-white text-[#335bff] border border-blue-100 hover:bg-blue-50'
     }
   ];
 
@@ -67,10 +67,10 @@ const FloatingActionButtons = () => {
         {isMobile && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-blue-600 text-white hover:bg-blue-700 border-none"
+            className="w-14 h-14 rounded-full bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none transition-all"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
-            {isExpanded ? <X className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
+            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
           </Button>
         )}
 
@@ -81,13 +81,13 @@ const FloatingActionButtons = () => {
                 <Button
                   onClick={button.onClick}
                   className={cn(
-                    "w-14 h-14 rounded-full", 
-                    "transition-all transform hover:scale-105",
+                    "w-14 h-14 rounded-full p-4", 
+                    "transition-all transform hover:scale-102 shadow-none hover:shadow-sm",
                     button.className
                   )}
                   aria-label={button.label}
                 >
-                  <button.icon className="h-6 w-6" />
+                  <button.icon className="h-5 w-5" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="left" className="bg-brand-footer text-white border-0">

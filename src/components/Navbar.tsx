@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from './MobileMenu';
 import { cn } from "@/lib/utils";
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   return (
     <>
@@ -34,14 +36,14 @@ const Navbar = () => {
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-9 w-9 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-8 w-8 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} isDesktop={isDesktop} />
     </>
   );
 };
