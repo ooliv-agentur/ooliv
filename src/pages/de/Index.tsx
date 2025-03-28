@@ -25,7 +25,6 @@ const GermanIndex = () => {
     <PageLayout className="overflow-x-hidden">
       <DeutscherHero />
       <DeutscherAboutSection />
-      <TeamImpactSectionDE />
       <TeamTeaserDE />
       
       <div className="py-16 bg-white">
@@ -76,6 +75,7 @@ const GermanIndex = () => {
       />
       
       <CTA 
+        lightBackground={true}
         title="Bereit, Ihre digitale Präsenz zu transformieren?"
         subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
         primaryCta="Starten Sie Ihr Website-Projekt"

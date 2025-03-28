@@ -1,8 +1,11 @@
 
 import React, { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const BeforeAfterSlider = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
   
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -28,7 +31,7 @@ const BeforeAfterSlider = () => {
       <div className="absolute inset-0">
         <img 
           src="/lovable-uploads/f47ade42-8d51-4616-a6eb-4c5f781c07bd.png" 
-          alt="Before website redesign"
+          alt={isGerman ? "Vor Website-Redesign" : "Before website redesign"}
           className="w-full h-full object-cover"
         />
       </div>
@@ -40,7 +43,7 @@ const BeforeAfterSlider = () => {
       >
         <img 
           src="/lovable-uploads/cc2540b3-885d-43e2-a5da-8cb04a07619f.png" 
-          alt="After website redesign"
+          alt={isGerman ? "Nach Website-Redesign" : "After website redesign"}
           className="w-full h-full object-cover"
         />
       </div>
@@ -56,8 +59,12 @@ const BeforeAfterSlider = () => {
       </div>
 
       {/* Labels */}
-      <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm font-medium px-3 py-1 rounded">Before</div>
-      <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm font-medium px-3 py-1 rounded">After</div>
+      <div className="absolute bottom-4 left-4 bg-black/60 text-white text-sm font-medium px-3 py-1 rounded">
+        {isGerman ? "Vorher" : "Before"}
+      </div>
+      <div className="absolute bottom-4 right-4 bg-black/60 text-white text-sm font-medium px-3 py-1 rounded">
+        {isGerman ? "Nachher" : "After"}
+      </div>
     </div>
   );
 };
