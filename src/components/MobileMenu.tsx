@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -112,28 +113,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
   };
 
-  const servicesVariants = {
-    hidden: { opacity: 0, height: 0, marginTop: 0 },
-    visible: { 
-      opacity: 1, 
-      height: 'auto', 
-      marginTop: 16,
-      transition: { 
-        duration: 0.3,
-        ease: [0.4, 0.0, 0.2, 1] 
-      } 
-    },
-    exit: { 
-      opacity: 0, 
-      height: 0,
-      marginTop: 0,
-      transition: { 
-        duration: 0.2,
-        ease: [0.4, 0.0, 0.2, 1]
-      } 
-    }
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -149,7 +128,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         >
           <motion.div
             ref={menuRef}
-            className="bg-brand-footer flex flex-col w-full h-full max-h-[100dvh] overflow-hidden"
+            className="bg-ooliv-black flex flex-col w-full h-full max-h-[100dvh] overflow-hidden"
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -158,8 +137,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-brand-footer/95 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold text-white font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-ooliv-black/95 backdrop-blur-sm">
+              <h2 className="text-xl font-semibold text-white font-condensed">{language === 'de' ? 'Menü' : 'Menu'}</h2>
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -177,7 +156,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   <div key={index} className={cn()}>
                     <Link 
                       to={link.path}
-                      className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
+                      className="block py-3 text-4xl font-bold text-white hover:text-ooliv-green transition-colors focus:outline-none focus:text-ooliv-green focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-condensed"
                       onClick={onClose}
                     >
                       {link.title}
@@ -187,9 +166,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </nav>
             </div>
             
-            <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-brand-footer/95 backdrop-blur-sm">
+            <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-ooliv-black/95 backdrop-blur-sm">
               <Button 
-                className="w-full justify-between group text-lg py-6 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
+                className="w-full justify-between group text-lg py-6 font-condensed" 
                 size="lg"
                 onClick={onClose}
                 asChild
@@ -210,7 +189,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-white/20 text-white bg-brand-backgroundAlt/10 hover:bg-brand-primary hover:text-white transition-all duration-200 hover:border-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-white/20 text-white bg-ooliv-warm-grey/10 hover:bg-ooliv-green hover:text-ooliv-black transition-all duration-200 hover:border-ooliv-green focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 flex items-center justify-center"
                     aria-label={contact.label}
                   >
                     <contact.icon className="h-6 w-6" />
