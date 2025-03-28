@@ -20,42 +20,47 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
 
   return (
     <motion.div
-      className="fixed right-0 top-0 bottom-0 w-[40%] bg-[#f7fafa] z-[101] overflow-auto"
+      className="fixed inset-0 w-full h-full bg-[#f7fafa] z-[101] overflow-auto"
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
       <div className="flex justify-end p-4 border-b border-gray-100">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300 transition-all duration-300"
+        <button 
+          className="absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
+          style={{ width: '2.5rem', height: '2.5rem', minWidth: '2.5rem', minHeight: '2.5rem' }}
         >
-          <X className="h-12 w-12" />
-        </Button>
+          <X style={{ width: '1.5rem', height: '1.5rem' }} />
+        </button>
       </div>
 
-      <div className="flex flex-col p-6 h-[calc(100%-80px)] mt-6">
-        <div className="flex justify-end mb-6">
-          <LanguageSwitcher />
-        </div>
-
-        <NavigationLinks onLinkClick={onClose} className="space-y-3 text-right" />
-
-        <div className="mt-auto pt-8">
-          <Button
-            className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans"
-            size="lg"
-            onClick={onClose}
-            asChild
-          >
-            <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-              {startProjectText}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
-            </Link>
-          </Button>
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="lg:col-span-1">
+            <div className="flex justify-end mb-8">
+              <LanguageSwitcher />
+            </div>
+          </div>
+          
+          <div className="lg:col-span-2">
+            <NavigationLinks onLinkClick={onClose} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 text-right" />
+            
+            <div className="mt-12">
+              <Button
+                className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans"
+                size="lg"
+                onClick={onClose}
+                asChild
+              >
+                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+                  {startProjectText}
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>

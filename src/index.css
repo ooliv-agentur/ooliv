@@ -48,39 +48,31 @@
 }
 
 @layer components {
-  /* Force burger menu size */
-  .nav-burger-button {
+  /* Navigation menu button sizes - with !important to override any conflicting styles */
+  .burger-menu-button, 
+  .close-button {
     width: 2.5rem !important;
     height: 2.5rem !important;
     min-width: 2.5rem !important;
     min-height: 2.5rem !important;
   }
   
-  .nav-burger-icon {
-    width: 2rem !important;
-    height: 2rem !important;
-    min-width: 2rem !important;
-    min-height: 2rem !important;
-  }
-  
-  .burger-menu-button {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-  }
-  
-  .burger-menu-icon {
-    width: 2rem !important;
-    height: 2rem !important;
-  }
-  
-  .close-button {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
-  }
-  
+  .burger-menu-icon,
   .close-icon {
-    width: 2rem !important;
-    height: 2rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    min-width: 1.5rem !important;
+    min-height: 1.5rem !important;
+  }
+  
+  /* Force close button color to ensure visibility */
+  .close-button {
+    background-color: #b1b497 !important;
+    color: white !important;
+  }
+  
+  .close-button:hover {
+    background-color: #9a9c83 !important;
   }
   
   /* Updated global section and component styles */
@@ -253,4 +245,29 @@
     box-shadow: none !important;
     backdrop-filter: none !important;
   }
+}
+
+/* Global CSS to ensure menu button and close button sizes */
+button[aria-label="Open menu"],
+button[aria-label="Close menu"],
+button[aria-label="Menü schließen"] {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  min-width: 2.5rem !important;
+  min-height: 2.5rem !important;
+}
+
+button[aria-label="Open menu"] svg,
+button[aria-label="Close menu"] svg,
+button[aria-label="Menü schließen"] svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+/* Ensure mobile menu is full width and height */
+.fixed.inset-0 {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }

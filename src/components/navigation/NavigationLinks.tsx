@@ -51,11 +51,11 @@ const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
         const isActive = location.pathname === link.path;
         
         return (
-          <div key={index} className="py-2">
+          <div key={index} className="py-1">
             <Link 
               to={link.path}
               className={cn(
-                "block py-2 px-3 rounded-md font-bold text-lg md:text-base transition-colors focus:outline-none hover:scale-105 transition-transform font-sans",
+                "block py-2 px-3 rounded-md font-bold text-lg transition-colors focus:outline-none hover:scale-105 transition-transform font-sans",
                 isActive 
                   ? "text-[#b1b497] bg-[#b1b497]/10" 
                   : "text-brand-heading hover:bg-[#b1b497]/10 hover:text-[#b1b497] focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50"

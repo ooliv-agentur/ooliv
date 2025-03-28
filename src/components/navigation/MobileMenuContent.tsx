@@ -26,12 +26,10 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     
     if (isOpen) {
       document.addEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'hidden';
     }
 
     return () => {
       document.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'auto';
     };
   }, [isOpen, onClose]);
 
@@ -68,7 +66,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
   return (
     <motion.div 
       ref={menuRef}
-      className="fixed right-0 top-0 bottom-0 w-full md:w-full lg:w-full bg-[#f7fafa] z-[101] overflow-auto"
+      className="fixed inset-0 w-full h-full bg-[#f7fafa] z-[101] overflow-auto"
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
@@ -76,18 +74,19 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
         <button 
-          className="close-button absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
+          className="absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
+          style={{ width: '2.5rem', height: '2.5rem', minWidth: '2.5rem', minHeight: '2.5rem' }}
         >
-          <X className="close-icon" />
+          <X style={{ width: '1.5rem', height: '1.5rem' }} />
         </button>
       </div>
       
-      <div className="flex-1 p-6 overflow-y-auto mt-8">
+      <div className="flex flex-col p-6 overflow-y-auto mt-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="mb-6 pb-6 border-b border-gray-200 md:col-span-2 lg:col-span-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="mb-6 pb-6 border-b border-gray-200 md:col-span-2 lg:col-span-2">
               <Button 
                 variant="outline" 
                 onClick={toggleLanguage}
@@ -101,8 +100,8 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               </Button>
             </div>
             
-            <div className="lg:col-span-3 md:col-span-2">
-              <NavigationLinks onLinkClick={onClose} className="space-y-4 text-center md:text-left w-full md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:space-y-0" />
+            <div className="lg:col-span-2 md:col-span-2">
+              <NavigationLinks onLinkClick={onClose} className="space-y-2 md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-x-8 md:gap-y-2 md:space-y-0" />
             </div>
           </div>
         </div>
