@@ -1,18 +1,17 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from "@/components/PageLayout";
-import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import TeamImpactSection from "@/components/TeamImpactSection";
-import Challenge from "@/components/Challenge";
-import Solution from "@/components/Solution";
+import DeutscherHero from "@/components/de/DeutscherHero";
+import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
+import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
+import BasecampSection from "@/components/de/BasecampSection";
+import TeamTeaserDE from "@/components/de/TeamTeaserDE";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import GermanSolutionSection from "@/components/de/GermanSolutionSection";
+import ClientLogos from "@/components/ClientLogos";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import TeamTeaser from "@/components/TeamTeaser";
-import ClientLogos from "@/components/ClientLogos";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
-import { Link } from "react-router-dom";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanIndex = () => {
@@ -25,44 +24,86 @@ const GermanIndex = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <Hero />
-      <AboutSection />
-      <TeamImpactSection />
-      <Challenge />
+      <DeutscherHero />
+      <DeutscherAboutSection />
+      <TeamImpactSectionDE />
+      <BasecampSection />
+      <TeamTeaserDE />
+      
       <div className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Erleben Sie den Unterschied einer strategischen Website</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
           <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            Ziehen Sie den Slider, um veraltete Designs mit modernen, konversionsorientierten Websites zu vergleichen, die echte Geschäftsergebnisse liefern.
+            Viele Unternehmen kämpfen mit Webseiten, die nicht performen. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gefunden werden.
           </p>
           <BeforeAfterSlider />
         </div>
       </div>
-      <Solution 
-        description={
-          <>
-            Wir erstellen leistungsstarke Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen. Unsere Expertise umfasst 
-            <Link to="/de/webdesign" className="text-brand-primary hover:underline"> Webdesign</Link>, 
-            <Link to="/de/webentwicklung" className="text-brand-primary hover:underline"> Webentwicklung</Link>, 
-            <Link to="/de/content-erstellung" className="text-brand-primary hover:underline"> Content-Erstellung</Link>, 
-            <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline"> SEO-Optimierung</Link>, 
-            <Link to="/de/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> und 
-            <Link to="/de/ki-technologien" className="text-brand-primary hover:underline"> KI-Technologien</Link>.
-          </>
-        }
+      
+      <GermanSolutionSection />
+      
+      <ClientLogos 
+        title="Technologien, die Website-Performance messbar verbessern"
+        description="Wir kombinieren menschliche Expertise mit leistungsstarken Tools – ohne Abkürzungen, ohne blinden KI-Einsatz."
+        technologies={[
+          {
+            name: "ChatGPT",
+            description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert."
+          },
+          {
+            name: "Midjourney",
+            description: "Individuelle Visuals statt Stockfotos."
+          },
+          {
+            name: "Ahrefs",
+            description: "Keyword-Analysen & Wettbewerbsrecherche."
+          },
+          {
+            name: "Basecamp",
+            description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt – intern und mit Ihnen."
+          }
+        ]}
       />
-      <TeamTeaser />
-      <ClientLogos />
       
-      {/* Show all case studies with no limitation */}
-      <CaseStudiesSection />
+      <CaseStudiesSection 
+        customTitle="Echte Ergebnisse von echten Kunden."
+        customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
+        customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+      />
       
-      <FAQ />
+      <FAQ 
+        customFaqs={[
+          {
+            question: "Wie läuft der Webseitenerstellungsprozess ab?",
+            answer: "Wir haben einen klaren 5-Schritte-Prozess: 1) Strategie und Konzeption, 2) UX/UI-Design, 3) Entwicklung, 4) Content-Erstellung, 5) Launch und Support."
+          },
+          {
+            question: "Wie viel kostet eine WordPress-Website?",
+            answer: "Die Kosten hängen von Umfang und Komplexität ab. Projekte starten typischerweise bei 5.000 € für kleine Business-Websites und können je nach Funktionsumfang, SEO-Optimierung und Content-Strategie variieren."
+          },
+          {
+            question: "Wie lange dauert die Erstellung einer Website?",
+            answer: "Der Zeitrahmen variiert je nach Projektumfang. Kleine Websites können innerhalb von 4-6 Wochen abgeschlossen sein, während komplexere Projekte 2-3 Monate benötigen können."
+          },
+          {
+            question: "Optimiert ihr Websites für Mobilgeräte?",
+            answer: "Absolut, Mobiloptimierung ist Standard. Wir entwickeln nach dem Mobile-First-Prinzip und stellen sicher, dass alle unsere Websites auf allen Geräten perfekt funktionieren."
+          },
+          {
+            question: "Bietet ihr laufenden Support nach dem Launch an?",
+            answer: "Ja, wir bieten verschiedene Support- und Wartungspakete an, die technischen Support, Sicherheitsupdates, Backups und Content-Updates umfassen können."
+          }
+        ]}
+        customTitle="Häufig gestellte Fragen"
+        customCtaText="Weitere Fragen? Kontaktieren Sie uns"
+      />
+      
       <CTA 
         title="Bereit, Ihre digitale Präsenz zu transformieren?"
         subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
         primaryCta="Starten Sie Ihr Website-Projekt"
         secondaryCta="Sehen Sie unsere Arbeit"
+        footerNote="100+ erfolgreiche Projekte umgesetzt • Vertrauenspartner führender Unternehmen • KI-Strategien, die messbar und menschlich sind"
       />
     </PageLayout>
   );

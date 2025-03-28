@@ -1,107 +1,34 @@
 
-import type { Config } from "tailwindcss";
+import { type Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  prefix: "",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        brand: {
-          background: "#F5F3EF",    // Soft beige
-          backgroundAlt: "#E8ECE3",  // Soft pastel green
-          primary: "#A5B79C",       // Soft green
-          primaryHover: "#94A68B",  // Darker soft green
-          heading: "#4A4A49",       // Dark gray for headings
-          text: "#333333",          // Soft black/charcoal
-          muted: "#D4D4D4",         // Muted gray
-          footer: "#2C2C2B",        // Dark footer background
-        },
-        blue: {
-          500: "#3B82F6",
-          600: "#2563EB",
-          700: "#1D4ED8",
-        },
-      },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ['DM Sans', 'sans-serif'],
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "fade-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(20px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
+      colors: {
+        brand: {
+          primary: "#006064", // Teal primary color
+          primaryHover: "#004D40", // Darker teal for hover states
+          secondary: "#FF9800", // Orange accent
+          secondaryHover: "#F57C00", // Darker orange for hover states
+          heading: "#0D1B2A", // Dark blue-black for headings
+          text: "#2B2D42", // Dark slate for body text
+          background: "#F5F7FA", // Light gray background
+          backgroundAlt: "#E9ECEF", // Slightly darker gray for alternating sections
+          footer: "#0D1B2A", // Dark blue-black for footer
+          success: "#2E7D32", // Green for success states
+          error: "#C62828", // Red for error states
+          warning: "#F9A825" // Amber for warning states
         },
       },
-      animation: {
-        "fade-up": "fade-up 0.5s ease-out",
-        "fade-in": "fade-in 0.3s ease-out",
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;
