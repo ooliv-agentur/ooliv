@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -31,6 +32,32 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       document.removeEventListener('keydown', handleEsc);
     };
   }, [isOpen, onClose]);
+
+  // Touch event handlers for swipe to close
+  const handleTouchStart = useRef<number | null>(null);
+  const handleTouchMove = useRef<number | null>(null);
+
+  const onTouchStartHandler = (e: React.TouchEvent) => {
+    handleTouchStart.current = e.touches[0].clientX;
+  };
+
+  const onTouchMoveHandler = (e: React.TouchEvent) => {
+    handleTouchMove.current = e.touches[0].clientX;
+  };
+
+  const onTouchEndHandler = () => {
+    if (!handleTouchStart.current || !handleTouchMove.current) return;
+    
+    const diff = handleTouchStart.current - handleTouchMove.current;
+    const threshold = 100;
+
+    if (diff > threshold) {
+      onClose();
+    }
+    
+    handleTouchStart.current = null;
+    handleTouchMove.current = null;
+  };
 
   const toggleLanguage = () => {
     const currentPath = location.pathname;
@@ -69,9 +96,9 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      onTouchStart={onTouchStartHandler}
+      onTouchMove={onTouchMoveHandler}
+      onTouchEnd={onTouchEndHandler}
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm h-24">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
