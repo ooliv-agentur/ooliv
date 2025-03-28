@@ -1,7 +1,6 @@
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { cva } from "class-variance-authority"
-import { ChevronDown, X } from "lucide-react"
+import { X, Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { AnimatePresence, motion } from "framer-motion"
@@ -16,19 +15,16 @@ const NavigationMenu = React.forwardRef<
   const isMobile = useMediaQuery("(max-width: 768px)")
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   
-  // Use the provided state control if available, otherwise use local state
   const isOpen = mobileMenuOpen !== undefined ? mobileMenuOpen : isMenuOpen
   const setIsOpen = setMobileMenuOpen || setIsMenuOpen
   
   React.useEffect(() => {
-    // Lock body scroll when mobile menu is open
     if (isMobile && isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'auto'
     }
     
-    // Handle ESC key to close menu
     const handleEscPress = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         setIsOpen(false)
@@ -44,19 +40,17 @@ const NavigationMenu = React.forwardRef<
 
   return (
     <>
-      {/* Mobile Toggle Button */}
       {isMobile && (
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden w-12 h-12 flex items-center justify-center text-foreground hover:bg-accent rounded-full border border-gray-300"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          Menu
+          <Menu className="h-6 w-6" />
         </button>
       )}
       
-      {/* Desktop Navigation */}
       {!isMobile && (
         <NavigationMenuPrimitive.Root
           ref={ref}
@@ -71,12 +65,10 @@ const NavigationMenu = React.forwardRef<
         </NavigationMenuPrimitive.Root>
       )}
       
-      {/* Mobile Navigation Overlay */}
       {isMobile && (
         <AnimatePresence>
           {isOpen && (
             <>
-              {/* Backdrop */}
               <motion.div 
                 className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
                 initial={{ opacity: 0 }}
@@ -86,7 +78,6 @@ const NavigationMenu = React.forwardRef<
                 onClick={() => setIsOpen(false)}
               />
               
-              {/* Mobile Menu */}
               <motion.div 
                 className="fixed inset-0 z-[101] bg-background flex flex-col overflow-auto"
                 initial={{ x: "100%" }}
@@ -94,7 +85,6 @@ const NavigationMenu = React.forwardRef<
                 exit={{ x: "100%" }}
                 transition={{ type: "tween", duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
               >
-                {/* Header with close button */}
                 <div className="flex items-center justify-between p-4 border-b">
                   <h2 className="text-xl font-semibold">Menu</h2>
                   <button 
@@ -106,7 +96,6 @@ const NavigationMenu = React.forwardRef<
                   </button>
                 </div>
                 
-                {/* Mobile Navigation Content */}
                 <div className="flex-1 p-4 overflow-auto">
                   <NavigationMenuPrimitive.Root
                     className="flex flex-col w-full space-y-4"
@@ -116,7 +105,6 @@ const NavigationMenu = React.forwardRef<
                   </NavigationMenuPrimitive.Root>
                 </div>
                 
-                {/* Persistent Contact Bar (Mobile) */}
                 <div className="border-t p-4 flex justify-center space-x-4">
                   {/* Contact buttons will be added here when used */}
                 </div>
@@ -285,7 +273,6 @@ const NavigationMenuIndicator = React.forwardRef<
 NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName
 
-// Create a ContactBar component for persistent contact options
 const ContactBar = ({
   className,
   whatsapp,

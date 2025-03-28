@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, MessageCircle, Mail, Phone, ArrowRight, Globe } from 'lucide-react';
@@ -75,7 +74,6 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     const currentPath = location.pathname;
     
     if (language === 'en') {
-      // Switching to German
       setLanguage('de');
       
       if (currentPath === '/') {
@@ -85,7 +83,6 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
         navigate(`/de/${pathWithoutLeadingSlash}`);
       }
     } else {
-      // Switching to English
       setLanguage('en');
       
       if (currentPath === '/de') {
@@ -156,17 +153,8 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          className="fixed inset-0 bg-black/50 flex flex-col z-[100]"
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={backdropVariants}
-          aria-modal="true"
-          role="dialog"
-          aria-label="Mobile menu"
-        >
-          <motion.div
+        <motion.div className="fixed inset-0 bg-black/50 flex flex-col z-[100]">
+          <motion.div 
             ref={menuRef}
             className={cn(
               "flex flex-col bg-[#f7fafa] text-brand-heading", 
@@ -174,13 +162,6 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                 ? "ml-auto w-[40%] h-full" 
                 : "w-full h-full max-h-[100dvh] overflow-auto"
             )}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={menuVariants}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
           >
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
               {!isDesktop && (
@@ -189,11 +170,11 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="text-brand-heading hover:bg-gray-100 w-20 h-20 rounded-full flex items-center justify-center ml-auto" 
+                className="w-12 h-12 flex items-center justify-center text-brand-heading hover:bg-accent rounded-full border border-gray-300" 
                 onClick={onClose}
                 aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
               >
-                <X className="h-8 w-8" />
+                <X className="h-6 w-6" />
               </Button>
             </div>
             
@@ -201,7 +182,6 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
-              {/* Language switcher at the top of the menu */}
               <div className="mb-6 pb-6 border-b border-gray-200">
                 <Button 
                   variant="outline" 
