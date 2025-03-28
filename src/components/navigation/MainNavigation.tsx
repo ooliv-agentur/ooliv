@@ -44,11 +44,12 @@ const MainNavigation = () => {
         </div>
       </nav>
 
-      {/* Menu toggle button - fixed position */}
+      {/* Menu toggle button - positioned based on menu state */}
       <button 
         className={cn(
-          "fixed top-4 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
-          "w-10 h-10 min-w-10 min-h-10"
+          "fixed top-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+          "w-10 h-10 min-w-10 min-h-10",
+          isOpen ? "right-4" : "left-4 md:left-[calc(50%-35rem)] lg:left-[calc(50%-37rem)] xl:left-[calc(50%-40rem)]"
         )}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
