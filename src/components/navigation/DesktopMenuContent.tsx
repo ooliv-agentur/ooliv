@@ -26,7 +26,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
       <div className="flex justify-end p-4 border-b border-gray-100">
-        {/* Close button removed from here as it's now in the MainNavigation */}
+        {/* Close button removed from here as it's in MainNavigation */}
       </div>
 
       <div className="container mx-auto px-4 py-12">

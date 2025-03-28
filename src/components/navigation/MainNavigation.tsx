@@ -40,32 +40,27 @@ const MainNavigation = () => {
                 />
               </Link>
             </div>
-            
-            {/* Menu toggle button - fixed position */}
-            <div className="flex items-center">
-              <button 
-                className="menu-toggle-button fixed top-4 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300" 
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : "Open menu"}
-                aria-expanded={isOpen}
-                aria-controls="mobile-menu"
-                style={{ 
-                  width: '2.5rem', 
-                  height: '2.5rem', 
-                  minWidth: '2.5rem', 
-                  minHeight: '2.5rem',
-                }}
-              >
-                {isOpen ? (
-                  <X className="transition-transform duration-300" style={{ width: '1.5rem', height: '1.5rem' }} />
-                ) : (
-                  <Menu className="transition-transform duration-300" style={{ width: '1.5rem', height: '1.5rem' }} />
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </nav>
+
+      {/* Menu toggle button - fixed position */}
+      <button 
+        className={cn(
+          "fixed top-4 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+          "w-10 h-10 min-w-10 min-h-10"
+        )}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
+      >
+        {isOpen ? (
+          <X className="w-6 h-6" />
+        ) : (
+          <Menu className="w-6 h-6" />
+        )}
+      </button>
 
       {/* Menu overlay */}
       {isOpen && (

@@ -73,6 +73,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+        {/* Close button removed from here */}
       </div>
       
       <div className="flex flex-col p-6 overflow-y-auto mt-4">
