@@ -40,7 +40,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold font-sans text-white">{t('footer.about')}</h3>
             <p className="text-white text-sm font-sans">
-              {t('footer.aboutText')}
+              {language === 'de' 
+                ? 'Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.'
+                : t('footer.aboutText')}
             </p>
             <Button 
               variant="outline" 

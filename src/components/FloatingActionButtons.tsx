@@ -21,34 +21,35 @@ const FloatingActionButtons = () => {
     setIsExpanded(prev => !prev);
   };
 
+  // Updated button styles for consistent, flat appearance
   const buttons = [
     { 
       id: 'chatbot', 
       icon: MessageCircle, 
       label: 'Chat with us', 
       onClick: () => console.log('Chatbot clicked'),
-      className: 'bg-blue-600 text-white hover:bg-blue-700'
+      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none'
     },
     { 
       id: 'project', 
       icon: Send, 
       label: 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-green-600 text-white hover:bg-green-700'
+      className: 'bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none'
     },
     { 
       id: 'email', 
       icon: Mail, 
       label: 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50'
+      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50 shadow-none'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50'
+      className: 'bg-white text-blue-600 border border-blue-300 hover:bg-blue-50 shadow-none'
     }
   ];
 
@@ -66,7 +67,7 @@ const FloatingActionButtons = () => {
         {isMobile && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full shadow-lg bg-brand-primary text-white hover:bg-brand-primaryHover"
+            className="w-14 h-14 rounded-full bg-blue-600 text-white hover:bg-blue-700 border-none shadow-none"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
             {isExpanded ? <X className="h-6 w-6" /> : <Plus className="h-6 w-6" />}
@@ -80,8 +81,8 @@ const FloatingActionButtons = () => {
                 <Button
                   onClick={button.onClick}
                   className={cn(
-                    "w-14 h-14 rounded-full shadow-lg", 
-                    "hover:shadow-xl transition-all transform hover:scale-105",
+                    "w-14 h-14 rounded-full", 
+                    "transition-all transform hover:scale-105",
                     button.className
                   )}
                   aria-label={button.label}

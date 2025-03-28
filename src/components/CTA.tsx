@@ -1,55 +1,56 @@
-
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-export interface CTAProps {
+interface CTAProps {
   title: string;
   subtitle: string;
   primaryCta: string;
-  secondaryCta?: string;
-  children?: ReactNode;
+  secondaryCta: string;
   footerNote?: string;
   lightBackground?: boolean;
 }
 
-const CTA = ({ title, subtitle, primaryCta, secondaryCta, children, footerNote, lightBackground = false }: CTAProps) => {
+const CTA = ({
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  footerNote,
+  lightBackground = false
+}: CTAProps) => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  const contactPath = isGerman ? "/de/kontakt" : "/contact";
+  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
+
   return (
-    <section className={`py-20 ${lightBackground ? 'bg-gray-50' : 'bg-brand-primary text-white'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${lightBackground ? 'text-brand-heading' : 'text-white'}`}>{title}</h2>
-        <p className={`text-xl max-w-2xl mx-auto mb-8 ${lightBackground ? 'text-brand-text' : 'text-white'}`}>{subtitle}</p>
+    <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-brand-heading">{title}</h2>
+        <p className="text-xl mb-12 max-w-3xl mx-auto text-brand-text">{subtitle}</p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button 
-            variant={lightBackground ? 'default' : 'outline'} 
-            className={lightBackground ? '' : 'border-white text-white hover:bg-white hover:text-brand-primary'} 
-            asChild
-          >
-            <Link to="/contact">{primaryCta}</Link>
+          <Button size="lg" className="group" asChild>
+            <Link to={contactPath}>
+              {primaryCta}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </Button>
           
-          {secondaryCta && (
-            <Button 
-              variant={lightBackground ? 'outline' : 'outline'} 
-              className={lightBackground ? 'border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white' : 'border-white text-white hover:bg-white hover:text-brand-primary'} 
-              asChild
-            >
-              <Link to="/case-studies">{secondaryCta}</Link>
-            </Button>
-          )}
+          <Button variant="outline" size="lg" className="bg-transparent text-white hover:bg-white/10 border-white hover:text-brand-heading hover:bg-white" asChild>
+            <Link to={caseStudiesPath}>
+              {secondaryCta}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
         
         {footerNote && (
-          <p className={`text-sm mt-8 ${lightBackground ? 'text-gray-500' : 'text-white'}`}>
-            {footerNote}
-          </p>
-        )}
-        
-        {children && (
-          <div className="mt-12">
-            {children}
-          </div>
+          <p className="mt-12 text-sm text-white/70">{footerNote}</p>
         )}
       </div>
     </section>
