@@ -4,11 +4,10 @@ import PageLayout from "@/components/PageLayout";
 import DeutscherHero from "@/components/de/DeutscherHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
-import BasecampSection from "@/components/de/BasecampSection";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
-import ClientLogos from "@/components/ClientLogos";
+import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -27,7 +26,6 @@ const GermanIndex = () => {
       <DeutscherHero />
       <DeutscherAboutSection />
       <TeamImpactSectionDE />
-      <BasecampSection />
       <TeamTeaserDE />
       
       <div className="py-16 bg-white">
@@ -42,28 +40,7 @@ const GermanIndex = () => {
       
       <GermanSolutionSection />
       
-      <ClientLogos 
-        title="Technologien, die Website-Performance messbar verbessern"
-        description="Wir kombinieren menschliche Expertise mit leistungsstarken Tools – ohne Abkürzungen, ohne blinden KI-Einsatz."
-        technologies={[
-          {
-            name: "ChatGPT",
-            description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert."
-          },
-          {
-            name: "Midjourney",
-            description: "Individuelle Visuals statt Stockfotos."
-          },
-          {
-            name: "Ahrefs",
-            description: "Keyword-Analysen & Wettbewerbsrecherche."
-          },
-          {
-            name: "Basecamp",
-            description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt – intern und mit Ihnen."
-          }
-        ]}
-      />
+      <TechnologiesSection />
       
       <CaseStudiesSection 
         customTitle="Echte Ergebnisse von echten Kunden."

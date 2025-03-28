@@ -13,27 +13,24 @@ const DeutscherHero = () => {
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            {/* Main heading with emphasis */}
+          <div className="text-left max-w-4xl">
+            {/* Main heading with emphasis - single H1 */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              <div className="flex flex-col">
-                <span>Werbeagentur Mainz</span>
-                <span>für messbare Ergebnisse im Web</span>
-              </div>
-              
-              {/* Subheadline */}
-              <span className="text-2xl md:text-3xl lg:text-4xl mt-4 text-brand-primary">
-                Seit 2008 entwickeln wir Websites, die mehr leisten.
-              </span>
+              Werbeagentur Mainz
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              Wir entwickeln Websites, die besser ranken, mehr konvertieren<br />
+            {/* Subheadline */}
+            <p className="text-2xl md:text-3xl lg:text-4xl text-brand-primary font-medium mb-6">
+              Für messbare Ergebnisse im Web.
+            </p>
+            
+            <p className="text-xl md:text-2xl text-gray-700 mb-10">
+              Seit 2008 entwickeln wir Websites, die besser ranken, mehr konvertieren<br className="hidden md:block" />
               und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
             </p>
             
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* CTA buttons - left-aligned */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group" asChild>
                 <Link to="/de/kontakt">
                   Projekt starten
