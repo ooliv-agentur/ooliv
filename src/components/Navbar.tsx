@@ -19,7 +19,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-10 md:h-12 w-auto"
+                  className="h-10 md:h-14 w-auto"
                 />
               </Link>
             </div>
@@ -28,13 +28,13 @@ const Navbar = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="relative group h-16 w-16 rounded-full text-gray-800 hover:bg-white/20" // Increased size from h-12 w-12 to h-16 w-16
+                className="relative group h-20 w-20 rounded-full text-gray-800 hover:bg-white/20" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-10 w-10 transition-transform duration-200 group-hover:scale-110" /> {/* Increased from h-8 w-8 to h-10 w-10 */}
+                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>
@@ -47,4 +47,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
