@@ -9,6 +9,7 @@ export default {
         sans: ['DM Sans', 'sans-serif'],
       },
       colors: {
+        border: "#e2e8f0", // Adding border color explicitly
         brand: {
           primary: "#006064", // Teal primary color
           primaryHover: "#004D40", // Darker teal for hover states

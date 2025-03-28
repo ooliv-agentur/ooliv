@@ -1,65 +1,39 @@
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
 
-interface CTAProps {
-  title?: string;
-  subtitle?: string;
-  primaryCta?: string;
+export interface CTAProps {
+  title: string;
+  subtitle: string;
+  primaryCta: string;
   secondaryCta?: string;
-  footerNote?: string;
+  children?: ReactNode; // Add children as an optional prop
 }
 
-const CTA = ({ title, subtitle, primaryCta, secondaryCta, footerNote }: CTAProps) => {
-  const { language } = useLanguage();
-  
+const CTA = ({ title, subtitle, primaryCta, secondaryCta, children }: CTAProps) => {
   return (
-    <section className="py-20 bg-brand-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold text-brand-heading mb-5">
-          {title || (language === 'de' 
-            ? "Bereit, Ihre digitale Präsenz zu transformieren?" 
-            : "Ready to transform your digital presence?")}
-        </h2>
+    <section className="py-20 bg-brand-primary text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+        <p className="text-xl max-w-2xl mx-auto mb-8">{subtitle}</p>
         
-        <p className="text-xl text-brand-text max-w-3xl mx-auto mb-10">
-          {subtitle || (language === 'de' 
-            ? "Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen." 
-            : "Let's discuss how our team can help your business achieve its online goals.")}
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <Button 
-            size="lg" 
-            className="group text-lg"
-            asChild
-          >
-            <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-              {primaryCta || (language === 'de' ? "Projekt starten" : "Start Your Project")}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button asChild>
+            <Link to="/contact">{primaryCta}</Link>
           </Button>
           
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="group text-lg" 
-            asChild
-          >
-            <Link to={language === 'de' ? "/de/case-studies" : "/case-studies"}>
-              {secondaryCta || (language === 'de' ? "Unsere Arbeiten ansehen" : "See Our Work")}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          {secondaryCta && (
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-primary" asChild>
+              <Link to="/case-studies">{secondaryCta}</Link>
+            </Button>
+          )}
         </div>
         
-        {footerNote && (
-          <p className="text-sm text-brand-text mt-8">
-            {footerNote}
-          </p>
+        {children && (
+          <div className="mt-12">
+            {children}
+          </div>
         )}
       </div>
     </section>
