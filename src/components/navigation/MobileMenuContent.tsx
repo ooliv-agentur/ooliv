@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { X, Globe, ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Globe, ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -73,14 +73,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
-        <button 
-          className="absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
-          onClick={onClose}
-          aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
-          style={{ width: '2.5rem', height: '2.5rem', minWidth: '2.5rem', minHeight: '2.5rem' }}
-        >
-          <X style={{ width: '1.5rem', height: '1.5rem' }} />
-        </button>
       </div>
       
       <div className="flex flex-col p-6 overflow-y-auto mt-4">
