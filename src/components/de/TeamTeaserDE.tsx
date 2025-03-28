@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -9,12 +8,12 @@ const TeamTeaserDE = () => {
     {
       name: "Uli Schönleber",
       position: "CEO",
-      image: "/lovable-uploads/53a8740e-7040-4fd8-8c2d-4476d7aea912.png"
+      image: "/lovable-uploads/fa1d7e97-0415-4796-bece-b9511223a43b.png"
     },
     {
       name: "Lisa Schönleber",
       position: "Content",
-      image: "/lovable-uploads/11fbefa2-3407-4a06-8de2-86e27a4743f3.png"
+      image: "/lovable-uploads/5d8ecaf2-f78a-43e7-b10e-d474d2005423.png"
     }
   ];
 
