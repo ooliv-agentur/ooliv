@@ -4,26 +4,19 @@ import PageLayout from '@/components/PageLayout';
 import { 
   Building, 
   Mail, 
-  Phone,
-  MessageCircle,
-  Send,
-  ArrowRight
+  Phone, 
+  Clock, 
+  MapPin,
+  CalendarDays
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
 import ContactForm from '@/components/ContactForm';
 import { useState } from 'react';
-import PageHero from '@/components/PageHero';
-import { Card, CardContent } from '@/components/ui/card';
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion';
-import { Separator } from '@/components/ui/separator';
 
 const GermanContact = () => {
   const { setLanguage } = useLanguage();
@@ -34,6 +27,12 @@ const GermanContact = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted');
+    // Form submission logic goes here
+  };
+
   const handleRequestAudit = () => {
     setShowAuditForm(true);
   };
@@ -41,238 +40,181 @@ const GermanContact = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <PageHero
-        badge="ooliv"
-        title="Lassen Sie uns über Ihr Projekt sprechen."
-        subtitle="Wir betreuen Unternehmen aus Mainz und Umgebung – persönlich, schnell und mit klarem Fokus."
-        primaryCta={{
-          text: "Projekt starten",
-          link: "#"
-        }}
-        secondaryCta={{
-          text: "Strategiegespräch buchen",
-          link: "#"
-        }}
-      />
-
-      {/* Meet Lisa - Your First Point of Contact */}
-      <section className="section-standard bg-gray-50">
-        <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Image column */}
-            <div className="relative h-full flex justify-center md:justify-end">
-              <div className="relative w-full max-w-md lg:max-w-lg">
-                <img 
-                  src="/lovable-uploads/8906f535-ee94-4493-8cd8-3a8a6a70ebd9.png" 
-                  alt="Lisa, Content & First Touch at ooliv" 
-                  className="rounded-lg shadow-lg w-full h-auto"
-                />
-                <div className="absolute inset-0 rounded-lg shadow-inner pointer-events-none"></div>
-              </div>
+      <section className="py-16 md:py-24 bg-gradient-to-b from-brand-backgroundAlt to-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center p-2 bg-brand-primary/10 rounded-full mb-4">
+              <Mail className="h-6 w-6 text-brand-primary" />
             </div>
-            
-            {/* Text column */}
-            <div className="flex flex-col justify-center space-y-4 md:pl-8">
-              <h2 className="text-3xl font-bold text-brand-heading">Lisa – Ihre erste Ansprechpartnerin</h2>
-              <p className="text-lg text-brand-text">
-                Lisa ist die erste Person, die Sie bei ooliv hören oder lesen werden. Sie kümmert sich um jede Anfrage persönlich, strukturiert und mit Tempo – und sorgt dafür, dass Ihr Projekt direkt bei Uli auf dem Tisch landet.
-              </p>
-              <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                "Sie müssen kein langes Formular ausfüllen. Schreiben Sie uns einfach – wir übernehmen den Rest."
-                <footer className="text-sm mt-2 font-medium">– Lisa, Content & First Touch</footer>
-              </blockquote>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Kontaktieren Sie ooliv</h1>
+            <p className="text-xl max-w-3xl mx-auto text-gray-600">
+              Lassen Sie uns über Ihr Projekt sprechen und herausfinden, wie wir Ihnen helfen können
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Choose How to Reach Us - Icon stack */}
-      <section className="section-standard relative overflow-hidden">
-        {/* Soft wave divider top */}
-        <div className="absolute top-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
-        
-        <div className="section-container">
-          <div className="grid md:grid-cols-2 gap-8 items-center py-4">
-            {/* Left column: Icon stack */}
-            <div className="flex flex-col items-center md:items-start justify-center space-y-6">
-              <div className="bg-blue-100 rounded-full p-4 shadow-sm">
-                <MessageCircle size={32} className="text-blue-600" />
-              </div>
-              <div className="bg-green-100 rounded-full p-4 shadow-sm">
-                <Send size={32} className="text-green-600" />
-              </div>
-              <div className="bg-amber-100 rounded-full p-4 shadow-sm">
-                <Mail size={32} className="text-amber-600" />
-              </div>
-              <div className="bg-purple-100 rounded-full p-4 shadow-sm">
-                <Phone size={32} className="text-purple-600" />
-              </div>
-            </div>
-            
-            {/* Right column: Copy */}
-            <div className="flex flex-col justify-center space-y-5">
-              <h2 className="text-3xl font-bold text-brand-heading">So erreichen Sie uns</h2>
-              <p className="text-lg text-brand-text">
-                Nutzen Sie die Sidebar – oder klicken Sie direkt auf:
-              </p>
+      {/* New Consultation Request Section in German */}
+      <ConsultationRequestSectionDE requestAudit={handleRequestAudit} />
+
+      {/* Contact Info & Form Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Contact Information Section */}
+            <div className="bg-brand-backgroundAlt rounded-lg p-8 shadow-sm">
+              <h2 className="text-2xl font-bold mb-6">ooliv GmbH</h2>
               
-              <div className="mt-4">
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2">
-                    <span>💬</span>
-                    <span>Chat starten</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>📝</span>
-                    <span>Anfrage senden</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>✉️</span>
-                    <span>E-Mail schreiben</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span>📞</span>
-                    <span>Anrufen</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                Keine Zwischenstellen. Keine Warteschleifen. Ihre Nachricht landet direkt im Team.
-              </blockquote>
-            </div>
-          </div>
-        </div>
-        
-        {/* Soft wave divider bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
-      </section>
-
-      {/* Why ooliv? Section */}
-      <section className="section-standard bg-gray-50">
-        <div className="section-container">
-          <h2 className="section-title text-center">Warum ooliv?</h2>
-          <div className="max-w-3xl mx-auto">
-            <ul className="space-y-3 text-center">
-              <li className="flex items-center justify-center gap-2">
-                <span className="text-brand-primary font-bold">✓</span>
-                <span>Direkter Kontakt mit dem CEO</span>
-              </li>
-              <li className="flex items-center justify-center gap-2">
-                <span className="text-brand-primary font-bold">✓</span>
-                <span>Klare Kommunikation ab Tag eins</span>
-              </li>
-              <li className="flex items-center justify-center gap-2">
-                <span className="text-brand-primary font-bold">✓</span>
-                <span>Keine Projektmanager, keine Reibungsverluste</span>
-              </li>
-              <li className="flex items-center justify-center gap-2">
-                <span className="text-brand-primary font-bold">✓</span>
-                <span>Fokus auf messbare Ergebnisse – nicht nur schöne Designs</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Details Section */}
-      <section className="section-standard">
-        <div className="section-container">
-          <h2 className="section-title text-center">Kontaktdaten</h2>
-          <div className="max-w-3xl mx-auto text-center">
-            <Card className="inline-block">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">ooliv GmbH</h3>
-                <p className="mb-4">
-                  Mombacher Str. 25<br />
-                  55122 Mainz, Deutschland
-                </p>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 text-brand-primary" />
-                    <span>06131 – 63 67 801</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-3">
-                    <Mail className="h-5 w-5 text-brand-primary" />
-                    <a href="mailto:info@ooliv.de" className="hover:underline">info@ooliv.de</a>
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start">
+                  <Building className="h-5 w-5 text-brand-primary mt-1 mr-3" />
+                  <div>
+                    <h3 className="font-medium mb-1">Unternehmen</h3>
+                    <p>ooliv GmbH</p>
                   </div>
                 </div>
                 
-                <p className="mt-4 italic text-sm">
-                  Wir sind für Sie da – regional erreichbar, digital verbunden.
+                <div className="flex items-start">
+                  <MapPin className="h-5 w-5 text-brand-primary mt-1 mr-3" />
+                  <div>
+                    <h3 className="font-medium mb-1">Adresse</h3>
+                    <p>Hauptstraße 1, 55116 Mainz, Deutschland</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Mail className="h-5 w-5 text-brand-primary mt-1 mr-3" />
+                  <div>
+                    <h3 className="font-medium mb-1">E-Mail</h3>
+                    <p>info@ooliv.de</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Phone className="h-5 w-5 text-brand-primary mt-1 mr-3" />
+                  <div>
+                    <h3 className="font-medium mb-1">Telefon</h3>
+                    <p>+49 6131 123456</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Clock className="h-5 w-5 text-brand-primary mt-1 mr-3" />
+                  <div>
+                    <h3 className="font-medium mb-1">Geschäftszeiten</h3>
+                    <p>Montag - Freitag: 9:00 - 17:00 Uhr</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg">
+                <div className="flex items-center gap-3 mb-4">
+                  <CalendarDays className="h-5 w-5 text-brand-primary" />
+                  <h3 className="text-lg font-medium">Lieber direkt ein Gespräch buchen?</h3>
+                </div>
+                <p className="mb-4">
+                  Sichern Sie sich einen Termin für ein 30-minütiges Strategiegespräch mit unserem Gründer
                 </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-standard bg-gray-50">
-        <div className="section-container">
-          <h2 className="section-title">Kontakt-FAQs</h2>
-          
-          <div className="max-w-3xl mx-auto mt-8">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left font-medium text-lg">
-                  Spreche ich direkt mit jemandem?
-                </AccordionTrigger>
-                <AccordionContent className="text-base">
-                  Ja – zuerst mit Lisa, danach direkt mit Uli, unserem Gründer und CEO.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left font-medium text-lg">
-                  Wie schnell bekomme ich eine Antwort?
-                </AccordionTrigger>
-                <AccordionContent className="text-base">
-                  In der Regel innerhalb weniger Stunden – oft sogar schneller.
-                </AccordionContent>
-              </AccordionItem>
-              
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left font-medium text-lg">
-                  Arbeitet ihr auch international?
-                </AccordionTrigger>
-                <AccordionContent className="text-base">
-                  Ja – wir betreuen Projekte aus ganz Europa. Regional erreichbar, aber ortsunabhängig umsetzbar.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="section-standard">
-        <div className="section-container text-center">
-          <h2 className="section-title">Bereit, loszulegen?</h2>
-          <p className="text-lg max-w-2xl mx-auto mb-8">
-            Wir sind schnell, direkt und strategisch – und freuen uns auf Ihr Projekt.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group" asChild>
-              <Link to="#">
-                Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+                <Button variant="outline" className="w-full">Termin vereinbaren</Button>
+              </div>
+            </div>
             
-            <Button 
-              size="lg"
-              variant="outline"
-              className="group"
-              asChild
-            >
-              <Link to="#">
-                Strategiegespräch buchen
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Schreiben Sie uns</h2>
+              <form onSubmit={onSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" placeholder="Ihr Name" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Unternehmen</Label>
+                    <Input id="company" placeholder="Ihre Firma" />
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">E-Mail *</Label>
+                    <Input id="email" type="email" placeholder="ihre.email@beispiel.de" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Telefon</Label>
+                    <Input id="phone" type="tel" placeholder="Ihre Telefonnummer" />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Betreff</Label>
+                  <Input id="subject" placeholder="Worum geht es?" />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="message">Nachricht *</Label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Wie können wir Ihnen helfen?" 
+                    rows={5}
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <input 
+                      type="checkbox" 
+                      id="privacy" 
+                      className="h-4 w-4 rounded border-gray-300 text-brand-primary focus:ring-brand-primary"
+                      required
+                    />
+                    <Label htmlFor="privacy" className="text-sm">
+                      Ich stimme der <a href="/de/datenschutz" className="text-brand-primary hover:underline">Datenschutzerklärung</a> zu *
+                    </Label>
+                  </div>
+                </div>
+                
+                <Button type="submit" size="lg">Nachricht senden</Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section with focus on "ooliv" keyword */}
+      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Häufig gestellte Fragen</h2>
+            <p className="text-lg max-w-2xl mx-auto text-gray-600">
+              Antworten auf die häufigsten Fragen zu unseren Dienstleistungen
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: "Wie läuft eine Zusammenarbeit mit ooliv typischerweise ab?",
+                answer: "Jede Zusammenarbeit mit ooliv beginnt mit einem strategischen Gespräch, in dem wir Ihre Ziele, Herausforderungen und Erwartungen besprechen. Nach einer gründlichen Analyse erstellen wir ein maßgeschneidertes Konzept und Angebot. Nach Ihrer Zustimmung starten wir mit der Umsetzung, wobei Sie in jedem Schritt eingebunden sind."
+              },
+              {
+                question: "Für welche Branchen hat ooliv bereits Projekte umgesetzt?",
+                answer: "ooliv hat Erfahrung in verschiedenen Branchen, darunter SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Unsere Expertise ist besonders wertvoll für B2B-Unternehmen mit komplexen Angeboten, die ihre digitale Präsenz optimieren möchten."
+              },
+              {
+                question: "Wie unterscheidet sich ooliv von anderen Agenturen?",
+                answer: "Bei ooliv arbeiten Sie direkt mit dem Gründer zusammen, während ein spezialisiertes Team im Hintergrund arbeitet. Dieser Ansatz garantiert kurze Kommunikationswege, tiefgreifendes Verständnis für Ihre Ziele und hochwertige Ergebnisse ohne Reibungsverluste."
+              },
+              {
+                question: "Was kostet ein Projekt mit ooliv?",
+                answer: "Die Kosten eines Projekts mit ooliv variieren je nach Umfang, Komplexität und Zeitrahmen. Wir glauben an transparente Preisgestaltung und erstellen individuelle Angebote basierend auf Ihren spezifischen Anforderungen. Kontaktieren Sie uns für ein unverbindliches Gespräch."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
+                <p className="text-gray-700">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
