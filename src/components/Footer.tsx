@@ -48,7 +48,7 @@ const Footer = () => {
               asChild
             >
               <Link to={getUrl('contact')}>
-                {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
+                {language === 'de' ? "Projekt starten →" : t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
             <div className="mt-4 pt-4 border-t border-gray-700">
               <p className="text-sm text-white/80">
                 {language === 'de' 
-                  ? 'Alle Kommunikation wird persönlich von unserem Gründer und CEO bearbeitet — schnell, direkt und strategisch.'
+                  ? 'Alle Kommunikation erfolgt direkt mit unserem CEO, Uli – schnell, direkt und strategisch.'
                   : 'All communication is handled personally by our founder and CEO — fast, direct, and strategic.'}
               </p>
             </div>
@@ -121,6 +121,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+        {language === 'de' && (
+          <div className="mt-6 text-center text-sm text-white/80">
+            <p><strong>100+ erfolgreiche Projekte umgesetzt</strong> • <span className="mx-2">Vertrauen von führenden Unternehmen</span> • <strong>Strategien, die messbar wirken</strong></p>
+          </div>
+        )}
       </div>
     </footer>
   );

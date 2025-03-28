@@ -25,7 +25,7 @@ const SEOCtaDE = () => {
           >
             <Link to="/de/kontakt">
               <FileCheck className="mr-2 h-5 w-5" />
-              Kostenloses SEO-Audit anfordern
+              Projekt starten →
             </Link>
           </Button>
           
@@ -37,15 +37,15 @@ const SEOCtaDE = () => {
           >
             <Link to="/de/kontakt">
               <PhoneCall className="mr-2 h-5 w-5" />
-              Strategiegespräch vereinbaren
+              Strategiegespräch buchen →
             </Link>
           </Button>
         </div>
         
         <p className="text-sm text-brand-text">
           <span className="font-bold">100+ erfolgreich umgesetzte Projekte</span> • 
-          <span className="mx-2">Vertraut von führenden Unternehmen</span> • 
-          <span className="font-bold">KI-gestützte Strategien für maximale Effizienz</span>
+          <span className="mx-2">Vertrauen von führenden Unternehmen</span> • 
+          <span className="font-bold">Strategien, die messbar wirken</span>
         </p>
       </div>
     </section>

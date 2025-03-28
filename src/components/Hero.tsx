@@ -33,8 +33,8 @@ const Hero = ({
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               {language === 'de' ? (
                 <div className="flex flex-col">
-                  <span>Werbeagentur Mainz</span>
-                  <span>für messbare Ergebnisse im Web</span>
+                  <span>Lassen Sie uns Ihr Projekt starten –</span>
+                  <span>Werbeagentur aus Mainz</span>
                   <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-ooliv-green">Seit 2008 entwickeln wir Websites, die mehr leisten.</span>
                 </div>
               ) : (
@@ -69,7 +69,7 @@ const Hero = ({
               
               <Button variant="outline" size="lg" className="bg-transparent text-white hover:bg-white/10 border-white hover:bg-white hover:text-ooliv-black" asChild>
                 <Link to={language === 'de' ? "/de/referenzen" : "/case-studies"}>
-                  {seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work")}
+                  {seeWorkText || (language === 'de' ? "Unsere Arbeiten ansehen" : "See Our Work")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
