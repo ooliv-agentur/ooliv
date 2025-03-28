@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,15 +52,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'ooliv-black': '#0C0C0C',
+        'ooliv-white': '#F9F9F9',
+        'ooliv-grey': '#DADADA',
+        'ooliv-warm-grey': '#E5E2DC',
+        'ooliv-green': '#00FF85',
+        'ooliv-orange': '#FF6A3D',
         brand: {
-          background: "#F5F3EF",    // Soft beige
-          backgroundAlt: "#E8ECE3",  // Soft pastel green
-          primary: "#A5B79C",       // Soft green
-          primaryHover: "#94A68B",  // Darker soft green
-          heading: "#4A4A49",       // Dark gray for headings
-          text: "#333333",          // Soft black/charcoal
-          muted: "#D4D4D4",         // Muted gray
-          footer: "#2C2C2B",        // Dark footer background
+          background: "#F9F9F9",
+          backgroundAlt: "#E5E2DC",
+          primary: "#00FF85",
+          primaryHover: "#00E678",
+          heading: "#0C0C0C",
+          text: "#333333",
+          muted: "#DADADA",
+          footer: "#0C0C0C",
         },
         blue: {
           500: "#3B82F6",
@@ -71,6 +76,14 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Bebas Neue", "Impact", "Arial Black", "sans-serif"],
+        condensed: ["Bebas Neue", "Impact", "Arial Narrow", "sans-serif"],
+      },
+      spacing: {
+        'section': '6rem',
+        'section-sm': '3rem',
+        'gutter': '1.5rem',
+        'container': '1200px',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,10 +109,20 @@ export default {
             opacity: "1",
           },
         },
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
