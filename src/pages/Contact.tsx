@@ -27,8 +27,8 @@ const Contact = () => {
       {/* Hero Section */}
       <PageHero
         badge="ooliv"
-        title="Let's Get Your Website Moving"
-        subtitle="Whether you're starting from scratch or planning a relaunch — this is where momentum begins."
+        title="Let's Talk About Your Project — From Mainz, With Clarity"
+        subtitle="Whether you already have a clear brief or just want to explore what's possible — we're one message away. Clients from Mainz, across Europe, and beyond trust us to move fast and think strategically."
         primaryCta={{
           text: "Start Your Project",
           link: "#"
@@ -57,12 +57,12 @@ const Contact = () => {
             
             {/* Text column */}
             <div className="flex flex-col justify-center space-y-4 md:pl-8">
-              <h2 className="text-3xl font-bold text-brand-heading">Lisa Will Be the First to Say Hi</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">Meet Lisa – Your First Point of Contact</h2>
               <p className="text-lg text-brand-text">
-                At ooliv, we don't hide behind forms or funnels. You'll start by talking to Lisa — who'll make sure your inquiry lands right where it belongs: with Uli, our CEO.
+                Lisa is your first point of contact at ooliv. She keeps every inquiry personal, structured, and moving — and makes sure it lands directly on Uli's desk.
               </p>
               <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                "I take every inquiry seriously — because most people already know what they need. They just want someone to finally move things forward."
+                "You don't need to fill out a long form. Just reach out — and we'll take it from there."
                 <footer className="text-sm mt-2 font-medium">– Lisa, Content & First Touch</footer>
               </blockquote>
             </div>
@@ -95,20 +95,20 @@ const Contact = () => {
             
             {/* Right column: Copy */}
             <div className="flex flex-col justify-center space-y-5">
-              <h2 className="text-3xl font-bold text-brand-heading">How to Reach Us (in 10 Seconds or Less)</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">Reach Out Your Way</h2>
               <p className="text-lg text-brand-text">
-                Use the sidebar. No extra clicks. No gatekeeping.
+                Use the sidebar to get in touch via:
               </p>
               
               <div className="mt-4">
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <span>💬</span>
-                    <span>Chat (for quick check-ins)</span>
+                    <span>Chat</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📝</span>
-                    <span>Inquiry Form (for detailed briefings)</span>
+                    <span>Step-by-step Inquiry Form</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>✉️</span>
@@ -121,7 +121,10 @@ const Contact = () => {
                 </ul>
               </div>
               
-              <p className="mt-2">We'll get back to you — personally, quickly, and with clarity.</p>
+              <p className="mt-2">No layers, no gatekeeping. Your message goes straight to our team.</p>
+              <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
+                You choose how we start — and we'll respond fast.
+              </blockquote>
             </div>
           </div>
         </div>
@@ -138,19 +141,19 @@ const Contact = () => {
             <ul className="space-y-3 text-center">
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll speak directly with Uli — no account managers, no friction</span>
+                <span>You'll speak directly with Uli — no account managers</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll move fast — we remove bottlenecks from day one</span>
+                <span>We remove delays — and bring clarity from day one</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll get answers, not "we'll look into it"</span>
+                <span>You'll always know where your project stands</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll get results — measurable, strategic, and on point</span>
+                <span>Every step is focused on business results</span>
               </li>
             </ul>
           </div>
@@ -181,7 +184,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <p className="mt-4 italic text-sm">Uli, our founder and CEO, will lead your project — from kickoff to delivery.</p>
+                <p className="mt-4 italic text-sm">We work remotely — but everything starts right here in Mainz.</p>
               </CardContent>
             </Card>
           </div>
@@ -197,19 +200,19 @@ const Contact = () => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Will I speak with the CEO?
+                  Will I speak with someone directly?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Yes. Every project is managed directly by Uli — no layers in between.
+                  Yes — you'll first talk to Lisa, and then directly with Uli, our CEO.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  How fast do you respond?
+                  How fast will I hear back?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Usually the same day. Sometimes within the hour.
+                  Usually within a few hours. Sometimes faster.
                 </AccordionContent>
               </AccordionItem>
               
@@ -218,7 +221,7 @@ const Contact = () => {
                   Do you work internationally?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Yes. We support clients across Europe and beyond.
+                  Absolutely. Most of our projects are remote — from Mainz to all across Europe.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -229,9 +232,9 @@ const Contact = () => {
       {/* Final CTA Section */}
       <section className="section-standard">
         <div className="section-container text-center">
-          <h2 className="section-title">What Happens Next?</h2>
+          <h2 className="section-title">Let's Get Started</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            You reach out. We reply. And together we turn your idea into something that works.
+            We're fast, direct, and strategic — and we'd love to hear what you're working on.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
