@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { MessageCircle, Send, Mail, Phone, Plus, X } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 import { 
   Tooltip,
   TooltipContent,
@@ -11,45 +10,46 @@ import {
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from '@/hooks/use-media-query';
 import LeadGenerationOverlay from './LeadGenerationOverlay';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const { language } = useLanguage();
 
   const toggleExpanded = () => {
     setIsExpanded(prev => !prev);
   };
 
-  // Updated button styles for consistent, flat appearance with softer blue
   const buttons = [
     { 
       id: 'chatbot', 
       icon: MessageCircle, 
-      label: 'Chat with us', 
+      label: language === 'de' ? 'Chatte mit uns' : 'Chat with us', 
       onClick: () => console.log('Chatbot clicked'),
-      className: 'bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none'
+      className: 'bg-white text-[#222730] border border-gray-200 hover:bg-gray-50'
     },
     { 
       id: 'project', 
       icon: Send, 
-      label: 'Start your project', 
+      label: language === 'de' ? 'Starte dein Projekt' : 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none'
+      className: 'bg-white text-[#222730] border border-gray-200 hover:bg-gray-50'
     },
     { 
       id: 'email', 
       icon: Mail, 
-      label: 'Email us', 
+      label: language === 'de' ? 'E-Mail an uns' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-[#335bff] border border-blue-100 hover:bg-blue-50'
+      className: 'bg-white text-[#222730] border border-gray-200 hover:bg-gray-50'
     },
     { 
       id: 'phone', 
       icon: Phone, 
-      label: 'Call us', 
+      label: language === 'de' ? 'Rufe uns an' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-[#335bff] border border-blue-100 hover:bg-blue-50'
+      className: 'bg-white text-[#222730] border border-gray-200 hover:bg-gray-50'
     }
   ];
 
@@ -61,41 +61,43 @@ const FloatingActionButtons = () => {
   return (
     <>
       <div className={cn(
-        "fixed right-10 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
+        "fixed right-6 lg:right-10 bottom-6 lg:bottom-10 z-40 flex flex-col gap-4",
         "transition-all duration-300"
       )}>
         {isMobile && (
-          <Button
+          <button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-[#335bff] text-white hover:bg-[#335bff]/90 border-none transition-all"
+            className="w-14 h-14 rounded-full bg-[#222730] text-white hover:bg-[#2C3240] transition-all shadow-lg flex items-center justify-center ml-auto"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
             {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
-          </Button>
+          </button>
         )}
 
-        {visibleButtons.map((button) => (
-          <TooltipProvider key={button.id} delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  onClick={button.onClick}
-                  className={cn(
-                    "w-14 h-14 rounded-full p-4", 
-                    "transition-all transform hover:scale-102 shadow-none hover:shadow-sm",
-                    button.className
-                  )}
-                  aria-label={button.label}
-                >
-                  <button.icon className="h-5 w-5" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left" className="bg-brand-footer text-white border-0">
-                <p>{button.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        ))}
+        <div className="flex flex-col gap-4">
+          {isExpanded && visibleButtons.map((button) => (
+            <TooltipProvider key={button.id} delayDuration={300}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={button.onClick}
+                    className={cn(
+                      "w-14 h-14 rounded-full flex items-center justify-center", 
+                      "transition-all shadow-md hover:shadow-lg",
+                      button.className
+                    )}
+                    aria-label={button.label}
+                  >
+                    <button.icon className="h-5 w-5" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="left" className="bg-[#222730] text-white border-0">
+                  <p>{button.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+        </div>
       </div>
 
       {/* Lead Generation Overlay */}
