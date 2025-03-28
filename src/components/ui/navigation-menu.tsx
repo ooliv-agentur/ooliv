@@ -1,9 +1,10 @@
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { X, Menu } from "lucide-react"
+import { X, Menu, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
 import { AnimatePresence, motion } from "framer-motion"
+import { cva } from "class-variance-authority"
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
