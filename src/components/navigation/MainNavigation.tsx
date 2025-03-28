@@ -17,14 +17,24 @@ const injectStyles = () => {
     style.id = styleId;
     style.innerHTML = `
       .burger-menu-button {
-        width: 5rem !important;
-        height: 5rem !important;
-        min-width: 5rem !important;
-        min-height: 5rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        min-width: 2.5rem !important;
+        min-height: 2.5rem !important;
       }
       .burger-menu-icon {
-        width: 4rem !important;
-        height: 4rem !important;
+        width: 2rem !important;
+        height: 2rem !important;
+      }
+      .close-button {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        min-width: 2.5rem !important;
+        min-height: 2.5rem !important;
+      }
+      .close-icon {
+        width: 2rem !important;
+        height: 2rem !important;
       }
     `;
     document.head.appendChild(style);
@@ -57,17 +67,16 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Mobile menu button - DOUBLED IN SIZE */}
+            {/* Mobile menu button - 50% SMALLER */}
             <div className="flex items-center">
               <button 
-                className="burger-menu-button flex items-center justify-center rounded-full text-[#b1b497] hover:bg-white/20" 
+                className="burger-menu-button flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300" 
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
-                style={{width: '5rem', height: '5rem'}}
               >
-                <Menu className="burger-menu-icon transition-transform duration-200 hover:scale-110" style={{width: '4rem', height: '4rem'}} />
+                <Menu className="burger-menu-icon transition-transform duration-200" />
               </button>
             </div>
           </div>
@@ -77,7 +86,7 @@ const MainNavigation = () => {
       {/* Mobile menu overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-[100]"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
           onClick={() => setIsOpen(false)}
         />
       )}

@@ -50,17 +50,37 @@
 @layer components {
   /* Force burger menu size */
   .nav-burger-button {
-    width: 5rem !important;
-    height: 5rem !important;
-    min-width: 5rem !important;
-    min-height: 5rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+    min-height: 2.5rem !important;
   }
   
   .nav-burger-icon {
-    width: 4rem !important;
-    height: 4rem !important;
-    min-width: 4rem !important;
-    min-height: 4rem !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    min-width: 2rem !important;
+    min-height: 2rem !important;
+  }
+  
+  .burger-menu-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .burger-menu-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  
+  .close-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  .close-icon {
+    width: 2rem !important;
+    height: 2rem !important;
   }
   
   /* Updated global section and component styles */

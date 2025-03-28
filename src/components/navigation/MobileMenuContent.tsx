@@ -68,40 +68,44 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
   return (
     <motion.div 
       ref={menuRef}
-      className="fixed right-0 top-0 bottom-0 w-full md:w-[80%] lg:w-[40%] bg-[#f7fafa] z-[101] overflow-auto"
+      className="fixed right-0 top-0 bottom-0 w-full md:w-full lg:w-full bg-[#f7fafa] z-[101] overflow-auto"
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
         <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          className="absolute right-4 top-4 w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300 transition-all duration-300" 
+        <button 
+          className="close-button absolute right-4 top-4 flex items-center justify-center bg-[#b1b497] text-white hover:bg-[#9a9c83] rounded-full transition-all duration-300" 
           onClick={onClose}
           aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
         >
-          <X className="h-12 w-12" />
-        </Button>
+          <X className="close-icon" />
+        </button>
       </div>
       
-      <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto mt-6">
-        <div className="mb-6 pb-6 border-b border-gray-200">
-          <Button 
-            variant="outline" 
-            onClick={toggleLanguage}
-            className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
-          >
-            <div className="flex items-center">
-              <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
-              <span>{languageButtonText}</span>
+      <div className="flex-1 p-6 overflow-y-auto mt-8">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="mb-6 pb-6 border-b border-gray-200 md:col-span-2 lg:col-span-3">
+              <Button 
+                variant="outline" 
+                onClick={toggleLanguage}
+                className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
+              >
+                <div className="flex items-center">
+                  <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
+                  <span>{languageButtonText}</span>
+                </div>
+                <span className="text-sm opacity-70">{switchToText}</span>
+              </Button>
             </div>
-            <span className="text-sm opacity-70">{switchToText}</span>
-          </Button>
+            
+            <div className="lg:col-span-3 md:col-span-2">
+              <NavigationLinks onLinkClick={onClose} className="space-y-4 text-center md:text-left w-full md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:space-y-0" />
+            </div>
+          </div>
         </div>
-        
-        <NavigationLinks onLinkClick={onClose} className="space-y-4 text-center w-full" />
       </div>
       
       <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
