@@ -19,7 +19,7 @@ const Navbar = () => {
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
-                  className="h-10 md:h-14 w-auto"
+                  className="h-12 md:h-16 w-auto"
                 />
               </Link>
             </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="h-12 w-12 transition-transform duration-200 group-hover:scale-110" />
+                <Menu className="h-9 w-9 transition-transform duration-200 group-hover:scale-110" />
               </Button>
             </div>
           </div>

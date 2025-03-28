@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
   
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -149,7 +151,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black/75 flex flex-col z-[100]"
+          className="fixed inset-0 bg-black/50 flex flex-col z-[100]"
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -160,7 +162,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         >
           <motion.div
             ref={menuRef}
-            className="bg-brand-footer flex flex-col w-full h-full max-h-[100dvh] overflow-hidden"
+            className={cn(
+              "flex flex-col w-full h-full max-h-[100dvh] overflow-auto lg:overflow-hidden lg:max-h-[90vh]",
+              "bg-white text-gray-800"
+            )}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -169,12 +174,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-white/10 bg-brand-footer/95 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold text-white font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+              {!isDesktop && (
+                <h2 className="text-xl font-semibold text-gray-800 font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+              )}
               <Button 
                 variant="ghost" 
                 size="icon" 
-                className="text-white hover:bg-white/10 w-14 h-14 rounded-full flex items-center justify-center" 
+                className="text-gray-800 hover:bg-gray-100 w-14 h-14 rounded-full flex items-center justify-center ml-auto" 
                 onClick={onClose}
                 aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
               >
@@ -182,13 +189,16 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </Button>
             </div>
             
-            <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
+            <div className={cn(
+              "flex-1 flex flex-col py-6 px-6 overflow-y-auto",
+              isDesktop ? "pt-4" : "pt-6"
+            )}>
               {/* Language switcher at the top of the menu */}
-              <div className="mb-6 pb-6 border-b border-white/10">
+              <div className="mb-6 pb-6 border-b border-gray-200">
                 <Button 
                   variant="outline" 
                   onClick={toggleLanguage}
-                  className="w-full justify-between py-3 border-white/20 text-white hover:bg-white/10 hover:text-white"
+                  className="w-full justify-between py-3 border-gray-300 text-gray-800 hover:bg-gray-100 hover:text-gray-900"
                 >
                   <div className="flex items-center">
                     <Globe className="h-4 w-4 mr-2" />
@@ -198,12 +208,18 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 </Button>
               </div>
               
-              <nav className="space-y-6 text-center w-full">
+              <nav className={cn(
+                "space-y-4 text-center w-full",
+                isDesktop ? "space-y-3" : "space-y-6"
+              )}>
                 {navigationLinks.map((link, index) => (
                   <div key={index} className={cn()}>
                     <Link 
                       to={link.path}
-                      className="block py-3 text-4xl font-bold text-white hover:text-brand-primary transition-colors focus:outline-none focus:text-brand-primary focus-visible:ring-2 focus-visible:ring-white/50 rounded-md hover:scale-105 transition-transform font-sans"
+                      className={cn(
+                        "block py-2 font-bold text-gray-800 hover:text-blue-600 transition-colors focus:outline-none focus:text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600/50 rounded-md hover:scale-105 transition-transform font-sans",
+                        isDesktop ? "text-lg" : "text-4xl py-3"
+                      )}
                       onClick={onClose}
                     >
                       {link.title}
@@ -213,9 +229,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </nav>
             </div>
             
-            <div className="sticky bottom-0 z-10 border-t border-white/10 p-6 space-y-5 bg-brand-footer/95 backdrop-blur-sm">
+            <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-white/95 backdrop-blur-sm">
               <Button 
-                className="w-full justify-between group text-lg py-6 bg-brand-primary hover:bg-brand-primaryHover text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
+                className="w-full justify-between group text-lg py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.02] font-sans" 
                 size="lg"
                 onClick={onClose}
                 asChild
@@ -236,7 +252,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-white/20 text-white bg-brand-backgroundAlt/10 hover:bg-brand-primary hover:text-white transition-all duration-200 hover:border-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-gray-300 text-gray-800 bg-gray-50/50 hover:bg-blue-600 hover:text-white transition-all duration-200 hover:border-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/50 flex items-center justify-center"
                     aria-label={contact.label}
                   >
                     <contact.icon className="h-6 w-6" />
