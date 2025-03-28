@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -11,6 +12,7 @@ interface CTAProps {
   secondaryCta: string;
   footerNote?: string;
   lightBackground?: boolean;
+  children?: React.ReactNode; // Add children prop to the interface
 }
 
 const CTA = ({
@@ -19,7 +21,8 @@ const CTA = ({
   primaryCta,
   secondaryCta,
   footerNote,
-  lightBackground = false
+  lightBackground = false,
+  children
 }: CTAProps) => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
@@ -51,6 +54,12 @@ const CTA = ({
         
         {footerNote && (
           <p className="mt-12 text-sm text-white/70">{footerNote}</p>
+        )}
+        
+        {children && (
+          <div className="mt-8">
+            {children}
+          </div>
         )}
       </div>
     </section>
