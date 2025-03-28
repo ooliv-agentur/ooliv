@@ -1,8 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { 
-  Building, 
   Mail, 
   Phone,
   MessageCircle,
@@ -19,16 +18,22 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { Separator } from '@/components/ui/separator';
+import ContactForm from '@/components/ContactForm';
 
 const Contact = () => {
+  const [showAuditForm, setShowAuditForm] = useState(false);
+  
+  const handleRequestAudit = () => {
+    setShowAuditForm(true);
+  };
+
   return (
     <PageLayout>
       {/* Hero Section */}
       <PageHero
         badge="ooliv"
-        title="Let's Talk About Your Project — From Mainz, With Clarity"
-        subtitle="Whether you already have a clear brief or just want to explore what's possible — we're one message away. Clients from Mainz, across Europe, and beyond trust us to move fast and think strategically."
+        title="Let's Talk About Your Website Project"
+        subtitle="We work with businesses across Europe — always with a clear focus and fast personal communication."
         primaryCta={{
           text: "Start Your Project",
           link: "#"
@@ -39,7 +44,7 @@ const Contact = () => {
         }}
       />
 
-      {/* Meet Lisa - Your First Point of Contact */}
+      {/* Meet Lisa - Your First Contact */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -57,12 +62,12 @@ const Contact = () => {
             
             {/* Text column */}
             <div className="flex flex-col justify-center space-y-4 md:pl-8">
-              <h2 className="text-3xl font-bold text-brand-heading">Meet Lisa – Your First Point of Contact</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">Meet Lisa – Your First Contact</h2>
               <p className="text-lg text-brand-text">
-                Lisa is your first point of contact at ooliv. She keeps every inquiry personal, structured, and moving — and makes sure it lands directly on Uli's desk.
+                Lisa is the first person you'll talk to at ooliv. She handles every inquiry personally, makes things easy, and ensures your message reaches Uli — the founder and CEO — without delay.
               </p>
               <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                "You don't need to fill out a long form. Just reach out — and we'll take it from there."
+                "You don't need to fill out long forms. Just reach out — we'll take it from there."
                 <footer className="text-sm mt-2 font-medium">– Lisa, Content & First Touch</footer>
               </blockquote>
             </div>
@@ -70,7 +75,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Choose How to Reach Us - Icon stack */}
+      {/* Get in Touch - Icon stack */}
       <section className="section-standard relative overflow-hidden">
         {/* Soft wave divider top */}
         <div className="absolute top-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
@@ -95,35 +100,34 @@ const Contact = () => {
             
             {/* Right column: Copy */}
             <div className="flex flex-col justify-center space-y-5">
-              <h2 className="text-3xl font-bold text-brand-heading">Reach Out Your Way</h2>
+              <h2 className="text-3xl font-bold text-brand-heading">Get in Touch</h2>
               <p className="text-lg text-brand-text">
-                Use the sidebar to get in touch via:
+                Use the sidebar — or just click what works best for you:
               </p>
               
               <div className="mt-4">
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <span>💬</span>
-                    <span>Chat</span>
+                    <span>Start Chat</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📝</span>
-                    <span>Step-by-step Inquiry Form</span>
+                    <span>Send Inquiry</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>✉️</span>
-                    <span>Email</span>
+                    <span>Email Us</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span>📞</span>
-                    <span>Phone</span>
+                    <span>Call Us</span>
                   </li>
                 </ul>
               </div>
               
-              <p className="mt-2">No layers, no gatekeeping. Your message goes straight to our team.</p>
               <blockquote className="border-l-4 border-brand-primary pl-4 italic my-4">
-                You choose how we start — and we'll respond fast.
+                No middlemen. No delays. Your message goes straight to our core team.
               </blockquote>
             </div>
           </div>
@@ -133,27 +137,27 @@ const Contact = () => {
         <div className="absolute bottom-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
       </section>
 
-      {/* Why ooliv? Section */}
+      {/* Why Work With Us? Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
-          <h2 className="section-title text-center">Why Clients Work With ooliv</h2>
+          <h2 className="section-title text-center">Why Work With Us?</h2>
           <div className="max-w-3xl mx-auto">
             <ul className="space-y-3 text-center">
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll speak directly with Uli — no account managers</span>
+                <span>Direct communication with our CEO</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>We remove delays — and bring clarity from day one</span>
+                <span>Fast response times and clear decisions</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>You'll always know where your project stands</span>
+                <span>No project managers slowing things down</span>
               </li>
               <li className="flex items-center justify-center gap-2">
                 <span className="text-brand-primary font-bold">✓</span>
-                <span>Every step is focused on business results</span>
+                <span>Focus on results — not just design</span>
               </li>
             </ul>
           </div>
@@ -176,7 +180,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 text-brand-primary" />
-                    <span>06131 – 63 67 801</span>
+                    <span>+49 6131 – 63 67 801</span>
                   </div>
                   <div className="flex items-center justify-center gap-3">
                     <Mail className="h-5 w-5 text-brand-primary" />
@@ -184,7 +188,7 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <p className="mt-4 italic text-sm">We work remotely — but everything starts right here in Mainz.</p>
+                <p className="mt-4 italic text-sm">Regionally reachable. Remotely efficient.</p>
               </CardContent>
             </Card>
           </div>
@@ -200,28 +204,28 @@ const Contact = () => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Will I speak with someone directly?
+                  Will I speak to someone directly?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Yes — you'll first talk to Lisa, and then directly with Uli, our CEO.
+                  Yes — you'll first speak with Lisa, then directly with Uli, our founder and CEO.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  How fast will I hear back?
+                  How soon will I hear back?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Usually within a few hours. Sometimes faster.
+                  Usually within a few hours — often faster.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Do you work internationally?
+                  Do you work with international clients?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Absolutely. Most of our projects are remote — from Mainz to all across Europe.
+                  Yes — most of our clients are based across Europe. We're easily reachable, wherever you are.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -232,15 +236,15 @@ const Contact = () => {
       {/* Final CTA Section */}
       <section className="section-standard">
         <div className="section-container text-center">
-          <h2 className="section-title">Let's Get Started</h2>
+          <h2 className="section-title">Ready to Start?</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            We're fast, direct, and strategic — and we'd love to hear what you're working on.
+            We move fast, communicate clearly, and focus on strategy — let's launch something great together.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="group" asChild>
               <Link to="#">
-                Start Your Website Project
+                Start Your Project
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -259,6 +263,13 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Dialogs */}
+      <ContactForm 
+        open={showAuditForm} 
+        onOpenChange={setShowAuditForm} 
+        formType="audit" 
+      />
     </PageLayout>
   );
 };
