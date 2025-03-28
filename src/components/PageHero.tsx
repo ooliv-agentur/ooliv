@@ -26,43 +26,43 @@ const PageHero = ({
   secondaryCta,
 }: PageHeroProps) => {
   return (
-    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-ooliv-black to-ooliv-black/90 text-white pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
       {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-ooliv-black to-ooliv-black/70 opacity-90 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
           {/* Tag line above heading */}
           {badge && (
-            <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+            <div className="inline-flex items-center bg-ooliv-green/20 text-ooliv-green rounded-full px-6 py-2 text-lg font-bold mb-8">
               <span>{badge}</span>
             </div>
           )}
           
           {/* Main heading with emphasis */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-heading mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
             {title}
           </h1>
           
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-brand-heading/80 mb-8">
+          <p className="text-xl md:text-2xl lg:text-3xl text-white mb-10">
             {subtitle}
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group" asChild>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" className="group bg-ooliv-green text-ooliv-black hover:bg-ooliv-green/90 text-lg py-7 px-8 font-bold" asChild>
               <Link to={primaryCta.link}>
                 {primaryCta.text}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             
             {secondaryCta && (
-              <Button variant="outline" size="lg" className="group" asChild>
+              <Button variant="outline" size="lg" className="bg-transparent text-white hover:bg-white/10 border-2 border-white hover:bg-white hover:text-ooliv-black text-lg py-7 px-8 font-bold" asChild>
                 <Link to={secondaryCta.link}>
                   {secondaryCta.text}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             )}
