@@ -8,10 +8,11 @@ export interface CTAProps {
   subtitle: string;
   primaryCta: string;
   secondaryCta?: string;
-  children?: ReactNode; // Add children as an optional prop
+  children?: ReactNode;
+  footerNote?: string; // Add footerNote as an optional prop
 }
 
-const CTA = ({ title, subtitle, primaryCta, secondaryCta, children }: CTAProps) => {
+const CTA = ({ title, subtitle, primaryCta, secondaryCta, children, footerNote }: CTAProps) => {
   return (
     <section className="py-20 bg-brand-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -29,6 +30,12 @@ const CTA = ({ title, subtitle, primaryCta, secondaryCta, children }: CTAProps) 
             </Button>
           )}
         </div>
+        
+        {footerNote && (
+          <p className="text-sm text-white mt-8">
+            {footerNote}
+          </p>
+        )}
         
         {children && (
           <div className="mt-12">
