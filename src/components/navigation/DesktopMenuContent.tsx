@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import NavigationLinks from './NavigationLinks';
@@ -25,15 +25,8 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
-      <div className="flex justify-between items-center p-4 border-b border-gray-100">
-        <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
-        <button 
-          className="flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300 w-10 h-10 min-w-10 min-h-10"
-          onClick={onClose}
-          aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
-        >
-          <X className="w-6 h-6" />
-        </button>
+      <div className="flex justify-end p-4 border-b border-gray-100">
+        {/* Close button removed from here as it's in MainNavigation */}
       </div>
 
       <div className="container mx-auto px-4 py-12">

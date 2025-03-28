@@ -40,27 +40,28 @@ const MainNavigation = () => {
                 />
               </Link>
             </div>
-            
-            {/* Menu toggle button - right-aligned */}
-            <button 
-              className={cn(
-                "flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
-                "w-10 h-10 min-w-10 min-h-10"
-              )}
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
           </div>
         </div>
       </nav>
+
+      {/* Menu toggle button - positioned based on menu state */}
+      <button 
+        className={cn(
+          "fixed top-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+          "w-10 h-10 min-w-10 min-h-10",
+          isOpen ? "right-4" : "left-4 md:left-[calc(50%-35rem)] lg:left-[calc(50%-37rem)] xl:left-[calc(50%-40rem)]"
+        )}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
+        aria-expanded={isOpen}
+        aria-controls="mobile-menu"
+      >
+        {isOpen ? (
+          <X className="w-6 h-6" />
+        ) : (
+          <Menu className="w-6 h-6" />
+        )}
+      </button>
 
       {/* Menu overlay */}
       {isOpen && (

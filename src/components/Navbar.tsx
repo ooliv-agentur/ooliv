@@ -4,7 +4,7 @@ import MainNavigation from './navigation/MainNavigation';
 
 const Navbar = () => {
   return (
-    <div className="z-50 relative">
+    <div className="z-50">
       <MainNavigation />
     </div>
   );
