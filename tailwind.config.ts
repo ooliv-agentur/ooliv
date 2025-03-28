@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -75,10 +76,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Bebas Neue", "Impact", "Arial Black", "sans-serif"],
-        condensed: ["Bebas Neue", "Impact", "Arial Narrow", "sans-serif"],
-        heading: ["Syne", "'Helvetica Neue'", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "sans-serif"],
+        heading: ["DM Sans", "system-ui", "sans-serif"],
+        condensed: ["DM Sans", "system-ui", "sans-serif"],
+        display: ["DM Sans", "system-ui", "sans-serif"],
       },
       fontSize: {
         '2xs': '0.625rem',
