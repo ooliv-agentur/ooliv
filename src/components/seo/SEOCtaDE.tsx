@@ -6,46 +6,46 @@ import { Link } from 'react-router-dom';
 
 const SEOCtaDE = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-ooliv-black to-ooliv-black/90 text-white">
+    <section className="py-20 bg-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h2 className="text-3xl font-bold text-brand-heading mb-4">
           SEO, das wirkt – lokal & skalierbar
         </h2>
         
-        <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12">
+        <p className="text-xl text-brand-text max-w-3xl mx-auto mb-10">
           SEO ist kein Projekt – sondern ein strategischer Hebel für nachhaltiges Wachstum. 
           Lassen Sie uns gemeinsam das volle Potenzial Ihrer Website entfalten.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button 
             size="lg" 
-            className="bg-ooliv-green text-ooliv-black hover:bg-ooliv-green/90 text-lg py-7 font-bold"
+            className="bg-brand-primary text-white hover:bg-brand-primaryHover text-base py-6 font-medium font-sans"
             asChild
           >
             <Link to="/de/kontakt">
-              <FileCheck className="mr-3 h-6 w-6" />
-              Projekt starten →
+              <FileCheck className="mr-2 h-5 w-5" />
+              Kostenloses SEO-Audit anfordern
             </Link>
           </Button>
           
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-2 border-white text-white hover:bg-white hover:text-ooliv-black text-lg py-7 font-bold"
+            className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white text-base py-6 font-medium font-sans"
             asChild
           >
             <Link to="/de/kontakt">
-              <PhoneCall className="mr-3 h-6 w-6" />
-              Strategiegespräch buchen →
+              <PhoneCall className="mr-2 h-5 w-5" />
+              Strategiegespräch vereinbaren
             </Link>
           </Button>
         </div>
         
-        <p className="text-lg text-white">
+        <p className="text-sm text-brand-text">
           <span className="font-bold">100+ erfolgreich umgesetzte Projekte</span> • 
-          <span className="mx-3">Vertrauen von führenden Unternehmen</span> • 
-          <span className="font-bold">Strategien, die messbar wirken</span>
+          <span className="mx-2">Vertraut von führenden Unternehmen</span> • 
+          <span className="font-bold">KI-gestützte Strategien für maximale Effizienz</span>
         </p>
       </div>
     </section>

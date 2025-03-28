@@ -24,13 +24,11 @@ const Navbar = () => {
   return (
     <>
       <nav className={cn(
-        "fixed w-full z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-white/90 backdrop-blur-xl shadow-sm py-3" 
-          : "bg-white/80 py-5"
+        "fixed w-full backdrop-blur-xl border-b z-50 transition-all duration-300",
+        isScrolled ? "bg-white/90 shadow-sm" : "bg-white/80"
       )}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center">
                 <img 

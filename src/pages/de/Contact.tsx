@@ -44,13 +44,13 @@ const GermanContact = () => {
       <PageHero
         badge="ooliv"
         title="Lassen Sie uns über Ihr Projekt sprechen."
-        subtitle="Wir sind für Sie da – erreichen Sie uns direkt und unkompliziert"
+        subtitle="Wir betreuen Unternehmen aus Mainz und Umgebung – persönlich, schnell und mit klarem Fokus."
         primaryCta={{
-          text: "Projekt starten →",
+          text: "Projekt starten",
           link: "#"
         }}
         secondaryCta={{
-          text: "Strategiegespräch buchen →",
+          text: "Strategiegespräch buchen",
           link: "#"
         }}
       />
@@ -217,10 +217,10 @@ const GermanContact = () => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left font-medium text-lg">
-                  Sprechen Sie direkt mit Uli, unserem CEO?
+                  Spreche ich direkt mit jemandem?
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
-                  Ja – Sie sprechen mit Uli, unserem Gründer und CEO – ohne Zwischenstellen. Nach einer ersten Aufnahme durch Lisa erfolgt die gesamte weitere Kommunikation direkt mit Uli.
+                  Ja – zuerst mit Lisa, danach direkt mit Uli, unserem Gründer und CEO.
                 </AccordionContent>
               </AccordionItem>
               

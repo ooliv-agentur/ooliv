@@ -80,54 +80,54 @@ const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSe
       ];
 
   return (
-    <section className="py-24 md:py-32 bg-ooliv-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white">
+      <div className="section-container">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             {title || "Small Team. Big Impact."}
           </h2>
-          <p className="text-xl md:text-2xl text-center mb-16 text-white">
+          <p className="text-xl text-center mb-12 text-brand-text/80">
             {subtitle && <span className="block mb-2">{subtitle}</span>}
             {description || "At ooliv, you don't get passed around. Every project is led directly by the CEO—and executed by a focused team of experts in strategy, content, design, and development. One point of contact. Full in-house precision."}
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {services.map((service, index) => (
-              <div key={index} className="p-8 bg-ooliv-black/40 border border-ooliv-green/20 rounded-xl hover:border-ooliv-green/50 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="mr-4 p-3 bg-ooliv-green/20 rounded-full">
-                    <service.icon className="h-6 w-6 text-ooliv-green" />
+              <div key={index} className="p-6 bg-brand-background rounded-lg hover:shadow-md transition-all duration-300">
+                <div className="flex items-center mb-3">
+                  <div className="mr-4 p-2 bg-brand-primary/10 rounded-full">
+                    <service.icon className="h-5 w-5 text-brand-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold">{service.title}</h3>
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
                 </div>
-                <p className="text-lg md:text-xl text-white/90">{service.description}</p>
+                <p className="text-brand-text/80">{service.description}</p>
               </div>
             ))}
           </div>
           
           {displayStats && displayStats.length > 0 && (
-            <div className="grid grid-cols-3 gap-6 mb-16 bg-ooliv-black/50 p-8 rounded-xl border border-white/10">
+            <div className="grid grid-cols-3 gap-6 mb-12">
               {displayStats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-ooliv-green mb-2">{stat.value}</div>
-                  <div className="text-lg text-white">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
+                  <div className="text-sm text-brand-text/80">{stat.label}</div>
                 </div>
               ))}
             </div>
           )}
 
           {/* Basecamp section */}
-          <div className="bg-ooliv-warm-grey text-ooliv-black rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-bold mb-4">{basecampTitle}</h3>
-            <p className="text-lg mb-6">{basecampDescription}</p>
+          <div className="bg-brand-background rounded-lg p-8 mb-12">
+            <h3 className="text-xl font-bold mb-3">{basecampTitle}</h3>
+            <p className="mb-4">{basecampDescription}</p>
             
             <div>
-              <p className="font-bold text-xl mb-4">{basecampBenefitsTitle}</p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              <p className="font-medium mb-2">{basecampBenefitsTitle}</p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
                 {basecampBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="w-2 h-2 bg-ooliv-orange rounded-full mr-3 flex-shrink-0"></span>
-                    <span className="text-lg">{benefit}</span>
+                    <span className="w-1.5 h-1.5 bg-brand-primary rounded-full mr-2 flex-shrink-0"></span>
+                    <span className="text-sm">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -135,8 +135,8 @@ const TeamImpactSection = ({ title, subtitle, description, stats }: TeamImpactSe
           </div>
           
           <div className="text-center">
-            <Link to="/about-ooliv" className="inline-flex items-center text-ooliv-green text-xl font-bold hover:text-ooliv-orange transition-all duration-300">
-              Meet the team behind the results <ArrowRight className="ml-2 h-6 w-6" />
+            <Link to="/about-ooliv" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+              Meet the team behind the results <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
         </div>
