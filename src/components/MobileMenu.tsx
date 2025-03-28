@@ -1,12 +1,11 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight, Globe, Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useMediaQuery } from '@/hooks/use-media-query';
+import NavigationLinks from './navigation/NavigationLinks';
+import MenuHeader from './navigation/MenuHeader';
+import MenuFooter from './navigation/MenuFooter';
+import LanguageToggle from './navigation/LanguageToggle';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -15,9 +14,6 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
-  const { language, setLanguage } = useLanguage();
-  const navigate = useNavigate();
-  const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -71,85 +67,11 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
-  const toggleLanguage = () => {
-    const currentPath = location.pathname;
-    
-    if (language === 'en') {
-      setLanguage('de');
-      
-      if (currentPath === '/') {
-        navigate('/de');
-      } else if (currentPath.startsWith('/')) {
-        const pathWithoutLeadingSlash = currentPath.substring(1);
-        navigate(`/de/${pathWithoutLeadingSlash}`);
-      }
-    } else {
-      setLanguage('en');
-      
-      if (currentPath === '/de') {
-        navigate('/');
-      } else if (currentPath.startsWith('/de/')) {
-        const pathWithoutDe = currentPath.substring(4);
-        navigate(pathWithoutDe);
-      }
-    }
-    
-    onClose();
+  const menuVariants = {
+    hidden: { x: "100%" },
+    visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
+    exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
   };
-
-  const getNavigationLinks = () => {
-    if (language === 'de') {
-      return [
-        { title: 'Home', path: '/de' },
-        { title: 'Webdesign', path: '/de/webdesign' },
-        { title: 'Webentwicklung', path: '/de/webentwicklung' },
-        { title: 'Content-Erstellung', path: '/de/content-erstellung' },
-        { title: 'SEO-Optimierung', path: '/de/seo-optimierung' },
-        { title: 'Google Ads', path: '/de/google-ads' },
-        { title: 'KI-Technologien', path: '/de/ki-technologien' },
-        { title: 'Case Studies', path: '/de/case-studies' },
-        { title: 'Über ooliv', path: '/de/ueber-ooliv' },
-        { title: 'Kontakt', path: '/de/kontakt' }
-      ];
-    } else {
-      return [
-        { title: 'Home', path: '/' },
-        { title: 'Web Design', path: '/web-design' },
-        { title: 'Web Development', path: '/web-development' },
-        { title: 'Content Creation', path: '/content-creation' },
-        { title: 'SEO Optimization', path: '/seo-optimization' },
-        { title: 'Google Ads', path: '/google-ads' },
-        { title: 'AI Technologies', path: '/ai-technologies' },
-        { title: 'Case Studies', path: '/case-studies' },
-        { title: 'About ooliv', path: '/about-ooliv' },
-        { title: 'Contact', path: '/contact' }
-      ];
-    }
-  };
-
-  const navigationLinks = getNavigationLinks();
-  
-  const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
-  const languageButtonText = language === 'de' ? 'Sprache: Deutsch' : 'Language: English';
-  const switchToText = language === 'de' ? 'Wechseln zu English' : 'Switch to German';
-
-  const backdropVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
-    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } }
-  };
-
-  const menuVariants = isDesktop 
-    ? {
-        hidden: { x: "100%" },
-        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
-        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
-      }
-    : {
-        hidden: { x: "100%" },
-        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
-        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
-      };
 
   return (
     <AnimatePresence>
@@ -163,95 +85,33 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                 ? "ml-auto w-[40%] h-full" 
                 : "w-full h-full max-h-[100dvh] overflow-auto"
             )}
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
-              {!isDesktop && (
-                <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
-              )}
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
-                onClick={onClose}
-                aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
+            <MenuHeader onClose={onClose} isDesktop={isDesktop} />
             
             <div className={cn(
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
               <div className="mb-6 pb-6 border-b border-gray-200">
-                <Button 
-                  variant="outline" 
-                  onClick={toggleLanguage}
-                  className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
-                >
-                  <div className="flex items-center">
-                    <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
-                    <span>{languageButtonText}</span>
-                  </div>
-                  <span className="text-sm opacity-70">{switchToText}</span>
-                </Button>
+                <LanguageToggle onToggle={onClose} />
               </div>
               
               <nav className={cn(
                 "space-y-4 text-center w-full",
                 isDesktop ? "space-y-3" : "space-y-4"
               )}>
-                {navigationLinks.map((link, index) => (
-                  <div key={index} className={cn()}>
-                    <Link 
-                      to={link.path}
-                      className={cn(
-                        "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
-                        isDesktop ? "text-lg py-2" : "text-3xl py-3"
-                      )}
-                      onClick={onClose}
-                    >
-                      {link.title}
-                    </Link>
-                  </div>
-                ))}
+                <NavigationLinks onLinkClick={onClose} className="space-y-0" />
               </nav>
             </div>
             
-            <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
-              <Button 
-                className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
-                size="lg"
-                onClick={onClose}
-                asChild
-              >
-                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-                  {startProjectText}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
-                </Link>
-              </Button>
-              
-              <div className="grid grid-cols-3 gap-6">
-                {[
-                  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/4961316367801" },
-                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email", href: "mailto:info@ooliv.de" },
-                  { icon: Phone, label: language === 'de' ? "Telefon" : "Phone", href: "tel:+4961316367801" }
-                ].map((contact, index) => (
-                  <Button 
-                    key={index}
-                    variant="outline" 
-                    size="lg" 
-                    className="w-full py-6 min-h-[60px] border-gray-300 text-[#b1b497] bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
-                    aria-label={contact.label}
-                    asChild
-                  >
-                    <a href={contact.href}>
-                      <contact.icon className="h-6 w-6" />
-                    </a>
-                  </Button>
-                ))}
-              </div>
-            </div>
+            <MenuFooter onClose={onClose} />
           </motion.div>
         </motion.div>
       )}
