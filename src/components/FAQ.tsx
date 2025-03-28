@@ -29,7 +29,7 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
   // Default FAQs (used if no custom FAQs are provided)
   const defaultFaqs = [
     {
-      question: isGerman ? "Wie läuft der Webseitenerstellungsprozess ab?" : "What is your website creation process?",
+      question: isGerman ? "Wie läuft der Website-Erstellungsprozess ab?" : "What is your website creation process?",
       answer: isGerman ? "Wir haben einen klaren 5-Schritte-Prozess: 1) Strategie und Konzeption, 2) UX/UI-Design, 3) Entwicklung, 4) Content-Erstellung, 5) Launch und Support." : "We follow a clear 5-step process: 1) Strategy and planning, 2) UX/UI design, 3) Development, 4) Content creation, 5) Launch and support."
     },
     {
@@ -57,7 +57,7 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
   const title = customTitle || (isGerman ? "Häufig gestellte Fragen" : "Frequently Asked Questions");
   
   // Use custom CTA text if provided, otherwise use default
-  const ctaText = customCtaText || (isGerman ? "Haben Sie weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
+  const ctaText = customCtaText || (isGerman ? "Weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
   
   return (
     <section className="py-24 bg-white">

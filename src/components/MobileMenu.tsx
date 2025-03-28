@@ -1,10 +1,11 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, MessageCircle, Mail, Phone, ArrowRight, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -12,7 +13,9 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  const { language, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -66,6 +69,34 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
+  const toggleLanguage = () => {
+    const currentPath = location.pathname;
+    
+    if (language === 'en') {
+      // Switching to German
+      setLanguage('de');
+      
+      if (currentPath === '/') {
+        navigate('/de');
+      } else if (currentPath.startsWith('/')) {
+        const pathWithoutLeadingSlash = currentPath.substring(1);
+        navigate(`/de/${pathWithoutLeadingSlash}`);
+      }
+    } else {
+      // Switching to English
+      setLanguage('en');
+      
+      if (currentPath === '/de') {
+        navigate('/');
+      } else if (currentPath.startsWith('/de/')) {
+        const pathWithoutDe = currentPath.substring(4);
+        navigate(pathWithoutDe);
+      }
+    }
+    
+    onClose();
+  };
+
   const getNavigationLinks = () => {
     if (language === 'de') {
       return [
@@ -99,6 +130,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const navigationLinks = getNavigationLinks();
   
   const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
+  const languageButtonText = language === 'de' ? 'Sprache: Deutsch' : 'Language: English';
+  const switchToText = language === 'de' ? 'Wechseln zu English' : 'Switch to German';
 
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -110,28 +143,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     hidden: { x: "100%" },
     visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
     exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
-  };
-
-  const servicesVariants = {
-    hidden: { opacity: 0, height: 0, marginTop: 0 },
-    visible: { 
-      opacity: 1, 
-      height: 'auto', 
-      marginTop: 16,
-      transition: { 
-        duration: 0.3,
-        ease: [0.4, 0.0, 0.2, 1] 
-      } 
-    },
-    exit: { 
-      opacity: 0, 
-      height: 0,
-      marginTop: 0,
-      transition: { 
-        duration: 0.2,
-        ease: [0.4, 0.0, 0.2, 1]
-      } 
-    }
   };
 
   return (
@@ -172,6 +183,21 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             </div>
             
             <div className="flex-1 flex flex-col py-6 px-6 overflow-y-auto">
+              {/* Language switcher at the top of the menu */}
+              <div className="mb-6 pb-6 border-b border-white/10">
+                <Button 
+                  variant="outline" 
+                  onClick={toggleLanguage}
+                  className="w-full justify-between py-3 border-white/20 text-white hover:bg-white/10 hover:text-white"
+                >
+                  <div className="flex items-center">
+                    <Globe className="h-4 w-4 mr-2" />
+                    <span>{languageButtonText}</span>
+                  </div>
+                  <span className="text-sm opacity-70">{switchToText}</span>
+                </Button>
+              </div>
+              
               <nav className="space-y-6 text-center w-full">
                 {navigationLinks.map((link, index) => (
                   <div key={index} className={cn()}>

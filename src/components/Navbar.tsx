@@ -1,32 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import LanguageSwitch from './LanguageSwitch';
 import MobileMenu from './MobileMenu';
 import { cn } from "@/lib/utils";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll effect for navbar
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
-      <nav className={cn(
-        "fixed w-full backdrop-blur-xl border-b z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 shadow-sm" : "bg-white/80"
-      )}>
+      <nav className="absolute w-full z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
@@ -39,8 +24,7 @@ const Navbar = () => {
               </Link>
             </div>
             
-            <div className="flex items-center gap-3">
-              <LanguageSwitch />
+            <div className="flex items-center">
               <Button 
                 variant="ghost" 
                 size="icon"
