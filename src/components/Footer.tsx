@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -101,22 +100,6 @@ const Footer = () => {
                 <Mail className="h-4 w-4 mr-2 shrink-0" />
                 <span>info@ooliv.de</span>
               </li>
-              {/* Google Review Rating positioned below contact info */}
-              <li className="mt-4 text-right">
-                <div className="flex items-center justify-end">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
-                  ))}
-                </div>
-                <a 
-                  href="https://g.co/kgs/sgZX29W" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-300 transition-colors text-sm"
-                >
-                  {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -125,6 +108,20 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white font-sans">
               © 2025 ooliv. Alle Rechte vorbehalten.
+            </div>
+            
+            <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
+              ))}
+              <a 
+                href="https://g.co/kgs/sgZX29W" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-300 transition-colors text-sm ml-2"
+              >
+                {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
+              </a>
             </div>
           </div>
         </div>
