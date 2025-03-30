@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -126,7 +125,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-300 transition-colors inline-flex items-center mt-1"
               >
-                {language === 'de' ? 'Jetzt ansehen' : 'View now'} 
+                {language === 'de' ? 'Google-Rezensionen' : 'Google Reviews'} 
                 <ArrowRight className="ml-1 h-3 w-3" />
               </a>
             </div>
