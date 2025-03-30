@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
@@ -34,7 +33,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-brand-footer text-white pt-20 pb-8"> {/* Added more top padding */}
+    <footer className="bg-brand-footer text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="space-y-4">
@@ -78,48 +77,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">Rechtliches</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
               <li><Link to={getUrl('privacy-policy')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.privacy')}</Link></li>
               <li><Link to={getUrl('legal-notice')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.imprint')}</Link></li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
-            <ul className="space-y-3 text-white text-sm font-sans">
-              <li className="font-medium">ooliv GmbH</li>
-              <li className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
-                <span>Mombacher Str. 25<br />55122 Mainz</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 shrink-0" />
-                <span>06131 – 63 67 801</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 shrink-0" />
-                <span>info@ooliv.de</span>
-              </li>
-            </ul>
-            <div className="mt-4 pt-4 border-t border-gray-700">
-              <p className="text-sm text-white/80">
-                {language === 'de' 
-                  ? 'Alle Kommunikation wird persönlich von unserem Gründer und CEO bearbeitet — schnell, direkt und strategisch.'
-                  : 'All communication is handled personally by our founder and CEO — fast, direct, and strategic.'}
-              </p>
-            </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white font-sans">
-              {t('footer.copyright')}
-            </div>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <Link to={getUrl('privacy-policy')} className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.privacy')}</Link>
-              <Link to={getUrl('legal-notice')} className="text-sm text-white hover:text-brand-background transition-colors font-sans">{t('footer.legal.imprint')}</Link>
+              © 2025 ooliv. Alle Rechte vorbehalten.
             </div>
           </div>
         </div>
