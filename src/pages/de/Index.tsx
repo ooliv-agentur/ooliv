@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from "@/components/PageLayout";
 import DeutscherHero from "@/components/de/DeutscherHero";
@@ -25,7 +24,7 @@ const GermanIndex = () => {
   const newFaqs = [
     {
       question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-      answer: "Unser bewährter Prozess umfasst fünf klare Schritte, um Ihre Website strategisch aufzubauen und Ihre Ziele zu erreichen:\n\n1. **Strategie & Konzept** – Wir analysieren Ihre Ziele, Zielgruppen und Mitbewerber, um die optimale Grundlage zu schaffen.\n2. **Content-Erstellung** – Erstellung maßgeschneiderter Inhalte, abgestimmt auf Ihre Zielgruppe und SEO-Anforderungen.\n3. **UX/UI-Design** – Individuelle Gestaltung eines modernen und benutzerfreundlichen Designs.\n4. **Entwicklung** – Umsetzung Ihrer Website mit neuester Technik, zuverlässig und optimiert für alle Endgeräte.\n5. **Launch & Support** – Veröffentlichung der Website mit laufender Betreuung und technischen Updates."
+      answer: "Unser bewährter Prozess umfasst fünf klare Schritte, um Ihre Website strategisch aufzubauen und Ihre Ziele zu erreichen:\n\n• **Strategie & Konzept** – Wir analysieren Ihre Ziele, Zielgruppen und Mitbewerber, um die optimale Grundlage zu schaffen.\n• **Content-Erstellung** – Erstellung maßgeschneiderter Inhalte, abgestimmt auf Ihre Zielgruppe und SEO-Anforderungen.\n• **UX/UI-Design** – Individuelle Gestaltung eines modernen und benutzerfreundlichen Designs.\n• **Entwicklung** – Umsetzung Ihrer Website mit neuester Technik, zuverlässig und optimiert für alle Endgeräte.\n• **Launch & Support** – Veröffentlichung der Website mit laufender Betreuung und technischen Updates."
     },
     {
       question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
@@ -37,11 +36,11 @@ const GermanIndex = () => {
     },
     {
       question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-      answer: "Nach der Veröffentlichung Ihrer Website kümmern wir uns kontinuierlich um technische Wartung, regelmäßige Sicherheits-Updates und bei Bedarf um inhaltliche Anpassungen. Zudem überwachen wir auf Wunsch Ihre SEO-Performance und unterstützen Sie langfristig dabei, Ihre Website aktuell und wettbewerbsfähig zu halten."
+      answer: "Nach der Veröffentlichung Ihrer Website kümmern wir uns kontinuierlich um:\n\n• **Technische Wartung** – Regelmäßige Updates und Sicherheitsüberprüfungen\n• **Inhaltliche Anpassungen** – Bei Bedarf Aktualisierung Ihrer Webseiteninhalte\n• **SEO-Performance-Überwachung** – Kontinuierliche Analyse und Optimierung\n\nWir unterstützen Sie langfristig dabei, Ihre Website aktuell und wettbewerbsfähig zu halten."
     },
     {
       question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
-      answer: "ooliv ist seit 2008 in Mainz etabliert und kombiniert kreative Lösungen mit datengetriebenen Strategien. Unser erfahrenes Team verbindet tiefgehendes technisches Know-how, kreative Kompetenz und lokale Marktkenntnisse, um Ihre digitale Präsenz nachhaltig zu stärken. Wir pflegen transparente Kommunikation und entwickeln individuelle Lösungen, die exakt auf Ihre Ziele zugeschnitten sind."
+      answer: "Seit 2008 in Mainz etabliert, kombinieren wir:\n\n• **Kreative Lösungen** – Innovative Designs, die Ihre Marke hervorheben\n• **Datengetriebene Strategien** – Messbare Ergebnisse und klare Zielerreichung\n• **Technisches Know-how** – Modernste Webtechnologien und SEO-Optimierung\n• **Lokale Marktkenntnisse** – Tiefes Verständnis für regionale Geschäftslandschaften\n\nWir entwickeln individuelle Lösungen, die exakt auf Ihre Ziele zugeschnitten sind, mit transparenter Kommunikation und messbarem Erfolg."
     }
   ];
   
