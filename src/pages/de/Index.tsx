@@ -22,6 +22,29 @@ const GermanIndex = () => {
     setLanguage('de');
   }, [setLanguage]);
   
+  const newFaqs = [
+    {
+      question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
+      answer: "Unser bewährter Prozess umfasst fünf klare Schritte, um Ihre Website strategisch aufzubauen und Ihre Ziele zu erreichen:\n\n1. **Strategie & Konzept** – Wir analysieren Ihre Ziele, Zielgruppen und Mitbewerber, um die optimale Grundlage zu schaffen.\n2. **Content-Erstellung** – Erstellung maßgeschneiderter Inhalte, abgestimmt auf Ihre Zielgruppe und SEO-Anforderungen.\n3. **UX/UI-Design** – Individuelle Gestaltung eines modernen und benutzerfreundlichen Designs.\n4. **Entwicklung** – Umsetzung Ihrer Website mit neuester Technik, zuverlässig und optimiert für alle Endgeräte.\n5. **Launch & Support** – Veröffentlichung der Website mit laufender Betreuung und technischen Updates."
+    },
+    {
+      question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
+      answer: "Die Kosten einer individuell gestalteten WordPress-Website beginnen meist bei etwa 3.500 € bis 5.000 €. Der genaue Preis hängt von Faktoren wie dem Umfang der Inhalte, der Komplexität individueller Funktionen und der benötigten Designarbeit ab. In einem unverbindlichen Erstgespräch klären wir Ihre Anforderungen genau, damit Sie eine präzise Kalkulation erhalten."
+    },
+    {
+      question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
+      answer: "Die Entwicklung einer maßgeschneiderten Website dauert durchschnittlich 4 bis 8 Wochen. Der exakte Zeitraum hängt von Umfang und Komplexität Ihres Projekts ab. Kleinere Projekte setzen wir in etwa einem Monat um, größere Projekte oder Websites mit speziellen Funktionen können etwas länger dauern. Transparente Zeitplanung ist fester Bestandteil unserer Zusammenarbeit."
+    },
+    {
+      question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
+      answer: "Nach der Veröffentlichung Ihrer Website kümmern wir uns kontinuierlich um technische Wartung, regelmäßige Sicherheits-Updates und bei Bedarf um inhaltliche Anpassungen. Zudem überwachen wir auf Wunsch Ihre SEO-Performance und unterstützen Sie langfristig dabei, Ihre Website aktuell und wettbewerbsfähig zu halten."
+    },
+    {
+      question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
+      answer: "ooliv ist seit 2008 in Mainz etabliert und kombiniert kreative Lösungen mit datengetriebenen Strategien. Unser erfahrenes Team verbindet tiefgehendes technisches Know-how, kreative Kompetenz und lokale Marktkenntnisse, um Ihre digitale Präsenz nachhaltig zu stärken. Wir pflegen transparente Kommunikation und entwickeln individuelle Lösungen, die exakt auf Ihre Ziele zugeschnitten sind."
+    }
+  ];
+  
   return (
     <>
       <PageLayout className="overflow-x-hidden">
@@ -50,28 +73,7 @@ const GermanIndex = () => {
         />
         
         <FAQ 
-          customFaqs={[
-            {
-              question: "Wie läuft der Website-Erstellungsprozess ab?", // Updated hyphenation
-              answer: "Wir haben einen klaren 5-Schritte-Prozess: 1) Strategie und Konzeption, 2) UX/UI-Design, 3) Entwicklung, 4) Content-Erstellung, 5) Launch und Support."
-            },
-            {
-              question: "Wie viel kostet eine WordPress-Website?",
-              answer: "Die Kosten hängen von Umfang und Komplexität ab. Projekte starten typischerweise bei 5.000 € für kleine Business-Websites und können je nach Funktionsumfang, SEO-Optimierung und Content-Strategie variieren."
-            },
-            {
-              question: "Wie lange dauert die Erstellung einer Website?",
-              answer: "Der Zeitrahmen variiert je nach Projektumfang. Kleine Websites können innerhalb von 4-6 Wochen abgeschlossen sein, während komplexere Projekte 2-3 Monate benötigen können."
-            },
-            {
-              question: "Optimiert ihr Websites für Mobilgeräte?",
-              answer: "Absolut, Mobiloptimierung ist Standard. Wir entwickeln nach dem Mobile-First-Prinzip und stellen sicher, dass alle unsere Websites auf allen Geräten perfekt funktionieren."
-            },
-            {
-              question: "Bietet ihr laufenden Support nach dem Launch an?",
-              answer: "Ja, wir bieten verschiedene Support- und Wartungspakete an, die technischen Support, Sicherheitsupdates, Backups und Content-Updates umfassen können."
-            }
-          ]}
+          customFaqs={newFaqs}
           customTitle="Häufig gestellte Fragen"
           customCtaText="Weitere Fragen? Kontaktieren Sie uns"
         />

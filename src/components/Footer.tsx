@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">Rechtliches</h3>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{language === 'de' ? "Rechtliches" : "Legal"}</h3>
             <ul className="space-y-2 text-white text-sm font-sans">
               <li><Link to={getUrl('privacy-policy')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.privacy')}</Link></li>
               <li><Link to={getUrl('legal-notice')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.imprint')}</Link></li>
