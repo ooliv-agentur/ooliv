@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
@@ -81,6 +82,25 @@ const Footer = () => {
             <ul className="space-y-2 text-white text-sm font-sans">
               <li><Link to={getUrl('privacy-policy')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.privacy')}</Link></li>
               <li><Link to={getUrl('legal-notice')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.imprint')}</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
+            <ul className="space-y-3 text-white text-sm font-sans">
+              <li className="font-medium">ooliv GmbH</li>
+              <li className="flex items-start">
+                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
+                <span>Mombacher Str. 25<br />55122 Mainz</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-4 w-4 mr-2 shrink-0" />
+                <span>06131 – 63 67 801</span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-4 w-4 mr-2 shrink-0" />
+                <span>info@ooliv.de</span>
+              </li>
             </ul>
           </div>
         </div>
