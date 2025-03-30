@@ -79,7 +79,7 @@ const BeforeAfterTabbedSlider = () => {
         {projects.map((project) => (
           <TabsContent key={project.id} value={project.id} className="mt-0">
             <div 
-              className="relative w-full h-[500px] cursor-ew-resize overflow-hidden rounded-lg" // Increased height
+              className="relative w-full h-[500px] cursor-ew-resize overflow-hidden rounded-lg" 
               onMouseMove={handleMouseMove}
               onTouchMove={handleTouchMove}
             >
@@ -88,7 +88,7 @@ const BeforeAfterTabbedSlider = () => {
                 <img 
                   src={project.beforeImage} 
                   alt={project.beforeAlt}
-                  className="w-full h-full object-contain" // Changed to object-contain to preserve aspect ratio
+                  className="w-full h-full object-contain" 
                 />
               </div>
               
@@ -100,7 +100,7 @@ const BeforeAfterTabbedSlider = () => {
                 <img 
                   src={project.afterImage}
                   alt={project.afterAlt}
-                  className="w-full h-full object-contain" // Changed to object-contain to preserve aspect ratio
+                  className="w-full h-full object-contain" 
                 />
               </div>
               
