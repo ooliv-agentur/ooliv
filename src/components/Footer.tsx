@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -109,6 +109,26 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-white font-sans">
               © 2025 ooliv. Alle Rechte vorbehalten.
+            </div>
+            
+            {/* Google Review Rating */}
+            <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right">
+              <div className="flex items-center justify-center md:justify-end space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
+                ))}
+                <span className="ml-2">|</span>
+                <span className="ml-2">{language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}</span>
+              </div>
+              <a 
+                href="https://www.google.com/maps/place/?q=place_id=ChIJYfDRxX8vvUcRiuVpDvzFQH8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-300 transition-colors inline-flex items-center mt-1"
+              >
+                {language === 'de' ? 'Jetzt ansehen' : 'View now'} 
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </a>
             </div>
           </div>
         </div>
