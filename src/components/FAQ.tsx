@@ -66,18 +66,21 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
           {title}
         </h2>
         
-        <Accordion type="single" collapsible className="space-y-6">
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
               className="border border-gray-200 rounded-lg px-6 py-2"
             >
-              <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline">
+              <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-opacity-50">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-brand-text pt-2 pb-4 leading-relaxed">
-                <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, '<br/>') }} />
+              <AccordionContent className="text-[16px] text-brand-text leading-relaxed mt-4">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, '<br/>') }} 
+                  className="prose prose-slate max-w-none prose-p:mt-2 prose-p:mb-4 prose-li:my-1 prose-ol:mt-2 prose-ol:mb-4 prose-ol:pl-6 prose-ul:mt-2 prose-ul:mb-4 prose-ul:pl-6"
+                />
               </AccordionContent>
             </AccordionItem>
           ))}
