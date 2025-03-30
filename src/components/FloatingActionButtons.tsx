@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { 
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
@@ -75,26 +74,24 @@ const FloatingActionButtons = () => {
         )}
 
         {visibleButtons.map((button) => (
-          <TooltipProvider key={button.id} delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  onClick={button.onClick}
-                  className={cn(
-                    "w-14 h-14 rounded-full p-4", 
-                    "transition-all transform hover:scale-102 shadow-none hover:shadow-sm",
-                    button.className
-                  )}
-                  aria-label={button.label}
-                >
-                  <button.icon className="h-5 w-5" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left" className="bg-[#b1b497] text-white border-0">
-                <p>{button.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <Tooltip key={button.id}>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={button.onClick}
+                className={cn(
+                  "w-14 h-14 rounded-full p-4", 
+                  "transition-all transform hover:scale-102 shadow-none hover:shadow-sm",
+                  button.className
+                )}
+                aria-label={button.label}
+              >
+                <button.icon className="h-5 w-5" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="left" className="bg-[#b1b497] text-white border-0">
+              <p>{button.label}</p>
+            </TooltipContent>
+          </Tooltip>
         ))}
       </div>
 
