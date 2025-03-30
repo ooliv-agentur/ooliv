@@ -76,8 +76,8 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
               <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-brand-text pt-2 pb-4">
-                {faq.answer}
+              <AccordionContent className="text-brand-text pt-2 pb-4 leading-relaxed">
+                <div dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, '<br/>') }} />
               </AccordionContent>
             </AccordionItem>
           ))}
