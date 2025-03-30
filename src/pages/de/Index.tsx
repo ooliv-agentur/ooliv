@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSection from "@/components/de/SEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
@@ -21,6 +22,11 @@ const GermanIndex = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+  
+  // Update document title and meta description
+  useEffect(() => {
+    document.title = "ooliv – Ihre Full-Service Werbeagentur in Mainz";
+  }, []);
   
   const newFaqs = [
     {
@@ -47,6 +53,13 @@ const GermanIndex = () => {
   
   return (
     <>
+      <Helmet>
+        <title>ooliv – Ihre Full-Service Werbeagentur in Mainz</title>
+        <meta 
+          name="description" 
+          content="Entdecken Sie maßgeschneiderte digitale Lösungen mit ooliv, Ihrer Full-Service Werbeagentur in Mainz. Wir bieten Webdesign, SEO, Google Ads, Branding und kanalübergreifende Online-Strategien für Ihren Erfolg." 
+        />
+      </Helmet>
       <PageLayout className="overflow-x-hidden">
         <DeutscherHero />
         <DeutscherAboutSection />
