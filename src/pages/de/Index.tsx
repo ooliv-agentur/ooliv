@@ -5,7 +5,7 @@ import DeutscherHero from "@/components/de/DeutscherHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import BeforeAfterTabbedSlider from "@/components/BeforeAfterTabbedSlider"; // Changed component
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
@@ -66,12 +66,12 @@ const GermanIndex = () => {
         <TeamTeaserDE />
         
         <div className="py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"> {/* Increased max-width from max-w-5xl */}
             <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
             <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
               Viele Unternehmen kämpfen mit Webseiten, die nicht performen. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gefunden werden.
             </p>
-            <BeforeAfterSlider />
+            <BeforeAfterTabbedSlider />
           </div>
         </div>
         

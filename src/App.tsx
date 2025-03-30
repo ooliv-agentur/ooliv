@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -46,39 +46,54 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            {/* English Routes */}
-            <Route path="/" element={<Index />} />
-            <Route path="/web-design" element={<WebDesign />} />
-            <Route path="/web-development" element={<WebDevelopment />} />
-            <Route path="/content-creation" element={<ContentCreation />} />
-            <Route path="/seo-optimization" element={<SEO />} />
-            <Route path="/google-ads" element={<GoogleAds />} />
-            <Route path="/ai-technologies" element={<AiTechnologies />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/about-ooliv" element={<AboutUs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/legal-notice" element={<LegalNotice />} />
-            <Route path="/data-privacy" element={<DataPrivacy />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            {/* German Routes as Default */}
+            <Route path="/" element={<GermanIndex />} />
+            <Route path="/webdesign" element={<GermanWebDesign />} />
+            <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+            <Route path="/content-erstellung" element={<GermanContentCreation />} />
+            <Route path="/seo-optimierung" element={<GermanSEO />} />
+            <Route path="/google-ads" element={<GermanGoogleAds />} />
+            <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+            <Route path="/case-studies" element={<GermanCaseStudies />} />
+            <Route path="/ueber-ooliv" element={<GermanAboutUs />} />
+            <Route path="/kontakt" element={<GermanContact />} />
+            <Route path="/karriere" element={<GermanCareers />} />
+            <Route path="/impressum" element={<GermanLegalNotice />} />
+            <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
             
-            {/* German Routes */}
-            <Route path="/de" element={<GermanIndex />} />
-            <Route path="/de/webdesign" element={<GermanWebDesign />} />
-            <Route path="/de/webentwicklung" element={<GermanWebDevelopment />} />
-            <Route path="/de/content-erstellung" element={<GermanContentCreation />} />
-            <Route path="/de/seo-optimierung" element={<GermanSEO />} />
-            <Route path="/de/google-ads" element={<GermanGoogleAds />} />
-            <Route path="/de/ki-technologien" element={<GermanAiTechnologies />} />
-            <Route path="/de/case-studies" element={<GermanCaseStudies />} />
-            <Route path="/de/ueber-ooliv" element={<GermanAboutUs />} />
-            <Route path="/de/kontakt" element={<GermanContact />} />
-            <Route path="/de/karriere" element={<GermanCareers />} />
-            <Route path="/de/impressum" element={<GermanLegalNotice />} />
-            <Route path="/de/datenschutz" element={<GermanPrivacyPolicy />} />
+            {/* English Routes under /en */}
+            <Route path="/en" element={<Index />} />
+            <Route path="/en/web-design" element={<WebDesign />} />
+            <Route path="/en/web-development" element={<WebDevelopment />} />
+            <Route path="/en/content-creation" element={<ContentCreation />} />
+            <Route path="/en/seo-optimization" element={<SEO />} />
+            <Route path="/en/google-ads" element={<GoogleAds />} />
+            <Route path="/en/ai-technologies" element={<AiTechnologies />} />
+            <Route path="/en/case-studies" element={<CaseStudies />} />
+            <Route path="/en/about-ooliv" element={<AboutUs />} />
+            <Route path="/en/contact" element={<Contact />} />
+            <Route path="/en/careers" element={<Careers />} />
+            <Route path="/en/legal-notice" element={<LegalNotice />} />
+            <Route path="/en/data-privacy" element={<DataPrivacy />} />
+            <Route path="/en/privacy-policy" element={<PrivacyPolicy />} />
             
-            {/* Legacy redirects */}
-            <Route path="/lead-generation" element={<GoogleAds />} /> {/* Redirect old path to new */}
+            {/* Legacy redirects for old German paths */}
+            <Route path="/de" element={<Navigate to="/" replace />} />
+            <Route path="/de/webdesign" element={<Navigate to="/webdesign" replace />} />
+            <Route path="/de/webentwicklung" element={<Navigate to="/webentwicklung" replace />} />
+            <Route path="/de/content-erstellung" element={<Navigate to="/content-erstellung" replace />} />
+            <Route path="/de/seo-optimierung" element={<Navigate to="/seo-optimierung" replace />} />
+            <Route path="/de/google-ads" element={<Navigate to="/google-ads" replace />} />
+            <Route path="/de/ki-technologien" element={<Navigate to="/ki-technologien" replace />} />
+            <Route path="/de/case-studies" element={<Navigate to="/case-studies" replace />} />
+            <Route path="/de/ueber-ooliv" element={<Navigate to="/ueber-ooliv" replace />} />
+            <Route path="/de/kontakt" element={<Navigate to="/kontakt" replace />} />
+            <Route path="/de/karriere" element={<Navigate to="/karriere" replace />} />
+            <Route path="/de/impressum" element={<Navigate to="/impressum" replace />} />
+            <Route path="/de/datenschutz" element={<Navigate to="/datenschutz" replace />} />
+            
+            {/* Legacy redirects for old English paths */}
+            <Route path="/lead-generation" element={<Navigate to="/google-ads" replace />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -24,24 +24,27 @@ const Hero = ({
 }: HeroProps = {}) => {
   const { t, language } = useLanguage();
   
-  // Typing effect state
+  // For German language only: Typing effect state
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(80);
 
-  // Updated value propositions to cycle through
+  // Updated value propositions to cycle through (only used for German)
   const valueProps = [
-    { text: "Measurable Business Growth & Higher Conversions", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Scalable, High-Performing Digital Experiences", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "More Visibility, Engagement & Conversions", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Faster Load Times & Better SEO Rankings", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Lead Generation & Long-Term Success", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> }
+    { text: "Messbare Geschäftsergebnisse & höhere Konversionen", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Skalierbare, leistungsstarke digitale Erlebnisse", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Mehr Sichtbarkeit, Engagement & Konversionen", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Schnellere Ladezeiten & besseres Ranking", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
+    { text: "Lead-Generierung & langfristiger Erfolg", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> }
   ];
   
   const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
   
+  // Only run the typewriter effect for German language
   useEffect(() => {
+    if (language !== 'de') return;
+    
     const handleTyping = () => {
       const currentProp = valueProps[loopNum % valueProps.length];
       const fullText = currentProp.text;
@@ -69,7 +72,11 @@ const Hero = ({
     
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, loopNum, typingSpeed, valueProps]);
+  }, [displayText, isDeleting, loopNum, typingSpeed, valueProps, language]);
+  
+  // Get the correct paths for the language
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -93,13 +100,14 @@ const Hero = ({
                 <div className="flex flex-col">
                   <span>Web Design Agency Mainz</span>
                   <span>for Websites That Convert, Rank & Drive Growth</span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-[#b1b497]">Since 2008, we've been building high-performance websites.</span>
                 </div>
               )}
               
-              {/* Animation container with fixed width to prevent line breaks on desktop - only for English without custom title */}
-              {!subtitle && language === 'en' && (
+              {/* Animation container with fixed width to prevent line breaks on desktop - ONLY FOR GERMAN */}
+              {!subtitle && language === 'de' && (
                 <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
-                  <span className="mr-2">for</span>
+                  <span className="mr-2">für</span>
                   <div className="relative inline-flex items-center">
                     <span className="whitespace-nowrap text-gray-800">{displayText}</span>
                     <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
@@ -128,14 +136,14 @@ const Hero = ({
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group" asChild>
-                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+                <Link to={contactPath}>
                   {startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               
               <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
-                <Link to={language === 'de' ? "/de/referenzen" : "/case-studies"}>
+                <Link to={caseStudiesPath}>
                   {seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
