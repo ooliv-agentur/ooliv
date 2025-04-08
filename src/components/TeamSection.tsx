@@ -9,7 +9,7 @@ interface TeamMember {
     en: string;
     de: string;
   };
-  image?: string;
+  image: string;
   initials: string;
 }
 
@@ -24,6 +24,7 @@ const TeamSection = () => {
         en: "CEO · Consulting, Concept, AI",
         de: "CEO · Beratung, Konzept, KI"
       }, 
+      image: "/lovable-uploads/51d7af38-5abb-42ed-90ea-bd9451cbe50d.png",
       initials: "US" 
     },
     { 
@@ -32,6 +33,7 @@ const TeamSection = () => {
         en: "Content",
         de: "Content"
       }, 
+      image: "/lovable-uploads/c704876d-6b25-4e90-80b5-bd2867f8234b.png",
       initials: "LS" 
     },
     { 
@@ -40,6 +42,7 @@ const TeamSection = () => {
         en: "Creation",
         de: "Kreation"
       }, 
+      image: "/lovable-uploads/9295d42e-6141-4877-8671-1431a4640a5c.png",
       initials: "DN" 
     },
     { 
@@ -48,6 +51,7 @@ const TeamSection = () => {
         en: "Web Development",
         de: "Webentwicklung"
       }, 
+      image: "/lovable-uploads/3e333d84-2828-4385-8037-6fa62f815d1f.png",
       initials: "PT" 
     },
     { 
@@ -56,6 +60,7 @@ const TeamSection = () => {
         en: "Web Development",
         de: "Webentwicklung"
       }, 
+      image: "/lovable-uploads/46d00b56-ce4b-406e-be84-59f9cb3cd65c.png",
       initials: "KL" 
     },
     { 
@@ -64,6 +69,7 @@ const TeamSection = () => {
         en: "App Development",
         de: "App-Entwicklung"
       }, 
+      image: "/lovable-uploads/e90c4372-4b9d-4726-82db-7eb9d25738c3.png",
       initials: "NK" 
     },
     { 
@@ -72,6 +78,7 @@ const TeamSection = () => {
         en: "SEO Optimization",
         de: "SEO-Optimierung"
       }, 
+      image: "/lovable-uploads/4b03d523-6e2d-489d-aa2f-df379ff2ae9f.png",
       initials: "PB" 
     },
     { 
@@ -80,6 +87,7 @@ const TeamSection = () => {
         en: "Corporate Design",
         de: "Corporate Design"
       }, 
+      image: "/lovable-uploads/86266813-7926-4e30-81ef-7a0835035f48.png",
       initials: "GC" 
     },
     { 
@@ -88,6 +96,7 @@ const TeamSection = () => {
         en: "Illustrator",
         de: "Illustratorin"
       }, 
+      image: "/lovable-uploads/88f7c576-b6d6-48bc-9476-49edd2da054d.png",
       initials: "BM" 
     },
     { 
@@ -96,6 +105,7 @@ const TeamSection = () => {
         en: "Print Design",
         de: "Print-Design"
       }, 
+      image: "/lovable-uploads/bc65cd4c-3c22-40dd-b4da-a6d272c61d23.png",
       initials: "SM" 
     }
   ];
@@ -116,7 +126,7 @@ const TeamSection = () => {
               className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <Avatar className="h-32 w-32 mb-4 border-2 border-brand-primary/20">
-                <AvatarImage src={member.image} alt={member.name} />
+                <AvatarImage src={member.image} alt={member.name} className="object-top object-cover" />
                 <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-2xl">
                   {member.initials}
                 </AvatarFallback>

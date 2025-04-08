@@ -14,7 +14,7 @@ import {
 interface TeamMember {
   name: string;
   role: string;
-  image?: string;
+  image: string;
   initials: string;
   tooltip?: string;
 }
@@ -24,25 +24,27 @@ const TeamTeaser = () => {
     {
       name: "Uli Schönleber",
       role: "CEO – Your direct point of contact",
-      image: "/lovable-uploads/35bef0c2-85ae-4280-ac53-b37e5b5df6fa.png",
+      image: "/lovable-uploads/51d7af38-5abb-42ed-90ea-bd9451cbe50d.png",
       initials: "US",
       tooltip: "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
       role: "Content",
-      image: "/lovable-uploads/30e87fda-0145-47a5-935a-98e1e83d34e3.png",
+      image: "/lovable-uploads/c704876d-6b25-4e90-80b5-bd2867f8234b.png",
       initials: "LS",
     },
     {
       name: "Parveen Thakur",
       role: "Web Development",
+      image: "/lovable-uploads/3e333d84-2828-4385-8037-6fa62f815d1f.png",
       initials: "PT",
       tooltip: "On the team for over 20 years"
     },
     {
       name: "Dorinel Nedelcu",
       role: "Creation",
+      image: "/lovable-uploads/9295d42e-6141-4877-8671-1431a4640a5c.png",
       initials: "DN",
     }
   ];
@@ -63,7 +65,7 @@ const TeamTeaser = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20 self-start">
-                    <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top" />
+                    <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top object-cover" />
                     <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
                       {member.initials}
                     </AvatarFallback>

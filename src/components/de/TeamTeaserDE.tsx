@@ -9,12 +9,12 @@ const TeamTeaserDE = () => {
     {
       name: "Uli Schönleber",
       position: "CEO",
-      image: "/lovable-uploads/35bef0c2-85ae-4280-ac53-b37e5b5df6fa.png"
+      image: "/lovable-uploads/51d7af38-5abb-42ed-90ea-bd9451cbe50d.png"
     },
     {
       name: "Lisa Schönleber",
       position: "Content",
-      image: "/lovable-uploads/30e87fda-0145-47a5-935a-98e1e83d34e3.png"
+      image: "/lovable-uploads/c704876d-6b25-4e90-80b5-bd2867f8234b.png"
     }
   ];
 
