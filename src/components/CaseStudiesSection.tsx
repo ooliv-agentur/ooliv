@@ -24,6 +24,23 @@ export const caseStudiesData = {
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
     },
     {
+      client: "COBUS Industries",
+      industry: "Global Airport Bus Manufacturer",
+      headline: "Strategic website relaunch for increased visibility and modern user experience",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
+      quote: "Our new website combines technology, service and brand aspiration. The collaboration with ooliv was structured, creative and goal-oriented - fitting our standards as a global market leader.",
+      websiteLink: "www.cobus-industries.de",
+      impact: [
+        "Conceptual realignment including wireframing and content creation",
+        "Text development for business divisions, product lines and international audiences",
+        "High-quality web design focusing on user guidance, technology and brand image",
+        "WordPress development based on a customized technical structure",
+        "SEO optimization for international visibility and B2B reach",
+        "Image and video production to visually strengthen global market leadership"
+      ],
+      image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
+    },
+    {
       client: "COBUS",
       industry: "ERP & IT Solutions",
       headline: "Lead generation improved by 80% with a new website & conversion strategy",
@@ -108,6 +125,23 @@ export const caseStudiesData = {
         "Produktion von Bild- und Videomaterial zur emotionalen Markeninszenierung"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+    },
+    {
+      client: "COBUS Industries",
+      industry: "Weltmarktführer für Flughafenbusse",
+      headline: "Strategischer Website-Relaunch für mehr Sichtbarkeit und ein modernes Nutzererlebnis",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
+      quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
+      websiteLink: "www.cobus-industries.de",
+      impact: [
+        "Konzeptionelle Neuausrichtung inklusive Wireframing und Content-Erstellung",
+        "Textentwicklung für Unternehmensbereiche, Produktlinien und internationale Zielgruppen",
+        "Hochwertiges Webdesign mit Fokus auf Nutzerführung, Technik und Markenimage",
+        "WordPress-Entwicklung auf Basis einer individuellen technischen Struktur",
+        "SEO-Optimierung für internationale Sichtbarkeit und B2B-Reichweite",
+        "Bild- und Videoproduktion zur visuellen Stärkung der globalen Marktführerschaft"
+      ],
+      image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
     },
     {
       client: "COBUS",
