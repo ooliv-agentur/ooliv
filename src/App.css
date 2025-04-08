@@ -40,29 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* Updated Sortlist badge styling */
-.sortlist-badge {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: 0.6rem !important;
-  overflow: visible !important;
-  vertical-align: middle !important;
-  min-width: 60px !important;
-  position: relative !important;
-  z-index: 10 !important;
-  margin-left: 12px !important;
-  pointer-events: auto !important;
-}
-
-.sortlist-badge iframe {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: 0.6rem !important;
-  max-height: 0.6rem !important;
-  transform: scale(0.5) !important;
-  transform-origin: left center !important;
-  pointer-events: auto !important;
-}

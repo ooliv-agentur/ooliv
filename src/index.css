@@ -10,15 +10,14 @@
     visibility: visible !important; 
     opacity: 1 !important;
     height: 0.6rem !important;
-    max-width: 100px !important;
+    max-width: 140px !important;
     overflow: visible !important;
     vertical-align: middle !important;
     white-space: nowrap !important;
-    margin-top: -4px !important;  /* Slightly increased negative margin */
-    margin-bottom: -4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     line-height: 1 !important;
     position: relative !important;
-    top: -2px !important;  /* Additional vertical adjustment */
   }
 
   .sortlist-badge iframe {
@@ -27,10 +26,12 @@
     opacity: 1 !important;
     height: 0.6rem !important;
     max-height: 0.6rem !important;
-    transform: scale(0.5) !important;
+    transform: scale(0.75) !important;
     transform-origin: left center !important;
     vertical-align: middle !important;
     position: relative !important;
-    top: -1px !important;  /* Fine-tune iframe position */
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }

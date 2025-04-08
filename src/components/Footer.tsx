@@ -54,8 +54,8 @@ const Footer = () => {
       }
     }
 
-    // Add the script only if the badge container exists
-    if (document.querySelector('.sortlist-badge')) {
+    // Add the script with a slight delay to ensure DOM is ready
+    setTimeout(() => {
       const script = document.createElement('script');
       script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
       script.defer = true;
@@ -63,7 +63,7 @@ const Footer = () => {
       
       document.head.appendChild(script);
       sortlistScriptLoaded.current = true;
-    }
+    }, 500);
     
     return () => {};
   }, []);
@@ -162,19 +162,8 @@ const Footer = () => {
               </div>
               
               <div 
-                className="sortlist-badge flex items-center" 
-                style={{ 
-                  display: 'inline-block',
-                  visibility: 'visible',
-                  opacity: 1,
-                  height: '0.6rem',
-                  maxWidth: '100px',
-                  overflow: 'visible',
-                  verticalAlign: 'middle',
-                  whiteSpace: 'nowrap',
-                  marginTop: '-2px',
-                  marginBottom: '-2px',
-                }}
+                className="sortlist-badge inline-flex items-center" 
+                aria-label="Sortlist Badge"
               ></div>
             </div>
           </div>
