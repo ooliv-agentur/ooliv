@@ -1,10 +1,12 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// Define the structure for case studies
 export const caseStudiesData = {
   en: [
     {
@@ -21,8 +23,7 @@ export const caseStudiesData = {
         "Production of image and video material for emotional brand staging"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
-      websiteLink: "https://www.kl-klaiber.de",
-      websiteLinkText: "Experience the website live"
+      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -108,8 +109,7 @@ export const caseStudiesData = {
         "Produktion von Bild- und Videomaterial zur emotionalen Markeninszenierung"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
-      websiteLink: "https://www.kl-klaiber.de",
-      websiteLinkText: "Website live erleben"
+      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -186,7 +186,7 @@ interface CaseStudiesSectionProps {
   customTitle?: string;
   customSubtitle?: string;
   customBodyText?: string;
-  hideHeaderText?: boolean;
+  hideHeaderText?: boolean;  // New prop to control header visibility
 }
 
 const defaultTranslations = {
@@ -210,7 +210,7 @@ const CaseStudiesSection = ({
   customTitle,
   customSubtitle,
   customBodyText,
-  hideHeaderText = false
+  hideHeaderText = false  // Default to showing header text
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
@@ -219,112 +219,104 @@ const CaseStudiesSection = ({
 
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
-      {!hideHeaderText && (
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-            {customTitle || t.title}
-          </h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
-            {customSubtitle || t.subtitle}
-          </p>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            {customBodyText || t.bodyText}
-          </p>
-        </div>
-      )}
-      
-      <div className="space-y-20">
-        {cases.map((study, index) => (
-          <div key={index} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}>
-            <div className="w-full md:w-1/2">
-              <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="mr-4">
-                    <img 
-                      src={study.logo} 
-                      alt={`${study.client} logo`} 
-                      className="h-10 w-auto"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
-                    <p className="text-sm text-gray-500">{study.industry}</p>
-                  </div>
-                </div>
-                
-                <h4 className="text-lg font-medium mb-6">
-                  {study.headline}
-                </h4>
-                
-                <div className="space-y-3 mb-6">
-                  {study.impact.map((point, idx) => (
-                    <div key={idx} className="flex items-start">
-                      <div className="mr-3 mt-1 text-brand-primary">
-                        <Check className="h-5 w-5" />
-                      </div>
-                      <p className="text-sm text-gray-600">{point}</p>
-                    </div>
-                  ))}
-                </div>
-                
-                <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
-                  "{study.quote}"
-                </blockquote>
-                
-                {study.websiteLink && (
-                  <div className="mt-4">
-                    <a 
-                      href={study.websiteLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-brand-primary hover:underline inline-flex items-center"
-                    >
-                      {study.websiteLinkText}
-                      <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </div>
-                )}
-                
-                {study.author && (
-                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                    <div className="mr-3">
-                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
-                        {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
-                      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {!hideHeaderText && (
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              {customTitle || t.title}
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
+              {customSubtitle || t.subtitle}
+            </p>
+            <p className="text-lg text-brand-text max-w-3xl mx-auto">
+              {customBodyText || t.bodyText}
+            </p>
+          </div>
+        )}
+        
+        <div className="space-y-20">
+          {cases.map((study, index) => (
+            <div 
+              key={index}
+              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
+            >
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="mr-4">
+                      <img 
+                        src={study.logo} 
+                        alt={`${study.client} logo`} 
+                        className="h-10 w-auto"
+                      />
                     </div>
                     <div>
-                      <p className="font-medium text-sm">{study.author.name}</p>
-                      <p className="text-xs text-gray-500">{study.author.position}</p>
+                      <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
+                      <p className="text-sm text-gray-500">{study.industry}</p>
                     </div>
                   </div>
-                )}
+                  
+                  <h4 className="text-lg font-medium mb-6">
+                    {study.headline}
+                  </h4>
+                  
+                  <div className="space-y-3 mb-6">
+                    {study.impact.map((point, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <div className="mr-3 mt-1 text-brand-primary">
+                          <Check className="h-5 w-5" />
+                        </div>
+                        <p className="text-sm text-gray-600">{point}</p>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "{study.quote}"
+                  </blockquote>
+                  
+                  {/* Only render author section if the author exists */}
+                  {study.author && (
+                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                      <div className="mr-3">
+                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                          {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm">{study.author.name}</p>
+                        <p className="text-xs text-gray-500">{study.author.position}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src={study.image} 
+                    alt={`${study.client} case study`} 
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
               </div>
             </div>
-            
-            <div className="w-full md:w-1/2">
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src={study.image} 
-                  alt={`${study.client} case study`} 
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      
-      <div className="mt-24 text-center">
-        <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
-          {t.ctaText}
-        </h3>
+          ))}
+        </div>
         
-        <Button size="lg" className="group" asChild>
-          <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-            {t.startProject}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Button>
+        <div className="mt-24 text-center">
+          <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
+            {t.ctaText}
+          </h3>
+          
+          <Button size="lg" className="group" asChild>
+            <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+              {t.startProject}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
