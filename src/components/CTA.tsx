@@ -37,14 +37,27 @@ const CTA = ({
         <p className="text-xl mb-12 max-w-3xl mx-auto text-brand-text">{subtitle}</p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="group" asChild>
+          <Button 
+            size="lg" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+            asChild
+            onClick={() => {
+              // Trigger the same lead generation form as the sidebar button
+              window.dispatchEvent(new Event('open-lead-form'));
+            }}
+          >
             <Link to={contactPath}>
               {primaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
           
-          <Button variant="outline" size="lg" className="bg-transparent text-white hover:bg-white/10 border-white hover:text-brand-heading hover:bg-white" asChild>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="bg-transparent text-[#006064] border-[#006064] hover:bg-[#006064]/10 hover:text-[#004D40] hover:border-[#004D40]" 
+            asChild
+          >
             <Link to={caseStudiesPath}>
               {secondaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -53,7 +66,7 @@ const CTA = ({
         </div>
         
         {footerNote && (
-          <p className="mt-12 text-sm text-white/70">{footerNote}</p>
+          <p className="mt-12 text-sm text-white/90 font-semibold">{footerNote}</p>
         )}
         
         {children && (
