@@ -143,12 +143,12 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-white font-sans">
+            <div className="text-sm text-white font-sans mb-4 md:mb-0">
               © 2025 ooliv. Alle Rechte vorbehalten.
             </div>
             
-            <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right flex items-center space-x-4">
-              <div className="flex items-center whitespace-nowrap">
+            <div className="flex items-center justify-center md:justify-end space-x-4">
+              <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
                 ))}
@@ -160,20 +160,21 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                <div 
-                  className="sortlist-badge ml-3" 
-                  style={{ 
-                    display: 'inline-block',
-                    visibility: 'visible',
-                    opacity: 1,
-                    height: '0.6rem',
-                    maxWidth: '100px',
-                    overflow: 'visible',
-                    verticalAlign: 'middle',
-                    whiteSpace: 'nowrap'
-                  }}
-                ></div>
               </div>
+              
+              <div 
+                className="sortlist-badge" 
+                style={{ 
+                  display: 'inline-block',
+                  visibility: 'visible',
+                  opacity: 1,
+                  height: '0.6rem',
+                  maxWidth: '100px',
+                  overflow: 'visible',
+                  verticalAlign: 'middle',
+                  whiteSpace: 'nowrap'
+                }}
+              ></div>
             </div>
           </div>
         </div>

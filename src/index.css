@@ -320,7 +320,7 @@ button[aria-label="Menü schließen"] {
   z-index: 200 !important;
 }
 
-/* Sortlist badge styling - optimized for inline display */
+/* Sortlist badge styling - optimized for horizontal alignment */
 .sortlist-badge {
   display: inline-block !important;
   visibility: visible !important; 
@@ -330,7 +330,7 @@ button[aria-label="Menü schließen"] {
   overflow: visible !important;
   vertical-align: middle !important;
   white-space: nowrap !important;
-  margin-left: 4px !important;
+  margin-left: 8px !important;
 }
 
 .sortlist-badge iframe {
@@ -377,7 +377,9 @@ footer .sortlist-badge iframe,
 }
 
 /* Additional specificity to override potentially conflicting styles */
-footer .flex .items-center .sortlist-badge {
+footer .flex .items-center .sortlist-badge,
+footer .flex .justify-center .sortlist-badge,
+footer .flex .justify-end .sortlist-badge {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -386,7 +388,9 @@ footer .flex .items-center .sortlist-badge {
 }
 
 /* Make sure iframe within sortlist-badge is visible */
-footer .flex .items-center .sortlist-badge iframe {
+footer .flex .items-center .sortlist-badge iframe,
+footer .flex .justify-center .sortlist-badge iframe,
+footer .flex .justify-end .sortlist-badge iframe {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
