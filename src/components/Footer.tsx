@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -146,7 +145,7 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
                 {/* Single sortlist badge placement */}
-                <div className="sortlist-badge"></div>
+                <div className="sortlist-badge ml-2"></div>
               </div>
             </div>
           </div>
