@@ -1,10 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DeutscherHero = () => {
+  // Handle opening the lead generation form
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
+  
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
@@ -29,11 +34,13 @@ const DeutscherHero = () => {
             
             {/* CTA buttons - left-aligned */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group" asChild>
-                <Link to="/de/kontakt">
-                  Projekt starten
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <Button 
+                size="lg" 
+                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                onClick={handleOpenLeadForm}
+              >
+                Projekt starten
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>

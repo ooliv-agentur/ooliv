@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Mail, Phone, Plus, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { 
@@ -21,6 +21,19 @@ const FloatingActionButtons = () => {
   const toggleExpanded = () => {
     setIsExpanded(prev => !prev);
   };
+
+  // Add event listener for opening the lead form from other components
+  useEffect(() => {
+    const handleOpenLeadForm = () => {
+      setShowLeadForm(true);
+    };
+    
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    
+    return () => {
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+    };
+  }, []);
 
   // Updated button definitions with translations
   const buttons = [

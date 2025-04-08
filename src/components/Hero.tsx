@@ -23,6 +23,7 @@ const Hero = ({
   seeWorkText 
 }: HeroProps = {}) => {
   const { t, language } = useLanguage();
+  const [showLeadForm, setShowLeadForm] = useState(false);
   
   // For German language only: Typing effect state
   const [displayText, setDisplayText] = useState("");
@@ -77,6 +78,13 @@ const Hero = ({
   // Get the correct paths for the language
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
+  
+  // Handle opening the lead generation form
+  const handleOpenLeadForm = () => {
+    setShowLeadForm(true);
+    // We need to call the global state to open the lead form
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
   
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -135,11 +143,13 @@ const Hero = ({
             
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group" asChild>
-                <Link to={contactPath}>
-                  {startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project")}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <Button 
+                size="lg" 
+                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                onClick={handleOpenLeadForm}
+              >
+                {startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project")}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
