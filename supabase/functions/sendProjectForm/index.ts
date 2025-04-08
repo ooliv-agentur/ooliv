@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
@@ -197,7 +196,7 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
         
         <p>vielen Dank für deine Anfrage – wir melden uns in Kürze bei dir.</p>
         
-        <p>Falls du uns direkt kontaktieren möchtest, erreichst du uns unter <a href="mailto:info@ooliv.de" style="color: #006064; text-decoration: none;">info@ooliv.de</a> oder telefonisch unter +49 176 80 16 76 41.</p>
+        <p>Falls du uns direkt kontaktieren möchtest, erreichst du uns unter <a href="mailto:info@ooliv.de" style="color: #006064; text-decoration: none;">info@ooliv.de</a> oder telefonisch unter 06131 – 63 67 801.</p>
         
         <div style="margin: 30px 0; text-align: center;">
           <a href="https://ooliv.de" style="background-color: #006064; color: white; padding: 12px 20px; text-decoration: none; border-radius: 4px; font-weight: bold;">Mehr über ooliv erfahren</a>
@@ -221,7 +220,7 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
     vielen Dank für deine Anfrage – wir melden uns in Kürze bei dir.
     
     Falls du uns direkt kontaktieren möchtest, erreichst du uns unter info@ooliv.de 
-    oder telefonisch unter +49 176 80 16 76 41.
+    oder telefonisch unter 06131 – 63 67 801.
     
     Mehr über ooliv: https://ooliv.de
     

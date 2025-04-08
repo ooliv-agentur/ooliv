@@ -670,16 +670,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       <h3 className="text-xl font-bold">
         {language === 'de' ? "Vielen Dank!" : "Thank you!"}
       </h3>
-      <p className="text-gray-200 max-w-md">
-        {language === 'de'
-          ? "Ihre Anfrage wurde erfolgreich übermittelt."
-          : "Your request has been successfully submitted."
-        }
-      </p>
       <p className="text-gray-300 max-w-md">
         {language === 'de'
-          ? "Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen. Für dringende Anfragen erreichen Sie uns direkt unter +49 176 80 16 76 41."
-          : "We'll usually get back to you within 24 hours. For urgent inquiries, you can reach us directly at +49 176 80 16 76 41."
+          ? "Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen. Für dringende Anfragen erreichen Sie uns direkt unter 06131 – 63 67 801."
+          : "We'll usually get back to you within 24 hours. For urgent inquiries, you can reach us directly at 06131 – 63 67 801."
         }
       </p>
       <div className="pt-4">
