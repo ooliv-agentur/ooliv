@@ -4,6 +4,10 @@ import PageHero from '@/components/PageHero';
 import ScrollIndicator from '@/components/ScrollIndicator';
 
 const WebDevHeroDE = () => {
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <div className="relative">
       <PageHero
@@ -12,7 +16,8 @@ const WebDevHeroDE = () => {
         subtitle="Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code."
         primaryCta={{
           text: "Projekt starten",
-          link: "/de/kontakt"
+          link: "#",
+          onClick: handleStartProject
         }}
         secondaryCta={{
           text: "Fallstudien ansehen",

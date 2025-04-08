@@ -11,10 +11,12 @@ interface PageHeroProps {
   primaryCta: {
     text: string;
     link: string;
+    onClick?: () => void;
   };
   secondaryCta?: {
     text: string;
     link: string;
+    onClick?: () => void;
   };
 }
 
@@ -51,20 +53,43 @@ const PageHero = ({
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group" asChild>
-              <Link to={primaryCta.link}>
+            {primaryCta.onClick ? (
+              <Button 
+                size="lg" 
+                className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+                onClick={primaryCta.onClick}
+              >
                 {primaryCta.text}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            
-            {secondaryCta && (
-              <Button variant="outline" size="lg" className="group" asChild>
-                <Link to={secondaryCta.link}>
-                  {secondaryCta.text}
+              </Button>
+            ) : (
+              <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
+                <Link to={primaryCta.link}>
+                  {primaryCta.text}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
+            )}
+            
+            {secondaryCta && (
+              secondaryCta.onClick ? (
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="group" 
+                  onClick={secondaryCta.onClick}
+                >
+                  {secondaryCta.text}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              ) : (
+                <Button variant="outline" size="lg" className="group" asChild>
+                  <Link to={secondaryCta.link}>
+                    {secondaryCta.text}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              )
             )}
           </div>
         </div>

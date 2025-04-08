@@ -81,9 +81,7 @@ const Hero = ({
   
   // Handle opening the lead generation form
   const handleOpenLeadForm = () => {
-    setShowLeadForm(true);
-    // We need to call the global state to open the lead form
-    window.dispatchEvent(new CustomEvent('open-lead-form'));
+    window.dispatchEvent(new Event('open-lead-form'));
   };
   
   return (
@@ -145,14 +143,19 @@ const Hero = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                className="group bg-[#006064] text-white hover:bg-[#004D40]" 
                 onClick={handleOpenLeadForm}
               >
                 {startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project")}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
-              <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" 
+                asChild
+              >
                 <Link to={caseStudiesPath}>
                   {seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

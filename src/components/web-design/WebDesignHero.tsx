@@ -22,8 +22,11 @@ const WebDesignHero = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
-  const contactPath = isGerman ? "/de/kontakt" : "/contact";
+  
+  // Using custom callbacks instead of direct links to open the lead form
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   return (
     <div className="relative">
@@ -33,11 +36,12 @@ const WebDesignHero = () => {
         subtitle={t.subtitle}
         primaryCta={{
           text: isGerman ? "Projekt starten" : "Start Your Web Project",
-          link: contactPath
+          link: "#",
+          onClick: handleStartProject
         }}
         secondaryCta={{
           text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
-          link: caseStudiesPath
+          link: isGerman ? "/de/case-studies" : "/case-studies"
         }}
       />
       <ScrollIndicator />

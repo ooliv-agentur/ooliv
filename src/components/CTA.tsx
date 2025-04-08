@@ -8,7 +8,7 @@ interface CTAProps {
   title: string;
   subtitle: string;
   primaryCta: string;
-  secondaryCta?: string;  // Added this property as optional
+  secondaryCta?: string;
   footerNote?: string;
   lightBackground?: boolean;
   children?: React.ReactNode;
@@ -18,12 +18,17 @@ const CTA = ({
   title,
   subtitle,
   primaryCta,
-  secondaryCta,  // Added this parameter
+  secondaryCta,
   footerNote,
   lightBackground = false,
   children
 }: CTAProps) => {
   const { language } = useLanguage();
+  
+  // Handler for opening the lead form
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   return (
     <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
@@ -35,9 +40,7 @@ const CTA = ({
           <Button 
             size="lg" 
             className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            onClick={() => {
-              window.dispatchEvent(new Event('open-lead-form'));
-            }}
+            onClick={handleOpenLeadForm}
           >
             {primaryCta}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -48,9 +51,7 @@ const CTA = ({
               size="lg" 
               variant="outline" 
               className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
-              onClick={() => {
-                window.dispatchEvent(new Event('open-lead-form'));
-              }}
+              onClick={handleOpenLeadForm}
             >
               {secondaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

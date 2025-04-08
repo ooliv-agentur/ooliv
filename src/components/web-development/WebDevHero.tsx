@@ -8,6 +8,10 @@ const WebDevHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <div className="relative">
       <PageHero
@@ -25,7 +29,8 @@ const WebDevHero = () => {
         }
         primaryCta={{
           text: isGerman ? "Projekt starten" : "Start Your Project",
-          link: isGerman ? "/de/kontakt" : "/contact"
+          link: "#",
+          onClick: handleStartProject
         }}
         secondaryCta={{
           text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
