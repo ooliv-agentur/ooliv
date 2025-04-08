@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -161,18 +160,29 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
                 <div 
-                  className="sortlist-badge ml-3" 
+                  className="sortlist-badge ml-6" 
                   style={{ 
                     display: 'inline-block',
-                    visibility: 'visible',
-                    opacity: 1,
+                    verticalAlign: 'baseline',
                     height: '0.6rem',
                     maxWidth: '100px',
                     overflow: 'visible',
-                    verticalAlign: 'middle',
                     whiteSpace: 'nowrap'
                   }}
-                ></div>
+                >
+                  <iframe 
+                    style={{
+                      display: 'inline-block',
+                      verticalAlign: 'baseline',
+                      height: '0.6rem',
+                      maxHeight: '0.6rem',
+                      transform: 'scale(0.5)',
+                      transformOrigin: 'left center',
+                      border: 'none',
+                      pointerEvents: 'auto'
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
