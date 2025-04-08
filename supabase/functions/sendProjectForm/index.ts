@@ -113,7 +113,7 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
     </tr>`
   ).join("");
 
-  // HTML Template for admin email
+  // HTML Template for admin email with single-line preview
   const htmlContent = `
     <!DOCTYPE html>
     <html lang="de">
@@ -176,7 +176,7 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
 }
 
 async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: string) {
-  // HTML Template for user confirmation email
+  // HTML Template for user confirmation email with single-line preview
   const htmlContent = `
     <!DOCTYPE html>
     <html lang="de">
