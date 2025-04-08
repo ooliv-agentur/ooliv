@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -34,10 +35,13 @@ const Footer = () => {
   };
   
   useEffect(() => {
+    // Clean up any existing badges
     const existingBadges = document.querySelectorAll('.sortlist-badge iframe');
     existingBadges.forEach(badge => {
       if (badge.parentNode) {
-        badge.parentNode.innerHTML = '';
+        // Fix: Cast parentNode to HTMLElement to access innerHTML
+        const parent = badge.parentNode as HTMLElement;
+        parent.innerHTML = '';
       }
     });
     
