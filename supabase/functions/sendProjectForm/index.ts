@@ -123,6 +123,7 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
       <title>Neue Projektanfrage</title>
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <div style="display:none; max-height:0; overflow:hidden;">Neue Projektanfrage über ooliv.de - alle Details im Überblick.</div>
       <div style="text-align: center; margin-bottom: 30px;">
         <img src="${OOLIV_LOGO_BASE64}" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
         <h1 style="color: #006064; margin: 0;">Neue Projektanfrage</h1>
@@ -158,13 +159,17 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
     © ${new Date().getFullYear()} ooliv GmbH
   `;
 
-  // Send the email
+  // Send the email with 8bit encoding and UTF-8 charset
   await client.send({
     from: "info@ooliv.de",
     to: "info@ooliv.de",
     subject: "📥 Neue Projektanfrage über ooliv.de",
     html: htmlContent,
     text: textContent,
+    encoding: "8bit",
+    contentType: "text/html; charset=utf-8",
+    textEncoding: "8bit",
+    textContentType: "text/plain; charset=utf-8"
   });
 
   console.log("Admin notification email sent");
@@ -181,6 +186,7 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
       <title>Vielen Dank für deine Anfrage</title>
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <div style="display:none; max-height:0; overflow:hidden;">Vielen Dank für Ihre Anfrage - wir melden uns in Kürze bei Ihnen.</div>
       <div style="text-align: center; margin-bottom: 30px;">
         <img src="${OOLIV_LOGO_BASE64}" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
         <h1 style="color: #006064; margin: 0;">Vielen Dank für deine Anfrage</h1>
@@ -223,13 +229,17 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
     © ${new Date().getFullYear()} ooliv GmbH
   `;
 
-  // Send the email
+  // Send the email with 8bit encoding and UTF-8 charset
   await client.send({
     from: "info@ooliv.de",
     to: userEmail,
     subject: "✅ Vielen Dank für deine Anfrage bei ooliv",
     html: htmlContent,
     text: textContent,
+    encoding: "8bit",
+    contentType: "text/html; charset=utf-8",
+    textEncoding: "8bit", 
+    textContentType: "text/plain; charset=utf-8"
   });
 
   console.log("User confirmation email sent");
