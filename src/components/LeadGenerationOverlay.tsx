@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Sheet,
@@ -44,7 +43,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   const totalSteps = 4;
   
-  // Create validation messages based on language
   const validationMessages = {
     projectType: language === 'de' 
       ? "Bitte wählen Sie einen Projekttyp aus." 
@@ -56,7 +54,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       ? "Bitte geben Sie eine gültige E-Mail-Adresse ein."
       : "Please enter a valid email address",
     goal: language === 'de'
-      ? "Bitte wählen Sie Ihr Hauptziel aus."
+      ? "Bitte wählen Sie ein Ziel aus."
       : "Please select your main goal",
     otherProjectType: language === 'de'
       ? "Bitte geben Sie Ihren Projekttyp an."
@@ -69,7 +67,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       : "Please select an industry"
   };
   
-  // Dynamically create form schema with proper validation messages
   const formSchema = z.object({
     projectType: z.string().min(1, { message: validationMessages.projectType }),
     projectTypeOther: z.string().optional(),
@@ -407,26 +404,47 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="goal"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-lg font-medium">What's your main goal with this project?</FormLabel>
+              <FormLabel className="text-lg font-medium text-white">
+                {language === 'de' 
+                  ? "Was ist das Hauptziel Ihres Projekts?" 
+                  : "What's your main goal with this project?"}
+              </FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select your main goal" />
+                  <SelectTrigger className="w-full bg-white/10 border-white/20 text-white">
+                    <SelectValue 
+                      placeholder={language === 'de' 
+                        ? "Hauptziel auswählen" 
+                        : "Select your main goal"} 
+                    />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="generate-leads">Generate Leads</SelectItem>
-                  <SelectItem value="improve-design">Improve Design</SelectItem>
-                  <SelectItem value="improve-rankings">Improve Google Rankings</SelectItem>
-                  <SelectItem value="launch-brand">Launch a New Brand</SelectItem>
-                  <SelectItem value="mobile-ready">Make It Faster / Mobile-Ready</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                <SelectContent className="bg-[#1e2830] text-white border-white/20">
+                  {language === 'de' ? (
+                    <>
+                      <SelectItem value="generate-leads">Leads generieren</SelectItem>
+                      <SelectItem value="improve-design">Design verbessern</SelectItem>
+                      <SelectItem value="improve-rankings">Google-Rankings steigern</SelectItem>
+                      <SelectItem value="launch-brand">Neue Marke einführen</SelectItem>
+                      <SelectItem value="mobile-ready">Schneller machen / Mobil optimieren</SelectItem>
+                      <SelectItem value="other">Anderes Ziel</SelectItem>
+                    </>
+                  ) : (
+                    <>
+                      <SelectItem value="generate-leads">Generate Leads</SelectItem>
+                      <SelectItem value="improve-design">Improve Design</SelectItem>
+                      <SelectItem value="improve-rankings">Improve Google Rankings</SelectItem>
+                      <SelectItem value="launch-brand">Launch a New Brand</SelectItem>
+                      <SelectItem value="mobile-ready">Make It Faster / Mobile-Ready</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </>
+                  )}
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -437,11 +455,18 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
             name="goalOther"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Please specify:</FormLabel>
+                <FormLabel className="text-white">{pleaseSpecify}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Tell us your goal" />
+                  <Input 
+                    {...field} 
+                    placeholder={language === 'de' 
+                      ? "Erzählen Sie uns Ihr Ziel" 
+                      : "Tell us your goal"
+                    }
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-[#ff6b6b]" />
               </FormItem>
             )}
           />
