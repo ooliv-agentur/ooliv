@@ -186,6 +186,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${supabase.auth.getSession()}`
         },
         body: JSON.stringify(formData),
         signal: abortController.signal
