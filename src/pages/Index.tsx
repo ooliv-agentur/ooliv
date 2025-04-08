@@ -1,6 +1,6 @@
 
 import PageLayout from "@/components/PageLayout";
-import Hero from "@/components/Hero";
+import PageHero from "@/components/PageHero"; // Changed from Hero to PageHero
 import AboutSection from "@/components/AboutSection";
 import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <Hero />
+      <PageHero isHomepage={true} /> {/* Changed from Hero to PageHero */}
       <AboutSection />
       <TeamImpactSection />
       <Challenge />
