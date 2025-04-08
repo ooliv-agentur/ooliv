@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -42,13 +43,20 @@ const Footer = () => {
     existingBadges.forEach(badge => badge.remove());
     
     // Create and add the script only once
-    const script = document.createElement('script');
-    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-    script.defer = true;
-    document.body.appendChild(script);
+    if (!scriptRef.current) {
+      const script = document.createElement('script');
+      script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+      script.defer = true;
+      document.body.appendChild(script);
+      scriptRef.current = script;
+    }
 
     return () => {
       // Clean up on component unmount
+      if (scriptRef.current) {
+        scriptRef.current.remove();
+        scriptRef.current = null;
+      }
       document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]').forEach(script => script.remove());
     };
   }, []);
