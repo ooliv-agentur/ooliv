@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -24,12 +23,14 @@ const TeamTeaser = () => {
     {
       name: "Uli Schönleber",
       role: "CEO – Your direct point of contact",
+      image: "/lovable-uploads/f7f54f21-58fb-4bda-913f-e6e4d91436cc.png",
       initials: "US",
       tooltip: "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
       role: "Content",
+      image: "/lovable-uploads/49c17f05-ac20-4c01-8454-fd78f1c3795d.png",
       initials: "LS",
     },
     {
