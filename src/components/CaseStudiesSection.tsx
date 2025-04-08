@@ -15,11 +15,10 @@ export const caseStudiesData = {
       quote: "Our new website finally represents what defines us as consultants: clarity, trust, and dynamism. The collaboration with ooliv was structured and goal-oriented.",
       websiteLink: "www.kl-klaiber.de",
       impact: [
-        "Conceptual realignment including wireframing and content creation",
-        "Text development for all service areas and location pages",
-        "Custom web design with clear structure and image-rich communication",
-        "Technical implementation as WordPress website with SEO basics",
-        "Production of image and video material for emotional brand staging"
+        "Strategic repositioning including wireframes and content",
+        "Text development for services and locations",
+        "Custom web design with clear visual language",
+        "WordPress implementation with SEO basics"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
     },
@@ -31,12 +30,10 @@ export const caseStudiesData = {
       quote: "Our new website combines technology, service and brand aspiration. The collaboration with ooliv was structured, creative and goal-oriented - fitting our standards as a global market leader.",
       websiteLink: "www.cobus-industries.de",
       impact: [
-        "Conceptual realignment including wireframing and content creation",
-        "Text development for business divisions, product lines and international audiences",
-        "High-quality web design focusing on user guidance, technology and brand image",
-        "WordPress development based on a customized technical structure",
-        "SEO optimization for international visibility and B2B reach",
-        "Image and video production to visually strengthen global market leadership"
+        "Concept and content for international product communication",
+        "UX-oriented web design for technology and service",
+        "WordPress implementation with customized structure",
+        "SEO & video for market leader visibility"
       ],
       image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
@@ -48,12 +45,10 @@ export const caseStudiesData = {
       quote: "With ooliv, we were able to make SPEZ visible. The new brand convinces both technically and emotionally - and has been consistently generating qualified inquiries since the launch.",
       websiteLink: "www.spez-ag.ch",
       impact: [
-        "Development of logo, corporate design and brand presence for digital market entry",
-        "Structure, wireframes and textual elaboration of all content and service areas",
-        "Custom web design with clear imagery and focus on trust, technology and nature",
-        "Implementation of the entire website with WordPress including responsive performance",
-        "SEO optimization for local keywords and Google Ads campaigns for lead generation",
-        "Rank 1 for the main keyword in a short time - significantly ahead of all regional competitors"
+        "Brand development incl. logo, design and tonality",
+        "Structure & content for web presence and services",
+        "WordPress launch with local SEO & SEM",
+        "Quick top ranking for main keyword in Zurich"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
     },
@@ -135,11 +130,10 @@ export const caseStudiesData = {
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
       websiteLink: "www.kl-klaiber.de",
       impact: [
-        "Konzeptionelle Neuausrichtung inklusive Wireframing und Content-Erstellung",
-        "Textentwicklung für alle Leistungsbereiche und Standortseiten",
-        "Individuelles Webdesign mit klarer Struktur und bildstarker Kommunikation",
-        "Technische Umsetzung als WordPress-Website mit SEO-Basics",
-        "Produktion von Bild- und Videomaterial zur emotionalen Markeninszenierung"
+        "Strategische Neuausrichtung inklusive Wireframes und Content",
+        "Textentwicklung für Leistungen und Standorte",
+        "Individuelles Webdesign mit klarer Bildsprache",
+        "WordPress-Umsetzung mit SEO-Basics"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
     },
@@ -151,12 +145,10 @@ export const caseStudiesData = {
       quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
       websiteLink: "www.cobus-industries.de",
       impact: [
-        "Konzeptionelle Neuausrichtung inklusive Wireframing und Content-Erstellung",
-        "Textentwicklung für Unternehmensbereiche, Produktlinien und internationale Zielgruppen",
-        "Hochwertiges Webdesign mit Fokus auf Nutzerführung, Technik und Markenimage",
-        "WordPress-Entwicklung auf Basis einer individuellen technischen Struktur",
-        "SEO-Optimierung für internationale Sichtbarkeit und B2B-Reichweite",
-        "Bild- und Videoproduktion zur visuellen Stärkung der globalen Marktführerschaft"
+        "Konzeption und Content für internationale Produktkommunikation",
+        "UX-orientiertes Webdesign für Technik und Service",
+        "WordPress-Umsetzung mit maßgeschneiderter Struktur",
+        "SEO & Video zur Sichtbarkeit als Marktführer"
       ],
       image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
@@ -168,12 +160,10 @@ export const caseStudiesData = {
       quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
       websiteLink: "www.spez-ag.ch",
       impact: [
-        "Entwicklung von Logo, Corporate Design und Markenauftritt für den digitalen Markteintritt",
-        "Struktur, Wireframes und textliche Ausarbeitung aller Inhalte und Leistungsbereiche",
-        "Individuelles Webdesign mit klarer Bildsprache und Fokus auf Vertrauen, Technik und Natur",
-        "Umsetzung der gesamten Website mit WordPress inklusive responsiver Performance",
-        "SEO-Optimierung auf lokale Keywords und Google Ads Kampagnen zur Lead-Generierung",
-        "Nach kurzer Zeit Platz 1 für das Hauptkeyword – deutlich vor allen regionalen Mitbewerbern"
+        "Markenentwicklung incl. Logo, Design und Tonalität",
+        "Struktur & Inhalte für Webauftritt und Leistungen",
+        "WordPress-Launch mit lokalem SEO & SEM",
+        "Schnell Top-Ranking für Hauptkeyword in Zürich"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
     },
