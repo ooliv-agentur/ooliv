@@ -34,23 +34,18 @@ interface LeadGenerationOverlayProps {
   onOpenChange: (open: boolean) => void;
 }
 
-// Define form schema with Zod
 const formSchema = z.object({
-  // Step 1
   projectType: z.string().min(1, { message: "Please select a project type" }),
   projectTypeOther: z.string().optional(),
   
-  // Step 2
   companyName: z.string().optional(),
   industry: z.string().optional(),
   website: z.string().optional(),
   location: z.string().optional(),
   
-  // Step 3
   goal: z.string().min(1, { message: "Please select your main goal" }),
   goalOther: z.string().optional(),
   
-  // Step 4
   name: z.string().min(2, { message: "Please enter your name" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().optional(),
@@ -87,7 +82,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     mode: "onChange"
   });
 
-  // Step titles based on language
   const stepTitle = language === 'de' ? "Schritt" : "Step";
   const letsStartTitle = language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project";
   const whatArePlanning = language === 'de' ? "Was planen Sie mit uns?" : "What are you planning with us?";
@@ -96,7 +90,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
   const nextStep = async () => {
-    // Validate current step before proceeding
     let isValid = false;
     
     if (step === 1) {
@@ -106,7 +99,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         return;
       }
     } else if (step === 2) {
-      // Company info step is optional, so always valid
       isValid = true;
     } else if (step === 3) {
       isValid = await form.trigger('goal');
@@ -130,7 +122,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const onSubmit = (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
     console.log("Form data:", data);
     
     setTimeout(() => {
@@ -143,7 +134,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         duration: 5000,
       });
       
-      // Reset form after submission
       setTimeout(() => {
         form.reset();
         setStep(1);
@@ -164,7 +154,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     onOpenChange(false);
   };
 
-  // Step content components
   const StepOne = () => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -191,22 +180,22 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                 </FormControl>
                 <SelectContent className="bg-[#1e2830] text-white border-white/20">
                   <SelectItem value="website-relaunch">
-                    {language === 'de' ? "Website-Relaunch" : "Website Relaunch"}
+                    {language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"}
                   </SelectItem>
                   <SelectItem value="new-website">
-                    {language === 'de' ? "Neue Website" : "New Website"}
+                    {language === 'de' ? "Neue Website erstellen" : "Create a new website"}
                   </SelectItem>
                   <SelectItem value="seo-optimization">
                     {language === 'de' ? "SEO-Optimierung" : "SEO Optimization"}
                   </SelectItem>
                   <SelectItem value="lead-generation">
-                    {language === 'de' ? "Lead-Generierung / Google Ads" : "Lead Generation / Google Ads"}
+                    {language === 'de' ? "Lead-Generierung mit Google Ads" : "Lead Generation with Google Ads"}
                   </SelectItem>
                   <SelectItem value="ai-content">
-                    {language === 'de' ? "KI-gestützte Inhalte / ChatGPT-Integration" : "AI-Powered Content / ChatGPT Integration"}
+                    {language === 'de' ? "KI-Inhalte & ChatGPT-Integration" : "AI Content & ChatGPT Integration"}
                   </SelectItem>
                   <SelectItem value="other">
-                    {language === 'de' ? "Etwas anderes" : "Something Else"}
+                    {language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"}
                   </SelectItem>
                 </SelectContent>
               </Select>
