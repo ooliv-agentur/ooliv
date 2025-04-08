@@ -690,7 +690,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <style jsx global>{`
+            <style dangerouslySetInnerHTML={{ __html: `
               .text-destructive {
                 color: #ff6b6b !important;
               }
@@ -703,7 +703,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                 padding: 0.5rem;
                 border-radius: 0.25rem;
               }
-            `}</style>
+            `}} />
             
             <div className="min-h-[350px]">
               <AnimatePresence mode="wait">
