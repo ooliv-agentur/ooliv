@@ -29,7 +29,7 @@ const PageHero = ({
 }: PageHeroProps) => {
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background pattern/gradient */}
+      {/* Background pattern/gradient - Updated to match the start page positioning */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
