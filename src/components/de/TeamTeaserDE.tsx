@@ -8,7 +8,7 @@ const TeamTeaserDE = () => {
   const teamMembers = [
     {
       name: "Uli Schönleber",
-      position: "CEO",
+      position: "Geschäftsführer", // Updated from "CEO" to "Geschäftsführer"
       image: "/lovable-uploads/Uli.jpg"
     },
     {
