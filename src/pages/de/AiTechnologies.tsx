@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from "@/components/PageLayout";
 import DeutscherHero from "@/components/de/DeutscherHero";
@@ -11,6 +12,7 @@ import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanAITech = () => {
   const { setLanguage } = useLanguage();
@@ -115,6 +117,13 @@ const GermanAITech = () => {
         />
 
         <ClientLogos />
+        
+        {/* Add CaseStudiesSection */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
 
         <FAQ
           customFaqs={simplifiedFaqs}
