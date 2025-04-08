@@ -8,12 +8,15 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+// Base64 encoded ooliv logo for inline embedding
+const OOLIV_LOGO_BASE64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAyCAYAAAC+jCIaAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUsSURBVHgB7ZzNbxtVFMXPm4nTuKSh0I8gFUFViYKQWoSExKYSO5bs2bJkgcQfsGXJhj/gY8ueJStWCKQghAQSSEBtqqYkaVO3SfwxY8/wnthVZeLM+H1sN/dIx28mUeq5tX/z5t47z7YADAbDf/JXG1vYJzpEiCiNgUjFgAdoY/0TnLJo5wDFAkosJhYvaBD9RjQiSgOvkYgpllZEJZ3GkudjTrBM0YFxT+DhVh2DweAME4vBYTCxGAwODLUxPrj0PXyZI00+bpRkAVOiiFW/iNRIgD6KVDGwgSHOWBe/uw6fRDL0Oj3P4dJUGWvFDsK+QpZUiWzxmwZR4RRbr4m3L/6AXNpDKhNt/U5HMU9S9QWfHW9BgDtZeXUFe3d/wyjzwgvv4M2F9yFN+fguFj/+GNKMvOPfL+L09M8ZH7/t/AJpXk7wHvFcXziREb98+hXcQQuvvd1HJu1jwQj4MuPjXimx4HseyWWuYJ54wlmI4SgXIc3BwhxyIw5+ubQe3P7J3cQrx5lLnDO3q0dh+OT4CYgWu57ER9nTFQSRqjx5Jjgv1UO8FDyrGNuYoAmJJUmCf2GqVMNirQefZUclnbMhj1cW+ObtK+Hx3NwCXj7TCiOLJNXqT8Lj1sIsxsHkr0O+UNtQN9oQZbooXxR0GNqpYrHOg4gRxztOZzWEmKmKMU9GEE/3vBDJx+GxQx+l56rV3YGDpSvjFKseziNkIhESQoNepzh4+PgeSpU9RIsM7VQr4SYyGcliTKx2U0h8IhZ9rzK+iqhKIpW1Vvkpki06r5BTuRPNNmtRVhwlOpGqfLyHSrEZnWqIiRWr2RxlrD3h8S1K/i1Wm9o5bkLIvHKAE2KvvHI4jP7MzLw0uapVObF2H0EWcWJpFZ21OQopCiQWZ43V8j7K9S1Unf+9B/d+Ra2yCxfKpRLk+BCiLBfKEdYqVUOxKhv3ISfVMvYfrUCODyHKMiFVEjWJJLi1Fopll+dYZaKGHBdCHnWw+/A2RGnEi7VbRwdCjDMhj1qs59VNiPLYiPXX2u/O121tfAvpdP+qB3i2C4qjiIrk4xrx40q3HHXFcppY3W4X1jMVcRmCpEsLFg3ihxVx2RVFWnRSAVHx5VyxOhTj6eoTiNPzSbJITSyJPe6TS8kIVK4HuHm0jEqQ03Q1+t9v1fWNVYiiVcTdBWmQm/cTvBP65bBp8ffkxBcfYXLqDUizT7GTJ9GhB6ULqIfUKtuOeZZu3reCcCbW5PWPIEn5zzJWP/sWEpRIrKzULQ28qXK+z44v7D3GScPMWCeHFw0Gg8NgYjE4DCYWg8ER5fZeLZdIkxLOFw1c4Gzx/eUahoGJxeAwmFgMDoOJxeAwPIxY2nsvnLr4BkLJcvNVw/8aCc8VMkAXIV0M9gJRKGBiMTgMfioc+R8wYnE49z1iF/eeq/hL2yrAFhZeqmAAc6r/GQPzn1jkVB2k6VNIXwA26P4dVYEtqvp8+MUVDDjLrY3wXVd2xjph7HHWknQIlYEtrDNuGiNQnYGUsXJC+ZS9LKa0iDBJssEk6rT5q7rBQEQB5VTcF8VLV3TqPwLM2yM8C+L/H4xYwfqeWG4nKFQB+V4HZ8KN3waONNFD+ZL+d+Nn6JkU11HEoI9JNJgULGJbQqwwGCTi+w/+BsuXCUukjfS5AAAAAElFTkSuQmCC";
+
 interface ProjectFormData {
   projectType: string;
   companyName: string;
   industry: string;
-  websiteUrl: string;
-  location: string;
+  websiteUrl?: string;
+  location?: string;
   goal: string;
   name: string;
   email: string;
@@ -33,11 +36,11 @@ serve(async (req) => {
     // Create SMTP client
     const client = new SMTPClient({
       connection: {
-        hostname: "smtp.strato.de",
-        port: 465,
+        hostname: Deno.env.get("EMAIL_HOST") || "smtp.mailbox.org",
+        port: parseInt(Deno.env.get("EMAIL_PORT") || "587"),
         tls: true,
         auth: {
-          username: "info@ooliv.de",
+          username: Deno.env.get("EMAIL_USER") || "info@ooliv.de",
           password: Deno.env.get("EMAIL_PASSWORD") || "",
         },
       },
@@ -58,7 +61,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: "Emails sent successfully" 
+        message: "E-Mails erfolgreich versendet" 
       }),
       {
         headers: { 
@@ -69,7 +72,7 @@ serve(async (req) => {
     );
 
   } catch (error) {
-    console.error("Error sending emails:", error);
+    console.error("Fehler beim E-Mail-Versand:", error);
     
     return new Response(
       JSON.stringify({ 
@@ -121,7 +124,7 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="text-align: center; margin-bottom: 30px;">
-        <img src="https://ooliv.de/logo-email.png" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
+        <img src="${OOLIV_LOGO_BASE64}" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
         <h1 style="color: #006064; margin: 0;">Neue Projektanfrage</h1>
       </div>
       
@@ -159,7 +162,7 @@ async function sendAdminEmail(client: SMTPClient, formData: ProjectFormData) {
   await client.send({
     from: "info@ooliv.de",
     to: "info@ooliv.de",
-    subject: "Neues Projektformular eingegangen",
+    subject: "📥 Neue Projektanfrage über ooliv.de",
     html: htmlContent,
     text: textContent,
   });
@@ -175,11 +178,11 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Vielen Dank für Ihre Anfrage</title>
+      <title>Vielen Dank für deine Anfrage</title>
     </head>
     <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
       <div style="text-align: center; margin-bottom: 30px;">
-        <img src="https://ooliv.de/logo-email.png" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
+        <img src="${OOLIV_LOGO_BASE64}" alt="ooliv Logo" width="150" style="margin-bottom: 20px;">
         <h1 style="color: #006064; margin: 0;">Vielen Dank für deine Anfrage</h1>
       </div>
       
@@ -224,7 +227,7 @@ async function sendUserEmail(client: SMTPClient, userEmail: string, firstName: s
   await client.send({
     from: "info@ooliv.de",
     to: userEmail,
-    subject: "Vielen Dank für deine Anfrage bei ooliv",
+    subject: "✅ Vielen Dank für deine Anfrage bei ooliv",
     html: htmlContent,
     text: textContent,
   });
