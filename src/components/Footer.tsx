@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -34,30 +33,13 @@ const Footer = () => {
   };
   
   useEffect(() => {
-    // Remove any existing script first to prevent duplicates
-    const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
-    existingScripts.forEach(script => script.remove());
-    
-    // Remove any existing badge divs to prevent duplicates
-    const existingBadges = document.querySelectorAll('.sortlist-badge');
-    existingBadges.forEach(badge => badge.remove());
-    
-    // Create and add the script only once
-    if (!scriptRef.current) {
-      const script = document.createElement('script');
-      script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-      script.defer = true;
-      document.body.appendChild(script);
-      scriptRef.current = script;
-    }
+    const script = document.createElement('script');
+    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+    script.defer = true;
+    document.body.appendChild(script);
 
     return () => {
-      // Clean up on component unmount
-      if (scriptRef.current) {
-        scriptRef.current.remove();
-        scriptRef.current = null;
-      }
-      document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]').forEach(script => script.remove());
+      document.body.removeChild(script);
     };
   }, []);
   
@@ -152,9 +134,9 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                {/* Single sortlist badge placement */}
-                <div className="sortlist-badge ml-2"></div>
               </div>
+              
+              <div className="sortlist-badge"></div>
             </div>
           </div>
         </div>
