@@ -162,7 +162,7 @@ const Footer = () => {
               </div>
               
               <div 
-                className="sortlist-badge" 
+                className="sortlist-badge flex items-center" 
                 style={{ 
                   display: 'inline-block',
                   visibility: 'visible',
@@ -171,7 +171,9 @@ const Footer = () => {
                   maxWidth: '100px',
                   overflow: 'visible',
                   verticalAlign: 'middle',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: 'nowrap',
+                  marginTop: '-2px',
+                  marginBottom: '-2px',
                 }}
               ></div>
             </div>
