@@ -484,17 +484,26 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       className="space-y-4"
     >
       <div className="space-y-2">
-        <h3 className="text-lg font-medium">Where can we reach you?</h3>
+        <h3 className="text-lg font-medium text-white">
+          {language === 'de' ? "Wie können wir Sie erreichen?" : "Where can we reach you?"}
+        </h3>
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name <span className="text-red-500">*</span></FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Name" : "Name"} <span className="text-red-500">*</span>
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Your name" required />
+                <Input 
+                  {...field} 
+                  placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
+                  required 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -504,11 +513,19 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email <span className="text-red-500">*</span></FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "E-Mail-Adresse" : "Email"} <span className="text-red-500">*</span>
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="your.email@example.com" type="email" required />
+                <Input 
+                  {...field} 
+                  placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
+                  type="email" 
+                  required 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -518,11 +535,18 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Telefonnummer" : "Phone"}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="+49 123 456 789" type="tel" />
+                <Input 
+                  {...field} 
+                  placeholder={language === 'de' ? "z. B. +49 123 456 789" : "+49 123 456 789"} 
+                  type="tel" 
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -532,15 +556,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message / Notes</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Nachricht oder Hinweise" : "Message / Notes"}
+              </FormLabel>
               <FormControl>
                 <Textarea 
                   {...field} 
-                  placeholder="Any additional information about your project"
-                  className="min-h-[100px]"
+                  placeholder={language === 'de' 
+                    ? "Gibt es etwas, das wir vorab wissen sollten?" 
+                    : "Any additional information about your project"
+                  }
+                  className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -558,13 +587,18 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
         <CheckCircle className="h-10 w-10 text-green-600" />
       </div>
-      <h3 className="text-xl font-bold">Thank you for your inquiry!</h3>
+      <h3 className="text-xl font-bold">
+        {language === 'de' ? "Vielen Dank für Ihre Anfrage!" : "Thank you for your inquiry!"}
+      </h3>
       <p className="text-gray-600 max-w-md">
-        We'll be in touch within 24 hours. Want a quicker reply? Call us directly at +49 176 80 16 76 41.
+        {language === 'de'
+          ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen. Möchten Sie eine schnellere Antwort? Rufen Sie uns direkt an unter +49 176 80 16 76 41."
+          : "We'll be in touch within 24 hours. Want a quicker reply? Call us directly at +49 176 80 16 76 41."
+        }
       </p>
       <div className="pt-4">
         <Button onClick={closeForm} variant="outline" className="mt-4">
-          Back to Site
+          {language === 'de' ? "Zurück zur Website" : "Back to Site"}
         </Button>
       </div>
     </motion.div>
