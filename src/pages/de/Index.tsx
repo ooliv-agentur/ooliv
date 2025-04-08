@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from "@/components/PageLayout";
 import DeutscherHero from "@/components/de/DeutscherHero";
@@ -43,7 +42,7 @@ const GermanIndex = () => {
     },
     {
       question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-      answer: "Nach dem Go-Live lassen wir Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
+      answer: "Nach dem Go-Live lassen Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
     },
     {
       question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
@@ -96,7 +95,6 @@ const GermanIndex = () => {
           title="Bereit, Ihre digitale Präsenz zu transformieren?"
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
           primaryCta="Starten Sie Ihr Website-Projekt"
-          secondaryCta="Sehen Sie unsere Arbeit"
           footerNote="100+ erfolgreiche Projekte umgesetzt • Vertrauenspartner führender Unternehmen • KI-Strategien, die messbar und menschlich sind"
         />
       </PageLayout>
