@@ -63,7 +63,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       : "Please specify your project type",
     otherGoal: language === 'de'
       ? "Bitte geben Sie Ihr Ziel an."
-      : "Please specify your goal"
+      : "Please specify your goal",
+    industry: language === 'de'
+      ? "Bitte wählen Sie eine Branche aus."
+      : "Please select an industry"
   };
   
   // Dynamically create form schema with proper validation messages
@@ -72,7 +75,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     projectTypeOther: z.string().optional(),
     
     companyName: z.string().optional(),
-    industry: z.string().optional(),
+    industry: z.string().min(1, { message: validationMessages.industry }),
     website: z.string().optional(),
     location: z.string().optional(),
     
@@ -123,7 +126,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         return;
       }
     } else if (step === 2) {
-      isValid = true;
+      isValid = await form.trigger('industry');
     } else if (step === 3) {
       isValid = await form.trigger('goal');
       if (form.getValues('goal') === 'other' && !form.getValues('goalOther')) {
@@ -256,17 +259,30 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       className="space-y-4"
     >
       <div className="space-y-2">
-        <h3 className="text-lg font-medium">Tell us a bit about your business</h3>
+        <h3 className="text-lg font-medium text-white">
+          {language === 'de' 
+            ? "Erzählen Sie uns etwas über Ihr Unternehmen" 
+            : "Tell us a bit about your business"}
+        </h3>
         <FormField
           control={form.control}
           name="companyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company Name</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Unternehmensname" : "Company Name"}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Your company name" />
+                <Input 
+                  {...field} 
+                  placeholder={language === 'de' 
+                    ? "Name Ihres Unternehmens" 
+                    : "Your company name"
+                  }
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -276,31 +292,56 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="industry"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Industry</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Branche" : "Industry"}
+              </FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select your industry" />
+                  <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                    <SelectValue 
+                      placeholder={language === 'de' 
+                        ? "Branche auswählen" 
+                        : "Select your industry"
+                      } 
+                    />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="technology">Technology / Software</SelectItem>
-                  <SelectItem value="retail">Retail / E-commerce</SelectItem>
-                  <SelectItem value="finance">Finance / Banking</SelectItem>
-                  <SelectItem value="healthcare">Healthcare / Medical</SelectItem>
-                  <SelectItem value="education">Education / Training</SelectItem>
-                  <SelectItem value="manufacturing">Manufacturing / Industrial</SelectItem>
-                  <SelectItem value="hospitality">Hospitality / Tourism</SelectItem>
-                  <SelectItem value="construction">Construction / Real Estate</SelectItem>
-                  <SelectItem value="food">Food / Restaurant</SelectItem>
-                  <SelectItem value="professional">Professional Services</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                <SelectContent className="bg-[#1e2830] text-white border-white/20">
+                  {language === 'de' ? (
+                    <>
+                      <SelectItem value="technology">Technologie / Software</SelectItem>
+                      <SelectItem value="retail">Einzelhandel / E-Commerce</SelectItem>
+                      <SelectItem value="finance">Finanzen / Banking</SelectItem>
+                      <SelectItem value="healthcare">Gesundheit / Medizin</SelectItem>
+                      <SelectItem value="education">Bildung / Training</SelectItem>
+                      <SelectItem value="manufacturing">Produktion / Industrie</SelectItem>
+                      <SelectItem value="hospitality">Gastronomie / Tourismus</SelectItem>
+                      <SelectItem value="construction">Bau / Immobilien</SelectItem>
+                      <SelectItem value="food">Lebensmittel / Restaurant</SelectItem>
+                      <SelectItem value="professional">Beratung / Dienstleistungen</SelectItem>
+                      <SelectItem value="other">Andere Branche</SelectItem>
+                    </>
+                  ) : (
+                    <>
+                      <SelectItem value="technology">Technology / Software</SelectItem>
+                      <SelectItem value="retail">Retail / E-commerce</SelectItem>
+                      <SelectItem value="finance">Finance / Banking</SelectItem>
+                      <SelectItem value="healthcare">Healthcare / Medical</SelectItem>
+                      <SelectItem value="education">Education / Training</SelectItem>
+                      <SelectItem value="manufacturing">Manufacturing / Industrial</SelectItem>
+                      <SelectItem value="hospitality">Hospitality / Tourism</SelectItem>
+                      <SelectItem value="construction">Construction / Real Estate</SelectItem>
+                      <SelectItem value="food">Food / Restaurant</SelectItem>
+                      <SelectItem value="professional">Professional Services</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </>
+                  )}
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -310,11 +351,18 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="website"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Website URL</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Website URL" : "Website URL"}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="www.example.com" type="url" />
+                <Input 
+                  {...field} 
+                  placeholder="www.example.com" 
+                  type="url"
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -324,11 +372,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="location"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Location</FormLabel>
+              <FormLabel className="text-white">
+                {language === 'de' ? "Standort" : "Location"}
+              </FormLabel>
               <FormControl>
-                <Input {...field} placeholder="City, Country" />
+                <Input 
+                  {...field} 
+                  placeholder={language === 'de' 
+                    ? "Stadt, Land" 
+                    : "City, Country"
+                  }
+                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
