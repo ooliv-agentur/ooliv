@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -61,8 +62,8 @@ const TeamTeaser = () => {
             <div key={index} className="flex flex-col items-center text-center">
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20">
-                    <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} />
+                  <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20 self-start">
+                    <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top" />
                     <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
                       {member.initials}
                     </AvatarFallback>

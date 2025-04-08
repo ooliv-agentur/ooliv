@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -33,11 +34,11 @@ const TeamTeaserDE = () => {
               key={index} 
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden flex items-start">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div className="p-6">
