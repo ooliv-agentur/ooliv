@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -33,13 +34,26 @@ const Footer = () => {
   };
   
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-    script.defer = true;
-    document.body.appendChild(script);
+    const existingBadges = document.querySelectorAll('.sortlist-badge iframe');
+    existingBadges.forEach(badge => {
+      if (badge.parentNode) {
+        badge.parentNode.innerHTML = '';
+      }
+    });
+    
+    if (!document.querySelector('script[src*="sortlist.de/api/badge-embed"]')) {
+      const script = document.createElement('script');
+      script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+      script.defer = true;
+      script.id = "sortlist-badge-script";
+      document.body.appendChild(script);
+      scriptRef.current = script;
+    }
 
     return () => {
-      document.body.removeChild(script);
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
     };
   }, []);
   
@@ -134,9 +148,8 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
+                <div className="sortlist-badge ml-2"></div>
               </div>
-              
-              <div className="sortlist-badge"></div>
             </div>
           </div>
         </div>
