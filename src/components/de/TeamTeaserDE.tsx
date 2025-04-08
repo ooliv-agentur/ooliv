@@ -34,11 +34,12 @@ const TeamTeaserDE = () => {
               key={index} 
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md"
             >
-              <div className="aspect-square overflow-hidden flex items-start">
+              <div className="aspect-square overflow-hidden">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-auto max-w-full"
+                  style={{ imageRendering: 'auto' }}
                 />
               </div>
               <div className="p-6">

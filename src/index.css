@@ -271,6 +271,15 @@
     box-shadow: none !important;
     backdrop-filter: none !important;
   }
+  
+  .image-crisp {
+    image-rendering: crisp-edges;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 button[aria-label="Open menu"],

@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
   Tooltip,
   TooltipContent,
@@ -65,12 +64,17 @@ const TeamTeaser = () => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Avatar className="h-36 w-36 mb-4 border-2 border-brand-primary/20">
-                      <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top object-cover" />
-                      <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
+                    <div className="relative mb-4 w-[170px] h-[170px] rounded-full overflow-hidden border-2 border-brand-primary/20">
+                      <img 
+                        src={member.image} 
+                        alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} 
+                        className="w-full h-auto max-w-none"
+                        style={{ imageRendering: 'auto' }}
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-brand-primary/10 text-brand-primary text-2xl opacity-0">
                         {member.initials}
-                      </AvatarFallback>
-                    </Avatar>
+                      </div>
+                    </div>
                   </TooltipTrigger>
                   {member.tooltip && (
                     <TooltipContent>
