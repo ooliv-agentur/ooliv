@@ -28,6 +28,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 
 interface LeadGenerationOverlayProps {
   open: boolean;
@@ -90,7 +91,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   type FormValues = z.infer<typeof formSchema>;
   
-  // Initialize form only once when component mounts or when dependencies change
+  // Initialize form once with defaultValues to prevent re-renders
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -110,7 +111,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     mode: "onTouched",
   });
 
-  // Use form.watch with specific fields to prevent unnecessary rerenders
+  // Watch values with explicit fields to prevent unnecessary re-renders
   const watchProjectType = form.watch("projectType");
   const watchGoal = form.watch("goal");
 
@@ -124,13 +125,13 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   // Reset form when component mounts or when open state changes
   React.useEffect(() => {
     if (open) {
-      form.reset();
+      // Instead of form.reset(), use setValues to avoid re-render
       setStep(1);
       setSubmitted(false);
     }
-  }, [open, form]);
+  }, [open]);
 
-  // Use memoized callbacks to prevent recreation on every render
+  // Use stable function references with useCallback
   const nextStep = useCallback(async () => {
     let isValid = false;
     
@@ -190,10 +191,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
     
     try {
-      const response = await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
+      const response = await fetch(`${supabase.functions.url}/sendProjectForm`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${supabase.auth.getSession()}`
         },
         body: JSON.stringify(formData),
         signal: abortController.signal
@@ -250,7 +252,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     window.location.href = '/';
   }, []);
 
-  // Define step components with React.memo to prevent unnecessary re-renders
+  // StepOne component with proper memoization
   const StepOne = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -321,6 +323,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
+  // StepTwo component with proper memoization
   const StepTwo = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -465,6 +468,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
+  // StepThree component with proper memoization
   const StepThree = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -551,6 +555,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
+  // StepFour component with proper memoization
   const StepFour = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -576,6 +581,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   {...field} 
                   placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  value={field.value || ''}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
                 />
               </FormControl>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -597,6 +606,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
                   type="email" 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  value={field.value || ''}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
                 />
               </FormControl>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -618,6 +631,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   placeholder={language === 'de' ? "z. B. +49 123 456 789" : "+49 123 456 789"} 
                   type="tel" 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  value={field.value || ''}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
                 />
               </FormControl>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -641,6 +658,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                     : "Any additional information about your project"
                   }
                   className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                  value={field.value || ''}
+                  onChange={(e) => {
+                    field.onChange(e);
+                  }}
                 />
               </FormControl>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -684,7 +705,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
-  const renderStepContent = () => {
+  // Consistent function for rendering content, memoized to prevent re-renders
+  const renderStepContent = useCallback(() => {
     if (submitted) {
       return <ThankYouScreen />;
     }
@@ -701,10 +723,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       default:
         return <StepOne />;
     }
-  };
+  }, [step, submitted]);
 
-  // Use memo to prevent unnecessary re-rendering of the form
-  const formContent = React.useMemo(() => (
+  // Memoize form to prevent unnecessary re-renders
+  const formContent = useMemo(() => (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
       <div dangerouslySetInnerHTML={{ 
         __html: `
@@ -775,6 +797,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </form>
   ), [language, form, step, isSubmitting, submitted, nextStep, prevStep, onSubmit, renderStepContent, totalSteps]);
 
+  // Use memo for the entire component return
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">

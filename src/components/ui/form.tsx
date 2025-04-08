@@ -141,7 +141,8 @@ const FormDescription = React.forwardRef<
 })
 FormDescription.displayName = "FormDescription"
 
-const FormMessage = React.forwardRef<
+// Optimize FormMessage to avoid re-renders
+const FormMessage = React.memo(React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
@@ -150,10 +151,13 @@ const FormMessage = React.forwardRef<
   const { touchedFields } = formState;
   const { name } = useFormField();
   
-  // Only show error message if the field has been touched or the form has been submitted
-  const fieldTouched = Object.keys(touchedFields).includes(name as string);
-  const formSubmitted = formState.isSubmitted;
-  const shouldShowError = error && (fieldTouched || formSubmitted);
+  // Use useMemo to prevent re-renders on every form change
+  const shouldShowError = React.useMemo(() => {
+    // Only show error message if the field has been touched or the form has been submitted
+    const fieldTouched = Object.keys(touchedFields).includes(name as string);
+    const formSubmitted = formState.isSubmitted;
+    return error && (fieldTouched || formSubmitted);
+  }, [error, touchedFields, formState.isSubmitted, name]);
   
   const body = shouldShowError ? String(error?.message) : children;
 
@@ -171,7 +175,7 @@ const FormMessage = React.forwardRef<
       {body}
     </p>
   )
-})
+})))
 FormMessage.displayName = "FormMessage"
 
 export {
