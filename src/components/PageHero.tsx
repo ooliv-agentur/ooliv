@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -40,13 +39,11 @@ const PageHero = ({
   const { t, language } = useLanguage();
   const [showLeadForm, setShowLeadForm] = useState(false);
   
-  // For German language only: Typing effect state (used on homepage)
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(80);
 
-  // Updated value propositions to cycle through (only used for German homepage)
   const valueProps = [
     { text: "Messbare Geschäftsergebnisse & höhere Konversionen", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
     { text: "Skalierbare, leistungsstarke digitale Erlebnisse", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
@@ -57,7 +54,6 @@ const PageHero = ({
   
   const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
   
-  // Only run the typewriter effect for German language on homepage
   useEffect(() => {
     if (language !== 'de' || !isHomepage) return;
     
@@ -90,16 +86,13 @@ const PageHero = ({
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, loopNum, typingSpeed, valueProps, language, isHomepage]);
   
-  // Get the correct paths for the language
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
-  // Handle opening the lead generation form
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Default values for homepage rendering
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -132,7 +125,6 @@ const PageHero = ({
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
           {title || defaultHomepageTitle}
           
-          {/* Animation container with fixed width to prevent line breaks on desktop - ONLY FOR GERMAN HOMEPAGE */}
           {!subtitle && isHomepage && language === 'de' && (
             <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
               <span className="mr-2">für</span>
@@ -231,7 +223,6 @@ const PageHero = ({
   
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Using the exact same background gradient as the homepage Hero */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
@@ -250,7 +241,6 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Using exactly the same wave divider from the homepage Hero */}
       <div className="absolute bottom-0 left-0 right-0 h-16 z-10">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
