@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -36,55 +37,7 @@ const PageHero = ({
   seeWorkText,
   isHomepage = false
 }: PageHeroProps) => {
-  const { t, language } = useLanguage();
-  const [showLeadForm, setShowLeadForm] = useState(false);
-  
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(80);
-
-  const valueProps = [
-    { text: "Messbare Geschäftsergebnisse & höhere Konversionen", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Skalierbare, leistungsstarke digitale Erlebnisse", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Mehr Sichtbarkeit, Engagement & Konversionen", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Schnellere Ladezeiten & besseres Ranking", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> },
-    { text: "Lead-Generierung & langfristiger Erfolg", icon: <ArrowRight className="inline-block ml-2 h-6 w-6" /> }
-  ];
-  
-  const [currentIcon, setCurrentIcon] = useState(valueProps[0].icon);
-  
-  useEffect(() => {
-    if (language !== 'de' || !isHomepage) return;
-    
-    const handleTyping = () => {
-      const currentProp = valueProps[loopNum % valueProps.length];
-      const fullText = currentProp.text;
-      
-      let updatedSpeed = isDeleting ? 50 : 80;
-      
-      if (isDeleting) {
-        setDisplayText(fullText.substring(0, displayText.length - 1));
-      } else {
-        setDisplayText(fullText.substring(0, displayText.length + 1));
-      }
-      
-      setTypingSpeed(updatedSpeed);
-      
-      if (!isDeleting && displayText === fullText) {
-        setTypingSpeed(2000);
-        setIsDeleting(true);
-      } else if (isDeleting && displayText === '') {
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-        setCurrentIcon(valueProps[(loopNum + 1) % valueProps.length].icon);
-        setTypingSpeed(500);
-      }
-    };
-    
-    const timer = setTimeout(handleTyping, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, loopNum, typingSpeed, valueProps, language, isHomepage]);
+  const { language } = useLanguage();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
@@ -96,8 +49,7 @@ const PageHero = ({
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
-      <span>für messbare Ergebnisse im Web</span>
-      <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-[#b1b497]">Seit 2008 entwickeln wir Websites, die mehr leisten.</span>
+      <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">Für messbare Ergebnisse im Web.</span>
     </div>
   ) : (
     <div className="flex flex-col">
@@ -124,17 +76,6 @@ const PageHero = ({
       return (
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
           {title || defaultHomepageTitle}
-          
-          {!subtitle && isHomepage && language === 'de' && (
-            <div className="flex flex-col md:flex-row items-center justify-center mt-2 md:mt-4 md:whitespace-nowrap">
-              <span className="mr-2">für</span>
-              <div className="relative inline-flex items-center">
-                <span className="whitespace-nowrap text-gray-800">{displayText}</span>
-                <span className="absolute right-[-16px] top-1/2 h-5 w-0.5 bg-gray-800 animate-pulse opacity-75"></span>
-                {currentIcon}
-              </div>
-            </div>
-          )}
         </h1>
       );
     } else {
