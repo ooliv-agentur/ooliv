@@ -65,12 +65,21 @@ const TeamTeaser = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div className="relative mb-4 w-[170px] h-[170px] rounded-full overflow-hidden border-2 border-brand-primary/20">
-                      <img 
-                        src={member.image} 
-                        alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} 
-                        className="w-full h-full object-cover object-center"
-                        style={{ imageRendering: 'auto' }}
-                      />
+                      <div className="w-full h-full" style={{ position: 'relative' }}>
+                        <img 
+                          src={member.image} 
+                          alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} 
+                          className="w-full object-contain object-top"
+                          style={{ 
+                            imageRendering: 'crisp-edges',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: 'auto'
+                          }}
+                        />
+                      </div>
                       <div className="absolute inset-0 flex items-center justify-center bg-brand-primary/10 text-brand-primary text-2xl opacity-0 hover:opacity-100 transition-opacity">
                         {member.initials}
                       </div>
@@ -103,4 +112,3 @@ const TeamTeaser = () => {
 };
 
 export default TeamTeaser;
-

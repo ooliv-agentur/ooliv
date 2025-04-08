@@ -34,13 +34,22 @@ const TeamTeaserDE = () => {
               key={index} 
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md"
             >
-              <div className="aspect-square overflow-hidden rounded-full mx-auto w-[240px] h-[240px] mb-6">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover object-center image-crisp"
-                  style={{ imageRendering: 'crisp-edges' }}
-                />
+              <div className="relative mx-auto w-[240px] h-[240px] rounded-full overflow-hidden mb-6">
+                <div className="w-full h-full" style={{ position: 'relative' }}>
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full object-contain object-top"
+                    style={{ 
+                      imageRendering: 'crisp-edges',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: 'auto'
+                    }}
+                  />
+                </div>
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-bold">{member.name}</h3>
@@ -64,4 +73,3 @@ const TeamTeaserDE = () => {
 };
 
 export default TeamTeaserDE;
-

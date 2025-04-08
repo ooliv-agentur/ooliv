@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface TeamMember {
   name: string;
@@ -128,12 +129,21 @@ const TeamSection = () => {
               className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative mb-4 w-full max-w-[240px] aspect-square rounded-full overflow-hidden border-2 border-brand-primary/20">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover object-center image-crisp"
-                  style={{ imageRendering: 'crisp-edges' }}
-                />
+                <div className="w-full h-full" style={{ position: 'relative' }}>
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full object-contain object-top"
+                    style={{ 
+                      imageRendering: 'crisp-edges',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: 'auto'
+                    }}
+                  />
+                </div>
                 {/* Fallback for image loading error */}
                 <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-brand-primary bg-brand-primary/10 rounded-full opacity-0 hover:opacity-100 transition-opacity">
                   {member.initials}
@@ -150,4 +160,3 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
-
