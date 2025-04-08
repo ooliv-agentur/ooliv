@@ -39,8 +39,7 @@ const CTA = ({
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button 
             size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            asChild
+            className="group bg-[#b1b497] text-white hover:bg-[#9a9c83]" 
             onClick={() => {
               window.dispatchEvent(new Event('open-lead-form'));
             }}
@@ -54,7 +53,7 @@ const CTA = ({
           <Button 
             variant="outline" 
             size="lg" 
-            className="bg-transparent border-gray-400 text-brand-text hover:bg-gray-100 hover:border-gray-500" 
+            className="border-[#b1b497] text-[#b1b497] hover:bg-[#b1b497]/10 hover:text-[#b1b497]" 
             asChild
           >
             <Link to={caseStudiesPath}>
@@ -79,3 +78,4 @@ const CTA = ({
 };
 
 export default CTA;
+
