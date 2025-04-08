@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -289,11 +288,15 @@ const CaseStudiesSection = ({
             {t.ctaText}
           </h3>
           
-          <Button size="lg" className="group" asChild>
-            <Link to={language === 'de' ? "/kontakt" : "/contact"}>
-              {t.startProject}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+          <Button 
+            size="lg" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]"
+            onClick={() => {
+              window.dispatchEvent(new Event('open-lead-form'));
+            }}
+          >
+            {t.startProject}
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </div>

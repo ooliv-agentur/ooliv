@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
@@ -70,10 +69,9 @@ const AiTechnologies = () => {
       
       <FAQ customFaqs={aiTechFaqs} />
       <CTA 
-        title="Let's Use AI the Right Way"
-        subtitle="With ooliv, AI speeds up the process — but never replaces quality or strategy. Let's create something better, faster, and smarter."
-        primaryCta="Start Your Project"
-        secondaryCta="Book a Strategy Call"
+        title="Ready to harness AI for your business?"
+        subtitle="Let's discuss how our team can help implement AI solutions that drive real results."
+        primaryCta="Start Your AI Project"
       >
         {/* New claim section */}
         <section className="mt-12 text-center">
@@ -89,4 +87,3 @@ const AiTechnologies = () => {
 };
 
 export default AiTechnologies;
-

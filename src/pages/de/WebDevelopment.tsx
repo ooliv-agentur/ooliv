@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import WebDevHero from '@/components/web-development/WebDevHeroDE';
@@ -59,10 +58,9 @@ const GermanWebDevelopment = () => {
       
       <FAQ customFaqs={webDevFaqs} />
       <CTA 
-        title="Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
-        subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch vereinbaren"
+        title="Bereit für eine Website, die Ergebnisse liefert?"
+        subtitle="Lassen Sie uns besprechen, wie unsere Webentwicklung Ihrem Unternehmen helfen kann, seine digitalen Ziele zu erreichen."
+        primaryCta="Starten Sie Ihr Webentwicklungsprojekt"
       />
     </PageLayout>
   );

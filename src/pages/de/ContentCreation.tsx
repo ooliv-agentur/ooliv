@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import ContentHero from '@/components/content-creation/ContentHero';
@@ -63,10 +62,9 @@ const GermanContentCreation = () => {
         customTitle="Häufig gestellte Fragen zur Content-Erstellung" 
       />
       <CTA 
-        title="Lassen Sie uns Content erstellen, der konvertiert"
-        subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns Content erstellen, der rankt, resoniert und echte Geschäftsergebnisse liefert."
-        primaryCta="Kostenlose Content-Strategie-Beratung"
-        secondaryCta="Beispielprojekt anfordern"
+        title="Bereit für Content, der verbindet und konvertiert?"
+        subtitle="Lassen Sie uns besprechen, wie unsere Content-Erstellung Ihrem Unternehmen helfen kann, seine Ziele zu erreichen."
+        primaryCta="Starten Sie Ihr Content-Projekt"
       />
     </PageLayout>
   );

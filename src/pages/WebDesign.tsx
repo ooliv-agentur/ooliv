@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
@@ -30,10 +29,9 @@ const WebDesign = () => {
       
       {/* Final CTA Section */}
       <CTA 
-        title="Let's Talk About Your Webdesign Project"
-        subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
-        primaryCta="Start Your Web Project"
-        secondaryCta="Book a Strategy Call"
+        title="Ready for a website that grows your business?"
+        subtitle="Let's discuss how a strategically designed website can help achieve your business goals."
+        primaryCta="Start Your Web Design Project"
       />
     </PageLayout>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -306,10 +305,9 @@ const AboutUs = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Ready to transform your digital presence?"
-        subtitle="Let's discuss how our team can help your business achieve its online goals."
+        title="Ready for a website that works for your business?"
+        subtitle="Let's discuss how we can help your company achieve its digital goals with measurable results."
         primaryCta="Start Your Project"
-        secondaryCta="Book a Strategy Call"
       />
     </PageLayout>
   );
