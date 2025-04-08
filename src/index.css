@@ -1,15 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Update Sortlist badge styling for precise vertical alignment and spacing */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-brand-background text-brand-text antialiased font-sans;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-brand-heading font-sans;
+  }
+  a {
+    @apply text-brand-heading hover:text-blue-600 transition-colors font-sans;
+  }
+}
+
+@layer components {
+  .burger-menu-button, 
+  .close-button,
+  .menu-toggle-button,
+  button[aria-label="Open menu"],
+  button[aria-label="Close menu"],
+  button[aria-label="Menü schließen"] {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+    min-height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 9999px !important;
+    background-color: #b1b497 !important;
+    color: white !important;
+    transition: all 0.3s !important;
+    position: relative !important;
+    z-index: 102 !important;
+  }
+  
+  .burger-menu-icon,
+  .close-icon,
+  button[aria-label="Open menu"] svg,
+  button[aria-label="Close menu"] svg,
+  button[aria-label="Menü schließen"] svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    min-width: 1.5rem !important;
+    min-height: 1.5rem !important;
+  }
+  
+  .burger-menu-button:hover,
+  .close-button:hover,
+  .menu-toggle-button:hover,
+  button[aria-label="Open menu"]:hover,
+  button[aria-label="Close menu"]:hover,
+  button[aria-label="Menü schließen"]:hover {
+    background-color: #9a9c83 !important;
+  }
+
+  button[aria-label="Close menu"],
+  button[aria-label="Menü schließen"] {
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+  
+  .fixed.inset-0.bg-black\/70 {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 100 !important;
+  }
+  
+  .fixed.inset-0.w-full.h-full.bg-\[\#f7fafa\].z-\[101\] {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4 text-brand-heading;
+  }
+  
+  .section-subtitle {
+    @apply text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text;
+  }
+  
+  .card-layout {
+    @apply bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .icon-background {
+    @apply p-3 rounded-full bg-brand-backgroundAlt inline-flex mb-3;
+  }
+  
+  .feature-card {
+    @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .section-standard {
+    @apply py-24 bg-white;
+  }
+  
+  .section-gradient {
+    @apply py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt;
+  }
+  
+  .section-alt {
+    @apply py-24 bg-brand-backgroundAlt;
+  }
+  
+  .heading-standard {
+    @apply text-3xl font-bold text-center mb-4 text-brand-heading;
+  }
+  
+  .subheading-standard {
+    @apply text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text;
+  }
+  
+  .card-standard {
+    @apply bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100;
+  }
+  
+  .icon-standard {
+    @apply p-3 rounded-full bg-brand-backgroundAlt inline-flex mb-3;
+  }
+  
+  .grid-standard {
+    @apply grid md:grid-cols-2 lg:grid-cols-4 gap-8;
+  }
+  
+  .button-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md transition-all;
+  }
+  
+  .button-secondary {
+    @apply border-2 border-blue-600 bg-transparent text-blue-600 hover:bg-blue-600 hover:text-white transition-all;
+  }
+  
+  .section-standard {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-alt {
+    @apply py-16 md:py-24 bg-brand-backgroundAlt;
+  }
+  
+  .section-gradient {
+    @apply py-16 md:py-24 bg-gradient-to-br from-brand-background to-brand-backgroundAlt;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 md:px-6;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-brand-text/80 mb-12 max-w-3xl mx-auto text-center;
+  }
+  
+  .card-layout {
+    @apply rounded-xl border border-brand-primary/10 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden;
+  }
+  
+  .icon-background {
+    @apply flex items-center justify-center h-10 w-10 rounded-full bg-brand-primary/10 shrink-0;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+  
+  .hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-video-container video {
+      height: 100%;
+      width: auto;
+    }
+  }
+  
+  .curve-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .curve-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 65px;
+  }
+  
+  .ai-tools-section,
+  .cta-section {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+button[aria-label="Open menu"],
+button[aria-label="Close menu"],
+button[aria-label="Menü schließen"] {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  min-width: 2.5rem !important;
+  min-height: 2.5rem !important;
+}
+
+button[aria-label="Open menu"] svg,
+button[aria-label="Close menu"] svg,
+button[aria-label="Menü schließen"] svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.fixed.inset-0 {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.mobile-menu-content, 
+.desktop-menu-content,
+div[class*="motion"] {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.menu-toggle-button,
+button[aria-label="Open menu"] {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+button[aria-label="Close menu"],
+button[aria-label="Menü schließen"] {
+  position: fixed !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 200 !important;
+}
+
+/* Sortlist badge styling - optimized for inline display */
 .sortlist-badge {
   display: inline-block !important;
-  visibility: visible !important;
+  visibility: visible !important; 
   opacity: 1 !important;
   height: 0.6rem !important;
   max-width: 100px !important;
   overflow: visible !important;
-  vertical-align: baseline !important; /* Precise vertical alignment */
+  vertical-align: middle !important;
   white-space: nowrap !important;
-  margin-left: 1.5rem !important; /* Increased left margin to ~24px */
+  margin-left: 4px !important;
 }
 
 .sortlist-badge iframe {
@@ -20,7 +341,56 @@
   max-height: 0.6rem !important;
   max-width: 100px !important;
   transform: scale(0.5) !important;
-  vertical-align: baseline !important; /* Matching parent's vertical alignment */
+  transform-origin: left center !important;
   border: none !important;
+  vertical-align: middle !important;
   pointer-events: auto !important;
+}
+
+/* Force visibility for Sortlist badge at all levels */
+body .sortlist-badge,
+footer .sortlist-badge,
+.flex .sortlist-badge,
+.items-center .sortlist-badge {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body .sortlist-badge iframe,
+footer .sortlist-badge iframe,
+.flex .sortlist-badge iframe,
+.items-center .sortlist-badge iframe {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  vertical-align: middle !important;
+}
+
+/* Additional overrides to prevent other CSS from hiding the badge */
+#root .sortlist-badge,
+.section-container .sortlist-badge,
+.flex .sortlist-badge {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Additional specificity to override potentially conflicting styles */
+footer .flex .items-center .sortlist-badge {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: 0.6rem !important;
+  overflow: visible !important;
+}
+
+/* Make sure iframe within sortlist-badge is visible */
+footer .flex .items-center .sortlist-badge iframe {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: 0.6rem !important;
+  max-height: 0.6rem !important;
+  transform: scale(0.5) !important;
 }
