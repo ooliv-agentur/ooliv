@@ -138,12 +138,17 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="text-sm text-white font-sans">
-              © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
-            </div>
-            
-            <div className="flex items-center space-x-6">
+          <div className="flex flex-col items-center space-y-6">
+            <div 
+              className="sortlist-badge -rotate-3" 
+              aria-label="Sortlist Badge"
+            ></div>
+
+            <div className="flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-sm text-white font-sans">
+                © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+              </div>
+              
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
@@ -157,11 +162,6 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
               </div>
-              
-              <div 
-                className="sortlist-badge ml-4 -rotate-3" 
-                aria-label="Sortlist Badge"
-              ></div>
             </div>
           </div>
         </div>
