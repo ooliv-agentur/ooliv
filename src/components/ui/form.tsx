@@ -174,9 +174,9 @@ const FormMessage = React.memo(React.forwardRef<
     >
       {body}
     </p>
-  )
-})))
-FormMessage.displayName = "FormMessage"
+  );
+}));
+FormMessage.displayName = "FormMessage";
 
 export {
   useFormField,
