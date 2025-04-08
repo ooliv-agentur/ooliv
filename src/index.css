@@ -1,4 +1,8 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer utilities {
   /* Update Sortlist badge styling to ensure consistent vertical alignment */
   .sortlist-badge {
