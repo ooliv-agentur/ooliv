@@ -136,7 +136,7 @@ const Footer = () => {
                 </a>
               </div>
               
-              <div className="sortlist-badge"></div>
+              <div className="sortlist-badge scale-50"></div>
             </div>
           </div>
         </div>
