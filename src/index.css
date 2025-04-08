@@ -8,8 +8,8 @@
     display: inline-flex !important;
     visibility: visible !important; 
     opacity: 1 !important;
-    height: 1rem !important; /* Reduced from 2rem */
-    max-width: 150px !important; /* Reduced from 300px */
+    height: 1rem !important;
+    max-width: 150px !important;
     overflow: visible !important;
     vertical-align: middle !important;
     white-space: nowrap !important;
@@ -17,7 +17,7 @@
     padding: 0 !important;
     line-height: 1 !important;
     position: relative !important;
-    transform: scale(0.6) !important; /* Reduced from 1.2 */
+    transform: scale(0.5) !important;
     transform-origin: center !important;
   }
 
@@ -25,9 +25,9 @@
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: 1rem !important; /* Reduced from 2rem */
+    height: 1rem !important;
     max-height: 1rem !important;
-    transform: scale(0.6) !important; /* Reduced from 1.2 */
+    transform: scale(0.5) !important;
     transform-origin: center !important;
     vertical-align: middle !important;
     position: relative !important;
