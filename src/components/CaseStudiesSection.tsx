@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -267,20 +268,6 @@ const CaseStudiesSection = ({
                       </div>
                     ))}
                   </div>
-                  
-                  {study.author && (
-                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                      <div className="mr-3">
-                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
-                          {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm">{study.author.name}</p>
-                        <p className="text-xs text-gray-500">{study.author.position}</p>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
               
@@ -303,7 +290,7 @@ const CaseStudiesSection = ({
           </h3>
           
           <Button size="lg" className="group" asChild>
-            <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
+            <Link to={language === 'de' ? "/kontakt" : "/contact"}>
               {t.startProject}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
