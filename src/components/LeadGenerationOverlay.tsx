@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useRef, useMemo } from 'react';
 import { 
   Sheet,
@@ -187,7 +186,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${supabase.auth.getSession()}`
         },
         body: JSON.stringify(formData),
         signal: abortController.signal

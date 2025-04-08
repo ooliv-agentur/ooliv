@@ -46,12 +46,33 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", data);
+    try {
+      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
+      
+      // Format the data to match what the function expects
+      const formData = {
+        projectType: "consultation",
+        companyName: data.company || '',
+        industry: '',
+        name: data.name,
+        email: data.email,
+        message: data.message || ''
+      };
+      
+      const response = await fetch(functionUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit consultation request');
+      }
       
       toast({
         title: "Request sent!",
@@ -59,8 +80,17 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
       });
       
       form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
