@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -93,11 +94,12 @@ const PageHero = ({
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-10">
+      {/* Standardized wavy divider with consistent height of 160px */}
+      <div className="absolute bottom-0 left-0 right-0 h-[160px] z-10">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 
-          className="absolute bottom-0 w-full h-auto"
+          className="absolute bottom-0 w-full h-full"
           preserveAspectRatio="none"
         >
           <path 
