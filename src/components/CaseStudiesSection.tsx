@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -9,21 +10,20 @@ import { Link } from "react-router-dom";
 export const caseStudiesData = {
   en: [
     {
-      client: "Scheurich",
-      industry: "Ceramic & Lifestyle Brand",
-      headline: "120% more organic traffic through complete website optimization",
-      logo: "/placeholder.svg",
-      quote: "Thanks to ooliv, our website is now a growth engine. The process was seamless, and the results speak for themselves.",
+      client: "KLAIBER",
+      industry: "Tax & Business Consulting",
+      headline: "Comprehensive website relaunch for increased visibility and modern brand presence",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
+      quote: "Our new website finally represents what defines us as consultants: clarity, trust, and dynamism. The collaboration with ooliv was structured and goal-oriented.",
       impact: [
-        "120% more organic traffic after full website optimization",
-        "45% higher conversion rate with improved user experience",
-        "2x lead generation through strategic conversion points"
+        "Conceptual realignment including wireframing and content creation",
+        "Text development for all service areas and location pages",
+        "Custom web design with clear structure and image-rich communication",
+        "Technical implementation as WordPress website with SEO basics",
+        "Production of image and video material for emotional brand staging"
       ],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      author: {
-        name: "Michael Schmidt",
-        position: "Marketing Director, Scheurich"
-      }
+      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -96,21 +96,20 @@ export const caseStudiesData = {
   ],
   de: [
     {
-      client: "Scheurich",
-      industry: "Keramik & Lifestyle Marke",
-      headline: "120% mehr organischer Traffic durch vollständige Website-Optimierung",
-      logo: "/placeholder.svg",
-      quote: "Dank ooliv ist unsere Website jetzt ein Wachstumsmotor. Der Prozess war nahtlos, und die Ergebnisse sprechen für sich.",
+      client: "KLAIBER",
+      industry: "Steuerberatung & Unternehmensberatung",
+      headline: "Ganzheitlicher Website-Relaunch für mehr Sichtbarkeit und eine moderne Markenpräsenz",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
+      quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
       impact: [
-        "120% mehr organischer Traffic nach vollständiger Website-Optimierung",
-        "45% höhere Konversionsrate durch verbesserte Nutzererfahrung",
-        "2x Lead-Generierung durch strategische Conversion-Punkte"
+        "Konzeptionelle Neuausrichtung inklusive Wireframing und Content-Erstellung",
+        "Textentwicklung für alle Leistungsbereiche und Standortseiten",
+        "Individuelles Webdesign mit klarer Struktur und bildstarker Kommunikation",
+        "Technische Umsetzung als WordPress-Website mit SEO-Basics",
+        "Produktion von Bild- und Videomaterial zur emotionalen Markeninszenierung"
       ],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      author: {
-        name: "Michael Schmidt",
-        position: "Marketing Direktor, Scheurich"
-      }
+      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -276,17 +275,20 @@ const CaseStudiesSection = ({
                     "{study.quote}"
                   </blockquote>
                   
-                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                    <div className="mr-3">
-                      <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
-                        {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
+                  {/* Only render author section if the author exists */}
+                  {study.author && (
+                    <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                      <div className="mr-3">
+                        <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold text-xs">
+                          {study.author.name.split(' ').map(part => part.charAt(0)).join('')}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm">{study.author.name}</p>
+                        <p className="text-xs text-gray-500">{study.author.position}</p>
                       </div>
                     </div>
-                    <div>
-                      <p className="font-medium text-sm">{study.author.name}</p>
-                      <p className="text-xs text-gray-500">{study.author.position}</p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
               
