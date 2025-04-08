@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -171,7 +172,8 @@ const PageHero = ({
     
     const defaultSecondaryCta = {
       text: seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work"),
-      link: caseStudiesPath
+      link: caseStudiesPath,
+      onClick: undefined
     };
     
     const primary = primaryCta || defaultPrimaryCta;
