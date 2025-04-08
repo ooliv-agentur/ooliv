@@ -21,7 +21,7 @@ const TechnologiesSection = () => {
     {
       name: "Ahrefs",
       description: "Keyword-Analysen & Wettbewerbsrecherche.",
-      icon: <img src="/ahrefs-logo.svg" alt="Ahrefs Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/db6a0e7f-92b8-4ebb-bf06-c9b9930fba55.png" alt="Ahrefs Logo" className="h-12 w-12" />
     },
     {
       name: "Basecamp",
