@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface Technology {
@@ -12,22 +11,22 @@ const TechnologiesSection = () => {
     {
       name: "Sora",
       description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert.",
-      icon: <img src="/sora-logo.svg" alt="Sora Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/301a15f8-275e-4e29-bff6-e16b548a2cc4.png" alt="Sora Logo" className="h-12 w-12" />
     },
     {
       name: "Midjourney",
       description: "Individuelle Visuals statt Stockfotos.",
-      icon: <img src="/midjourney-logo.svg" alt="Midjourney Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/e8258ca0-d36b-48a3-b32f-b1e840c31f9a.png" alt="Midjourney Logo" className="h-12 w-12" />
     },
     {
       name: "Ahrefs",
       description: "Keyword-Analysen & Wettbewerbsrecherche.",
-      icon: <img src="/ahrefs-logo.svg" alt="Ahrefs Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/bf5a94f3-2829-4580-838e-f65d0bb17daf.png" alt="Ahrefs Logo" className="h-12 w-12" />
     },
     {
-      name: "Google Ads",
+      name: "Basecamp",
       description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt.",
-      icon: <img src="/google-ads-logo.svg" alt="Google Ads Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/1cf28eb6-2f14-4761-9479-7f363adb4686.png" alt="Basecamp Logo" className="h-12 w-12" />
     }
   ];
 
