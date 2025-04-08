@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useCallback } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -102,7 +103,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       projectTypeOther: "",
       goalOther: "",
     },
-    mode: "onTouched"
+    mode: "onTouched",
+    criteriaMode: "firstError",
+    shouldFocusError: false,
   });
 
   const stepTitle = language === 'de' ? "Schritt" : "Step";
@@ -112,12 +115,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
-  const nextStep = async () => {
+  const watchProjectType = form.watch("projectType");
+  const watchGoal = form.watch("goal");
+
+  const nextStep = useCallback(async () => {
     let isValid = false;
     
     if (step === 1) {
       isValid = await form.trigger('projectType');
-      if (form.getValues('projectType') === 'other' && !form.getValues('projectTypeOther')) {
+      if (watchProjectType === 'other' && !form.getValues('projectTypeOther')) {
         form.setError('projectTypeOther', { message: validationMessages.otherProjectType });
         return;
       }
@@ -125,7 +131,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       isValid = await form.trigger('industry');
     } else if (step === 3) {
       isValid = await form.trigger('goal');
-      if (form.getValues('goal') === 'other' && !form.getValues('goalOther')) {
+      if (watchGoal === 'other' && !form.getValues('goalOther')) {
         form.setError('goalOther', { message: validationMessages.otherGoal });
         return;
       }
@@ -134,15 +140,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     if (isValid && step < totalSteps) {
       setStep(prev => prev + 1);
     }
-  };
+  }, [step, form, validationMessages, watchProjectType, watchGoal]);
 
-  const prevStep = () => {
+  const prevStep = useCallback(() => {
     if (step > 1) {
       setStep(prev => prev - 1);
     }
-  };
+  }, [step]);
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = useCallback((data: FormValues) => {
     setIsSubmitting(true);
     
     console.log("Form data:", data);
@@ -183,24 +189,24 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         duration: 5000,
       });
     });
-  };
+  }, [language, toast]);
 
-  const resetForm = () => {
+  const resetForm = useCallback(() => {
     form.reset();
     setStep(1);
     setSubmitted(false);
-  };
+  }, [form]);
 
-  const closeForm = () => {
+  const closeForm = useCallback(() => {
     resetForm();
     onOpenChange(false);
-  };
+  }, [resetForm, onOpenChange]);
 
-  const redirectToHome = () => {
+  const redirectToHome = useCallback(() => {
     window.location.href = '/';
-  };
+  }, []);
 
-  const StepOne = () => (
+  const StepOne = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -250,7 +256,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           )}
         />
         
-        {form.watch("projectType") === "other" && (
+        {watchProjectType === "other" && (
           <FormField
             control={form.control}
             name="projectTypeOther"
@@ -267,9 +273,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         )}
       </div>
     </motion.div>
-  );
+  ));
 
-  const StepTwo = () => (
+  const StepTwo = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -410,9 +416,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         />
       </div>
     </motion.div>
-  );
+  ));
 
-  const StepThree = () => (
+  const StepThree = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -471,7 +477,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           )}
         />
         
-        {form.watch("goal") === "other" && (
+        {watchGoal === "other" && (
           <FormField
             control={form.control}
             name="goalOther"
@@ -495,9 +501,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         )}
       </div>
     </motion.div>
-  );
+  ));
 
-  const StepFour = () => (
+  const StepFour = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
@@ -597,9 +603,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         />
       </div>
     </motion.div>
-  );
+  ));
 
-  const ThankYouScreen = () => (
+  const ThankYouScreen = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -630,7 +636,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         </Button>
       </div>
     </motion.div>
-  );
+  ));
 
   const renderStepContent = () => {
     if (submitted) {
@@ -734,4 +740,4 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   );
 };
 
-export default LeadGenerationOverlay;
+export default React.memo(LeadGenerationOverlay);
