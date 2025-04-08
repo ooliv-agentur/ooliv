@@ -85,8 +85,17 @@ const Footer = () => {
             iframeElement.style.border = 'none';
             iframeElement.style.display = 'inline-block';
             iframeElement.style.verticalAlign = 'middle';
+            iframeElement.style.opacity = '1';
+            iframeElement.style.visibility = 'visible';
+            
+            const badgeContainer = iframeElement.closest('.sortlist-badge');
+            if (badgeContainer) {
+              (badgeContainer as HTMLElement).style.visibility = 'visible';
+              (badgeContainer as HTMLElement).style.display = 'inline-block';
+              (badgeContainer as HTMLElement).style.opacity = '1';
+            }
           });
-        }, 300);
+        }, 500);
       };
       
       document.body.appendChild(script);
@@ -191,7 +200,18 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                <div className="sortlist-badge inline-block" style={{ overflow: 'hidden', height: '0.6rem', verticalAlign: 'middle' }}></div>
+                <div 
+                  className="sortlist-badge inline-block" 
+                  style={{ 
+                    overflow: 'visible', 
+                    height: '0.6rem', 
+                    verticalAlign: 'middle',
+                    minWidth: '60px',
+                    opacity: 1,
+                    visibility: 'visible',
+                    display: 'inline-block'
+                  }}
+                ></div>
               </div>
             </div>
           </div>
