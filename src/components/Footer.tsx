@@ -1,7 +1,5 @@
-
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
+import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -44,15 +42,6 @@ const Footer = () => {
                 ? 'Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.'
                 : t('footer.aboutText')}
             </p>
-            <Button 
-              variant="outline" 
-              className="bg-white text-brand-footer hover:bg-gray-100 border-white hover:text-brand-footer hover:bg-white"
-              asChild
-            >
-              <Link to={getUrl('contact')}>
-                {t('footer.startProject')} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
 
           <div>
