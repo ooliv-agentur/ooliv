@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
-  const sortlistScriptLoaded = useRef(false);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -32,43 +32,6 @@ const Footer = () => {
     const translatedPath = pathMap[basePath] || basePath;
     return `${langPrefix}/${translatedPath}`;
   };
-  
-  useEffect(() => {
-    // First, remove all existing Sortlist scripts and badges
-    const cleanup = () => {
-      const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
-      existingScripts.forEach(script => {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      });
-
-      const existingBadges = document.querySelectorAll('.sortlist-badge');
-      existingBadges.forEach(badge => {
-        if (badge.parentNode) {
-          badge.parentNode.removeChild(badge);
-        }
-      });
-    };
-    
-    // Clean up first
-    cleanup();
-    
-    // Only load if not already loaded
-    if (!sortlistScriptLoaded.current) {
-      setTimeout(() => {
-        const script = document.createElement('script');
-        script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-        script.defer = true;
-        script.id = "sortlist-badge-script";
-        
-        document.head.appendChild(script);
-        sortlistScriptLoaded.current = true;
-      }, 500);
-    }
-    
-    return cleanup;
-  }, []);
   
   return (
     <footer className="bg-brand-footer text-white pt-20 pb-8">
@@ -144,11 +107,19 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col items-center space-y-6">
-            <div 
-              id="sortlist-badge-container" 
-              className="flex justify-center w-full"
-            >
-              <div className="sortlist-badge" aria-label="Sortlist Badge"></div>
+            <div className="flex justify-center w-full">
+              <a 
+                href="https://www.sortlist.de/agency/uli-werbeagentur?disableCache=true&_gl=1*ry4v5e*_gcl_au*MzA5OTA3ODYxLjE3NDEwMDk3MTI.*_ga*NzY3NTI4Nzk0LjE3MzI4MDI5MTE.*_ga_1R6BD4KZ09*MTc0NDA4OTMzNS4xOC4xLjE3NDQwODk3MDkuNTkuMC4w" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <img 
+                  src="/lovable-uploads/19dd8ee6-65ca-4be8-a7b8-93ae2d687d64.png" 
+                  alt="Sortlist" 
+                  className="h-12"
+                />
+              </a>
             </div>
 
             <div className="flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0">
