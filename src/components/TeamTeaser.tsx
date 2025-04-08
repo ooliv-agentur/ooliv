@@ -24,27 +24,27 @@ const TeamTeaser = () => {
     {
       name: "Uli Schönleber",
       role: "CEO – Your direct point of contact",
-      image: "/lovable-uploads/51d7af38-5abb-42ed-90ea-bd9451cbe50d.png",
+      image: "/lovable-uploads/d371491a-0cfe-4247-8421-8890230b3bcd.png",
       initials: "US",
       tooltip: "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
       role: "Content",
-      image: "/lovable-uploads/c704876d-6b25-4e90-80b5-bd2867f8234b.png",
+      image: "/lovable-uploads/3a13a1f1-b92a-4c00-a174-8788747be4d8.png",
       initials: "LS",
     },
     {
       name: "Parveen Thakur",
       role: "Web Development",
-      image: "/lovable-uploads/3e333d84-2828-4385-8037-6fa62f815d1f.png",
+      image: "/lovable-uploads/a16411e3-22bb-4664-a907-f1a1305cb693.png",
       initials: "PT",
       tooltip: "On the team for over 20 years"
     },
     {
       name: "Dorinel Nedelcu",
       role: "Creation",
-      image: "/lovable-uploads/9295d42e-6141-4877-8671-1431a4640a5c.png",
+      image: "/lovable-uploads/507cabf5-e61e-428e-8fad-34553f639daa.png",
       initials: "DN",
     }
   ];
@@ -62,21 +62,23 @@ const TeamTeaser = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
           {featuredTeamMembers.map((member, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Avatar className="h-28 w-28 mb-4 border-2 border-brand-primary/20 self-start">
-                    <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top object-cover" />
-                    <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
-                      {member.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                </TooltipTrigger>
-                {member.tooltip && (
-                  <TooltipContent>
-                    <p>{member.tooltip}</p>
-                  </TooltipContent>
-                )}
-              </Tooltip>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Avatar className="h-36 w-36 mb-4 border-2 border-brand-primary/20">
+                      <AvatarImage src={member.image} alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} className="object-top object-cover" />
+                      <AvatarFallback className="bg-brand-primary/10 text-brand-primary text-xl">
+                        {member.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                  </TooltipTrigger>
+                  {member.tooltip && (
+                    <TooltipContent>
+                      <p>{member.tooltip}</p>
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              </TooltipProvider>
               <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
               <p className="text-sm text-brand-text/80">{member.role}</p>
             </div>
