@@ -157,7 +157,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     }
   }, [step]);
 
-  const onSubmit = useCallback((data: FormValues) => {
+  const onSubmit = useCallback(async (data: FormValues) => {
     setIsSubmitting(true);
     
     // Cancel any previous requests
@@ -171,25 +171,37 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     
     console.log("Form data:", data);
     
-    fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(data),
-      signal: abortController.signal
-    })
-    .then(response => {
+    // Prepare the data for submission
+    const formData = {
+      projectType: data.projectType === 'other' ? data.projectTypeOther : data.projectType,
+      companyName: data.companyName || '',
+      industry: data.industry,
+      websiteUrl: data.website || '',
+      location: data.location || '',
+      goal: data.goal === 'other' ? data.goalOther : data.goal,
+      name: data.name,
+      email: data.email,
+      phone: data.phone || '',
+      message: data.message || ''
+    };
+    
+    try {
+      const response = await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData),
+        signal: abortController.signal
+      });
+      
       if (!response.ok) {
-        return response.json().then(errData => {
-          console.error("Server error details:", errData);
-          throw new Error(errData.message || 'Network response was not ok');
-        });
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
+        throw new Error(errorData.message || 'Network response was not ok');
       }
-      return response.json();
-    })
-    .then(result => {
+      
+      const result = await response.json();
       setIsSubmitting(false);
       setSubmitted(true);
       
@@ -199,8 +211,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         duration: 5000,
         className: "bg-[#004d51] text-white border-[#006064]",
       });
-    })
-    .catch(error => {
+    } catch (error: any) {
       // Ignore aborted requests
       if (error.name === 'AbortError') {
         return;
@@ -217,7 +228,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         variant: "destructive",
         duration: 5000,
       });
-    });
+    }
   }, [language, toast]);
 
   const resetForm = useCallback(() => {
@@ -281,7 +292,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   </SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -296,7 +307,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                 <FormControl>
                   <Input {...field} placeholder={tellUsWhat} className="bg-white/10 border-white/20 text-white placeholder:text-white/60" />
                 </FormControl>
-                <FormMessage className="text-[#ff6b6b]" />
+                <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
               </FormItem>
             )}
           />
@@ -337,7 +348,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -396,7 +407,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   )}
                 </SelectContent>
               </Select>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -417,7 +428,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -440,7 +451,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -502,7 +513,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   )}
                 </SelectContent>
               </Select>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -524,7 +535,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                   />
                 </FormControl>
-                <FormMessage className="text-[#ff6b6b]" />
+                <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
               </FormItem>
             )}
           />
@@ -557,11 +568,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                 <Input 
                   {...field} 
                   placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
-                  required 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -579,11 +589,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   {...field} 
                   placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
                   type="email" 
-                  required 
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -604,7 +613,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -627,7 +636,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
@@ -716,20 +725,24 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <style dangerouslySetInnerHTML={{ __html: `
-              .text-destructive {
-                color: #ff6b6b !important;
-              }
-              .text-destructive-foreground {
-                color: white !important;
-              }
-              .bg-destructive {
-                background-color: rgba(255, 92, 92, 0.2) !important;
-                border: 1px solid #ff6b6b !important;
-                padding: 0.5rem;
-                border-radius: 0.25rem;
-              }
-            `}} />
+            <div dangerouslySetInnerHTML={{ 
+              __html: `
+                <style>
+                  .text-destructive {
+                    color: #ff6b6b !important;
+                  }
+                  .text-destructive-foreground {
+                    color: white !important;
+                  }
+                  .bg-destructive {
+                    background-color: rgba(255, 92, 92, 0.2) !important;
+                    border: 1px solid #ff6b6b !important;
+                    padding: 0.5rem;
+                    border-radius: 0.25rem;
+                  }
+                </style>
+              `
+            }} />
             
             <div className="min-h-[350px]">
               <AnimatePresence mode="wait">
