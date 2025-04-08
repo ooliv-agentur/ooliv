@@ -44,7 +44,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   const totalSteps = 4;
   
-  // Move validation messages to useMemo to prevent recreating on every render
   const validationMessages = useMemo(() => ({
     projectType: language === 'de' 
       ? "Bitte wählen Sie einen Projekttyp aus" 
@@ -69,7 +68,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       : "Please select an industry"
   }), [language]);
   
-  // Move schema to useMemo to prevent recreation on every render
   const formSchema = useMemo(() => z.object({
     projectType: z.string().min(1, { message: validationMessages.projectType }),
     projectTypeOther: z.string().optional(),
@@ -90,7 +88,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   type FormValues = z.infer<typeof formSchema>;
   
-  // Initialize form once with defaultValues to prevent re-renders
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -110,7 +107,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     mode: "onTouched",
   });
 
-  // Watch values with explicit fields to prevent unnecessary re-renders
   const watchProjectType = form.watch("projectType");
   const watchGoal = form.watch("goal");
 
@@ -121,16 +117,13 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
-  // Reset form when component mounts or when open state changes
   React.useEffect(() => {
     if (open) {
-      // Instead of form.reset(), use setValues to avoid re-render
       setStep(1);
       setSubmitted(false);
     }
   }, [open]);
 
-  // Use stable function references with useCallback
   const nextStep = useCallback(async () => {
     let isValid = false;
     
@@ -164,18 +157,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const onSubmit = useCallback(async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Cancel any previous requests
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
     
-    // Create a new abort controller for this request
     const abortController = new AbortController();
     abortControllerRef.current = abortController;
     
     console.log("Form data:", data);
     
-    // Prepare the data for submission
     const formData = {
       projectType: data.projectType === 'other' ? data.projectTypeOther : data.projectType,
       companyName: data.companyName || '',
@@ -190,7 +180,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
     
     try {
-      // Fix: Use proper URL construction for the Supabase function
       const functionUrl = `${supabase.functions.getUrl('sendProjectForm')}`;
       
       const response = await fetch(functionUrl, {
@@ -220,7 +209,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         className: "bg-[#004d51] text-white border-[#006064]",
       });
     } catch (error: any) {
-      // Ignore aborted requests
       if (error.name === 'AbortError') {
         return;
       }
@@ -254,7 +242,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     window.location.href = '/';
   }, []);
 
-  // StepOne component with proper memoization
   const StepOne = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -325,7 +312,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
-  // StepTwo component with proper memoization
   const StepTwo = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -470,7 +456,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
-  // StepThree component with proper memoization
   const StepThree = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -557,7 +542,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
-  // StepFour component with proper memoization
   const StepFour = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -707,7 +691,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </motion.div>
   ));
 
-  // Consistent function for rendering content, memoized to prevent re-renders
   const renderStepContent = useCallback(() => {
     if (submitted) {
       return <ThankYouScreen />;
@@ -727,7 +710,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     }
   }, [step, submitted]);
 
-  // Memoize form to prevent unnecessary re-renders
   const formContent = useMemo(() => (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
       <div dangerouslySetInnerHTML={{ 
@@ -799,7 +781,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     </form>
   ), [language, form, step, isSubmitting, submitted, nextStep, prevStep, onSubmit, renderStepContent, totalSteps]);
 
-  // Use memo for the entire component return
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
@@ -835,4 +816,4 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   );
 };
 
-export default React.memo(LeadGeneration
+export default React.memo(LeadGenerationOverlay);
