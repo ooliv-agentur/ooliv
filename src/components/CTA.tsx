@@ -12,7 +12,7 @@ interface CTAProps {
   secondaryCta: string;
   footerNote?: string;
   lightBackground?: boolean;
-  children?: React.ReactNode; // Add children prop to the interface
+  children?: React.ReactNode;
 }
 
 const CTA = ({
@@ -42,7 +42,6 @@ const CTA = ({
             className="group bg-[#006064] text-white hover:bg-[#004D40]" 
             asChild
             onClick={() => {
-              // Trigger the same lead generation form as the sidebar button
               window.dispatchEvent(new Event('open-lead-form'));
             }}
           >
@@ -55,7 +54,7 @@ const CTA = ({
           <Button 
             variant="outline" 
             size="lg" 
-            className="bg-transparent text-[#006064] border-[#006064] hover:bg-[#006064]/10 hover:text-[#004D40] hover:border-[#004D40]" 
+            className="bg-transparent border-gray-400 text-brand-text hover:bg-gray-100 hover:border-gray-500" 
             asChild
           >
             <Link to={caseStudiesPath}>
@@ -66,7 +65,7 @@ const CTA = ({
         </div>
         
         {footerNote && (
-          <p className="mt-12 text-sm text-white/90 font-semibold">{footerNote}</p>
+          <p className="mt-12 text-sm text-brand-text/80 font-semibold">{footerNote}</p>
         )}
         
         {children && (
