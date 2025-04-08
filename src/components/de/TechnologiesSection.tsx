@@ -16,7 +16,7 @@ const TechnologiesSection = () => {
     {
       name: "Midjourney",
       description: "Individuelle Visuals statt Stockfotos.",
-      icon: <img src="/midjourney-logo.svg" alt="Midjourney Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/c2e2bd92-40a4-4a70-a1bd-6a3d5d936f87.png" alt="Midjourney Logo" className="h-12 w-12" />
     },
     {
       name: "Ahrefs",
