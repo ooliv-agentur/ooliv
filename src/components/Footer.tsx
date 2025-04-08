@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -37,7 +36,6 @@ const Footer = () => {
   useEffect(() => {
     if (sortlistScriptLoaded.current) return;
     
-    // Clean up any existing scripts
     const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
     existingScripts.forEach(script => {
       if (script.parentNode) {
@@ -45,7 +43,6 @@ const Footer = () => {
       }
     });
 
-    // Remove duplicate badges if any exist
     const existingBadges = document.querySelectorAll('.sortlist-badge');
     if (existingBadges.length > 1) {
       for (let i = 1; i < existingBadges.length; i++) {
@@ -55,7 +52,6 @@ const Footer = () => {
       }
     }
 
-    // Add the script with a slight delay to ensure DOM is ready
     setTimeout(() => {
       const script = document.createElement('script');
       script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
@@ -141,16 +137,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* New bottom footer area with the layout matching the mockup */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Left: Copyright text */}
-            <div className="text-sm text-white font-sans order-2 md:order-1 text-center md:text-left">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <div className="text-sm text-white font-sans">
               © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
             </div>
             
-            {/* Middle: Google reviews */}
-            <div className="flex justify-center items-center order-1 md:order-2">
+            <div className="flex items-center space-x-6">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
@@ -164,12 +157,9 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
               </div>
-            </div>
-            
-            {/* Right: Sortlist badge - larger size */}
-            <div className="flex justify-end order-3 md:order-3">
+              
               <div 
-                className="sortlist-badge" 
+                className="sortlist-badge ml-4 -rotate-3" 
                 aria-label="Sortlist Badge"
               ></div>
             </div>
