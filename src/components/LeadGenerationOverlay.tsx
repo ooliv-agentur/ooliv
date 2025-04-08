@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useMemo } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -24,7 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -44,7 +44,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   const totalSteps = 4;
   
-  const validationMessages = React.useMemo(() => ({
+  // Move validation messages to useMemo to prevent recreating on every render
+  const validationMessages = useMemo(() => ({
     projectType: language === 'de' 
       ? "Bitte wählen Sie einen Projekttyp aus" 
       : "Please select a project type",
@@ -68,7 +69,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       : "Please select an industry"
   }), [language]);
   
-  const formSchema = React.useMemo(() => z.object({
+  // Move schema to useMemo to prevent recreation on every render
+  const formSchema = useMemo(() => z.object({
     projectType: z.string().min(1, { message: validationMessages.projectType }),
     projectTypeOther: z.string().optional(),
     
@@ -88,6 +90,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   type FormValues = z.infer<typeof formSchema>;
   
+  // Initialize form only once when component mounts or when dependencies change
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -107,7 +110,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     mode: "onTouched",
   });
 
-  // Get form values that we're watching without causing re-renders
+  // Use form.watch with specific fields to prevent unnecessary rerenders
   const watchProjectType = form.watch("projectType");
   const watchGoal = form.watch("goal");
 
@@ -118,7 +121,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
-  // Reset form when component mounts
+  // Reset form when component mounts or when open state changes
   React.useEffect(() => {
     if (open) {
       form.reset();
@@ -127,6 +130,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     }
   }, [open, form]);
 
+  // Use memoized callbacks to prevent recreation on every render
   const nextStep = useCallback(async () => {
     let isValid = false;
     
@@ -265,6 +269,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
+                value={field.value}
               >
                 <FormControl>
                   <SelectTrigger className="w-full bg-white/10 border-white/20 text-white">
@@ -364,6 +369,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
+                value={field.value}
               >
                 <FormControl>
                   <SelectTrigger className="bg-white/10 border-white/20 text-white">
@@ -481,6 +487,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
+                value={field.value}
               >
                 <FormControl>
                   <SelectTrigger className="w-full bg-white/10 border-white/20 text-white">
@@ -696,6 +703,78 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     }
   };
 
+  // Use memo to prevent unnecessary re-rendering of the form
+  const formContent = React.useMemo(() => (
+    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <div dangerouslySetInnerHTML={{ 
+        __html: `
+          <style>
+            .text-destructive {
+              color: #ff6b6b !important;
+            }
+            .text-destructive-foreground {
+              color: white !important;
+            }
+            .bg-destructive {
+              background-color: rgba(255, 92, 92, 0.2) !important;
+              border: 1px solid #ff6b6b !important;
+              padding: 0.5rem;
+              border-radius: 0.25rem;
+            }
+          </style>
+        `
+      }} />
+      
+      <div className="min-h-[350px]">
+        <AnimatePresence mode="wait">
+          {renderStepContent()}
+        </AnimatePresence>
+      </div>
+      
+      {!submitted && (
+        <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
+          {step > 1 && (
+            <Button 
+              type="button"
+              variant="outline"
+              onClick={prevStep}
+              className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {language === 'de' ? "Zurück" : "Back"}
+            </Button>
+          )}
+          
+          {step < totalSteps ? (
+            <Button 
+              type="button"
+              onClick={nextStep}
+              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+            >
+              {language === 'de' ? "Weiter" : "Next"}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          ) : (
+            <Button 
+              type="submit"
+              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                  {language === 'de' ? "Wird gesendet..." : "Sending..."}
+                </span>
+              ) : (
+                language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
+              )}
+            </Button>
+          )}
+        </SheetFooter>
+      )}
+    </form>
+  ), [language, form, step, isSubmitting, submitted, nextStep, prevStep, onSubmit, renderStepContent, totalSteps]);
+
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
@@ -724,74 +803,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         )}
         
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div dangerouslySetInnerHTML={{ 
-              __html: `
-                <style>
-                  .text-destructive {
-                    color: #ff6b6b !important;
-                  }
-                  .text-destructive-foreground {
-                    color: white !important;
-                  }
-                  .bg-destructive {
-                    background-color: rgba(255, 92, 92, 0.2) !important;
-                    border: 1px solid #ff6b6b !important;
-                    padding: 0.5rem;
-                    border-radius: 0.25rem;
-                  }
-                </style>
-              `
-            }} />
-            
-            <div className="min-h-[350px]">
-              <AnimatePresence mode="wait">
-                {renderStepContent()}
-              </AnimatePresence>
-            </div>
-            
-            {!submitted && (
-              <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
-                {step > 1 && (
-                  <Button 
-                    type="button"
-                    variant="outline"
-                    onClick={prevStep}
-                    className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
-                  >
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    {language === 'de' ? "Zurück" : "Back"}
-                  </Button>
-                )}
-                
-                {step < totalSteps ? (
-                  <Button 
-                    type="button"
-                    onClick={nextStep}
-                    className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
-                  >
-                    {language === 'de' ? "Weiter" : "Next"}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                ) : (
-                  <Button 
-                    type="submit"
-                    className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                        {language === 'de' ? "Wird gesendet..." : "Sending..."}
-                      </span>
-                    ) : (
-                      language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
-                    )}
-                  </Button>
-                )}
-              </SheetFooter>
-            )}
-          </form>
+          {formContent}
         </Form>
       </SheetContent>
     </Sheet>
