@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -94,7 +93,6 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Updated wave divider to match exactly with the homepage */}
       <div className="absolute bottom-0 left-0 right-0 h-[160px] z-10">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
