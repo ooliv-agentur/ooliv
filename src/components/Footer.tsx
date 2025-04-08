@@ -163,7 +163,7 @@ const Footer = () => {
               
               <div className="ml-4">
                 <div 
-                  className="sortlist-badge inline-flex items-center" 
+                  className="sortlist-badge" 
                   aria-label="Sortlist Badge"
                 ></div>
               </div>
