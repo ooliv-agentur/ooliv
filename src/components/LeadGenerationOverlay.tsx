@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   Sheet,
@@ -34,26 +35,6 @@ interface LeadGenerationOverlayProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const formSchema = z.object({
-  projectType: z.string().min(1, { message: "Please select a project type" }),
-  projectTypeOther: z.string().optional(),
-  
-  companyName: z.string().optional(),
-  industry: z.string().optional(),
-  website: z.string().optional(),
-  location: z.string().optional(),
-  
-  goal: z.string().min(1, { message: "Please select your main goal" }),
-  goalOther: z.string().optional(),
-  
-  name: z.string().min(2, { message: "Please enter your name" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  phone: z.string().optional(),
-  message: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
-
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,6 +43,49 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const { language } = useLanguage();
   
   const totalSteps = 4;
+  
+  // Create validation messages based on language
+  const validationMessages = {
+    projectType: language === 'de' 
+      ? "Bitte wählen Sie einen Projekttyp aus." 
+      : "Please select a project type",
+    name: language === 'de'
+      ? "Bitte geben Sie Ihren Namen ein."
+      : "Please enter your name",
+    email: language === 'de'
+      ? "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+      : "Please enter a valid email address",
+    goal: language === 'de'
+      ? "Bitte wählen Sie Ihr Hauptziel aus."
+      : "Please select your main goal",
+    otherProjectType: language === 'de'
+      ? "Bitte geben Sie Ihren Projekttyp an."
+      : "Please specify your project type",
+    otherGoal: language === 'de'
+      ? "Bitte geben Sie Ihr Ziel an."
+      : "Please specify your goal"
+  };
+  
+  // Dynamically create form schema with proper validation messages
+  const formSchema = z.object({
+    projectType: z.string().min(1, { message: validationMessages.projectType }),
+    projectTypeOther: z.string().optional(),
+    
+    companyName: z.string().optional(),
+    industry: z.string().optional(),
+    website: z.string().optional(),
+    location: z.string().optional(),
+    
+    goal: z.string().min(1, { message: validationMessages.goal }),
+    goalOther: z.string().optional(),
+    
+    name: z.string().min(2, { message: validationMessages.name }),
+    email: z.string().email({ message: validationMessages.email }),
+    phone: z.string().optional(),
+    message: z.string().optional(),
+  });
+
+  type FormValues = z.infer<typeof formSchema>;
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -95,7 +119,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     if (step === 1) {
       isValid = await form.trigger('projectType');
       if (form.getValues('projectType') === 'other' && !form.getValues('projectTypeOther')) {
-        form.setError('projectTypeOther', { message: 'Please specify your project type' });
+        form.setError('projectTypeOther', { message: validationMessages.otherProjectType });
         return;
       }
     } else if (step === 2) {
@@ -103,7 +127,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     } else if (step === 3) {
       isValid = await form.trigger('goal');
       if (form.getValues('goal') === 'other' && !form.getValues('goalOther')) {
-        form.setError('goalOther', { message: 'Please specify your goal' });
+        form.setError('goalOther', { message: validationMessages.otherGoal });
         return;
       }
     }
