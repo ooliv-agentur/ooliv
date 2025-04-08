@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from 'react';
+
+import React, { useState, useCallback, useRef } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -23,7 +24,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -39,10 +40,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
   const { language } = useLanguage();
+  const abortControllerRef = useRef<AbortController | null>(null);
   
   const totalSteps = 4;
   
-  const validationMessages = {
+  const validationMessages = React.useMemo(() => ({
     projectType: language === 'de' 
       ? "Bitte wählen Sie einen Projekttyp aus" 
       : "Please select a project type",
@@ -64,9 +66,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     industry: language === 'de'
       ? "Bitte wählen Sie eine Branche aus"
       : "Please select an industry"
-  };
+  }), [language]);
   
-  const formSchema = z.object({
+  const formSchema = React.useMemo(() => z.object({
     projectType: z.string().min(1, { message: validationMessages.projectType }),
     projectTypeOther: z.string().optional(),
     
@@ -82,7 +84,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     email: z.string().email({ message: validationMessages.email }),
     phone: z.string().optional(),
     message: z.string().optional(),
-  });
+  }), [validationMessages]);
 
   type FormValues = z.infer<typeof formSchema>;
   
@@ -103,9 +105,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       goalOther: "",
     },
     mode: "onTouched",
-    criteriaMode: "firstError",
-    shouldFocusError: false,
   });
+
+  // Get form values that we're watching without causing re-renders
+  const watchProjectType = form.watch("projectType");
+  const watchGoal = form.watch("goal");
 
   const stepTitle = language === 'de' ? "Schritt" : "Step";
   const letsStartTitle = language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project";
@@ -114,8 +118,14 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
-  const watchProjectType = form.watch("projectType");
-  const watchGoal = form.watch("goal");
+  // Reset form when component mounts
+  React.useEffect(() => {
+    if (open) {
+      form.reset();
+      setStep(1);
+      setSubmitted(false);
+    }
+  }, [open, form]);
 
   const nextStep = useCallback(async () => {
     let isValid = false;
@@ -139,7 +149,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     if (isValid && step < totalSteps) {
       setStep(prev => prev + 1);
     }
-  }, [step, form, validationMessages, watchProjectType, watchGoal]);
+  }, [step, form, validationMessages, watchProjectType, watchGoal, totalSteps]);
 
   const prevStep = useCallback(() => {
     if (step > 1) {
@@ -150,6 +160,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const onSubmit = useCallback((data: FormValues) => {
     setIsSubmitting(true);
     
+    // Cancel any previous requests
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    
+    // Create a new abort controller for this request
+    const abortController = new AbortController();
+    abortControllerRef.current = abortController;
+    
     console.log("Form data:", data);
     
     fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
@@ -158,7 +177,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      signal: abortController.signal
     })
     .then(response => {
       if (!response.ok) {
@@ -181,6 +201,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       });
     })
     .catch(error => {
+      // Ignore aborted requests
+      if (error.name === 'AbortError') {
+        return;
+      }
+      
       console.error("Error submitting form:", error);
       setIsSubmitting(false);
       
@@ -210,6 +235,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     window.location.href = '/';
   }, []);
 
+  // Define step components with React.memo to prevent unnecessary re-renders
   const StepOne = React.memo(() => (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -535,7 +561,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
             </FormItem>
           )}
         />
@@ -557,7 +583,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
             </FormItem>
           )}
         />
@@ -578,7 +604,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
             </FormItem>
           )}
         />
@@ -601,7 +627,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
               </FormControl>
-              <FormMessage className="text-[#ff6b6b]" />
+              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded" />
             </FormItem>
           )}
         />

@@ -155,6 +155,11 @@ function toast({ ...props }: Toast) {
     props.className = `bg-red-900 border-red-700 text-white ${props.className || ""}`;
   }
 
+  // Set default styling for success toasts
+  if (!props.variant && !props.className?.includes("bg-")) {
+    props.className = `bg-[#004d51] text-white border-[#006064] ${props.className || ""}`;
+  }
+
   dispatch({
     type: "ADD_TOAST",
     toast: {

@@ -29,6 +29,27 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
   const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [formError, setFormError] = React.useState<string | null>(null);
+  const [formValues, setFormValues] = React.useState({
+    name: '',
+    email: '',
+    message: '',
+    privacy: false
+  });
+  const [validationErrors, setValidationErrors] = React.useState<{[key: string]: string}>({});
+  
+  // Reset the form when dialog opens/closes
+  React.useEffect(() => {
+    if (open) {
+      setFormValues({
+        name: '',
+        email: '',
+        message: '',
+        privacy: false
+      });
+      setValidationErrors({});
+      setFormError(null);
+    }
+  }, [open]);
   
   const titles = {
     'audit': language === 'de' ? 'Fordern Sie Ihr kostenloses Website-Audit an' : 'Request Your Free Website Audit',
@@ -48,15 +69,72 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
       : 'Tell us about your project and let\'s create something amazing together.'
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormValues(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear validation error when field is being edited
+    if (validationErrors[name]) {
+      setValidationErrors(prev => {
+        const updated = {...prev};
+        delete updated[name];
+        return updated;
+      });
+    }
+  };
+  
+  const handleCheckboxChange = (checked: boolean) => {
+    setFormValues(prev => ({
+      ...prev,
+      privacy: checked
+    }));
+    
+    if (validationErrors['privacy']) {
+      setValidationErrors(prev => {
+        const updated = {...prev};
+        delete updated['privacy'];
+        return updated;
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const errors: {[key: string]: string} = {};
+    
+    if (!formValues.name.trim()) {
+      errors.name = language === 'de' ? 'Name ist erforderlich' : 'Name is required';
+    }
+    
+    if (!formValues.email.trim()) {
+      errors.email = language === 'de' ? 'E-Mail ist erforderlich' : 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
+      errors.email = language === 'de' ? 'Ungültige E-Mail-Adresse' : 'Invalid email address';
+    }
+    
+    if (!formValues.message.trim()) {
+      errors.message = language === 'de' ? 'Nachricht ist erforderlich' : 'Message is required';
+    }
+    
+    if (!formValues.privacy) {
+      errors.privacy = language === 'de' ? 'Zustimmung erforderlich' : 'Consent is required';
+    }
+    
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     setFormError(null);
-    
-    // Form data collection
-    const formElement = e.target as HTMLFormElement;
-    const formData = new FormData(formElement);
-    const formValues = Object.fromEntries(formData.entries());
     
     // Simulate form submission
     setTimeout(() => {
@@ -105,11 +183,15 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
             <Input 
               id="name" 
               name="name" 
-              required 
-              placeholder={language === 'de' ? 'Geben Sie Ihren Namen ein' : 'Enter your name'} 
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              value={formValues.name}
+              onChange={handleInputChange}
+              className={`bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.name ? 'border-red-500' : ''}`}
               aria-required="true"
+              placeholder={language === 'de' ? 'Geben Sie Ihren Namen ein' : 'Enter your name'}
             />
+            {validationErrors.name && (
+              <p className="text-sm text-red-500 mt-1">{validationErrors.name}</p>
+            )}
           </div>
           
           <div className="space-y-2">
@@ -119,12 +201,16 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
             <Input 
               id="email" 
               name="email" 
-              type="email" 
-              required 
-              placeholder={language === 'de' ? 'Geben Sie Ihre E-Mail-Adresse ein' : 'Enter your email'} 
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              type="email"
+              value={formValues.email}
+              onChange={handleInputChange}
+              className={`bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.email ? 'border-red-500' : ''}`}
               aria-required="true"
+              placeholder={language === 'de' ? 'Geben Sie Ihre E-Mail-Adresse ein' : 'Enter your email'}
             />
+            {validationErrors.email && (
+              <p className="text-sm text-red-500 mt-1">{validationErrors.email}</p>
+            )}
           </div>
           
           <div className="space-y-2">
@@ -134,23 +220,38 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
             <Textarea 
               id="message" 
               name="message" 
-              required 
-              placeholder={language === 'de' ? 'Wie können wir Ihnen helfen?' : 'How can we help you?'} 
-              className="resize-none h-24 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              value={formValues.message}
+              onChange={handleInputChange}
+              className={`resize-none h-24 bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.message ? 'border-red-500' : ''}`}
               aria-required="true"
+              placeholder={language === 'de' ? 'Wie können wir Ihnen helfen?' : 'How can we help you?'}
             />
+            {validationErrors.message && (
+              <p className="text-sm text-red-500 mt-1">{validationErrors.message}</p>
+            )}
           </div>
           
           <div className="flex items-start space-x-3">
-            <Checkbox id="privacy" name="privacy" required className="data-[state=checked]:bg-[#006064] data-[state=checked]:border-[#006064]" />
-            <Label 
-              htmlFor="privacy" 
-              className="text-sm font-normal leading-tight cursor-pointer text-white/90"
-            >
-              {language === 'de' 
-                ? 'Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzrichtlinie zu.' 
-                : 'I agree to the processing of my data as outlined in the privacy policy.'}
-            </Label>
+            <Checkbox 
+              id="privacy" 
+              name="privacy" 
+              checked={formValues.privacy}
+              onCheckedChange={handleCheckboxChange}
+              className={`data-[state=checked]:bg-[#006064] data-[state=checked]:border-[#006064] ${validationErrors.privacy ? 'border-red-500' : ''}`} 
+            />
+            <div className="flex flex-col">
+              <Label 
+                htmlFor="privacy" 
+                className="text-sm font-normal leading-tight cursor-pointer text-white/90"
+              >
+                {language === 'de' 
+                  ? 'Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzrichtlinie zu.' 
+                  : 'I agree to the processing of my data as outlined in the privacy policy.'}
+              </Label>
+              {validationErrors.privacy && (
+                <p className="text-sm text-red-500 mt-1">{validationErrors.privacy}</p>
+              )}
+            </div>
           </div>
           
           <DialogFooter className="mt-6 sm:mt-6 flex gap-4">
