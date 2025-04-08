@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -106,21 +107,22 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-sm text-white font-sans flex items-center space-x-4">
+            <div className="flex flex-col md:flex-row items-center justify-between w-full space-y-6 md:space-y-0">
+              <div className="flex items-center">
                 <a 
                   href="https://www.sortlist.de/agency/uli-werbeagentur?disableCache=true&_gl=1*ry4v5e*_gcl_au*MzA5OTA3ODYxLjE3NDEwMDk3MTI.*_ga*NzY3NTI4Nzk0LjE3MzI4MDI5MTE.*_ga_1R6BD4KZ09*MTc0NDA4OTMzNS4xOC4xLjE3NDQwODk3MDkuNTkuMC4w" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-block mr-4"
                 >
                   <img 
                     src="/lovable-uploads/19dd8ee6-65ca-4be8-a7b8-93ae2d687d64.png" 
                     alt="Sortlist Top Rated Agency" 
-                    className="h-6"
+                    className="h-10 mr-4"
                   />
                 </a>
-                © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+                <span className="text-sm text-white font-sans">
+                  © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+                </span>
               </div>
               
               <div className="flex items-center">
