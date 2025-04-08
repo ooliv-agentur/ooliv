@@ -26,10 +26,7 @@ const TechnologiesSection = () => {
     {
       name: "Basecamp",
       description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt.",
-      icon: <svg className="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L2 8L12 14L22 8L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M2 14L12 20L22 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
+      icon: <img src="/lovable-uploads/a58c92c6-bfd7-4602-acaa-db2fba947360.png" alt="Basecamp Logo" className="h-12 w-12" />
     }
   ];
 
