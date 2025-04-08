@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -34,17 +35,17 @@ const TeamTeaser = () => {
       initials: "LS",
     },
     {
+      name: "Parveen Thakur",
+      role: "Web Development",
+      image: "/lovable-uploads/a16411e3-22bb-4664-a907-f1a1305cb693.png",
+      initials: "PT",
+      tooltip: "On the team for over 20 years"
+    },
+    {
       name: "Dorinel Nedelcu",
       role: "Creation",
       image: "/lovable-uploads/507cabf5-e61e-428e-8fad-34553f639daa.png",
       initials: "DN",
-    },
-    {
-      name: "Parveen Thakur",
-      role: "Web Development",
-      image: "/lovable-uploads/932bf82e-16bb-4133-ba57-73b1e5e61ac1.png",
-      initials: "PT",
-      tooltip: "On the team for over 20 years"
     }
   ];
 
