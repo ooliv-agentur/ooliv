@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
+  const sortlistScriptLoaded = useRef(false);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -32,8 +33,9 @@ const Footer = () => {
     return `${langPrefix}/${translatedPath}`;
   };
   
-  React.useEffect(() => {
-    // Remove any existing scripts first to avoid duplicates
+  useEffect(() => {
+    if (sortlistScriptLoaded.current) return;
+    
     const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
     existingScripts.forEach(script => {
       if (script.parentNode) {
@@ -41,21 +43,26 @@ const Footer = () => {
       }
     });
 
-    // Create a new script element
-    const script = document.createElement('script');
-    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-    script.defer = true;
-    script.id = "sortlist-badge-script";
-    
-    // Add the script to the document head
-    document.head.appendChild(script);
-    
-    return () => {
-      // Clean up script when component unmounts
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
+    const existingBadges = document.querySelectorAll('.sortlist-badge');
+    if (existingBadges.length > 1) {
+      for (let i = 1; i < existingBadges.length; i++) {
+        if (existingBadges[i].parentNode) {
+          existingBadges[i].parentNode.removeChild(existingBadges[i]);
+        }
       }
-    };
+    }
+
+    if (document.querySelector('.sortlist-badge')) {
+      const script = document.createElement('script');
+      script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+      script.defer = true;
+      script.id = "sortlist-badge-script";
+      
+      document.head.appendChild(script);
+      sortlistScriptLoaded.current = true;
+    }
+    
+    return () => {};
   }, []);
   
   return (
@@ -149,7 +156,21 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                <div className="sortlist-badge" style={{ display: 'inline-block', height: '0.6rem', overflow: 'visible', verticalAlign: 'middle', minWidth: '60px', position: 'relative', zIndex: 10 }}></div>
+                <div 
+                  className="sortlist-badge" 
+                  style={{ 
+                    display: 'inline-block',
+                    visibility: 'visible', 
+                    opacity: 1,
+                    height: '0.6rem', 
+                    overflow: 'visible', 
+                    verticalAlign: 'middle', 
+                    minWidth: '60px', 
+                    position: 'relative', 
+                    zIndex: 10,
+                    marginLeft: '12px'
+                  }}
+                ></div>
               </div>
             </div>
           </div>
