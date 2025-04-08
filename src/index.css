@@ -8,8 +8,8 @@
     display: inline-flex !important;
     visibility: visible !important; 
     opacity: 1 !important;
-    height: 1.2rem !important; /* Doubled from 0.6rem */
-    max-width: 240px !important; /* Doubled from 120px */
+    height: 2rem !important;
+    max-width: 300px !important;
     overflow: visible !important;
     vertical-align: middle !important;
     white-space: nowrap !important;
@@ -17,16 +17,18 @@
     padding: 0 !important;
     line-height: 1 !important;
     position: relative !important;
+    transform: scale(1.2) !important;
+    transform-origin: center !important;
   }
 
   .sortlist-badge iframe {
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    height: 1.2rem !important; /* Doubled from 0.6rem */
-    max-height: 1.2rem !important; /* Doubled from 0.6rem */
-    transform: scale(1.2) !important; /* Increased from 0.6 */
-    transform-origin: left center !important;
+    height: 2rem !important;
+    max-height: 2rem !important;
+    transform: scale(1.2) !important;
+    transform-origin: center !important;
     vertical-align: middle !important;
     position: relative !important;
     border: none !important;
