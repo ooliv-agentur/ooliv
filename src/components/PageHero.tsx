@@ -27,10 +27,14 @@ const PageHero = ({
   primaryCta,
   secondaryCta,
 }: PageHeroProps) => {
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
-    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background pattern/gradient - Updated to match the start page positioning */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+    <section className="relative bg-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      {/* Background pattern/gradient with updated positioning */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#f0f4f8] opacity-50 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -57,7 +61,7 @@ const PageHero = ({
               <Button 
                 size="lg" 
                 className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-                onClick={primaryCta.onClick}
+                onClick={primaryCta.onClick || handleStartProject}
               >
                 {primaryCta.text}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
