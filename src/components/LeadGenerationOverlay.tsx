@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useRef, useMemo } from 'react';
 import { 
   Sheet,
@@ -191,7 +190,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
     
     try {
-      const response = await fetch(`${supabase.functions.url}/sendProjectForm`, {
+      // Fix: Use proper URL construction for the Supabase function
+      const functionUrl = `${supabase.functions.getUrl('sendProjectForm')}`;
+      
+      const response = await fetch(functionUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -833,4 +835,4 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   );
 };
 
-export default React.memo(LeadGenerationOverlay);
+export default React.memo(LeadGeneration
