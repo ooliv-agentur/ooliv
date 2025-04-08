@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -31,6 +31,17 @@ const Footer = () => {
     const translatedPath = pathMap[basePath] || basePath;
     return `${langPrefix}/${translatedPath}`;
   };
+  
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   
   return (
     <footer className="bg-brand-footer text-white pt-20 pb-8">
@@ -110,18 +121,22 @@ const Footer = () => {
               © 2025 ooliv. Alle Rechte vorbehalten.
             </div>
             
-            <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
-              ))}
-              <a 
-                href="https://g.co/kgs/sgZX29W" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-300 transition-colors text-sm ml-2"
-              >
-                {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
-              </a>
+            <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right flex items-center space-x-4">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
+                ))}
+                <a 
+                  href="https://g.co/kgs/sgZX29W" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gray-300 transition-colors text-sm ml-2"
+                >
+                  {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
+                </a>
+              </div>
+              
+              <div className="sortlist-badge"></div>
             </div>
           </div>
         </div>
