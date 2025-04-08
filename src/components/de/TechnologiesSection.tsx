@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface Technology {
@@ -12,7 +11,7 @@ const TechnologiesSection = () => {
     {
       name: "ChatGPT",
       description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert.",
-      icon: <img src="/chatgpt-logo.svg" alt="ChatGPT Logo" className="h-12 w-12" />
+      icon: <img src="/lovable-uploads/ac2faaf0-3c11-47bd-a829-aafb0bd09f24.png" alt="ChatGPT Logo" className="h-12 w-12" />
     },
     {
       name: "Midjourney",
