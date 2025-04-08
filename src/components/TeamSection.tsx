@@ -24,7 +24,7 @@ const TeamSection = () => {
         en: "CEO · Consulting, Concept, AI",
         de: "CEO · Beratung, Konzept, KI"
       }, 
-      image: "/lovable-uploads/d371491a-0cfe-4247-8421-8890230b3bcd.png",
+      image: "/lovable-uploads/Uli.jpg",
       initials: "US" 
     },
     { 
@@ -33,7 +33,7 @@ const TeamSection = () => {
         en: "Content",
         de: "Content"
       }, 
-      image: "/lovable-uploads/3a13a1f1-b92a-4c00-a174-8788747be4d8.png",
+      image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
     },
     { 
@@ -42,7 +42,7 @@ const TeamSection = () => {
         en: "Creation",
         de: "Kreation"
       }, 
-      image: "/lovable-uploads/507cabf5-e61e-428e-8fad-34553f639daa.png",
+      image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN" 
     },
     { 
@@ -51,7 +51,7 @@ const TeamSection = () => {
         en: "Web Development",
         de: "Webentwicklung"
       }, 
-      image: "/lovable-uploads/a16411e3-22bb-4664-a907-f1a1305cb693.png",
+      image: "/lovable-uploads/Parveen.jpg",
       initials: "PT" 
     },
     { 
@@ -60,7 +60,7 @@ const TeamSection = () => {
         en: "Web Development",
         de: "Webentwicklung"
       }, 
-      image: "/lovable-uploads/932bf82e-16bb-4133-ba57-73b1e5e61ac1.png",
+      image: "/lovable-uploads/Kamil.jpg",
       initials: "KL" 
     },
     { 
@@ -69,7 +69,7 @@ const TeamSection = () => {
         en: "App Development",
         de: "App-Entwicklung"
       }, 
-      image: "/lovable-uploads/5d31980a-bc2f-4a4f-b4b5-ebf0aba47f2d.png",
+      image: "/lovable-uploads/Neeraj.jpg",
       initials: "NK" 
     },
     { 
@@ -78,7 +78,7 @@ const TeamSection = () => {
         en: "SEO Optimization",
         de: "SEO-Optimierung"
       }, 
-      image: "/lovable-uploads/7a0dfc1a-3ebf-454c-a2c7-a19009456220.png",
+      image: "/lovable-uploads/Paul.jpg",
       initials: "PB" 
     },
     { 
@@ -87,7 +87,7 @@ const TeamSection = () => {
         en: "Corporate Design",
         de: "Corporate Design"
       }, 
-      image: "/lovable-uploads/1e8c7562-a48a-4d59-8628-c6466e706326.png",
+      image: "/lovable-uploads/Giovanni.jpg",
       initials: "GC" 
     },
     { 
@@ -96,7 +96,7 @@ const TeamSection = () => {
         en: "Illustrator",
         de: "Illustratorin"
       }, 
-      image: "/lovable-uploads/f585dcaa-c361-4250-9591-ae76feba5f69.png",
+      image: "/lovable-uploads/Beatriz.jpg",
       initials: "BM" 
     },
     { 
@@ -105,7 +105,7 @@ const TeamSection = () => {
         en: "Print Design",
         de: "Print-Design"
       }, 
-      image: "/lovable-uploads/455b2c4e-3a9c-4fa8-914d-4368b126b1a7.png",
+      image: "/lovable-uploads/Sanja.jpg",
       initials: "SM" 
     }
   ];
