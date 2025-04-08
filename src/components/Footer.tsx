@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -141,12 +142,14 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-white font-sans mb-4 md:mb-0">
-              © 2025 ooliv. Alle Rechte vorbehalten.
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center">
+            {/* Left: Copyright text */}
+            <div className="text-sm text-white font-sans text-left">
+              © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
             </div>
             
-            <div className="flex items-center justify-center space-x-4">
+            {/* Middle: Google reviews */}
+            <div className="flex justify-center items-center">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
@@ -160,13 +163,14 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
               </div>
-              
-              <div className="ml-4">
-                <div 
-                  className="sortlist-badge" 
-                  aria-label="Sortlist Badge"
-                ></div>
-              </div>
+            </div>
+            
+            {/* Right: Sortlist badge */}
+            <div className="flex justify-end">
+              <div 
+                className="sortlist-badge" 
+                aria-label="Sortlist Badge"
+              ></div>
             </div>
           </div>
         </div>
