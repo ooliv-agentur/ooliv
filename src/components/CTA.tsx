@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -40,7 +39,6 @@ const CTA = ({
           <Button 
             size="lg" 
             className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            asChild
             onClick={() => {
               window.dispatchEvent(new Event('open-lead-form'));
             }}
@@ -54,7 +52,7 @@ const CTA = ({
           <Button 
             variant="outline" 
             size="lg" 
-            className="bg-transparent border-gray-400 text-brand-text hover:bg-gray-100 hover:border-gray-500" 
+            className="border-gray-400 text-brand-text hover:bg-transparent hover:border-brand-primary" 
             asChild
           >
             <Link to={caseStudiesPath}>
