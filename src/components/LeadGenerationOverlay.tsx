@@ -147,7 +147,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     
     console.log("Form data:", data);
     
-    setTimeout(() => {
+    fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(result => {
       setIsSubmitting(false);
       setSubmitted(true);
       
@@ -156,7 +169,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
         duration: 5000,
       });
-    }, 1500);
+    })
+    .catch(error => {
+      console.error("Error submitting form:", error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: language === 'de' ? "Fehler" : "Error",
+        description: language === 'de' 
+          ? "Es gab ein Problem bei der Übermittlung Ihrer Anfrage. Bitte versuchen Sie es erneut." 
+          : "There was a problem submitting your request. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    });
   };
 
   const resetForm = () => {
