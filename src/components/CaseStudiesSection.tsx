@@ -41,6 +41,23 @@ export const caseStudiesData = {
       image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
     },
     {
+      client: "SPEZ AG",
+      industry: "Specialist for Tree Removal, Crane Work and Green Maintenance",
+      headline: "Market launch with holistic strategy - from initial idea to high-performance website",
+      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
+      quote: "With ooliv, we were able to make SPEZ visible. The new brand convinces both technically and emotionally - and has been consistently generating qualified inquiries since the launch.",
+      websiteLink: "www.spez-ag.ch",
+      impact: [
+        "Development of logo, corporate design and brand presence for digital market entry",
+        "Structure, wireframes and textual elaboration of all content and service areas",
+        "Custom web design with clear imagery and focus on trust, technology and nature",
+        "Implementation of the entire website with WordPress including responsive performance",
+        "SEO optimization for local keywords and Google Ads campaigns for lead generation",
+        "Rank 1 for the main keyword in a short time - significantly ahead of all regional competitors"
+      ],
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+    },
+    {
       client: "COBUS",
       industry: "ERP & IT Solutions",
       headline: "Lead generation improved by 80% with a new website & conversion strategy",
@@ -142,6 +159,23 @@ export const caseStudiesData = {
         "Bild- und Videoproduktion zur visuellen Stärkung der globalen Marktführerschaft"
       ],
       image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
+    },
+    {
+      client: "SPEZ AG",
+      industry: "Spezialist für Baumfällung, Kranarbeiten und Grünpflege",
+      headline: "Markteinführung mit ganzheitlicher Strategie – von der ersten Idee zur performanten Website",
+      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
+      quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
+      websiteLink: "www.spez-ag.ch",
+      impact: [
+        "Entwicklung von Logo, Corporate Design und Markenauftritt für den digitalen Markteintritt",
+        "Struktur, Wireframes und textliche Ausarbeitung aller Inhalte und Leistungsbereiche",
+        "Individuelles Webdesign mit klarer Bildsprache und Fokus auf Vertrauen, Technik und Natur",
+        "Umsetzung der gesamten Website mit WordPress inklusive responsiver Performance",
+        "SEO-Optimierung auf lokale Keywords und Google Ads Kampagnen zur Lead-Generierung",
+        "Nach kurzer Zeit Platz 1 für das Hauptkeyword – deutlich vor allen regionalen Mitbewerbern"
+      ],
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
     },
     {
       client: "COBUS",
