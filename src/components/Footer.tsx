@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -162,10 +161,12 @@ const Footer = () => {
                 </a>
               </div>
               
-              <div 
-                className="sortlist-badge inline-flex items-center" 
-                aria-label="Sortlist Badge"
-              ></div>
+              <div className="ml-4">
+                <div 
+                  className="sortlist-badge inline-flex items-center" 
+                  aria-label="Sortlist Badge"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
