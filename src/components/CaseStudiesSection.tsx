@@ -38,7 +38,7 @@ export const caseStudiesData = {
         "SEO optimization for international visibility and B2B reach",
         "Image and video production to visually strengthen global market leadership"
       ],
-      image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
+      image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
     {
       client: "SPEZ AG",
@@ -158,7 +158,7 @@ export const caseStudiesData = {
         "SEO-Optimierung für internationale Sichtbarkeit und B2B-Reichweite",
         "Bild- und Videoproduktion zur visuellen Stärkung der globalen Marktführerschaft"
       ],
-      image: "/lovable-uploads/df666b75-d857-4a1e-9f47-c1262bd43fe4.png",
+      image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
     {
       client: "SPEZ AG",
