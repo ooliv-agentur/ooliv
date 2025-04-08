@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -69,72 +68,19 @@ export const caseStudiesData = {
       image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
     },
     {
-      client: "COBUS",
-      industry: "ERP & IT Solutions",
-      headline: "Lead generation improved by 80% with a new website & conversion strategy",
-      logo: "/placeholder.svg",
-      quote: "Professional, strategic, and results-driven. They understood exactly what our business needed.",
+      client: "Quartier Am Kliff",
+      industry: "Beachfront Condominiums on Rügen",
+      headline: "Market launch of a real estate brand - from logo to landing page",
+      logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
+      quote: "With ooliv, we have created a project that convincingly showcases our architecture, location, and vision digitally. The site actively supports us in sales - at all levels.",
+      websiteLink: "www.amkliff.de",
       impact: [
-        "80% more leads through targeted conversion strategy",
-        "3x website traffic with improved visibility and content",
-        "40% lower bounce rate with enhanced user experience"
+        "Digital brand development incl. logo, CI & naming",
+        "Concept, text and design of the sales landing page",
+        "Implementation as a high-performance HTML page (without CMS)",
+        "Image editing & construction signs for project communication"
       ],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      author: {
-        name: "Thomas Weber",
-        position: "CEO, COBUS"
-      }
-    },
-    {
-      client: "Weisenburger",
-      industry: "Construction & Real Estate",
-      headline: "Seamless CRM integration & scalable web infrastructure",
-      logo: "/placeholder.svg",
-      quote: "A game-changer for our online presence. More leads, better conversions, and seamless collaboration.",
-      impact: [
-        "95% faster load time with optimized architecture",
-        "60% more inquiries through improved user journey",
-        "4.9/5 user satisfaction with new digital experience"
-      ],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      author: {
-        name: "Julia Müller",
-        position: "Digital Manager, Weisenburger"
-      }
-    },
-    {
-      client: "PopBird",
-      industry: "E-Commerce & Retail",
-      headline: "35% sales increase in 6 months through emotional storytelling",
-      logo: "/placeholder.svg",
-      quote: "Working with ooliv completely transformed our online presence. Our customers now have a seamless experience from discovery to purchase.",
-      impact: [
-        "35% sales growth through emotional storytelling approach",
-        "42% increase in average order value with improved UX",
-        "60% higher customer retention with personalized email workflows"
-      ],
-      image: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
-      author: {
-        name: "Sarah Johnson",
-        position: "Marketing Lead, PopBird"
-      }
-    },
-    {
-      client: "GreenTech",
-      industry: "Renewable Energy",
-      headline: "200+ qualified leads per month with targeted SEO & content strategy",
-      logo: "/placeholder.svg",
-      quote: "The results exceeded our expectations. Our web presence now truly reflects our brand values and converts visitors efficiently.",
-      impact: [
-        "200+ qualified leads per month with targeted strategy",
-        "First page Google rankings for 30+ industry keywords",
-        "68% reduction in cost per acquisition through organic channels"
-      ],
-      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
-      author: {
-        name: "Daniel Krause",
-        position: "Growth Director, GreenTech"
-      }
+      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
     }
   ],
   de: [
@@ -199,72 +145,19 @@ export const caseStudiesData = {
       image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
     },
     {
-      client: "COBUS",
-      industry: "ERP & IT-Lösungen",
-      headline: "Lead-Generierung um 80% verbessert mit neuer Website & Konversionsstrategie",
-      logo: "/placeholder.svg",
-      quote: "Professionell, strategisch und ergebnisorientiert. Sie haben genau verstanden, was unser Unternehmen braucht.",
+      client: "Quartier Am Kliff",
+      industry: "Strandnahe Eigentumswohnungen auf Rügen",
+      headline: "Markteinführung einer Immobilienmarke – von Logo bis Landingpage",
+      logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
+      quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
+      websiteLink: "www.amkliff.de",
       impact: [
-        "80% mehr Leads durch gezielte Konversionsstrategie",
-        "3x Website-Traffic mit verbesserter Sichtbarkeit und Inhalten",
-        "40% niedrigere Absprungrate mit verbesserter Benutzererfahrung"
+        "Digitale Markenentwicklung inkl. Logo, CI & Naming",
+        "Konzept, Text und Design der Verkaufs-Landingpage",
+        "Umsetzung als performante HTML-Seite (ohne CMS)",
+        "Bildbearbeitung & Bauschilder für die Projektkommunikation"
       ],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      author: {
-        name: "Thomas Weber",
-        position: "CEO, COBUS"
-      }
-    },
-    {
-      client: "Weisenburger",
-      industry: "Bau & Immobilien",
-      headline: "Nahtlose CRM-Integration & skalierbare Web-Infrastruktur",
-      logo: "/placeholder.svg",
-      quote: "Ein Game-Changer für unsere Online-Präsenz. Mehr Leads, bessere Conversions und nahtlose Zusammenarbeit.",
-      impact: [
-        "95% schnellere Ladezeit mit optimierter Architektur",
-        "60% mehr Anfragen durch verbesserte Benutzerführung",
-        "4,9/5 Nutzerzufriedenheit mit neuer digitaler Erfahrung"
-      ],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      author: {
-        name: "Julia Müller",
-        position: "Digital Manager, Weisenburger"
-      }
-    },
-    {
-      client: "PopBird",
-      industry: "E-Commerce & Einzelhandel",
-      headline: "35% Umsatzsteigerung in 6 Monaten durch emotionales Storytelling",
-      logo: "/placeholder.svg",
-      quote: "Die Zusammenarbeit mit ooliv hat unsere Online-Präsenz komplett transformiert. Unsere Kunden haben jetzt ein nahtloses Erlebnis von der Entdeckung bis zum Kauf.",
-      impact: [
-        "35% Umsatzwachstum durch emotionalen Storytelling-Ansatz",
-        "42% Steigerung des durchschnittlichen Bestellwerts mit verbesserter UX",
-        "60% höhere Kundenbindung mit personalisierten E-Mail-Workflows"
-      ],
-      image: "https://images.unsplash.com/photo-1556155092-490a1ba16284",
-      author: {
-        name: "Sarah Johnson",
-        position: "Marketing Lead, PopBird"
-      }
-    },
-    {
-      client: "GreenTech",
-      industry: "Erneuerbare Energien",
-      headline: "200+ qualifizierte Leads pro Monat mit gezielter SEO & Content-Strategie",
-      logo: "/placeholder.svg",
-      quote: "Die Ergebnisse haben unsere Erwartungen übertroffen. Unsere Webpräsenz spiegelt nun wirklich unsere Markenwerte wider und konvertiert Besucher effizient.",
-      impact: [
-        "200+ qualifizierte Leads pro Monat mit gezielter Strategie",
-        "Erste Seite Google-Rankings für 30+ Branchenkeywords",
-        "68% Reduzierung der Akquisitionskosten durch organische Kanäle"
-      ],
-      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
-      author: {
-        name: "Daniel Krause",
-        position: "Growth Director, GreenTech"
-      }
+      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
     }
   ]
 };
