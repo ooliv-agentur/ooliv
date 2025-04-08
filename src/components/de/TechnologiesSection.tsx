@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface Technology {
@@ -9,24 +10,27 @@ interface Technology {
 const TechnologiesSection = () => {
   const technologies: Technology[] = [
     {
-      name: "Sora",
+      name: "ChatGPT",
       description: "Content-Ideen, SEO-Snippets & Text-Varianten – von Menschen finalisiert.",
-      icon: <img src="/lovable-uploads/301a15f8-275e-4e29-bff6-e16b548a2cc4.png" alt="Sora Logo" className="h-12 w-12" />
+      icon: <img src="/chatgpt-logo.svg" alt="ChatGPT Logo" className="h-12 w-12" />
     },
     {
       name: "Midjourney",
       description: "Individuelle Visuals statt Stockfotos.",
-      icon: <img src="/lovable-uploads/e8258ca0-d36b-48a3-b32f-b1e840c31f9a.png" alt="Midjourney Logo" className="h-12 w-12" />
+      icon: <img src="/midjourney-logo.svg" alt="Midjourney Logo" className="h-12 w-12" />
     },
     {
       name: "Ahrefs",
       description: "Keyword-Analysen & Wettbewerbsrecherche.",
-      icon: <img src="/lovable-uploads/bf5a94f3-2829-4580-838e-f65d0bb17daf.png" alt="Ahrefs Logo" className="h-12 w-12" />
+      icon: <img src="/ahrefs-logo.svg" alt="Ahrefs Logo" className="h-12 w-12" />
     },
     {
       name: "Basecamp",
       description: "Strukturierte Zusammenarbeit & klare Kommunikation im Projekt.",
-      icon: <img src="/lovable-uploads/1cf28eb6-2f14-4761-9479-7f363adb4686.png" alt="Basecamp Logo" className="h-12 w-12" />
+      icon: <svg className="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 8L12 14L22 8L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M2 14L12 20L22 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
     }
   ];
 
