@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -39,6 +40,7 @@ const Footer = () => {
     if (scriptLoaded.current) return;
     
     const cleanupBadges = () => {
+      // Only remove duplicate badges, not all badges
       const sortlistBadges = document.querySelectorAll('.sortlist-badge:not(:first-of-type)');
       sortlistBadges.forEach(badge => {
         if (badge.parentNode) {
@@ -56,6 +58,7 @@ const Footer = () => {
     
     cleanupBadges();
     
+    // Remove any existing scripts first
     const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
     existingScripts.forEach(script => {
       if (script.parentNode) {
@@ -63,6 +66,7 @@ const Footer = () => {
       }
     });
     
+    // Then create our new script
     if (!document.querySelector('script[src*="sortlist.de/api/badge-embed"]')) {
       const script = document.createElement('script');
       script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
@@ -73,29 +77,42 @@ const Footer = () => {
         scriptLoaded.current = true;
         setBadgeRendered(true);
         
+        // Give time for the badge to be inserted in the DOM
         setTimeout(() => {
           const sortlistIframes = document.querySelectorAll('.sortlist-badge iframe');
           sortlistIframes.forEach(iframe => {
             const iframeElement = iframe as HTMLIFrameElement;
-            iframeElement.style.height = '0.6rem';
-            iframeElement.style.maxHeight = '0.6rem';
-            iframeElement.style.transform = 'scale(0.5)';
-            iframeElement.style.transformOrigin = 'left center';
-            iframeElement.style.marginLeft = '12px';
-            iframeElement.style.border = 'none';
-            iframeElement.style.display = 'inline-block';
-            iframeElement.style.verticalAlign = 'middle';
-            iframeElement.style.opacity = '1';
-            iframeElement.style.visibility = 'visible';
+            if (iframeElement && iframeElement.style) {
+              iframeElement.style.height = '0.6rem';
+              iframeElement.style.maxHeight = '0.6rem';
+              iframeElement.style.width = 'auto';
+              iframeElement.style.maxWidth = '150px';
+              iframeElement.style.transform = 'scale(0.5)';
+              iframeElement.style.transformOrigin = 'left center';
+              iframeElement.style.marginLeft = '12px';
+              iframeElement.style.border = 'none';
+              iframeElement.style.display = 'inline-block';
+              iframeElement.style.verticalAlign = 'middle';
+              iframeElement.style.opacity = '1';
+              iframeElement.style.visibility = 'visible';
+              iframeElement.style.position = 'relative';
+              iframeElement.style.zIndex = '10';
+            }
             
             const badgeContainer = iframeElement.closest('.sortlist-badge');
             if (badgeContainer) {
               (badgeContainer as HTMLElement).style.visibility = 'visible';
               (badgeContainer as HTMLElement).style.display = 'inline-block';
               (badgeContainer as HTMLElement).style.opacity = '1';
+              (badgeContainer as HTMLElement).style.height = '0.6rem';
+              (badgeContainer as HTMLElement).style.overflow = 'visible';
+              (badgeContainer as HTMLElement).style.verticalAlign = 'middle';
+              (badgeContainer as HTMLElement).style.minWidth = '60px';
+              (badgeContainer as HTMLElement).style.position = 'relative';
+              (badgeContainer as HTMLElement).style.zIndex = '10';
             }
           });
-        }, 500);
+        }, 1000); // Increased timeout to ensure badge loads
       };
       
       document.body.appendChild(script);
@@ -200,7 +217,9 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
+                {/* Use an empty div with id and class for the badge to be inserted */}
                 <div 
+                  id="sortlist-badge"
                   className="sortlist-badge inline-block" 
                   style={{ 
                     overflow: 'visible', 
@@ -209,7 +228,9 @@ const Footer = () => {
                     minWidth: '60px',
                     opacity: 1,
                     visibility: 'visible',
-                    display: 'inline-block'
+                    display: 'inline-block',
+                    position: 'relative',
+                    zIndex: 10
                   }}
                 ></div>
               </div>

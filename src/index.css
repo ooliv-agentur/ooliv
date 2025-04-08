@@ -3,7 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,7 +28,7 @@
     --radius: 1rem;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-gray-200;
@@ -320,12 +320,12 @@ button[aria-label="Menü schließen"] {
   z-index: 200 !important;
 }
 
-/* Sortlist badge styling */
+/* Sortlist badge styling - important overrides to ensure it displays */
 .sortlist-badge iframe {
   height: 0.6rem !important;
   max-height: 0.6rem !important;
   width: auto !important;
-  max-width: 150px !important;
+  max-width: 200px !important; /* Increased max-width to ensure badge is visible */
   border: none !important;
   display: inline-block !important;
   vertical-align: middle !important;
@@ -337,8 +337,10 @@ button[aria-label="Menü schließen"] {
   visibility: visible !important;
   position: relative !important;
   z-index: 10 !important;
+  pointer-events: auto !important;
 }
 
+/* Make sure the badge container is visible and properly sized */
 .sortlist-badge {
   display: inline-block !important;
   height: 0.6rem !important;
@@ -349,4 +351,24 @@ button[aria-label="Menü schließen"] {
   visibility: visible !important;
   position: relative !important;
   z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+/* Override any potential conflicting styles from other components */
+body .sortlist-badge,
+footer .sortlist-badge,
+.flex .sortlist-badge,
+.items-center .sortlist-badge {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body .sortlist-badge iframe,
+footer .sortlist-badge iframe,
+.flex .sortlist-badge iframe,
+.items-center .sortlist-badge iframe {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
