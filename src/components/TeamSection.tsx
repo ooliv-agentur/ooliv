@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TeamMember {
@@ -128,15 +127,15 @@ const TeamSection = () => {
               key={index} 
               className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="relative mb-4 w-full max-w-[240px] aspect-square">
+              <div className="relative mb-4 w-full max-w-[240px] aspect-square rounded-full overflow-hidden border-2 border-brand-primary/20">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-auto max-w-full rounded-lg image-crisp"
+                  className="w-full h-full object-cover object-center image-crisp"
                   style={{ imageRendering: 'crisp-edges' }}
                 />
                 {/* Fallback for image loading error */}
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-brand-primary bg-brand-primary/10 rounded-lg opacity-0 hover:opacity-100 transition-opacity">
+                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-brand-primary bg-brand-primary/10 rounded-full opacity-0 hover:opacity-100 transition-opacity">
                   {member.initials}
                 </div>
               </div>
@@ -151,3 +150,4 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+

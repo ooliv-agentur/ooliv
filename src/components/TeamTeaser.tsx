@@ -68,10 +68,10 @@ const TeamTeaser = () => {
                       <img 
                         src={member.image} 
                         alt={`${member.name}${member.tooltip ? ` - ${member.tooltip}` : ''}`} 
-                        className="w-full h-auto max-w-none"
+                        className="w-full h-full object-cover object-center"
                         style={{ imageRendering: 'auto' }}
                       />
-                      <div className="absolute inset-0 flex items-center justify-center bg-brand-primary/10 text-brand-primary text-2xl opacity-0">
+                      <div className="absolute inset-0 flex items-center justify-center bg-brand-primary/10 text-brand-primary text-2xl opacity-0 hover:opacity-100 transition-opacity">
                         {member.initials}
                       </div>
                     </div>
@@ -103,3 +103,4 @@ const TeamTeaser = () => {
 };
 
 export default TeamTeaser;
+

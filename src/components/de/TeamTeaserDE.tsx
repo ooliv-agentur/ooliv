@@ -34,15 +34,15 @@ const TeamTeaserDE = () => {
               key={index} 
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md"
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden rounded-full mx-auto w-[240px] h-[240px] mb-6">
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className="w-full h-auto max-w-full"
-                  style={{ imageRendering: 'auto' }}
+                  className="w-full h-full object-cover object-center image-crisp"
+                  style={{ imageRendering: 'crisp-edges' }}
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 text-center">
                 <h3 className="text-xl font-bold">{member.name}</h3>
                 <p className="text-gray-600">{member.position}</p>
               </div>
@@ -64,3 +64,4 @@ const TeamTeaserDE = () => {
 };
 
 export default TeamTeaserDE;
+
