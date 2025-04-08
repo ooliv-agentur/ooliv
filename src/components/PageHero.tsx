@@ -32,7 +32,7 @@ const PageHero = ({
   };
 
   return (
-    <section className="relative bg-[#f8f9fa] pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-100 opacity-80 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
