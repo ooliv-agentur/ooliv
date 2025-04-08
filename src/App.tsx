@@ -21,6 +21,7 @@ import Careers from "./pages/Careers";
 import LegalNotice from "./pages/LegalNotice";
 import DataPrivacy from "./pages/DataPrivacy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ChatbaseWidget from "./components/ChatbaseWidget";
 
 // Import German pages
 import GermanIndex from "./pages/de/Index";
@@ -46,6 +47,7 @@ const App = () => (
         <LanguageProvider>
           <Toaster />
           <Sonner />
+          <ChatbaseWidget />
           <BrowserRouter>
             <Routes>
               {/* German Routes as Default */}
