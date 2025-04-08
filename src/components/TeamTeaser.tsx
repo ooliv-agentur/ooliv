@@ -23,14 +23,14 @@ const TeamTeaser = () => {
     {
       name: "Uli Schönleber",
       role: "CEO – Your direct point of contact",
-      image: "/lovable-uploads/f7f54f21-58fb-4bda-913f-e6e4d91436cc.png",
+      image: "/lovable-uploads/35bef0c2-85ae-4280-ac53-b37e5b5df6fa.png",
       initials: "US",
       tooltip: "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
       role: "Content",
-      image: "/lovable-uploads/49c17f05-ac20-4c01-8454-fd78f1c3795d.png",
+      image: "/lovable-uploads/30e87fda-0145-47a5-935a-98e1e83d34e3.png",
       initials: "LS",
     },
     {
