@@ -120,7 +120,7 @@ const PageHero = ({
     const secondary = secondaryCta || defaultSecondaryCta;
     
     return (
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
         {primary.onClick ? (
           <Button 
             size="lg" 
@@ -167,7 +167,7 @@ const PageHero = ({
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="flex flex-col items-start text-left max-w-4xl">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
               <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                 <span>{badge}</span>
