@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Define the structure for case studies
 export const caseStudiesData = {
   en: [
     {
@@ -15,6 +13,7 @@ export const caseStudiesData = {
       headline: "Comprehensive website relaunch for increased visibility and modern brand presence",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Our new website finally represents what defines us as consultants: clarity, trust, and dynamism. The collaboration with ooliv was structured and goal-oriented.",
+      websiteLink: "www.kl-klaiber.de",
       impact: [
         "Conceptual realignment including wireframing and content creation",
         "Text development for all service areas and location pages",
@@ -23,7 +22,6 @@ export const caseStudiesData = {
         "Production of image and video material for emotional brand staging"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
-      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -101,6 +99,7 @@ export const caseStudiesData = {
       headline: "Ganzheitlicher Website-Relaunch für mehr Sichtbarkeit und eine moderne Markenpräsenz",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
+      websiteLink: "www.kl-klaiber.de",
       impact: [
         "Konzeptionelle Neuausrichtung inklusive Wireframing und Content-Erstellung",
         "Textentwicklung für alle Leistungsbereiche und Standortseiten",
@@ -109,7 +108,6 @@ export const caseStudiesData = {
         "Produktion von Bild- und Videomaterial zur emotionalen Markeninszenierung"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
-      // Removed author section as requested
     },
     {
       client: "COBUS",
@@ -186,7 +184,7 @@ interface CaseStudiesSectionProps {
   customTitle?: string;
   customSubtitle?: string;
   customBodyText?: string;
-  hideHeaderText?: boolean;  // New prop to control header visibility
+  hideHeaderText?: boolean;
 }
 
 const defaultTranslations = {
@@ -210,7 +208,7 @@ const CaseStudiesSection = ({
   customTitle,
   customSubtitle,
   customBodyText,
-  hideHeaderText = false  // Default to showing header text
+  hideHeaderText = false
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
   const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
@@ -260,6 +258,23 @@ const CaseStudiesSection = ({
                     {study.headline}
                   </h4>
                   
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                    "{study.quote}"
+                  </blockquote>
+                  
+                  {study.websiteLink && (
+                    <div className="mb-6">
+                      <a 
+                        href={`https://${study.websiteLink}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-brand-primary hover:underline inline-flex items-center"
+                      >
+                        Website live erleben → {study.websiteLink}
+                      </a>
+                    </div>
+                  )}
+                  
                   <div className="space-y-3 mb-6">
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
@@ -271,11 +286,6 @@ const CaseStudiesSection = ({
                     ))}
                   </div>
                   
-                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
-                    "{study.quote}"
-                  </blockquote>
-                  
-                  {/* Only render author section if the author exists */}
                   {study.author && (
                     <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
                       <div className="mr-3">
