@@ -23,7 +23,7 @@ const BeforeAfterSlider = () => {
 
   return (
     <div 
-      className="relative w-full h-[400px] cursor-ew-resize overflow-hidden rounded-lg"
+      className="relative w-full h-[480px] cursor-ew-resize overflow-hidden rounded-lg"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
