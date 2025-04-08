@@ -39,21 +39,22 @@ const CTA = ({
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button 
             size="lg" 
-            className="group bg-[#b1b497] text-white hover:bg-[#9a9c83]" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+            asChild
             onClick={() => {
               window.dispatchEvent(new Event('open-lead-form'));
             }}
           >
-            <div>
+            <Link to={contactPath}>
               {primaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </div>
+            </Link>
           </Button>
           
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-[#b1b497] text-[#b1b497] hover:bg-[#b1b497]/10 hover:text-[#b1b497]" 
+            className="bg-transparent border-gray-400 text-brand-text hover:bg-gray-100 hover:border-gray-500" 
             asChild
           >
             <Link to={caseStudiesPath}>
@@ -78,4 +79,3 @@ const CTA = ({
 };
 
 export default CTA;
-
