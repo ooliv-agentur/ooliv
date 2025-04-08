@@ -28,26 +28,26 @@ const GermanIndex = () => {
     document.title = "ooliv – Ihre Full-Service Werbeagentur in Mainz";
   }, []);
   
-  const newFaqs = [
+  const simplifiedFaqs = [
     {
       question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-      answer: "Unsere Website-Projekte folgen einem klaren 5-Schritte-Ablauf:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Strategie & Konzept</strong> – Wir analysieren Ziele, Zielgruppen und Wettbewerber – und schaffen eine fundierte inhaltliche Basis.</li><li><strong>Content-Erstellung</strong> – Texte, Bilder, Struktur – alles maßgeschneidert auf Ihre Marke und SEO-optimiert.</li><li><strong>UX/UI-Design</strong> – Modernes, individuelles Design mit Fokus auf Klarheit, Nutzerfreundlichkeit und Markenwirkung.</li><li><strong>Entwicklung</strong> – Technisch sauber umgesetzt mit aktueller Technik, responsive und DSGVO-konform.</li><li><strong>Launch & Support</strong> – Go-Live mit persönlicher Betreuung – inklusive technischer Unterstützung bei Bedarf.</li></ul>"
+      answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen wir Sie weiter – mit Support und Updates."
     },
     {
       question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
-      answer: "Die Kosten hängen von Umfang, Funktionalität und gewünschtem Design ab. Typische Projekte bewegen sich in diesen Bereichen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Basic:</strong> ab 4.000 € (Onepager, Starter-Seiten)</li><li><strong>Standard:</strong> 6.000 – 12.000 € (Corporate Sites, lokale SEO)</li><li><strong>Erweitert:</strong> ab 15.000 € (Shops, komplexe Funktionen, Multilinguale Seiten)</li></ul>Transparente Angebote – keine versteckten Kosten.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lassen Sie uns Ihr Projekt besprechen</a>"
+      answer: "Die Preise richten sich nach Umfang, Design und Funktionen. Einfache Onepager starten bei etwa 3.000 €, mittelgroße Websites mit SEO bei 5.000 bis 10.000 €. Für größere Projekte wie Shops oder Multilingual-Seiten starten die Kosten bei etwa 10.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
     },
     {
       question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
-      answer: "Das hängt vom Projektumfang ab – ein typischer Zeitrahmen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Kompakte Seiten</strong> (z. B. Onepager): 3–4 Wochen</li><li><strong>Mittlere Projekte:</strong> ca. 5–8 Wochen</li><li><strong>Komplexe Umsetzungen:</strong> 10+ Wochen (z. B. Shop, Multisite)</li></ul>Wichtig: Qualität vor Schnelligkeit – aber mit realistischen Timings und klarer Projektstruktur.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Jetzt Timing klären</a>"
+      answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Websites sind in wenigen Wochen umsetzbar, größere Seiten benötigen in der Regel 6 bis 10 Wochen. Wir stimmen den Zeitplan individuell mit Ihnen ab und arbeiten effizient auf gemeinsame Deadlines hin."
     },
     {
       question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-      answer: "Wir begleiten Sie gerne auch nach dem Go-Live – mit Optionen wie:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Technische Wartung</strong> (Updates, Backups, Sicherheit)</li><li><strong>Content-Pflege</strong> (Texte, Medien, SEO)</li><li><strong>Erweiterungen & Optimierung</strong></li><li>Monatliche Support-Modelle oder nach Bedarf buchbar</li></ul>→ Betreuung, wie Sie sie brauchen – flexibel und transparent."
+      answer: "Nach dem Go-Live lassen wir Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
     },
     {
       question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
-      answer: "Weil wir anders arbeiten – und besser zusammenarbeiten:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Direkter Kontakt:</strong> Bei uns sprechen Sie immer mit dem CEO.</li><li><strong>Effiziente Prozesse:</strong> Strategie, Content, Design und Technik aus einer Hand.</li><li><strong>Volle Sichtbarkeit:</strong> SEO, Performance und Klarheit stehen im Fokus.</li><li><strong>Lokale Stärke & digitale Exzellenz:</strong> Mit Sitz in Mainz – und Kunden weit darüber hinaus.</li></ul>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Gemeinsam sichtbar werden</a>"
+      answer: "Wir arbeiten direkt, effizient und auf Augenhöhe. Bei uns sprechen Sie immer mit dem CEO. Strategie, Design und Technik kommen aus einer Hand. Unsere Websites sind SEO-stark, klar strukturiert und messbar erfolgreich – und wir sind in Mainz verwurzelt, mit Kunden weit darüber hinaus."
     }
   ];
   
@@ -86,7 +86,7 @@ const GermanIndex = () => {
         />
         
         <FAQ 
-          customFaqs={newFaqs}
+          customFaqs={simplifiedFaqs}
           customTitle="Häufig gestellte Fragen"
           customCtaText="Weitere Fragen? Kontaktieren Sie uns"
         />
