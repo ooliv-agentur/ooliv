@@ -42,15 +42,24 @@
   color: #888;
 }
 
-/* Ensure Sortlist badge is not affected by App.css */
+/* Force visibility for Sortlist badge */
 .sortlist-badge {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  height: 0.6rem !important;
+  overflow: visible !important;
+  vertical-align: middle !important;
+  pointer-events: auto !important;
 }
 
 .sortlist-badge iframe {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  height: 0.6rem !important;
+  max-height: 0.6rem !important;
+  transform: scale(0.5) !important;
+  transform-origin: left center !important;
+  pointer-events: auto !important;
 }

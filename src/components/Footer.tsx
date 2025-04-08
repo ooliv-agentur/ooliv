@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,9 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t, language } = useLanguage();
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
-  const scriptLoaded = useRef<boolean>(false);
-  const [badgeRendered, setBadgeRendered] = useState(false);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -36,92 +32,28 @@ const Footer = () => {
     return `${langPrefix}/${translatedPath}`;
   };
   
-  useEffect(() => {
-    if (scriptLoaded.current) return;
-    
-    const cleanupBadges = () => {
-      // Only remove duplicate badges, not all badges
-      const sortlistBadges = document.querySelectorAll('.sortlist-badge:not(:first-of-type)');
-      sortlistBadges.forEach(badge => {
-        if (badge.parentNode) {
-          badge.parentNode.removeChild(badge);
-        }
-      });
-      
-      const sortlistIframes = document.querySelectorAll('iframe[src*="sortlist"]:not(:first-of-type)');
-      sortlistIframes.forEach(iframe => {
-        if (iframe.parentNode) {
-          iframe.parentNode.removeChild(iframe);
-        }
-      });
-    };
-    
-    cleanupBadges();
-    
-    // Remove any existing scripts first
+  React.useEffect(() => {
+    // Remove any existing scripts first to avoid duplicates
     const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
     existingScripts.forEach(script => {
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }
     });
-    
-    // Then create our new script
-    if (!document.querySelector('script[src*="sortlist.de/api/badge-embed"]')) {
-      const script = document.createElement('script');
-      script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
-      script.defer = true;
-      script.id = "sortlist-badge-script";
-      
-      script.onload = () => {
-        scriptLoaded.current = true;
-        setBadgeRendered(true);
-        
-        // Give time for the badge to be inserted in the DOM
-        setTimeout(() => {
-          const sortlistIframes = document.querySelectorAll('.sortlist-badge iframe');
-          sortlistIframes.forEach(iframe => {
-            const iframeElement = iframe as HTMLIFrameElement;
-            if (iframeElement && iframeElement.style) {
-              iframeElement.style.height = '0.6rem';
-              iframeElement.style.maxHeight = '0.6rem';
-              iframeElement.style.width = 'auto';
-              iframeElement.style.maxWidth = '150px';
-              iframeElement.style.transform = 'scale(0.5)';
-              iframeElement.style.transformOrigin = 'left center';
-              iframeElement.style.marginLeft = '12px';
-              iframeElement.style.border = 'none';
-              iframeElement.style.display = 'inline-block';
-              iframeElement.style.verticalAlign = 'middle';
-              iframeElement.style.opacity = '1';
-              iframeElement.style.visibility = 'visible';
-              iframeElement.style.position = 'relative';
-              iframeElement.style.zIndex = '10';
-            }
-            
-            const badgeContainer = iframeElement.closest('.sortlist-badge');
-            if (badgeContainer) {
-              (badgeContainer as HTMLElement).style.visibility = 'visible';
-              (badgeContainer as HTMLElement).style.display = 'inline-block';
-              (badgeContainer as HTMLElement).style.opacity = '1';
-              (badgeContainer as HTMLElement).style.height = '0.6rem';
-              (badgeContainer as HTMLElement).style.overflow = 'visible';
-              (badgeContainer as HTMLElement).style.verticalAlign = 'middle';
-              (badgeContainer as HTMLElement).style.minWidth = '60px';
-              (badgeContainer as HTMLElement).style.position = 'relative';
-              (badgeContainer as HTMLElement).style.zIndex = '10';
-            }
-          });
-        }, 1000); // Increased timeout to ensure badge loads
-      };
-      
-      document.body.appendChild(script);
-      scriptRef.current = script;
-    }
 
+    // Create a new script element
+    const script = document.createElement('script');
+    script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
+    script.defer = true;
+    script.id = "sortlist-badge-script";
+    
+    // Add the script to the document head
+    document.head.appendChild(script);
+    
     return () => {
-      if (scriptRef.current && document.body.contains(scriptRef.current)) {
-        document.body.removeChild(scriptRef.current);
+      // Clean up script when component unmounts
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
       }
     };
   }, []);
@@ -217,22 +149,7 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                {/* Use an empty div with id and class for the badge to be inserted */}
-                <div 
-                  id="sortlist-badge"
-                  className="sortlist-badge inline-block" 
-                  style={{ 
-                    overflow: 'visible', 
-                    height: '0.6rem', 
-                    verticalAlign: 'middle',
-                    minWidth: '60px',
-                    opacity: 1,
-                    visibility: 'visible',
-                    display: 'inline-block',
-                    position: 'relative',
-                    zIndex: 10
-                  }}
-                ></div>
+                <div className="sortlist-badge" style={{ display: 'inline-block', height: '0.6rem', overflow: 'visible', verticalAlign: 'middle', minWidth: '60px', position: 'relative', zIndex: 10 }}></div>
               </div>
             </div>
           </div>
