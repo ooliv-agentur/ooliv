@@ -6,11 +6,11 @@
 @layer utilities {
   /* Update Sortlist badge styling to ensure consistent vertical alignment */
   .sortlist-badge {
-    display: inline-block !important;
+    display: inline-flex !important;
     visibility: visible !important; 
     opacity: 1 !important;
     height: 0.6rem !important;
-    max-width: 140px !important;
+    max-width: 100px !important;
     overflow: visible !important;
     vertical-align: middle !important;
     white-space: nowrap !important;
@@ -26,7 +26,7 @@
     opacity: 1 !important;
     height: 0.6rem !important;
     max-height: 0.6rem !important;
-    transform: scale(0.75) !important;
+    transform: scale(0.6) !important;
     transform-origin: left center !important;
     vertical-align: middle !important;
     position: relative !important;
