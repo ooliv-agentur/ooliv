@@ -32,8 +32,8 @@ const PageHero = ({
   };
 
   return (
-    <section className="relative bg-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-[#f0f4f8] opacity-50 z-0"></div>
+    <section className="relative bg-[#f8f9fa] pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-100 opacity-80 z-0"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
