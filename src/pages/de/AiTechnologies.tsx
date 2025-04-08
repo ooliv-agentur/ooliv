@@ -1,153 +1,99 @@
 
 import React, { useEffect } from 'react';
-import PageLayout from "@/components/PageLayout";
-import DeutscherHero from "@/components/de/DeutscherHero";
-import AIChallengeDE from "@/components/de/AIChallengeDE";
-import AISolutionDE from "@/components/de/AISolutionDE";
-import AIProcessDE from "@/components/de/AIProcessDE";
-import PricingCards from "@/components/PricingCards";
-import ClientLogos from "@/components/ClientLogos";
-import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
+import PageLayout from '@/components/PageLayout';
+import AiTechHero from '@/components/ai-technologies/AiTechHero';
+import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
+import AiTechServices from '@/components/ai-technologies/AiTechServices';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
-const GermanAITech = () => {
+const GermanAiTechnologies = () => {
   const { setLanguage } = useLanguage();
-
+  
+  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
-  useEffect(() => {
-    document.title = "KI-Agentur Mainz: KI-Lösungen & KI-Beratung | ooliv";
-  }, []);
-
-  const pricingCardsData = [
+  // AI tools data for German page
+  const aiTools = [
     {
-      title: "KI-Strategie-Workshop",
-      price: "ab 2.500 €",
-      features: [
-        "Analyse Ihrer Geschäftsprozesse",
-        "Identifizierung von KI-Anwendungsfällen",
-        "Entwicklung einer KI-Roadmap",
-        "Priorisierung der nächsten Schritte"
-      ],
-      buttonText: "Strategiegespräch vereinbaren",
-      buttonLink: "/de/kontakt"
+      name: "ChatGPT",
+      logoSrc: "/chatgpt-logo.svg",
+      description: "Texte, FAQs, SEO-Snippets und Übersetzungen – entwickelt mit KI, veredelt von unseren Redakteur:innen."
     },
     {
-      title: "KI-Prototyp-Entwicklung",
-      price: "ab 7.500 €",
-      features: [
-        "Konzeption und Design des Prototyps",
-        "Entwicklung eines funktionsfähigen Prototyps",
-        "Test und Optimierung des Prototyps",
-        "Präsentation der Ergebnisse"
-      ],
-      buttonText: "Prototyp entwickeln lassen",
-      buttonLink: "/de/kontakt"
+      name: "Midjourney",
+      logoSrc: "/midjourney-logo.svg",
+      description: "Individuelle Visuals & Illustrationen für Marken, die keine Stockfotos wollen."
     },
     {
-      title: "KI-Implementierung",
-      price: "Individuell",
-      features: [
-        "Integration von KI-Lösungen in Ihre bestehende IT-Infrastruktur",
-        "Schulung Ihrer Mitarbeiter",
-        "Laufende Wartung und Support",
-        "Skalierung Ihrer KI-Lösungen"
-      ],
-      buttonText: "KI-Lösung implementieren",
-      buttonLink: "/de/kontakt"
+      name: "Sora (Video AI)",
+      logoSrc: "/sora-logo.svg",
+      description: "Animierte Videoelemente, Hintergrundvideos und Motion Design – auf Ihre Marke zugeschnitten."
     }
   ];
 
-  const simplifiedFaqs = [
+  // Custom FAQ items for AI page
+  const aiFaqs = [
     {
-      question: "Was sind die Vorteile von KI für mein Unternehmen?",
-      answer: "KI kann Ihnen helfen, Ihre Geschäftsprozesse zu automatisieren, Ihre Entscheidungen zu verbessern und neue Produkte und Dienstleistungen zu entwickeln. KI kann Ihnen auch helfen, Ihre Kunden besser zu verstehen und Ihre Marketingkampagnen zu optimieren."
+      question: "Wie integrieren wir KI in bestehende Marketingprozesse?",
+      answer: "Wir analysieren Ihre aktuellen Prozesse, identifizieren die größten Effizienzpotenziale und integrieren die passenden KI-Tools nahtlos in Ihren Workflow."
     },
     {
-      question: "Welche KI-Lösungen bietet ooliv an?",
-      answer: "ooliv bietet eine breite Palette von KI-Lösungen an, darunter KI-Strategieberatung, KI-Prototyp-Entwicklung und KI-Implementierung. Wir helfen Ihnen, die richtigen KI-Lösungen für Ihre Bedürfnisse zu finden und diese erfolgreich in Ihrem Unternehmen einzusetzen."
+      question: "Bleiben wir bei KI-erstellten Inhalten im rechtlichen Rahmen?",
+      answer: "Absolut. Wir achten auf rechtliche und ethische Compliance, vom Urheberrecht bis zum Datenschutz, und behalten die menschliche Kontrolle über alle Outputs."
     },
     {
-      question: "Wie viel kostet eine KI-Lösung?",
-      answer: "Die Kosten für eine KI-Lösung hängen von Ihren individuellen Bedürfnissen ab. Wir bieten Ihnen gerne ein individuelles Angebot an."
+      question: "Welche konkreten ROI-Vorteile bringt KI im Marketing?",
+      answer: "Typische Vorteile: 70-80% Zeitersparnis bei Content-Erstellung, 30-50% geringere Kosten pro Lead und deutlich schnellere Reaktionszeiten auf Marktveränderungen."
     },
     {
-      question: "Wie lange dauert die Implementierung einer KI-Lösung?",
-      answer: "Die Dauer der Implementierung einer KI-Lösung hängt von der Komplexität der Lösung ab. Wir arbeiten eng mit Ihnen zusammen, um sicherzustellen, dass die Implementierung so schnell und reibungslos wie möglich verläuft."
+      question: "Ist die Qualität von KI-generiertem Content wirklich gut?",
+      answer: "Mit dem richtigen Prompt-Engineering und menschlicher Nachbearbeitung ist die Qualität hervorragend. KI erstellt den Rohtext, Experten verfeinern ihn für optimale Ergebnisse."
     },
     {
-      question: "Wie kann ich mit ooliv zusammenarbeiten?",
-      answer: "Sie können uns gerne kontaktieren, um ein unverbindliches Beratungsgespräch zu vereinbaren. Wir freuen uns darauf, mehr über Ihre Bedürfnisse zu erfahren und Ihnen zu zeigen, wie wir Ihnen helfen können."
+      question: "Welche KI-Tools setzen wir in unseren Projekten ein?",
+      answer: "Wir nutzen ein breites Spektrum: ChatGPT für Texterstellung, DALL-E und Midjourney für Bildgenerierung, Claude für komplexe Aufgaben und spezialisierte Tools für SEO und Datenanalyse."
     }
   ];
-
+  
   return (
-    <>
-      <Helmet>
-        <title>KI-Agentur Mainz: KI-Lösungen & KI-Beratung | ooliv</title>
-        <meta
-          name="description"
-          content="Entdecken Sie die Möglichkeiten von KI mit ooliv, Ihrer KI-Agentur in Mainz. Wir bieten KI-Strategieberatung, KI-Prototyp-Entwicklung und KI-Implementierung."
-        />
-      </Helmet>
-      <PageLayout className="overflow-x-hidden">
-        <DeutscherHero
-          title="KI-Agentur Mainz: KI-Lösungen & KI-Beratung"
-          subtitle="Wir helfen Ihnen, die Möglichkeiten von KI für Ihr Unternehmen zu nutzen."
-          image="/ai-hero.webp"
-          imageAlt="KI-Agentur Mainz"
-        />
-
-        <AIChallengeDE />
-
-        <AISolutionDE />
-
-        <AIProcessDE />
-
-        <PricingCards
-          title="KI-Lösungen für Ihr Unternehmen"
-          subtitle="Wir bieten Ihnen eine breite Palette von KI-Lösungen an, die auf Ihre individuellen Bedürfnisse zugeschnitten sind."
-          cardsData={pricingCardsData}
-        />
-
-        <ClientLogos />
-        
-        {/* Add CaseStudiesSection */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <CaseStudiesSection />
+    <PageLayout className="overflow-x-hidden">
+      <AiTechHero />
+      <AiTechBenefits />
+      <AiTechServices />
+      <AiToolsSection 
+        title="KI-gesteuert – menschlich geführt"
+        subtitle="Wir integrieren KI dort, wo sie Zeit spart und Mehrwert bietet – nicht um Expertise zu ersetzen."
+        tools={aiTools}
+        note="Wir setzen KI als kreativen Beschleuniger ein – nie als Abkürzung. Qualität und Strategie kommen immer von Menschen."
+      />
+      
+      <CaseStudiesSection />
+      
+      <FAQ customFaqs={aiFaqs} />
+      <CTA 
+        title="KI-basierte Marketinglösungen für Ihr Unternehmen"
+        subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
+        primaryCta="KI-Potenzialanalyse anfordern"
+        secondaryCta="Strategiegespräch vereinbaren"
+      >
+        {/* New claim section */}
+        <section className="mt-12 text-center">
+          <div className="container mx-auto px-4">
+            <p className="text-lg text-brand-text font-medium">
+              100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
+            </p>
           </div>
         </section>
-
-        <FAQ
-          customFaqs={simplifiedFaqs}
-          customTitle="Häufig gestellte Fragen zu KI"
-          customCtaText="Weitere Fragen? Kontaktieren Sie uns"
-        />
-
-        <CTA
-          title="Bereit, KI für Ihr Unternehmen zu nutzen?"
-          subtitle="Lassen Sie uns besprechen, wie unser Team bei der Implementierung von KI-Lösungen helfen kann, die echte Ergebnisse liefern."
-          primaryCta="Starten Sie Ihr KI-Projekt"
-        >
-          <p className="mt-8 text-sm text-brand-text/80 font-semibold">
-            KI-Strategien, die messbar und menschlich sind • 100+ erfolgreiche Projekte umgesetzt • Vertrauenspartner führender Unternehmen
-          </p>
-          <div className="mt-4 flex justify-center">
-            <Link to="/case-studies" className="text-brand-text hover:text-white underline">
-              Fallstudien ansehen
-            </Link>
-          </div>
-        </CTA>
-      </PageLayout>
-    </>
+      </CTA>
+    </PageLayout>
   );
 };
 
-export default GermanAITech;
+export default GermanAiTechnologies;
+

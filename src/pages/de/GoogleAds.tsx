@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -12,10 +13,12 @@ import { Link } from 'react-router-dom';
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
   
+  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
+  // Custom FAQ items for Google Ads page
   const googleAdsFaqs = [
     {
       question: "Wie unterscheidet sich ooliv von anderen Google Ads Agenturen?",
@@ -38,9 +41,10 @@ const GermanGoogleAds = () => {
       answer: "Ja – wir liefern alles aus einer Hand: Landingpages, Tracking, Kampagnenstruktur und Optimierung."
     }
   ];
-
+  
   return (
     <PageLayout className="overflow-x-hidden">
+      {/* Hero Section */}
       <PageHero
         badge="Traffic zu Leads zu Ergebnissen"
         title="Google Ads Agentur Mainz – Leads statt nur Klicks"
@@ -55,6 +59,7 @@ const GermanGoogleAds = () => {
         }}
       />
       
+      {/* Pain Points Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
@@ -98,6 +103,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
       
+      {/* Services Section */}
       <section className="py-16 md:py-24 bg-brand-backgroundAlt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -131,6 +137,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
       
+      {/* Lead Generation Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
@@ -152,6 +159,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
+      {/* Extended Services Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -198,6 +206,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
+      {/* Process Section */}
       <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -255,6 +264,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
       
+      {/* Success Metrics Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -291,20 +301,25 @@ const GermanGoogleAds = () => {
         </div>
       </section>
       
+      {/* Case Studies Section */}
       <section className="py-24 bg-brand-backgroundAlt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
+      {/* FAQ Section */}
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />
       
+      {/* CTA Section */}
       <CTA 
-        title="Bereit, Ihre Google Ads-Performance zu transformieren?"
-        subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, bessere Ergebnisse aus Ihren Werbeausgaben zu erzielen."
-        primaryCta="Starten Sie Ihr Google Ads-Projekt"
+        title="Lassen Sie uns Ihre Google Ads messbar machen"
+        subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
+        primaryCta="Kampagne starten"
+        secondaryCta="Kostenlose Analyse anfordern"
       />
       
+      {/* Footer text for "100+ projects" we need to add directly to the page instead of as children to CTA */}
       <div className="bg-brand-backgroundAlt py-6">
         <div className="container mx-auto px-4">
           <p className="text-sm text-brand-text font-sans text-center">

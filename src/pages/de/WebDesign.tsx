@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
@@ -37,9 +38,10 @@ const GermanWebDesign = () => {
       
       {/* Final CTA Section */}
       <CTA 
-        title="Bereit für eine Website, die Ihr Unternehmen wachsen lässt?"
-        subtitle="Lassen Sie uns besprechen, wie eine strategisch gestaltete Website dazu beitragen kann, Ihre Unternehmensziele zu erreichen."
-        primaryCta="Starten Sie Ihr Webdesign-Projekt"
+        title="Sprechen wir über Ihr Webdesign-Projekt"
+        subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
+        primaryCta="Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
       />
     </PageLayout>
   );

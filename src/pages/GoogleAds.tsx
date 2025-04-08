@@ -290,9 +290,10 @@ const GoogleAds = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Ready to transform your Google Ads performance?"
-        subtitle="Let's discuss how our team can help your business achieve better results from your ad spend."
-        primaryCta="Start Your Google Ads Project"
+        title="Let's Turn Google Ads Into a Scalable Sales Channel"
+        subtitle="With our data-driven approach, we'll help you improve ROI, lower lead costs, and build campaigns that deliver measurable growth."
+        primaryCta="Launch Your Campaign"
+        secondaryCta="Request Free Audit"
       />
 
       {/* New Claim Section */}
