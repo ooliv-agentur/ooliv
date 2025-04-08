@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -36,6 +37,7 @@ const Footer = () => {
   useEffect(() => {
     if (sortlistScriptLoaded.current) return;
     
+    // Clean up any existing scripts
     const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
     existingScripts.forEach(script => {
       if (script.parentNode) {
@@ -43,6 +45,7 @@ const Footer = () => {
       }
     });
 
+    // Remove duplicate badges if any exist
     const existingBadges = document.querySelectorAll('.sortlist-badge');
     if (existingBadges.length > 1) {
       for (let i = 1; i < existingBadges.length; i++) {
@@ -52,6 +55,7 @@ const Footer = () => {
       }
     }
 
+    // Add the script only if the badge container exists
     if (document.querySelector('.sortlist-badge')) {
       const script = document.createElement('script');
       script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
@@ -144,7 +148,7 @@ const Footer = () => {
             </div>
             
             <div className="text-sm text-gray-400 font-sans mt-4 md:mt-0 text-center md:text-right flex items-center space-x-4">
-              <div className="flex items-center">
+              <div className="flex items-center whitespace-nowrap">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
                 ))}
@@ -157,18 +161,16 @@ const Footer = () => {
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
                 <div 
-                  className="sortlist-badge" 
+                  className="sortlist-badge ml-3" 
                   style={{ 
                     display: 'inline-block',
-                    visibility: 'visible', 
+                    visibility: 'visible',
                     opacity: 1,
-                    height: '0.6rem', 
-                    overflow: 'visible', 
-                    verticalAlign: 'middle', 
-                    minWidth: '60px', 
-                    position: 'relative', 
-                    zIndex: 10,
-                    marginLeft: '12px'
+                    height: '0.6rem',
+                    maxWidth: '100px',
+                    overflow: 'visible',
+                    verticalAlign: 'middle',
+                    whiteSpace: 'nowrap'
                   }}
                 ></div>
               </div>
