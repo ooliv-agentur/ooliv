@@ -17,7 +17,6 @@ import {
   FormMessage 
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -45,25 +44,25 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   const validationMessages = {
     projectType: language === 'de' 
-      ? "Bitte wählen Sie einen Projekttyp aus." 
+      ? "Bitte wählen Sie einen Projekttyp aus" 
       : "Please select a project type",
     name: language === 'de'
-      ? "Bitte geben Sie Ihren Namen ein."
+      ? "Bitte geben Sie Ihren Namen ein"
       : "Please enter your name",
     email: language === 'de'
-      ? "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+      ? "Bitte geben Sie eine gültige E-Mail-Adresse ein"
       : "Please enter a valid email address",
     goal: language === 'de'
-      ? "Bitte wählen Sie ein Ziel aus."
+      ? "Bitte wählen Sie ein Ziel aus"
       : "Please select your main goal",
     otherProjectType: language === 'de'
-      ? "Bitte geben Sie Ihren Projekttyp an."
+      ? "Bitte geben Sie Ihren Projekttyp an"
       : "Please specify your project type",
     otherGoal: language === 'de'
-      ? "Bitte geben Sie Ihr Ziel an."
+      ? "Bitte geben Sie Ihr Ziel an"
       : "Please specify your goal",
     industry: language === 'de'
-      ? "Bitte wählen Sie eine Branche aus."
+      ? "Bitte wählen Sie eine Branche aus"
       : "Please select an industry"
   };
   
@@ -103,7 +102,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       projectTypeOther: "",
       goalOther: "",
     },
-    mode: "onChange"
+    mode: "onTouched"
   });
 
   const stepTitle = language === 'de' ? "Schritt" : "Step";
@@ -157,13 +156,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
         duration: 5000,
       });
-      
-      setTimeout(() => {
-        form.reset();
-        setStep(1);
-        setSubmitted(false);
-        onOpenChange(false);
-      }, 3000);
     }, 1500);
   };
 
@@ -176,6 +168,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const closeForm = () => {
     resetForm();
     onOpenChange(false);
+  };
+
+  const redirectToHome = () => {
+    window.location.href = '/';
   };
 
   const StepOne = () => (
@@ -588,16 +584,22 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         <CheckCircle className="h-10 w-10 text-green-600" />
       </div>
       <h3 className="text-xl font-bold">
-        {language === 'de' ? "Vielen Dank für Ihre Anfrage!" : "Thank you for your inquiry!"}
+        {language === 'de' ? "Vielen Dank!" : "Thank you!"}
       </h3>
-      <p className="text-gray-600 max-w-md">
+      <p className="text-gray-200 max-w-md">
         {language === 'de'
-          ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen. Möchten Sie eine schnellere Antwort? Rufen Sie uns direkt an unter +49 176 80 16 76 41."
-          : "We'll be in touch within 24 hours. Want a quicker reply? Call us directly at +49 176 80 16 76 41."
+          ? "Ihre Anfrage wurde erfolgreich übermittelt."
+          : "Your request has been successfully submitted."
+        }
+      </p>
+      <p className="text-gray-300 max-w-md">
+        {language === 'de'
+          ? "Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen. Für dringende Anfragen erreichen Sie uns direkt unter +49 176 80 16 76 41."
+          : "We'll usually get back to you within 24 hours. For urgent inquiries, you can reach us directly at +49 176 80 16 76 41."
         }
       </p>
       <div className="pt-4">
-        <Button onClick={closeForm} variant="outline" className="mt-4">
+        <Button onClick={redirectToHome} variant="outline" className="mt-4">
           {language === 'de' ? "Zurück zur Website" : "Back to Site"}
         </Button>
       </div>
@@ -632,7 +634,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetTitle>
           <SheetDescription className="text-white/70">
             {submitted 
-              ? (language === 'de' ? "Wir haben Ihre Anfrage erhalten" : "We've received your inquiry") 
+              ? (language === 'de' ? "Ihre Anfrage wurde erfolgreich übermittelt" : "Your request has been successfully submitted") 
               : `${stepTitle} ${step} ${language === 'de' ? 'von' : 'of'} ${totalSteps}`}
           </SheetDescription>
         </SheetHeader>

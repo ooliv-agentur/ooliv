@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
@@ -145,10 +146,19 @@ const FormMessage = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, children, ...props }, ref) => {
   const { error, formMessageId } = useFormField()
-  const body = error ? String(error?.message) : children
+  const { formState } = useFormContext();
+  const { touchedFields } = formState;
+  const { name } = useFormField();
+  
+  // Only show error message if the field has been touched or the form has been submitted
+  const fieldTouched = Object.keys(touchedFields).includes(name as string);
+  const formSubmitted = formState.isSubmitted;
+  const shouldShowError = error && (fieldTouched || formSubmitted);
+  
+  const body = shouldShowError ? String(error?.message) : children;
 
   if (!body) {
-    return null
+    return null;
   }
 
   return (
