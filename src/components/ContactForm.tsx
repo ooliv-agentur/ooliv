@@ -28,6 +28,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
   const { toast } = useToast();
   const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [formError, setFormError] = React.useState<string | null>(null);
   
   const titles = {
     'audit': language === 'de' ? 'Fordern Sie Ihr kostenloses Website-Audit an' : 'Request Your Free Website Audit',
@@ -50,17 +51,33 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setFormError(null);
+    
+    // Form data collection
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const formValues = Object.fromEntries(formData.entries());
     
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false);
-      onOpenChange(false);
-      
-      toast({
-        title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
-        description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
-        duration: 5000,
-      });
+      try {
+        // Success case
+        setIsSubmitting(false);
+        onOpenChange(false);
+        
+        toast({
+          title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
+          description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
+          duration: 5000,
+          className: "bg-[#004d51] text-white border-[#006064]", // Higher contrast confirmation
+        });
+      } catch (error) {
+        // Error handling
+        setIsSubmitting(false);
+        setFormError(language === 'de' 
+          ? 'Es gab ein Problem bei der Übermittlung Ihrer Nachricht. Bitte versuchen Sie es erneut.' 
+          : 'There was a problem submitting your message. Please try again.');
+      }
     }, 1000);
   };
 
@@ -74,6 +91,12 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
           </DialogDescription>
         </DialogHeader>
         
+        {formError && (
+          <div className="bg-red-900/60 border border-red-700 text-white px-4 py-3 rounded mb-4">
+            <p className="text-sm">{formError}</p>
+          </div>
+        )}
+        
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
           <div className="space-y-2">
             <Label htmlFor="name" className="text-white">
@@ -85,6 +108,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
               required 
               placeholder={language === 'de' ? 'Geben Sie Ihren Namen ein' : 'Enter your name'} 
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              aria-required="true"
             />
           </div>
           
@@ -99,6 +123,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
               required 
               placeholder={language === 'de' ? 'Geben Sie Ihre E-Mail-Adresse ein' : 'Enter your email'} 
               className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              aria-required="true"
             />
           </div>
           
@@ -112,6 +137,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
               required 
               placeholder={language === 'de' ? 'Wie können wir Ihnen helfen?' : 'How can we help you?'} 
               className="resize-none h-24 bg-white/10 border-white/20 text-white placeholder:text-white/60"
+              aria-required="true"
             />
           </div>
           

@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import type {
@@ -6,7 +7,7 @@ import type {
 } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 1000000
+const TOAST_REMOVE_DELAY = 10000
 
 type ToasterToast = ToastProps & {
   id: string
@@ -148,6 +149,11 @@ function toast({ ...props }: Toast) {
       toast: { ...props, id },
     })
   const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id })
+
+  // Set improved default styling for error/destructive toasts
+  if (props.variant === "destructive") {
+    props.className = `bg-red-900 border-red-700 text-white ${props.className || ""}`;
+  }
 
   dispatch({
     type: "ADD_TOAST",

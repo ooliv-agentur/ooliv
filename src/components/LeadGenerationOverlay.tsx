@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { 
   Sheet,
@@ -156,13 +155,17 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify(data)
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        return response.json().then(errData => {
+          console.error("Server error details:", errData);
+          throw new Error(errData.message || 'Network response was not ok');
+        });
       }
       return response.json();
     })
@@ -174,6 +177,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         title: language === 'de' ? "Anfrage erhalten!" : "Inquiry received!",
         description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
         duration: 5000,
+        className: "bg-[#004d51] text-white border-[#006064]",
       });
     })
     .catch(error => {
@@ -686,6 +690,21 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <style jsx global>{`
+              .text-destructive {
+                color: #ff6b6b !important;
+              }
+              .text-destructive-foreground {
+                color: white !important;
+              }
+              .bg-destructive {
+                background-color: rgba(255, 92, 92, 0.2) !important;
+                border: 1px solid #ff6b6b !important;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+              }
+            `}</style>
+            
             <div className="min-h-[350px]">
               <AnimatePresence mode="wait">
                 {renderStepContent()}
