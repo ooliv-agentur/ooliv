@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -51,6 +52,21 @@ export const caseStudiesData = {
         "Quick top ranking for main keyword in Zurich"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+    },
+    {
+      client: "IconPro GmbH",
+      industry: "AI Software for Predictive Quality & Smart Production",
+      headline: "Website relaunch with strong brand presentation for complex B2B tech solutions",
+      logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
+      quote: "Thanks to ooliv, our website now feels just like our software: thoughtful, structured, and visually compelling. The illustrations and animations in particular bring complex topics to the point.",
+      websiteLink: "www.iconpro.com",
+      impact: [
+        "Relaunch concept including structure, wireframes & text",
+        "UX-oriented design for AI software & use cases",
+        "Development of illustrative assets & animated modules",
+        "WordPress implementation with optimized performance"
+      ],
+      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
     },
     {
       client: "COBUS",
@@ -166,6 +182,21 @@ export const caseStudiesData = {
         "Schnell Top-Ranking für Hauptkeyword in Zürich"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+    },
+    {
+      client: "IconPro GmbH",
+      industry: "KI-Software für Predictive Quality & Smart Production",
+      headline: "Website-Relaunch mit starker Markeninszenierung für erklärungsbedürftige B2B-Techlösungen",
+      logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
+      quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
+      websiteLink: "www.iconpro.com",
+      impact: [
+        "Relaunch-Konzeption inkl. Struktur, Wireframes & Text",
+        "UX-orientiertes Design für KI-Software & Use Cases",
+        "Entwicklung illustrativer Assets & animierter Module",
+        "WordPress-Umsetzung mit optimierter Performance"
+      ],
+      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
     },
     {
       client: "COBUS",
