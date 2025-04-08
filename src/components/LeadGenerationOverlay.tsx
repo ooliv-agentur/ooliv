@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Sheet,
@@ -28,6 +27,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LeadGenerationOverlayProps {
   open: boolean;
@@ -64,6 +64,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
+  const { language } = useLanguage();
   
   const totalSteps = 4;
   
@@ -85,6 +86,14 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     },
     mode: "onChange"
   });
+
+  // Step titles based on language
+  const stepTitle = language === 'de' ? "Schritt" : "Step";
+  const letsStartTitle = language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project";
+  const whatArePlanning = language === 'de' ? "Was planen Sie mit uns?" : "What are you planning with us?";
+  const selectProjectType = language === 'de' ? "Projekttyp auswählen" : "Select project type";
+  const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
+  const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
 
   const nextStep = async () => {
     // Validate current step before proceeding
@@ -129,8 +138,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       setSubmitted(true);
       
       toast({
-        title: "Inquiry received!",
-        description: "We'll get back to you within 24 hours.",
+        title: language === 'de' ? "Anfrage erhalten!" : "Inquiry received!",
+        description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
         duration: 5000,
       });
       
@@ -170,26 +179,38 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           name="projectType"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-lg font-medium">What are you planning with us?</FormLabel>
+              <FormLabel className="text-lg font-medium text-white">{whatArePlanning}</FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select project type" />
+                  <SelectTrigger className="w-full bg-white/10 border-white/20 text-white">
+                    <SelectValue placeholder={selectProjectType} />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="website-relaunch">Website Relaunch</SelectItem>
-                  <SelectItem value="new-website">New Website</SelectItem>
-                  <SelectItem value="seo-optimization">SEO Optimization</SelectItem>
-                  <SelectItem value="lead-generation">Lead Generation / Google Ads</SelectItem>
-                  <SelectItem value="ai-content">AI-Powered Content / ChatGPT Integration</SelectItem>
-                  <SelectItem value="other">Something Else</SelectItem>
+                <SelectContent className="bg-[#1e2830] text-white border-white/20">
+                  <SelectItem value="website-relaunch">
+                    {language === 'de' ? "Website-Relaunch" : "Website Relaunch"}
+                  </SelectItem>
+                  <SelectItem value="new-website">
+                    {language === 'de' ? "Neue Website" : "New Website"}
+                  </SelectItem>
+                  <SelectItem value="seo-optimization">
+                    {language === 'de' ? "SEO-Optimierung" : "SEO Optimization"}
+                  </SelectItem>
+                  <SelectItem value="lead-generation">
+                    {language === 'de' ? "Lead-Generierung / Google Ads" : "Lead Generation / Google Ads"}
+                  </SelectItem>
+                  <SelectItem value="ai-content">
+                    {language === 'de' ? "KI-gestützte Inhalte / ChatGPT-Integration" : "AI-Powered Content / ChatGPT Integration"}
+                  </SelectItem>
+                  <SelectItem value="other">
+                    {language === 'de' ? "Etwas anderes" : "Something Else"}
+                  </SelectItem>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="text-[#ff6b6b]" />
             </FormItem>
           )}
         />
@@ -200,11 +221,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
             name="projectTypeOther"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Please specify:</FormLabel>
+                <FormLabel className="text-white">{pleaseSpecify}</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Tell us what you need" />
+                  <Input {...field} placeholder={tellUsWhat} className="bg-white/10 border-white/20 text-white placeholder:text-white/60" />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-[#ff6b6b]" />
               </FormItem>
             )}
           />
@@ -475,13 +496,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="sm:max-w-md overflow-y-auto" side="right">
+      <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
         <SheetHeader className="text-left pb-4">
-          <SheetTitle className="text-xl font-bold text-brand-primary">
-            {submitted ? "Thank You!" : "Let's Start Your Project"}
+          <SheetTitle className="text-xl font-bold text-white">
+            {submitted ? (language === 'de' ? "Vielen Dank!" : "Thank You!") : letsStartTitle}
           </SheetTitle>
-          <SheetDescription>
-            {submitted ? "We've received your inquiry" : `Step ${step} of ${totalSteps}`}
+          <SheetDescription className="text-white/70">
+            {submitted 
+              ? (language === 'de' ? "Wir haben Ihre Anfrage erhalten" : "We've received your inquiry") 
+              : `${stepTitle} ${step} ${language === 'de' ? 'von' : 'of'} ${totalSteps}`}
           </SheetDescription>
         </SheetHeader>
         
@@ -491,7 +514,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
               <div 
                 key={index} 
                 className={`h-1 flex-1 mx-1 rounded-full ${
-                  index + 1 <= step ? "bg-brand-primary" : "bg-gray-200"
+                  index + 1 <= step ? "bg-[#006064]" : "bg-gray-600"
                 }`}
               />
             ))}
@@ -507,16 +530,16 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
             </div>
             
             {!submitted && (
-              <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t">
+              <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
                 {step > 1 && (
                   <Button 
                     type="button"
                     variant="outline"
                     onClick={prevStep}
-                    className="flex-1"
+                    className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back
+                    {language === 'de' ? "Zurück" : "Back"}
                   </Button>
                 )}
                 
@@ -524,24 +547,24 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
                   <Button 
                     type="button"
                     onClick={nextStep}
-                    className="flex-1"
+                    className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
                   >
-                    Next
+                    {language === 'de' ? "Weiter" : "Next"}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
                   <Button 
                     type="submit"
-                    className="flex-1"
+                    className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                        Sending...
+                        {language === 'de' ? "Wird gesendet..." : "Sending..."}
                       </span>
                     ) : (
-                      'Finish & Send'
+                      language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
                     )}
                   </Button>
                 )}

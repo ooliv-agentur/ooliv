@@ -26,19 +26,25 @@ interface ContactFormProps {
 
 const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   
   const titles = {
-    'audit': t('contactForm.auditTitle') || 'Request Your Free Website Audit',
-    'call': t('contactForm.callTitle') || 'Schedule a Strategy Call',
-    'work': t('contactForm.workTitle') || 'Let\'s Work Together'
+    'audit': language === 'de' ? 'Fordern Sie Ihr kostenloses Website-Audit an' : 'Request Your Free Website Audit',
+    'call': language === 'de' ? 'Planen Sie ein Strategiegespräch' : 'Schedule a Strategy Call',
+    'work': language === 'de' ? 'Lassen Sie uns zusammenarbeiten' : 'Let\'s Work Together'
   };
   
   const descriptions = {
-    'audit': t('contactForm.auditDescription') || 'We\'ll analyze your website and provide actionable insights to improve your online presence.',
-    'call': t('contactForm.callDescription') || 'Schedule a call with our team to discuss your project and goals.',
-    'work': t('contactForm.workDescription') || 'Tell us about your project and let\'s create something amazing together.'
+    'audit': language === 'de' 
+      ? 'Wir analysieren Ihre Website und bieten umsetzbare Erkenntnisse zur Verbesserung Ihrer Online-Präsenz.' 
+      : 'We\'ll analyze your website and provide actionable insights to improve your online presence.',
+    'call': language === 'de' 
+      ? 'Vereinbaren Sie einen Termin mit unserem Team, um Ihr Projekt und Ihre Ziele zu besprechen.' 
+      : 'Schedule a call with our team to discuss your project and goals.',
+    'work': language === 'de' 
+      ? 'Erzählen Sie uns von Ihrem Projekt und lassen Sie uns gemeinsam etwas Besonderes erschaffen.' 
+      : 'Tell us about your project and let\'s create something amazing together.'
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,8 +57,8 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
       onOpenChange(false);
       
       toast({
-        title: t('contactForm.successTitle') || 'Message sent!',
-        description: t('contactForm.successDescription') || 'We\'ll get back to you soon.',
+        title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
+        description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
         duration: 5000,
       });
     }, 1000);
@@ -60,62 +66,64 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] rounded-lg p-6">
+      <DialogContent className="sm:max-w-[500px] rounded-lg p-6 bg-gradient-to-b from-[#0c2036] to-[#1a2630] text-white border-white/10">
         <DialogHeader>
-          <DialogTitle className="text-brand-heading text-2xl">{titles[formType]}</DialogTitle>
-          <DialogDescription className="text-brand-text mt-2">
+          <DialogTitle className="text-white text-2xl">{titles[formType]}</DialogTitle>
+          <DialogDescription className="text-white/70 mt-2">
             {descriptions[formType]}
           </DialogDescription>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-brand-heading">
-              {t('contactForm.nameLabel') || 'Name'}
+            <Label htmlFor="name" className="text-white">
+              {language === 'de' ? 'Name' : 'Name'}
             </Label>
             <Input 
               id="name" 
               name="name" 
               required 
-              placeholder={t('contactForm.namePlaceholder') || 'Enter your name'} 
-              className="bg-brand-background/50 border-brand-primary/20 focus:border-brand-primary"
+              placeholder={language === 'de' ? 'Geben Sie Ihren Namen ein' : 'Enter your name'} 
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-brand-heading">
-              {t('contactForm.emailLabel') || 'Email'}
+            <Label htmlFor="email" className="text-white">
+              {language === 'de' ? 'E-Mail' : 'Email'}
             </Label>
             <Input 
               id="email" 
               name="email" 
               type="email" 
               required 
-              placeholder={t('contactForm.emailPlaceholder') || 'Enter your email'} 
-              className="bg-brand-background/50 border-brand-primary/20 focus:border-brand-primary"
+              placeholder={language === 'de' ? 'Geben Sie Ihre E-Mail-Adresse ein' : 'Enter your email'} 
+              className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-brand-heading">
-              {t('contactForm.messageLabel') || 'Message'}
+            <Label htmlFor="message" className="text-white">
+              {language === 'de' ? 'Nachricht' : 'Message'}
             </Label>
             <Textarea 
               id="message" 
               name="message" 
               required 
-              placeholder={t('contactForm.messagePlaceholder') || 'How can we help you?'} 
-              className="resize-none h-24 bg-brand-background/50 border-brand-primary/20 focus:border-brand-primary"
+              placeholder={language === 'de' ? 'Wie können wir Ihnen helfen?' : 'How can we help you?'} 
+              className="resize-none h-24 bg-white/10 border-white/20 text-white placeholder:text-white/60"
             />
           </div>
           
           <div className="flex items-start space-x-3">
-            <Checkbox id="privacy" name="privacy" required />
+            <Checkbox id="privacy" name="privacy" required className="data-[state=checked]:bg-[#006064] data-[state=checked]:border-[#006064]" />
             <Label 
               htmlFor="privacy" 
-              className="text-sm font-normal leading-tight cursor-pointer"
+              className="text-sm font-normal leading-tight cursor-pointer text-white/90"
             >
-              {t('contactForm.privacyLabel') || 'I agree to the processing of my data as outlined in the privacy policy.'}
+              {language === 'de' 
+                ? 'Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzrichtlinie zu.' 
+                : 'I agree to the processing of my data as outlined in the privacy policy.'}
             </Label>
           </div>
           
@@ -124,26 +132,26 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
               <Button 
                 type="button" 
                 variant="outline"
-                className="flex-1"
+                className="flex-1 border-white/20 text-white hover:bg-white/10"
               >
-                {t('contactForm.cancelButton') || 'Cancel'}
+                {language === 'de' ? 'Abbrechen' : 'Cancel'}
               </Button>
             </DialogClose>
             
             <Button 
               type="submit" 
-              className="flex-1"
+              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
                 <span className="flex items-center gap-2">
                   <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                  {t('contactForm.sendingButton') || 'Sending...'}
+                  {language === 'de' ? 'Wird gesendet...' : 'Sending...'}
                 </span>
               ) : (
                 <span className="flex items-center gap-2">
                   <Send className="h-4 w-4" />
-                  {t('contactForm.sendButton') || 'Send Message'}
+                  {language === 'de' ? 'Nachricht senden' : 'Send Message'}
                 </span>
               )}
             </Button>

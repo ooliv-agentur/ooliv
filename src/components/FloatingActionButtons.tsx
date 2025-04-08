@@ -29,7 +29,7 @@ const FloatingActionButtons = () => {
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none' // New teal color
+      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none shadow-md hover:shadow-lg' // Enhanced visibility
     },
     { 
       id: 'email', 
@@ -75,7 +75,7 @@ const FloatingActionButtons = () => {
                 onClick={button.onClick}
                 className={cn(
                   "w-14 h-14 rounded-full p-4", 
-                  "transition-all transform hover:scale-102 shadow-none hover:shadow-sm",
+                  "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
                   button.className
                 )}
                 aria-label={button.label}
@@ -83,7 +83,7 @@ const FloatingActionButtons = () => {
                 <button.icon className="h-5 w-5" />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="left" className="bg-[#b1b497] text-white border-0">
+            <TooltipContent side="left" className="bg-[#006064] text-white border-0">
               <p>{button.label}</p>
             </TooltipContent>
           </Tooltip>
