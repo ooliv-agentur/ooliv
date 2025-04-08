@@ -30,7 +30,7 @@ const BeforeAfterSlider = () => {
       {/* Before Image (Outdated Website) */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/f47ade42-8d51-4616-a6eb-4c5f781c07bd.png" 
+          src="/lovable-uploads/da5b45b3-580d-4326-a143-f12de0081b97.png" 
           alt={isGerman ? "Vor Website-Redesign" : "Before website redesign"}
           className="w-full h-full object-cover"
         />
@@ -42,7 +42,7 @@ const BeforeAfterSlider = () => {
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-          src="/lovable-uploads/cc2540b3-885d-43e2-a5da-8cb04a07619f.png" 
+          src="/lovable-uploads/3355b778-3d78-4b00-b67e-e4dbed715e89.png" 
           alt={isGerman ? "Nach Website-Redesign" : "After website redesign"}
           className="w-full h-full object-cover"
         />
