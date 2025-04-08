@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -143,12 +142,10 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="grid grid-cols-1 md:grid-cols-3 items-center">
-            {/* Left: Copyright text */}
             <div className="text-sm text-white font-sans text-left">
               © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
             </div>
             
-            {/* Middle: Google reviews */}
             <div className="flex justify-center items-center">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
@@ -165,10 +162,9 @@ const Footer = () => {
               </div>
             </div>
             
-            {/* Right: Sortlist badge */}
             <div className="flex justify-end">
               <div 
-                className="sortlist-badge" 
+                className="sortlist-badge w-full max-w-[120px]" 
                 aria-label="Sortlist Badge"
               ></div>
             </div>
