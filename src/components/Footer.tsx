@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
@@ -140,13 +141,16 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* New bottom footer area with the layout matching the mockup */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="grid grid-cols-1 md:grid-cols-3 items-center">
-            <div className="text-sm text-white font-sans text-left">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* Left: Copyright text */}
+            <div className="text-sm text-white font-sans order-2 md:order-1 text-center md:text-left">
               © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
             </div>
             
-            <div className="flex justify-center items-center">
+            {/* Middle: Google reviews */}
+            <div className="flex justify-center items-center order-1 md:order-2">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
@@ -162,9 +166,10 @@ const Footer = () => {
               </div>
             </div>
             
-            <div className="flex justify-end">
+            {/* Right: Sortlist badge - larger size */}
+            <div className="flex justify-end order-3 md:order-3">
               <div 
-                className="sortlist-badge w-full max-w-[120px]" 
+                className="sortlist-badge" 
                 aria-label="Sortlist Badge"
               ></div>
             </div>
