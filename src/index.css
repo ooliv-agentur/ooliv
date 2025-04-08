@@ -322,9 +322,11 @@ button[aria-label="Menü schließen"] {
 
 /* Sortlist badge styling */
 .sortlist-badge iframe {
-  height: 1.25rem !important;
+  height: 1rem !important;
   width: auto !important;
-  max-width: 100px;
+  max-width: 80px !important;
   border: none !important;
-  display: inline-block;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-left: 8px !important;
 }
