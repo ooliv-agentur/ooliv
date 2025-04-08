@@ -136,9 +136,7 @@ const Footer = () => {
                 </a>
               </div>
               
-              <div className="flex items-center space-x-1">
-                <div className="sortlist-badge h-6 w-6"></div>
-              </div>
+              <div className="sortlist-badge"></div>
             </div>
           </div>
         </div>
