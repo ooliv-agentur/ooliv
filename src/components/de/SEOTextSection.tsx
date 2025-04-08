@@ -41,6 +41,19 @@ const SEOTextSection = () => {
             Unsere Erfolgsberichte und Kundenbewertungen zeigen, wie wir individuelle Strategien entwickeln, um Ihre Ziele zu erreichen.
           </p>
 
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Webdesign Mainz – Kreative und innovative Lösungen</h3>
+          <p>
+            Ihre Website ist die digitale Visitenkarte Ihres Unternehmens. Als erfahrene Webdesign-Agentur in Mainz entwickeln wir Websites, die:
+          </p>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Benutzerfreundlich und responsive sind.</li>
+            <li>SEO-optimiert und für Google ausgerichtet sind.</li>
+            <li>Kreativität und Innovation in den Vordergrund stellen.</li>
+          </ul>
+          <p>
+            Unsere Designs integrieren die kreative DNA von Mainz – eine einzigartige Verbindung aus Tradition und Moderne. Wir entwickeln maßgeschneiderte Websites, die Ihre Vision widerspiegeln und Ihre Zielgruppe begeistern.
+          </p>
+
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO und Online-Marketing – Sichtbarkeit für Ihren Erfolg</h3>
           <p>
             Eine schöne Website reicht nicht aus. Deshalb sorgen wir dafür, dass Ihre Zielgruppe Sie auch findet. Unsere Leistungen umfassen:
@@ -53,6 +66,19 @@ const SEOTextSection = () => {
           </ul>
           <p>
             Durch kanalübergreifende Strategien verbinden wir verschiedene digitale Kanäle, um Ihre Online-Präsenz ganzheitlich zu stärken. Ob Webdesign oder Suchmaschinenoptimierung – wir stellen sicher, dass alle Maßnahmen miteinander harmonieren und optimale Ergebnisse erzielen.
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Google Ads – Schnelle Ergebnisse mit messbarem Erfolg</h3>
+          <p>
+            Mit Google Ads sprechen wir Ihre Zielgruppe genau dort an, wo sie sich befindet. Unsere datengetriebenen Kampagnen maximieren Ihre Reichweite:
+          </p>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Gezielte Anzeigen für Ihre Zielgruppe.</li>
+            <li>Budgetkontrolle für optimale Effizienz.</li>
+            <li>Laufende Optimierungen zur Performance-Steigerung.</li>
+          </ul>
+          <p>
+            Egal, ob Sie Ihre Markenbekanntheit steigern, mehr Leads generieren oder direkt Umsatz erzielen möchten – wir entwickeln Google Ads-Kampagnen, die Ihre individuellen Ziele erreichen.
           </p>
 
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Branding und Corporate Design – Ihre Marke, klar und unverwechselbar</h3>
@@ -74,6 +100,75 @@ const SEOTextSection = () => {
           </ul>
           <p>
             Mit einem ganzheitlichen Ansatz optimieren wir den Marketingmix, um Ihre Sichtbarkeit zu erhöhen und Ihre Unternehmensziele nachhaltig zu erreichen. Diese Strategien sind ideal für Unternehmen, die ihre Marke stärken und langfristig erfolgreich sein möchten.
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ganzheitliche Betreuung und Beratung</h3>
+          <p>
+            Als Full-Service-Agentur in Mainz bieten wir mehr als nur Einzeldienstleistungen. Unser Fokus liegt auf einer umfassenden Betreuung, die alle Aspekte Ihrer Online-Präsenz umfasst:
+          </p>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Strategische Beratung: Entwicklung langfristiger Online-Strategien.</li>
+            <li>Technische Umsetzung: Webdesign, SEO, Google Ads und mehr.</li>
+            <li>Laufende Betreuung: Regelmäßige Updates, Optimierungen und Support.</li>
+          </ul>
+          <p>
+            Wir verstehen uns als Ihr langfristiger Partner, der gemeinsam mit Ihnen an Ihrem Erfolg arbeitet.
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Kundenstimmen und Erfahrungsberichte</h3>
+          <p>
+            Detaillierte Kundenbewertungen geben Einblicke in die Zusammenarbeit mit ooliv und zeigen, wie wir Unternehmen zum Erfolg verhelfen. Unsere Kunden berichten von ihren Erfahrungen und dem Mehrwert, den unsere Dienstleistungen bieten:
+          </p>
+          <ul className="space-y-3 mt-4 mb-6">
+            <li>
+              <strong>Erfolg im Einzelhandel</strong> „Mit ooliv konnten wir unsere Online-Präsenz deutlich verbessern. Die Kombination aus SEO und Google Ads brachte uns innerhalb von drei Monaten 30 % mehr Website-Traffic." – Sandra K.
+            </li>
+            <li>
+              <strong>Designprojekte: Maßgeschneiderte Lösungen</strong> „Das neue Webdesign von ooliv hat nicht nur unser Image modernisiert, sondern auch die Nutzerfreundlichkeit enorm gesteigert. Wir bekommen durchweg positives Feedback von unseren Kunden." – Michael R.
+            </li>
+            <li>
+              <strong>Langjährige Partnerschaft mit ooliv</strong> „Wir arbeiten seit über 10 Jahren mit ooliv zusammen. Die Agentur versteht es, unsere Unternehmensziele mit kreativen und datengetriebenen Ansätzen zu unterstützen." – Julia F.
+            </li>
+          </ul>
+          <p>
+            Lesen Sie weitere Bewertungen auf unserer Google-Seite oder kontaktieren Sie uns, um mehr über unsere Erfolgsgeschichten zu erfahren.
+          </p>
+
+          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
+            „Dank ooliv haben wir eine Website, die nicht nur gut aussieht, sondern auch funktioniert. Die Zusammenarbeit war von Anfang an professionell und angenehm." – Susanne B.
+          </blockquote>
+
+          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
+            „Die SEO-Optimierung von ooliv hat uns geholfen, unsere Sichtbarkeit im Netz zu steigern. Jetzt werden wir bei Google besser gefunden." – Markus P.
+          </blockquote>
+
+          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
+            „Wir schätzen die strategische Herangehensweise und die kreativen Ideen von ooliv. Die Ergebnisse sprechen für sich." – Stefanie S.
+          </blockquote>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Häufig gestellte Fragen (FAQs)</h3>
+          <div className="space-y-4 mt-4 mb-6">
+            <div>
+              <p><strong>Welche Dienstleistungen bietet ooliv als Werbeagentur Mainz an?</strong></p>
+              <p>Wir bieten Webdesign, SEO, Google Ads, Branding und kanalübergreifende Online-Strategien.</p>
+            </div>
+            <div>
+              <p><strong>Wie lange dauert die Entwicklung einer Website durch ooliv?</strong></p>
+              <p>Abhängig von der Komplexität des Projekts zwischen 4 und 8 Wochen.</p>
+            </div>
+            <div>
+              <p><strong>Warum sollte ich ooliv wählen?</strong></p>
+              <p>Wir verbinden kreative Ansätze mit datengetriebener Effizienz und regionaler Marktkenntnis.</p>
+            </div>
+            <div>
+              <p><strong>Welche Vorteile bietet lokale SEO?</strong></p>
+              <p>Lokale SEO ermöglicht es Ihnen, gezielt Kunden in Mainz und Umgebung anzusprechen, Ihre Sichtbarkeit in der Region zu steigern und mehr Traffic zu generieren.</p>
+            </div>
+          </div>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Fazit: Ihr Erfolg ist unser Ziel</h3>
+          <p>
+            Als Ihre Werbeagentur in Mainz begleiten wir Sie mit kreativen Ideen, innovativen Lösungen und datengetriebenen Strategien auf Ihrem Weg zum digitalen Erfolg. Kontaktieren Sie uns für ein unverbindliches Erstgesprääch und lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten. Bei ooliv setzen wir auf Transparenz, Innovation und eine partnerschaftliche Zusammenarbeit, um Ihre Ziele zu erreichen. Starten Sie jetzt durch und werden Sie Teil unseres Erfolgsnetzwerks.
           </p>
         </article>
       </div>
