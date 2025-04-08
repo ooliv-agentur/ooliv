@@ -24,13 +24,13 @@ const GermanIndex = () => {
   
   // Update document title and meta description
   useEffect(() => {
-    document.title = "ooliv – Ihre Full-Service Werbeagentur in Mainz";
+    document.title = "Ihre Full-Service Werbeagentur Mainz entdecken";
   }, []);
   
   const simplifiedFaqs = [
     {
       question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-      answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen wir Sie weiter – mit Support und Updates."
+      answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
     },
     {
       question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
@@ -53,10 +53,10 @@ const GermanIndex = () => {
   return (
     <>
       <Helmet>
-        <title>ooliv – Ihre Full-Service Werbeagentur in Mainz</title>
+        <title>Ihre Full-Service Werbeagentur Mainz entdecken</title>
         <meta 
           name="description" 
-          content="Entdecken Sie maßgeschneiderte digitale Lösungen mit ooliv, Ihrer Full-Service Werbeagentur in Mainz. Wir bieten Webdesign, SEO, Google Ads, Branding und kanalübergreifende Online-Strategien für Ihren Erfolg." 
+          content="ooliv - Ihre Werbeagentur Mainz: Kreative Webdesigns, SEO & Marketingstrategien für Ihren digitalen Erfolg." 
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
