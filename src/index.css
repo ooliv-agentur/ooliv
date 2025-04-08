@@ -322,11 +322,22 @@ button[aria-label="Menü schließen"] {
 
 /* Sortlist badge styling */
 .sortlist-badge iframe {
-  height: 1rem !important;
+  height: 0.6rem !important;
+  max-height: 0.6rem !important;
   width: auto !important;
-  max-width: 80px !important;
+  max-width: 60px !important;
   border: none !important;
   display: inline-block !important;
   vertical-align: middle !important;
-  margin-left: 8px !important;
+  margin-left: 12px !important;
+  transform: scale(0.5) !important;
+  transform-origin: left center !important;
+  overflow: hidden !important;
+}
+
+.sortlist-badge {
+  display: inline-block !important;
+  height: 0.6rem !important;
+  overflow: hidden !important;
+  vertical-align: middle !important;
 }

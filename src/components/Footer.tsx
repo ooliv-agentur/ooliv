@@ -1,5 +1,4 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin, ArrowRight, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,6 +7,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const { t, language } = useLanguage();
   const scriptRef = useRef<HTMLScriptElement | null>(null);
+  const scriptLoaded = useRef<boolean>(false);
+  const [badgeRendered, setBadgeRendered] = useState(false);
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
@@ -35,13 +36,29 @@ const Footer = () => {
   };
   
   useEffect(() => {
-    // Clean up any existing badges
-    const existingBadges = document.querySelectorAll('.sortlist-badge iframe');
-    existingBadges.forEach(badge => {
-      if (badge.parentNode) {
-        // Fix: Cast parentNode to HTMLElement to access innerHTML
-        const parent = badge.parentNode as HTMLElement;
-        parent.innerHTML = '';
+    if (scriptLoaded.current) return;
+    
+    const cleanupBadges = () => {
+      const existingBadges = document.querySelectorAll('.sortlist-badge');
+      existingBadges.forEach(badge => {
+        const badgeElement = badge as HTMLElement;
+        badgeElement.innerHTML = '';
+      });
+      
+      const sortlistIframes = document.querySelectorAll('iframe[src*="sortlist"]');
+      sortlistIframes.forEach(iframe => {
+        if (iframe.parentNode) {
+          iframe.parentNode.removeChild(iframe);
+        }
+      });
+    };
+    
+    cleanupBadges();
+    
+    const existingScripts = document.querySelectorAll('script[src*="sortlist.de/api/badge-embed"]');
+    existingScripts.forEach(script => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
       }
     });
     
@@ -50,14 +67,31 @@ const Footer = () => {
       script.src = "https://www.sortlist.de/api/badge-embed?agencySlug=uli-werbeagentur&color=neutral&hue=100&type=rated&country=DE&locale=en";
       script.defer = true;
       script.id = "sortlist-badge-script";
+      
+      script.onload = () => {
+        scriptLoaded.current = true;
+        setBadgeRendered(true);
+        
+        const sortlistIframes = document.querySelectorAll('.sortlist-badge iframe');
+        sortlistIframes.forEach(iframe => {
+          const iframeElement = iframe as HTMLIFrameElement;
+          iframeElement.style.height = '0.6rem';
+          iframeElement.style.maxHeight = '0.6rem';
+          iframeElement.style.transform = 'scale(0.5)';
+          iframeElement.style.transformOrigin = 'left center';
+          iframeElement.style.marginLeft = '12px';
+          iframeElement.style.border = 'none';
+          iframeElement.style.display = 'inline-block';
+          iframeElement.style.verticalAlign = 'middle';
+        });
+      };
+      
       document.body.appendChild(script);
       scriptRef.current = script;
     }
 
     return () => {
-      if (scriptRef.current && document.body.contains(scriptRef.current)) {
-        document.body.removeChild(scriptRef.current);
-      }
+      cleanupBadges();
     };
   }, []);
   
@@ -152,7 +186,7 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                <div className="sortlist-badge ml-2"></div>
+                <div className="sortlist-badge inline-block" style={{ overflow: 'hidden' }}></div>
               </div>
             </div>
           </div>
