@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MessageCircle, Send, Mail, Phone, Plus, X } from 'lucide-react';
+import { Send, Mail, Phone, Plus, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { 
   Tooltip,
@@ -10,43 +10,38 @@ import {
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from '@/hooks/use-media-query';
 import LeadGenerationOverlay from './LeadGenerationOverlay';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const { language } = useLanguage();
 
   const toggleExpanded = () => {
     setIsExpanded(prev => !prev);
   };
 
-  // Updated button styles to use olive color instead of blue
+  // Updated button definitions with translations
   const buttons = [
-    { 
-      id: 'chatbot', 
-      icon: MessageCircle, 
-      label: 'Chat with us', 
-      onClick: () => console.log('Chatbot clicked'),
-      className: 'bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none'
-    },
     { 
       id: 'project', 
       icon: Send, 
-      label: 'Start your project', 
+      label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none'
+      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none' // New teal color
     },
     { 
       id: 'email', 
       icon: Mail, 
-      label: 'Email us', 
+      label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
       className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
     },
     { 
       id: 'phone', 
       icon: Phone, 
-      label: 'Call us', 
+      label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
       className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
     }

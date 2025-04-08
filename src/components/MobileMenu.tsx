@@ -1,7 +1,6 @@
-
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, MessageCircle, Mail, Phone, ArrowRight, Globe, Menu } from 'lucide-react';
+import { X, Mail, Phone, ArrowRight, Globe, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
@@ -220,7 +219,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             
             <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
               <Button 
-                className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
+                className="w-full justify-between group text-lg py-6 bg-[#006064] hover:bg-[#004d51] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
                 size="lg"
                 onClick={onClose}
                 asChild
@@ -233,9 +232,8 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
               
               <div className="grid grid-cols-3 gap-6">
                 {[
-                  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/4961316367801" },
-                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email", href: "mailto:info@ooliv.de" },
-                  { icon: Phone, label: language === 'de' ? "Telefon" : "Phone", href: "tel:+4961316367801" }
+                  { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email", href: "mailto:info@ooliv.de" },
+                  { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Phone", href: "tel:+4961316367801" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}

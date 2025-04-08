@@ -1,8 +1,7 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Globe, ArrowRight, MessageCircle, Mail, Phone } from 'lucide-react';
+import { Globe, ArrowRight, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -102,7 +101,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       
       <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
         <Button 
-          className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
+          className="w-full justify-between group text-lg py-6 bg-[#006064] hover:bg-[#004d51] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
           size="lg"
           onClick={onClose}
           asChild
@@ -115,9 +114,8 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
         
         <div className="grid grid-cols-3 gap-6">
           {[
-            { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/4961316367801" },
-            { icon: Mail, label: language === 'de' ? "E-Mail" : "Email", href: "mailto:info@ooliv.de" },
-            { icon: Phone, label: language === 'de' ? "Telefon" : "Phone", href: "tel:+4961316367801" }
+            { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email", href: "mailto:info@ooliv.de" },
+            { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Phone", href: "tel:+4961316367801" }
           ].map((contact, index) => (
             <Button 
               key={index}
