@@ -39,13 +39,14 @@ const Footer = () => {
     if (scriptLoaded.current) return;
     
     const cleanupBadges = () => {
-      const existingBadges = document.querySelectorAll('.sortlist-badge');
-      existingBadges.forEach(badge => {
-        const badgeElement = badge as HTMLElement;
-        badgeElement.innerHTML = '';
+      const sortlistBadges = document.querySelectorAll('.sortlist-badge:not(:first-of-type)');
+      sortlistBadges.forEach(badge => {
+        if (badge.parentNode) {
+          badge.parentNode.removeChild(badge);
+        }
       });
       
-      const sortlistIframes = document.querySelectorAll('iframe[src*="sortlist"]');
+      const sortlistIframes = document.querySelectorAll('iframe[src*="sortlist"]:not(:first-of-type)');
       sortlistIframes.forEach(iframe => {
         if (iframe.parentNode) {
           iframe.parentNode.removeChild(iframe);
@@ -72,18 +73,20 @@ const Footer = () => {
         scriptLoaded.current = true;
         setBadgeRendered(true);
         
-        const sortlistIframes = document.querySelectorAll('.sortlist-badge iframe');
-        sortlistIframes.forEach(iframe => {
-          const iframeElement = iframe as HTMLIFrameElement;
-          iframeElement.style.height = '0.6rem';
-          iframeElement.style.maxHeight = '0.6rem';
-          iframeElement.style.transform = 'scale(0.5)';
-          iframeElement.style.transformOrigin = 'left center';
-          iframeElement.style.marginLeft = '12px';
-          iframeElement.style.border = 'none';
-          iframeElement.style.display = 'inline-block';
-          iframeElement.style.verticalAlign = 'middle';
-        });
+        setTimeout(() => {
+          const sortlistIframes = document.querySelectorAll('.sortlist-badge iframe');
+          sortlistIframes.forEach(iframe => {
+            const iframeElement = iframe as HTMLIFrameElement;
+            iframeElement.style.height = '0.6rem';
+            iframeElement.style.maxHeight = '0.6rem';
+            iframeElement.style.transform = 'scale(0.5)';
+            iframeElement.style.transformOrigin = 'left center';
+            iframeElement.style.marginLeft = '12px';
+            iframeElement.style.border = 'none';
+            iframeElement.style.display = 'inline-block';
+            iframeElement.style.verticalAlign = 'middle';
+          });
+        }, 300);
       };
       
       document.body.appendChild(script);
@@ -91,7 +94,9 @@ const Footer = () => {
     }
 
     return () => {
-      cleanupBadges();
+      if (scriptRef.current && document.body.contains(scriptRef.current)) {
+        document.body.removeChild(scriptRef.current);
+      }
     };
   }, []);
   
@@ -186,7 +191,7 @@ const Footer = () => {
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>
-                <div className="sortlist-badge inline-block" style={{ overflow: 'hidden' }}></div>
+                <div className="sortlist-badge inline-block" style={{ overflow: 'hidden', height: '0.6rem', verticalAlign: 'middle' }}></div>
               </div>
             </div>
           </div>

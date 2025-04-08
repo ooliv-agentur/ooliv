@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -325,19 +326,21 @@ button[aria-label="Menü schließen"] {
   height: 0.6rem !important;
   max-height: 0.6rem !important;
   width: auto !important;
-  max-width: 60px !important;
+  max-width: 120px !important; /* Increased to ensure badge is visible */
   border: none !important;
   display: inline-block !important;
   vertical-align: middle !important;
   margin-left: 12px !important;
   transform: scale(0.5) !important;
   transform-origin: left center !important;
-  overflow: hidden !important;
+  overflow: visible !important; /* Changed from hidden to visible */
+  opacity: 1 !important; /* Ensure visibility */
 }
 
 .sortlist-badge {
   display: inline-block !important;
   height: 0.6rem !important;
-  overflow: hidden !important;
+  overflow: visible !important; /* Changed from hidden to visible */
   vertical-align: middle !important;
+  min-width: 60px !important; /* Added min-width to reserve space */
 }
