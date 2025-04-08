@@ -180,7 +180,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
     
     try {
-      const functionUrl = `${supabase.functions.getUrl('sendProjectForm')}`;
+      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
       
       const response = await fetch(functionUrl, {
         method: "POST",
