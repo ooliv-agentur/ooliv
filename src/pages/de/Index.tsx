@@ -5,7 +5,7 @@ import DeutscherHero from "@/components/de/DeutscherHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider"; // Changed component
+import BeforeAfterSlider from "@/components/BeforeAfterSlider"; 
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
@@ -31,23 +31,23 @@ const GermanIndex = () => {
   const newFaqs = [
     {
       question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-      answer: "Unser bewährter Prozess umfasst fünf klare Schritte, um Ihre Website strategisch aufzubauen und Ihre Ziele zu erreichen:\n\n<ul className='list-disc pl-4 space-y-2'>\n<li><span className='font-semibold'>Strategie & Konzept</span> – Wir analysieren Ihre Ziele, Zielgruppen und Mitbewerber, um die optimale Grundlage zu schaffen.</li>\n<li><span className='font-semibold'>Content-Erstellung</span> – Erstellung maßgeschneiderter Inhalte, abgestimmt auf Ihre Zielgruppe und SEO-Anforderungen.</li>\n<li><span className='font-semibold'>UX/UI-Design</span> – Individuelle Gestaltung eines modernen und benutzerfreundlichen Designs.</li>\n<li><span className='font-semibold'>Entwicklung</span> – Umsetzung Ihrer Website mit neuester Technik, zuverlässig und optimiert für alle Endgeräte.</li>\n<li><span className='font-semibold'>Launch & Support</span> – Veröffentlichung der Website mit laufender Betreuung und technischen Updates.</li>\n</ul>"
+      answer: "Unsere Website-Projekte folgen einem klaren 5-Schritte-Ablauf:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Strategie & Konzept</strong> – Wir analysieren Ziele, Zielgruppen und Wettbewerber – und schaffen eine fundierte inhaltliche Basis.</li><li><strong>Content-Erstellung</strong> – Texte, Bilder, Struktur – alles maßgeschneidert auf Ihre Marke und SEO-optimiert.</li><li><strong>UX/UI-Design</strong> – Modernes, individuelles Design mit Fokus auf Klarheit, Nutzerfreundlichkeit und Markenwirkung.</li><li><strong>Entwicklung</strong> – Technisch sauber umgesetzt mit aktueller Technik, responsive und DSGVO-konform.</li><li><strong>Launch & Support</strong> – Go-Live mit persönlicher Betreuung – inklusive technischer Unterstützung bei Bedarf.</li></ul>"
     },
     {
       question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
-      answer: "Die Kosten einer individuell gestalteten WordPress-Website beginnen meist bei etwa 3.500 € bis 5.000 €.\n\nDer genaue Preis hängt von Faktoren wie dem Umfang der Inhalte, der Komplexität individueller Funktionen und der benötigten Designarbeit ab.\n\nIn einem unverbindlichen Erstgespräch klären wir Ihre Anforderungen genau, damit Sie eine präzise Kalkulation erhalten."
+      answer: "Die Kosten hängen von Umfang, Funktionalität und gewünschtem Design ab. Typische Projekte bewegen sich in diesen Bereichen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Basic:</strong> ab 4.000 € (Onepager, Starter-Seiten)</li><li><strong>Standard:</strong> 6.000 – 12.000 € (Corporate Sites, lokale SEO)</li><li><strong>Erweitert:</strong> ab 15.000 € (Shops, komplexe Funktionen, Multilinguale Seiten)</li></ul>Transparente Angebote – keine versteckten Kosten.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lassen Sie uns Ihr Projekt besprechen</a>"
     },
     {
       question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
-      answer: "Die Entwicklung einer maßgeschneiderten Website dauert durchschnittlich 4 bis 8 Wochen.\n\nDer exakte Zeitraum hängt von Umfang und Komplexität Ihres Projekts ab. Kleinere Projekte setzen wir in etwa einem Monat um, größere Projekte oder Websites mit speziellen Funktionen können etwas länger dauern.\n\nTransparente Zeitplanung ist fester Bestandteil unserer Zusammenarbeit."
+      answer: "Das hängt vom Projektumfang ab – ein typischer Zeitrahmen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Kompakte Seiten</strong> (z. B. Onepager): 3–4 Wochen</li><li><strong>Mittlere Projekte:</strong> ca. 5–8 Wochen</li><li><strong>Komplexe Umsetzungen:</strong> 10+ Wochen (z. B. Shop, Multisite)</li></ul>Wichtig: Qualität vor Schnelligkeit – aber mit realistischen Timings und klarer Projektstruktur.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Jetzt Timing klären</a>"
     },
     {
       question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-      answer: "Nach der Veröffentlichung Ihrer Website kümmern wir uns kontinuierlich um:\n\n<ul className='list-disc pl-4 space-y-2'>\n<li><span className='font-semibold'>Technische Wartung</span> – Regelmäßige Updates und Sicherheitsüberprüfungen</li>\n<li><span className='font-semibold'>Inhaltliche Anpassungen</span> – Bei Bedarf Aktualisierung Ihrer Webseiteninhalte</li>\n<li><span className='font-semibold'>SEO-Performance-Überwachung</span> – Kontinuierliche Analyse und Optimierung</li>\n</ul>\n\nWir unterstützen Sie langfristig dabei, Ihre Website aktuell und wettbewerbsfähig zu halten."
+      answer: "Wir begleiten Sie gerne auch nach dem Go-Live – mit Optionen wie:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Technische Wartung</strong> (Updates, Backups, Sicherheit)</li><li><strong>Content-Pflege</strong> (Texte, Medien, SEO)</li><li><strong>Erweiterungen & Optimierung</strong></li><li>Monatliche Support-Modelle oder nach Bedarf buchbar</li></ul>→ Betreuung, wie Sie sie brauchen – flexibel und transparent."
     },
     {
       question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
-      answer: "Seit 2008 in Mainz etabliert, kombinieren wir:\n\n<ul className='list-disc pl-4 space-y-2'>\n<li><span className='font-semibold'>Kreative Lösungen</span> – Innovative Designs, die Ihre Marke hervorheben</li>\n<li><span className='font-semibold'>Datengetriebene Strategien</span> – Messbare Ergebnisse und klare Zielerreichung</li>\n<li><span className='font-semibold'>Technisches Know-how</span> – Modernste Webtechnologien und SEO-Optimierung</li>\n<li><span className='font-semibold'>Lokale Marktkenntnisse</span> – Tiefes Verständnis für regionale Geschäftslandschaften</li>\n</ul>\n\nWir entwickeln individuelle Lösungen, die exakt auf Ihre Ziele zugeschnitten sind, mit transparenter Kommunikation und messbarem Erfolg."
+      answer: "Weil wir anders arbeiten – und besser zusammenarbeiten:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Direkter Kontakt:</strong> Bei uns sprechen Sie immer mit dem CEO.</li><li><strong>Effiziente Prozesse:</strong> Strategie, Content, Design und Technik aus einer Hand.</li><li><strong>Volle Sichtbarkeit:</strong> SEO, Performance und Klarheit stehen im Fokus.</li><li><strong>Lokale Stärke & digitale Exzellenz:</strong> Mit Sitz in Mainz – und Kunden weit darüber hinaus.</li></ul>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Gemeinsam sichtbar werden</a>"
     }
   ];
   
