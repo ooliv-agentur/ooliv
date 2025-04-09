@@ -10,62 +10,52 @@ const ContentProcess = () => {
   const steps = isGerman ? [
     {
       icon: CalendarCheck,
-      number: '01',
       title: 'Strategie & Kickoff',
       description: 'Ziele definieren, Tonalität festlegen, SEO-Recherche (z. B. mit Ahrefs).'
     },
     {
       icon: PenTool,
-      number: '02',
       title: 'Erstellung & Design',
       description: 'Inhalte entwickeln – Texte, Bilder, Videos – mit Fokus auf UX & Conversion.'
     },
     {
       icon: Monitor,
-      number: '03',
       title: 'Review & Integration',
       description: 'Freigabe durch Sie, Einbindung über uns oder Ihr CMS.'
     },
     {
       icon: CheckCircle,
-      number: '04',
       title: 'Testing & Launch',
       description: 'SEO-Checks, Performance, Struktur – dann Go Live.'
     },
     {
       icon: RefreshCw,
-      number: '05',
       title: 'Laufende Content-Pakete',
       description: 'Monatliche Pakete zur Pflege, Optimierung & strategischen Weiterentwicklung.'
     }
   ] : [
     {
       icon: CalendarCheck,
-      number: '01',
       title: 'Strategy & Kickoff',
       description: 'We start by understanding your goals, brand tone, and doing SEO research (using Ahrefs) to ensure we\'re on the right track.'
     },
     {
       icon: PenTool,
-      number: '02',
       title: 'Creation & Design',
       description: 'We create your content, including copy, visuals, and video — all designed for conversion and user experience.'
     },
     {
       icon: Monitor,
-      number: '03',
       title: 'Review & Integration',
       description: 'You review the content, and we integrate it into your site — either directly or through your CMS.'
     },
     {
       icon: CheckCircle,
-      number: '04',
       title: 'Testing & Launch',
       description: 'We ensure SEO checks, speed, and structure before we go live.'
     },
     {
       icon: RefreshCw,
-      number: '05',
       title: 'Ongoing Content Support',
       description: 'After launch, we offer monthly content packages to keep your site fresh and aligned with your SEO and business goals.'
     }
@@ -96,17 +86,11 @@ const ContentProcess = () => {
                 className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex-1 min-w-[280px] snap-center"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="p-3 rounded-full bg-brand-backgroundAlt">
-                      <step.icon className="h-6 w-6 text-brand-primary" />
-                    </div>
-                    <div className="h-full w-0.5 bg-brand-backgroundAlt mt-2 mb-2 hidden md:block"></div>
+                  <div className="p-3 rounded-full bg-brand-backgroundAlt">
+                    <step.icon className="h-6 w-6 text-brand-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-brand-heading flex items-center gap-2">
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-primary text-white text-sm">
-                        {step.number.split('')[1]}
-                      </span>
+                    <h3 className="text-xl font-bold mb-2 text-brand-heading">
                       {step.title}
                     </h3>
                     <p className="text-brand-text">{step.description}</p>
@@ -132,3 +116,4 @@ const ContentProcess = () => {
 };
 
 export default ContentProcess;
+
