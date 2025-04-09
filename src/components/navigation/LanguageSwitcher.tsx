@@ -18,31 +18,29 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
-    if (language === 'de') {
-      // Switching to English
-      setLanguage('en');
+    // Switching to English
+    setLanguage('en');
+    
+    if (currentPath === '/' || currentPath === '') {
+      navigate('/en');
+    } else {
+      // Map German paths to English equivalent paths
+      const pathMappings: Record<string, string> = {
+        '/webdesign': '/en/web-design',
+        '/webentwicklung': '/en/web-development',
+        '/content-erstellung': '/en/content-creation',
+        '/seo-optimierung': '/en/seo-optimization',
+        '/google-ads': '/en/google-ads',
+        '/ki-technologien': '/en/ai-technologies',
+        '/case-studies': '/en/case-studies',
+        '/ueber-ooliv': '/en/about-ooliv',
+        '/kontakt': '/en/contact',
+        '/impressum': '/en/legal-notice',
+        '/datenschutz': '/en/privacy-policy',
+      };
       
-      if (currentPath === '/' || currentPath === '') {
-        navigate('/en');
-      } else {
-        // Map German paths to English equivalent paths
-        const pathMappings: Record<string, string> = {
-          '/webdesign': '/en/web-design',
-          '/webentwicklung': '/en/web-development',
-          '/content-erstellung': '/en/content-creation',
-          '/seo-optimierung': '/en/seo-optimization',
-          '/google-ads': '/en/google-ads',
-          '/ki-technologien': '/en/ai-technologies',
-          '/case-studies': '/en/case-studies',
-          '/ueber-ooliv': '/en/about-ooliv',
-          '/kontakt': '/en/contact',
-          '/impressum': '/en/legal-notice',
-          '/datenschutz': '/en/privacy-policy',
-        };
-        
-        const englishPath = pathMappings[currentPath] || '/en';
-        navigate(englishPath);
-      }
+      const englishPath = pathMappings[currentPath] || '/en';
+      navigate(englishPath);
     }
   };
   

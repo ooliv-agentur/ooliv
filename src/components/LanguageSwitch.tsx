@@ -45,7 +45,7 @@ const LanguageSwitch: React.FC = () => {
     
     if (isGermanPath && language !== 'de') {
       setLanguage('de');
-    } else if (!isGermanPath && language !== 'en') {
+    } else if (!isGermanPath && language === 'en') {
       setLanguage('en');
     }
   }, [location.pathname, language, setLanguage]);
@@ -53,24 +53,22 @@ const LanguageSwitch: React.FC = () => {
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
-    if (language === 'de') {
-      // Switching to English
-      setLanguage('en');
-      
-      // Try to find a mapped path
-      let foundMapping = false;
-      for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
-        if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
-          navigate(enPath);
-          foundMapping = true;
-          return;
-        }
+    // Switching to English
+    setLanguage('en');
+    
+    // Try to find a mapped path
+    let foundMapping = false;
+    for (const [dePath, enPath] of Object.entries(reversePathMapping)) {
+      if (currentPath === dePath || currentPath.startsWith(dePath + '/')) {
+        navigate(enPath);
+        foundMapping = true;
+        return;
       }
-      
-      // Default fallback if no specific path mapping found
-      if (!foundMapping) {
-        navigate('/');
-      }
+    }
+    
+    // Default fallback if no specific path mapping found
+    if (!foundMapping) {
+      navigate('/');
     }
   };
 
