@@ -22,7 +22,7 @@ const ContentHero = () => {
         }
         primaryCta={{
           text: isGerman ? "Content-Projekt starten" : "Start Your Content Project",
-          link: isGerman ? "/de/kontakt" : "/contact"
+          link: "#"
         }}
         secondaryCta={{
           text: isGerman ? "Case Studies ansehen" : "View Case Studies",

@@ -15,11 +15,11 @@ const GoogleAdsHero = () => {
         subtitle="Wir entwickeln und optimieren Google Ads Kampagnen, die nicht nur sichtbar sind, sondern qualifizierte Anfragen generieren. KI-gestützt, datenbasiert, auf Conversion ausgelegt."
         primaryCta={{
           text: "Kampagne starten",
-          link: "/de/kontakt"
+          link: "#"
         }}
         secondaryCta={{
           text: "Kostenlose Analyse anfordern",
-          link: "/de/kontakt"
+          link: "#"
         }}
       />
     );
@@ -32,11 +32,11 @@ const GoogleAdsHero = () => {
       subtitle="We design and optimize Google Ads campaigns that don't just generate traffic — they bring in qualified B2B leads. AI-powered, conversion-driven, and performance-monitored."
       primaryCta={{
         text: "Launch Your Campaign",
-        link: "/contact"
+        link: "#"
       }}
       secondaryCta={{
         text: "Request Free Audit",
-        link: "/contact"
+        link: "#"
       }}
     />
   );

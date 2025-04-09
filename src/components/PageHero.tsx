@@ -51,10 +51,21 @@ const PageHero = ({
            text.includes('Technische Beratung');
   };
   
+  // Handler for opening the lead form
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
+  // Function to check if the primary CTA should open the lead form instead of linking
+  const isPrimaryCtaProjectStart = (text?: string) => {
+    if (!text) return false;
+    return text.includes('Projekt starten') || 
+           text.includes('Start Your') || 
+           text.includes('Launch Your') ||
+           text.includes('SEO-Strategie starten') ||
+           text.includes('Kampagne starten');
+  };
+  
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -134,9 +145,21 @@ const PageHero = ({
       secondary.onClick = undefined;
     }
     
+    // If primary CTA is a "Start Project" button, make it open the lead form instead of linking
+    const shouldOpenLeadForm = isPrimaryCtaProjectStart(primary.text) || primary.onClick === handleOpenLeadForm;
+    
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        {primary.onClick ? (
+        {shouldOpenLeadForm ? (
+          <Button 
+            size="lg" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+            onClick={handleOpenLeadForm}
+          >
+            {primary.text}
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        ) : primary.onClick ? (
           <Button 
             size="lg" 
             className="group bg-[#006064] text-white hover:bg-[#004D40]" 

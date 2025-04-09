@@ -10,11 +10,11 @@ const SEOHeroDE = () => {
       subtitle="Wir verwandeln Ihre Website in einen Wachstumstreiber. Strategiegetriebene SEO-Optimierung für bessere Rankings, qualifizierte Anfragen und nachhaltiges Business-Wachstum – in Mainz und darüber hinaus."
       primaryCta={{
         text: "SEO-Strategie starten",
-        link: "/de/kontakt"
+        link: "#"
       }}
       secondaryCta={{
         text: "Kostenloses SEO-Audit anfordern",
-        link: "/de/kontakt"
+        link: "#"
       }}
     />
   );

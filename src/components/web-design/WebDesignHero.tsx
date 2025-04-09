@@ -7,7 +7,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const WebDesignHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
-  const contactPath = isGerman ? "/kontakt" : "/en/contact";
   
   const translations = {
     en: {
@@ -32,8 +31,7 @@ const WebDesignHero = () => {
         subtitle={t.subtitle}
         primaryCta={{
           text: isGerman ? "Projekt starten" : "Start Your Web Project",
-          link: "#",
-          onClick: () => window.dispatchEvent(new Event('open-lead-form'))
+          link: "#"
         }}
         // Removed the secondary CTA completely
       />
