@@ -1,8 +1,7 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Globe, ArrowRight, Mail, Phone } from 'lucide-react';
+import { Globe, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -59,12 +58,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     onClose();
   };
 
-  const handleOpenSidebarForm = () => {
-    document.dispatchEvent(new CustomEvent('open-lead-form'));
-    onClose(); // Close the mobile menu after opening the form
-  };
-
-  const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
   const languageButtonText = language === 'de' ? 'Sprache: Deutsch' : 'Language: English';
   const switchToText = language === 'de' ? 'Wechseln zu English' : 'Switch to German';
 
@@ -105,15 +98,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       </div>
       
       <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
-        <Button 
-          className="w-full justify-between group text-lg py-6 bg-[#006064] hover:bg-[#004d51] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
-          size="lg"
-          onClick={handleOpenSidebarForm}
-        >
-          {startProjectText}
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
-        </Button>
-        
         <div className="grid grid-cols-2 gap-6">
           {[
             { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email", href: "mailto:info@ooliv.de" },
