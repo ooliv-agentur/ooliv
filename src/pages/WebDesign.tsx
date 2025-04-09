@@ -34,9 +34,12 @@ const WebDesign = () => {
         subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
         primaryCta="Start Your Web Project"
         secondaryCta="Book a Strategy Call"
+        primaryCtaLink="#"
+        secondaryCtaLink="/en/contact"
       />
     </PageLayout>
   );
 };
 
 export default WebDesign;
+
