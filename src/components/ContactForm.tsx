@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Dialog,
@@ -17,6 +16,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
 
 interface ContactFormProps {
   open: boolean;
@@ -148,15 +148,9 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         phone: ''
       };
       
-      const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4",
-        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4"
-      };
-      
-      await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
+      await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
-        headers: headers,
+        headers: getSupabaseHeaders(),
         body: JSON.stringify(formData)
       });
       

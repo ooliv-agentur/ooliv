@@ -1,8 +1,8 @@
-
 import { FormValues } from './FormSchema';
 import { useToast } from "@/hooks/use-toast";
 import { useCallback, useRef } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
 
 export const useFormSubmission = (
   onSuccess: () => void,
@@ -36,15 +36,9 @@ export const useFormSubmission = (
     };
     
     try {
-      const headers = {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4",
-        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4"
-      };
-      
-      const response = await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
+      const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
-        headers: headers,
+        headers: getSupabaseHeaders(),
         body: JSON.stringify(formData),
         signal: abortController.signal
       });
