@@ -32,6 +32,61 @@ import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
 
+const ContactCard: React.FC<ContactCardProps> = ({
+  icon,
+  color,
+  title,
+  description,
+  buttonText,
+  onClick,
+  href
+}) => {
+  const colorClasses = {
+    blue: 'bg-blue-50',
+    green: 'bg-green-50',
+    amber: 'bg-amber-50',
+    purple: 'bg-purple-50'
+  };
+
+  const ButtonElement = () => (
+    <Button 
+      variant="outline" 
+      className="w-full justify-between group"
+      onClick={onClick}
+      asChild={Boolean(href)}
+    >
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          <span>{buttonText}</span>
+          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      ) : (
+        <>
+          <span>{buttonText}</span>
+          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        </>
+      )}
+    </Button>
+  );
+
+  return (
+    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-brand-primary/50">
+      <CardHeader className="pb-2">
+        <div className={cn("rounded-full w-12 h-12 flex items-center justify-center mb-2", colorClasses[color])}>
+          {icon}
+        </div>
+        <CardTitle className="text-xl font-bold">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="pb-3">
+        <p className="text-gray-600">{description}</p>
+      </CardContent>
+      <CardFooter className="pt-0">
+        <ButtonElement />
+      </CardFooter>
+    </Card>
+  );
+};
+
 const GermanContact = () => {
   const { setLanguage } = useLanguage();
   const [showAuditForm, setShowAuditForm] = useState(false);
@@ -39,6 +94,10 @@ const GermanContact = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+
+  const handleOpenSidebarForm = () => {
+    document.dispatchEvent(new CustomEvent('open-lead-generation'));
+  };
 
   const handleRequestAudit = () => {
     setShowAuditForm(true);
@@ -110,9 +169,7 @@ const GermanContact = () => {
                 title="Anfrage senden"
                 description="Projekt-Details über unser Formular teilen"
                 buttonText="Formular öffnen"
-                onClick={() => {
-                  console.log('Open sidebar form');
-                }}
+                onClick={handleOpenSidebarForm}
               />
               
               <ContactCard 
@@ -355,61 +412,6 @@ interface ContactCardProps {
   onClick?: () => void;
   href?: string;
 }
-
-const ContactCard: React.FC<ContactCardProps> = ({
-  icon,
-  color,
-  title,
-  description,
-  buttonText,
-  onClick,
-  href
-}) => {
-  const colorClasses = {
-    blue: 'bg-blue-50',
-    green: 'bg-green-50',
-    amber: 'bg-amber-50',
-    purple: 'bg-purple-50'
-  };
-
-  const ButtonElement = () => (
-    <Button 
-      variant="outline" 
-      className="w-full justify-between group"
-      onClick={onClick}
-      asChild={Boolean(href)}
-    >
-      {href ? (
-        <a href={href}>
-          <span>{buttonText}</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </a>
-      ) : (
-        <>
-          <span>{buttonText}</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </>
-      )}
-    </Button>
-  );
-
-  return (
-    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-brand-primary/50">
-      <CardHeader className="pb-2">
-        <div className={cn("rounded-full w-12 h-12 flex items-center justify-center mb-2", colorClasses[color])}>
-          {icon}
-        </div>
-        <CardTitle className="text-xl font-bold">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="pb-3">
-        <p className="text-gray-600">{description}</p>
-      </CardContent>
-      <CardFooter className="pt-0">
-        <ButtonElement />
-      </CardFooter>
-    </Card>
-  );
-};
 
 interface FeatureCardProps {
   icon: React.ReactNode;
