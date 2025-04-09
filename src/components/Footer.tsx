@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -77,7 +78,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3 text-white text-sm font-sans">
-              <li className="font-medium">ooliv GmbH</li>
+              <li className="font-medium">ooliv</li>
               <li className="flex items-start">
                 <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
                 <span>Mombacher Str. 25<br />55122 Mainz</span>

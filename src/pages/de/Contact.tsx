@@ -182,7 +182,7 @@ const GermanContact = () => {
           <div className="max-w-3xl mx-auto text-center">
             <Card className="inline-block">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">ooliv GmbH</h3>
+                <h3 className="text-2xl font-bold mb-4">ooliv</h3>
                 <p className="mb-4">
                   Mombacher Str. 25<br />
                   55122 Mainz, Deutschland

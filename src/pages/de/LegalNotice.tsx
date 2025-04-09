@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -18,7 +17,7 @@ const GermanLegalNotice = () => {
     <PageLayout>
       <LegalHero
         title="Impressum"
-        subtitle="Rechtliche Informationen über ooliv GmbH"
+        subtitle="Rechtliche Informationen über ooliv"
         primaryCta={{
           text: "Zur Datenschutzerklärung",
           link: "/de/datenschutz"
@@ -34,7 +33,7 @@ const GermanLegalNotice = () => {
           <div className="prose max-w-none">
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
-              ooliv GmbH<br />
+              ooliv<br />
               Hauptstraße 1<br />
               55116 Mainz
             </p>
@@ -66,7 +65,7 @@ const GermanLegalNotice = () => {
             <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
             <p>
               Max Mustermann<br />
-              ooliv GmbH<br />
+              ooliv<br />
               Hauptstraße 1<br />
               55116 Mainz
             </p>
@@ -85,8 +84,7 @@ const GermanLegalNotice = () => {
             
             <h3>Urheberrecht</h3>
             <p>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hin
-weis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
             </p>
           </div>
           

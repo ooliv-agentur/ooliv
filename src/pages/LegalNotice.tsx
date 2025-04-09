@@ -12,7 +12,7 @@ const LegalNotice = () => {
     <PageLayout className="overflow-x-hidden">
       <LegalHero
         title="Legal Notice & Company Details"
-        subtitle="Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv GmbH."
+        subtitle="Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv."
         primaryCta={{
           text: "Start Your Project",
           link: "/contact"
@@ -38,7 +38,7 @@ const LegalNotice = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <p className="text-lg font-semibold text-brand-heading">ooliv GmbH</p>
+                    <p className="text-lg font-semibold text-brand-heading">ooliv</p>
                     <p className="text-brand-text">
                       Eduard von Heuss Str. 29<br />
                       55294 Bodenheim<br />
