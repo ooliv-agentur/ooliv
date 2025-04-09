@@ -137,13 +137,16 @@ const WebDesignProcess = () => {
                         </div>
                         <p className="text-brand-text text-sm mb-4">{step.description}</p>
                         
-                        <div className="bg-brand-backgroundAlt p-3 rounded-md">
-                          <p className="text-xs font-medium text-brand-primary mb-2">{t.deliverableTitle}</p>
-                          <ul className="grid grid-cols-2 gap-x-2 gap-y-1">
+                        {/* Enhanced Deliverables Section */}
+                        <div className="bg-brand-backgroundAlt p-4 rounded-md">
+                          <p className="text-sm font-bold text-brand-primary mb-3 uppercase tracking-wider">
+                            {t.deliverableTitle}
+                          </p>
+                          <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
                             {step.deliverables.map((deliverable, idx) => (
-                              <li key={idx} className="text-xs text-brand-text flex items-center">
-                                <div className="h-1 w-1 rounded-full bg-brand-primary mr-1.5"></div>
-                                {deliverable}
+                              <li key={idx} className="text-sm text-brand-text flex items-center">
+                                <div className="h-2 w-2 rounded-full bg-brand-primary mr-2 flex-shrink-0"></div>
+                                <span className="font-medium">{deliverable}</span>
                               </li>
                             ))}
                           </ul>
