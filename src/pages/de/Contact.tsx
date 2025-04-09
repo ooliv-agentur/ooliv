@@ -99,9 +99,9 @@ const GermanContact = () => {
                 icon={<MessageCircle className="h-6 w-6 text-blue-600" />} 
                 color="blue"
                 title="Chat starten"
-                description="Direkter Live-Chat mit unserem Team"
-                buttonText="Chat öffnen"
-                onClick={() => {}} // Chat-Funktion hier implementieren
+                description="Direkter WhatsApp-Chat"
+                buttonText="WhatsApp öffnen"
+                href="http://wa.me/+4917680167641"
               />
               
               <ContactCard 
@@ -109,8 +109,10 @@ const GermanContact = () => {
                 color="green"
                 title="Anfrage senden"
                 description="Projekt-Details über unser Formular teilen"
-                buttonText="Anfrage stellen"
-                onClick={() => handleRequestAudit()}
+                buttonText="Formular öffnen"
+                onClick={() => {
+                  console.log('Open sidebar form');
+                }}
               />
               
               <ContactCard 
