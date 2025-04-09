@@ -3,6 +3,7 @@ import React from 'react';
 import PageHero from '@/components/PageHero';
 
 interface LegalHeroProps {
+  badge?: string;
   title: string;
   subtitle: string;
   primaryCta: {
@@ -15,10 +16,10 @@ interface LegalHeroProps {
   };
 }
 
-const LegalHero = ({ title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
+const LegalHero = ({ badge, title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
   return (
     <PageHero
-      badge="Impressum"
+      badge={badge}
       title={title}
       subtitle={subtitle}
       primaryCta={primaryCta}
