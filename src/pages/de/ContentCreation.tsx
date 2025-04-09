@@ -65,8 +65,9 @@ const GermanContentCreation = () => {
       <CTA 
         title="Lassen Sie uns Content erstellen, der konvertiert"
         subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns Content erstellen, der rankt, resoniert und echte Geschäftsergebnisse liefert."
-        primaryCta="Kostenlose Content-Strategie-Beratung"
-        secondaryCta="Beispielprojekt anfordern"
+        primaryCta="Content-Projekt besprechen"
+        secondaryCta="Showcase ansehen"
+        secondaryCtaLink="/case-studies"
       />
     </PageLayout>
   );
