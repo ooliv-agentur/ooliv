@@ -10,6 +10,11 @@ const LanguageSwitcher = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
+  // If not in German, return null to hide the language switcher
+  if (language !== 'de') {
+    return null;
+  }
+  
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     

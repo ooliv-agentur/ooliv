@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -33,6 +32,11 @@ const LanguageSwitch: React.FC = () => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
+
+  // If not in German, return null to hide the language switcher
+  if (language !== 'de') {
+    return null;
+  }
 
   // Make sure language state is synchronized with URL on mount and URL changes
   React.useEffect(() => {
