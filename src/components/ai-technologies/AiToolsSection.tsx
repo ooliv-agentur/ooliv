@@ -43,20 +43,28 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex"
+              className="flex flex-col"
             >
-              <div className="h-full flex flex-col items-center justify-between p-6 w-full">
-                <div className="flex items-center justify-center mb-5 h-24 w-full">
-                  <img 
-                    src={tool.logoSrc} 
-                    alt={tool.name} 
-                    className="max-h-full max-w-full object-contain" 
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
+              {/* Logo container with fixed height */}
+              <div className="h-24 flex items-center justify-center mb-6">
+                <img 
+                  src={tool.logoSrc} 
+                  alt={tool.name} 
+                  className="max-h-full max-w-full object-contain" 
+                />
+              </div>
+              
+              {/* Text content container with fixed padding and top alignment */}
+              <div className="flex flex-col items-center">
+                {/* Headline container with fixed height */}
+                <div className="h-8 mb-3 flex items-center">
+                  <h3 className="text-xl font-bold text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
                     {tool.name}
                   </h3>
+                </div>
+                
+                {/* Description container with same height */}
+                <div className="text-center">
                   <p className="text-gray-700">
                     {tool.description}
                   </p>
