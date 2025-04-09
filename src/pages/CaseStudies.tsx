@@ -1,18 +1,8 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Check, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
@@ -60,10 +50,6 @@ const faqItems = [
 
 const CaseStudies = () => {
   const { language } = useLanguage();
-
-  const handleOpenLeadForm = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
 
   return (
     <PageLayout>
@@ -132,7 +118,6 @@ const CaseStudies = () => {
           </div>
         </div>
         
-        {/* Use the FAQ component for consistent styling */}
         <FAQ 
           customFaqs={faqItems}
           customTitle="Case Study & Project Questions"
