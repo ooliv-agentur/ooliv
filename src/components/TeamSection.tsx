@@ -110,8 +110,8 @@ const TeamSection = () => {
     }
   ];
 
-  // Start with the first 6 team members like in the image
-  const displayTeamMembers = teamMembers.slice(0, 6);
+  // Show all team members instead of limiting to 6
+  const displayTeamMembers = teamMembers;
 
   return (
     <section className="py-20 bg-brand-background" id="team">
