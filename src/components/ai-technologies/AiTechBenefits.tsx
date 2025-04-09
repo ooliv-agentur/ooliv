@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
-import { LineChart, ShieldCheck, Lightbulb } from "lucide-react";
+import { LineChart, Clock, Lightbulb } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AiTechBenefits = () => {
@@ -19,9 +19,9 @@ const AiTechBenefits = () => {
           description: "AI supports our workflows—but we make the decisions."
         },
         {
-          icon: <ShieldCheck className="h-10 w-10 text-brand-primary" />,
-          title: "Data Protection & Security",
-          description: "No sensitive data in external systems—full control remains with us."
+          icon: <Clock className="h-10 w-10 text-brand-primary" />,
+          title: "Faster Results",
+          description: "AI helps us deliver research, variations, and initial drafts much faster—without compromising quality."
         },
         {
           icon: <Lightbulb className="h-10 w-10 text-brand-primary" />,
@@ -40,9 +40,9 @@ const AiTechBenefits = () => {
           description: "KI unterstützt unsere Workflows – aber Entscheidungen treffen wir."
         },
         {
-          icon: <ShieldCheck className="h-10 w-10 text-brand-primary" />,
-          title: "Datenschutz & Sicherheit",
-          description: "Keine sensiblen Daten in fremden Systemen – volle Kontrolle bleibt bei uns."
+          icon: <Clock className="h-10 w-10 text-brand-primary" />,
+          title: "Schneller zum Ergebnis",
+          description: "KI hilft uns, Recherche, Varianten und erste Entwürfe deutlich schneller zu liefern – ohne Kompromisse bei der Qualität."
         },
         {
           icon: <Lightbulb className="h-10 w-10 text-brand-primary" />,
