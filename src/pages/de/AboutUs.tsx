@@ -196,14 +196,6 @@ const GermanAboutUs = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-10">
-            <Button variant="outline" size="lg" className="group" asChild>
-              <Link to="/de/ueber-ooliv#team">
-                Das gesamte Team kennenlernen
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
