@@ -54,7 +54,7 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
                   />
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 h-8">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
                     {tool.name}
                   </h3>
                   <p className="text-gray-700">
