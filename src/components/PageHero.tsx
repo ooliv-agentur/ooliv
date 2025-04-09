@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -55,15 +56,23 @@ const PageHero = ({
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Function to check if the primary CTA should open the lead form instead of linking
-  const isPrimaryCtaProjectStart = (text?: string) => {
+  // Function to check if the button should open the lead form
+  const shouldOpenLeadForm = (text?: string) => {
     if (!text) return false;
-    return text.includes('Projekt starten') || 
-           text.includes('Start Your') || 
-           text.includes('Launch Your') ||
-           text.includes('SEO-Strategie starten') ||
-           text.includes('Kampagne starten') ||
-           text === "Projekt starten";
+    
+    const projectStartKeywords = [
+      'Projekt starten',
+      'Start Your',
+      'Launch Your',
+      'SEO-Strategie starten',
+      'Kampagne starten'
+    ];
+    
+    // Check for exact match first
+    if (text === "Projekt starten") return true;
+    
+    // Then check for includes
+    return projectStartKeywords.some(keyword => text.includes(keyword));
   };
   
   const defaultHomepageTitle = language === 'de' ? (
@@ -145,37 +154,36 @@ const PageHero = ({
       secondary.onClick = undefined;
     }
     
-    // Always open lead form for any "Projekt starten" button or if explicitly set to handleOpenLeadForm
-    const shouldOpenLeadForm = primary && (isPrimaryCtaProjectStart(primary.text) || primary.onClick === handleOpenLeadForm);
-    
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        {primary && primary.text && (shouldOpenLeadForm ? (
-          <Button 
-            size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            onClick={handleOpenLeadForm}
-          >
-            {primary.text}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        ) : primary.onClick ? (
-          <Button 
-            size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            onClick={primary.onClick}
-          >
-            {primary.text}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        ) : (
-          <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
-            <Link to={primary.link}>
+        {primary && primary.text && (
+          shouldOpenLeadForm(primary.text) || primary.onClick === handleOpenLeadForm ? (
+            <Button 
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              onClick={handleOpenLeadForm}
+            >
               {primary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-        ))}
+            </Button>
+          ) : primary.onClick ? (
+            <Button 
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              onClick={primary.onClick}
+            >
+              {primary.text}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          ) : (
+            <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
+              <Link to={primary.link}>
+                {primary.text}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          )
+        )}
         
         {secondary && secondary.text && (
           secondary.onClick ? (
