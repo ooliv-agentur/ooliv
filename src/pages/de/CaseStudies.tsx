@@ -1,8 +1,7 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
-import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -44,13 +43,6 @@ const faqItems = [
 ];
 
 const GermanCaseStudies = () => {
-  const { setLanguage } = useLanguage();
-  
-  // Set language to German when this page is loaded
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
-  
   // Handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -70,7 +62,7 @@ const GermanCaseStudies = () => {
         }}
         secondaryCta={{
           text: "Strategiegespräch buchen",
-          link: "/de/kontakt"
+          link: "/kontakt"
         }}
       />
       
@@ -117,7 +109,7 @@ const GermanCaseStudies = () => {
           subtitle="Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um."
           primaryCta="Projekt starten"
           secondaryCta="Strategiegespräch buchen"
-          secondaryCtaLink="/de/kontakt"
+          secondaryCtaLink="/kontakt"
         />
       </div>
     </PageLayout>

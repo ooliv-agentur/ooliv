@@ -1,7 +1,7 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero"; // Changed from DeutscherHero to PageHero
+import PageHero from "@/components/PageHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
@@ -12,19 +12,11 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSection from "@/components/de/SEOTextSection";
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Helmet } from 'react-helmet-async';
 
 const GermanIndex = () => {
-  const { setLanguage } = useLanguage();
-  
-  // Set language to German when this page is loaded
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
-  
   // Update document title and meta description
-  useEffect(() => {
+  React.useEffect(() => {
     document.title = "Ihre Full-Service Werbeagentur Mainz entdecken";
   }, []);
   
@@ -61,7 +53,7 @@ const GermanIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} /> {/* Changed from DeutscherHero to PageHero */}
+        <PageHero isHomepage={true} />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         

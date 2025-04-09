@@ -1,7 +1,6 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-type Language = 'en' | 'de';
+type Language = 'de';
 
 interface LanguageContextType {
   language: Language;
@@ -12,72 +11,11 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const translations = {
-  en: {
-    // Navbar
-    'nav.solutions': 'Solutions',
-    'nav.process': 'Process',
-    'nav.cases': 'Case Studies',
-    'nav.faq': 'FAQ',
-    'nav.contact': 'Contact',
-    'nav.scheduleCall': 'Schedule Call',
-    
-    // Hero
-    'hero.title': "ooliv Web Design Agency – Building High-Performance Websites for SEO, Conversions & Growth",
-    'hero.subtitle': "At ooliv, we create websites that rank higher, convert better, and drive measurable business success.",
-    'hero.description': "We create high-performance websites that drive leads, rank higher, and turn visitors into customers. Whether it's a relaunch or a brand-new site, we ensure your website delivers measurable business success.",
-    'hero.startProject': "Start Your Website Project",
-    'hero.seeWork': "See Our Work",
-    
-    // Challenge
-    'challenge.title': 'Your Website Should Work for You—Not Against You.',
-    'challenge.description': "Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity.",
-    
-    // Solution
-    'solution.title': 'We Build Websites That Elevate Your Business—',
-    'solution.subtitle': 'With Strategy, Expertise & Smart Technology',
-    'solution.description': "Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences. AI enhances efficiency—but creativity, experience, and data-driven decisions are at the core of our approach.",
-    'solution.learnMore': 'Learn more about our process',
-    
-    // Testimonials
-    'testimonials.title': 'We Create Websites That Deliver',
-    'testimonials.subtitle': 'Real Business Results.',
-    
-    // FAQ
-    'faq.title': 'Frequently Asked Questions',
-    
-    // CTA
-    'cta.title': "Let's Build a Website That Moves Your Business Forward.",
-    'cta.subtitle': "Your website should be a growth engine, not a limitation. Let's discuss your challenges, analyze your current setup, and create a plan to turn your digital presence into a business asset—efficiently, strategically, and powered by the latest AI-driven insights.",
-    'cta.audit': 'Request a Free Website Audit',
-    'cta.call': 'Schedule a Strategy Call',
-    'cta.work': 'See Our Work',
-    
-    // Footer
-    'footer.about': 'About ooliv',
-    'footer.aboutText': 'We create high-performance websites that drive business growth. With 16+ years of experience, AI-powered strategies, and a results-driven approach, we help businesses succeed in the digital world.',
-    'footer.startProject': 'Start Your Project',
-    'footer.services': 'Services',
-    'footer.webDesign': 'Web Design',
-    'footer.seo': 'SEO Optimization',
-    'footer.ads': 'Google Ads',
-    'footer.branding': 'Branding',
-    'footer.company': 'Company',
-    'footer.aboutUs': 'About Us',
-    'footer.caseStudies': 'Case Studies',
-    'footer.contact': 'Contact',
-    'footer.jobs': 'Jobs',
-    'footer.legal.privacy': 'Privacy Policy',
-    'footer.legal.imprint': 'Imprint',
-    'footer.contactInfo': 'Contact',
-    'footer.location': 'Mainz, Germany',
-    'footer.copyright': '© 2024 ooliv. All rights reserved.',
-    'footer.ctaBanner': "Need a Website That Grows Your Business? Let's Talk."
-  },
   de: {
     // Navbar
     'nav.solutions': 'Lösungen',
     'nav.process': 'Prozess',
-    'nav.cases': 'Case Studies', // Changed from 'Referenzen' to 'Case Studies' to be consistent
+    'nav.cases': 'Case Studies',
     'nav.faq': 'FAQ',
     'nav.contact': 'Kontakt',
     'nav.scheduleCall': 'Termin vereinbaren',
@@ -126,7 +64,7 @@ export const translations = {
     'footer.aiTechnologies': 'KI-Technologien',
     'footer.company': 'Unternehmen',
     'footer.aboutUs': 'Über uns',
-    'footer.caseStudies': 'Case Studies', // Changed from 'Referenzen' to 'Case Studies' to be consistent
+    'footer.caseStudies': 'Case Studies',
     'footer.contact': 'Kontakt',
     'footer.jobs': 'Karriere',
     'footer.legal.privacy': 'Datenschutz',
@@ -139,12 +77,15 @@ export const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Make German the default language
-  const [language, setLanguage] = useState<Language>('de');
+  // Only use German as the language
+  const [language] = useState<Language>('de');
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
+
+  // Keep setLanguage function for backwards compatibility, but it won't change the language
+  const setLanguage = (_: Language) => {};
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

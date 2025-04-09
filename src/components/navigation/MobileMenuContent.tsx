@@ -1,8 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Globe, Mail, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -14,8 +13,6 @@ interface MobileMenuContentProps {
 }
 
 const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
-  const { language, setLanguage } = useLanguage();
-  const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   
@@ -33,35 +30,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     };
   }, [isOpen, onClose]);
 
-  const toggleLanguage = () => {
-    const currentPath = location.pathname;
-    
-    if (language === 'en') {
-      setLanguage('de');
-      
-      if (currentPath === '/') {
-        navigate('/de');
-      } else if (currentPath.startsWith('/')) {
-        const pathWithoutLeadingSlash = currentPath.substring(1);
-        navigate(`/de/${pathWithoutLeadingSlash}`);
-      }
-    } else {
-      setLanguage('en');
-      
-      if (currentPath === '/de') {
-        navigate('/');
-      } else if (currentPath.startsWith('/de/')) {
-        const pathWithoutDe = currentPath.substring(4);
-        navigate(pathWithoutDe);
-      }
-    }
-    
-    onClose();
-  };
-
-  const languageButtonText = language === 'de' ? 'Sprache: Deutsch' : 'Language: English';
-  const switchToText = language === 'de' ? 'Wechseln zu English' : 'Switch to German';
-
   return (
     <motion.div 
       ref={menuRef}
@@ -71,25 +39,13 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       transition={{ type: "spring", damping: 25, stiffness: 300 }}
     >
       <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
-        <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+        <h2 className="text-lg font-semibold text-brand-heading font-sans">Menü</h2>
       </div>
       
       <div className="flex flex-col p-6 overflow-y-auto mt-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div className="mb-6 pb-6 border-b border-gray-200 md:col-span-2 lg:col-span-2">
-              <Button 
-                variant="outline" 
-                onClick={toggleLanguage}
-                className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
-              >
-                <div className="flex items-center">
-                  <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
-                  <span>{languageButtonText}</span>
-                </div>
-                <span className="text-sm opacity-70">{switchToText}</span>
-              </Button>
-            </div>
+            {/* Language switcher removed */}
             
             <div className="lg:col-span-2 md:col-span-2">
               <NavigationLinks onLinkClick={onClose} className="space-y-2 md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-x-8 md:gap-y-2 md:space-y-0" />
@@ -101,8 +57,8 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
       <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
         <div className="grid grid-cols-2 gap-6">
           {[
-            { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email", href: "mailto:info@ooliv.de" },
-            { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Phone", href: "tel:+4961316367801" }
+            { icon: Mail, label: "E-Mail an ooliv", href: "mailto:info@ooliv.de" },
+            { icon: Phone, label: "ooliv anrufen", href: "tel:+4961316367801" }
           ].map((contact, index) => (
             <Button 
               key={index}

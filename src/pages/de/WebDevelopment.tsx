@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import WebDevHero from '@/components/web-development/WebDevHeroDE';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
@@ -8,17 +8,9 @@ import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE'
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import { useLanguage } from '@/contexts/LanguageContext';
 import CTA from '@/components/CTA';
 
 const GermanWebDevelopment = () => {
-  const { setLanguage } = useLanguage();
-  
-  // Set language to German when this page is loaded
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
-
   const webDevFaqs = [
     {
       question: "Mit welchen Plattformen arbeitet ihr?",
@@ -63,7 +55,6 @@ const GermanWebDevelopment = () => {
         subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
-        /* Removed custom footerNote to prevent duplication */
       />
     </PageLayout>
   );

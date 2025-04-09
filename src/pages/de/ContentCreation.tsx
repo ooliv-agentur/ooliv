@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
@@ -8,17 +8,9 @@ import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanContentCreation = () => {
-  const { setLanguage } = useLanguage();
-  
-  // Set language to German when this page is loaded
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
-
   // Custom FAQ items for Content Creation page
   const contentFaqs = [
     {

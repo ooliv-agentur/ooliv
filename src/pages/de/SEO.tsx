@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import SEOHeroDE from '@/components/seo/SEOHeroDE';
 import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
@@ -9,16 +9,8 @@ import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanSEO = () => {
-  const { setLanguage } = useLanguage();
-  
-  // Set language to German when this page is loaded
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
-
   // Custom FAQ items for SEO page with focus on "seo agentur mainz"
   const seoFaqs = [
     {

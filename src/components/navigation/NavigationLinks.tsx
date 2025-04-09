@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
 interface NavigationLinksProps {
@@ -10,40 +9,21 @@ interface NavigationLinksProps {
 }
 
 const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
-  const { language } = useLanguage();
   const location = useLocation();
 
-  const getNavigationLinks = () => {
-    if (language === 'de') {
-      return [
-        { title: 'Home', path: '/de' },
-        { title: 'Webdesign', path: '/de/webdesign' },
-        { title: 'Webentwicklung', path: '/de/webentwicklung' },
-        { title: 'Content-Erstellung', path: '/de/content-erstellung' },
-        { title: 'SEO-Optimierung', path: '/de/seo-optimierung' },
-        { title: 'Google Ads', path: '/de/google-ads' },
-        { title: 'KI-Technologien', path: '/de/ki-technologien' },
-        { title: 'Case Studies', path: '/de/case-studies' },
-        { title: 'Über ooliv', path: '/de/ueber-ooliv' },
-        { title: 'Kontakt', path: '/de/kontakt' }
-      ];
-    } else {
-      return [
-        { title: 'Home', path: '/' },
-        { title: 'Web Design', path: '/web-design' },
-        { title: 'Web Development', path: '/web-development' },
-        { title: 'Content Creation', path: '/content-creation' },
-        { title: 'SEO Optimization', path: '/seo-optimization' },
-        { title: 'Google Ads', path: '/google-ads' },
-        { title: 'AI Technologies', path: '/ai-technologies' },
-        { title: 'Case Studies', path: '/case-studies' },
-        { title: 'About ooliv', path: '/about-ooliv' },
-        { title: 'Contact', path: '/contact' }
-      ];
-    }
-  };
-
-  const navigationLinks = getNavigationLinks();
+  // Only use German navigation links
+  const navigationLinks = [
+    { title: 'Home', path: '/' },
+    { title: 'Webdesign', path: '/webdesign' },
+    { title: 'Webentwicklung', path: '/webentwicklung' },
+    { title: 'Content-Erstellung', path: '/content-erstellung' },
+    { title: 'SEO-Optimierung', path: '/seo-optimierung' },
+    { title: 'Google Ads', path: '/google-ads' },
+    { title: 'KI-Technologien', path: '/ki-technologien' },
+    { title: 'Case Studies', path: '/case-studies' },
+    { title: 'Über ooliv', path: '/ueber-ooliv' },
+    { title: 'Kontakt', path: '/kontakt' }
+  ];
 
   return (
     <nav className={cn("w-full", className)}>
