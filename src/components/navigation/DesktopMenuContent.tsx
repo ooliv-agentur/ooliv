@@ -2,8 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import NavigationLinks from './NavigationLinks';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -15,8 +13,6 @@ interface DesktopMenuContentProps {
 
 const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
   const { language } = useLanguage();
-
-  const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
 
   return (
     <motion.div
@@ -40,19 +36,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           <div className="lg:col-span-2">
             <NavigationLinks onLinkClick={onClose} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 text-right" />
             
-            <div className="mt-12">
-              <Button
-                className="w-full justify-between group text-lg py-6 bg-[#b1b497] hover:bg-[#9a9c83] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans"
-                size="lg"
-                onClick={onClose}
-                asChild
-              >
-                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-                  {startProjectText}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
-                </Link>
-              </Button>
-            </div>
+            {/* "Start Your Project" button removed */}
           </div>
         </div>
       </div>
