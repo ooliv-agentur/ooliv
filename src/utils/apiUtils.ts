@@ -17,4 +17,3 @@ export const getSupabaseHeaders = () => {
  * URL der sendProjectForm-Funktion
  */
 export const SEND_PROJECT_FORM_URL = "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm";
-
