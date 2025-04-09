@@ -46,6 +46,11 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
   });
 
   const onSubmit = async (data: FormValues) => {
+    if (!data.name || !data.email || !data.message) {
+      console.error("Formular-Übermittlung abgebrochen: Erforderliche Daten fehlen");
+      return;
+    }
+    
     setIsSubmitting(true);
     console.log("Anfrage wird gesendet:", data);
     
@@ -80,9 +85,13 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
         throw new Error(errorData.message || 'Netzwerkantwort war nicht in Ordnung');
       }
       
+      const responseData = await response.json();
+      console.log("Formular erfolgreich gesendet:", responseData);
+      
       toast({
         title: "Anfrage gesendet!",
         description: "Wir melden uns in Kürze bei Ihnen.",
+        className: "bg-[#004d51] text-white border-[#006064]",
       });
       
       form.reset();

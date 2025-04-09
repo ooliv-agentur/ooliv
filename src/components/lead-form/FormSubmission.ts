@@ -14,6 +14,19 @@ export const useFormSubmission = (
   const abortControllerRef = useRef<AbortController | null>(null);
   
   const submitForm = useCallback(async (data: FormValues) => {
+    // Don't proceed if essential data is missing
+    if (!data || !data.name || !data.email) {
+      console.error("Form submission aborted: Missing required data");
+      toast({
+        title: language === 'de' ? "Fehler" : "Error",
+        description: language === 'de' 
+          ? "Bitte füllen Sie alle Pflichtfelder aus." 
+          : "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
     if (abortControllerRef.current) {

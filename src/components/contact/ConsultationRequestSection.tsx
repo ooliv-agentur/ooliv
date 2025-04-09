@@ -46,6 +46,11 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
   });
 
   const onSubmit = async (data: FormValues) => {
+    if (!data.name || !data.email || !data.message) {
+      console.error("Form submission aborted: Missing required data");
+      return;
+    }
+    
     setIsSubmitting(true);
     console.log("Submitting consultation form:", data);
     
@@ -80,9 +85,13 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         throw new Error(errorData.message || 'Network response was not ok');
       }
       
+      const responseData = await response.json();
+      console.log("Form submission successful:", responseData);
+      
       toast({
         title: "Request sent!",
         description: "We'll get back to you soon to schedule your consultation.",
+        className: "bg-[#004d51] text-white border-[#006064]",
       });
       
       form.reset();

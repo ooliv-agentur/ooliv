@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Dialog,
@@ -148,11 +149,26 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         phone: ''
       };
       
-      await fetch(SEND_PROJECT_FORM_URL, {
+      // Get headers and log them for debugging
+      const headers = getSupabaseHeaders();
+      console.log("ContactForm - Headers being sent:", headers);
+      
+      const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
-        headers: getSupabaseHeaders(),
+        headers: headers,
         body: JSON.stringify(formData)
       });
+      
+      console.log("Response status:", response.status);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
+        throw new Error(errorData.message || 'Network response was not ok');
+      }
+      
+      const responseData = await response.json();
+      console.log("Form submission successful:", responseData);
       
       onOpenChange(false);
       
