@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { 
@@ -53,14 +52,13 @@ const GermanContact = () => {
         subtitle="Wir betreuen Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation."
       />
       
-      {/* Hero-Erweiterung mit Lisa-Bild und Zitat */}
       <section className="relative -mt-16 z-10 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-5 gap-0">
               <div className="md:col-span-2 relative h-full overflow-hidden bg-gradient-to-br from-brand-background to-brand-backgroundAlt">
                 <img 
-                  src="/lovable-uploads/d0f113b2-5bb7-422b-8c20-dd20c3b7120b.png" 
+                  src="/lovable-uploads/22a1721c-dd5f-47a8-871b-a42c2ea29458.png" 
                   alt="Lisa, Content & First Touch bei ooliv" 
                   className="w-full h-full object-cover object-center"
                 />
@@ -86,7 +84,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Kontaktoptionen-Sektion */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -98,7 +95,6 @@ const GermanContact = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {/* Kontaktkarten */}
               <ContactCard 
                 icon={<MessageCircle className="h-6 w-6 text-blue-600" />} 
                 color="blue"
@@ -147,7 +143,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Bürodetails-Karte */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -246,7 +241,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Warum mit uns arbeiten */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
@@ -286,7 +280,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* FAQ-Sektion */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -340,10 +333,8 @@ const GermanContact = () => {
         </div>
       </section>
       
-      {/* Kontaktformular-Integration */}
       <ConsultationRequestSectionDE requestAudit={handleRequestAudit} />
 
-      {/* Kontaktformular für Audits (Modal) */}
       <ContactForm 
         open={showAuditForm} 
         onOpenChange={setShowAuditForm} 
@@ -353,7 +344,6 @@ const GermanContact = () => {
   );
 };
 
-// Kontaktkarten-Komponente
 interface ContactCardProps {
   icon: React.ReactNode;
   color: 'blue' | 'green' | 'amber' | 'purple';
@@ -419,7 +409,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
   );
 };
 
-// Feature-Card-Komponente
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
