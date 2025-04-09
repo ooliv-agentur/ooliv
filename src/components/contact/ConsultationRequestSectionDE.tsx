@@ -48,6 +48,7 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    console.log("Anfrage wird gesendet:", data);
     
     try {
       const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
@@ -59,20 +60,33 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
         industry: '',
         name: data.name,
         email: data.email,
-        message: data.message || ''
+        message: data.message || '',
+        // Add empty values for required fields
+        websiteUrl: '',
+        location: '',
+        goal: 'website_consultation',
+        phone: ''
       };
+      
+      console.log("Formatierte Daten werden an Supabase gesendet:", formData);
       
       const response = await fetch(functionUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`
         },
         body: JSON.stringify(formData)
       });
       
       if (!response.ok) {
-        throw new Error('Failed to submit consultation request');
+        const errorData = await response.json();
+        console.error("Server-Fehlerdetails:", errorData);
+        throw new Error(errorData.message || 'Netzwerkantwort war nicht in Ordnung');
       }
+      
+      const responseData = await response.json();
+      console.log("Formular erfolgreich gesendet:", responseData);
       
       toast({
         title: "Anfrage gesendet!",
@@ -80,8 +94,8 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
       });
       
       form.reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    } catch (error: any) {
+      console.error("Fehler beim Senden des Formulars:", error);
       
       toast({
         title: "Fehler",

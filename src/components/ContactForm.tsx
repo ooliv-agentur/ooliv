@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Dialog,
@@ -126,7 +125,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -136,27 +135,62 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
     setIsSubmitting(true);
     setFormError(null);
     
-    // Simulate form submission
-    setTimeout(() => {
-      try {
-        // Success case
-        setIsSubmitting(false);
-        onOpenChange(false);
-        
-        toast({
-          title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
-          description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
-          duration: 5000,
-          className: "bg-[#004d51] text-white border-[#006064]", // Higher contrast confirmation
-        });
-      } catch (error) {
-        // Error handling
-        setIsSubmitting(false);
-        setFormError(language === 'de' 
-          ? 'Es gab ein Problem bei der Übermittlung Ihrer Nachricht. Bitte versuchen Sie es erneut.' 
-          : 'There was a problem submitting your message. Please try again.');
+    try {
+      console.log("Submitting contact form:", formValues);
+      
+      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
+      
+      // Format the data to match what the function expects
+      const formData = {
+        projectType: formType,
+        companyName: '',
+        industry: '',
+        name: formValues.name,
+        email: formValues.email,
+        message: formValues.message,
+        // Add empty values for required fields
+        websiteUrl: '',
+        location: '',
+        goal: formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration'),
+        phone: ''
+      };
+      
+      console.log("Sending formatted data to Supabase:", formData);
+      
+      const response = await fetch(functionUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
+        throw new Error(errorData.message || 'Network response was not ok');
       }
-    }, 1000);
+      
+      const responseData = await response.json();
+      console.log("Form submission successful:", responseData);
+      
+      onOpenChange(false);
+      
+      toast({
+        title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
+        description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
+        duration: 5000,
+        className: "bg-[#004d51] text-white border-[#006064]", // Higher contrast confirmation
+      });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      setFormError(language === 'de' 
+        ? 'Es gab ein Problem bei der Übermittlung Ihrer Nachricht. Bitte versuchen Sie es erneut.' 
+        : 'There was a problem submitting your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

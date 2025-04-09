@@ -48,6 +48,7 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    console.log("Submitting consultation form:", data);
     
     try {
       const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
@@ -59,20 +60,33 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         industry: '',
         name: data.name,
         email: data.email,
-        message: data.message || ''
+        message: data.message || '',
+        // Add empty values for required fields
+        websiteUrl: '',
+        location: '',
+        goal: 'website_consultation',
+        phone: ''
       };
+      
+      console.log("Sending formatted data to Supabase:", formData);
       
       const response = await fetch(functionUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`
         },
         body: JSON.stringify(formData)
       });
       
       if (!response.ok) {
-        throw new Error('Failed to submit consultation request');
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
+        throw new Error(errorData.message || 'Network response was not ok');
       }
+      
+      const responseData = await response.json();
+      console.log("Form submission successful:", responseData);
       
       toast({
         title: "Request sent!",
@@ -80,7 +94,7 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
       });
       
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting form:", error);
       
       toast({
