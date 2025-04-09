@@ -45,7 +45,7 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex"
             >
-              <div className="h-full flex flex-col items-center justify-center p-6 w-full">
+              <div className="h-full flex flex-col items-center justify-between p-6 w-full">
                 <div className="flex items-center justify-center mb-5 h-24 w-full">
                   <img 
                     src={tool.logoSrc} 
@@ -53,12 +53,14 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
                     className="max-h-full max-w-full object-contain" 
                   />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">
-                  {tool.name}
-                </h3>
-                <p className="text-gray-700 text-center">
-                  {tool.description}
-                </p>
+                <div className="text-center">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 h-8">
+                    {tool.name}
+                  </h3>
+                  <p className="text-gray-700">
+                    {tool.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
