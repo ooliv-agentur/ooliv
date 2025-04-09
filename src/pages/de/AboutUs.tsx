@@ -6,8 +6,15 @@ import { Link } from 'react-router-dom';
 import PageHero from '@/components/PageHero';
 import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { Users, Target, Briefcase, Globe, Award, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Separator } from '@/components/ui/separator';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -31,6 +38,29 @@ const GermanAboutUs = () => {
     'Bau / Immobilien',
     'Lebensmittel / Restaurant',
     'Beratung / Dienstleistungen'
+  ];
+
+  const faqItems = [
+    {
+      question: "Was unterscheidet ooliv von anderen Marketing Agenturen in Mainz?",
+      answer: "Als spezialisierte Marketing Agentur in Mainz verbinden wir strategisches Denken mit praktischer Umsetzung. Bei uns arbeiten Sie direkt mit dem Gründer zusammen, was kurze Entscheidungswege und ein tiefes Verständnis für Ihre Ziele garantiert."
+    },
+    {
+      question: "Welche Leistungen bietet ooliv als Marketing Agentur an?",
+      answer: "Wir bieten ein Komplettpaket digitaler Marketingdienstleistungen – von Webdesign und -entwicklung über SEO und Content-Erstellung bis hin zu Google Ads und KI-Technologien. Als Marketing Agentur in Mainz konzentrieren wir uns auf messbare Ergebnisse und langfristigen Geschäftserfolg."
+    },
+    {
+      question: "Für welche Branchen arbeitet eure Marketing Agentur in Mainz?",
+      answer: "Wir haben besondere Expertise in B2B-Bereichen wie SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Als Marketing Agentur mit Sitz in Mainz unterstützen wir sowohl lokale Unternehmen als auch Kunden im gesamten DACH-Raum."
+    },
+    {
+      question: "Wie ist der typische Projektablauf mit eurer Marketing Agentur?",
+      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team in Mainz entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Marketing Agentur begleiten wir Sie von der ersten Idee bis zur langfristigen Betreuung."
+    },
+    {
+      question: "Arbeitet ihr als Marketing Agentur auch mit KI-Tools?",
+      answer: "Ja, wir nutzen modernste KI-Tools zur Effizienzsteigerung. Als zukunftsorientierte Marketing Agentur in Mainz setzen wir auf eine sinnvolle Balance zwischen technologischer Innovation und menschlicher Kreativität."
+    }
   ];
 
   return (
@@ -350,34 +380,24 @@ const GermanAboutUs = () => {
             </p>
           </div>
           
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {[
-              {
-                question: "Was unterscheidet ooliv von anderen Marketing Agenturen in Mainz?",
-                answer: "Als spezialisierte Marketing Agentur in Mainz verbinden wir strategisches Denken mit praktischer Umsetzung. Bei uns arbeiten Sie direkt mit dem Gründer zusammen, was kurze Entscheidungswege und ein tiefes Verständnis für Ihre Ziele garantiert."
-              },
-              {
-                question: "Welche Leistungen bietet ooliv als Marketing Agentur an?",
-                answer: "Wir bieten ein Komplettpaket digitaler Marketingdienstleistungen – von Webdesign und -entwicklung über SEO und Content-Erstellung bis hin zu Google Ads und KI-Technologien. Als Marketing Agentur in Mainz konzentrieren wir uns auf messbare Ergebnisse und langfristigen Geschäftserfolg."
-              },
-              {
-                question: "Für welche Branchen arbeitet eure Marketing Agentur in Mainz?",
-                answer: "Wir haben besondere Expertise in B2B-Bereichen wie SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Als Marketing Agentur mit Sitz in Mainz unterstützen wir sowohl lokale Unternehmen als auch Kunden im gesamten DACH-Raum."
-              },
-              {
-                question: "Wie ist der typische Projektablauf mit eurer Marketing Agentur?",
-                answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team in Mainz entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Marketing Agentur begleiten wir Sie von der ersten Idee bis zur langfristigen Betreuung."
-              },
-              {
-                question: "Arbeitet ihr als Marketing Agentur auch mit KI-Tools?",
-                answer: "Ja, wir nutzen modernste KI-Tools zur Effizienzsteigerung. Als zukunftsorientierte Marketing Agentur in Mainz setzen wir auf eine sinnvolle Balance zwischen technologischer Innovation und menschlicher Kreativität."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="text-xl font-bold mb-3 text-brand-heading">{faq.question}</h3>
-                <p className="text-brand-text">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqItems.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+                >
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 text-brand-text">
+                    <Separator className="mb-4" />
+                    <p>{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
