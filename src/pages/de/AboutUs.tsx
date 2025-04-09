@@ -19,7 +19,6 @@ const GermanAboutUs = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section using PageHero component */}
       <PageHero 
         badge="Über ooliv"
         title="Marketing Agentur Mainz"
@@ -30,7 +29,7 @@ const GermanAboutUs = () => {
         }}
         secondaryCta={{
           text: "Referenzen ansehen",
-          link: "/de/referenzen"
+          link: "/case-studies"
         }}
       />
 
@@ -359,4 +358,3 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
-
