@@ -1,9 +1,6 @@
-
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { 
   Lock, 
   Database, 
@@ -36,12 +33,8 @@ const PrivacyPolicy = () => {
         title="Your Data, Your Rights"
         subtitle="How we handle, store, and protect your personal information. This privacy policy explains what data we collect, how we use it, and how you can exercise your rights under the GDPR."
         primaryCta={{
-          text: "Read Full Policy",
-          link: "#policy"
-        }}
-        secondaryCta={{
-          text: "Contact Data Officer",
-          link: "/contact"
+          text: "",
+          link: ""
         }}
       />
 
@@ -53,7 +46,7 @@ const PrivacyPolicy = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Privacy Policy</h2>
             <p className="text-lg text-brand-text/80 max-w-2xl mx-auto">
-              At ooliv GmbH, we take your privacy seriously. This policy details how we collect, use, and protect your information.
+              At ooliv, we take your privacy seriously. This policy details how we collect, use, and protect your information.
             </p>
           </div>
 

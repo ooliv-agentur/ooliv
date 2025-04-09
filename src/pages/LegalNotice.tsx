@@ -1,10 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
+import { Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const LegalNotice = () => {
@@ -14,12 +11,8 @@ const LegalNotice = () => {
         title="Legal Notice & Company Details"
         subtitle="Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv."
         primaryCta={{
-          text: "Start Your Project",
-          link: "/contact"
-        }}
-        secondaryCta={{
-          text: "Contact Us",
-          link: "/contact"
+          text: "",
+          link: ""
         }}
       />
 
@@ -114,6 +107,8 @@ const LegalNotice = () => {
               </div>
             </div>
           </div>
+          
+          <div className="mt-32"></div>
         </div>
       </section>
     </PageLayout>

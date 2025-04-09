@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
@@ -41,8 +42,8 @@ const GermanPrivacyPolicy = () => {
         title="Ihre Daten, Ihre Rechte"
         subtitle="Wie wir mit Ihren persönlichen Informationen umgehen, sie speichern und schützen. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und wie Sie Ihre Rechte gemäß der DSGVO ausüben können."
         primaryCta={{
-          text: "Vollständige Erklärung lesen",
-          link: "#policy"
+          text: "",
+          link: ""
         }}
       />
 
@@ -54,7 +55,7 @@ const GermanPrivacyPolicy = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Datenschutzerklärung</h2>
             <p className="text-lg text-brand-text/80 max-w-2xl mx-auto">
-              Bei ooliv GmbH nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
+              Bei ooliv nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
             </p>
           </div>
 
@@ -182,6 +183,9 @@ const GermanPrivacyPolicy = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          {/* Adding more space before footer */}
+          <div className="mt-32"></div>
         </div>
       </section>
     </PageLayout>
