@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -68,14 +67,12 @@ const GermanCaseStudies = () => {
       />
       
       <div className="section-container">
-        {/* Global Case Studies Section */}
         <CaseStudiesSection 
           customTitle="Echte Ergebnisse von echten Kunden"
           customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
           customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
         />
         
-        {/* What Makes These Projects Work */}
         <div className="py-20 bg-brand-backgroundAlt">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -101,22 +98,18 @@ const GermanCaseStudies = () => {
           </div>
         </div>
         
-        {/* FAQ Section - Use the reusable FAQ component */}
         <FAQ 
           customFaqs={faqItems}
           customTitle="Häufige Fragen zu Projekten & Marketing Mainz"
           customCtaText="Weitere Fragen? Kontaktieren Sie uns"
         />
 
-        {/* Final CTA Section */}
         <CTA 
           title="Lassen Sie uns Ihre Erfolgsgeschichte schreiben"
           subtitle="Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um."
           primaryCta="Projekt starten"
           secondaryCta="Strategiegespräch buchen"
           secondaryCtaLink="/de/kontakt"
-          footerNote="100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind"
-          lightBackground={true}
         />
       </div>
     </PageLayout>
