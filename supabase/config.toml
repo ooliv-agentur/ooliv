@@ -2,4 +2,4 @@
 project_id = "ycloufmcjjfvjxhmslbm"
 
 [functions.sendProjectForm]
-verify_jwt = false
+verify_jwt = true
