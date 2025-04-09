@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
@@ -21,17 +22,17 @@ const GermanAiTechnologies = () => {
   const aiTools = [
     {
       name: "ChatGPT",
-      logoSrc: "/chatgpt-logo.svg",
+      logoSrc: "/lovable-uploads/chatgpt.png",
       description: "Texte, FAQs, SEO-Snippets und Übersetzungen – entwickelt mit KI, veredelt von unseren Redakteur:innen."
     },
     {
       name: "Midjourney",
-      logoSrc: "/midjourney-logo.svg", 
+      logoSrc: "/lovable-uploads/Midjourney.png", 
       description: "Individuelle Visuals & Illustrationen für Marken, die keine Stockfotos wollen."
     },
     {
       name: "Sora (Video AI)",
-      logoSrc: "/sora-logo.svg",
+      logoSrc: "/lovable-uploads/sora.png",
       description: "Animierte Videoelemente, Hintergrundvideos und Motion Design – auf Ihre Marke zugeschnitten."
     }
   ];

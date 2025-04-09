@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
@@ -16,17 +17,17 @@ const AiTechnologies = () => {
   const aiTools = [
     {
       name: "ChatGPT",
-      logoSrc: "/chatgpt-logo.svg",
+      logoSrc: "/lovable-uploads/chatgpt.png",
       description: "Used for content drafts, metadata, FAQs and SEO snippets – always refined and finalized by our editorial team."
     },
     {
       name: "Midjourney",
-      logoSrc: "/midjourney-logo.svg",
+      logoSrc: "/lovable-uploads/Midjourney.png",
       description: "For expressive, custom visuals that go beyond stock photos – especially when no photo assets exist."
     },
     {
       name: "Sora (Video AI)",
-      logoSrc: "/sora-logo.svg",
+      logoSrc: "/lovable-uploads/sora.png",
       description: "Ideal for short motion clips or atmospheric video backgrounds – tailored to your brand and message."
     }
   ];
