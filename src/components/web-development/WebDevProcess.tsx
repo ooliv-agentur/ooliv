@@ -74,7 +74,7 @@ const WebDevProcess = () => {
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-backgroundAlt"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-7"> {/* Reduced vertical spacing between steps */}
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -82,42 +82,47 @@ const WebDevProcess = () => {
                 className="opacity-0 transition-all duration-500 delay-[var(--delay)]"
                 style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
               >
-                <div className="relative flex">
-                  {/* Step Number (centered on timeline) */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="w-14 h-14 rounded-full bg-brand-primary flex items-center justify-center shadow-md">
-                      <span className="text-white text-xl font-bold">{step.number}</span>
+                <div className="relative flex items-center">
+                  {/* Content boxes with number circles aligned to top of each box */}
+                  {index % 2 === 0 ? (
+                    <div className="grid grid-cols-2 w-full">
+                      {/* Left side (even steps) */}
+                      <div className="pr-8 flex justify-end">
+                        <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg relative">
+                          {/* Number circle aligned with the top of content box */}
+                          <div className="absolute -right-12 top-6 z-10">
+                            <div className="w-12 h-12 rounded-full bg-brand-primary flex items-center justify-center shadow-md">
+                              <span className="text-white text-lg font-bold">{step.number}</span>
+                            </div>
+                          </div>
+                          <h3 className="text-xl font-bold mb-2 text-brand-heading text-right">
+                            {step.title}
+                          </h3>
+                          <p className="text-brand-text text-right">{step.description}</p>
+                        </div>
+                      </div>
+                      <div className="pl-8"></div>
                     </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 w-full">
-                    {/* Left Side (even steps) */}
-                    {index % 2 === 0 ? (
-                      <>
-                        <div className="pr-12 flex justify-end">
-                          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg">
-                            <h3 className="text-xl font-bold mb-2 text-brand-heading text-right">
-                              {step.title}
-                            </h3>
-                            <p className="text-brand-text text-right">{step.description}</p>
+                  ) : (
+                    <div className="grid grid-cols-2 w-full">
+                      {/* Right side (odd steps) */}
+                      <div className="pr-8"></div>
+                      <div className="pl-8">
+                        <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg relative">
+                          {/* Number circle aligned with the top of content box */}
+                          <div className="absolute -left-12 top-6 z-10">
+                            <div className="w-12 h-12 rounded-full bg-brand-primary flex items-center justify-center shadow-md">
+                              <span className="text-white text-lg font-bold">{step.number}</span>
+                            </div>
                           </div>
+                          <h3 className="text-xl font-bold mb-2 text-brand-heading">
+                            {step.title}
+                          </h3>
+                          <p className="text-brand-text">{step.description}</p>
                         </div>
-                        <div className="pl-12"></div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="pr-12"></div>
-                        <div className="pl-12">
-                          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg">
-                            <h3 className="text-xl font-bold mb-2 text-brand-heading">
-                              {step.title}
-                            </h3>
-                            <p className="text-brand-text">{step.description}</p>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -125,14 +130,15 @@ const WebDevProcess = () => {
         </div>
         
         {/* Mobile Cards View */}
-        <div className="lg:hidden space-y-8">
+        <div className="lg:hidden space-y-6"> {/* Reduced spacing for mobile */}
           {steps.map((step, index) => (
             <div 
               key={index}
               ref={(el) => (stepRefs.current[index + steps.length] = el)}
-              className="relative bg-white p-6 rounded-lg shadow-md border border-gray-100 opacity-0 transition-all duration-500"
+              className="relative bg-white p-6 rounded-lg shadow-md border border-gray-100 opacity-0 transition-all duration-500 mt-8"
               style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
             >
+              {/* Number placed at the top center of each box */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-5 h-10 w-10 bg-brand-primary rounded-full flex items-center justify-center shadow-md">
                 <span className="text-white font-bold">{step.number}</span>
               </div>
