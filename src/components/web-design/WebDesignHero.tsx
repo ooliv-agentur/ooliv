@@ -34,10 +34,7 @@ const WebDesignHero = () => {
           link: "#",
           onClick: () => window.dispatchEvent(new Event('open-lead-form'))
         }}
-        secondaryCta={{
-          text: isGerman ? "Strategiegespräch vereinbaren" : "Book a Strategy Call",
-          link: isGerman ? "/kontakt" : "/en/contact"
-        }}
+        // Removed the secondary CTA completely
       />
       <ScrollIndicator />
     </div>
