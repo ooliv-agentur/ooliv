@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +17,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Mail } from 'lucide-react';
 
-// Form schema with validation
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -53,7 +51,6 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
     try {
       const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
       
-      // Format the data to match what the function expects
       const formData = {
         projectType: "consultation",
         companyName: data.company || '',
@@ -61,7 +58,6 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         name: data.name,
         email: data.email,
         message: data.message || '',
-        // Add empty values for required fields
         websiteUrl: '',
         location: '',
         goal: 'website_consultation',
@@ -119,7 +115,6 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <div className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -211,7 +206,6 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
               )}
             </div>
             
-            {/* Contact Info */}
             <div className="flex flex-col justify-center">
               <div className="space-y-8">
                 <div>

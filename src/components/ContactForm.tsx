@@ -36,7 +36,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
   });
   const [validationErrors, setValidationErrors] = React.useState<{[key: string]: string}>({});
   
-  // Reset the form when dialog opens/closes
   React.useEffect(() => {
     if (open) {
       setFormValues({
@@ -75,7 +74,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
       [name]: value
     }));
     
-    // Clear validation error when field is being edited
     if (validationErrors[name]) {
       setValidationErrors(prev => {
         const updated = {...prev};
@@ -140,7 +138,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
       
       const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
       
-      // Format the data to match what the function expects
       const formData = {
         projectType: formType,
         companyName: '',
@@ -148,7 +145,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         name: formValues.name,
         email: formValues.email,
         message: formValues.message,
-        // Add empty values for required fields
         websiteUrl: '',
         location: '',
         goal: formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration'),
