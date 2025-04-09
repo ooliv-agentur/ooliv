@@ -17,7 +17,6 @@ import AiTechnologies from "./pages/AiTechnologies";
 import CaseStudies from "./pages/CaseStudies";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import Careers from "./pages/Careers";
 import LegalNotice from "./pages/LegalNotice";
 import DataPrivacy from "./pages/DataPrivacy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -34,7 +33,6 @@ import GermanAiTechnologies from "./pages/de/AiTechnologies";
 import GermanCaseStudies from "./pages/de/CaseStudies";
 import GermanAboutUs from "./pages/de/AboutUs";
 import GermanContact from "./pages/de/Contact";
-import GermanCareers from "./pages/de/Careers";
 import GermanLegalNotice from "./pages/de/LegalNotice";
 import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
 
@@ -61,7 +59,6 @@ const App = () => (
               <Route path="/case-studies" element={<GermanCaseStudies />} />
               <Route path="/ueber-ooliv" element={<GermanAboutUs />} />
               <Route path="/kontakt" element={<GermanContact />} />
-              <Route path="/karriere" element={<GermanCareers />} />
               <Route path="/impressum" element={<GermanLegalNotice />} />
               <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
               
@@ -76,28 +73,9 @@ const App = () => (
               <Route path="/en/case-studies" element={<CaseStudies />} />
               <Route path="/en/about-ooliv" element={<AboutUs />} />
               <Route path="/en/contact" element={<Contact />} />
-              <Route path="/en/careers" element={<Careers />} />
               <Route path="/en/legal-notice" element={<LegalNotice />} />
               <Route path="/en/data-privacy" element={<DataPrivacy />} />
               <Route path="/en/privacy-policy" element={<PrivacyPolicy />} />
-              
-              {/* Legacy redirects for old German paths */}
-              <Route path="/de" element={<Navigate to="/" replace />} />
-              <Route path="/de/webdesign" element={<Navigate to="/webdesign" replace />} />
-              <Route path="/de/webentwicklung" element={<Navigate to="/webentwicklung" replace />} />
-              <Route path="/de/content-erstellung" element={<Navigate to="/content-erstellung" replace />} />
-              <Route path="/de/seo-optimierung" element={<Navigate to="/seo-optimierung" replace />} />
-              <Route path="/de/google-ads" element={<Navigate to="/google-ads" replace />} />
-              <Route path="/de/ki-technologien" element={<Navigate to="/ki-technologien" replace />} />
-              <Route path="/de/case-studies" element={<Navigate to="/case-studies" replace />} />
-              <Route path="/de/ueber-ooliv" element={<Navigate to="/ueber-ooliv" replace />} />
-              <Route path="/de/kontakt" element={<Navigate to="/kontakt" replace />} />
-              <Route path="/de/karriere" element={<Navigate to="/karriere" replace />} />
-              <Route path="/de/impressum" element={<Navigate to="/impressum" replace />} />
-              <Route path="/de/datenschutz" element={<Navigate to="/datenschutz" replace />} />
-              
-              {/* Legacy redirects for old English paths */}
-              <Route path="/lead-generation" element={<Navigate to="/google-ads" replace />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

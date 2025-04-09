@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -16,7 +15,6 @@ const Footer = () => {
     'google-ads': 'google-ads',
     'ai-technologies': language === 'de' ? 'ki-technologien' : 'ai-technologies',
     'case-studies': 'case-studies',
-    'careers': language === 'de' ? 'karriere' : 'careers',
     'contact': language === 'de' ? 'kontakt' : 'contact',
     'privacy-policy': language === 'de' ? 'datenschutz' : 'privacy-policy',
     'legal-notice': language === 'de' ? 'impressum' : 'legal-notice',
@@ -63,7 +61,6 @@ const Footer = () => {
               <li><Link to={getUrl('about-ooliv')} className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</Link></li>
               <li><Link to={getUrl('case-studies')} className="text-white hover:text-brand-background transition-colors">Case Studies</Link></li>
               <li><Link to={getUrl('contact')} className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</Link></li>
-              <li><Link to={getUrl('careers')} className="text-white hover:text-brand-background transition-colors">{t('footer.jobs')}</Link></li>
             </ul>
           </div>
 
