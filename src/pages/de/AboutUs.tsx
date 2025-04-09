@@ -8,7 +8,6 @@ import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import { Users, Target, Briefcase, Globe, Award, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import SEOCtaDE from '@/components/seo/SEOCtaDE';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -307,8 +306,6 @@ const GermanAboutUs = () => {
           </div>
         </div>
       </section>
-
-      <SEOCtaDE />
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
