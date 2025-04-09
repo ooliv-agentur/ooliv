@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -145,7 +144,7 @@ const PageHero = ({
       secondary.onClick = undefined;
     }
     
-    // If primary CTA is a "Start Project" button, make it open the lead form instead of linking
+    // If primary CTA is a "Projekt starten" button, make it open the lead form instead of linking
     const shouldOpenLeadForm = isPrimaryCtaProjectStart(primary.text) || primary.onClick === handleOpenLeadForm;
     
     return (
