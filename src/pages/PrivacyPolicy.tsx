@@ -2,8 +2,6 @@
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { 
   Lock, 
   Database, 
@@ -24,23 +22,25 @@ import {
 const PrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
   
-  const scrollToPolicy = () => {
-    if (policyRef.current) {
-      policyRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+  // Handler for opening the lead form
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
   };
 
   return (
     <PageLayout className="overflow-x-hidden">
       <LegalHero
+        badge="Privacy"
         title="Your Data, Your Rights"
         subtitle="How we handle, store, and protect your personal information. This privacy policy explains what data we collect, how we use it, and how you can exercise your rights under the GDPR."
         primaryCta={{
-          text: "Read Full Policy",
-          link: "#policy"
+          text: "Start Your Project",
+          link: "#",
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
-          text: "Contact Data Officer",
+          text: "Schedule a Strategy Call",
           link: "/contact"
         }}
       />
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Privacy Policy</h2>
             <p className="text-lg text-brand-text/80 max-w-2xl mx-auto">
-              At ooliv GmbH, we take your privacy seriously. This policy details how we collect, use, and protect your information.
+              At ooliv, we take your privacy seriously. This policy details how we collect, use, and protect your information.
             </p>
           </div>
 
@@ -182,14 +182,8 @@ const PrivacyPolicy = () => {
             </AccordionItem>
           </Accordion>
 
-          <div className="flex justify-center mt-12">
-            <Button asChild variant="outline" className="mr-4">
-              <Link to="/legal-notice">View Legal Notice</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/contact">Contact Our Data Officer</Link>
-            </Button>
-          </div>
+          {/* Added extra spacing before the footer */}
+          <div className="pb-16"></div>
         </div>
       </section>
     </PageLayout>

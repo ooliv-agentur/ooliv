@@ -8,17 +8,20 @@ interface LegalHeroProps {
   primaryCta: {
     text: string;
     link: string;
+    onClick?: (e: React.MouseEvent) => void;
   };
   secondaryCta?: {
     text: string;
     link: string;
+    onClick?: (e: React.MouseEvent) => void;
   };
+  badge?: string;
 }
 
-const LegalHero = ({ title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
+const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHeroProps) => {
   return (
     <PageHero
-      badge="Impressum"
+      badge={badge}
       title={title}
       subtitle={subtitle}
       primaryCta={primaryCta}

@@ -2,8 +2,6 @@
 import React, { useRef, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { 
   Lock, 
   Database, 
@@ -37,18 +35,26 @@ const GermanPrivacyPolicy = () => {
     }
   };
 
+  // Handler for opening the lead form
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
     <PageLayout className="overflow-x-hidden">
       <LegalHero
+        badge="Datenschutz"
         title="Ihre Daten, Ihre Rechte"
         subtitle="Wie wir mit Ihren persönlichen Informationen umgehen, sie speichern und schützen. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und wie Sie Ihre Rechte gemäß der DSGVO ausüben können."
         primaryCta={{
-          text: "Vollständige Erklärung lesen",
-          link: "#policy"
+          text: "Projekt starten",
+          link: "#",
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
-          text: "Datenschutzbeauftragten kontaktieren",
-          link: "/de/contact"
+          text: "Strategiegespräch vereinbaren",
+          link: "/de/kontakt"
         }}
       />
 
@@ -60,7 +66,7 @@ const GermanPrivacyPolicy = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Datenschutzerklärung</h2>
             <p className="text-lg text-brand-text/80 max-w-2xl mx-auto">
-              Bei ooliv GmbH nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
+              Bei ooliv nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
             </p>
           </div>
 
@@ -189,14 +195,8 @@ const GermanPrivacyPolicy = () => {
             </AccordionItem>
           </Accordion>
 
-          <div className="flex justify-center mt-12">
-            <Button asChild variant="outline" className="mr-4">
-              <Link to="/de/legal-notice">Impressum ansehen</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/de/contact">Datenschutzbeauftragten kontaktieren</Link>
-            </Button>
-          </div>
+          {/* Added extra spacing before the footer */}
+          <div className="pb-16"></div>
         </div>
       </section>
     </PageLayout>
