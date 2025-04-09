@@ -3,6 +3,8 @@ import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
 import { Building, FileText, AlertTriangle, Phone, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const LegalNotice = () => {
   return (
@@ -115,6 +117,12 @@ const LegalNotice = () => {
           <div className="mt-32"></div>
         </div>
       </section>
+
+      <div className="flex justify-center mt-12">
+        <Button asChild>
+          <Link to="/contact">Contact Our Data Officer</Link>
+        </Button>
+      </div>
     </PageLayout>
   );
 };
