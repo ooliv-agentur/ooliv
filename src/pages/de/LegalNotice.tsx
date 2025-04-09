@@ -21,6 +21,10 @@ const GermanLegalNotice = () => {
           text: "",
           link: ""
         }}
+        secondaryCta={{
+          text: "",
+          link: ""
+        }}
       />
       
       <section className="py-16">

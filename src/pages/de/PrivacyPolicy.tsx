@@ -44,6 +44,10 @@ const GermanPrivacyPolicy = () => {
           text: "",
           link: ""
         }}
+        secondaryCta={{
+          text: "",
+          link: ""
+        }}
       />
 
       <section className="section-standard" ref={policyRef} id="policy">

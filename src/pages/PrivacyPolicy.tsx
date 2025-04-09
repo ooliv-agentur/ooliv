@@ -36,6 +36,10 @@ const PrivacyPolicy = () => {
           text: "",
           link: ""
         }}
+        secondaryCta={{
+          text: "",
+          link: ""
+        }}
       />
 
       <section className="section-standard" ref={policyRef} id="policy">
