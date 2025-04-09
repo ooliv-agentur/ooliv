@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -316,7 +315,6 @@ const GermanGoogleAds = () => {
         title="Lassen Sie uns Ihre Google Ads messbar machen"
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
-        secondaryCta="Kostenlose Analyse anfordern"
       />
       
       {/* Footer text for "100+ projects" we need to add directly to the page instead of as children to CTA */}

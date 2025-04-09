@@ -293,7 +293,6 @@ const GoogleAds = () => {
         title="Let's Turn Google Ads Into a Scalable Sales Channel"
         subtitle="With our data-driven approach, we'll help you improve ROI, lower lead costs, and build campaigns that deliver measurable growth."
         primaryCta="Launch Your Campaign"
-        secondaryCta="Request Free Audit"
       />
 
       {/* New Claim Section */}
