@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Accordion,
@@ -20,13 +19,18 @@ interface FAQProps {
   customFaqs?: FAQItem[];
   customTitle?: string;
   customCtaText?: string;
+  hideCTA?: boolean;
 }
 
-const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
+const FAQ = ({ 
+  customFaqs, 
+  customTitle, 
+  customCtaText, 
+  hideCTA = false
+}: FAQProps) => {
   const { language, t } = useLanguage();
   const isGerman = language === 'de';
   
-  // Default FAQs (used if no custom FAQs are provided)
   const defaultFaqs = [
     {
       question: isGerman ? "Wie läuft der Website-Erstellungsprozess bei ooliv ab?" : "What is your website creation process?",
@@ -60,13 +64,10 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
     }
   ];
   
-  // Use custom FAQs if provided, otherwise use default FAQs
   const faqs = customFaqs || defaultFaqs;
   
-  // Use custom title if provided, otherwise use default title
   const title = customTitle || (isGerman ? "Häufig gestellte Fragen" : "Frequently Asked Questions");
   
-  // Use custom CTA text if provided, otherwise use default
   const ctaText = customCtaText || (isGerman ? "Weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
   
   return (
@@ -95,14 +96,16 @@ const FAQ = ({ customFaqs, customTitle, customCtaText }: FAQProps) => {
           ))}
         </Accordion>
         
-        <div className="mt-12 text-center">
-          <Button asChild variant="outline" className="rounded-full">
-            <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
-              <Plus className="h-4 w-4" />
-              {ctaText}
-            </Link>
-          </Button>
-        </div>
+        {!hideCTA && (
+          <div className="mt-12 text-center">
+            <Button asChild variant="outline" className="rounded-full">
+              <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
+                <Plus className="h-4 w-4" />
+                {ctaText}
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

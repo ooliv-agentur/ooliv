@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { 
@@ -308,7 +307,7 @@ const GermanContact = () => {
             answer: "Nach Ihrer Anfrage werden wir uns zeitnah bei Ihnen melden, um Ihre Anforderungen zu besprechen. Anschließend erhalten Sie ein maßgeschneidertes Angebot für Ihr Projekt."
           }
         ]}
-        customCtaText="Weitere Fragen? Nehmen Sie Kontakt auf"
+        hideCTA={true}
       />
     </PageLayout>
   );
