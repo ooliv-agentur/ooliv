@@ -50,19 +50,25 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
     setIsSubmitting(true);
     
     try {
-      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
+      console.log("Preparing submission data:", data);
       
       // Format the data to match what the function expects
       const formData = {
         projectType: "consultation",
         companyName: data.company || '',
         industry: '',
+        websiteUrl: '',
+        location: '',
+        goal: 'consultation',
         name: data.name,
         email: data.email,
+        phone: '',
         message: data.message || ''
       };
       
-      const response = await fetch(functionUrl, {
+      console.log("Sending data to Supabase:", formData);
+      
+      const response = await fetch(`https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,9 +76,16 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         body: JSON.stringify(formData)
       });
       
+      console.log("Response status:", response.status);
+      
       if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
         throw new Error('Failed to submit consultation request');
       }
+      
+      const responseData = await response.json();
+      console.log("Response from server:", responseData);
       
       toast({
         title: "Request sent!",

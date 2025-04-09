@@ -37,8 +37,12 @@ export const useFormSubmission = (
       message: data.message || ''
     };
     
+    console.log("Sending to Supabase:", formData);
+    
     try {
       const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
+      
+      console.log("Using function URL:", functionUrl);
       
       const response = await fetch(functionUrl, {
         method: "POST",
@@ -49,13 +53,17 @@ export const useFormSubmission = (
         signal: abortController.signal
       });
       
+      console.log("Response status:", response.status);
+      
       if (!response.ok) {
         const errorData = await response.json();
         console.error("Server error details:", errorData);
         throw new Error(errorData.message || 'Network response was not ok');
       }
       
-      await response.json();
+      const responseData = await response.json();
+      console.log("Response from server:", responseData);
+      
       setIsSubmitting(false);
       onSuccess();
       
@@ -67,6 +75,7 @@ export const useFormSubmission = (
       });
     } catch (error: any) {
       if (error.name === 'AbortError') {
+        console.log("Request was aborted");
         return;
       }
       
