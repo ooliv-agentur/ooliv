@@ -4,7 +4,7 @@ import PageLayout from '@/components/PageLayout';
 import WebDevHero from '@/components/web-development/WebDevHeroDE';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
 import WebDevServices from '@/components/web-development/WebDevServicesDE';
-import WebDevProcess from '@/components/web-development/WebDevProcessDE';
+import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -47,7 +47,7 @@ const GermanWebDevelopment = () => {
       <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStaticDE />
-      <WebDevProcess />
+      <WebDevProcessNewDE />
       <WebDevServices />
       
       {/* Global Case Studies Section */}

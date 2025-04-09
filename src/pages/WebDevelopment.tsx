@@ -4,7 +4,7 @@ import PageLayout from '@/components/PageLayout';
 import WebDevHero from '@/components/web-development/WebDevHero';
 import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
-import WebDevProcess from '@/components/web-development/WebDevProcess';
+import WebDevProcessNew from '@/components/web-development/WebDevProcessNew';
 import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
 import FAQ from '@/components/FAQ';
@@ -39,7 +39,7 @@ const WebDevelopment = () => {
       <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStatic />
-      <WebDevProcess />
+      <WebDevProcessNew />
       <WebDevServices />
       
       {/* Global Case Studies Section */}
