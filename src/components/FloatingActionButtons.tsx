@@ -28,10 +28,13 @@ const FloatingActionButtons = () => {
       setShowLeadForm(true);
     };
     
-    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    // Listen for both events to ensure compatibility
+    document.addEventListener('open-lead-form', handleOpenLeadForm);
+    document.addEventListener('open-lead-generation', handleOpenLeadForm);
     
     return () => {
-      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+      document.removeEventListener('open-lead-form', handleOpenLeadForm);
+      document.removeEventListener('open-lead-generation', handleOpenLeadForm);
     };
   }, []);
 

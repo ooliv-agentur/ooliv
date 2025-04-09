@@ -90,13 +90,14 @@ const ContactCard: React.FC<ContactCardProps> = ({
 const GermanContact = () => {
   const { setLanguage } = useLanguage();
   const [showAuditForm, setShowAuditForm] = useState(false);
+  const [showLeadForm, setShowLeadForm] = useState(false);
   
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
   const handleOpenSidebarForm = () => {
-    document.dispatchEvent(new CustomEvent('open-lead-generation'));
+    document.dispatchEvent(new CustomEvent('open-lead-form'));
   };
 
   const handleRequestAudit = () => {
@@ -157,7 +158,7 @@ const GermanContact = () => {
               <ContactCard 
                 icon={<MessageCircle className="h-6 w-6 text-blue-600" />} 
                 color="blue"
-                title="Chat starten"
+                title="WhatsApp-Chat"
                 description="Direkter WhatsApp-Chat"
                 buttonText="WhatsApp öffnen"
                 href="http://wa.me/+4917680167641"
