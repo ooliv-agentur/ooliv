@@ -1,3 +1,4 @@
+
 import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, Mail, Phone, ArrowRight, Globe, Menu } from 'lucide-react';
@@ -14,7 +15,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
@@ -70,67 +71,24 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
-  const toggleLanguage = () => {
-    const currentPath = location.pathname;
-    
-    if (language === 'en') {
-      setLanguage('de');
-      
-      if (currentPath === '/') {
-        navigate('/de');
-      } else if (currentPath.startsWith('/')) {
-        const pathWithoutLeadingSlash = currentPath.substring(1);
-        navigate(`/de/${pathWithoutLeadingSlash}`);
-      }
-    } else {
-      setLanguage('en');
-      
-      if (currentPath === '/de') {
-        navigate('/');
-      } else if (currentPath.startsWith('/de/')) {
-        const pathWithoutDe = currentPath.substring(4);
-        navigate(pathWithoutDe);
-      }
-    }
-    
-    onClose();
-  };
+  // Remove language toggling functionality since we're German-only now
+  const navigationLinks = [
+    { title: 'Home', path: '/' },
+    { title: 'Webdesign', path: '/webdesign' },
+    { title: 'Webentwicklung', path: '/webentwicklung' },
+    { title: 'Content-Erstellung', path: '/content-erstellung' },
+    { title: 'SEO-Optimierung', path: '/seo-optimierung' },
+    { title: 'Google Ads', path: '/google-ads' },
+    { title: 'KI-Technologien', path: '/ki-technologien' },
+    { title: 'Case Studies', path: '/case-studies' },
+    { title: 'Über ooliv', path: '/ueber-ooliv' },
+    { title: 'Kontakt', path: '/kontakt' }
+  ];
 
-  const getNavigationLinks = () => {
-    if (language === 'de') {
-      return [
-        { title: 'Home', path: '/de' },
-        { title: 'Webdesign', path: '/de/webdesign' },
-        { title: 'Webentwicklung', path: '/de/webentwicklung' },
-        { title: 'Content-Erstellung', path: '/de/content-erstellung' },
-        { title: 'SEO-Optimierung', path: '/de/seo-optimierung' },
-        { title: 'Google Ads', path: '/de/google-ads' },
-        { title: 'KI-Technologien', path: '/de/ki-technologien' },
-        { title: 'Case Studies', path: '/de/case-studies' },
-        { title: 'Über ooliv', path: '/de/ueber-ooliv' },
-        { title: 'Kontakt', path: '/de/kontakt' }
-      ];
-    } else {
-      return [
-        { title: 'Home', path: '/' },
-        { title: 'Web Design', path: '/web-design' },
-        { title: 'Web Development', path: '/web-development' },
-        { title: 'Content Creation', path: '/content-creation' },
-        { title: 'SEO Optimization', path: '/seo-optimization' },
-        { title: 'Google Ads', path: '/google-ads' },
-        { title: 'AI Technologies', path: '/ai-technologies' },
-        { title: 'Case Studies', path: '/case-studies' },
-        { title: 'About ooliv', path: '/about-ooliv' },
-        { title: 'Contact', path: '/contact' }
-      ];
-    }
-  };
-
-  const navigationLinks = getNavigationLinks();
-  
-  const startProjectText = language === 'de' ? 'Projekt starten' : 'Start Your Project';
-  const languageButtonText = language === 'de' ? 'Sprache: Deutsch' : 'Language: English';
-  const switchToText = language === 'de' ? 'Wechseln zu English' : 'Switch to German';
+  // Only use German text now
+  const startProjectText = 'Projekt starten';
+  const menuText = 'Menü';
+  const closeMenuText = 'Menü schließen';
 
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -165,14 +123,14 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
           >
             <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
               {!isDesktop && (
-                <h2 className="text-lg font-semibold text-brand-heading font-sans">{language === 'de' ? 'Menü' : 'Menu'}</h2>
+                <h2 className="text-lg font-semibold text-brand-heading font-sans">{menuText}</h2>
               )}
               <Button 
                 variant="ghost" 
                 size="icon" 
                 className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
                 onClick={onClose}
-                aria-label={language === 'de' ? 'Menü schließen' : 'Close menu'}
+                aria-label={closeMenuText}
               >
                 <X className="h-6 w-6" />
               </Button>
@@ -182,19 +140,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
-              <div className="mb-6 pb-6 border-b border-gray-200">
-                <Button 
-                  variant="outline" 
-                  onClick={toggleLanguage}
-                  className="w-full justify-between py-3 border-gray-300 text-brand-heading hover:bg-gray-100"
-                >
-                  <div className="flex items-center">
-                    <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
-                    <span>{languageButtonText}</span>
-                  </div>
-                  <span className="text-sm opacity-70">{switchToText}</span>
-                </Button>
-              </div>
+              {/* Language switcher removed */}
               
               <nav className={cn(
                 "space-y-4 text-center w-full",
@@ -218,22 +164,10 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             </div>
             
             <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
-              <Button 
-                className="w-full justify-between group text-lg py-6 bg-[#006064] hover:bg-[#004d51] text-white rounded-lg transition-all duration-300 hover:shadow-md hover:scale-[1.02] font-sans" 
-                size="lg"
-                onClick={onClose}
-                asChild
-              >
-                <Link to={language === 'de' ? "/de/kontakt" : "/contact"}>
-                  {startProjectText}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 text-white" />
-                </Link>
-              </Button>
-              
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email", href: "mailto:info@ooliv.de" },
-                  { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Phone", href: "tel:+4961316367801" }
+                  { icon: Mail, label: "E-Mail an ooliv", href: "mailto:info@ooliv.de" },
+                  { icon: Phone, label: "ooliv anrufen", href: "tel:+4961316367801" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}

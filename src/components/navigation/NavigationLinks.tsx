@@ -11,7 +11,7 @@ interface NavigationLinksProps {
 const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
   const location = useLocation();
 
-  // Only use German navigation links
+  // German navigation links only
   const navigationLinks = [
     { title: 'Home', path: '/' },
     { title: 'Webdesign', path: '/webdesign' },
