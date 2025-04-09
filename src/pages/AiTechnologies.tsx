@@ -73,15 +73,7 @@ const AiTechnologies = () => {
         subtitle="With ooliv, AI speeds up the process — but never replaces quality or strategy. Let's create something better, faster, and smarter."
         primaryCta="Start Your Project"
         secondaryCta="Book a Strategy Call"
-      >
-        <section className="mt-12 text-center">
-          <div className="container mx-auto px-4">
-            <p className="text-lg text-brand-text font-medium">
-              100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact
-            </p>
-          </div>
-        </section>
-      </CTA>
+      />
     </PageLayout>
   );
 };

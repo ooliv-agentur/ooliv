@@ -81,15 +81,7 @@ const GermanAiTechnologies = () => {
         subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
         primaryCta="KI-Potenzialanalyse anfordern"
         secondaryCta="Strategiegespräch vereinbaren"
-      >
-        <section className="mt-12 text-center">
-          <div className="container mx-auto px-4">
-            <p className="text-lg text-brand-text font-medium">
-              100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
-            </p>
-          </div>
-        </section>
-      </CTA>
+      />
     </PageLayout>
   );
 };

@@ -119,10 +119,20 @@ const CTA = ({
           <p className="mt-12 text-sm text-brand-text/80 font-semibold">{footerNote}</p>
         )}
         
-        {children && (
+        {children ? (
           <div className="mt-8">
             {children}
           </div>
+        ) : (
+          <section className="mt-12 text-center">
+            <div className="container mx-auto px-4">
+              <p className="text-lg text-brand-text font-medium">
+                {language === 'de' ? 
+                  "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz" :
+                  "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact"}
+              </p>
+            </div>
+          </section>
         )}
       </div>
     </section>

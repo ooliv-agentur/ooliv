@@ -32,9 +32,7 @@ const SEOCtaDE = () => {
         </div>
         
         <p className="text-sm text-brand-text">
-          <span className="font-bold">100+ erfolgreich umgesetzte Projekte</span> • 
-          <span className="mx-2">Vertraut von führenden Unternehmen</span> • 
-          <span className="font-bold">KI-gestützte Strategien für maximale Effizienz</span>
+          100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz
         </p>
       </div>
     </section>

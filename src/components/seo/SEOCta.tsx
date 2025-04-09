@@ -2,8 +2,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { FileCheck } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const SEOCta = () => {
+  const { language } = useLanguage();
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
@@ -31,9 +33,7 @@ const SEOCta = () => {
         </div>
         
         <p className="text-sm text-brand-text">
-          <span className="font-bold">100+ successful projects</span> • 
-          <span className="mx-2">Trusted by leading companies</span> • 
-          <span className="font-bold">AI-powered SEO strategy for maximum impact</span>
+          100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact
         </p>
       </div>
     </section>
