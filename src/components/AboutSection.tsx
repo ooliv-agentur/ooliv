@@ -1,61 +1,54 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { LayoutGrid, Sparkles, Code, PhoneCall } from 'lucide-react';
 
-interface AboutSectionProps {
-  title?: string;
-  description?: string;
-  values?: string[];
-  additionalText?: string;
-}
+const AboutSection = () => {
+  // Define the 4 pillars of service
+  const services = [
+    {
+      title: "Strategy & UX",
+      description: "Clear structure, data-driven decisions, B2B-ready.",
+      icon: <LayoutGrid className="h-6 w-6 text-brand-primary" />
+    },
+    {
+      title: "Content & SEO",
+      description: "Keyword-driven, multilingual, AI-supported.",
+      icon: <Sparkles className="h-6 w-6 text-brand-primary" />
+    },
+    {
+      title: "Design & Development",
+      description: "Custom-coded, conversion-optimized, scalable.",
+      icon: <Code className="h-6 w-6 text-brand-primary" />
+    },
+    {
+      title: "Direct Communication",
+      description: "You always speak directly with the CEO – no detours.",
+      icon: <PhoneCall className="h-6 w-6 text-brand-primary" />
+    }
+  ];
 
-const AboutSection = ({ title, description, values, additionalText }: AboutSectionProps) => {
-  const { language } = useLanguage();
-  
-  // Basecamp text based on language
-  const basecampText = language === 'de' 
-    ? "Wir nutzen Basecamp als zentrale Plattform. Hier laufen Kommunikation, Aufgaben und Dateien zusammen – DSGVO-konform, transparent und effizient."
-    : "We use Basecamp as our central project hub. All tasks, feedback, and files are shared transparently — GDPR-compliant and accessible to everyone involved.";
-  
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            {title || "About ooliv"}
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-brand-heading mb-4 text-center">
+            Strategy Meets Implementation – Directly in Mainz
           </h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto">
-            {description || "We're a specialized digital agency based in Mainz, creating high-quality websites and digital solutions for demanding clients since 2008. Our team combines strategic thinking with technical expertise and creative flair."}
+          <p className="text-xl text-brand-text max-w-3xl mx-auto text-center">
+            We are a specialized digital agency based in Mainz. Since 2008, we have been developing websites that capture the essence of your business – strategically designed, content-rich, and technologically measurable.
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
-            {values && values.map((value, index) => (
-              <div 
-                key={index} 
-                className="bg-brand-background p-6 rounded-lg text-center flex flex-col items-center"
-              >
-                <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Check className="h-6 w-6 text-brand-primary" />
-                </div>
-                <p className="font-semibold text-brand-heading">{value}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          {services.map((service, index) => (
+            <div key={index} className="bg-brand-background/50 p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="mb-4 p-3 rounded-full bg-brand-primary/10 inline-flex">
+                {service.icon}
               </div>
-            ))}
-          </div>
-          
-          {additionalText && (
-            <p className="text-center mt-8 text-brand-text">
-              {additionalText}
-            </p>
-          )}
-          
-          <div className="mt-12 p-6 bg-brand-background/50 rounded-lg border border-gray-100">
-            <p className="text-brand-text text-center">
-              {basecampText}
-            </p>
-          </div>
+              <h3 className="text-xl font-bold mb-2 text-brand-heading">{service.title}</h3>
+              <p className="text-brand-text">{service.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
