@@ -37,12 +37,17 @@ export const useFormSubmission = (
     };
     
     try {
+      const headers = getSupabaseHeaders();
+      console.log("Sending request with headers:", headers);
+      
       const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
-        headers: getSupabaseHeaders(),
+        headers: headers,
         body: JSON.stringify(formData),
         signal: abortController.signal
       });
+      
+      console.log("Response status:", response.status);
       
       if (!response.ok) {
         const errorData = await response.json();

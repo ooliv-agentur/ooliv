@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -62,11 +63,22 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         phone: ''
       };
       
-      await fetch(SEND_PROJECT_FORM_URL, {
+      const headers = getSupabaseHeaders();
+      console.log("ConsultationRequestSection - Headers being sent:", headers);
+      
+      const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
-        headers: getSupabaseHeaders(),
+        headers: headers,
         body: JSON.stringify(formData)
       });
+      
+      console.log("Response status:", response.status);
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Server error details:", errorData);
+        throw new Error(errorData.message || 'Network response was not ok');
+      }
       
       toast({
         title: "Request sent!",
