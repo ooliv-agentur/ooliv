@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
-import { Strategy, ShieldCheck, Lightbulb } from "lucide-react";
+import { LineChart, ShieldCheck, Lightbulb } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AiTechBenefits = () => {
@@ -14,7 +14,7 @@ const AiTechBenefits = () => {
       subtitle: "Our AI tools increase speed, precision, and scalability—without giving up creativity or control. We use AI where it creates measurable benefits—and rely on humans when it matters.",
       cards: [
         {
-          icon: <Strategy className="h-10 w-10 text-brand-primary" />,
+          icon: <LineChart className="h-10 w-10 text-brand-primary" />,
           title: "Strategically Integrated—Not Automated",
           description: "AI supports our workflows—but we make the decisions."
         },
@@ -35,7 +35,7 @@ const AiTechBenefits = () => {
       subtitle: "Unsere KI-Tools steigern Tempo, Präzision und Skalierbarkeit – ohne Kreativität oder Kontrolle aus der Hand zu geben. Wir nutzen KI dort, wo sie messbare Vorteile schafft – und vertrauen auf Menschen, wenn es zählt.",
       cards: [
         {
-          icon: <Strategy className="h-10 w-10 text-brand-primary" />,
+          icon: <LineChart className="h-10 w-10 text-brand-primary" />,
           title: "Strategisch integriert – nicht automatisiert",
           description: "KI unterstützt unsere Workflows – aber Entscheidungen treffen wir."
         },
