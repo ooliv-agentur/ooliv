@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { 
@@ -29,7 +28,6 @@ const GermanContact = () => {
   const { setLanguage } = useLanguage();
   const [showAuditForm, setShowAuditForm] = useState(false);
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
@@ -40,7 +38,6 @@ const GermanContact = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
       <PageHero
         badge="ooliv"
         title="Lassen Sie uns über Ihr Projekt sprechen."
@@ -49,29 +46,22 @@ const GermanContact = () => {
           text: "Projekt starten",
           link: "#"
         }}
-        secondaryCta={{
-          text: "Strategiegespräch buchen",
-          link: "#"
-        }}
       />
 
-      {/* Meet Lisa - Your First Point of Contact */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Image column */}
             <div className="relative h-full flex justify-center md:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <img 
-                  src="/lovable-uploads/8906f535-ee94-4493-8cd8-3a8a6a70ebd9.png" 
-                  alt="Lisa, Content & First Touch at ooliv" 
+                  src="/lovable-uploads/9eb336e5-4bfd-4875-ada9-c37e080ee93c.png" 
+                  alt="Lisa, Content & First Touch bei ooliv" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
                 <div className="absolute inset-0 rounded-lg shadow-inner pointer-events-none"></div>
               </div>
             </div>
             
-            {/* Text column */}
             <div className="flex flex-col justify-center space-y-4 md:pl-8">
               <h2 className="text-3xl font-bold text-brand-heading">Lisa – Ihre erste Ansprechpartnerin</h2>
               <p className="text-lg text-brand-text">
@@ -86,14 +76,11 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Choose How to Reach Us - Icon stack */}
       <section className="section-standard relative overflow-hidden">
-        {/* Soft wave divider top */}
         <div className="absolute top-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
         
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8 items-center py-4">
-            {/* Left column: Icon stack */}
             <div className="flex flex-col items-center md:items-start justify-center space-y-6">
               <div className="bg-blue-100 rounded-full p-4 shadow-sm">
                 <MessageCircle size={32} className="text-blue-600" />
@@ -109,7 +96,6 @@ const GermanContact = () => {
               </div>
             </div>
             
-            {/* Right column: Copy */}
             <div className="flex flex-col justify-center space-y-5">
               <h2 className="text-3xl font-bold text-brand-heading">So erreichen Sie uns</h2>
               <p className="text-lg text-brand-text">
@@ -144,11 +130,9 @@ const GermanContact = () => {
           </div>
         </div>
         
-        {/* Soft wave divider bottom */}
         <div className="absolute bottom-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
       </section>
 
-      {/* Why ooliv? Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <h2 className="section-title text-center">Warum ooliv?</h2>
@@ -175,7 +159,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Contact Details Section */}
       <section className="section-standard">
         <div className="section-container">
           <h2 className="section-title text-center">Kontaktdaten</h2>
@@ -208,7 +191,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <h2 className="section-title">Kontakt-FAQs</h2>
@@ -246,7 +228,6 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Contact Form Dialogs */}
       <ContactForm 
         open={showAuditForm} 
         onOpenChange={setShowAuditForm} 

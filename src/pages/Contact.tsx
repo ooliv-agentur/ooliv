@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { 
@@ -29,7 +28,6 @@ const Contact = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
       <PageHero
         badge="ooliv"
         title="Let's Talk About Your Website Project"
@@ -38,21 +36,15 @@ const Contact = () => {
           text: "Start Your Project",
           link: "#"
         }}
-        secondaryCta={{
-          text: "Book a Strategy Call",
-          link: "#"
-        }}
       />
 
-      {/* Meet Lisa - Your First Contact */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Image column */}
             <div className="relative h-full flex justify-center md:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <img 
-                  src="/lovable-uploads/8906f535-ee94-4493-8cd8-3a8a6a70ebd9.png" 
+                  src="/lovable-uploads/9eb336e5-4bfd-4875-ada9-c37e080ee93c.png" 
                   alt="Lisa, Content & First Touch at ooliv" 
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
@@ -60,7 +52,6 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Text column */}
             <div className="flex flex-col justify-center space-y-4 md:pl-8">
               <h2 className="text-3xl font-bold text-brand-heading">Meet Lisa – Your First Contact</h2>
               <p className="text-lg text-brand-text">
@@ -75,14 +66,11 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Get in Touch - Icon stack */}
       <section className="section-standard relative overflow-hidden">
-        {/* Soft wave divider top */}
         <div className="absolute top-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
         
         <div className="section-container">
           <div className="grid md:grid-cols-2 gap-8 items-center py-4">
-            {/* Left column: Icon stack */}
             <div className="flex flex-col items-center md:items-start justify-center space-y-6">
               <div className="bg-blue-100 rounded-full p-4 shadow-sm">
                 <MessageCircle size={32} className="text-blue-600" />
@@ -98,7 +86,6 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* Right column: Copy */}
             <div className="flex flex-col justify-center space-y-5">
               <h2 className="text-3xl font-bold text-brand-heading">Get in Touch</h2>
               <p className="text-lg text-brand-text">
@@ -133,11 +120,9 @@ const Contact = () => {
           </div>
         </div>
         
-        {/* Soft wave divider bottom */}
         <div className="absolute bottom-0 left-0 w-full h-8 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-primary to-transparent"></div>
       </section>
 
-      {/* Why Work With Us? Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <h2 className="section-title text-center">Why Work With Us?</h2>
@@ -164,7 +149,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Details Section */}
       <section className="section-standard">
         <div className="section-container">
           <h2 className="section-title text-center">Contact Details</h2>
@@ -195,7 +179,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="section-standard bg-gray-50">
         <div className="section-container">
           <h2 className="section-title">Contact FAQs</h2>
@@ -233,7 +216,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form Dialogs */}
       <ContactForm 
         open={showAuditForm} 
         onOpenChange={setShowAuditForm} 
