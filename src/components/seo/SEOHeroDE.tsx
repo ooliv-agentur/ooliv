@@ -14,10 +14,11 @@ const SEOHeroDE = () => {
       }}
       secondaryCta={{
         text: "Kostenloses SEO-Audit anfordern",
-        link: "#"
+        link: "/kontakt"  // Updated to direct link to contact page
       }}
     />
   );
 };
 
 export default SEOHeroDE;
+

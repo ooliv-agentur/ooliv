@@ -14,10 +14,11 @@ const SEOHero = () => {
       }}
       secondaryCta={{
         text: "Request Free SEO Audit",
-        link: "#"
+        link: "/en/contact"  // Updated to direct link to contact page
       }}
     />
   );
 };
 
 export default SEOHero;
+
