@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -14,12 +13,12 @@ interface PageHeroProps {
   primaryCta?: {
     text: string;
     link: string;
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
   };
   secondaryCta?: {
     text: string;
     link: string;
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
   };
   startProjectText?: string;
   seeWorkText?: string;
@@ -42,7 +41,6 @@ const PageHero = ({
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
-  // Check if the CTA text is the strategy call text
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
     return text.includes('Strategiegespräch vereinbaren') || 
@@ -51,17 +49,14 @@ const PageHero = ({
            text.includes('Technische Beratung');
   };
   
-  // Standard handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Determine if button should open lead form
   const shouldOpenLeadForm = (text?: string) => {
     if (!text) return false;
     
-    // Direct project start texts
     if (
       text === 'Projekt starten' || 
       text === 'Start Your Project' ||
@@ -75,7 +70,6 @@ const PageHero = ({
       return true;
     }
     
-    // Then check for partial matches
     return text.includes('Projekt starten') || 
            text.includes('Start Your') || 
            text.includes('Launch Your') ||
@@ -156,13 +150,11 @@ const PageHero = ({
     const primary = primaryCta || defaultPrimaryCta;
     const secondary = secondaryCta || defaultSecondaryCta;
     
-    // If secondary CTA is a strategy call button, override its link to the contact page
     if (secondary && isStrategyCallCta(secondary.text)) {
       secondary.link = contactPath;
       secondary.onClick = undefined;
     }
     
-    // Determine if the primary CTA should open lead form
     const openLeadForm = shouldOpenLeadForm(primary.text);
     
     return (

@@ -24,8 +24,16 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
       badge={badge}
       title={title}
       subtitle={subtitle}
-      primaryCta={primaryCta}
-      secondaryCta={secondaryCta}
+      primaryCta={{
+        text: primaryCta.text,
+        link: primaryCta.link,
+        onClick: primaryCta.onClick
+      }}
+      secondaryCta={secondaryCta ? {
+        text: secondaryCta.text,
+        link: secondaryCta.link,
+        onClick: secondaryCta.onClick
+      } : undefined}
     />
   );
 };

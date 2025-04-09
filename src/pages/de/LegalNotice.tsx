@@ -1,9 +1,12 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
@@ -14,88 +17,113 @@ const GermanLegalNotice = () => {
   }, [setLanguage]);
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
       <LegalHero
-        title="Impressum"
-        subtitle="Rechtliche Informationen über ooliv"
+        badge="Impressum"
+        title="Impressum & Unternehmensdetails"
+        subtitle="Transparente Unternehmensinformationen gemäß §5 TMG & EU-Verordnungen. Diese Seite enthält alle gesetzlich vorgeschriebenen Informationen über ooliv."
         primaryCta={{
-          text: "Zur Datenschutzerklärung",
-          link: "/de/datenschutz"
+          text: "Projekt starten",
+          link: "#",
+          onClick: (e) => {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-lead-form'));
+          }
         }}
         secondaryCta={{
           text: "Kontakt aufnehmen",
           link: "/de/kontakt"
         }}
       />
-      
-      <section className="py-16">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <div className="prose max-w-none">
-            <h2>Angaben gemäß § 5 TMG</h2>
-            <p>
-              ooliv<br />
-              Hauptstraße 1<br />
-              55116 Mainz
-            </p>
-            
-            <h3>Kontakt</h3>
-            <p>
-              Telefon: +49 6131 123456<br />
-              E-Mail: info@ooliv.de
-            </p>
-            
-            <h3>Vertreten durch</h3>
-            <p>
-              Geschäftsführer: Max Mustermann
-            </p>
-            
-            <h3>Registereintrag</h3>
-            <p>
-              Eintragung im Handelsregister.<br />
-              Registergericht: Amtsgericht Mainz<br />
-              Registernummer: HRB 12345
-            </p>
-            
-            <h3>Umsatzsteuer-ID</h3>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-              DE123456789
-            </p>
-            
-            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-            <p>
-              Max Mustermann<br />
-              ooliv<br />
-              Hauptstraße 1<br />
-              55116 Mainz
-            </p>
-            
-            <h2>Haftungsausschluss</h2>
-            
-            <h3>Haftung für Inhalte</h3>
-            <p>
-              Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-            </p>
-            
-            <h3>Haftung für Links</h3>
-            <p>
-              Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-            </p>
-            
-            <h3>Urheberrecht</h3>
-            <p>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-            </p>
+
+      <section className="section-standard">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Company Details Column */}
+            <div>
+              <Card className="card-layout h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <Building className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Firmendaten</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <p className="text-lg font-semibold text-brand-heading">ooliv</p>
+                    <p className="text-brand-text">
+                      Eduard von Heuss Str. 29<br />
+                      55294 Bodenheim<br />
+                      Germany
+                    </p>
+                    
+                    <div className="flex items-center text-brand-text space-x-2">
+                      <Phone className="h-4 w-4 text-brand-primary" />
+                      <span>06131-6367801</span>
+                    </div>
+                    
+                    <div className="flex items-center text-brand-text space-x-2">
+                      <Mail className="h-4 w-4 text-brand-primary" />
+                      <span>info@ooliv.de</span>
+                    </div>
+                    
+                    <div className="pt-4">
+                      <p className="font-medium">Inhaber:</p>
+                      <p>Uli Schönleber</p>
+                    </div>
+                    
+                    <div className="pt-2">
+                      <p className="font-medium">USt.-IdNr.:</p>
+                      <p>DE265704357</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Legal Notices Column */}
+            <div className="space-y-6">
+              <Card className="card-layout">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <FileText className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Urheberrechtshinweis</h3>
+                  </div>
+                  
+                  <p className="text-brand-text">
+                    Alle Inhalte und Medien auf dieser Website sind durch das deutsche Urheberrecht und verwandte Schutzrechte geschützt. Jede Form der Wiederverwendung, Vervielfältigung oder Verbreitung außerhalb der Grenzen des Urheberrechts erfordert eine schriftliche Zustimmung. Unbefugte Nutzung wird rechtlich verfolgt.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-layout">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="icon-background text-brand-primary">
+                      <AlertTriangle className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Einspruch gegen Werbe-E-Mails</h3>
+                  </div>
+                  
+                  <p className="text-brand-text">
+                    Wir widersprechen der Nutzung unserer veröffentlichten Kontaktdaten für unaufgeforderte Werbung. Wir behalten uns das Recht vor, im Falle unaufgeforderter Werbe-E-Mails (Spam) rechtliche Schritte einzuleiten.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <div className="flex justify-center md:justify-start pt-4">
+                <Button variant="outline" asChild data-trigger-lead-form>
+                  <Link to="/de/datenschutz">Datenschutzerklärung →</Link>
+                </Button>
+              </div>
+            </div>
           </div>
-          
-          <div className="mt-12 flex justify-center gap-4">
-            <Button asChild variant="outline">
-              <Link to="/de/datenschutz">Datenschutzerklärung ansehen</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/de/kontakt">Kontakt aufnehmen</Link>
-            </Button>
-          </div>
+
+          {/* Added extra spacing before the footer */}
+          <div className="pb-16"></div>
         </div>
       </section>
     </PageLayout>

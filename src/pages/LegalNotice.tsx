@@ -8,14 +8,21 @@ import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const LegalNotice = () => {
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <PageLayout className="overflow-x-hidden">
       <LegalHero
+        badge="Legal"
         title="Legal Notice & Company Details"
         subtitle="Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv."
         primaryCta={{
           text: "Start Your Project",
-          link: "/contact"
+          link: "#",
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
           text: "Contact Us",
@@ -47,7 +54,7 @@ const LegalNotice = () => {
                     
                     <div className="flex items-center text-brand-text space-x-2">
                       <Phone className="h-4 w-4 text-brand-primary" />
-                      <span>06131 – 63 67 801</span>
+                      <span>06131-6367801</span>
                     </div>
                     
                     <div className="flex items-center text-brand-text space-x-2">
@@ -56,14 +63,8 @@ const LegalNotice = () => {
                     </div>
                     
                     <div className="pt-4">
-                      <p className="font-medium">Represented by:</p>
+                      <p className="font-medium">Owner:</p>
                       <p>Uli Schönleber</p>
-                    </div>
-                    
-                    <div className="pt-2">
-                      <p className="font-medium">Commercial Register:</p>
-                      <p>Amtsgericht Mainz</p>
-                      <p>HRB 50933</p>
                     </div>
                     
                     <div className="pt-2">
@@ -114,6 +115,9 @@ const LegalNotice = () => {
               </div>
             </div>
           </div>
+
+          {/* Added extra spacing before the footer */}
+          <div className="pb-16"></div>
         </div>
       </section>
     </PageLayout>
