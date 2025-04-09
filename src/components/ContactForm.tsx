@@ -134,10 +134,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
     setFormError(null);
     
     try {
-      console.log("Submitting contact form:", formValues);
-      
-      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
-      
       const formData = {
         projectType: formType,
         companyName: '',
@@ -151,25 +147,14 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         phone: ''
       };
       
-      console.log("Sending formatted data to Supabase:", formData);
-      
-      const response = await fetch(functionUrl, {
+      await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4"
         },
         body: JSON.stringify(formData)
       });
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Server error details:", errorData);
-        throw new Error(errorData.message || 'Network response was not ok');
-      }
-      
-      const responseData = await response.json();
-      console.log("Form submission successful:", responseData);
       
       onOpenChange(false);
       
@@ -177,7 +162,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
         description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
         duration: 5000,
-        className: "bg-[#004d51] text-white border-[#006064]", // Higher contrast confirmation
+        className: "bg-[#004d51] text-white border-[#006064]",
       });
     } catch (error: any) {
       console.error("Error submitting form:", error);

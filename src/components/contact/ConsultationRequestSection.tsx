@@ -49,8 +49,6 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
     console.log("Submitting consultation form:", data);
     
     try {
-      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
-      
       const formData = {
         projectType: "consultation",
         companyName: data.company || '',
@@ -64,25 +62,14 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         phone: ''
       };
       
-      console.log("Sending formatted data to Supabase:", formData);
-      
-      const response = await fetch(functionUrl, {
+      await fetch("https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4"
         },
         body: JSON.stringify(formData)
       });
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Server error details:", errorData);
-        throw new Error(errorData.message || 'Network response was not ok');
-      }
-      
-      const responseData = await response.json();
-      console.log("Form submission successful:", responseData);
       
       toast({
         title: "Request sent!",
