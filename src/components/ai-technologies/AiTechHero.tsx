@@ -29,11 +29,11 @@ const AiTechHero = () => {
       subtitle={currentContent.subtitle}
       primaryCta={{
         text: language === 'de' ? "Projekt starten" : "Start Your Project",
-        link: language === 'de' ? "/de/kontakt" : "/contact"
+        link: language === 'de' ? "/kontakt" : "/en/contact"
       }}
       secondaryCta={{
-        text: language === 'de' ? "Referenzen ansehen" : "View Case Studies",
-        link: language === 'de' ? "/de/referenzen" : "/case-studies"
+        text: language === 'de' ? "Referenzen ansehen" : "View Case Studies", 
+        link: language === 'de' ? "/case-studies" : "/en/case-studies"  // Updated link
       }}
     />
   );
