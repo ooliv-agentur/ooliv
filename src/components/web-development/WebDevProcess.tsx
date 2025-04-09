@@ -74,7 +74,7 @@ const WebDevProcess = () => {
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-backgroundAlt"></div>
           
-          <div className="space-y-5"> {/* Further reduced vertical spacing between steps */}
+          <div className="space-y-4"> {/* Reduced vertical spacing */}
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -99,7 +99,7 @@ const WebDevProcess = () => {
 
                       {/* Number circle positioned vertically centered to the box */}
                       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                        <div className="w-10 h-10 rounded-full bg-[#333333] flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-[#9F9EA1] flex items-center justify-center shadow-sm">
                           <span className="text-white text-sm font-medium">{step.number}</span>
                         </div>
                       </div>
@@ -119,7 +119,7 @@ const WebDevProcess = () => {
 
                       {/* Number circle positioned vertically centered to the box */}
                       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                        <div className="w-10 h-10 rounded-full bg-[#333333] flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 rounded-full bg-[#9F9EA1] flex items-center justify-center shadow-sm">
                           <span className="text-white text-sm font-medium">{step.number}</span>
                         </div>
                       </div>
@@ -132,7 +132,7 @@ const WebDevProcess = () => {
         </div>
         
         {/* Mobile Cards View */}
-        <div className="lg:hidden space-y-5"> {/* Reduced spacing for mobile */}
+        <div className="lg:hidden space-y-4"> {/* Reduced spacing for mobile */}
           {steps.map((step, index) => (
             <div 
               key={index}
@@ -141,7 +141,7 @@ const WebDevProcess = () => {
               style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
             >
               {/* Number placed at the top center of each box */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-5 h-9 w-9 bg-[#333333] rounded-full flex items-center justify-center shadow-sm">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-5 h-9 w-9 bg-[#9F9EA1] rounded-full flex items-center justify-center shadow-sm">
                 <span className="text-white text-sm font-medium">{step.number}</span>
               </div>
               
@@ -158,3 +158,4 @@ const WebDevProcess = () => {
 };
 
 export default WebDevProcess;
+
