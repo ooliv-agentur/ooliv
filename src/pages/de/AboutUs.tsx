@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Button } from '@/components/ui/button';
@@ -14,7 +13,6 @@ import SEOCtaDE from '@/components/seo/SEOCtaDE';
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
@@ -35,7 +33,6 @@ const GermanAboutUs = () => {
         }}
       />
 
-      {/* Who we are and how we work Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
@@ -73,7 +70,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Our Story Section */}
       <section className="py-20 bg-brand-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
@@ -102,7 +98,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Why We Stay Small Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto">
@@ -122,7 +117,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* What Drives Us Section */}
       <section className="py-20 bg-brand-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Ein digitaler Partner, nicht nur ein Dienstleister</h2>
@@ -130,8 +124,8 @@ const GermanAboutUs = () => {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm">
               <AspectRatio ratio={4/3}>
                 <img 
-                  src="/lovable-uploads/b98c599a-289c-4ec5-962b-660f36e16d48.png" 
-                  alt="Büroumgebung" 
+                  src="/lovable-uploads/b1bdd6f6-0801-4a5d-ba2f-cad413494d55.png" 
+                  alt="Moderne Arbeitsumgebung" 
                   className="h-full w-full object-cover"
                 />
               </AspectRatio>
@@ -158,7 +152,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Our Philosophy Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
@@ -180,8 +173,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Our Team Section */}
-      <section className="py-20 bg-brand-background">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 className="text-3xl font-bold mb-6 text-center text-brand-heading">Kleines Team. Volle Leistungsfähigkeit.</h2>
           <p className="text-lg mb-12 text-center max-w-3xl mx-auto text-brand-text">
@@ -215,15 +207,12 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Team Section Component */}
       <div id="team">
         <TeamSection />
       </div>
 
-      {/* Added Compact FAQ Section */}
       <AboutCompactFAQ />
 
-      {/* What We Offer Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
@@ -255,7 +244,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Who We Work With Section */}
       <section className="py-20 bg-brand-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Für Unternehmen, die vorankommen wollen</h2>
@@ -293,7 +281,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Locations Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -313,10 +300,8 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section with standardized text */}
       <SEOCtaDE />
 
-      {/* What's Next Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center">
@@ -345,7 +330,6 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* FAQ Section with keyword focus "marketing agentur mainz" */}
       <section className="py-20 bg-brand-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
