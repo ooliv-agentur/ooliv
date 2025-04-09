@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
@@ -17,6 +18,8 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
@@ -183,6 +186,8 @@ const PrivacyPolicy = () => {
               <Link to="/contact">Contact Our Data Officer</Link>
             </Button>
           </div>
+
+          <div className="mt-32"></div>
         </div>
       </section>
     </PageLayout>

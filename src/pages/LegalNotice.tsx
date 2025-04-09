@@ -1,8 +1,11 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Building, FileText, AlertTriangle } from 'lucide-react';
+import { Building, FileText, AlertTriangle, Phone, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const LegalNotice = () => {
   return (

@@ -19,6 +19,8 @@ import {
   AccordionTrigger 
 } from '@/components/ui/accordion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const GermanPrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
