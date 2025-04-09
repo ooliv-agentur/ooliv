@@ -1,9 +1,6 @@
-
 import React, { useRef, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import { 
   Lock, 
   Database, 
@@ -40,15 +37,12 @@ const GermanPrivacyPolicy = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <LegalHero
+        badge="Datenschutz"
         title="Ihre Daten, Ihre Rechte"
         subtitle="Wie wir mit Ihren persönlichen Informationen umgehen, sie speichern und schützen. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und wie Sie Ihre Rechte gemäß der DSGVO ausüben können."
         primaryCta={{
           text: "Vollständige Erklärung lesen",
           link: "#policy"
-        }}
-        secondaryCta={{
-          text: "Datenschutzbeauftragten kontaktieren",
-          link: "/de/contact"
         }}
       />
 
@@ -188,15 +182,6 @@ const GermanPrivacyPolicy = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-          <div className="flex justify-center mt-12">
-            <Button asChild variant="outline" className="mr-4">
-              <Link to="/de/legal-notice">Impressum ansehen</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/de/contact">Datenschutzbeauftragten kontaktieren</Link>
-            </Button>
-          </div>
         </div>
       </section>
     </PageLayout>
