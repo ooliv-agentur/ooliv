@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,7 +17,6 @@ const pathMapping: Record<string, string> = {
   '/case-studies': '/de/case-studies',
   '/about-ooliv': '/de/ueber-ooliv',
   '/contact': '/de/kontakt',
-  '/careers': '/de/karriere',
   '/legal-notice': '/de/impressum',
   '/privacy-policy': '/de/datenschutz',
   '/data-privacy': '/de/datenschutz',
@@ -53,25 +53,7 @@ const LanguageSwitch: React.FC = () => {
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
-    if (language === 'en') {
-      // Switching to German
-      setLanguage('de');
-      
-      // Try to find a mapped path
-      let foundMapping = false;
-      for (const [enPath, dePath] of Object.entries(pathMapping)) {
-        if (currentPath === enPath || currentPath.startsWith(enPath + '/')) {
-          navigate(dePath);
-          foundMapping = true;
-          return;
-        }
-      }
-      
-      // Default fallback if no specific path mapping found
-      if (!foundMapping) {
-        navigate('/de');
-      }
-    } else {
+    if (language === 'de') {
       // Switching to English
       setLanguage('en');
       
@@ -100,7 +82,7 @@ const LanguageSwitch: React.FC = () => {
       className="flex items-center gap-1"
     >
       <Globe className="h-4 w-4" />
-      <span>{language === 'en' ? 'DE' : 'EN'}</span>
+      <span>EN</span>
     </Button>
   );
 };

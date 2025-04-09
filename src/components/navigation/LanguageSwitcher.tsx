@@ -10,7 +10,7 @@ const LanguageSwitcher = () => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  // If not in German, return null to hide the language switcher
+  // If not German, return null to hide the language switcher
   if (language !== 'de') {
     return null;
   }
@@ -18,37 +18,7 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     const currentPath = location.pathname;
     
-    if (language === 'en') {
-      // Switching to German (default)
-      setLanguage('de');
-      
-      if (currentPath === '/en') {
-        navigate('/');
-      } else if (currentPath.startsWith('/en/')) {
-        // Map English paths to German equivalent paths
-        const pathWithoutEn = currentPath.substring(3);
-        
-        // Map of English paths to German paths
-        const pathMappings: Record<string, string> = {
-          '/web-design': '/webdesign',
-          '/web-development': '/webentwicklung',
-          '/content-creation': '/content-erstellung',
-          '/seo-optimization': '/seo-optimierung',
-          '/google-ads': '/google-ads',
-          '/ai-technologies': '/ki-technologien',
-          '/case-studies': '/case-studies',
-          '/about-ooliv': '/ueber-ooliv',
-          '/contact': '/kontakt',
-          '/careers': '/karriere',
-          '/legal-notice': '/impressum',
-          '/data-privacy': '/datenschutz',
-          '/privacy-policy': '/datenschutz',
-        };
-        
-        const germanPath = pathMappings[pathWithoutEn] || '/';
-        navigate(germanPath);
-      }
-    } else {
+    if (language === 'de') {
       // Switching to English
       setLanguage('en');
       
@@ -66,7 +36,6 @@ const LanguageSwitcher = () => {
           '/case-studies': '/en/case-studies',
           '/ueber-ooliv': '/en/about-ooliv',
           '/kontakt': '/en/contact',
-          '/karriere': '/en/careers',
           '/impressum': '/en/legal-notice',
           '/datenschutz': '/en/privacy-policy',
         };
@@ -77,8 +46,6 @@ const LanguageSwitcher = () => {
     }
   };
   
-  const languageButtonText = language === 'de' ? 'EN' : 'DE';
-  
   return (
     <Button 
       variant="outline" 
@@ -87,7 +54,7 @@ const LanguageSwitcher = () => {
       size="sm"
     >
       <Globe className="h-4 w-4 mr-2 text-[#b1b497]" />
-      <span>{languageButtonText}</span>
+      <span>EN</span>
     </Button>
   );
 };
