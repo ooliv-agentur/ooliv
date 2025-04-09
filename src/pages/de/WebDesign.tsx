@@ -42,7 +42,6 @@ const GermanWebDesign = () => {
         subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
-        primaryCtaLink="#"
         secondaryCtaLink="/kontakt"
       />
     </PageLayout>
@@ -50,4 +49,3 @@ const GermanWebDesign = () => {
 };
 
 export default GermanWebDesign;
-
