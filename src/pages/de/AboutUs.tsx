@@ -17,6 +17,19 @@ const GermanAboutUs = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const industries = [
+    'Technologie / Software',
+    'Einzelhandel / E-Commerce',
+    'Finanzen / Banking',
+    'Gesundheit / Medizin',
+    'Bildung / Training',
+    'Produktion / Industrie',
+    'Gastronomie / Tourismus',
+    'Bau / Immobilien',
+    'Lebensmittel / Restaurant',
+    'Beratung / Dienstleistungen'
+  ];
+
   return (
     <PageLayout>
       <PageHero 
@@ -117,7 +130,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-brand-background">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Ein digitaler Partner, nicht nur ein Dienstleister</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
@@ -240,7 +253,7 @@ const GermanAboutUs = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Für Unternehmen, die vorankommen wollen</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-sm">
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
               <p className="text-xl font-medium mb-6 text-brand-heading">Wir helfen:</p>
               <ul className="space-y-4">
                 {[
@@ -254,17 +267,20 @@ const GermanAboutUs = () => {
                     <span className="h-8 w-8 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3 flex-shrink-0">
                       <CheckCircle className="h-4 w-4 text-brand-primary" />
                     </span>
-                    <span className="text-lg text-brand-text">{item}</span>
+                    <span className="text-brand-text">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-sm">
+            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
               <p className="text-xl font-medium mb-6 text-brand-heading">Typische Branchen:</p>
               <div className="grid grid-cols-2 gap-4">
-                {['SaaS', 'Fertigung', 'Beratung', 'Recht', 'Gesundheitswesen'].map((industry, index) => (
-                  <div key={index} className="bg-brand-background p-4 rounded-md text-center text-brand-text">
-                    {industry}
+                {industries.slice(0, 10).map((industry, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-brand-background p-4 rounded-md text-center text-brand-text hover:bg-brand-background/80 transition-colors duration-300"
+                  >
+                    {industry.split('/')[0].trim()}
                   </div>
                 ))}
               </div>
