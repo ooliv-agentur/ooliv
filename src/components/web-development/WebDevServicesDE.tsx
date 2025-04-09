@@ -3,6 +3,7 @@ import React from 'react';
 import { Code, Box, ShoppingCart, Server, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const services = [
   {
@@ -33,6 +34,9 @@ const services = [
 ];
 
 const WebDevServicesDE = () => {
+  const { language } = useLanguage();
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  
   return (
     <section className="py-16 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +66,7 @@ const WebDevServicesDE = () => {
             <strong>Nicht sicher, was passt?</strong> ➝ Lassen Sie uns darüber sprechen.
           </p>
           <Button asChild>
-            <Link to="/de/kontakt">Beratungsgespräch vereinbaren</Link>
+            <Link to={contactPath}>Beratungsgespräch vereinbaren</Link>
           </Button>
         </div>
       </div>

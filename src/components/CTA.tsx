@@ -30,9 +30,20 @@ const CTA = ({
 }: CTAProps) => {
   const { language } = useLanguage();
   
+  // Get the appropriate contact page based on language
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  
   // Handler for opening the lead form
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
+  // Check if the CTA text is the strategy call text
+  const isStrategyCallCta = (text: string) => {
+    return text.includes('Strategiegespräch vereinbaren') || 
+           text.includes('Schedule a Strategy Call') ||
+           text.includes('Technical Consultation') ||
+           text.includes('Technische Beratung');
   };
   
   return (
@@ -65,7 +76,20 @@ const CTA = ({
           )}
           
           {secondaryCta && (
-            secondaryCtaLink ? (
+            isStrategyCallCta(secondaryCta) ? (
+              // If it's the strategy call CTA, always use the contact path
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                asChild
+              >
+                <Link to={contactPath}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            ) : secondaryCtaLink ? (
               <Button 
                 size="lg" 
                 variant="outline" 

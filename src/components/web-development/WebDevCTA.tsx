@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import ContactForm from '@/components/ContactForm';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const WebDevCTA = () => {
   const [openForm, setOpenForm] = useState(false);
   const [formType, setFormType] = useState<'audit' | 'call' | 'work'>('audit');
   const { language } = useLanguage();
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   
   const handleOpenForm = (type: 'audit' | 'call' | 'work') => {
     setFormType(type);
@@ -44,10 +46,12 @@ const WebDevCTA = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
           <Button 
-            className="flex-1" 
-            onClick={() => handleOpenForm('call')}
+            className="flex-1"
+            asChild
           >
-            {consultationText}
+            <Link to={contactPath}>
+              {consultationText}
+            </Link>
           </Button>
           
           <Button 

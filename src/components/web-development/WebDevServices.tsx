@@ -3,6 +3,7 @@ import React from 'react';
 import { Code, Layout, ShoppingBag, Database, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Carousel, 
   CarouselContent, 
@@ -40,6 +41,9 @@ const services = [
 ];
 
 const WebDevServices = () => {
+  const { language } = useLanguage();
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +101,7 @@ const WebDevServices = () => {
             <strong>Not sure what fits?</strong> ➔ Let's talk strategy.
           </p>
           <Button variant="outline" asChild>
-            <Link to="/contact">
+            <Link to={contactPath}>
               Schedule a Strategy Call
             </Link>
           </Button>

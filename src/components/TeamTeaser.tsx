@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Tooltip,
   TooltipContent,
@@ -19,6 +20,9 @@ interface TeamMember {
 }
 
 const TeamTeaser = () => {
+  const { language } = useLanguage();
+  const aboutPath = language === 'de' ? "/ueber-ooliv" : "/en/about-ooliv";
+  
   const featuredTeamMembers: TeamMember[] = [
     {
       name: "Uli Schönleber",
@@ -100,7 +104,7 @@ const TeamTeaser = () => {
 
         <div className="flex justify-center">
           <Button variant="outline" size="lg" className="group" asChild>
-            <Link to="/about-ooliv">
+            <Link to={aboutPath}>
               Meet the full team
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

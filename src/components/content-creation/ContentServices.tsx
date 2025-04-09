@@ -4,10 +4,12 @@ import { FileText, Image, PenTool, Video } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const ContentServices = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   
   const services = isGerman ? [
     {
@@ -143,11 +145,13 @@ const ContentServices = () => {
         </div>
         
         <div className="text-center mt-10">
-          <Button variant="link" className="text-brand-primary">
-            {isGerman 
-              ? "Content definieren? Jetzt Strategiegespräch starten →" 
-              : "Need help defining your content? Let's talk strategy →"
-            }
+          <Button variant="link" className="text-brand-primary" asChild>
+            <Link to={contactPath}>
+              {isGerman 
+                ? "Content definieren? Jetzt Strategiegespräch starten →" 
+                : "Need help defining your content? Let's talk strategy →"
+              }
+            </Link>
           </Button>
         </div>
       </div>

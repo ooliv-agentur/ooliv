@@ -42,6 +42,15 @@ const PageHero = ({
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
+  // Check if the CTA text is the strategy call text
+  const isStrategyCallCta = (text?: string) => {
+    if (!text) return false;
+    return text.includes('Strategiegespräch vereinbaren') || 
+           text.includes('Schedule a Strategy Call') ||
+           text.includes('Technical Consultation') ||
+           text.includes('Technische Beratung');
+  };
+  
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
@@ -118,6 +127,12 @@ const PageHero = ({
     
     const primary = primaryCta || defaultPrimaryCta;
     const secondary = secondaryCta || defaultSecondaryCta;
+    
+    // If secondary CTA is a strategy call button, override its link to the contact page
+    if (secondary && isStrategyCallCta(secondary.text)) {
+      secondary.link = contactPath;
+      secondary.onClick = undefined;
+    }
     
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">

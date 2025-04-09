@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const WebDesignHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
+  const contactPath = isGerman ? "/kontakt" : "/en/contact";
   
   const translations = {
     en: {
