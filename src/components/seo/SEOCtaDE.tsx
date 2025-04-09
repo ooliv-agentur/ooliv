@@ -29,7 +29,7 @@ const SEOCtaDE = () => {
           >
             <Link to={contactPath}>
               <FileCheck className="mr-2 h-5 w-5" />
-              Kostenloses SEO-Audit anfordern
+              Beratungsgespräch anfordern
             </Link>
           </Button>
           
@@ -57,3 +57,4 @@ const SEOCtaDE = () => {
 };
 
 export default SEOCtaDE;
+

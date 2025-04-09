@@ -28,7 +28,7 @@ const SEOCta = () => {
           >
             <Link to={contactPath}>
               <FileCheck className="mr-2 h-5 w-5" />
-              Request Free SEO Audit
+              Request a Consultation
             </Link>
           </Button>
           
@@ -56,3 +56,4 @@ const SEOCta = () => {
 };
 
 export default SEOCta;
+
