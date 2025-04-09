@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { FileSearch, PencilRuler, Code, TestTube, Rocket } from 'lucide-react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDesignProcess = () => {
@@ -55,7 +55,7 @@ const WebDesignProcess = () => {
           deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
         }
       ],
-      deliverableTitle: "WHAT WE DELIVER:"
+      deliverableTitle: "DELIVERABLES"
     },
     de: {
       title: "Unser Webdesign-Prozess – von der Planung bis zum Launch",
@@ -97,7 +97,7 @@ const WebDesignProcess = () => {
           deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
         }
       ],
-      deliverableTitle: "WAS WIR LIEFERN:"
+      deliverableTitle: "WAS WIR LIEFERN"
     }
   };
   
@@ -125,7 +125,7 @@ const WebDesignProcess = () => {
             {t.steps.map((step, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
                 <div className="p-1">
-                  <div className="bg-white rounded-lg p-6 h-full shadow-sm">
+                  <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
                         {step.number}
@@ -135,21 +135,23 @@ const WebDesignProcess = () => {
                           <step.icon className="h-5 w-5 text-brand-primary mr-2" />
                           <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
                         </div>
-                        <p className="text-brand-text text-sm mb-4">{step.description}</p>
+                        <p className="text-brand-text text-sm mb-5">{step.description}</p>
                         
-                        {/* Enhanced Deliverables Section */}
-                        <div className="bg-brand-backgroundAlt p-4 rounded-md">
-                          <p className="text-sm font-bold text-brand-primary mb-3 uppercase tracking-wider">
+                        {/* Completely redesigned deliverables section */}
+                        <div className="border-t border-brand-backgroundAlt pt-4">
+                          <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
                             {t.deliverableTitle}
-                          </p>
-                          <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
+                          </h4>
+                          <div className="space-y-2.5">
                             {step.deliverables.map((deliverable, idx) => (
-                              <li key={idx} className="text-sm text-brand-text flex items-center">
-                                <div className="h-2 w-2 rounded-full bg-brand-primary mr-2 flex-shrink-0"></div>
-                                <span className="font-medium">{deliverable}</span>
-                              </li>
+                              <div key={idx} className="flex items-center">
+                                <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                                  <Check className="h-3 w-3 text-brand-primary" />
+                                </div>
+                                <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                              </div>
                             ))}
-                          </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
