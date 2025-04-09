@@ -297,7 +297,7 @@ const GermanAboutUs = () => {
               Digital-first, ortsflexibel – und immer reaktionsschnell.
             </p>
           </div>
-          <div className="bg-brand-background rounded-xl p-6 shadow-sm h-[400px] flex items-center justify-center max-w-5xl mx-auto">
+          <div className="bg-brand-background rounded-xl p-6 shadow-sm h-[500px] flex items-center justify-center max-w-4xl mx-auto">
             <img 
               src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
               alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
