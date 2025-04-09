@@ -2,8 +2,8 @@ import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
-import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -73,7 +73,6 @@ const AiTechnologies = () => {
         primaryCta="Start Your Project"
         secondaryCta="Book a Strategy Call"
       >
-        {/* New claim section */}
         <section className="mt-12 text-center">
           <div className="container mx-auto px-4">
             <p className="text-lg text-brand-text font-medium">

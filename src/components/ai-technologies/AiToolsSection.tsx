@@ -43,13 +43,14 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex"
             >
-              <div className="h-full flex flex-col items-center p-6">
+              <div className="h-full flex flex-col items-center p-6 w-full">
                 <div className="flex items-center justify-center mb-5">
                   <img 
                     src={tool.logoSrc} 
                     alt={tool.name} 
-                    className="h-16 w-16" 
+                    className="h-16 w-16 object-contain" 
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">

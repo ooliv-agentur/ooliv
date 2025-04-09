@@ -26,7 +26,7 @@ const GermanAiTechnologies = () => {
     },
     {
       name: "Midjourney",
-      logoSrc: "/midjourney-logo.svg",
+      logoSrc: "/midjourney-logo.svg", 
       description: "Individuelle Visuals & Illustrationen für Marken, die keine Stockfotos wollen."
     },
     {
