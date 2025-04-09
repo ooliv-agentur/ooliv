@@ -50,25 +50,19 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
     setIsSubmitting(true);
     
     try {
-      console.log("Bereite Einreichungsdaten vor:", data);
+      const functionUrl = `https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`;
       
       // Format the data to match what the function expects
       const formData = {
         projectType: "consultation",
         companyName: data.company || '',
         industry: '',
-        websiteUrl: '',
-        location: '',
-        goal: 'consultation',
         name: data.name,
         email: data.email,
-        phone: '',
         message: data.message || ''
       };
       
-      console.log("Sende Daten an Supabase:", formData);
-      
-      const response = await fetch(`https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/sendProjectForm`, {
+      const response = await fetch(functionUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,16 +70,9 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
         body: JSON.stringify(formData)
       });
       
-      console.log("Antwortstatus:", response.status);
-      
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Serverfehlerdetails:", errorData);
-        throw new Error('Konnte Beratungsanfrage nicht einreichen');
+        throw new Error('Failed to submit consultation request');
       }
-      
-      const responseData = await response.json();
-      console.log("Antwort vom Server:", responseData);
       
       toast({
         title: "Anfrage gesendet!",
@@ -94,7 +81,7 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
       
       form.reset();
     } catch (error) {
-      console.error("Fehler beim Absenden des Formulars:", error);
+      console.error("Error submitting form:", error);
       
       toast({
         title: "Fehler",
