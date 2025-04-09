@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -56,9 +55,22 @@ const PageHero = ({
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Function to check if the primary CTA should open the lead form instead of linking
-  const isPrimaryCtaProjectStart = (text?: string) => {
+  // Function to check if button should open lead form
+  const shouldOpenLeadForm = (text?: string) => {
     if (!text) return false;
+    
+    // Check for exact matches first
+    if (
+      text === 'Projekt starten' || 
+      text === 'Start Your Project' ||
+      text === 'Start Your Web Project' ||
+      text === 'SEO-Strategie starten' ||
+      text === 'Start Your SEO Strategy'
+    ) {
+      return true;
+    }
+    
+    // Then check for partial matches
     return text.includes('Projekt starten') || 
            text.includes('Start Your') || 
            text.includes('Launch Your') ||
@@ -145,12 +157,12 @@ const PageHero = ({
       secondary.onClick = undefined;
     }
     
-    // If primary CTA is a "Start Project" button, make it open the lead form instead of linking
-    const shouldOpenLeadForm = isPrimaryCtaProjectStart(primary.text) || primary.onClick === handleOpenLeadForm;
+    // Determine if the primary CTA should open lead form
+    const openLeadForm = primary.onClick === handleOpenLeadForm || shouldOpenLeadForm(primary.text);
     
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        {shouldOpenLeadForm ? (
+        {openLeadForm ? (
           <Button 
             size="lg" 
             className="group bg-[#006064] text-white hover:bg-[#004D40]" 

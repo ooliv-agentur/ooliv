@@ -46,6 +46,27 @@ const CTA = ({
            text.includes('Technische Beratung');
   };
   
+  // Check if button should open lead form
+  const shouldOpenLeadForm = (text: string) => {
+    // Check for exact matches first
+    if (
+      text === 'Projekt starten' || 
+      text === 'Start Your Project' ||
+      text === 'Start Your Web Project' ||
+      text === 'SEO-Strategie starten' ||
+      text === 'Start Your SEO Strategy'
+    ) {
+      return true;
+    }
+    
+    // Then check for partial matches
+    return text.includes('Projekt starten') || 
+           text.includes('Start Your') || 
+           text.includes('Launch Your') ||
+           text.includes('SEO-Strategie starten') ||
+           text.includes('Kampagne starten');
+  };
+  
   return (
     <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -53,7 +74,16 @@ const CTA = ({
         <p className="text-xl mb-12 max-w-3xl mx-auto text-brand-text">{subtitle}</p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {primaryCtaLink ? (
+          {shouldOpenLeadForm(primaryCta) ? (
+            <Button
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              onClick={handleOpenLeadForm}
+            >
+              {primaryCta}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          ) : primaryCtaLink ? (
             <Button
               size="lg" 
               className="group bg-[#006064] text-white hover:bg-[#004D40]" 

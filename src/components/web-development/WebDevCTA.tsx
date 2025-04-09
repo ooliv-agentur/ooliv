@@ -16,6 +16,11 @@ const WebDevCTA = () => {
     setOpenForm(true);
   };
 
+  // Handler for opening the sidebar lead form
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   const title = language === 'de' 
     ? "Lassen Sie uns etwas gemeinsam aufbauen — für heute und morgen"
     : "Let's Build Something That Works — Now and in the Future";
@@ -57,7 +62,7 @@ const WebDevCTA = () => {
           <Button 
             variant="outline" 
             className="flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10"
-            onClick={() => handleOpenForm('work')}
+            onClick={handleOpenLeadForm}
           >
             {projectText}
           </Button>

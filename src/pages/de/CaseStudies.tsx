@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -49,6 +50,11 @@ const GermanCaseStudies = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+  
+  // Handler for opening the lead form
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
 
   return (
     <PageLayout>
@@ -58,7 +64,8 @@ const GermanCaseStudies = () => {
         subtitle="Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen."
         primaryCta={{
           text: "Projekt starten",
-          link: "/de/kontakt"
+          link: "#",
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
           text: "Strategiegespräch buchen",
