@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -7,6 +6,12 @@ import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Partner logos placeholders
 const partnerLogos = [
@@ -138,14 +143,18 @@ const CaseStudies = () => {
               </p>
             </div>
             
-            <div className="space-y-6">
-              {faqItems.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold mb-2 text-brand-heading">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
-                </div>
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4">
+                    <p className="text-brand-text">{faq.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
 
