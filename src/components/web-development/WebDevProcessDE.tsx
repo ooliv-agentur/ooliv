@@ -39,46 +39,71 @@ const WebDevProcessDE = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+        <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
           Unser Webentwicklungs-Prozess – von der Idee bis zum Livegang
         </h2>
         
-        <div className="overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-none md:overflow-visible">
-          <div className="flex flex-nowrap gap-6 min-w-max md:grid md:grid-cols-5 md:min-w-0">
-            {steps.map((step, index) => (
-              <div 
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex-1 min-w-[280px] snap-center"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="p-3 rounded-full bg-brand-backgroundAlt">
-                      <step.icon className="h-6 w-6 text-brand-primary" />
-                    </div>
-                    <div className="h-full w-0.5 bg-brand-backgroundAlt mt-2 mb-2 hidden md:block"></div>
+        {/* Desktop Timeline View */}
+        <div className="hidden lg:flex flex-col relative">
+          {/* Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-backgroundAlt"></div>
+          
+          {steps.map((step, index) => (
+            <div key={index} className={`flex mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+              {/* Content Side */}
+              <div className="w-5/12">
+                <div className={`p-6 bg-white rounded-lg shadow-sm border border-gray-100 
+                              ${index % 2 === 0 ? 'text-right pr-12' : 'text-left pl-12'}`}>
+                  <h3 className="text-xl font-bold mb-2 text-brand-heading">
+                    {step.title}
+                  </h3>
+                  <p className="text-brand-text">{step.description}</p>
+                </div>
+              </div>
+              
+              {/* Middle Icon */}
+              <div className="w-2/12 flex justify-center">
+                <div className="relative">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                                w-14 h-14 rounded-full bg-brand-primary flex items-center justify-center 
+                                z-10 shadow-md">
+                    <step.icon className="h-6 w-6 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-brand-heading flex items-center gap-2">
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-primary text-white text-sm">
-                        {step.number.split('')[1]}
-                      </span>
-                      {step.title}
-                    </h3>
-                    <p className="text-brand-text">{step.description}</p>
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10 mb-2">
+                    <span className="bg-brand-primary text-white text-sm font-bold py-1 px-2 rounded-full">
+                      {index + 1}
+                    </span>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              
+              {/* Empty Side */}
+              <div className="w-5/12"></div>
+            </div>
+          ))}
         </div>
         
-        {/* Scroll indicator for mobile */}
-        <div className="flex justify-center gap-2 mt-6 md:hidden">
-          {steps.map((_, i) => (
+        {/* Mobile Cards View */}
+        <div className="lg:hidden space-y-6">
+          {steps.map((step, index) => (
             <div 
-              key={i} 
-              className={`h-1.5 rounded-full ${i === 0 ? 'w-6 bg-brand-primary' : 'w-2 bg-gray-300'}`}
-            ></div>
+              key={index}
+              className="relative bg-white p-6 rounded-lg shadow-sm border border-gray-100"
+            >
+              <div className="absolute top-0 right-0 h-12 w-12 bg-brand-primary rounded-bl-lg flex items-center justify-center">
+                <span className="text-white font-bold">{index + 1}</span>
+              </div>
+              
+              <div className="flex items-start mt-4">
+                <div className="p-3 rounded-full bg-brand-backgroundAlt mr-4">
+                  <step.icon className="h-6 w-6 text-brand-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2 text-brand-heading">{step.title}</h3>
+                  <p className="text-brand-text">{step.description}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
