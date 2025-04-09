@@ -74,44 +74,54 @@ const WebDevProcess = () => {
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-brand-backgroundAlt"></div>
           
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              ref={(el) => (stepRefs.current[index] = el)}
-              className={cn(
-                "flex mb-24 opacity-0 transition-all duration-500 delay-[var(--delay)]",
-                index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-              )}
-              style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
-            >
-              {/* Content Side */}
-              <div className="w-5/12">
-                <div className={cn(
-                  "p-6 bg-white rounded-lg shadow-md border border-gray-100 transform transition-all duration-500",
-                  index % 2 === 0 ? "text-right pr-12" : "text-left pl-12"
-                )}>
-                  <h3 className="text-xl font-bold mb-2 text-brand-heading">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-text">{step.description}</p>
-                </div>
-              </div>
-              
-              {/* Middle Number */}
-              <div className="w-2/12 flex justify-center">
-                <div className="relative">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                              w-14 h-14 rounded-full bg-brand-primary flex items-center justify-center 
-                              z-10 shadow-md">
-                    <span className="text-white text-xl font-bold">{step.number}</span>
+          <div className="space-y-12">
+            {steps.map((step, index) => (
+              <div 
+                key={index}
+                ref={(el) => (stepRefs.current[index] = el)}
+                className="opacity-0 transition-all duration-500 delay-[var(--delay)]"
+                style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
+              >
+                <div className="relative flex">
+                  {/* Step Number (centered on timeline) */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="w-14 h-14 rounded-full bg-brand-primary flex items-center justify-center shadow-md">
+                      <span className="text-white text-xl font-bold">{step.number}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 w-full">
+                    {/* Left Side (even steps) */}
+                    {index % 2 === 0 ? (
+                      <>
+                        <div className="pr-12 flex justify-end">
+                          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg">
+                            <h3 className="text-xl font-bold mb-2 text-brand-heading text-right">
+                              {step.title}
+                            </h3>
+                            <p className="text-brand-text text-right">{step.description}</p>
+                          </div>
+                        </div>
+                        <div className="pl-12"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="pr-12"></div>
+                        <div className="pl-12">
+                          <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 max-w-md transform transition-all duration-500 hover:shadow-lg">
+                            <h3 className="text-xl font-bold mb-2 text-brand-heading">
+                              {step.title}
+                            </h3>
+                            <p className="text-brand-text">{step.description}</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-              
-              {/* Empty Side */}
-              <div className="w-5/12"></div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         
         {/* Mobile Cards View */}
@@ -123,11 +133,11 @@ const WebDevProcess = () => {
               className="relative bg-white p-6 rounded-lg shadow-md border border-gray-100 opacity-0 transition-all duration-500"
               style={{ '--delay': `${(index + 1) * 150}ms` } as React.CSSProperties}
             >
-              <div className="absolute top-0 left-0 -mt-5 -ml-2 h-10 w-10 bg-brand-primary rounded-full flex items-center justify-center shadow-md">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-5 h-10 w-10 bg-brand-primary rounded-full flex items-center justify-center shadow-md">
                 <span className="text-white font-bold">{step.number}</span>
               </div>
               
-              <div className="mt-4 ml-6">
+              <div className="mt-6 text-center">
                 <h3 className="text-xl font-bold mb-2 text-brand-heading">{step.title}</h3>
                 <p className="text-brand-text">{step.description}</p>
               </div>
