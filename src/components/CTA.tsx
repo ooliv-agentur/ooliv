@@ -33,11 +33,6 @@ const CTA = ({
   // Get the appropriate contact page based on language
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   
-  // Handler for opening the lead form
-  const handleOpenLeadForm = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
-  
   // Check if the CTA text is the strategy call text
   const isStrategyCallCta = (text: string) => {
     return text.includes('Strategiegespräch vereinbaren') || 
@@ -48,13 +43,16 @@ const CTA = ({
   
   // Check if button should open lead form
   const shouldOpenLeadForm = (text: string) => {
-    // Check for exact matches first
+    // Direct project start texts
     if (
       text === 'Projekt starten' || 
       text === 'Start Your Project' ||
       text === 'Start Your Web Project' ||
       text === 'SEO-Strategie starten' ||
-      text === 'Start Your SEO Strategy'
+      text === 'Start Your SEO Strategy' ||
+      text === 'Content-Projekt starten' ||
+      text === 'Launch Your Campaign' ||
+      text === 'Kampagne starten'
     ) {
       return true;
     }
@@ -67,6 +65,12 @@ const CTA = ({
            text.includes('Kampagne starten');
   };
   
+  // Handler for opening the lead form via event
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -77,7 +81,8 @@ const CTA = ({
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
+              data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
               {primaryCta}
@@ -97,8 +102,9 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
               onClick={handleOpenLeadForm}
+              data-trigger-lead-form
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

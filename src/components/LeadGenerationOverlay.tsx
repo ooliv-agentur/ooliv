@@ -18,13 +18,20 @@ interface LeadGenerationOverlayProps {
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const { language } = useLanguage();
   
-  // Reset form when dialog opens
+  // Listen for the global event to open the lead form
   useEffect(() => {
-    // Form reset is handled in LeadFormContent component
-  }, [open]);
+    const handleOpenLeadForm = () => {
+      onOpenChange(true);
+    };
 
-  const letsStartTitle = language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project";
-  const stepTitle = language === 'de' ? "Schritt" : "Step";
+    // Register event listener
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    
+    // Clean up
+    return () => {
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+    };
+  }, [onOpenChange]);
   
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>

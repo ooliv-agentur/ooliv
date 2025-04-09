@@ -52,7 +52,8 @@ const GermanCaseStudies = () => {
   }, [setLanguage]);
   
   // Handler for opening the lead form
-  const handleOpenLeadForm = () => {
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
 

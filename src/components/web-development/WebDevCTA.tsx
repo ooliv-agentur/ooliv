@@ -17,7 +17,8 @@ const WebDevCTA = () => {
   };
 
   // Handler for opening the sidebar lead form
-  const handleOpenLeadForm = () => {
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
@@ -62,6 +63,7 @@ const WebDevCTA = () => {
           <Button 
             variant="outline" 
             className="flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10"
+            data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
             {projectText}

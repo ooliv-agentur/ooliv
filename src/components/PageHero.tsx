@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -50,22 +51,26 @@ const PageHero = ({
            text.includes('Technische Beratung');
   };
   
-  // Handler for opening the lead form
-  const handleOpenLeadForm = () => {
+  // Standard handler for opening the lead form
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Function to check if button should open lead form
+  // Determine if button should open lead form
   const shouldOpenLeadForm = (text?: string) => {
     if (!text) return false;
     
-    // Check for exact matches first
+    // Direct project start texts
     if (
       text === 'Projekt starten' || 
       text === 'Start Your Project' ||
       text === 'Start Your Web Project' ||
       text === 'SEO-Strategie starten' ||
-      text === 'Start Your SEO Strategy'
+      text === 'Start Your SEO Strategy' ||
+      text === 'Content-Projekt starten' ||
+      text === 'Launch Your Campaign' ||
+      text === 'Kampagne starten'
     ) {
       return true;
     }
@@ -158,14 +163,15 @@ const PageHero = ({
     }
     
     // Determine if the primary CTA should open lead form
-    const openLeadForm = primary.onClick === handleOpenLeadForm || shouldOpenLeadForm(primary.text);
+    const openLeadForm = shouldOpenLeadForm(primary.text);
     
     return (
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         {openLeadForm ? (
           <Button 
             size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]"
+            data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
             {primary.text}
