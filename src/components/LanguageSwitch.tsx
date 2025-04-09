@@ -45,7 +45,7 @@ const LanguageSwitch: React.FC = () => {
     
     if (isGermanPath && language !== 'de') {
       setLanguage('de');
-    } else if (!isGermanPath && language === 'en') {
+    } else if (!isGermanPath && language === 'de') {  // Changed from 'en' to 'de'
       setLanguage('en');
     }
   }, [location.pathname, language, setLanguage]);
