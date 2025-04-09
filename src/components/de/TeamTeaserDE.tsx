@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const TeamTeaserDE = () => {
   const teamMembers = [
@@ -30,9 +29,9 @@ const TeamTeaserDE = () => {
           {teamMembers.map((member, index) => (
             <div 
               key={index} 
-              className="flex flex-col items-center"
+              className="flex flex-col items-center group"
             >
-              <div className="relative mb-4 w-[200px] h-[200px] rounded-full overflow-hidden bg-[#faf5eb] border-2 border-white">
+              <div className="relative mb-4 w-[200px] h-[200px] rounded-full overflow-hidden bg-brand-background/50 border-2 border-white shadow-sm group-hover:shadow-md transition-all duration-300">
                 <img 
                   src={member.image} 
                   alt={member.name}
