@@ -46,11 +46,11 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
               className="flex"
             >
               <div className="h-full flex flex-col items-center justify-center p-6 w-full">
-                <div className="flex items-center justify-center mb-5">
+                <div className="flex items-center justify-center mb-5 h-24 w-full">
                   <img 
                     src={tool.logoSrc} 
                     alt={tool.name} 
-                    className="h-16 object-contain" 
+                    className="max-h-full max-w-full object-contain" 
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">
