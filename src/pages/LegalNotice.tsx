@@ -118,11 +118,7 @@ const LegalNotice = () => {
         </div>
       </section>
 
-      <div className="flex justify-center mt-12">
-        <Button asChild>
-          <Link to="/contact">Contact Our Data Officer</Link>
-        </Button>
-      </div>
+      {/* Removed the button section */}
     </PageLayout>
   );
 };

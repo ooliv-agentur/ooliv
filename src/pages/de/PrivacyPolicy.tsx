@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
@@ -187,6 +188,8 @@ const GermanPrivacyPolicy = () => {
             </AccordionItem>
           </Accordion>
 
+          {/* Removed the buttons section */}
+          
           {/* Adding more space before footer */}
           <div className="mt-32"></div>
         </div>

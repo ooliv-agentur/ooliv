@@ -17,8 +17,6 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
@@ -180,15 +178,6 @@ const PrivacyPolicy = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-
-          <div className="flex justify-center mt-12">
-            <Button asChild variant="outline" className="mr-4">
-              <Link to="/legal-notice">View Legal Notice</Link>
-            </Button>
-            <Button asChild>
-              <Link to="/contact">Contact Our Data Officer</Link>
-            </Button>
-          </div>
 
           <div className="mt-32"></div>
         </div>
