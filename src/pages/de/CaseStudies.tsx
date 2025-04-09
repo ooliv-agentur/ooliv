@@ -2,11 +2,10 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 
 // Success pillars
 const successPillars = [
@@ -102,53 +101,23 @@ const GermanCaseStudies = () => {
           </div>
         </div>
         
-        {/* FAQ Section */}
-        <div className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-brand-heading mb-4">
-                Häufige Fragen zu Projekten & Marketing Mainz
-              </h2>
-              <p className="text-lg text-gray-600">
-                Hier beantworten wir die wichtigsten Fragen rund um Projekte und Marketing in Mainz.
-              </p>
-            </div>
-            
-            <div className="space-y-6">
-              {faqItems.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold mb-2 text-brand-heading">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* FAQ Section - Use the reusable FAQ component */}
+        <FAQ 
+          customFaqs={faqItems}
+          customTitle="Häufige Fragen zu Projekten & Marketing Mainz"
+          customCtaText="Weitere Fragen? Kontaktieren Sie uns"
+        />
 
         {/* Final CTA Section */}
-        <div className="mt-24 bg-brand-backgroundAlt rounded-lg p-10 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Lassen Sie uns Ihre Erfolgsgeschichte schreiben</h2>
-          <p className="text-lg max-w-2xl mx-auto mb-8">
-            Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" asChild>
-              <Link to="/de/kontakt">
-                Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/de/kontakt">
-                Strategiegespräch buchen
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-          <p className="text-lg text-brand-text font-medium mt-8">
-            100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
-          </p>
-        </div>
+        <CTA 
+          title="Lassen Sie uns Ihre Erfolgsgeschichte schreiben"
+          subtitle="Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um."
+          primaryCta="Projekt starten"
+          secondaryCta="Strategiegespräch buchen"
+          secondaryCtaLink="/de/kontakt"
+          footerNote="100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind"
+          lightBackground={true}
+        />
       </div>
     </PageLayout>
   );

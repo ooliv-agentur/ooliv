@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -12,6 +13,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 
 const partnerLogos = [
   { id: 'scheurich', name: 'Scheurich' },
@@ -129,57 +132,20 @@ const CaseStudies = () => {
           </div>
         </div>
         
-        <div className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-brand-heading mb-4">
-                Case Study & Project Questions
-              </h2>
-              <p className="text-lg text-gray-600">
-                Common questions about our projects and processes.
-              </p>
-            </div>
-            
-            <Accordion type="single" collapsible className="w-full">
-              {faqItems.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4">
-                    <p className="text-brand-text">{faq.answer}</p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
+        {/* Use the FAQ component for consistent styling */}
+        <FAQ 
+          customFaqs={faqItems}
+          customTitle="Case Study & Project Questions"
+          customCtaText="Have more questions about our projects?"
+        />
 
-        <div className="mt-24 bg-brand-backgroundAlt rounded-lg p-10 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Lassen Sie uns Ihre Erfolgsgeschichte schreiben</h2>
-          <p className="text-lg max-w-2xl mx-auto mb-8">
-            Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-              onClick={handleOpenLeadForm}
-            >
-              Projekt starten
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/de/kontakt">
-                Strategiegespräch buchen
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-          <p className="text-lg text-brand-text font-medium mt-8">
-            100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
-          </p>
-        </div>
+        <CTA 
+          title="Let's Write Your Success Story"
+          subtitle="Whether you need a relaunch, better conversions, or more qualified leads, we're ready to help. Every ooliv project starts with a strategy session."
+          primaryCta="Start a Project"
+          secondaryCta="Book a Strategy Call"
+          lightBackground={true}
+        />
       </div>
     </PageLayout>
   );
