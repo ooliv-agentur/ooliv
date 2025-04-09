@@ -13,7 +13,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-// Partner logos placeholders
 const partnerLogos = [
   { id: 'scheurich', name: 'Scheurich' },
   { id: 'cobus', name: 'COBUS' },
@@ -22,7 +21,6 @@ const partnerLogos = [
   { id: 'greentech', name: 'GreenTech' }
 ];
 
-// Success pillars
 const successPillars = [
   {
     title: "Strategy-First Process",
@@ -38,7 +36,6 @@ const successPillars = [
   }
 ];
 
-// FAQ items with focus on "marketing mainz"
 const faqItems = [
   {
     question: "What types of businesses does ooliv work with?",
@@ -61,6 +58,10 @@ const faqItems = [
 const CaseStudies = () => {
   const { language } = useLanguage();
 
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
     <PageLayout>
       <PageHero
@@ -78,7 +79,6 @@ const CaseStudies = () => {
       />
       
       <div className="section-container">
-        {/* Partner Logos */}
         <div className="py-12 border-t border-b border-gray-200">
           <div className="text-center mb-8">
             <div className="flex justify-center flex-wrap gap-12 mb-8">
@@ -98,14 +98,12 @@ const CaseStudies = () => {
           </div>
         </div>
         
-        {/* Full Case Studies Section with default titles */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <CaseStudiesSection />
           </div>
         </section>
         
-        {/* What Makes These Projects Work */}
         <div className="py-20 bg-brand-backgroundAlt">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -131,7 +129,6 @@ const CaseStudies = () => {
           </div>
         </div>
         
-        {/* FAQ Section */}
         <div className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -158,26 +155,30 @@ const CaseStudies = () => {
           </div>
         </div>
 
-        {/* Final CTA Section */}
         <div className="mt-24 bg-brand-backgroundAlt rounded-lg p-10 text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Let's Write Your Success Story</h2>
+          <h2 className="text-3xl font-bold mb-4">Lassen Sie uns Ihre Erfolgsgeschichte schreiben</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            Whether you need a relaunch, better conversions, or more qualified leads, we're ready to help. Every ooliv project starts with a strategy session.
+            Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/contact">
-                Start a Project
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button 
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              onClick={handleOpenLeadForm}
+            >
+              Projekt starten
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/contact">
-                Book a Strategy Call
+              <Link to="/de/kontakt">
+                Strategiegespräch buchen
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
+          <p className="text-lg text-brand-text font-medium mt-8">
+            100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
+          </p>
         </div>
       </div>
     </PageLayout>
