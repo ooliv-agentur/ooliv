@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LegalHero from '@/components/legal/LegalHero';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
@@ -14,16 +16,15 @@ const GermanLegalNotice = () => {
   return (
     <PageLayout>
       <LegalHero
-        badge="Impressum"
         title="Impressum"
         subtitle="Rechtliche Informationen über ooliv"
         primaryCta={{
-          text: "",
-          link: ""
+          text: "Zur Datenschutzerklärung",
+          link: "/de/datenschutz"
         }}
         secondaryCta={{
-          text: "",
-          link: ""
+          text: "Kontakt aufnehmen",
+          link: "/de/kontakt"
         }}
       />
       
@@ -87,7 +88,14 @@ const GermanLegalNotice = () => {
             </p>
           </div>
           
-          <div className="mt-32"></div>
+          <div className="mt-12 flex justify-center gap-4">
+            <Button asChild variant="outline">
+              <Link to="/de/datenschutz">Datenschutzerklärung ansehen</Link>
+            </Button>
+            <Button asChild>
+              <Link to="/de/kontakt">Kontakt aufnehmen</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </PageLayout>

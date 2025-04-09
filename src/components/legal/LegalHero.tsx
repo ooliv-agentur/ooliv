@@ -3,7 +3,6 @@ import React from 'react';
 import PageHero from '@/components/PageHero';
 
 interface LegalHeroProps {
-  badge?: string;
   title: string;
   subtitle: string;
   primaryCta: {
@@ -16,18 +15,14 @@ interface LegalHeroProps {
   };
 }
 
-const LegalHero = ({ badge, title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
-  // Only pass CTA props to PageHero if they have content
-  const primaryCtaProp = primaryCta?.text ? primaryCta : undefined;
-  const secondaryCtaProp = secondaryCta?.text ? secondaryCta : undefined;
-  
+const LegalHero = ({ title, subtitle, primaryCta, secondaryCta }: LegalHeroProps) => {
   return (
     <PageHero
-      badge={badge}
+      badge="Impressum"
       title={title}
       subtitle={subtitle}
-      primaryCta={primaryCtaProp}
-      secondaryCta={secondaryCtaProp}
+      primaryCta={primaryCta}
+      secondaryCta={secondaryCta}
     />
   );
 };

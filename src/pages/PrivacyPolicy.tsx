@@ -1,6 +1,9 @@
+
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Lock, 
   Database, 
@@ -33,12 +36,12 @@ const PrivacyPolicy = () => {
         title="Your Data, Your Rights"
         subtitle="How we handle, store, and protect your personal information. This privacy policy explains what data we collect, how we use it, and how you can exercise your rights under the GDPR."
         primaryCta={{
-          text: "",
-          link: ""
+          text: "Read Full Policy",
+          link: "#policy"
         }}
         secondaryCta={{
-          text: "",
-          link: ""
+          text: "Contact Data Officer",
+          link: "/contact"
         }}
       />
 
@@ -50,7 +53,7 @@ const PrivacyPolicy = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Privacy Policy</h2>
             <p className="text-lg text-brand-text/80 max-w-2xl mx-auto">
-              At ooliv, we take your privacy seriously. This policy details how we collect, use, and protect your information.
+              At ooliv GmbH, we take your privacy seriously. This policy details how we collect, use, and protect your information.
             </p>
           </div>
 
@@ -179,7 +182,14 @@ const PrivacyPolicy = () => {
             </AccordionItem>
           </Accordion>
 
-          <div className="mt-32"></div>
+          <div className="flex justify-center mt-12">
+            <Button asChild variant="outline" className="mr-4">
+              <Link to="/legal-notice">View Legal Notice</Link>
+            </Button>
+            <Button asChild>
+              <Link to="/contact">Contact Our Data Officer</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </PageLayout>
