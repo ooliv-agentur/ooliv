@@ -28,7 +28,7 @@ const WebDesign = () => {
       
       <WebDesignFAQ />
       
-      {/* Final CTA Section */}
+      {/* Final CTA Section - removed footerNote to prevent duplication */}
       <CTA 
         title="Let's Talk About Your Webdesign Project"
         subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."

@@ -36,7 +36,7 @@ const GermanWebDesign = () => {
       
       <WebDesignFAQ />
       
-      {/* Final CTA Section */}
+      {/* Final CTA Section - removed footerNote to prevent duplication */}
       <CTA 
         title="Sprechen wir über Ihr Webdesign-Projekt"
         subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."

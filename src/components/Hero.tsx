@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageHero from './PageHero';
-import ScrollIndicator from './ScrollIndicator';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface HeroProps {

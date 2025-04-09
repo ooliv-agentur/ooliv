@@ -53,6 +53,7 @@ const Index = () => {
         title="Ready to transform your digital presence?"
         subtitle="Let's discuss how our team can help your business achieve its online goals."
         primaryCta="Start Your Website Project"
+        /* Removed custom footerNote to prevent duplication */
       />
     </PageLayout>
   );

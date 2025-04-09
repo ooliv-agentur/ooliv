@@ -70,13 +70,7 @@ const WebDevCTA = () => {
           </Button>
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-brand-text">
-            {language === 'de' 
-              ? "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz"
-              : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact"}
-          </p>
-        </div>
+        {/* Removed the duplicate footer text */}
       </div>
       
       <ContactForm 

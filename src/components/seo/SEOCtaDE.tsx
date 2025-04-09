@@ -31,9 +31,7 @@ const SEOCtaDE = () => {
           </Button>
         </div>
         
-        <p className="text-sm text-brand-text">
-          100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz
-        </p>
+        {/* Removed duplicate footer note - now handled by CTA component */}
       </div>
     </section>
   );

@@ -96,7 +96,7 @@ const GermanIndex = () => {
           title="Bereit, Ihre digitale Präsenz zu transformieren?"
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
           primaryCta="Starten Sie Ihr Website-Projekt"
-          footerNote="100+ erfolgreiche Projekte umgesetzt • Vertrauenspartner führender Unternehmen • KI-Strategien, die messbar und menschlich sind"
+          /* Removed custom footerNote to prevent duplication */
         />
       </PageLayout>
       

@@ -63,6 +63,7 @@ const GermanWebDevelopment = () => {
         subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
+        /* Removed custom footerNote to prevent duplication */
       />
     </PageLayout>
   );

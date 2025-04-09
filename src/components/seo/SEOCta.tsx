@@ -32,9 +32,7 @@ const SEOCta = () => {
           </Button>
         </div>
         
-        <p className="text-sm text-brand-text">
-          100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact
-        </p>
+        {/* Removed duplicate footer note - now handled by CTA component */}
       </div>
     </section>
   );
