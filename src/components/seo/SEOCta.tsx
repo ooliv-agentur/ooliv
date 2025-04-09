@@ -1,13 +1,12 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { FileCheck, PhoneCall } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { FileCheck } from 'lucide-react';
 
 const SEOCta = () => {
-  const { language } = useLanguage();
-  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   return (
     <section className="py-20 bg-brand-background">
@@ -24,24 +23,10 @@ const SEOCta = () => {
           <Button 
             size="lg" 
             className="bg-brand-primary text-white hover:bg-brand-primaryHover text-base py-6 font-medium font-sans"
-            asChild
+            onClick={handleOpenLeadForm}
           >
-            <Link to={contactPath}>
-              <FileCheck className="mr-2 h-5 w-5" />
-              Request a Consultation
-            </Link>
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white text-base py-6 font-medium font-sans"
-            asChild
-          >
-            <Link to={contactPath}>
-              <PhoneCall className="mr-2 h-5 w-5" />
-              Book Strategy Call
-            </Link>
+            <FileCheck className="mr-2 h-5 w-5" />
+            Request a Consultation
           </Button>
         </div>
         
@@ -56,4 +41,3 @@ const SEOCta = () => {
 };
 
 export default SEOCta;
-
