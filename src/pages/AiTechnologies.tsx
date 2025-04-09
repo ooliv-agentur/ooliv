@@ -1,11 +1,9 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
-import AiTechCaseStudies from '@/components/ai-technologies/AiTechCaseStudies';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -89,4 +87,3 @@ const AiTechnologies = () => {
 };
 
 export default AiTechnologies;
-

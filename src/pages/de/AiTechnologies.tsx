@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
@@ -82,7 +81,6 @@ const GermanAiTechnologies = () => {
         primaryCta="KI-Potenzialanalyse anfordern"
         secondaryCta="Strategiegespräch vereinbaren"
       >
-        {/* New claim section */}
         <section className="mt-12 text-center">
           <div className="container mx-auto px-4">
             <p className="text-lg text-brand-text font-medium">
@@ -96,4 +94,3 @@ const GermanAiTechnologies = () => {
 };
 
 export default GermanAiTechnologies;
-
