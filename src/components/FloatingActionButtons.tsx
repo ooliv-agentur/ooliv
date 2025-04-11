@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { useIsMobile } from '@/hooks/use-mobile';
 import LeadGenerationOverlay from './LeadGenerationOverlay';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -17,7 +16,6 @@ const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const isMobileDevice = useIsMobile();
   const { language } = useLanguage();
 
   const toggleExpanded = () => {
@@ -73,10 +71,8 @@ const FloatingActionButtons = () => {
   return (
     <>
       <div className={cn(
-        "fixed z-40 flex flex-col gap-5 transition-all duration-300",
-        isMobileDevice 
-          ? "right-5 bottom-36 sm:bottom-40 sm:right-6 md:right-10 md:bottom-24" // Mobile positioning - above the menu button
-          : "right-10 top-1/2 -translate-y-1/2" // Desktop positioning
+        "fixed right-10 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
+        "transition-all duration-300"
       )}>
         {visibleButtons.map((button) => (
           <Tooltip key={button.id}>
