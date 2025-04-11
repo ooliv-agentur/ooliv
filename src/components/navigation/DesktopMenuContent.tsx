@@ -36,7 +36,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
+              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full" 
               onClick={onClose}
               aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
             >
