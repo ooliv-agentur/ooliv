@@ -15,7 +15,10 @@ const WebDesignProcess = () => {
   const isGerman = language === 'de';
   const [activeIndex, setActiveIndex] = useState(0);
   
-  const [emblaRef, emblaApi] = useEmblaCarousel({}, []);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: true,
+  }, []);
   
   useEffect(() => {
     if (emblaApi) {
