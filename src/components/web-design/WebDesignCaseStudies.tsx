@@ -76,11 +76,11 @@ const WebDesignCaseStudies = () => {
                 <div className="flex items-center mb-4">
                   {study.logo && (
                     <div className="h-10 w-auto mr-3">
-                      <AspectRatio ratio={3/1} className="h-10 w-auto">
+                      <AspectRatio ratio={3/1} className="h-10">
                         <img 
                           src={study.logo} 
                           alt={`${study.client} logo`}
-                          className="h-10 w-auto object-contain object-left"
+                          className="h-10 object-contain object-left"
                         />
                       </AspectRatio>
                     </div>
