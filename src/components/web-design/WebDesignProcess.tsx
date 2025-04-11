@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -9,10 +9,27 @@ import {
 } from "@/components/ui/carousel";
 import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel();
+  
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        setActiveIndex(emblaApi.selectedScrollSnap());
+      });
+    }
+    
+    return () => {
+      if (emblaApi) {
+        emblaApi.off('select');
+      }
+    };
+  }, [emblaApi]);
   
   const translations = {
     en: {
@@ -55,7 +72,8 @@ const WebDesignProcess = () => {
           deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
         }
       ],
-      deliverableTitle: "DELIVERABLES"
+      deliverableTitle: "DELIVERABLES",
+      scrollHint: "Scroll to see more"
     },
     de: {
       title: "Unser Webdesign-Prozess – von der Planung bis zum Launch",
@@ -97,7 +115,8 @@ const WebDesignProcess = () => {
           deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
         }
       ],
-      deliverableTitle: "WAS WIR LIEFERN"
+      deliverableTitle: "WAS WIR LIEFERN",
+      scrollHint: "Weiter scrollen für mehr"
     }
   };
   
@@ -119,6 +138,7 @@ const WebDesignProcess = () => {
             align: "start",
             loop: true,
           }}
+          ref={emblaRef}
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
@@ -160,6 +180,28 @@ const WebDesignProcess = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          
+          {/* Pagination dots for mobile */}
+          <div className="flex justify-center items-center mt-6 md:hidden">
+            {t.steps.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full mx-1.5 transition-all duration-300 ${
+                  index === activeIndex 
+                    ? "bg-brand-primary scale-125" 
+                    : "bg-gray-300"
+                }`}
+                onClick={() => emblaApi?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          {/* Scroll hint for mobile */}
+          <div className="md:hidden text-center mt-3 text-sm text-gray-500 animate-pulse">
+            {t.scrollHint} ›
+          </div>
+          
           <div className="flex justify-center mt-8">
             <CarouselPrevious className="mr-2" />
             <CarouselNext className="ml-2" />
