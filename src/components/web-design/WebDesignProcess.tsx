@@ -1,9 +1,10 @@
 
-import React, { useRef, useState } from 'react';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight, CircleDot } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import { Button } from "@/components/ui/button";
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
@@ -105,27 +106,28 @@ const WebDesignProcess = () => {
   
   const t = isGerman ? translations.de : translations.en;
 
-  const scrollLeft = () => {
+  // Move to next slide
+  const scrollToIndex = (index: number) => {
     if (scrollRef.current) {
       const container = scrollRef.current;
       const cardWidth = container.scrollWidth / t.steps.length;
-      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-      
-      if (activeIndex > 0) {
-        setActiveIndex(activeIndex - 1);
-      }
+      container.scrollTo({ 
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setActiveIndex(index);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (activeIndex > 0) {
+      scrollToIndex(activeIndex - 1);
     }
   };
 
   const scrollRight = () => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const cardWidth = container.scrollWidth / t.steps.length;
-      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
-      
-      if (activeIndex < t.steps.length - 1) {
-        setActiveIndex(activeIndex + 1);
-      }
+    if (activeIndex < t.steps.length - 1) {
+      scrollToIndex(activeIndex + 1);
     }
   };
 
@@ -137,14 +139,30 @@ const WebDesignProcess = () => {
       // Calculate active index based on scroll position
       const cardWidth = container.scrollWidth / t.steps.length;
       const newIndex = Math.round(container.scrollLeft / cardWidth);
-      if (newIndex !== activeIndex) {
+      if (newIndex !== activeIndex && newIndex >= 0 && newIndex < t.steps.length) {
         setActiveIndex(newIndex);
       }
     }
   };
 
+  // Add keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        scrollLeft();
+      } else if (e.key === 'ArrowRight') {
+        scrollRight();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeIndex]);
+
   // Calculate if we can scroll further
-  const canScrollLeft = scrollPosition > 0;
+  const canScrollLeft = scrollPosition > 10;
   const canScrollRight = scrollRef.current 
     ? scrollPosition < scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 10 
     : false;
@@ -160,111 +178,111 @@ const WebDesignProcess = () => {
           {t.subtitle}
         </p>
         
-        <div className="w-full max-w-6xl mx-auto">
-          {/* Mobile/Tablet Scroll View */}
-          <div className="relative">
-            <div 
-              ref={scrollRef}
-              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none pb-6 -mx-4 px-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              onScroll={handleScroll}
-            >
-              <style jsx>{`
-                div::-webkit-scrollbar {
-                  display: none;
-                }
-              `}</style>
-              
-              {t.steps.map((step, index) => (
-                <div 
-                  key={index}
-                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
-                >
-                  <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
-                        {step.number}
+        <div className="w-full max-w-6xl mx-auto relative">
+          {/* Custom scrollbar styling */}
+          <style dangerouslySetInnerHTML={{ __html: `
+            .process-scroll::-webkit-scrollbar {
+              display: none;
+            }
+            .process-scroll {
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+            }
+          `}} />
+          
+          {/* Carousel Container */}
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4"
+            onScroll={handleScroll}
+          >
+            {t.steps.map((step, index) => (
+              <div 
+                key={index}
+                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
+              >
+                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+                      {step.number}
+                    </div>
+                    <div>
+                      <div className="flex items-center mb-2">
+                        <step.icon className="h-5 w-5 text-brand-primary mr-2" />
+                        <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
                       </div>
-                      <div>
-                        <div className="flex items-center mb-2">
-                          <step.icon className="h-5 w-5 text-brand-primary mr-2" />
-                          <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
-                        </div>
-                        <p className="text-brand-text text-sm mb-5">{step.description}</p>
-                        
-                        <div className="border-t border-brand-backgroundAlt pt-4">
-                          <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
-                            {t.deliverableTitle}
-                          </h4>
-                          <div className="space-y-2.5">
-                            {step.deliverables.map((deliverable, idx) => (
-                              <div key={idx} className="flex items-center">
-                                <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
-                                  <Check className="h-3 w-3 text-brand-primary" />
-                                </div>
-                                <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                      <p className="text-brand-text text-sm mb-5">{step.description}</p>
+                      
+                      <div className="border-t border-brand-backgroundAlt pt-4">
+                        <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
+                          {t.deliverableTitle}
+                        </h4>
+                        <div className="space-y-2.5">
+                          {step.deliverables.map((deliverable, idx) => (
+                            <div key={idx} className="flex items-center">
+                              <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                                <Check className="h-3 w-3 text-brand-primary" />
                               </div>
-                            ))}
-                          </div>
+                              <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Navigation Controls - Always visible */}
+          <div className="flex justify-between mt-6">
+            <Button 
+              variant="secondary"
+              size="icon"
+              onClick={scrollLeft}
+              className={`rounded-full transition-opacity ${canScrollLeft ? 'opacity-100' : 'opacity-50'}`}
+              disabled={!canScrollLeft}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            
+            {/* Position Indicators */}
+            <div className="flex items-center gap-1.5">
+              {t.steps.map((_, idx) => (
+                <button
+                  key={idx}
+                  aria-label={`Go to step ${idx + 1}`}
+                  className={`flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary`}
+                  onClick={() => scrollToIndex(idx)}
+                >
+                  <CircleDot 
+                    className={`h-4 w-4 transition-colors ${
+                      idx === activeIndex 
+                        ? 'text-brand-primary fill-brand-primary' 
+                        : 'text-gray-300'
+                    }`} 
+                  />
+                </button>
               ))}
             </div>
             
-            {/* Navigation Controls */}
-            {isTablet && (
-              <div className="flex justify-between mt-6">
-                <button 
-                  onClick={scrollLeft}
-                  className={`p-2 rounded-full shadow-sm transition-opacity ${canScrollLeft ? 'bg-white opacity-100' : 'bg-gray-100 opacity-50'}`}
-                  disabled={!canScrollLeft}
-                >
-                  <ChevronLeft className="h-5 w-5 text-brand-heading" />
-                </button>
-                
-                <div className="flex items-center gap-1">
-                  {t.steps.map((_, idx) => (
-                    <button
-                      key={idx}
-                      className={`h-2 rounded-full transition-all ${
-                        idx === activeIndex 
-                          ? 'w-6 bg-brand-primary' 
-                          : 'w-2 bg-gray-300'
-                      }`}
-                      onClick={() => {
-                        if (scrollRef.current) {
-                          const container = scrollRef.current;
-                          const cardWidth = container.scrollWidth / t.steps.length;
-                          container.scrollTo({ 
-                            left: idx * cardWidth,
-                            behavior: 'smooth'
-                          });
-                          setActiveIndex(idx);
-                        }
-                      }}
-                    />
-                  ))}
-                </div>
-                
-                <button 
-                  onClick={scrollRight}
-                  className={`p-2 rounded-full shadow-sm transition-opacity ${canScrollRight ? 'bg-white opacity-100' : 'bg-gray-100 opacity-50'}`}
-                  disabled={!canScrollRight}
-                >
-                  <ChevronRight className="h-5 w-5 text-brand-heading" />
-                </button>
-              </div>
-            )}
-            
-            {isMobile && (
-              <div className="text-center mt-3 text-sm text-gray-500">
-                {t.scrollHint} ›
-              </div>
-            )}
+            <Button 
+              variant="secondary"
+              size="icon"
+              onClick={scrollRight}
+              className={`rounded-full transition-opacity ${canScrollRight ? 'opacity-100' : 'opacity-50'}`}
+              disabled={!canScrollRight}
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
           </div>
+          
+          {isMobile && (
+            <div className="text-center mt-3 text-sm text-gray-500">
+              {t.scrollHint} ›
+            </div>
+          )}
         </div>
       </div>
     </section>
