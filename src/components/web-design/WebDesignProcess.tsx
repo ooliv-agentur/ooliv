@@ -1,10 +1,10 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight, CircleDot } from 'lucide-react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { Button } from "@/components/ui/button";
+import { cn } from '@/lib/utils';
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
@@ -14,6 +14,9 @@ const WebDesignProcess = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   
   const translations = {
     en: {
@@ -106,7 +109,7 @@ const WebDesignProcess = () => {
   
   const t = isGerman ? translations.de : translations.en;
 
-  // Move to next slide
+  // Move to specific slide
   const scrollToIndex = (index: number) => {
     if (scrollRef.current) {
       const container = scrollRef.current;
@@ -119,18 +122,7 @@ const WebDesignProcess = () => {
     }
   };
 
-  const scrollLeft = () => {
-    if (activeIndex > 0) {
-      scrollToIndex(activeIndex - 1);
-    }
-  };
-
-  const scrollRight = () => {
-    if (activeIndex < t.steps.length - 1) {
-      scrollToIndex(activeIndex + 1);
-    }
-  };
-
+  // Handle scroll events to update active index
   const handleScroll = () => {
     if (scrollRef.current) {
       const container = scrollRef.current;
@@ -145,13 +137,65 @@ const WebDesignProcess = () => {
     }
   };
 
+  // Mouse/touch drag functionality
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (scrollRef.current) {
+      setIsDragging(true);
+      setStartX(e.pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (scrollRef.current) {
+      setIsDragging(true);
+      setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    
+    // After dragging ends, snap to the nearest slide
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.scrollWidth / t.steps.length;
+      const targetIndex = Math.round(container.scrollLeft / cardWidth);
+      scrollToIndex(targetIndex);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    if (scrollRef.current) {
+      const x = e.pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 1.5; // Multiplier for drag sensitivity
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    if (scrollRef.current) {
+      const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 1.5; // Multiplier for drag sensitivity
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
   // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        scrollLeft();
+        if (activeIndex > 0) {
+          scrollToIndex(activeIndex - 1);
+        }
       } else if (e.key === 'ArrowRight') {
-        scrollRight();
+        if (activeIndex < t.steps.length - 1) {
+          scrollToIndex(activeIndex + 1);
+        }
       }
     };
 
@@ -159,13 +203,13 @@ const WebDesignProcess = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeIndex]);
+  }, [activeIndex, t.steps.length]);
 
-  // Calculate if we can scroll further
-  const canScrollLeft = scrollPosition > 10;
-  const canScrollRight = scrollRef.current 
-    ? scrollPosition < scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 10 
-    : false;
+  // CSS to apply to the scroll container
+  const scrollContainerClass = cn(
+    "flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4 cursor-grab",
+    isDragging && "cursor-grabbing"
+  );
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -190,11 +234,18 @@ const WebDesignProcess = () => {
             }
           `}} />
           
-          {/* Carousel Container */}
+          {/* Carousel Container with drag functionality */}
           <div 
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4"
+            className={scrollContainerClass}
             onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleMouseUp}
+            onTouchMove={handleTouchMove}
           >
             {t.steps.map((step, index) => (
               <div 
@@ -235,47 +286,23 @@ const WebDesignProcess = () => {
             ))}
           </div>
           
-          {/* Navigation Controls - Always visible */}
-          <div className="flex justify-between mt-6">
-            <Button 
-              variant="secondary"
-              size="icon"
-              onClick={scrollLeft}
-              className={`rounded-full transition-opacity ${canScrollLeft ? 'opacity-100' : 'opacity-50'}`}
-              disabled={!canScrollLeft}
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            
-            {/* Position Indicators */}
-            <div className="flex items-center gap-1.5">
+          {/* Position Indicators (simplified, no dots inside) */}
+          <div className="flex justify-center mt-6">
+            <div className="flex items-center gap-2">
               {t.steps.map((_, idx) => (
                 <button
                   key={idx}
                   aria-label={`Go to step ${idx + 1}`}
-                  className={`flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary`}
+                  className={cn(
+                    "w-3 h-3 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary",
+                    idx === activeIndex 
+                      ? "bg-brand-primary scale-110" 
+                      : "bg-gray-300 hover:bg-gray-400"
+                  )}
                   onClick={() => scrollToIndex(idx)}
-                >
-                  <CircleDot 
-                    className={`h-4 w-4 transition-colors ${
-                      idx === activeIndex 
-                        ? 'text-brand-primary fill-brand-primary' 
-                        : 'text-gray-300'
-                    }`} 
-                  />
-                </button>
+                />
               ))}
             </div>
-            
-            <Button 
-              variant="secondary"
-              size="icon"
-              onClick={scrollRight}
-              className={`rounded-full transition-opacity ${canScrollRight ? 'opacity-100' : 'opacity-50'}`}
-              disabled={!canScrollRight}
-            >
-              <ChevronRight className="h-5 w-5" />
-            </Button>
           </div>
           
           {isMobile && (
