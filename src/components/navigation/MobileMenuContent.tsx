@@ -2,7 +2,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { X, Mail, Phone } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -53,35 +53,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             </nav>
           </div>
           
-          <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { 
-                  icon: Mail, 
-                  label: language === 'de' ? "E-Mail an ooliv" : "Email ooliv", 
-                  href: "mailto:info@ooliv.de" 
-                },
-                { 
-                  icon: Phone, 
-                  label: language === 'de' ? "ooliv anrufen" : "Call ooliv", 
-                  href: "tel:+4961316367801" 
-                }
-              ].map((contact, index) => (
-                <Button 
-                  key={index}
-                  variant="outline" 
-                  size="lg" 
-                  className="w-full py-6 min-h-[60px] border-gray-300 text-[#b1b497] bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
-                  aria-label={contact.label}
-                  asChild
-                >
-                  <a href={contact.href}>
-                    <contact.icon className="h-6 w-6" />
-                  </a>
-                </Button>
-              ))}
-            </div>
-          </div>
+          {/* Removed the duplicate close button */}
         </motion.div>
       )}
     </AnimatePresence>
