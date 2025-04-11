@@ -74,16 +74,6 @@ const FloatingActionButtons = () => {
         "fixed right-10 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
         "transition-all duration-300"
       )}>
-        {isMobile && (
-          <Button
-            onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all"
-            aria-label={isExpanded ? "Close menu" : "Open menu"}
-          >
-            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
-          </Button>
-        )}
-
         {visibleButtons.map((button) => (
           <Tooltip key={button.id}>
             <TooltipTrigger asChild>
@@ -104,6 +94,16 @@ const FloatingActionButtons = () => {
             </TooltipContent>
           </Tooltip>
         ))}
+        
+        {isMobile && (
+          <Button
+            onClick={toggleExpanded}
+            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all"
+            aria-label={isExpanded ? "Close menu" : "Open menu"}
+          >
+            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+          </Button>
+        )}
       </div>
 
       {/* Lead Generation Overlay */}
