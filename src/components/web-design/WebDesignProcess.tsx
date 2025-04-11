@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -109,7 +108,6 @@ const WebDesignProcess = () => {
   
   const t = isGerman ? translations.de : translations.en;
 
-  // Move to specific slide
   const scrollToIndex = (index: number) => {
     if (scrollRef.current) {
       const container = scrollRef.current;
@@ -122,13 +120,11 @@ const WebDesignProcess = () => {
     }
   };
 
-  // Handle scroll events to update active index
   const handleScroll = () => {
     if (scrollRef.current) {
       const container = scrollRef.current;
       setScrollPosition(container.scrollLeft);
       
-      // Calculate active index based on scroll position
       const cardWidth = container.scrollWidth / t.steps.length;
       const newIndex = Math.round(container.scrollLeft / cardWidth);
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < t.steps.length) {
@@ -137,12 +133,16 @@ const WebDesignProcess = () => {
     }
   };
 
-  // Mouse/touch drag functionality
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (scrollRef.current) {
       setIsDragging(true);
       setStartX(e.pageX - scrollRef.current.offsetLeft);
       setScrollLeft(scrollRef.current.scrollLeft);
+      
+      if (scrollRef.current) {
+        scrollRef.current.style.cursor = 'grabbing';
+        scrollRef.current.style.userSelect = 'none';
+      }
     }
   };
 
@@ -157,8 +157,10 @@ const WebDesignProcess = () => {
   const handleMouseUp = () => {
     setIsDragging(false);
     
-    // After dragging ends, snap to the nearest slide
     if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+      scrollRef.current.style.userSelect = 'auto';
+      
       const container = scrollRef.current;
       const cardWidth = container.scrollWidth / t.steps.length;
       const targetIndex = Math.round(container.scrollLeft / cardWidth);
@@ -171,7 +173,7 @@ const WebDesignProcess = () => {
     e.preventDefault();
     if (scrollRef.current) {
       const x = e.pageX - scrollRef.current.offsetLeft;
-      const walk = (x - startX) * 1.5; // Multiplier for drag sensitivity
+      const walk = (x - startX) * 2.5;
       scrollRef.current.scrollLeft = scrollLeft - walk;
     }
   };
@@ -180,12 +182,11 @@ const WebDesignProcess = () => {
     if (!isDragging) return;
     if (scrollRef.current) {
       const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
-      const walk = (x - startX) * 1.5; // Multiplier for drag sensitivity
+      const walk = (x - startX) * 2.5;
       scrollRef.current.scrollLeft = scrollLeft - walk;
     }
   };
 
-  // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
@@ -205,7 +206,6 @@ const WebDesignProcess = () => {
     };
   }, [activeIndex, t.steps.length]);
 
-  // CSS to apply to the scroll container
   const scrollContainerClass = cn(
     "flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4 cursor-grab",
     isDragging && "cursor-grabbing"
@@ -223,7 +223,6 @@ const WebDesignProcess = () => {
         </p>
         
         <div className="w-full max-w-6xl mx-auto relative">
-          {/* Custom scrollbar styling */}
           <style dangerouslySetInnerHTML={{ __html: `
             .process-scroll::-webkit-scrollbar {
               display: none;
@@ -231,10 +230,11 @@ const WebDesignProcess = () => {
             .process-scroll {
               scrollbar-width: none;
               -ms-overflow-style: none;
+              scroll-behavior: smooth;
+              -webkit-overflow-scrolling: touch;
             }
           `}} />
           
-          {/* Carousel Container with drag functionality */}
           <div 
             ref={scrollRef}
             className={scrollContainerClass}
@@ -286,7 +286,6 @@ const WebDesignProcess = () => {
             ))}
           </div>
           
-          {/* Position Indicators (simplified, no dots inside) */}
           <div className="flex justify-center mt-6">
             <div className="flex items-center gap-2">
               {t.steps.map((_, idx) => (
@@ -294,7 +293,7 @@ const WebDesignProcess = () => {
                   key={idx}
                   aria-label={`Go to step ${idx + 1}`}
                   className={cn(
-                    "w-3 h-3 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary",
+                    "w-3 h-3 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus:ring-0 focus:outline-none",
                     idx === activeIndex 
                       ? "bg-brand-primary scale-110" 
                       : "bg-gray-300 hover:bg-gray-400"
