@@ -71,8 +71,7 @@ const FloatingActionButtons = () => {
   return (
     <>
       <div className={cn(
-        "fixed bottom-24 right-6 z-40 flex flex-col gap-5",
-        "md:right-10 md:top-1/2 md:-translate-y-1/2",
+        "fixed right-10 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
         "transition-all duration-300"
       )}>
         {visibleButtons.map((button) => (
@@ -90,7 +89,7 @@ const FloatingActionButtons = () => {
                 <button.icon className="h-5 w-5" />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side={isMobile ? "left" : "left"} className="bg-[#006064] text-white border-0">
+            <TooltipContent side="left" className="bg-[#006064] text-white border-0">
               <p>{button.label}</p>
             </TooltipContent>
           </Tooltip>
@@ -99,7 +98,7 @@ const FloatingActionButtons = () => {
         {isMobile && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none shadow-md transition-all"
+            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all"
             aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
             {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
