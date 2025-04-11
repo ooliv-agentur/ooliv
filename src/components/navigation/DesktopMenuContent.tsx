@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion } from 'framer-motion';
-import NavigationLinks from './NavigationLinks';
-import LanguageSwitcher from './LanguageSwitcher';
+import { NavigationLinks } from './NavigationLinks';
 
 interface DesktopMenuContentProps {
   isOpen: boolean;
@@ -14,33 +16,42 @@ interface DesktopMenuContentProps {
 const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
   const { language } = useLanguage();
 
+  // Handle link click with scroll to top
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    onClose();
+  };
+  
   return (
-    <motion.div
-      className="fixed inset-0 w-full h-full bg-[#f7fafa] z-[101] overflow-auto"
-      initial={{ x: '100%' }}
-      animate={{ x: isOpen ? 0 : '100%' }}
-      transition={{ type: "spring", damping: 25, stiffness: 300 }}
-    >
-      <div className="flex justify-end p-4 border-b border-gray-100">
-        {/* Close button removed from here as it's in MainNavigation */}
-      </div>
-
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-1">
-            <div className="flex justify-end mb-8">
-              <LanguageSwitcher />
-            </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
+        >
+          <div className="sticky top-0 z-10 flex items-center justify-end p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
+              onClick={onClose}
+              aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
+            >
+              <X className="h-6 w-6" />
+            </Button>
           </div>
           
-          <div className="lg:col-span-2">
-            <NavigationLinks onLinkClick={onClose} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 text-right" />
-            
-            {/* "Start Your Project" button removed */}
+          <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto">
+            <nav className="space-y-3 text-center w-full">
+              <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />
+            </nav>
           </div>
-        </div>
-      </div>
-    </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

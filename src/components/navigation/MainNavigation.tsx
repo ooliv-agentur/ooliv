@@ -24,6 +24,11 @@ const MainNavigation = () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+  
+  // Scroll to top on logo click
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -32,7 +37,7 @@ const MainNavigation = () => {
           <div className="flex justify-between h-24 items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to={language === 'de' ? '/de' : '/'} className="flex items-center">
+              <Link to={language === 'de' ? '/de' : '/'} className="flex items-center" onClick={handleLogoClick}>
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 

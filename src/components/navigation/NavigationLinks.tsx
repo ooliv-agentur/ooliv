@@ -1,18 +1,19 @@
 
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavigationLinksProps {
+  layout: 'mobile' | 'desktop';
   onLinkClick?: () => void;
-  className?: string;
 }
 
-const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
-  const location = useLocation();
-
-  // German navigation links only
-  const navigationLinks = [
+export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) => {
+  const { language } = useLanguage();
+  
+  // Navigation links for German language
+  const germanLinks = [
     { title: 'Home', path: '/' },
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
@@ -25,30 +26,34 @@ const NavigationLinks = ({ onLinkClick, className }: NavigationLinksProps) => {
     { title: 'Kontakt', path: '/kontakt' }
   ];
 
+  // Use German links by default
+  const navigationLinks = germanLinks;
+
+  const handleClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    } else {
+      // Default behavior: scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+  
   return (
-    <nav className={cn("w-full", className)}>
-      {navigationLinks.map((link, index) => {
-        const isActive = location.pathname === link.path;
-        
-        return (
-          <div key={index} className="py-1">
-            <Link 
-              to={link.path}
-              className={cn(
-                "block py-2 px-3 rounded-md font-bold text-lg transition-colors focus:outline-none hover:scale-105 transition-transform font-sans",
-                isActive 
-                  ? "text-[#b1b497] bg-[#b1b497]/10" 
-                  : "text-brand-heading hover:bg-[#b1b497]/10 hover:text-[#b1b497] focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50"
-              )}
-              onClick={onLinkClick}
-            >
-              {link.title}
-            </Link>
-          </div>
-        );
-      })}
-    </nav>
+    <>
+      {navigationLinks.map((link, index) => (
+        <div key={index}>
+          <Link 
+            to={link.path}
+            className={cn(
+              "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
+              layout === 'desktop' ? "text-lg py-2" : "text-3xl py-3"
+            )}
+            onClick={handleClick}
+          >
+            {link.title}
+          </Link>
+        </div>
+      ))}
+    </>
   );
 };
-
-export default NavigationLinks;

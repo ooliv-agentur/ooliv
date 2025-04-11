@@ -71,6 +71,12 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     handleTouchMove.current = null;
   };
 
+  // Handle link click with scroll to top
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    onClose();
+  };
+
   // Remove language toggling functionality since we're German-only now
   const navigationLinks = [
     { title: 'Home', path: '/' },
@@ -154,7 +160,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                         "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
                         isDesktop ? "text-lg py-2" : "text-3xl py-3"
                       )}
-                      onClick={onClose}
+                      onClick={handleLinkClick}
                     >
                       {link.title}
                     </Link>

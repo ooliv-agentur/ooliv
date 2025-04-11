@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { useScrollToTop } from "./hooks/useScrollToTop";
 
 // Import German pages as main pages
 import GermanIndex from "./pages/de/Index";
@@ -28,6 +29,12 @@ import NotFound from "./pages/NotFound";
 // Create the query client
 const queryClient = new QueryClient();
 
+// ScrollToTop component to use in the app
+const ScrollToTop = () => {
+  useScrollToTop();
+  return null;
+};
+
 const App = () => (
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
@@ -37,6 +44,7 @@ const App = () => (
           <Sonner />
           <ChatbaseWidget />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               {/* Main (German) Routes */}
               <Route path="/" element={<GermanIndex />} />
