@@ -8,6 +8,13 @@ import PageHero from '@/components/PageHero';
 import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -205,7 +212,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - Updated with new timeline design */}
       <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -214,7 +221,7 @@ const GermanGoogleAds = () => {
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-5">
+          <div className="hidden lg:grid grid-cols-5 gap-8 mb-10">
             {[
               {
                 step: "01",
@@ -242,19 +249,80 @@ const GermanGoogleAds = () => {
                 description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
               }
             ].map((step, index) => (
-              <div key={index} className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary">
-                <div className="absolute -top-4 -left-4 bg-brand-primary text-white h-10 w-10 rounded-full flex items-center justify-center font-bold">
+              <div key={index} className="relative">
+                {/* Step Circle */}
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold z-10">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-bold mb-2 mt-4">{step.title}</h3>
-                <p>{step.description}</p>
+                
+                {/* Content Box */}
+                <div className="bg-white pt-8 pb-6 px-4 rounded-lg border-l-4 border-brand-primary h-full mt-5">
+                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-sm">{step.description}</p>
+                </div>
+                
+                {/* Connector Line - hide for last item */}
+                {index < 4 && (
+                  <div className="absolute top-5 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gray-200"></div>
+                )}
               </div>
             ))}
           </div>
           
+          {/* Mobile carousel for process steps */}
+          <div className="lg:hidden">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {[
+                  {
+                    step: "01",
+                    title: "Strategie & Setup",
+                    description: "Zielgruppen, Angebote, Budgets und KPIs definieren"
+                  },
+                  {
+                    step: "02",
+                    title: "Landingpage-Erstellung",
+                    description: "Mobileoptimierte Seiten mit klarem Nutzen & schneller Ladezeit"
+                  },
+                  {
+                    step: "03",
+                    title: "Kampagnen-Setup",
+                    description: "Anzeigen starten – Search, Display & Performance Max"
+                  },
+                  {
+                    step: "04",
+                    title: "Tracking & Schutz",
+                    description: "Ereignisse erfassen, Klickbetrug blockieren, Datenqualität sichern"
+                  },
+                  {
+                    step: "05",
+                    title: "Reporting & Optimierung",
+                    description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
+                  }
+                ].map((step, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary h-full">
+                      <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold">
+                        {step.step}
+                      </div>
+                      <div className="mt-2">
+                        <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                        <p>{step.description}</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-4">
+                <CarouselPrevious className="relative inset-0 translate-y-0 left-0" />
+                <CarouselNext className="relative inset-0 translate-y-0 right-0" />
+              </div>
+            </Carousel>
+          </div>
+          
           <div className="text-center mt-12">
             <Button variant="link" asChild className="group">
-              <Link to="/de/webentwicklung" className="flex items-center gap-2 text-brand-primary">
+              <Link to="/de/webentwicklung" className="flex items-center justify-center gap-2 text-brand-primary">
                 Mehr über unsere Landingpages & Webentwicklung
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
@@ -317,7 +385,7 @@ const GermanGoogleAds = () => {
         primaryCta="Kampagne starten"
       />
       
-      {/* Footer text for "100+ projects" we need to add directly to the page instead of as children to CTA */}
+      {/* Footer text section */}
       <div className="bg-brand-backgroundAlt py-6">
         <div className="container mx-auto px-4">
           <p className="text-sm text-brand-text font-sans text-center">
