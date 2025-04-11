@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -15,8 +14,7 @@ const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   const [activeIndex, setActiveIndex] = useState(0);
-  // Fix: The issue is with how we're initializing useEmblaCarousel
-  // Pass empty objects as arguments instead of null to avoid "length" property errors
+  
   const [emblaRef, emblaApi] = useEmblaCarousel({}, []);
   
   useEffect(() => {
