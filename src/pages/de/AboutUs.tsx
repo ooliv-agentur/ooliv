@@ -108,7 +108,7 @@ const GermanAboutUs = () => {
             
             <Button size="lg" className="group bg-brand-primary hover:bg-brand-primary/90 text-white" asChild>
               <Link to="/de/kontakt">
-                Lassen Sie uns zusammenarbeiten – schnell, direkt und strategisch
+                Lassen Sie uns zusammenarbeiten
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
