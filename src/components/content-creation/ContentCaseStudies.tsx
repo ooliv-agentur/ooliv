@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const cases = {
   en: [
@@ -15,7 +16,8 @@ const cases = {
       result: "120% increase in qualified leads and 45% lower bounce rate.",
       services: ["Webdesign", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
       kpis: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
-      image: "bg-[url('/case-study-1.jpg')]"
+      image: "bg-[url('/case-study-1.jpg')]",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
     },
     {
       client: "COBUS – Enterprise Software",
@@ -25,7 +27,8 @@ const cases = {
       result: "80% more qualified sales opportunities and significantly improved user satisfaction.",
       services: ["Website Redesign", "Content Strategy", "UX Research", "CRM Integration"],
       kpis: ["80% More Qualified Leads", "3.2s Faster Load Time", "92% User Satisfaction"],
-      image: "bg-[url('/case-study-2.jpg')]"
+      image: "bg-[url('/case-study-2.jpg')]",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
     }
   ],
   de: [
@@ -37,7 +40,8 @@ const cases = {
       result: "120% mehr qualifizierte Leads und 45% niedrigere Absprungrate.",
       services: ["Webdesign", "UX-Optimierung", "Mobile Redesign", "CMS-Implementierung"],
       kpis: ["120% mehr Leads", "45% weniger Absprünge", "89% Mobile Conversion"],
-      image: "bg-[url('/case-study-1.jpg')]"
+      image: "bg-[url('/case-study-1.jpg')]",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
     },
     {
       client: "COBUS – Enterprise Software",
@@ -47,7 +51,8 @@ const cases = {
       result: "80% mehr qualifizierte Verkaufschancen und deutlich verbesserte Nutzerzufriedenheit.",
       services: ["Website-Redesign", "Content-Strategie", "UX-Research", "CRM-Integration"],
       kpis: ["80% mehr qualifizierte Leads", "3,2s schnellere Ladezeit", "92% Nutzerzufriedenheit"],
-      image: "bg-[url('/case-study-2.jpg')]"
+      image: "bg-[url('/case-study-2.jpg')]",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
     }
   ]
 };
@@ -98,8 +103,21 @@ const ContentCaseStudies = () => {
             >
               <div className={`h-56 ${study.image} bg-cover bg-center`} />
               <div className="p-6">
-                <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
-                <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>
+                <div className="flex items-center mb-3">
+                  <div className="flex-shrink-0 w-16 h-10 mr-4">
+                    <AspectRatio ratio={16/10} className="h-full">
+                      <img 
+                        src={study.logo} 
+                        alt={`${study.client} logo`} 
+                        className="h-full w-full object-contain"
+                      />
+                    </AspectRatio>
+                  </div>
+                  <div>
+                    <span className="text-sm font-medium text-brand-primary block">{study.industry}</span>
+                    <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
+                  </div>
+                </div>
                 
                 <div className="mb-4 grid grid-cols-2 gap-4">
                   <div className="bg-brand-backgroundAlt p-3 rounded-md">

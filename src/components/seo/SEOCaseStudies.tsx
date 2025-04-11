@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const SEOCaseStudies = () => {
   const { language } = useLanguage();
@@ -50,8 +51,21 @@ const SEOCaseStudies = () => {
               key={index}
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
             >
-              <h3 className="text-2xl font-bold mb-2 text-brand-heading">{study.client}</h3>
-              <p className="text-brand-primary text-sm font-medium mb-6">{study.industry}</p>
+              <div className="flex items-center mb-4">
+                <div className="flex-shrink-0 w-16 h-10 mr-4">
+                  <AspectRatio ratio={16/10} className="h-full">
+                    <img 
+                      src={study.logo} 
+                      alt={`${study.client} logo`} 
+                      className="h-full w-full object-contain"
+                    />
+                  </AspectRatio>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-1 text-brand-heading">{study.client}</h3>
+                  <p className="text-brand-primary text-sm font-medium">{study.industry}</p>
+                </div>
+              </div>
               
               <div className="flex gap-6 mb-6">
                 {study.impact.slice(0, 2).map((result, idx) => (
