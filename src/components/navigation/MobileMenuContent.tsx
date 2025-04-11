@@ -39,7 +39,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
+              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full" 
               onClick={onClose}
               aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
             >
@@ -52,8 +52,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               <NavigationLinks layout="mobile" onLinkClick={handleLinkClick} />
             </nav>
           </div>
-          
-          {/* Removed the duplicate close button */}
         </motion.div>
       )}
     </AnimatePresence>
