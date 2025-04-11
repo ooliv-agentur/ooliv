@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const caseStudiesData = {
   en: [
@@ -222,12 +224,16 @@ const CaseStudiesSection = ({
               <div className="w-full md:w-1/2">
                 <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
                   <div className="flex items-center mb-6">
-                    <div className="mr-4">
-                      <img 
-                        src={study.logo} 
-                        alt={`${study.client} logo`} 
-                        className="h-10 w-auto"
-                      />
+                    <div className="mr-4 w-auto h-10 flex items-center">
+                      <div className="w-auto h-10 relative">
+                        <AspectRatio ratio={3/1} className="h-10 w-auto">
+                          <img 
+                            src={study.logo} 
+                            alt={`${study.client} logo`} 
+                            className="h-10 w-auto object-contain object-left"
+                          />
+                        </AspectRatio>
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>

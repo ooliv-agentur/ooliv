@@ -4,57 +4,19 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { caseStudiesData } from '@/components/CaseStudiesSection';
 
-const cases = {
-  en: [
-    {
-      client: "Scheurich – Manufacturing Brand",
-      industry: "Manufacturing & Industrial",
-      before: "Old website with poor lead generation and high bounce rate on mobile devices.",
-      after: "Strategic webdesign with clear user journeys and mobile-optimized experience.",
-      result: "120% increase in qualified leads and 45% lower bounce rate.",
-      services: ["Webdesign", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
-      kpis: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
-      image: "bg-[url('/case-study-1.jpg')]"
-    },
-    {
-      client: "COBUS – Enterprise Software",
-      industry: "B2B SaaS & Technology",
-      before: "Complex product demonstration process with low conversion from demo to sale.",
-      after: "Streamlined website with clearer product positioning and demo request flow.",
-      result: "80% more qualified sales opportunities and significantly improved user satisfaction.",
-      services: ["Website Redesign", "Content Strategy", "UX Research", "CRM Integration"],
-      kpis: ["80% More Qualified Leads", "3.2s Faster Load Time", "92% User Satisfaction"],
-      image: "bg-[url('/case-study-2.jpg')]"
-    }
-  ],
-  de: [
-    {
-      client: "Scheurich – Keramik & Lifestyle",
-      industry: "Fertigung & Industrie",
-      before: "Alte Website mit geringer Lead-Generierung und hoher Absprungrate auf Mobilgeräten.",
-      after: "Strategisches Webdesign mit klaren Nutzerführungen und mobiloptimierter Erfahrung.",
-      result: "120% mehr qualifizierte Leads und 45% niedrigere Absprungrate.",
-      services: ["Webdesign", "UX-Optimierung", "Mobile Redesign", "CMS-Implementierung"],
-      kpis: ["120% mehr Leads", "45% weniger Absprünge", "89% Mobile Conversion"],
-      image: "bg-[url('/case-study-1.jpg')]"
-    },
-    {
-      client: "COBUS – Enterprise Software",
-      industry: "B2B SaaS & Technologie",
-      before: "Komplexer Produktdemonstrationsprozess mit geringer Konversion von Demo zu Verkauf.",
-      after: "Optimierte Website mit klarerer Produktpositionierung und Demo-Anfrage-Fluss.",
-      result: "80% mehr qualifizierte Verkaufschancen und deutlich verbesserte Nutzerzufriedenheit.",
-      services: ["Website-Redesign", "Content-Strategie", "UX-Research", "CRM-Integration"],
-      kpis: ["80% mehr qualifizierte Leads", "3,2s schnellere Ladezeit", "92% Nutzerzufriedenheit"],
-      image: "bg-[url('/case-study-2.jpg')]"
-    }
-  ]
+// Use the actual case studies data instead of hardcoded values
+const getWebDesignCases = (language: 'en' | 'de') => {
+  const allCases = caseStudiesData[language];
+  // Select 2 case studies that have good web design examples
+  return allCases.slice(0, 2);
 };
 
 const WebDesignCaseStudies = () => {
   const { language } = useLanguage();
-  const displayCases = cases[language as 'en' | 'de'] || cases.en;
+  const displayCases = getWebDesignCases(language as 'en' | 'de');
   
   const translations = {
     en: {
@@ -79,6 +41,19 @@ const WebDesignCaseStudies = () => {
   
   const t = translations[language as 'en' | 'de'] || translations.en;
 
+  // Transform case studies data to match the WebDesignCaseStudies format
+  const cases = displayCases.map((study) => ({
+    client: study.client,
+    industry: study.industry,
+    before: "Old website with poor lead generation and high bounce rate on mobile devices.",
+    after: "Strategic webdesign with clear user journeys and mobile-optimized experience.",
+    result: study.quote,
+    services: study.impact.slice(0, 4),
+    kpis: ["80% More Leads", "45% Lower Bounce Rate", "92% User Satisfaction"],
+    image: study.image,
+    logo: study.logo
+  }));
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,15 +66,30 @@ const WebDesignCaseStudies = () => {
         </p>
         
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {displayCases.map((study, index) => (
+          {cases.map((study, index) => (
             <div 
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className={`h-56 ${study.image} bg-cover bg-center`} />
+              <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url(${study.image})` }} />
               <div className="p-6">
-                <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
-                <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>
+                <div className="flex items-center mb-4">
+                  {study.logo && (
+                    <div className="h-10 w-auto mr-3">
+                      <AspectRatio ratio={3/1} className="h-10 w-auto">
+                        <img 
+                          src={study.logo} 
+                          alt={`${study.client} logo`}
+                          className="h-10 w-auto object-contain object-left"
+                        />
+                      </AspectRatio>
+                    </div>
+                  )}
+                  <div>
+                    <span className="text-sm font-medium text-brand-primary block">{study.industry}</span>
+                    <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
+                  </div>
+                </div>
                 
                 <div className="mb-4 grid grid-cols-2 gap-4">
                   <div className="bg-brand-backgroundAlt p-3 rounded-md">

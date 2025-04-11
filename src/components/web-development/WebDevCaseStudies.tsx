@@ -12,6 +12,7 @@ import {
   CarouselPrevious 
 } from '@/components/ui/carousel';
 import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const WebDevCaseStudies = () => {
   const { language } = useLanguage();
@@ -53,7 +54,8 @@ const WebDevCaseStudies = () => {
       "Performance Optimization"
     ], 
     kpis: study.impact.map(impact => impact.split(' ')[0]),
-    image: study.image
+    image: study.image,
+    logo: study.logo
   }));
 
   return (
@@ -74,8 +76,23 @@ const WebDevCaseStudies = () => {
                 <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                   <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${study.image})` }} />
                   <div className="p-6">
-                    <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
-                    <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>
+                    <div className="flex items-center mb-4">
+                      {study.logo && (
+                        <div className="w-auto h-8 mr-3">
+                          <AspectRatio ratio={3/1} className="h-8 w-auto">
+                            <img 
+                              src={study.logo} 
+                              alt={`${study.client} logo`}
+                              className="h-8 w-auto object-contain object-left"
+                            />
+                          </AspectRatio>
+                        </div>
+                      )}
+                      <div>
+                        <span className="text-sm font-medium text-brand-primary block">{study.industry}</span>
+                        <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
+                      </div>
+                    </div>
                     
                     <p className="text-brand-text mb-5">{study.summary}</p>
                     
