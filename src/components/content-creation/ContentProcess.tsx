@@ -1,9 +1,10 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { CalendarCheck, PenTool, Monitor, CheckCircle, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CalendarCheck, PenTool, Monitor, CheckCircle, RefreshCw, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const ContentProcess = () => {
   const { language } = useLanguage();
@@ -18,53 +19,53 @@ const ContentProcess = () => {
   
   const steps = isGerman ? [
     {
-      icon: CalendarCheck,
+      number: "01",
       title: 'Strategie & Kickoff',
       description: 'Ziele definieren, Tonalität festlegen, SEO-Recherche (z. B. mit Ahrefs).'
     },
     {
-      icon: PenTool,
+      number: "02",
       title: 'Erstellung & Design',
       description: 'Inhalte entwickeln – Texte, Bilder, Videos – mit Fokus auf UX & Conversion.'
     },
     {
-      icon: Monitor,
+      number: "03",
       title: 'Review & Integration',
       description: 'Freigabe durch Sie, Einbindung über uns oder Ihr CMS.'
     },
     {
-      icon: CheckCircle,
+      number: "04",
       title: 'Testing & Launch',
       description: 'SEO-Checks, Performance, Struktur – dann Go Live.'
     },
     {
-      icon: RefreshCw,
+      number: "05",
       title: 'Laufende Content-Pakete',
       description: 'Monatliche Pakete zur Pflege, Optimierung & strategischen Weiterentwicklung.'
     }
   ] : [
     {
-      icon: CalendarCheck,
+      number: "01",
       title: 'Strategy & Kickoff',
       description: 'We start by understanding your goals, brand tone, and doing SEO research (using Ahrefs) to ensure we\'re on the right track.'
     },
     {
-      icon: PenTool,
+      number: "02",
       title: 'Creation & Design',
       description: 'We create your content, including copy, visuals, and video — all designed for conversion and user experience.'
     },
     {
-      icon: Monitor,
+      number: "03",
       title: 'Review & Integration',
       description: 'You review the content, and we integrate it into your site — either directly or through your CMS.'
     },
     {
-      icon: CheckCircle,
+      number: "04",
       title: 'Testing & Launch',
       description: 'We ensure SEO checks, speed, and structure before we go live.'
     },
     {
-      icon: RefreshCw,
+      number: "05",
       title: 'Ongoing Content Support',
       description: 'After launch, we offer monthly content packages to keep your site fresh and aligned with your SEO and business goals.'
     }
@@ -194,23 +195,16 @@ const ContentProcess = () => {
   );
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
           {isGerman
-            ? "Vom Content-Chaos zur Klarheit – so arbeiten wir"
-            : "From Content Chaos to Clarity — Here's How We Work"
+            ? "Unser Kampagnen-Prozess – von Strategie bis Skalierung"
+            : "Our Campaign Process – From Strategy to Growth"
           }
         </h2>
         
-        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          {isGerman
-            ? "Ein bewährter Prozess, der Ihre Content-Strategie messbar macht."
-            : "A proven process that ensures your content strategy delivers measurable business results."
-          }
-        </p>
-        
-        <div className="w-full max-w-6xl mx-auto relative">
+        <div className="w-full max-w-6xl mx-auto relative mt-12">
           <style dangerouslySetInnerHTML={{ __html: `
             .process-scroll::-webkit-scrollbar {
               display: none;
@@ -240,17 +234,13 @@ const ContentProcess = () => {
                 key={index}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
               >
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-full bg-brand-backgroundAlt flex-shrink-0">
-                      <step.icon className="h-6 w-6 text-brand-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-brand-heading">
-                        {step.title}
-                      </h3>
-                      <p className="text-brand-text">{step.description}</p>
-                    </div>
+                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
+                  <div className="absolute -top-4 -left-4 h-10 w-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold">
+                    {step.number}
+                  </div>
+                  <div className="mt-4">
+                    <h3 className="text-xl font-bold mb-3 text-brand-heading">{step.title}</h3>
+                    <p className="text-brand-text">{step.description}</p>
                   </div>
                 </div>
               </div>
@@ -291,6 +281,16 @@ const ContentProcess = () => {
           {/* Mobile scroll hint */}
           <div className="text-center mt-3 text-sm text-gray-500 md:hidden">
             {isGerman ? "Weiter scrollen für mehr ›" : "Scroll to see more ›"}
+          </div>
+          
+          {/* Additional link at the bottom as shown in the image */}
+          <div className="text-center mt-10">
+            <Button variant="link" asChild className="group">
+              <Link to={isGerman ? "/de/webentwicklung" : "/web-development"} className="flex items-center gap-2 text-brand-primary">
+                {isGerman ? "Mehr über unsere Landingpages & Webentwicklung" : "Learn more about our landing pages & web development"}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
