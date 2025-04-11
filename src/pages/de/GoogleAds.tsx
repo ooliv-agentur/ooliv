@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -5,6 +6,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
+import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -212,124 +214,8 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Process Section - Updated with new timeline design */}
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Unser Kampagnen-Prozess – von Strategie bis Skalierung
-            </h2>
-          </div>
-
-          <div className="hidden lg:grid grid-cols-5 gap-8 mb-10">
-            {[
-              {
-                step: "01",
-                title: "Strategie & Setup",
-                description: "Zielgruppen, Angebote, Budgets und KPIs definieren"
-              },
-              {
-                step: "02",
-                title: "Landingpage-Erstellung",
-                description: "Mobileoptimierte Seiten mit klarem Nutzen & schneller Ladezeit"
-              },
-              {
-                step: "03",
-                title: "Kampagnen-Setup",
-                description: "Anzeigen starten – Search, Display & Performance Max"
-              },
-              {
-                step: "04",
-                title: "Tracking & Schutz",
-                description: "Ereignisse erfassen, Klickbetrug blockieren, Datenqualität sichern"
-              },
-              {
-                step: "05",
-                title: "Reporting & Optimierung",
-                description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
-              }
-            ].map((step, index) => (
-              <div key={index} className="relative">
-                {/* Step Circle */}
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold z-10">
-                  {step.step}
-                </div>
-                
-                {/* Content Box */}
-                <div className="bg-white pt-8 pb-6 px-4 rounded-lg border-l-4 border-brand-primary h-full mt-5">
-                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-sm">{step.description}</p>
-                </div>
-                
-                {/* Connector Line - hide for last item */}
-                {index < 4 && (
-                  <div className="absolute top-5 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gray-200"></div>
-                )}
-              </div>
-            ))}
-          </div>
-          
-          {/* Mobile carousel for process steps */}
-          <div className="lg:hidden">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {[
-                  {
-                    step: "01",
-                    title: "Strategie & Setup",
-                    description: "Zielgruppen, Angebote, Budgets und KPIs definieren"
-                  },
-                  {
-                    step: "02",
-                    title: "Landingpage-Erstellung",
-                    description: "Mobileoptimierte Seiten mit klarem Nutzen & schneller Ladezeit"
-                  },
-                  {
-                    step: "03",
-                    title: "Kampagnen-Setup",
-                    description: "Anzeigen starten – Search, Display & Performance Max"
-                  },
-                  {
-                    step: "04",
-                    title: "Tracking & Schutz",
-                    description: "Ereignisse erfassen, Klickbetrug blockieren, Datenqualität sichern"
-                  },
-                  {
-                    step: "05",
-                    title: "Reporting & Optimierung",
-                    description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
-                  }
-                ].map((step, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary h-full">
-                      <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold">
-                        {step.step}
-                      </div>
-                      <div className="mt-2">
-                        <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                        <p>{step.description}</p>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-2 mt-4">
-                <CarouselPrevious className="relative inset-0 translate-y-0 left-0" />
-                <CarouselNext className="relative inset-0 translate-y-0 right-0" />
-              </div>
-            </Carousel>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button variant="link" asChild className="group">
-              <Link to="/de/webentwicklung" className="flex items-center justify-center gap-2 text-brand-primary">
-                Mehr über unsere Landingpages & Webentwicklung
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Process Section - Using the new GoogleAdsProcess component */}
+      <GoogleAdsProcess />
       
       {/* Success Metrics Section */}
       <section className="py-16 md:py-24 bg-white">

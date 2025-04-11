@@ -1,7 +1,9 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
+import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import { 
   Target, 
   LineChart, 
@@ -190,120 +192,8 @@ const GoogleAds = () => {
         </div>
       </section>
 
-      {/* Process Section - Updated with new timeline design */}
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Our Campaign Process – From Audit to Growth
-            </h2>
-          </div>
-
-          <div className="hidden lg:grid grid-cols-5 gap-8 mb-10">
-            {[
-              {
-                step: "01",
-                title: "Campaign Strategy",
-                description: "Define your audience, value propositions, budgets, and KPIs"
-              },
-              {
-                step: "02",
-                title: "Landing Page Creation",
-                description: "We design SEO-ready, mobile-first landing pages tailored to your specific offers"
-              },
-              {
-                step: "03",
-3 title: "Google Ads Setup",
-                description: "We launch and manage campaigns across Google Ads — Search, Display, and Performance Max"
-              },
-              {
-                step: "04",
-                title: "Tracking & Protection",
-                description: "We set up event tracking to monitor performance, block invalid clicks, and ensure data accuracy"
-              },
-              {
-                step: "05",
-                title: "Reporting & Optimization",
-                description: "We iterate and improve your funnel through weekly insights and A/B tests"
-              }
-            ].map((step, index) => (
-              <div key={index} className="relative">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold z-10">
-                  {step.step}
-                </div>
-                
-                <div className="bg-white pt-8 pb-6 px-4 rounded-lg border-l-4 border-brand-primary h-full mt-5">
-                  <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-sm">{step.description}</p>
-                </div>
-                
-                {index < 4 && (
-                  <div className="absolute top-5 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gray-200"></div>
-                )}
-              </div>
-            ))}
-          </div>
-          
-          <div className="lg:hidden">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {[
-                  {
-                    step: "01",
-                    title: "Campaign Strategy",
-                    description: "Define your audience, value propositions, budgets, and KPIs"
-                  },
-                  {
-                    step: "02",
-                    title: "Landing Page Creation",
-                    description: "We design SEO-ready, mobile-first landing pages tailored to your specific offers"
-                  },
-                  {
-                    step: "03",
-                    title: "Google Ads Setup",
-                    description: "We launch and manage campaigns across Google Ads — Search, Display, and Performance Max"
-                  },
-                  {
-                    step: "04",
-                    title: "Tracking & Protection",
-                    description: "We set up event tracking to monitor performance, block invalid clicks, and ensure data accuracy"
-                  },
-                  {
-                    step: "05",
-                    title: "Reporting & Optimization",
-                    description: "We iterate and improve your funnel through weekly insights and A/B tests"
-                  }
-                ].map((step, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative bg-white p-6 rounded-lg border-l-4 border-brand-primary h-full">
-                      <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold">
-                        {step.step}
-                      </div>
-                      <div className="mt-2">
-                        <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                        <p>{step.description}</p>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-2 mt-4">
-                <CarouselPrevious className="relative inset-0 translate-y-0 left-0" />
-                <CarouselNext className="relative inset-0 translate-y-0 right-0" />
-              </div>
-            </Carousel>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button variant="link" asChild className="group">
-              <Link to="/web-development" className="flex items-center justify-center gap-2 text-brand-primary">
-                Explore our landing page & web development services
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Process Section - Updated to use the new component */}
+      <GoogleAdsProcess />
 
       {/* Success Metrics Section */}
       <section className="py-16 md:py-24 bg-white">
