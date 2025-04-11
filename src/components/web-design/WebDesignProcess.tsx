@@ -1,41 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import useEmblaCarousel from 'embla-carousel-react';
+import { useIsMobile } from '@/hooks/use-mobile';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
+  const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState(0);
-  
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      align: "start",
-      loop: true,
-    }, 
-    []
-  );
-  
-  useEffect(() => {
-    if (emblaApi) {
-      emblaApi.on('select', () => {
-        setActiveIndex(emblaApi.selectedScrollSnap());
-      });
-    }
-    
-    return () => {
-      if (emblaApi) {
-        emblaApi.off('select');
-      }
-    };
-  }, [emblaApi]);
   
   const translations = {
     en: {
@@ -139,18 +118,26 @@ const WebDesignProcess = () => {
           {t.subtitle}
         </p>
         
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          ref={emblaRef}
-          className="w-full max-w-6xl mx-auto"
-        >
-          <CarouselContent>
+        <div className="w-full max-w-6xl mx-auto">
+          <Swiper
+            modules={[Pagination, Navigation]}
+            spaceBetween={20}
+            slidesPerView={isMobile ? 1 : 3}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }
+            }}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: true
+            }}
+            navigation={!isMobile}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            className="w-full pb-12"
+          >
             {t.steps.map((step, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                <div className="p-1">
+              <SwiperSlide key={index}>
+                <div className="p-1 h-full">
                   <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
@@ -182,34 +169,16 @@ const WebDesignProcess = () => {
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
+              </SwiperSlide>
             ))}
-          </CarouselContent>
+          </Swiper>
           
-          <div className="flex justify-center items-center mt-6 md:hidden">
-            {t.steps.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2.5 h-2.5 rounded-full mx-1.5 transition-all duration-300 ${
-                  index === activeIndex 
-                    ? "bg-brand-primary scale-125" 
-                    : "bg-gray-300"
-                }`}
-                onClick={() => emblaApi?.scrollTo(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-          
-          <div className="md:hidden text-center mt-3 text-sm text-gray-500 animate-pulse">
-            {t.scrollHint} ›
-          </div>
-          
-          <div className="flex justify-center mt-8">
-            <CarouselPrevious className="mr-2" />
-            <CarouselNext className="ml-2" />
-          </div>
-        </Carousel>
+          {isMobile && (
+            <div className="text-center mt-3 text-sm text-gray-500">
+              {t.scrollHint} ›
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
