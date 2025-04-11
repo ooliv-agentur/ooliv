@@ -1,9 +1,11 @@
+
 import React, { useRef, useState, useEffect } from 'react';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
@@ -16,6 +18,8 @@ const WebDesignProcess = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
   
   const translations = {
     en: {
@@ -120,6 +124,18 @@ const WebDesignProcess = () => {
     }
   };
 
+  const scrollPrev = () => {
+    if (activeIndex > 0) {
+      scrollToIndex(activeIndex - 1);
+    }
+  };
+
+  const scrollNext = () => {
+    if (activeIndex < t.steps.length - 1) {
+      scrollToIndex(activeIndex + 1);
+    }
+  };
+
   const handleScroll = () => {
     if (scrollRef.current) {
       const container = scrollRef.current;
@@ -130,6 +146,10 @@ const WebDesignProcess = () => {
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < t.steps.length) {
         setActiveIndex(newIndex);
       }
+      
+      // Update scroll buttons state
+      setCanScrollPrev(container.scrollLeft > 10);
+      setCanScrollNext(container.scrollLeft < container.scrollWidth - container.clientWidth - 10);
     }
   };
 
@@ -205,6 +225,11 @@ const WebDesignProcess = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [activeIndex, t.steps.length]);
+
+  // Initialize scroll buttons state
+  useEffect(() => {
+    handleScroll();
+  }, []);
 
   const scrollContainerClass = cn(
     "flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4 cursor-grab",
@@ -286,22 +311,35 @@ const WebDesignProcess = () => {
             ))}
           </div>
           
-          <div className="flex justify-center mt-6">
-            <div className="flex items-center gap-2">
-              {t.steps.map((_, idx) => (
-                <button
-                  key={idx}
-                  aria-label={`Go to step ${idx + 1}`}
-                  className={cn(
-                    "w-3 h-3 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus:ring-0 focus:outline-none",
-                    idx === activeIndex 
-                      ? "bg-brand-primary scale-110" 
-                      : "bg-gray-300 hover:bg-gray-400"
-                  )}
-                  onClick={() => scrollToIndex(idx)}
-                />
-              ))}
-            </div>
+          {/* Navigation Arrows */}
+          <div className="flex justify-center mt-8 items-center gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              className={cn(
+                "rounded-full w-10 h-10 flex items-center justify-center border-2 border-brand-primary text-brand-primary transition-all duration-200",
+                !canScrollPrev && "opacity-50 cursor-not-allowed"
+              )}
+              disabled={!canScrollPrev}
+              onClick={scrollPrev}
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              className={cn(
+                "rounded-full w-10 h-10 flex items-center justify-center border-2 border-brand-primary text-brand-primary transition-all duration-200",
+                !canScrollNext && "opacity-50 cursor-not-allowed"
+              )}
+              disabled={!canScrollNext}
+              onClick={scrollNext}
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
           </div>
           
           {isMobile && (
