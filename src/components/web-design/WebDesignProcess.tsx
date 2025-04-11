@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
+
+import React, { useRef, useState } from 'react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   const isMobile = useIsMobile();
+  const isTablet = useMediaQuery('(max-width: 1023px)');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   
   const translations = {
@@ -107,8 +105,52 @@ const WebDesignProcess = () => {
   
   const t = isGerman ? translations.de : translations.en;
 
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.scrollWidth / t.steps.length;
+      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      
+      if (activeIndex > 0) {
+        setActiveIndex(activeIndex - 1);
+      }
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.scrollWidth / t.steps.length;
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      
+      if (activeIndex < t.steps.length - 1) {
+        setActiveIndex(activeIndex + 1);
+      }
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      setScrollPosition(container.scrollLeft);
+      
+      // Calculate active index based on scroll position
+      const cardWidth = container.scrollWidth / t.steps.length;
+      const newIndex = Math.round(container.scrollLeft / cardWidth);
+      if (newIndex !== activeIndex) {
+        setActiveIndex(newIndex);
+      }
+    }
+  };
+
+  // Calculate if we can scroll further
+  const canScrollLeft = scrollPosition > 0;
+  const canScrollRight = scrollRef.current 
+    ? scrollPosition < scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 10 
+    : false;
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
           {t.title}
@@ -119,25 +161,25 @@ const WebDesignProcess = () => {
         </p>
         
         <div className="w-full max-w-6xl mx-auto">
-          <Swiper
-            modules={[Pagination, Navigation]}
-            spaceBetween={20}
-            slidesPerView={isMobile ? 1 : 3}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            pagination={{ 
-              clickable: true,
-              dynamicBullets: true
-            }}
-            navigation={!isMobile}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            className="w-full pb-12"
-          >
-            {t.steps.map((step, index) => (
-              <SwiperSlide key={index}>
-                <div className="p-1 h-full">
+          {/* Mobile/Tablet Scroll View */}
+          <div className="relative">
+            <div 
+              ref={scrollRef}
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none pb-6 -mx-4 px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              onScroll={handleScroll}
+            >
+              <style jsx>{`
+                div::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
+              
+              {t.steps.map((step, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
+                >
                   <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
@@ -169,15 +211,60 @@ const WebDesignProcess = () => {
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          {isMobile && (
-            <div className="text-center mt-3 text-sm text-gray-500">
-              {t.scrollHint} ›
+              ))}
             </div>
-          )}
+            
+            {/* Navigation Controls */}
+            {isTablet && (
+              <div className="flex justify-between mt-6">
+                <button 
+                  onClick={scrollLeft}
+                  className={`p-2 rounded-full shadow-sm transition-opacity ${canScrollLeft ? 'bg-white opacity-100' : 'bg-gray-100 opacity-50'}`}
+                  disabled={!canScrollLeft}
+                >
+                  <ChevronLeft className="h-5 w-5 text-brand-heading" />
+                </button>
+                
+                <div className="flex items-center gap-1">
+                  {t.steps.map((_, idx) => (
+                    <button
+                      key={idx}
+                      className={`h-2 rounded-full transition-all ${
+                        idx === activeIndex 
+                          ? 'w-6 bg-brand-primary' 
+                          : 'w-2 bg-gray-300'
+                      }`}
+                      onClick={() => {
+                        if (scrollRef.current) {
+                          const container = scrollRef.current;
+                          const cardWidth = container.scrollWidth / t.steps.length;
+                          container.scrollTo({ 
+                            left: idx * cardWidth,
+                            behavior: 'smooth'
+                          });
+                          setActiveIndex(idx);
+                        }
+                      }}
+                    />
+                  ))}
+                </div>
+                
+                <button 
+                  onClick={scrollRight}
+                  className={`p-2 rounded-full shadow-sm transition-opacity ${canScrollRight ? 'bg-white opacity-100' : 'bg-gray-100 opacity-50'}`}
+                  disabled={!canScrollRight}
+                >
+                  <ChevronRight className="h-5 w-5 text-brand-heading" />
+                </button>
+              </div>
+            )}
+            
+            {isMobile && (
+              <div className="text-center mt-3 text-sm text-gray-500">
+                {t.scrollHint} ›
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
