@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -15,7 +14,7 @@ const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   const [activeIndex, setActiveIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({}, null);
   
   useEffect(() => {
     if (emblaApi) {
@@ -157,7 +156,6 @@ const WebDesignProcess = () => {
                         </div>
                         <p className="text-brand-text text-sm mb-5">{step.description}</p>
                         
-                        {/* Completely redesigned deliverables section */}
                         <div className="border-t border-brand-backgroundAlt pt-4">
                           <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
                             {t.deliverableTitle}
@@ -181,7 +179,6 @@ const WebDesignProcess = () => {
             ))}
           </CarouselContent>
           
-          {/* Pagination dots for mobile */}
           <div className="flex justify-center items-center mt-6 md:hidden">
             {t.steps.map((_, index) => (
               <button
@@ -197,7 +194,6 @@ const WebDesignProcess = () => {
             ))}
           </div>
           
-          {/* Scroll hint for mobile */}
           <div className="md:hidden text-center mt-3 text-sm text-gray-500 animate-pulse">
             {t.scrollHint} ›
           </div>
