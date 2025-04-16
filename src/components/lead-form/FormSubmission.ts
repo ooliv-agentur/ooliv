@@ -80,6 +80,9 @@ export const useFormSubmission = (
         duration: 5000,
         className: "bg-[#004d51] text-white border-[#006064]",
       });
+
+      // Redirect to thank you page after successful submission
+      window.location.href = "/danke";
     } catch (error: any) {
       if (error.name === 'AbortError') {
         console.log("Request was aborted");

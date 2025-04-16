@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -25,6 +24,9 @@ import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
+
+//Import Danke page
+import Danke from "./pages/de/Danke";
 
 // Create the query client
 const queryClient = new QueryClient();
@@ -59,6 +61,7 @@ const App = () => (
               <Route path="/kontakt" element={<GermanContact />} />
               <Route path="/impressum" element={<GermanLegalNotice />} />
               <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+              <Route path="/danke" element={<Danke />} />
               
               {/* Redirects from old /de/ paths to new root paths */}
               <Route path="/de" element={<Navigate to="/" replace />} />
