@@ -13,8 +13,8 @@ const Danke = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       
-      <div className="min-h-screen bg-white pt-24 pb-16">
-        <div className="container mx-auto px-4">
+      <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
+        <div className="container px-4">
           <div className="max-w-[720px] mx-auto text-center">
             <div className="flex justify-center mb-8">
               <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
