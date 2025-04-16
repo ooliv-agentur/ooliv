@@ -30,10 +30,10 @@ const Danke = () => {
               Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
               Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
-                href="mailto:hello@ooliv.de" 
+                href="mailto:info@ooliv.de" 
                 className="text-[#004d51] hover:underline"
               >
-                hello@ooliv.de
+                info@ooliv.de
               </a>.
             </p>
             
