@@ -72,17 +72,24 @@ export const useFormSubmission = (
       console.log("Form submission successful:", responseData);
       
       setIsSubmitting(false);
+      
+      // Call onSuccess callback first (for any necessary state cleanup)
       onSuccess();
       
+      // Display toast notification
       toast({
         title: language === 'de' ? "Anfrage erhalten!" : "Inquiry received!",
         description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
-        duration: 5000,
+        duration: 3000, // Reduced duration to make redirect more seamless
         className: "bg-[#004d51] text-white border-[#006064]",
       });
 
-      // Redirect to thank you page after successful submission
-      window.location.href = "/danke";
+      // Add a small delay to ensure the toast is visible before redirecting
+      setTimeout(() => {
+        // Redirect to thank you page after successful submission
+        window.location.href = "/danke";
+      }, 1000);
+      
     } catch (error: any) {
       if (error.name === 'AbortError') {
         console.log("Request was aborted");

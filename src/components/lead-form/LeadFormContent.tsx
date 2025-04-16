@@ -14,7 +14,6 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
-import ThankYouScreen from './ThankYouScreen';
 
 interface LeadFormContentProps {
   onClose: () => void;
@@ -23,7 +22,6 @@ interface LeadFormContentProps {
 const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const { language } = useLanguage();
   const { formSchema } = useFormSchema();
   const totalSteps = 4;
@@ -51,25 +49,22 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
   const watchGoal = form.watch("goal");
 
   const onSuccessfulSubmission = useCallback(() => {
-    setSubmitted(true);
-  }, []);
+    // No need to set submitted state as we'll redirect to the thank you page
+    // Just perform any cleanup necessary
+    form.reset();
+  }, [form]);
 
   const { submitForm } = useFormSubmission(onSuccessfulSubmission, setIsSubmitting);
 
   const resetForm = useCallback(() => {
     form.reset();
     setStep(1);
-    setSubmitted(false);
   }, [form]);
 
   const closeForm = useCallback(() => {
     resetForm();
     onClose();
   }, [resetForm, onClose]);
-
-  const redirectToHome = useCallback(() => {
-    window.location.href = '/';
-  }, []);
 
   const nextStep = useCallback(async () => {
     let isValid = false;
@@ -110,10 +105,6 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
   }, [step]);
 
   const renderStepContent = useCallback(() => {
-    if (submitted) {
-      return <ThankYouScreen onRedirectToHome={redirectToHome} />;
-    }
-    
     switch (step) {
       case 1:
         return <StepOne form={form} />;
@@ -126,7 +117,7 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
       default:
         return <StepOne form={form} />;
     }
-  }, [step, submitted, form, redirectToHome]);
+  }, [step, form]);
 
   const stepTitle = language === 'de' ? "Schritt" : "Step";
 
@@ -158,47 +149,45 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
           </AnimatePresence>
         </div>
         
-        {!submitted && (
-          <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
-            {step > 1 && (
-              <Button 
-                type="button"
-                variant="outline"
-                onClick={prevStep}
-                className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                {language === 'de' ? "Zurück" : "Back"}
-              </Button>
-            )}
-            
-            {step < totalSteps ? (
-              <Button 
-                type="button"
-                onClick={nextStep}
-                className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
-              >
-                {language === 'de' ? "Weiter" : "Next"}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            ) : (
-              <Button 
-                type="submit"
-                className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                    {language === 'de' ? "Wird gesendet..." : "Sending..."}
-                  </span>
-                ) : (
-                  language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
-                )}
-              </Button>
-            )}
-          </SheetFooter>
-        )}
+        <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
+          {step > 1 && (
+            <Button 
+              type="button"
+              variant="outline"
+              onClick={prevStep}
+              className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              {language === 'de' ? "Zurück" : "Back"}
+            </Button>
+          )}
+          
+          {step < totalSteps ? (
+            <Button 
+              type="button"
+              onClick={nextStep}
+              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+            >
+              {language === 'de' ? "Weiter" : "Next"}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          ) : (
+            <Button 
+              type="submit"
+              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <span className="flex items-center gap-2">
+                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                  {language === 'de' ? "Wird gesendet..." : "Sending..."}
+                </span>
+              ) : (
+                language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
+              )}
+            </Button>
+          )}
+        </SheetFooter>
       </form>
     </Form>
   );
