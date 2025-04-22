@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -55,6 +55,15 @@ const CaseStudies = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg</title>
+        <meta 
+          name="description" 
+          content="Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!" 
+        />
+        <meta name="keywords" content="Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
+      </Helmet>
+      
       <PageHero
         badge="Real Results. Real Clients."
         title="Marketing Success Stories from Around the World"
