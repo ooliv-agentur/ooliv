@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import WeitereProjekteTable from "@/components/WeitereProjekteTable";
 
 const partnerLogos = [
   { id: 'scheurich', name: 'Scheurich' },
@@ -131,6 +132,7 @@ const CaseStudies = () => {
           secondaryCta="Book a Strategy Call"
           lightBackground={true}
         />
+        <WeitereProjekteTable />
       </div>
     </PageLayout>
   );
