@@ -93,7 +93,8 @@ const WeitereProjekteTable = () => (
       <h3 className="text-2xl md:text-3xl font-bold text-brand-heading mb-8 text-center">
         Weitere Projekte im Überblick
       </h3>
-      <div className="overflow-x-auto shadow-card rounded-xl bg-white">
+      {/* Desktop Table */}
+      <div className="hidden md:block overflow-x-auto shadow-card rounded-xl bg-white">
         <Table className="min-w-full border-separate border-spacing-y-0">
           <TableHeader>
             <TableRow className="bg-brand-background">
@@ -134,6 +135,37 @@ const WeitereProjekteTable = () => (
             ))}
           </TableBody>
         </Table>
+      </div>
+      {/* Mobile Stack/Card Layout */}
+      <div className="block md:hidden space-y-4 mt-2">
+        {projekte.map((projekt, idx) => (
+          <div
+            key={projekt.name}
+            className="bg-white rounded-xl shadow-card px-4 py-4 flex flex-col gap-2 border border-brand-backgroundAlt"
+          >
+            <div className="font-semibold text-brand-heading text-base">
+              {projekt.name}
+            </div>
+            <div className="text-brand-text text-sm">
+              {projekt.branche}
+            </div>
+            <div>
+              <a
+                href={projekt.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-3 py-1 mt-1 bg-brand-primary/10 text-brand-primary font-medium text-sm rounded shadow hover:bg-brand-primary/20 transition"
+              >
+                Zur Website
+              </a>
+            </div>
+            {idx !== projekte.length - 1 && (
+              <div className="mt-4">
+                <hr className="border-t border-brand-backgroundAlt/90" />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   </section>
