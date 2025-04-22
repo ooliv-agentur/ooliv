@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -21,6 +22,9 @@ import GermanAboutUs from "./pages/de/AboutUs";
 import GermanContact from "./pages/de/Contact";
 import GermanLegalNotice from "./pages/de/LegalNotice";
 import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
+
+// Import English pages
+import CaseStudies from "./pages/CaseStudies";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
@@ -62,6 +66,9 @@ const App = () => (
               <Route path="/impressum" element={<GermanLegalNotice />} />
               <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
               <Route path="/danke" element={<Danke />} />
+              
+              {/* English routes */}
+              <Route path="/en/case-studies" element={<CaseStudies />} />
               
               {/* Redirects from old /de/ paths to new root paths */}
               <Route path="/de" element={<Navigate to="/" replace />} />
