@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -7,6 +6,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from "@/components/WeitereProjekteTable";
 import { Helmet } from 'react-helmet-async';
+import { useMetaTags } from '@/hooks/useMetaTags';
 
 // Success pillars
 const successPillars = [
@@ -51,55 +51,13 @@ const GermanCaseStudies = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
-  useEffect(() => {
-    // Immediate execution plus with a delayed execution to handle any race conditions
-    const updateMetaTags = () => {
-      document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
-      
-      // Handle meta description
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.setAttribute('name', 'description');
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
-      
-      // Handle meta keywords
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
-      
-      // Handle canonical link - always point to the non-www version
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (!canonicalLink) {
-        canonicalLink = document.createElement('link');
-        canonicalLink.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonicalLink);
-      }
-      canonicalLink.setAttribute('href', 'https://ooliv.de/case-studies');
-      
-      // Optional: Force a re-render if necessary
-      document.head.appendChild(document.createElement('meta')).remove();
-    };
-    
-    // Execute immediately
-    updateMetaTags();
-    
-    // And again after a delay to ensure it takes effect after any potential overwrites
-    const timeoutId = setTimeout(updateMetaTags, 100);
-    const backupTimeoutId = setTimeout(updateMetaTags, 1000);
-    
-    // Clean up on component unmount
-    return () => {
-      clearTimeout(timeoutId);
-      clearTimeout(backupTimeoutId);
-    };
-  }, []);
+  // Use our custom hook to set meta tags consistently across the site
+  useMetaTags({
+    title: "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg",
+    description: "Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!",
+    keywords: "Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies",
+    canonicalPath: "/case-studies"
+  });
 
   return (
     <PageLayout>
