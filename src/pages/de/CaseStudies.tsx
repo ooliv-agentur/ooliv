@@ -1,10 +1,10 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import WeitereProjekteTable from "@/components/WeitereProjekteTable";
 
 // Success pillars
 const successPillars = [
@@ -112,6 +112,8 @@ const GermanCaseStudies = () => {
           secondaryCtaLink="/kontakt"
         />
       </div>
+      
+      <WeitereProjekteTable />
     </PageLayout>
   );
 };
