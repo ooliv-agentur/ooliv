@@ -10,7 +10,7 @@ interface MetaTagsProps {
 
 /**
  * Hook to set meta tags consistently across the site
- * Ensures all pages use the non-www version for canonical URLs
+ * Always uses the non-www root domain (ooliv.de) for canonical URLs
  */
 export const useMetaTags = ({ title, description, keywords, canonicalPath }: MetaTagsProps) => {
   useEffect(() => {
@@ -39,7 +39,7 @@ export const useMetaTags = ({ title, description, keywords, canonicalPath }: Met
         metaKeywords.setAttribute('content', keywords);
       }
       
-      // Handle canonical link - always point to the non-www version
+      // Handle canonical link - always point to the root domain (no www)
       const canonicalUrl = `https://ooliv.de${canonicalPath}`;
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {

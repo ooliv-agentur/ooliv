@@ -5,7 +5,6 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from "@/components/WeitereProjekteTable";
-import { Helmet } from 'react-helmet-async';
 import { useMetaTags } from '@/hooks/useMetaTags';
 
 // Success pillars
@@ -61,16 +60,6 @@ const GermanCaseStudies = () => {
 
   return (
     <PageLayout>
-      <Helmet>
-        <title>Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg</title>
-        <meta 
-          name="description" 
-          content="Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!" 
-        />
-        <meta name="keywords" content="Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
-        <link rel="canonical" href="https://ooliv.de/case-studies" />
-      </Helmet>
-      
       <PageHero
         badge="Case Studies"
         title="Marketing aus Mainz mit echten Ergebnissen."

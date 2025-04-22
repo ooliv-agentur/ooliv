@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import LegalHero from '@/components/legal/LegalHero';
+import { useMetaTags } from '@/hooks/useMetaTags';
 import { 
   Lock, 
   Database, 
@@ -21,6 +22,13 @@ import {
 
 const PrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
+  
+  // Add useMetaTags hook for consistent canonical URLs
+  useMetaTags({
+    title: "Privacy Policy | ooliv",
+    description: "How we handle, store, and protect your personal information. Learn about your rights under GDPR and how we ensure data security.",
+    canonicalPath: "/privacy-policy"
+  });
   
   // Handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
