@@ -58,18 +58,44 @@ serve(async (req) => {
   }
 });
 
+// Helper function to sanitize text by removing MIME encoding artifacts
+function sanitizeText(text) {
+  if (!text) return "";
+  
+  // Replace =20 with regular spaces
+  return text.replace(/=20/g, " ")
+    // Handle other common MIME encoding issues if needed
+    .replace(/=([0-9A-F]{2})/g, (match, p1) => {
+      try {
+        return String.fromCharCode(parseInt(p1, 16));
+      } catch (e) {
+        return match;
+      }
+    });
+}
+
 async function sendAdminEmail(client, data, smtpUsername) {
+  // Sanitize all text fields
+  const sanitizedData = {};
+  for (const key in data) {
+    if (typeof data[key] === 'string') {
+      sanitizedData[key] = sanitizeText(data[key]);
+    } else {
+      sanitizedData[key] = data[key];
+    }
+  }
+  
   const rows = [
-    { label: "Projekttyp", value: data.projectType },
-    { label: "Unternehmen", value: data.companyName },
-    { label: "Branche", value: data.industry },
-    { label: "Website", value: data.websiteUrl || "Nicht angegeben" },
-    { label: "Standort", value: data.location || "Nicht angegeben" },
-    { label: "Hauptziel", value: data.goal },
-    { label: "Name", value: data.name },
-    { label: "E-Mail", value: data.email },
-    { label: "Telefon", value: data.phone || "Nicht angegeben" },
-    { label: "Nachricht", value: data.message || "Keine Nachricht hinterlassen" }
+    { label: "Projekttyp", value: sanitizedData.projectType },
+    { label: "Unternehmen", value: sanitizedData.companyName },
+    { label: "Branche", value: sanitizedData.industry },
+    { label: "Website", value: sanitizedData.websiteUrl || "Nicht angegeben" },
+    { label: "Standort", value: sanitizedData.location || "Nicht angegeben" },
+    { label: "Hauptziel", value: sanitizedData.goal },
+    { label: "Name", value: sanitizedData.name },
+    { label: "E-Mail", value: sanitizedData.email },
+    { label: "Telefon", value: sanitizedData.phone || "Nicht angegeben" },
+    { label: "Nachricht", value: sanitizedData.message || "Keine Nachricht hinterlassen" }
   ];
 
   const htmlContent = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Neue Projektanfrage über ooliv.de – alle Details im Überblick.</div><h1 style="color: #006064;">Neue Projektanfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><table style="width: 100%; border-collapse: collapse;">${rows.map((row) => `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:bold;width:150px;">${row.label}:</td><td style="padding:10px;border-bottom:1px solid #eee;">${row.value}</td></tr>`).join("")}</table></div><p style="font-size: 14px; color: #777;">Diese E-Mail wurde automatisch gesendet.<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;

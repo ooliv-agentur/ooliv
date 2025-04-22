@@ -5,6 +5,17 @@ import { useCallback, useRef } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
 
+// Helper function to sanitize text input to avoid MIME encoding issues
+const sanitizeInput = (text: string | undefined): string => {
+  if (!text) return '';
+  // Replace problematic characters or sequences that might cause MIME encoding issues
+  return text
+    .replace(/=20/g, ' ')
+    .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .trim();
+};
+
 export const useFormSubmission = (
   onSuccess: () => void,
   setIsSubmitting: (isSubmitting: boolean) => void
@@ -36,17 +47,18 @@ export const useFormSubmission = (
     const abortController = new AbortController();
     abortControllerRef.current = abortController;
     
+    // Sanitize text fields to avoid MIME encoding issues
     const formData = {
-      projectType: data.projectType === 'other' ? data.projectTypeOther : data.projectType,
-      companyName: data.companyName || '',
-      industry: data.industry,
-      websiteUrl: data.website || '',
-      location: data.location || '',
-      goal: data.goal === 'other' ? data.goalOther : data.goal,
-      name: data.name,
-      email: data.email,
-      phone: data.phone || '',
-      message: data.message || ''
+      projectType: sanitizeInput(data.projectType === 'other' ? data.projectTypeOther : data.projectType),
+      companyName: sanitizeInput(data.companyName || ''),
+      industry: sanitizeInput(data.industry),
+      websiteUrl: sanitizeInput(data.website || ''),
+      location: sanitizeInput(data.location || ''),
+      goal: sanitizeInput(data.goal === 'other' ? data.goalOther : data.goal),
+      name: sanitizeInput(data.name),
+      email: sanitizeInput(data.email),
+      phone: sanitizeInput(data.phone || ''),
+      message: sanitizeInput(data.message || '')
     };
     
     try {

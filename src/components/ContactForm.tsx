@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Dialog,
@@ -18,6 +17,15 @@ import { Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
+
+const sanitizeInput = (text: string): string => {
+  if (!text) return '';
+  return text
+    .replace(/=20/g, ' ')
+    .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .trim();
+};
 
 interface ContactFormProps {
   open: boolean;
@@ -137,19 +145,18 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
     
     try {
       const formData = {
-        projectType: formType,
+        projectType: sanitizeInput(formType),
         companyName: '',
         industry: '',
-        name: formValues.name,
-        email: formValues.email,
-        message: formValues.message,
+        name: sanitizeInput(formValues.name),
+        email: sanitizeInput(formValues.email),
+        message: sanitizeInput(formValues.message),
         websiteUrl: '',
         location: '',
-        goal: formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration'),
+        goal: sanitizeInput(formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration')),
         phone: ''
       };
       
-      // Get headers and log them for debugging
       const headers = getSupabaseHeaders();
       console.log("ContactForm - Headers being sent:", headers);
       
@@ -178,6 +185,10 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         duration: 5000,
         className: "bg-[#004d51] text-white border-[#006064]",
       });
+
+      setTimeout(() => {
+        window.location.href = "/danke";
+      }, 1000);
     } catch (error: any) {
       console.error("Error submitting form:", error);
       setFormError(language === 'de' 
