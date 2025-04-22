@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
@@ -54,9 +55,11 @@ const CaseStudies = () => {
   const { language } = useLanguage();
   
   useEffect(() => {
-    setTimeout(() => {
+    // Immediate execution plus with a delayed execution to handle any race conditions
+    const updateMetaTags = () => {
       document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
       
+      // Handle meta description
       let metaDescription = document.querySelector('meta[name="description"]');
       if (!metaDescription) {
         metaDescription = document.createElement('meta');
@@ -65,6 +68,7 @@ const CaseStudies = () => {
       }
       metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
       
+      // Handle meta keywords
       let metaKeywords = document.querySelector('meta[name="keywords"]');
       if (!metaKeywords) {
         metaKeywords = document.createElement('meta');
@@ -73,6 +77,7 @@ const CaseStudies = () => {
       }
       metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
       
+      // Handle canonical link - always point to the non-www version
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement('link');
@@ -80,7 +85,19 @@ const CaseStudies = () => {
         document.head.appendChild(canonicalLink);
       }
       canonicalLink.setAttribute('href', 'https://ooliv.de/case-studies');
-    }, 50);
+      
+      // Optional: Force a re-render if necessary
+      document.head.appendChild(document.createElement('meta')).remove();
+    };
+    
+    // Execute immediately
+    updateMetaTags();
+    
+    // And again after a delay to ensure it takes effect after any potential overwrites
+    const timeoutId = setTimeout(updateMetaTags, 100);
+    
+    // Clean up on component unmount
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (

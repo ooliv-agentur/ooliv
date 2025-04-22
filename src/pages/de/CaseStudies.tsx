@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
@@ -50,13 +51,12 @@ const GermanCaseStudies = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
-  // Force document title update to ensure it works across all domains
   useEffect(() => {
-    // Set timeout to ensure this runs after any other initialization
-    setTimeout(() => {
+    // Immediate execution plus with a delayed execution to handle any race conditions
+    const updateMetaTags = () => {
       document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
       
-      // Create and update meta description if it doesn't exist
+      // Handle meta description
       let metaDescription = document.querySelector('meta[name="description"]');
       if (!metaDescription) {
         metaDescription = document.createElement('meta');
@@ -65,7 +65,7 @@ const GermanCaseStudies = () => {
       }
       metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
       
-      // Create and update meta keywords if it doesn't exist
+      // Handle meta keywords
       let metaKeywords = document.querySelector('meta[name="keywords"]');
       if (!metaKeywords) {
         metaKeywords = document.createElement('meta');
@@ -74,16 +74,31 @@ const GermanCaseStudies = () => {
       }
       metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
       
-      // Create canonical link if it doesn't exist - helps with duplicate content issues
+      // Handle canonical link - always point to the non-www version
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement('link');
         canonicalLink.setAttribute('rel', 'canonical');
         document.head.appendChild(canonicalLink);
       }
-      // Set canonical to the non-www version to consolidate SEO
       canonicalLink.setAttribute('href', 'https://ooliv.de/case-studies');
-    }, 50); // Small timeout to ensure this runs after initial render
+      
+      // Optional: Force a re-render if necessary
+      document.head.appendChild(document.createElement('meta')).remove();
+    };
+    
+    // Execute immediately
+    updateMetaTags();
+    
+    // And again after a delay to ensure it takes effect after any potential overwrites
+    const timeoutId = setTimeout(updateMetaTags, 100);
+    const backupTimeoutId = setTimeout(updateMetaTags, 1000);
+    
+    // Clean up on component unmount
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(backupTimeoutId);
+    };
   }, []);
 
   return (
