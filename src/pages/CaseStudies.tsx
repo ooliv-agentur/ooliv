@@ -133,8 +133,9 @@ const CaseStudies = () => {
           secondaryCta="Book a Strategy Call"
           lightBackground={true}
         />
-        <WeitereProjekteTable />
       </div>
+      
+      <WeitereProjekteTable />
     </PageLayout>
   );
 };
