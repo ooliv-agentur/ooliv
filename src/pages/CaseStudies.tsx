@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
@@ -54,13 +53,10 @@ const faqItems = [
 const CaseStudies = () => {
   const { language } = useLanguage();
   
-  // Force document title update to ensure it works across all domains
   useEffect(() => {
-    // Set timeout to ensure this runs after any other initialization
     setTimeout(() => {
       document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
       
-      // Create and update meta description if it doesn't exist
       let metaDescription = document.querySelector('meta[name="description"]');
       if (!metaDescription) {
         metaDescription = document.createElement('meta');
@@ -69,7 +65,6 @@ const CaseStudies = () => {
       }
       metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
       
-      // Create and update meta keywords if it doesn't exist
       let metaKeywords = document.querySelector('meta[name="keywords"]');
       if (!metaKeywords) {
         metaKeywords = document.createElement('meta');
@@ -78,16 +73,14 @@ const CaseStudies = () => {
       }
       metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
       
-      // Create canonical link if it doesn't exist - helps with duplicate content issues
       let canonicalLink = document.querySelector('link[rel="canonical"]');
       if (!canonicalLink) {
         canonicalLink = document.createElement('link');
         canonicalLink.setAttribute('rel', 'canonical');
         document.head.appendChild(canonicalLink);
       }
-      // Set canonical to the non-www version to consolidate SEO
       canonicalLink.setAttribute('href', 'https://ooliv.de/case-studies');
-    }, 50); // Small timeout to ensure this runs after initial render
+    }, 50);
   }, []);
 
   return (
