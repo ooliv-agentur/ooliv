@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from "@/components/WeitereProjekteTable";
-import { useMetaTags } from '@/hooks/useMetaTags';
+import { Helmet } from 'react-helmet-async';
 
 // Success pillars
 const successPillars = [
@@ -50,16 +50,40 @@ const GermanCaseStudies = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
-  // Use our custom hook to set meta tags consistently across the site
-  useMetaTags({
-    title: "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg",
-    description: "Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!",
-    keywords: "Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies",
-    canonicalPath: "/case-studies"
-  });
+  // Force document title update to ensure it works across all domains
+  useEffect(() => {
+    document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
+    
+    // Create and update meta description if it doesn't exist
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
+    
+    // Create and update meta keywords if it doesn't exist
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
+  }, []);
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg</title>
+        <meta 
+          name="description" 
+          content="Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!" 
+        />
+        <meta name="keywords" content="Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
+      </Helmet>
+      
       <PageHero
         badge="Case Studies"
         title="Marketing aus Mainz mit echten Ergebnissen."

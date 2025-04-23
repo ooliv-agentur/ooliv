@@ -6,20 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { useMetaTags } from '@/hooks/useMetaTags';
 
 const LegalNotice = () => {
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
-  
-  // Add useMetaTags hook for consistent canonical URLs
-  useMetaTags({
-    title: "Legal Notice & Company Details | ooliv",
-    description: "Transparent company information in line with §5 TMG & EU regulations. This page provides all legally required information about ooliv.",
-    canonicalPath: "/impressum"
-  });
   
   return (
     <PageLayout className="overflow-x-hidden">
