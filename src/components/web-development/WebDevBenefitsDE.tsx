@@ -1,12 +1,11 @@
-
 import React from 'react';
 import { Settings, Shield, Edit3, TrendingUp } from 'lucide-react';
 
 const benefits = [
   {
     icon: Settings,
-    title: "Individuell statt vorgefertigt",
-    description: "Keine Templates, kein Pagebuilder – jede Zeile Code ist auf Ihre Ziele abgestimmt."
+    title: "Individuell mit System",
+    description: "Keine Templates – jede Seite entsteht auf Basis Ihrer Inhalte und Ziele. Mit Elementor, WPBakery oder individuellem Code: Wir arbeiten flexibel, aber nie von der Stange."
   },
   {
     icon: Shield,
