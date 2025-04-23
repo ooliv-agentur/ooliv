@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Settings, Shield, Edit3, TrendingUp } from 'lucide-react';
 
@@ -10,17 +11,17 @@ const benefits = [
   {
     icon: Shield,
     title: "Schnell, sicher, skalierbar",
-    description: "Ihre Website lädt schnell, läuft stabil und wächst mit Ihrem Business."
+    description: "Ihre Website lädt blitzschnell, läuft stabil und wächst mit Ihrem Business – dank durchdachter Technik, Hosting-Optimierung und sauberem Code."
   },
   {
     icon: Edit3,
     title: "Einfach pflegbar",
-    description: "Mit oder ohne CMS – Sie behalten die Kontrolle."
+    description: "Mit oder ohne CMS: Wir entwickeln so, dass Sie Inhalte selbst bearbeiten können – ob mit Elementor, Gutenberg oder individuellem Backend."
   },
   {
     icon: TrendingUp,
     title: "Für die Zukunft gebaut",
-    description: "Internationalisierung, Integrationen, Erweiterbarkeit – von Anfang an mitgedacht."
+    description: "Internationalisierung, Integrationen und Erweiterbarkeit: Ihre Website ist bereit für morgen – durch skalierbare Struktur und klare Schnittstellen."
   }
 ];
 
