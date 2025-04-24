@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -88,7 +87,6 @@ const GermanIndex = () => {
           title="Bereit, Ihre digitale Präsenz zu transformieren?"
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
           primaryCta="Starten Sie Ihr Website-Projekt"
-          /* Removed custom footerNote to prevent duplication */
         />
       </PageLayout>
       
