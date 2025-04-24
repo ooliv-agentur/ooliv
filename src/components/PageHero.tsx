@@ -213,6 +213,10 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      <div className="absolute inset-0 z-10 pointer-events-none bg-hero-pattern" aria-hidden="true">
+        {/* This empty div ensures the animation is visible and takes full space */}
+      </div>
+      
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -229,7 +233,7 @@ const PageHero = ({
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-2">
+      <div className="absolute bottom-0 left-0 right-0 h-16 z-30">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 

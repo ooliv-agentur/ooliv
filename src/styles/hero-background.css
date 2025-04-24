@@ -4,6 +4,7 @@
   position: relative;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
   overflow: hidden;
+  z-index: 0; /* Ensure correct stacking context */
 }
 
 .bg-hero-pattern::before {
@@ -21,6 +22,7 @@
   z-index: 1;
   animation: float 8s ease-in-out infinite;
   will-change: transform;
+  pointer-events: none; /* Prevent interaction problems */
 }
 
 .bg-hero-pattern::after {
@@ -38,8 +40,10 @@
   z-index: 1;
   animation: float-reverse 10s ease-in-out infinite;
   will-change: transform;
+  pointer-events: none; /* Prevent interaction problems */
 }
 
+/* Verstärkte Animation für bessere Sichtbarkeit */
 @keyframes float {
   0%, 100% {
     transform: translateY(0) scale(1);
