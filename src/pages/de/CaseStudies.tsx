@@ -1,6 +1,12 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
+import PageHero from '@/components/PageHero';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
+import WeitereProjekteTable from '@/components/WeitereProjekteTable';
 
 // Success pillars
 const successPillars = [

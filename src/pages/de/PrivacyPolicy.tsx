@@ -1,7 +1,9 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Lock, 
   Database, 
@@ -18,7 +20,6 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from '@/components/ui/accordion';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanPrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
