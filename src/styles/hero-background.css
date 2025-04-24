@@ -19,6 +19,7 @@
   background-size: contain;
   opacity: 0.7;
   z-index: 1;
+  animation: float 20s ease-in-out infinite;
 }
 
 .bg-hero-pattern::after {
@@ -34,4 +35,31 @@
   background-size: contain;
   opacity: 0.5;
   z-index: 1;
+  animation: float-reverse 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(10px) scale(1.01);
+  }
+}
+
+/* Optional: Reduziere Animationen wenn der Benutzer dies bevorzugt */
+@media (prefers-reduced-motion: reduce) {
+  .bg-hero-pattern::before,
+  .bg-hero-pattern::after {
+    animation: none;
+  }
 }
