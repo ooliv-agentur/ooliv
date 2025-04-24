@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Link } from 'react-router-dom';
@@ -64,7 +66,12 @@ const GermanAboutUs = () => {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Über ooliv | Ihre Digitalagentur aus Mainz</title>
+        <meta name="description" content="Lernen Sie ooliv kennen: Inhabergeführte Digitalagentur aus Mainz für Strategie, Web, Content & SEO – individuell mit System." />
+      </Helmet>
+
       <PageHero 
         badge="Über ooliv"
         title="Marketing Agentur Mainz"

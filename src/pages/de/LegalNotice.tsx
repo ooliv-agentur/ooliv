@@ -1,6 +1,6 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
@@ -11,13 +11,17 @@ import { Card, CardContent } from '@/components/ui/card';
 const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Impressum | ooliv Werbeagentur Mainz</title>
+        <meta name="description" content="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG." />
+      </Helmet>
+
       <LegalHero
         badge="Impressum"
         title="Impressum & Unternehmensdetails"
@@ -39,7 +43,6 @@ const GermanLegalNotice = () => {
       <section className="section-standard">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Company Details Column */}
             <div>
               <Card className="card-layout h-full">
                 <CardContent className="p-6">
@@ -82,7 +85,6 @@ const GermanLegalNotice = () => {
               </Card>
             </div>
 
-            {/* Legal Notices Column */}
             <div className="space-y-6">
               <Card className="card-layout">
                 <CardContent className="p-6">
@@ -122,7 +124,6 @@ const GermanLegalNotice = () => {
             </div>
           </div>
 
-          {/* Added extra spacing before the footer */}
           <div className="pb-16"></div>
         </div>
       </section>

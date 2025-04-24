@@ -1,6 +1,6 @@
-
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { 
   Lock, 
@@ -24,7 +24,6 @@ const GermanPrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
   const { setLanguage } = useLanguage();
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
@@ -35,7 +34,6 @@ const GermanPrivacyPolicy = () => {
     }
   };
 
-  // Handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
@@ -43,6 +41,11 @@ const GermanPrivacyPolicy = () => {
 
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Datenschutz | ooliv Werbeagentur Mainz</title>
+        <meta name="description" content="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen." />
+      </Helmet>
+
       <LegalHero
         badge="Datenschutz"
         title="Ihre Daten, Ihre Rechte"
@@ -195,7 +198,6 @@ const GermanPrivacyPolicy = () => {
             </AccordionItem>
           </Accordion>
 
-          {/* Added extra spacing before the footer */}
           <div className="pb-16"></div>
         </div>
       </section>

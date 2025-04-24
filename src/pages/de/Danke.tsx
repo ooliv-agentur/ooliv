@@ -1,15 +1,16 @@
-
 import React from 'react';
+import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
-import PageLayout from '@/components/PageLayout';
 import { CheckCircle } from 'lucide-react';
 
 const Danke = () => {
   return (
     <PageLayout>
       <Helmet>
+        <title>Danke für Ihre Anfrage | ooliv</title>
+        <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
         <meta name="robots" content="noindex" />
       </Helmet>
       

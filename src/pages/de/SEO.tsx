@@ -1,6 +1,6 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import SEOHeroDE from '@/components/seo/SEOHeroDE';
 import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
 import SEOServicesDE from '@/components/seo/SEOServicesDE';
@@ -11,7 +11,6 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 
 const GermanSEO = () => {
-  // Custom FAQ items for SEO page with focus on "seo agentur mainz"
   const seoFaqs = [
     {
       question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
@@ -38,16 +37,20 @@ const GermanSEO = () => {
       answer: "Weil regionale Marktkenntnis, Sprache und SEO-Taktik einen entscheidenden Unterschied machen."
     }
   ];
-  
+
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>SEO Agentur Mainz | Sichtbarkeit für B2B mit ooliv</title>
+        <meta name="description" content="Mehr Sichtbarkeit für Ihre Website: ooliv ist Ihre SEO Agentur in Mainz – Onpage, Inhalte & Strategie für nachhaltige Rankings." />
+      </Helmet>
+
       <SEOHeroDE />
       <SEOBenefitsDE />
       <SEOServicesDE />
       <SEOApproachDE />
       <SEOProcessDE />
       
-      {/* Case Studies Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />

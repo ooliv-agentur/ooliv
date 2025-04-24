@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import { 
   Mail, 
   Phone,
@@ -97,7 +98,12 @@ const GermanContact = () => {
   };
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Kontakt | ooliv Werbeagentur Mainz</title>
+        <meta name="description" content="Direktkontakt zur ooliv Werbeagentur Mainz: Jetzt Strategiegespräch vereinbaren oder unverbindlich Projektstart anfragen." />
+      </Helmet>
+
       <PageHero
         badge="ooliv"
         title="Lassen Sie uns über Ihr Projekt sprechen"

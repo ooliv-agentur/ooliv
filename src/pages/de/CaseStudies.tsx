@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import PageHero from '@/components/PageHero';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import WeitereProjekteTable from "@/components/WeitereProjekteTable";
 import { Helmet } from 'react-helmet-async';
 
 // Success pillars
@@ -52,7 +47,7 @@ const GermanCaseStudies = () => {
   
   // Force document title update to ensure it works across all domains
   useEffect(() => {
-    document.title = "Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg";
+    document.title = "Marketing Mainz | Case Studies mit echten Ergebnissen";
     
     // Create and update meta description if it doesn't exist
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -61,7 +56,7 @@ const GermanCaseStudies = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!');
+    metaDescription.setAttribute('content', 'So funktioniert Marketing aus Mainz: ooliv zeigt erfolgreiche Projekte für Web, Content und SEO. Jetzt inspirieren & profitieren!');
     
     // Create and update meta keywords if it doesn't exist
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -70,18 +65,18 @@ const GermanCaseStudies = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
+    metaKeywords.setAttribute('content', 'Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
   }, []);
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Marketing Agentur Mainz: Echte Case Studies für B2B-Erfolg</title>
+        <title>Marketing Mainz | Case Studies mit echten Ergebnissen</title>
         <meta 
           name="description" 
-          content="Entdecken Sie echte Projekte unserer Marketing Agentur Mainz: Webdesign, SEO & Performance-Marketing für B2B. Jetzt inspirieren & profitieren!" 
+          content="So funktioniert Marketing aus Mainz: ooliv zeigt erfolgreiche Projekte für Web, Content und SEO. Jetzt inspirieren & profitieren!" 
         />
-        <meta name="keywords" content="Marketing Agentur Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
+        <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
       </Helmet>
       
       <PageHero

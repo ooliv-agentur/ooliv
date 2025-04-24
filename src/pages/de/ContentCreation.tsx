@@ -1,6 +1,6 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
@@ -37,6 +37,11 @@ const GermanContentCreation = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Content Erstellung für B2B | Texte, die konvertieren</title>
+        <meta name="description" content="ooliv erstellt strategischen B2B-Content: Website-Texte, Landingpages & SEO-Inhalte mit Plan – klar, durchdacht, leistungsstark." />
+      </Helmet>
+
       <ContentHero />
       <ContentBenefits />
       <ContentServiceDE />

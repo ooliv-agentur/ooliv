@@ -1,6 +1,6 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
@@ -55,6 +55,11 @@ const GermanAiTechnologies = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>KI Agentur für Web & Marketing | ooliv</title>
+        <meta name="description" content="ooliv integriert Künstliche Intelligenz in Strategie, Content und UX – als KI Agentur für moderne, skalierbare Weblösungen." />
+      </Helmet>
+
       <AiTechHero />
       <AiTechBenefits />
       <AiTechServices />

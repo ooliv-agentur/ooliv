@@ -1,6 +1,6 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
@@ -21,12 +21,10 @@ import {
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language to German when this page is loaded
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
-  // Custom FAQ items for Google Ads page
   const googleAdsFaqs = [
     {
       question: "Wie unterscheidet sich ooliv von anderen Google Ads Agenturen?",
@@ -49,10 +47,14 @@ const GermanGoogleAds = () => {
       answer: "Ja – wir liefern alles aus einer Hand: Landingpages, Tracking, Kampagnenstruktur und Optimierung."
     }
   ];
-  
+
   return (
     <PageLayout className="overflow-x-hidden">
-      {/* Hero Section */}
+      <Helmet>
+        <title>Google Ads Mainz | Kampagnen, die sich lohnen</title>
+        <meta name="description" content="Performance-orientierte Google Ads aus Mainz: ooliv entwickelt, optimiert und verwaltet Ihre Kampagnen – datenbasiert & effizient." />
+      </Helmet>
+
       <PageHero
         badge="Traffic zu Leads zu Ergebnissen"
         title="Google Ads Agentur Mainz – Leads statt nur Klicks"
@@ -66,8 +68,7 @@ const GermanGoogleAds = () => {
           link: "/de/kontakt"
         }}
       />
-      
-      {/* Pain Points Section */}
+
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
@@ -110,8 +111,7 @@ const GermanGoogleAds = () => {
           </div>
         </div>
       </section>
-      
-      {/* Services Section */}
+
       <section className="py-16 md:py-24 bg-brand-backgroundAlt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -144,8 +144,7 @@ const GermanGoogleAds = () => {
           </div>
         </div>
       </section>
-      
-      {/* Lead Generation Section */}
+
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
@@ -167,7 +166,6 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Extended Services Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -214,10 +212,8 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Process Section - Using the new GoogleAdsProcess component */}
       <GoogleAdsProcess />
-      
-      {/* Success Metrics Section */}
+
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
@@ -253,25 +249,21 @@ const GermanGoogleAds = () => {
           </div>
         </div>
       </section>
-      
-      {/* Case Studies Section */}
+
       <section className="py-24 bg-brand-backgroundAlt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
-      
-      {/* FAQ Section */}
+
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />
-      
-      {/* CTA Section */}
+
       <CTA 
         title="Lassen Sie uns Ihre Google Ads messbar machen"
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
       />
-      
-      {/* Footer text section */}
+
       <div className="bg-brand-backgroundAlt py-6">
         <div className="container mx-auto px-4">
           <p className="text-sm text-brand-text font-sans text-center">
