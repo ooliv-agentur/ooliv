@@ -1,11 +1,34 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle } from 'lucide-react';
+import ConfettiCelebration from '@/components/ConfettiCelebration';
+import { motion } from "framer-motion";
 
 const Danke = () => {
+  // Create a nice entrance effect for the content
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
     <PageLayout>
       <Helmet>
@@ -14,20 +37,28 @@ const Danke = () => {
         <meta name="robots" content="noindex" />
       </Helmet>
       
+      {/* Add the confetti animation */}
+      <ConfettiCelebration />
+      
       <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
         <div className="container px-4">
-          <div className="max-w-[720px] mx-auto text-center">
-            <div className="flex justify-center mb-8">
+          <motion.div 
+            className="max-w-[720px] mx-auto text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div className="flex justify-center mb-8" variants={itemVariants}>
               <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
                 <CheckCircle className="h-8 w-8 text-[#004d51]" />
               </div>
-            </div>
+            </motion.div>
             
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading">
+            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading" variants={itemVariants}>
               Vielen Dank für Ihre Anfrage!
-            </h1>
+            </motion.h1>
             
-            <p className="text-lg mb-8 text-brand-text">
+            <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
               Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
               Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
@@ -36,17 +67,19 @@ const Danke = () => {
               >
                 info@ooliv.de
               </a>.
-            </p>
+            </motion.p>
             
-            <Button 
-              asChild
-              className="bg-[#004d51] hover:bg-[#003d41]"
-            >
-              <Link to="/">
-                Zurück zur Startseite
-              </Link>
-            </Button>
-          </div>
+            <motion.div variants={itemVariants}>
+              <Button 
+                asChild
+                className="bg-[#004d51] hover:bg-[#003d41]"
+              >
+                <Link to="/">
+                  Zurück zur Startseite
+                </Link>
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </PageLayout>
