@@ -4,7 +4,6 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { cn } from '@/lib/utils';
 import FloatingActionButtons from './FloatingActionButtons';
-import ChatbaseWidget from './ChatbaseWidget';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -20,7 +19,6 @@ const PageLayout = ({ children, className }: PageLayoutProps) => {
       </main>
       <Footer />
       <FloatingActionButtons />
-      <ChatbaseWidget />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -14,11 +15,6 @@ import SEOTextSection from "@/components/de/SEOTextSection";
 import { Helmet } from 'react-helmet-async';
 
 const GermanIndex = () => {
-  // Update document title and meta description
-  React.useEffect(() => {
-    document.title = "Ihre Full-Service Werbeagentur Mainz entdecken";
-  }, []);
-  
   const simplifiedFaqs = [
     {
       question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",

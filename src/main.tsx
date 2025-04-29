@@ -13,9 +13,12 @@ if (!root) {
   throw new Error('Root element not found');
 }
 
+// Create a dedicated context for react-helmet-async
+const helmetContext = {};
+
 createRoot(root).render(
   <React.StrictMode>
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <App />
     </HelmetProvider>
   </React.StrictMode>
