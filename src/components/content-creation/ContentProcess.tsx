@@ -234,11 +234,11 @@ const ContentProcess = () => {
                 key={index}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
               >
-                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
-                  <div className="absolute -top-4 -left-4 h-10 w-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold">
+                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative pt-10">
+                  <div className="absolute -top-6 left-4 h-12 w-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold">
                     {step.number}
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-2">
                     <h3 className="text-xl font-bold mb-3 text-brand-heading">{step.title}</h3>
                     <p className="text-brand-text">{step.description}</p>
                   </div>
@@ -286,7 +286,7 @@ const ContentProcess = () => {
           {/* Additional link at the bottom as shown in the image */}
           <div className="text-center mt-10">
             <Button variant="link" asChild className="group">
-              <Link to={isGerman ? "/de/webentwicklung" : "/web-development"} className="flex items-center gap-2 text-brand-primary">
+              <Link to={isGerman ? "/webentwicklung" : "/web-development"} className="flex items-center gap-2 text-brand-primary">
                 {isGerman ? "Mehr über unsere Landingpages & Webentwicklung" : "Learn more about our landing pages & web development"}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
