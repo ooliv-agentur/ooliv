@@ -1,8 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import WebDevHeroDE from '@/components/web-development/WebDevHeroDE';
+import WebDevHero from '@/components/web-development/WebDevHeroDE';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
 import WebDevServices from '@/components/web-development/WebDevServicesDE';
 import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
@@ -11,7 +10,7 @@ import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 
-const Webentwicklung = () => {
+const GermanWebDevelopment = () => {
   const webDevFaqs = [
     {
       question: "Mit welchen Plattformen arbeitet ihr?",
@@ -42,7 +41,7 @@ const Webentwicklung = () => {
         <meta name="description" content="Ihre WordPress Agentur aus Mainz: ooliv entwickelt skalierbare Websites mit Pagebuilder oder individuellem Code – flexibel, sicher, SEO-ready." />
       </Helmet>
 
-      <WebDevHeroDE />
+      <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStaticDE />
       <WebDevProcessNewDE />
@@ -66,4 +65,4 @@ const Webentwicklung = () => {
   );
 };
 
-export default Webentwicklung;
+export default GermanWebDevelopment;

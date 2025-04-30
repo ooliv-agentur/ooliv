@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const Impressum = () => {
+const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
@@ -37,7 +37,7 @@ const Impressum = () => {
         }}
         secondaryCta={{
           text: "Kontakt aufnehmen",
-          link: "/kontakt"
+          link: "/de/kontakt"
         }}
       />
 
@@ -118,8 +118,8 @@ const Impressum = () => {
               </Card>
               
               <div className="flex justify-center md:justify-start pt-4">
-                <Button variant="outline" asChild>
-                  <Link to="/datenschutz">Datenschutzerklärung →</Link>
+                <Button variant="outline" asChild data-trigger-lead-form>
+                  <Link to="/de/datenschutz">Datenschutzerklärung →</Link>
                 </Button>
               </div>
             </div>
@@ -132,4 +132,4 @@ const Impressum = () => {
   );
 };
 
-export default Impressum;
+export default GermanLegalNotice;

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -10,7 +9,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
-const KiTechnologien = () => {
+const GermanAiTechnologies = () => {
   // AI tools data for German page
   const aiTools = [
     {
@@ -62,7 +61,6 @@ const KiTechnologien = () => {
       </Helmet>
 
       <AiTechHero />
-      
       <AiTechBenefits />
       <AiTechServices />
       <AiToolsSection 
@@ -85,4 +83,4 @@ const KiTechnologien = () => {
   );
 };
 
-export default KiTechnologien;
+export default GermanAiTechnologies;

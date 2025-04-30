@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -20,7 +21,7 @@ import {
   AccordionTrigger 
 } from '@/components/ui/accordion';
 
-const Datenschutz = () => {
+const GermanPrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
   const { setLanguage } = useLanguage();
   
@@ -57,7 +58,7 @@ const Datenschutz = () => {
         }}
         secondaryCta={{
           text: "Strategiegespräch vereinbaren",
-          link: "/kontakt"
+          link: "/de/kontakt"
         }}
       />
 
@@ -205,4 +206,4 @@ const Datenschutz = () => {
   );
 };
 
-export default Datenschutz;
+export default GermanPrivacyPolicy;

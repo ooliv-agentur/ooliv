@@ -1,8 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import HeroContent from '@/components/hero/HeroContent';
+import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
 import ContentProcess from '@/components/content-creation/ContentProcess';
@@ -11,7 +10,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
-const ContentErstellung = () => {
+const GermanContentCreation = () => {
   // Custom FAQ items for Content Creation page
   const contentFaqs = [
     {
@@ -43,8 +42,7 @@ const ContentErstellung = () => {
         <meta name="description" content="ooliv erstellt strategischen B2B-Content: Website-Texte, Landingpages & SEO-Inhalte mit Plan – klar, durchdacht, leistungsstark." />
       </Helmet>
 
-      <HeroContent />
-      
+      <ContentHero />
       <ContentBenefits />
       <ContentServiceDE />
       <ContentServices />
@@ -72,4 +70,4 @@ const ContentErstellung = () => {
   );
 };
 
-export default ContentErstellung;
+export default GermanContentCreation;

@@ -1,8 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
-import HeroWebdesign from '@/components/hero/HeroWebdesign';
+import WebDesignHero from '@/components/web-design/WebDesignHero';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
@@ -11,21 +10,16 @@ import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
-const GermanWebDesign = () => {
+const WebDesign = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Webdesign Mainz | UX-stark & individuell mit ooliv</title>
-        <meta name="description" content="Webdesign für B2B-Marken in Mainz: modern, conversionstark und individuell. ooliv entwickelt Websites, die wirken – ohne Templates." />
-      </Helmet>
-
-      <HeroWebdesign />
+      <WebDesignHero />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />
       <WebDesignProcess />
       
-      {/* Full Case Studies Section with global titles */}
+      {/* Full Case Studies Section with all 5 cases */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
@@ -36,14 +30,14 @@ const GermanWebDesign = () => {
       
       {/* Final CTA Section - removed footerNote to prevent duplication */}
       <CTA 
-        title="Sprechen wir über Ihr Webdesign-Projekt"
-        subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch vereinbaren"
-        secondaryCtaLink="/kontakt"
+        title="Let's Talk About Your Webdesign Project"
+        subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
+        primaryCta="Start Your Web Project"
+        secondaryCta="Book a Strategy Call"
+        secondaryCtaLink="/en/contact"
       />
     </PageLayout>
   );
 };
 
-export default GermanWebDesign;
+export default WebDesign;

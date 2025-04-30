@@ -1,8 +1,7 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import HeroSEO from '@/components/hero/HeroSEO';
+import SEOHeroDE from '@/components/seo/SEOHeroDE';
 import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
 import SEOServicesDE from '@/components/seo/SEOServicesDE';
 import SEOProcessDE from '@/components/seo/SEOProcessDE';
@@ -11,7 +10,7 @@ import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 
-const SeoOptimierung = () => {
+const GermanSEO = () => {
   const seoFaqs = [
     {
       question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
@@ -46,7 +45,7 @@ const SeoOptimierung = () => {
         <meta name="description" content="Mehr Sichtbarkeit für Ihre Website: ooliv ist Ihre SEO Agentur in Mainz – Onpage, Inhalte & Strategie für nachhaltige Rankings." />
       </Helmet>
 
-      <HeroSEO />
+      <SEOHeroDE />
       <SEOBenefitsDE />
       <SEOServicesDE />
       <SEOApproachDE />
@@ -68,4 +67,4 @@ const SeoOptimierung = () => {
   );
 };
 
-export default SeoOptimierung;
+export default GermanSEO;

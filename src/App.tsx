@@ -1,56 +1,36 @@
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
-// Import renamed German pages
-import Index from "./pages/de/Index";
-import Webdesign from "./pages/de/Webdesign";
-import Webentwicklung from "./pages/de/Webentwicklung";
-import ContentErstellung from "./pages/de/ContentErstellung";
-import SeoOptimierung from "./pages/de/SeoOptimierung";
-import GoogleAds from "./pages/de/GoogleAds";
-import KiTechnologien from "./pages/de/KiTechnologien";
-import CaseStudies from "./pages/de/CaseStudies";
-import UeberOoliv from "./pages/de/UeberOoliv";
-import Kontakt from "./pages/de/Kontakt";
-import Impressum from "./pages/de/Impressum";
-import Datenschutz from "./pages/de/Datenschutz";
+// Import German pages as main pages
+import GermanIndex from "./pages/de/Index";
+import GermanWebDesign from "./pages/de/WebDesign";
+import GermanWebDevelopment from "./pages/de/WebDevelopment";
+import GermanContentCreation from "./pages/de/ContentCreation";
+import GermanSEO from "./pages/de/SEO";
+import GermanGoogleAds from "./pages/de/GoogleAds";
+import GermanAiTechnologies from "./pages/de/AiTechnologies";
+import GermanCaseStudies from "./pages/de/CaseStudies";
+import GermanAboutUs from "./pages/de/AboutUs";
+import GermanContact from "./pages/de/Contact";
+import GermanLegalNotice from "./pages/de/LegalNotice";
+import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
+
+// Import English pages
+import CaseStudies from "./pages/CaseStudies";
+
+// Import NotFound page
+import NotFound from "./pages/NotFound";
+
+//Import Danke page
 import Danke from "./pages/de/Danke";
-
-// Create a NotFound component directly here instead of importing it
-const NotFound = () => {
-  const location = useLocation();
-  
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">
-          Oops! Seite nicht gefunden
-        </p>
-        <Link 
-          to="/" 
-          className="text-blue-500 hover:text-blue-700 underline"
-        >
-          Zurück zur Startseite
-        </Link>
-      </div>
-    </div>
-  );
-};
 
 // Create the query client
 const queryClient = new QueryClient();
@@ -71,20 +51,23 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
-            {/* Main (German) Routes with updated components */}
-            <Route path="/" element={<Index />} />
-            <Route path="/webdesign" element={<Webdesign />} />
-            <Route path="/webentwicklung" element={<Webentwicklung />} />
-            <Route path="/content-erstellung" element={<ContentErstellung />} />
-            <Route path="/seo-optimierung" element={<SeoOptimierung />} />
-            <Route path="/google-ads" element={<GoogleAds />} />
-            <Route path="/ki-technologien" element={<KiTechnologien />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/ueber-ooliv" element={<UeberOoliv />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
+            {/* Main (German) Routes */}
+            <Route path="/" element={<GermanIndex />} />
+            <Route path="/webdesign" element={<GermanWebDesign />} />
+            <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+            <Route path="/content-erstellung" element={<GermanContentCreation />} />
+            <Route path="/seo-optimierung" element={<GermanSEO />} />
+            <Route path="/google-ads" element={<GermanGoogleAds />} />
+            <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+            <Route path="/case-studies" element={<GermanCaseStudies />} />
+            <Route path="/ueber-ooliv" element={<GermanAboutUs />} />
+            <Route path="/kontakt" element={<GermanContact />} />
+            <Route path="/impressum" element={<GermanLegalNotice />} />
+            <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
             <Route path="/danke" element={<Danke />} />
+            
+            {/* English routes */}
+            <Route path="/en/case-studies" element={<CaseStudies />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />

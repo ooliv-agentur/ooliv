@@ -52,7 +52,7 @@ const WebDevCTA = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
           <Button 
-            className="flex-1 hover:scale-[1.03] transition-transform duration-200"
+            className="flex-1"
             asChild
           >
             <Link to={contactPath}>
@@ -62,13 +62,15 @@ const WebDevCTA = () => {
           
           <Button 
             variant="outline" 
-            className="flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10 hover:scale-[1.03] transition-transform duration-200"
+            className="flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10"
             data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
             {projectText}
           </Button>
         </div>
+
+        {/* Removed the duplicate footer text */}
       </div>
       
       <ContactForm 

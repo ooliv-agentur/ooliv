@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import HeroCaseStudies from '@/components/hero/HeroCaseStudies';
+import PageHero from '@/components/PageHero';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -44,7 +44,13 @@ const faqItems = [
   }
 ];
 
-const GermanCaseStudies = () => {  
+const GermanCaseStudies = () => {
+  // Handler for opening the lead form
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   // Force document title update to ensure it works across all domains
   useEffect(() => {
     document.title = "Marketing Mainz | Case Studies mit echten Ergebnissen";
@@ -79,7 +85,20 @@ const GermanCaseStudies = () => {
         <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
       </Helmet>
       
-      <HeroCaseStudies />
+      <PageHero
+        badge="Case Studies"
+        title="Marketing aus Mainz mit echten Ergebnissen."
+        subtitle="Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen."
+        primaryCta={{
+          text: "Projekt starten",
+          link: "#",
+          onClick: handleOpenLeadForm
+        }}
+        secondaryCta={{
+          text: "Strategiegespräch buchen",
+          link: "/kontakt"
+        }}
+      />
       
       <div className="section-container">
         <CaseStudiesSection 

@@ -18,21 +18,23 @@ interface LeadGenerationOverlayProps {
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const { language } = useLanguage();
   
+  // Listen for the global event to open the lead form
   useEffect(() => {
-    console.log('🔖 LeadGenerationOverlay - open state changed to:', open);
-    if (open) {
-      console.log('🔖 LeadGenerationOverlay - Lead form opened');
-    }
-  }, [open]);
+    const handleOpenLeadForm = () => {
+      onOpenChange(true);
+    };
+
+    // Register event listener
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    
+    // Clean up
+    return () => {
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+    };
+  }, [onOpenChange]);
   
   return (
-    <Sheet 
-      open={open} 
-      onOpenChange={(newOpen) => {
-        console.log('🔖 LeadGenerationOverlay - Sheet onOpenChange called with:', newOpen);
-        onOpenChange(newOpen);
-      }}
-    >
+    <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
         <SheetHeader className="text-left pb-4">
           <SheetTitle className="text-xl font-bold text-white">
@@ -43,10 +45,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => {
-          console.log('🔖 LeadGenerationOverlay - LeadFormContent onClose called');
-          onOpenChange(false);
-        }} />
+        <LeadFormContent onClose={() => onOpenChange(false)} />
       </SheetContent>
     </Sheet>
   );
