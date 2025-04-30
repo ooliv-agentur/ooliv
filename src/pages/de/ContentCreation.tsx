@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -63,6 +64,7 @@ const GermanContentCreation = () => {
         title="Lassen Sie uns Content erstellen, der konvertiert"
         subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns Content erstellen, der rankt, resoniert und echte Geschäftsergebnisse liefert."
         primaryCta="Content-Projekt besprechen"
+        primaryCtaLink="/kontakt"
         secondaryCta="Showcase ansehen"
         secondaryCtaLink="/case-studies"
       />
