@@ -1,8 +1,9 @@
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Lock, 
   Database, 
@@ -20,10 +21,20 @@ import {
   AccordionTrigger 
 } from '@/components/ui/accordion';
 
-const Datenschutz = () => {
+const GermanPrivacyPolicy = () => {
   const policyRef = useRef<HTMLDivElement>(null);
+  const { setLanguage } = useLanguage();
   
-  // Handler for opening the lead form
+  useEffect(() => {
+    setLanguage('de');
+  }, [setLanguage]);
+  
+  const scrollToPolicy = () => {
+    if (policyRef.current) {
+      policyRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
@@ -47,7 +58,7 @@ const Datenschutz = () => {
         }}
         secondaryCta={{
           text: "Strategiegespräch vereinbaren",
-          link: "/kontakt"
+          link: "/de/kontakt"
         }}
       />
 
@@ -140,7 +151,7 @@ const Datenschutz = () => {
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 pt-2">
                 <p className="text-brand-text">
-                  Wir verwenden Google Ads und Google Analytics, um unseren Website-Verkehr zu verstehen und unsere Marketingbemühungen zu optimieren. Die IP-Anonymisierung ist aktiviert, um Ihre Privatsphäre zu schützen. Daten können in den USA gemäß Googles Datenschutzrichtlinien verarbeitet werden. Sie können über die <a href="https://www.google.de/settings/ads" className="text-brand-primary hover:underline">Google-Einstellungen</a> oder durch die Verwendung von Browser-Erweiterungen wie Google Analytics Opt-out widersprechen.
+                  Wir verwenden Google Ads und Google Analytics, um unseren Website-Verkehr zu verstehen und unsere Marketingbemühungen zu optimieren. Die IP-Anonymisierung ist aktiv, um Ihre Privatsphäre zu schützen. Daten können in den USA gemäß den Datenschutzrichtlinien von Google verarbeitet werden. Sie können über <a href="https://www.google.de/settings/ads" className="text-brand-primary hover:underline">Google-Einstellungen</a> oder durch die Verwendung von Browser-Erweiterungen wie Google Analytics Opt-out widersprechen.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -154,7 +165,7 @@ const Datenschutz = () => {
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 pt-2">
                 <p className="text-brand-text">
-                  Unsere Website kann Links zu externen Websites enthalten, die nicht von uns betrieben werden. Wir sind nicht verantwortlich für den Inhalt oder die Datenschutzpraktiken dieser Drittanbieter-Websites. Wir empfehlen Ihnen, die Datenschutzrichtlinien aller externen Websites zu überprüfen, die Sie über Links auf unserer Website besuchen.
+                  Unsere Website kann Links zu externen Seiten enthalten, die nicht von uns betrieben werden. Wir sind nicht verantwortlich für den Inhalt oder die Datenschutzpraktiken dieser Drittanbieter-Websites. Wir empfehlen Ihnen, die Datenschutzrichtlinien aller externen Websites zu überprüfen, die Sie über Links auf unserer Website besuchen.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -168,7 +179,7 @@ const Datenschutz = () => {
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 pt-2">
                 <p className="text-brand-text">
-                  Wir implementieren starke Sicherheitsprotokolle, können jedoch keinen 100%igen Schutz gegen alle Bedrohungen garantieren. Unsere Website verwendet SSL-Verschlüsselung zum Schutz der Datenübertragung, und wir aktualisieren regelmäßig unsere Systeme, um die Sicherheit aufrechtzuerhalten. Jedoch ist keine Methode der elektronischen Speicherung oder Übertragung vollständig sicher. Wir raten davon ab, hochsensible Daten per E-Mail oder über Standard-Kontaktformulare zu senden.
+                  Wir implementieren starke Sicherheitsprotokolle, können aber keinen 100%igen Schutz gegen alle Bedrohungen garantieren. Unsere Website verwendet SSL-Verschlüsselung zum Schutz der Datenübertragung, und wir aktualisieren regelmäßig unsere Systeme, um die Sicherheit aufrechtzuerhalten. Dennoch ist keine Methode der elektronischen Speicherung oder Übertragung vollständig sicher. Wir raten davon ab, hochsensible Daten per E-Mail oder über Standard-Kontaktformulare zu senden.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -182,13 +193,12 @@ const Datenschutz = () => {
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-4 pt-2">
                 <p className="text-brand-text">
-                  Diese Richtlinie kann sich ändern, wenn sich rechtliche oder technische Bedingungen weiterentwickeln. Wir werden alle Überarbeitungen auf dieser Seite mit einem aktualisierten Datum veröffentlichen. Bei wesentlichen Änderungen werden wir möglicherweise auch einen auffälligeren Hinweis geben. Bitte überprüfen Sie diese Richtlinie regelmäßig, um über den Schutz Ihrer Daten informiert zu bleiben.
+                  Diese Richtlinie kann sich ändern, wenn sich rechtliche oder technische Bedingungen weiterentwickeln. Wir werden alle Überarbeitungen auf dieser Seite mit einem aktualisierten Datum des Inkrafttretens veröffentlichen. Bei erheblichen Änderungen können wir auch einen auffälligeren Hinweis geben. Bitte überprüfen Sie diese Richtlinie regelmäßig, um über den Schutz Ihrer Informationen informiert zu bleiben.
                 </p>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          {/* Added extra spacing before the footer */}
           <div className="pb-16"></div>
         </div>
       </section>
@@ -196,4 +206,4 @@ const Datenschutz = () => {
   );
 };
 
-export default Datenschutz;
+export default GermanPrivacyPolicy;

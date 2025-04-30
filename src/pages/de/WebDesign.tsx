@@ -12,7 +12,7 @@ import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import SEOTextSection from '@/components/web-design/SEOTextSection';
 
-const Webdesign = () => {
+const GermanWebDesign = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
@@ -50,4 +50,4 @@ const Webdesign = () => {
   );
 };
 
-export default Webdesign;
+export default GermanWebDesign;

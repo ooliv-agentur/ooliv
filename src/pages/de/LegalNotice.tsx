@@ -1,18 +1,20 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/contexts/LanguageContext';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const Impressum = () => {
-  const handleOpenLeadForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
+const GermanLegalNotice = () => {
+  const { setLanguage } = useLanguage();
+  
+  useEffect(() => {
+    setLanguage('de');
+  }, [setLanguage]);
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -35,7 +37,7 @@ const Impressum = () => {
         }}
         secondaryCta={{
           text: "Kontakt aufnehmen",
-          link: "/kontakt"
+          link: "/de/kontakt"
         }}
       />
 
@@ -117,7 +119,7 @@ const Impressum = () => {
               
               <div className="flex justify-center md:justify-start pt-4">
                 <Button variant="outline" asChild data-trigger-lead-form>
-                  <Link to="/datenschutz">Datenschutzerklärung →</Link>
+                  <Link to="/de/datenschutz">Datenschutzerklärung →</Link>
                 </Button>
               </div>
             </div>
@@ -130,4 +132,4 @@ const Impressum = () => {
   );
 };
 
-export default Impressum;
+export default GermanLegalNotice;
