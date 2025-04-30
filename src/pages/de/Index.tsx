@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSection from "@/components/de/SEOTextSection";
 import { Helmet } from 'react-helmet-async';
+import DeutscherHero from "@/components/de/DeutscherHero";
 
 const GermanIndex = () => {
   const simplifiedFaqs = [
@@ -48,7 +49,7 @@ const GermanIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} />
+        <DeutscherHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
@@ -86,7 +87,6 @@ const GermanIndex = () => {
         />
       </PageLayout>
       
-      {/* SEO Text Section placed after the PageLayout */}
       <SEOTextSection />
     </>
   );

@@ -1,13 +1,17 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DeutscherHero = () => {
   // Handle opening the lead generation form
-  const handleOpenLeadForm = () => {
-    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Dispatch both events to ensure compatibility with different components
+    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-generation'));
   };
   
   return (
@@ -36,14 +40,19 @@ const DeutscherHero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                className="group bg-[#006064] text-white hover:bg-[#004d51] hover:scale-[1.03] transition-transform duration-200 ease-in-out" 
                 onClick={handleOpenLeadForm}
               >
                 Projekt starten
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
-              <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200 ease-in-out"
+                asChild
+              >
                 <Link to="/de/case-studies">
                   Arbeiten ansehen
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
