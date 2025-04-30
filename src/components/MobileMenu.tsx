@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import LanguageSwitcher from './navigation/LanguageSwitcher';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -77,8 +78,8 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     onClose();
   };
 
-  // Remove language toggling functionality since we're German-only now
-  const navigationLinks = [
+  // Navigation links based on language
+  const navigationLinks = language === 'de' ? [
     { title: 'Home', path: '/' },
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
@@ -89,12 +90,22 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
     { title: 'Case Studies', path: '/case-studies' },
     { title: 'Über ooliv', path: '/ueber-ooliv' },
     { title: 'Kontakt', path: '/kontakt' }
+  ] : [
+    { title: 'Home', path: '/en' },
+    { title: 'Web Design', path: '/en/webdesign' },
+    { title: 'Web Development', path: '/en/webdevelopment' },
+    { title: 'Content Creation', path: '/en/content-creation' },
+    { title: 'SEO', path: '/en/seo' },
+    { title: 'Google Ads', path: '/en/google-ads' },
+    { title: 'AI Technologies', path: '/en/ai-technologies' },
+    { title: 'Case Studies', path: '/en/case-studies' },
+    { title: 'About ooliv', path: '/en/about-us' },
+    { title: 'Contact', path: '/en/contact' }
   ];
 
-  // Only use German text now
-  const startProjectText = 'Projekt starten';
-  const menuText = 'Menü';
-  const closeMenuText = 'Menü schließen';
+  // Text based on language
+  const menuText = language === 'de' ? 'Menü' : 'Menu';
+  const closeMenuText = language === 'de' ? 'Menü schließen' : 'Close menu';
 
   const backdropVariants = {
     hidden: { opacity: 0 },
@@ -146,7 +157,10 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
-              {/* Language switcher removed */}
+              {/* Language Switcher */}
+              <div className="flex justify-end mb-4">
+                <LanguageSwitcher />
+              </div>
               
               <nav className={cn(
                 "space-y-4 text-center w-full",
@@ -172,8 +186,8 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: Mail, label: "E-Mail an ooliv", href: "mailto:info@ooliv.de" },
-                  { icon: Phone, label: "ooliv anrufen", href: "tel:+4961316367801" }
+                  { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email ooliv", href: "mailto:info@ooliv.de" },
+                  { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Call ooliv", href: "tel:+4961316367801" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}

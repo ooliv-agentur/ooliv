@@ -22,6 +22,7 @@ const WebDesignHero = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
+  const linkPath = isGerman ? "/kontakt" : "/en/contact";
   
   return (
     <div className="relative">
@@ -31,7 +32,7 @@ const WebDesignHero = () => {
         subtitle={t.subtitle}
         primaryCta={{
           text: isGerman ? "Projekt starten" : "Start Your Web Project",
-          link: "#"
+          link: linkPath
         }}
       />
       <ScrollIndicator />

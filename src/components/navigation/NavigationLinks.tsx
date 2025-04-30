@@ -26,8 +26,22 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'Kontakt', path: '/kontakt' }
   ];
 
-  // Use German links by default
-  const navigationLinks = germanLinks;
+  // Navigation links for English language
+  const englishLinks = [
+    { title: 'Home', path: '/en' },
+    { title: 'Web Design', path: '/en/webdesign' },
+    { title: 'Web Development', path: '/en/webdevelopment' },
+    { title: 'Content Creation', path: '/en/content-creation' },
+    { title: 'SEO', path: '/en/seo' },
+    { title: 'Google Ads', path: '/en/google-ads' },
+    { title: 'AI Technologies', path: '/en/ai-technologies' },
+    { title: 'Case Studies', path: '/en/case-studies' },
+    { title: 'About ooliv', path: '/en/about-us' },
+    { title: 'Contact', path: '/en/contact' }
+  ];
+
+  // Use appropriate links based on language
+  const navigationLinks = language === 'de' ? germanLinks : englishLinks;
 
   const handleClick = () => {
     if (onLinkClick) {
