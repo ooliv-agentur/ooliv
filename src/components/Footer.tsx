@@ -56,8 +56,39 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Section */}
           <div>
+            <Link to={language === 'de' ? '/' : '/en'} className="inline-block mb-6">
+              <img 
+                src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
+                alt="ooliv - Advertising Agency Mainz"
+                className="h-8 w-auto"
+              />
+            </Link>
             <h3 className="text-lg font-semibold mb-4">{t('footer.about')}</h3>
             <p className="text-white/90 mb-6">{t('footer.aboutText')}</p>
+            
+            {/* Ratings Section */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm text-white/90">5.0/5 Google</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm text-white/90">5.0/5 Sortlist</span>
+              </div>
+            </div>
           </div>
           
           {/* Services Links */}
@@ -113,7 +144,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">{t('footer.contactInfo')}</h3>
             <div className="space-y-4">
               <div>
-                <p className="text-white/90">ooliv GmbH</p>
+                <p className="text-white/90">ooliv</p>
                 <p className="text-white/90">Petersstraße 1</p>
                 <p className="text-white/90">55116 Mainz</p>
               </div>
