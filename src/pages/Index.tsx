@@ -1,71 +1,94 @@
 
 import React from 'react';
 import PageLayout from "@/components/PageLayout";
-import { Helmet } from 'react-helmet-async';
-import PageHero from "@/components/PageHero"; 
-import AboutSection from "@/components/AboutSection";
-import TeamImpactSection from "@/components/TeamImpactSection";
-import Challenge from "@/components/Challenge";
-import Solution from "@/components/Solution";
+import PageHero from "@/components/PageHero";
+import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
+import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
+import TeamTeaserDE from "@/components/de/TeamTeaserDE";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider"; 
+import GermanSolutionSection from "@/components/de/GermanSolutionSection";
+import TechnologiesSection from "@/components/de/TechnologiesSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import TeamTeaser from "@/components/TeamTeaser";
-import ClientLogos from "@/components/ClientLogos";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
-import { Link } from "react-router-dom";
+import SEOTextSection from "@/components/de/SEOTextSection";
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
+  const simplifiedFaqs = [
+    {
+      question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
+      answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
+    },
+    {
+      question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
+      answer: "Die Preise richten sich nach Umfang, Design und Funktionen. Einfache Onepager starten bei etwa 3.000 €, mittelgroße Websites mit SEO bei 5.000 bis 10.000 €. Für größere Projekte wie Shops oder Multilingual-Seiten starten die Kosten bei etwa 10.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
+    },
+    {
+      question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
+      answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Websites sind in wenigen Wochen umsetzbar, größere Seiten benötigen in der Regel 6 bis 10 Wochen. Wir stimmen den Zeitplan individuell mit Ihnen ab und arbeiten effizient auf gemeinsame Deadlines hin."
+    },
+    {
+      question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
+      answer: "Nach dem Go-Live lassen Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
+    },
+    {
+      question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
+      answer: "Wir arbeiten direkt, effizient und auf Augenhöhe. Bei uns sprechen Sie immer mit dem CEO. Strategie, Design und Technik kommen aus einer Hand. Unsere Websites sind SEO-stark, klar strukturiert und messbar erfolgreich – und wir sind in Mainz verwurzelt, mit Kunden weit darüber hinaus."
+    }
+  ];
+  
   return (
-    <PageLayout className="overflow-x-hidden">
+    <>
       <Helmet>
-        <title>ooliv | Strategic Web Design & Digital Marketing Agency</title>
-        <meta name="description" content="ooliv helps businesses grow with strategic web design, content creation, SEO, and digital marketing that delivers measurable results." />
-        <meta name="keywords" content="web design, digital marketing, SEO, content creation, B2B marketing" />
+        <title>Ihre Full-Service Werbeagentur Mainz entdecken</title>
+        <meta 
+          name="description" 
+          content="ooliv - Ihre Werbeagentur Mainz: Kreative Webdesigns, SEO & Marketingstrategien für Ihren digitalen Erfolg." 
+        />
       </Helmet>
-      
-      <PageHero isHomepage={true} />
-      <AboutSection />
-      <TeamImpactSection />
-      <Challenge />
-      
-      <div className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">See the Difference a Strategic Website Makes</h2>
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            Drag the slider to compare outdated designs with modern, conversion-focused websites that drive real business results.
-          </p>
-          <BeforeAfterSlider />
+      <PageLayout className="overflow-x-hidden">
+        <PageHero isHomepage={true} />
+        <DeutscherAboutSection />
+        <TeamTeaserDE />
+        
+        <div className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+              Viele Unternehmen kämpfen mit Webseiten, die nicht performen. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gefunden werden.
+            </p>
+            <BeforeAfterSlider />
+          </div>
         </div>
-      </div>
+        
+        <GermanSolutionSection />
+        
+        <TechnologiesSection />
+        
+        <CaseStudiesSection 
+          customTitle="Echte Ergebnisse von echten Kunden."
+          customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
+          customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+        />
+        
+        <FAQ 
+          customFaqs={simplifiedFaqs}
+          customTitle="Häufig gestellte Fragen"
+          customCtaText="Weitere Fragen? Kontaktieren Sie uns"
+        />
+        
+        <CTA 
+          lightBackground={true}
+          title="Bereit, Ihre digitale Präsenz zu transformieren?"
+          subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
+          primaryCta="Starten Sie Ihr Website-Projekt"
+        />
+      </PageLayout>
       
-      <Solution 
-        description={
-          <>
-            We create high-performance websites that rank higher, convert better, and drive measurable business success. Our expertise spans 
-            <Link to="/web-design" className="text-brand-primary hover:underline"> Web Design</Link>, 
-            <Link to="/web-development" className="text-brand-primary hover:underline"> Web Development</Link>, 
-            <Link to="/content-creation" className="text-brand-primary hover:underline"> Content Creation</Link>, 
-            <Link to="/seo-optimization" className="text-brand-primary hover:underline"> SEO Optimization</Link>, 
-            <Link to="/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link>, and 
-            <Link to="/ai-technologies" className="text-brand-primary hover:underline"> AI Technologies</Link>.
-          </>
-        }
-      />
-      
-      <TeamTeaser />
-      <ClientLogos />
-      
-      {/* Show all 5 case studies with standardized headers */}
-      <CaseStudiesSection />
-      
-      <FAQ />
-      <CTA 
-        title="Ready to transform your digital presence?"
-        subtitle="Let's discuss how our team can help your business achieve its online goals."
-        primaryCta="Start Your Website Project"
-      />
-    </PageLayout>
+      {/* SEO Text Section placed after the PageLayout */}
+      <SEOTextSection />
+    </>
   );
 };
 

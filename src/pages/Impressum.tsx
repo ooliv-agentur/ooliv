@@ -1,20 +1,18 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const GermanLegalNotice = () => {
-  const { setLanguage } = useLanguage();
-  
-  useEffect(() => {
-    setLanguage('de');
-  }, [setLanguage]);
+const Impressum = () => {
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -37,7 +35,7 @@ const GermanLegalNotice = () => {
         }}
         secondaryCta={{
           text: "Kontakt aufnehmen",
-          link: "/de/kontakt"
+          link: "/kontakt"
         }}
       />
 
@@ -119,7 +117,7 @@ const GermanLegalNotice = () => {
               
               <div className="flex justify-center md:justify-start pt-4">
                 <Button variant="outline" asChild data-trigger-lead-form>
-                  <Link to="/de/datenschutz">Datenschutzerklärung →</Link>
+                  <Link to="/datenschutz">Datenschutzerklärung →</Link>
                 </Button>
               </div>
             </div>
@@ -132,4 +130,4 @@ const GermanLegalNotice = () => {
   );
 };
 
-export default GermanLegalNotice;
+export default Impressum;

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -10,7 +11,7 @@ import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 
-const GermanSEO = () => {
+const SEOAgentur = () => {
   const seoFaqs = [
     {
       question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
@@ -67,4 +68,4 @@ const GermanSEO = () => {
   );
 };
 
-export default GermanSEO;
+export default SEOAgentur;

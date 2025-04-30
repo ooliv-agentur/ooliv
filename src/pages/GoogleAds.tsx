@@ -13,59 +13,47 @@ import {
   Shield,
   Bot,
   RefreshCw,
-  X,
-  Search,
-  ArrowRight,
-  CheckCircle
+  Search
 } from 'lucide-react';
 import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const GoogleAds = () => {
   // Custom FAQ items for Google Ads page
   const googleAdsFaqs = [
     {
-      question: "How is ooliv different from other Google Ads agencies?",
-      answer: "We combine B2B strategy with tech expertise — delivering real business impact, not generic ad traffic."
+      question: "Was unterscheidet ooliv von anderen Google Ads Agenturen?",
+      answer: "Wir kombinieren B2B-Strategie mit Tech-Expertise – für echte Business-Ergebnisse, nicht nur Traffic-Zahlen."
     },
     {
-      question: "Do we need Google Ads if SEO is already working well?",
-      answer: "Yes — Google Ads adds visibility and delivers immediate, targeted traffic with conversion focus."
+      question: "Brauchen wir Google Ads, wenn SEO bereits gut funktioniert?",
+      answer: "Ja – Google Ads erhöht die Sichtbarkeit und liefert sofortigen, gezielten Traffic mit Konversionsfokus."
     },
     {
-      question: "What's a typical budget for effective Google Ads?",
-      answer: "Most clients start between €1,000–3,000/month — based on goals, market, and competition."
+      question: "Wie hoch ist ein typisches Budget für effektive Google Ads?",
+      answer: "Die meisten Kunden starten zwischen 1.000–3.000 €/Monat – basierend auf Zielen, Markt und Wettbewerb."
     },
     {
-      question: "How soon will we see results from a campaign?",
-      answer: "You'll often see early results in a few days, with full performance in 4–6 weeks."
+      question: "Wie schnell werden wir Ergebnisse aus einer Kampagne sehen?",
+      answer: "Erste Ergebnisse sind oft in wenigen Tagen sichtbar, mit voller Performance in 4–6 Wochen."
     },
     {
-      question: "Can you help with landing pages and tracking setup?",
-      answer: "Absolutely — we handle everything from page design to full analytics integration."
+      question: "Könnt ihr bei Landingpages und Tracking-Einrichtung helfen?",
+      answer: "Absolut – wir übernehmen alles vom Seitendesign bis zur vollständigen Analyse-Integration."
     },
     {
-      question: "What platforms do you advertise on?",
-      answer: "We focus 100% on Google Ads — including Search, Display, and Performance Max."
+      question: "Auf welchen Plattformen schaltet ihr Werbung?",
+      answer: "Wir konzentrieren uns zu 100% auf Google Ads – einschließlich Search, Display und Performance Max."
     }
   ];
 
   return (
     <PageLayout>
       <Helmet>
-        <title>Google Ads Management | PPC That Delivers Real Business Results</title>
-        <meta name="description" content="Google Ads management for B2B companies. We create and optimize PPC campaigns that focus on qualified leads and measurable ROI - not just impressions." />
-        <meta name="keywords" content="Google Ads, PPC marketing, lead generation, conversion optimization" />
+        <title>Google Ads Agentur Mainz | Kampagnen mit messbarem ROI</title>
+        <meta name="description" content="Google Ads Management für B2B-Unternehmen. Wir erstellen und optimieren PPC-Kampagnen mit Fokus auf qualifizierte Leads und messbarer Rendite – nicht nur Impressionen." />
+        <meta name="keywords" content="Google Ads, PPC-Marketing, Lead-Generation, Konversionsoptimierung" />
       </Helmet>
       
       {/* Hero Section */}
@@ -76,38 +64,38 @@ const GoogleAds = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Website Challenges That Hurt Your Business — Here's How We Fix Them
+              Website-Herausforderungen, die Ihr Business behindern — So lösen wir sie
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                problem: "No inbound leads",
-                context: "Your website gets traffic but no conversions",
-                solution: "We create campaigns and landing pages designed to convert B2B visitors into real contacts"
+                problem: "Keine eingehenden Leads",
+                context: "Ihre Website erhält Traffic, aber keine Konversionen",
+                solution: "Wir erstellen Kampagnen und Landing Pages, die speziell darauf ausgerichtet sind, B2B-Besucher in echte Kontakte zu verwandeln"
               },
               {
-                problem: "Ad spend wasted",
-                context: "ROI is unclear and budget disappears",
-                solution: "We track every click, optimize continuously, and use click fraud protection to avoid fake traffic"
+                problem: "Verschwendetes Werbebudget",
+                context: "ROI ist unklar und Budget verschwindet",
+                solution: "Wir tracken jeden Klick, optimieren kontinuierlich und nutzen Klickbetrugsschutz, um gefälschten Traffic zu vermeiden"
               },
               {
-                problem: "Wrong audience",
-                context: "Visitors bounce without action",
-                solution: "Our campaigns use AI-enhanced targeting to reach decision-makers, not window shoppers"
+                problem: "Falsche Zielgruppe",
+                context: "Besucher verlassen die Seite ohne Aktion",
+                solution: "Unsere Kampagnen verwenden KI-verbesserte Zielgruppenausrichtung, um Entscheidungsträger zu erreichen, nicht Fenstergucker"
               },
               {
-                problem: "Lack of strategy",
-                context: "Disconnected efforts, no real growth",
-                solution: "We connect campaigns, content, and data into one conversion-focused system"
+                problem: "Mangel an Strategie",
+                context: "Isolierte Bemühungen, kein echtes Wachstum",
+                solution: "Wir verbinden Kampagnen, Inhalte und Daten zu einem konversionsorientierten System"
               }
             ].map((item, i) => (
               <div key={i} className="bg-brand-backgroundAlt rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-brand-primary font-bold mb-3">PROBLEM:</div>
                 <h3 className="text-lg font-bold mb-2">{item.problem}</h3>
                 <p className="text-sm text-gray-600 mb-4">{item.context}</p>
-                <div className="text-brand-primary font-bold mb-2">SOLUTION:</div>
+                <div className="text-brand-primary font-bold mb-2">LÖSUNG:</div>
                 <p>{item.solution}</p>
               </div>
             ))}
@@ -120,30 +108,30 @@ const GoogleAds = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Google Ads for Results – Not Just Visibility
+              Google Ads für Ergebnisse – nicht nur für Sichtbarkeit
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              We use Google Ads to generate qualified leads — not empty clicks.
+              Wir nutzen Google Ads, um qualifizierte Leads zu generieren — nicht nur leere Klicks.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <Search className="h-10 w-10 mb-4 text-brand-primary" />
-              <h3 className="text-xl font-bold mb-4">Search Campaigns</h3>
-              <p>Reach your audience at the right time — with targeted keywords, ad extensions, and tracked conversions.</p>
+              <h3 className="text-xl font-bold mb-4">Suchkampagnen</h3>
+              <p>Erreichen Sie Ihre Zielgruppe zum richtigen Zeitpunkt — mit gezielten Keywords, Ad Extensions und getrackte Conversions.</p>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <Layout className="h-10 w-10 mb-4 text-brand-primary" />
               <h3 className="text-xl font-bold mb-4">Landing Pages</h3>
-              <p>Great ads need great destinations. We create high-performance landing pages built for speed, clarity, and conversion.</p>
+              <p>Gute Anzeigen brauchen gute Zielseiten. Wir erstellen leistungsstarke Landing Pages für Geschwindigkeit, Klarheit und Konversion.</p>
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <RefreshCw className="h-10 w-10 mb-4 text-brand-primary" />
-              <h3 className="text-xl font-bold mb-4">Continuous Optimization</h3>
-              <p>We test, analyze, and improve your campaigns constantly — lowering cost per lead and increasing results.</p>
+              <h3 className="text-xl font-bold mb-4">Kontinuierliche Optimierung</h3>
+              <p>Wir testen, analysieren und verbessern Ihre Kampagnen ständig — senken die Kosten pro Lead und steigern die Ergebnisse.</p>
             </div>
           </div>
         </div>
@@ -157,7 +145,7 @@ const GoogleAds = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Our Tech Stack – Data-Driven Performance
+              Unser Tech-Stack – datengestützte Performance
             </h2>
           </div>
 
@@ -166,27 +154,27 @@ const GoogleAds = () => {
               {
                 icon: <Target className="h-10 w-10 mb-4 text-brand-primary" />,
                 title: "Google Ads (Search, Display & PMax)",
-                description: "Performance-driven campaigns targeting high-intent B2B keywords and optimized for conversions"
+                description: "Leistungsstarke Kampagnen, die auf hochwertige B2B-Keywords abzielen und auf Konversionen optimiert sind"
               },
               {
                 icon: <Bot className="h-10 w-10 mb-4 text-brand-primary" />,
-                title: "AI-Enhanced Campaign Management",
-                description: "We use AI tools to improve ad quality, keyword performance, and audience targeting"
+                title: "KI-verbessertes Kampagnen-Management",
+                description: "Wir nutzen KI-Tools zur Verbesserung der Anzeigenqualität, Keyword-Performance und Zielgruppenausrichtung"
               },
               {
                 icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
-                title: "Landing Page Design & Development",
-                description: "We build landing pages that load fast, communicate clearly, and are built to convert visitors into leads"
+                title: "Landing Page Design & Entwicklung",
+                description: "Wir bauen Landing Pages, die schnell laden, klar kommunizieren und darauf ausgerichtet sind, Besucher in Leads zu konvertieren"
               },
               {
                 icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
-                title: "Conversion Rate Optimization (CRO)",
-                description: "We test every element — from headlines to CTAs — to improve your conversion rates step by step"
+                title: "Conversion Rate Optimierung (CRO)",
+                description: "Wir testen jedes Element — von Überschriften bis zu CTAs — um Ihre Konversionsraten Schritt für Schritt zu verbessern"
               },
               {
                 icon: <Shield className="h-10 w-10 mb-4 text-brand-primary" />,
-                title: "Analytics, Tracking & Click Fraud Protection",
-                description: "We track every action, monitor performance, and protect your budget from invalid clicks"
+                title: "Analytics, Tracking & Klickbetrugsschutz",
+                description: "Wir tracken jede Aktion, überwachen die Performance und schützen Ihr Budget vor ungültigen Klicks"
               }
             ].map((service, index) => (
               <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -207,7 +195,7 @@ const GoogleAds = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              B2B Brands That Drive Results With ooliv
+              B2B-Marken, die mit ooliv Ergebnisse erzielen
             </h2>
           </div>
 
@@ -215,18 +203,18 @@ const GoogleAds = () => {
             {[
               {
                 icon: <Target className="h-10 w-10 mb-4 text-brand-primary" />,
-                metric: "+3x more qualified leads",
-                description: "thanks to AI-optimized targeting and strategic landing pages"
+                metric: "+3x mehr qualifizierte Leads",
+                description: "dank KI-optimiertem Targeting und strategischen Landing Pages"
               },
               {
                 icon: <LineChart className="h-10 w-10 mb-4 text-brand-primary" />,
-                metric: "-40% bounce rate",
-                description: "after we improved conversion copy and user experience"
+                metric: "-40% geringere Absprungrate",
+                description: "nachdem wir Conversion-Texte und User Experience verbessert haben"
               },
               {
                 icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
-                metric: "+70% higher CTR",
-                description: "through better ad copy and keyword alignment"
+                metric: "+70% höhere CTR",
+                description: "durch bessere Anzeigentexte und Keyword-Abstimmung"
               }
             ].map((metric, index) => (
               <div key={index} className="bg-brand-backgroundAlt p-8 rounded-lg shadow-md text-center">
@@ -251,16 +239,16 @@ const GoogleAds = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Let's Turn Google Ads Into a Scalable Sales Channel"
-        subtitle="With our data-driven approach, we'll help you improve ROI, lower lead costs, and build campaigns that deliver measurable growth."
-        primaryCta="Launch Your Campaign"
+        title="Lassen Sie uns Google Ads in einen skalierbaren Vertriebskanal verwandeln"
+        subtitle="Mit unserem datengesteuerten Ansatz helfen wir Ihnen, den ROI zu verbessern, die Lead-Kosten zu senken und Kampagnen aufzubauen, die messbares Wachstum liefern."
+        primaryCta="Starten Sie Ihre Kampagne"
       />
 
       {/* New Claim Section */}
       <section className="bg-brand-backgroundAlt py-12 text-center">
         <div className="container mx-auto px-4">
           <p className="text-lg text-brand-text font-medium">
-            100+ successful projects • Trusted by B2B leaders • AI-powered strategies for measurable growth
+            100+ erfolgreiche Projekte • Vertrauen von B2B-Führungskräften • KI-gestützte Strategien für messbares Wachstum
           </p>
         </div>
       </section>

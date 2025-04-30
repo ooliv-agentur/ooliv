@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -10,7 +11,7 @@ import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 
-const GermanWebDevelopment = () => {
+const WordPressAgentur = () => {
   const webDevFaqs = [
     {
       question: "Mit welchen Plattformen arbeitet ihr?",
@@ -65,4 +66,4 @@ const GermanWebDevelopment = () => {
   );
 };
 
-export default GermanWebDevelopment;
+export default WordPressAgentur;

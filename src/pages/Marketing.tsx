@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import PageHero from '@/components/PageHero';
@@ -44,35 +44,12 @@ const faqItems = [
   }
 ];
 
-const GermanCaseStudies = () => {
+const Marketing = () => {
   // Handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
-  
-  // Force document title update to ensure it works across all domains
-  useEffect(() => {
-    document.title = "Marketing Mainz | Case Studies mit echten Ergebnissen";
-    
-    // Create and update meta description if it doesn't exist
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', 'So funktioniert Marketing aus Mainz: ooliv zeigt erfolgreiche Projekte für Web, Content und SEO. Jetzt inspirieren & profitieren!');
-    
-    // Create and update meta keywords if it doesn't exist
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', 'Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
-  }, []);
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -152,4 +129,4 @@ const GermanCaseStudies = () => {
   );
 };
 
-export default GermanCaseStudies;
+export default Marketing;
