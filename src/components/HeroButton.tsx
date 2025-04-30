@@ -13,8 +13,8 @@ type HeroButtonProps = {
 
 const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps) => {
   const handleClick = (e: React.MouseEvent) => {
+    // Don't prevent default behavior, just call onClick if provided
     if (onClick) {
-      e.preventDefault();
       onClick(e);
     }
   };
