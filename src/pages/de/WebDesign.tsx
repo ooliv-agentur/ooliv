@@ -14,39 +14,41 @@ import SEOTextSection from '@/components/web-design/SEOTextSection';
 
 const GermanWebDesign = () => {
   return (
-    <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Strategisches Webdesign Mainz für B2B-Unternehmen</title>
-        <meta name="description" content="Webdesign Mainz – keine Templates, sondern maßgeschneiderte Lösungen. Für mehr Leads, Sichtbarkeit und digitale Markenstärke." />
-      </Helmet>
+    <>
+      <PageLayout className="overflow-x-hidden">
+        <Helmet>
+          <title>Strategisches Webdesign Mainz für B2B-Unternehmen</title>
+          <meta name="description" content="Webdesign Mainz – keine Templates, sondern maßgeschneiderte Lösungen. Für mehr Leads, Sichtbarkeit und digitale Markenstärke." />
+        </Helmet>
+        
+        <WebDesignHero />
+        <WebDesignBenefits />
+        <WebDesignStructureFirst />
+        <WebDesignBuildOptions />
+        <WebDesignProcess />
+        
+        {/* Full Case Studies Section with global titles */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
+        
+        <WebDesignFAQ />
+        
+        {/* Final CTA Section - removed footerNote to prevent duplication */}
+        <CTA 
+          title="Sprechen wir über Ihr Webdesign-Projekt"
+          subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
+          primaryCta="Projekt starten"
+          secondaryCta="Strategiegespräch vereinbaren"
+          secondaryCtaLink="/kontakt"
+        />
+      </PageLayout>
       
-      <WebDesignHero />
-      <WebDesignBenefits />
-      <WebDesignStructureFirst />
-      <WebDesignBuildOptions />
-      <WebDesignProcess />
-      
-      {/* Full Case Studies Section with global titles */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
-        </div>
-      </section>
-      
-      <WebDesignFAQ />
-      
-      {/* Final CTA Section - removed footerNote to prevent duplication */}
-      <CTA 
-        title="Sprechen wir über Ihr Webdesign-Projekt"
-        subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch vereinbaren"
-        secondaryCtaLink="/kontakt"
-      />
-      
-      {/* SEO Text Section added within the PageLayout */}
+      {/* SEO Text Section moved outside PageLayout to appear after footer */}
       <SEOTextSection />
-    </PageLayout>
+    </>
   );
 };
 
