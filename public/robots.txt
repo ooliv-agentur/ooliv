@@ -1,6 +1,3 @@
-
 User-agent: *
 Allow: /
 Sitemap: https://ooliv.de/sitemap.xml
-# Explicitly indicate canonical domain
-Host: ooliv.de
