@@ -9,7 +9,7 @@ import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
-// Import German pages
+// Import pages
 import Index from "./pages/Index";
 import Webdesign from "./pages/Webdesign";
 import Webentwicklung from "./pages/Webentwicklung";
