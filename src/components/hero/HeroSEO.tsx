@@ -1,6 +1,5 @@
-
 import React from 'react';
-import HeroButton from './HeroButton';
+import HeroButton from '@/components/HeroButton';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -52,6 +51,7 @@ const HeroSEO = () => {
               <HeroButton 
                 variant="solid"
                 label={isGerman ? "SEO-Analyse anfragen" : "Request SEO Analysis"}
+                href="#"
                 onClick={handleOpenLeadForm}
               />
               

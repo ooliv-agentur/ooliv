@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 type HeroButtonProps = {
   variant?: 'solid' | 'outline';
@@ -22,7 +23,8 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
     ? "group bg-[#006064] text-white hover:bg-[#004d51] hover:scale-[1.03] transition-transform duration-200" 
     : "group bg-transparent text-gray-800 hover:bg-white/10 border border-gray-800 hover:text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200";
 
-  if (!href && onClick) {
+  // For buttons with onClick but no href (like lead form triggers)
+  if (onClick && !href) {
     return (
       <Button 
         size="lg" 
@@ -34,32 +36,33 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
       </Button>
     );
   }
-
-  if (href && onClick) {
+  
+  // For buttons with both href and onClick (lead form triggers with fallback links)
+  if (onClick && href) {
     return (
-      <Link href={href} passHref legacyBehavior>
-        <Button 
-          size="lg" 
-          className={buttonClass}
-          onClick={handleClick}
-        >
-          {label}
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
-      </Link>
-    );
-  }
-
-  return (
-    <Link href={href || "#"} passHref legacyBehavior>
       <Button 
         size="lg" 
         className={buttonClass}
+        onClick={handleClick}
       >
         {label}
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
-    </Link>
+    );
+  }
+  
+  // For regular link buttons
+  return (
+    <Button 
+      size="lg" 
+      className={buttonClass}
+      asChild
+    >
+      <Link to={href || '#'}>
+        {label}
+        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </Link>
+    </Button>
   );
 };
 

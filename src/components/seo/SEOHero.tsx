@@ -3,6 +3,10 @@ import React from 'react';
 import PageHero from '@/components/PageHero';
 
 const SEOHero = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
+
   return (
     <PageHero
       badge="SEO Optimization"
@@ -10,15 +14,15 @@ const SEOHero = () => {
       subtitle="We turn your website into a scalable growth engine. Strategy-first SEO to boost visibility, attract B2B leads, and achieve long-term business results — in Mainz and beyond."
       primaryCta={{
         text: "Start Your SEO Strategy",
-        link: "#"
+        link: "#",
+        onClick: handleOpenLeadForm
       }}
       secondaryCta={{
         text: "Request Free SEO Audit",
-        link: "/en/contact"  // Updated to direct link to contact page
+        link: "/en/contact"
       }}
     />
   );
 };
 
 export default SEOHero;
-

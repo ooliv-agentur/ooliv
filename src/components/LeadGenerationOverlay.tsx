@@ -21,6 +21,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
+      console.log('Lead form open event received');
       onOpenChange(true);
     };
 

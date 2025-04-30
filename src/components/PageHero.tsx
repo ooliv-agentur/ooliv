@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -42,6 +41,12 @@ const PageHero = ({
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log('Dispatching open-lead-form event from PageHero');
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
+
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
     return text.includes('Strategiegespräch vereinbaren') || 
@@ -50,11 +55,6 @@ const PageHero = ({
            text.includes('Technische Beratung');
   };
   
-  const handleOpenLeadForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
-
   const shouldOpenLeadForm = (text?: string) => {
     if (!text) return false;
     
@@ -151,59 +151,24 @@ const PageHero = ({
     const primary = primaryCta || defaultPrimaryCta;
     const secondary = secondaryCta || defaultSecondaryCta;
     
-    if (secondary && isStrategyCallCta(secondary.text)) {
+    if (secondary && (secondary.text?.includes('Strategiegespräch') || secondary.text?.includes('Strategy Call'))) {
       secondary.link = contactPath;
       secondary.onClick = undefined;
     }
     
-    const openLeadForm = shouldOpenLeadForm(primary.text);
-    
-    return (
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        {openLeadForm ? (
+    if (primary.onClick || shouldOpenLeadForm(primary.text)) {
+      return (
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
             className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200"
-            data-trigger-lead-form
-            onClick={handleOpenLeadForm}
+            onClick={primary.onClick || handleOpenLeadForm}
           >
             {primary.text}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
-        ) : primary.onClick ? (
-          <Button 
-            size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200" 
-            onClick={primary.onClick}
-          >
-            {primary.text}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        ) : (
-          <Button 
-            size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200" 
-            asChild
-          >
-            <Link to={primary.link}>
-              {primary.text}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-        )}
-        
-        {secondary && (
-          secondary.onClick ? (
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="group hover:scale-[1.03] transition-transform duration-200" 
-              onClick={secondary.onClick}
-            >
-              {secondary.text}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          ) : (
+          
+          {secondary && (
             <Button 
               variant="outline" 
               size="lg" 
@@ -215,7 +180,36 @@ const PageHero = ({
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-          )
+          )}
+        </div>
+      );
+    }
+    
+    return (
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button 
+          size="lg" 
+          className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200" 
+          asChild
+        >
+          <Link to={primary.link}>
+            {primary.text}
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Button>
+        
+        {secondary && (
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="group hover:scale-[1.03] transition-transform duration-200" 
+            asChild
+          >
+            <Link to={secondary.link}>
+              {secondary.text}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         )}
       </div>
     );
