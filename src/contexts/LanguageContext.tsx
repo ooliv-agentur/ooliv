@@ -93,12 +93,12 @@ export const translations = {
     
     // Challenge
     'challenge.title': 'Your website should work for you – not against you.',
-    'challenge.description': 'Many companies struggle with websites that don't perform – whether because they're outdated, too slow, or don't even exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a missed opportunity.',
+    'challenge.description': "Many companies struggle with websites that don't perform – whether because they're outdated, too slow, or don't even exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a missed opportunity.",
     
     // Solution
     'solution.title': 'We build websites that move your business forward—',
     'solution.subtitle': 'With Strategy, Expertise & Intelligent Technology',
-    'solution.description': 'Whether you're launching a new business or updating an outdated website, our team of experts combines strategic thinking, user-focused design, and cutting-edge tools to create powerful digital experiences. AI enhances efficiency – but creativity, experience, and data-driven decisions are at the heart of our approach.',
+    'solution.description': "Whether you're launching a new business or updating an outdated website, our team of experts combines strategic thinking, user-focused design, and cutting-edge tools to create powerful digital experiences. AI enhances efficiency – but creativity, experience, and data-driven decisions are at the heart of our approach.",
     'solution.learnMore': 'Learn more about our process',
     
     // Testimonials
@@ -136,7 +136,7 @@ export const translations = {
     'footer.contactInfo': 'Contact',
     'footer.location': 'Mainz, Germany',
     'footer.copyright': '© 2024 ooliv. All rights reserved.',
-    'footer.ctaBanner': 'Need a website that grows your business? Let's talk about it.'
+    'footer.ctaBanner': "Need a website that grows your business? Let's talk about it."
   }
 };
 
