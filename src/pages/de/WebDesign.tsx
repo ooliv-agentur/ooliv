@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -34,12 +33,11 @@ const GermanWebDesign = () => {
       
       <WebDesignFAQ />
       
-      {/* Final CTA Section - updated with explicit link paths */}
+      {/* Final CTA Section - removed footerNote to prevent duplication */}
       <CTA 
         title="Sprechen wir über Ihr Webdesign-Projekt"
         subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
         primaryCta="Projekt starten"
-        primaryCtaLink="/kontakt"
         secondaryCta="Strategiegespräch vereinbaren"
         secondaryCtaLink="/kontakt"
       />

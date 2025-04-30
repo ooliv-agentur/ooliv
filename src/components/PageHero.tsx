@@ -67,7 +67,7 @@ const PageHero = ({
       text === 'Launch Your Campaign' ||
       text === 'Kampagne starten'
     ) {
-      return false; // Changed to false so buttons use their link paths
+      return true;
     }
     
     return text.includes('Projekt starten') || 
@@ -76,9 +76,6 @@ const PageHero = ({
            text.includes('SEO-Strategie starten') ||
            text.includes('Kampagne starten');
   };
-  
-  // Added hover effect style
-  const buttonHoverStyle = "transition-transform duration-200 ease-in-out hover:scale-[1.03]";
   
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
@@ -140,8 +137,8 @@ const PageHero = ({
   const renderCtas = () => {
     const defaultPrimaryCta = {
       text: startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project"),
-      link: language === 'de' ? "/kontakt" : "/en/contact", // Updated to use contact paths
-      onClick: undefined
+      link: "#",
+      onClick: handleOpenLeadForm
     };
     
     const defaultSecondaryCta = {
@@ -165,7 +162,7 @@ const PageHero = ({
         {openLeadForm ? (
           <Button 
             size="lg" 
-            className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`}
+            className="group bg-[#006064] text-white hover:bg-[#004D40]"
             data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
@@ -175,14 +172,14 @@ const PageHero = ({
         ) : primary.onClick ? (
           <Button 
             size="lg" 
-            className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`} 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
             onClick={primary.onClick}
           >
             {primary.text}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : (
-          <Button size="lg" className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`} asChild>
+          <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
             <Link to={primary.link}>
               {primary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -195,14 +192,14 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className={`group ${buttonHoverStyle}`} 
+              className="group" 
               onClick={secondary.onClick}
             >
               {secondary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : (
-            <Button variant="outline" size="lg" className={`group ${buttonHoverStyle}`} asChild>
+            <Button variant="outline" size="lg" className="group" asChild>
               <Link to={secondary.link}>
                 {secondary.text}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

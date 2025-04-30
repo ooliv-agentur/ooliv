@@ -54,7 +54,7 @@ const CTA = ({
       text === 'Launch Your Campaign' ||
       text === 'Kampagne starten'
     ) {
-      return false; // Changed to false so buttons use links instead of opening lead form
+      return true;
     }
     
     // Then check for partial matches
@@ -76,9 +76,6 @@ const CTA = ({
     ? "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz"
     : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
   
-  // Added hover effect style
-  const buttonHoverStyle = "transition-transform duration-200 ease-in-out hover:scale-[1.03]";
-  
   return (
     <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -89,7 +86,7 @@ const CTA = ({
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`}
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
               data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
@@ -99,7 +96,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`} 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -110,7 +107,7 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className={`group bg-[#006064] text-white hover:bg-[#004D40] ${buttonHoverStyle}`}
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
               onClick={handleOpenLeadForm}
               data-trigger-lead-form
             >
@@ -125,7 +122,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className={`group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40] ${buttonHoverStyle}`}
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
                 asChild
               >
                 <Link to={contactPath}>
@@ -137,7 +134,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className={`group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40] ${buttonHoverStyle}`}
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
@@ -149,7 +146,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className={`group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40] ${buttonHoverStyle}`}
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}

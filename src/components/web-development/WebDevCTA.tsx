@@ -38,9 +38,6 @@ const WebDevCTA = () => {
     ? "Starten Sie Ihr Web-Projekt"
     : "Start Your Web Project";
 
-  // Added hover effect style
-  const buttonHoverStyle = "transition-transform duration-200 ease-in-out hover:scale-[1.03]";
-
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +52,7 @@ const WebDevCTA = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
           <Button 
-            className={`flex-1 ${buttonHoverStyle}`}
+            className="flex-1"
             asChild
           >
             <Link to={contactPath}>
@@ -65,12 +62,15 @@ const WebDevCTA = () => {
           
           <Button 
             variant="outline" 
-            className={`flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10 ${buttonHoverStyle}`}
+            className="flex-1 border-[#006064] text-[#006064] hover:bg-[#006064]/10"
+            data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
             {projectText}
           </Button>
         </div>
+
+        {/* Removed the duplicate footer text */}
       </div>
       
       <ContactForm 

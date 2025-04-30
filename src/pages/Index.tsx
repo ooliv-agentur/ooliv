@@ -1,6 +1,6 @@
 
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero";
+import PageHero from "@/components/PageHero"; // Changed from Hero to PageHero
 import AboutSection from "@/components/AboutSection";
 import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <PageHero isHomepage={true} />
+      <PageHero isHomepage={true} /> {/* Changed from Hero to PageHero */}
       <AboutSection />
       <TeamImpactSection />
       <Challenge />
@@ -53,9 +53,7 @@ const Index = () => {
         title="Ready to transform your digital presence?"
         subtitle="Let's discuss how our team can help your business achieve its online goals."
         primaryCta="Start Your Website Project"
-        primaryCtaLink="/en/contact"
-        secondaryCta="See Our Work"
-        secondaryCtaLink="/en/case-studies"
+        /* Removed custom footerNote to prevent duplication */
       />
     </PageLayout>
   );

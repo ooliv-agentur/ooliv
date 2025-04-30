@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -60,9 +59,7 @@ const GermanWebDevelopment = () => {
         title="Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
         subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
         primaryCta="Projekt starten"
-        primaryCtaLink="/kontakt"
         secondaryCta="Strategiegespräch vereinbaren"
-        secondaryCtaLink="/kontakt"
       />
     </PageLayout>
   );

@@ -82,10 +82,7 @@ const GermanIndex = () => {
           lightBackground={true}
           title="Bereit, Ihre digitale Präsenz zu transformieren?"
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihrem Unternehmen helfen kann, seine Online-Ziele zu erreichen."
-          primaryCta="Projekt starten"
-          primaryCtaLink="/kontakt"
-          secondaryCta="Arbeiten ansehen"
-          secondaryCtaLink="/case-studies"
+          primaryCta="Starten Sie Ihr Website-Projekt"
         />
       </PageLayout>
       
