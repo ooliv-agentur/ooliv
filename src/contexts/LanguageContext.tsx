@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'de' | 'en';
@@ -109,8 +108,8 @@ export const translations = {
     'faq.title': 'Frequently Asked Questions',
     
     // CTA
-    'cta.title': 'Let's build a website that drives your business forward.',
-    'cta.subtitle': 'Your website should be an engine for growth, not a limitation. Let's discuss your challenges, analyze your current setup, and create a plan to turn your digital presence into a business advantage – efficiently, strategically, and with the latest AI-powered insights.',
+    'cta.title': "Let's build a website that drives your business forward.",
+    'cta.subtitle': "Your website should be an engine for growth, not a limitation. Let's discuss your challenges, analyze your current setup, and create a plan to turn your digital presence into a business advantage – efficiently, strategically, and with the latest AI-powered insights.",
     'cta.audit': 'Request Free Website Audit',
     'cta.call': 'Schedule Strategy Call',
     'cta.work': 'See Our Work',
