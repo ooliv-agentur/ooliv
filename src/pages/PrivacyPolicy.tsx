@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { 
   Lock, 
@@ -30,6 +31,11 @@ const PrivacyPolicy = () => {
 
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Privacy Policy | ooliv Digital Marketing Agency</title>
+        <meta name="description" content="Learn how ooliv protects your data. Our privacy policy details how we collect, store, and process your information in compliance with GDPR." />
+      </Helmet>
+      
       <LegalHero
         badge="Privacy"
         title="Your Data, Your Rights"
