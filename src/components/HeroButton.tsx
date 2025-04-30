@@ -30,6 +30,7 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
         size="lg" 
         className={buttonClass}
         onClick={handleClick}
+        type="button"
       >
         {label}
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -44,6 +45,8 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
         size="lg" 
         className={buttonClass}
         onClick={handleClick}
+        as="a"
+        href={href}
       >
         {label}
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
