@@ -7,10 +7,11 @@ import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import LanguageSwitch from '../LanguageSwitch';
 
 const MainNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language } = useLanguage();
+  const { language, getPathInLanguage } = useLanguage();
   const isDesktop = useMediaQuery("(min-width: 1024px)");
   
   // Handle document body overflow when menu is open
@@ -30,6 +31,9 @@ const MainNavigation = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Get path to homepage based on current language
+  const homePath = language === 'de' ? '/' : '/en';
+
   return (
     <>
       <nav className="w-full z-50 absolute top-0 left-0 right-0">
@@ -37,13 +41,18 @@ const MainNavigation = () => {
           <div className="flex justify-between h-24 items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to={language === 'de' ? '/de' : '/'} className="flex items-center" onClick={handleLogoClick}>
+              <Link to={homePath} className="flex items-center" onClick={handleLogoClick}>
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
                   className="h-6 md:h-8 w-auto" 
                 />
               </Link>
+            </div>
+            
+            {/* Desktop Language Switcher */}
+            <div className="hidden md:flex items-center">
+              <LanguageSwitch />
             </div>
           </div>
         </div>
