@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import EnglishAboutSection from "@/components/en/EnglishAboutSection";
-import TeamTeaser from "@/components/TeamTeaser";
+import EnglishTeamTeaser from "@/components/en/EnglishTeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Solution from "@/components/Solution";
 import TechnologiesSection from "@/components/en/TechnologiesSection";
@@ -21,7 +21,7 @@ const EnglishIndex = () => {
   setLanguage('en');
   
   // Add a debug console log to verify this component is being rendered
-  console.log('EnglishIndex component rendering - clean rebuild');
+  console.log('EnglishIndex component rendering - clean rebuild with 2-person team');
   
   const simplifiedFaqs = [
     {
@@ -59,7 +59,7 @@ const EnglishIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero isHomepage={true} />
         <EnglishAboutSection />
-        <TeamTeaser />
+        <EnglishTeamTeaser />
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
