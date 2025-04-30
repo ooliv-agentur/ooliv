@@ -26,7 +26,10 @@ const EnglishIndex = () => {
       </Helmet>
 
       <EnglishHero />
-      <Challenge />
+      <Challenge 
+        title="Your Website Should Work for You—Not Against You."
+        description="Many businesses struggle with websites that don't perform—whether they're outdated, too slow, or don't exist yet. A website that doesn't generate leads, build trust, or rank well on Google is a wasted opportunity."
+      />
       <Solution />
       <TeamTeaser />
       <ClientLogos />
