@@ -1,0 +1,10 @@
+
+{
+  "redirects": [
+    {
+      "source": "https://www.ooliv.de/:path*",
+      "destination": "https://ooliv.de/:path*",
+      "permanent": true
+    }
+  ]
+}
