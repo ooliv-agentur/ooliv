@@ -197,14 +197,14 @@ const ContentProcess = () => {
   return (
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+        <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
           {isGerman
             ? "Unser Kampagnen-Prozess – von Strategie bis Skalierung"
             : "Our Campaign Process – From Strategy to Growth"
           }
         </h2>
         
-        <div className="w-full max-w-6xl mx-auto relative mt-12">
+        <div className="w-full max-w-6xl mx-auto relative mt-16">
           <style dangerouslySetInnerHTML={{ __html: `
             .process-scroll::-webkit-scrollbar {
               display: none;
@@ -234,11 +234,11 @@ const ContentProcess = () => {
                 key={index}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
               >
-                <div className="bg-white rounded-lg p-6 pt-10 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
-                  <div className="absolute -top-8 left-6 h-16 w-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold">
+                <div className="bg-white rounded-lg p-6 pt-14 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative mt-10">
+                  <div className="absolute -top-10 left-6 h-20 w-20 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold">
                     {step.number}
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-2">
                     <h3 className="text-xl font-bold mb-3 text-brand-heading">{step.title}</h3>
                     <p className="text-brand-text">{step.description}</p>
                   </div>
