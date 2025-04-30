@@ -11,7 +11,7 @@ import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 
-const GermanWebDevelopment = () => {
+const Webentwicklung = () => {
   const webDevFaqs = [
     {
       question: "Mit welchen Plattformen arbeitet ihr?",
@@ -66,4 +66,4 @@ const GermanWebDevelopment = () => {
   );
 };
 
-export default GermanWebDevelopment;
+export default Webentwicklung;

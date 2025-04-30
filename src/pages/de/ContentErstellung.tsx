@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -10,7 +11,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
-const GermanContentCreation = () => {
+const ContentErstellung = () => {
   // Custom FAQ items for Content Creation page
   const contentFaqs = [
     {
@@ -71,4 +72,4 @@ const GermanContentCreation = () => {
   );
 };
 
-export default GermanContentCreation;
+export default ContentErstellung;
