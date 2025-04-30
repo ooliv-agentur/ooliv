@@ -156,12 +156,12 @@ export const translations = {
     
     // Challenge
     'challenge.title': 'Your Website Should Work for You – Not Against You.',
-    'challenge.description': 'Many businesses struggle with underperforming websites – whether they're outdated, too slow, or don't exist yet. A website that fails to generate leads, build trust, or rank well on Google is a missed opportunity.',
+    'challenge.description': "Many businesses struggle with underperforming websites – whether they're outdated, too slow, or don't exist yet. A website that fails to generate leads, build trust, or rank well on Google is a missed opportunity.",
     
     // Solution
     'solution.title': 'We Build Websites That Move Your Business Forward—',
     'solution.subtitle': 'With Strategy, Expertise & Intelligent Technology',
-    'solution.description': 'Whether you're launching a new business or updating an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create powerful digital experiences. AI enhances efficiency – but creativity, experience, and data-driven decisions remain at the core of our approach.',
+    'solution.description': "Whether you're launching a new business or updating an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create powerful digital experiences. AI enhances efficiency – but creativity, experience, and data-driven decisions remain at the core of our approach.",
     'solution.learnMore': 'Learn More About Our Process',
     
     // Testimonials
@@ -172,8 +172,8 @@ export const translations = {
     'faq.title': 'Frequently Asked Questions',
     
     // CTA
-    'cta.title': 'Let\'s Build a Website That Drives Your Business Forward.',
-    'cta.subtitle': 'Your website should be a growth engine, not a constraint. Let\'s discuss your challenges, analyze your current setup, and create a plan to transform your digital presence into a business advantage – efficiently, strategically, and with the latest AI-powered insights.',
+    'cta.title': "Let's Build a Website That Drives Your Business Forward.",
+    'cta.subtitle': "Your website should be a growth engine, not a constraint. Let's discuss your challenges, analyze your current setup, and create a plan to transform your digital presence into a business advantage – efficiently, strategically, and with the latest AI-powered insights.",
     'cta.audit': 'Request Free Website Audit',
     'cta.call': 'Schedule Strategy Call',
     'cta.work': 'See Our Work',
@@ -199,7 +199,7 @@ export const translations = {
     'footer.contactInfo': 'Contact',
     'footer.location': 'Mainz, Germany',
     'footer.copyright': '© 2024 ooliv. All rights reserved.',
-    'footer.ctaBanner': 'Need a website that grows your business? Let\'s talk about it.'
+    'footer.ctaBanner': "Need a website that grows your business? Let's talk about it."
   }
 };
 
