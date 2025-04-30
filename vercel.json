@@ -2,8 +2,14 @@
 {
   "redirects": [
     {
-      "source": "https://www.ooliv.de/:path*",
-      "destination": "https://ooliv.de/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ooliv.de"
+        }
+      ],
+      "destination": "https://ooliv.de/$1",
       "permanent": true
     }
   ]
