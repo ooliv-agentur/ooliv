@@ -78,6 +78,7 @@ const PageHero = ({
            text.includes('Kampagne starten');
   };
   
+  // Adjusted content to ensure proper translation and consistent structure for both languages
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -86,8 +87,7 @@ const PageHero = ({
   ) : (
     <div className="flex flex-col">
       <span>Web Design Agency Mainz</span>
-      <span>for Websites That Convert, Rank & Drive Growth</span>
-      <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-[#b1b497]">Since 2008, we've been building high-performance websites.</span>
+      <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">For Websites That Convert, Rank & Drive Growth</span>
     </div>
   );
   
