@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import WebDesignHero from '@/components/web-design/WebDesignHero';
+import HeroWebdesign from '@/components/hero/HeroWebdesign';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
@@ -13,7 +13,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 const WebDesign = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <WebDesignHero />
+      <HeroWebdesign />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />

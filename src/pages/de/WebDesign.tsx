@@ -1,7 +1,8 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import WebDesignHero from '@/components/web-design/WebDesignHero';
+import HeroWebdesign from '@/components/hero/HeroWebdesign';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
@@ -18,7 +19,7 @@ const GermanWebDesign = () => {
         <meta name="description" content="Webdesign für B2B-Marken in Mainz: modern, conversionstark und individuell. ooliv entwickelt Websites, die wirken – ohne Templates." />
       </Helmet>
 
-      <WebDesignHero />
+      <HeroWebdesign />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
       <WebDesignBuildOptions />

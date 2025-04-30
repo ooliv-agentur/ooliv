@@ -1,7 +1,6 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
+import HeroGoogleAds from '@/components/hero/HeroGoogleAds';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import { 
@@ -12,7 +11,6 @@ import {
   Shield,
   Bot,
   RefreshCw,
-  X,
   Search,
   ArrowRight,
   CheckCircle
@@ -62,7 +60,7 @@ const GoogleAds = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <GoogleAdsHero />
+      <HeroGoogleAds />
 
       {/* Pain Points Section */}
       <section className="py-16 md:py-24 bg-white">
