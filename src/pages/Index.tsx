@@ -1,6 +1,8 @@
 
+import React from 'react';
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero"; // Changed from Hero to PageHero
+import { Helmet } from 'react-helmet-async';
+import PageHero from "@/components/PageHero"; 
 import AboutSection from "@/components/AboutSection";
 import TeamImpactSection from "@/components/TeamImpactSection";
 import Challenge from "@/components/Challenge";
@@ -16,10 +18,17 @@ import { Link } from "react-router-dom";
 const Index = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <PageHero isHomepage={true} /> {/* Changed from Hero to PageHero */}
+      <Helmet>
+        <title>ooliv | Strategic Web Design & Digital Marketing Agency</title>
+        <meta name="description" content="ooliv helps businesses grow with strategic web design, content creation, SEO, and digital marketing that delivers measurable results." />
+        <meta name="keywords" content="web design, digital marketing, SEO, content creation, B2B marketing" />
+      </Helmet>
+      
+      <PageHero isHomepage={true} />
       <AboutSection />
       <TeamImpactSection />
       <Challenge />
+      
       <div className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">See the Difference a Strategic Website Makes</h2>
@@ -29,6 +38,7 @@ const Index = () => {
           <BeforeAfterSlider />
         </div>
       </div>
+      
       <Solution 
         description={
           <>
@@ -42,6 +52,7 @@ const Index = () => {
           </>
         }
       />
+      
       <TeamTeaser />
       <ClientLogos />
       
@@ -53,7 +64,6 @@ const Index = () => {
         title="Ready to transform your digital presence?"
         subtitle="Let's discuss how our team can help your business achieve its online goals."
         primaryCta="Start Your Website Project"
-        /* Removed custom footerNote to prevent duplication */
       />
     </PageLayout>
   );

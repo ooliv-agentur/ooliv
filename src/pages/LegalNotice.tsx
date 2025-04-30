@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -15,6 +16,11 @@ const LegalNotice = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Legal Notice | ooliv Digital Marketing Agency</title>
+        <meta name="description" content="Legal information and company details for ooliv. Find our imprint, copyright notices, and contact information." />
+      </Helmet>
+      
       <LegalHero
         badge="Legal"
         title="Legal Notice & Company Details"

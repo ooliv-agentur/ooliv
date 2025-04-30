@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
@@ -61,6 +62,12 @@ const GoogleAds = () => {
 
   return (
     <PageLayout>
+      <Helmet>
+        <title>Google Ads Management | PPC That Delivers Real Business Results</title>
+        <meta name="description" content="Google Ads management for B2B companies. We create and optimize PPC campaigns that focus on qualified leads and measurable ROI - not just impressions." />
+        <meta name="keywords" content="Google Ads, PPC marketing, lead generation, conversion optimization" />
+      </Helmet>
+      
       {/* Hero Section */}
       <GoogleAdsHero />
 
