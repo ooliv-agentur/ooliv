@@ -21,4 +21,3 @@ const SEOHero = () => {
 };
 
 export default SEOHero;
-

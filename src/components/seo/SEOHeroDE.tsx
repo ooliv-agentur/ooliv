@@ -21,4 +21,3 @@ const SEOHeroDE = () => {
 };
 
 export default SEOHeroDE;
-

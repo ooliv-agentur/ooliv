@@ -33,7 +33,6 @@ const WebDesignHero = () => {
           text: isGerman ? "Projekt starten" : "Start Your Web Project",
           link: "#"
         }}
-        // Removed the secondary CTA completely
       />
       <ScrollIndicator />
     </div>
