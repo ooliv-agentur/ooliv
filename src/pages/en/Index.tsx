@@ -17,9 +17,9 @@ import PageHero from '@/components/PageHero';
 const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
   
-  useEffect(() => {
-    setLanguage('en');
-  }, [setLanguage]);
+  // Set language immediately during render, not in an effect
+  // This ensures the language context is available before any components render
+  setLanguage('en');
   
   const simplifiedFaqs = [
     {
@@ -52,6 +52,7 @@ const EnglishIndex = () => {
           name="description" 
           content="ooliv creates websites that rank better, convert more, and deliver measurable business success. SEO, webdesign and web development from Mainz." 
         />
+        <html lang="en" /> {/* Explicitly set the language attribute for this page */}
       </Helmet>
       <PageLayout className="overflow-x-hidden">
         <PageHero isHomepage={true} />
