@@ -47,7 +47,7 @@ const HeroHome = () => {
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0 pointer-events-none"></div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -80,7 +80,7 @@ const HeroHome = () => {
       </div>
       
       {/* Curved bottom section divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-10">
+      <div className="absolute bottom-0 left-0 right-0 h-16 z-10 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 

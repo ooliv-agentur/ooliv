@@ -64,7 +64,7 @@ const GoogleAdsHero = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-30">
+      <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 

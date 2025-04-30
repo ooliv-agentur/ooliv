@@ -13,7 +13,7 @@ const DeutscherHero = () => {
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0 pointer-events-none"></div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -60,7 +60,7 @@ const DeutscherHero = () => {
       </div>
       
       {/* Curved bottom section divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-10">
+      <div className="absolute bottom-0 left-0 right-0 h-16 z-10 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 
@@ -76,7 +76,7 @@ const DeutscherHero = () => {
       </div>
       
       {/* Visual transition indicator */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none">
         <div className="flex flex-col items-center space-y-2 mb-8">
           <div className="w-1 h-8 bg-gradient-to-b from-gray-300/50 to-gray-400/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
