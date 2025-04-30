@@ -40,7 +40,7 @@ const PageHero = ({
   const { language } = useLanguage();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
-  const caseStudiesPath = language === 'de' ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;

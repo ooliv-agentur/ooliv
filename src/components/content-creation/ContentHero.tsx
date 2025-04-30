@@ -8,6 +8,10 @@ const ContentHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
+  
   return (
     <div className="relative">
       <PageHero
@@ -22,11 +26,12 @@ const ContentHero = () => {
         }
         primaryCta={{
           text: isGerman ? "Content-Projekt starten" : "Start Your Content Project",
-          link: "#"
+          link: "#",
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
           text: isGerman ? "Case Studies ansehen" : "View Case Studies",
-          link: isGerman ? "/de/case-studies" : "/case-studies"
+          link: isGerman ? "/case-studies" : "/en/case-studies"
         }}
       />
       <ScrollIndicator />

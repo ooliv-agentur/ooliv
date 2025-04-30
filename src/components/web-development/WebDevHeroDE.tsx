@@ -5,7 +5,7 @@ import ScrollIndicator from '@/components/ScrollIndicator';
 
 const WebDevHeroDE = () => {
   const handleStartProject = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
   };
   
   return (
@@ -21,7 +21,7 @@ const WebDevHeroDE = () => {
         }}
         secondaryCta={{
           text: "Fallstudien ansehen",
-          link: "/de/case-studies"
+          link: "/case-studies"
         }}
       />
       <ScrollIndicator />

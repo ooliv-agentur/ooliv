@@ -6,6 +6,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const AiTechHero = () => {
   const { language } = useLanguage();
   
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  };
+  
   // Content based on language
   const content = {
     en: {
@@ -29,11 +33,12 @@ const AiTechHero = () => {
       subtitle={currentContent.subtitle}
       primaryCta={{
         text: language === 'de' ? "Projekt starten" : "Start Your Project",
-        link: language === 'de' ? "/kontakt" : "/en/contact"
+        link: "#",
+        onClick: handleOpenLeadForm
       }}
       secondaryCta={{
         text: language === 'de' ? "Referenzen ansehen" : "View Case Studies", 
-        link: language === 'de' ? "/case-studies" : "/en/case-studies"  // Updated link
+        link: language === 'de' ? "/case-studies" : "/en/case-studies"
       }}
     />
   );
