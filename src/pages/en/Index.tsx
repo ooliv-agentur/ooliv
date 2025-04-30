@@ -21,6 +21,9 @@ const EnglishIndex = () => {
   // This ensures the language context is available before any components render
   setLanguage('en');
   
+  // Add a debug console log to verify this component is being rendered
+  console.log('EnglishIndex component rendering - latest version');
+  
   const simplifiedFaqs = [
     {
       question: "What is your website creation process?",
