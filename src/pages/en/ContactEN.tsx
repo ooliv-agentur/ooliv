@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ConsultationRequestSection } from '@/components/contact/ConsultationRequestSection';
+import ConsultationRequestSection from '@/components/contact/ConsultationRequestSection';
 
 const EnglishContact = () => {
   const { setLanguage } = useLanguage();
