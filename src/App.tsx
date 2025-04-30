@@ -24,7 +24,7 @@ import Impressum from "./pages/de/Impressum";
 import Datenschutz from "./pages/de/Datenschutz";
 import Danke from "./pages/de/Danke";
 
-// Import NotFound page
+// Import NotFound page from the correct location
 import NotFound from "./pages/NotFound";
 
 // Create the query client
