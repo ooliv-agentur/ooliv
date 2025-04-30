@@ -17,13 +17,16 @@ const PageLayout = ({ children, className }: PageLayoutProps) => {
   // Add event listener for the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
-      console.log('Lead form open event received in PageLayout');
+      console.log('📋 PageLayout - Lead form open event received');
       setLeadFormOpen(true);
+      console.log('📋 PageLayout - leadFormOpen state set to:', true);
     };
 
+    console.log('📋 PageLayout - Adding event listener for open-lead-form');
     window.addEventListener('open-lead-form', handleOpenLeadForm);
     
     return () => {
+      console.log('📋 PageLayout - Removing event listener for open-lead-form');
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
   }, []);
@@ -36,7 +39,13 @@ const PageLayout = ({ children, className }: PageLayoutProps) => {
       </main>
       <Footer />
       <FloatingActionButtons />
-      <LeadGenerationOverlay open={leadFormOpen} onOpenChange={setLeadFormOpen} />
+      <LeadGenerationOverlay 
+        open={leadFormOpen} 
+        onOpenChange={(open) => {
+          console.log('📋 PageLayout - LeadGenerationOverlay onOpenChange called with:', open);
+          setLeadFormOpen(open);
+        }} 
+      />
     </div>
   );
 };

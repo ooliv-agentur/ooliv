@@ -19,13 +19,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const { language } = useLanguage();
   
   useEffect(() => {
+    console.log('🔖 LeadGenerationOverlay - open state changed to:', open);
     if (open) {
-      console.log('Lead form opened');
+      console.log('🔖 LeadGenerationOverlay - Lead form opened');
     }
   }, [open]);
   
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet 
+      open={open} 
+      onOpenChange={(newOpen) => {
+        console.log('🔖 LeadGenerationOverlay - Sheet onOpenChange called with:', newOpen);
+        onOpenChange(newOpen);
+      }}
+    >
       <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
         <SheetHeader className="text-left pb-4">
           <SheetTitle className="text-xl font-bold text-white">
@@ -36,7 +43,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => onOpenChange(false)} />
+        <LeadFormContent onClose={() => {
+          console.log('🔖 LeadGenerationOverlay - LeadFormContent onClose called');
+          onOpenChange(false);
+        }} />
       </SheetContent>
     </Sheet>
   );

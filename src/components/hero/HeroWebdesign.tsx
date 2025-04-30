@@ -10,7 +10,10 @@ const HeroWebdesign = () => {
   
   // Handle opening the lead form
   const handleOpenLeadForm = () => {
+    console.log("🔍 HeroWebdesign - handleOpenLeadForm called");
+    console.log("🔍 Dispatching open-lead-form event");
     window.dispatchEvent(new CustomEvent('open-lead-form'));
+    console.log("🔍 Event dispatched");
   };
   
   const translations = {
@@ -52,7 +55,10 @@ const HeroWebdesign = () => {
               <HeroButton 
                 variant="solid"
                 label={isGerman ? "Projekt starten" : "Start Your Web Project"}
-                onClick={handleOpenLeadForm}
+                onClick={() => {
+                  console.log("✅ HeroWebdesign - Solid button clicked");
+                  handleOpenLeadForm();
+                }}
               />
               
               <HeroButton 
