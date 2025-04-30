@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HeroButton from '@/components/HeroButton';
 import ScrollIndicator from '@/components/ScrollIndicator';
@@ -51,7 +52,6 @@ const HeroWebdesign = () => {
               <HeroButton 
                 variant="solid"
                 label={isGerman ? "Projekt starten" : "Start Your Web Project"}
-                href="#"
                 onClick={handleOpenLeadForm}
               />
               
