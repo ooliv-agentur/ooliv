@@ -23,6 +23,21 @@ import GermanKontakt from "./pages/de/Kontakt";
 import GermanImpressum from "./pages/de/Impressum";
 import GermanDatenschutz from "./pages/de/Datenschutz";
 
+// Import English pages
+import EnglishIndex from "./pages/en/Index";
+import EnglishWebdesign from "./pages/en/WebDesignEN";
+import EnglishWebDevelopment from "./pages/en/WebDevelopmentEN";
+import EnglishContentCreation from "./pages/en/ContentCreationEN";
+import EnglishSEO from "./pages/en/SEOEN";
+import EnglishGoogleAds from "./pages/en/GoogleAdsEN";
+import EnglishAiTechnologies from "./pages/en/AiTechnologiesEN";
+import EnglishCaseStudies from "./pages/en/CaseStudiesEN";
+import EnglishAboutUs from "./pages/en/AboutUsEN";
+import EnglishContact from "./pages/en/ContactEN";
+import EnglishLegalNotice from "./pages/en/LegalNoticeEN";
+import EnglishPrivacyPolicy from "./pages/en/PrivacyPolicyEN";
+import EnglishThankYou from "./pages/en/ThankYouEN";
+
 // Import NotFound page
 import NotFound from "./pages/NotFound";
 
@@ -62,6 +77,21 @@ const App = () => (
             <Route path="/impressum" element={<GermanImpressum />} />
             <Route path="/datenschutz" element={<GermanDatenschutz />} />
             <Route path="/danke" element={<Danke />} />
+            
+            {/* English Routes */}
+            <Route path="/en" element={<EnglishIndex />} />
+            <Route path="/en/webdesign" element={<EnglishWebdesign />} />
+            <Route path="/en/webdevelopment" element={<EnglishWebDevelopment />} />
+            <Route path="/en/content-creation" element={<EnglishContentCreation />} />
+            <Route path="/en/seo" element={<EnglishSEO />} />
+            <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
+            <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
+            <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
+            <Route path="/en/about-us" element={<EnglishAboutUs />} />
+            <Route path="/en/contact" element={<EnglishContact />} />
+            <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
+            <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
+            <Route path="/en/thank-you" element={<EnglishThankYou />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />

@@ -46,11 +46,18 @@ const LanguageSwitcher = () => {
   const toggleLanguage = () => {
     // Determine new language
     const newLanguage = language === 'de' ? 'en' : 'de';
+    
+    // First set the language context
     setLanguage(newLanguage);
     
     // Determine new path
     const currentPath = location.pathname;
+    console.log('Current path:', currentPath);
+    console.log('Current language:', language);
+    console.log('New language:', newLanguage);
+    
     const newPath = pathMappings[currentPath] || (newLanguage === 'de' ? '/' : '/en');
+    console.log('Navigating to:', newPath);
     
     // Navigate to new path
     navigate(newPath);
