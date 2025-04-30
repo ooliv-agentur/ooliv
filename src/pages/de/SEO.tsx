@@ -1,7 +1,8 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import SEOHeroDE from '@/components/seo/SEOHeroDE';
+import HeroSEO from '@/components/hero/HeroSEO';
 import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
 import SEOServicesDE from '@/components/seo/SEOServicesDE';
 import SEOProcessDE from '@/components/seo/SEOProcessDE';
@@ -45,7 +46,7 @@ const GermanSEO = () => {
         <meta name="description" content="Mehr Sichtbarkeit für Ihre Website: ooliv ist Ihre SEO Agentur in Mainz – Onpage, Inhalte & Strategie für nachhaltige Rankings." />
       </Helmet>
 
-      <SEOHeroDE />
+      <HeroSEO />
       <SEOBenefitsDE />
       <SEOServicesDE />
       <SEOApproachDE />

@@ -1,7 +1,8 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import AiTechHero from '@/components/ai-technologies/AiTechHero';
+import HeroKI from '@/components/hero/HeroKI';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
@@ -60,7 +61,7 @@ const GermanAiTechnologies = () => {
         <meta name="description" content="ooliv integriert Künstliche Intelligenz in Strategie, Content und UX – als KI Agentur für moderne, skalierbare Weblösungen." />
       </Helmet>
 
-      <AiTechHero />
+      <HeroKI />
       <AiTechBenefits />
       <AiTechServices />
       <AiToolsSection 

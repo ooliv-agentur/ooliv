@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
+import HeroKontakt from '@/components/hero/HeroKontakt';
 import { 
   Mail, 
   Phone,
@@ -104,11 +105,7 @@ const GermanContact = () => {
         <meta name="description" content="Direktkontakt zur ooliv Werbeagentur Mainz: Jetzt Strategiegespräch vereinbaren oder unverbindlich Projektstart anfragen." />
       </Helmet>
 
-      <PageHero
-        badge="ooliv"
-        title="Lassen Sie uns über Ihr Projekt sprechen"
-        subtitle="Wir betreuen Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation."
-      />
+      <HeroKontakt />
       
       <section className="relative -mt-16 z-10 pb-16">
         <div className="container mx-auto px-4">
