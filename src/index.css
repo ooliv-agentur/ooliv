@@ -1,9 +1,10 @@
 
-@import './styles/hero-background.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import hero background styles */
+@import './styles/hero-background.css';
 
 /* Stellen Sie sicher, dass es keine Überschreibungen für den Hero-Hintergrund gibt */
 .bg-hero-pattern {
@@ -16,4 +17,3 @@
   content: '' !important;
   z-index: 1 !important;
 }
-

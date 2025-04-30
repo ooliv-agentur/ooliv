@@ -11,7 +11,7 @@ import { useScrollToTop } from "./hooks/useScrollToTop";
 
 // Import renamed German pages
 import Index from "./pages/de/Index";
-import Webdesign from "./pages/de/WebDesign";
+import Webdesign from "./pages/de/Webdesign";
 import Webentwicklung from "./pages/de/Webentwicklung";
 import ContentErstellung from "./pages/de/ContentErstellung";
 import SeoOptimierung from "./pages/de/SeoOptimierung";
@@ -21,7 +21,7 @@ import CaseStudies from "./pages/de/CaseStudies";
 import UeberOoliv from "./pages/de/UeberOoliv";
 import Kontakt from "./pages/de/Kontakt";
 import Impressum from "./pages/de/Impressum";
-import PrivacyPolicy from "./pages/de/PrivacyPolicy";
+import Datenschutz from "./pages/de/Datenschutz";
 import Danke from "./pages/de/Danke";
 
 // Import NotFound page
@@ -58,7 +58,7 @@ const App = () => (
             <Route path="/ueber-ooliv" element={<UeberOoliv />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<PrivacyPolicy />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/danke" element={<Danke />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
