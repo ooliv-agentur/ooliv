@@ -1,25 +1,33 @@
 
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { cn } from '@/lib/utils';
-import FloatingActionButtons from './FloatingActionButtons';
 
 interface PageLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-const PageLayout = ({ children, className }: PageLayoutProps) => {
+const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
+  const location = useLocation();
+  const canonicalPath = location.pathname === '/' ? '' : location.pathname;
+  const canonicalUrl = `https://ooliv.de${canonicalPath}`;
+
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
-      <main className={cn("flex-1", className)}>
-        {children}
-      </main>
-      <Footer />
-      <FloatingActionButtons />
-    </div>
+    <>
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+      </Helmet>
+      <div className={`min-h-screen flex flex-col ${className}`}>
+        <Navbar />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
