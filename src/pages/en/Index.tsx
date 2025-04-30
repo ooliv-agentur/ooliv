@@ -5,14 +5,14 @@ import EnglishAboutSection from "@/components/en/EnglishAboutSection";
 import TeamTeaser from "@/components/TeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider"; 
 import Solution from "@/components/Solution";
-import ClientLogos from "@/components/ClientLogos";
+import TechnologiesSection from "@/components/en/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSectionEN from "@/components/en/SEOTextSectionEN";
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import EnglishHero from '@/components/en/EnglishHero';
+import PageHero from '@/components/PageHero';
 
 const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
@@ -54,7 +54,7 @@ const EnglishIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <EnglishHero />
+        <PageHero isHomepage={true} />
         <EnglishAboutSection />
         <TeamTeaser />
         
@@ -74,7 +74,7 @@ const EnglishIndex = () => {
           description="Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences."
         />
         
-        <ClientLogos />
+        <TechnologiesSection />
         
         <CaseStudiesSection 
           customTitle="Real Results from Real Clients"
