@@ -11,17 +11,17 @@ import { useScrollToTop } from "./hooks/useScrollToTop";
 
 // Import German pages
 import GermanIndex from "./pages/de/Index";
-import GermanWebDesign from "./pages/de/WebDesign";
-import GermanWebDevelopment from "./pages/de/WebDevelopment";
-import GermanContentCreation from "./pages/de/ContentCreation";
-import GermanSEO from "./pages/de/SEO";
+import GermanWebdesign from "./pages/de/Webdesign";
+import GermanWebentwicklung from "./pages/de/Webentwicklung";
+import GermanContentErstellung from "./pages/de/ContentErstellung";
+import GermanSEOOptimierung from "./pages/de/SEOOptimierung";
 import GermanGoogleAds from "./pages/de/GoogleAds";
-import GermanAiTechnologies from "./pages/de/AiTechnologies";
-import GermanCaseStudies from "./pages/de/CaseStudies";
-import GermanAboutUs from "./pages/de/AboutUs";
-import GermanContact from "./pages/de/Contact";
-import GermanLegalNotice from "./pages/de/LegalNotice";
-import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
+import GermanKiTechnologien from "./pages/de/KiTechnologien";
+import GermanReferenzen from "./pages/de/Referenzen";
+import GermanUeberUns from "./pages/de/UeberUns";
+import GermanKontakt from "./pages/de/Kontakt";
+import GermanImpressum from "./pages/de/Impressum";
+import GermanDatenschutz from "./pages/de/Datenschutz";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
@@ -50,17 +50,17 @@ const App = () => (
           <Routes>
             {/* Main (German) Routes */}
             <Route path="/" element={<GermanIndex />} />
-            <Route path="/webdesign" element={<GermanWebDesign />} />
-            <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-            <Route path="/content-erstellung" element={<GermanContentCreation />} />
-            <Route path="/seo-optimierung" element={<GermanSEO />} />
+            <Route path="/webdesign" element={<GermanWebdesign />} />
+            <Route path="/webentwicklung" element={<GermanWebentwicklung />} />
+            <Route path="/content-erstellung" element={<GermanContentErstellung />} />
+            <Route path="/seo-optimierung" element={<GermanSEOOptimierung />} />
             <Route path="/google-ads" element={<GermanGoogleAds />} />
-            <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-            <Route path="/case-studies" element={<GermanCaseStudies />} />
-            <Route path="/ueber-ooliv" element={<GermanAboutUs />} />
-            <Route path="/kontakt" element={<GermanContact />} />
-            <Route path="/impressum" element={<GermanLegalNotice />} />
-            <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+            <Route path="/ki-technologien" element={<GermanKiTechnologien />} />
+            <Route path="/case-studies" element={<GermanReferenzen />} />
+            <Route path="/ueber-ooliv" element={<GermanUeberUns />} />
+            <Route path="/kontakt" element={<GermanKontakt />} />
+            <Route path="/impressum" element={<GermanImpressum />} />
+            <Route path="/datenschutz" element={<GermanDatenschutz />} />
             <Route path="/danke" element={<Danke />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
