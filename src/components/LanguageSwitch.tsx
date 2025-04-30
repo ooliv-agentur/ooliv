@@ -13,8 +13,8 @@ const LanguageSwitch: React.FC = () => {
       variant="ghost"
       onClick={toggleLanguage}
       className={cn(
-        "flex items-center justify-center gap-1.5 px-2 py-1 hover:bg-accent/30",
-        "text-brand-heading rounded-full h-auto transition-colors duration-300"
+        "flex items-center justify-center gap-1.5 px-2 py-1 hover:bg-transparent",
+        "text-brand-heading rounded-full h-auto"
       )}
       aria-label={language === 'de' ? "Switch to English" : "Auf Deutsch umschalten"}
     >

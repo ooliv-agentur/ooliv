@@ -50,8 +50,8 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Language Switcher - fixed position at top right */}
-            <div className="absolute top-6 right-16 md:right-20 z-[100]">
+            {/* Desktop Language Switcher */}
+            <div className="hidden md:flex items-center">
               <LanguageSwitch />
             </div>
           </div>
