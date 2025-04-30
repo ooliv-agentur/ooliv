@@ -1,16 +1,16 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import EnglishAboutSection from "@/components/en/EnglishAboutSection";
 import TeamTeaser from "@/components/TeamTeaser";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider"; 
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Solution from "@/components/Solution";
 import TechnologiesSection from "@/components/en/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSectionEN from "@/components/en/SEOTextSectionEN";
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageHero from '@/components/PageHero';
 
@@ -18,11 +18,10 @@ const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
   
   // Set language immediately during render, not in an effect
-  // This ensures the language context is available before any components render
   setLanguage('en');
   
   // Add a debug console log to verify this component is being rendered
-  console.log('EnglishIndex component rendering - latest version');
+  console.log('EnglishIndex component rendering - clean rebuild');
   
   const simplifiedFaqs = [
     {
@@ -55,7 +54,7 @@ const EnglishIndex = () => {
           name="description" 
           content="ooliv creates websites that rank better, convert more, and deliver measurable business success. SEO, webdesign and web development from Mainz." 
         />
-        <html lang="en" /> {/* Explicitly set the language attribute for this page */}
+        <html lang="en" />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
         <PageHero isHomepage={true} />
