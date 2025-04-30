@@ -1,10 +1,9 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
 import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
@@ -24,8 +23,34 @@ import Impressum from "./pages/de/Impressum";
 import Datenschutz from "./pages/de/Datenschutz";
 import Danke from "./pages/de/Danke";
 
-// Import NotFound page from the correct location
-import NotFound from "./pages/NotFound";
+// Create a NotFound component directly here instead of importing it
+const NotFound = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    console.error(
+      "404 Error: User attempted to access non-existent route:",
+      location.pathname
+    );
+  }, [location.pathname]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">404</h1>
+        <p className="text-xl text-gray-600 mb-4">
+          Oops! Seite nicht gefunden
+        </p>
+        <Link 
+          to="/" 
+          className="text-blue-500 hover:text-blue-700 underline"
+        >
+          Zurück zur Startseite
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 // Create the query client
 const queryClient = new QueryClient();
