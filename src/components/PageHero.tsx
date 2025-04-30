@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -39,7 +40,7 @@ const PageHero = ({
   const { language } = useLanguage();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
-  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
+  const caseStudiesPath = language === 'de' ? "/de/case-studies" : "/en/case-studies";
   
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
@@ -162,7 +163,7 @@ const PageHero = ({
         {openLeadForm ? (
           <Button 
             size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]"
+            className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200"
             data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
@@ -172,14 +173,18 @@ const PageHero = ({
         ) : primary.onClick ? (
           <Button 
             size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200" 
             onClick={primary.onClick}
           >
             {primary.text}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : (
-          <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
+          <Button 
+            size="lg" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40] hover:scale-[1.03] transition-transform duration-200" 
+            asChild
+          >
             <Link to={primary.link}>
               {primary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -192,14 +197,19 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="group" 
+              className="group hover:scale-[1.03] transition-transform duration-200" 
               onClick={secondary.onClick}
             >
               {secondary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : (
-            <Button variant="outline" size="lg" className="group" asChild>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group hover:scale-[1.03] transition-transform duration-200" 
+              asChild
+            >
               <Link to={secondary.link}>
                 {secondary.text}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
