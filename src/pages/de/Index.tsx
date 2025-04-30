@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PageLayout from "@/components/PageLayout";
-import DeutscherHero from "@/components/de/DeutscherHero";
+import PageHero from "@/components/PageHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
@@ -48,7 +48,7 @@ const GermanIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <DeutscherHero />
+        <PageHero isHomepage={true} />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
