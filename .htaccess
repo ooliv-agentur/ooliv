@@ -1,16 +1,15 @@
-
 # Enable URL rewriting
 RewriteEngine On
 
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
-
-# Redirect from www to non-www - PRIORITY RULE
+# Redirect from www to non-www - MUST COME FIRST
 RewriteCond %{HTTP_HOST} ^www\.ooliv\.de [NC]
 RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]
 
-# Handle pushState routing - only after www redirect is processed
+# Force HTTPS (applies after domain is already correct)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Handle pushState routing (SPA)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.html [L,QSA]
+RewriteRule ^ index.html [L,QSA]
