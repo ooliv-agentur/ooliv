@@ -2,7 +2,7 @@
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import HeroWebentwicklung from '@/components/hero/HeroWebentwicklung';
+import WebDevHeroDE from '@/components/web-development/WebDevHeroDE';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
 import WebDevServices from '@/components/web-development/WebDevServicesDE';
 import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
@@ -42,7 +42,7 @@ const Webentwicklung = () => {
         <meta name="description" content="Ihre WordPress Agentur aus Mainz: ooliv entwickelt skalierbare Websites mit Pagebuilder oder individuellem Code – flexibel, sicher, SEO-ready." />
       </Helmet>
 
-      <HeroWebentwicklung />
+      <WebDevHeroDE />
       <WebDevBenefits />
       <WebDevCmsVsStaticDE />
       <WebDevProcessNewDE />
