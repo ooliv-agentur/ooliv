@@ -49,7 +49,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
           </div>
           
           <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto">
-            <div className="mb-4 flex justify-center">
+            <div className="mb-6 flex justify-center">
               <LanguageSwitch />
             </div>
             <nav className="space-y-4 text-center w-full">
