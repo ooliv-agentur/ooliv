@@ -1,7 +1,5 @@
-
 import React from 'react';
 import PageLayout from "@/components/PageLayout";
-import PageHero from "@/components/PageHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamImpactSectionDE from "@/components/de/TeamImpactSectionDE";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";

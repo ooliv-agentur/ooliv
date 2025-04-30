@@ -40,7 +40,7 @@ const DeutscherHero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="group bg-[#006064] text-white hover:bg-[#004d51] hover:scale-[1.03] transition-transform duration-200 ease-in-out" 
+                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
                 onClick={handleOpenLeadForm}
               >
                 Projekt starten
@@ -50,7 +50,7 @@ const DeutscherHero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200 ease-in-out"
+                className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800"
                 asChild
               >
                 <Link to="/de/case-studies">
