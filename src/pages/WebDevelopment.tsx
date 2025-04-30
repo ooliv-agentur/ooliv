@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import WebDevHero from '@/components/web-development/WebDevHero';
 import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevServices from '@/components/web-development/WebDevServices';
@@ -37,11 +36,6 @@ const webDevFaqs = [
 const WebDevelopment = () => {
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Professional Web Development for Business | ooliv</title>
-        <meta name="description" content="Custom web development services built for performance. We create fast, scalable websites with WordPress or code-first approaches – aligned with your business goals." />
-      </Helmet>
-      
       <WebDevHero />
       <WebDevBenefits />
       <WebDevCmsVsStatic />

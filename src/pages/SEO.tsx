@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import SEOHero from '@/components/seo/SEOHero';
 import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
@@ -42,11 +41,6 @@ const SEO = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>SEO Services for Business Growth | ooliv</title>
-        <meta name="description" content="Expert SEO services focused on business results. We increase your organic visibility with strategic content, technical optimization, and measurable performance." />
-      </Helmet>
-      
       <SEOHero />
       <SEOBenefits />
       <SEOServices />

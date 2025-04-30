@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServices from '@/components/content-creation/ContentServices';
@@ -39,11 +38,6 @@ const ContentCreation = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Strategic Content Creation for Business | ooliv</title>
-        <meta name="description" content="Expert content creation services for B2B companies. We create SEO-optimized, conversion-focused content that builds authority and drives business growth." />
-      </Helmet>
-      
       <ContentHero />
       <ContentBenefits />
       <ContentService />

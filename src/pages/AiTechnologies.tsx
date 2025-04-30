@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
@@ -55,11 +54,6 @@ const AiTechnologies = () => {
   
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>AI for Business Growth | Smart Marketing Solutions</title>
-        <meta name="description" content="Enhance your business with AI-powered solutions. We integrate AI into your marketing, content, and web design - with strategy and human oversight every step of the way." />
-      </Helmet>
-      
       <AiTechHero />
       <AiTechBenefits />
       <AiTechServices />
