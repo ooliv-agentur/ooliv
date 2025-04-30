@@ -21,7 +21,7 @@ const EnglishIndex = () => {
   setLanguage('en');
   
   // Add a debug console log to verify this component is being rendered
-  console.log('EnglishIndex component rendering - clean rebuild with 2-person team');
+  console.log('EnglishIndex component rendering - using updated EnglishTeamTeaser with 2 members');
   
   const simplifiedFaqs = [
     {
