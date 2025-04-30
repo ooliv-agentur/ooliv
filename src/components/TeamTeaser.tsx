@@ -26,10 +26,10 @@ const TeamTeaser = () => {
   const featuredTeamMembers: TeamMember[] = [
     {
       name: "Uli Schönleber",
-      role: "CEO – Your direct point of contact",
+      role: language === 'de' ? "Geschäftsführer" : "CEO – Your direct point of contact",
       image: "/lovable-uploads/Uli.jpg",
       initials: "US",
-      tooltip: "Leads every client project personally"
+      tooltip: language === 'de' ? "Leitet jedes Kundenprojekt persönlich" : "Leads every client project personally"
     },
     {
       name: "Lisa Schönleber",
@@ -39,14 +39,14 @@ const TeamTeaser = () => {
     },
     {
       name: "Parveen Thakur",
-      role: "Web Development",
+      role: language === 'de' ? "Webentwicklung" : "Web Development",
       image: "/lovable-uploads/Parveen.jpg",
       initials: "PT",
-      tooltip: "On the team for over 20 years"
+      tooltip: language === 'de' ? "Seit über 20 Jahren im Team" : "On the team for over 20 years"
     },
     {
       name: "Dorinel Nedelcu",
-      role: "Creation",
+      role: language === 'de' ? "Kreation" : "Creation",
       image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN",
     }
@@ -56,9 +56,15 @@ const TeamTeaser = () => {
     <section className="section-alt py-24">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="section-title">Meet the Team Behind ooliv</h2>
+          <h2 className="section-title">
+            {language === 'de' 
+              ? "Das Team hinter den Ergebnissen" 
+              : "Meet the Team Behind ooliv"}
+          </h2>
           <p className="section-subtitle max-w-3xl mx-auto">
-            Led by the CEO who handles all client communication, our team of designers, developers, and strategists works behind the scenes to deliver websites that drive measurable business value.
+            {language === 'de'
+              ? "Jedes Projekt wird direkt vom Geschäftsführer geführt. Im Hintergrund sorgt unser eingespieltes Team für die Umsetzung – mit Präzision in Content, Design und Development."
+              : "Led by the CEO who handles all client communication, our team of designers, developers, and strategists works behind the scenes to deliver websites that drive measurable business value."}
           </p>
         </div>
 
@@ -105,7 +111,7 @@ const TeamTeaser = () => {
         <div className="flex justify-center">
           <Button variant="outline" size="lg" className="group" asChild>
             <Link to={aboutPath}>
-              Meet the full team
+              {language === 'de' ? "Komplettes Team kennenlernen" : "Meet the full team"}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
