@@ -23,6 +23,7 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
       const hostname = window.location.hostname;
       if (hostname.startsWith('www.')) {
         const nonWwwUrl = window.location.href.replace('www.', '');
+        console.log('Redirecting from www to non-www:', nonWwwUrl);
         window.location.replace(nonWwwUrl);
       }
     }
