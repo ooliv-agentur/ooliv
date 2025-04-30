@@ -1,6 +1,16 @@
 
+# Enable URL rewriting
 RewriteEngine On
 
-# Weiterleitung von www auf non-www
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Redirect from www to non-www
 RewriteCond %{HTTP_HOST} ^www\.ooliv\.de$ [NC]
 RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]
+
+# Handle pushState routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L,QSA]

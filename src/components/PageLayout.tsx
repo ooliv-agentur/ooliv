@@ -14,12 +14,15 @@ interface PageLayoutProps {
 const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
   const location = useLocation();
   const canonicalPath = location.pathname === '/' ? '' : location.pathname;
+  // Explicitly use non-www version for canonical URLs
   const canonicalUrl = `https://ooliv.de${canonicalPath}`;
 
   return (
     <>
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
+        {/* Add preconnect for www domain to improve performance during redirect */}
+        <link rel="preconnect" href="https://www.ooliv.de" />
       </Helmet>
       <div className={`min-h-screen flex flex-col ${className}`}>
         <Navbar />
