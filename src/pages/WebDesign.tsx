@@ -7,7 +7,6 @@ import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureF
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
-import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import WebDesignSEOSection from '@/components/web-design/WebDesignSEOSection';
 
@@ -29,15 +28,6 @@ const WebDesign = () => {
         </section>
         
         <WebDesignFAQ />
-        
-        {/* Final CTA Section - removed footerNote to prevent duplication */}
-        <CTA 
-          title="Let's Talk About Your Webdesign Project"
-          subtitle="We'll help you build something faster, smarter, and more strategic than what you have today."
-          primaryCta="Start Your Web Project"
-          secondaryCta="Book a Strategy Call"
-          secondaryCtaLink="/en/contact"
-        />
       </PageLayout>
       
       {/* SEO Text Section placed after the PageLayout */}

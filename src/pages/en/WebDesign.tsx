@@ -8,7 +8,6 @@ import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureF
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptionsEN';
 import WebDesignProcess from '@/components/web-design/WebDesignProcessEN';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQEN';
-import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const EnglishWebDesign = () => {
@@ -33,15 +32,6 @@ const EnglishWebDesign = () => {
       </section>
       
       <WebDesignFAQ />
-      
-      {/* Final CTA Section - translated to English */}
-      <CTA 
-        title="Let's Talk About Your Web Design Project"
-        subtitle="Let's develop a website together that doesn't just look good, but also becomes visible and converts."
-        primaryCta="Start Your Project"
-        secondaryCta="Schedule a Strategy Call"
-        secondaryCtaLink="/en/contact"
-      />
     </PageLayout>
   );
 };

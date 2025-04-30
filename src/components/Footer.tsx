@@ -49,39 +49,13 @@ const Footer = () => {
         { name: t('footer.legal.imprint'), path: '/en/legal-notice' },
       ];
 
-  const contactPath = language === 'de' ? '/kontakt' : '/en/contact';
-
   return (
-    <footer className="bg-[#004d51] text-white">
-      {/* Call to Action Banner */}
-      <div className="bg-[#b1b497] py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between">
-          <p className="text-white text-lg md:text-xl font-medium mb-4 md:mb-0">{t('footer.ctaBanner')}</p>
-          <Button 
-            asChild
-            variant="outline" 
-            className="border-white text-white hover:bg-white hover:text-[#b1b497] transition-colors"
-          >
-            <Link to={contactPath} className="flex items-center">
-              {t('footer.startProject')}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-      
+    <footer className="bg-[#0A1623] text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Section */}
           <div>
-            <Link to={language === 'de' ? '/' : '/en'} className="inline-block mb-6">
-              <img 
-                src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
-                alt="ooliv - Advertising Agency Mainz"
-                className="h-8 w-auto"
-              />
-            </Link>
             <h3 className="text-lg font-semibold mb-4">{t('footer.about')}</h3>
             <p className="text-white/90 mb-6">{t('footer.aboutText')}</p>
           </div>

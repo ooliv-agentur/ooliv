@@ -8,7 +8,6 @@ import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureF
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
-import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import WebDesignSEOSection from '@/components/web-design/WebDesignSEOSection';
 
@@ -35,15 +34,6 @@ const GermanWebDesign = () => {
         </section>
         
         <WebDesignFAQ />
-        
-        {/* Final CTA Section - removed footerNote to prevent duplication */}
-        <CTA 
-          title="Sprechen wir über Ihr Webdesign-Projekt"
-          subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
-          primaryCta="Projekt starten"
-          secondaryCta="Strategiegespräch vereinbaren"
-          secondaryCtaLink="/kontakt"
-        />
       </PageLayout>
       
       {/* SEO Text Section placed after the PageLayout */}
