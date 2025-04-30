@@ -16,6 +16,10 @@ const Impressum = () => {
       <LegalHero 
         title="Impressum"
         subtitle="Rechtliche Informationen über ooliv"
+        primaryCta={{
+          text: "Zurück zur Startseite",
+          link: "/"
+        }}
       />
 
       <section className="py-12 bg-white">

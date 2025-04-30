@@ -35,6 +35,25 @@ const KITechnologien = () => {
     }
   ];
 
+  // AI tools data
+  const aiTools = [
+    {
+      name: "ChatGPT & Claude",
+      logoSrc: "/lovable-uploads/ac2faaf0-3c11-47bd-a829-aafb0bd09f24.png",
+      description: "Text-KI für Content-Erstellung, Ideenfindung und Marketingtexte."
+    },
+    {
+      name: "Midjourney",
+      logoSrc: "/lovable-uploads/c2e2bd92-40a4-4a70-a1bd-6a3d5d936f87.png",
+      description: "Bildgenerierung für einzigartige Visuals und Illustrationen."
+    },
+    {
+      name: "DALL-E",
+      logoSrc: "/lovable-uploads/996a7b08-e2fe-4996-8254-2af3eded918c.png",
+      description: "Erstellung präziser Bildkonzepte für Marketing-Assets."
+    }
+  ];
+
   return (
     <PageLayout>
       <Helmet>
@@ -45,7 +64,12 @@ const KITechnologien = () => {
       
       <AiTechHero />
       <AiTechServices />
-      <AiToolsSection />
+      <AiToolsSection 
+        title="KI-Tools in unserem Marketing-Stack"
+        subtitle="Wir nutzen modernste KI-Technologien als Werkzeuge – immer kombiniert mit menschlicher Expertise"
+        tools={aiTools}
+        note="Alle KI-generierten Inhalte durchlaufen eine kritische Überprüfung durch unsere Experten, bevor sie zum Einsatz kommen."
+      />
       <AiTechBenefits />
       <AiTechCaseStudies />
       <FAQ customFaqs={aiFaqs} />

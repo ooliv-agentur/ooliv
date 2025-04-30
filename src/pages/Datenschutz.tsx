@@ -16,6 +16,10 @@ const Datenschutz = () => {
       <LegalHero 
         title="Datenschutzerklärung"
         subtitle="Informationen zum Umgang mit Ihren Daten gemäß DSGVO"
+        primaryCta={{
+          text: "Zurück zur Startseite",
+          link: "/"
+        }}
       />
 
       <section className="py-12 bg-white">

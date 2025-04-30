@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import PageLayout from "@/components/PageLayout";
 import { Helmet } from 'react-helmet-async';
 import PageHero from "@/components/PageHero";
@@ -8,6 +8,9 @@ import ConsultationRequestSectionDE from "@/components/contact/ConsultationReque
 import FAQ from "@/components/FAQ";
 
 const Kontakt = () => {
+  // State for contact form modal
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  
   // FAQ items specific to the contact page
   const contactFaqs = [
     {
@@ -47,7 +50,21 @@ const Kontakt = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Schreiben Sie uns</h2>
-            <ContactForm />
+            {/* Open contact form button */}
+            <div className="text-center mb-8">
+              <button 
+                onClick={() => setIsContactFormOpen(true)}
+                className="bg-brand-primary text-white px-6 py-3 rounded-md hover:bg-brand-primary/90 transition-colors"
+              >
+                Kontaktformular öffnen
+              </button>
+            </div>
+            {/* Contact form modal */}
+            <ContactForm 
+              open={isContactFormOpen} 
+              onOpenChange={setIsContactFormOpen} 
+              formType="work" 
+            />
           </div>
         </div>
       </div>
