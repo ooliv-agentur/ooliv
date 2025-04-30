@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import FloatingActionButtons from './FloatingActionButtons'; // Re-adding this component
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -26,6 +27,7 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
           {children}
         </main>
         <Footer />
+        <FloatingActionButtons /> {/* Re-adding this component */}
       </div>
     </>
   );
