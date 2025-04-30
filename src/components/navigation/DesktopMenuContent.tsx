@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { NavigationLinks } from './NavigationLinks';
-import LanguageSwitch from '../LanguageSwitch';
 
 interface DesktopMenuContentProps {
   isOpen: boolean;
@@ -33,10 +32,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
           className="fixed top-0 right-0 bottom-0 w-[40%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
         >
-          <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
-            <div className="flex items-center">
-              <LanguageSwitch />
-            </div>
+          <div className="sticky top-0 z-10 flex items-center justify-end p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
             <Button 
               variant="ghost" 
               size="icon" 

@@ -24,19 +24,7 @@ import GermanLegalNotice from "./pages/de/LegalNotice";
 import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
 
 // Import English pages
-import EnglishIndex from "./pages/en/Index";
-import EnglishWebDesign from "./pages/en/WebDesign";
-import EnglishWebDevelopment from "./pages/en/WebDevelopment";
-import EnglishContentCreation from "./pages/en/ContentCreation";
-import EnglishSEO from "./pages/en/SEO";
-import EnglishGoogleAds from "./pages/en/GoogleAds";
-import EnglishAiTechnologies from "./pages/en/AiTechnologies";
-import EnglishCaseStudies from "./pages/en/CaseStudies";
-import EnglishAboutUs from "./pages/en/AboutUs";
-import EnglishContact from "./pages/en/Contact";
-import EnglishLegalNotice from "./pages/en/LegalNotice";
-import EnglishPrivacyPolicy from "./pages/en/PrivacyPolicy";
-import EnglishThankYou from "./pages/en/ThankYou";
+import CaseStudies from "./pages/CaseStudies";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
@@ -55,12 +43,12 @@ const ScrollToTop = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <ChatbaseWidget />
+    <LanguageProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <ChatbaseWidget />
+        <BrowserRouter>
           <ScrollToTop />
           <Routes>
             {/* Main (German) Routes */}
@@ -78,20 +66,8 @@ const App = () => (
             <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
             <Route path="/danke" element={<Danke />} />
             
-            {/* English Routes */}
-            <Route path="/en" element={<EnglishIndex />} />
-            <Route path="/en/web-design" element={<EnglishWebDesign />} />
-            <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
-            <Route path="/en/content-creation" element={<EnglishContentCreation />} />
-            <Route path="/en/seo-optimization" element={<EnglishSEO />} />
-            <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
-            <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
-            <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
-            <Route path="/en/about-ooliv" element={<EnglishAboutUs />} />
-            <Route path="/en/contact" element={<EnglishContact />} />
-            <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
-            <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
-            <Route path="/en/thank-you" element={<EnglishThankYou />} />
+            {/* English routes */}
+            <Route path="/en/case-studies" element={<CaseStudies />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />
@@ -110,9 +86,9 @@ const App = () => (
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </TooltipProvider>
-      </LanguageProvider>
-    </BrowserRouter>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 

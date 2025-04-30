@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { NavigationLinks } from './NavigationLinks';
-import LanguageSwitch from '../LanguageSwitch';
 
 interface MobileMenuContentProps {
   isOpen: boolean;
@@ -49,9 +48,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
           </div>
           
           <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto">
-            <div className="mb-4 flex justify-center">
-              <LanguageSwitch />
-            </div>
             <nav className="space-y-4 text-center w-full">
               <NavigationLinks layout="mobile" onLinkClick={handleLinkClick} />
             </nav>
