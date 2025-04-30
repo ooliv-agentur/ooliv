@@ -23,7 +23,7 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
   // Button styling based on variant
   const buttonClass = variant === 'solid' 
     ? "group bg-[#006064] text-white hover:bg-[#004d51] hover:scale-[1.03] transition-transform duration-200" 
-    : "bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200";
+    : "group bg-transparent text-gray-800 hover:bg-white/10 border border-gray-800 hover:text-white hover:bg-gray-800 hover:scale-[1.03] transition-transform duration-200";
 
   // If no href and has onClick, render as button
   if (!href && onClick) {
@@ -58,7 +58,6 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
   // If just has href, render as Link wrapped in Button
   return (
     <Button 
-      variant={variant === 'outline' ? 'outline' : 'default'}
       size="lg" 
       className={buttonClass}
       asChild

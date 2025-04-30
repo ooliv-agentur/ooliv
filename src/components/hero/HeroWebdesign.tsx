@@ -27,7 +27,7 @@ const HeroWebdesign = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
