@@ -1,6 +1,6 @@
 
 import React from 'react';
-import HeroButton from './HeroButton';
+import HeroButton from '@/components/HeroButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroGoogleAds = () => {
