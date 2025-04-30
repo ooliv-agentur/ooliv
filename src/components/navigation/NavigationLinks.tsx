@@ -16,13 +16,13 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   const germanLinks = [
     { title: 'Home', path: '/' },
     { title: 'Webdesign', path: '/webdesign' },
-    { title: 'Webentwicklung', path: '/webentwicklung' },
+    { title: 'WordPress', path: '/wordpress-agentur' },
     { title: 'Content-Erstellung', path: '/content-erstellung' },
-    { title: 'SEO-Optimierung', path: '/seo-optimierung' },
+    { title: 'SEO', path: '/seo-agentur' },
     { title: 'Google Ads', path: '/google-ads' },
     { title: 'KI-Technologien', path: '/ki-technologien' },
-    { title: 'Case Studies', path: '/case-studies' },
-    { title: 'Über ooliv', path: '/ueber-ooliv' },
+    { title: 'Marketing', path: '/marketing' },
+    { title: 'Über uns', path: '/ueber-ooliv' },
     { title: 'Kontakt', path: '/kontakt' }
   ];
 
