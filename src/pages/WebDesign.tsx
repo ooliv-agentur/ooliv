@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
@@ -13,6 +14,11 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 const WebDesign = () => {
   return (
     <PageLayout className="overflow-x-hidden">
+      <Helmet>
+        <title>Strategic Web Design for Business Growth | ooliv</title>
+        <meta name="description" content="We design websites that improve your Google visibility, drive qualified leads, and align with your business goals. Our webdesign services are built on strategy – not templates." />
+      </Helmet>
+      
       <WebDesignHero />
       <WebDesignBenefits />
       <WebDesignStructureFirst />
