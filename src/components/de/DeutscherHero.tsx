@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -11,9 +10,9 @@ const DeutscherHero = () => {
   };
   
   return (
-    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section className="relative bg-[#f5f7fa] pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5f7fa] to-[#e9ecef] opacity-50 z-0"></div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -24,7 +23,7 @@ const DeutscherHero = () => {
             </h1>
             
             {/* Subheadline */}
-            <p className="text-2xl md:text-3xl text-brand-primary font-medium mb-6">
+            <p className="text-2xl md:text-3xl text-[#006064] font-medium mb-6">
               Für messbare Ergebnisse im Web.
             </p>
             
@@ -34,26 +33,21 @@ const DeutscherHero = () => {
             
             {/* CTA buttons - left-aligned */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+              <button 
                 onClick={handleOpenLeadForm}
+                className="inline-flex items-center justify-center px-8 py-3 bg-[#006064] text-white rounded-full hover:bg-[#004d51] transition-all duration-300 font-medium group"
               >
                 Projekt starten
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </button>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" 
-                asChild
+              <Link 
+                to="/case-studies"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 font-medium group"
               >
-                <Link to="/case-studies">
-                  Arbeiten ansehen
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                Arbeiten ansehen
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </div>
