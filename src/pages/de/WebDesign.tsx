@@ -17,8 +17,8 @@ const GermanWebDesign = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <Helmet>
-          <title>Webdesign Mainz | UX-stark & individuell mit ooliv</title>
-          <meta name="description" content="Webdesign für B2B-Marken in Mainz: modern, conversionstark und individuell. ooliv entwickelt Websites, die wirken – ohne Templates." />
+          <title>Strategisches Webdesign Mainz für B2B-Unternehmen</title>
+          <meta name="description" content="Webdesign Mainz – keine Templates, sondern maßgeschneiderte Lösungen. Für mehr Leads, Sichtbarkeit und digitale Markenstärke." />
         </Helmet>
 
         <WebDesignHero />
