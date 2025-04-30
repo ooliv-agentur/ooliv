@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroButton from './HeroButton';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroContent = () => {
@@ -14,19 +15,19 @@ const HeroContent = () => {
   
   const translations = {
     en: {
-      badge: "Content Creation",
-      title: "Content that Converts: From Strategy to Execution",
-      subtitle: "We create strategic content that attracts, engages, and converts your ideal customers. Text, images, and video that work."
+      badge: "Strategic Content Creation",
+      title: "Content That Converts Visitors Into Customers",
+      subtitle: "We create strategic content that supports your business goals — not just words on a page."
     },
     de: {
-      badge: "Content Erstellung",
-      title: "Content für B2B: Strategisch, überzeugend, umsetzbar",
-      subtitle: "Wir erstellen Content, der Ihre Zielgruppe überzeugt und zum Handeln bewegt – von Website-Texten bis zum kompletten Content-Ökosystem."
+      badge: "Strategische Content-Erstellung",
+      title: "Content, der Besucher in Kunden verwandelt",
+      subtitle: "Wir erstellen strategische Inhalte, die Ihre Geschäftsziele unterstützen – nicht nur Worte auf einer Seite."
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -50,13 +51,13 @@ const HeroContent = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HeroButton 
                 variant="solid"
-                label={isGerman ? "Content-Projekt besprechen" : "Discuss Content Project"}
+                label={isGerman ? "Content-Projekt starten" : "Start Your Content Project"}
                 onClick={handleOpenLeadForm}
               />
               
               <HeroButton 
                 variant="outline"
-                label={isGerman ? "Arbeiten ansehen" : "View Our Work"}
+                label={isGerman ? "Arbeiten ansehen" : "View Case Studies"}
                 href={caseStudiesPath}
               />
             </div>
@@ -78,6 +79,8 @@ const HeroContent = () => {
           ></path>
         </svg>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

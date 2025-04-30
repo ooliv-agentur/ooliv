@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -62,6 +61,7 @@ const GermanAiTechnologies = () => {
       </Helmet>
 
       <HeroKI />
+      
       <AiTechBenefits />
       <AiTechServices />
       <AiToolsSection 

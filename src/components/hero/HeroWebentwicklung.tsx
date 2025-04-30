@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroButton from './HeroButton';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroWebentwicklung = () => {
@@ -14,19 +15,19 @@ const HeroWebentwicklung = () => {
   
   const translations = {
     en: {
-      badge: "Web Development",
-      title: "Modern Web Development for Businesses That Want to Grow",
-      subtitle: "We build custom, high-performance websites using modern technologies that support your business goals."
+      badge: "WordPress Development & Custom Coding",
+      title: "Web Development That Supports Your Business Growth",
+      subtitle: "We build websites that are fast, secure, and scalable. Our development solutions focus on business goals, not just technical features."
     },
     de: {
-      badge: "WordPress & Webentwicklung",
-      title: "WordPress Agentur Mainz – für Websites mit System",
-      subtitle: "Wir entwickeln flexible, moderne WordPress-Websites und vollständig individuelle Web-Apps. Skalierbar, sicher und für Performance optimiert."
+      badge: "WordPress Entwicklung & Custom Coding",
+      title: "Webentwicklung für Unternehmen mit Anspruch",
+      subtitle: "Wir entwickeln Websites mit System: skalierbar, sicher und technisch sauber – immer mit Fokus auf Ihre Geschäftsziele und nicht nur auf Features."
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -50,13 +51,13 @@ const HeroWebentwicklung = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HeroButton 
                 variant="solid"
-                label={isGerman ? "Projekt starten" : "Start a Project"}
+                label={isGerman ? "Projekt starten" : "Start Your Web Project"}
                 onClick={handleOpenLeadForm}
               />
               
               <HeroButton 
                 variant="outline"
-                label={isGerman ? "Arbeiten ansehen" : "View Our Work"}
+                label={isGerman ? "Arbeiten ansehen" : "View Case Studies"}
                 href={caseStudiesPath}
               />
             </div>
@@ -78,6 +79,8 @@ const HeroWebentwicklung = () => {
           ></path>
         </svg>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

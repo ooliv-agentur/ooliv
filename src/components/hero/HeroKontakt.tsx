@@ -1,6 +1,5 @@
 
 import React from 'react';
-import HeroButton from './HeroButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroKontakt = () => {

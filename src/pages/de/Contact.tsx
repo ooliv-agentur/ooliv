@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -14,7 +15,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
 import { 
   Card, 
   CardHeader, 
@@ -95,7 +95,7 @@ const GermanContact = () => {
   }, [setLanguage]);
 
   const handleOpenSidebarForm = () => {
-    document.dispatchEvent(new CustomEvent('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
   };
 
   return (

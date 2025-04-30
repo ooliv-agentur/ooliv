@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroButton from './HeroButton';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroCaseStudies = () => {
@@ -14,19 +15,18 @@ const HeroCaseStudies = () => {
   
   const translations = {
     en: {
-      badge: "Case Studies",
-      title: "Our Work: Real Results for Real Clients",
-      subtitle: "Explore how we've helped businesses achieve measurable growth through strategic design and development."
+      badge: "Our Work",
+      title: "Successful Projects That Drive Business Growth",
+      subtitle: "Explore our case studies to see how we've helped businesses achieve their goals through strategic digital solutions."
     },
     de: {
-      badge: "Case Studies",
-      title: "Marketing aus Mainz mit echten Ergebnissen.",
-      subtitle: "Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen."
+      badge: "Unsere Arbeit",
+      title: "Erfolgreiche Projekte, die Geschäftswachstum fördern",
+      subtitle: "Entdecken Sie unsere Fallstudien und sehen Sie, wie wir Unternehmen durch strategische digitale Lösungen zum Erfolg verhelfen."
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const contactPath = isGerman ? "/kontakt" : "/en/contact";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -50,14 +50,14 @@ const HeroCaseStudies = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HeroButton 
                 variant="solid"
-                label={isGerman ? "Projekt starten" : "Start a Project"}
+                label={isGerman ? "Projekt starten" : "Start Your Project"}
                 onClick={handleOpenLeadForm}
               />
               
               <HeroButton 
                 variant="outline"
-                label={isGerman ? "Strategiegespräch buchen" : "Book a Strategy Call"}
-                href={contactPath}
+                label={isGerman ? "Strategiegespräch vereinbaren" : "Book a Strategy Call"}
+                href={isGerman ? "/kontakt" : "/contact"}
               />
             </div>
           </div>
@@ -78,6 +78,8 @@ const HeroCaseStudies = () => {
           ></path>
         </svg>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

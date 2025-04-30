@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroButton from './HeroButton';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroKI = () => {
@@ -14,19 +15,19 @@ const HeroKI = () => {
   
   const translations = {
     en: {
-      badge: "AI Technologies",
-      title: "AI-powered Solutions for Modern Web Marketing",
-      subtitle: "We integrate AI capabilities into your web presence to boost productivity, enhance user experiences, and drive measurable business results."
+      badge: "AI-Enhanced Digital Solutions",
+      title: "AI Technologies That Drive Business Growth",
+      subtitle: "We harness the power of artificial intelligence to create smarter, faster, and more effective digital solutions for your business."
     },
     de: {
-      badge: "KI-Technologien",
-      title: "KI Agentur für moderne Web-Marketing Lösungen",
-      subtitle: "Wir integrieren künstliche Intelligenz in Ihre digitale Strategie für bessere Ergebnisse – ohne Kompromisse bei Qualität und Markenkonsistenz."
+      badge: "KI-gestützte digitale Lösungen",
+      title: "KI-Technologien für Ihr Unternehmenswachstum",
+      subtitle: "Wir nutzen die Kraft der künstlichen Intelligenz, um intelligentere, schnellere und effektivere digitale Lösungen für Ihr Unternehmen zu schaffen."
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -50,13 +51,13 @@ const HeroKI = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HeroButton 
                 variant="solid"
-                label={isGerman ? "KI-Potenzialanalyse anfordern" : "Request AI Potential Analysis"}
+                label={isGerman ? "KI-Potenzial analysieren" : "Analyze AI Potential"}
                 onClick={handleOpenLeadForm}
               />
               
               <HeroButton 
                 variant="outline"
-                label={isGerman ? "Arbeiten ansehen" : "View Our Work"}
+                label={isGerman ? "Arbeiten ansehen" : "View Case Studies"}
                 href={caseStudiesPath}
               />
             </div>
@@ -78,6 +79,8 @@ const HeroKI = () => {
           ></path>
         </svg>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

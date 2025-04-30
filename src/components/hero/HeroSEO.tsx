@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroButton from './HeroButton';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSEO = () => {
@@ -14,19 +15,19 @@ const HeroSEO = () => {
   
   const translations = {
     en: {
-      badge: "SEO Optimization",
-      title: "SEO Agency That Delivers Measurable Results",
-      subtitle: "We help you climb the search rankings and get found by your ideal customers with data-driven SEO strategies."
+      badge: "SEO That Drives Business Growth",
+      title: "SEO for B2B Companies Who Want to Be Found",
+      subtitle: "We don't just optimize for search engines — we build visibility systems that attract qualified leads and drive measurable business growth."
     },
     de: {
-      badge: "SEO Optimierung",
-      title: "SEO Agentur Mainz – Sichtbarkeit, die messbar ist",
-      subtitle: "Wir entwickeln nachhaltige SEO-Strategien für B2B-Websites, die bei relevanten Keywords ranken und qualifizierten Traffic bringen."
+      badge: "SEO für messbare Ergebnisse",
+      title: "SEO für B2B-Unternehmen mit Anspruch",
+      subtitle: "Wir optimieren nicht nur für Suchmaschinen – wir entwickeln Sichtbarkeitssysteme, die qualifizierte Leads anziehen und messbares Geschäftswachstum fördern."
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/en/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
@@ -50,13 +51,13 @@ const HeroSEO = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <HeroButton 
                 variant="solid"
-                label={isGerman ? "SEO-Audit anfordern" : "Request SEO Audit"}
+                label={isGerman ? "SEO-Analyse anfragen" : "Request SEO Analysis"}
                 onClick={handleOpenLeadForm}
               />
               
               <HeroButton 
                 variant="outline"
-                label={isGerman ? "Arbeiten ansehen" : "View Our Work"}
+                label={isGerman ? "Arbeiten ansehen" : "View Case Studies"}
                 href={caseStudiesPath}
               />
             </div>
@@ -78,6 +79,8 @@ const HeroSEO = () => {
           ></path>
         </svg>
       </div>
+      
+      <ScrollIndicator />
     </section>
   );
 };

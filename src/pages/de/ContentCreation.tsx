@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -44,6 +43,7 @@ const GermanContentCreation = () => {
       </Helmet>
 
       <HeroContent />
+      
       <ContentBenefits />
       <ContentServiceDE />
       <ContentServices />
