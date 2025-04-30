@@ -9,7 +9,7 @@ import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
-// Import German pages as main pages
+// Import German pages
 import GermanIndex from "./pages/de/Index";
 import GermanWebDesign from "./pages/de/WebDesign";
 import GermanWebDevelopment from "./pages/de/WebDevelopment";
@@ -62,8 +62,6 @@ const App = () => (
             <Route path="/impressum" element={<GermanLegalNotice />} />
             <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
             <Route path="/danke" element={<Danke />} />
-            
-            {/* English routes - removed /en/case-studies route */}
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />
