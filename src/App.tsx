@@ -9,28 +9,23 @@ import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
-// Import German pages as main pages
-import GermanIndex from "./pages/de/Index";
-import GermanWebDesign from "./pages/de/WebDesign";
-import GermanWebDevelopment from "./pages/de/WebDevelopment";
-import GermanContentCreation from "./pages/de/ContentCreation";
-import GermanSEO from "./pages/de/SEO";
-import GermanGoogleAds from "./pages/de/GoogleAds";
-import GermanAiTechnologies from "./pages/de/AiTechnologies";
-import GermanCaseStudies from "./pages/de/CaseStudies";
-import GermanAboutUs from "./pages/de/AboutUs";
-import GermanContact from "./pages/de/Contact";
-import GermanLegalNotice from "./pages/de/LegalNotice";
-import GermanPrivacyPolicy from "./pages/de/PrivacyPolicy";
-
-// Import English pages
+// Import German pages
+import Index from "./pages/Index";
+import Webdesign from "./pages/Webdesign";
+import Webentwicklung from "./pages/Webentwicklung";
+import ContentErstellung from "./pages/ContentErstellung";
+import SEOOptimierung from "./pages/SEOOptimierung";
+import GoogleAds from "./pages/GoogleAds";
+import KITechnologien from "./pages/KITechnologien";
 import CaseStudies from "./pages/CaseStudies";
+import UeberOoliv from "./pages/UeberOoliv";
+import Kontakt from "./pages/Kontakt";
+import Impressum from "./pages/Impressum";
+import Datenschutz from "./pages/Datenschutz";
+import Danke from "./pages/Danke";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
-
-//Import Danke page
-import Danke from "./pages/de/Danke";
 
 // Create the query client
 const queryClient = new QueryClient();
@@ -51,23 +46,20 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
-            {/* Main (German) Routes */}
-            <Route path="/" element={<GermanIndex />} />
-            <Route path="/webdesign" element={<GermanWebDesign />} />
-            <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-            <Route path="/content-erstellung" element={<GermanContentCreation />} />
-            <Route path="/seo-optimierung" element={<GermanSEO />} />
-            <Route path="/google-ads" element={<GermanGoogleAds />} />
-            <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-            <Route path="/case-studies" element={<GermanCaseStudies />} />
-            <Route path="/ueber-ooliv" element={<GermanAboutUs />} />
-            <Route path="/kontakt" element={<GermanContact />} />
-            <Route path="/impressum" element={<GermanLegalNotice />} />
-            <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+            {/* Main (German) Routes based on sitemap */}
+            <Route path="/" element={<Index />} />
+            <Route path="/webdesign" element={<Webdesign />} />
+            <Route path="/webentwicklung" element={<Webentwicklung />} />
+            <Route path="/content-erstellung" element={<ContentErstellung />} />
+            <Route path="/seo-optimierung" element={<SEOOptimierung />} />
+            <Route path="/google-ads" element={<GoogleAds />} />
+            <Route path="/ki-technologien" element={<KITechnologien />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/ueber-ooliv" element={<UeberOoliv />} />
+            <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/danke" element={<Danke />} />
-            
-            {/* English routes */}
-            <Route path="/en/case-studies" element={<CaseStudies />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />
@@ -82,6 +74,17 @@ const App = () => (
             <Route path="/de/kontakt" element={<Navigate to="/kontakt" replace />} />
             <Route path="/de/impressum" element={<Navigate to="/impressum" replace />} />
             <Route path="/de/datenschutz" element={<Navigate to="/datenschutz" replace />} />
+            
+            {/* Redirects for old English paths */}
+            <Route path="/en/*" element={<Navigate to="/" replace />} />
+            <Route path="/web-design" element={<Navigate to="/webdesign" replace />} />
+            <Route path="/web-development" element={<Navigate to="/webentwicklung" replace />} />
+            <Route path="/content-creation" element={<Navigate to="/content-erstellung" replace />} />
+            <Route path="/seo-optimization" element={<Navigate to="/seo-optimierung" replace />} />
+            <Route path="/about-us" element={<Navigate to="/ueber-ooliv" replace />} />
+            <Route path="/legal-notice" element={<Navigate to="/impressum" replace />} />
+            <Route path="/privacy-policy" element={<Navigate to="/datenschutz" replace />} />
+            <Route path="/contact" element={<Navigate to="/kontakt" replace />} />
             
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />

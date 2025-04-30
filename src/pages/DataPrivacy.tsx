@@ -2,29 +2,23 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const DataPrivacy = () => {
   const navigate = useNavigate();
-  const { language } = useLanguage();
 
   useEffect(() => {
-    // Redirect to the appropriate language privacy policy page
-    if (language === 'de') {
-      navigate('/datenschutz');
-    } else {
-      navigate('/privacy-policy');
-    }
-  }, [navigate, language]);
+    // Always redirect to the German privacy policy page
+    navigate('/datenschutz');
+  }, [navigate]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">
       <Helmet>
-        <title>Privacy Policy | Redirecting...</title>
-        <meta name="description" content="Redirecting to the privacy policy page." />
+        <title>Datenschutz | Weiterleitung...</title>
+        <meta name="description" content="Weiterleitung zur Datenschutzerklärung." />
         <meta name="robots" content="noindex" />
       </Helmet>
-      <p>Redirecting to Privacy Policy...</p>
+      <p>Weiterleitung zur Datenschutzerklärung...</p>
     </div>
   );
 };
