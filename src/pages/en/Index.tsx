@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import DeutscherHero from '@/components/de/DeutscherHero';
 import Challenge from '@/components/Challenge';
 import Solution from '@/components/Solution';
 import TeamTeaser from '@/components/TeamTeaser';

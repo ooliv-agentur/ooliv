@@ -11,13 +11,13 @@ const EnglishHero = () => {
   };
   
   return (
-    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background pattern/gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-left max-w-4xl">
+          <div className="text-center">
             {/* Main heading with emphasis - single H1 */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
               Web Design Agency Mainz
@@ -38,8 +38,8 @@ const EnglishHero = () => {
               custom design and measurable results from day one.
             </p>
             
-            {/* CTA buttons - left-aligned */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA buttons - center-aligned */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="group bg-[#006064] text-white hover:bg-[#004d51]" 
