@@ -1,5 +1,5 @@
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -16,6 +16,17 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
   const canonicalPath = location.pathname === '/' ? '' : location.pathname;
   // Explicitly use non-www version for canonical URLs
   const canonicalUrl = `https://ooliv.de${canonicalPath}`;
+
+  // Handle www to non-www redirect at the client level
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname;
+      if (hostname.startsWith('www.')) {
+        const nonWwwUrl = window.location.href.replace('www.', '');
+        window.location.replace(nonWwwUrl);
+      }
+    }
+  }, []);
 
   return (
     <>
