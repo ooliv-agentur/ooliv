@@ -204,7 +204,7 @@ const ContentProcess = () => {
           }
         </h2>
         
-        <div className="w-full max-w-6xl mx-auto relative mt-12">
+        <div className="w-full max-w-6xl mx-auto relative mt-12 pt-10">
           <style dangerouslySetInnerHTML={{ __html: `
             .process-scroll::-webkit-scrollbar {
               display: none;
@@ -234,8 +234,8 @@ const ContentProcess = () => {
                 key={index}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
               >
-                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative pt-10">
-                  <div className="absolute -top-6 left-4 h-12 w-12 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold">
+                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative pt-12">
+                  <div className="absolute -top-8 left-4 h-14 w-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-lg font-bold">
                     {step.number}
                   </div>
                   <div className="mt-2">
