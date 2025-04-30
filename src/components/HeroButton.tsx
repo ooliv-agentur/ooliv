@@ -41,31 +41,30 @@ const HeroButton = ({ variant = 'solid', label, href, onClick }: HeroButtonProps
   // For buttons with both href and onClick (lead form triggers with fallback links)
   if (onClick && href) {
     return (
-      <Button 
-        size="lg" 
-        className={buttonClass}
-        onClick={handleClick}
-        as="a"
-        href={href}
-      >
-        {label}
-        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-      </Button>
+      <Link to={href}>
+        <Button 
+          size="lg" 
+          className={buttonClass}
+          onClick={handleClick}
+        >
+          {label}
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Button>
+      </Link>
     );
   }
   
   // For regular link buttons
   return (
-    <Button 
-      size="lg" 
-      className={buttonClass}
-      asChild
-    >
-      <Link to={href || '#'}>
+    <Link to={href || '#'}>
+      <Button 
+        size="lg" 
+        className={buttonClass}
+      >
         {label}
         <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };
 
