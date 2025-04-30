@@ -1,6 +1,0 @@
-
-RewriteEngine On
-
-# Weiterleitung von www auf non-www
-RewriteCond %{HTTP_HOST} ^www\.ooliv\.de$ [NC]
-RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]

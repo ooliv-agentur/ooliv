@@ -6,11 +6,11 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 
-# Redirect from www to non-www
-RewriteCond %{HTTP_HOST} ^www\.ooliv\.de$ [NC]
+# Redirect from www to non-www - PRIORITY RULE
+RewriteCond %{HTTP_HOST} ^www\.ooliv\.de [NC]
 RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]
 
-# Handle pushState routing
+# Handle pushState routing - only after www redirect is processed
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.html [L,QSA]
