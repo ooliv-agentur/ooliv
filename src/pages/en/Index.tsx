@@ -97,10 +97,10 @@ const EnglishIndex = () => {
           subtitle="Let's discuss how our team can help your business achieve its online goals."
           primaryCta="Start Your Website Project"
         />
+        
+        {/* SEO Text Section placed inside PageLayout to match German style */}
+        <SEOTextSectionEN />
       </PageLayout>
-      
-      {/* SEO Text Section placed after the PageLayout */}
-      <SEOTextSectionEN />
     </>
   );
 };
