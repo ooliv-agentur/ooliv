@@ -61,18 +61,6 @@ const TechnologiesSection = () => {
             Important: At ooliv, humans maintain control. AI is a tool – not a solution.
           </p>
         </div>
-        
-        <div className="flex justify-center mt-8">
-          <Link 
-            to="/en/about-us" 
-            className="group inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
-          >
-            Learn more about our process
-            <svg className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
-        </div>
       </div>
     </section>
   );
