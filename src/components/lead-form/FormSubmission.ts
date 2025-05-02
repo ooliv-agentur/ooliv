@@ -58,12 +58,14 @@ export const useFormSubmission = (
       name: sanitizeInput(data.name),
       email: sanitizeInput(data.email),
       phone: sanitizeInput(data.phone || ''),
-      message: sanitizeInput(data.message || '')
+      message: sanitizeInput(data.message || ''),
+      language: language // Add the current language to the form data
     };
     
     try {
       const headers = getSupabaseHeaders();
       console.log("Sending request with headers:", headers);
+      console.log("Sending form data with language:", language);
       
       const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",

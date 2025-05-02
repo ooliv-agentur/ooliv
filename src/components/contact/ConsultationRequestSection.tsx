@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,7 +64,8 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
         websiteUrl: '',
         location: '',
         goal: 'website_consultation',
-        phone: ''
+        phone: '',
+        language: 'en' // This is the English component, so hardcode 'en'
       };
       
       const headers = getSupabaseHeaders();
@@ -95,6 +95,11 @@ const ConsultationRequestSection = ({ requestAudit }: ConsultationRequestSection
       });
       
       form.reset();
+      
+      // Redirect to thank you page after a short delay
+      setTimeout(() => {
+        window.location.href = "/en/thank-you";
+      }, 1000);
     } catch (error: any) {
       console.error("Error submitting form:", error);
       

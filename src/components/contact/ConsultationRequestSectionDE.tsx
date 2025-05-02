@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,7 +64,8 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
         websiteUrl: '',
         location: '',
         goal: 'website_consultation',
-        phone: ''
+        phone: '',
+        language: 'de' // This is the German component, so hardcode 'de'
       };
       
       const headers = getSupabaseHeaders();
@@ -95,6 +95,11 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
       });
       
       form.reset();
+      
+      // Redirect to thank you page after a short delay
+      setTimeout(() => {
+        window.location.href = "/danke";
+      }, 1000);
     } catch (error: any) {
       console.error("Fehler beim Senden des Formulars:", error);
       

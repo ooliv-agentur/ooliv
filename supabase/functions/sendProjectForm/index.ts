@@ -17,6 +17,12 @@ serve(async (req) => {
     const smtpUsername = Deno.env.get("SMTP_USERNAME");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
 
+    // Determine language based on form data
+    // If a form is submitted from an English page, we'll expect a "language" field to be set to "en"
+    const language = formData.language || "de"; // Default to German if not specified
+    
+    console.log(`Processing form submission in language: ${language}`);
+
     const client = new SMTPClient({
       connection: {
         hostname: "smtp.mailbox.org",
@@ -29,14 +35,14 @@ serve(async (req) => {
       }
     });
 
-    const firstName = formData.name?.split(" ")[0] || "Interessent";
-    await sendAdminEmail(client, formData, smtpUsername);
-    await sendUserEmail(client, formData.email, firstName, smtpUsername);
+    const firstName = formData.name?.split(" ")[0] || (language === "en" ? "Customer" : "Interessent");
+    await sendAdminEmail(client, formData, smtpUsername, language);
+    await sendUserEmail(client, formData.email, firstName, smtpUsername, language);
     await client.close();
 
     return new Response(JSON.stringify({
       success: true,
-      message: "E-Mails erfolgreich versendet"
+      message: language === "en" ? "Emails sent successfully" : "E-Mails erfolgreich versendet"
     }), {
       headers: {
         "Content-Type": "application/json",
@@ -44,10 +50,10 @@ serve(async (req) => {
       }
     });
   } catch (error) {
-    console.error("Fehler beim E-Mail-Versand:", error);
+    console.error("Error sending emails:", error);
     return new Response(JSON.stringify({
       success: false,
-      message: error.message || "Unbekannter Fehler"
+      message: error.message || "Unknown error"
     }), {
       status: 500,
       headers: {
@@ -74,7 +80,7 @@ function sanitizeText(text) {
     });
 }
 
-async function sendAdminEmail(client, data, smtpUsername) {
+async function sendAdminEmail(client, data, smtpUsername, language) {
   // Sanitize all text fields
   const sanitizedData = {};
   for (const key in data) {
@@ -84,28 +90,65 @@ async function sendAdminEmail(client, data, smtpUsername) {
       sanitizedData[key] = data[key];
     }
   }
+
+  // Different labels and content based on language
+  const labels = language === "en" 
+    ? {
+        projectType: "Project Type",
+        companyName: "Company",
+        industry: "Industry",
+        websiteUrl: "Website",
+        location: "Location",
+        goal: "Main Goal",
+        name: "Name",
+        email: "Email",
+        phone: "Phone",
+        message: "Message",
+        notSpecified: "Not specified",
+        noMessage: "No message left",
+        subject: "📥 New Project Inquiry via ooliv.de",
+        title: "New Project Inquiry",
+        footer: `This email was sent automatically.\n© ${new Date().getFullYear()} ooliv`
+      }
+    : {
+        projectType: "Projekttyp",
+        companyName: "Unternehmen", 
+        industry: "Branche",
+        websiteUrl: "Website",
+        location: "Standort",
+        goal: "Hauptziel",
+        name: "Name",
+        email: "E-Mail",
+        phone: "Telefon",
+        message: "Nachricht",
+        notSpecified: "Nicht angegeben",
+        noMessage: "Keine Nachricht hinterlassen",
+        subject: "📥 Neue Projektanfrage über ooliv.de",
+        title: "Neue Projektanfrage",
+        footer: `Diese E-Mail wurde automatisch gesendet.\n© ${new Date().getFullYear()} ooliv`
+      };
   
   const rows = [
-    { label: "Projekttyp", value: sanitizedData.projectType },
-    { label: "Unternehmen", value: sanitizedData.companyName },
-    { label: "Branche", value: sanitizedData.industry },
-    { label: "Website", value: sanitizedData.websiteUrl || "Nicht angegeben" },
-    { label: "Standort", value: sanitizedData.location || "Nicht angegeben" },
-    { label: "Hauptziel", value: sanitizedData.goal },
-    { label: "Name", value: sanitizedData.name },
-    { label: "E-Mail", value: sanitizedData.email },
-    { label: "Telefon", value: sanitizedData.phone || "Nicht angegeben" },
-    { label: "Nachricht", value: sanitizedData.message || "Keine Nachricht hinterlassen" }
+    { label: labels.projectType, value: sanitizedData.projectType },
+    { label: labels.companyName, value: sanitizedData.companyName },
+    { label: labels.industry, value: sanitizedData.industry },
+    { label: labels.websiteUrl, value: sanitizedData.websiteUrl || labels.notSpecified },
+    { label: labels.location, value: sanitizedData.location || labels.notSpecified },
+    { label: labels.goal, value: sanitizedData.goal },
+    { label: labels.name, value: sanitizedData.name },
+    { label: labels.email, value: sanitizedData.email },
+    { label: labels.phone, value: sanitizedData.phone || labels.notSpecified },
+    { label: labels.message, value: sanitizedData.message || labels.noMessage }
   ];
 
-  const htmlContent = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Neue Projektanfrage über ooliv.de – alle Details im Überblick.</div><h1 style="color: #006064;">Neue Projektanfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><table style="width: 100%; border-collapse: collapse;">${rows.map((row) => `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:bold;width:150px;">${row.label}:</td><td style="padding:10px;border-bottom:1px solid #eee;">${row.value}</td></tr>`).join("")}</table></div><p style="font-size: 14px; color: #777;">Diese E-Mail wurde automatisch gesendet.<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
+  const htmlContent = `<!DOCTYPE html><html lang="${language}"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">${language === "en" ? "New project inquiry via ooliv.de – all details in overview." : "Neue Projektanfrage über ooliv.de – alle Details im Überblick."}</div><h1 style="color: #006064;">${labels.title}</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><table style="width: 100%; border-collapse: collapse;">${rows.map((row) => `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:bold;width:150px;">${row.label}:</td><td style="padding:10px;border-bottom:1px solid #eee;">${row.value}</td></tr>`).join("")}</table></div><p style="font-size: 14px; color: #777;">${language === "en" ? "This email was sent automatically." : "Diese E-Mail wurde automatisch gesendet."}<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
 
-  const textContent = rows.map((r) => `${r.label}: ${r.value}`).join("\n") + `\n\nDiese E-Mail wurde automatisch gesendet.\n© ${new Date().getFullYear()} ooliv`;
+  const textContent = rows.map((r) => `${r.label}: ${r.value}`).join("\n") + `\n\n${labels.footer}`;
 
   await client.send({
     from: "info@ooliv.de",
     to: smtpUsername,
-    subject: "📥 Neue Projektanfrage über ooliv.de",
+    subject: labels.subject,
     html: htmlContent,
     text: textContent,
     encoding: "8bit",
@@ -115,20 +158,38 @@ async function sendAdminEmail(client, data, smtpUsername) {
   });
 }
 
-async function sendUserEmail(client, email, firstName, smtpUsername) {
-  const html = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Vielen Dank für Ihre Anfrage – wir melden uns zeitnah bei Ihnen.</div><h1 style="color: #006064;">Vielen Dank für Ihre Anfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Guten Tag ${firstName},</p><p>vielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.</p><p>Sie erreichen uns auch direkt unter <a href="mailto:${smtpUsername}">${smtpUsername}</a> oder telefonisch unter +49 176 80 16 76 41.</p><p style="margin-top: 30px;"><a href="https://ooliv.de" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Mehr über ooliv erfahren</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
-
-  const text = `Guten Tag ${firstName},\n\nvielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.\n\nKontakt: ${smtpUsername}\nTelefon: 06131 – 63 67 801\n\nMehr über ooliv: https://ooliv.de\n\n© ${new Date().getFullYear()} ooliv`;
-
-  await client.send({
-    from: "info@ooliv.de",
-    to: email,
-    subject: "✅ Vielen Dank für Ihre Anfrage bei ooliv",
-    html,
-    text,
-    encoding: "8bit",
-    contentType: "text/html; charset=utf-8",
-    textEncoding: "8bit",
-    textContentType: "text/plain; charset=utf-8"
-  });
+async function sendUserEmail(client, email, firstName, smtpUsername, language) {
+  // Email content based on language
+  if (language === "en") {
+    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Thank you for your inquiry – we'll get back to you soon.</div><h1 style="color: #006064;">Thank you for your inquiry</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Hello ${firstName},</p><p>Thank you for your message – we will get back to you shortly.</p><p>You can also reach us directly at <a href="mailto:${smtpUsername}">${smtpUsername}</a> or by phone at +49 176 80 16 76 41.</p><p style="margin-top: 30px;"><a href="https://ooliv.de/en" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Learn more about ooliv</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
+    const text = `Hello ${firstName},\n\nThank you for your message – we will get back to you shortly.\n\nContact: ${smtpUsername}\nPhone: +49 176 80 16 76 41\n\nLearn more about ooliv: https://ooliv.de/en\n\n© ${new Date().getFullYear()} ooliv`;
+    
+    await client.send({
+      from: "info@ooliv.de",
+      to: email,
+      subject: "✅ Thank you for your inquiry at ooliv",
+      html,
+      text,
+      encoding: "8bit",
+      contentType: "text/html; charset=utf-8",
+      textEncoding: "8bit",
+      textContentType: "text/plain; charset=utf-8"
+    });
+  } else {
+    // German email (existing template)
+    const html = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Vielen Dank für Ihre Anfrage – wir melden uns zeitnah bei Ihnen.</div><h1 style="color: #006064;">Vielen Dank für Ihre Anfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Guten Tag ${firstName},</p><p>vielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.</p><p>Sie erreichen uns auch direkt unter <a href="mailto:${smtpUsername}">${smtpUsername}</a> oder telefonisch unter +49 176 80 16 76 41.</p><p style="margin-top: 30px;"><a href="https://ooliv.de" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Mehr über ooliv erfahren</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
+    const text = `Guten Tag ${firstName},\n\nvielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.\n\nKontakt: ${smtpUsername}\nTelefon: +49 176 80 16 76 41\n\nMehr über ooliv: https://ooliv.de\n\n© ${new Date().getFullYear()} ooliv`;
+    
+    await client.send({
+      from: "info@ooliv.de",
+      to: email,
+      subject: "✅ Vielen Dank für Ihre Anfrage bei ooliv",
+      html,
+      text,
+      encoding: "8bit",
+      contentType: "text/html; charset=utf-8",
+      textEncoding: "8bit",
+      textContentType: "text/plain; charset=utf-8"
+    });
+  }
 }

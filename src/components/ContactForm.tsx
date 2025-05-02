@@ -154,11 +154,13 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         websiteUrl: '',
         location: '',
         goal: sanitizeInput(formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration')),
-        phone: ''
+        phone: '',
+        language: language // Add language parameter
       };
       
       const headers = getSupabaseHeaders();
       console.log("ContactForm - Headers being sent:", headers);
+      console.log("ContactForm - Sending form with language:", language);
       
       const response = await fetch(SEND_PROJECT_FORM_URL, {
         method: "POST",
