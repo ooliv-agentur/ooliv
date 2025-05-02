@@ -1,5 +1,8 @@
 
 import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const TeamTeaserDE = () => {
   const teamMembers = [
@@ -25,7 +28,7 @@ const TeamTeaserDE = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto mb-12">
           {teamMembers.map((member, index) => (
             <div 
               key={index} 
@@ -46,6 +49,15 @@ const TeamTeaserDE = () => {
               <p className="text-brand-text">{member.position}</p>
             </div>
           ))}
+        </div>
+        
+        <div className="flex justify-center">
+          <Button variant="outline" size="lg" className="group" asChild>
+            <Link to="/ueber-ooliv">
+              Das gesamte Team kennenlernen
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
