@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,33 @@ import { Link } from "react-router-dom";
 import { CheckCircle } from 'lucide-react';
 import ConfettiCelebration from '@/components/ConfettiCelebration';
 import { motion } from "framer-motion";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Danke = () => {
+  const { setLanguage } = useLanguage();
+  
+  useEffect(() => {
+    setLanguage('de');
+    
+    // Auto-redirect after 8 seconds
+    const redirectTimeout = setTimeout(() => {
+      // Apply fade-out effect to the content
+      const content = document.querySelector('.thank-you-content');
+      if (content) {
+        content.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
+      }
+      
+      // Wait for the fade animation to complete before redirecting
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 1000);
+    }, 8000);
+    
+    return () => {
+      clearTimeout(redirectTimeout);
+    };
+  }, [setLanguage]);
+
   // Create a nice entrance effect for the content
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +59,7 @@ const Danke = () => {
       <Helmet>
         <title>Danke für Ihre Anfrage | ooliv</title>
         <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       
       {/* Add the confetti animation */}
@@ -43,7 +68,7 @@ const Danke = () => {
       <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
         <div className="container px-4">
           <motion.div 
-            className="max-w-[720px] mx-auto text-center"
+            className="max-w-[720px] mx-auto text-center thank-you-content"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

@@ -98,8 +98,8 @@ export const useFormSubmission = (
 
       // Add a small delay to ensure the toast is visible before redirecting
       setTimeout(() => {
-        // Redirect to thank you page after successful submission
-        window.location.href = "/danke";
+        // Redirect to appropriate thank you page based on language
+        window.location.href = language === 'de' ? "/danke" : "/en/thank-you";
       }, 1000);
       
     } catch (error: any) {

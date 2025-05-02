@@ -1,3 +1,7 @@
+
 User-agent: *
 Allow: /
+Disallow: /danke
+Disallow: /en/thank-you
 Sitemap: https://ooliv.de/sitemap.xml
+

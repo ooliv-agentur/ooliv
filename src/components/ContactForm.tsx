@@ -186,8 +186,9 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         className: "bg-[#004d51] text-white border-[#006064]",
       });
 
+      // Redirect based on the current language
       setTimeout(() => {
-        window.location.href = "/danke";
+        window.location.href = language === 'de' ? "/danke" : "/en/thank-you";
       }, 1000);
     } catch (error: any) {
       console.error("Error submitting form:", error);
