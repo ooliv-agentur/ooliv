@@ -1,11 +1,10 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import EnglishAboutSection from "@/components/en/EnglishAboutSection";
 import EnglishTeamTeaser from "@/components/en/EnglishTeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import Solution from "@/components/Solution";
+import EnglishSolutionSection from "@/components/en/EnglishSolutionSection";
 import TechnologiesSection from "@/components/en/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
@@ -73,11 +72,7 @@ const EnglishIndex = () => {
           </div>
         </div>
         
-        <Solution 
-          title="We Create Websites That Elevate Your Business—"
-          subtitle="With Strategy, Expertise & Smart Technology"
-          description="Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences."
-        />
+        <EnglishSolutionSection />
         
         <TechnologiesSection />
         

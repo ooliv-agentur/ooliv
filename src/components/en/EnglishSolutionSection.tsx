@@ -1,0 +1,38 @@
+
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+
+const EnglishSolutionSection = () => {
+  return (
+    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-6 text-brand-heading">
+            We develop websites that drive your business forward – with strategy, expertise and technology.
+          </h2>
+          <p className="text-xl text-brand-text max-w-3xl mx-auto">
+            Our services include: 
+            <Link to="/en/web-design" className="text-brand-primary hover:underline"> Web Design</Link>, 
+            <Link to="/en/web-development" className="text-brand-primary hover:underline"> Web Development</Link>, 
+            <Link to="/en/content-creation" className="text-brand-primary hover:underline"> Content Creation</Link>, 
+            <Link to="/en/seo" className="text-brand-primary hover:underline"> SEO Optimization</Link>, 
+            <Link to="/en/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> and 
+            <Link to="/en/ai-technologies" className="text-brand-primary hover:underline"> AI Technologies</Link>.
+          </p>
+          <div className="mt-8">
+            <Button variant="outline" className="group" asChild>
+              <Link to="/en/about-ooliv">
+                Learn more about our process
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default EnglishSolutionSection;
