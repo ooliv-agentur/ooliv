@@ -1,114 +1,62 @@
 
 import React, { useEffect } from 'react';
-import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { CheckCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import ConfettiCelebration from '@/components/ConfettiCelebration';
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
+import { ConfettiCelebration } from "@/components/ConfettiCelebration";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const EnglishThankYou = () => {
+const ThankYouPage = () => {
+  const navigate = useNavigate();
   const { setLanguage } = useLanguage();
   
+  // Set language to English when the component mounts
   useEffect(() => {
     setLanguage('en');
     
-    // Auto-redirect after 8 seconds
-    const redirectTimeout = setTimeout(() => {
-      // Apply fade-out effect to the content
-      const content = document.querySelector('.thank-you-content');
-      if (content) {
-        content.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
-      }
-      
-      // Wait for the fade animation to complete before redirecting
-      setTimeout(() => {
-        window.location.href = '/en';
-      }, 1000);
+    // Setup automatic redirect after 8 seconds
+    const redirectTimer = setTimeout(() => {
+      navigate('/en', { replace: true });
     }, 8000);
     
-    return () => {
-      clearTimeout(redirectTimeout);
-    };
-  }, [setLanguage]);
-
-  // Create a nice entrance effect for the content
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
+    return () => clearTimeout(redirectTimer);
+  }, [setLanguage, navigate]);
   
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
-    <PageLayout>
+    <>
       <Helmet>
-        <title>Thank You For Your Inquiry | ooliv</title>
-        <meta name="description" content="Thank you for your message! We'll get back to you shortly – ooliv, your marketing agency from Mainz." />
+        <title>Thank you for your inquiry | ooliv digital agency Mainz</title>
+        <meta name="description" content="Thanks for contacting ooliv. We've received your message and will get back to you shortly." />
         <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://ooliv.de/en/thank-you" />
       </Helmet>
       
-      {/* Add the confetti animation */}
       <ConfettiCelebration />
       
-      <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
-        <div className="container px-4">
-          <motion.div 
-            className="max-w-[720px] mx-auto text-center thank-you-content"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#0c2036] to-[#1a2630] px-4 py-16">
+        <div className="max-w-md w-full bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-xl p-8 text-center text-white border border-white/10">
+          <h1 className="text-3xl font-bold mb-6">Thank you for your inquiry!</h1>
+          
+          <p className="text-lg text-white/90 mb-8">
+            We have received your information and will get back to you as soon as possible. 
+            If you have any questions in the meantime, feel free to contact us at <a href="mailto:info@ooliv.de" className="text-[#4fd1ca] hover:underline">info@ooliv.de</a>.
+          </p>
+          
+          <Button 
+            onClick={() => navigate('/en')} 
+            className="bg-[#006064] hover:bg-[#004d51] text-white px-8 py-6 text-lg"
+            size="lg"
           >
-            <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-              <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-[#004d51]" />
-              </div>
-            </motion.div>
-            
-            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading" variants={itemVariants}>
-              Thank you for your inquiry!
-            </motion.h1>
-            
-            <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
-              We have received your information and will get back to you as soon as possible. 
-              If you have any questions in the meantime, feel free to contact us at{' '}
-              <a 
-                href="mailto:info@ooliv.de" 
-                className="text-[#004d51] hover:underline"
-              >
-                info@ooliv.de
-              </a>.
-            </motion.p>
-            
-            <motion.div variants={itemVariants}>
-              <Button 
-                asChild
-                className="bg-[#004d51] hover:bg-[#003d41]"
-              >
-                <Link to="/en">
-                  Back to Homepage
-                </Link>
-              </Button>
-            </motion.div>
-          </motion.div>
+            Back to Homepage
+          </Button>
+          
+          <p className="text-white/60 mt-8">
+            Redirecting to homepage in a few seconds...
+          </p>
         </div>
       </div>
-    </PageLayout>
+    </>
   );
 };
 
-export default EnglishThankYou;
+export default ThankYouPage;
