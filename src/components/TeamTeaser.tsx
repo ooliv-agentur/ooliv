@@ -111,7 +111,7 @@ const TeamTeaser = () => {
         <div className="flex justify-center">
           <Button variant="outline" size="lg" className="group" asChild>
             <Link to={aboutPath}>
-              {language === 'de' ? "Komplettes Team kennenlernen" : "Meet the full team"}
+              {language === 'de' ? "Das gesamte Team kennenlernen" : "Meet the full team"}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
