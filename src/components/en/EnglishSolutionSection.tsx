@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const EnglishSolutionSection = () => {
@@ -21,14 +19,6 @@ const EnglishSolutionSection = () => {
             <Link to="/en/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> and 
             <Link to="/en/ai-technologies" className="text-brand-primary hover:underline"> AI Technologies</Link>.
           </p>
-          <div className="mt-8">
-            <Button variant="outline" className="group" asChild>
-              <Link to="/en/about-ooliv">
-                Learn more about our process
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </div>
     </section>
