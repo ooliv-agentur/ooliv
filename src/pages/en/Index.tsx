@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import EnglishAboutSection from "@/components/en/EnglishAboutSection";
-import TeamTeaser from "@/components/TeamTeaser";
+import EnglishTeamTeaser from "@/components/en/EnglishTeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import Solution from "@/components/Solution";
 import TechnologiesSection from "@/components/en/TechnologiesSection";
@@ -61,7 +61,7 @@ const EnglishIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero isHomepage={true} />
         <EnglishAboutSection />
-        <TeamTeaser />
+        <EnglishTeamTeaser />
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,8 +74,8 @@ const EnglishIndex = () => {
         </div>
         
         <Solution 
-          title="We Build Websites That Move Your Business Forward—"
-          subtitle="With Strategy, Expertise & Intelligent Technology"
+          title="We Create Websites That Elevate Your Business—"
+          subtitle="With Strategy, Expertise & Smart Technology"
           description="Whether you're launching a new business or upgrading an outdated website, our expert team combines strategic thinking, user-focused design, and cutting-edge tools to create high-performance digital experiences."
         />
         
