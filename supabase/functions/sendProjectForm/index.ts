@@ -148,6 +148,7 @@ async function sendAdminEmail(client, data, smtpUsername, language) {
   await client.send({
     from: "info@ooliv.de",
     to: smtpUsername,
+    replyTo: sanitizedData.email, // Set reply-to to the user's email for faster replies
     subject: labels.subject,
     html: htmlContent,
     text: textContent,
@@ -159,10 +160,13 @@ async function sendAdminEmail(client, data, smtpUsername, language) {
 }
 
 async function sendUserEmail(client, email, firstName, smtpUsername, language) {
+  // Use the correct phone number based on language
+  const phoneNumber = language === "en" ? "+49 6131 – 63 67 801" : "06131 – 63 67 801";
+  
   // Email content based on language
   if (language === "en") {
-    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Thank you for your inquiry – we'll get back to you soon.</div><h1 style="color: #006064;">Thank you for your inquiry</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Hello ${firstName},</p><p>Thank you for your message – we will get back to you shortly.</p><p>You can also reach us directly at <a href="mailto:${smtpUsername}">${smtpUsername}</a> or by phone at +49 176 80 16 76 41.</p><p style="margin-top: 30px;"><a href="https://ooliv.de/en" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Learn more about ooliv</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
-    const text = `Hello ${firstName},\n\nThank you for your message – we will get back to you shortly.\n\nContact: ${smtpUsername}\nPhone: +49 176 80 16 76 41\n\nLearn more about ooliv: https://ooliv.de/en\n\n© ${new Date().getFullYear()} ooliv`;
+    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Thank you for your inquiry – we'll get back to you soon.</div><h1 style="color: #006064;">Thank you for your inquiry</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Hello ${firstName},</p><p>Thank you for your message – we will get back to you shortly.</p><p>You can also reach us directly at <a href="mailto:${smtpUsername}">${smtpUsername}</a> or by phone at ${phoneNumber}.</p><p style="margin-top: 30px;"><a href="https://ooliv.de/en" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Learn more about ooliv</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
+    const text = `Hello ${firstName},\n\nThank you for your message – we will get back to you shortly.\n\nContact: ${smtpUsername}\nPhone: ${phoneNumber}\n\nLearn more about ooliv: https://ooliv.de/en\n\n© ${new Date().getFullYear()} ooliv`;
     
     await client.send({
       from: "info@ooliv.de",
@@ -176,9 +180,9 @@ async function sendUserEmail(client, email, firstName, smtpUsername, language) {
       textContentType: "text/plain; charset=utf-8"
     });
   } else {
-    // German email (existing template)
-    const html = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Vielen Dank für Ihre Anfrage – wir melden uns zeitnah bei Ihnen.</div><h1 style="color: #006064;">Vielen Dank für Ihre Anfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Guten Tag ${firstName},</p><p>vielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.</p><p>Sie erreichen uns auch direkt unter <a href="mailto:${smtpUsername}">${smtpUsername}</a> oder telefonisch unter +49 176 80 16 76 41.</p><p style="margin-top: 30px;"><a href="https://ooliv.de" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Mehr über ooliv erfahren</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
-    const text = `Guten Tag ${firstName},\n\nvielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.\n\nKontakt: ${smtpUsername}\nTelefon: +49 176 80 16 76 41\n\nMehr über ooliv: https://ooliv.de\n\n© ${new Date().getFullYear()} ooliv`;
+    // German email (updated with correct phone)
+    const html = `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">Vielen Dank für Ihre Anfrage – wir melden uns zeitnah bei Ihnen.</div><h1 style="color: #006064;">Vielen Dank für Ihre Anfrage</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><p>Guten Tag ${firstName},</p><p>vielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.</p><p>Sie erreichen uns auch direkt unter <a href="mailto:${smtpUsername}">${smtpUsername}</a> oder telefonisch unter ${phoneNumber}.</p><p style="margin-top: 30px;"><a href="https://ooliv.de" style="background: #006064; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Mehr über ooliv erfahren</a></p></div><p style="font-size: 14px; color: #777;">ooliv | Mombacher Str. 25 | 55122 Mainz<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
+    const text = `Guten Tag ${firstName},\n\nvielen Dank für Ihre Nachricht – wir melden uns in Kürze bei Ihnen.\n\nKontakt: ${smtpUsername}\nTelefon: ${phoneNumber}\n\nMehr über ooliv: https://ooliv.de\n\n© ${new Date().getFullYear()} ooliv`;
     
     await client.send({
       from: "info@ooliv.de",
