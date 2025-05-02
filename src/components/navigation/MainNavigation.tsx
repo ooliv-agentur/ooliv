@@ -33,9 +33,9 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-50 absolute top-0 left-0 right-0">
+      <nav className="w-full z-50 fixed top-0 left-0 right-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-24 items-center">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link to={language === 'de' ? '/' : '/en'} className="flex items-center" onClick={handleLogoClick}>
@@ -47,12 +47,10 @@ const MainNavigation = () => {
               </Link>
             </div>
             
-            {/* Language Switcher - visible on desktop */}
-            {isDesktop && (
-              <div className="mr-16">
-                <LanguageSwitcher />
-              </div>
-            )}
+            {/* Language Switcher - visible on all devices */}
+            <div className="flex-1 flex justify-end items-center">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </nav>
@@ -60,7 +58,7 @@ const MainNavigation = () => {
       {/* Menu toggle button - fixed position at top right with better spacing */}
       <button 
         className={cn(
-          "fixed top-4 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
           "w-10 h-10 min-w-10 min-h-10"
         )}
         onClick={() => setIsOpen(!isOpen)}
