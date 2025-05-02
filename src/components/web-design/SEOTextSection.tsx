@@ -7,209 +7,209 @@ const SEOTextSection = () => {
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Webdesign Mainz – individuelles Design, strategischer Aufbau, rechtliche Sicherheit</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Web Design Mainz – Custom Design, Strategic Structure, Legal Compliance</h2>
           <p className="my-4">
-            Als Webdesign-Agentur in Mainz entwickeln wir Websites, die nicht nur gut aussehen, sondern funktionieren: technisch, inhaltlich, rechtlich und strategisch. 
-            Unsere Kunden kommen zu uns, wenn Templates nicht mehr reichen, wenn Ladezeiten zu lang sind oder wenn ein Relaunch mehr braucht als nur ein neues Screendesign.
+            As a web design agency in Mainz, we develop websites that not only look good but also function effectively: technically, content-wise, legally, and strategically. 
+            Our clients come to us when templates are no longer sufficient, when loading times are too long, or when a relaunch needs more than just a new screen design.
           </p>
           
           <p className="my-4">
-            Mit einem systematischen Ansatz schaffen wir individuelle Websites, die Ihre Marke sichtbar machen, messbar performen und langfristig wachsen können. 
-            Von der Konzeptvorstellung bis zur technischen Umsetzung liefern wir WordPress-Webdesign-Lösungen, die strukturiert, sicher und suchmaschinenfreundlich sind.
+            With a systematic approach, we create custom websites that make your brand visible, measurably perform, and can grow long-term. 
+            From the concept presentation to technical implementation, we deliver WordPress web design solutions that are structured, secure, and search engine-friendly.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Individuelle Website statt Baukasten – warum Standardlösungen nicht ausreichen</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Custom Website Instead of Templates – Why Standard Solutions Are Not Enough</h3>
           
           <p className="my-4">
-            Viele Unternehmen starten mit Themes oder Baukastensystemen – und scheitern bei Skalierung, Sicherheit oder Markenwirkung. 
-            Unsere Antwort: maßgeschneidertes Webdesign mit Konzept, intuitiver Benutzerführung und sauberem Codeaufbau.
+            Many businesses start with themes or page builders – and fail when it comes to scaling, security, or brand impact. 
+            Our answer: tailor-made web design with concept, intuitive user guidance, and clean code structure.
           </p>
           
-          <p className="my-4">Wir berücksichtigen:</p>
+          <p className="my-4">We consider:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Ihre Markenidentität und Zielgruppe</li>
-            <li>Ihre technischen Anforderungen (z. B. Corporate Website mit CRM-Anbindung)</li>
-            <li>Ihre bestehende Infrastruktur (Hosting, CMS, Domain)</li>
-            <li>Ihre Online-Marketing-Ziele (Leads, Sichtbarkeit, Conversion)</li>
+            <li>Your brand identity and target audience</li>
+            <li>Your technical requirements (e.g., corporate website with CRM integration)</li>
+            <li>Your existing infrastructure (hosting, CMS, domain)</li>
+            <li>Your online marketing goals (leads, visibility, conversion)</li>
           </ul>
           
-          <p className="my-4">Dabei achten wir auf eine durchgängige Designlogik, strukturierte Inhaltsmodelle und vollständige SEO-Integration.</p>
+          <p className="my-4">We focus on consistent design logic, structured content models, and complete SEO integration.</p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Der Webdesign-Prozess: von der Analyse bis zum Launch</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">The Web Design Process: From Analysis to Launch</h3>
           
           <p className="my-4">
-            Unser bewährter Ablauf garantiert einen reibungslosen Projektverlauf – auch bei komplexen Websites, 
-            internationalen Rollouts oder anspruchsvollen SEO-Zielen.
+            Our proven workflow guarantees a smooth project progression – even with complex websites, 
+            international rollouts, or demanding SEO goals.
           </p>
           
-          <p className="my-4">Unser Prozess umfasst:</p>
+          <p className="my-4">Our process includes:</p>
           
           <p className="my-4">
-            <strong>Anamnesegespräch & Recherche- und Planungsphase</strong><br />
-            – Zieldefinition, Ist-Analyse, Projektumfang<br />
-            – Mitbewerberanalyse, Keyword-Recherche, Zielgruppenanalyse
-          </p>
-          
-          <p className="my-4">
-            <strong>Wireframes & Screendesign & Layout</strong><br />
-            – Strukturierung aller Seiten & Navigationspfade<br />
-            – UX-Optimierung, Mobile-First-Ansatz, Conversion-Ziele
+            <strong>Discovery & Research Planning Phase</strong><br />
+            – Goal definition, current state analysis, project scope<br />
+            – Competitor analysis, keyword research, target audience analysis
           </p>
           
           <p className="my-4">
-            <strong>Technische Seite einer Website</strong><br />
-            – CMS-Setup (z. B. WordPress), HTML/CSS, Webentwicklung<br />
-            – Integration von Plugins, Tracking-Tools, Formularen
+            <strong>Wireframes, Screen Design & Layout</strong><br />
+            – Structuring all pages & navigation paths<br />
+            – UX optimization, mobile-first approach, conversion goals
           </p>
           
           <p className="my-4">
-            <strong>Relaunch- und Redesign-Service</strong><br />
-            – Übernahme und Optimierung bestehender Inhalte<br />
-            – Weiterleitungskonzepte, technische Migration
+            <strong>Technical Website Development</strong><br />
+            – CMS setup (e.g., WordPress), HTML/CSS, web development<br />
+            – Integration of plugins, tracking tools, forms
           </p>
           
           <p className="my-4">
-            <strong>Launch & Full Service für Webprojekte</strong><br />
-            – Qualitätssicherung, Ladezeitenprüfung, Responsivität<br />
-            – Optional: Betreuung, Wartung, Weiterentwicklung
+            <strong>Relaunch and Redesign Service</strong><br />
+            – Migration and optimization of existing content<br />
+            – Redirection concepts, technical migration
           </p>
           
-          <p className="my-4">Jede Phase ist dokumentiert, abgestimmt und strukturiert – mit direkter Kommunikation über Basecamp und klaren Timelines.</p>
+          <p className="my-4">
+            <strong>Launch & Full Service for Web Projects</strong><br />
+            – Quality assurance, loading time testing, responsiveness<br />
+            – Optional: support, maintenance, ongoing development
+          </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Webtechnik, CMS & Benutzerfreundlichkeit</h3>
+          <p className="my-4">Each phase is documented, aligned, and structured – with direct communication via Basecamp and clear timelines.</p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Web Technology, CMS & User-Friendliness</h3>
           
           <p className="my-4">
-            Wir arbeiten mit zeitgemäßer Webtechnik, die skalierbar, wartbar und zukunftssicher ist. 
-            Ob Sie auf WordPress, TYPO3 oder ein individuelles HTML-Setup setzen – wir entwickeln CMS-basierte Websites, 
-            die Inhalte einfach aktualisieren, strukturieren und erweitern lassen.
+            We work with contemporary web technology that is scalable, maintainable, and future-proof. 
+            Whether you rely on WordPress, TYPO3, or a custom HTML setup – we develop CMS-based websites 
+            that make it easy to update, structure, and extend content.
           </p>
           
           <p className="my-4">Highlights:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Intuitives WordPress CMS für Corporate Websites, Landingpages & Portale</li>
-            <li>Integration mit Joomla oder TYPO3, wenn projektspezifisch sinnvoll</li>
-            <li>Strukturierte Inhaltsmodelle mit klarer Benutzerführung</li>
-            <li>Erstellung und Editieren von Inhalten im Live-Editor</li>
-            <li>Rechtemanagement, Mehrsprachigkeit, Medienverwaltung</li>
+            <li>Intuitive WordPress CMS for corporate websites, landing pages & portals</li>
+            <li>Integration with Joomla or TYPO3 when project-specifically sensible</li>
+            <li>Structured content models with clear user guidance</li>
+            <li>Creation and editing of content in the live editor</li>
+            <li>Rights management, multilingual support, media management</li>
           </ul>
           
-          <p className="my-4">So bleibt Ihre Seite auch nach dem Launch lebendig – ohne laufende Abhängigkeit von Entwicklerteams.</p>
+          <p className="my-4">This keeps your site dynamic even after launch – without ongoing dependence on development teams.</p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Datenschutz, DSGVO und technische Sicherheit</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Data Protection, GDPR and Technical Security</h3>
           
           <p className="my-4">
-            Rechtliche Sicherheit ist nicht verhandelbar. Unsere Weblösungen erfüllen die Anforderungen der DSGVO – vom Schutz personenbezogener Daten 
-            bis zur vollständigen technischen Absicherung.
+            Legal security is non-negotiable. Our web solutions meet GDPR requirements – from protecting personal data 
+            to complete technical security.
           </p>
           
-          <p className="my-4">Unsere Standards:</p>
+          <p className="my-4">Our standards:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Cookie-Banner mit aktiver Einwilligung (Consent Management)</li>
-            <li>SSL-Verschlüsselung und Hosting in der EU</li>
-            <li>Sicheres Kontaktformular mit Double Opt-in</li>
-            <li>Datenschutzerklärung, Impressum, Opt-Out-Logik</li>
-            <li>Barrierearme Gestaltung für mehr Zugänglichkeit</li>
+            <li>Cookie banner with active consent management</li>
+            <li>SSL encryption and EU-based hosting</li>
+            <li>Secure contact form with double opt-in</li>
+            <li>Privacy policy, imprint, opt-out logic</li>
+            <li>Barrier-free design for greater accessibility</li>
           </ul>
           
-          <p className="my-4">So schützen Sie Ihre Besucher und Ihre Marke – ganz ohne Kompromisse beim Design.</p>
+          <p className="my-4">This protects your visitors and your brand – without compromising on design.</p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO & Online-Marketing: Sichtbarkeit als Strategie</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO & Online Marketing: Visibility as a Strategy</h3>
           
           <p className="my-4">
-            Jede Website ist nur so gut wie ihre Auffindbarkeit. Deshalb gehört Suchmaschinenoptimierung (SEO) bei uns zum Webdesign-Prozess – 
-            ergänzt durch Maßnahmen im Online-Marketing.
+            A website is only as good as its findability. That's why search engine optimization (SEO) is part of our web design process – 
+            complemented by online marketing measures.
           </p>
           
-          <p className="my-4">Unsere SEO-Strategie:</p>
+          <p className="my-4">Our SEO strategy:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Keyword-Strategie auf Basis von Suchvolumen & Wettbewerb</li>
-            <li>OnPage-Optimierung: Titles, Meta, H1-H6, ALT-Texte</li>
-            <li>Technisches SEO: Pagespeed, Crawling, saubere URL-Struktur</li>
-            <li>Lokale SEO: für regionale Sichtbarkeit (z. B. „Webdesign Mainz")</li>
-            <li>Linkaufbau & Content Seeding nach dem Launch</li>
-            <li>Erweiterbar durch: Google-AdWords (SEM) & Performance-Kampagnen</li>
+            <li>Keyword strategy based on search volume & competition</li>
+            <li>OnPage optimization: titles, meta, H1-H6, ALT texts</li>
+            <li>Technical SEO: page speed, crawling, clean URL structure</li>
+            <li>Local SEO: for regional visibility (e.g., "Web Design Mainz")</li>
+            <li>Link building & content seeding after launch</li>
+            <li>Expandable through: Google AdWords (SEM) & performance campaigns</li>
           </ul>
           
-          <p className="my-4">Ob SEO-ready Webseiten, Conversion-Funnel oder datenbasiertes Kampagnen-Setup – wir bauen Websites, die sichtbar sind und bleiben.</p>
+          <p className="my-4">Whether SEO-ready websites, conversion funnels, or data-driven campaign setups – we build websites that are visible and remain so.</p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Referenzen & Kundenstimmen – Projekte, die Ergebnisse liefern</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">References & Client Testimonials – Projects That Deliver Results</h3>
           
           <p className="my-4">
-            Webdesign ist keine Spielwiese – es ist ein strategischer Prozess, der Kompetenz, Struktur und Erfahrung erfordert. 
-            Unsere Kund:innen vertrauen ooliv, weil wir aus Ideen konkrete, messbare Ergebnisse machen. 
-            Von der ersten Beratung über die technische Umsetzung bis zur langfristigen Betreuung stehen wir für Klarheit, Qualität und Wirkung.
+            Web design is not a playground – it's a strategic process that requires expertise, structure, and experience. 
+            Our clients trust ooliv because we turn ideas into concrete, measurable results. 
+            From initial consultation to technical implementation to long-term support, we stand for clarity, quality, and impact.
           </p>
           
           <p className="my-4">
-            Unsere Projekte umfassen Unternehmensseiten, Portale, Shops und Relaunches – für Kunden aus Beratung, Industrie, Tech und Handel. 
-            Dabei verzichten wir bewusst auf Fertig-Templates: Jedes Projekt basiert auf einer individuellen Strategie, passenden Themes, 
-            maßgeschneiderten Strukturen und einem klaren Projektumfang.
+            Our projects include corporate websites, portals, shops, and relaunches – for clients in consulting, industry, tech, and retail. 
+            We deliberately avoid ready-made templates: Each project is based on an individual strategy, appropriate themes, 
+            customized structures, and a clear project scope.
           </p>
           
-          <p className="my-4">Auswahl realisierter Kundenprojekte:</p>
+          <p className="my-4">Selection of completed client projects:</p>
           
           <p className="my-6">
-            <strong>Klaiber Steuerberatung</strong><br />
-            <em className="block mt-2">"Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. 
-            Die Zusammenarbeit mit ooliv war strukturiert und zielführend."</em><br />
-            Website live erleben: <a href="https://www.kl-klaiber.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.kl-klaiber.de</a>
+            <strong>Klaiber Tax Consulting</strong><br />
+            <em className="block mt-2">"Our new website finally represents what defines us as consultants: clarity, trust, and dynamism. 
+            Working with ooliv was structured and goal-oriented."</em><br />
+            Experience the website live: <a href="https://www.kl-klaiber.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.kl-klaiber.de</a>
           </p>
           
           <p className="my-6">
             <strong>COBUS Industries</strong><br />
-            <em className="block mt-2">"Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit war strukturiert, kreativ und zielorientiert."</em><br />
-            Website live erleben: <a href="https://www.cobus-industries.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.cobus-industries.de</a>
+            <em className="block mt-2">"Our new website combines technology, service, and brand standards. The collaboration was structured, creative, and goal-oriented."</em><br />
+            Experience the website live: <a href="https://www.cobus-industries.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.cobus-industries.de</a>
           </p>
           
           <p className="my-6">
             <strong>SPEZ AG</strong><br />
-            <em className="block mt-2">"Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen."</em><br />
-            Website live erleben: <a href="https://www.spez-ag.ch" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.spez-ag.ch</a>
+            <em className="block mt-2">"With ooliv, we were able to make SPEZ visible. The new brand convinces technically and emotionally – and has been consistently generating qualified inquiries since the launch."</em><br />
+            Experience the website live: <a href="https://www.spez-ag.ch" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.spez-ag.ch</a>
           </p>
           
           <p className="my-6">
             <strong>IconPro GmbH</strong><br />
-            <em className="block mt-2">"Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend."</em><br />
-            Website live erleben: <a href="https://www.iconpro.com" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.iconpro.com</a>
+            <em className="block mt-2">"Thanks to ooliv, our website now has the same effect as our software: well thought-out, structured, and visually convincing."</em><br />
+            Experience the website live: <a href="https://www.iconpro.com" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.iconpro.com</a>
           </p>
           
           <p className="my-6">
             <strong>Quartier am Kliff</strong><br />
-            <em className="block mt-2">"Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb."</em><br />
-            Website live erleben: <a href="https://www.amkliff.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.amkliff.de</a>
+            <em className="block mt-2">"With ooliv, we've created a project that convincingly showcases our architecture, location, and vision in digital form. The site actively supports our sales."</em><br />
+            Experience the website live: <a href="https://www.amkliff.de" target="_blank" rel="noopener noreferrer" className="text-brand-primary hover:underline">www.amkliff.de</a>
           </p>
           
-          <p className="my-4">Unsere Expertise:</p>
+          <p className="my-4">Our expertise:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Projektberatung mit klarem Ablauf – vom Kick-off bis zum GoLive</li>
-            <li>Betreuung nach dem Launch – technisch, strategisch und redaktionell</li>
-            <li>Erfahrung aus über 100 Webprojekten – mit Fokus auf B2B und erklärungsbedürftige Produkte</li>
-            <li>Transparente Kommunikation – direkt über Basecamp und persönliche Ansprechpartner</li>
+            <li>Project consulting with a clear process – from kick-off to go-live</li>
+            <li>Support after launch – technical, strategic, and editorial</li>
+            <li>Experience from over 100 web projects – focusing on B2B and products requiring explanation</li>
+            <li>Transparent communication – directly via Basecamp and personal contacts</li>
           </ul>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Fazit: Webdesign Mainz mit Tiefe, Struktur und Wirkung</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusion: Web Design Mainz with Depth, Structure, and Impact</h3>
           
           <p className="my-4">
-            Unsere Kunden erhalten kein Theme, sondern ein System. Kein Bauchgefühl, sondern eine Strategie. 
-            Kein One-Size-Fits-All, sondern individuelles Webdesign mit messbarem Effekt.
+            Our clients receive not just a theme, but a system. Not gut feelings, but a strategy. 
+            Not one-size-fits-all, but individual web design with measurable effects.
           </p>
           
-          <p className="my-4">Mit ooliv profitieren Sie von:</p>
+          <p className="my-4">With ooliv, you benefit from:</p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>maßgeschneiderten Webdesign-Lösungen, die technisch und rechtlich sauber sind</li>
-            <li>einem strukturierten Projektablauf mit klarer Betreuung</li>
-            <li>CMS-Systemen, die Sie selbst pflegen können</li>
-            <li>einer SEO-Strategie, die auf Sichtbarkeit und Conversion einzahlt</li>
-            <li>einem Team, das kreative Ideen mit technischer Tiefe verbindet</li>
+            <li>Tailor-made web design solutions that are technically and legally sound</li>
+            <li>A structured project flow with clear support</li>
+            <li>CMS systems you can maintain yourself</li>
+            <li>An SEO strategy focused on visibility and conversion</li>
+            <li>A team that combines creative ideas with technical depth</li>
           </ul>
           
-          <p className="my-4">Starten wir gemeinsam Ihr Webprojekt – mit Strategie, Struktur und Substanz.</p>
+          <p className="my-4">Let's start your web project together – with strategy, structure, and substance.</p>
         </article>
       </div>
     </section>
@@ -217,4 +217,3 @@ const SEOTextSection = () => {
 };
 
 export default SEOTextSection;
-
