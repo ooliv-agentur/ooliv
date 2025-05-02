@@ -29,6 +29,9 @@ const Footer = () => {
     const translatedPath = pathMap[basePath] || basePath;
     return `${langPrefix}/${translatedPath}`;
   };
+
+  // Phone number with international format for English users
+  const phoneNumber = language === 'de' ? '06131 – 63 67 801' : '+49 6131 – 63 67 801';
   
   return (
     <footer className="bg-brand-footer text-white pt-20 pb-8">
@@ -82,7 +85,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 shrink-0" />
-                <span>06131 – 63 67 801</span>
+                <span>{phoneNumber}</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 shrink-0" />
