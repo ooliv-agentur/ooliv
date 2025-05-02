@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import LanguageSwitcher from './LanguageSwitcher';
 
 const MainNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,29 +32,16 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-50 absolute top-0 left-0 right-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-24 items-center">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link to={language === 'de' ? '/' : '/en'} className="flex items-center" onClick={handleLogoClick}>
-                <img 
-                  src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
-                  alt="ooliv" 
-                  className="h-6 md:h-8 w-auto" 
-                />
-              </Link>
-            </div>
-            
-            {/* Language Switcher - visible on desktop */}
-            {isDesktop && (
-              <div className="mr-16">
-                <LanguageSwitcher />
-              </div>
-            )}
-          </div>
-        </div>
-      </nav>
+      {/* Logo */}
+      <div className="flex-shrink-0">
+        <Link to={language === 'de' ? '/' : '/en'} className="flex items-center" onClick={handleLogoClick}>
+          <img 
+            src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
+            alt="ooliv" 
+            className="h-6 md:h-8 w-auto" 
+          />
+        </Link>
+      </div>
 
       {/* Menu toggle button - fixed position at top right with better spacing */}
       <button 
