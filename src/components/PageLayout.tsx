@@ -33,13 +33,12 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
     <>
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
+        {/* Remove the language attribute setting from PageLayout */}
         {/* Add preconnect for www domain to improve performance during redirect */}
         <link rel="preconnect" href="https://www.ooliv.de" />
       </Helmet>
       <div className={`min-h-screen flex flex-col ${className}`}>
-        <header>
-          <Navbar />
-        </header>
+        <Navbar />
         <main className="flex-grow">
           {children}
         </main>

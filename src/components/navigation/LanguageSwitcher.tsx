@@ -68,9 +68,9 @@ const LanguageSwitcher = () => {
       variant="ghost" 
       size="sm" 
       onClick={toggleLanguage} 
-      className="flex items-center gap-1 font-medium text-[#b1b497] hover:text-white transition-colors group"
+      className="flex items-center gap-1 font-medium text-[#b1b497] hover:text-[#9a9c83] transition-colors"
     >
-      <Globe className="h-4 w-4 group-hover:text-white" />
+      <Globe className="h-4 w-4" />
       <span>{language === 'de' ? 'EN' : 'DE'}</span>
     </Button>
   );
