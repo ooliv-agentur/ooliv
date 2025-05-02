@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
-import { ConfettiCelebration } from "@/components/ConfettiCelebration";
+import ConfettiCelebration from "@/components/ConfettiCelebration";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Danke = () => {
