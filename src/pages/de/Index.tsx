@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
@@ -39,18 +40,22 @@ const germanFaqs = [
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language immediately during render, not in an effect
-  setLanguage('de');
+  // Use useEffect to set language once after component mounts
+  useEffect(() => {
+    setLanguage('de');
+    console.log('GermanIndex component mounted - setting language to German');
+  }, []);
   
   return (
     <>
       <Helmet>
+        {/* Force immediate application of these tags with higher priority */}
+        <html lang="de" />
         <title>Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen</title>
         <meta
           name="description"
           content="ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz."
         />
-        <html lang="de" /> {/* Explicitly set the language attribute for this page */}
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">

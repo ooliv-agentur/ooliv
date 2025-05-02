@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -17,7 +16,6 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
   const canonicalPath = location.pathname === '/' ? '' : location.pathname;
   // Explicitly use non-www version for canonical URLs
   const canonicalUrl = `https://ooliv.de${canonicalPath}`;
-  const { language } = useLanguage();
 
   // Handle www to non-www redirect at the client level
   useEffect(() => {
@@ -35,8 +33,7 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
     <>
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
-        {/* Add language attribute based on current language context */}
-        <html lang={language} />
+        {/* Remove the language attribute setting from PageLayout */}
         {/* Add preconnect for www domain to improve performance during redirect */}
         <link rel="preconnect" href="https://www.ooliv.de" />
       </Helmet>

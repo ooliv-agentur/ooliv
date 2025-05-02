@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import EnglishAboutSection from "@/components/en/EnglishAboutSection";
@@ -17,11 +17,12 @@ import PageHero from '@/components/PageHero';
 const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
   
-  // Set language immediately during render, not in an effect
-  setLanguage('en');
-  
-  // Add a debug console log to verify this component is being rendered
-  console.log('EnglishIndex component rendering - using updated EnglishTeamTeaser with 2 members');
+  // Use useEffect to set language once after component mounts
+  useEffect(() => {
+    setLanguage('en');
+    // Add a more detailed debug console log
+    console.log('EnglishIndex component mounted - setting language to English');
+  }, []);
   
   const simplifiedFaqs = [
     {
@@ -49,12 +50,13 @@ const EnglishIndex = () => {
   return (
     <>
       <Helmet>
+        {/* Force immediate application of these tags with higher priority */}
+        <html lang="en" />
         <title>Web Design Agency Mainz – High-Performance Websites | ooliv</title>
         <meta 
           name="description" 
           content="ooliv creates websites that rank better, convert more, and deliver measurable business success. SEO, webdesign and web development from Mainz." 
         />
-        <html lang="en" />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
         <PageHero isHomepage={true} />

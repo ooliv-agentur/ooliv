@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 
 type Language = 'de' | 'en';
 
@@ -140,7 +141,23 @@ export const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('de');
+  // Get initial language based on URL path
+  const getInitialLanguage = (): Language => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path.startsWith('/en')) {
+        return 'en';
+      }
+    }
+    return 'de'; // Default to German
+  };
+
+  const [language, setLanguage] = useState<Language>(getInitialLanguage());
+
+  // Debug language changes
+  useEffect(() => {
+    console.log('Language context updated:', language);
+  }, [language]);
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;
