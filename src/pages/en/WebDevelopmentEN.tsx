@@ -7,9 +7,9 @@ import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevProcess from '@/components/web-development/WebDevProcessNew';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
-import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
 import WebDevFAQ from '@/components/web-development/WebDevFAQ';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const EnglishWebDevelopment = () => {
@@ -31,7 +31,14 @@ const EnglishWebDevelopment = () => {
       <WebDevCmsVsStatic />
       <WebDevProcess />
       <WebDevServices />
-      <WebDevCaseStudies />
+      
+      {/* Using Global Case Studies Component */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
+      
       <WebDevFAQ />
       <WebDevCTA />
     </PageLayout>
