@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 const CustomCursor = () => {
@@ -11,8 +10,7 @@ const CustomCursor = () => {
     // Check if device is touch-only (mobile/tablet)
     const isTouchDevice = () => {
       return (('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0));
+        (navigator.maxTouchPoints > 0));
     };
     
     // If it's a touch device, don't apply custom cursor
