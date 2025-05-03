@@ -88,16 +88,33 @@ const CustomCursor = () => {
     document.body.style.cursor = 'none';
     
     // Apply "cursor: none" to menu elements and overlays to ensure consistency
-    // Fix: Use valid CSS selectors without brackets for class names
-    document.querySelectorAll('.fixed, .absolute, .z-50').forEach(el => {
+    document.querySelectorAll('.fixed').forEach(el => {
       (el as HTMLElement).style.cursor = 'none';
     });
     
-    // Handle additional z-index classes separately
-    ['z-\\[50\\]', 'z-\\[100\\]', 'z-\\[110\\]', 'z-\\[200\\]'].forEach(className => {
-      document.querySelectorAll(`.${className}`).forEach(el => {
-        (el as HTMLElement).style.cursor = 'none';
-      });
+    document.querySelectorAll('.absolute').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    document.querySelectorAll('.z-50').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    // Apply to specific z-index classes separately
+    document.querySelectorAll('.z-\\[50\\]').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    document.querySelectorAll('.z-\\[100\\]').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    document.querySelectorAll('.z-\\[110\\]').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    document.querySelectorAll('.z-\\[200\\]').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
     });
     
     addEventListeners();

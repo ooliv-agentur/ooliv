@@ -68,9 +68,11 @@ input[type="button"],
 [role="button"],
 .fixed,
 .absolute,
-.z-50,
+.z-50 {
+  cursor: none !important;
+}
+
 /* Apply cursor: none to elements with special z-index classes */
-/* Use proper CSS escape sequences for special characters in class names */
 .z-\[50\],
 .z-\[100\],
 .z-\[110\],
