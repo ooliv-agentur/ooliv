@@ -7,7 +7,6 @@ import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevProcess from '@/components/web-development/WebDevProcessNew';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
-import WebDevFAQ from '@/components/web-development/WebDevFAQ';
 import WebDevCTA from '@/components/web-development/WebDevCTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
