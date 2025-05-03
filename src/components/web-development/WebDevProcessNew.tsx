@@ -7,7 +7,7 @@ const WebDevProcessNew = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">Our Web Development Process</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">Our Web Development Process – From Concept to Launch</h2>
         </div>
 
         <div className="relative">
@@ -24,7 +24,7 @@ const WebDevProcessNew = () => {
                 </div>
                 <h3 className="text-xl font-bold text-brand-heading mb-2">1. Strategy & Setup</h3>
                 <p className="text-brand-text">
-                  Technical goals, platform selection, feature planning – all based on your business model.
+                  Technical goals, platform selection, feature definition – based on your business model.
                 </p>
               </div>
               
@@ -48,7 +48,7 @@ const WebDevProcessNew = () => {
                 </div>
                 <h3 className="text-xl font-bold text-brand-heading mb-2">2. Development</h3>
                 <p className="text-brand-text">
-                  Structured, scalable, SEO-ready code.
+                  Clearly structured code – scalable, SEO-ready, cleanly programmed.
                 </p>
               </div>
               
@@ -69,7 +69,7 @@ const WebDevProcessNew = () => {
                 </div>
                 <h3 className="text-xl font-bold text-brand-heading mb-2">3. CMS or Backend (if needed)</h3>
                 <p className="text-brand-text">
-                  As a WordPress development agency, we offer flexible CMS setups – or we go backend-free for maximum performance.
+                  We set up your CMS so you can manage content flexibly – or we develop a backend-free solution with clean code and maximum performance.
                 </p>
               </div>
               
@@ -91,9 +91,9 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <TestTube className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">4. Testing & QA</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">4. Testing & Quality Assurance</h3>
                 <p className="text-brand-text">
-                  Speed, stability, SEO – across all devices.
+                  Speed, SEO, stability – on all devices.
                 </p>
               </div>
               
@@ -114,7 +114,7 @@ const WebDevProcessNew = () => {
                 </div>
                 <h3 className="text-xl font-bold text-brand-heading mb-2">5. Launch & Support</h3>
                 <p className="text-brand-text">
-                  Go-live with tracking setup, technical support, and ongoing optimization.
+                  Go-live with tracking setup, support & ongoing optimization.
                 </p>
               </div>
               

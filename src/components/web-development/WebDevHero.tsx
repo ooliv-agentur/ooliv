@@ -15,26 +15,17 @@ const WebDevHero = () => {
   return (
     <div className="relative">
       <PageHero
-        badge={isGerman 
-          ? "Webentwicklung" 
-          : "Web Development"
-        }
-        title={isGerman 
-          ? "WordPress Agentur Mainz für skalierbare Unternehmenslösungen" 
-          : "Web Development That Drives Business Growth"
-        }
-        subtitle={isGerman 
-          ? "Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code." 
-          : "Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
-        }
+        badge="Web Development"
+        title="Web Development That Drives Business Growth"
+        subtitle="Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
         primaryCta={{
-          text: isGerman ? "Projekt starten" : "Start Your Project",
+          text: "Start Your Project",
           link: "#",
           onClick: handleStartProject
         }}
         secondaryCta={{
-          text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
-          link: isGerman ? "/de/case-studies" : "/case-studies"
+          text: "View Case Studies",
+          link: "/en/case-studies"
         }}
       />
       <ScrollIndicator />
