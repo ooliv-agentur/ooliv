@@ -1,13 +1,21 @@
 
 import React from 'react';
 import { BarChart2, Code, Database, TestTube, Rocket } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDevProcessNew = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">Our Web Development Process</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">
+            {isGerman 
+              ? "Unser Webentwicklungs-Prozess – von der Idee bis zum Livegang" 
+              : "Our Web Development Process – from Idea to Launch"}
+          </h2>
         </div>
 
         <div className="relative">
@@ -22,9 +30,13 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <BarChart2 className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">1. Strategy & Setup</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">
+                  {isGerman ? "1. Strategie & Setup" : "1. Strategy & Setup"}
+                </h3>
                 <p className="text-brand-text">
-                  Technical goals, platform selection, feature planning – all based on your business model.
+                  {isGerman 
+                    ? "Technische Ziele, Plattformwahl, Feature-Definition – auf Basis Ihres Geschäftsmodells." 
+                    : "Technical goals, platform selection, feature planning – all based on your business model."}
                 </p>
               </div>
               
@@ -46,9 +58,13 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <Code className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">2. Development</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">
+                  {isGerman ? "2. Entwicklung" : "2. Development"}
+                </h3>
                 <p className="text-brand-text">
-                  Structured, scalable, SEO-ready code.
+                  {isGerman 
+                    ? "Klar strukturierter Code – skalierbar, SEO-ready, sauber programmiert." 
+                    : "Structured, scalable, SEO-ready code."}
                 </p>
               </div>
               
@@ -67,9 +83,13 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <Database className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">3. CMS or Backend (if needed)</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">
+                  {isGerman ? "3. CMS oder Backend (wenn nötig)" : "3. CMS or Backend (if needed)"}
+                </h3>
                 <p className="text-brand-text">
-                  As a WordPress development agency, we offer flexible CMS setups – or we go backend-free for maximum performance.
+                  {isGerman 
+                    ? "Als WordPress Agentur in Mainz setzen wir Ihr CMS so auf, dass Sie Inhalte flexibel pflegen können – oder wir entwickeln eine backendfreie Lösung mit klarem Code und maximaler Performance." 
+                    : "As a WordPress development agency, we offer flexible CMS setups – or we go backend-free for maximum performance."}
                 </p>
               </div>
               
@@ -91,9 +111,13 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <TestTube className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">4. Testing & QA</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">
+                  {isGerman ? "4. Testing & Qualitätssicherung" : "4. Testing & QA"}
+                </h3>
                 <p className="text-brand-text">
-                  Speed, stability, SEO – across all devices.
+                  {isGerman 
+                    ? "Speed, SEO, Stabilität – auf allen Geräten." 
+                    : "Speed, stability, SEO – across all devices."}
                 </p>
               </div>
               
@@ -112,9 +136,13 @@ const WebDevProcessNew = () => {
                 <div className="inline-block p-3 rounded-full bg-brand-primary text-white mb-4">
                   <Rocket className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-brand-heading mb-2">5. Launch & Support</h3>
+                <h3 className="text-xl font-bold text-brand-heading mb-2">
+                  {isGerman ? "5. Launch & Betreuung" : "5. Launch & Support"}
+                </h3>
                 <p className="text-brand-text">
-                  Go-live with tracking setup, technical support, and ongoing optimization.
+                  {isGerman 
+                    ? "Go-live mit Setup von Tracking, Support & laufender Optimierung." 
+                    : "Go-live with tracking setup, technical support, and ongoing optimization."}
                 </p>
               </div>
               

@@ -1,109 +1,73 @@
 
 import React from 'react';
-import { Code, Layout, ShoppingBag, Database, Network } from 'lucide-react';
+import { Code, Box, ShoppingCart, Server, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious 
-} from '@/components/ui/carousel';
-
-const services = [
-  {
-    icon: Code,
-    title: 'Custom Code (No CMS)',
-    description: 'HTML, CSS, JS – fast, flexible, and lean'
-  },
-  {
-    icon: Layout,
-    title: 'WordPress Development',
-    description: 'Clean-coded, scalable, and editor-friendly'
-  },
-  {
-    icon: ShoppingBag,
-    title: 'WooCommerce Integration',
-    description: 'Sell products or services directly from your site'
-  },
-  {
-    icon: Database,
-    title: 'API & Feature Integration',
-    description: 'Connect third-party tools or build custom features'
-  },
-  {
-    icon: ShoppingBag,
-    title: 'Shopify (Selected Projects)',
-    description: 'Tailored storefronts for product-first B2B clients'
-  }
-];
 
 const WebDevServices = () => {
   const { language } = useLanguage();
-  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  const isGerman = language === 'de';
+  const contactPath = isGerman ? "/kontakt" : "/en/contact";
+  
+  const services = [
+    {
+      icon: Code,
+      title: isGerman ? "Custom Code (kein CMS)" : "Custom Code (No CMS)",
+      description: isGerman ? "HTML, CSS, JS – schnell, flexibel, wartungsarm" : "HTML, CSS, JS – fast, flexible, low-maintenance"
+    },
+    {
+      icon: Box,
+      title: isGerman ? "WordPress Entwicklung" : "WordPress Development",
+      description: isGerman ? "Sauber programmiert, redaktionell nutzbar, skalierbar" : "Clean-coded, editorially usable, scalable"
+    },
+    {
+      icon: ShoppingCart,
+      title: isGerman ? "WooCommerce Integration" : "WooCommerce Integration",
+      description: isGerman ? "Produkte oder Services direkt integrieren" : "Integrate products or services directly"
+    },
+    {
+      icon: Server,
+      title: isGerman ? "API & Schnittstellen" : "API & Interfaces",
+      description: isGerman ? "Drittanbieter-Tools integrieren, eigene Features entwickeln" : "Integrate third-party tools, develop custom features"
+    },
+    {
+      icon: Gift,
+      title: isGerman ? "Shopify (ausgewählte Projekte)" : "Shopify (Selected Projects)",
+      description: isGerman ? "Für fokussierte B2B-Shops mit klarer Struktur" : "For focused B2B shops with clear structure"
+    }
+  ];
   
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-gradient-to-br from-brand-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          Technologies & Capabilities
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-brand-heading mb-4">
+            {isGerman ? "Technologien & Lösungen" : "Technologies & Solutions"}
+          </h2>
+        </div>
         
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 text-center h-full flex flex-col"
+              className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4">
-                <div className="p-3 rounded-full bg-brand-backgroundAlt inline-flex">
-                  <service.icon className="h-6 w-6 text-brand-primary" />
-                </div>
+              <div className="mb-4 text-brand-primary">
+                <service.icon className="h-10 w-10" />
               </div>
-              <h3 className="text-lg font-bold mb-3 text-brand-heading">
-                {service.title}
-              </h3>
-              <p className="text-brand-text text-sm flex-grow">{service.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-brand-heading">{service.title}</h3>
+              <p className="text-brand-text">{service.description}</p>
             </div>
           ))}
         </div>
         
-        <div className="block md:hidden mb-10">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {services.map((service, index) => (
-                <CarouselItem key={index} className="basis-4/5 sm:basis-1/2">
-                  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center h-full flex flex-col">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-3 rounded-full bg-brand-backgroundAlt inline-flex">
-                        <service.icon className="h-6 w-6 text-brand-primary" />
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 text-brand-heading">
-                      {service.title}
-                    </h3>
-                    <p className="text-brand-text text-sm flex-grow">{service.description}</p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-4">
-              <CarouselPrevious className="mx-2 static" />
-              <CarouselNext className="mx-2 static" />
-            </div>
-          </Carousel>
-        </div>
-        
-        <div className="text-center">
+        <div className="text-center mt-12">
           <p className="text-lg text-brand-text mb-6">
-            <strong>Not sure what fits?</strong> ➔ Let's talk strategy.
+            <strong>{isGerman ? "Nicht sicher, was passt?" : "Not sure what fits?"}</strong> ➝ {isGerman ? "Lassen Sie uns darüber sprechen." : "Let's talk about it."}
           </p>
-          <Button variant="outline" asChild>
-            <Link to={contactPath}>
-              Schedule a Strategy Call
-            </Link>
+          <Button asChild>
+            <Link to={contactPath}>{isGerman ? "Beratungsgespräch vereinbaren" : "Schedule a Strategy Call"}</Link>
           </Button>
         </div>
       </div>
