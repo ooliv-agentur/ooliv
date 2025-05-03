@@ -57,7 +57,7 @@ const GoogleAdsLeadGeneration = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const linkPath = isGerman ? "/kontakt" : "/en/contact";
+  const linkPath = isGerman ? "/de/kontakt" : "/en/contact";
 
   return (
     <section className="py-16 md:py-24 bg-white">

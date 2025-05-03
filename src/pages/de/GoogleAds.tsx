@@ -8,16 +8,10 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import PageHero from '@/components/PageHero';
 import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
+import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -113,59 +107,7 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-brand-backgroundAlt">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Google Ads für B2B – mit Fokus auf Ergebnisse
-            </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Wir nutzen Google Ads zur Lead-Generierung – nicht für Klicks ohne Wirkung.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Search className="h-10 w-10 mb-4 text-brand-primary" />
-              <h3 className="text-xl font-bold mb-4">Suchkampagnen</h3>
-              <p>Ihre Zielgruppe sucht – wir liefern passende Anzeigen: mit Keyword-Targeting, Anzeigenerweiterungen & Conversion-Tracking.</p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Layout className="h-10 w-10 mb-4 text-brand-primary" />
-              <h3 className="text-xl font-bold mb-4">Landingpages</h3>
-              <p>Performance beginnt nach dem Klick: Wir erstellen schnelle, mobileoptimierte Zielseiten mit klarer Botschaft und UX-Fokus.</p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <RefreshCw className="h-10 w-10 mb-4 text-brand-primary" />
-              <h3 className="text-xl font-bold mb-4">Laufende Optimierung</h3>
-              <p>Wir testen, analysieren und verbessern kontinuierlich – für niedrigere Kosten pro Lead und steigende Conversion Rates.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-              Google Ads für messbare Ergebnisse
-            </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Von der Strategie bis zur Optimierung – wir kümmern uns um Ihre Google Ads Performance.
-            </p>
-          </div>
-          
-          <div className="text-center">
-            <Button size="lg" className="group" asChild>
-              <Link to="/de/kontakt">
-                Jetzt Ihre Google Ads Kampagne starten
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <GoogleAdsLeadGeneration />
 
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -263,6 +205,7 @@ const GermanGoogleAds = () => {
         title="Lassen Sie uns Ihre Google Ads messbar machen"
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
+        secondaryCtaLink="/de/kontakt"
       />
 
       <div className="bg-brand-backgroundAlt py-6">
