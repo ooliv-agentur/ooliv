@@ -6,7 +6,7 @@ const SEOApproach = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">⚙️ SEO for Google — and for Your Users</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO for Google — and for Your Users</h2>
         </div>
         
         <div className="max-w-4xl mx-auto bg-brand-background p-8 rounded-lg shadow-sm">

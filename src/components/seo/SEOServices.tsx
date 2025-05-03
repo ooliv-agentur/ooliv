@@ -73,9 +73,9 @@ const SEOServices = () => {
           </div>
         </div>
 
-        {/* AI-powered tools section */}
+        {/* AI-powered tools section - Removed emoji from heading */}
         <div className="mt-16 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold mb-4 text-brand-heading">🧰 Tools That Support — Not Replace — Strategy</h3>
+          <h3 className="text-2xl font-bold mb-4 text-brand-heading">Tools That Support — Not Replace — Strategy</h3>
           <p className="text-brand-text mb-6">
             We use industry-leading tools to enhance our SEO strategies, but our expertise is what delivers results.
           </p>

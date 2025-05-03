@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import SEOHeroDE from '@/components/seo/SEOHeroDE';
@@ -9,8 +10,16 @@ import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
+import { useLanguage } from '@/contexts/LanguageContext';
+import SEOTextSection from '@/components/de/SEOTextSection';
 
 const GermanSEO = () => {
+  const { setLanguage } = useLanguage();
+  
+  useEffect(() => {
+    setLanguage('de');
+  }, [setLanguage]);
+  
   const seoFaqs = [
     {
       question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
@@ -63,6 +72,7 @@ const GermanSEO = () => {
       />
       
       <SEOCtaDE />
+      <SEOTextSection />
     </PageLayout>
   );
 };
