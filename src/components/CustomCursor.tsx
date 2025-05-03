@@ -88,6 +88,7 @@ const CustomCursor = () => {
     document.body.style.cursor = 'none';
     
     // Apply "cursor: none" to menu elements and overlays to ensure consistency
+    // Process each selector type separately to avoid invalid CSS selector errors
     document.querySelectorAll('.fixed').forEach(el => {
       (el as HTMLElement).style.cursor = 'none';
     });
@@ -100,22 +101,26 @@ const CustomCursor = () => {
       (el as HTMLElement).style.cursor = 'none';
     });
     
-    // Apply to specific z-index classes separately
-    document.querySelectorAll('.z-\\[50\\]').forEach(el => {
-      (el as HTMLElement).style.cursor = 'none';
-    });
-    
-    document.querySelectorAll('.z-\\[100\\]').forEach(el => {
-      (el as HTMLElement).style.cursor = 'none';
-    });
-    
-    document.querySelectorAll('.z-\\[110\\]').forEach(el => {
-      (el as HTMLElement).style.cursor = 'none';
-    });
-    
-    document.querySelectorAll('.z-\\[200\\]').forEach(el => {
-      (el as HTMLElement).style.cursor = 'none';
-    });
+    // Apply to specific z-index classes separately with proper escaping
+    try {
+      document.querySelectorAll('.z-\\[50\\]').forEach(el => {
+        (el as HTMLElement).style.cursor = 'none';
+      });
+      
+      document.querySelectorAll('.z-\\[100\\]').forEach(el => {
+        (el as HTMLElement).style.cursor = 'none';
+      });
+      
+      document.querySelectorAll('.z-\\[110\\]').forEach(el => {
+        (el as HTMLElement).style.cursor = 'none';
+      });
+      
+      document.querySelectorAll('.z-\\[200\\]').forEach(el => {
+        (el as HTMLElement).style.cursor = 'none';
+      });
+    } catch (error) {
+      console.warn('Error applying cursor style to bracketed z-index classes:', error);
+    }
     
     addEventListeners();
     return () => {

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, MousePointerClick, LineChart } from 'lucide-react';
+import { Search, Layout, LineChart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -20,7 +20,7 @@ const GoogleAdsLeadGeneration = () => {
           description: "We create ads that appear exactly when your audience is searching. With precise keyword targeting, ad extensions, and conversion tracking."
         },
         {
-          icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
+          icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
           title: "Landing Pages",
           description: "Ads only work when the landing page does. We design high-converting pages with a clear message and strong CTA – optimized for mobile and speed."
         },
@@ -33,7 +33,7 @@ const GoogleAdsLeadGeneration = () => {
       cta: "Let's turn search intent into qualified leads"
     },
     de: {
-      title: "Zielgerichteter Traffic, messbare Ergebnisse",
+      title: "Google Ads für B2B – mit Fokus auf Ergebnisse",
       subtitle: "Wir nutzen Google Ads zur Lead-Generierung – nicht für Klicks ohne Wirkung.",
       features: [
         {
@@ -42,7 +42,7 @@ const GoogleAdsLeadGeneration = () => {
           description: "Ihre Zielgruppe sucht – wir liefern passende Anzeigen: mit Keyword-Targeting, Anzeigenerweiterungen & Conversion-Tracking."
         },
         {
-          icon: <MousePointerClick className="h-10 w-10 mb-4 text-brand-primary" />,
+          icon: <Layout className="h-10 w-10 mb-4 text-brand-primary" />,
           title: "Landingpages",
           description: "Performance beginnt nach dem Klick: Wir erstellen schnelle, mobileoptimierte Zielseiten mit klarer Botschaft und UX-Fokus."
         },
