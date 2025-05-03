@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
+import CustomCursor from './CustomCursor';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -43,6 +44,7 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
       </Helmet>
       <div className={`min-h-screen flex flex-col ${className}`}>
+        <CustomCursor />
         <Navbar />
         <main className="flex-grow">
           {children}
