@@ -7,9 +7,9 @@ import WebDevBenefits from '@/components/web-development/WebDevBenefits';
 import WebDevProcess from '@/components/web-development/WebDevProcessNew';
 import WebDevServices from '@/components/web-development/WebDevServices';
 import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
+import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
 import WebDevFAQ from '@/components/web-development/WebDevFAQ';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import CTA from '@/components/CTA';
+import WebDevCTA from '@/components/web-development/WebDevCTA';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const EnglishWebDevelopment = () => {
@@ -45,8 +45,8 @@ const EnglishWebDevelopment = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Web Development | ooliv</title>
-        <meta name="description" content="Web development services for businesses. We build modern, scalable websites that help your business grow." />
+        <title>Web Development Agency | Custom WordPress & Code Solutions</title>
+        <meta name="description" content="ooliv develops scalable websites with CMS or custom code – flexible, secure, SEO-ready. WordPress agency for business-focused web development." />
       </Helmet>
 
       <WebDevHero />
@@ -54,22 +54,9 @@ const EnglishWebDevelopment = () => {
       <WebDevCmsVsStatic />
       <WebDevProcess />
       <WebDevServices />
-      
-      {/* Global Case Studies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
-        </div>
-      </section>
-      
-      <WebDevFAQ />
-      <CTA 
-        title="Let's discuss your web development project"
-        subtitle="We develop a scalable, secure website that perfectly matches your business goals."
-        primaryCta="Start Project"
-        secondaryCta="Schedule Strategy Call"
-        secondaryCtaLink="/en/contact"
-      />
+      <WebDevCaseStudies />
+      <WebDevFAQ customFaqs={webDevFaqs} />
+      <WebDevCTA />
     </PageLayout>
   );
 };
