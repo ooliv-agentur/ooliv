@@ -52,9 +52,11 @@ const WebDevServices = () => {
             <div 
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+              role="region"
+              aria-label={service.title}
             >
               <div className="mb-4 text-brand-primary">
-                <service.icon className="h-10 w-10" />
+                <service.icon className="h-10 w-10" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-brand-heading">{service.title}</h3>
               <p className="text-brand-text">{service.description}</p>
@@ -67,7 +69,9 @@ const WebDevServices = () => {
             <strong>{isGerman ? "Nicht sicher, was passt?" : "Not sure what fits?"}</strong> ➝ {isGerman ? "Lassen Sie uns darüber sprechen." : "Let's talk about it."}
           </p>
           <Button asChild>
-            <Link to={contactPath}>{isGerman ? "Beratungsgespräch vereinbaren" : "Schedule a Strategy Call"}</Link>
+            <Link to={contactPath} aria-label={isGerman ? "Beratungsgespräch vereinbaren" : "Schedule a Strategy Call"}>
+              {isGerman ? "Beratungsgespräch vereinbaren" : "Schedule a Strategy Call"}
+            </Link>
           </Button>
         </div>
       </div>

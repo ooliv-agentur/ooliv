@@ -33,7 +33,9 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
     <>
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
-        {/* Remove the language attribute setting from PageLayout */}
+        {/* Add preconnect for fonts to improve loading performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Add preconnect for www domain to improve performance during redirect */}
         <link rel="preconnect" href="https://www.ooliv.de" />
       </Helmet>

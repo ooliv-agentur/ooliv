@@ -54,9 +54,11 @@ const WebDevBenefits = () => {
             <div 
               key={index}
               className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+              role="region"
+              aria-label={benefit.title}
             >
               <div className="mb-4 text-brand-primary">
-                <benefit.icon className="h-10 w-10" />
+                <benefit.icon className="h-10 w-10" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-brand-heading">{benefit.title}</h3>
               <p className="text-brand-text">{benefit.description}</p>
