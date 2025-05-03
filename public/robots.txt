@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Block thank you pages explicitly
+# Block thank you pages explicitly to prevent indexing
 Disallow: /danke
 Disallow: /en/thank-you
 

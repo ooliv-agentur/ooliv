@@ -38,6 +38,9 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Add preconnect for www domain to improve performance during redirect */}
         <link rel="preconnect" href="https://www.ooliv.de" />
+        {/* Preconnect to analytics domains to improve performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://analytics.ahrefs.com" />
       </Helmet>
       <div className={`min-h-screen flex flex-col ${className}`}>
         <Navbar />
