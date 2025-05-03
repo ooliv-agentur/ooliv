@@ -40,7 +40,7 @@ const WebDevCaseStudies = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
+  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
   
   // Adapt case studies data for web development display format
   const cases = relevantCases.map(study => ({
@@ -48,9 +48,9 @@ const WebDevCaseStudies = () => {
     industry: study.industry,
     summary: study.headline,
     services: [
-      "WordPress Development", 
+      isGerman ? "WordPress-Entwicklung" : "WordPress Development", 
       "ERP Integration", 
-      "Performance Optimization"
+      isGerman ? "Performance-Optimierung" : "Performance Optimization"
     ], 
     kpis: study.impact.map(impact => impact.split(' ')[0]),
     image: study.image
