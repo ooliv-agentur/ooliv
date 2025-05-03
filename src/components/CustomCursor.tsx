@@ -1,74 +1,116 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isPointer, setIsPointer] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
+  const [hidden, setHidden] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [linkHovered, setLinkHovered] = useState(false);
+  
   useEffect(() => {
-    const updateCursorPosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      
-      // Check if the cursor is over a clickable element
-      const target = e.target as HTMLElement;
-      const clickableElements = ['A', 'BUTTON', 'INPUT[type="submit"]', 'INPUT[type="button"]'];
-      const isClickable = 
-        clickableElements.includes(target.tagName) || 
-        target.classList.contains('cursor-pointer') || 
-        target.getAttribute('role') === 'button';
-      
-      setIsPointer(isClickable);
+    // Check if device is touch-only (mobile/tablet)
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
     };
-
-    const handleMouseEnter = () => setIsVisible(true);
-    const handleMouseLeave = () => setIsVisible(false);
-
-    document.addEventListener('mousemove', updateCursorPosition);
-    document.addEventListener('mouseenter', handleMouseEnter);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      document.removeEventListener('mousemove', updateCursorPosition);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
-
-  // Don't show custom cursor on touch devices
-  useEffect(() => {
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) {
-      document.documentElement.style.cursor = 'auto';
+    
+    // If it's a touch device, don't apply custom cursor
+    if (isTouchDevice()) {
       document.body.style.cursor = 'auto';
-      const elements = document.querySelectorAll('a, button, input[type="submit"], input[type="button"], .cursor-pointer, [role="button"]');
-      elements.forEach(el => {
-        (el as HTMLElement).style.cursor = 'pointer';
-      });
+      return;
     }
+    
+    const addEventListeners = () => {
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseenter', onMouseEnter);
+      document.addEventListener('mouseleave', onMouseLeave);
+      document.addEventListener('mousedown', onMouseDown);
+      document.addEventListener('mouseup', onMouseUp);
+      
+      // Track hover on interactive elements
+      const interactiveElements = document.querySelectorAll(
+        'a, button, input[type="button"], input[type="submit"], [role="button"], .cursor-pointer'
+      );
+      
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', onLinkMouseEnter);
+        el.addEventListener('mouseleave', onLinkMouseLeave);
+      });
+    };
+    
+    const removeEventListeners = () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseenter', onMouseEnter);
+      document.removeEventListener('mouseleave', onMouseLeave);
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
+      
+      const interactiveElements = document.querySelectorAll(
+        'a, button, input[type="button"], input[type="submit"], [role="button"], .cursor-pointer'
+      );
+      
+      interactiveElements.forEach(el => {
+        el.removeEventListener('mouseenter', onLinkMouseEnter);
+        el.removeEventListener('mouseleave', onLinkMouseLeave);
+      });
+    };
+    
+    const onMouseMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    const onMouseEnter = () => {
+      setHidden(false);
+    };
+    
+    const onMouseLeave = () => {
+      setHidden(true);
+    };
+    
+    const onMouseDown = () => {
+      setClicked(true);
+    };
+    
+    const onMouseUp = () => {
+      setClicked(false);
+    };
+    
+    const onLinkMouseEnter = () => {
+      setLinkHovered(true);
+    };
+    
+    const onLinkMouseLeave = () => {
+      setLinkHovered(false);
+    };
+    
+    addEventListeners();
+    return () => removeEventListeners();
   }, []);
-
-  if (!isVisible) return null;
+  
+  if (typeof window === 'undefined') return null;
+  
+  // Hide default cursor via CSS in index.css
 
   return (
-    <div
-      className="fixed pointer-events-none z-[9999]"
+    <div 
+      className={`fixed pointer-events-none z-50 transition-transform duration-100 ${
+        hidden ? 'opacity-0' : 'opacity-100'
+      } ${linkHovered ? 'scale-125' : ''} ${clicked ? 'scale-90' : ''}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: 'translate(-50%, -50%)',
+        width: '32px',
+        height: '32px',
+        backgroundImage: linkHovered 
+          ? 'url(/cursor-pointer.svg)'
+          : 'url(/cursor-default.svg)',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        transition: 'transform 0.15s ease-out, opacity 0.2s ease'
       }}
-    >
-      <div
-        className={`transition-all duration-100 ${isPointer ? 'scale-125' : 'scale-100'}`}
-        style={{
-          width: '16px',
-          height: '16px',
-          borderRadius: '50%',
-          backgroundColor: isPointer ? '#999C7A' : '#B1B497',
-        }}
-      />
-    </div>
+    />
   );
 };
 

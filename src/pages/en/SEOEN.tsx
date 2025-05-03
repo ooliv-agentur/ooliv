@@ -2,15 +2,16 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import SEOHeroDE from '@/components/seo/SEOHeroDE';
-import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
-import SEOServicesDE from '@/components/seo/SEOServicesDE';
-import SEOProcessDE from '@/components/seo/SEOProcessDE';
-import SEOApproachDE from '@/components/seo/SEOApproachDE';
-import SEOCtaDE from '@/components/seo/SEOCtaDE';
+import SEOHero from '@/components/seo/SEOHero';
+import SEOBenefits from '@/components/seo/SEOBenefits';
+import SEOServices from '@/components/seo/SEOServices';
+import SEOProcess from '@/components/seo/SEOProcess';
+import SEOApproach from '@/components/seo/SEOApproach';
+import SEOCta from '@/components/seo/SEOCta';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEOTextSectionEN from '@/components/en/SEOTextSectionEN';
 
 const EnglishSEO = () => {
   const { setLanguage } = useLanguage();
@@ -53,11 +54,11 @@ const EnglishSEO = () => {
         <meta name="description" content="More visibility for your website: ooliv is your SEO agency in Mainz – Onpage, content & strategy for sustainable rankings." />
       </Helmet>
 
-      <SEOHeroDE />
-      <SEOBenefitsDE />
-      <SEOServicesDE />
-      <SEOApproachDE />
-      <SEOProcessDE />
+      <SEOHero />
+      <SEOBenefits />
+      <SEOServices />
+      <SEOApproach />
+      <SEOProcess />
       
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +71,8 @@ const EnglishSEO = () => {
         customTitle="Frequently Asked Questions about SEO Agency Mainz"
       />
       
-      <SEOCtaDE />
+      <SEOCta />
+      <SEOTextSectionEN />
     </PageLayout>
   );
 };
