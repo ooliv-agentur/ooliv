@@ -5,7 +5,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
 
-const LanguageSwitcher = () => {
+interface LanguageSwitcherProps {
+  variant?: 'default' | 'compact';
+}
+
+const LanguageSwitcher = ({ variant = 'default' }: LanguageSwitcherProps) => {
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
@@ -68,9 +72,12 @@ const LanguageSwitcher = () => {
       variant="ghost" 
       size="sm" 
       onClick={toggleLanguage} 
-      className="flex items-center gap-1 font-medium text-[#b1b497] hover:text-white transition-colors mr-20 md:mr-16 hover:bg-[#b1b497] border border-transparent hover:border-[#b1b497]/30 hover:shadow-sm"
+      className={`flex items-center gap-1 font-medium text-[#b1b497] hover:text-white transition-colors hover:bg-[#b1b497] border border-transparent hover:border-[#b1b497]/30 hover:shadow-sm ${
+        variant === 'compact' ? 'px-2 py-1' : 'mr-20 md:mr-16'
+      }`}
+      aria-label={language === 'de' ? "Switch to English" : "Zu Deutsch wechseln"}
     >
-      <Globe className="h-4 w-4" />
+      <Globe className="h-4 w-4" aria-hidden="true" />
       <span>{language === 'de' ? 'EN' : 'DE'}</span>
     </Button>
   );

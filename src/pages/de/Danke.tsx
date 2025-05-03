@@ -75,7 +75,7 @@ const Danke = () => {
           >
             <motion.div className="flex justify-center mb-8" variants={itemVariants}>
               <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-[#004d51]" />
+                <CheckCircle className="h-8 w-8 text-[#004d51]" aria-hidden="true" />
               </div>
             </motion.div>
             
@@ -89,6 +89,7 @@ const Danke = () => {
               <a 
                 href="mailto:info@ooliv.de" 
                 className="text-[#004d51] hover:underline"
+                aria-label="E-Mail an info@ooliv.de senden"
               >
                 info@ooliv.de
               </a>.
@@ -99,7 +100,7 @@ const Danke = () => {
                 asChild
                 className="bg-[#004d51] hover:bg-[#003d41]"
               >
-                <Link to="/">
+                <Link to="/" aria-label="Zurück zur Startseite">
                   Zurück zur Startseite
                 </Link>
               </Button>

@@ -38,11 +38,17 @@ const MainNavigation = () => {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link to={language === 'de' ? '/' : '/en'} className="flex items-center" onClick={handleLogoClick}>
+              <Link 
+                to={language === 'de' ? '/' : '/en'} 
+                className="flex items-center" 
+                onClick={handleLogoClick}
+                aria-label="ooliv Homepage"
+              >
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
                   alt="ooliv" 
                   className="h-6 md:h-8 w-auto" 
+                  loading="lazy"
                 />
               </Link>
             </div>
@@ -67,9 +73,9 @@ const MainNavigation = () => {
         aria-controls="mobile-menu"
       >
         {isOpen ? (
-          <X className="w-6 h-6" />
+          <X className="w-6 h-6" aria-hidden="true" />
         ) : (
-          <Menu className="w-6 h-6" />
+          <Menu className="w-6 h-6" aria-hidden="true" />
         )}
       </button>
 
@@ -78,6 +84,7 @@ const MainNavigation = () => {
         <div 
           className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
 

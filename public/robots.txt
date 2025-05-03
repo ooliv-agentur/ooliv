@@ -1,7 +1,10 @@
 
 User-agent: *
 Allow: /
+
+# Block thank you pages explicitly
 Disallow: /danke
 Disallow: /en/thank-you
-Sitemap: https://ooliv.de/sitemap.xml
 
+# Provide sitemap location
+Sitemap: https://ooliv.de/sitemap.xml
