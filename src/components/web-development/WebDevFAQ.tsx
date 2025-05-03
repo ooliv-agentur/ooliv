@@ -2,36 +2,41 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDevFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { language } = useLanguage();
 
+  // Use the faqs passed from the page component or use default ones
   const faqs = [
     {
-      question: "What CMS options do you offer?",
-      answer: "We work with a variety of content management systems including WordPress, Shopify, and headless CMS solutions like Strapi and Contentful. We'll recommend the best option based on your specific needs, workflow requirements, and growth plans."
+      question: "Which platforms do you work with?",
+      answer: "We develop fully coded websites (without CMS) and custom WordPress solutions - depending on what better suits your business."
     },
     {
-      question: "What's the difference between custom and template-based development?",
-      answer: "Template-based development uses pre-designed themes that are customized to your brand, which can be cost-effective for certain projects. Custom development builds your site entirely from scratch, giving you complete control over functionality, user experience, and scalability—ideal for businesses with specific workflows or unique requirements."
+      question: "Can ooliv develop e-commerce shops?",
+      answer: "Yes - WooCommerce within WordPress or Shopify for targeted B2B cases."
     },
     {
-      question: "Can you maintain or optimize an existing WordPress site?",
-      answer: "Absolutely! We offer WordPress maintenance, optimization, and redesign services. We'll audit your existing site, identify improvement opportunities, and implement changes that enhance performance, security, and user experience while preserving your content and SEO value."
+      question: "Is performance a standard?",
+      answer: "Absolutely. Our pages are fast, SEO-optimized and run reliably on all devices."
     },
     {
-      question: "Do you offer Shopify-only development support?",
-      answer: "Yes, we provide specialized Shopify development services including theme customization, app integration, performance optimization, and custom functionality development. Whether you're starting a new store or enhancing an existing one, our Shopify experts can help."
+      question: "Is there support after launch?",
+      answer: "Yes. We continue to support you with technical assistance, updates and tracking."
     },
     {
-      question: "How long does web development typically take?",
-      answer: "Development timelines vary based on project complexity. A standard WordPress or Shopify site typically takes 6-8 weeks from concept to launch. Custom web applications may take 3-6 months depending on functionality requirements. We'll provide a detailed timeline during our initial planning phase."
+      question: "Can you improve existing websites?",
+      answer: "Yes. We analyze whether optimization makes sense - or if a relaunch would be more efficient."
     }
   ];
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
 
   return (
     <section className="py-20 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
@@ -76,7 +81,7 @@ const WebDevFAQ = () => {
         </div>
 
         <div className="max-w-3xl mx-auto mt-12 text-center">
-          <Link to="/contact" className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
+          <Link to={contactPath} className="text-brand-primary font-medium hover:text-brand-primaryHover transition-colors">
             Have more questions about our web development services? Contact Us →
           </Link>
         </div>

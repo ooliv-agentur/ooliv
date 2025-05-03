@@ -9,7 +9,7 @@ const WebDevCmsVsStatic = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            WordPress or Code-First? We Build What Fits
+            Flexible or Ultra-Fast – We Develop What Fits Your Setup
           </h2>
         </div>
         
@@ -23,7 +23,8 @@ const WebDevCmsVsStatic = () => {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base text-brand-text">
-                Ideal for editorial teams: easily editable content, flexible structure.
+                You can easily maintain content yourself. Ideal if you want to regularly update texts, news or offers - without a developer.
+                <p className="mt-2">Recommended for editorial teams or marketing departments.</p>
               </CardDescription>
             </CardContent>
           </Card>
@@ -37,7 +38,8 @@ const WebDevCmsVsStatic = () => {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base text-brand-text">
-                Ultra-fast, secure, and low-maintenance – best for stable content setups.
+                Extremely fast, low-maintenance and secure. Perfect when content rarely changes and performance is the focus.
+                <p className="mt-2">We'll handle changes for you.</p>
               </CardDescription>
             </CardContent>
           </Card>
@@ -45,7 +47,7 @@ const WebDevCmsVsStatic = () => {
         
         <div className="bg-white p-6 rounded-lg border border-gray-100 text-center mt-6">
           <p className="text-brand-text">
-            We offer honest, technology-agnostic advice. Your website should match your goals, workflows, and SEO strategy – not the other way around.
+            We advise you honestly and with technology-agnostic approach – ensuring your website technically matches your goals, internal workflows, and SEO requirements.
           </p>
         </div>
       </div>
