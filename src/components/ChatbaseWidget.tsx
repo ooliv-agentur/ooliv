@@ -1,14 +1,22 @@
 
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function ChatbaseWidget() {
   const scriptLoaded = useRef(false);
-
+  const location = useLocation();
+  
   useEffect(() => {
-    // Vermeide Mehrfachinitialisierung
+    // Skip loading the chatbot on English pages (URLs starting with /en/)
+    if (location.pathname.startsWith('/en/') || location.pathname === '/en') {
+      console.log('Chatbot disabled on English page:', location.pathname);
+      return;
+    }
+    
+    // Avoid multiple initializations
     if (scriptLoaded.current) return;
     
-    // Prüfe, ob das Script bereits geladen wurde
+    // Check if the script already exists
     if (document.getElementById("chatbase-widget-script")) return;
     
     const script = document.createElement("script");
@@ -50,14 +58,22 @@ export default function ChatbaseWidget() {
     document.body.appendChild(script);
     scriptLoaded.current = true;
 
-    // Cleanup-Funktion um das Script zu entfernen, wenn die Komponente unmounted wird
+    // Cleanup function to remove the script when component unmounts
     return () => {
       const scriptElement = document.getElementById("chatbase-widget-script");
       if (scriptElement && scriptElement.parentNode) {
         scriptElement.parentNode.removeChild(scriptElement);
       }
+      
+      // Also remove any chatbase elements that might have been created
+      const chatbaseElements = document.querySelectorAll('[id^="chatbase-"]');
+      chatbaseElements.forEach(el => {
+        if (el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      });
     };
-  }, []);
+  }, [location.pathname]);
 
   return null;
 }
