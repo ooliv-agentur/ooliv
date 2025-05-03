@@ -68,14 +68,13 @@ input[type="button"],
 [role="button"],
 .fixed,
 .absolute,
-[data-state="open"],
-[data-radix-menu-content],
-[data-radix-dropdown-menu-content],
 .z-50,
-.z-[50],
-.z-[100],
-.z-[110],
-.z-[200] {
+/* Apply cursor: none to elements with special z-index classes */
+/* Use proper CSS escape sequences for special characters in class names */
+.z-\[50\],
+.z-\[100\],
+.z-\[110\],
+.z-\[200\] {
   cursor: none !important;
 }
 

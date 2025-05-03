@@ -88,8 +88,16 @@ const CustomCursor = () => {
     document.body.style.cursor = 'none';
     
     // Apply "cursor: none" to menu elements and overlays to ensure consistency
-    document.querySelectorAll('.fixed, .absolute, .z-50, .z-[50], .z-[100], .z-[110], .z-[200]').forEach(el => {
+    // Fix: Use valid CSS selectors without brackets for class names
+    document.querySelectorAll('.fixed, .absolute, .z-50').forEach(el => {
       (el as HTMLElement).style.cursor = 'none';
+    });
+    
+    // Handle additional z-index classes separately
+    ['z-\\[50\\]', 'z-\\[100\\]', 'z-\\[110\\]', 'z-\\[200\\]'].forEach(className => {
+      document.querySelectorAll(`.${className}`).forEach(el => {
+        (el as HTMLElement).style.cursor = 'none';
+      });
     });
     
     addEventListeners();
