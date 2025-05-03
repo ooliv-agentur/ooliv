@@ -31,8 +31,6 @@ const SEOCta = () => {
             Request a Consultation
           </Button>
         </div>
-        
-        {/* Removed duplicate footer note - now handled by CTA component */}
       </div>
     </section>
   );

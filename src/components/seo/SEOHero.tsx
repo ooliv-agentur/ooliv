@@ -14,7 +14,7 @@ const SEOHero = () => {
       }}
       secondaryCta={{
         text: "Request Free SEO Audit",
-        link: "/en/contact"  // Updated to direct link to contact page
+        link: "/en/contact"
       }}
     />
   );
