@@ -4,9 +4,13 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import WebDevHero from '@/components/web-development/WebDevHero';
 import WebDevBenefits from '@/components/web-development/WebDevBenefits';
-import WebDevProcess from '@/components/web-development/WebDevProcess';
+import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
+import WebDevProcessNew from '@/components/web-development/WebDevProcessNew';
 import WebDevServices from '@/components/web-development/WebDevServices';
-import CTA from '@/components/CTA';
+import WebDevCaseStudies from '@/components/web-development/WebDevCaseStudies';
+import FAQ from '@/components/FAQ';
+import WebDevCTA from '@/components/web-development/WebDevCTA';
+import SEOTextSectionEN from '@/components/en/SEOTextSectionEN';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const EnglishWebDevelopment = () => {
@@ -15,6 +19,30 @@ const EnglishWebDevelopment = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
+
+  // Define web development FAQ content
+  const webDevFaqs = [
+    {
+      question: "What platforms do you work with?",
+      answer: "We develop fully coded websites (without CMS) and custom WordPress solutions – depending on what better suits your business."
+    },
+    {
+      question: "Can ooliv develop shops as well?",
+      answer: "Yes – WooCommerce within WordPress or Shopify for targeted B2B cases."
+    },
+    {
+      question: "Is performance a standard for you?",
+      answer: "Absolutely. Our sites are fast, SEO-optimized, and run reliably on all devices."
+    },
+    {
+      question: "Is there support after launch?",
+      answer: "Yes. We continue to support you with technical maintenance, updates, and tracking."
+    },
+    {
+      question: "Can you improve existing websites?",
+      answer: "Yes. We analyze whether optimization makes sense – or if a relaunch would be more efficient."
+    }
+  ];
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -25,16 +53,13 @@ const EnglishWebDevelopment = () => {
 
       <WebDevHero />
       <WebDevBenefits />
-      <WebDevProcess />
+      <WebDevCmsVsStatic />
+      <WebDevProcessNew />
       <WebDevServices />
-      
-      <CTA 
-        title="Ready to build your next web project?"
-        subtitle="Let's create a website that drives real results for your business."
-        primaryCta="Start Project"
-        secondaryCta="Schedule Call"
-        secondaryCtaLink="/en/contact"
-      />
+      <WebDevCaseStudies />
+      <FAQ customFaqs={webDevFaqs} />
+      <WebDevCTA />
+      <SEOTextSectionEN />
     </PageLayout>
   );
 };
