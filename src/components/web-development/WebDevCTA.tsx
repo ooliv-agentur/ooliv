@@ -69,6 +69,8 @@ const WebDevCTA = () => {
             {projectText}
           </Button>
         </div>
+
+        {/* Removed the duplicate footer text */}
       </div>
       
       <ContactForm 
