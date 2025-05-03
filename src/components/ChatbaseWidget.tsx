@@ -7,14 +7,17 @@ export default function ChatbaseWidget() {
   
   // Use try-catch to handle potential Router context issues
   let pathname = "/";
+  let isEnglishPage = false;
+  
   try {
     const location = useLocation();
     pathname = location.pathname;
     
-    // Skip loading the chatbot on English pages (URLs starting with /en/)
-    if (pathname.startsWith('/en/') || pathname === '/en') {
+    // Determine if this is an English page, but don't return early
+    isEnglishPage = pathname.startsWith('/en/') || pathname === '/en';
+    if (isEnglishPage) {
       console.log('Chatbot disabled on English page:', pathname);
-      return null;
+      // Don't return early here
     }
   } catch (error) {
     console.warn('ChatbaseWidget: Router context not available, chatbot might not work correctly');
@@ -22,6 +25,11 @@ export default function ChatbaseWidget() {
   }
   
   useEffect(() => {
+    // Skip loading the chatbot on English pages
+    if (isEnglishPage) {
+      return;
+    }
+    
     // Avoid multiple initializations
     if (scriptLoaded.current) return;
     
@@ -82,7 +90,7 @@ export default function ChatbaseWidget() {
         }
       });
     };
-  }, [pathname]);
+  }, [isEnglishPage, pathname]);
 
   return null;
 }
