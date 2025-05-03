@@ -4,15 +4,24 @@ import { useLocation } from "react-router-dom";
 
 export default function ChatbaseWidget() {
   const scriptLoaded = useRef(false);
-  const location = useLocation();
+  
+  // Use try-catch to handle potential Router context issues
+  let pathname = "/";
+  try {
+    const location = useLocation();
+    pathname = location.pathname;
+    
+    // Skip loading the chatbot on English pages (URLs starting with /en/)
+    if (pathname.startsWith('/en/') || pathname === '/en') {
+      console.log('Chatbot disabled on English page:', pathname);
+      return null;
+    }
+  } catch (error) {
+    console.warn('ChatbaseWidget: Router context not available, chatbot might not work correctly');
+    // Continue with default behavior if not in Router context
+  }
   
   useEffect(() => {
-    // Skip loading the chatbot on English pages (URLs starting with /en/)
-    if (location.pathname.startsWith('/en/') || location.pathname === '/en') {
-      console.log('Chatbot disabled on English page:', location.pathname);
-      return;
-    }
-    
     // Avoid multiple initializations
     if (scriptLoaded.current) return;
     
@@ -73,7 +82,7 @@ export default function ChatbaseWidget() {
         }
       });
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   return null;
 }

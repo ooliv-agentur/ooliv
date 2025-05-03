@@ -5,9 +5,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ChatbaseWidget from "./components/ChatbaseWidget";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+import ChatbaseWidget from "./components/ChatbaseWidget";
 
 // Import German pages
 import GermanIndex from "./pages/de/Index";
@@ -59,8 +59,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <ChatbaseWidget />
         <BrowserRouter>
+          <ChatbaseWidget />
           <ScrollToTop />
           <Routes>
             {/* Main (German) Routes */}
