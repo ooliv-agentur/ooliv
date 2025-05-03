@@ -42,6 +42,11 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
         {/* Preconnect to analytics domains to improve performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
+        <style>{`
+          /* Ensure custom cursor works everywhere */
+          html, body, #root { cursor: none !important; }
+          * { cursor: inherit; }
+        `}</style>
       </Helmet>
       <div className={`min-h-screen flex flex-col ${className}`}>
         <CustomCursor />

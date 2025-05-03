@@ -83,17 +83,29 @@ const CustomCursor = () => {
       setLinkHovered(false);
     };
     
+    // Hide default cursor with CSS
+    document.documentElement.style.cursor = 'none';
+    document.body.style.cursor = 'none';
+    
+    // Apply "cursor: none" to menu elements and overlays to ensure consistency
+    document.querySelectorAll('.fixed, .absolute, .z-50, .z-[50], .z-[100], .z-[110], .z-[200]').forEach(el => {
+      (el as HTMLElement).style.cursor = 'none';
+    });
+    
     addEventListeners();
-    return () => removeEventListeners();
+    return () => {
+      removeEventListeners();
+      // Reset cursor on unmount
+      document.documentElement.style.cursor = '';
+      document.body.style.cursor = '';
+    };
   }, []);
   
   if (typeof window === 'undefined') return null;
-  
-  // Hide default cursor via CSS in index.css
 
   return (
     <div 
-      className={`fixed pointer-events-none z-50 transition-transform duration-100 ${
+      className={`fixed pointer-events-none z-[1000] transition-transform duration-100 ${
         hidden ? 'opacity-0' : 'opacity-100'
       } ${linkHovered ? 'scale-125' : ''} ${clicked ? 'scale-90' : ''}`}
       style={{

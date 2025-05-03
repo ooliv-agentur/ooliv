@@ -33,7 +33,7 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-50 fixed top-0 left-0 right-0">
+      <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
@@ -43,6 +43,7 @@ const MainNavigation = () => {
                 className="flex items-center" 
                 onClick={handleLogoClick}
                 aria-label="ooliv Homepage"
+                style={{ cursor: 'none' }}
               >
                 <img 
                   src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
@@ -71,6 +72,7 @@ const MainNavigation = () => {
         aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
+        style={{ cursor: 'none' }}
       >
         {isOpen ? (
           <X className="w-6 h-6" aria-hidden="true" />
@@ -85,6 +87,7 @@ const MainNavigation = () => {
           className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
+          style={{ cursor: 'none' }}
         />
       )}
 

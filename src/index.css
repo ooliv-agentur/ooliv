@@ -45,13 +45,41 @@
   scrollbar-color: #B1B497 transparent;
 }
 
-/* Custom cursor styling is applied via PageLayout component */
-html, body {
-  cursor: none;
+/* Custom cursor styling is applied globally */
+html, 
+body, 
+#root,
+div,
+section,
+nav,
+aside,
+main,
+header,
+footer {
+  cursor: none !important;
 }
 
 /* Ensure links and buttons show the pointer cursor for accessibility */
-a, button, input[type="submit"], input[type="button"], 
-.cursor-pointer, [role="button"] {
-  cursor: none;
+a, 
+button, 
+input[type="submit"], 
+input[type="button"], 
+.cursor-pointer, 
+[role="button"],
+.fixed,
+.absolute,
+[data-state="open"],
+[data-radix-menu-content],
+[data-radix-dropdown-menu-content],
+.z-50,
+.z-[50],
+.z-[100],
+.z-[110],
+.z-[200] {
+  cursor: none !important;
+}
+
+/* Ensure proper z-index for menu components */
+.z-[1000] {
+  isolation: isolate;
 }

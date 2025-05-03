@@ -35,7 +35,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" side="right">
+      <SheetContent 
+        className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
+        side="right"
+        style={{ cursor: 'none' }}
+      >
         <SheetHeader className="text-left pb-4">
           <SheetTitle className="text-xl font-bold text-white">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
