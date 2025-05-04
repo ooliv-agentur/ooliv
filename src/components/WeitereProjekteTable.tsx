@@ -13,77 +13,77 @@ import {
 const projekte = [
   {
     name: "Scheurich",
-    branche: "Gartenbedarf / Pflanzgefäße",
+    branche: "Gartenbedarf",
     link: "https://www.scheurich.de",
   },
   {
     name: "Weisenburger",
-    branche: "Bauunternehmen / Projektentwicklung",
+    branche: "Bauunternehmen",
     link: "https://www.weisenburger.de",
   },
   {
     name: "Aeratron",
-    branche: "E-Commerce / Design-Ventilatoren",
+    branche: "E-Commerce",
     link: "https://aeratron.io",
   },
   {
     name: "Leidmann",
-    branche: "E-Commerce / Designerbrillen",
+    branche: "E-Commerce",
     link: "https://www.leidmann.de",
   },
   {
     name: "MediCloud Med",
-    branche: "Software / Arztpraxis Schweiz",
+    branche: "Software",
     link: "https://www.medicloudmed.ch",
   },
   {
     name: "LIERSCH",
-    branche: "Innenausbau / Retail Design",
+    branche: "Innenausbau",
     link: "https://liersch-retail.com",
   },
   {
     name: "ALC",
-    branche: "Logistik / Supply Chain Software",
+    branche: "Logistik",
     link: "https://www.alc-logistic.de",
   },
   {
     name: "NOXUSGROUP",
-    branche: "Bau / Holzhausbau",
+    branche: "Bau",
     link: "https://noxusgroup-hausbau.com",
   },
   {
     name: "MDI",
-    branche: "Industrie & Fertigung",
+    branche: "Industrie",
     link: "https://www.mdi-ap.com",
   },
   {
     name: "enwas",
-    branche: "Energieversorgung / Zählermanagement",
+    branche: "Energieversorgung",
     link: "https://www.enwas.de",
   },
   {
     name: "FIBONA",
-    branche: "Immobilien / Investment",
+    branche: "Immobilien",
     link: "https://www.fibona.de",
   },
   {
     name: "confacts",
-    branche: "SaaS / Digitalisierung",
+    branche: "SaaS",
     link: "https://www.confacts.de",
   },
   {
     name: "Doerr Kühn Plück + Partner",
-    branche: "Rechtsberatung / Wirtschaftsrecht",
+    branche: "Rechtsberatung",
     link: "https://www.doerrpartners.de",
   },
   {
     name: "präQ",
-    branche: "MedTech / Präqualifizierung",
+    branche: "MedTech",
     link: "https://www.praeq.de",
   },
   {
     name: "Dachdeckerei Leilich",
-    branche: "Handwerk / Dachdeckerei",
+    branche: "Handwerk",
     link: "https://www.dachdeckerei-leilich.de",
   },
 ];
@@ -95,7 +95,7 @@ const WeitereProjekteTable = () => {
   const translations = {
     title: isGerman ? "Weitere Projekte im Überblick" : "More Projects Overview",
     projectName: isGerman ? "Kunde" : "Client",
-    industry: isGerman ? "Branche / Thema" : "Industry / Topic",
+    industry: isGerman ? "Branche" : "Industry",
     liveLink: isGerman ? "Live-Link" : "Live Link",
     toWebsite: isGerman ? "Zur Website" : "View Website"
   };
