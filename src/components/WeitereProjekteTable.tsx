@@ -53,7 +53,7 @@ const projekte = [
   },
   {
     name: "MDI Webseite",
-    branche: "Unternehmensberatung / Leadership",
+    branche: "Industrie & Fertigung",
     link: "https://www.mdi-ap.com",
   },
   {
