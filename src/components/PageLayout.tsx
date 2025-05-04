@@ -6,17 +6,60 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
 }
 
+// Map paths between languages
+const pathMappings: Record<string, string> = {
+  // German to English
+  '/': '/en',
+  '/webdesign': '/en/webdesign',
+  '/webentwicklung': '/en/webdevelopment',
+  '/content-erstellung': '/en/content-creation',
+  '/seo-optimierung': '/en/seo',
+  '/google-ads': '/en/google-ads',
+  '/ki-technologien': '/en/ai-technologies',
+  '/case-studies': '/en/case-studies',
+  '/ueber-ooliv': '/en/about-us',
+  '/kontakt': '/en/contact',
+  '/impressum': '/en/legal-notice',
+  '/datenschutz': '/en/privacy-policy',
+  '/danke': '/en/thank-you',
+  
+  // English to German
+  '/en': '/',
+  '/en/webdesign': '/webdesign',
+  '/en/webdevelopment': '/webentwicklung',
+  '/en/content-creation': '/content-erstellung',
+  '/en/seo': '/seo-optimierung',
+  '/en/google-ads': '/google-ads',
+  '/en/ai-technologies': '/ki-technologien',
+  '/en/case-studies': '/case-studies',
+  '/en/about-us': '/ueber-ooliv',
+  '/en/contact': '/kontakt',
+  '/en/legal-notice': '/impressum',
+  '/en/privacy-policy': '/datenschutz',
+  '/en/thank-you': '/danke',
+};
+
 const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
   const location = useLocation();
-  const canonicalPath = location.pathname === '/' ? '' : location.pathname;
-  // Explicitly use non-www version for canonical URLs
-  const canonicalUrl = `https://ooliv.de${canonicalPath}`;
+  const { language } = useLanguage();
+  
+  // Get the canonical path (current path)
+  const currentPath = location.pathname;
+  
+  // Use non-www version for all URLs
+  const baseUrl = 'https://ooliv.de';
+  const canonicalUrl = `${baseUrl}${currentPath}`;
+  
+  // Get the alternate language URL
+  const alternateLanguagePath = pathMappings[currentPath];
+  const alternateLanguageUrl = alternateLanguagePath ? `${baseUrl}${alternateLanguagePath}` : null;
 
   // Handle www to non-www redirect at the client level
   useEffect(() => {
@@ -33,7 +76,22 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
   return (
     <>
       <Helmet>
+        {/* Self-referencing canonical URL */}
         <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Hreflang tags for language alternates */}
+        <link rel="alternate" hreflang={language} href={canonicalUrl} />
+        {alternateLanguageUrl && (
+          <link 
+            rel="alternate" 
+            hreflang={language === 'de' ? 'en' : 'de'} 
+            href={alternateLanguageUrl}
+          />
+        )}
+        
+        {/* Explicitly tell search engines to index and follow */}
+        <meta name="robots" content="index, follow" />
+        
         {/* Add preconnect for fonts to improve loading performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -1,6 +1,29 @@
 
 User-agent: *
 Allow: /
+Allow: /en/
+Allow: /webdesign
+Allow: /en/webdesign
+Allow: /webentwicklung
+Allow: /en/webdevelopment
+Allow: /content-erstellung
+Allow: /en/content-creation
+Allow: /seo-optimierung
+Allow: /en/seo
+Allow: /google-ads
+Allow: /en/google-ads
+Allow: /ki-technologien
+Allow: /en/ai-technologies
+Allow: /case-studies
+Allow: /en/case-studies
+Allow: /ueber-ooliv
+Allow: /en/about-us
+Allow: /kontakt
+Allow: /en/contact
+Allow: /impressum
+Allow: /en/legal-notice
+Allow: /datenschutz
+Allow: /en/privacy-policy
 
 # Block thank you pages explicitly to prevent indexing
 Disallow: /danke
