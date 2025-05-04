@@ -80,11 +80,11 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
         <link rel="canonical" href={canonicalUrl} />
         
         {/* Hreflang tags for language alternates */}
-        <link rel="alternate" hreflang={language} href={canonicalUrl} />
+        <link rel="alternate" hrefLang={language} href={canonicalUrl} />
         {alternateLanguageUrl && (
           <link 
             rel="alternate" 
-            hreflang={language === 'de' ? 'en' : 'de'} 
+            hrefLang={language === 'de' ? 'en' : 'de'} 
             href={alternateLanguageUrl}
           />
         )}
