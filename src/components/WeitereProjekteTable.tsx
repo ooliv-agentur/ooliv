@@ -14,76 +14,91 @@ const projekte = [
   {
     name: "Scheurich",
     branche: "Gartenbedarf",
+    brancheEn: "Gardening Supplies",
     link: "https://www.scheurich.de",
   },
   {
     name: "Weisenburger",
     branche: "Bauunternehmen",
+    brancheEn: "Construction Company",
     link: "https://www.weisenburger.de",
   },
   {
     name: "Aeratron",
     branche: "E-Commerce",
+    brancheEn: "E-Commerce",
     link: "https://aeratron.io",
   },
   {
     name: "Leidmann",
     branche: "E-Commerce",
+    brancheEn: "E-Commerce",
     link: "https://www.leidmann.de",
   },
   {
     name: "MediCloud Med",
     branche: "Software",
+    brancheEn: "Software",
     link: "https://www.medicloudmed.ch",
   },
   {
     name: "LIERSCH",
     branche: "Innenausbau",
+    brancheEn: "Interior Design",
     link: "https://liersch-retail.com",
   },
   {
     name: "ALC",
     branche: "Logistik",
+    brancheEn: "Logistics",
     link: "https://www.alc-logistic.de",
   },
   {
     name: "NOXUSGROUP",
     branche: "Bau",
+    brancheEn: "Construction",
     link: "https://noxusgroup-hausbau.com",
   },
   {
     name: "MDI",
-    branche: "Industrie",
+    branche: "Industrie & Fertigung",
+    brancheEn: "Industry & Manufacturing",
     link: "https://www.mdi-ap.com",
   },
   {
     name: "enwas",
     branche: "Energieversorgung",
+    brancheEn: "Energy Supply",
     link: "https://www.enwas.de",
   },
   {
     name: "FIBONA",
     branche: "Immobilien",
+    brancheEn: "Real Estate",
     link: "https://www.fibona.de",
   },
   {
     name: "confacts",
     branche: "SaaS",
+    brancheEn: "SaaS",
     link: "https://www.confacts.de",
   },
   {
     name: "Doerr Kühn Plück + Partner",
     branche: "Rechtsberatung",
+    brancheEn: "Legal Services",
     link: "https://www.doerrpartners.de",
   },
   {
     name: "präQ",
     branche: "MedTech",
+    brancheEn: "MedTech",
     link: "https://www.praeq.de",
   },
   {
     name: "Dachdeckerei Leilich",
     branche: "Handwerk",
+    brancheEn: "Craft",
     link: "https://www.dachdeckerei-leilich.de",
   },
 ];
@@ -134,7 +149,7 @@ const WeitereProjekteTable = () => {
                     {projekt.name}
                   </TableCell>
                   <TableCell className="py-3 px-4 text-brand-text text-sm">
-                    {projekt.branche}
+                    {isGerman ? projekt.branche : projekt.brancheEn}
                   </TableCell>
                   <TableCell className="py-3 px-4">
                     <a
@@ -162,7 +177,7 @@ const WeitereProjekteTable = () => {
                 {projekt.name}
               </div>
               <div className="text-brand-text text-sm">
-                {projekt.branche}
+                {isGerman ? projekt.branche : projekt.brancheEn}
               </div>
               <div>
                 <a
