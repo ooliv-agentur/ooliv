@@ -176,14 +176,16 @@ const defaultTranslations = {
     subtitle: "We deliver websites and strategies that highlight what makes your business special.",
     bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization.",
     ctaText: "What results can we achieve for your business?",
-    startProject: "Start Your Project"
+    startProject: "Start Your Project",
+    exploreWebsite: "Explore website →"
   },
   de: {
     title: "Echte Ergebnisse von echten Kunden",
     subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
     bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
     ctaText: "Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?",
-    startProject: "Projekt starten"
+    startProject: "Projekt starten",
+    exploreWebsite: "Website live erleben →"
   }
 };
 
@@ -255,7 +257,7 @@ const CaseStudiesSection = ({
                         rel="noopener noreferrer"
                         className="text-brand-primary hover:underline inline-flex items-center"
                       >
-                        Website live erleben → {study.websiteLink}
+                        {t.exploreWebsite} {study.websiteLink}
                       </a>
                     </div>
                   )}
