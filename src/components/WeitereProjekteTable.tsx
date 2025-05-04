@@ -12,57 +12,57 @@ import {
 
 const projekte = [
   {
-    name: "Scheurich Webseite",
+    name: "Scheurich",
     branche: "Gartenbedarf / Pflanzgefäße",
     link: "https://www.scheurich.de",
   },
   {
-    name: "Weisenburger Webseite",
+    name: "Weisenburger",
     branche: "Bauunternehmen / Projektentwicklung",
     link: "https://www.weisenburger.de",
   },
   {
-    name: "Aeratron Shopify",
+    name: "Aeratron",
     branche: "E-Commerce / Design-Ventilatoren",
     link: "https://aeratron.io",
   },
   {
-    name: "Leidmann Shopify",
+    name: "Leidmann",
     branche: "E-Commerce / Designerbrillen",
     link: "https://www.leidmann.de",
   },
   {
-    name: "MediCloud Med Webseitengestaltung",
+    name: "MediCloud Med",
     branche: "Software / Arztpraxis Schweiz",
     link: "https://www.medicloudmed.ch",
   },
   {
-    name: "LIERSCH Webseite",
+    name: "LIERSCH",
     branche: "Innenausbau / Retail Design",
     link: "https://liersch-retail.com",
   },
   {
-    name: "ALC Webseite",
+    name: "ALC",
     branche: "Logistik / Supply Chain Software",
     link: "https://www.alc-logistic.de",
   },
   {
-    name: "NOXUSGROUP Webseite",
+    name: "NOXUSGROUP",
     branche: "Bau / Holzhausbau",
     link: "https://noxusgroup-hausbau.com",
   },
   {
-    name: "MDI Webseite",
+    name: "MDI",
     branche: "Industrie & Fertigung",
     link: "https://www.mdi-ap.com",
   },
   {
-    name: "enwas Webseite",
+    name: "enwas",
     branche: "Energieversorgung / Zählermanagement",
     link: "https://www.enwas.de",
   },
   {
-    name: "FIBONA Webseite",
+    name: "FIBONA",
     branche: "Immobilien / Investment",
     link: "https://www.fibona.de",
   },
@@ -72,12 +72,12 @@ const projekte = [
     link: "https://www.confacts.de",
   },
   {
-    name: "Doerr Kühn Plück + Partner Webseite",
+    name: "Doerr Kühn Plück + Partner",
     branche: "Rechtsberatung / Wirtschaftsrecht",
     link: "https://www.doerrpartners.de",
   },
   {
-    name: "präQ Webseite",
+    name: "präQ",
     branche: "MedTech / Präqualifizierung",
     link: "https://www.praeq.de",
   },
@@ -94,7 +94,7 @@ const WeitereProjekteTable = () => {
 
   const translations = {
     title: isGerman ? "Weitere Projekte im Überblick" : "More Projects Overview",
-    projectName: isGerman ? "Projektname" : "Project Name",
+    projectName: isGerman ? "Kunde" : "Client",
     industry: isGerman ? "Branche / Thema" : "Industry / Topic",
     liveLink: isGerman ? "Live-Link" : "Live Link",
     toWebsite: isGerman ? "Zur Website" : "View Website"
