@@ -13,11 +13,11 @@ const ContentHero = () => {
       <PageHero
         badge={isGerman ? "Content Erstellung" : "Content Creation"}
         title={isGerman 
-          ? "Content Erstellung für Websites – strategisch, visuell, SEO-basiert" 
+          ? "Content Agentur Mainz – Inhalte, die verkaufen und gefunden werden" 
           : "Web Content Strategy & Creation"
         }
         subtitle={isGerman 
-          ? "Wir entwickeln Inhalte, die Vertrauen schaffen, bei Google gefunden werden und echte Geschäftsergebnisse liefern – von Text bis Video."
+          ? "Wir entwickeln Inhalte, die Vertrauen schaffen, bei Google gefunden werden und echte Geschäftsergebnisse liefern – von Text bis Video – als erfahrene Content Agentur aus Mainz."
           : "From tailored text and visuals to SEO-focused structure — we create content that builds trust, boosts visibility, and generates qualified leads."
         }
         primaryCta={{

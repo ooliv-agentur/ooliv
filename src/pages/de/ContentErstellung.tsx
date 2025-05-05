@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -9,13 +10,14 @@ import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import ContentSEOText from '@/components/content-creation/ContentSEOText';
 
 const GermanContentCreation = () => {
   // Custom FAQ items for Content Creation page
   const contentFaqs = [
     {
       question: "Wie erstellt ihr Content für Websites?",
-      answer: "Wir entwickeln eine umfassende Content-Strategie, beginnend mit Keyword-Recherche, und liefern dann modulare, konversionsorientierte Assets: Text, Bilder, Videos und Illustrationen – alles startbereit."
+      answer: "Als Content Agentur Mainz entwickeln wir eine umfassende Content-Strategie, beginnend mit Keyword-Recherche, und liefern dann modulare, konversionsorientierte Assets: Text, Bilder, Videos und Illustrationen – alles startbereit."
     },
     {
       question: "Kann ich nur Content ohne Design bestellen?",
@@ -31,15 +33,18 @@ const GermanContentCreation = () => {
     },
     {
       question: "Optimiert ihr Content für SEO?",
-      answer: "Ja. Jedes Content-Element ist SEO-freundlich, von den Überschriften bis zu den Metadaten."
+      answer: "Ja. Als Content Agentur Mainz wird jedes Content-Element SEO-freundlich gestaltet, von den Überschriften bis zu den Metadaten."
     }
   ];
   
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<ContentSEOText />}
+    >
       <Helmet>
-        <title>Content Erstellung für B2B | Texte, die konvertieren</title>
-        <meta name="description" content="ooliv erstellt strategischen B2B-Content: Website-Texte, Landingpages & SEO-Inhalte mit Plan – klar, durchdacht, leistungsstark." />
+        <title>Content Agentur Mainz | Content-Strategie, Text, Visuals – ooliv</title>
+        <meta name="description" content="ooliv – Ihre Content Agentur in Mainz für Texte, Visuals und SEO-optimierte Inhalte, die Vertrauen schaffen, gefunden werden und konvertieren." />
       </Helmet>
 
       <ContentHero />
@@ -61,7 +66,7 @@ const GermanContentCreation = () => {
       />
       <CTA 
         title="Lassen Sie uns Content erstellen, der konvertiert"
-        subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns Content erstellen, der rankt, resoniert und echte Geschäftsergebnisse liefert."
+        subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
         primaryCta="Content-Projekt besprechen"
         secondaryCta="Showcase ansehen"
         secondaryCtaLink="/case-studies"

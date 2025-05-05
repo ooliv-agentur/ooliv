@@ -12,7 +12,7 @@ const ContentBenefits = () => {
     {
       icon: FileText,
       problem: 'Keine Inhalte, keine Ergebnisse',
-      solution: 'Wir liefern komplette Webinhalte – von Text bis Visual – damit Ihre Website wirkt.'
+      solution: 'Als Content Agentur Mainz liefern wir komplette Webinhalte – von Text bis Visual – damit Ihre Website wirkt.'
     },
     {
       icon: Target,
@@ -58,8 +58,8 @@ const ContentBenefits = () => {
         {/* Two-tone heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            {isGerman ? "Content-Probleme, die Umsatz kosten" : "Content Challenges That Cost You Business"}
-            <span className="block text-brand-primary">{isGerman ? " — wir lösen sie" : " — We Fix Them"}</span>
+            {isGerman ? "Unsere Leistungen als Content Agentur Mainz" : "Content Challenges That Cost You Business"}
+            <span className="block text-brand-primary">{isGerman ? " — für nachhaltige Ergebnisse" : " — We Fix Them"}</span>
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
