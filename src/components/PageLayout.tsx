@@ -1,4 +1,3 @@
-
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -11,6 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
+  seoText?: ReactNode;
 }
 
 // Map paths between languages
@@ -46,7 +46,7 @@ const pathMappings: Record<string, string> = {
   '/en/thank-you': '/danke',
 };
 
-const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
+const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const location = useLocation();
   const { language } = useLanguage();
   
@@ -115,6 +115,8 @@ const PageLayout = ({ children, className = '' }: PageLayoutProps) => {
         <Footer />
         <FloatingActionButtons />
       </div>
+      {/* SEO Text section - placed after Footer */}
+      {seoText}
     </>
   );
 };

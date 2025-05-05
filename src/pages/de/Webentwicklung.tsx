@@ -37,7 +37,10 @@ const GermanWebDevelopment = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<WebDevSEOText />}
+    >
       <Helmet>
         <title>WordPress Agentur Mainz für skalierbare Lösungen</title>
         <meta name="description" content="WordPress Agentur Mainz – maßgeschneiderte Unternehmenswebsites mit WordPress & WooCommerce. Skalierbar, sicher, SEO-optimiert." />
@@ -63,9 +66,6 @@ const GermanWebDevelopment = () => {
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
       />
-      
-      {/* SEO Text Section */}
-      <WebDevSEOText />
     </PageLayout>
   );
 };
