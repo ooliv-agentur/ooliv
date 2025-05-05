@@ -8,108 +8,121 @@ const ContentSEOText = () => {
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Content Agentur Mainz – Strategische Inhalte für Ihren Geschäftserfolg</h2>
           <p>
-            Als spezialisierte Content Agentur Mainz entwickeln wir Inhalte, die weit mehr leisten als die Füllung von Seiten: Unsere strategischen Texte und Visuals sind darauf ausgerichtet, Ihre Zielgruppe zu überzeugen, Vertrauen aufzubauen und letztendlich Conversions zu generieren. 
+            Als spezialisierte Content Marketing Agentur Mainz entwickeln wir Inhalte, die weit mehr leisten als nur Seiten zu füllen: Unsere Texte, Visuals und Videos schaffen Vertrauen, verbessern Ihre Google-Sichtbarkeit und unterstützen aktiv die Leadgenerierung. Wir kombinieren fundierte Analyseprozesse mit kreativer Umsetzung – für Content, der messbar wirkt.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Unsere Leistungen als Content Agentur Mainz</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Unsere Leistungen als Content Marketing Agentur Mainz</h3>
           <p>
-            Jedes Unternehmen hat eine einzigartige Geschichte. Wir helfen Ihnen, diese Geschichte durch hochwertige Inhalte zu erzählen:
+            Wir entwickeln Inhalte, die perfekt zu Ihrer Marke und Ihrer Zielgruppe passen:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Strategische Content-Konzeption: Zieldefinition, Keyword-Recherche und Themenfindung.</li>
-            <li>Texterstellung: Website-Texte, Blog-Artikel, Whitepaper und Case Studies.</li>
-            <li>Visual Content: Professionelle Fotos, Videos, Infografiken und Illustrationen.</li>
-            <li>SEO-Optimierung: Keywords, Meta-Daten und strukturierter Content für bessere Rankings.</li>
-            <li>Content-Distribution: Social Media-Inhalte und Newsletter-Kampagnen.</li>
+            <li>Strategische Content-Konzeption: Analyse, Zieldefinition, SEO-Keyword-Recherche und Relevanzbewertung.</li>
+            <li>Texterstellung: Website-Texte, Landingpages, Blog-Artikel, Whitepaper, Case Studies.</li>
+            <li>Visual Content: Hochwertige Fotos, Videos, Infografiken, Illustrationen und Social Media Assets.</li>
+            <li>SEO-Optimierung: Strukturierte Inhalte, Meta-Daten, Content-Architektur für bessere Google-Rankings.</li>
+            <li>Content Distribution & Paid Media: Social Ads Kampagnen, Content Seeding und Newsletter-Marketing.</li>
           </ul>
           <p>
-            Als erfahrene Content Agentur in Mainz verstehen wir, dass jedes Wort und jedes Bild zählt.
+            Unsere Arbeitsweise ist transparent, fact-based und forward-thinking – von der Analyse bis zur Skalierung.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content-Erstellung mit System – von der Strategie zur Umsetzung</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content-Erstellung mit System – von der Analyse bis zur Skalierung</h3>
           <p>
-            Unsere Content-Erstellung folgt einem bewährten Prozess:
+            Wir arbeiten strukturiert, effizient und plattformspezifisch:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Analyse: Wir verstehen Ihre Zielgruppe, Ihre Mitbewerber und Ihre Geschäftsziele.</li>
-            <li>Strategie: Wir entwickeln einen klaren Plan für Ihre Content-Erstellung.</li>
-            <li>Produktion: Unser Team aus Textern, Designern und SEO-Experten erstellt hochwertige Inhalte.</li>
-            <li>Distribution: Wir helfen Ihnen, Ihre Inhalte über die richtigen Kanäle zu verbreiten.</li>
-            <li>Analyse & Optimierung: Wir messen den Erfolg und optimieren kontinuierlich.</li>
+            <li>Analyse & Strategie: Zielgruppenanalyse, Status-Quo-Analyse und Plattformwahl (inkl. Meta Business Manager, LinkedIn, YouTube).</li>
+            <li>Content-Produktion: Redaktionelle Texte, Canva-Designs, Videoproduktionen und Social Ads.</li>
+            <li>Content-Optimierung: SEO-Optimierung, Keyword-Updates, Performance-Reporting.</li>
+            <li>Distribution: Crossmediale Content-Strategien über Website, LinkedIn, Instagram und YouTube.</li>
+            <li>Laufende Optimierung: Monitoring, Redaktionsplanentwicklung, Targeting-Feinjustierung.</li>
           </ul>
-          <p>
-            Dieser strukturierte Ansatz sorgt dafür, dass Ihre Inhalte nicht nur kreativ, sondern auch strategisch wirksam sind.
-          </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content, der konvertiert – messbar und zielorientiert</h3>
-          <p>
-            Als Content Agentur Mainz wissen wir: Gute Inhalte müssen nicht nur gefallen, sondern auch messbare Ergebnisse liefern:
-          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content, der gefunden wird – und konvertiert</h3>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Höhere Sichtbarkeit in Suchmaschinen durch SEO-optimierte Texte.</li>
-            <li>Längere Verweildauer auf Ihrer Website durch fesselnde Inhalte.</li>
-            <li>Stärkere Kundenbindung durch wertvollen, informativen Content.</li>
-            <li>Mehr Leads und Anfragen durch überzeugende Call-to-Actions.</li>
-            <li>Verbesserte Conversion-Raten durch zielgruppengerechte Ansprache.</li>
+            <li>Google-Sichtbarkeit steigern durch SEO-optimierte Inhalte und strukturierten Content-Flow.</li>
+            <li>Leadgenerierung fördern durch conversion-optimierte Landingpages und Calls-to-Action.</li>
+            <li>Kundenbindung stärken durch exklusive Inhalte, Webinare und Tutorials.</li>
+            <li>Social Recruiting Kampagnen für gezielte Personalgewinnung.</li>
+            <li>Nachhaltiges Wachstum durch datenbasierte Content-Marketing-Strategien.</li>
           </ul>
-          <p>
-            Mit uns als Partner für Ihre Content-Erstellung investieren Sie in nachhaltige Geschäftsergebnisse.
-          </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content-Typen für unterschiedliche Ziele</h3>
-          <p>
-            Je nach Ihren Zielen entwickeln wir verschiedene Arten von Content:
-          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Content-Formate, die Ihre Ziele unterstützen</h3>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Awareness-Content: Blog-Artikel, Infografiken und Social Media Posts, um Ihre Reichweite zu erhöhen.</li>
-            <li>Consideration-Content: Case Studies, Whitepaper und Webinare, um Expertise zu demonstrieren.</li>
-            <li>Conversion-Content: Produktbeschreibungen, Landing Pages und E-Mail-Kampagnen, die zum Handeln animieren.</li>
-            <li>Retention-Content: Newsletter, Tutorials und exklusive Inhalte, die Kundenbindung stärken.</li>
+            <li>Awareness-Content: Blogartikel, Social Posts, Infografiken.</li>
+            <li>Consideration-Content: Case Studies, Whitepaper, Webinare.</li>
+            <li>Conversion-Content: Sales Pages, Produktbeschreibungen, Performance-Ads.</li>
+            <li>Retention-Content: Newsletter, Video-Tutorials, exklusive Inhalte.</li>
           </ul>
-          <p>
-            Die richtige Mischung aus diesen Content-Typen schafft eine Customer Journey, die potenzielle Kunden Schritt für Schritt zu einer Kaufentscheidung führt.
-          </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Die Rolle der KI in der modernen Content-Erstellung</h3>
-          <p>
-            Als fortschrittliche Content Agentur in Mainz nutzen wir modernste KI-Tools wie ChatGPT und Midjourney – aber immer mit menschlicher Expertise:
-          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Warum ooliv? Ihre Content Agentur Mainz mit klarer Philosophie</h3>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>KI für Recherche und erste Entwürfe – Mensch für Feinschliff und Markenstimme.</li>
-            <li>KI für Datenanalyse und Keyword-Recherche – Mensch für strategische Entscheidungen.</li>
-            <li>KI für Bildgenerierung und -bearbeitung – Mensch für kreative Direktion und Qualitätskontrolle.</li>
+            <li>Fact-Based Content Marketing: Entscheidungen auf Basis von Analysedaten.</li>
+            <li>Transparente Kommunikation: Offener Umgang und klare Reportings.</li>
+            <li>Agenturwerte: Fairness, Partnerschaftlichkeit, Innovation.</li>
+            <li>Workshops & Trendberatung: Weiterbildung zu Content-Marketing-Trends, Canva-Design und Social Media Infrastruktur.</li>
           </ul>
-          <p>
-            Diese Kombination aus KI-Effizienz und menschlicher Kreativität ermöglicht es uns, schneller bessere Inhalte zu liefern.
-          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Workshops & Trendberatung</h3>
+          <p>Wir bieten praxisnahe Workshops für Ihr Team zu Themen wie:</p>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Content-Erstellung mit Canva</li>
+            <li>Strategie- und Kanaloptimierung</li>
+            <li>Aktuelle Content Marketing Trends</li>
+          </ul>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Die Rolle der KI – Effizienz trifft Qualität</h3>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>KI-gestützte Recherche & Texterstellung (z. B. ChatGPT).</li>
+            <li>KI-gestützte Bild- und Videoerstellung (z. B. Midjourney, Sora).</li>
+            <li>KI-SEO-Analysen für verbesserte Content-Strategien.</li>
+          </ul>
+          <p>KI unterstützt – der Mensch entscheidet. Für authentische, wirkungsvolle Inhalte.</p>
 
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Häufig gestellte Fragen zur Content-Erstellung</h3>
           <div className="space-y-4 mt-4 mb-6">
             <div>
-              <p><strong>Wie lange dauert die Erstellung von professionellem Content?</strong></p>
-              <p>Je nach Umfang und Komplexität: Einzelne Texte in 2-5 Arbeitstagen, umfassende Content-Strategien in 2-4 Wochen.</p>
+              <p><strong>Wie lange dauert die Erstellung?</strong> – 2-5 Werktage für Einzelprojekte, 2-4 Wochen für Kampagnen.</p>
             </div>
             <div>
-              <p><strong>Kann ich bestehende Inhalte optimieren lassen?</strong></p>
-              <p>Ja, wir bieten Content-Audits und Optimierungen bestehender Texte und Visuals an.</p>
+              <p><strong>Optimiert ihr bestehenden Content?</strong> – Ja, durch Audits, Re-Optimierung und SEO-Updates.</p>
             </div>
             <div>
-              <p><strong>Wie stellt ihr sicher, dass der Content zu meiner Marke passt?</strong></p>
-              <p>Wir entwickeln einen detaillierten Brand Voice Guide und stimmen alle Inhalte entsprechend ab.</p>
+              <p><strong>Bietet ihr Workshops an?</strong> – Ja, zu Content-Strategie, Social Media Infrastruktur und Canva-Design.</p>
             </div>
             <div>
-              <p><strong>Erstellt ihr auch mehrsprachigen Content?</strong></p>
-              <p>Ja, wir bieten professionelle Übersetzungen und kulturelle Anpassungen für verschiedene Märkte.</p>
+              <p><strong>Wie integriert ihr SEO?</strong> – Über Keyword-Recherche, Strukturierung und technische SEO.</p>
             </div>
             <div>
-              <p><strong>Wie wird mein Content SEO-optimiert?</strong></p>
-              <p>Durch Keyword-Recherche, optimierte Textstruktur, Meta-Daten und technische SEO-Maßnahmen.</p>
+              <p><strong>Ist Content-Erstellung mit KI möglich?</strong> – Ja, kombiniert mit menschlicher Expertise.</p>
             </div>
           </div>
-          
-          <p className="mt-8">
-            Als Ihre Content Agentur Mainz sind wir bereit, Ihnen bei der Erstellung von Inhalten zu helfen, die nicht nur informieren und begeistern, sondern auch messbare Geschäftsergebnisse liefern. Kontaktieren Sie uns heute für ein unverbindliches Beratungsgespräch.
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Branchenspezifischer Content für maximale Relevanz</h3>
+          <p>
+            Wir entwickeln gezielt Inhalte für B2B, E-Commerce, Technologie, Beratung und Industrie. Mit Trendbeobachtung und SEO-Analysen erreichen Ihre Inhalte maximale Sichtbarkeit.
           </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erfolgsgeschichten aus der Praxis</h3>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Leadgenerierung über SEO-optimierte Webseiten.</li>
+            <li>Umsetzung crossmedialer Content-Marketing-Kampagnen.</li>
+            <li>Aufbau starker Social Media Communities und Influencer-Kooperationen.</li>
+          </ul>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Social Media Content, der Ihre Community begeistert</h3>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Meta Ads, LinkedIn Kampagnen, YouTube SEO.</li>
+            <li>Redaktionsplanentwicklung und Community Management.</li>
+            <li>Performance-Berichte und Optimierung.</li>
+          </ul>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Jetzt Ihr Content Projekt starten</h3>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>✅ Beratungsgespräch vereinbaren – individuell & unverbindlich.</li>
+            <li>✅ Sichtbarkeit steigern – auf Website & Social Media.</li>
+            <li>✅ Umsatzpotenziale freisetzen – durch besseren Content.</li>
+          </ul>
         </article>
       </div>
     </section>
