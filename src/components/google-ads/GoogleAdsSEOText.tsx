@@ -90,7 +90,7 @@ const GoogleAdsSEOText = () => {
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
             <li>Setup-Pauschale (abhängig von Umfang und Kampagnenanzahl)</li>
-            <li>Laufendes Kampagnenmanagement (monatliche Pauschale ab 850 € netto)</li>
+            <li>Laufendes Kampagnenmanagement (monatliche Pauschale ab 500 € netto)</li>
             <li>Mediabudget: wird direkt bei Google Ads verwaltet, keine Aufschläge</li>
             <li>Optionaler Erfolgsbonus: bei definierten Lead- oder Umsatzsteigerungen</li>
           </ul>
@@ -139,7 +139,7 @@ const GoogleAdsSEOText = () => {
               <p><strong>Welche Optimierungsansätze verfolgt ooliv?</strong><br />Unsere Optimierungsansätze umfassen Smart Bidding, A/B-Tests, Anzeigenerweiterungen, Conversiontracking und die kontinuierliche Anpassung der Gebotsstrategien.</p>
             </div>
             <div>
-              <p><strong>Wie hoch sollte unser Werbebudget sein?</strong><br />Für B2B-Kampagnen empfehlen wir ein Mindestbudget von ca. 1.500 € pro Monat, abhängig von Branche und Wettbewerbssituation.</p>
+              <p><strong>Wie hoch sollte unser Werbebudget sein?</strong><br />Für B2B-Kampagnen empfehlen wir ein Mindestbudget von ca. 1.000 € pro Monat, abhängig von Branche und Wettbewerbssituation.</p>
             </div>
             <div>
               <p><strong>Wie schnell liefert eine Google Ads Kampagne Ergebnisse?</strong><br />Erste Conversions und Anfragen entstehen oft innerhalb der ersten 2–4 Wochen. Der ROI wird durch laufende Optimierungen weiter verbessert.</p>
