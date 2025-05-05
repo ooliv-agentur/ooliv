@@ -12,6 +12,7 @@ import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGenera
 import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -44,10 +45,13 @@ const GermanGoogleAds = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<GoogleAdsSEOText />}
+    >
       <Helmet>
-        <title>Google Ads Mainz | Kampagnen, die sich lohnen</title>
-        <meta name="description" content="Performance-orientierte Google Ads aus Mainz: ooliv entwickelt, optimiert und verwaltet Ihre Kampagnen – datenbasiert & effizient." />
+        <title>Google Ads Agentur Mainz – Kampagnenoptimierung & Leadgenerierung | ooliv</title>
+        <meta name="description" content="Mit ooliv als Google Ads Agentur Mainz sichern Sie sich Leads, Umsatzwachstum und volle Transparenz. Jetzt Analyse sichern!" />
       </Helmet>
 
       <PageHero

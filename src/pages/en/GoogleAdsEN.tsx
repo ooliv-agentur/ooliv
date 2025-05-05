@@ -12,6 +12,7 @@ import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGenera
 import { ArrowRight, Search, Layout, RefreshCw, Target, LineChart, MousePointerClick, Bot, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import GoogleAdsSEOTextEN from '@/components/google-ads/GoogleAdsSEOTextEN';
 
 const EnglishGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -44,7 +45,10 @@ const EnglishGoogleAds = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<GoogleAdsSEOTextEN />}
+    >
       <Helmet>
         <title>Google Ads Agency Mainz | Data-driven & Transparent</title>
         <meta name="description" content="ooliv is your Google Ads agency in Mainz for more visibility & conversions. From setup to optimization – transparent, measurable, successful." />
