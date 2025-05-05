@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -9,6 +10,7 @@ import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticD
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
+import WebDevSEOText from '@/components/web-development/WebDevSEOText';
 
 const GermanWebDevelopment = () => {
   const webDevFaqs = [
@@ -37,8 +39,8 @@ const GermanWebDevelopment = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>WordPress Agentur Mainz | Flexible Websites mit System</title>
-        <meta name="description" content="Ihre WordPress Agentur aus Mainz: ooliv entwickelt skalierbare Websites mit Pagebuilder oder individuellem Code – flexibel, sicher, SEO-ready." />
+        <title>WordPress Agentur Mainz für skalierbare Lösungen</title>
+        <meta name="description" content="WordPress Agentur Mainz – maßgeschneiderte Unternehmenswebsites mit WordPress & WooCommerce. Skalierbar, sicher, SEO-optimiert." />
       </Helmet>
 
       <WebDevHero />
@@ -61,6 +63,9 @@ const GermanWebDevelopment = () => {
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
       />
+      
+      {/* SEO Text Section */}
+      <WebDevSEOText />
     </PageLayout>
   );
 };
