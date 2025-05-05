@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -211,16 +210,6 @@ const EnglishGoogleAds = () => {
         primaryCta="Start Campaign"
         secondaryCtaLink="/en/contact"
       />
-
-      <div className="bg-brand-backgroundAlt py-6">
-        <div className="container mx-auto px-4">
-          <p className="text-sm text-brand-text font-sans text-center">
-            <span className="font-bold">100+ successfully implemented projects</span> • 
-            <span className="mx-2">Trusted by leading companies</span> • 
-            <span className="font-bold">AI-powered performance strategies for maximum impact</span>
-          </p>
-        </div>
-      </div>
     </PageLayout>
   );
 };
