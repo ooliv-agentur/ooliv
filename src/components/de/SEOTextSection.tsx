@@ -7,169 +7,161 @@ const SEOTextSection = () => {
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Ihre Werbeagentur in Mainz – Maßgeschneiderte digitale Lösungen für Ihren Erfolg</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">SEO Agentur Mainz – Sichtbarkeit, die wächst</h2>
           <p>
-            Seit über 16 Jahren ist ooliv Ihre verlässliche Werbeagentur in Mainz, die kreative Lösungen, technische Expertise und durchdachte Online-Marketing-Strategien vereint. Unser Ziel ist es, Ihre Marke in der digitalen Welt optimal zu positionieren. Ob Webdesign, individuelle Programmierlösungen oder umfassende Marketingkampagnen – wir setzen Ihre Ideen in erfolgreiche Projekte um.
+            Als spezialisierte SEO Agentur Mainz verwandeln wir Ihre Website in einen nachhaltigen Wachstumstreiber. Mit klarer SEO-Strategie, technischer Präzision und Content-Fokus steigern wir Ihre Rankings, gewinnen qualifizierte Anfragen und stärken Ihre Marktposition – in Mainz und darüber hinaus.
           </p>
+          
+          <p className="font-medium">Jetzt SEO-Strategie starten → Kostenloses SEO-Audit anfordern</p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ihre Designagentur in Mainz – Kreativität trifft auf Innovation</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO-Probleme, die Umsatz kosten – wir lösen sie</h3>
           <p>
-            Unsere Designagentur in Mainz setzt auf eine einzigartige Verbindung aus Kreativität und Innovation. Jedes Projekt wird individuell entwickelt, um Ihre Marke mit einem ästhetischen und funktionalen Design zu stärken. Mit einem erfahrenen Team aus kreativen Köpfen und technischem Know-how schaffen wir Designs, die inspirieren und überzeugen. Dabei berücksichtigen wir nicht nur aktuelle Trends, sondern auch die spezifischen Anforderungen Ihrer Branche und Zielgruppe.
-          </p>
-
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Herausforderungen und Strategien beim Agenturwechsel</h3>
-          <p>
-            Ein Wechsel der Werbeagentur bringt häufig Herausforderungen mit sich, wie die Integration bestehender Projekte, das Vertrauen in neue Partner oder das Verständnis der Markenidentität. Wir bei ooliv kennen diese Herausforderungen und bieten Ihnen bewährte Strategien, um den Übergang reibungslos zu gestalten:
+            Unsere SEO-Dienstleistungen adressieren typische Schwachstellen und schaffen messbare Ergebnisse:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Analyse Ihrer bisherigen Agenturprojekte: Wir prüfen, welche Ansätze erfolgreich waren und welche verbessert werden können.</li>
-            <li>Klare Kommunikationswege: Transparenz und regelmäßiger Austausch sind für einen erfolgreichen Wechsel entscheidend.</li>
-            <li>Risikominimierung: Mit einer sorgfältigen Planung und Übergabeprozessen stellen wir sicher, dass keine wichtigen Daten oder Ressourcen verloren gehen.</li>
+            <li>Traffic, aber keine Leads: Optimierung für Suchintention & Conversion.</li>
+            <li>SEO dauert zu lange: Kombination aus schnellen Erfolgen und nachhaltigem Wachstum.</li>
+            <li>Veraltete Inhalte & schlechte Struktur: UX-Optimierung und Content-Aktualisierung.</li>
+            <li>Technische Fehler bremsen Rankings: Analyse von Ladezeiten, Indexierung, Core Web Vitals.</li>
           </ul>
           <p>
-            Ein Wechsel kann eine Chance sein, Ihre Marke neu zu positionieren und von frischen, innovativen Ideen zu profitieren. Vertrauen Sie auf unsere Erfahrung und regionale Marktkenntnisse in Mainz.
+            Mehr zu Content-Erstellung und Webentwicklung →
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erfolgsanalysen und Fallstudien – Überzeugende Ergebnisse</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Unsere SEO-Leistungen im Überblick</h3>
           <p>
-            Unsere Arbeit spricht für sich: Dank detaillierter Mitbewerberanalysen und datengetriebener Strategien konnten wir bereits zahlreiche Kunden in Mainz und darüber hinaus zum Erfolg führen. Hier ein Beispiel:
+            <strong>Keyword-Strategie:</strong><br />
+            Branchenspezifische Recherche und Keyword-Mapping für maximale Relevanz.
           </p>
           <p>
-            <strong>Fallstudie: Lokale SEO-Strategie für einen Einzelhändler</strong> Durch gezielte Keyword-Optimierungen und eine lokale SEO-Kampagne erhöhte sich die Sichtbarkeit um 45 % innerhalb von sechs Monaten. Dies führte zu einer Verdopplung des Umsatzes im Online-Shop.
+            <strong>On-Page-Optimierung:</strong><br />
+            Metadaten, Überschriften, URLs und strukturierte Content-Architektur.
           </p>
           <p>
-            Unsere Erfolgsberichte und Kundenbewertungen zeigen, wie wir individuelle Strategien entwickeln, um Ihre Ziele zu erreichen.
+            <strong>Technische SEO:</strong><br />
+            Website-Speed, Core Web Vitals, saubere Indexierung und Mobiloptimierung.
+          </p>
+          <p>
+            <strong>Content-Optimierung:</strong><br />
+            Erstellung und Pflege hochwertiger Inhalte für Nutzer und Suchmaschinen.
+          </p>
+          <p>
+            <strong>Link-Strategie:</strong><br />
+            Interne Verlinkung und nachhaltiger Backlink-Aufbau für Autorität und Trust.
+          </p>
+          <p>
+            <strong>Lokale SEO:</strong><br />
+            Sichtbarkeit in Mainz und Rhein-Main durch Google Business, lokale Verzeichnisse und regionale SEO.
+          </p>
+          <p>
+            <strong>Tools als Unterstützung – Strategie als Grundlage:</strong><br />
+            Wir arbeiten mit Ahrefs, Google Search Console, YoastSEO, ChatGPT, Midjourney und Sora – doch was zählt, ist unsere Erfahrung.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Webdesign Mainz – Kreative und innovative Lösungen</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Branchenspezifische SEO-Strategien für Ihren Erfolg</h3>
           <p>
-            Ihre Website ist die digitale Visitenkarte Ihres Unternehmens. Als erfahrene Webdesign-Agentur in Mainz entwickeln wir Websites, die:
+            Wir bieten maßgeschneiderte SEO-Lösungen für verschiedene Branchen:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Benutzerfreundlich und responsive sind.</li>
-            <li>SEO-optimiert und für Google ausgerichtet sind.</li>
-            <li>Kreativität und Innovation in den Vordergrund stellen.</li>
+            <li>Immobilien-SEO: Lokale Optimierung für Makler und Immobilienprojekte.</li>
+            <li>Handwerks-SEO: Sichtbarkeit für Handwerksbetriebe und spezialisierte Dienstleistungen.</li>
+            <li>Gesundheitswesen-SEO: Datenschutzkonformes SEO für Arztpraxen und Kliniken.</li>
+            <li>E-Commerce-SEO: Optimierte Produktseiten, Performance-Steigerung und Conversion-Optimierung.</li>
+            <li>Gastronomie-SEO: Mobile First SEO und Voice-Search-Optimierung für Restaurants und Eventlocations.</li>
           </ul>
           <p>
-            Unsere Designs integrieren die kreative DNA von Mainz – eine einzigartige Verbindung aus Tradition und Moderne. Wir entwickeln maßgeschneiderte Websites, die Ihre Vision widerspiegeln und Ihre Zielgruppe begeistern.
+            <strong>Maßnahmen je Branche:</strong><br />
+            Content Creation, SEO-Checks Mainz, On-Page & Off-Page Optimierung, mobiles SEO, individuelle Handlungsempfehlungen.
+          </p>
+          <p>
+            <strong>Ihr Vorteil:</strong><br />
+            Maßgeschneiderte Strategien – keine 08/15 SEO-Pakete.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO und Online-Marketing – Sichtbarkeit für Ihren Erfolg</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Unser SEO-Prozess – transparent und datengetrieben</h3>
+          <ul className="list-disc pl-6 mb-4 mt-2">
+            <li>Strategie & Analyse: Initiales Audit, Zieldefinition und Roadmap-Erstellung.</li>
+            <li>Fix & Struktur: Technische Korrekturen und Aufbau einer skalierbaren Architektur.</li>
+            <li>Keywords & Content: Entwicklung relevanter Seiten und Optimierung bestehender Inhalte.</li>
+            <li>Autorität aufbauen: Interne Verlinkung und gezielte Backlink-Kampagnen.</li>
+            <li>Tracking & Skalierung: Monitoring, Reportings und datengetriebene Optimierungen.</li>
+          </ul>
           <p>
-            Eine schöne Website reicht nicht aus. Deshalb sorgen wir dafür, dass Ihre Zielgruppe Sie auch findet. Unsere Leistungen umfassen:
+            Ihre Website wird zum nachhaltigen Wachstumsmotor.
+          </p>
+
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erfolgskontrolle & Reporting</h3>
+          <p>
+            Unsere SEO-Arbeit ist messbar:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Keyword-Analyse: Identifikation relevanter Begriffe für Ihre Branche.</li>
-            <li>On-Page-Optimierung: Optimierung von Texten, Bildern und Ladezeiten.</li>
-            <li>Off-Page-Strategien: Aufbau hochwertiger Backlinks.</li>
-            <li>Lokale SEO: Maximale Präsenz im Mainzer Markt.</li>
+            <li>SEO-Dashboards und monatliche Reportings: Alle KPIs auf einen Blick.</li>
+            <li>Keyword-Tracking: Monitoring relevanter Rankings und Suchbegriffe.</li>
+            <li>Conversion-Tracking: Erfolgsmessung auf Lead- und Umsatzbasis.</li>
+            <li>Kontinuierliche Betreuung: Laufende Optimierung basierend auf echten Daten.</li>
           </ul>
           <p>
-            Durch kanalübergreifende Strategien verbinden wir verschiedene digitale Kanäle, um Ihre Online-Präsenz ganzheitlich zu stärken. Ob Webdesign oder Suchmaschinenoptimierung – wir stellen sicher, dass alle Maßnahmen miteinander harmonieren und optimale Ergebnisse erzielen.
+            Daten statt Bauchgefühl – für nachhaltigen SEO-Erfolg.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Google Ads – Schnelle Ergebnisse mit messbarem Erfolg</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Beratung, Workshops & Zusammenarbeit</h3>
           <p>
-            Mit Google Ads sprechen wir Ihre Zielgruppe genau dort an, wo sie sich befindet. Unsere datengetriebenen Kampagnen maximieren Ihre Reichweite:
+            Neben klassischer SEO-Beratung bieten wir:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Gezielte Anzeigen für Ihre Zielgruppe.</li>
-            <li>Budgetkontrolle für optimale Effizienz.</li>
-            <li>Laufende Optimierungen zur Performance-Steigerung.</li>
+            <li>SEO-Erstberatung: Kostenfreie Analyse und Strategiegespräch.</li>
+            <li>SEO-Workshops: Wissenstransfer für Marketing- und Content-Teams.</li>
+            <li>Wissensvermittlung: Transparente Kommunikation aller Maßnahmen.</li>
+            <li>Individuelle Betreuung: Monatliche Meetings und direkte Ansprechpartner.</li>
           </ul>
           <p>
-            Egal, ob Sie Ihre Markenbekanntheit steigern, mehr Leads generieren oder direkt Umsatz erzielen möchten – wir entwickeln Google Ads-Kampagnen, die Ihre individuellen Ziele erreichen.
+            SEO bei ooliv bedeutet: fair, offen, partnerschaftlich.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Branding und Corporate Design – Ihre Marke, klar und unverwechselbar</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO als Investition in nachhaltigen Erfolg</h3>
           <p>
-            Ein starkes Branding schafft Vertrauen und Wiedererkennung. Wir entwickeln individuelle Markenidentitäten, die Ihre Werte und Visionen widerspiegeln. Vom Logo-Design bis zur Markenstrategie sorgen wir dafür, dass Ihre Marke einzigartig ist.
-          </p>
-          <p>
-            Unser Ansatz verbindet Kreativität mit strategischem Denken. So entstehen Designs, die nicht nur beeindrucken, sondern auch Ihre Zielgruppe langfristig ansprechen.
-          </p>
-
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erweiterte Marketingstrategien zur Umsatzsteigerung</h3>
-          <p>
-            Unsere maßgeschneiderten Marketingstrategien heben sich durch ihre Wirksamkeit und Kundennähe hervor. Durch die Kombination aus datengetriebenen Analysen und kreativen Ansätzen erzielen wir messbare Erfolge:
+            Suchmaschinenoptimierung ist keine Ausgabe, sondern eine gezielte Investition in messbares Wachstum. Durch transparente Kostenstrukturen, klare Zieldefinitionen und datenbasierte Optimierung schaffen wir echten Mehrwert für Ihr Business. Unsere Leistungen umfassen:
           </p>
           <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Content-Marketing: Hochwertige Inhalte, die Ihre Zielgruppe ansprechen und Ihr Unternehmen als Experten positionieren.</li>
-            <li>E-Mail-Marketing: Direktes Targeting Ihrer Kunden mit personalisierten Kampagnen, die den Umsatz steigern.</li>
-            <li>Kundenerfahrungen als Grundlage: Wir nutzen Feedback und Analysen, um die Strategie kontinuierlich zu verbessern.</li>
+            <li>SEO-Audits zur Identifikation von Optimierungspotenzialen</li>
+            <li>Ladezeiten- und Mobiloptimierung für bessere User Experience</li>
+            <li>Conversion-Optimierung für höhere Abschlussraten</li>
+            <li>Keyword-Tracking und Monitoring für kontinuierliche Performance-Analyse</li>
+            <li>Klar strukturierte Reportings für volle Transparenz</li>
           </ul>
           <p>
-            Mit einem ganzheitlichen Ansatz optimieren wir den Marketingmix, um Ihre Sichtbarkeit zu erhöhen und Ihre Unternehmensziele nachhaltig zu erreichen. Diese Strategien sind ideal für Unternehmen, die ihre Marke stärken und langfristig erfolgreich sein möchten.
+            Mit einem klar kalkulierten Werbebudget und individuell zugeschnittenen Veränderungsmaßnahmen maximieren wir den Return on Investment (ROI) Ihrer SEO-Strategie – effizient, nachhaltig, planbar.
           </p>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ganzheitliche Betreuung und Beratung</h3>
-          <p>
-            Als Full-Service-Agentur in Mainz bieten wir mehr als nur Einzeldienstleistungen. Unser Fokus liegt auf einer umfassenden Betreuung, die alle Aspekte Ihrer Online-Präsenz umfasst:
-          </p>
-          <ul className="list-disc pl-6 mb-4 mt-2">
-            <li>Strategische Beratung: Entwicklung langfristiger Online-Strategien.</li>
-            <li>Technische Umsetzung: Webdesign, SEO, Google Ads und mehr.</li>
-            <li>Laufende Betreuung: Regelmäßige Updates, Optimierungen und Support.</li>
-          </ul>
-          <p>
-            Wir verstehen uns als Ihr langfristiger Partner, der gemeinsam mit Ihnen an Ihrem Erfolg arbeitet.
-          </p>
-
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Kundenstimmen und Erfahrungsberichte</h3>
-          <p>
-            Detaillierte Kundenbewertungen geben Einblicke in die Zusammenarbeit mit ooliv und zeigen, wie wir Unternehmen zum Erfolg verhelfen. Unsere Kunden berichten von ihren Erfahrungen und dem Mehrwert, den unsere Dienstleistungen bieten:
-          </p>
-          <ul className="space-y-3 mt-4 mb-6">
-            <li>
-              <strong>Erfolg im Einzelhandel</strong> „Mit ooliv konnten wir unsere Online-Präsenz deutlich verbessern. Die Kombination aus SEO und Google Ads brachte uns innerhalb von drei Monaten 30 % mehr Website-Traffic." – Sandra K.
-            </li>
-            <li>
-              <strong>Designprojekte: Maßgeschneiderte Lösungen</strong> „Das neue Webdesign von ooliv hat nicht nur unser Image modernisiert, sondern auch die Nutzerfreundlichkeit enorm gesteigert. Wir bekommen durchweg positives Feedback von unseren Kunden." – Michael R.
-            </li>
-            <li>
-              <strong>Langjährige Partnerschaft mit ooliv</strong> „Wir arbeiten seit über 10 Jahren mit ooliv zusammen. Die Agentur versteht es, unsere Unternehmensziele mit kreativen und datengetriebenen Ansätzen zu unterstützen." – Julia F.
-            </li>
-          </ul>
-          <p>
-            Lesen Sie weitere Bewertungen auf unserer Google-Seite oder kontaktieren Sie uns, um mehr über unsere Erfolgsgeschichten zu erfahren.
-          </p>
-
-          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
-            „Dank ooliv haben wir eine Website, die nicht nur gut aussieht, sondern auch funktioniert. Die Zusammenarbeit war von Anfang an professionell und angenehm." – Susanne B.
-          </blockquote>
-
-          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
-            „Die SEO-Optimierung von ooliv hat uns geholfen, unsere Sichtbarkeit im Netz zu steigern. Jetzt werden wir bei Google besser gefunden." – Markus P.
-          </blockquote>
-
-          <blockquote className="border-l-4 border-brand-primary pl-4 italic my-6">
-            „Wir schätzen die strategische Herangehensweise und die kreativen Ideen von ooliv. Die Ergebnisse sprechen für sich." – Stefanie S.
-          </blockquote>
-
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Häufig gestellte Fragen (FAQs)</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Häufige Fragen zur SEO Agentur Mainz</h3>
           <div className="space-y-4 mt-4 mb-6">
             <div>
-              <p><strong>Welche Dienstleistungen bietet ooliv als Werbeagentur Mainz an?</strong></p>
-              <p>Wir bieten Webdesign, SEO, Google Ads, Branding und kanalübergreifende Online-Strategien.</p>
+              <p><strong>Wie lange dauert SEO?</strong><br />Erste Ergebnisse nach 2–4 Monaten, nachhaltige Rankings nach 6–12 Monaten.</p>
             </div>
             <div>
-              <p><strong>Wie lange dauert die Entwicklung einer Website durch ooliv?</strong></p>
-              <p>Abhängig von der Komplexität des Projekts zwischen 4 und 8 Wochen.</p>
+              <p><strong>Was macht eure SEO besonders?</strong><br />Verzahnung aus Content, Technik und Lokaler SEO – ohne Tricks, dafür mit Substanz.</p>
             </div>
             <div>
-              <p><strong>Warum sollte ich ooliv wählen?</strong></p>
-              <p>Wir verbinden kreative Ansätze mit datengetriebener Effizienz und regionaler Marktkenntnis.</p>
+              <p><strong>Bietet ihr nur lokale SEO in Mainz an?</strong><br />Nein, wir betreuen Kunden deutschlandweit und im gesamten DACH-Raum.</p>
             </div>
             <div>
-              <p><strong>Welche Vorteile bietet lokale SEO?</strong></p>
-              <p>Lokale SEO ermöglicht es Ihnen, gezielt Kunden in Mainz und Umgebung anzusprechen, Ihre Sichtbarkeit in der Region zu steigern und mehr Traffic zu generieren.</p>
+              <p><strong>Gehört Linkbuilding bei euch dazu?</strong><br />Ja, aber nachhaltig – keine Spam-Backlinks.</p>
+            </div>
+            <div>
+              <p><strong>Wie garantiert ihr aktuelle technische Standards?</strong><br />Durch regelmäßige Audits, Core Web Vitals Optimierung und neueste SEO-Technologien.</p>
             </div>
           </div>
 
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Fazit: Ihr Erfolg ist unser Ziel</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO, das wirkt – lokal & skalierbar</h3>
           <p>
-            Als Ihre Werbeagentur in Mainz begleiten wir Sie mit kreativen Ideen, innovativen Lösungen und datengetriebenen Strategien auf Ihrem Weg zum digitalen Erfolg. Kontaktieren Sie uns für ein unverbindliches Erstgesprääch und lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten. Bei ooliv setzen wir auf Transparenz, Innovation und eine partnerschaftliche Zusammenarbeit, um Ihre Ziele zu erreichen. Starten Sie jetzt durch und werden Sie Teil unseres Erfolgsnetzwerks.
+            SEO ist kein Projekt, sondern ein strategischer Wachstumshebel. Lassen Sie uns gemeinsam das volle Potenzial Ihrer Website entfalten.
           </p>
+          <p className="font-medium">👉 Jetzt Beratungsgespräch anfordern</p>
+          <ul className="list-none pl-6 mb-4 mt-2">
+            <li>✅ SEO-Strategie entwickeln</li>
+            <li>✅ Rankings steigern</li>
+            <li>✅ Geschäftserfolg messbar machen</li>
+          </ul>
         </article>
       </div>
     </section>

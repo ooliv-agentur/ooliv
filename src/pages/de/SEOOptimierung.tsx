@@ -48,10 +48,13 @@ const GermanSEO = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<SEOTextSection />}
+    >
       <Helmet>
-        <title>SEO Agentur Mainz | Sichtbarkeit für B2B mit ooliv</title>
-        <meta name="description" content="Mehr Sichtbarkeit für Ihre Website: ooliv ist Ihre SEO Agentur in Mainz – Onpage, Inhalte & Strategie für nachhaltige Rankings." />
+        <title>SEO Agentur Mainz | Sichtbarkeit und Wachstum mit ooliv</title>
+        <meta name="description" content="Mehr Sichtbarkeit, mehr Anfragen: Ihre SEO Agentur Mainz. Strategie, Onpage, Technik, Content und Backlinks – alles für Ihren SEO-Erfolg." />
       </Helmet>
 
       <SEOHeroDE />
@@ -72,7 +75,6 @@ const GermanSEO = () => {
       />
       
       <SEOCtaDE />
-      <SEOTextSection />
     </PageLayout>
   );
 };
