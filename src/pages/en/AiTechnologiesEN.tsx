@@ -10,6 +10,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import KiSEOTextEN from '@/components/ai-technologies/KiSEOTextEN';
 
 const EnglishAiTechnologies = () => {
   const { setLanguage } = useLanguage();
@@ -62,10 +63,10 @@ const EnglishAiTechnologies = () => {
   ];
   
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout className="overflow-x-hidden" seoText={<KiSEOTextEN />}>
       <Helmet>
-        <title>AI Agency for Web & Marketing | ooliv</title>
-        <meta name="description" content="ooliv integrates Artificial Intelligence into strategy, content and UX - as an AI agency for modern, scalable web solutions." />
+        <title>AI Agency in Mainz – AI Technologies for Webdesign, Content & Marketing | ooliv</title>
+        <meta name="description" content="Your AI Agency in Mainz: Faster, more scalable, more efficient with AI-powered web design, content and strategy. Get your potential analysis now!" />
       </Helmet>
 
       <AiTechHero />

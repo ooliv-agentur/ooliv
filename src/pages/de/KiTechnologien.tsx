@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -8,6 +9,7 @@ import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import KiSEOText from '@/components/ai-technologies/KiSEOText';
 
 const GermanAiTechnologies = () => {
   // AI tools data for German page
@@ -54,10 +56,10 @@ const GermanAiTechnologies = () => {
   ];
   
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout className="overflow-x-hidden" seoText={<KiSEOText />}>
       <Helmet>
-        <title>KI Agentur für Web & Marketing | ooliv</title>
-        <meta name="description" content="ooliv integriert Künstliche Intelligenz in Strategie, Content und UX – als KI Agentur für moderne, skalierbare Weblösungen." />
+        <title>KI Agentur Mainz – KI-Technologien für Webdesign, Content & Marketing | ooliv</title>
+        <meta name="description" content="Ihre KI Agentur Mainz: Schneller, skalierbarer, effizienter mit KI-gestütztem Webdesign, Content und Strategie. Jetzt Potenzialanalyse sichern!" />
       </Helmet>
 
       <AiTechHero />
