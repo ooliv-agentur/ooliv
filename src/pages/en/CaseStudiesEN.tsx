@@ -8,6 +8,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
+import CaseStudiesSEOTextEN from '@/components/case-studies/CaseStudiesSEOTextEN';
 
 // Success pillars
 const successPillars = [
@@ -83,7 +84,7 @@ const EnglishCaseStudies = () => {
   }, [setLanguage]);
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOTextEN />}>
       <Helmet>
         <title>Marketing Mainz | Case Studies with Real Results</title>
         <meta 

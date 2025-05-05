@@ -7,6 +7,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
+import CaseStudiesSEOText from '@/components/case-studies/CaseStudiesSEOText';
 
 // Success pillars
 const successPillars = [
@@ -53,7 +54,7 @@ const GermanCaseStudies = () => {
   
   // Force document title update to ensure it works across all domains
   useEffect(() => {
-    document.title = "Marketing Mainz | Case Studies mit echten Ergebnissen";
+    document.title = "Marketing Mainz – Erfolgreiche Markenentwicklung & Webprojekte | ooliv";
     
     // Create and update meta description if it doesn't exist
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -62,7 +63,7 @@ const GermanCaseStudies = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'So funktioniert Marketing aus Mainz: ooliv zeigt erfolgreiche Projekte für Web, Content und SEO. Jetzt inspirieren & profitieren!');
+    metaDescription.setAttribute('content', 'Marketing Mainz: Branding, Webdesign und nachhaltige Marketinglösungen für Unternehmen. ooliv – Ihre Agentur für strategisches Wachstum. Jetzt beraten lassen!');
     
     // Create and update meta keywords if it doesn't exist
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -75,12 +76,12 @@ const GermanCaseStudies = () => {
   }, []);
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOText />}>
       <Helmet>
-        <title>Marketing Mainz | Case Studies mit echten Ergebnissen</title>
+        <title>Marketing Mainz – Erfolgreiche Markenentwicklung & Webprojekte | ooliv</title>
         <meta 
           name="description" 
-          content="So funktioniert Marketing aus Mainz: ooliv zeigt erfolgreiche Projekte für Web, Content und SEO. Jetzt inspirieren & profitieren!" 
+          content="Marketing Mainz: Branding, Webdesign und nachhaltige Marketinglösungen für Unternehmen. ooliv – Ihre Agentur für strategisches Wachstum. Jetzt beraten lassen!" 
         />
         <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
       </Helmet>
