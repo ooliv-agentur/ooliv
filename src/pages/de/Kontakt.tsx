@@ -30,6 +30,7 @@ import {
 } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 import FAQ from '@/components/FAQ';
+import ContactSEOText from '@/components/contact/ContactSEOText';
 
 const ContactCard: React.FC<ContactCardProps> = ({
   icon,
@@ -98,10 +99,13 @@ const GermanContact = () => {
   };
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<ContactSEOText />}
+    >
       <Helmet>
-        <title>Kontakt | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Direktkontakt zur ooliv Werbeagentur Mainz: Jetzt Strategiegespräch vereinbaren oder unverbindlich Projektstart anfragen." />
+        <title>Kontakt ooliv – Ihre Digitalagentur Mainz</title>
+        <meta name="description" content="Kontaktieren Sie ooliv – Ihre Digitalagentur aus Mainz für individuelles Webdesign, SEO und Online-Marketing. Persönlich, direkt, effizient. Jetzt Nachricht senden!" />
       </Helmet>
 
       <PageHero

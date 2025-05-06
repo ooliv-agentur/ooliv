@@ -4,6 +4,7 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ConsultationRequestSection from '@/components/contact/ConsultationRequestSection';
+import ContactSEOTextEN from '@/components/contact/ContactSEOTextEN';
 
 const EnglishContact = () => {
   const { setLanguage } = useLanguage();
@@ -13,7 +14,10 @@ const EnglishContact = () => {
   }, [setLanguage]);
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<ContactSEOTextEN />}
+    >
       <Helmet>
         <title>Contact Us | ooliv</title>
         <meta name="description" content="Get in touch with our team to discuss your project." />
