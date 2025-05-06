@@ -52,10 +52,10 @@ const EnglishIndex = () => {
       <Helmet>
         {/* Force immediate application of these tags with higher priority */}
         <html lang="en" />
-        <title>Web Design Agency Mainz – High-Performance Websites | ooliv</title>
+        <title>Web Design Agency Mainz – Custom Websites That Deliver Results</title>
         <meta 
           name="description" 
-          content="ooliv creates websites that rank better, convert more, and deliver measurable business success. SEO, webdesign and web development from Mainz." 
+          content="ooliv – Your Web Design Agency in Mainz. We create WordPress, e-commerce, and custom websites focused on SEO, UX, and measurable business growth." 
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
