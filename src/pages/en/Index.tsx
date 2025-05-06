@@ -52,20 +52,14 @@ const EnglishIndex = () => {
       <Helmet>
         {/* Force immediate application of these tags with higher priority */}
         <html lang="en" />
-        <title>Web Design Agency Mainz – Custom Websites That Deliver Results | ooliv</title>
+        <title>Web Design Agency Mainz – High-Performance Websites | ooliv</title>
         <meta 
           name="description" 
-          content="ooliv – Your Web Design Agency in Mainz. We create WordPress, e-commerce, and custom websites focused on SEO, UX, and measurable business growth." 
+          content="ooliv creates websites that rank better, convert more, and deliver measurable business success. SEO, webdesign and web development from Mainz." 
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <PageHero 
-          title="Web Design Agency Mainz – Tailored Digital Solutions for Business Growth"
-          description="At ooliv, we are your specialized Web Design Agency in Mainz, creating websites that go beyond visual appeal — they deliver measurable results. With over 16 years of experience, we combine strategic thinking, technical excellence, and creative design to develop websites that convert, rank, and scale."
-          startProjectText="Start Your Website Project Today"
-          seeWorkText="See Our Work"
-          isHomepage={true}
-        />
+        <PageHero isHomepage={true} />
         <EnglishAboutSection />
         <EnglishTeamTeaser />
         
@@ -97,9 +91,9 @@ const EnglishIndex = () => {
         
         <CTA 
           lightBackground={true}
-          title="Ready to Build Your High-Performance Website?"
-          subtitle="Let's discuss how ooliv, your trusted Web Design Agency in Mainz, can deliver a website that drives real business growth."
-          primaryCta="Start Your Website Project Today"
+          title="Ready to transform your digital presence?"
+          subtitle="Let's discuss how our team can help your business achieve its online goals."
+          primaryCta="Start Your Website Project"
         />
       </PageLayout>
       
