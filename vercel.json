@@ -10,7 +10,23 @@
         }
       ],
       "destination": "https://ooliv.de/$1",
-      "permanent": true
+      "permanent": true,
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
+          "key": "Link",
+          "value": "<https://ooliv.de>; rel=\"canonical\""
+        }
+      ]
     }
   ]
 }

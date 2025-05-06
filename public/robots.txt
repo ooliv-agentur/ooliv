@@ -29,5 +29,8 @@ Allow: /en/privacy-policy
 Disallow: /danke
 Disallow: /en/thank-you
 
+# Explicitly block www version to prevent duplicate indexing
+Host: ooliv.de
+
 # Provide sitemap location
 Sitemap: https://ooliv.de/sitemap.xml

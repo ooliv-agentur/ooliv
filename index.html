@@ -28,7 +28,7 @@
     <meta name="robots" content="index, follow" />
     <!-- Default title (will be overridden by Helmet) -->
     <title>ooliv - Web Design Agency</title>
-    <!-- Base canonical URL that will be overridden by React Helmet on specific pages -->
+    <!-- Base canonical URL - always use non-www version -->
     <link rel="canonical" href="https://ooliv.de/" />
     <!-- Default hreflang tags that will be overridden by React Helmet on specific pages -->
     <link rel="alternate" hreflang="de" href="https://ooliv.de/" />
@@ -40,6 +40,9 @@
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ooliv.de" />
+    
+    <!-- Added explicit meta tag for non-www canonical site -->
+    <meta name="google-site-verification" content="DEIN-VERIFICATION-CODE" />
     
     <!-- Preconnect to critical domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

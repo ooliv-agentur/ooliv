@@ -1,3 +1,4 @@
+
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -53,7 +54,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   // Get the canonical path (current path)
   const currentPath = location.pathname;
   
-  // Use non-www version for all URLs
+  // Always use non-www version for all URLs
   const baseUrl = 'https://ooliv.de';
   const canonicalUrl = `${baseUrl}${currentPath}`;
   
@@ -61,7 +62,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const alternateLanguagePath = pathMappings[currentPath];
   const alternateLanguageUrl = alternateLanguagePath ? `${baseUrl}${alternateLanguagePath}` : null;
 
-  // Handle www to non-www redirect at the client level
+  // Handle www to non-www redirect at the client level as an extra safety measure
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hostname = window.location.hostname;
@@ -76,10 +77,10 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   return (
     <>
       <Helmet>
-        {/* Self-referencing canonical URL */}
+        {/* Self-referencing canonical URL - always the non-www version */}
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* Hreflang tags for language alternates */}
+        {/* Hreflang tags for language alternates - always non-www */}
         <link rel="alternate" hrefLang={language} href={canonicalUrl} />
         {alternateLanguageUrl && (
           <link 
@@ -92,12 +93,13 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Explicitly tell search engines to index and follow */}
         <meta name="robots" content="index, follow" />
         
+        {/* Add meta tag to indicate preferred domain variant */}
+        <meta name="google" content="notranslate" />
+        
         {/* Add preconnect for fonts to improve loading performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Add preconnect for www domain to improve performance during redirect */}
-        <link rel="preconnect" href="https://www.ooliv.de" />
-        {/* Preconnect to analytics domains to improve performance */}
+        {/* Add preconnect for analytics domains to improve performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         <style>{`

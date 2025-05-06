@@ -10,6 +10,11 @@ RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 
+# Add canonical header to all responses
+<IfModule mod_headers.c>
+    Header set Link "<https://ooliv.de>; rel=\"canonical\""
+</IfModule>
+
 # Handle pushState routing (SPA)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
