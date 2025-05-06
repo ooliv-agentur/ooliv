@@ -2,6 +2,10 @@
 import React from 'react';
 
 const ContactSEOTextEN = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,6 +19,15 @@ const ContactSEOTextEN = () => {
           
           {/* This is a placeholder - content will be added later when needed */}
           <p className="my-8">Full English content will be implemented according to requirements.</p>
+          
+          <p className="my-4">
+            <button
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+            >
+              👉 Get in touch today
+            </button>
+          </p>
         </article>
       </div>
     </section>

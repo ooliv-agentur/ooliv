@@ -1,8 +1,11 @@
-
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 
 const SEOTextSection = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,7 +212,14 @@ const SEOTextSection = () => {
             <li>A team that combines creative ideas with technical depth</li>
           </ul>
           
-          <p className="my-4">Let's start your web project together – with strategy, structure, and substance.</p>
+          <p className="my-4">
+            <button
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+            >
+              👉 Let's start your web project together – with strategy, structure, and substance.
+            </button>
+          </p>
         </article>
       </div>
     </section>

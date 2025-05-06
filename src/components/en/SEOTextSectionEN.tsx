@@ -1,8 +1,11 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const SEOTextSectionEN = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +114,12 @@ const SEOTextSectionEN = () => {
           </p>
           
           <p className="my-4">
-            👉 Start Your Website Project Today
+            <button 
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+            >
+              👉 Start Your Website Project Today
+            </button>
           </p>
         </article>
       </div>

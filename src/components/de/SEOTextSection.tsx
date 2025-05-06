@@ -1,8 +1,11 @@
-
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 
 const SEOTextSection = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +15,20 @@ const SEOTextSection = () => {
             Als spezialisierte SEO Agentur Mainz verwandeln wir Ihre Website in einen nachhaltigen Wachstumstreiber. Mit klarer SEO-Strategie, technischer Präzision und Content-Fokus steigern wir Ihre Rankings, gewinnen qualifizierte Anfragen und stärken Ihre Marktposition – in Mainz und darüber hinaus.
           </p>
           
-          <p className="font-medium">Jetzt SEO-Strategie starten → Kostenloses SEO-Audit anfordern</p>
+          <p className="font-medium">
+            <button
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+            >
+              Jetzt SEO-Strategie starten
+            </button> → 
+            <button
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block ml-1"
+            >
+              Kostenloses SEO-Audit anfordern
+            </button>
+          </p>
 
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO-Probleme, die Umsatz kosten – wir lösen sie</h3>
           <p>
@@ -156,7 +172,14 @@ const SEOTextSection = () => {
           <p>
             SEO ist kein Projekt, sondern ein strategischer Wachstumshebel. Lassen Sie uns gemeinsam das volle Potenzial Ihrer Website entfalten.
           </p>
-          <p className="font-medium">👉 Jetzt Beratungsgespräch anfordern</p>
+          <p className="font-medium">
+            <button
+              onClick={handleOpenLeadForm}
+              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+            >
+              👉 Jetzt Beratungsgespräch anfordern
+            </button>
+          </p>
           <ul className="list-none pl-6 mb-4 mt-2">
             <li>✅ SEO-Strategie entwickeln</li>
             <li>✅ Rankings steigern</li>
