@@ -6,7 +6,18 @@ const SEOTextSectionEN = () => {
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Why ooliv? – Your Partner for Professional Web Projects</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Web Design Agency Mainz – Tailored Digital Solutions for Business Growth</h2>
+          
+          <p>
+            At ooliv, we are your specialized Web Design Agency in Mainz, creating websites that go beyond visual appeal — they deliver measurable results.
+            With over 16 years of experience, we combine strategic thinking, technical excellence, and creative design to develop websites that convert, rank, and scale.
+          </p>
+          
+          <p>
+            We specialize in WordPress CMS development, while also offering custom solutions on Shopify, Shopware, and other e-commerce platforms — always optimized for SEO, speed, and user experience.
+          </p>
+          
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-10 mb-6">Why ooliv? – Your Partner for Professional Web Projects</h2>
           
           <ul className="list-none space-y-2 my-6">
             <li>✓ Custom CMS Solutions: WordPress, Shopify, and scalable e-commerce platforms — selected based on your project goals.</li>
