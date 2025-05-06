@@ -7,6 +7,7 @@ import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import CTA from '@/components/CTA';
 import { useLanguage } from '@/contexts/LanguageContext';
+import AboutUsSEOTextEN from '@/components/about-us/AboutUsSEOTextEN';
 
 const EnglishAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -16,7 +17,10 @@ const EnglishAboutUs = () => {
   }, [setLanguage]);
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<AboutUsSEOTextEN />}
+    >
       <Helmet>
         <title>About ooliv | Your web agency from Mainz</title>
         <meta name="description" content="ooliv is your web & marketing agency from Mainz: Strategic, transparent, effective. Learn more about our team and working style!" />

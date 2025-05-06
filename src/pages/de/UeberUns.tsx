@@ -17,6 +17,7 @@ import {
 import { Users, Target, Briefcase, Globe, Award, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Separator } from '@/components/ui/separator';
+import AboutUsSEOText from '@/components/about-us/AboutUsSEOText';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -57,7 +58,7 @@ const GermanAboutUs = () => {
     },
     {
       question: "Wie ist der typische Projektablauf mit eurer Marketing Agentur?",
-      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team in Mainz entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Marketing Agentur begleiten wir Sie von der ersten Idee bis zur langfristigen Betreuung."
+      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team in Mainz entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Marketing Agentur begleiten Sie von der ersten Idee bis zur langfristigen Betreuung."
     },
     {
       question: "Arbeitet ihr als Marketing Agentur auch mit KI-Tools?",
@@ -66,10 +67,13 @@ const GermanAboutUs = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
+    <PageLayout 
+      className="overflow-x-hidden" 
+      seoText={<AboutUsSEOText />}
+    >
       <Helmet>
-        <title>Über ooliv | Ihre Digitalagentur aus Mainz</title>
-        <meta name="description" content="Lernen Sie ooliv kennen: Inhabergeführte Digitalagentur aus Mainz für Strategie, Web, Content & SEO – individuell mit System." />
+        <title>Marketing Agentur Mainz – Strategie, SEO & Wachstum | ooliv</title>
+        <meta name="description" content="Ihre Marketing Agentur Mainz für Websites, SEO, SEA und Content. Maßgeschneiderte Strategien für echtes Wachstum. Jetzt Beratung sichern!" />
       </Helmet>
 
       <PageHero 
