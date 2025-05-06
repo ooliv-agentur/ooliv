@@ -10,7 +10,7 @@ import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import SEOTextSection from '@/components/web-design/SEOTextSection';
+import WebDesignSEOTextEN from '@/components/web-design/WebDesignSEOTextEN';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const EnglishWebDesign = () => {
@@ -24,8 +24,8 @@ const EnglishWebDesign = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <Helmet>
-          <title>Strategic Web Design Mainz for B2B Companies</title>
-          <meta name="description" content="Web Design Mainz – no templates, but tailor-made solutions. For more leads, visibility and digital brand strength." />
+          <title>Webdesign by ooliv – Custom Websites for Business Growth</title>
+          <meta name="description" content="Discover tailor-made webdesign solutions by ooliv. Scalable WordPress websites, SEO strategies, and high-performance design for international businesses." />
         </Helmet>
         
         <WebDesignHero />
@@ -54,7 +54,7 @@ const EnglishWebDesign = () => {
       </PageLayout>
       
       {/* SEO Text Section moved outside PageLayout to appear after footer */}
-      <SEOTextSection />
+      <WebDesignSEOTextEN />
     </>
   );
 };
