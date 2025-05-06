@@ -11,6 +11,7 @@ import WebDevCTA from '@/components/web-development/WebDevCTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
+import WebDevSEOTextEN from '@/components/web-development/WebDevSEOTextEN';
 
 const EnglishWebDevelopment = () => {
   const { setLanguage } = useLanguage();
@@ -44,30 +45,35 @@ const EnglishWebDevelopment = () => {
   ];
 
   return (
-    <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Web Development Agency | Custom WordPress & Code Solutions</title>
-        <meta name="description" content="ooliv develops scalable websites with CMS or custom code – flexible, secure, SEO-ready. WordPress agency for business-focused web development." />
-      </Helmet>
+    <>
+      <PageLayout className="overflow-x-hidden">
+        <Helmet>
+          <title>Web Development Services | Front-End, Back-End & Full-Stack Solutions | ooliv</title>
+          <meta name="description" content="Scalable web development with front-end, back-end, and full-stack expertise. Build a secure, SEO-optimized website with ooliv today!" />
+        </Helmet>
 
-      <WebDevHero />
-      <WebDevBenefits />
-      <WebDevCmsVsStatic />
-      <WebDevProcess />
-      <WebDevServices />
+        <WebDevHero />
+        <WebDevBenefits />
+        <WebDevCmsVsStatic />
+        <WebDevProcess />
+        <WebDevServices />
+        
+        {/* Using Global Case Studies Component */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
+        
+        {/* Using Global FAQ Component with custom FAQs - matching German page structure */}
+        <FAQ customFaqs={webDevFaqs} />
+        
+        <WebDevCTA />
+      </PageLayout>
       
-      {/* Using Global Case Studies Component */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
-        </div>
-      </section>
-      
-      {/* Using Global FAQ Component with custom FAQs - matching German page structure */}
-      <FAQ customFaqs={webDevFaqs} />
-      
-      <WebDevCTA />
-    </PageLayout>
+      {/* SEO Text Section moved outside PageLayout to appear after footer */}
+      <WebDevSEOTextEN />
+    </>
   );
 };
 
