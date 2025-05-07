@@ -1,11 +1,21 @@
 
-
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
   overflow: hidden;
   z-index: 0; /* Ensure correct stacking context */
+}
+
+/* Hero video background */
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .bg-hero-pattern::before {
@@ -100,8 +110,8 @@
 @media (prefers-reduced-motion: reduce) {
   .bg-hero-pattern::before,
   .bg-hero-pattern::after,
-  .premium-texture {
+  .premium-texture,
+  .hero-background-video {
     animation: none;
   }
 }
-
