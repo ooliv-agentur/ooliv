@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +5,7 @@
 /* Import hero background styles */
 @import './styles/hero-background.css';
 
-/* Stellen Sie sicher, dass es keine Überschreibungen für den Hero-Hintergrund gibt */
+/* Ensure there are no overrides for the hero background */
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
@@ -15,7 +14,7 @@
 .bg-hero-pattern::before,
 .bg-hero-pattern::after {
   content: '' !important;
-  z-index: 1 !important;
+  z-index: -1 !important;
 }
 
 /* Custom Scrollbar Styling */

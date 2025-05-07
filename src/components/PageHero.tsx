@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -214,8 +213,8 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      <div className="absolute inset-0 z-10 pointer-events-none bg-hero-pattern" aria-hidden="true">
-        {/* This empty div ensures the animation is visible and takes full space */}
+      <div className="absolute inset-0 z-10 bg-hero-pattern" aria-hidden="true">
+        {/* Empty div with bg-hero-pattern class to ensure animation is visible */}
       </div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
