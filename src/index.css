@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,6 +16,10 @@
 .bg-hero-pattern::after {
   content: '' !important;
   z-index: -1 !important;
+  animation-play-state: running !important;
+  animation-delay: 0s !important;
+  animation-fill-mode: both !important;
+  transform-origin: center center !important;
 }
 
 /* Custom Scrollbar Styling */
