@@ -6,14 +6,14 @@ interface BackgroundAnimationProps {
   speed?: number;
   opacity?: number;
   disableAnimation?: boolean;
-  testMode?: boolean; // Keeping this prop but will set to false
+  testMode?: boolean;
 }
 
 const BackgroundAnimation = ({
   speed = 1,
   opacity = 0.8,
   disableAnimation = false,
-  testMode = false 
+  testMode = false
 }: BackgroundAnimationProps) => {
   // Check if user prefers reduced motion
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
@@ -31,24 +31,21 @@ const BackgroundAnimation = ({
   }, []);
   
   // Calculate actual animation duration based on speed prop
-  const baseDuration = 60; // seconds
-  const actualDuration = baseDuration / speed; // Production speed
+  const baseDuration = 60; // seconds 
+  const actualDuration = baseDuration / speed;
   
   // Skip animation if disabled or if user prefers reduced motion
   const shouldAnimate = !disableAnimation && !prefersReducedMotion;
   
-  // Use subtle gradients for production
-  const backgroundStyle = {
-    background: `radial-gradient(circle at 30% 30%, rgba(240,244,248,0.7) 0%, rgba(229,233,236,0) 70%)`,
-    opacity: opacity,
-  };
-  
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {/* Main rotating background */}
+      {/* Main rotating background - soft radial gradient */}
       <motion.div 
         className="absolute inset-0"
-        style={backgroundStyle}
+        style={{
+          background: `radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 80%)`,
+          opacity: opacity,
+        }}
         initial={{ rotate: 0 }}
         animate={shouldAnimate ? { rotate: 360 } : {}}
         transition={{
@@ -62,13 +59,13 @@ const BackgroundAnimation = ({
       <motion.div
         className="absolute inset-0"
         style={{
-          background: `radial-gradient(circle at 70% 70%, rgba(233,236,239,0.7) 0%, rgba(225,228,232,0) 70%)`,
-          opacity: opacity * 0.8,
+          background: `radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 70%)`,
+          opacity: opacity * 0.9,
         }}
         initial={{ rotate: 0 }}
         animate={shouldAnimate ? { rotate: -360 } : {}}
         transition={{
-          duration: actualDuration * 1.2,
+          duration: actualDuration * 1.3,
           repeat: Infinity,
           ease: "linear"
         }}
