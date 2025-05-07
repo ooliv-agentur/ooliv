@@ -23,6 +23,13 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
+  backgroundTexture?: {
+    enabled?: boolean;
+    imageUrl?: string;
+    opacity?: number;
+    topPosition?: string;
+    height?: string;
+  };
 }
 
 const PageHero = ({
@@ -34,12 +41,42 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false
+  isHomepage = false,
+  backgroundTexture
 }: PageHeroProps) => {
   const { language } = useLanguage();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
+  
+  // Default background texture settings
+  const defaultBackgroundTexture = {
+    enabled: isHomepage && language === 'de',
+    imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
+    opacity: 0.07,
+    topPosition: '20%',
+    height: '60%'
+  };
+  
+  // Merge provided texture settings with defaults
+  const textureSettings = {
+    ...defaultBackgroundTexture,
+    ...backgroundTexture
+  };
+  
+  // Create custom texture style if needed
+  const customTextureStyle = textureSettings.enabled && 
+    (backgroundTexture?.imageUrl || 
+     backgroundTexture?.opacity !== undefined || 
+     backgroundTexture?.topPosition || 
+     backgroundTexture?.height)
+    ? {
+        backgroundImage: `url("${textureSettings.imageUrl}")`,
+        opacity: textureSettings.opacity,
+        top: textureSettings.topPosition,
+        height: textureSettings.height
+      } 
+    : {};
   
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
@@ -213,8 +250,14 @@ const PageHero = ({
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
-        {/* Premium texture overlay for German homepage */}
-        {isHomepage && language === 'de' && <div className="premium-texture" aria-hidden="true"></div>}
+        {/* Premium texture overlay - conditionally rendered and styled */}
+        {textureSettings.enabled && (
+          <div 
+            className={Object.keys(customTextureStyle).length > 0 ? "" : "premium-texture"} 
+            style={customTextureStyle}
+            aria-hidden="true"
+          ></div>
+        )}
       </div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">

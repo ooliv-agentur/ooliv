@@ -24,6 +24,18 @@ const EnglishIndex = () => {
     console.log('EnglishIndex component mounted - setting language to English');
   }, []);
   
+  // No background texture for English homepage, but we could add one if desired
+  // by uncommenting and configuring the below:
+  /*
+  const backgroundTexture = {
+    enabled: true,
+    imageUrl: "/path/to/texture.png", 
+    opacity: 0.05,
+    topPosition: '20%',
+    height: '60%'
+  };
+  */
+  
   const simplifiedFaqs = [
     {
       question: "What is your website creation process?",
@@ -59,7 +71,10 @@ const EnglishIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} />
+        <PageHero 
+          isHomepage={true}
+          // backgroundTexture={backgroundTexture} // Uncomment to enable a texture for English page
+        />
         <EnglishAboutSection />
         <EnglishTeamTeaser />
         

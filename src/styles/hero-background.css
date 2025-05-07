@@ -43,7 +43,7 @@
   pointer-events: none; /* Prevent interaction problems */
 }
 
-/* Premium texture overlay for German homepage */
+/* Premium texture overlay for hero backgrounds */
 .premium-texture {
   position: absolute;
   top: 20%;

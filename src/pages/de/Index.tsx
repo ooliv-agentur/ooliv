@@ -46,6 +46,15 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
   }, []);
   
+  // Premium texture configuration for the German homepage
+  const backgroundTexture = {
+    enabled: true,
+    imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
+    opacity: 0.07,
+    topPosition: '20%',
+    height: '60%'
+  };
+  
   return (
     <>
       <Helmet>
@@ -59,7 +68,10 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} />
+        <PageHero 
+          isHomepage={true} 
+          backgroundTexture={backgroundTexture}
+        />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
