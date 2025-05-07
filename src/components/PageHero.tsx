@@ -213,8 +213,8 @@ const PageHero = ({
   
   return (
     <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background animation using Framer Motion - USING TEST MODE FOR VISIBILITY */}
-      <BackgroundAnimation testMode={true} speed={2} opacity={0.7} />
+      {/* Background animation using Framer Motion - with production settings */}
+      <BackgroundAnimation speed={0.8} opacity={0.7} />
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
