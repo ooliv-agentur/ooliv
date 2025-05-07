@@ -43,7 +43,7 @@
   pointer-events: none; /* Prevent interaction problems */
 }
 
-/* Verstärkte Animation für bessere Sichtbarkeit */
+/* Animation for subtle movement */
 @keyframes float {
   0%, 100% {
     transform: translateY(0) scale(1);
@@ -62,7 +62,7 @@
   }
 }
 
-/* Optional: Reduziere Animationen wenn der Benutzer dies bevorzugt */
+/* Optional: Reduce animations if the user prefers */
 @media (prefers-reduced-motion: reduce) {
   .bg-hero-pattern::before,
   .bg-hero-pattern::after {
