@@ -1,4 +1,5 @@
 
+
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative;
@@ -64,59 +65,6 @@
   filter: blur(2px);
 }
 
-/* Video background container */
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* Video styling */
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translateX(-50%) translateY(-50%);
-  opacity: 0.85; /* 85% opacity as requested */
-  object-fit: cover;
-}
-
-/* Wave separator styling - improved for seamless video background */
-.wave-separator {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2; /* Above the video but below content */
-  pointer-events: none;
-  filter: drop-shadow(0 -3px 2px rgba(255, 255, 255, 0.08));
-}
-
-.wave-separator path {
-  fill: rgba(255, 255, 255, 0.85); /* Semi-transparent white for better blending */
-}
-
-/* Overlay to improve text readability over video */
-.video-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(245, 247, 250, 0.2) 0%, rgba(233, 236, 239, 0.3) 100%);
-  z-index: 1;
-}
-
 /* Verstärkte Animation für bessere Sichtbarkeit */
 @keyframes float {
   0%, 100% {
@@ -152,8 +100,8 @@
 @media (prefers-reduced-motion: reduce) {
   .bg-hero-pattern::before,
   .bg-hero-pattern::after,
-  .premium-texture,
-  .video-background video {
+  .premium-texture {
     animation: none;
   }
 }
+

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -23,12 +24,17 @@ const EnglishIndex = () => {
     console.log('EnglishIndex component mounted - setting language to English');
   }, []);
   
-  // Background video configuration
-  const backgroundVideo = {
+  // No background texture for English homepage, but we could add one if desired
+  // by uncommenting and configuring the below:
+  /*
+  const backgroundTexture = {
     enabled: true,
-    videoUrl: "/20250507_1412_Elegant Abstract Calm_simple_compose_01jtnaj92be5hakm8yk68g405s.mp4",
-    opacity: 0.85
+    imageUrl: "/path/to/texture.png", 
+    opacity: 0.05,
+    topPosition: '20%',
+    height: '60%'
   };
+  */
   
   const simplifiedFaqs = [
     {
@@ -67,7 +73,7 @@ const EnglishIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true}
-          backgroundVideo={backgroundVideo}
+          // backgroundTexture={backgroundTexture} // Uncomment to enable a texture for English page
         />
         <EnglishAboutSection />
         <EnglishTeamTeaser />

@@ -1,10 +1,10 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PageHeroProps {
   badge?: string;
@@ -31,11 +31,6 @@ interface PageHeroProps {
     topPosition?: string;
     height?: string;
   };
-  backgroundVideo?: {
-    enabled?: boolean;
-    videoUrl?: string;
-    opacity?: number;
-  };
 }
 
 const PageHero = ({
@@ -48,11 +43,9 @@ const PageHero = ({
   startProjectText,
   seeWorkText,
   isHomepage = false,
-  backgroundTexture,
-  backgroundVideo
+  backgroundTexture
 }: PageHeroProps) => {
   const { language } = useLanguage();
-  const isMobile = useIsMobile();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
@@ -62,8 +55,8 @@ const PageHero = ({
     enabled: isHomepage && language === 'de',
     imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
     opacity: 0.07,
-    topPosition: '0',
-    height: '100%'
+    topPosition: '0', // Changed from '20%' to '0' to cover the entire section
+    height: '100%' // Changed from '60%' to '100%' to cover the entire section
   };
   
   // Merge provided texture settings with defaults
@@ -71,22 +64,6 @@ const PageHero = ({
     ...defaultBackgroundTexture,
     ...backgroundTexture
   };
-  
-  // Default video settings
-  const defaultBackgroundVideo = {
-    enabled: isHomepage,
-    videoUrl: "/20250507_1412_Elegant Abstract Calm_simple_compose_01jtnaj92be5hakm8yk68g405s.mp4",
-    opacity: 0.85
-  };
-  
-  // Merge provided video settings with defaults
-  const videoSettings = {
-    ...defaultBackgroundVideo,
-    ...backgroundVideo
-  };
-  
-  // Whether to show video (not on mobile)
-  const showVideo = videoSettings.enabled && !isMobile;
   
   // Create custom texture style if needed
   const customTextureStyle = textureSettings.enabled && 
@@ -120,7 +97,7 @@ const PageHero = ({
     
     if (
       text === 'Projekt starten' || 
-      text === 'Start Your Website Project' ||
+      text === 'Start Your Project' ||
       text === 'Start Your Web Project' ||
       text === 'SEO-Strategie starten' ||
       text === 'Start Your SEO Strategy' ||
@@ -273,24 +250,7 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background video and texture container - single layer across entire section */}
       <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
-        {/* Video background - conditionally rendered for non-mobile devices */}
-        {showVideo && (
-          <div className="video-background">
-            <video 
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="hero-background-video"
-              style={{ opacity: videoSettings.opacity }}
-            >
-              <source src={videoSettings.videoUrl} type="video/mp4" />
-            </video>
-          </div>
-        )}
-        
         {/* Premium texture overlay - conditionally rendered and styled */}
         {textureSettings.enabled && (
           <div 
@@ -317,8 +277,7 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Wave separator with improved transparency for video continuity */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none wave-separator">
+      <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 
@@ -326,6 +285,8 @@ const PageHero = ({
           preserveAspectRatio="none"
         >
           <path 
+            fill="#ffffff" 
+            fillOpacity="1" 
             d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
         </svg>
