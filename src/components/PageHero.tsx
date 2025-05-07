@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -78,7 +77,6 @@ const PageHero = ({
            text.includes('Kampagne starten');
   };
   
-  // Adjusted content to ensure proper translation and consistent structure for both languages
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -214,8 +212,8 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      <div className="absolute inset-0 z-10 pointer-events-none bg-hero-pattern" aria-hidden="true">
-        {/* This empty div ensures the animation is visible and takes full space */}
+      <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
+        {/* Premium texture overlay for German homepage */}
         {isHomepage && language === 'de' && <div className="premium-texture" aria-hidden="true"></div>}
       </div>
       
