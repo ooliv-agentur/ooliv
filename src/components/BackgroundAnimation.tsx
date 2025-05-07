@@ -36,14 +36,14 @@ const BackgroundAnimation = ({
 
   const shouldAnimate = !disableAnimation && !prefersReducedMotion;
 
-  // Updated background style: stronger, centered, more visible
+  // Updated background style: stronger, centered, more visible glow
   const backgroundStyle = {
-    background: `radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 80%)`,
+    background: `radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 80%)`,
     opacity: opacity,
   };
 
   const secondLayerStyle = {
-    background: `radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 80%)`,
+    background: `radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%)`,
     opacity: opacity * 0.8,
   };
 
