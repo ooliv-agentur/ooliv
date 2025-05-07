@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -54,11 +55,11 @@ const GermanIndex = () => {
     height: '100%'
   };
   
-  // Background video configuration
+  // Background video configuration with slightly increased opacity for testing
   const backgroundVideo = {
     enabled: true,
     videoUrl: "/20250507_1412_Elegant Abstract Calm_simple_compose_01jtnaj92be5hakm8yk68g405s.mp4",
-    opacity: 0.85
+    opacity: 0.9  // Temporarily increased for testing visual integration
   };
   
   return (
