@@ -232,21 +232,6 @@ const PageHero = ({
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1440 320" 
-          className="absolute bottom-0 w-full h-auto"
-          preserveAspectRatio="none"
-        >
-          <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-      
       {isHomepage && <ScrollIndicator />}
     </section>
   );
