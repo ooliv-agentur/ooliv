@@ -3,25 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import hero background styles */
-@import './styles/hero-background.css';
-
-/* Ensure there are no overrides for the hero background */
-.bg-hero-pattern {
-  position: relative !important;
-  z-index: 0 !important;
-}
-
-.bg-hero-pattern::before,
-.bg-hero-pattern::after {
-  content: '' !important;
-  z-index: -1 !important;
-  animation-play-state: running !important;
-  animation-delay: 0s !important;
-  animation-fill-mode: both !important;
-  transform-origin: center center !important;
-}
-
 /* Custom Scrollbar Styling */
 /* For webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
+import BackgroundAnimation from './BackgroundAnimation';
 
 interface PageHeroProps {
   badge?: string;
@@ -212,18 +213,9 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Animated background with visible texture pattern */}
-      <div 
-        className="absolute inset-0 z-10 bg-hero-pattern" 
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          pointerEvents: 'none'
-        }}
-      ></div>
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      {/* Background animation using Framer Motion */}
+      <BackgroundAnimation speed={0.5} opacity={0.7} />
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
