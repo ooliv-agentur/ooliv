@@ -89,6 +89,23 @@
   object-fit: cover;
 }
 
+/* Wave separator styling - modified to ensure video shows through */
+.wave-separator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2; /* Above the video but below content */
+  pointer-events: none;
+  filter: drop-shadow(0 -4px 4px rgba(255, 255, 255, 0.1));
+}
+
+.wave-separator path {
+  fill: #ffffff;
+  fill-opacity: 0.9; /* Semi-transparent to show video through */
+}
+
 /* Overlay to improve text readability over video */
 .video-background::after {
   content: '';
