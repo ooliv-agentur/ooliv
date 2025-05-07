@@ -1,4 +1,5 @@
 
+
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative;
@@ -46,11 +47,11 @@
 /* Premium texture overlay for hero backgrounds */
 .premium-texture {
   position: absolute;
-  top: 20%;
+  top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 60%;
+  height: 100%; /* Extended to cover the entire section height */
   background-image: url("/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -103,3 +104,4 @@
     animation: none;
   }
 }
+

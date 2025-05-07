@@ -51,8 +51,8 @@ const GermanIndex = () => {
     enabled: true,
     imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
     opacity: 0.07,
-    topPosition: '20%',
-    height: '60%'
+    topPosition: '0', // Changed from '20%' to '0'
+    height: '100%' // Changed from '60%' to '100%'
   };
   
   return (
