@@ -42,7 +42,6 @@ const BackgroundAnimation = ({
         className="absolute top-[-10%] right-[-10%] w-[70%] h-[80%] rounded-full"
         style={{
           background: `radial-gradient(circle at center, rgba(240,244,248,0.7) 0%, rgba(229,233,236,0) 70%)`,
-          backgroundImage: `repeating-linear-gradient(45deg, rgba(240,244,248,0.3) 0px, rgba(240,244,248,0.3) 20px, rgba(245,247,250,0.3) 20px, rgba(245,247,250,0.3) 40px)`,
           opacity: opacity,
         }}
         initial={{ rotate: 0, y: 0 }}
@@ -63,7 +62,6 @@ const BackgroundAnimation = ({
         className="absolute bottom-0 left-[-5%] w-[60%] h-[70%] rounded-full"
         style={{
           background: `radial-gradient(circle at center, rgba(233,236,239,0.7) 0%, rgba(225,228,232,0) 70%)`,
-          backgroundImage: `repeating-radial-gradient(circle at center, rgba(233,236,239,0.4) 0px, rgba(233,236,239,0.4) 10px, rgba(229,232,235,0.4) 10px, rgba(229,232,235,0.4) 20px)`,
           opacity: opacity,
         }}
         initial={{ rotate: 0, y: 0 }}
