@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -51,8 +50,15 @@ const GermanIndex = () => {
     enabled: true,
     imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
     opacity: 0.07,
-    topPosition: '0', // Changed from '20%' to '0'
-    height: '100%' // Changed from '60%' to '100%'
+    topPosition: '0',
+    height: '100%'
+  };
+  
+  // Background video configuration
+  const backgroundVideo = {
+    enabled: true,
+    videoUrl: "/20250507_1412_Elegant Abstract Calm_simple_compose_01jtnaj92be5hakm8yk68g405s.mp4",
+    opacity: 0.85
   };
   
   return (
@@ -71,6 +77,7 @@ const GermanIndex = () => {
         <PageHero 
           isHomepage={true} 
           backgroundTexture={backgroundTexture}
+          backgroundVideo={backgroundVideo}
         />
         <DeutscherAboutSection />
         <TeamTeaserDE />

@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PageHeroProps {
   badge?: string;
@@ -31,6 +31,11 @@ interface PageHeroProps {
     topPosition?: string;
     height?: string;
   };
+  backgroundVideo?: {
+    enabled?: boolean;
+    videoUrl?: string;
+    opacity?: number;
+  };
 }
 
 const PageHero = ({
@@ -43,9 +48,11 @@ const PageHero = ({
   startProjectText,
   seeWorkText,
   isHomepage = false,
-  backgroundTexture
+  backgroundTexture,
+  backgroundVideo
 }: PageHeroProps) => {
   const { language } = useLanguage();
+  const isMobile = useIsMobile();
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
@@ -55,8 +62,8 @@ const PageHero = ({
     enabled: isHomepage && language === 'de',
     imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
     opacity: 0.07,
-    topPosition: '0', // Changed from '20%' to '0' to cover the entire section
-    height: '100%' // Changed from '60%' to '100%' to cover the entire section
+    topPosition: '0',
+    height: '100%'
   };
   
   // Merge provided texture settings with defaults
@@ -64,6 +71,22 @@ const PageHero = ({
     ...defaultBackgroundTexture,
     ...backgroundTexture
   };
+  
+  // Default video settings
+  const defaultBackgroundVideo = {
+    enabled: isHomepage,
+    videoUrl: "/20250507_1412_Elegant Abstract Calm_simple_compose_01jtnaj92be5hakm8yk68g405s.mp4",
+    opacity: 0.85
+  };
+  
+  // Merge provided video settings with defaults
+  const videoSettings = {
+    ...defaultBackgroundVideo,
+    ...backgroundVideo
+  };
+  
+  // Whether to show video (not on mobile)
+  const showVideo = videoSettings.enabled && !isMobile;
   
   // Create custom texture style if needed
   const customTextureStyle = textureSettings.enabled && 
@@ -251,6 +274,22 @@ const PageHero = ({
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
+        {/* Video background - conditionally rendered for non-mobile devices */}
+        {showVideo && (
+          <div className="video-background">
+            <video 
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-background-video"
+              style={{ opacity: videoSettings.opacity }}
+            >
+              <source src={videoSettings.videoUrl} type="video/mp4" />
+            </video>
+          </div>
+        )}
+        
         {/* Premium texture overlay - conditionally rendered and styled */}
         {textureSettings.enabled && (
           <div 
