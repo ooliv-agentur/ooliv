@@ -213,7 +213,7 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Enhanced animated background container with explicit style to ensure visibility */}
+      {/* Animated background with visible texture pattern */}
       <div 
         className="absolute inset-0 z-10 bg-hero-pattern" 
         aria-hidden="true"
@@ -223,9 +223,7 @@ const PageHero = ({
           height: '100%',
           pointerEvents: 'none'
         }}
-      >
-        {/* Empty div with bg-hero-pattern class to ensure animation is visible */}
-      </div>
+      ></div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
