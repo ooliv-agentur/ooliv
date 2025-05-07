@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
-import HeroParticles from './HeroParticles';
 
 interface PageHeroProps {
   badge?: string;
@@ -218,9 +217,6 @@ const PageHero = ({
       <div className="absolute inset-0 z-10 pointer-events-none bg-hero-pattern" aria-hidden="true">
         {/* This empty div ensures the animation is visible and takes full space */}
       </div>
-      
-      {/* Add our new particles component */}
-      <HeroParticles />
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
