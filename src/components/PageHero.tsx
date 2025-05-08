@@ -266,7 +266,7 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background video - positioned absolutely to fill the entire hero area */}
+      {/* Background video - positioned absolutely to fill the entire hero area with correct attributes */}
       {videoSettings.enabled && videoSettings.videoUrl && (
         <video 
           className="hero-background-video"
