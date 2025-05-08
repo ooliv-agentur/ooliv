@@ -5,7 +5,7 @@ import EnglishAboutSection from "@/components/en/EnglishAboutSection";
 import EnglishTeamTeaser from "@/components/en/EnglishTeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import EnglishSolutionSection from "@/components/en/EnglishSolutionSection";
-import TechnologiesSection from "@/components/TechnologiesSection";
+import TechnologiesSection from "@/components/en/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
