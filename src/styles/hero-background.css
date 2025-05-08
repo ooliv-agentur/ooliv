@@ -1,4 +1,3 @@
-
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative;
@@ -7,7 +6,7 @@
   z-index: 0; /* Ensure correct stacking context */
 }
 
-/* Hero video background - Updated with exact positioning requirements */
+/* Hero video background - Fixed positioning to ensure fullscreen coverage */
 .hero-background-video {
   position: absolute;
   top: 0;

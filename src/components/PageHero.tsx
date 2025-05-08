@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -266,7 +267,7 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background video - positioned absolutely to fill the entire hero area with correct attributes */}
+      {/* Background video - properly positioned and configured to fill the entire hero area */}
       {videoSettings.enabled && videoSettings.videoUrl && (
         <video 
           className="hero-background-video"
