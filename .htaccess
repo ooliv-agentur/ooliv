@@ -13,8 +13,6 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 # Add canonical header to all responses
 <IfModule mod_headers.c>
     Header set Link "<https://ooliv.de>; rel=\"canonical\""
-    # Add X-Robots-Tag to ensure indexability
-    Header set X-Robots-Tag "all"
 </IfModule>
 
 # Handle pushState routing (SPA)

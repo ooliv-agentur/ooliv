@@ -1,5 +1,4 @@
 
-# Global access for all crawlers
 User-agent: *
 Allow: /
 Allow: /en/

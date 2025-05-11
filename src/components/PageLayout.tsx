@@ -71,15 +71,8 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         console.log('Redirecting from www to non-www:', nonWwwUrl);
         window.location.replace(nonWwwUrl);
       }
-      
-      // Log for debugging
-      console.log(`PageLayout rendered: ${currentPath} (${language})`);
-      console.log(`Setting canonical URL: ${canonicalUrl}`);
-      if (alternateLanguageUrl) {
-        console.log(`Setting alternate language URL: ${alternateLanguageUrl}`);
-      }
     }
-  }, [currentPath, canonicalUrl, alternateLanguageUrl, language]);
+  }, []);
 
   return (
     <>
@@ -95,11 +88,6 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
             hrefLang={language === 'de' ? 'en' : 'de'} 
             href={alternateLanguageUrl}
           />
-        )}
-        
-        {/* Add x-default hreflang pointing to German version (homepage) */}
-        {currentPath === '/' && (
-          <link rel="alternate" hrefLang="x-default" href={baseUrl} />
         )}
         
         {/* Explicitly tell search engines to index and follow */}

@@ -31,10 +31,6 @@ interface PageHeroProps {
     topPosition?: string;
     height?: string;
   };
-  backgroundVideo?: {
-    enabled?: boolean;
-    videoUrl?: string;
-  };
 }
 
 const PageHero = ({
@@ -47,8 +43,7 @@ const PageHero = ({
   startProjectText,
   seeWorkText,
   isHomepage = false,
-  backgroundTexture,
-  backgroundVideo
+  backgroundTexture
 }: PageHeroProps) => {
   const { language } = useLanguage();
   
@@ -60,26 +55,14 @@ const PageHero = ({
     enabled: isHomepage && language === 'de',
     imageUrl: "/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png",
     opacity: 0.07,
-    topPosition: '0', 
-    height: '100%'
-  };
-  
-  // Default video background settings
-  const defaultBackgroundVideo = {
-    enabled: false,
-    videoUrl: ""
+    topPosition: '0', // Changed from '20%' to '0' to cover the entire section
+    height: '100%' // Changed from '60%' to '100%' to cover the entire section
   };
   
   // Merge provided texture settings with defaults
   const textureSettings = {
     ...defaultBackgroundTexture,
     ...backgroundTexture
-  };
-  
-  // Merge provided video settings with defaults
-  const videoSettings = {
-    ...defaultBackgroundVideo,
-    ...backgroundVideo
   };
   
   // Create custom texture style if needed
@@ -267,21 +250,6 @@ const PageHero = ({
   
   return (
     <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background video - properly positioned and configured to fill the entire hero area */}
-      {videoSettings.enabled && videoSettings.videoUrl && (
-        <video 
-          className="hero-background-video"
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-hidden="true"
-        >
-          <source src={videoSettings.videoUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
-
       <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
         {/* Premium texture overlay - conditionally rendered and styled */}
         {textureSettings.enabled && (
