@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,11 +8,11 @@ const Footer = () => {
   const { t, language } = useLanguage();
   
   const pathMap: Record<string, string> = {
-    'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-ooliv',
-    'web-design': language === 'de' ? 'webdesign' : 'web-design',
-    'web-development': language === 'de' ? 'webentwicklung' : 'web-development',
+    'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-us',
+    'web-design': language === 'de' ? 'webdesign' : 'webdesign',
+    'web-development': language === 'de' ? 'webentwicklung' : 'webdevelopment',
     'content-creation': language === 'de' ? 'content-erstellung' : 'content-creation',
-    'seo-optimization': language === 'de' ? 'seo-optimierung' : 'seo-optimization',
+    'seo-optimization': language === 'de' ? 'seo-optimierung' : 'seo',
     'google-ads': 'google-ads',
     'ai-technologies': language === 'de' ? 'ki-technologien' : 'ai-technologies',
     'case-studies': 'case-studies',
@@ -20,10 +21,10 @@ const Footer = () => {
     'legal-notice': language === 'de' ? 'impressum' : 'legal-notice',
   };
   
-  const langPrefix = language === 'de' ? '/de' : '';
+  const langPrefix = language === 'de' ? '' : '/en';
   
   const getUrl = (path: string) => {
-    if (path === '/') return language === 'de' ? '/de' : '/';
+    if (path === '/') return language === 'de' ? '/' : '/en';
     
     const basePath = path.replace(/^\//,'');
     const translatedPath = pathMap[basePath] || basePath;

@@ -34,7 +34,7 @@ const WebDevHero = () => {
         }}
         secondaryCta={{
           text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
-          link: isGerman ? "/de/case-studies" : "/case-studies"
+          link: isGerman ? "/case-studies" : "/en/case-studies"
         }}
       />
       <ScrollIndicator />

@@ -6,6 +6,10 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.ooliv\.de [NC]
 RewriteRule ^(.*)$ https://ooliv.de/$1 [L,R=301]
 
+# Redirect /de/ prefix to root paths
+RewriteRule ^de/(.*)$ /$1 [R=301,L]
+RewriteRule ^de/?$ / [R=301,L]
+
 # Force HTTPS (applies after domain is already correct)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
