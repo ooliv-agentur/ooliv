@@ -29,7 +29,10 @@ Allow: /en/privacy-policy
 Disallow: /danke
 Disallow: /en/thank-you
 
-# Explicitly block www version to prevent duplicate indexing
+# Explicitly block old PHP pages that should 404
+Disallow: /*.php$
+
+# Set canonical domain - no www
 Host: ooliv.de
 
 # Provide sitemap location

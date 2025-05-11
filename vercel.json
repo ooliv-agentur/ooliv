@@ -12,6 +12,42 @@
       "destination": "https://ooliv.de/$1",
       "permanent": true,
       "statusCode": 301
+    },
+    {
+      "source": "/de/:path*",
+      "destination": "/:path*",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/leistungen.php",
+      "destination": "/webdesign",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/:path*",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/kontakt.php",
+      "destination": "/kontakt",
+      "permanent": true,
+      "statusCode": 301
     }
   ],
   "headers": [
@@ -20,11 +56,33 @@
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "all"
+          "value": "index, follow"
         },
         {
           "key": "Link",
           "value": "<https://ooliv.de>; rel=\"canonical\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }

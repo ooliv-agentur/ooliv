@@ -74,11 +74,31 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
     }
   }, []);
 
+  // Handle old /de/ paths redirect at client level (backup to server redirects)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && currentPath.startsWith('/de/')) {
+      const newPath = currentPath.replace('/de/', '/');
+      console.log('Redirecting from /de/ path to root path:', newPath);
+      window.location.replace(`${baseUrl}${newPath}`);
+    }
+  }, [currentPath]);
+
+  // Console log for debugging canonical and hreflang
+  useEffect(() => {
+    console.log('Current canonical URL:', canonicalUrl);
+    if (alternateLanguageUrl) {
+      console.log('Alternate language URL:', alternateLanguageUrl);
+    }
+  }, [canonicalUrl, alternateLanguageUrl]);
+
   return (
     <>
       <Helmet>
         {/* Self-referencing canonical URL - always the non-www version */}
         <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Explicitly tell search engines to index and follow */}
+        <meta name="robots" content="index, follow" />
         
         {/* Hreflang tags for language alternates - always non-www */}
         <link rel="alternate" hrefLang={language} href={canonicalUrl} />
@@ -90,11 +110,14 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
           />
         )}
         
-        {/* Explicitly tell search engines to index and follow */}
-        <meta name="robots" content="index, follow" />
+        {/* x-default hreflang pointing to German version as default */}
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${language === 'de' ? currentPath : pathMappings[currentPath] || '/'}`} />
         
         {/* Add meta tag to indicate preferred domain variant */}
         <meta name="google" content="notranslate" />
+        
+        {/* HTTP headers for improved indexing */}
+        <meta httpEquiv="X-Robots-Tag" content="index, follow" />
         
         {/* Add preconnect for fonts to improve loading performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
