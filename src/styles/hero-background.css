@@ -1,5 +1,4 @@
 
-
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative;
@@ -44,27 +43,6 @@
   pointer-events: none; /* Prevent interaction problems */
 }
 
-/* Premium texture overlay for hero backgrounds */
-.premium-texture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%; /* Extended to cover the entire section height */
-  background-image: url("/lovable-uploads/d59234b1-8c74-4631-858e-36eefaf63d78.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.07;
-  z-index: 1;
-  animation: gentle-float 15s ease-in-out infinite;
-  will-change: transform, opacity;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  filter: blur(2px);
-}
-
 /* Verstärkte Animation für bessere Sichtbarkeit */
 @keyframes float {
   0%, 100% {
@@ -84,24 +62,10 @@
   }
 }
 
-/* Very gentle animation for the premium texture */
-@keyframes gentle-float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.07;
-  }
-  50% {
-    transform: translateY(-5px) scale(1.01);
-    opacity: 0.055;
-  }
-}
-
 /* Optional: Reduziere Animationen wenn der Benutzer dies bevorzugt */
 @media (prefers-reduced-motion: reduce) {
   .bg-hero-pattern::before,
-  .bg-hero-pattern::after,
-  .premium-texture {
+  .bg-hero-pattern::after {
     animation: none;
   }
 }
-
