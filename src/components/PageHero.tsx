@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -230,8 +231,8 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background video or fallback */}
+    <section className="relative overflow-hidden">
+      {/* Background video or fallback - with fixed height */}
       <div className="absolute inset-0 z-0">
         {!isMobile && !prefersReducedMotion ? (
           <div className="absolute inset-0 z-0 bg-black">
@@ -252,8 +253,9 @@ const PageHero = ({
         )}
       </div>
       
-      <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      {/* Fixed height container for consistent sizing */}
+      <div className="relative z-20 min-h-[680px] flex flex-col justify-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-32">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
               <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
@@ -268,6 +270,7 @@ const PageHero = ({
         </div>
       </div>
       
+      {/* Fixed position for the wave */}
       <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
