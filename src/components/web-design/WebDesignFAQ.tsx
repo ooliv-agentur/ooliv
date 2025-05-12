@@ -7,6 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from '@/contexts/LanguageContext';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const WebDesignFAQ = () => {
   const { language } = useLanguage();
@@ -94,12 +96,14 @@ const WebDesignFAQ = () => {
   return (
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
-          {t.title}
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
+            {t.title}
+          </h2>
+        </Reveal>
         
         <div className="max-w-4xl mx-auto space-y-4">
-          <Accordion type="single" collapsible className="w-full">
+          <StaggerReveal className="w-full" stagger={0.08}>
             {faqItems.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
                 <AccordionTrigger className="px-6 py-4 hover:no-underline">
@@ -110,7 +114,7 @@ const WebDesignFAQ = () => {
                 </AccordionContent>
               </AccordionItem>
             ))}
-          </Accordion>
+          </StaggerReveal>
         </div>
       </div>
     </section>

@@ -2,6 +2,8 @@
 import React from 'react';
 import { Target, ArrowRight, Zap, PhoneCall } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const WebDesignBenefits = () => {
   const { language } = useLanguage();
@@ -65,11 +67,13 @@ const WebDesignBenefits = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
-          {t.title}
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
+            {t.title}
+          </h2>
+        </Reveal>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.features.map((feature, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
               <div className="flex items-start gap-4">
@@ -83,7 +87,7 @@ const WebDesignBenefits = () => {
               </div>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

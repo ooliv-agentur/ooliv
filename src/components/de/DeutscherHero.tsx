@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import Reveal from '@/components/animations/Reveal';
 
 const DeutscherHero = () => {
   // Handle opening the lead generation form
@@ -19,37 +20,45 @@ const DeutscherHero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-left max-w-4xl">
             {/* Main heading with emphasis - single H1 */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-              Werbeagentur Mainz
-            </h1>
+            <Reveal>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                Werbeagentur Mainz
+              </h1>
+            </Reveal>
             
             {/* Subheadline */}
-            <p className="text-2xl md:text-3xl text-brand-primary font-medium mb-6">
-              Für messbare Ergebnisse im Web.
-            </p>
+            <Reveal delay={0.1}>
+              <p className="text-2xl md:text-3xl text-brand-primary font-medium mb-6">
+                Für messbare Ergebnisse im Web.
+              </p>
+            </Reveal>
             
-            <p className="text-xl text-gray-700 mb-10">
-              Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
-            </p>
+            <Reveal delay={0.2}>
+              <p className="text-xl text-gray-700 mb-10">
+                Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
+              </p>
+            </Reveal>
             
             {/* CTA buttons - left-aligned */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="group bg-[#006064] text-white hover:bg-[#004d51]" 
-                onClick={handleOpenLeadForm}
-              >
-                Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              
-              <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
-                <Link to="/de/case-studies">
-                  Arbeiten ansehen
+            <Reveal delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                  onClick={handleOpenLeadForm}
+                >
+                  Projekt starten
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
+                </Button>
+                
+                <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
+                  <Link to="/de/case-studies">
+                    Arbeiten ansehen
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

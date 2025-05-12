@@ -2,6 +2,8 @@
 import React from 'react';
 import { Code, ShoppingBag, Settings, Database } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const WebDesignBuildOptions = () => {
   const { language } = useLanguage();
@@ -67,15 +69,17 @@ const WebDesignBuildOptions = () => {
   return (
     <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          {t.title}
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+            {t.title}
+          </h2>
+          
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            {t.subtitle}
+          </p>
+        </Reveal>
         
-        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          {t.subtitle}
-        </p>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.options.map((option, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
               <div className="flex flex-col items-center text-center">
@@ -87,7 +91,7 @@ const WebDesignBuildOptions = () => {
               </div>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

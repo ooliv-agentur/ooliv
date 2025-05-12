@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Accordion,
@@ -9,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 interface FAQItem {
   question: string;
@@ -73,11 +76,13 @@ const FAQ = ({
   return (
     <section className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
-          {title}
-        </h2>
+        <Reveal>
+          <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
+            {title}
+          </h2>
+        </Reveal>
         
-        <Accordion type="single" collapsible className="space-y-4">
+        <StaggerReveal className="space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
@@ -94,17 +99,19 @@ const FAQ = ({
               </AccordionContent>
             </AccordionItem>
           ))}
-        </Accordion>
+        </StaggerReveal>
         
         {!hideCTA && (
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline" className="rounded-full">
-              <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
-                <Plus className="h-4 w-4" />
-                {ctaText}
-              </Link>
-            </Button>
-          </div>
+          <Reveal delay={0.3}>
+            <div className="mt-12 text-center">
+              <Button asChild variant="outline" className="rounded-full">
+                <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
+                  <Plus className="h-4 w-4" />
+                  {ctaText}
+                </Link>
+              </Button>
+            </div>
+          </Reveal>
         )}
       </div>
     </section>
