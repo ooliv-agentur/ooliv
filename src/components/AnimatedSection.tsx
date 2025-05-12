@@ -1,7 +1,7 @@
 
 import React, { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -19,7 +19,7 @@ const AnimatedSection = ({
   threshold = 0.2
 }: AnimatedSectionProps) => {
   const prefersReducedMotion = useReducedMotion();
-  const [ref, inView] = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: once,
     threshold: threshold,
   });

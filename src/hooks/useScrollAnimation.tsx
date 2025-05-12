@@ -1,5 +1,5 @@
 
-import { useInView } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { useReducedMotion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -15,7 +15,7 @@ export const useScrollAnimation = ({
   delay = 0
 }: ScrollAnimationOptions = {}) => {
   const prefersReducedMotion = useReducedMotion();
-  const [ref, inView] = useInView({
+  const { ref, inView } = useInView({
     triggerOnce,
     threshold,
   });
