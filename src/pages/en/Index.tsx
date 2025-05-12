@@ -59,7 +59,10 @@ const EnglishIndex = () => {
         />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} />
+        <PageHero 
+          isHomepage={true}
+          backgroundType="image"
+        />
         <EnglishAboutSection />
         <EnglishTeamTeaser />
         

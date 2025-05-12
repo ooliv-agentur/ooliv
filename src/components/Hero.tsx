@@ -9,6 +9,8 @@ interface HeroProps {
   description?: string;
   startProjectText?: string;
   seeWorkText?: string;
+  backgroundType?: 'video' | 'image';
+  videoSrc?: string;
 }
 
 const Hero = ({ 
@@ -16,7 +18,9 @@ const Hero = ({
   subtitle, 
   description, 
   startProjectText, 
-  seeWorkText 
+  seeWorkText,
+  backgroundType = 'image',
+  videoSrc
 }: HeroProps = {}) => {
   const { language } = useLanguage();
   
@@ -28,6 +32,8 @@ const Hero = ({
       startProjectText={startProjectText}
       seeWorkText={seeWorkText}
       isHomepage={true}
+      backgroundType={backgroundType}
+      videoSrc={videoSrc}
     />
   );
 };
