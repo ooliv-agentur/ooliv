@@ -7,12 +7,16 @@ interface ScrollAnimationOptions {
   triggerOnce?: boolean;
   threshold?: number;
   delay?: number;
+  distance?: number;
+  direction?: 'up' | 'down' | 'left' | 'right';
 }
 
 export const useScrollAnimation = ({
   triggerOnce = true,
   threshold = 0.2,
-  delay = 0
+  delay = 0,
+  distance = 30,
+  direction = 'up'
 }: ScrollAnimationOptions = {}) => {
   const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({
@@ -38,9 +42,16 @@ export const useScrollAnimation = ({
     };
   }
 
-  const animationClass = inView ? 'animate-fade-in opacity-100' : 'opacity-0 translate-y-10';
+  // Determine transform property based on direction
+  let transform = 'translateY(10px)';
+  if (direction === 'down') transform = 'translateY(-10px)';
+  if (direction === 'left') transform = 'translateX(10px)';
+  if (direction === 'right') transform = 'translateX(-10px)';
+
+  const animationClass = inView ? 'animate-fade-in opacity-100' : 'opacity-0';
   
   const style = {
+    transform: inView ? 'none' : transform,
     transitionDelay: `${delay}s`,
     transitionProperty: 'opacity, transform',
     transitionDuration: '0.6s',
