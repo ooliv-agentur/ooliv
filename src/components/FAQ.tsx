@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Accordion,
@@ -82,8 +81,8 @@ const FAQ = ({
           </h2>
         </Reveal>
         
-        <StaggerReveal className="space-y-4">
-          <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full">
+          <StaggerReveal className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
@@ -94,14 +93,12 @@ const FAQ = ({
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-[16px] text-brand-text leading-relaxed mt-4">
-                  <div className="prose prose-slate max-w-none">
-                    {faq.answer}
-                  </div>
+                  <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </AccordionContent>
               </AccordionItem>
             ))}
-          </Accordion>
-        </StaggerReveal>
+          </StaggerReveal>
+        </Accordion>
         
         {!hideCTA && (
           <Reveal delay={0.3}>

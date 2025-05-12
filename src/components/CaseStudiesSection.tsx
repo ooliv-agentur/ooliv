@@ -1,10 +1,11 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 export const caseStudiesData = {
   en: [
@@ -204,20 +205,22 @@ const CaseStudiesSection = ({
     <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              {customTitle || t.title}
-            </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
-              {customSubtitle || t.subtitle}
-            </p>
-            <p className="text-lg text-brand-text max-w-3xl mx-auto">
-              {customBodyText || t.bodyText}
-            </p>
-          </div>
+          <Reveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+                {customTitle || t.title}
+              </h2>
+              <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
+                {customSubtitle || t.subtitle}
+              </p>
+              <p className="text-lg text-brand-text max-w-3xl mx-auto">
+                {customBodyText || t.bodyText}
+              </p>
+            </div>
+          </Reveal>
         )}
         
-        <div className="space-y-20">
+        <StaggerReveal className="space-y-20" stagger={0.15}>
           {cases.map((study, index) => (
             <div 
               key={index}
@@ -262,7 +265,7 @@ const CaseStudiesSection = ({
                     </div>
                   )}
                   
-                  <div className="space-y-3 mb-6">
+                  <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
                         <div className="mr-3 mt-1 text-brand-primary">
@@ -271,7 +274,7 @@ const CaseStudiesSection = ({
                         <p className="text-sm text-gray-600">{point}</p>
                       </div>
                     ))}
-                  </div>
+                  </StaggerReveal>
                 </div>
               </div>
               
@@ -286,24 +289,26 @@ const CaseStudiesSection = ({
               </div>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
         
-        <div className="mt-24 text-center">
-          <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
-            {t.ctaText}
-          </h3>
-          
-          <Button 
-            size="lg" 
-            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
-            onClick={() => {
-              window.dispatchEvent(new Event('open-lead-form'));
-            }}
-          >
-            {t.startProject}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </div>
+        <Reveal delay={0.2}>
+          <div className="mt-24 text-center">
+            <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
+              {t.ctaText}
+            </h3>
+            
+            <Button 
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              onClick={() => {
+                window.dispatchEvent(new Event('open-lead-form'));
+              }}
+            >
+              {t.startProject}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

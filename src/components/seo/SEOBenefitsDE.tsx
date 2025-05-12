@@ -2,19 +2,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart2, Clock, FileText, ShieldAlert } from 'lucide-react';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const SEOBenefitsDE = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Probleme, die Umsatz kosten – wir lösen sie</h2>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto">
-            Unsere SEO-Dienstleistungen aus Mainz adressieren typische Sichtbarkeitsprobleme – und schaffen messbare Ergebnisse.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Probleme, die Umsatz kosten – wir lösen sie</h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              Unsere SEO-Dienstleistungen aus Mainz adressieren typische Sichtbarkeitsprobleme – und schaffen messbare Ergebnisse.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
             <div className="mb-4 text-brand-primary">
               <BarChart2 className="h-8 w-8" />
@@ -54,14 +58,16 @@ const SEOBenefitsDE = () => {
               Wir analysieren Ladezeit, Indexierung und Core Web Vitals – und sorgen für sauberen Code.
             </p>
           </div>
-        </div>
+        </StaggerReveal>
 
-        <div className="text-center mt-10">
-          <Link to="/de/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
-            Mehr zu Content-Erstellung & Webentwicklung
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
+        <Reveal delay={0.2}>
+          <div className="text-center mt-10">
+            <Link to="/de/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+              Mehr zu Content-Erstellung & Webentwicklung
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
