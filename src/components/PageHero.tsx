@@ -1,10 +1,10 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PageHeroProps {
   badge?: string;
@@ -38,6 +38,23 @@ const PageHero = ({
   isHomepage = false
 }: PageHeroProps) => {
   const { language } = useLanguage();
+  const isMobile = useIsMobile();
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+    
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
@@ -78,7 +95,7 @@ const PageHero = ({
            text.includes('Kampagne starten');
   };
   
-  // Adjusted content to ensure proper translation and consistent structure for both languages
+  // Default content based on language
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -213,16 +230,33 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative bg-hero-pattern pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      <div className="absolute inset-0 z-10 pointer-events-none bg-hero-pattern" aria-hidden="true">
-        {/* This empty div ensures the animation is visible and takes full space */}
+    <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      {/* Background video or fallback */}
+      <div className="absolute inset-0 z-0">
+        {!isMobile && !prefersReducedMotion ? (
+          <div className="absolute inset-0 z-0 bg-black">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="absolute w-full h-full object-cover opacity-85"
+              style={{ opacity: 0.85 }}
+            >
+              <source src="/lovable-uploads/test.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-hero-pattern"></div>
+        )}
       </div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
-              <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+              <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
                 <span>{badge}</span>
               </div>
             )}
