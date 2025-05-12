@@ -15,7 +15,7 @@ export const useScrollAnimation = ({
   delay = 0
 }: ScrollAnimationOptions = {}) => {
   const prefersReducedMotion = useReducedMotion();
-  const { ref, inView } = useInView({
+  const [ref, inView] = useInView({
     triggerOnce,
     threshold,
   });

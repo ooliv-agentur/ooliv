@@ -19,7 +19,7 @@ const AnimatedSection = ({
   threshold = 0.2
 }: AnimatedSectionProps) => {
   const prefersReducedMotion = useReducedMotion();
-  const { ref, inView } = useInView({
+  const [ref, inView] = useInView({
     triggerOnce: once,
     threshold: threshold,
   });
