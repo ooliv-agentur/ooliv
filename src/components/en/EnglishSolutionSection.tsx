@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AnimatedSection from '../AnimatedSection';
 
 const EnglishSolutionSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-background">
+    <AnimatedSection className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12" delay={0.2}>
           <h2 className="text-3xl font-bold mb-6 text-brand-heading">
             We develop websites that drive your business forward – with strategy, expertise and technology.
           </h2>
@@ -19,9 +20,9 @@ const EnglishSolutionSection = () => {
             <Link to="/en/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> and 
             <Link to="/en/ai-technologies" className="text-brand-primary hover:underline"> AI Technologies</Link>.
           </p>
-        </div>
+        </AnimatedSection>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

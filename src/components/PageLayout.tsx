@@ -7,6 +7,7 @@ import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { MotionConfig } from 'framer-motion';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -131,17 +132,19 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
           * { cursor: inherit; }
         `}</style>
       </Helmet>
-      <div className={`min-h-screen flex flex-col ${className}`}>
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <FloatingActionButtons />
-      </div>
-      {/* SEO Text section - placed after Footer */}
-      {seoText}
+      <MotionConfig reducedMotion="user">
+        <div className={`min-h-screen flex flex-col ${className}`}>
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <FloatingActionButtons />
+        </div>
+        {/* SEO Text section - placed after Footer */}
+        {seoText}
+      </MotionConfig>
     </>
   );
 };
