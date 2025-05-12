@@ -13,29 +13,32 @@ const WebDevHero = () => {
   };
   
   return (
-    <PageHero
-      badge={isGerman 
-        ? "Webentwicklung" 
-        : "Web Development"
-      }
-      title={isGerman 
-        ? "WordPress Agentur Mainz für skalierbare Unternehmenslösungen" 
-        : "Web Development That Drives Business Growth"
-      }
-      subtitle={isGerman 
-        ? "Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code." 
-        : "Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
-      }
-      primaryCta={{
-        text: isGerman ? "Projekt starten" : "Start Your Project",
-        link: "#",
-        onClick: handleStartProject
-      }}
-      secondaryCta={{
-        text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
-        link: isGerman ? "/case-studies" : "/en/case-studies"
-      }}
-    />
+    <div className="relative">
+      <PageHero
+        badge={isGerman 
+          ? "Webentwicklung" 
+          : "Web Development"
+        }
+        title={isGerman 
+          ? "WordPress Agentur Mainz für skalierbare Unternehmenslösungen" 
+          : "Web Development That Drives Business Growth"
+        }
+        subtitle={isGerman 
+          ? "Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code." 
+          : "Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
+        }
+        primaryCta={{
+          text: isGerman ? "Projekt starten" : "Start Your Project",
+          link: "#",
+          onClick: handleStartProject
+        }}
+        secondaryCta={{
+          text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
+          link: isGerman ? "/case-studies" : "/en/case-studies"
+        }}
+      />
+      <ScrollIndicator />
+    </div>
   );
 };
 

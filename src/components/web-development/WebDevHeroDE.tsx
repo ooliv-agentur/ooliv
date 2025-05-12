@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageHero from '@/components/PageHero';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 const WebDevHeroDE = () => {
   const handleStartProject = () => {
@@ -8,20 +9,23 @@ const WebDevHeroDE = () => {
   };
   
   return (
-    <PageHero
-      badge="Webentwicklung"
-      title="WordPress Agentur Mainz für skalierbare Unternehmenslösungen"
-      subtitle="Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code."
-      primaryCta={{
-        text: "Projekt starten",
-        link: "#",
-        onClick: handleStartProject
-      }}
-      secondaryCta={{
-        text: "Fallstudien ansehen",
-        link: "/de/case-studies"
-      }}
-    />
+    <div className="relative">
+      <PageHero
+        badge="Webentwicklung"
+        title="WordPress Agentur Mainz für skalierbare Unternehmenslösungen"
+        subtitle="Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code."
+        primaryCta={{
+          text: "Projekt starten",
+          link: "#",
+          onClick: handleStartProject
+        }}
+        secondaryCta={{
+          text: "Fallstudien ansehen",
+          link: "/de/case-studies"
+        }}
+      />
+      <ScrollIndicator />
+    </div>
   );
 };
 
