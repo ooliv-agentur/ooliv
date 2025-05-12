@@ -59,11 +59,7 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <PageHero 
-          isHomepage={true}
-          backgroundType="video"
-          videoSrc="/lovable-uploads/test.mp4"
-        />
+        <PageHero isHomepage={true} />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         

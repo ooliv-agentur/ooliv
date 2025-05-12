@@ -24,8 +24,6 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
-  backgroundType?: 'video' | 'image';
-  videoSrc?: string;
 }
 
 const PageHero = ({
@@ -37,9 +35,7 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false,
-  backgroundType = 'image',
-  videoSrc = '/lovable-uploads/test.mp4'
+  isHomepage = false
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
@@ -99,6 +95,7 @@ const PageHero = ({
            text.includes('Kampagne starten');
   };
   
+  // Default content based on language
   const defaultHomepageTitle = language === 'de' ? (
     <div className="flex flex-col">
       <span>Werbeagentur Mainz</span>
@@ -232,41 +229,27 @@ const PageHero = ({
     );
   };
   
-  // Determine the background based on backgroundType, reduced motion, and mobile preferences
-  const renderBackground = () => {
-    // Mobile devices and reduced motion preference always get the static image background
-    if (isMobile || prefersReducedMotion) {
-      return <div className="absolute inset-0 bg-hero-pattern"></div>;
-    }
-    
-    // For video background
-    if (backgroundType === 'video' && videoSrc) {
-      return (
-        <div className="absolute inset-0 z-0 bg-black">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="absolute w-full h-full object-cover opacity-85"
-            style={{ opacity: 0.85 }}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
-        </div>
-      );
-    }
-    
-    // Default to image background
-    return <div className="absolute inset-0 bg-hero-pattern"></div>;
-  };
-  
   return (
     <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
       {/* Background video or fallback */}
       <div className="absolute inset-0 z-0">
-        {renderBackground()}
+        {!isMobile && !prefersReducedMotion ? (
+          <div className="absolute inset-0 z-0 bg-black">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="absolute w-full h-full object-cover opacity-85"
+              style={{ opacity: 0.85 }}
+            >
+              <source src="/lovable-uploads/test.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-hero-pattern"></div>
+        )}
       </div>
       
       <div className="relative z-20 pt-32 pb-20 lg:pt-40 lg:pb-28">
