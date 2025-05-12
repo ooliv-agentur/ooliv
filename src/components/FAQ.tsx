@@ -83,22 +83,24 @@ const FAQ = ({
         </Reveal>
         
         <StaggerReveal className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={`item-${index}`}
-              className="border border-gray-200 rounded-lg px-6 py-2"
-            >
-              <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-opacity-50">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-[16px] text-brand-text leading-relaxed mt-4">
-                <div className="prose prose-slate max-w-none">
-                  {faq.answer}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border border-gray-200 rounded-lg px-6 py-2"
+              >
+                <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-opacity-50">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-[16px] text-brand-text leading-relaxed mt-4">
+                  <div className="prose prose-slate max-w-none">
+                    {faq.answer}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </StaggerReveal>
         
         {!hideCTA && (
