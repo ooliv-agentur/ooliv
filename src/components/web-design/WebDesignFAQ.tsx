@@ -103,8 +103,8 @@ const WebDesignFAQ = () => {
         </Reveal>
         
         <div className="max-w-4xl mx-auto space-y-4">
-          <StaggerReveal className="w-full" stagger={0.08}>
-            <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full">
+            <StaggerReveal className="w-full" stagger={0.08}>
               {faqItems.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
                   <AccordionTrigger className="px-6 py-4 hover:no-underline">
@@ -115,8 +115,8 @@ const WebDesignFAQ = () => {
                   </AccordionContent>
                 </AccordionItem>
               ))}
-            </Accordion>
-          </StaggerReveal>
+            </StaggerReveal>
+          </Accordion>
         </div>
       </div>
     </section>
