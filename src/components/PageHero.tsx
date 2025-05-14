@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -24,9 +25,6 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
-  useVideo?: boolean;
-  videoSrc?: string;
-  videoOpacity?: number;
 }
 
 const PageHero = ({
@@ -38,10 +36,7 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false,
-  useVideo = false,
-  videoSrc = "/lovable-uploads/test.mp4",
-  videoOpacity = 0.2
+  isHomepage = false
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
@@ -129,7 +124,7 @@ const PageHero = ({
   const renderTitle = () => {
     if (isHomepage) {
       return (
-        <h1 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${useVideo ? 'text-gray-100' : 'text-gray-800'} mb-6 leading-tight`}>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
           {title || defaultHomepageTitle}
         </h1>
       );
@@ -145,7 +140,7 @@ const PageHero = ({
   const renderSubtitle = () => {
     if (isHomepage) {
       return (
-        <p className={`text-xl md:text-2xl ${useVideo ? 'text-gray-100' : 'text-gray-700'} mb-8`}>
+        <p className="text-xl md:text-2xl text-gray-700 mb-8">
           {subtitle || description || defaultHomepageDescription}
         </p>
       );
@@ -216,19 +211,14 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className={`group ${useVideo ? 'bg-transparent text-gray-100 border-gray-300 hover:bg-white/10 hover:text-white' : ''}`}
+              className="group" 
               onClick={secondary.onClick}
             >
               {secondary.text}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : (
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className={`group ${useVideo ? 'bg-transparent text-gray-100 border-gray-300 hover:bg-white/10 hover:text-white' : ''}`} 
-              asChild
-            >
+            <Button variant="outline" size="lg" className="group" asChild>
               <Link to={secondary.link}>
                 {secondary.text}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -244,20 +234,19 @@ const PageHero = ({
     <section className="relative overflow-hidden">
       {/* Background video or fallback - with fixed height */}
       <div className="absolute inset-0 z-0">
-        {useVideo ? (
+        {!isMobile && !prefersReducedMotion ? (
           <div className="absolute inset-0 z-0 bg-black">
             <video 
               autoPlay 
               muted 
               loop 
               playsInline
-              className="absolute w-full h-full object-cover"
-              style={{ opacity: videoOpacity }}
-              {...(prefersReducedMotion ? { paused: true } : {})}
+              className="absolute w-full h-full object-cover opacity-85"
+              style={{ opacity: 0.85 }}
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
           </div>
         ) : (
           <div className="absolute inset-0 bg-hero-pattern"></div>
