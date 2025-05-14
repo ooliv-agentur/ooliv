@@ -240,12 +240,12 @@ const PageHero = ({
               muted 
               loop 
               playsInline
-              className="absolute w-full h-full object-cover opacity-20"
+              className="absolute w-full h-full object-cover opacity-20 z-20"
               style={{ opacity: 0.20 }}
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gray-100 bg-opacity-80 z-10"></div>
+            <div className="absolute inset-0 bg-gray-100 z-10"></div>
           </div>
         ) : (
           <div className="absolute inset-0 bg-hero-pattern"></div>
