@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -242,7 +241,7 @@ const PageHero = ({
               loop 
               playsInline
               className="absolute w-full h-full object-cover"
-              style={{ opacity: 0.20 }}  {/* Updated opacity to 20% */}
+              style={{ opacity: 0.20 }}
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
