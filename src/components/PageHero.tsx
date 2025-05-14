@@ -234,7 +234,7 @@ const PageHero = ({
       {/* Background video or fallback - with fixed height */}
       <div className="absolute inset-0 z-0">
         {!isMobile && !prefersReducedMotion ? (
-          <div className="absolute inset-0 z-0 bg-black">
+          <div className="absolute inset-0 z-0 bg-gray-100">
             <video 
               autoPlay 
               muted 
@@ -245,7 +245,7 @@ const PageHero = ({
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
+            <div className="absolute inset-0 bg-gray-100 bg-opacity-80 z-10"></div>
           </div>
         ) : (
           <div className="absolute inset-0 bg-hero-pattern"></div>
