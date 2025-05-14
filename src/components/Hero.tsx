@@ -9,6 +9,9 @@ interface HeroProps {
   description?: string;
   startProjectText?: string;
   seeWorkText?: string;
+  useVideo?: boolean;
+  videoSrc?: string;
+  videoOpacity?: number;
 }
 
 const Hero = ({ 
@@ -16,7 +19,10 @@ const Hero = ({
   subtitle, 
   description, 
   startProjectText, 
-  seeWorkText 
+  seeWorkText,
+  useVideo = false,
+  videoSrc = "/lovable-uploads/test.mp4",
+  videoOpacity = 0.2
 }: HeroProps = {}) => {
   const { language } = useLanguage();
   
@@ -28,6 +34,9 @@ const Hero = ({
       startProjectText={startProjectText}
       seeWorkText={seeWorkText}
       isHomepage={true}
+      useVideo={useVideo}
+      videoSrc={videoSrc}
+      videoOpacity={videoOpacity}
     />
   );
 };

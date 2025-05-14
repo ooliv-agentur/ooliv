@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
+import DeutscherHero from "@/components/de/DeutscherHero";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -12,7 +13,6 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSection from "@/components/de/SEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
 
 const germanFaqs = [
   {
@@ -59,7 +59,7 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <PageHero isHomepage={true} />
+        <DeutscherHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         

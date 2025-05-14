@@ -1,11 +1,28 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from '@/components/animations/Reveal';
 
 const DeutscherHero = () => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+    
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
+  
   // Handle opening the lead generation form
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form'));
@@ -13,15 +30,30 @@ const DeutscherHero = () => {
   
   return (
     <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black z-10">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute w-full h-full object-cover"
+            style={{ opacity: 0.2 }}
+            {...(prefersReducedMotion ? { paused: true } : {})}
+          >
+            <source src="/lovable-uploads/test.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black bg-opacity-60 z-20"></div>
+        </div>
+      </div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-left max-w-4xl">
             {/* Main heading with emphasis - single H1 */}
             <Reveal>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-100 mb-6 leading-tight">
                 Werbeagentur Mainz
               </h1>
             </Reveal>
@@ -34,7 +66,7 @@ const DeutscherHero = () => {
             </Reveal>
             
             <Reveal delay={0.2}>
-              <p className="text-xl text-gray-700 mb-10">
+              <p className="text-xl text-gray-100 mb-10">
                 Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
               </p>
             </Reveal>
@@ -51,7 +83,7 @@ const DeutscherHero = () => {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
-                <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
+                <Button variant="outline" size="lg" className="bg-transparent text-gray-100 hover:bg-white/10 border-gray-300 hover:text-white hover:bg-gray-800" asChild>
                   <Link to="/de/case-studies">
                     Arbeiten ansehen
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
