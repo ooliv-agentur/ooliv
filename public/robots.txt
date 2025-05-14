@@ -24,10 +24,12 @@ Allow: /impressum
 Allow: /en/legal-notice
 Allow: /datenschutz
 Allow: /en/privacy-policy
+Allow: /danke
+Allow: /en/thank-you
 
-# Block thank you pages explicitly to prevent indexing
-Disallow: /danke
-Disallow: /en/thank-you
+# Block thank you pages from indexing (but still allow crawling)
+# Disallow: /danke
+# Disallow: /en/thank-you
 
 # Explicitly block old PHP pages that should 404
 Disallow: /*.php$

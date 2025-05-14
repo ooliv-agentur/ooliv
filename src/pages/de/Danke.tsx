@@ -59,7 +59,7 @@ const Danke = () => {
       <Helmet>
         <title>Danke für Ihre Anfrage | ooliv</title>
         <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
-        <meta name="robots" content="noindex, nofollow" />
+        {/* Removed noindex tag to make this page indexable */}
       </Helmet>
       
       {/* Add the confetti animation */}

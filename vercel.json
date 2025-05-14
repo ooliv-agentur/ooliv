@@ -32,6 +32,30 @@
       "statusCode": 301
     },
     {
+      "source": "/datenschutz.php",
+      "destination": "/impressum",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/webdesign-agentur-mainz/index.php",
+      "destination": "/webdesign",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte-farber-partner.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/insight-health/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/projekte/:path*",
       "destination": "/case-studies",
       "permanent": true,

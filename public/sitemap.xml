@@ -5,7 +5,7 @@
   <!-- German URLs with language alternates -->
   <url>
     <loc>https://ooliv.de/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/webdesign</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/webdesign"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/webentwicklung</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/webentwicklung"/>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/content-erstellung</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/content-erstellung"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/seo-optimierung</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/seo-optimierung"/>
@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/google-ads</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/google-ads"/>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/ki-technologien</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/ki-technologien"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/case-studies</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/case-studies"/>
@@ -70,7 +70,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/ueber-ooliv</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/ueber-ooliv"/>
@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/kontakt</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/kontakt"/>
@@ -86,7 +86,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/impressum</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/impressum"/>
@@ -94,17 +94,25 @@
   </url>
   <url>
     <loc>https://ooliv.de/datenschutz</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/datenschutz"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/privacy-policy"/>
   </url>
+  <url>
+    <loc>https://ooliv.de/danke</loc>
+    <lastmod>2025-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/danke"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/thank-you"/>
+  </url>
   
   <!-- English URLs with language alternates -->
   <url>
     <loc>https://ooliv.de/en</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en"/>
@@ -112,7 +120,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/webdesign</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/webdesign"/>
@@ -120,7 +128,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/webdevelopment</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/webdevelopment"/>
@@ -128,7 +136,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/content-creation</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/content-creation"/>
@@ -136,7 +144,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/seo</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/seo"/>
@@ -144,7 +152,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/google-ads</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/google-ads"/>
@@ -152,7 +160,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/ai-technologies</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/ai-technologies"/>
@@ -160,7 +168,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/case-studies</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/case-studies"/>
@@ -168,7 +176,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/about-us</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/about-us"/>
@@ -176,7 +184,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/contact</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/contact"/>
@@ -184,7 +192,7 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/legal-notice</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/legal-notice"/>
@@ -192,10 +200,18 @@
   </url>
   <url>
     <loc>https://ooliv.de/en/privacy-policy</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/privacy-policy"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/datenschutz"/>
+  </url>
+  <url>
+    <loc>https://ooliv.de/en/thank-you</loc>
+    <lastmod>2025-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ooliv.de/en/thank-you"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ooliv.de/danke"/>
   </url>
 </urlset>

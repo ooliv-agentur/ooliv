@@ -13,6 +13,10 @@ RewriteRule ^de/?$ / [R=301,L]
 # Handle old PHP pages redirects (from legacy site)
 RewriteRule ^index\.php$ / [R=301,L]
 RewriteRule ^leistungen\.php$ /webdesign [R=301,L]
+RewriteRule ^datenschutz\.php$ /impressum [R=301,L]
+RewriteRule ^webdesign-agentur-mainz/index\.php$ /webdesign [R=301,L]
+RewriteRule ^projekte-farber-partner\.php$ /case-studies [R=301,L]
+RewriteRule ^projekte/insight-health/index\.php$ /case-studies [R=301,L]
 RewriteRule ^projekte/aeratron/?$ /case-studies [R=301,L]
 RewriteRule ^projekte/(.*)$ /case-studies [R=301,L]
 RewriteRule ^projekte\.php$ /case-studies [R=301,L]
@@ -25,6 +29,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 # Add canonical header to all responses
 <IfModule mod_headers.c>
     Header set Link "<https://ooliv.de%{REQUEST_URI}s>; rel=\"canonical\""
+    # Ensure X-Robots-Tag is set to index, follow for all responses
+    Header set X-Robots-Tag "index, follow"
 </IfModule>
 
 # Improve server performance
