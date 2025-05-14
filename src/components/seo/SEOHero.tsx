@@ -16,6 +16,7 @@ const SEOHero = () => {
         text: "Request Free SEO Audit",
         link: "/en/contact"
       }}
+      videoOpacity={0.65}
     />
   );
 };

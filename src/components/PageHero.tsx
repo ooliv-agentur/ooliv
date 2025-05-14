@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -25,6 +24,7 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
+  videoOpacity?: number; // New prop for video opacity
 }
 
 const PageHero = ({
@@ -36,7 +36,8 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false
+  isHomepage = false,
+  videoOpacity = 0.65 // Default to 65% opacity
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
@@ -241,15 +242,21 @@ const PageHero = ({
               muted 
               loop 
               playsInline
-              className="absolute w-full h-full object-cover opacity-85"
-              style={{ opacity: 0.85 }}
+              className="absolute w-full h-full object-cover"
+              style={{ opacity: videoOpacity }} // Use the prop for opacity
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
           </div>
         ) : (
-          <div className="absolute inset-0 bg-hero-pattern"></div>
+          <div className="absolute inset-0 bg-hero-pattern">
+            {/* Add gradient overlay for mobile/reduced-motion to match video opacity */}
+            <div 
+              className="absolute inset-0 bg-gradient-to-br from-black to-transparent" 
+              style={{ opacity: 0.35 }} // Adjust for visual parity with video opacity
+            ></div>
+          </div>
         )}
       </div>
       

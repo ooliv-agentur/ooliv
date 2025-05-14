@@ -33,8 +33,9 @@ const AiTechHero = () => {
       }}
       secondaryCta={{
         text: language === 'de' ? "Referenzen ansehen" : "View Case Studies", 
-        link: language === 'de' ? "/case-studies" : "/en/case-studies"  // Updated link
+        link: language === 'de' ? "/case-studies" : "/en/case-studies"
       }}
+      videoOpacity={0.65}
     />
   );
 };

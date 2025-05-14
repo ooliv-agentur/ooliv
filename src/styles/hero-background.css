@@ -54,6 +54,14 @@
   z-index: -1;
 }
 
+/* Mobile/reduced motion background overlay */
+.bg-hero-pattern .reduced-motion-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+  z-index: 2;
+}
+
 /* Animation keyframes */
 @keyframes float {
   0%, 100% {
