@@ -19,6 +19,7 @@ const SEOHeroDE = () => {
           link: "/kontakt"
         }}
         videoOpacity={0.65}
+        useVideo={false}
       />
     </Reveal>
   );

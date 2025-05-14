@@ -35,6 +35,7 @@ const WebDesignHero = () => {
           link: linkPath
         }}
         videoOpacity={0.65}
+        useVideo={false}
       />
       <ScrollIndicator />
     </div>

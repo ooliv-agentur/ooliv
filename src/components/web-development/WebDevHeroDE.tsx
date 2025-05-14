@@ -24,6 +24,7 @@ const WebDevHeroDE = () => {
           link: "/de/case-studies"
         }}
         videoOpacity={0.65}
+        useVideo={false}
       />
       <ScrollIndicator />
     </div>
