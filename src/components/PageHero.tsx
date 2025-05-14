@@ -243,7 +243,7 @@ const PageHero = ({
               loop 
               playsInline
               className="absolute w-full h-full object-cover"
-              style={{ opacity: videoOpacity }} // Use the prop for opacity
+              style={{ opacity: videoOpacity }} // Apply opacity directly from prop
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
@@ -254,7 +254,7 @@ const PageHero = ({
             {/* Add gradient overlay for mobile/reduced-motion to match video opacity */}
             <div 
               className="absolute inset-0 bg-gradient-to-br from-black to-transparent" 
-              style={{ opacity: 0.35 }} // Adjust for visual parity with video opacity
+              style={{ opacity: 0.35 }}
             ></div>
           </div>
         )}
