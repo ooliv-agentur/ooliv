@@ -6,7 +6,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { cn } from '@/lib/utils';
 
 interface PageHeroProps {
   badge?: string;
@@ -26,9 +25,6 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
-  videoOpacity?: number; // Opacity for video background
-  videoSrc?: string; // Source URL for video
-  useVideo?: boolean; // Whether to use video background
 }
 
 const PageHero = ({
@@ -40,19 +36,11 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false,
-  videoOpacity = 0.65, // Default to 65% opacity
-  videoSrc = "/lovable-uploads/test.mp4", // Default video source
-  useVideo = false // Default to not using video
+  isHomepage = false
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  
-  // Set CSS variable for video opacity to ensure CSS can use it
-  useEffect(() => {
-    document.documentElement.style.setProperty('--video-opacity', videoOpacity.toString());
-  }, [videoOpacity]);
   
   useEffect(() => {
     // Check for reduced motion preference
@@ -244,30 +232,24 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video or fallback */}
+      {/* Background video or fallback - with fixed height */}
       <div className="absolute inset-0 z-0">
-        {useVideo && !prefersReducedMotion ? (
+        {!isMobile && !prefersReducedMotion ? (
           <div className="absolute inset-0 z-0 bg-black">
             <video 
               autoPlay 
               muted 
               loop 
               playsInline
-              className="absolute w-full h-full object-cover"
-              style={{ opacity: videoOpacity }} // Apply opacity directly from prop
+              className="absolute w-full h-full object-cover opacity-85"
+              style={{ opacity: 0.85 }}
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-20 z-10"></div>
           </div>
         ) : (
-          <div className="absolute inset-0 bg-hero-pattern">
-            {/* Add gradient overlay for non-video backgrounds to maintain visual consistency */}
-            <div 
-              className="absolute inset-0 bg-gradient-to-br from-black to-transparent" 
-              style={{ opacity: 0.35 }}
-            ></div>
-          </div>
+          <div className="absolute inset-0 bg-hero-pattern"></div>
         )}
       </div>
       
@@ -293,11 +275,11 @@ const PageHero = ({
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 
-          className={cn("absolute bottom-0 w-full h-auto", useVideo ? "text-white fill-current" : "")}
+          className="absolute bottom-0 w-full h-auto"
           preserveAspectRatio="none"
         >
           <path 
-            fill={useVideo ? "currentColor" : "#ffffff"} 
+            fill="#ffffff" 
             fillOpacity="1" 
             d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>

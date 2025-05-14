@@ -18,8 +18,6 @@ const SEOHeroDE = () => {
           text: "Kostenloses SEO-Audit anfordern",
           link: "/kontakt"
         }}
-        videoOpacity={0.65}
-        useVideo={false}
       />
     </Reveal>
   );

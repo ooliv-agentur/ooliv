@@ -12,7 +12,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import SEOTextSection from "@/components/de/SEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
-import DeutscherHero from '@/components/de/DeutscherHero';
+import PageHero from '@/components/PageHero';
 
 const germanFaqs = [
   {
@@ -59,7 +59,7 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <DeutscherHero />
+        <PageHero isHomepage={true} />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         

@@ -28,7 +28,6 @@ const ContentHero = () => {
           text: isGerman ? "Case Studies ansehen" : "View Case Studies",
           link: isGerman ? "/de/case-studies" : "/case-studies"
         }}
-        videoOpacity={0.65}
       />
       <ScrollIndicator />
     </div>

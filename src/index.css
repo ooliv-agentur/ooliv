@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,11 +16,6 @@
 .bg-hero-pattern::after {
   content: '' !important;
   z-index: 1 !important;
-}
-
-/* Ensure proper video opacity */
-video.absolute.w-full.h-full.object-cover {
-  opacity: var(--video-opacity, 0.65) !important;
 }
 
 /* Custom Scrollbar Styling */

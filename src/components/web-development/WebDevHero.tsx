@@ -36,7 +36,6 @@ const WebDevHero = () => {
           text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
           link: isGerman ? "/case-studies" : "/en/case-studies"
         }}
-        videoOpacity={0.65}
       />
       <ScrollIndicator />
     </div>

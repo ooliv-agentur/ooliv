@@ -34,8 +34,6 @@ const WebDesignHero = () => {
           text: isGerman ? "Projekt starten" : "Start Your Web Project",
           link: linkPath
         }}
-        videoOpacity={0.65}
-        useVideo={false}
       />
       <ScrollIndicator />
     </div>

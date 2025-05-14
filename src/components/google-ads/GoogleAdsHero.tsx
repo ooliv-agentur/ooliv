@@ -21,7 +21,6 @@ const GoogleAdsHero = () => {
           text: "Kostenlose Analyse anfordern",
           link: "/kontakt"
         }}
-        videoOpacity={0.65}
       />
     );
   }
@@ -39,7 +38,6 @@ const GoogleAdsHero = () => {
         text: "Request Free Audit",
         link: "/en/contact"
       }}
-      videoOpacity={0.65}
     />
   );
 };
