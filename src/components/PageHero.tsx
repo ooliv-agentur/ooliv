@@ -241,8 +241,8 @@ const PageHero = ({
               muted 
               loop 
               playsInline
-              className="absolute w-full h-full object-cover opacity-85"
-              style={{ opacity: 0.85 }}
+              className="absolute w-full h-full object-cover"
+              style={{ opacity: 0.20 }}  {/* Updated opacity to 20% */}
             >
               <source src="/lovable-uploads/test.mp4" type="video/mp4" />
             </video>
