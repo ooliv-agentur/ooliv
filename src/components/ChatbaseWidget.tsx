@@ -41,6 +41,18 @@ export default function ChatbaseWidget() {
 
     script.innerHTML = `
       (function(){
+        // Safe wrapper function for handling postMessage
+        function safePostMessage(target, message, origin) {
+          if (target && typeof target.postMessage === 'function') {
+            try {
+              target.postMessage(message, origin);
+            } catch (e) {
+              console.warn('Chatbase postMessage error:', e);
+            }
+          }
+        }
+        
+        // Initialize chatbase with safe postMessage handling
         if (!window.chatbase || window.chatbase("getState") !== "initialized") {
           window.chatbase = (...arguments) => {
             if (!window.chatbase.q) {
@@ -57,13 +69,18 @@ export default function ChatbaseWidget() {
             }
           });
         }
+        
         const onLoad = function () {
           const script = document.createElement("script");
           script.src = "https://www.chatbase.co/embed.min.js";
           script.id = "VCSuG_Qa30vQV8N5Y6TbB";
           script.domain = "www.chatbase.co";
+          script.onerror = function(e) {
+            console.warn('Failed to load Chatbase script:', e);
+          };
           document.body.appendChild(script);
         };
+        
         if (document.readyState === "complete") {
           onLoad();
         } else {
@@ -77,18 +94,32 @@ export default function ChatbaseWidget() {
 
     // Cleanup function to remove the script when component unmounts
     return () => {
-      const scriptElement = document.getElementById("chatbase-widget-script");
-      if (scriptElement && scriptElement.parentNode) {
-        scriptElement.parentNode.removeChild(scriptElement);
-      }
-      
-      // Also remove any chatbase elements that might have been created
-      const chatbaseElements = document.querySelectorAll('[id^="chatbase-"]');
-      chatbaseElements.forEach(el => {
-        if (el.parentNode) {
-          el.parentNode.removeChild(el);
+      try {
+        const scriptElement = document.getElementById("chatbase-widget-script");
+        if (scriptElement && scriptElement.parentNode) {
+          scriptElement.parentNode.removeChild(scriptElement);
         }
-      });
+        
+        // Also remove any chatbase elements that might have been created
+        const chatbaseElements = document.querySelectorAll('[id^="chatbase-"]');
+        chatbaseElements.forEach(el => {
+          if (el.parentNode) {
+            el.parentNode.removeChild(el);
+          }
+        });
+        
+        // Clean up any global chatbase objects
+        if (window.chatbase && typeof window.chatbase === 'function') {
+          try {
+            // Try to terminate any existing instances
+            window.chatbase("terminate");
+          } catch (e) {
+            console.warn('Error terminating chatbase:', e);
+          }
+        }
+      } catch (error) {
+        console.warn('Error cleaning up chatbase widget:', error);
+      }
     };
   }, [isEnglishPage, pathname]);
 
