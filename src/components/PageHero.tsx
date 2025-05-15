@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -248,7 +249,7 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video */}
+      {/* Background video or pattern */}
       <div className="absolute inset-0 z-0">
         {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
