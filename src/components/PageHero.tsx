@@ -71,22 +71,6 @@ const PageHero = ({
     console.error('Failed video source:', backgroundVideo);
     setVideoLoaded(false);
     setVideoError(true);
-    
-    // Try alternative path if initial path fails
-    if (backgroundVideo && backgroundVideo.startsWith('/') && !backgroundVideo.startsWith('/lovable-uploads/')) {
-      const alternativePath = `/lovable-uploads${backgroundVideo}`;
-      console.log('Trying alternative video path:', alternativePath);
-      
-      // Create a temporary video element to test the alternative path
-      const tempVideo = document.createElement('video');
-      tempVideo.src = alternativePath;
-      tempVideo.onloadeddata = () => {
-        // If alternative path works, update the source
-        const videoElement = e.currentTarget;
-        videoElement.src = alternativePath;
-        videoElement.load();
-      };
-    }
   };
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
@@ -263,25 +247,33 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative overflow-hidden bg-hero-pattern">
+    <section className="relative overflow-hidden">
       {/* Background video */}
       <div className="absolute inset-0 z-0">
-        {backgroundVideo ? (
-          // Video background when provided
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="video-background"
-            onLoadedData={handleVideoLoaded}
-            onError={handleVideoError}
-          >
-            <source src={backgroundVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        ) : (
+        {backgroundVideo && !videoError ? (
+          // Video background when provided - with error handling and loading feedback
+          <>
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="absolute w-full h-full object-cover opacity-20 z-10"
+              onLoadedData={handleVideoLoaded}
+              onError={handleVideoError}
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {!videoLoaded && (
+              <div className="absolute inset-0 bg-hero-pattern"></div>
+            )}
+          </>
+        ) : !isMobile && !prefersReducedMotion && !videoError ? (
           // Default pattern background if no video
+          <div className="absolute inset-0 bg-hero-pattern"></div>
+        ) : (
+          // Fallback pattern background
           <div className="absolute inset-0 bg-hero-pattern"></div>
         )}
       </div>
