@@ -114,7 +114,8 @@ const GermanContact = () => {
         subtitle="Wir betreuen Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation."
       />
       
-      <section className="relative -mt-16 z-10 pb-16">
+      {/* Adjusted spacing - increased margin from -mt-16 to -mt-8 to create more space */}
+      <section className="relative -mt-8 z-10 pb-24 pt-8">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-5 gap-0">

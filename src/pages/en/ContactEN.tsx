@@ -34,7 +34,10 @@ const EnglishContact = () => {
         </div>
       </div>
       
-      <ConsultationRequestSection />
+      {/* Added padding to create more space */}
+      <div className="pt-16 pb-8">
+        <ConsultationRequestSection />
+      </div>
       
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
