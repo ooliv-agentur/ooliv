@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -59,6 +58,22 @@ const PageHero = ({
     return () => {
       mediaQuery.removeEventListener('change', handleMediaChange);
     };
+  }, []);
+
+  // Force CSS class to be registered and applied
+  useEffect(() => {
+    const enforceStyles = () => {
+      // This adds a class to the body to force a style recalculation
+      document.body.classList.add('force-bg-hero-pattern');
+      setTimeout(() => {
+        document.body.classList.remove('force-bg-hero-pattern');
+      }, 100);
+    };
+    
+    enforceStyles();
+    
+    // Log to verify class application
+    console.log('PageHero: Attempting to enforce bg-hero-pattern styles');
   }, []);
 
   const handleVideoLoaded = () => {
@@ -267,7 +282,15 @@ const PageHero = ({
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
-              <div className="absolute inset-0 bg-hero-pattern"></div>
+              <div 
+                className="absolute inset-0 bg-hero-pattern"
+                style={{
+                  position: 'relative',
+                  background: '#f7f8fc',
+                  overflow: 'hidden'
+                }}
+                data-hero-background="true"
+              ></div>
             )}
           </>
         ) : !isMobile && !prefersReducedMotion && !videoError ? (
@@ -276,10 +299,11 @@ const PageHero = ({
             className="absolute inset-0 bg-hero-pattern"
             style={{ 
               // Inline style as a fallback to ensure the background is visible
-              background: '#f7f8fc',
               position: 'relative',
+              background: '#f7f8fc',
               overflow: 'hidden'
             }}
+            data-hero-background="true"
           ></div>
         ) : (
           // Fallback pattern background - ensure class is applied directly
@@ -287,10 +311,11 @@ const PageHero = ({
             className="absolute inset-0 bg-hero-pattern"
             style={{ 
               // Inline style as a fallback to ensure the background is visible
-              background: '#f7f8fc',
               position: 'relative',
+              background: '#f7f8fc',
               overflow: 'hidden'
             }}
+            data-hero-background="true"
           ></div>
         )}
       </div>

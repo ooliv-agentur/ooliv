@@ -7,7 +7,8 @@ export default {
   safelist: [
     'bg-hero-pattern',
     'bg-hero-pattern::before',
-    'bg-hero-pattern::after'
+    'bg-hero-pattern::after',
+    'force-bg-hero-pattern'
   ],
   theme: {
     extend: {
