@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-// This component is intentionally empty as requested - we've removed the scroll indicator
+// Component is now empty - we've removed the scroll indicator as requested
 const ScrollIndicator = () => {
   return null;
 };
