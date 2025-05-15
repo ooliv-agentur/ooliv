@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -43,6 +42,7 @@ const PageHero = ({
   const { language } = useLanguage();
   const isMobile = useIsMobile();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   
   useEffect(() => {
     // Check for reduced motion preference
@@ -58,6 +58,16 @@ const PageHero = ({
       mediaQuery.removeEventListener('change', handleMediaChange);
     };
   }, []);
+
+  const handleVideoLoaded = () => {
+    console.log('Background video loaded successfully');
+    setVideoLoaded(true);
+  };
+  
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    console.error('Error loading background video:', e);
+    setVideoLoaded(false);
+  };
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
@@ -237,17 +247,23 @@ const PageHero = ({
       {/* Background video or pattern */}
       <div className="absolute inset-0 z-0">
         {backgroundVideo ? (
-          // Video background when provided
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="absolute w-full h-full object-cover z-10"
-            style={{ opacity: 0.20 }}
-          >
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
+          // Video background when provided - with error handling and loading feedback
+          <>
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className={`absolute w-full h-full object-cover z-10 transition-opacity duration-500 ${videoLoaded ? 'opacity-20' : 'opacity-0'}`}
+              onLoadedData={handleVideoLoaded}
+              onError={handleVideoError}
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+            </video>
+            {!videoLoaded && (
+              <div className="absolute inset-0 bg-hero-pattern"></div>
+            )}
+          </>
         ) : !isMobile && !prefersReducedMotion ? (
           // Default video background for non-mobile, if no reduced motion
           <div className="absolute inset-0 z-0 bg-gray-100">

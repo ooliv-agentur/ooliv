@@ -26,7 +26,7 @@ const ContentHero = () => {
         }}
         secondaryCta={{
           text: isGerman ? "Case Studies ansehen" : "View Case Studies",
-          link: isGerman ? "/de/case-studies" : "/case-studies"
+          link: isGerman ? "/case-studies" : "/en/case-studies"
         }}
       />
       <ScrollIndicator />
