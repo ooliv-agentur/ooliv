@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -269,8 +270,8 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Fixed position for the wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-30 pointer-events-none">
+      {/* Fixed position for the wave - Increased height and adjusted position to eliminate line */}
+      <div className="absolute -bottom-1 left-0 right-0 h-20 z-30 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 1440 320" 
