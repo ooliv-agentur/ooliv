@@ -43,6 +43,7 @@ const PageHero = ({
   const isMobile = useIsMobile();
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   
   useEffect(() => {
     // Check for reduced motion preference
@@ -59,14 +60,24 @@ const PageHero = ({
     };
   }, []);
 
+  // Reset video states when backgroundVideo changes
+  useEffect(() => {
+    if (backgroundVideo) {
+      setVideoLoaded(false);
+      setVideoError(false);
+    }
+  }, [backgroundVideo]);
+
   const handleVideoLoaded = () => {
     console.log('Background video loaded successfully');
     setVideoLoaded(true);
+    setVideoError(false);
   };
   
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     console.error('Error loading background video:', e);
     setVideoLoaded(false);
+    setVideoError(true);
   };
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
@@ -246,7 +257,7 @@ const PageHero = ({
     <section className="relative overflow-hidden">
       {/* Background video or pattern */}
       <div className="absolute inset-0 z-0">
-        {backgroundVideo ? (
+        {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
           <>
             <video 
@@ -264,7 +275,7 @@ const PageHero = ({
               <div className="absolute inset-0 bg-hero-pattern"></div>
             )}
           </>
-        ) : !isMobile && !prefersReducedMotion ? (
+        ) : !isMobile && !prefersReducedMotion && !videoError ? (
           // Default video background for non-mobile, if no reduced motion
           <div className="absolute inset-0 z-0 bg-gray-100">
             <video 

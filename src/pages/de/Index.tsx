@@ -46,6 +46,9 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
   }, []);
   
+  const videoPath = "/lovable-uploads/Startpage german english.mp4";
+  console.log('German homepage: Using video path:', videoPath);
+  
   return (
     <>
       <Helmet>
@@ -61,7 +64,7 @@ const GermanIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true} 
-          backgroundVideo="/lovable-uploads/Startpage german english.mp4"
+          backgroundVideo={videoPath}
         />
         <DeutscherAboutSection />
         <TeamTeaserDE />

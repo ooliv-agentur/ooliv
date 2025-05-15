@@ -24,6 +24,9 @@ const EnglishIndex = () => {
     console.log('EnglishIndex component mounted - setting language to English');
   }, []);
   
+  const videoPath = "/lovable-uploads/Startpage german english.mp4";
+  console.log('English homepage: Using video path:', videoPath);
+  
   const simplifiedFaqs = [
     {
       question: "What is your website creation process?",
@@ -61,7 +64,7 @@ const EnglishIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true}
-          backgroundVideo="/lovable-uploads/Startpage german english.mp4"
+          backgroundVideo={videoPath}
         />
         <EnglishAboutSection />
         <EnglishTeamTeaser />
