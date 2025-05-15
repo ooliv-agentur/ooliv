@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -108,6 +107,7 @@ const App = () => (
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          {/* Add both Toasters at the app level, outside of routes */}
           <Toaster />
           <Sonner />
         </BrowserRouter>

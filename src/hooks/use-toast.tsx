@@ -2,6 +2,7 @@
 "use client";
 
 import * as React from "react";
+import { type ToastProps, type ToastActionElement } from "@/components/ui/toast";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const ToastVariants = cva(
@@ -22,19 +23,24 @@ const ToastVariants = cva(
 
 type ToastVariantProps = VariantProps<typeof ToastVariants>;
 
-export interface Toast {
+export type Toast = {
   id: string;
   title?: React.ReactNode;
   description?: React.ReactNode;
-  action?: React.ReactElement;
+  action?: ToastActionElement;
   variant?: ToastVariantProps["variant"];
   className?: string;
-}
+};
 
 const TOAST_LIMIT = 5;
 const TOAST_REMOVE_DELAY = 1000 * 60;
 
-type ToasterToast = Toast;
+type ToasterToast = Toast & {
+  id: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  action?: ToastActionElement;
+};
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -183,17 +189,18 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: actionTypes.DISMISS_TOAST, toastId });
   }, []);
 
-  const value = React.useMemo(
-    () => ({
-      toasts: state.toasts,
-      toast,
-      dismiss,
-      update,
-    }),
-    [state.toasts, toast, dismiss, update]
-  );
+  const contextValue = React.useMemo(() => ({
+    toasts: state.toasts,
+    toast,
+    dismiss,
+    update,
+  }), [state.toasts, toast, dismiss, update]);
 
-  return <ToastContext.Provider value={value}>{children}</ToastContext.Provider>;
+  return (
+    <ToastContext.Provider value={contextValue}>
+      {children}
+    </ToastContext.Provider>
+  );
 }
 
 export function useToast() {
@@ -206,11 +213,15 @@ export function useToast() {
   return context;
 }
 
-// Helper function separate from the hook
+// Helper function to avoid circular dependencies
 export function toast(props: Omit<ToasterToast, "id">) {
   try {
-    const { toast } = useToast();
-    return toast(props);
+    const context = React.useContext(ToastContext);
+    if (!context) {
+      console.error("Toast failed: ToastProvider not found");
+      return "";
+    }
+    return context.toast(props);
   } catch (e) {
     console.error("Toast failed:", e);
     return "";
