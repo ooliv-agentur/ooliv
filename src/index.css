@@ -10,6 +10,7 @@
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
+  background: linear-gradient(135deg, #f9f9f7 0%, #f3f3f3 100%) !important;
 }
 
 .bg-hero-pattern::before,
