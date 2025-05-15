@@ -2,7 +2,7 @@
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative !important;
-  background: linear-gradient(135deg, #f9f9f7 0%, #f3f3f3 100%) !important;
+  background: linear-gradient(135deg, #f9f9f7 0%, #f9f9f7 100%) !important; /* Changed to solid light gray */
   overflow: hidden !important;
   z-index: 0 !important; /* Ensure correct stacking context */
 }

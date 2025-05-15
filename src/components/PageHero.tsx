@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -247,7 +248,7 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative overflow-hidden">
+    <section className={`relative overflow-hidden ${isHomepage ? 'is-homepage' : ''}`}>
       {/* Background layer - ALWAYS render the bg-hero-pattern for the swirl effect */}
       <div className="absolute inset-0 z-0 bg-hero-pattern"></div>
       
