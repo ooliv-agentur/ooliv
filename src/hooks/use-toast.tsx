@@ -1,4 +1,6 @@
 
+"use client";
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -16,23 +18,23 @@ const ToastVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
-type ToastVariantProps = VariantProps<typeof ToastVariants>
+type ToastVariantProps = VariantProps<typeof ToastVariants>;
 
 export interface Toast {
-  id: string
-  title?: React.ReactNode
-  description?: React.ReactNode
-  action?: React.ReactElement
-  variant?: ToastVariantProps["variant"]
-  className?: string
+  id: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  action?: React.ReactElement;
+  variant?: ToastVariantProps["variant"];
+  className?: string;
 }
 
 const TOAST_LIMIT = 5;
 const TOAST_REMOVE_DELAY = 1000 * 60;
 
-type ToasterToast = Toast
+type ToasterToast = Toast;
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -129,9 +131,9 @@ const reducer = (state: State, action: Action): State => {
 
 interface ToastContextType {
   toasts: ToasterToast[];
-  toast: (props: Omit<ToasterToast, "id">) => void;
+  toast: (props: Omit<ToasterToast, "id">) => string;
   dismiss: (toastId?: string) => void;
-  update: (toastId: string, updatedProps: Omit<ToasterToast, "id">) => void;
+  update: (toastId: string, props: Omit<ToasterToast, "id">) => void;
 }
 
 const ToastContext = React.createContext<ToastContextType | undefined>(undefined);
@@ -206,6 +208,11 @@ export function useToast() {
 
 // Helper function separate from the hook
 export function toast(props: Omit<ToasterToast, "id">) {
-  const { toast } = useToast();
-  return toast(props);
+  try {
+    const { toast } = useToast();
+    return toast(props);
+  } catch (e) {
+    console.error("Toast failed:", e);
+    return "";
+  }
 }

@@ -1,5 +1,4 @@
 
-import { useToast } from "@/hooks/use-toast"
 import {
   Toast,
   ToastClose,
@@ -8,18 +7,10 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@/components/ui/toast"
+import { useToast } from "@/hooks/use-toast"
 
 export function Toaster() {
-  const { toasts } = useToast()
-
-  // Safety check - ensure toasts exists and is an array
-  if (!toasts || !Array.isArray(toasts) || toasts.length === 0) {
-    return (
-      <ToastProvider>
-        <ToastViewport />
-      </ToastProvider>
-    )
-  }
+  const { toasts = [] } = useToast() || {};
 
   return (
     <ToastProvider>
@@ -35,7 +26,7 @@ export function Toaster() {
             {action}
             <ToastClose />
           </Toast>
-        )
+        );
       })}
       <ToastViewport />
     </ToastProvider>

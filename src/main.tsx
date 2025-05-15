@@ -4,11 +4,14 @@ import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
+import { ToastProvider } from '@/hooks/use-toast';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    <ToastProvider>
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
+    </ToastProvider>
   </React.StrictMode>
 );
