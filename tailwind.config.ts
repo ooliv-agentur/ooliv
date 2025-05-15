@@ -8,7 +8,10 @@ export default {
     'bg-hero-pattern',
     'bg-hero-pattern::before',
     'bg-hero-pattern::after',
-    'force-bg-hero-pattern'
+    'force-bg-hero-pattern',
+    { pattern: /^bg-hero-pattern.*/ },
+    { pattern: /.*before.*/ },
+    { pattern: /.*after.*/ }
   ],
   theme: {
     extend: {
