@@ -1,10 +1,10 @@
 
+/* Import hero background styles - moved this import to first position to ensure it takes precedence */
+@import './styles/hero-background.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import hero background styles - moved this import to first position to ensure it takes precedence */
-@import './styles/hero-background.css';
 
 /* Explicitly ensure the swirl pattern is visible with important flags */
 .bg-hero-pattern {
