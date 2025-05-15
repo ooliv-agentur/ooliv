@@ -44,7 +44,6 @@ const PageHero = ({
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
-  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
   
   useEffect(() => {
     // Check for reduced motion preference
@@ -61,48 +60,17 @@ const PageHero = ({
     };
   }, []);
 
-  // Process the video path when it changes
-  useEffect(() => {
-    if (backgroundVideo) {
-      setVideoLoaded(false);
-      setVideoError(false);
-      
-      // Handle different path formats for the video
-      if (backgroundVideo.startsWith('/')) {
-        // Path already has leading slash
-        setVideoSrc(backgroundVideo);
-      } else if (backgroundVideo.startsWith('http')) {
-        // Absolute URL, use as is
-        setVideoSrc(backgroundVideo);
-      } else {
-        // Relative path, add appropriate prefix
-        setVideoSrc(`/${backgroundVideo}`);
-      }
-      
-      console.log('Processing video path:', backgroundVideo, '-> Result:', videoSrc);
-    } else {
-      setVideoSrc(undefined);
-    }
-  }, [backgroundVideo]);
-
   const handleVideoLoaded = () => {
-    console.log('Background video loaded successfully:', videoSrc);
+    console.log('Background video loaded successfully:', backgroundVideo);
     setVideoLoaded(true);
     setVideoError(false);
   };
   
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement>) => {
     console.error('Error loading background video:', e);
-    console.error('Failed video source:', videoSrc);
+    console.error('Failed video source:', backgroundVideo);
     setVideoLoaded(false);
     setVideoError(true);
-    
-    // Try alternative paths if the current one fails
-    if (videoSrc && !videoSrc.includes('lovable-uploads')) {
-      const alternativePath = `/lovable-uploads/${backgroundVideo}`;
-      console.log('Trying alternative video path:', alternativePath);
-      setVideoSrc(alternativePath);
-    }
   };
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
@@ -280,9 +248,9 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video or pattern */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0">
-        {videoSrc && !videoError ? (
+        {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
           <>
             <video 
@@ -290,11 +258,11 @@ const PageHero = ({
               muted 
               loop 
               playsInline
-              className={`absolute w-full h-full object-cover z-10 transition-opacity duration-500 ${videoLoaded ? 'opacity-20' : 'opacity-0'}`}
+              className="absolute w-full h-full object-cover opacity-20 z-10"
               onLoadedData={handleVideoLoaded}
               onError={handleVideoError}
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src={backgroundVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
@@ -302,21 +270,8 @@ const PageHero = ({
             )}
           </>
         ) : !isMobile && !prefersReducedMotion && !videoError ? (
-          // Default video background for non-mobile, if no reduced motion
-          <div className="absolute inset-0 z-0 bg-gray-100">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="absolute w-full h-full object-cover opacity-20 z-20"
-              style={{ opacity: 0.20 }}
-            >
-              <source src="/test.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 bg-gray-100 z-10"></div>
-          </div>
+          // Default pattern background if no video
+          <div className="absolute inset-0 bg-hero-pattern"></div>
         ) : (
           // Fallback pattern background
           <div className="absolute inset-0 bg-hero-pattern"></div>

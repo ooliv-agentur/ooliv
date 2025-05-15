@@ -24,8 +24,8 @@ const EnglishIndex = () => {
     console.log('EnglishIndex component mounted - setting language to English');
   }, []);
   
-  // Update the video path to ensure it's correct for production
-  const videoPath = "Startpage german english.mp4";
+  // Update to correct video path in lovable-uploads folder
+  const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
   console.log('English homepage: Using video path:', videoPath);
   
   const simplifiedFaqs = [
