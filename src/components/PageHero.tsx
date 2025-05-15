@@ -25,6 +25,7 @@ interface PageHeroProps {
   startProjectText?: string;
   seeWorkText?: string;
   isHomepage?: boolean;
+  backgroundVideo?: string;
 }
 
 const PageHero = ({
@@ -36,7 +37,8 @@ const PageHero = ({
   secondaryCta,
   startProjectText,
   seeWorkText,
-  isHomepage = false
+  isHomepage = false,
+  backgroundVideo
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
@@ -232,9 +234,22 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video or fallback - with fixed height */}
+      {/* Background video or pattern */}
       <div className="absolute inset-0 z-0">
-        {!isMobile && !prefersReducedMotion ? (
+        {backgroundVideo ? (
+          // Video background when provided
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute w-full h-full object-cover z-10"
+            style={{ opacity: 0.20 }}
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+        ) : !isMobile && !prefersReducedMotion ? (
+          // Default video background for non-mobile, if no reduced motion
           <div className="absolute inset-0 z-0 bg-gray-100">
             <video 
               autoPlay 
@@ -249,6 +264,7 @@ const PageHero = ({
             <div className="absolute inset-0 bg-gray-100 z-10"></div>
           </div>
         ) : (
+          // Fallback pattern background
           <div className="absolute inset-0 bg-hero-pattern"></div>
         )}
       </div>
