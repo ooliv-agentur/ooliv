@@ -12,6 +12,10 @@ import {
 export function Toaster() {
   const { toasts } = useToast()
 
+  if (!toasts || !Array.isArray(toasts)) {
+    return null
+  }
+
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
