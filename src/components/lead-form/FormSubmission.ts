@@ -94,6 +94,7 @@ export const useFormSubmission = (
       toast({
         title: language === 'de' ? "Anfrage erhalten!" : "Inquiry received!",
         description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
+        duration: 3000, // Reduced duration to make redirect more seamless
         className: "bg-[#004d51] text-white border-[#006064]",
       });
 
@@ -118,6 +119,7 @@ export const useFormSubmission = (
           ? "Es gab ein Problem bei der Übermittlung Ihrer Anfrage. Bitte versuchen Sie es erneut." 
           : "There was a problem submitting your request. Please try again.",
         variant: "destructive",
+        duration: 5000,
       });
     }
   }, [language, toast, setIsSubmitting, onSuccess]);

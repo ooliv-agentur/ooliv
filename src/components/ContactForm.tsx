@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Dialog,
@@ -185,6 +184,7 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
       toast({
         title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
         description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
+        duration: 5000,
         className: "bg-[#004d51] text-white border-[#006064]",
       });
 
