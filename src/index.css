@@ -10,12 +10,12 @@
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
-  background: #f9f9f7 !important; /* Solid light gray color */
+  background: #1A1A1A !important; /* Dark background for subpages */
 }
 
 /* Ensure the homepage can have a different background when needed */
 .is-homepage .bg-hero-pattern {
-  background: linear-gradient(135deg, #f9f9f7 0%, #f3f3f3 100%) !important;
+  background: linear-gradient(135deg, #1A1A1A 0%, #222222 100%) !important; /* Slightly varied dark gradient for homepage */
 }
 
 .bg-hero-pattern::before,

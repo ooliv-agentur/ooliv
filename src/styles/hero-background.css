@@ -2,7 +2,7 @@
 /* Global Hero Background Pattern */
 .bg-hero-pattern {
   position: relative !important;
-  background: linear-gradient(135deg, #f9f9f7 0%, #f9f9f7 100%) !important; /* Solid light gray */
+  background: #1A1A1A !important; /* Solid dark gray matching homepage video fallback */
   overflow: hidden !important;
   z-index: 0 !important; /* Ensure correct stacking context */
 }
@@ -14,7 +14,7 @@
   right: -10% !important;
   width: 70% !important;
   height: 80% !important;
-  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1200 C 800 1000, 800 800, 1200 600 L 1200 0 L 0 0 Z' fill='%23f3f3f3' opacity='0.5'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1200 C 800 1000, 800 800, 1200 600 L 1200 0 L 0 0 Z' fill='%23333333' opacity='1.0'/%3E%3C/svg%3E") !important;
   background-position: top right !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -33,7 +33,7 @@
   left: -5% !important;
   width: 60% !important;
   height: 70% !important;
-  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1200 0 C 400 200, 400 400, 0 600 L 0 1200 L 1200 1200 Z' fill='%23f5f5f5' opacity='0.5'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1200 0 C 400 200, 400 400, 0 600 L 0 1200 L 1200 1200 Z' fill='%23333333' opacity='1.0'/%3E%3C/svg%3E") !important;
   background-position: bottom left !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;

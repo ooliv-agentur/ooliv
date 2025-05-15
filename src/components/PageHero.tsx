@@ -138,6 +138,7 @@ const PageHero = ({
     </>
   );
   
+  // Updated rendering functions to handle dark background on subpages
   const renderTitle = () => {
     if (isHomepage) {
       return (
@@ -147,7 +148,7 @@ const PageHero = ({
       );
     } else {
       return (
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-heading mb-6 leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
           {title}
         </h1>
       );
@@ -163,7 +164,7 @@ const PageHero = ({
       );
     } else {
       return (
-        <p className="text-xl md:text-2xl text-brand-heading/80 mb-8">
+        <p className="text-xl md:text-2xl text-gray-200 mb-8">
           {subtitle || description}
         </p>
       );
@@ -275,7 +276,7 @@ const PageHero = ({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-32">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
-              <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
+              <div className="inline-flex items-center bg-brand-primary/80 text-white rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
                 <span>{badge}</span>
               </div>
             )}
