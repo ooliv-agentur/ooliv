@@ -1,5 +1,5 @@
+
 import * as React from "react";
-import { type ToastProps, type ToastActionElement } from "@/components/ui/toast";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const ToastVariants = cva(
@@ -20,11 +20,11 @@ const ToastVariants = cva(
 
 type ToastVariantProps = VariantProps<typeof ToastVariants>
 
-export type Toast = {
+export interface Toast {
   id: string
   title?: React.ReactNode
   description?: React.ReactNode
-  action?: ToastActionElement
+  action?: React.ReactElement
   variant?: ToastVariantProps["variant"]
   className?: string
 }
@@ -32,12 +32,7 @@ export type Toast = {
 const TOAST_LIMIT = 5;
 const TOAST_REMOVE_DELAY = 1000 * 60;
 
-type ToasterToast = Toast & {
-  id: string;
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  action?: ToastActionElement;
-}
+type ToasterToast = Toast
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -97,8 +92,6 @@ const reducer = (state: State, action: Action): State => {
     case actionTypes.DISMISS_TOAST: {
       const { toastId } = action;
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
       if (toastId) {
         if (toastTimeouts.has(toastId)) {
           clearTimeout(toastTimeouts.get(toastId));
@@ -115,9 +108,7 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         toasts: state.toasts.map((t) =>
           t.id === toastId || toastId === undefined
-            ? {
-                ...t,
-              }
+            ? { ...t }
             : t
         ),
       };
@@ -136,19 +127,16 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const ToastContext = React.createContext<{
+interface ToastContextType {
   toasts: ToasterToast[];
   toast: (props: Omit<ToasterToast, "id">) => void;
   dismiss: (toastId?: string) => void;
   update: (toastId: string, updatedProps: Omit<ToasterToast, "id">) => void;
-}>({
-  toasts: [],
-  toast: () => {},
-  dismiss: () => {},
-  update: () => {},
-});
+}
 
-export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
+const ToastContext = React.createContext<ToastContextType | undefined>(undefined);
+
+export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = React.useReducer(reducer, { toasts: [] });
 
   React.useEffect(() => {
@@ -179,6 +167,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
       type: actionTypes.ADD_TOAST,
       toast: { ...props, id },
     });
+    return id;
   }, []);
 
   const update = React.useCallback((toastId: string, props: Omit<ToasterToast, "id">) => {
@@ -192,24 +181,31 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: actionTypes.DISMISS_TOAST, toastId });
   }, []);
 
-  return (
-    <ToastContext.Provider value={{ toasts: state.toasts, toast, dismiss, update }}>
-      {children}
-    </ToastContext.Provider>
+  const value = React.useMemo(
+    () => ({
+      toasts: state.toasts,
+      toast,
+      dismiss,
+      update,
+    }),
+    [state.toasts, toast, dismiss, update]
   );
-};
 
-export const useToast = () => {
+  return <ToastContext.Provider value={value}>{children}</ToastContext.Provider>;
+}
+
+export function useToast() {
   const context = React.useContext(ToastContext);
 
-  if (context === undefined) {
+  if (!context) {
     throw new Error("useToast must be used within a ToastProvider");
   }
 
   return context;
-};
+}
 
-export const toast = (props: Omit<ToasterToast, "id">) => {
+// Helper function separate from the hook
+export function toast(props: Omit<ToasterToast, "id">) {
   const { toast } = useToast();
-  toast(props);
-};
+  return toast(props);
+}

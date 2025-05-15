@@ -12,8 +12,13 @@ import {
 export function Toaster() {
   const { toasts } = useToast()
 
-  if (!toasts || !Array.isArray(toasts)) {
-    return null
+  // Safety check - ensure toasts exists and is an array
+  if (!toasts || !Array.isArray(toasts) || toasts.length === 0) {
+    return (
+      <ToastProvider>
+        <ToastViewport />
+      </ToastProvider>
+    )
   }
 
   return (
