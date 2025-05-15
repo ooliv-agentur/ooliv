@@ -23,6 +23,7 @@
   animation: float 8s ease-in-out infinite !important;
   will-change: transform !important;
   pointer-events: none !important; /* Prevent interaction problems */
+  display: block !important; /* Force display */
 }
 
 .bg-hero-pattern::after {
@@ -41,6 +42,7 @@
   animation: float-reverse 10s ease-in-out infinite !important;
   will-change: transform !important;
   pointer-events: none !important; /* Prevent interaction problems */
+  display: block !important; /* Force display */
 }
 
 /* Video Background Styles */

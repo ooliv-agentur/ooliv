@@ -249,7 +249,7 @@ const PageHero = ({
   return (
     <section className="relative overflow-hidden">
       {/* Background layer - ALWAYS render the bg-hero-pattern for the swirl effect */}
-      <div className="absolute inset-0 z-0 bg-hero-pattern"></div>
+      <div className="absolute inset-0 z-0 bg-hero-pattern" style={{display: 'block'}}></div>
       
       {/* Video layer (if provided) - rendered above the swirl background */}
       {backgroundVideo && !videoError && (
@@ -259,7 +259,7 @@ const PageHero = ({
             muted 
             loop 
             playsInline
-            className="absolute w-full h-full object-cover opacity-20"
+            className="absolute w-full h-full object-cover opacity-20 video-background"
             onLoadedData={handleVideoLoaded}
             onError={handleVideoError}
           >
