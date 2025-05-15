@@ -248,37 +248,28 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video */}
-      <div className="absolute inset-0 z-0">
-        {backgroundVideo && !videoError ? (
-          // Video background when provided - with error handling and loading feedback
-          <>
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="absolute w-full h-full object-cover opacity-20 z-10"
-              onLoadedData={handleVideoLoaded}
-              onError={handleVideoError}
-            >
-              <source src={backgroundVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            {!videoLoaded && (
-              <div className="absolute inset-0 bg-hero-pattern"></div>
-            )}
-          </>
-        ) : !isMobile && !prefersReducedMotion && !videoError ? (
-          // Default pattern background if no video
-          <div className="absolute inset-0 bg-hero-pattern"></div>
-        ) : (
-          // Fallback pattern background
-          <div className="absolute inset-0 bg-hero-pattern"></div>
-        )}
-      </div>
+      {/* Background layer - ALWAYS render the bg-hero-pattern for the swirl effect */}
+      <div className="absolute inset-0 z-0 bg-hero-pattern"></div>
       
-      {/* Fixed height container for consistent sizing */}
+      {/* Video layer (if provided) - rendered above the swirl background */}
+      {backgroundVideo && !videoError && (
+        <div className="absolute inset-0 z-10">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="absolute w-full h-full object-cover opacity-20"
+            onLoadedData={handleVideoLoaded}
+            onError={handleVideoError}
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
+      
+      {/* Content layer - rendered above both background and video */}
       <div className="relative z-20 min-h-[680px] flex flex-col justify-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-32">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">

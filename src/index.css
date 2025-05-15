@@ -3,10 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import hero background styles */
+/* Import hero background styles - moved this import to first position to ensure it takes precedence */
 @import './styles/hero-background.css';
 
-/* Stellen Sie sicher, dass es keine Überschreibungen für den Hero-Hintergrund gibt */
+/* Explicitly ensure the swirl pattern is visible with important flags */
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
@@ -16,6 +16,8 @@
 .bg-hero-pattern::after {
   content: '' !important;
   z-index: 1 !important;
+  opacity: 0.7 !important;
+  display: block !important;
 }
 
 /* Custom Scrollbar Styling */
