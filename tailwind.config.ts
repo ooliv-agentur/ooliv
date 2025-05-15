@@ -3,16 +3,6 @@ import { type Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  // Add safelist to prevent Tailwind from purging critical classes
-  safelist: [
-    'bg-hero-pattern',
-    'bg-hero-pattern::before',
-    'bg-hero-pattern::after',
-    'force-bg-hero-pattern',
-    { pattern: /^bg-hero-pattern.*/ },
-    { pattern: /.*before.*/ },
-    { pattern: /.*after.*/ }
-  ],
   theme: {
     extend: {
       fontFamily: {

@@ -60,22 +60,6 @@ const PageHero = ({
     };
   }, []);
 
-  // Force CSS class to be registered and applied
-  useEffect(() => {
-    const enforceStyles = () => {
-      // This adds a class to the body to force a style recalculation
-      document.body.classList.add('force-bg-hero-pattern');
-      setTimeout(() => {
-        document.body.classList.remove('force-bg-hero-pattern');
-      }, 100);
-    };
-    
-    enforceStyles();
-    
-    // Log to verify class application
-    console.log('PageHero: Attempting to enforce bg-hero-pattern styles');
-  }, []);
-
   const handleVideoLoaded = () => {
     console.log('Background video loaded successfully:', backgroundVideo);
     setVideoLoaded(true);
@@ -264,7 +248,7 @@ const PageHero = ({
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background video or pattern */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0">
         {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
@@ -282,41 +266,15 @@ const PageHero = ({
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
-              <div 
-                className="absolute inset-0 bg-hero-pattern"
-                style={{
-                  position: 'relative',
-                  background: '#f7f8fc',
-                  overflow: 'hidden'
-                }}
-                data-hero-background="true"
-              ></div>
+              <div className="absolute inset-0 bg-hero-pattern"></div>
             )}
           </>
         ) : !isMobile && !prefersReducedMotion && !videoError ? (
-          // Default pattern background if no video - ensure class is applied directly
-          <div 
-            className="absolute inset-0 bg-hero-pattern"
-            style={{ 
-              // Inline style as a fallback to ensure the background is visible
-              position: 'relative',
-              background: '#f7f8fc',
-              overflow: 'hidden'
-            }}
-            data-hero-background="true"
-          ></div>
+          // Default pattern background if no video
+          <div className="absolute inset-0 bg-hero-pattern"></div>
         ) : (
-          // Fallback pattern background - ensure class is applied directly
-          <div 
-            className="absolute inset-0 bg-hero-pattern"
-            style={{ 
-              // Inline style as a fallback to ensure the background is visible
-              position: 'relative',
-              background: '#f7f8fc',
-              overflow: 'hidden'
-            }}
-            data-hero-background="true"
-          ></div>
+          // Fallback pattern background
+          <div className="absolute inset-0 bg-hero-pattern"></div>
         )}
       </div>
       
