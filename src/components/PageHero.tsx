@@ -271,11 +271,27 @@ const PageHero = ({
             )}
           </>
         ) : !isMobile && !prefersReducedMotion && !videoError ? (
-          // Default pattern background if no video
-          <div className="absolute inset-0 bg-hero-pattern"></div>
+          // Default pattern background if no video - ensure class is applied directly
+          <div 
+            className="absolute inset-0 bg-hero-pattern"
+            style={{ 
+              // Inline style as a fallback to ensure the background is visible
+              background: '#f7f8fc',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          ></div>
         ) : (
-          // Fallback pattern background
-          <div className="absolute inset-0 bg-hero-pattern"></div>
+          // Fallback pattern background - ensure class is applied directly
+          <div 
+            className="absolute inset-0 bg-hero-pattern"
+            style={{ 
+              // Inline style as a fallback to ensure the background is visible
+              background: '#f7f8fc',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          ></div>
         )}
       </div>
       
