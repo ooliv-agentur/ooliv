@@ -30,7 +30,7 @@ export default {
         'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       },
       backgroundImage: {
-        'hero-pattern': 'linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%)',
+        'hero-pattern': 'linear-gradient(135deg, #f7f8fc 0%, #f7f8fc 100%)',
       },
     },
   },

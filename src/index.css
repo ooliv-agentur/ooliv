@@ -6,10 +6,11 @@
 /* Import hero background styles */
 @import './styles/hero-background.css';
 
-/* Stellen Sie sicher, dass es keine Überschreibungen für den Hero-Hintergrund gibt */
+/* Ensure proper application of hero background styles */
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
+  background: #f7f8fc !important;
 }
 
 .bg-hero-pattern::before,
