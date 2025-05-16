@@ -45,6 +45,9 @@ const PageHero = ({
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   
+  // Set the background color based on whether this is the homepage or not
+  const bgColor = isHomepage ? '#f7f8fc' : '#f3f6fa';
+  
   useEffect(() => {
     // Check for reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -247,9 +250,9 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: '#f7f8fc' }}>
+    <section className="relative overflow-hidden" style={{ backgroundColor: bgColor }}>
       {/* Background container - using direct background instead of pattern with SVGs */}
-      <div className="absolute inset-0 z-0" style={{ backgroundColor: '#f7f8fc' }}>
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: bgColor }}>
         {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
           <>
@@ -266,12 +269,12 @@ const PageHero = ({
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
-              <div className="absolute inset-0" style={{ backgroundColor: '#f7f8fc' }}></div>
+              <div className="absolute inset-0" style={{ backgroundColor: bgColor }}></div>
             )}
           </>
         ) : (
           // Simple flat background - no patterns or SVGs
-          <div className="absolute inset-0" style={{ backgroundColor: '#f7f8fc' }}></div>
+          <div className="absolute inset-0" style={{ backgroundColor: bgColor }}></div>
         )}
       </div>
       
