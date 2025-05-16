@@ -266,15 +266,15 @@ const PageHero = ({
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
-              <div className="absolute inset-0 bg-hero-pattern"></div>
+              <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
             )}
           </>
         ) : !isMobile && !prefersReducedMotion && !videoError ? (
           // Default pattern background if no video
-          <div className="absolute inset-0 bg-hero-pattern"></div>
+          <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
         ) : (
           // Fallback pattern background
-          <div className="absolute inset-0 bg-hero-pattern"></div>
+          <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
         )}
       </div>
       
