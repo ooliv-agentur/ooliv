@@ -247,9 +247,9 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative overflow-hidden">
-      {/* Background video */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative overflow-hidden" style={{ backgroundColor: '#f7f8fc' }}>
+      {/* Background container - using direct background instead of pattern with SVGs */}
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: '#f7f8fc' }}>
         {backgroundVideo && !videoError ? (
           // Video background when provided - with error handling and loading feedback
           <>
@@ -266,15 +266,12 @@ const PageHero = ({
               Your browser does not support the video tag.
             </video>
             {!videoLoaded && (
-              <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
+              <div className="absolute inset-0" style={{ backgroundColor: '#f7f8fc' }}></div>
             )}
           </>
-        ) : !isMobile && !prefersReducedMotion && !videoError ? (
-          // Default pattern background if no video
-          <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
         ) : (
-          // Fallback pattern background
-          <div className="absolute inset-0 bg-hero-pattern" style={{ backgroundColor: '#f7f8fc' }}></div>
+          // Simple flat background - no patterns or SVGs
+          <div className="absolute inset-0" style={{ backgroundColor: '#f7f8fc' }}></div>
         )}
       </div>
       

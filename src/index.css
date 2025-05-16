@@ -13,11 +13,13 @@
   background: #f7f8fc !important;
 }
 
+/* These are commented out to match our CSS changes
 .bg-hero-pattern::before,
 .bg-hero-pattern::after {
   content: '' !important;
   z-index: 1 !important;
 }
+*/
 
 /* Custom Scrollbar Styling */
 /* For webkit browsers (Chrome, Safari, Edge) */

@@ -7,6 +7,7 @@
   z-index: 0; /* Ensure correct stacking context */
 }
 
+/* Temporarily commenting out the ::before pseudo-element with SVG background
 .bg-hero-pattern::before {
   content: '';
   position: absolute;
@@ -18,13 +19,15 @@
   background-position: top right;
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.6; /* Reduced opacity for subtler effect */
+  opacity: 0.6;
   z-index: 1;
   animation: float 8s ease-in-out infinite;
   will-change: transform;
-  pointer-events: none; /* Prevent interaction problems */
+  pointer-events: none;
 }
+*/
 
+/* Temporarily commenting out the ::after pseudo-element with SVG background
 .bg-hero-pattern::after {
   content: '';
   position: absolute;
@@ -36,12 +39,13 @@
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: contain;
-  opacity: 0.5; /* Reduced opacity for subtler effect */
+  opacity: 0.5;
   z-index: 1;
   animation: float-reverse 10s ease-in-out infinite;
   will-change: transform;
-  pointer-events: none; /* Prevent interaction problems */
+  pointer-events: none;
 }
+*/
 
 /* Video Background Styles */
 .video-background {
