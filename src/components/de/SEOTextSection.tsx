@@ -10,73 +10,99 @@ const SEOTextSection = () => {
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Werbeagentur Mainz – maßgeschneiderte Websites für Ihr Unternehmen</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Ihre Werbeagentur in Mainz – Klar. Digital. Wirksam.</h2>
           
           <p className="my-4">
-            Als spezialisierte Werbeagentur in Mainz entwickeln wir Websites, die weit mehr leisten als gutes Design: 
-            Unsere Lösungen sind technisch sauber, SEO-optimiert und strategisch ausgerichtet auf Ihre Geschäftsziele. 
-            Ob Corporate Website, E-Commerce-Shop oder individuelle Webentwicklung – wir schaffen digitale Plattformen, 
-            die nachhaltig konvertieren und wachsen können.
+            ooliv ist Ihre strategische Werbeagentur in Mainz für digitale Markenführung, zielgerichtetes Design und messbare Online-Ergebnisse. 
+            Mit über 16 Jahren Erfahrung verbinden wir kreative Ideen mit technischer Umsetzung und nachhaltiger Sichtbarkeit. 
+            Ob Relaunch, neue Website oder performanceorientiertes Marketing – wir denken Projekte ganzheitlich und setzen genau dort an, 
+            wo Wirkung entsteht.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Warum ooliv? – Ihr Partner für Webdesign und Marketing</h3>
-          
-          <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Maßgeschneiderte CMS-Lösungen: WordPress und Shopify, ausgewählt nach Ihren Unternehmenszielen.</li>
-            <li>Transparente Preismodelle: Klare Festpreise oder individuelle Angebote, je nach Projektkomplexität.</li>
-            <li>Strategische Entwicklung: SEO, UX und konversionsorientierte technische Umsetzung.</li>
-            <li>Rundum-Support: Hosting, Wartung, Sicherheit und Performance-Monitoring.</li>
-            <li>Direkter Expertenzugang: Sie arbeiten direkt mit unserem CEO und Entwicklungsteam – keine Zwischenschritte.</li>
-          </ul>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Unsere Leistungen – Webdesign und digitale Strategie</h3>
-          
-          <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Webdesign & UX-Design: Schnell ladend, nutzerorientiert, konversionsoptimiert.</li>
-            <li>WordPress-Entwicklung: SEO-bereite, skalierbare CMS-Strukturen.</li>
-            <li>Technische Implementierung: DSGVO-konform, sichere Programmierung.</li>
-            <li>E-Commerce-Lösungen: Maßgeschneiderte Online-Shops mit WordPress (WooCommerce) und Shopify.</li>
-            <li>SEO & Google Ads: Umfassende On-Page-SEO und performante PPC-Kampagnen.</li>
-            <li>Laufende Betreuung: Flexible Wartungspakete und zuverlässiges Hosting.</li>
-          </ul>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Benutzerfreundlichkeit und Zugänglichkeit</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Designagentur in Mainz – Identität, die wirkt</h3>
           
           <p className="my-4">
-            Unsere WordPress-CMS-Lösungen sind mit intuitiven Drag-and-Drop-Tools und einer benutzerfreundlichen 
-            visuellen Oberfläche ausgestattet, die schnelle Publishing-Workflows und einfache Zusammenarbeit für 
-            Ihre Marketing- oder Content-Teams gewährleisten.
+            Gutes Design transportiert nicht nur Ästhetik, sondern Strategie. Als Designagentur in Mainz entwickeln wir Markenauftritte, 
+            die klar positionieren, begeistern und langfristig binden. Unser Fokus: maßgeschneiderte Gestaltung, abgestimmt auf Zielgruppe, 
+            Kanal und Markenkern. Jedes Projekt entsteht in enger Zusammenarbeit – mit echten Menschen, echtem Feedback und echtem Mehrwert für Ihre Marke.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Transparente Preisgestaltung für Webdesign-Projekte</h3>
-          
-          <p className="my-4">Jedes Projekt ist einzigartig. Wir bieten:</p>
-          
-          <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Festpreispakete: Für klar definierte Umfänge.</li>
-            <li>Individuelle Angebote: Basierend auf Komplexität, technischen Anforderungen und SEO-Zielen.</li>
-            <li>Wartungspakete: Laufende monatliche Unterstützung und Updates.</li>
-          </ul>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Reibungslos wechseln – So gelingt der Agenturwechsel</h3>
           
           <p className="my-4">
-            Sie erhalten von Anfang an einen detaillierten Entwicklungsplan, kontinuierliche Beratung und messbare Meilensteine.
+            Ein Agenturwechsel bringt oft Unsicherheit – aber auch neue Chancen. Bei ooliv begleiten wir Sie strukturiert und transparent durch jeden Übergang:
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Warum eine professionelle Werbeagentur wählen?</h3>
-          
-          <p className="my-4">Die Zusammenarbeit mit ooliv garantiert:</p>
-          
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li>Schnellere Online-Sichtbarkeit durch SEO-bereite Strukturen.</li>
-            <li>Bessere Website-Performance mit Fokus auf Geschwindigkeit und Benutzerfreundlichkeit.</li>
-            <li>Höhere Sicherheitsstandards mit DSGVO-Konformität und zuverlässigem Hosting.</li>
-            <li>Nachhaltiges Wachstum durch Fokussierung auf messbare Konversionen, Leads und Markenbekanntheit.</li>
+            <li>Analyse & Audit: Wir prüfen bestehende Maßnahmen, identifizieren Potenziale und vermeiden Reibungsverluste.</li>
+            <li>Strategische Übergabe: Inhalte, Zugänge und Verantwortlichkeiten werden sauber dokumentiert.</li>
+            <li>Vertrauen aufbauen: Mit klaren Ansprechpartnern, Basecamp-Projektsteuerung und offenen Workflows sorgen wir für eine partnerschaftliche Zusammenarbeit ab Tag 1.</li>
           </ul>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Bereit, Ihre Website zu starten?</h3>
+          <p className="my-4">
+            Ein Agenturwechsel kann der erste Schritt in eine neue, bessere Richtung sein – wir machen ihn einfach.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ergebnisse, die überzeugen – aus Mainz, für Mainz</h3>
           
           <p className="my-4">
-            Lassen Sie uns besprechen, wie ooliv eine leistungsstarke Website erstellen kann, die echtes Geschäftswachstum vorantreibt.
+            Hinter jeder Strategie steht ein Ziel: Wirkung. Unsere datenbasierten Analysen und lokal optimierten Maßnahmen zeigen, was möglich ist:
+          </p>
+          
+          <p className="my-4">
+            <strong>Beispiel:</strong><br />
+            Einzelhändler aus Mainz, 2024<br />
+            Lokale SEO + Conversion-Optimierung → +45 % Sichtbarkeit in 6 Monaten, +102 % Umsatz im Online-Shop.
+          </p>
+          
+          <p className="my-4">
+            Unsere Methodik: Weniger Bauchgefühl, mehr Daten – und dabei immer nah am Menschen.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Sichtbarkeit zählt – SEO & Online-Marketing aus Mainz</h3>
+          
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li>Keyword-Recherche: präzise, datenbasiert, zielgerichtet</li>
+            <li>On-Page-Optimierung: Struktur, Inhalte, Performance</li>
+            <li>Off-Page & Backlinks: nachhaltiger Trust-Aufbau</li>
+            <li>Lokale SEO: gezielte Sichtbarkeit im Raum Mainz</li>
+          </ul>
+          
+          <p className="my-4">
+            Unsere Maßnahmen sind kein Flickwerk, sondern Teil eines durchdachten Systems – abgestimmt auf Ihre Unternehmensziele und Ihren Markt.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Markenaufbau mit Haltung – Branding & Corporate Design</h3>
+          
+          <p className="my-4">
+            Ihre Marke ist mehr als ein Logo. Wir übersetzen Ihre Werte in ein visuelles System, das Haltung zeigt – vom Farbkonzept bis zur Bildsprache. 
+            Unser Ziel: Wiedererkennbarkeit, Klarheit, Konsistenz.
+          </p>
+          
+          <p className="my-4">
+            Dabei verbinden wir strategisches Denken mit kreativer Exzellenz – für Markenidentitäten, die auffallen, berühren und bleiben.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Umsatz steigern – durch smarte Marketingstrategien</h3>
+          
+          <p className="my-4">
+            ooliv denkt Marketing weiter: mit datengetriebener Planung und kreativen Maßnahmen, die greifen.
+          </p>
+          
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li>Content-Marketing: relevante Inhalte, strategisch distribuiert</li>
+            <li>E-Mail-Marketing: automatisiert, personalisiert, erfolgreich</li>
+            <li>Feedback & Optimierung: datenbasiert und zyklisch weiterentwickelt</li>
+          </ul>
+          
+          <p className="my-4">
+            Jeder Kanal erfüllt eine Funktion – wir stimmen sie aufeinander ab, damit aus Klicks Conversions und aus Besuchern Kunden werden.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Bereit für den nächsten Schritt?</h3>
+          
+          <p className="my-4">
+            Wir begleiten Sie von der Idee bis zur Umsetzung – digital, strategisch, partnerschaftlich. Ihre Marke verdient mehr als Standard.
           </p>
           
           <p className="my-4">
