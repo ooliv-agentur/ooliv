@@ -46,7 +46,7 @@ const PageHero = ({
   const [videoError, setVideoError] = useState(false);
   
   // Set the background color based on whether this is the homepage or not
-  const bgColor = isHomepage ? '#f7f8fc' : '#f3f6fa';
+  const bgColor = isHomepage ? '#f7f8fc' : '#f5f6fa';
   
   useEffect(() => {
     // Check for reduced motion preference
