@@ -44,6 +44,9 @@ const GermanIndex = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('GermanIndex component mounted - setting language to German');
+    
+    // Force title update immediately
+    document.title = 'Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen';
   }, []);
   
   // Update to correct video path in lovable-uploads folder
@@ -52,14 +55,15 @@ const GermanIndex = () => {
   
   return (
     <>
-      <Helmet>
-        {/* Force immediate application of these tags with higher priority */}
+      <Helmet prioritizeSeoTags>
         <html lang="de" />
         <title>Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen</title>
         <meta
           name="description"
           content="ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz."
         />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
