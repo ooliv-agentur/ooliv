@@ -9,7 +9,7 @@ import ConfettiCelebration from '@/components/ConfettiCelebration';
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const EnglishThankYou = () => {
+const ThankYouEN = () => {
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
@@ -56,10 +56,12 @@ const EnglishThankYou = () => {
 
   return (
     <PageLayout>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
+        <html lang="en" />
         <title>Thank You for Your Inquiry | ooliv</title>
-        <meta name="description" content="Thank you for your message! We'll get back to you soon – Your advertising agency ooliv from Mainz." />
-        {/* Removed noindex tag to make this page indexable */}
+        <meta name="description" content="Thank you for your message! We will get back to you shortly – Your web design agency ooliv from Mainz." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ooliv.de/en/thank-you" />
       </Helmet>
       
       {/* Add the confetti animation */}
@@ -85,7 +87,7 @@ const EnglishThankYou = () => {
             
             <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
               We have received your information and will get back to you as soon as possible. 
-              If you have any questions in the meantime, please feel free to email us at{' '}
+              If you have any questions in the meantime, please feel free to contact us at{' '}
               <a 
                 href="mailto:info@ooliv.de" 
                 className="text-[#004d51] hover:underline"
@@ -100,7 +102,7 @@ const EnglishThankYou = () => {
                 asChild
                 className="bg-[#004d51] hover:bg-[#003d41]"
               >
-                <Link to="/en" aria-label="Back to Homepage">
+                <Link to="/en" aria-label="Back to homepage">
                   Back to Homepage
                 </Link>
               </Button>
@@ -112,4 +114,4 @@ const EnglishThankYou = () => {
   );
 };
 
-export default EnglishThankYou;
+export default ThankYouEN;

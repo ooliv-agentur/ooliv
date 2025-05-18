@@ -33,7 +33,7 @@
     },
     {
       "source": "/datenschutz.php",
-      "destination": "/impressum",
+      "destination": "/datenschutz",
       "permanent": true,
       "statusCode": 301
     },
@@ -51,6 +51,18 @@
     },
     {
       "source": "/projekte/insight-health/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/aeratron/:path*",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/bert-helbig.php",
       "destination": "/case-studies",
       "permanent": true,
       "statusCode": 301

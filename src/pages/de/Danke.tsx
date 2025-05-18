@@ -56,10 +56,11 @@ const Danke = () => {
 
   return (
     <PageLayout>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <title>Danke für Ihre Anfrage | ooliv</title>
         <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
-        {/* Removed noindex tag to make this page indexable */}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ooliv.de/danke" />
       </Helmet>
       
       {/* Add the confetti animation */}
