@@ -47,7 +47,7 @@ const WerbeagenturWiesbaden = () => {
     console.log('WerbeagenturWiesbaden component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'Werbeagentur Wiesbaden – Websites die besser ranken, konvertieren & verkaufen';
+    document.title = 'Werbeagentur Wiesbaden – Sichtbarkeit & Weblösungen für Unternehmen';
   }, []);
   
   // Update to correct video path in lovable-uploads folder - using same as homepage
@@ -58,10 +58,10 @@ const WerbeagenturWiesbaden = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>Werbeagentur Wiesbaden – Websites die besser ranken, konvertieren & verkaufen</title>
+        <title>Werbeagentur Wiesbaden – Sichtbarkeit & Weblösungen für Unternehmen</title>
         <meta
           name="description"
-          content="ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Wiesbaden."
+          content="ooliv ist Ihre strategische Werbeagentur in Wiesbaden: Websites, SEO & Google Ads – individuell umgesetzt, messbar im Ergebnis."
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -71,6 +71,15 @@ const WerbeagenturWiesbaden = () => {
         <PageHero 
           isHomepage={true} 
           backgroundVideo={videoPath}
+          title={
+            <div className="flex flex-col">
+              <span>Werbeagentur Wiesbaden</span>
+              <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">
+                Klar positioniert. Digital sichtbar. Erfolgreich im Wettbewerb.
+              </span>
+            </div>
+          }
+          subtitle="Wir gestalten Websites, die Ihre Marke stärken, online sichtbar machen und gezielt Kunden ansprechen – individuell entwickelt, mit Strategie und System."
         />
         <DeutscherAboutSection />
         <TeamTeaserDE />
