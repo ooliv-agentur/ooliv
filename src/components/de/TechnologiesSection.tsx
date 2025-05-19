@@ -45,7 +45,7 @@ const TechnologiesSection = () => {
               Webdesign, SEO & mehr – alles aus einer Hand.
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Ob Website-Relaunch, Google Ads oder Content-Erstellung: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
+              Ob <Link to="/webentwicklung" className="text-brand-primary hover:underline">Website-Relaunch</Link>, <Link to="/google-ads" className="text-brand-primary hover:underline">Google Ads</Link> oder <Link to="/content-erstellung" className="text-brand-primary hover:underline">Content-Erstellung</Link>: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
             </p>
             <div className="mt-8">
               <Button variant="outline" size="lg" className="group" asChild>
