@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -16,7 +15,7 @@ const TechnologiesSection = () => {
   const technologies: Technology[] = [
     {
       name: "ChatGPT",
-      description: "Texte schneller entwickeln, Ideen strukturieren – finalisiert von echten Menschen.",
+      description: "Texte schneller entwickeln, Ideen strukturieren, dynamische Video-Snippets generieren – alles KI-gestützt, aber von Menschen finalisiert.",
       icon: <img src="/lovable-uploads/ac2faaf0-3c11-47bd-a829-aafb0bd09f24.png" alt="ChatGPT Logo" className="h-12 w-12" />
     },
     {
