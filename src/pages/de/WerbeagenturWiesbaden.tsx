@@ -109,8 +109,8 @@ const WerbeagenturWiesbaden = () => {
         
         <CTA
           lightBackground={true}
-          title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
-          subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
+          title="Bereit für eine Website, die Kunden gewinnt?"
+          subtitle="Lassen Sie uns gemeinsam besprechen, wie wir Ihre Website zum leistungsstarken Vertriebskanal machen – strategisch, klar und messbar."
           primaryCta="Projekt starten"
         />
       </PageLayout>
