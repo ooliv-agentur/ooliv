@@ -22,9 +22,9 @@ const WiesbadenTeamSection = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-heading mb-4">Inhabergeführt. Persönlich. Mit einem starken Team im Hintergrund.</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-4">Persönlich geführt. Professionell umgesetzt.</h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            ooliv ist eine inhabergeführte Agentur aus der Nähe von Wiesbaden. Sie arbeiten direkt mit uns – Uli und Lisa Schönleber. Persönlich, effizient und ohne Zwischenebenen. Unterstützt werden wir von einem erfahrenen Team aus Spezialisten für Content, Design und Development – präzise eingespielt, seit vielen Jahren bewährt.
+            ooliv ist eine inhabergeführte Agentur nahe Wiesbaden. Sie sprechen direkt mit Uli und Lisa Schönleber – unterstützt von einem erfahrenen Team für Content, Design und Technik. Ohne Umwege. Ohne Bürokratie. Mit Fokus auf Ergebnisse.
           </p>
         </div>
 

@@ -9,22 +9,22 @@ const WiesbadenAboutSection = () => {
   const services = [
     {
       title: "Strategie & UX",
-      description: "Strukturiert denken, nutzerzentriert handeln: Wir entwickeln klare Informationsarchitektur und führen Ihre Zielgruppen sicher ans Ziel.",
+      description: "Klare Struktur, zielführende Nutzerführung – datenbasiert und durchdacht.",
       icon: <LayoutGrid className="h-6 w-6 text-brand-primary" />
     },
     {
       title: "Content & SEO",
-      description: "Texte, die ranken und konvertieren – abgestimmt auf Ihre Zielgruppe, mehrsprachig skalierbar, intelligent unterstützt durch KI.",
+      description: "Texte, die ranken und konvertieren – mehrsprachig, KI-gestützt, zielgruppenfokussiert.",
       icon: <Sparkles className="h-6 w-6 text-brand-primary" />
     },
     {
       title: "Design & Development",
-      description: "Technisch sauber, schnell, skalierbar: Wir realisieren Websites, die performen – vom Onepager bis zum komplexen Portal.",
+      description: "Schnell, sauber, skalierbar: Websites, die mitwachsen – und überzeugen.",
       icon: <Code className="h-6 w-6 text-brand-primary" />
     },
     {
       title: "Direkte Kommunikation",
-      description: "Ohne Zwischenebenen, ohne Reibungsverluste: Sie sprechen mit dem Entscheider – effizient, transparent, auf Augenhöhe.",
+      description: "Keine Projektmanager-Filter – Sie sprechen direkt mit uns. Klar, effizient, verbindlich.",
       icon: <PhoneCall className="h-6 w-6 text-brand-primary" />
     }
   ];
@@ -35,10 +35,10 @@ const WiesbadenAboutSection = () => {
         <Reveal>
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-brand-heading mb-4 text-center">
-              Strategie trifft Substanz – in Wiesbaden.
+              Werbeagentur Wiesbaden: Digitalstrategie trifft Umsetzung.
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto text-center">
-              Als Werbeagentur in Wiesbaden entwickeln wir seit über 15 Jahren digitale Lösungen, die wirken. Unser Anspruch: Websites und Kampagnen, die den Kern Ihres Geschäfts treffen – klar in der Botschaft, präzise in der Technik, messbar im Ergebnis.
+              Ob Webdesign, SEO oder Google Ads – wir entwickeln Lösungen, die auf Ihre Ziele einzahlen. Für Unternehmen aus Wiesbaden und dem Rhein-Main-Gebiet, die mehr wollen als schöne Seiten.
             </p>
           </div>
         </Reveal>

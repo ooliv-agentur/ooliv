@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -79,7 +78,7 @@ const WerbeagenturWiesbaden = () => {
               </span>
             </div>
           }
-          subtitle="Wir gestalten Websites, die Ihre Marke stärken, online sichtbar machen und gezielt Kunden ansprechen – individuell entwickelt, mit Strategie und System."
+          subtitle="Wir gestalten Websites, die wirken: sichtbar, überzeugend, strategisch durchdacht. Ohne Templates, ohne Umwege – sondern mit System und Substanz."
         />
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />
