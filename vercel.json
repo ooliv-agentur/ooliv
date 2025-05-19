@@ -68,6 +68,12 @@
       "statusCode": 301
     },
     {
+      "source": "/projekte/hofgut-mappen/:path*",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/projekte/:path*",
       "destination": "/case-studies",
       "permanent": true,
@@ -95,12 +101,34 @@
           "value": "index, follow"
         },
         {
-          "key": "Link",
-          "value": "<https://ooliv.de>; rel=\"canonical\""
-        },
-        {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/danke",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "Link",
+          "value": "<https://ooliv.de/danke>; rel=\"canonical\""
+        }
+      ]
+    },
+    {
+      "source": "/en/thank-you",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "Link",
+          "value": "<https://ooliv.de/en/thank-you>; rel=\"canonical\""
         }
       ]
     },

@@ -83,6 +83,23 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
       window.location.replace(`${baseUrl}${newPath}`);
     }
   }, [currentPath]);
+  
+  // Handle old .php paths redirect at client level (backup to server redirects)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && currentPath.endsWith('.php')) {
+      let newPath = '/';
+      
+      // Map old PHP URLs to new paths
+      if (currentPath === '/index.php') newPath = '/';
+      else if (currentPath === '/leistungen.php') newPath = '/webdesign';
+      else if (currentPath === '/datenschutz.php') newPath = '/datenschutz';
+      else if (currentPath.includes('/projekte')) newPath = '/case-studies';
+      else if (currentPath === '/kontakt.php') newPath = '/kontakt';
+      
+      console.log('Redirecting from PHP path to new path:', newPath);
+      window.location.replace(`${baseUrl}${newPath}`);
+    }
+  }, [currentPath]);
 
   // Console log for debugging canonical and hreflang
   useEffect(() => {

@@ -57,9 +57,8 @@ const ThankYouEN = () => {
   return (
     <PageLayout>
       <Helmet prioritizeSeoTags>
-        <html lang="en" />
         <title>Thank You for Your Inquiry | ooliv</title>
-        <meta name="description" content="Thank you for your message! We will get back to you shortly – Your web design agency ooliv from Mainz." />
+        <meta name="description" content="Thank you for your message! We will get back to you shortly – Your advertising agency ooliv from Mainz, Germany." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://ooliv.de/en/thank-you" />
       </Helmet>
@@ -86,12 +85,12 @@ const ThankYouEN = () => {
             </motion.h1>
             
             <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
-              We have received your information and will get back to you as soon as possible. 
-              If you have any questions in the meantime, please feel free to contact us at{' '}
+              We have received your information and will get back to you as soon as possible.
+              If you have any questions in the meantime, please feel free to write to us at{' '}
               <a 
                 href="mailto:info@ooliv.de" 
                 className="text-[#004d51] hover:underline"
-                aria-label="Send email to info@ooliv.de"
+                aria-label="Send an email to info@ooliv.de"
               >
                 info@ooliv.de
               </a>.
@@ -102,8 +101,8 @@ const ThankYouEN = () => {
                 asChild
                 className="bg-[#004d51] hover:bg-[#003d41]"
               >
-                <Link to="/en" aria-label="Back to homepage">
-                  Back to Homepage
+                <Link to="/en" aria-label="Back to Home">
+                  Back to Home
                 </Link>
               </Button>
             </motion.div>
