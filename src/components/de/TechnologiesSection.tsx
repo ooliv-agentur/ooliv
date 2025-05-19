@@ -36,13 +36,6 @@ const TechnologiesSection = () => {
     }
   ];
 
-  // Service links with descriptions
-  const serviceLinks = [
-    { name: "Website-Relaunch", path: "/webdesign", description: "Modernes Design & klare Strukturen" },
-    { name: "Google Ads", path: "/google-ads", description: "Gezielte Leads & messbare Ergebnisse" },
-    { name: "Content-Erstellung", path: "/content-erstellung", description: "Texte die überzeugen & ranken" }
-  ];
-
   return (
     <section className="py-20 bg-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,22 +47,6 @@ const TechnologiesSection = () => {
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
               Ob Website-Relaunch, Google Ads oder Content-Erstellung: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
             </p>
-            
-            {/* Service Links Grid */}
-            <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {serviceLinks.map((service, index) => (
-                <Link 
-                  key={index}
-                  to={service.path}
-                  className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 group flex flex-col items-center"
-                >
-                  <h3 className="text-xl font-medium mb-2 text-brand-heading group-hover:text-brand-primary transition-colors">{service.name}</h3>
-                  <p className="text-sm text-brand-text mb-3">{service.description}</p>
-                  <ArrowRight className="h-5 w-5 text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              ))}
-            </div>
-
             <div className="mt-8">
               <Button variant="outline" size="lg" className="group" asChild>
                 <Link to="/webdesign">
