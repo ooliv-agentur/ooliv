@@ -1,4 +1,3 @@
-
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -31,6 +30,7 @@ const pathMappings: Record<string, string> = {
   '/impressum': '/en/legal-notice',
   '/datenschutz': '/en/privacy-policy',
   '/danke': '/en/thank-you',
+  '/werbeagentur-wiesbaden': '/en',
   
   // English to German
   '/en': '/',

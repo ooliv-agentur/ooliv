@@ -22,6 +22,7 @@ import GermanUeberUns from "./pages/de/UeberUns";
 import GermanKontakt from "./pages/de/Kontakt";
 import GermanImpressum from "./pages/de/Impressum";
 import GermanDatenschutz from "./pages/de/Datenschutz";
+import WerbeagenturWiesbaden from "./pages/de/WerbeagenturWiesbaden";
 
 // Import English pages
 import EnglishIndex from "./pages/en/Index";
@@ -77,6 +78,7 @@ const App = () => (
             <Route path="/impressum" element={<GermanImpressum />} />
             <Route path="/datenschutz" element={<GermanDatenschutz />} />
             <Route path="/danke" element={<Danke />} />
+            <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
             
             {/* English Routes */}
             <Route path="/en" element={<EnglishIndex />} />
