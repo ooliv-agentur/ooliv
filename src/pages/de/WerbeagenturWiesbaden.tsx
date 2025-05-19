@@ -2,15 +2,15 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import WiesbadenAboutSection from "@/components/wiesbaden/WiesbadenAboutSection";
-import WiesbadenTeamTeaser from "@/components/wiesbaden/WiesbadenTeamTeaser";
+import DeutscherAboutSection from "@/components/werbeagentur-wiesbaden/WiesbadenAboutSection";
+import TeamTeaserDE from "@/components/werbeagentur-wiesbaden/WiesbadenTeamTeaser";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import WiesbadenSolutionSection from "@/components/wiesbaden/WiesbadenSolutionSection";
-import TechnologiesSection from "@/components/de/TechnologiesSection";
+import WiesbadenSolutionSection from "@/components/werbeagentur-wiesbaden/WiesbadenSolutionSection";
+import WiesbadenTechnologiesSection from "@/components/werbeagentur-wiesbaden/WiesbadenTechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import WiesbadenSEOTextSection from "@/components/wiesbaden/WiesbadenSEOTextSection";
+import WiesbadenSEOTextSection from "@/components/werbeagentur-wiesbaden/WiesbadenSEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageHero from '@/components/PageHero';
 
@@ -46,21 +46,21 @@ const WerbeagenturWiesbaden = () => {
     console.log('WerbeagenturWiesbaden component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'Werbeagentur Wiesbaden – Digitales Branding & Online-Marketing für Ihr Unternehmen';
+    document.title = 'Werbeagentur Wiesbaden: Digital & innovativ mit ooliv';
   }, []);
   
   // Update to correct video path in lovable-uploads folder
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
-  console.log('Wiesbaden page: Using video path:', videoPath);
+  console.log('Wiesbaden landing page: Using video path:', videoPath);
   
   return (
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>Werbeagentur Wiesbaden – Digitales Branding & Online-Marketing für Ihr Unternehmen</title>
+        <title>Werbeagentur Wiesbaden: Digital & innovativ mit ooliv</title>
         <meta
           name="description"
-          content="ooliv, die kreative Werbeagentur in Wiesbaden: Wir entwickeln strategische Markenauftritte, maßgeschneiderte Websites und performanceorientierte Online-Kampagnen für zukunftsorientierte Unternehmen."
+          content="ooliv – Ihre Werbeagentur Wiesbaden: Kreative Lösungen, modernes Webdesign und starke Markenstrategien für nachhaltigen Erfolg."
         />
         <link rel="canonical" href="https://ooliv.de/werbeagentur-wiesbaden" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
@@ -69,15 +69,18 @@ const WerbeagenturWiesbaden = () => {
       
       <PageLayout className="overflow-x-hidden">
         <PageHero 
-          isHomepage={false} 
+          isHomepage={true} 
           backgroundVideo={videoPath}
-          title="Werbeagentur Wiesbaden für starke Marken und digitale Sichtbarkeit"
+          title={
+            <div className="flex flex-col">
+              <span>Werbeagentur Wiesbaden</span>
+              <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">für starke Marken und digitale Sichtbarkeit</span>
+            </div>
+          }
           subtitle="Wir gestalten Websites und Markenauftritte, die begeistern – visuell, strategisch und messbar erfolgreich."
-          startProjectText="Projekt starten"
-          seeWorkText="Arbeiten ansehen"
         />
-        <WiesbadenAboutSection />
-        <WiesbadenTeamTeaser />
+        <DeutscherAboutSection />
+        <TeamTeaserDE />
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,7 +93,7 @@ const WerbeagenturWiesbaden = () => {
         </div>
         
         <WiesbadenSolutionSection />
-        <TechnologiesSection />
+        <WiesbadenTechnologiesSection />
         
         <CaseStudiesSection />
         

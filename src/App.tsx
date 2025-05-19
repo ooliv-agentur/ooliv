@@ -22,6 +22,7 @@ import GermanUeberUns from "./pages/de/UeberUns";
 import GermanKontakt from "./pages/de/Kontakt";
 import GermanImpressum from "./pages/de/Impressum";
 import GermanDatenschutz from "./pages/de/Datenschutz";
+import WerbeagenturWiesbaden from "./pages/de/WerbeagenturWiesbaden";
 
 // Import English pages
 import EnglishIndex from "./pages/en/Index";
@@ -37,9 +38,6 @@ import EnglishContact from "./pages/en/ContactEN";
 import EnglishLegalNotice from "./pages/en/LegalNoticeEN";
 import EnglishPrivacyPolicy from "./pages/en/PrivacyPolicyEN";
 import EnglishThankYou from "./pages/en/ThankYouEN";
-
-// Import Location-specific landing pages
-import WerbeagenturWiesbaden from "./pages/de/WerbeagenturWiesbaden";
 
 // Import NotFound page
 import NotFound from "./pages/NotFound";
@@ -80,6 +78,7 @@ const App = () => (
             <Route path="/impressum" element={<GermanImpressum />} />
             <Route path="/datenschutz" element={<GermanDatenschutz />} />
             <Route path="/danke" element={<Danke />} />
+            <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
             
             {/* English Routes */}
             <Route path="/en" element={<EnglishIndex />} />
@@ -96,9 +95,6 @@ const App = () => (
             <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
             <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
             <Route path="/en/thank-you" element={<EnglishThankYou />} />
-            
-            {/* Location-specific landing pages */}
-            <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />
