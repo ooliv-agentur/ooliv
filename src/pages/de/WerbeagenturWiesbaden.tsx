@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -12,6 +13,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import PageHero from '@/components/PageHero';
 import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
+import Reveal from '@/components/animations/Reveal';
 
 // Use the same FAQ items as on the German homepage
 const germanFaqs = [
@@ -85,10 +87,12 @@ const WerbeagenturWiesbaden = () => {
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
-            </p>
+            <Reveal>
+              <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website soll Kunden gewinnen – nicht nur gut aussehen.</h2>
+              <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+                Viele Unternehmen aus Wiesbaden kämpfen mit hübschen, aber wirkungslosen Websites. Wir entwickeln Auftritte, die Vertrauen schaffen, Leads generieren und bei Google sichtbar sind – technisch sauber, strategisch geplant, klar auf Zielgruppen ausgerichtet.
+              </p>
+            </Reveal>
             <BeforeAfterSlider />
           </div>
         </div>
