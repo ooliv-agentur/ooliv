@@ -26,7 +26,6 @@ Allow: /datenschutz
 Allow: /en/privacy-policy
 Allow: /danke
 Allow: /en/thank-you
-Allow: /werbeagentur-wiesbaden
 
 # Set canonical domain - no www
 Host: ooliv.de
