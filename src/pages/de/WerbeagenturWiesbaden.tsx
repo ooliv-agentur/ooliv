@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
@@ -13,6 +12,7 @@ import SEOTextSection from "@/components/de/SEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageHero from '@/components/PageHero';
 import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
+import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 
 // Use the same FAQ items as on the German homepage
 const germanFaqs = [
@@ -82,7 +82,7 @@ const WerbeagenturWiesbaden = () => {
           subtitle="Wir gestalten Websites, die Ihre Marke stärken, online sichtbar machen und gezielt Kunden ansprechen – individuell entwickelt, mit Strategie und System."
         />
         <WiesbadenAboutSection />
-        <TeamTeaserDE />
+        <WiesbadenTeamSection />
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
