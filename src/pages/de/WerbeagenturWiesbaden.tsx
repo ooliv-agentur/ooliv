@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -14,27 +15,27 @@ import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import Reveal from '@/components/animations/Reveal';
 
-// Use the same FAQ items as on the German homepage
-const germanFaqs = [
+// Updated FAQ items for Wiesbaden
+const wiesbadenFaqs = [
   {
-    question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-    answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
+    question: "Wie läuft ein Website-Projekt mit ooliv ab?",
+    answer: "Wir starten mit einem klar strukturierten Plan: Strategie, Inhalte, Design, Technik – alles modular aufgebaut. Sie erhalten feste Ansprechpartner, volle Transparenz und eine Website, die wirkt."
   },
   {
-    question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
-    answer: "Die Preise richten sich nach Umfang, Design und Funktionen. Einfache Onepager starten bei etwa 3.000 €, mittelgroße Websites mit SEO bei 5.000 bis 10.000 €. Für größere Projekte wie Shops oder Multilingual-Seiten starten die Kosten bei etwa 10.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
+    question: "Was kostet eine individuelle Website bei ooliv?",
+    answer: "Der Preis hängt vom Umfang ab – einfache Seiten starten bei rund 4.000 €, größere Projekte liegen meist zwischen 8.000 € und 15.000 €. Wir liefern Ihnen ein transparentes Angebot, ohne versteckte Kosten."
   },
   {
-    question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
-    answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Websites sind in wenigen Wochen umsetzbar, größere Seiten benötigen in der Regel 6 bis 10 Wochen. Wir stimmen den Zeitplan individuell mit Ihnen ab und arbeiten effizient auf gemeinsame Deadlines hin."
+    question: "Wie lange dauert die Umsetzung?",
+    answer: "Typische Projekte dauern zwischen 4 und 8 Wochen – abhängig von Komplexität und Abstimmung. Eine saubere Vorbereitung sorgt für einen reibungslosen Ablauf."
   },
   {
-    question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-    answer: "Nach dem Go-Live lassen Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
+    question: "Was passiert nach dem GoLive?",
+    answer: "Wir bleiben an Ihrer Seite – für Updates, technische Betreuung oder neue Inhalte. Auf Wunsch übernehmen wir Hosting, Wartung und Weiterentwicklung."
   },
   {
-    question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
-    answer: "Wir arbeiten direkt, effizient und auf Augenhöhe. Bei uns sprechen Sie immer mit dem CEO. Strategie, Design und Technik kommen aus einer Hand. Unsere Websites sind SEO-stark, klar strukturiert und messbar erfolgreich – und wir sind in Mainz verwurzelt, mit Kunden weit darüber hinaus."
+    question: "Warum ist ooliv die richtige Werbeagentur für Unternehmen aus Wiesbaden?",
+    answer: "Weil wir verstehen, was B2B-Unternehmen im Raum Wiesbaden brauchen: Sichtbarkeit, Klarheit und messbare Ergebnisse. Keine Floskeln, sondern funktionierende Websites – individuell mit System."
   }
 ];
 
@@ -101,7 +102,7 @@ const WerbeagenturWiesbaden = () => {
         <CaseStudiesSection />
         
         <FAQ 
-          customFaqs={germanFaqs}
+          customFaqs={wiesbadenFaqs}
           customTitle="Häufig gestellte Fragen"
           customCtaText="Weitere Fragen? Sprechen Sie mit uns"
         />
