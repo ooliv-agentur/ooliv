@@ -38,6 +38,9 @@ import EnglishLegalNotice from "./pages/en/LegalNoticeEN";
 import EnglishPrivacyPolicy from "./pages/en/PrivacyPolicyEN";
 import EnglishThankYou from "./pages/en/ThankYouEN";
 
+// Import Location-specific landing pages
+import WerbeagenturWiesbaden from "./pages/de/WerbeagenturWiesbaden";
+
 // Import NotFound page
 import NotFound from "./pages/NotFound";
 
@@ -93,6 +96,9 @@ const App = () => (
             <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
             <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
             <Route path="/en/thank-you" element={<EnglishThankYou />} />
+            
+            {/* Location-specific landing pages */}
+            <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
             
             {/* Redirects from old /de/ paths to new root paths */}
             <Route path="/de" element={<Navigate to="/" replace />} />
