@@ -26,6 +26,12 @@
       "statusCode": 301
     },
     {
+      "source": "/kontakt/index.php",
+      "destination": "/kontakt",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/leistungen.php",
       "destination": "/webdesign",
       "permanent": true,
@@ -62,13 +68,67 @@
       "statusCode": 301
     },
     {
+      "source": "/projekte/aeratron/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/projekte/bert-helbig.php",
       "destination": "/case-studies",
       "permanent": true,
       "statusCode": 301
     },
     {
+      "source": "/projekte/farber-partner.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/projekte/hofgut-mappen/:path*",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/best-haus/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/bodenheim/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/weinmann/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/dcon/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/doerr-kuhn-pluck-partner/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/iv-kontor/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/iv-kontor/:path*",
       "destination": "/case-studies",
       "permanent": true,
       "statusCode": 301

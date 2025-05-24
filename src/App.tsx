@@ -90,7 +90,6 @@ const App = () => (
             <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
             <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
             <Route path="/en/about-us" element={<EnglishAboutUs />} />
-            <Route path="/en/about-ooliv" element={<EnglishAboutUs />} /> {/* Added an alias route */}
             <Route path="/en/contact" element={<EnglishContact />} />
             <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
             <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
