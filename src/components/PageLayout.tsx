@@ -1,3 +1,4 @@
+
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -115,7 +116,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Self-referencing canonical URL - always the non-www version */}
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* Explicitly tell search engines to index and follow */}
+        {/* CRITICAL: Only index,follow - no noindex anywhere */}
         <meta name="robots" content="index, follow" />
         
         {/* Hreflang tags for language alternates - always non-www */}
@@ -133,9 +134,6 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         
         {/* Add meta tag to indicate preferred domain variant */}
         <meta name="google" content="notranslate" />
-        
-        {/* HTTP headers for improved indexing */}
-        <meta httpEquiv="X-Robots-Tag" content="index, follow" />
         
         {/* Add preconnect for fonts to improve loading performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -38,6 +38,9 @@ RewriteRule ^projekte/(.*)$ /case-studies [R=301,L]
 RewriteRule ^projekte\.php$ /case-studies [R=301,L]
 RewriteRule ^kontakt\.php$ /kontakt [R=301,L]
 
+# Add redirect for author pages (Soft 404 issue)
+RewriteRule ^author/(.*)$ /ueber-ooliv [R=301,L]
+
 # Add canonical header to all responses
 <IfModule mod_headers.c>
     Header set Link "<https://ooliv.de%{REQUEST_URI}s>; rel=\"canonical\""

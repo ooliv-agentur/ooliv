@@ -150,6 +150,12 @@
       "destination": "/kontakt",
       "permanent": true,
       "statusCode": 301
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/ueber-ooliv",
+      "permanent": true,
+      "statusCode": 301
     }
   ],
   "headers": [
