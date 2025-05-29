@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /api/
+Disallow: /preview/
+Disallow: /*.php$
+
+Allow: /danke
+Allow: /en/thank-you
+Allow: /
+
+Sitemap: https://ooliv.de/sitemap.xml
