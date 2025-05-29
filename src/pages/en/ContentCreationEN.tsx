@@ -1,35 +1,17 @@
 
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/contexts/LanguageContext';
 import ContentHero from '@/components/content-creation/ContentHero';
-import ContentService from '@/components/content-creation/ContentService';
-import ContentProcess from '@/components/content-creation/ContentProcess';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
-import ContentCaseStudies from '@/components/content-creation/ContentCaseStudies';
+import ContentService from '@/components/content-creation/ContentService';
+import ContentServices from '@/components/content-creation/ContentServices';
 import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
+import ContentProcess from '@/components/content-creation/ContentProcess';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { useLanguage } from '@/contexts/LanguageContext';
-
-const contentFaqs = [
-  {
-    question: "How do you develop content strategies for B2B companies?",
-    answer: "We start with a comprehensive analysis of your target audiences, competitors, and business goals. Based on this, we develop a tailored content strategy that showcases your expertise and generates qualified leads."
-  },
-  {
-    question: "What content formats do you create?",
-    answer: "We create diverse content formats: website copy, blog articles, case studies, whitepapers, social media content, newsletters, product descriptions, and SEO-optimized landing pages – all tailored to your target audiences."
-  },
-  {
-    question: "How do you ensure content is found on Google?",
-    answer: "Every piece of content is created with SEO optimization: from keyword research to content structure and technical SEO factors. We combine strategic content with measurable search engine visibility."
-  },
-  {
-    question: "Can you also revamp existing content?",
-    answer: "Yes, we conduct content audits and optimize existing content. Often, targeted revisions can significantly improve performance – both for users and search engines."
-  }
-];
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const EnglishContentCreation = () => {
   const { setLanguage } = useLanguage();
@@ -38,42 +20,62 @@ const EnglishContentCreation = () => {
     setLanguage('en');
   }, [setLanguage]);
 
+  // Custom FAQ items for Content Creation page - English version
+  const contentFaqs = [
+    {
+      question: "How do you create content for websites?",
+      answer: "We develop a comprehensive content strategy, starting with keyword research, and then deliver modular, conversion-oriented assets: text, images, videos, and illustrations – all ready to launch."
+    },
+    {
+      question: "Can I order just content without design?",
+      answer: "Yes – we can deliver just content (text, images, videos) that you can integrate into your existing website."
+    },
+    {
+      question: "What if I don't have a logo or visual brand elements?",
+      answer: "We can help with that too. Our team creates logos, icons, and visual systems that match your brand identity."
+    },
+    {
+      question: "Do you use AI for content?",
+      answer: "Yes, but we don't blindly rely on AI. We use tools like ChatGPT and Midjourney, but everything is refined and curated by our team."
+    },
+    {
+      question: "Do you optimize content for SEO?",
+      answer: "Yes. Every content element is SEO-friendly, from headlines to metadata."
+    }
+  ];
+
   return (
-    <>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Content Creation Agency Mainz – Content That Converts & Ranks</title>
-        <meta 
-          name="description" 
-          content="Content marketing from Mainz: Strategic content for B2B companies. From SEO copy to video content – we develop content that converts." 
-        />
+        <title>Content Creation for B2B | Text that Converts</title>
+        <meta name="description" content="ooliv creates strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful." />
       </Helmet>
       
-      {/* Fixed Hero Section */}
-      <div className="fixed inset-0 z-10">
-        <ContentHero />
-      </div>
+      <ContentHero />
+      <ContentBenefits />
+      <ContentService />
+      <ContentServices />
+      <ContentProcess />
       
-      {/* Scrollable Content Overlay */}
-      <div className="relative z-20" style={{ marginTop: '100vh' }}>
-        <div className="bg-white relative">
-          <ContentService />
-          <ContentProcess />
-          <ContentBenefits />
-          <ContentCaseStudies />
-          <ContentExpertInsight />
-          <FAQ 
-            customFaqs={contentFaqs}
-            customTitle="Frequently Asked Questions about Content Marketing"
-            customCtaText="More questions? Let's talk"
-          />
-          <CTA 
-            title="Ready for content that drives your business forward?"
-            subtitle="Let's develop a content strategy together that delivers measurable results."
-            primaryCta="Start Your Content Project"
-          />
+      {/* Use the standardized global CaseStudiesSection */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
         </div>
-      </div>
-    </>
+      </section>
+      
+      <FAQ 
+        customFaqs={contentFaqs}
+        customTitle="Frequently Asked Questions About Content Creation" 
+      />
+      <CTA 
+        title="Let's create content that converts"
+        subtitle="We don't just fill pages – we build momentum. Let's create content that ranks, resonates and delivers real business results."
+        primaryCta="Discuss Content Project"
+        secondaryCta="View Showcase"
+        secondaryCtaLink="/en/case-studies"
+      />
+    </PageLayout>
   );
 };
 

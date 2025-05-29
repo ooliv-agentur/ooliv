@@ -66,51 +66,44 @@ const GermanIndex = () => {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Helmet>
       
-      {/* Fixed Hero Section */}
-      <div className="fixed inset-0 z-10">
+      <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true} 
           backgroundVideo={videoPath}
         />
-      </div>
-      
-      {/* Scrollable Content Overlay */}
-      <div className="relative z-20" style={{ marginTop: '100vh' }}>
-        <div className="bg-white relative">
-          <DeutscherAboutSection />
-          <TeamTeaserDE />
-          
-          <div className="py-16 bg-white">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
-              <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-                Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
-              </p>
-              <BeforeAfterSlider />
-            </div>
+        <DeutscherAboutSection />
+        <TeamTeaserDE />
+        
+        <div className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
+            </p>
+            <BeforeAfterSlider />
           </div>
-          
-          <GermanSolutionSection />
-          <TechnologiesSection />
-          
-          <CaseStudiesSection />
-          
-          <FAQ 
-            customFaqs={germanFaqs}
-            customTitle="Häufig gestellte Fragen"
-            customCtaText="Weitere Fragen? Sprechen Sie mit uns"
-          />
-          
-          <CTA
-            lightBackground={true}
-            title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
-            subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
-            primaryCta="Projekt starten"
-          />
-          
-          <SEOTextSection />
         </div>
-      </div>
+        
+        <GermanSolutionSection />
+        <TechnologiesSection />
+        
+        <CaseStudiesSection />
+        
+        <FAQ 
+          customFaqs={germanFaqs}
+          customTitle="Häufig gestellte Fragen"
+          customCtaText="Weitere Fragen? Sprechen Sie mit uns"
+        />
+        
+        <CTA
+          lightBackground={true}
+          title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
+          subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
+          primaryCta="Projekt starten"
+        />
+      </PageLayout>
+      
+      <SEOTextSection />
     </>
   );
 };

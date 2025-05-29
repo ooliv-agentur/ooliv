@@ -1,76 +1,82 @@
 
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import SEOHeroDE from '@/components/seo/SEOHeroDE';
+import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
 import SEOServicesDE from '@/components/seo/SEOServicesDE';
 import SEOProcessDE from '@/components/seo/SEOProcessDE';
 import SEOApproachDE from '@/components/seo/SEOApproachDE';
-import SEOBenefitsDE from '@/components/seo/SEOBenefitsDE';
-import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
-import FAQ from '@/components/FAQ';
 import SEOCtaDE from '@/components/seo/SEOCtaDE';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
+import SEOTextSection from '@/components/de/SEOTextSection';
 
-const seoFaqs = [
-  {
-    question: "Wie lange dauert es, bis SEO-Ergebnisse sichtbar werden?",
-    answer: "Erste Verbesserungen sind oft nach 3-6 Monaten messbar, signifikante Erfolge zeigen sich meist nach 6-12 Monaten. SEO ist eine langfristige Investition, die sich durch nachhaltiges Wachstum auszahlt."
-  },
-  {
-    question: "Was unterscheidet Ihre SEO-Strategie von anderen Agenturen?",
-    answer: "Wir setzen auf datengetriebene Strategien und transparente Kommunikation. Unsere SEO-Maßnahmen sind immer an Ihre Geschäftsziele gekoppelt – es geht um qualifizierte Leads, nicht nur um Rankings."
-  },
-  {
-    question: "Können Sie auch bei technischen SEO-Problemen helfen?",
-    answer: "Ja, technische SEO ist einer unserer Schwerpunkte. Wir optimieren Ladezeiten, beheben Crawling-Probleme, implementieren strukturierte Daten und sorgen für eine saubere technische Basis."
-  },
-  {
-    question: "Wie transparent ist Ihr SEO-Reporting?",
-    answer: "Vollständig transparent. Sie erhalten regelmäßige Reports mit allen wichtigen KPIs, Fortschritten und geplanten Maßnahmen. Jederzeit können Sie den Stand Ihrer SEO-Kampagne einsehen."
-  }
-];
-
-const GermanSEOOptimierung = () => {
+const GermanSEO = () => {
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+  
+  const seoFaqs = [
+    {
+      question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
+      answer: "Erste Effekte in wenigen Wochen, nachhaltige Ergebnisse meist ab 3 Monaten."
+    },
+    {
+      question: "Was macht euren SEO-Ansatz in Mainz besonders?",
+      answer: "Strategie, Tech-Knowhow und Content – kombiniert in einem skalierbaren Prozess."
+    },
+    {
+      question: "Bietet ihr auch lokale SEO-Dienste an?",
+      answer: "Ja – inkl. Google Business, Branchenverzeichnisse und gezielter Sichtbarkeit in Mainz & Region."
+    },
+    {
+      question: "Ist Linkaufbau Teil eurer SEO-Leistungen?",
+      answer: "Ja – wir koordinieren nachhaltige Backlink-Kampagnen inkl. Autoritätsaufbau."
+    },
+    {
+      question: "Wie stellt ihr sicher, dass die technische SEO aktuell ist?",
+      answer: "Durch strukturierte Audits, Core Web Vitals Checks und technische Umsetzung durch unser Team."
+    },
+    {
+      question: "Warum sollte ich mit einer lokalen SEO Agentur in Mainz arbeiten?",
+      answer: "Weil regionale Marktkenntnis, Sprache und SEO-Taktik einen entscheidenden Unterschied machen."
+    }
+  ];
 
   return (
-    <>
+    <PageLayout 
+      className="overflow-x-hidden"
+      seoText={<SEOTextSection />}
+    >
       <Helmet>
-        <title>SEO Agentur Mainz – Sichtbarkeit, die zu Leads wird</title>
-        <meta 
-          name="description" 
-          content="SEO-Optimierung aus Mainz für nachhaltige Google-Rankings. Wir steigern Ihre Sichtbarkeit und generieren qualifizierte Leads durch strategische Suchmaschinenoptimierung." 
-        />
+        <title>SEO Agentur Mainz | Sichtbarkeit und Wachstum mit ooliv</title>
+        <meta name="description" content="Mehr Sichtbarkeit, mehr Anfragen: Ihre SEO Agentur Mainz. Strategie, Onpage, Technik, Content und Backlinks – alles für Ihren SEO-Erfolg." />
       </Helmet>
+
+      <SEOHeroDE />
+      <SEOBenefitsDE />
+      <SEOServicesDE />
+      <SEOApproachDE />
+      <SEOProcessDE />
       
-      {/* Fixed Hero Section */}
-      <div className="fixed inset-0 z-10">
-        <SEOHeroDE />
-      </div>
-      
-      {/* Scrollable Content Overlay */}
-      <div className="relative z-20" style={{ marginTop: '100vh' }}>
-        <div className="bg-white relative">
-          <SEOServicesDE />
-          <SEOProcessDE />
-          <SEOApproachDE />
-          <SEOBenefitsDE />
-          <SEOCaseStudies />
-          <FAQ 
-            customFaqs={seoFaqs}
-            customTitle="Häufige Fragen zu SEO"
-            customCtaText="Weitere Fragen? Kontaktieren Sie uns"
-          />
-          <SEOCtaDE />
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
         </div>
-      </div>
-    </>
+      </section>
+      
+      <FAQ 
+        customFaqs={seoFaqs} 
+        customTitle="Häufige Fragen zur SEO Agentur Mainz"
+      />
+      
+      <SEOCtaDE />
+    </PageLayout>
   );
 };
 
-export default GermanSEOOptimierung;
+export default GermanSEO;

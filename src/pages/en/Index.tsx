@@ -62,57 +62,50 @@ const EnglishIndex = () => {
           content="ooliv – Your Web Design Agency in Mainz. We create WordPress, e-commerce, and custom websites focused on SEO, UX, and measurable business growth." 
         />
       </Helmet>
-      
-      {/* Fixed Hero Section */}
-      <div className="fixed inset-0 z-10">
+      <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true}
           backgroundVideo={videoPath}
         />
-      </div>
-      
-      {/* Scrollable Content Overlay */}
-      <div className="relative z-20" style={{ marginTop: '100vh' }}>
-        <div className="bg-white relative">
-          <EnglishAboutSection />
-          <EnglishTeamTeaser />
-          
-          <div className="py-16 bg-white">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Your Website Should Work for You—Not Against You.</h2>
-              <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-                Many businesses struggle with websites that don't perform. We develop websites that generate leads, build trust, and rank well on Google.
-              </p>
-              <BeforeAfterSlider />
-            </div>
+        <EnglishAboutSection />
+        <EnglishTeamTeaser />
+        
+        <div className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Your Website Should Work for You—Not Against You.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+              Many businesses struggle with websites that don't perform. We develop websites that generate leads, build trust, and rank well on Google.
+            </p>
+            <BeforeAfterSlider />
           </div>
-          
-          <EnglishSolutionSection />
-          
-          <TechnologiesSection />
-          
-          <CaseStudiesSection 
-            customTitle="Real Results from Real Clients"
-            customSubtitle="We deliver websites and strategies that showcase what makes your business special."
-            customBodyText="See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
-          />
-          
-          <FAQ 
-            customFaqs={simplifiedFaqs}
-            customTitle="Frequently Asked Questions"
-            customCtaText="More questions? Contact us"
-          />
-          
-          <CTA 
-            lightBackground={true}
-            title="Ready to transform your digital presence?"
-            subtitle="Let's discuss how our team can help your business achieve its online goals."
-            primaryCta="Start Your Website Project"
-          />
-          
-          <SEOTextSectionEN />
         </div>
-      </div>
+        
+        <EnglishSolutionSection />
+        
+        <TechnologiesSection />
+        
+        <CaseStudiesSection 
+          customTitle="Real Results from Real Clients"
+          customSubtitle="We deliver websites and strategies that showcase what makes your business special."
+          customBodyText="See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
+        />
+        
+        <FAQ 
+          customFaqs={simplifiedFaqs}
+          customTitle="Frequently Asked Questions"
+          customCtaText="More questions? Contact us"
+        />
+        
+        <CTA 
+          lightBackground={true}
+          title="Ready to transform your digital presence?"
+          subtitle="Let's discuss how our team can help your business achieve its online goals."
+          primaryCta="Start Your Website Project"
+        />
+      </PageLayout>
+      
+      {/* SEO Text Section placed OUTSIDE PageLayout to match German style */}
+      <SEOTextSectionEN />
     </>
   );
 };

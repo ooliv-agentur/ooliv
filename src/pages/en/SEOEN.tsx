@@ -1,35 +1,17 @@
 
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
+import { Helmet } from 'react-helmet-async';
 import SEOHero from '@/components/seo/SEOHero';
+import SEOBenefits from '@/components/seo/SEOBenefits';
 import SEOServices from '@/components/seo/SEOServices';
 import SEOProcess from '@/components/seo/SEOProcess';
 import SEOApproach from '@/components/seo/SEOApproach';
-import SEOBenefits from '@/components/seo/SEOBenefits';
-import SEOCaseStudies from '@/components/seo/SEOCaseStudies';
-import FAQ from '@/components/FAQ';
 import SEOCta from '@/components/seo/SEOCta';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const seoFaqs = [
-  {
-    question: "How long does it take to see SEO results?",
-    answer: "Initial improvements are often measurable after 3-6 months, significant success typically shows after 6-12 months. SEO is a long-term investment that pays off through sustainable growth."
-  },
-  {
-    question: "What sets your SEO strategy apart from other agencies?",
-    answer: "We focus on data-driven strategies and transparent communication. Our SEO measures are always tied to your business goals – it's about qualified leads, not just rankings."
-  },
-  {
-    question: "Can you help with technical SEO issues?",
-    answer: "Yes, technical SEO is one of our core strengths. We optimize loading times, fix crawling issues, implement structured data, and ensure a clean technical foundation."
-  },
-  {
-    question: "How transparent is your SEO reporting?",
-    answer: "Completely transparent. You receive regular reports with all important KPIs, progress, and planned measures. You can check the status of your SEO campaign at any time."
-  }
-];
+import SEOTextSectionEN from '@/components/en/SEOTextSectionEN';
 
 const EnglishSEO = () => {
   const { setLanguage } = useLanguage();
@@ -37,39 +19,61 @@ const EnglishSEO = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
+  
+  const seoFaqs = [
+    {
+      question: "How long does it take for SEO measures to show results?",
+      answer: "First effects in a few weeks, sustainable results usually from 3 months onwards."
+    },
+    {
+      question: "What makes your SEO approach in Mainz special?",
+      answer: "Strategy, tech know-how and content – combined in a scalable process."
+    },
+    {
+      question: "Do you also offer local SEO services?",
+      answer: "Yes – including Google Business, industry directories and targeted visibility in Mainz & region."
+    },
+    {
+      question: "Is link building part of your SEO services?",
+      answer: "Yes – we coordinate sustainable backlink campaigns including authority building."
+    },
+    {
+      question: "How do you ensure that technical SEO is up to date?",
+      answer: "Through structured audits, Core Web Vitals checks and technical implementation by our team."
+    },
+    {
+      question: "Why should I work with a local SEO agency in Mainz?",
+      answer: "Because regional market knowledge, language and SEO tactics make a decisive difference."
+    }
+  ];
 
   return (
-    <>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>SEO Agency Mainz – Visibility That Converts to Leads</title>
-        <meta 
-          name="description" 
-          content="SEO optimization from Mainz for sustainable Google rankings. We increase your visibility and generate qualified leads through strategic search engine optimization." 
-        />
+        <title>SEO Agency Mainz | Visibility for B2B with ooliv</title>
+        <meta name="description" content="More visibility for your website: ooliv is your SEO agency in Mainz – Onpage, content & strategy for sustainable rankings." />
       </Helmet>
+
+      <SEOHero />
+      <SEOBenefits />
+      <SEOServices />
+      <SEOApproach />
+      <SEOProcess />
       
-      {/* Fixed Hero Section */}
-      <div className="fixed inset-0 z-10">
-        <SEOHero />
-      </div>
-      
-      {/* Scrollable Content Overlay */}
-      <div className="relative z-20" style={{ marginTop: '100vh' }}>
-        <div className="bg-white relative">
-          <SEOServices />
-          <SEOProcess />
-          <SEOApproach />
-          <SEOBenefits />
-          <SEOCaseStudies />
-          <FAQ 
-            customFaqs={seoFaqs}
-            customTitle="Frequently Asked Questions about SEO"
-            customCtaText="More questions? Contact us"
-          />
-          <SEOCta />
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
         </div>
-      </div>
-    </>
+      </section>
+      
+      <FAQ 
+        customFaqs={seoFaqs} 
+        customTitle="Frequently Asked Questions about SEO Agency Mainz"
+      />
+      
+      <SEOCta />
+      <SEOTextSectionEN />
+    </PageLayout>
   );
 };
 
