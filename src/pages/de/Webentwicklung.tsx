@@ -1,73 +1,77 @@
 
-import React from 'react';
-import PageLayout from '@/components/PageLayout';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import WebDevHero from '@/components/web-development/WebDevHeroDE';
-import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
-import WebDevServices from '@/components/web-development/WebDevServicesDE';
+import PageLayout from '@/components/PageLayout';
+import WebDevHeroDE from '@/components/web-development/WebDevHeroDE';
+import WebDevServicesDE from '@/components/web-development/WebDevServicesDE';
 import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
+import WebDevBenefitsDE from '@/components/web-development/WebDevBenefitsDE';
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
+import WebDevCTA from '@/components/web-development/WebDevCTA';
 import FAQ from '@/components/FAQ';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import CTA from '@/components/CTA';
 import WebDevSEOText from '@/components/web-development/WebDevSEOText';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const GermanWebDevelopment = () => {
-  const webDevFaqs = [
-    {
-      question: "Mit welchen Plattformen arbeitet ihr?",
-      answer: "Wir entwickeln vollständig codierte Websites (ohne CMS) und maßgeschneiderte WordPress-Lösungen – je nachdem, was besser zu Ihrem Business passt."
-    },
-    {
-      question: "Kann ooliv auch Shops entwickeln?",
-      answer: "Ja – WooCommerce innerhalb von WordPress oder Shopify für gezielte B2B-Cases."
-    },
-    {
-      question: "Ist Performance bei euch Standard?",
-      answer: "Absolut. Unsere Seiten sind schnell, SEO-optimiert und laufen zuverlässig auf allen Geräten."
-    },
-    {
-      question: "Gibt es Betreuung nach dem Launch?",
-      answer: "Ja. Wir begleiten Sie weiter mit technischer Betreuung, Updates und Tracking."
-    },
-    {
-      question: "Könnt ihr bestehende Websites verbessern?",
-      answer: "Ja. Wir analysieren, ob Optimierung sinnvoll ist – oder ein Relaunch effizienter wäre."
-    }
-  ];
+const faqs = [
+  {
+    question: "Wie lange dauert die Entwicklung einer Website?",
+    answer: "Die Entwicklungszeit hängt von der Komplexität ab. Einfache Websites sind in 2-4 Wochen fertig, komplexere Projekte benötigen 6-12 Wochen. Wir erstellen einen detaillierten Zeitplan für Ihr Projekt."
+  },
+  {
+    question: "Welche Technologien nutzen Sie für die Webentwicklung?",
+    answer: "Wir verwenden moderne, bewährte Technologien wie React, WordPress, und headless CMS-Systeme. Die Auswahl richtet sich nach Ihren spezifischen Anforderungen und Zukunftsplänen."
+  },
+  {
+    question: "Bieten Sie auch Wartung und Support nach der Entwicklung?",
+    answer: "Ja, wir bieten umfassende Wartung und Support an. Das beinhaltet Updates, Sicherheitspatches, technische Optimierungen und bei Bedarf auch Erweiterungen Ihrer Website."
+  },
+  {
+    question: "Können Sie bestehende Websites überarbeiten oder neu entwickeln?",
+    answer: "Sowohl als auch. Wir analysieren Ihre bestehende Website und empfehlen, ob eine Überarbeitung ausreicht oder eine Neuentwicklung sinnvoller ist. Oft ist eine komplette Neuentwicklung langfristig wirtschaftlicher."
+  }
+];
+
+const GermanWebentwicklung = () => {
+  const { setLanguage } = useLanguage();
+  
+  useEffect(() => {
+    setLanguage('de');
+  }, [setLanguage]);
 
   return (
-    <PageLayout 
-      className="overflow-x-hidden"
-      seoText={<WebDevSEOText />}
-    >
+    <>
       <Helmet>
-        <title>WordPress Agentur Mainz für skalierbare Lösungen</title>
-        <meta name="description" content="WordPress Agentur Mainz – maßgeschneiderte Unternehmenswebsites mit WordPress & WooCommerce. Skalierbar, sicher, SEO-optimiert." />
+        <title>Webentwicklung Mainz – Maßgeschneiderte Lösungen für Ihr Business</title>
+        <meta 
+          name="description" 
+          content="Professionelle Webentwicklung aus Mainz. Von WordPress bis zu individuellen Webanwendungen – wir entwickeln skalierbare Lösungen für Ihr Unternehmen." 
+        />
       </Helmet>
-
-      <WebDevHero />
-      <WebDevBenefits />
-      <WebDevCmsVsStaticDE />
-      <WebDevProcessNewDE />
-      <WebDevServices />
       
-      {/* Global Case Studies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CaseStudiesSection />
+      {/* Fixed Hero Section */}
+      <div className="fixed inset-0 z-10">
+        <WebDevHeroDE />
+      </div>
+      
+      {/* Scrollable Content Overlay */}
+      <div className="relative z-20" style={{ marginTop: '100vh' }}>
+        <div className="bg-white relative">
+          <WebDevServicesDE />
+          <WebDevProcessNewDE />
+          <WebDevBenefitsDE />
+          <WebDevCmsVsStaticDE />
+          <FAQ 
+            customFaqs={faqs}
+            customTitle="Häufige Fragen zur Webentwicklung"
+            customCtaText="Weitere Fragen? Kontaktieren Sie uns"
+          />
+          <WebDevCTA />
         </div>
-      </section>
+      </div>
       
-      <FAQ customFaqs={webDevFaqs} />
-      <CTA 
-        title="Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
-        subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
-        primaryCta="Projekt starten"
-        secondaryCta="Strategiegespräch vereinbaren"
-      />
-    </PageLayout>
+      <WebDevSEOText />
+    </>
   );
 };
 
-export default GermanWebDevelopment;
+export default GermanWebentwicklung;
