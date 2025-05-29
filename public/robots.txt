@@ -32,4 +32,4 @@ Allow: /werbeagentur-wiesbaden
 Host: ooliv.de
 
 # Provide sitemap location
-Sitemap: https://ooliv.de/sitemap.xml
+Sitemap: https://ooliv.de/sitemap-final-ooliv.xml
