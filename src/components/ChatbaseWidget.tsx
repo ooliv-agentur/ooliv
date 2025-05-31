@@ -1,96 +1,82 @@
 
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function ChatbaseWidget() {
-  const scriptLoaded = useRef(false);
-  
-  // Use try-catch to handle potential Router context issues
-  let pathname = "/";
-  let isEnglishPage = false;
-  
-  try {
-    const location = useLocation();
-    pathname = location.pathname;
-    
-    // Determine if this is an English page, but don't return early
-    isEnglishPage = pathname.startsWith('/en/') || pathname === '/en';
-    if (isEnglishPage) {
-      console.log('Chatbot disabled on English page:', pathname);
-      // Don't return early here
-    }
-  } catch (error) {
-    console.warn('ChatbaseWidget: Router context not available, chatbot might not work correctly');
-    // Continue with default behavior if not in Router context
-  }
+const ChatbaseWidget = () => {
+  const { language } = useLanguage();
   
   useEffect(() => {
-    // Skip loading the chatbot on English pages
-    if (isEnglishPage) {
+    // Only show chatbot on German pages
+    if (language !== 'de') {
+      console.log('Chatbot disabled on English page');
       return;
     }
-    
-    // Avoid multiple initializations
-    if (scriptLoaded.current) return;
-    
-    // Check if the script already exists
-    if (document.getElementById("chatbase-widget-script")) return;
-    
-    const script = document.createElement("script");
-    script.id = "chatbase-widget-script";
 
-    script.innerHTML = `
-      (function(){
-        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
-          window.chatbase = (...arguments) => {
-            if (!window.chatbase.q) {
-              window.chatbase.q = [];
-            }
-            window.chatbase.q.push(arguments);
-          };
-          window.chatbase = new Proxy(window.chatbase, {
-            get(target, prop) {
-              if (prop === "q") {
-                return target.q;
-              }
-              return (...args) => target(prop, ...args);
-            }
-          });
-        }
-        const onLoad = function () {
-          const script = document.createElement("script");
-          script.src = "https://www.chatbase.co/embed.min.js";
-          script.id = "VCSuG_Qa30vQV8N5Y6TbB";
-          script.domain = "www.chatbase.co";
-          document.body.appendChild(script);
-        };
-        if (document.readyState === "complete") {
-          onLoad();
-        } else {
-          window.addEventListener("load", onLoad);
-        }
-      })();
-    `;
+    console.log('Loading Chatbase widget for German page');
+    
+    // Remove any existing chatbase elements
+    const existingScript = document.getElementById('chatbase-script');
+    const existingWidget = document.getElementById('chatbase-bubble-button');
+    const existingIframe = document.querySelector('iframe[src*="chatbase.co"]');
+    
+    if (existingScript) existingScript.remove();
+    if (existingWidget) existingWidget.remove();
+    if (existingIframe) existingIframe.remove();
 
-    document.body.appendChild(script);
-    scriptLoaded.current = true;
-
-    // Cleanup function to remove the script when component unmounts
-    return () => {
-      const scriptElement = document.getElementById("chatbase-widget-script");
-      if (scriptElement && scriptElement.parentNode) {
-        scriptElement.parentNode.removeChild(scriptElement);
+    // Create and load the chatbase script
+    const script = document.createElement('script');
+    script.id = 'chatbase-script';
+    script.src = 'https://www.chatbase.co/embed.min.js';
+    script.defer = true;
+    
+    script.onload = () => {
+      console.log('Chatbase script loaded successfully');
+      // Initialize the chatbot
+      if (window.Chatbase) {
+        window.Chatbase.init({
+          chatbotId: 'VCSuG_Qa30vQV8N5Y6TbB',
+        });
+        console.log('Chatbase initialized');
       }
-      
-      // Also remove any chatbase elements that might have been created
-      const chatbaseElements = document.querySelectorAll('[id^="chatbase-"]');
-      chatbaseElements.forEach(el => {
-        if (el.parentNode) {
-          el.parentNode.removeChild(el);
-        }
-      });
     };
-  }, [isEnglishPage, pathname]);
+    
+    script.onerror = () => {
+      console.error('Failed to load Chatbase script');
+    };
 
-  return null;
+    document.head.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      const scriptToRemove = document.getElementById('chatbase-script');
+      const widgetToRemove = document.getElementById('chatbase-bubble-button');
+      const iframeToRemove = document.querySelector('iframe[src*="chatbase.co"]');
+      
+      if (scriptToRemove) scriptToRemove.remove();
+      if (widgetToRemove) widgetToRemove.remove();
+      if (iframeToRemove) iframeToRemove.remove();
+    };
+  }, [language]);
+
+  // Only render on German pages
+  if (language !== 'de') {
+    return null;
+  }
+
+  return (
+    <div id="chatbase-container">
+      {/* Chatbase widget will be injected here */}
+    </div>
+  );
+};
+
+// Extend window type for TypeScript
+declare global {
+  interface Window {
+    Chatbase?: {
+      init: (config: { chatbotId: string }) => void;
+    };
+  }
 }
+
+export default ChatbaseWidget;
