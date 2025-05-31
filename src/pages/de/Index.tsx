@@ -49,10 +49,6 @@ const GermanIndex = () => {
     document.title = 'Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen';
   }, []);
   
-  // Update to correct video path in lovable-uploads folder
-  const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
-  console.log('German homepage: Using video path:', videoPath);
-  
   return (
     <>
       <Helmet prioritizeSeoTags>
@@ -68,8 +64,7 @@ const GermanIndex = () => {
       
       <PageLayout className="overflow-x-hidden">
         <PageHero 
-          isHomepage={true} 
-          backgroundVideo={videoPath}
+          isHomepage={true}
         />
         <DeutscherAboutSection />
         <TeamTeaserDE />
