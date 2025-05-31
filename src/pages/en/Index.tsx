@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -22,7 +21,7 @@ const EnglishIndex = () => {
     setLanguage('en');
     // Add a more detailed debug console log
     console.log('EnglishIndex component mounted - setting language to English');
-  }, []);
+  }, [setLanguage]);
   
   // Update to correct video path in lovable-uploads folder
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -65,7 +64,6 @@ const EnglishIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true}
-          backgroundVideo={videoPath}
         />
         <EnglishAboutSection />
         <EnglishTeamTeaser />
