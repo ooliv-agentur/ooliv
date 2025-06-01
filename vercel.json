@@ -156,6 +156,54 @@
       "destination": "/ueber-ooliv",
       "permanent": true,
       "statusCode": 301
+    },
+    {
+      "source": "/werbeagentur-wiesbaden.php",
+      "destination": "/",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte-dcon.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/webdesign-agentur-frankfurt.php",
+      "destination": "/webdesign",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/home.php",
+      "destination": "/",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/ooliv.php",
+      "destination": "/",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte-doerr-kuehn-pluck-partner/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/logodesign-agentur-mainz.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/projekte/kuhn-gmbh/index.php",
+      "destination": "/case-studies",
+      "permanent": true,
+      "statusCode": 301
     }
   ],
   "headers": [
