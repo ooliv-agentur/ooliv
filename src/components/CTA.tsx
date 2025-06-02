@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from "react-router-dom";
 
 interface CTAProps {
   lightBackground?: boolean;
@@ -10,6 +11,7 @@ interface CTAProps {
   subtitle?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  secondaryCtaLink?: string;
 }
 
 const CTA = ({ 
@@ -17,7 +19,8 @@ const CTA = ({
   title, 
   subtitle, 
   primaryCta, 
-  secondaryCta 
+  secondaryCta,
+  secondaryCtaLink
 }: CTAProps) => {
   const { language } = useLanguage();
   
@@ -41,6 +44,7 @@ const CTA = ({
   };
 
   const t = language === 'de' ? translations.de : translations.en;
+  const defaultSecondaryLink = language === 'de' ? '/case-studies' : '/en/case-studies';
 
   return (
     <section className={`py-20 ${lightBackground ? 'bg-gradient-to-br from-brand-mint-50 to-white' : 'bg-gradient-to-br from-brand-mint-100 to-brand-mint-50'}`}>
@@ -63,14 +67,19 @@ const CTA = ({
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white hover:border-brand-mint-500 transition-all duration-300"
-            >
-              {t.secondaryCta}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            {secondaryCta && (
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white hover:border-brand-mint-500 transition-all duration-300"
+                asChild
+              >
+                <Link to={secondaryCtaLink || defaultSecondaryLink}>
+                  {t.secondaryCta}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
