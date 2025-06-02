@@ -77,16 +77,16 @@ const CTA = ({
     : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
   
   return (
-    <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
+    <section className={`py-24 ${lightBackground ? 'bg-gradient-to-br from-brand-mint-50 to-brand-mint-100' : 'bg-gradient-to-br from-brand-mint-500 to-brand-mint-600'} text-white`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold mb-8 text-brand-heading">{title}</h2>
-        <p className="text-xl mb-12 max-w-3xl mx-auto text-brand-text">{subtitle}</p>
+        <h2 className={`text-3xl font-bold mb-8 ${lightBackground ? 'text-brand-heading' : 'text-white'}`}>{title}</h2>
+        <p className={`text-xl mb-12 max-w-3xl mx-auto ${lightBackground ? 'text-brand-text' : 'text-brand-mint-50'}`}>{subtitle}</p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]"
+              className={`group ${lightBackground ? 'bg-brand-mint-500 text-white hover:bg-brand-mint-600' : 'bg-white text-brand-mint-600 hover:bg-brand-mint-50'} shadow-mint hover:shadow-mintHover`}
               data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
@@ -96,7 +96,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              className={`group ${lightBackground ? 'bg-brand-mint-500 text-white hover:bg-brand-mint-600' : 'bg-white text-brand-mint-600 hover:bg-brand-mint-50'} shadow-mint hover:shadow-mintHover`} 
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -107,7 +107,7 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]"
+              className={`group ${lightBackground ? 'bg-brand-mint-500 text-white hover:bg-brand-mint-600' : 'bg-white text-brand-mint-600 hover:bg-brand-mint-50'} shadow-mint hover:shadow-mintHover`}
               onClick={handleOpenLeadForm}
               data-trigger-lead-form
             >
@@ -122,7 +122,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                className={`group ${lightBackground ? 'border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white' : 'border-white text-white hover:bg-white hover:text-brand-mint-600'}`}
                 asChild
               >
                 <Link to={contactPath}>
@@ -134,7 +134,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                className={`group ${lightBackground ? 'border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white' : 'border-white text-white hover:bg-white hover:text-brand-mint-600'}`}
                 asChild
               >
                 <Link to={secondaryCtaLink}>
@@ -146,7 +146,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                className={`group ${lightBackground ? 'border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white' : 'border-white text-white hover:bg-white hover:text-brand-mint-600'}`}
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
@@ -158,13 +158,13 @@ const CTA = ({
         
         {/* Show either custom footer note, children, or default footer (but not multiple) */}
         {footerNote ? (
-          <p className="mt-12 text-sm text-brand-text/80 font-semibold">{footerNote}</p>
+          <p className={`mt-12 text-sm font-semibold ${lightBackground ? 'text-brand-text/80' : 'text-brand-mint-100'}`}>{footerNote}</p>
         ) : children ? (
           <div className="mt-8">
             {children}
           </div>
         ) : (
-          <p className="mt-12 text-sm text-brand-text/80 font-semibold">
+          <p className={`mt-12 text-sm font-semibold ${lightBackground ? 'text-brand-text/80' : 'text-brand-mint-100'}`}>
             {defaultFooterNote}
           </p>
         )}
