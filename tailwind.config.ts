@@ -6,36 +6,40 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
-        border: "#e2e8f0", // Adding border color explicitly
+        border: "#e2e8f0",
         brand: {
-          primary: "#006064", // Teal primary color
-          primaryHover: "#004D40", // Darker teal for hover states
-          secondary: "#FF9800", // Orange accent
-          secondaryHover: "#F57C00", // Darker orange for hover states
-          heading: "#0D1B2A", // Dark blue-black for headings
-          text: "#2B2D42", // Dark slate for body text
-          background: "#F5F7FA", // Light gray background
-          backgroundAlt: "#E9ECEF", // Slightly darker gray for alternating sections
-          footer: "#0D1B2A", // Dark blue-black for footer
-          success: "#2E7D32", // Green for success states
-          error: "#C62828", // Red for error states
-          warning: "#F9A825" // Amber for warning states
+          primary: "#006064",
+          primaryHover: "#004D40",
+          secondary: "#FF9800",
+          secondaryHover: "#F57C00",
+          heading: "#0D1B2A",
+          text: "#2B2D42",
+          background: "#F5F7FA",
+          backgroundAlt: "#E9ECEF",
+          footer: "#0D1B2A",
+          success: "#2E7D32",
+          error: "#C62828",
+          warning: "#F9A825"
         },
-        // Medicosearch color scheme
         medico: {
-          mint: "#7DDCC0", // Main mint green from medicosearch
-          mintLight: "#B8E6D1", // Lighter mint
-          mintDark: "#5BC9A3", // Darker mint
-          yellow: "#F4E04D", // Bright yellow from buttons
-          yellowHover: "#F0DC3C", // Darker yellow for hover
-          navy: "#1E3A5F", // Dark navy blue from text
-          navyLight: "#2D4B6B", // Lighter navy
+          mint: "#7DDCC0",
+          mintLight: "#B8E6D1",
+          mintDark: "#5BC9A3",
+          yellow: "#F4E04D",
+          yellowHover: "#F0DC3C",
+          navy: "#1E3A5F",
+          navyLight: "#2D4B6B",
           white: "#FFFFFF",
           lightGray: "#F8F9FA",
-          mediumGray: "#E9ECEF"
+          mediumGray: "#E9ECEF",
+          // Additional background variations
+          skyBlue: "#E3F2FD",
+          softMint: "#F0FDF4",
+          warmBeige: "#FEF7ED",
+          lightPurple: "#FAF5FF"
         },
       },
       boxShadow: {
@@ -46,7 +50,35 @@ export default {
       backgroundImage: {
         'medico-gradient': 'linear-gradient(135deg, #7DDCC0 0%, #B8E6D1 100%)',
         'medico-hero': 'linear-gradient(135deg, #7DDCC0 0%, #B8E6D1 50%, #F8F9FA 100%)',
+        'medico-hero-animated': 'linear-gradient(45deg, #7DDCC0, #B8E6D1, #E3F2FD, #F4E04D)',
+        'footer-gradient': 'linear-gradient(135deg, #1E3A5F 0%, #0D1B2A 100%)',
+        'section-gradient-1': 'linear-gradient(135deg, #F0FDF4 0%, #E3F2FD 100%)',
+        'section-gradient-2': 'linear-gradient(135deg, #FAF5FF 0%, #FEF7ED 100%)',
+        'case-studies-gradient': 'linear-gradient(135deg, #E3F2FD 0%, #F0FDF4 50%, #FAF5FF 100%)',
       },
+      animation: {
+        'gradient-shift': 'gradient-shift 8s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        'gradient-shift': {
+          '0%, 100%': {
+            'background-position': '0% 50%'
+          },
+          '50%': {
+            'background-position': '100% 50%'
+          }
+        },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0px) scale(1)'
+          },
+          '50%': {
+            transform: 'translateY(-20px) scale(1.05)'
+          }
+        }
+      }
     },
   },
   plugins: [],

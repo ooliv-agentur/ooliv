@@ -40,12 +40,9 @@ const germanFaqs = [
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
   
-  // Use useEffect to set language once after component mounts
   useEffect(() => {
     setLanguage('de');
     console.log('GermanIndex component mounted - setting language to German');
-    
-    // Force title update immediately
     document.title = 'Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen';
   }, []);
   
@@ -60,19 +57,26 @@ const GermanIndex = () => {
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
         <PageHero 
           isHomepage={true}
         />
-        <DeutscherAboutSection />
-        <TeamTeaserDE />
         
-        <div className="py-16 bg-white">
+        <DeutscherAboutSection />
+        
+        <div className="bg-section-gradient-1">
+          <TeamTeaserDE />
+        </div>
+        
+        <div className="py-20 bg-section-gradient-2">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            <h2 className="text-4xl font-bold text-center mb-8 text-medico-navy">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-xl mb-16 max-w-4xl mx-auto text-medico-navyLight">
               Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
             </p>
             <BeforeAfterSlider />
@@ -80,25 +84,34 @@ const GermanIndex = () => {
         </div>
         
         <GermanSolutionSection />
-        <TechnologiesSection />
         
-        <CaseStudiesSection />
+        <div className="bg-medico-lightGray">
+          <TechnologiesSection />
+        </div>
         
-        <FAQ 
-          customFaqs={germanFaqs}
-          customTitle="Häufig gestellte Fragen"
-          customCtaText="Weitere Fragen? Sprechen Sie mit uns"
-        />
+        <div className="bg-case-studies-gradient">
+          <CaseStudiesSection />
+        </div>
+        
+        <div className="bg-section-gradient-1">
+          <FAQ 
+            customFaqs={germanFaqs}
+            customTitle="Häufig gestellte Fragen"
+            customCtaText="Weitere Fragen? Sprechen Sie mit uns"
+          />
+        </div>
         
         <CTA
-          lightBackground={true}
+          lightBackground={false}
           title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
           primaryCta="Projekt starten"
         />
       </PageLayout>
       
-      <SEOTextSection />
+      <div className="bg-medico-softMint">
+        <SEOTextSection />
+      </div>
     </>
   );
 };
