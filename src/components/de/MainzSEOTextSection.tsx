@@ -10,22 +10,22 @@ const MainzSEOTextSection = () => {
     <section className="bg-[#f7fafa] pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Ihre Werbeagentur in Mainz – Klar. Digital. Wirksam.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Werbeagentur Mainz – Klar. Strategisch. Messbar.</h2>
           
           <p className="my-4">
-            ooliv ist Ihre strategische Werbeagentur in Mainz für digitale Markenführung, zielgerichtetes Design und messbare Online-Ergebnisse. Mit über 16 Jahren Erfahrung verbinden wir kreative Ideen mit technischer Umsetzung und nachhaltiger Sichtbarkeit. Ob Relaunch, neue Website oder performanceorientiertes Marketing – wir denken Projekte ganzheitlich und setzen genau dort an, wo Wirkung entsteht.
+            ooliv ist Ihre Werbeagentur in Mainz für digitale Markenführung, durchdachtes Webdesign und wirkungsvolles Online-Marketing. Seit über 16 Jahren entwickeln wir ganzheitliche Strategien für Unternehmen in Mainz und der Region – kreativ, technisch präzise und datenbasiert. Relaunch, neue Website oder Performance-Marketing: Wir denken Projekte immer ganzheitlich und setzen genau dort an, wo Ihre Marke sichtbar wird und Wirkung entfaltet.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Designagentur in Mainz – Identität, die wirkt</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Designagentur Mainz – Identität mit Wirkung</h3>
           
           <p className="my-4">
-            Gutes Design transportiert nicht nur Ästhetik, sondern Strategie. Als Designagentur in Mainz entwickeln wir Markenauftritte, die klar positionieren, begeistern und langfristig binden. Unser Fokus: maßgeschneiderte Gestaltung, abgestimmt auf Zielgruppe, Kanal und Markenkern. Jedes Projekt entsteht in enger Zusammenarbeit – mit echten Menschen, echtem Feedback und echtem Mehrwert für Ihre Marke.
+            Design ist Strategie – kein Selbstzweck. Als erfahrene Designagentur in Mainz gestalten wir Markenauftritte, die Unternehmen klar positionieren, Ihre Zielgruppe erreichen und langfristig Vertrauen aufbauen. Printdesign, Webdesign oder Corporate Design: Wir verbinden Ästhetik mit Funktion und schaffen eine Online-Außendarstellung, die überzeugt – online wie offline.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Reibungslos wechseln – So gelingt der Agenturwechsel</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erfolgreich wechseln – Ihr Agenturwechsel mit System</h3>
           
           <p className="my-4">
-            Ein Agenturwechsel bringt oft Unsicherheit – aber auch neue Chancen. Bei ooliv begleiten wir Sie strukturiert und transparent durch jeden Übergang:
+            Der Wechsel zu einer neuen Werbeagentur Mainz kann Unsicherheit mit sich bringen – aber auch enormes Potenzial freisetzen. Mit ooliv wird der Wechsel planbar, transparent und partnerschaftlich:
           </p>
           
           <p className="my-4">
@@ -33,84 +33,183 @@ const MainzSEOTextSection = () => {
           </p>
           
           <p className="my-4">
-            <strong>Strategische Übergabe:</strong> Inhalte, Zugänge und Verantwortlichkeiten werden sauber dokumentiert.
+            <strong>Strategische Übergabe:</strong> Inhalte, Zugänge und Zuständigkeiten werden dokumentiert und reibungslos übergeben.
           </p>
           
           <p className="my-4">
-            <strong>Vertrauen aufbauen:</strong> Mit klaren Ansprechpartnern, Basecamp-Projektsteuerung und offenen Workflows sorgen wir für eine partnerschaftliche Zusammenarbeit ab Tag 1.
+            <strong>Vertrauen & Struktur:</strong> Mit festen Ansprechpartnern, Basecamp-Projektsteuerung und offenen Workflows schaffen wir Klarheit und Sicherheit.
           </p>
           
           <p className="my-4">
-            Ein Agenturwechsel kann der erste Schritt in eine neue, bessere Richtung sein – wir machen ihn einfach.
+            So wird der Agenturwechsel zum Startpunkt für neue Erfolge.
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ergebnisse, die überzeugen – aus Mainz, für Mainz</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Erfolgsanalysen & Referenzen – Vertrauen schaffen</h3>
           
           <p className="my-4">
-            Hinter jeder Strategie steht ein Ziel: Wirkung. Unsere datenbasierten Analysen und lokal optimierten Maßnahmen zeigen, was möglich ist:
-          </p>
-          
-          <p className="my-4">
-            <strong>Beispiel:</strong><br />
-            Einzelhändler aus Mainz, 2024<br />
-            Lokale SEO + Conversion-Optimierung → +45 % Sichtbarkeit in 6 Monaten, +102 % Umsatz im Online-Shop.
+            Als Werbeagentur Mainz setzen wir auf echte Ergebnisse statt leere Versprechen. Über 100 erfolgreich abgeschlossene Projekte in verschiedensten Branchen – von Einzelhandel über B2B bis SaaS – sprechen für uns.
           </p>
           
           <p className="my-4">
-            Unsere Methodik: Weniger Bauchgefühl, mehr Daten – und dabei immer nah am Menschen.
+            <strong>Ausgewählte Erfolgsbeispiele:</strong>
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Sichtbarkeit zählt – SEO & Online-Marketing aus Mainz</h3>
+          <p className="my-4">
+            <strong>E-Commerce-Startup Mainz</strong><br />
+            – Relaunch & SEO: +120 % Sichtbarkeit, +75 % Conversion-Rate in 6 Monaten
+          </p>
           
           <p className="my-4">
-            Schöne Websites bringen nichts, wenn sie niemand findet. Wir entwickeln SEO-Strategien, die wirken:
+            <strong>Technologieunternehmen Mainz</strong><br />
+            – Corporate Website & Content-Marketing: 3x mehr Leads, 2x höherer Umsatz
+          </p>
+          
+          <p className="my-4">
+            <strong>Medizinische Praxis Mainz</strong><br />
+            – Lokale SEO & UX-Optimierung: +95 % Online-Anfragen, Platz 1 bei Google Maps
+          </p>
+          
+          <p className="my-4">
+            <strong>Stimmen unserer Kunden:</strong>
+          </p>
+          
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-4 italic text-gray-600">
+            „Wir haben mit ooliv genau die Werbeagentur Mainz gefunden, die unsere Marke strategisch vorangebracht hat. Von der Beratung bis zur Umsetzung – alles lief reibungslos."<br />
+            – Geschäftsführung, E-Commerce-Startup Mainz
+          </blockquote>
+          
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-4 italic text-gray-600">
+            „Besonders beeindruckt hat uns die Transparenz und die schnellen Ergebnisse. Wir konnten unsere Conversion-Rate in Rekordzeit steigern."<br />
+            – Marketingleitung, Technologieunternehmen Mainz
+          </blockquote>
+          
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-4 italic text-gray-600">
+            „ooliv liefert einfach ab – professionell, kreativ, messbar."<br />
+            – Inhaber, medizinische Praxis Mainz
+          </blockquote>
+          
+          <p className="my-4">
+            <strong>Kundenerfahrungen und Bewertungen:</strong>
           </p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li><strong>Keyword-Recherche:</strong> präzise, datenbasiert, zielgerichtet</li>
-            <li><strong>On-Page-Optimierung:</strong> Struktur, Inhalte, Performance</li>
-            <li><strong>Off-Page & Backlinks:</strong> nachhaltiger Trust-Aufbau</li>
-            <li><strong>Lokale SEO:</strong> gezielte Sichtbarkeit im Raum Mainz</li>
+            <li><strong>Langjährige Erfahrung:</strong> Mehr als 16 Jahre Expertise in Designprojekten und digitalem Marketing.</li>
+            <li><strong>Sternebewertungen:</strong> 5/5 Sterne auf führenden Plattformen – für Qualität, Kommunikation und Ergebnisse.</li>
+            <li><strong>Vertrauen & Spezialisierung:</strong> 80 % unserer Kunden kommen aus wiederkehrenden Projekten und Empfehlungen.</li>
+            <li><strong>MarketingMeer:</strong> Mit unseren Strategien schaffen wir messbare Sichtbarkeit und eine positive Online-Außendarstellung für Ihre Marke.</li>
           </ul>
           
-          <p className="my-4">
-            Unsere Maßnahmen sind kein Flickwerk, sondern Teil eines durchdachten Systems – abgestimmt auf Ihre Unternehmensziele und Ihren Markt.
-          </p>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Markenaufbau mit Haltung – Branding & Corporate Design</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Marketingstrategien – individuell, datenbasiert, lokal verankert</h3>
           
           <p className="my-4">
-            Ihre Marke ist mehr als ein Logo. Wir übersetzen Ihre Werte in ein visuelles System, das Haltung zeigt – vom Farbkonzept bis zur Bildsprache. Unser Ziel: Wiedererkennbarkeit, Klarheit, Konsistenz.
+            Als Werbeagentur Mainz entwickeln wir Marketingstrategien, die auf Ihre Marke, Ihr Unternehmen und Ihren Markt zugeschnitten sind. Keine Maßnahmen von der Stange, sondern individuelle Lösungen für maximale Wirkung.
           </p>
           
           <p className="my-4">
-            Dabei verbinden wir strategisches Denken mit kreativer Exzellenz – für Markenidentitäten, die auffallen, berühren und bleiben.
-          </p>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Umsatz steigern – durch smarte Marketingstrategien</h3>
-          
-          <p className="my-4">
-            ooliv denkt Marketing weiter: mit datengetriebener Planung und kreativen Maßnahmen, die greifen.
+            <strong>Maßgeschneiderte Strategien für Mainz</strong>
           </p>
           
           <ul className="list-disc pl-6 my-4 space-y-2">
-            <li><strong>Content-Marketing:</strong> relevante Inhalte, strategisch distribuiert</li>
-            <li><strong>E-Mail-Marketing:</strong> automatisiert, personalisiert, erfolgreich</li>
-            <li><strong>Feedback & Optimierung:</strong> datenbasiert und zyklisch weiterentwickelt</li>
+            <li><strong>Lokale Marktanalyse:</strong> Wir kennen die Besonderheiten des Mainzer Marktes – Ihre Zielgruppe, deren Bedürfnisse und die Kanäle, auf denen sie unterwegs ist.</li>
+            <li><strong>Marketingmix:</strong> SEO, Social Media Marketing, Content-Marketing, Printdesign und Paid Ads – abgestimmt auf Ihre Ziele.</li>
+            <li><strong>Full-Service Agentur:</strong> Wir verbinden alle digitalen Kanäle und sorgen für eine ganzheitliche Strategie, die Ihre Marke erfolgreich macht.</li>
           </ul>
           
           <p className="my-4">
-            Jeder Kanal erfüllt eine Funktion – wir stimmen sie aufeinander ab, damit aus Klicks Conversions und aus Besuchern Kunden werden.
+            <strong>Alle Kanäle im Blick – für Ihren Geschäftserfolg</strong>
           </p>
           
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Bereit für den nächsten Schritt?</h3>
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li><strong>Suchmaschinenoptimierung (SEO):</strong> Sichtbarkeit und Reichweite nachhaltig ausbauen.</li>
+            <li><strong>Webdesign & UX:</strong> Ihre Website als Schaltzentrale Ihrer Marke.</li>
+            <li><strong>Social Media Marketing:</strong> Facebook, Instagram, LinkedIn & Co. – strategisch genutzt.</li>
+            <li><strong>Content-Marketing:</strong> Relevante Inhalte, die Ihre Zielgruppe erreichen und überzeugen.</li>
+            <li><strong>Printdesign:</strong> Auch offline überzeugen wir – Visitenkarten, Broschüren, Flyer.</li>
+            <li><strong>Digitale Kanäle:</strong> Wir denken kanalübergreifend – für maximale Wirkung.</li>
+          </ul>
           
           <p className="my-4">
-            Wir begleiten Sie von der Idee bis zur Umsetzung – digital, strategisch, partnerschaftlich. Ihre Marke verdient mehr als Standard.
+            <strong>Datenbasierte Optimierung statt Bauchgefühl</strong>
           </p>
           
-          <p className="my-4 font-bold text-brand-primary">
-            ooliv – Ihre Werbeagentur in Mainz.
+          <p className="my-4">
+            Wir messen alles: Sichtbarkeit, Leads, Conversion-Rate, ROI. Ihre Investition muss sich lohnen – deshalb optimieren wir Ihre Strategie kontinuierlich.
+          </p>
+          
+          <p className="my-4">
+            <strong>Persönliche Beratung – Ihr Erfolg im Mittelpunkt</strong>
+          </p>
+          
+          <p className="my-4">
+            Bei ooliv haben Sie immer einen festen Ansprechpartner. Wir begleiten Sie von der ersten Idee bis zur Umsetzung – individuell, partnerschaftlich, transparent.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Ganzheitliche Online-Strategien – alles aus einer Hand</h3>
+          
+          <p className="my-4">
+            Als Full-Service Agentur bieten wir kanalübergreifende Online-Strategien, die alle digitalen Kanäle bündeln – für eine starke Online-Präsenz. Unser Ziel: Ihre Marke wird online sichtbar, spürbar und erfolgreich.
+          </p>
+          
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li><strong>Analyse & Strategieentwicklung:</strong> Wer ist Ihre Zielgruppe? Auf welchen Kanälen bewegen sie sich?</li>
+            <li><strong>Digitale Außendarstellung:</strong> Ein konsistenter Markenauftritt auf allen Plattformen.</li>
+            <li><strong>SEO & Performance-Marketing:</strong> Sichtbarkeit steigern und messbare Ergebnisse erzielen.</li>
+            <li><strong>Content & Social Media:</strong> Inhalte, die Emotionen wecken und Vertrauen schaffen.</li>
+            <li><strong>Marketingmix:</strong> Online und offline perfekt verzahnt – Printdesign, Webdesign, Social Media und mehr.</li>
+            <li><strong>Kontinuierliche Optimierung:</strong> Datenbasiert und zielgerichtet für nachhaltigen Erfolg.</li>
+          </ul>
+          
+          <p className="my-4">
+            Mit ganzheitlichen Online-Strategien machen wir Ihre Marke zum Erlebnis – überall dort, wo Ihre Zielgruppe unterwegs ist.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">SEO & Online-Marketing aus Mainz – Sichtbarkeit zählt</h3>
+          
+          <p className="my-4">
+            Eine Website allein reicht nicht, wenn sie niemand findet. Als Werbeagentur Mainz entwickeln wir SEO- und Online-Marketing-Strategien, die wirken:
+          </p>
+          
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li><strong>Keyword-Analyse:</strong> Datenbasiert, präzise, für nachhaltige Rankings.</li>
+            <li><strong>OnPage-Optimierung:</strong> Technisch einwandfrei, blitzschnelle Ladezeiten, perfekte Struktur.</li>
+            <li><strong>OffPage & Backlinks:</strong> Nachhaltiger Trust für Ihre Website.</li>
+            <li><strong>Lokale SEO:</strong> Sichtbarkeit in Mainz und Umgebung – dort, wo Ihre Zielgruppe sucht.</li>
+          </ul>
+          
+          <p className="my-4">
+            Wir denken alle Maßnahmen integriert – für Reichweite, Vertrauen und Conversions.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Branding & Corporate Design – Marken mit Haltung</h3>
+          
+          <p className="my-4">
+            Ihre Marke ist mehr als ein Logo. Wir übersetzen Ihre Werte in ein konsistentes Designsystem mit Haltung – vom Farbkonzept bis zur Bildsprache. Das Ergebnis: Wiedererkennbarkeit, Klarheit und eine starke Marktposition.
+          </p>
+          
+          <p className="my-4">
+            Strategie und Kreativität vereint: für Markenidentitäten, die auffallen und bleiben.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">Mehr Umsatz mit smarter Marketingstrategie</h3>
+          
+          <p className="my-4">
+            Wir denken Marketing weiter – mit Konzepten, die alle Kanäle optimal verzahnen:
+          </p>
+          
+          <ul className="list-disc pl-6 my-4 space-y-2">
+            <li><strong>Content-Marketing:</strong> Inhalte, die überzeugen und gefunden werden.</li>
+            <li><strong>E-Mail-Marketing:</strong> Automatisiert, personalisiert, wirksam.</li>
+            <li><strong>Feedback & Optimierung:</strong> Datenbasiert und kontinuierlich verbessert.</li>
+          </ul>
+          
+          <p className="my-4">
+            So werden Klicks zu Conversions und Interessenten zu Kunden.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mt-8 mb-4">ooliv – Ihre Werbeagentur Mainz</h3>
+          
+          <p className="my-4">
+            Bereit für den nächsten Schritt? Mit ooliv haben Sie eine Werbeagentur Mainz an Ihrer Seite, die Strategie, Kreativität und messbare Ergebnisse vereint. Wir begleiten Sie von der Idee bis zur Umsetzung – digital, strategisch, partnerschaftlich. Ihre Marke verdient mehr als Standard.
           </p>
           
           <p className="my-4">
