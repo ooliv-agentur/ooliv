@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -18,22 +17,26 @@ const DeutscherHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-mint-100/50 via-transparent to-brand-mint-200/50 animate-pulse"></div>
       </div>
       
-      {/* Animated floating circles */}
+      {/* Animated floating circles - enhanced for mobile visibility */}
       <div className="absolute inset-0 z-10">
         {/* Large floating circle - top right */}
-        <div className="absolute top-20 right-10 w-32 h-32 bg-brand-mint-300/30 rounded-full blur-xl animate-[float_6s_ease-in-out_infinite]"></div>
+        <div className="absolute top-20 right-4 md:right-10 w-24 h-24 md:w-32 md:h-32 bg-brand-mint-300/40 md:bg-brand-mint-300/30 rounded-full blur-lg md:blur-xl animate-[float_6s_ease-in-out_infinite] will-change-transform"></div>
         
         {/* Medium floating circle - bottom left */}
-        <div className="absolute bottom-40 left-10 w-24 h-24 bg-brand-mint-400/40 rounded-full blur-lg animate-[float-reverse_8s_ease-in-out_infinite]"></div>
+        <div className="absolute bottom-32 md:bottom-40 left-4 md:left-10 w-20 h-20 md:w-24 md:h-24 bg-brand-mint-400/50 md:bg-brand-mint-400/40 rounded-full blur-md md:blur-lg animate-[float-reverse_8s_ease-in-out_infinite] will-change-transform"></div>
         
         {/* Small floating circle - top left */}
-        <div className="absolute top-32 left-20 w-16 h-16 bg-brand-mint-500/20 rounded-full blur-md animate-[float_4s_ease-in-out_infinite_1s]"></div>
+        <div className="absolute top-24 md:top-32 left-8 md:left-20 w-12 h-12 md:w-16 md:h-16 bg-brand-mint-500/30 md:bg-brand-mint-500/20 rounded-full blur-sm md:blur-md animate-[float_4s_ease-in-out_infinite_1s] will-change-transform"></div>
         
         {/* Extra small floating circle - middle right */}
-        <div className="absolute top-1/2 right-32 w-12 h-12 bg-brand-mint-200/50 rounded-full blur-sm animate-[float-reverse_5s_ease-in-out_infinite_2s]"></div>
+        <div className="absolute top-1/2 right-16 md:right-32 w-10 h-10 md:w-12 md:h-12 bg-brand-mint-200/60 md:bg-brand-mint-200/50 rounded-full blur-sm animate-[float-reverse_5s_ease-in-out_infinite_2s] will-change-transform"></div>
         
         {/* Tiny floating circle - bottom right */}
-        <div className="absolute bottom-20 right-20 w-8 h-8 bg-brand-mint-600/30 rounded-full blur-sm animate-[float_7s_ease-in-out_infinite_0.5s]"></div>
+        <div className="absolute bottom-16 md:bottom-20 right-8 md:right-20 w-6 h-6 md:w-8 md:h-8 bg-brand-mint-600/40 md:bg-brand-mint-600/30 rounded-full blur-sm animate-[float_7s_ease-in-out_infinite_0.5s] will-change-transform"></div>
+        
+        {/* Additional mobile-visible circles */}
+        <div className="absolute top-40 left-1/2 w-8 h-8 bg-brand-mint-400/35 rounded-full blur-sm animate-[float_5s_ease-in-out_infinite_1.5s] will-change-transform md:hidden"></div>
+        <div className="absolute bottom-24 left-1/3 w-14 h-14 bg-brand-mint-300/25 rounded-full blur-md animate-[float-reverse_7s_ease-in-out_infinite_3s] will-change-transform md:hidden"></div>
       </div>
       
       <div className="relative z-20 py-16 md:py-24">
