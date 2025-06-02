@@ -22,7 +22,7 @@ const DeutscherHero = () => {
             {/* Main heading with emphasis - single H1 */}
             <Reveal>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                Werbeagentur Mainz
+                Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen
               </h1>
             </Reveal>
             
