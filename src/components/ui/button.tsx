@@ -5,17 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-sans",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-sans",
   {
     variants: {
       variant: {
-        default: "bg-medico-yellow text-medico-navy hover:bg-medico-yellowHover hover:shadow-lg",
+        default: "bg-[#b1b497] text-white hover:bg-[#9a9c83] hover:shadow-md",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-medico-mint bg-transparent text-medico-navy hover:bg-medico-mint hover:text-white",
-        secondary: "bg-medico-lightGray text-medico-navy hover:bg-medico-mint hover:text-white",
-        ghost: "hover:bg-medico-mint hover:text-white",
-        link: "text-medico-navy underline-offset-4 hover:underline hover:text-medico-mint",
-        mint: "bg-medico-mint text-white hover:bg-medico-mintDark hover:shadow-lg",
+        outline: "border-2 border-[#b1b497] bg-transparent text-[#b1b497] hover:bg-[#b1b497] hover:text-white",
+        secondary: "bg-brand-background text-brand-text hover:bg-[#b1b497] hover:text-white",
+        ghost: "hover:bg-[#b1b497] hover:text-white",
+        link: "text-brand-heading underline-offset-4 hover:underline hover:text-[#b1b497] hover:bg-brand-background/50",
       },
       size: {
         default: "h-11 px-6 py-2",
