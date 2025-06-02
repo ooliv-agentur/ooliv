@@ -12,11 +12,27 @@ const DeutscherHero = () => {
   
   return (
     <section className="relative bg-gradient-to-br from-medico-mint via-medico-mintLight to-medico-skyBlue pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden min-h-[80vh] flex items-center bg-[length:400%_400%] animate-gradient-shift">
-      {/* Animated background swirl */}
-      <div className="absolute inset-0 opacity-30">
+      {/* Animated floating circles */}
+      <div className="absolute inset-0 opacity-40">
+        {/* Large circles */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-medico-yellow/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-medico-mint/30 rounded-full blur-2xl animate-float" style={{animationDelay: '4s'}}></div>
+        
+        {/* Medium circles */}
+        <div className="absolute top-10 right-20 w-40 h-40 bg-medico-navy/10 rounded-full blur-xl animate-float" style={{animationDelay: '1s', animationDuration: '8s'}}></div>
+        <div className="absolute bottom-20 left-20 w-32 h-32 bg-medico-yellow/30 rounded-full blur-lg animate-float" style={{animationDelay: '3s', animationDuration: '7s'}}></div>
+        <div className="absolute top-1/3 left-10 w-48 h-48 bg-white/15 rounded-full blur-2xl animate-float" style={{animationDelay: '5s', animationDuration: '9s'}}></div>
+        
+        {/* Small circles */}
+        <div className="absolute top-20 left-1/2 w-20 h-20 bg-medico-mint/40 rounded-full blur-md animate-float" style={{animationDelay: '0.5s', animationDuration: '5s'}}></div>
+        <div className="absolute bottom-1/3 right-10 w-24 h-24 bg-medico-yellow/25 rounded-full blur-lg animate-float" style={{animationDelay: '2.5s', animationDuration: '6s'}}></div>
+        <div className="absolute top-2/3 left-1/3 w-16 h-16 bg-white/25 rounded-full blur-sm animate-float" style={{animationDelay: '4.5s', animationDuration: '4s'}}></div>
+        <div className="absolute top-10 right-1/2 w-28 h-28 bg-medico-navy/15 rounded-full blur-lg animate-float" style={{animationDelay: '1.5s', animationDuration: '7s'}}></div>
+        
+        {/* Extra small accent circles */}
+        <div className="absolute bottom-10 left-1/4 w-12 h-12 bg-medico-mint/50 rounded-full blur-sm animate-float" style={{animationDelay: '3.5s', animationDuration: '3s'}}></div>
+        <div className="absolute top-1/4 right-1/4 w-14 h-14 bg-medico-yellow/40 rounded-full blur-sm animate-float" style={{animationDelay: '6s', animationDuration: '5s'}}></div>
       </div>
       
       {/* Gradient overlay for better text readability */}
