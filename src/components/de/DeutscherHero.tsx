@@ -42,17 +42,15 @@ const DeutscherHero = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <div className="text-center">
             <Reveal>
-              <div className="mb-8">
-                <span className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm text-medico-navy rounded-full text-sm font-semibold shadow-lg">
-                  Werbeagentur Mainz
-                </span>
-              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-medico-navy mb-4 leading-tight max-w-4xl mx-auto">
+                Werbeagentur Mainz
+              </h1>
             </Reveal>
             
             <Reveal delay={0.1}>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-medico-navy mb-6 leading-tight max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-medico-navy/90 mb-6 leading-tight max-w-4xl mx-auto">
                 Für messbare Ergebnisse im Web
-              </h1>
+              </h2>
             </Reveal>
             
             <Reveal delay={0.2}>
