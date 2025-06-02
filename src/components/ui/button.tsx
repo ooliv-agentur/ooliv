@@ -9,12 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[#b1b497] text-white hover:bg-[#9a9c83] hover:shadow-md",
+        default: "bg-brand-mint-500 text-white hover:bg-brand-mint-600 hover:shadow-mint",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-[#b1b497] bg-transparent text-[#b1b497] hover:bg-[#b1b497] hover:text-white",
-        secondary: "bg-brand-background text-brand-text hover:bg-[#b1b497] hover:text-white",
-        ghost: "hover:bg-[#b1b497] hover:text-white",
-        link: "text-brand-heading underline-offset-4 hover:underline hover:text-[#b1b497] hover:bg-brand-background/50",
+        outline: "border-2 border-brand-mint-400 bg-transparent text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white",
+        secondary: "bg-brand-mint-100 text-brand-mint-700 hover:bg-brand-mint-200",
+        ghost: "hover:bg-brand-mint-100 hover:text-brand-mint-600",
+        link: "text-brand-heading underline-offset-4 hover:underline hover:text-brand-mint-600",
       },
       size: {
         default: "h-11 px-6 py-2",

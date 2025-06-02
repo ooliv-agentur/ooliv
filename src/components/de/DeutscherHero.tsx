@@ -12,9 +12,13 @@ const DeutscherHero = () => {
   };
   
   return (
-    <section className="relative bg-brand-background pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background pattern/gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-background to-brand-backgroundAlt opacity-50 z-0"></div>
+    <section className="relative bg-gradient-mint pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+      {/* Background pattern with mint green gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-mint-50 to-brand-mint-100 opacity-80 z-0"></div>
+      
+      {/* Decorative elements inspired by medicosearch */}
+      <div className="absolute top-20 right-10 w-32 h-32 bg-brand-mint-200 rounded-full opacity-30 blur-xl"></div>
+      <div className="absolute bottom-40 left-10 w-24 h-24 bg-brand-mint-300 rounded-full opacity-40 blur-lg"></div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -26,32 +30,37 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Subheadline */}
+            {/* Subheadline with mint accent */}
             <Reveal delay={0.1}>
-              <p className="text-2xl md:text-3xl text-brand-primary font-medium mb-6">
+              <p className="text-2xl md:text-3xl text-brand-mint-600 font-medium mb-6">
                 Für messbare Ergebnisse im Web.
               </p>
             </Reveal>
             
             <Reveal delay={0.2}>
-              <p className="text-xl text-gray-700 mb-10">
+              <p className="text-xl text-gray-700 mb-10 leading-relaxed">
                 Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
               </p>
             </Reveal>
             
-            {/* CTA buttons - left-aligned */}
+            {/* CTA buttons with mint green styling */}
             <Reveal delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="group bg-[#006064] text-white hover:bg-[#004d51]" 
+                  className="group bg-brand-mint-500 text-white hover:bg-brand-mint-600 shadow-mint hover:shadow-mintHover transition-all duration-300" 
                   onClick={handleOpenLeadForm}
                 >
                   Projekt starten
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
-                <Button variant="outline" size="lg" className="bg-transparent text-gray-800 hover:bg-white/10 border-gray-800 hover:text-white hover:bg-gray-800" asChild>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="bg-white/80 text-gray-800 border-brand-mint-300 hover:bg-brand-mint-50 hover:border-brand-mint-400 hover:text-brand-mint-700 transition-all duration-300" 
+                  asChild
+                >
                   <Link to="/de/case-studies">
                     Arbeiten ansehen
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -63,7 +72,7 @@ const DeutscherHero = () => {
         </div>
       </div>
       
-      {/* Curved bottom section divider */}
+      {/* Modern curved bottom section with mint accent */}
       <div className="absolute bottom-0 left-0 right-0 h-16 z-10 pointer-events-none">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -79,14 +88,14 @@ const DeutscherHero = () => {
         </svg>
       </div>
       
-      {/* Visual transition indicator */}
+      {/* Modern transition indicator with mint accent */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2 mb-8">
-          <div className="w-1 h-8 bg-gradient-to-b from-gray-300/50 to-gray-400/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-8 bg-gradient-to-b from-brand-mint-300 to-brand-mint-500 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
-            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
-            <div className="w-1.5 h-1.5 bg-gray-400/80 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-brand-mint-400 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-brand-mint-400 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-brand-mint-400 rounded-full"></div>
           </div>
         </div>
       </div>
