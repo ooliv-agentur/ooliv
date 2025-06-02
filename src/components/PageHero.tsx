@@ -265,7 +265,7 @@ const PageHero = ({
             >
               <source src={backgroundVideo} type="video/mp4" />
               Your browser does not support the video tag.
-            </source>
+            </video>
             {!videoLoaded && (
               <div className={`absolute inset-0 ${isHomepage ? 'bg-gradient-to-br from-brand-mint-50 via-brand-mint-100 to-brand-mint-200' : 'bg-gradient-to-br from-brand-mint-50 to-white'}`}></div>
             )}
