@@ -11,6 +11,7 @@ interface CTAProps {
   subtitle?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  secondaryCtaLink?: string;
   lightBackground?: boolean;
 }
 
@@ -19,6 +20,7 @@ const CTA = ({
   subtitle,
   primaryCta,
   secondaryCta,
+  secondaryCtaLink,
   lightBackground = true
 }: CTAProps) => {
   const { language } = useLanguage();
@@ -29,8 +31,8 @@ const CTA = ({
   };
 
   const bgClass = lightBackground 
-    ? "bg-section-gradient-1" 
-    : "bg-footer-gradient";
+    ? "bg-medico-gradient" 
+    : "bg-medico-darkGradient";
   
   const textColorClass = lightBackground 
     ? "text-medico-navy" 
@@ -82,7 +84,7 @@ const CTA = ({
                 } font-bold px-10 py-5 text-lg transition-all duration-300`}
                 asChild
               >
-                <Link to={isGerman ? "/de/case-studies" : "/case-studies"}>
+                <Link to={secondaryCtaLink || (isGerman ? "/de/case-studies" : "/case-studies")}>
                   {secondaryCta}
                   <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Link>
