@@ -11,7 +11,7 @@ const DeutscherHero = () => {
   };
   
   return (
-    <section className="relative bg-gradient-to-br from-medico-mint via-medico-mintLight to-medico-skyBlue pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden min-h-[80vh] flex items-center">
+    <section className="relative bg-gradient-to-br from-medico-mint via-medico-mintLight to-medico-skyBlue pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden min-h-[80vh] flex items-center bg-[length:400%_400%] animate-gradient-shift">
       {/* Animated background swirl */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/20 rounded-full blur-3xl animate-float"></div>
@@ -35,17 +35,11 @@ const DeutscherHero = () => {
             
             <Reveal delay={0.1}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-medico-navy mb-6 leading-tight max-w-4xl mx-auto">
-                Werbeagentur Mainz
+                Für messbare Ergebnisse im Web
               </h1>
             </Reveal>
             
             <Reveal delay={0.2}>
-              <p className="text-2xl md:text-3xl text-medico-navyLight mb-8 font-semibold max-w-3xl mx-auto">
-                Für messbare Ergebnisse im Web.
-              </p>
-            </Reveal>
-            
-            <Reveal delay={0.3}>
               <p className="text-lg md:text-xl text-medico-navy/80 mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
                 Wir entwickeln Websites, die besser ranken, mehr konvertieren<br />
                 und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
