@@ -24,14 +24,28 @@ export default {
           error: "#C62828", // Red for error states
           warning: "#F9A825" // Amber for warning states
         },
+        // Medicosearch color scheme
+        medico: {
+          mint: "#7DDCC0", // Main mint green from medicosearch
+          mintLight: "#B8E6D1", // Lighter mint
+          mintDark: "#5BC9A3", // Darker mint
+          yellow: "#F4E04D", // Bright yellow from buttons
+          yellowHover: "#F0DC3C", // Darker yellow for hover
+          navy: "#1E3A5F", // Dark navy blue from text
+          navyLight: "#2D4B6B", // Lighter navy
+          white: "#FFFFFF",
+          lightGray: "#F8F9FA",
+          mediumGray: "#E9ECEF"
+        },
       },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'medico': '0 8px 25px -5px rgba(125, 220, 192, 0.3)',
       },
       backgroundImage: {
-        // Commenting out the hero pattern to use direct background color
-        // 'hero-pattern': 'linear-gradient(135deg, #f7f8fc 0%, #f7f8fc 100%)',
+        'medico-gradient': 'linear-gradient(135deg, #7DDCC0 0%, #B8E6D1 100%)',
+        'medico-hero': 'linear-gradient(135deg, #7DDCC0 0%, #B8E6D1 50%, #F8F9FA 100%)',
       },
     },
   },
