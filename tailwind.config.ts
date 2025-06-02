@@ -47,6 +47,34 @@ export default {
       backgroundImage: {
         'gradient-mint': 'linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)',
       },
+      keyframes: {
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0px) translateX(0px)',
+          },
+          '33%': {
+            transform: 'translateY(-20px) translateX(10px)',
+          },
+          '66%': {
+            transform: 'translateY(10px) translateX(-5px)',
+          },
+        },
+        'float-reverse': {
+          '0%, 100%': {
+            transform: 'translateY(0px) translateX(0px)',
+          },
+          '33%': {
+            transform: 'translateY(15px) translateX(-10px)',
+          },
+          '66%': {
+            transform: 'translateY(-10px) translateX(8px)',
+          },
+        },
+      },
+      animation: {
+        float: 'float 6s ease-in-out infinite',
+        'float-reverse': 'float-reverse 8s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

@@ -13,12 +13,28 @@ const DeutscherHero = () => {
   
   return (
     <section className="relative bg-gradient-mint pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background pattern with mint green gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-mint-50 to-brand-mint-100 opacity-80 z-0"></div>
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-mint-50 via-brand-mint-100 to-brand-mint-200 opacity-90 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-mint-100/50 via-transparent to-brand-mint-200/50 animate-pulse"></div>
+      </div>
       
-      {/* Decorative elements inspired by medicosearch */}
-      <div className="absolute top-20 right-10 w-32 h-32 bg-brand-mint-200 rounded-full opacity-30 blur-xl"></div>
-      <div className="absolute bottom-40 left-10 w-24 h-24 bg-brand-mint-300 rounded-full opacity-40 blur-lg"></div>
+      {/* Animated floating circles */}
+      <div className="absolute inset-0 z-10">
+        {/* Large floating circle - top right */}
+        <div className="absolute top-20 right-10 w-32 h-32 bg-brand-mint-300/30 rounded-full blur-xl animate-[float_6s_ease-in-out_infinite]"></div>
+        
+        {/* Medium floating circle - bottom left */}
+        <div className="absolute bottom-40 left-10 w-24 h-24 bg-brand-mint-400/40 rounded-full blur-lg animate-[float-reverse_8s_ease-in-out_infinite]"></div>
+        
+        {/* Small floating circle - top left */}
+        <div className="absolute top-32 left-20 w-16 h-16 bg-brand-mint-500/20 rounded-full blur-md animate-[float_4s_ease-in-out_infinite_1s]"></div>
+        
+        {/* Extra small floating circle - middle right */}
+        <div className="absolute top-1/2 right-32 w-12 h-12 bg-brand-mint-200/50 rounded-full blur-sm animate-[float-reverse_5s_ease-in-out_infinite_2s]"></div>
+        
+        {/* Tiny floating circle - bottom right */}
+        <div className="absolute bottom-20 right-20 w-8 h-8 bg-brand-mint-600/30 rounded-full blur-sm animate-[float_7s_ease-in-out_infinite_0.5s]"></div>
+      </div>
       
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
