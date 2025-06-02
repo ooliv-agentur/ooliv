@@ -35,10 +35,10 @@ const DeutscherAboutSection = () => {
         <Reveal>
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-brand-heading mb-4 text-center">
-              Werbeagentur Mainz: Wo Strategie auf Umsetzung trifft
+              Wo Strategie auf Umsetzung trifft – in Mainz.
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto text-center">
-              Wir sind eine spezialisierte Werbeagentur Mainz. Seit 2008 entwickeln wir als Digitalagentur Websites, die das Wesentliche Ihres Unternehmens erfassen – strategisch geplant, inhaltsstark und technisch messbar.
+              Wir sind eine spezialisierte Digitalagentur aus Mainz. Seit 2008 entwickeln wir Websites, die das Wesentliche Ihres Unternehmens erfassen – strategisch geplant, inhaltsstark und technisch messbar.
             </p>
           </div>
         </Reveal>
