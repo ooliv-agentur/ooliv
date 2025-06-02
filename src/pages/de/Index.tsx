@@ -16,11 +16,11 @@ import PageHero from '@/components/PageHero';
 
 const germanFaqs = [
   {
-    question: "Wie läuft der Website-Erstellungsprozess bei der Werbeagentur Mainz ooliv ab?",
+    question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
     answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
   },
   {
-    question: "Was kostet eine individuell entwickelte WordPress-Website bei der Werbeagentur Mainz?",
+    question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
     answer: "Die Preise richten sich nach Umfang, Design und Funktionen. Einfache Onepager starten bei etwa 3.000 €, mittelgroße Websites mit SEO bei 5.000 bis 10.000 €. Für größere Projekte wie Shops oder Multilingual-Seiten starten die Kosten bei etwa 10.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
   },
   {
@@ -56,139 +56,10 @@ const GermanIndex = () => {
         <title>Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen</title>
         <meta
           name="description"
-          content="ooliv Werbeagentur Mainz entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz seit 2008."
+          content="ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz."
         />
-        
-        {/* Geographic Metadata for Mainz */}
-        <meta name="geo.region" content="DE-RP" />
-        <meta name="geo.placename" content="Mainz" />
-        <meta name="geo.position" content="49.9929;8.2473" />
-        <meta name="ICBM" content="49.9929, 8.2473" />
-        
-        {/* Local Business Keywords */}
-        <meta name="keywords" content="Werbeagentur Mainz, Webdesign Mainz, SEO Mainz, Online Marketing Mainz, Designagentur Mainz" />
-        
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        
-        {/* Comprehensive LocalBusiness Schema Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "@id": "https://ooliv.de/#organization",
-            "name": "ooliv Werbeagentur Mainz",
-            "alternateName": "ooliv",
-            "description": "Werbeagentur Mainz für digitale Markenführung, durchdachtes Webdesign und wirkungsvolles Online-Marketing. Seit über 16 Jahren entwickeln wir ganzheitliche Strategien für Unternehmen in Mainz und der Region.",
-            "url": "https://ooliv.de",
-            "telephone": "+49-6131-3278485",
-            "email": "mail@ooliv.de",
-            "foundingDate": "2008",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Quintinsstraße 15",
-              "addressLocality": "Mainz",
-              "addressRegion": "Rheinland-Pfalz",
-              "postalCode": "55116",
-              "addressCountry": "DE"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "49.9929",
-              "longitude": "8.2473"
-            },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Mainz"
-              },
-              {
-                "@type": "State",
-                "name": "Rheinland-Pfalz"
-              },
-              {
-                "@type": "City",
-                "name": "Wiesbaden"
-              },
-              {
-                "@type": "City",
-                "name": "Frankfurt am Main"
-              }
-            ],
-            "serviceType": [
-              "Werbeagentur",
-              "Webdesign",
-              "SEO",
-              "Online Marketing",
-              "Corporate Design",
-              "Designagentur"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Werbeagentur Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Webdesign Mainz",
-                    "description": "Professionelles Webdesign und Website-Entwicklung"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "SEO Mainz",
-                    "description": "Suchmaschinenoptimierung für bessere Rankings"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Online Marketing",
-                    "description": "Ganzheitliches digitales Marketing"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Corporate Design",
-                    "description": "Markenidentität und Designsysteme"
-                  }
-                }
-              ]
-            },
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-              ],
-              "opens": "09:00",
-              "closes": "18:00"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/company/ooliv",
-              "https://www.instagram.com/ooliv.de"
-            ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "20",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "priceRange": "€€€",
-            "currenciesAccepted": "EUR",
-            "paymentAccepted": "Cash, Credit Card, Bank Transfer"
-          })}
-        </script>
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
@@ -215,7 +86,7 @@ const GermanIndex = () => {
         
         <FAQ 
           customFaqs={germanFaqs}
-          customTitle="Häufig gestellte Fragen zur Werbeagentur Mainz"
+          customTitle="Häufig gestellte Fragen"
           customCtaText="Weitere Fragen? Sprechen Sie mit uns"
         />
         
