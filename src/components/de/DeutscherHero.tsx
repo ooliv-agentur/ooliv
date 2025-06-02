@@ -19,10 +19,10 @@ const DeutscherHero = () => {
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-left max-w-4xl">
-            {/* Main heading with emphasis - single H1 */}
+            {/* Main H1 heading optimized for WERBEAGENTUR MAINZ */}
             <Reveal>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
-                Werbeagentur Mainz
+                Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen
               </h1>
             </Reveal>
             
@@ -35,7 +35,7 @@ const DeutscherHero = () => {
             
             <Reveal delay={0.2}>
               <p className="text-xl text-gray-700 mb-10">
-                Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
+                ooliv entwickelt als Werbeagentur Mainz Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
               </p>
             </Reveal>
             
