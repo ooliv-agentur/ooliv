@@ -6,32 +6,63 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
+        sans: ['Satoshi', 'sans-serif'],
+        satoshi: ['Satoshi', 'sans-serif'],
       },
       colors: {
-        border: "#e2e8f0", // Adding border color explicitly
+        border: "#e2e8f0",
         brand: {
-          primary: "#006064", // Teal primary color
-          primaryHover: "#004D40", // Darker teal for hover states
-          secondary: "#FF9800", // Orange accent
-          secondaryHover: "#F57C00", // Darker orange for hover states
-          heading: "#0D1B2A", // Dark blue-black for headings
-          text: "#2B2D42", // Dark slate for body text
-          background: "#F5F7FA", // Light gray background
-          backgroundAlt: "#E9ECEF", // Slightly darker gray for alternating sections
-          footer: "#0D1B2A", // Dark blue-black for footer
-          success: "#2E7D32", // Green for success states
-          error: "#C62828", // Red for error states
-          warning: "#F9A825" // Amber for warning states
+          primary: "#006064",
+          primaryHover: "#004D40",
+          secondary: "#FF9800",
+          secondaryHover: "#F57C00",
+          heading: "#0D1B2A",
+          text: "#2B2D42",
+          background: "#F5F7FA",
+          backgroundAlt: "#E9ECEF",
+          footer: "#0D1B2A",
+          success: "#2E7D32",
+          error: "#C62828",
+          warning: "#F9A825"
         },
+        // New medicosearch.ch color palette
+        medico: {
+          mint: "#D8F4E3",
+          yellow: "#FFE500",
+          turquoise: "#38B593",
+          darkGreen: "#003347",
+          white: "#FFFFFF"
+        }
       },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'gradient': 'gradient 15s ease infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-20px)',
+          },
+        },
+        gradient: {
+          '0%, 100%': {
+            'background-position': '0% 50%'
+          },
+          '50%': {
+            'background-position': '100% 50%'
+          }
+        }
+      },
       backgroundImage: {
-        // Commenting out the hero pattern to use direct background color
-        // 'hero-pattern': 'linear-gradient(135deg, #f7f8fc 0%, #f7f8fc 100%)',
+        'hero-gradient': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3)',
       },
     },
   },

@@ -7,23 +7,23 @@ import Reveal from '@/components/animations/Reveal';
 
 const GermanSolutionSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-background">
+    <section className="py-24 bg-medico-white font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
               Wir entwickeln Websites, die Ihr Business voranbringen – mit Strategie, Expertise und Technologie.
             </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
               Unsere Leistungen umfassen: 
-              <Link to="/de/webdesign" className="text-brand-primary hover:underline"> Webdesign</Link>, 
-              <Link to="/de/webentwicklung" className="text-brand-primary hover:underline"> Webentwicklung</Link>, 
-              <Link to="/de/content-erstellung" className="text-brand-primary hover:underline"> Content-Erstellung</Link>, 
-              <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline"> SEO-Optimierung</Link>, 
-              <Link to="/de/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> und 
-              <Link to="/de/ki-technologien" className="text-brand-primary hover:underline"> KI-Technologien</Link>.
+              <Link to="/de/webdesign" className="text-medico-turquoise hover:underline font-medium"> Webdesign</Link>, 
+              <Link to="/de/webentwicklung" className="text-medico-turquoise hover:underline font-medium"> Webentwicklung</Link>, 
+              <Link to="/de/content-erstellung" className="text-medico-turquoise hover:underline font-medium"> Content-Erstellung</Link>, 
+              <Link to="/de/seo-optimierung" className="text-medico-turquoise hover:underline font-medium"> SEO-Optimierung</Link>, 
+              <Link to="/de/google-ads" className="text-medico-turquoise hover:underline font-medium"> Google Ads</Link> und 
+              <Link to="/de/ki-technologien" className="text-medico-turquoise hover:underline font-medium"> KI-Technologien</Link>.
             </p>
-            <div className="mt-8">
+            <div className="mt-10">
               <Button variant="outline" className="group" asChild>
                 <Link to="/de/ueber-ooliv">
                   Mehr über den Ablauf erfahren
