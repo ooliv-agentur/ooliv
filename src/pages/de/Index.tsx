@@ -12,7 +12,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import MainzSEOTextSection from "@/components/de/MainzSEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import DeutscherHero from '@/components/de/DeutscherHero';
 
 const germanFaqs = [
   {
@@ -48,6 +48,81 @@ const GermanIndex = () => {
     // Force title update immediately
     document.title = 'Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen';
   }, []);
+
+  // Comprehensive LocalBusiness schema markup
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ooliv Werbeagentur Mainz",
+    "alternateName": "ooliv",
+    "description": "Werbeagentur Mainz für messbare Ergebnisse im Web. Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen.",
+    "url": "https://ooliv.de",
+    "telephone": "+49-6131-5544041",
+    "email": "hallo@ooliv.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Große Bleiche 60-62",
+      "addressLocality": "Mainz",
+      "postalCode": "55116",
+      "addressRegion": "Rheinland-Pfalz",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9928617,
+      "longitude": 8.2472526
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Mainz"
+      },
+      {
+        "@type": "City", 
+        "name": "Wiesbaden"
+      },
+      {
+        "@type": "State",
+        "name": "Rheinland-Pfalz"
+      },
+      {
+        "@type": "State",
+        "name": "Hessen"
+      }
+    ],
+    "serviceType": [
+      "Webdesign",
+      "Webentwicklung", 
+      "SEO-Optimierung",
+      "Content-Erstellung",
+      "Google Ads",
+      "KI-Technologien"
+    ],
+    "priceRange": "€€€",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday", 
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "foundingDate": "2008",
+    "founder": {
+      "@type": "Person",
+      "name": "Uli Schönleber"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/ooliv",
+      "https://www.xing.com/companies/ooliv"
+    ]
+  };
   
   return (
     <>
@@ -56,16 +131,27 @@ const GermanIndex = () => {
         <title>Werbeagentur Mainz – Websites die besser ranken, konvertieren & verkaufen</title>
         <meta
           name="description"
-          content="ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz."
+          content="Werbeagentur Mainz für messbare Ergebnisse im Web. ooliv entwickelt Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege. Webdesign Mainz."
         />
+        
+        {/* Geographic Metadata for Mainz */}
+        <meta name="geo.region" content="DE-RP" />
+        <meta name="geo.placename" content="Mainz" />
+        <meta name="geo.position" content="49.9928617;8.2472526" />
+        <meta name="ICBM" content="49.9928617, 8.2472526" />
+        <meta name="DC.title" content="Werbeagentur Mainz - ooliv" />
+        
+        {/* LocalBusiness Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <PageHero 
-          isHomepage={true}
-        />
+        <DeutscherHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
