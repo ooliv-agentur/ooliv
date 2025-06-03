@@ -1,61 +1,38 @@
 
 import React from 'react';
-import { CheckCircle, Target, BarChart3, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const GermanSolutionSection = () => {
-  const solutions = [
-    {
-      icon: <Target className="h-12 w-12 text-brand-mint-600" />,
-      title: "Strategische Positionierung",
-      description: "Wir analysieren Ihre Zielgruppe, Mitbewerber und USPs, um eine klare digitale Strategie zu entwickeln, die Ihr Business voranbringt."
-    },
-    {
-      icon: <CheckCircle className="h-12 w-12 text-brand-mint-600" />,
-      title: "Conversion-optimiertes Design",
-      description: "Jedes Element Ihrer Website ist darauf ausgelegt, Besucher zu Kunden zu machen – durch durchdachte UX und zielgerichtete Call-to-Actions."
-    },
-    {
-      icon: <BarChart3 className="h-12 w-12 text-brand-mint-600" />,
-      title: "SEO & Content-Marketing",
-      description: "Wir sorgen dafür, dass Ihre Website bei Google gefunden wird und durch hochwertigen Content Vertrauen und Expertise vermittelt."
-    },
-    {
-      icon: <Zap className="h-12 w-12 text-brand-mint-600" />,
-      title: "Technische Exzellenz",
-      description: "Schnelle Ladezeiten, mobile Optimierung und sauberer Code – für eine Website, die technisch auf höchstem Niveau performt."
-    }
-  ];
-
   return (
-    <section className="py-24 bg-gradient-to-br from-white to-brand-mint-50">
+    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              Unsere Lösung für Ihr Wachstum
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-brand-heading">
+              Wir entwickeln Websites, die Ihr Business voranbringen – mit Strategie, Expertise und Technologie.
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Wir entwickeln maßgeschneiderte Websites, die nicht nur gut aussehen, sondern messbare Ergebnisse liefern.
+              Unsere Leistungen umfassen: 
+              <Link to="/de/webdesign" className="text-brand-primary hover:underline"> Webdesign</Link>, 
+              <Link to="/de/webentwicklung" className="text-brand-primary hover:underline"> Webentwicklung</Link>, 
+              <Link to="/de/content-erstellung" className="text-brand-primary hover:underline"> Content-Erstellung</Link>, 
+              <Link to="/de/seo-optimierung" className="text-brand-primary hover:underline"> SEO-Optimierung</Link>, 
+              <Link to="/de/google-ads" className="text-brand-primary hover:underline"> Google Ads</Link> und 
+              <Link to="/de/ki-technologien" className="text-brand-primary hover:underline"> KI-Technologien</Link>.
             </p>
+            <div className="mt-8">
+              <Button variant="outline" className="group" asChild>
+                <Link to="/de/ueber-ooliv">
+                  Mehr über den Ablauf erfahren
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
-
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {solutions.map((solution, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-8 rounded-xl shadow-mint hover:shadow-mintHover transition-all duration-300 hover:-translate-y-2 border border-brand-mint-100"
-            >
-              <div className="mb-6 p-4 rounded-full bg-brand-mint-100 inline-flex">
-                {solution.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">{solution.title}</h3>
-              <p className="text-brand-text leading-relaxed">{solution.description}</p>
-            </div>
-          ))}
-        </StaggerReveal>
       </div>
     </section>
   );

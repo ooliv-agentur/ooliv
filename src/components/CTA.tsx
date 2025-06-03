@@ -1,87 +1,173 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface CTAProps {
-  lightBackground?: boolean;
-  title?: string;
-  subtitle?: string;
-  primaryCta?: string;
+  title: string;
+  subtitle: string;
+  primaryCta: string;
   secondaryCta?: string;
+  primaryCtaLink?: string;
   secondaryCtaLink?: string;
+  footerNote?: string;
+  lightBackground?: boolean;
+  children?: React.ReactNode;
 }
 
-const CTA = ({ 
-  lightBackground = false, 
-  title, 
-  subtitle, 
-  primaryCta, 
+const CTA = ({
+  title,
+  subtitle,
+  primaryCta,
   secondaryCta,
-  secondaryCtaLink
+  primaryCtaLink,
+  secondaryCtaLink,
+  footerNote,
+  lightBackground = false,
+  children
 }: CTAProps) => {
   const { language } = useLanguage();
   
-  const handleOpenLeadForm = () => {
-    window.dispatchEvent(new CustomEvent('open-lead-form'));
+  // Get the appropriate contact page based on language
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  
+  // Check if the CTA text is the strategy call text
+  const isStrategyCallCta = (text: string) => {
+    return text.includes('Strategiegespräch vereinbaren') || 
+           text.includes('Schedule a Strategy Call') ||
+           text.includes('Technical Consultation') ||
+           text.includes('Technische Beratung');
   };
-
-  const translations = {
-    en: {
-      title: title || "Ready to transform your digital presence?",
-      subtitle: subtitle || "Let's discuss how our team can help your business achieve its online goals.",
-      primaryCta: primaryCta || "Start Your Website Project",
-      secondaryCta: secondaryCta || "View Our Work"
-    },
-    de: {
-      title: title || "Bereit für eine Website, die Ihr Unternehmen voranbringt?",
-      subtitle: subtitle || "Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen.",
-      primaryCta: primaryCta || "Projekt starten",
-      secondaryCta: secondaryCta || "Unsere Arbeiten ansehen"
+  
+  // Check if button should open lead form
+  const shouldOpenLeadForm = (text: string) => {
+    // Direct project start texts
+    if (
+      text === 'Projekt starten' || 
+      text === 'Start Your Project' ||
+      text === 'Start Your Web Project' ||
+      text === 'SEO-Strategie starten' ||
+      text === 'Start Your SEO Strategy' ||
+      text === 'Content-Projekt starten' ||
+      text === 'Launch Your Campaign' ||
+      text === 'Kampagne starten'
+    ) {
+      return true;
     }
+    
+    // Then check for partial matches
+    return text.includes('Projekt starten') || 
+           text.includes('Start Your') || 
+           text.includes('Launch Your') ||
+           text.includes('SEO-Strategie starten') ||
+           text.includes('Kampagne starten');
+  };
+  
+  // Handler for opening the lead form via event
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  const t = language === 'de' ? translations.de : translations.en;
-  const defaultSecondaryLink = language === 'de' ? '/case-studies' : '/en/case-studies';
-
+  // Default footer text based on language
+  const defaultFooterNote = language === 'de' 
+    ? "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz"
+    : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
+  
   return (
-    <section className={`py-20 ${lightBackground ? 'bg-gradient-to-br from-brand-mint-50 to-white' : 'bg-gradient-to-br from-brand-mint-100 to-brand-mint-50'}`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white p-10 rounded-2xl shadow-mint border border-brand-mint-200">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-            {t.title}
-          </h2>
-          <p className="text-xl text-brand-text mb-10 max-w-2xl mx-auto">
-            {t.subtitle}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+    <section className={`py-24 ${lightBackground ? 'bg-brand-backgroundAlt' : 'bg-brand-background'} text-white`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-brand-heading">{title}</h2>
+        <p className="text-xl mb-12 max-w-3xl mx-auto text-brand-text">{subtitle}</p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {shouldOpenLeadForm(primaryCta) ? (
+            <Button
               size="lg" 
-              className="group bg-brand-mint-500 text-white hover:bg-brand-mint-600 shadow-mint hover:shadow-mintHover transition-all duration-300" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
+              data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
-              {t.primaryCta}
+              {primaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
-            
-            {secondaryCta && (
+          ) : primaryCtaLink ? (
+            <Button
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              asChild
+            >
+              <Link to={primaryCtaLink}>
+                {primaryCta}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          ) : (
+            <Button 
+              size="lg" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]"
+              onClick={handleOpenLeadForm}
+              data-trigger-lead-form
+            >
+              {primaryCta}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          )}
+          
+          {secondaryCta && (
+            isStrategyCallCta(secondaryCta) ? (
+              // If it's the strategy call CTA, always use the contact path
               <Button 
-                variant="outline" 
                 size="lg" 
-                className="border-brand-mint-400 text-brand-mint-600 hover:bg-brand-mint-500 hover:text-white hover:border-brand-mint-500 transition-all duration-300"
+                variant="outline" 
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
                 asChild
               >
-                <Link to={secondaryCtaLink || defaultSecondaryLink}>
-                  {t.secondaryCta}
+                <Link to={contactPath}>
+                  {secondaryCta}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-            )}
-          </div>
+            ) : secondaryCtaLink ? (
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                asChild
+              >
+                <Link to={secondaryCtaLink}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            ) : (
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="group border-[#006064] text-brand-primary hover:bg-[#E0F2F1] hover:text-[#004D40]"
+                onClick={handleOpenLeadForm}
+              >
+                {secondaryCta}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            )
+          )}
         </div>
+        
+        {/* Show either custom footer note, children, or default footer (but not multiple) */}
+        {footerNote ? (
+          <p className="mt-12 text-sm text-brand-text/80 font-semibold">{footerNote}</p>
+        ) : children ? (
+          <div className="mt-8">
+            {children}
+          </div>
+        ) : (
+          <p className="mt-12 text-sm text-brand-text/80 font-semibold">
+            {defaultFooterNote}
+          </p>
+        )}
       </div>
     </section>
   );

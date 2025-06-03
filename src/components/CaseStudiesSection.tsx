@@ -154,7 +154,7 @@ export const caseStudiesData = {
       quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
       websiteLink: "www.amkliff.de",
       impact: [
-        "Digitale Markenentwicklung incl. Logo, CI & Naming",
+        "Digitale Markenentwicklung inkl. Logo, CI & Naming",
         "Konzept, Text und Design der Verkaufs-Landingpage",
         "Umsetzung als performante HTML-Seite (ohne CMS)",
         "Bildbearbeitung & Bauschilder für die Projektkommunikation"
@@ -202,7 +202,7 @@ const CaseStudiesSection = ({
   const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-mint-50 to-white overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
@@ -227,7 +227,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-xl p-8 shadow-mint border border-brand-mint-100 hover:shadow-mintHover transition-all duration-300">
+                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -240,15 +240,15 @@ const CaseStudiesSection = ({
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
-                      <p className="text-sm text-brand-text/70">{study.industry}</p>
+                      <p className="text-sm text-gray-500">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <h4 className="text-lg font-medium mb-6 text-brand-heading">
+                  <h4 className="text-lg font-medium mb-6">
                     {study.headline}
                   </h4>
                   
-                  <blockquote className="italic text-brand-text text-sm border-l-4 border-brand-mint-500 pl-4 my-6 bg-brand-mint-50/50 py-3 rounded-r">
+                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
                     "{study.quote}"
                   </blockquote>
                   
@@ -258,7 +258,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-brand-mint-600 hover:text-brand-mint-700 hover:underline inline-flex items-center font-medium"
+                        className="text-brand-primary hover:underline inline-flex items-center"
                       >
                         {t.exploreWebsite} {study.websiteLink}
                       </a>
@@ -268,10 +268,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-brand-mint-600">
+                        <div className="mr-3 mt-1 text-brand-primary">
                           <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-sm text-brand-text">{point}</p>
+                        <p className="text-sm text-gray-600">{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -279,7 +279,7 @@ const CaseStudiesSection = ({
               </div>
               
               <div className="w-full md:w-1/2">
-                <div className="rounded-xl overflow-hidden shadow-mint border border-brand-mint-200">
+                <div className="rounded-xl overflow-hidden shadow-lg">
                   <img 
                     src={study.image} 
                     alt={`${study.client} case study`} 
@@ -299,7 +299,7 @@ const CaseStudiesSection = ({
             
             <Button 
               size="lg" 
-              className="group bg-brand-mint-500 text-white hover:bg-brand-mint-600 shadow-mint hover:shadow-mintHover" 
+              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
               onClick={() => {
                 window.dispatchEvent(new Event('open-lead-form'));
               }}
