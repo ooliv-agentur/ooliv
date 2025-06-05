@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -6,7 +5,6 @@ import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
-import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -166,7 +164,6 @@ const GermanIndex = () => {
         </div>
         
         <GermanSolutionSection />
-        <TechnologiesSection />
         
         <CaseStudiesSection />
         
