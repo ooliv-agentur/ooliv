@@ -271,7 +271,7 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi">
+    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation with more variety - same as homepage */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large slow moving circles */}
@@ -292,7 +292,7 @@ const PageHero = ({
         <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
       </div>
       
-      <div className="relative z-20 py-32 md:py-40">
+      <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
