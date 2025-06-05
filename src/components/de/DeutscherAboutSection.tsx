@@ -11,25 +11,25 @@ const DeutscherAboutSection = () => {
     {
       title: "Strategie & UX",
       description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
-      icon: <Grid2X2 className="h-5 w-5 text-medico-turquoise" />,
+      icon: <Grid2X2 className="h-6 w-6 text-medico-turquoise" />,
       link: "/strategie"
     },
     {
       title: "Content & SEO",
       description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
-      icon: <Sparkles className="h-5 w-5 text-medico-turquoise" />,
+      icon: <Sparkles className="h-6 w-6 text-medico-turquoise" />,
       link: "/content-erstellung"
     },
     {
       title: "Design & Development",
       description: "Custom-coded, konversionsstark, skalierbar.",
-      icon: <Code2 className="h-5 w-5 text-medico-turquoise" />,
+      icon: <Code2 className="h-6 w-6 text-medico-turquoise" />,
       link: "/webentwicklung"
     },
     {
       title: "Kommunikation",
       description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
-      icon: <Phone className="h-5 w-5 text-medico-turquoise" />,
+      icon: <Phone className="h-6 w-6 text-medico-turquoise" />,
       link: "/kontakt"
     }
   ];
@@ -59,7 +59,7 @@ const DeutscherAboutSection = () => {
               <div>
                 <Link 
                   to={service.link}
-                  className="hover:text-medico-darkGreen underline transition-colors duration-300 font-bold"
+                  className="underline transition-colors duration-300 font-bold text-lg hover:text-medico-darkGreen"
                   style={{ 
                     color: '#32b1ab',
                     fontSize: '18px'
