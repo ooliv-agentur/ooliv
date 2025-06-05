@@ -35,7 +35,7 @@ const LeadGenerationOverlay = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-white text-gray-900 border-l border-gray-200" 
+        className="sm:max-w-md overflow-y-auto bg-gradient-to-b from-medico-darkGreen to-medico-darkGreen/90 text-white border-l border-medico-turquoise/20" 
         side="right"
       >
         {/* Close Button */}
@@ -44,19 +44,19 @@ const LeadGenerationOverlay = () => {
             <Button 
               variant="ghost" 
               size="icon"
-              className="h-8 w-8 rounded-full hover:bg-gray-100"
+              className="h-10 w-10 rounded-full hover:bg-medico-turquoise/20 text-white hover:text-white"
             >
-              <X className="h-5 w-5" />
+              <X className="h-6 w-6" />
               <span className="sr-only">Close</span>
             </Button>
           </SheetClose>
         </div>
 
-        <SheetHeader className="text-left pb-4 pr-12">
-          <SheetTitle className="text-xl font-bold text-gray-900">
+        <SheetHeader className="text-left pb-6 pr-14">
+          <SheetTitle className="text-2xl font-bold text-white">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
           </SheetTitle>
-          <SheetDescription className="text-gray-600">
+          <SheetDescription className="text-medico-mint/80 text-base">
             {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
           </SheetDescription>
         </SheetHeader>

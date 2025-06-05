@@ -21,10 +21,10 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.3 }}
-      className="space-y-4"
+      className="space-y-6"
     >
-      <div className="space-y-2">
-        <h3 className="text-lg font-medium text-white">
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-white mb-4">
           {language === 'de' ? "Wie können wir Sie erreichen?" : "Where can we reach you?"}
         </h3>
         <FormField
@@ -32,14 +32,14 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">
-                {language === 'de' ? "Name" : "Name"} <span className="text-red-500">*</span>
+              <FormLabel className="text-white text-base font-medium">
+                {language === 'de' ? "Name" : "Name"} <span className="text-red-400">*</span>
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
                   placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -56,15 +56,15 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">
-                {language === 'de' ? "E-Mail-Adresse" : "Email"} <span className="text-red-500">*</span>
+              <FormLabel className="text-white text-base font-medium">
+                {language === 'de' ? "E-Mail-Adresse" : "Email"} <span className="text-red-400">*</span>
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
                   placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
                   type="email" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -81,7 +81,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">
+              <FormLabel className="text-white text-base font-medium">
                 {language === 'de' ? "Telefonnummer" : "Phone"}
               </FormLabel>
               <FormControl>
@@ -89,7 +89,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                   {...field} 
                   placeholder={language === 'de' ? "z. B. +49 123 456 789" : "+49 123 456 789"} 
                   type="tel" 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/60" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -106,7 +106,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">
+              <FormLabel className="text-white text-base font-medium">
                 {language === 'de' ? "Nachricht oder Hinweise" : "Message / Notes"}
               </FormLabel>
               <FormControl>
@@ -116,7 +116,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                     ? "Gibt es etwas, das wir vorab wissen sollten?" 
                     : "Any additional information about your project"
                   }
-                  className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                  className="min-h-[120px] bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise resize-none"
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);

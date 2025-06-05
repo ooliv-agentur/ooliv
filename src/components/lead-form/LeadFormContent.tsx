@@ -124,41 +124,75 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(submitForm)} className="space-y-6">
+        {/* Step indicator */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center space-x-2">
+            {[1, 2, 3, 4].map((stepNumber) => (
+              <div key={stepNumber} className="flex items-center">
+                <div 
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                    stepNumber === step 
+                      ? 'bg-medico-turquoise text-white' 
+                      : stepNumber < step 
+                        ? 'bg-medico-mint text-medico-darkGreen' 
+                        : 'bg-white/20 text-white/70'
+                  }`}
+                >
+                  {stepNumber}
+                </div>
+                {stepNumber < 4 && (
+                  <div 
+                    className={`w-8 h-0.5 ${
+                      stepNumber < step ? 'bg-medico-mint' : 'bg-white/20'
+                    }`}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mb-6">
+          <p className="text-medico-mint text-sm font-medium">
+            {stepTitle} {step} {language === 'de' ? 'von' : 'of'} {totalSteps}
+          </p>
+        </div>
+        
         <div dangerouslySetInnerHTML={{ 
           __html: `
             <style>
               .text-destructive {
-                color: #dc2626 !important;
+                color: #ff6b6b !important;
               }
               .text-destructive-foreground {
-                color: #dc2626 !important;
+                color: #ff6b6b !important;
               }
               .bg-destructive, .bg-red-900\/20 {
-                background-color: #fef2f2 !important;
-                border: 1px solid #fecaca !important;
-                color: #dc2626 !important;
+                background-color: rgba(255, 107, 107, 0.15) !important;
+                border: 1px solid #ff6b6b !important;
+                color: #ff6b6b !important;
                 padding: 0.5rem;
-                border-radius: 0.25rem;
+                border-radius: 0.375rem;
               }
             </style>
           `
         }} />
         
-        <div className="min-h-[350px]">
+        <div className="min-h-[400px]">
           <AnimatePresence mode="wait">
             {renderStepContent()}
           </AnimatePresence>
         </div>
         
-        <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-gray-200">
+        <SheetFooter className="flex sm:justify-between gap-3 pt-6 border-t border-medico-turquoise/20">
           {step > 1 && (
             <Button 
               type="button"
               variant="outline"
               onClick={prevStep}
-              className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-800"
+              className="flex-1 border-medico-mint text-medico-mint hover:bg-medico-mint hover:text-medico-darkGreen"
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-5 w-5" />
               {language === 'de' ? "Zurück" : "Back"}
             </Button>
           )}
@@ -167,20 +201,20 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
             <Button 
               type="button"
               onClick={nextStep}
-              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+              className="flex-1 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white font-semibold h-12"
             >
               {language === 'de' ? "Weiter" : "Next"}
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           ) : (
             <Button 
               type="submit"
-              className="flex-1 bg-[#006064] hover:bg-[#004d51] text-white"
+              className="flex-1 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white font-semibold h-12"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
                 <span className="flex items-center gap-2">
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                  <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
                   {language === 'de' ? "Wird gesendet..." : "Sending..."}
                 </span>
               ) : (
