@@ -16,6 +16,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
   const { language } = useLanguage();
 
   const toggleExpanded = () => {
@@ -64,10 +65,13 @@ const FloatingActionButtons = () => {
     }
   ];
 
-  // Show buttons based on expansion state - on mobile only show when expanded
-  const visibleButtons = isMobile 
+  // Show buttons based on expansion state and device type
+  const visibleButtons = (isMobile || isTablet) 
     ? (isExpanded ? buttons : []) 
     : buttons; // On desktop, always show all buttons
+
+  // Show toggle button on mobile/tablet, but hide it when buttons are expanded
+  const showToggleButton = (isMobile || isTablet) && !isExpanded;
 
   return (
     <TooltipProvider>
@@ -96,14 +100,25 @@ const FloatingActionButtons = () => {
           </Tooltip>
         ))}
         
-        {/* Only show toggle button on mobile devices */}
-        {isMobile && (
+        {/* Show toggle button only on mobile/tablet and when not expanded */}
+        {showToggleButton && (
           <Button
             onClick={toggleExpanded}
             className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all duration-300"
-            aria-label={isExpanded ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
+            aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
           >
-            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+            <Plus className="h-5 w-5" />
+          </Button>
+        )}
+
+        {/* Show close button when expanded on mobile/tablet */}
+        {(isMobile || isTablet) && isExpanded && (
+          <Button
+            onClick={toggleExpanded}
+            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all duration-300"
+            aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
+          >
+            <X className="h-5 w-5" />
           </Button>
         )}
       </div>
