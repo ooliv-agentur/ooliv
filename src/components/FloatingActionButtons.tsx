@@ -15,8 +15,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
   const { language } = useLanguage();
 
   const toggleExpanded = () => {
@@ -47,7 +46,7 @@ const FloatingActionButtons = () => {
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => window.dispatchEvent(new Event('open-lead-form')),
-      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none shadow-md hover:shadow-lg' // Enhanced visibility
+      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none shadow-md hover:shadow-lg'
     },
     { 
       id: 'email', 
@@ -65,13 +64,10 @@ const FloatingActionButtons = () => {
     }
   ];
 
-  // Show buttons based on expansion state and device type
-  const visibleButtons = (isMobile || isTablet) 
-    ? (isExpanded ? buttons : []) 
-    : buttons; // On desktop, always show all buttons
-
-  // Show toggle button on mobile/tablet, but hide it when buttons are expanded
-  const showToggleButton = (isMobile || isTablet) && !isExpanded;
+  // On desktop: always show all buttons, no toggle needed
+  // On mobile/tablet: show toggle button and control visibility
+  const showAllButtons = isDesktop || isExpanded;
+  const showToggleButton = !isDesktop;
 
   return (
     <TooltipProvider>
@@ -79,46 +75,54 @@ const FloatingActionButtons = () => {
         "fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
         "transition-all duration-300"
       )}>
-        {visibleButtons.map((button) => (
-          <Tooltip key={button.id}>
-            <TooltipTrigger asChild>
-              <Button
-                onClick={button.onClick}
-                className={cn(
-                  "w-14 h-14 rounded-full p-4", 
-                  "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
-                  button.className
-                )}
-                aria-label={button.label}
-              >
-                <button.icon className="h-5 w-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="left" className="bg-[#006064] text-white border-0">
-              <p>{button.label}</p>
-            </TooltipContent>
-          </Tooltip>
-        ))}
+        {/* Action buttons with smooth transition */}
+        <div className={cn(
+          "flex flex-col gap-5 transition-all duration-500 ease-in-out",
+          showAllButtons 
+            ? "opacity-100 transform translate-y-0 scale-100" 
+            : "opacity-0 transform translate-y-4 scale-95 pointer-events-none"
+        )}>
+          {buttons.map((button, index) => (
+            <Tooltip key={button.id}>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={button.onClick}
+                  className={cn(
+                    "w-14 h-14 rounded-full p-4", 
+                    "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
+                    button.className
+                  )}
+                  style={{
+                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
+                  }}
+                  aria-label={button.label}
+                >
+                  <button.icon className="h-5 w-5" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent side="left" className="bg-[#006064] text-white border-0">
+                <p>{button.label}</p>
+              </TooltipContent>
+            </Tooltip>
+          ))}
+        </div>
         
-        {/* Show toggle button only on mobile/tablet and when not expanded */}
+        {/* Toggle button - only visible on mobile/tablet */}
         {showToggleButton && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all duration-300"
-            aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
+            className={cn(
+              "w-14 h-14 rounded-full border-none transition-all duration-300",
+              isExpanded 
+                ? "bg-[#b1b497] text-white hover:bg-[#9a9c83]" 
+                : "bg-[#b1b497] text-white hover:bg-[#9a9c83]"
+            )}
+            aria-label={isExpanded 
+              ? (language === 'de' ? "Menü schließen" : "Close menu")
+              : (language === 'de' ? "Menü öffnen" : "Open menu")
+            }
           >
-            <Plus className="h-5 w-5" />
-          </Button>
-        )}
-
-        {/* Show close button when expanded on mobile/tablet */}
-        {(isMobile || isTablet) && isExpanded && (
-          <Button
-            onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all duration-300"
-            aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
-          >
-            <X className="h-5 w-5" />
+            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
           </Button>
         )}
       </div>
