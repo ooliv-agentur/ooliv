@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LayoutGrid, Sparkles, Code, PhoneCall } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Reveal from '@/components/animations/Reveal';
@@ -11,25 +11,25 @@ const DeutscherAboutSection = () => {
     {
       title: "Strategie & UX",
       description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
-      icon: <LayoutGrid className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Grid2X2 className="h-5 w-5 text-medico-turquoise" />,
       link: "/strategie"
     },
     {
       title: "Content & SEO",
       description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
-      icon: <Sparkles className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Sparkles className="h-5 w-5 text-medico-turquoise" />,
       link: "/content-erstellung"
     },
     {
       title: "Design & Development",
       description: "Custom-coded, konversionsstark, skalierbar.",
-      icon: <Code className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Code2 className="h-5 w-5 text-medico-turquoise" />,
       link: "/webentwicklung"
     },
     {
       title: "Kommunikation",
       description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
-      icon: <PhoneCall className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Phone className="h-5 w-5 text-medico-turquoise" />,
       link: "/kontakt"
     }
   ];
@@ -51,7 +51,7 @@ const DeutscherAboutSection = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {services.map((service, index) => (
             <div key={index} className="bg-medico-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group">
-              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6 group-hover:bg-medico-turquoise/10 transition-colors duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-medico-mint to-medico-turquoise/20 rounded-full flex items-center justify-center mb-6 group-hover:from-medico-turquoise/20 group-hover:to-medico-mint transition-all duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
