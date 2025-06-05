@@ -1,101 +1,93 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
-import { useMediaQuery } from '@/hooks/use-media-query';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const MainNavigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 1025px)');
   const { language } = useLanguage();
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
-  
-  // Handle document body overflow when menu is open
+
+  // Close menu when switching between desktop/mobile
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
+    setIsMenuOpen(false);
+  }, [isDesktop]);
+
+  // Handle escape key to close menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
     };
-  }, [isOpen]);
-  
-  // Scroll to top on logo click
-  const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (isMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <>
-      <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link 
-                to={language === 'de' ? '/' : '/en'} 
-                className="flex items-center" 
-                onClick={handleLogoClick}
-                aria-label="ooliv Homepage"
-                style={{ cursor: 'none' }}
-              >
-                <img 
-                  src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
-                  alt="ooliv logo" 
-                  className="h-6 md:h-8 w-auto" 
-                  loading="lazy"
-                />
-              </Link>
-            </div>
-            
-            {/* Language Switcher - visible on all devices */}
-            <div className="flex-1 flex justify-end items-center">
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <div className="flex items-center gap-4">
+        <LanguageSwitcher />
+        
+        {/* Menu Button with floating style */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className={cn(
+            "relative z-[120] w-12 h-12 rounded-full transition-all duration-300",
+            "bg-white/90 backdrop-blur-sm border border-gray-200/50",
+            "hover:bg-white hover:border-gray-300 shadow-sm hover:shadow-md",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50"
+          )}
+          onClick={toggleMenu}
+          aria-label={isMenuOpen 
+            ? (language === 'de' ? 'Menü schließen' : 'Close menu')
+            : (language === 'de' ? 'Menü öffnen' : 'Open menu')
+          }
+        >
+          {isMenuOpen ? (
+            <X className="h-5 w-5 text-gray-700" />
+          ) : (
+            <Menu className="h-5 w-5 text-gray-700" />
+          )}
+        </Button>
+      </div>
 
-      {/* Menu toggle button - fixed position at top right with better spacing */}
-      <button 
-        className={cn(
-          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
-          "w-10 h-10 min-w-10 min-h-10"
-        )}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
-        aria-expanded={isOpen}
-        aria-controls="mobile-menu"
-        style={{ cursor: 'none' }}
-      >
-        {isOpen ? (
-          <X className="w-6 h-6" aria-hidden="true" />
-        ) : (
-          <Menu className="w-6 h-6" aria-hidden="true" />
-        )}
-      </button>
-
-      {/* Menu overlay */}
-      {isOpen && (
+      {/* Backdrop */}
+      {isMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
-          onClick={() => setIsOpen(false)}
-          aria-hidden="true"
-          style={{ cursor: 'none' }}
+          className="fixed inset-0 bg-black/50 z-[100]"
+          onClick={closeMenu}
         />
       )}
 
-      {/* Menu content - ensure full width/height */}
+      {/* Menu Content - Use same component for all devices with fade animation */}
       {isDesktop ? (
-        <DesktopMenuContent isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <DesktopMenuContent isOpen={isMenuOpen} onClose={closeMenu} />
       ) : (
-        <MobileMenuContent isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <MobileMenuContent isOpen={isMenuOpen} onClose={closeMenu} />
       )}
     </>
   );
