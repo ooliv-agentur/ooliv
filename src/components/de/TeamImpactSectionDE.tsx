@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Grid2X2, Sparkles, Code, Phone } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
@@ -16,8 +16,8 @@ const TeamImpactSectionDE = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mb-6">
-              <Grid2X2 className="h-10 w-10 text-purple-600" />
+            <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+              <Grid2X2 className="h-10 w-10 text-medico-turquoise" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Strategie & UX</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -37,8 +37,8 @@ const TeamImpactSectionDE = () => {
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-2xl flex items-center justify-center mb-6">
-              <Sparkles className="h-10 w-10 text-orange-500" />
+            <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+              <Sparkles className="h-10 w-10 text-medico-turquoise" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Content & SEO</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -58,8 +58,8 @@ const TeamImpactSectionDE = () => {
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-teal-200 rounded-2xl flex items-center justify-center mb-6">
-              <Code className="h-10 w-10 text-teal-600" />
+            <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+              <Code2 className="h-10 w-10 text-medico-turquoise" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Design & Development</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -79,8 +79,8 @@ const TeamImpactSectionDE = () => {
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl flex items-center justify-center mb-6">
-              <Phone className="h-10 w-10 text-blue-600" />
+            <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+              <Phone className="h-10 w-10 text-medico-turquoise" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Direkte Kommunikation</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
