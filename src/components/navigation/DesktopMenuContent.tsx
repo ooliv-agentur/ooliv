@@ -31,18 +31,18 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
       opacity: 1,
       scale: 1,
       transition: { 
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1],
-        delayChildren: 0.1,
-        staggerChildren: 0.05
+        duration: 0.5,
+        ease: "easeInOut",
+        delayChildren: 0.2,
+        staggerChildren: 0.08
       }
     },
     exit: { 
       opacity: 0,
       scale: 0.95,
       transition: { 
-        duration: 0.3,
-        ease: 'easeIn'
+        duration: 0.5,
+        ease: "easeInOut"
       }
     }
   };
@@ -53,8 +53,8 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
       opacity: 1, 
       y: 0,
       transition: {
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.4,
+        ease: "easeInOut"
       }
     }
   };

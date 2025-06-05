@@ -30,8 +30,8 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ 
-            duration: 0.3,
-            ease: [0.22, 1, 0.36, 1]
+            duration: 0.5,
+            ease: "easeInOut"
           }}
           className="fixed top-0 right-0 bottom-0 w-full md:w-[350px] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
           style={{ cursor: 'none' }}
