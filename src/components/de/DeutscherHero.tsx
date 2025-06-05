@@ -13,7 +13,7 @@ const DeutscherHero = () => {
   return (
     <section className="relative bg-medico-mint pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden hero-gradient-bg font-satoshi">
       {/* Enhanced floating circles animation with more variety */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large slow moving circles */}
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
         <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
@@ -84,25 +84,9 @@ const DeutscherHero = () => {
         </div>
       </div>
       
-      {/* Curved bottom section divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 z-10 pointer-events-none">
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 1440 320" 
-          className="absolute bottom-0 w-full h-auto"
-          preserveAspectRatio="none"
-        >
-          <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-      
-      {/* Visual transition indicator */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-2 mb-8">
+      {/* Visual transition indicator - simplified */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex flex-col items-center space-y-2">
           <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
             <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
