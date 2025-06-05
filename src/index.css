@@ -117,9 +117,9 @@ input[type="button"],
   animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Sanfter, minimalistischer Hero-Gradient mit natürlichen Grüntönen */
+/* Sanfter, minimalistischer Hero-Gradient mit helleren natürlichen Grüntönen */
 .hero-gradient-bg {
-  background: linear-gradient(135deg, #E8F5E8, #D8F4E3, #B8E6B8, #98D498, #78C478, #58B458, #38A438, #28942D, #188218);
+  background: linear-gradient(135deg, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf, #ade6d5);
   background-size: 600% 600%;
   animation: gentle-gradient 45s ease-in-out infinite;
   will-change: background-position;

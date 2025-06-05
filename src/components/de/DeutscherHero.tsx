@@ -42,9 +42,9 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Subheadline */}
+            {/* Subheadline - changed to white for better contrast */}
             <Reveal delay={0.1}>
-              <p className="text-2xl md:text-3xl text-medico-turquoise font-medium mb-6">
+              <p className="text-2xl md:text-3xl text-white font-medium mb-6">
                 Für messbare Ergebnisse im Web.
               </p>
             </Reveal>
