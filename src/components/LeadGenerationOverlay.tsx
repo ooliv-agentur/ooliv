@@ -31,26 +31,26 @@ const LeadGenerationOverlay = () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
   }, []);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-gradient-to-b from-medico-darkGreen to-medico-darkGreen/90 text-white border-l border-medico-turquoise/20" 
+        className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
       >
-        {/* Close Button */}
-        <div className="absolute top-4 right-4 z-10">
-          <SheetClose asChild>
-            <Button 
-              variant="ghost" 
-              size="icon"
-              className="h-10 w-10 rounded-full hover:bg-medico-turquoise/20 text-white hover:text-white"
-            >
-              <X className="h-6 w-6" />
-              <span className="sr-only">Close</span>
-            </Button>
-          </SheetClose>
-        </div>
+        {/* Close Button - styled like the main menu button */}
+        <button 
+          onClick={handleClose}
+          className="fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+          aria-label={language === 'de' ? "Formular schließen" : "Close form"}
+          style={{ cursor: 'none' }}
+        >
+          <X className="w-6 h-6" aria-hidden="true" />
+        </button>
 
         <SheetHeader className="text-left pb-6 pr-14">
           <SheetTitle className="text-2xl font-bold text-white">
@@ -61,7 +61,7 @@ const LeadGenerationOverlay = () => {
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => setOpen(false)} />
+        <LeadFormContent onClose={handleClose} />
       </SheetContent>
     </Sheet>
   );
