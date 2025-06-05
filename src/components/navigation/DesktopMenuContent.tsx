@@ -21,24 +21,65 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
   };
+
+  const menuVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0.95,
+      y: 20
+    },
+    visible: { 
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { 
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+        delayChildren: 0.1,
+        staggerChildren: 0.05
+      }
+    },
+    exit: { 
+      opacity: 0,
+      scale: 0.95,
+      y: 20,
+      transition: { 
+        duration: 0.3,
+        ease: 'easeIn'
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
   
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={menuVariants}
           className="fixed top-0 right-0 bottom-0 w-[40%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
           style={{ cursor: 'none' }}
         >
-          {/* Removed the header with close button - we use the floating button instead */}
-          
           <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto" style={{ cursor: 'none' }}>
-            <nav className="space-y-3 text-center w-full">
+            <motion.nav 
+              className="space-y-3 text-center w-full"
+              variants={itemVariants}
+            >
               <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />
-            </nav>
+            </motion.nav>
           </div>
         </motion.div>
       )}

@@ -110,26 +110,60 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
 
   const backdropVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
-    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } }
+    visible: { opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
+    exit: { opacity: 0, transition: { duration: 0.3, ease: 'easeIn' } }
   };
 
-  const menuVariants = isDesktop 
-    ? {
-        hidden: { x: "100%" },
-        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
-        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
+  const menuVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0.95,
+      y: 20
+    },
+    visible: { 
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { 
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
-    : {
-        hidden: { x: "100%" },
-        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
-        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
-      };
+    },
+    exit: { 
+      opacity: 0,
+      scale: 0.95,
+      y: 20,
+      transition: { 
+        duration: 0.3,
+        ease: 'easeIn'
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div className="fixed inset-0 bg-black/50 flex flex-col z-[100]">
+        <motion.div 
+          className="fixed inset-0 bg-black/50 flex flex-col z-[100]"
+          variants={backdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
           <motion.div 
             ref={menuRef}
             className={cn(
@@ -138,24 +172,33 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                 ? "ml-auto w-[40%] h-full" 
                 : "w-full h-full max-h-[100dvh] overflow-auto"
             )}
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
-            {/* Removed the header with close button - we use the floating button instead */}
-            
             <div className={cn(
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
               {/* Language Switcher */}
-              <div className="flex justify-end mb-4">
+              <motion.div 
+                className="flex justify-end mb-4"
+                variants={itemVariants}
+              >
                 <LanguageSwitcher />
-              </div>
+              </motion.div>
               
               <nav className={cn(
                 "space-y-4 text-center w-full",
                 isDesktop ? "space-y-3" : "space-y-4"
               )}>
                 {navigationLinks.map((link, index) => (
-                  <div key={index} className={cn()}>
+                  <motion.div 
+                    key={index} 
+                    className={cn()}
+                    variants={itemVariants}
+                  >
                     <Link 
                       to={link.path}
                       className={cn(
@@ -166,12 +209,15 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                     >
                       {link.title}
                     </Link>
-                  </div>
+                  </motion.div>
                 ))}
               </nav>
             </div>
             
-            <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
+            <motion.div 
+              className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm"
+              variants={itemVariants}
+            >
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email ooliv", href: "mailto:info@ooliv.de" },
@@ -191,7 +237,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                   </Button>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}
