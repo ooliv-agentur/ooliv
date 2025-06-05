@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import CustomCursor from '@/components/CustomCursor';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
@@ -60,58 +60,60 @@ function App() {
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
-          <Router>
-            <Helmet>
-              <link rel="preconnect" href="https://fonts.googleapis.com" />
-              <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-            </Helmet>
-            
-            <CustomCursor />
-            <ScrollIndicator />
-            <FloatingActionButtons />
-            <LeadGenerationOverlay />
-            <ConfettiCelebration />
-            <ChatbaseWidget />
-            
-            <Routes>
-              {/* German Routes */}
-              <Route path="/" element={<GermanIndex />} />
-              <Route path="/ueber-uns" element={<UeberUns />} />
-              <Route path="/webdesign" element={<Webdesign />} />
-              <Route path="/webentwicklung" element={<Webentwicklung />} />
-              <Route path="/content-erstellung" element={<ContentErstellung />} />
-              <Route path="/seo-optimierung" element={<SEOOptimierung />} />
-              <Route path="/google-ads" element={<GoogleAds />} />
-              <Route path="/ki-technologien" element={<KiTechnologien />} />
-              <Route path="/strategie" element={<Strategie />} />
-              <Route path="/referenzen" element={<Referenzen />} />
-              <Route path="/kontakt" element={<Kontakt />} />
-              <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
-              <Route path="/danke" element={<Danke />} />
-              <Route path="/impressum" element={<Impressum />} />
-              <Route path="/datenschutz" element={<Datenschutz />} />
+          <TooltipProvider>
+            <Router>
+              <Helmet>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+              </Helmet>
+              
+              <CustomCursor />
+              <ScrollIndicator />
+              <FloatingActionButtons />
+              <LeadGenerationOverlay />
+              <ConfettiCelebration />
+              <ChatbaseWidget />
+              
+              <Routes>
+                {/* German Routes */}
+                <Route path="/" element={<GermanIndex />} />
+                <Route path="/ueber-uns" element={<UeberUns />} />
+                <Route path="/webdesign" element={<Webdesign />} />
+                <Route path="/webentwicklung" element={<Webentwicklung />} />
+                <Route path="/content-erstellung" element={<ContentErstellung />} />
+                <Route path="/seo-optimierung" element={<SEOOptimierung />} />
+                <Route path="/google-ads" element={<GoogleAds />} />
+                <Route path="/ki-technologien" element={<KiTechnologien />} />
+                <Route path="/strategie" element={<Strategie />} />
+                <Route path="/referenzen" element={<Referenzen />} />
+                <Route path="/kontakt" element={<Kontakt />} />
+                <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
+                <Route path="/danke" element={<Danke />} />
+                <Route path="/impressum" element={<Impressum />} />
+                <Route path="/datenschutz" element={<Datenschutz />} />
 
-              {/* English Routes */}
-              <Route path="/en" element={<EnglishIndex />} />
-              <Route path="/en/about-us" element={<AboutUsEN />} />
-              <Route path="/en/web-design" element={<WebDesignEN />} />
-              <Route path="/en/web-development" element={<WebDevelopmentEN />} />
-              <Route path="/en/content-creation" element={<ContentCreationEN />} />
-              <Route path="/en/seo" element={<SEOEN />} />
-              <Route path="/en/google-ads" element={<GoogleAdsEN />} />
-              <Route path="/en/ai-technologies" element={<AiTechnologiesEN />} />
-              <Route path="/en/case-studies" element={<CaseStudiesEN />} />
-              <Route path="/en/contact" element={<ContactEN />} />
-              <Route path="/en/thank-you" element={<ThankYouEN />} />
-              <Route path="/en/legal-notice" element={<LegalNoticeEN />} />
-              <Route path="/en/privacy-policy" element={<PrivacyPolicyEN />} />
+                {/* English Routes */}
+                <Route path="/en" element={<EnglishIndex />} />
+                <Route path="/en/about-us" element={<AboutUsEN />} />
+                <Route path="/en/web-design" element={<WebDesignEN />} />
+                <Route path="/en/web-development" element={<WebDevelopmentEN />} />
+                <Route path="/en/content-creation" element={<ContentCreationEN />} />
+                <Route path="/en/seo" element={<SEOEN />} />
+                <Route path="/en/google-ads" element={<GoogleAdsEN />} />
+                <Route path="/en/ai-technologies" element={<AiTechnologiesEN />} />
+                <Route path="/en/case-studies" element={<CaseStudiesEN />} />
+                <Route path="/en/contact" element={<ContactEN />} />
+                <Route path="/en/thank-you" element={<ThankYouEN />} />
+                <Route path="/en/legal-notice" element={<LegalNoticeEN />} />
+                <Route path="/en/privacy-policy" element={<PrivacyPolicyEN />} />
 
-              {/* 404 Page */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            
-            <Toaster />
-          </Router>
+                {/* 404 Page */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              
+              <Toaster />
+            </Router>
+          </TooltipProvider>
         </LanguageProvider>
       </QueryClientProvider>
     </HelmetProvider>

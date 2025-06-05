@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -10,18 +10,14 @@ import {
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 
-interface LeadGenerationOverlayProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
-
-const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
+const LeadGenerationOverlay = () => {
   const { language } = useLanguage();
+  const [open, setOpen] = useState(false);
   
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
-      onOpenChange(true);
+      setOpen(true);
     };
 
     // Register event listener
@@ -31,10 +27,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     return () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [onOpenChange]);
+  }, []);
   
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
@@ -49,7 +45,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => onOpenChange(false)} />
+        <LeadFormContent onClose={() => setOpen(false)} />
       </SheetContent>
     </Sheet>
   );
