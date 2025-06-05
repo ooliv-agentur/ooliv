@@ -1,5 +1,4 @@
 
-
 # Enable URL rewriting
 RewriteEngine On
 
@@ -18,8 +17,31 @@ RewriteRule ^de/?$ / [R=301,L]
 # Redirect ALL .php files to homepage
 RewriteRule ^.*\.php$ / [R=301,L]
 
-# Add redirect for author pages (Soft 404 issue)
+# Redirect old paths to new structure
 RewriteRule ^author/(.*)$ /ueber-ooliv [R=301,L]
+RewriteRule ^projekte/(.*)$ /case-studies [R=301,L]
+RewriteRule ^projekte/?$ /case-studies [R=301,L]
+RewriteRule ^leistungen/(.*)$ /webdesign [R=301,L]
+RewriteRule ^leistungen/?$ /webdesign [R=301,L]
+RewriteRule ^ooliv/(.*)$ /ueber-ooliv [R=301,L]
+RewriteRule ^ooliv/?$ /ueber-ooliv [R=301,L]
+RewriteRule ^werbeagentur-frankfurt/(.*)$ / [R=301,L]
+RewriteRule ^werbeagentur-frankfurt/?$ / [R=301,L]
+RewriteRule ^webdesign-agentur-wiesbaden/(.*)$ /werbeagentur-wiesbaden [R=301,L]
+RewriteRule ^webdesign-agentur-wiesbaden/?$ /werbeagentur-wiesbaden [R=301,L]
+RewriteRule ^webdesign-agentur-frankfurt/(.*)$ / [R=301,L]
+RewriteRule ^webdesign-agentur-frankfurt/?$ / [R=301,L]
+RewriteRule ^wordpress-agentur-wiesbaden/(.*)$ /werbeagentur-wiesbaden [R=301,L]
+RewriteRule ^wordpress-agentur-wiesbaden/?$ /werbeagentur-wiesbaden [R=301,L]
+RewriteRule ^wordpress-agentur-mainz/(.*)$ / [R=301,L]
+RewriteRule ^wordpress-agentur-mainz/?$ / [R=301,L]
+RewriteRule ^kunden/(.*)$ /case-studies [R=301,L]
+RewriteRule ^kunden/?$ /case-studies [R=301,L]
+
+# Remove trailing slashes from all URLs except root
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^(.*)$ /%1 [R=301,L]
 
 # Add canonical header to all responses
 <IfModule mod_headers.c>
@@ -47,4 +69,3 @@ RewriteRule ^author/(.*)$ /ueber-ooliv [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L,QSA]
-

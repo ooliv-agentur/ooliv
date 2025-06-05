@@ -53,8 +53,8 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const location = useLocation();
   const { language } = useLanguage();
   
-  // Get the canonical path (current path)
-  const currentPath = location.pathname;
+  // Get the canonical path (current path) - ensure no trailing slash
+  const currentPath = location.pathname.replace(/\/$/, '') || '/';
   
   // Always use non-www version for all URLs
   const baseUrl = 'https://ooliv.de';
@@ -69,8 +69,8 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
     if (typeof window !== 'undefined') {
       const hostname = window.location.hostname;
       if (hostname.startsWith('www.')) {
-        const nonWwwUrl = window.location.href.replace('www.', '');
-        console.log('Redirecting from www to non-www:', nonWwwUrl);
+        const nonWwwUrl = window.location.href.replace(/^https?:\/\/www\./, 'https://');
+        console.log('Client-side redirect from www to non-www:', nonWwwUrl);
         window.location.replace(nonWwwUrl);
       }
     }
@@ -79,8 +79,8 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   // Handle old /de/ paths redirect at client level (backup to server redirects)
   useEffect(() => {
     if (typeof window !== 'undefined' && currentPath.startsWith('/de/')) {
-      const newPath = currentPath.replace('/de/', '/');
-      console.log('Redirecting from /de/ path to root path:', newPath);
+      const newPath = currentPath.replace(/^\/de/, '') || '/';
+      console.log('Client-side redirect from /de/ path to root path:', newPath);
       window.location.replace(`${baseUrl}${newPath}`);
     }
   }, [currentPath]);
@@ -88,19 +88,19 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   // Handle old .php paths redirect at client level (backup to server redirects)
   useEffect(() => {
     if (typeof window !== 'undefined' && currentPath.endsWith('.php')) {
-      let newPath = '/';
-      
-      // Map old PHP URLs to new paths
-      if (currentPath === '/index.php') newPath = '/';
-      else if (currentPath === '/leistungen.php') newPath = '/webdesign';
-      else if (currentPath === '/datenschutz.php') newPath = '/datenschutz';
-      else if (currentPath.includes('/projekte')) newPath = '/case-studies';
-      else if (currentPath === '/kontakt.php') newPath = '/kontakt';
-      
-      console.log('Redirecting from PHP path to new path:', newPath);
-      window.location.replace(`${baseUrl}${newPath}`);
+      console.log('Client-side redirect from PHP path to homepage');
+      window.location.replace(`${baseUrl}/`);
     }
   }, [currentPath]);
+
+  // Handle trailing slash removal at client level
+  useEffect(() => {
+    if (typeof window !== 'undefined' && currentPath !== '/' && location.pathname.endsWith('/')) {
+      const newPath = location.pathname.slice(0, -1);
+      console.log('Client-side redirect to remove trailing slash:', newPath);
+      window.location.replace(`${baseUrl}${newPath}`);
+    }
+  }, [currentPath, location.pathname]);
 
   // Console log for debugging canonical and hreflang
   useEffect(() => {
@@ -117,7 +117,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         <link rel="canonical" href={canonicalUrl} />
         
         {/* CRITICAL: Only index,follow - no noindex anywhere */}
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         
         {/* Hreflang tags for language alternates - always non-www */}
         <link rel="alternate" hrefLang={language} href={canonicalUrl} />
@@ -141,6 +141,11 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Add preconnect for analytics domains to improve performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
+        
+        {/* Additional SEO improvements */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="referrer" content="origin-when-cross-origin" />
+        
         <style>{`
           /* Ensure custom cursor works everywhere */
           html, body, #root { cursor: none !important; }

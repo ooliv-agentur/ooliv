@@ -28,6 +28,32 @@ Allow: /danke
 Allow: /en/thank-you
 Allow: /werbeagentur-wiesbaden
 
+# Block old /de/ paths - they redirect anyway
+Disallow: /de/
+Disallow: /de
+
+# Block old PHP paths
+Disallow: /*.php$
+Disallow: /*.php/
+
+# Block old directory paths that redirect
+Disallow: /projekte/
+Disallow: /leistungen/
+Disallow: /ooliv/
+Disallow: /author/
+Disallow: /werbeagentur-frankfurt/
+Disallow: /webdesign-agentur-wiesbaden/
+Disallow: /webdesign-agentur-frankfurt/
+Disallow: /wordpress-agentur-wiesbaden/
+Disallow: /wordpress-agentur-mainz/
+Disallow: /kunden/
+
+# Block common crawling patterns that shouldn't be indexed
+Disallow: /*?utm_source=*
+Disallow: /*?utm_medium=*
+Disallow: /*?utm_campaign=*
+Disallow: /*?*utm_source=*
+
 # Set canonical domain - no www
 Host: ooliv.de
 
