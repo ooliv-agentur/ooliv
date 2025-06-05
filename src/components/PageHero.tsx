@@ -293,7 +293,7 @@ const PageHero = ({
         <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
       </div>
       
-      <div className="relative z-20 py-16 md:py-24">
+      <div className="relative z-20 py-32 md:py-40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
@@ -309,17 +309,19 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Visual transition indicator - same as homepage */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
-          <div className="flex space-x-1">
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+      {/* Visual transition indicator - only on homepage */}
+      {isHomepage && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="flex flex-col items-center space-y-2">
+            <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="flex space-x-1">
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       
       {isHomepage && <ScrollIndicator />}
     </section>
