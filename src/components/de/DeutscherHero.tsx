@@ -12,13 +12,24 @@ const DeutscherHero = () => {
   
   return (
     <section className="relative bg-medico-mint pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden hero-gradient-bg font-satoshi">
-      {/* Floating circles animation */}
+      {/* Enhanced floating circles animation with more variety */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="floating-circle w-20 h-20 top-20 left-10 opacity-60"></div>
-        <div className="floating-circle delayed w-32 h-32 top-40 right-20 opacity-40"></div>
-        <div className="floating-circle w-16 h-16 bottom-40 left-1/4 opacity-50"></div>
-        <div className="floating-circle delayed w-24 h-24 bottom-20 right-1/3 opacity-30"></div>
-        <div className="floating-circle w-12 h-12 top-1/2 left-3/4 opacity-70"></div>
+        {/* Large slow moving circles */}
+        <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
+        <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
+        
+        {/* Medium circles with different animations */}
+        <div className="floating-circle reverse w-24 h-24 bottom-40 left-1/4 opacity-50"></div>
+        <div className="floating-circle diagonal w-20 h-20 bottom-20 right-1/3 opacity-45"></div>
+        
+        {/* Small fast moving circles */}
+        <div className="floating-circle fast w-16 h-16 top-1/2 left-3/4 opacity-60"></div>
+        <div className="floating-circle pulse w-12 h-12 top-1/3 right-1/4 opacity-70"></div>
+        
+        {/* Additional ambient circles */}
+        <div className="floating-circle slow w-14 h-14 top-60 left-1/2 opacity-35"></div>
+        <div className="floating-circle delayed reverse w-18 h-18 bottom-60 right-10 opacity-40"></div>
+        <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
       </div>
       
       <div className="relative z-20 py-16 md:py-24">
@@ -62,7 +73,7 @@ const DeutscherHero = () => {
                   className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
                   asChild
                 >
-                  <Link to="/de/case-studies">
+                  <Link to="/case-studies">
                     Arbeiten ansehen
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -94,9 +105,9 @@ const DeutscherHero = () => {
         <div className="flex flex-col items-center space-y-2 mb-8">
           <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full"></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full"></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full"></div>
+            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>

@@ -41,15 +41,20 @@ export default {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
         'gradient': 'gradient 15s ease infinite',
+        'gradient-slow': 'gradient 20s ease infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': {
-            transform: 'translateY(0px)',
+            transform: 'translateY(0px) rotate(0deg)',
           },
           '50%': {
-            transform: 'translateY(-20px)',
+            transform: 'translateY(-20px) rotate(5deg)',
           },
         },
         gradient: {
@@ -63,7 +68,11 @@ export default {
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3)',
+        'hero-gradient-animated': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3, #38B593, #D8F4E3)',
       },
+      backgroundSize: {
+        '400': '400% 400%',
+      }
     },
   },
   plugins: [],
