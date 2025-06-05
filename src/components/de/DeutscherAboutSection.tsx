@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -58,7 +59,11 @@ const DeutscherAboutSection = () => {
               <div>
                 <Link 
                   to={service.link}
-                  className="text-medico-turquoise hover:text-medico-darkGreen text-lg font-medium underline transition-colors duration-300"
+                  className="hover:text-medico-darkGreen underline transition-colors duration-300 font-bold"
+                  style={{ 
+                    color: '#32b1ab',
+                    fontSize: '18px'
+                  }}
                 >
                   Mehr erfahren
                 </Link>
