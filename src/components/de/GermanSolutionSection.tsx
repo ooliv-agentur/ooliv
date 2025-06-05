@@ -12,19 +12,13 @@ const GermanSolutionSection = () => {
         <Reveal>
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
-              Wir entwickeln Websites, die Ihr Business voranbringen – mit Strategie, Expertise und Technologie.
+              Von der Strategie bis zum GoLive – alles aus einer Hand.
             </h2>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed mb-6">
-              Von der strategischen Planung bis zur technischen Umsetzung – wir bieten alle Leistungen aus einer Hand:
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed mb-8">
+              Ob <Link to="/de/webdesign" className="text-medico-turquoise hover:underline font-medium">Website-Relaunch</Link>, <Link to="/de/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> oder <Link to="/de/content-erstellung" className="text-medico-turquoise hover:underline font-medium">Content-Erstellung</Link>: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
-              <Link to="/strategie" className="text-medico-turquoise hover:underline font-medium"> Strategie & UX</Link>, 
-              <Link to="/de/webdesign" className="text-medico-turquoise hover:underline font-medium"> Webdesign</Link>, 
-              <Link to="/de/webentwicklung" className="text-medico-turquoise hover:underline font-medium"> Webentwicklung</Link>, 
-              <Link to="/de/content-erstellung" className="text-medico-turquoise hover:underline font-medium"> Content-Erstellung</Link>, 
-              <Link to="/de/seo-optimierung" className="text-medico-turquoise hover:underline font-medium"> SEO-Optimierung</Link>, 
-              <Link to="/de/google-ads" className="text-medico-turquoise hover:underline font-medium"> Google Ads</Link> und 
-              <Link to="/de/ki-technologien" className="text-medico-turquoise hover:underline font-medium"> KI-Technologien</Link>.
+              Unser Leistungsspektrum umfasst <Link to="/strategie" className="text-medico-turquoise hover:underline font-medium">Strategie & UX</Link>, <Link to="/de/webdesign" className="text-medico-turquoise hover:underline font-medium">Webdesign</Link>, <Link to="/de/webentwicklung" className="text-medico-turquoise hover:underline font-medium">Webentwicklung</Link>, <Link to="/de/content-erstellung" className="text-medico-turquoise hover:underline font-medium">Content-Erstellung</Link>, <Link to="/de/seo-optimierung" className="text-medico-turquoise hover:underline font-medium">SEO-Optimierung</Link>, <Link to="/de/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> und <Link to="/de/ki-technologien" className="text-medico-turquoise hover:underline font-medium">KI-Technologien</Link>.
             </p>
             <div className="mt-10">
               <Button variant="outline" className="group" asChild>
