@@ -1,7 +1,6 @@
 
 import React from 'react';
 import PageHero from '@/components/PageHero';
-import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDesignHero = () => {
@@ -25,18 +24,15 @@ const WebDesignHero = () => {
   const linkPath = isGerman ? "/kontakt" : "/en/contact";
   
   return (
-    <div className="relative">
-      <PageHero
-        badge={t.badge}
-        title={t.title}
-        subtitle={t.subtitle}
-        primaryCta={{
-          text: isGerman ? "Projekt starten" : "Start Your Web Project",
-          link: linkPath
-        }}
-      />
-      <ScrollIndicator />
-    </div>
+    <PageHero
+      badge={t.badge}
+      title={t.title}
+      subtitle={t.subtitle}
+      primaryCta={{
+        text: isGerman ? "Projekt starten" : "Start Your Web Project",
+        link: linkPath
+      }}
+    />
   );
 };
 

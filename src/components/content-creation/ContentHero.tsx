@@ -1,36 +1,37 @@
 
 import React from 'react';
 import PageHero from '@/components/PageHero';
-import ScrollIndicator from '@/components/ScrollIndicator';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+  
   return (
-    <div className="relative">
-      <PageHero
-        badge={isGerman ? "Content Erstellung" : "Content Creation"}
-        title={isGerman 
-          ? "Content Agentur Mainz – Inhalte, die verkaufen und gefunden werden" 
-          : "Web Content Strategy & Creation"
-        }
-        subtitle={isGerman 
-          ? "Wir entwickeln Inhalte, die Vertrauen schaffen, bei Google gefunden werden und echte Geschäftsergebnisse liefern – von Text bis Video – als erfahrene Content Agentur aus Mainz."
-          : "From tailored text and visuals to SEO-focused structure — we create content that builds trust, boosts visibility, and generates qualified leads."
-        }
-        primaryCta={{
-          text: isGerman ? "Content-Projekt starten" : "Start Your Content Project",
-          link: "#"
-        }}
-        secondaryCta={{
-          text: isGerman ? "Case Studies ansehen" : "View Case Studies",
-          link: isGerman ? "/case-studies" : "/en/case-studies"
-        }}
-      />
-      <ScrollIndicator />
-    </div>
+    <PageHero
+      badge={isGerman ? "Content-Erstellung" : "Content Creation"}
+      title={isGerman 
+        ? "Content-Erstellung für B2B-Unternehmen mit Strategie" 
+        : "Content Creation for B2B Companies with Strategy"
+      }
+      subtitle={isGerman 
+        ? "Wir entwickeln strategische B2B-Inhalte: Website-Texte, Landing Pages & SEO-Content mit Plan – klar, durchdacht, wirkungsvoll." 
+        : "We create strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful."
+      }
+      primaryCta={{
+        text: isGerman ? "Content-Projekt starten" : "Start Content Project",
+        link: "#",
+        onClick: handleStartProject
+      }}
+      secondaryCta={{
+        text: isGerman ? "Referenzen ansehen" : "View Case Studies",
+        link: isGerman ? "/referenzen" : "/en/case-studies"
+      }}
+    />
   );
 };
 
