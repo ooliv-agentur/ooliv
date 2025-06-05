@@ -1,8 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
@@ -39,26 +36,7 @@ const TechnologiesSection = () => {
   return (
     <section className="py-20 bg-medico-mint font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">
-              Webdesign, SEO & mehr – alles aus einer Hand.
-            </h2>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
-              Ob <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-medium">Website-Relaunch</Link>, <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> oder <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-medium">Content-Erstellung</Link>: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
-            </p>
-            <div className="mt-10">
-              <Button variant="outline" size="lg" className="group" asChild>
-                <Link to="/webdesign">
-                  Mehr über den Ablauf erfahren
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </Reveal>
-        
-        <div className="mt-16 mb-12">
+        <div className="mb-12">
           <Reveal>
             <h3 className="text-3xl font-bold text-center mb-6 text-medico-darkGreen">
               Technologie ist kein Selbstzweck – sondern Mittel zum Ziel.
