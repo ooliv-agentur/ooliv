@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const TeamImpactSectionDE = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-medico-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-heading mb-6">
@@ -15,9 +15,9 @@ const TeamImpactSectionDE = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white border border-gray-200 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <Grid2X2 className="h-8 w-8 text-green-600" />
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mb-6">
+              <Grid2X2 className="h-10 w-10 text-purple-600" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Strategie & UX</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -26,7 +26,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-green-600 hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/strategie">
@@ -36,9 +36,9 @@ const TeamImpactSectionDE = () => {
             </div>
           </div>
           
-          <div className="bg-white border border-gray-200 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <Sparkles className="h-8 w-8 text-green-600" />
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-200 rounded-2xl flex items-center justify-center mb-6">
+              <Sparkles className="h-10 w-10 text-orange-500" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Content & SEO</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -47,7 +47,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-green-600 hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/content-erstellung">
@@ -57,9 +57,9 @@ const TeamImpactSectionDE = () => {
             </div>
           </div>
           
-          <div className="bg-white border border-gray-200 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <Code className="h-8 w-8 text-green-600" />
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-teal-200 rounded-2xl flex items-center justify-center mb-6">
+              <Code className="h-10 w-10 text-teal-600" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Design & Development</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -68,7 +68,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-green-600 hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/webentwicklung">
@@ -78,9 +78,9 @@ const TeamImpactSectionDE = () => {
             </div>
           </div>
           
-          <div className="bg-white border border-gray-200 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <Phone className="h-8 w-8 text-green-600" />
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl flex items-center justify-center mb-6">
+              <Phone className="h-10 w-10 text-blue-600" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Direkte Kommunikation</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -89,7 +89,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-green-600 hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/kontakt">
