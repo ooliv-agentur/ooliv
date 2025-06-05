@@ -82,7 +82,7 @@ const TeamImpactSectionDE = () => {
             <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
               <Phone className="h-10 w-10 text-medico-turquoise" />
             </div>
-            <h3 className="text-xl font-semibold mb-3 text-gray-900">Direkte Kommunikation</h3>
+            <h3 className="text-xl font-semibold mb-3 text-gray-900">Kommunikation</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
               Sie sprechen immer direkt mit dem CEO – ohne Umwege.
             </p>
