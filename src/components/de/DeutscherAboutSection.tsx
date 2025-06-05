@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LayoutGrid, Sparkles, Code, PhoneCall } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
@@ -22,7 +21,7 @@ const DeutscherAboutSection = () => {
       icon: <Code className="h-8 w-8 text-medico-turquoise" />
     },
     {
-      title: "Direkte Kommunikation",
+      title: "Kommunikation",
       description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
       icon: <PhoneCall className="h-8 w-8 text-medico-turquoise" />
     }
