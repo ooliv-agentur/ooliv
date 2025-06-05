@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,6 +11,7 @@ interface NavigationLinksProps {
 
 export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) => {
   const { language } = useLanguage();
+  const location = useLocation();
   
   // Navigation links for German language
   const germanLinks = [
@@ -52,6 +53,11 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  // Check if a link is active
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
   
   return (
     <>
@@ -60,8 +66,11 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
-              layout === 'desktop' ? "text-lg py-2" : "text-3xl py-3"
+              "block py-2 font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
+              layout === 'desktop' ? "text-lg py-2" : "text-3xl py-3",
+              isActive(link.path) 
+                ? "text-[#b1b497]" // Active state: highlighted in brand color
+                : "text-brand-heading hover:text-[#b1b497]" // Default state: brand heading color with hover
             )}
             onClick={handleClick}
           >
