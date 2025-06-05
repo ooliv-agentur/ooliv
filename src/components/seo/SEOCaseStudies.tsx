@@ -32,7 +32,7 @@ const SEOCaseStudies = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/de/case-studies" : "/case-studies";
+  const caseStudiesPath = isGerman ? "/referenzen" : "/en/case-studies";
 
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">

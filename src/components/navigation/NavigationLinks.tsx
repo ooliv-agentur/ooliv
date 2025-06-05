@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -22,7 +23,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'SEO-Optimierung', path: '/seo-optimierung' },
     { title: 'Google Ads', path: '/google-ads' },
     { title: 'KI-Technologien', path: '/ki-technologien' },
-    { title: 'Case Studies', path: '/case-studies' },
+    { title: 'Case Studies', path: '/referenzen' },
     { title: 'Über ooliv', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
   ];
