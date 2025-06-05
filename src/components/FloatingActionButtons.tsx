@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { 
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
@@ -69,7 +70,7 @@ const FloatingActionButtons = () => {
     : buttons;
 
   return (
-    <>
+    <TooltipProvider>
       <div className={cn(
         "fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
         "transition-all duration-300"
@@ -108,7 +109,7 @@ const FloatingActionButtons = () => {
 
       {/* Lead Generation Overlay - no props needed as it manages its own state */}
       <LeadGenerationOverlay />
-    </>
+    </TooltipProvider>
   );
 };
 
