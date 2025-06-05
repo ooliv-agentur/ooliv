@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -9,7 +10,6 @@ import CustomCursor from '@/components/CustomCursor';
 import ScrollIndicator from '@/components/ScrollIndicator';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import LeadGenerationOverlay from '@/components/LeadGenerationOverlay';
-import ConfettiCelebration from '@/components/ConfettiCelebration';
 import ChatbaseWidget from '@/components/ChatbaseWidget';
 
 // German Pages
@@ -71,7 +71,6 @@ function App() {
               <ScrollIndicator />
               <FloatingActionButtons />
               <LeadGenerationOverlay />
-              <ConfettiCelebration />
               <ChatbaseWidget />
               
               <Routes>
