@@ -1,4 +1,5 @@
 
+
 {
   "redirects": [
     {
@@ -20,188 +21,14 @@
       "statusCode": 301
     },
     {
-      "source": "/index.php",
+      "source": "/:path*.php",
       "destination": "/",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/kontakt/index.php",
-      "destination": "/kontakt",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/leistungen.php",
-      "destination": "/webdesign",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/datenschutz.php",
-      "destination": "/datenschutz",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/webdesign-agentur-mainz/index.php",
-      "destination": "/webdesign",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte-farber-partner.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/insight-health/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/aeratron/:path*",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/aeratron/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/bert-helbig.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/farber-partner.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/hofgut-mappen/:path*",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/best-haus/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/bodenheim/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/weinmann/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/dcon/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/doerr-kuhn-pluck-partner/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/iv-kontor/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/iv-kontor/:path*",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/:path*",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/kontakt.php",
-      "destination": "/kontakt",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/author/:path*",
       "destination": "/ueber-ooliv",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/werbeagentur-wiesbaden.php",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte-dcon.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/webdesign-agentur-frankfurt.php",
-      "destination": "/webdesign",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/home.php",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/ooliv.php",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte-doerr-kuehn-pluck-partner/index.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/logodesign-agentur-mainz.php",
-      "destination": "/case-studies",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/projekte/kuhn-gmbh/index.php",
-      "destination": "/case-studies",
       "permanent": true,
       "statusCode": 301
     }
@@ -266,3 +93,4 @@
     }
   ]
 }
+

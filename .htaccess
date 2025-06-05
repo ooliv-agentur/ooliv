@@ -1,4 +1,5 @@
 
+
 # Enable URL rewriting
 RewriteEngine On
 
@@ -14,39 +15,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
 RewriteRule ^de/(.*)$ /$1 [R=301,L]
 RewriteRule ^de/?$ / [R=301,L]
 
-# Handle old PHP pages redirects (from legacy site)
-RewriteRule ^index\.php$ / [R=301,L]
-RewriteRule ^kontakt/index\.php$ /kontakt [R=301,L]
-RewriteRule ^leistungen\.php$ /webdesign [R=301,L]
-RewriteRule ^datenschutz\.php$ /datenschutz [R=301,L]
-RewriteRule ^webdesign-agentur-mainz/index\.php$ /webdesign [R=301,L]
-RewriteRule ^projekte-farber-partner\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/insight-health/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/aeratron/?$ /case-studies [R=301,L]
-RewriteRule ^projekte/aeratron/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/bert-helbig\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/farber-partner\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/hofgut-mappen/?$ /case-studies [R=301,L]
-RewriteRule ^projekte/best-haus/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/bodenheim/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/weinmann/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/dcon/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/doerr-kuhn-pluck-partner/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/iv-kontor/index\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/iv-kontor/?$ /case-studies [R=301,L]
-RewriteRule ^projekte/(.*)$ /case-studies [R=301,L]
-RewriteRule ^projekte\.php$ /case-studies [R=301,L]
-RewriteRule ^kontakt\.php$ /kontakt [R=301,L]
-
-# NEW: Additional .php redirects from your final prompt
-RewriteRule ^werbeagentur-wiesbaden\.php$ / [R=301,L]
-RewriteRule ^projekte-dcon\.php$ /case-studies [R=301,L]
-RewriteRule ^webdesign-agentur-frankfurt\.php$ /webdesign [R=301,L]
-RewriteRule ^home\.php$ / [R=301,L]
-RewriteRule ^ooliv\.php$ / [R=301,L]
-RewriteRule ^projekte-doerr-kuehn-pluck-partner/index\.php$ /case-studies [R=301,L]
-RewriteRule ^logodesign-agentur-mainz\.php$ /case-studies [R=301,L]
-RewriteRule ^projekte/kuhn-gmbh/index\.php$ /case-studies [R=301,L]
+# Redirect ALL .php files to homepage
+RewriteRule ^.*\.php$ / [R=301,L]
 
 # Add redirect for author pages (Soft 404 issue)
 RewriteRule ^author/(.*)$ /ueber-ooliv [R=301,L]
@@ -77,3 +47,4 @@ RewriteRule ^author/(.*)$ /ueber-ooliv [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L,QSA]
+
