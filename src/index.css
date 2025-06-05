@@ -117,17 +117,17 @@ input[type="button"],
   animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Enhanced hero gradient background animation with better performance */
+/* Sanfter, minimalistischer Hero-Gradient mit natürlichen Grüntönen */
 .hero-gradient-bg {
-  background: linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3, #38B593, #D8F4E3);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(135deg, #E8F5E8, #D8F4E3, #B8E6B8, #98D498, #78C478, #58B458, #38A438, #28942D, #188218);
+  background-size: 600% 600%;
+  animation: gentle-gradient 45s ease-in-out infinite;
   will-change: background-position;
   backface-visibility: hidden;
 }
 
 .hero-gradient-bg.slow {
-  animation: gradient 20s ease infinite;
+  animation: gentle-gradient 60s ease-in-out infinite;
 }
 
 /* Keyframes for better floating animations */
@@ -150,18 +150,31 @@ input[type="button"],
   }
 }
 
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
+/* Sanfte, natürliche Gradient-Animation */
+@keyframes gentle-gradient {
+  0% {
+    background-position: 0% 20%;
   }
-  25% {
-    background-position: 100% 0%;
+  15% {
+    background-position: 20% 40%;
   }
-  50% {
-    background-position: 200% 50%;
+  30% {
+    background-position: 60% 10%;
+  }
+  45% {
+    background-position: 80% 70%;
+  }
+  60% {
+    background-position: 40% 90%;
   }
   75% {
-    background-position: 100% 100%;
+    background-position: 10% 60%;
+  }
+  90% {
+    background-position: 30% 30%;
+  }
+  100% {
+    background-position: 0% 20%;
   }
 }
 
