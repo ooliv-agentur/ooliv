@@ -54,6 +54,9 @@ Disallow: /*?utm_medium=*
 Disallow: /*?utm_campaign=*
 Disallow: /*?*utm_source=*
 
+# Block trailing slashes (they redirect)
+Disallow: /*/
+
 # Set canonical domain - no www
 Host: ooliv.de
 
