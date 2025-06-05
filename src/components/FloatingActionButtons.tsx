@@ -64,10 +64,10 @@ const FloatingActionButtons = () => {
     }
   ];
 
-  // For mobile, limit to first 2 actions when collapsed
+  // Show buttons based on expansion state - on mobile only show when expanded
   const visibleButtons = isMobile 
     ? (isExpanded ? buttons : []) 
-    : buttons;
+    : buttons; // On desktop, always show all buttons
 
   return (
     <TooltipProvider>
@@ -96,6 +96,7 @@ const FloatingActionButtons = () => {
           </Tooltip>
         ))}
         
+        {/* Only show toggle button on mobile devices */}
         {isMobile && (
           <Button
             onClick={toggleExpanded}
