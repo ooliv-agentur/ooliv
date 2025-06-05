@@ -66,11 +66,11 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block py-2 font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
+              "block py-2 font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
               layout === 'desktop' ? "text-lg py-2" : "text-3xl py-3",
               isActive(link.path) 
-                ? "text-[#b1b497]" // Active state: highlighted in brand color
-                : "text-brand-heading hover:text-[#b1b497]" // Default state: brand heading color with hover
+                ? "text-medico-turquoise" // Active state: highlighted in medico turquoise
+                : "text-medico-darkGreen hover:text-medico-turquoise" // Default state: dark green with turquoise hover
             )}
             onClick={handleClick}
           >

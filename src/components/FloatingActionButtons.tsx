@@ -39,28 +39,28 @@ const FloatingActionButtons = () => {
     };
   }, []);
 
-  // Updated button definitions with translations
+  // Updated button definitions with new medico colors
   const buttons = [
     { 
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => window.dispatchEvent(new Event('open-lead-form')),
-      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none shadow-md hover:shadow-lg'
+      className: 'bg-medico-turquoise text-white hover:bg-medico-darkGreen border-none shadow-md hover:shadow-lg'
     },
     { 
       id: 'email', 
       icon: Mail, 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
+      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
+      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
     }
   ];
 
@@ -100,22 +100,22 @@ const FloatingActionButtons = () => {
                   <button.icon className="h-5 w-5" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent side="left" className="bg-[#006064] text-white border-0">
+              <TooltipContent side="left" className="bg-medico-darkGreen text-white border-0">
                 <p>{button.label}</p>
               </TooltipContent>
             </Tooltip>
           ))}
         </div>
         
-        {/* Toggle button - only visible on mobile/tablet */}
+        {/* Toggle button - only visible on mobile/tablet with new colors */}
         {showToggleButton && (
           <Button
             onClick={toggleExpanded}
             className={cn(
-              "w-14 h-14 rounded-full border-none transition-all duration-300",
+              "w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg",
               isExpanded 
-                ? "bg-[#b1b497] text-white hover:bg-[#9a9c83]" 
-                : "bg-[#b1b497] text-white hover:bg-[#9a9c83]"
+                ? "bg-medico-turquoise text-white hover:bg-medico-darkGreen" 
+                : "bg-medico-turquoise text-white hover:bg-medico-darkGreen"
             )}
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")

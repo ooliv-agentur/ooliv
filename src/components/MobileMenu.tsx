@@ -167,7 +167,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
           <motion.div 
             ref={menuRef}
             className={cn(
-              "flex flex-col bg-[#f7fafa] text-brand-heading", 
+              "flex flex-col bg-medico-mint text-medico-darkGreen", 
               isDesktop 
                 ? "ml-auto w-[40%] h-full" 
                 : "w-full h-full max-h-[100dvh] overflow-auto"
@@ -202,7 +202,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                     <Link 
                       to={link.path}
                       className={cn(
-                        "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
+                        "block py-2 font-bold text-medico-darkGreen hover:text-medico-turquoise transition-colors focus:outline-none focus:text-medico-turquoise focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
                         isDesktop ? "text-lg py-2" : "text-3xl py-3"
                       )}
                       onClick={handleLinkClick}
@@ -215,7 +215,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             </div>
             
             <motion.div 
-              className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm"
+              className="sticky bottom-0 z-10 border-t border-medico-turquoise/20 p-6 space-y-5 bg-medico-mint/95 backdrop-blur-sm"
               variants={itemVariants}
             >
               <div className="grid grid-cols-2 gap-6">
@@ -227,7 +227,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-gray-300 text-[#b1b497] bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200 hover:border-medico-turquoise focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 flex items-center justify-center"
                     aria-label={contact.label}
                     asChild
                   >

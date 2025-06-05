@@ -62,10 +62,10 @@ const MainNavigation = () => {
         </div>
       </nav>
 
-      {/* Menu toggle button - fixed position at top right with better spacing */}
+      {/* Menu toggle button - fixed position at top right with new colors */}
       <button 
         className={cn(
-          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] transition-all duration-300",
+          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg",
           "w-10 h-10 min-w-10 min-h-10"
         )}
         onClick={() => setIsOpen(!isOpen)}

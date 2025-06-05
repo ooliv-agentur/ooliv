@@ -33,7 +33,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             duration: 0.5,
             ease: "easeInOut"
           }}
-          className="fixed top-0 right-0 bottom-0 w-full md:w-[350px] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
+          className="fixed top-0 right-0 bottom-0 w-full md:w-[350px] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden"
           style={{ cursor: 'none' }}
         >
           {/* Removed the header with close button - we use the floating button instead */}
