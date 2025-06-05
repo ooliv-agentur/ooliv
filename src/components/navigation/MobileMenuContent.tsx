@@ -25,15 +25,13 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
   const menuVariants = {
     hidden: { 
       opacity: 0,
-      scale: 0.95,
-      y: 20
+      scale: 0.95
     },
     visible: { 
       opacity: 1,
       scale: 1,
-      y: 0,
       transition: { 
-        duration: 0.4,
+        duration: 0.3,
         ease: [0.22, 1, 0.36, 1],
         delayChildren: 0.1,
         staggerChildren: 0.05
@@ -42,9 +40,8 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     exit: { 
       opacity: 0,
       scale: 0.95,
-      y: 20,
       transition: { 
-        duration: 0.3,
+        duration: 0.2,
         ease: 'easeIn'
       }
     }
