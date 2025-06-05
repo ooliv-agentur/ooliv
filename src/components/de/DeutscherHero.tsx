@@ -35,16 +35,30 @@ const DeutscherHero = () => {
       <div className="relative z-20 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Main heading with emphasis - single H1 with target keyword */}
+            {/* Main heading - font-medium, 52px, line-height 68px, color #003343 */}
             <Reveal>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-medico-darkGreen mb-6 leading-tight">
+              <h1 
+                className="font-medium mb-6 leading-tight text-center"
+                style={{ 
+                  fontSize: '52px', 
+                  lineHeight: '68px', 
+                  color: '#003343' 
+                }}
+              >
                 Werbeagentur Mainz
               </h1>
             </Reveal>
             
-            {/* Subheadline - specific turquoise color */}
+            {/* Subheadline - font-bold, 52px, line-height 68px, color #32b1ab */}
             <Reveal delay={0.1}>
-              <p className="text-2xl md:text-3xl font-medium mb-6" style={{ color: '#32b1ab' }}>
+              <p 
+                className="font-bold mb-6 text-center"
+                style={{ 
+                  fontSize: '52px', 
+                  lineHeight: '68px', 
+                  color: '#32b1ab' 
+                }}
+              >
                 Für messbare Ergebnisse im Web.
               </p>
             </Reveal>
