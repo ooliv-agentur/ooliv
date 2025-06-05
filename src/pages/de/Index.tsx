@@ -1,8 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import GermanSolutionSection from "@/components/de/GermanSolutionSection";
@@ -152,7 +150,7 @@ const GermanIndex = () => {
       
       <PageLayout className="overflow-x-hidden">
         <DeutscherHero />
-        <DeutscherAboutSection />
+        <GermanSolutionSection />
         <TeamTeaserDE />
         
         <div className="py-16 bg-white">
@@ -165,7 +163,6 @@ const GermanIndex = () => {
           </div>
         </div>
         
-        <GermanSolutionSection />
         <TechnologiesSection />
         
         <CaseStudiesSection />
