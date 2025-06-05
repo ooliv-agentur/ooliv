@@ -38,7 +38,7 @@ const DeutscherHero = () => {
             {/* Main heading - font-medium, 52px, line-height 68px, color #003343 */}
             <Reveal>
               <h1 
-                className="font-medium mb-6 leading-tight text-center"
+                className="font-medium mb-2 leading-tight text-center"
                 style={{ 
                   fontSize: '52px', 
                   lineHeight: '68px', 
@@ -52,7 +52,7 @@ const DeutscherHero = () => {
             {/* Subheadline - font-bold, 52px, line-height 68px, color #32b1ab */}
             <Reveal delay={0.1}>
               <p 
-                className="font-bold mb-6 text-center"
+                className="font-bold mb-10 text-center"
                 style={{ 
                   fontSize: '52px', 
                   lineHeight: '68px', 
