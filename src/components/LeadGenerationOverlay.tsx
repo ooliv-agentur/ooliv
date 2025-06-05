@@ -5,8 +5,11 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription
+  SheetDescription,
+  SheetClose
 } from "@/components/ui/sheet";
+import { X } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 
@@ -32,15 +35,28 @@ const LeadGenerationOverlay = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
+        className="sm:max-w-md overflow-y-auto bg-white text-gray-900 border-l border-gray-200" 
         side="right"
-        style={{ cursor: 'none' }}
       >
-        <SheetHeader className="text-left pb-4">
-          <SheetTitle className="text-xl font-bold text-white">
+        {/* Close Button */}
+        <div className="absolute top-4 right-4 z-10">
+          <SheetClose asChild>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="h-8 w-8 rounded-full hover:bg-gray-100"
+            >
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </Button>
+          </SheetClose>
+        </div>
+
+        <SheetHeader className="text-left pb-4 pr-12">
+          <SheetTitle className="text-xl font-bold text-gray-900">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
           </SheetTitle>
-          <SheetDescription className="text-white/70">
+          <SheetDescription className="text-gray-600">
             {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
           </SheetDescription>
         </SheetHeader>

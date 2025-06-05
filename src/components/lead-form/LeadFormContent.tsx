@@ -128,14 +128,15 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
           __html: `
             <style>
               .text-destructive {
-                color: #ff6b6b !important;
+                color: #dc2626 !important;
               }
               .text-destructive-foreground {
-                color: white !important;
+                color: #dc2626 !important;
               }
-              .bg-destructive {
-                background-color: rgba(255, 92, 92, 0.2) !important;
-                border: 1px solid #ff6b6b !important;
+              .bg-destructive, .bg-red-900\/20 {
+                background-color: #fef2f2 !important;
+                border: 1px solid #fecaca !important;
+                color: #dc2626 !important;
                 padding: 0.5rem;
                 border-radius: 0.25rem;
               }
@@ -149,13 +150,13 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
           </AnimatePresence>
         </div>
         
-        <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-white/10">
+        <SheetFooter className="flex sm:justify-between gap-2 pt-4 border-t border-gray-200">
           {step > 1 && (
             <Button 
               type="button"
               variant="outline"
               onClick={prevStep}
-              className="flex-1 border-white/20 text-white hover:bg-white/10 hover:text-white"
+              className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-800"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               {language === 'de' ? "Zurück" : "Back"}
