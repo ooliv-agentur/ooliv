@@ -4,7 +4,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const ContentProcess = () => {
   const { language } = useLanguage();
@@ -91,17 +90,10 @@ const ContentProcess = () => {
           </div>
         </div>
         
-        {/* Mobile and Tablet Version with improved scrolling */}
+        {/* Mobile and Tablet Version with native scrolling */}
         <div className="lg:hidden">
-          <ScrollArea className="w-full">
-            <div 
-              className="flex gap-6 pb-4 touch-pan-x"
-              style={{
-                touchAction: 'pan-x',
-                WebkitOverflowScrolling: 'touch',
-                scrollBehavior: 'smooth'
-              }}
-            >
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
               {steps.map((step, index) => (
                 <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 pt-12 shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
                   <div className="absolute -top-7 left-6 h-14 w-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold">
@@ -114,7 +106,7 @@ const ContentProcess = () => {
                 </div>
               ))}
             </div>
-          </ScrollArea>
+          </div>
         </div>
         
         {/* Additional link at the bottom */}

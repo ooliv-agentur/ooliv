@@ -5,7 +5,6 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const GoogleAdsProcess = () => {
   const { language } = useLanguage();
@@ -106,17 +105,10 @@ const GoogleAdsProcess = () => {
           </div>
         </div>
         
-        {/* Mobile and Tablet Version with improved scrolling */}
+        {/* Mobile and Tablet Version with native scrolling */}
         <div className="lg:hidden">
-          <ScrollArea className="w-full">
-            <div 
-              className="flex gap-6 pb-4 touch-pan-x"
-              style={{
-                touchAction: 'pan-x',
-                WebkitOverflowScrolling: 'touch',
-                scrollBehavior: 'smooth'
-              }}
-            >
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
               {t.steps.map((step, index) => (
                 <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                   <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold mb-4">
@@ -127,7 +119,7 @@ const GoogleAdsProcess = () => {
                 </div>
               ))}
             </div>
-          </ScrollArea>
+          </div>
           
           {isMobile && (
             <div className="text-center mt-3 text-sm text-gray-500">

@@ -3,7 +3,6 @@ import React from 'react';
 import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
@@ -150,17 +149,10 @@ const WebDesignProcess = () => {
           </div>
         </div>
         
-        {/* Mobile and Tablet Version with improved scrolling */}
+        {/* Mobile and Tablet Version with native scrolling */}
         <div className="lg:hidden">
-          <ScrollArea className="w-full">
-            <div 
-              className="flex gap-6 pb-4 touch-pan-x"
-              style={{
-                touchAction: 'pan-x',
-                WebkitOverflowScrolling: 'touch',
-                scrollBehavior: 'smooth'
-              }}
-            >
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
               {t.steps.map((step, index) => (
                 <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-start gap-4 mb-4">
@@ -194,7 +186,7 @@ const WebDesignProcess = () => {
                 </div>
               ))}
             </div>
-          </ScrollArea>
+          </div>
           
           {isMobile && (
             <div className="text-center mt-3 text-sm text-gray-500">

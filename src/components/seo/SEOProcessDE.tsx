@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { BarChart2, Search, Code, Link2, LineChart } from 'lucide-react';
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const SEOProcessDE = () => {
   return (
@@ -110,17 +109,10 @@ const SEOProcessDE = () => {
           </div>
         </div>
 
-        {/* Mobile and Tablet Version with improved scrolling */}
+        {/* Mobile and Tablet Version with native scrolling */}
         <div className="md:hidden">
-          <ScrollArea className="w-full">
-            <div 
-              className="flex gap-6 pb-4 touch-pan-x"
-              style={{
-                touchAction: 'pan-x',
-                WebkitOverflowScrolling: 'touch',
-                scrollBehavior: 'smooth'
-              }}
-            >
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
               {[
                 { icon: BarChart2, title: "1. Strategie & Analyse", desc: "Initiales SEO-Audit + Roadmap abgestimmt auf Ihre Ziele" },
                 { icon: Code, title: "2. Fix & Struktur", desc: "Technische Probleme beheben, saubere Architektur schaffen" },
@@ -137,7 +129,7 @@ const SEOProcessDE = () => {
                 </div>
               ))}
             </div>
-          </ScrollArea>
+          </div>
         </div>
       </div>
     </section>
