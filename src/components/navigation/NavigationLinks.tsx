@@ -53,15 +53,20 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     }
   };
   
+  // Calculate dynamic font size and spacing based on screen height and number of items
+  const itemCount = navigationLinks.length;
+  
   return (
     <>
       {navigationLinks.map((link, index) => (
-        <div key={index}>
+        <div key={index} className="flex-1 flex items-center justify-center">
           <Link 
             to={link.path}
             className={cn(
-              "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
-              layout === 'desktop' ? "text-lg py-2" : "text-3xl py-3"
+              "block font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans leading-tight",
+              layout === 'desktop' 
+                ? "text-sm xl:text-base 2xl:text-lg py-1" 
+                : "text-base sm:text-lg md:text-xl lg:text-2xl py-1"
             )}
             onClick={handleClick}
           >

@@ -30,24 +30,26 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
+          className="fixed top-0 right-0 bottom-0 w-[35%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col h-screen"
           style={{ cursor: 'none' }}
         >
-          <div className="sticky top-0 z-10 flex items-center justify-end p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
+          {/* Header - Fixed height */}
+          <div className="flex items-center justify-end p-3 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm flex-shrink-0">
             <Button 
               variant="ghost" 
               size="icon" 
-              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full" 
+              className="w-10 h-10 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full" 
               onClick={onClose}
               aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
               style={{ cursor: 'none' }}
             >
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" />
             </Button>
           </div>
           
-          <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto" style={{ cursor: 'none' }}>
-            <nav className="space-y-3 text-center w-full">
+          {/* Navigation - Flexible content area that fills remaining space */}
+          <div className="flex-1 flex flex-col justify-center px-6 py-2 overflow-hidden" style={{ cursor: 'none' }}>
+            <nav className="flex flex-col justify-center space-y-2 text-center w-full h-full">
               <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />
             </nav>
           </div>
