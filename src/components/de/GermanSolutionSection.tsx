@@ -14,8 +14,11 @@ const GermanSolutionSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
               Wir entwickeln Websites, die Ihr Business voranbringen – mit Strategie, Expertise und Technologie.
             </h2>
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed mb-6">
+              Von der strategischen Planung bis zur technischen Umsetzung – wir bieten alle Leistungen aus einer Hand:
+            </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
-              Unsere Leistungen umfassen: 
+              <Link to="/strategie" className="text-medico-turquoise hover:underline font-medium"> Strategie & UX</Link>, 
               <Link to="/de/webdesign" className="text-medico-turquoise hover:underline font-medium"> Webdesign</Link>, 
               <Link to="/de/webentwicklung" className="text-medico-turquoise hover:underline font-medium"> Webentwicklung</Link>, 
               <Link to="/de/content-erstellung" className="text-medico-turquoise hover:underline font-medium"> Content-Erstellung</Link>, 
