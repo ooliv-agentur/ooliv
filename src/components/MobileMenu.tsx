@@ -81,6 +81,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
   // Navigation links based on language
   const navigationLinks = language === 'de' ? [
     { title: 'Home', path: '/' },
+    { title: 'Strategie', path: '/strategie' },
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
     { title: 'Content-Erstellung', path: '/content-erstellung' },

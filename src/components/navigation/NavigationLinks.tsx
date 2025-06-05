@@ -15,6 +15,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   // Navigation links for German language
   const germanLinks = [
     { title: 'Home', path: '/' },
+    { title: 'Strategie', path: '/strategie' },
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
     { title: 'Content-Erstellung', path: '/content-erstellung' },
