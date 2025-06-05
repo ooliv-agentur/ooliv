@@ -1,10 +1,11 @@
 
 import React, { useEffect } from 'react';
+import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import PageLayout from "@/components/PageLayout";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Target, Users, TrendingUp, CheckCircle } from 'lucide-react';
-import CTA from "@/components/CTA";
+import PageHero from '@/components/PageHero';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -13,119 +14,150 @@ const Strategie = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const strategieFaqs = [
+    {
+      question: "Wie entwickelt ihr eine passende Strategie für mein Unternehmen?",
+      answer: "Wir beginnen mit einer gründlichen Analyse Ihrer Zielgruppen, Mitbewerber und Geschäftsziele. Darauf aufbauend entwickeln wir eine maßgeschneiderte Digitalstrategie, die messbare Ergebnisse liefert."
+    },
+    {
+      question: "Was beinhaltet eine UX-Analyse?",
+      answer: "Wir analysieren das Nutzerverhalten auf Ihrer Website, identifizieren Optimierungspotentiale und entwickeln Lösungen für eine bessere User Experience und höhere Conversion-Raten."
+    },
+    {
+      question: "Wie lange dauert die Strategieentwicklung?",
+      answer: "Eine fundierte Strategieentwicklung dauert in der Regel 2-4 Wochen, je nach Komplexität Ihres Geschäftsmodells und der gewünschten Tiefe der Analyse."
+    },
+    {
+      question: "Arbeitet ihr auch mit bestehenden Websites?",
+      answer: "Ja, wir analysieren gerne Ihre bestehende Website und entwickeln Optimierungsstrategien. Oft können bereits kleine Änderungen große Wirkung erzielen."
+    }
+  ];
+
   return (
-    <>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <html lang="de" />
-        <title>Strategie & UX - Datenbasierte Entscheidungen für Ihren Erfolg</title>
-        <meta
-          name="description"
-          content="Strategische UX-Planung und datenbasierte Entscheidungen für B2B-Websites. Klare Struktur, optimierte User Experience und messbare Ergebnisse."
-        />
+        <title>Digitalstrategie & UX-Beratung Mainz | ooliv</title>
+        <meta name="description" content="Strategische Digitalberatung und UX-Optimierung in Mainz. Datenbasierte Entscheidungen für messbare Erfolge im digitalen Marketing." />
       </Helmet>
-      
-      <PageLayout className="overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="bg-medico-mint pt-24 pb-20 lg:pt-32 lg:pb-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-medico-darkGreen mb-6 leading-tight">
-                Strategie & UX
-              </h1>
-              <p className="text-xl text-medico-darkGreen mb-10 leading-relaxed">
-                Klare Struktur, datenbasierte Entscheidungen, B2B-ready – für Websites, die wirklich funktionieren.
+
+      <PageHero
+        badge="Strategie & UX"
+        title="Klare Strategien für messbare Erfolge"
+        subtitle="Wir entwickeln datenbasierte Digitalstrategien und optimieren die User Experience Ihrer Website für bessere Conversion-Raten und nachhaltige Geschäftserfolge."
+        primaryCta={{
+          text: "Strategiegespräch vereinbaren",
+          link: "#",
+          onClick: (e) => {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-lead-form'));
+          }
+        }}
+        secondaryCta={{
+          text: "Mehr über unsere Leistungen",
+          link: "/webdesign"
+        }}
+      />
+
+      {/* Strategy Benefits Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              Strategie ist der Grundstein Ihres digitalen Erfolgs
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              Ohne klare Strategie verpuffen Marketing-Budgets. Wir sorgen dafür, dass jeder Euro zielgerichtet eingesetzt wird.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-medico-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse</h3>
+              <p className="text-brand-text">
+                Wir identifizieren genau, wer Ihre Kunden sind und wie sie online nach Ihren Lösungen suchen.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-medico-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">UX-Optimierung</h3>
+              <p className="text-brand-text">
+                Nutzerfreundliche Websites, die Besucher zu Kunden machen. Basierend auf bewährten UX-Prinzipien.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-medico-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Messbare Ergebnisse</h3>
+              <p className="text-brand-text">
+                Klare KPIs und regelmäßiges Tracking sorgen dafür, dass Sie den ROI Ihrer Investition sehen.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Main Content */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-3xl font-bold text-medico-darkGreen mb-6">
-                  Warum Strategie vor Design kommt
-                </h2>
-                <p className="text-lg text-medico-darkGreen mb-6 leading-relaxed">
-                  Bevor wir auch nur einen Pixel gestalten, verstehen wir Ihre Ziele, Ihre Zielgruppe und Ihren Markt. 
-                  Nur so entstehen Websites, die nicht nur schön aussehen, sondern auch messbare Ergebnisse liefern.
-                </p>
-                <p className="text-medico-darkGreen leading-relaxed">
-                  Unsere strategische Herangehensweise sorgt dafür, dass jede Entscheidung – von der Navigation 
-                  bis zur Content-Struktur – auf fundierten Daten und bewährten UX-Prinzipien basiert.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-medico-mint p-6 rounded-lg">
-                  <Target className="h-8 w-8 text-medico-turquoise mb-4" />
-                  <h3 className="font-bold text-medico-darkGreen mb-2">Zielgruppenanalyse</h3>
-                  <p className="text-sm text-medico-darkGreen">Verstehen, wer Ihre Kunden sind</p>
-                </div>
-                <div className="bg-medico-mint p-6 rounded-lg">
-                  <Users className="h-8 w-8 text-medico-turquoise mb-4" />
-                  <h3 className="font-bold text-medico-darkGreen mb-2">User Journey Mapping</h3>
-                  <p className="text-sm text-medico-darkGreen">Optimierte Nutzererfahrung planen</p>
-                </div>
-                <div className="bg-medico-mint p-6 rounded-lg">
-                  <TrendingUp className="h-8 w-8 text-medico-turquoise mb-4" />
-                  <h3 className="font-bold text-medico-darkGreen mb-2">Conversion-Optimierung</h3>
-                  <p className="text-sm text-medico-darkGreen">Messbare Erfolge maximieren</p>
-                </div>
-                <div className="bg-medico-mint p-6 rounded-lg">
-                  <CheckCircle className="h-8 w-8 text-medico-turquoise mb-4" />
-                  <h3 className="font-bold text-medico-darkGreen mb-2">A/B Testing</h3>
-                  <p className="text-sm text-medico-darkGreen">Datenbasierte Verbesserungen</p>
-                </div>
-              </div>
+      {/* Process Section */}
+      <section className="py-20 bg-medico-mint">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              Unser strategischer Ansatz
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              Systematisch von der Analyse zur Umsetzung
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+              <h3 className="text-lg font-bold mb-2">Analyse</h3>
+              <p className="text-sm text-brand-text">Ist-Zustand, Zielgruppen, Wettbewerb</p>
             </div>
 
-            {/* Process Section */}
-            <div className="bg-medico-mint rounded-lg p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-center text-medico-darkGreen mb-12">
-                Unser strategischer Prozess
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    1
-                  </div>
-                  <h3 className="text-xl font-bold text-medico-darkGreen mb-3">Analyse & Research</h3>
-                  <p className="text-medico-darkGreen">
-                    Wir analysieren Ihre Zielgruppe, Konkurrenz und Marktposition für eine fundierte Basis.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    2
-                  </div>
-                  <h3 className="text-xl font-bold text-medico-darkGreen mb-3">Konzept & Wireframing</h3>
-                  <p className="text-medico-darkGreen">
-                    Entwicklung einer klaren Informationsarchitektur und User Experience Strategie.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    3
-                  </div>
-                  <h3 className="text-xl font-bold text-medico-darkGreen mb-3">Testing & Optimierung</h3>
-                  <p className="text-medico-darkGreen">
-                    Kontinuierliche Verbesserung basierend auf Nutzerdaten und Performance-Metriken.
-                  </p>
-                </div>
-              </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+              <h3 className="text-lg font-bold mb-2">Strategie</h3>
+              <p className="text-sm text-brand-text">Ziele definieren, Maßnahmen planen</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+              <h3 className="text-lg font-bold mb-2">Umsetzung</h3>
+              <p className="text-sm text-brand-text">Schrittweise Implementierung</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+              <h3 className="text-lg font-bold mb-2">Optimierung</h3>
+              <p className="text-sm text-brand-text">Kontinuierliche Verbesserung</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <CTA
-          lightBackground={true}
-          title="Bereit für eine strategische Website-Planung?"
-          subtitle="Lassen Sie uns gemeinsam eine datenbasierte Strategie für Ihren Online-Erfolg entwickeln."
-          primaryCta="Strategiegespräch vereinbaren"
-        />
-      </PageLayout>
-    </>
+      <FAQ customFaqs={strategieFaqs} />
+      <CTA 
+        title="Bereit für eine strategische Digitalberatung?"
+        subtitle="Lassen Sie uns gemeinsam eine Strategie entwickeln, die messbare Ergebnisse liefert."
+        primaryCta="Strategiegespräch vereinbaren"
+        secondaryCta="Kontakt aufnehmen"
+      />
+    </PageLayout>
   );
 };
 
