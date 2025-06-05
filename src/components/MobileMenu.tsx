@@ -139,20 +139,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                 : "w-full h-full max-h-[100dvh] overflow-auto"
             )}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
-              {!isDesktop && (
-                <h2 className="text-lg font-semibold text-brand-heading font-sans">{menuText}</h2>
-              )}
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
-                onClick={onClose}
-                aria-label={closeMenuText}
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
+            {/* Removed the header with close button - we use the floating button instead */}
             
             <div className={cn(
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
