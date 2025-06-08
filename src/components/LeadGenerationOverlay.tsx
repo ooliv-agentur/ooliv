@@ -30,16 +30,16 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  const handleClose = (e?: React.MouseEvent) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  const handleClose = () => {
     setOpen(false);
   };
 
+  // Prevent the sheet from closing on outside clicks or escape - we handle it manually
   const handleOpenChange = (newOpen: boolean) => {
-    setOpen(newOpen);
+    // Only allow opening, closing is handled by our close button
+    if (newOpen) {
+      setOpen(true);
+    }
   };
   
   return (
@@ -47,17 +47,12 @@ const LeadGenerationOverlay = () => {
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
-        // Prevent default close behavior conflicts
-        onPointerDownOutside={(e) => {
-          e.preventDefault();
-          handleClose();
-        }}
-        onEscapeKeyDown={(e) => {
-          e.preventDefault();
-          handleClose();
-        }}
+        // Disable all automatic closing behaviors
+        onPointerDownOutside={(e) => e.preventDefault()}
+        onEscapeKeyDown={(e) => e.preventDefault()}
+        onInteractOutside={(e) => e.preventDefault()}
       >
-        {/* Close Button - now properly isolated from Sheet's overlay */}
+        {/* Close Button */}
         <button 
           onClick={handleClose}
           className="absolute top-7 right-4 z-[60] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
