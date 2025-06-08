@@ -30,22 +30,40 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  const handleClose = () => {
+  const handleClose = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setOpen(false);
+  };
+
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
   };
   
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={handleOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
+        // Prevent default close behavior conflicts
+        onPointerDownOutside={(e) => {
+          e.preventDefault();
+          handleClose();
+        }}
+        onEscapeKeyDown={(e) => {
+          e.preventDefault();
+          handleClose();
+        }}
       >
-        {/* Close Button - positioned absolutely and using Sheet's onOpenChange */}
+        {/* Close Button - now properly isolated from Sheet's overlay */}
         <button 
-          onClick={() => setOpen(false)}
-          className="absolute top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+          onClick={handleClose}
+          className="absolute top-7 right-4 z-[60] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           style={{ cursor: 'none' }}
+          type="button"
         >
           <X className="w-6 h-6" aria-hidden="true" />
         </button>
