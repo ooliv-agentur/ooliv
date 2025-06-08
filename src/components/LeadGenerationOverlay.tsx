@@ -6,10 +6,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetDescription,
-  SheetClose
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
-import { Button } from "@/components/ui/button";
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 
@@ -42,10 +40,10 @@ const LeadGenerationOverlay = () => {
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
       >
-        {/* Close Button - styled like the main menu button */}
+        {/* Close Button - positioned absolutely and using Sheet's onOpenChange */}
         <button 
-          onClick={handleClose}
-          className="fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+          onClick={() => setOpen(false)}
+          className="absolute top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           style={{ cursor: 'none' }}
         >
