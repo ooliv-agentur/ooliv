@@ -34,24 +34,19 @@ const LeadGenerationOverlay = () => {
     setOpen(false);
   };
 
-  // Prevent the sheet from closing on outside clicks or escape - we handle it manually
-  const handleOpenChange = (newOpen: boolean) => {
-    // Only allow opening, closing is handled by our close button
-    if (newOpen) {
-      setOpen(true);
-    }
-  };
+  if (!open) return null;
   
   return (
-    <Sheet open={open} onOpenChange={handleOpenChange}>
-      <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
-        side="right"
-        // Disable all automatic closing behaviors
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-      >
+    <>
+      {/* Custom overlay that closes on click */}
+      <div 
+        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+        onClick={handleClose}
+        style={{ cursor: 'none' }}
+      />
+      
+      {/* Content panel - no Sheet wrapper to avoid conflicts */}
+      <div className="fixed inset-y-0 right-0 z-50 h-full w-3/4 sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20 shadow-lg animate-in slide-in-from-right duration-300">
         {/* Close Button */}
         <button 
           onClick={handleClose}
@@ -63,18 +58,20 @@ const LeadGenerationOverlay = () => {
           <X className="w-6 h-6" aria-hidden="true" />
         </button>
 
-        <SheetHeader className="text-left pb-6 pr-14">
-          <SheetTitle className="text-2xl font-bold text-white">
-            {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
-          </SheetTitle>
-          <SheetDescription className="text-medico-mint/80 text-base">
-            {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
-          </SheetDescription>
-        </SheetHeader>
-        
-        <LeadFormContent onClose={handleClose} />
-      </SheetContent>
-    </Sheet>
+        <div className="p-6">
+          <div className="text-left pb-6 pr-14">
+            <h2 className="text-2xl font-bold text-white mb-2">
+              {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
+            </h2>
+            <p className="text-medico-mint/80 text-base">
+              {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
+            </p>
+          </div>
+          
+          <LeadFormContent onClose={handleClose} />
+        </div>
+      </div>
+    </>
   );
 };
 
