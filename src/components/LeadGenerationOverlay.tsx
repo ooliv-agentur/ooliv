@@ -5,8 +5,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
-  SheetOverlay
+  SheetDescription
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -32,22 +31,12 @@ const LeadGenerationOverlay = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  // Ensure the overlay click closes the sheet
-  const handleOverlayClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setOpen(false);
-  };
   
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetOverlay onClick={handleOverlayClick} />
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
-        onPointerDownOutside={handleClose}
-        onEscapeKeyDown={handleClose}
       >
         {/* Close Button */}
         <button 
