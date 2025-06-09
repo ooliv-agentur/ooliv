@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -6,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Search, Target, Monitor, ArrowUp } from 'lucide-react';
+import { Search, Target, Monitor, ArrowUp, User, Users, MessageCircle } from 'lucide-react';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -181,6 +180,52 @@ const Strategie = () => {
                 <div className="w-8 h-0.5 bg-medico-turquoise"></div>
                 <div className="w-2 h-2 bg-medico-turquoise rounded-full"></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Strategy Consulting Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              Strategieberatung, die zu Ihnen passt
+            </h2>
+            <p className="text-xl text-brand-text max-w-3xl mx-auto">
+              Wir begleiten Sie von der ersten Idee bis zur erfolgreichen Umsetzung – persönlich, individuell und mit dem richtigen Blick fürs Detail.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <User className="w-8 h-8 text-medico-turquoise" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Persönlicher Ansprechpartner</h3>
+              <p className="text-brand-text">
+                Wir sind für Sie da: direkt, ehrlich und transparent. Sie sprechen bei uns immer mit einem erfahrenen Strategen – kein Buzzword-Bingo, sondern Klartext.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-medico-turquoise" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Workshops & Kick-off-Meetings</h3>
+              <p className="text-brand-text">
+                Gemeinsam entwickeln wir in Workshops und Kick-offs eine Strategie, die zu Ihnen passt und Ihr Team von Anfang an mitnimmt.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                <MessageCircle className="w-8 h-8 text-medico-turquoise" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Transparente Kommunikation</h3>
+              <p className="text-brand-text">
+                Über Basecamp oder persönliche Calls sind wir immer für Sie erreichbar – für Fragen, Feedback oder neue Ideen.
+              </p>
             </div>
           </div>
         </div>
