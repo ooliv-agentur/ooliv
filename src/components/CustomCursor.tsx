@@ -137,19 +137,19 @@ const CustomCursor = () => {
     <div 
       className={`fixed pointer-events-none z-[1000] transition-transform duration-100 ${
         hidden ? 'opacity-0' : 'opacity-100'
-      } ${linkHovered ? 'scale-125' : ''} ${clicked ? 'scale-90' : ''}`}
+      } ${linkHovered ? 'scale-150' : ''} ${clicked ? 'scale-75' : ''}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: 'translate(-50%, -50%)',
-        width: '32px',
-        height: '32px',
-        backgroundImage: linkHovered 
-          ? 'url(/cursor-pointer.svg)'
-          : 'url(/cursor-default.svg)',
-        backgroundSize: 'cover',
+        width: '24px',
+        height: '24px',
+        backgroundImage: 'url(/ooliv-cursor.svg)',
+        backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
-        transition: 'transform 0.15s ease-out, opacity 0.2s ease'
+        backgroundPosition: 'center',
+        transition: 'transform 0.15s ease-out, opacity 0.2s ease',
+        filter: linkHovered ? 'brightness(0.8)' : 'none'
       }}
     />
   );
