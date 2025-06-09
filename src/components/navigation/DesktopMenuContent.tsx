@@ -21,35 +21,62 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
   };
+
+  const menuVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1,
+      scale: 1,
+      transition: { 
+        duration: 0.5,
+        ease: "easeInOut",
+        delayChildren: 0.2,
+        staggerChildren: 0.08
+      }
+    },
+    exit: { 
+      opacity: 0,
+      scale: 0.95,
+      transition: { 
+        duration: 0.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut"
+      }
+    }
+  };
   
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-[#f7fafa] text-brand-heading z-[110] flex flex-col overflow-hidden"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={menuVariants}
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden"
           style={{ cursor: 'none' }}
         >
-          <div className="sticky top-0 z-10 flex items-center justify-end p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full" 
-              onClick={onClose}
-              aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
-              style={{ cursor: 'none' }}
-            >
-              <X className="h-6 w-6" />
-            </Button>
-          </div>
-          
           <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto" style={{ cursor: 'none' }}>
-            <nav className="space-y-3 text-center w-full">
+            <motion.nav 
+              className="space-y-3 text-center w-full"
+              variants={itemVariants}
+            >
               <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />
-            </nav>
+            </motion.nav>
           </div>
         </motion.div>
       )}

@@ -152,7 +152,7 @@ const ContentCaseStudies = () => {
                 </div>
                 
                 <Link 
-                  to={language === 'de' ? "/de/case-studies" : "/case-studies"} 
+                  to={language === 'de' ? "/referenzen" : "/en/case-studies"} 
                   className="text-sm font-medium text-brand-primary hover:underline inline-flex items-center"
                 >
                   {t.viewFull} <ArrowRight className="ml-1 h-3 w-3" />
@@ -164,7 +164,7 @@ const ContentCaseStudies = () => {
         
         <div className="text-center">
           <Button variant="outline" asChild>
-            <Link to={language === 'de' ? "/de/case-studies" : "/case-studies"}>
+            <Link to={language === 'de' ? "/referenzen" : "/en/case-studies"}>
               {t.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
