@@ -28,7 +28,7 @@ const DynamicSubheadlines = ({
           prevIndex === subheadlines.length - 1 ? 0 : prevIndex + 1
         );
         setIsVisible(true);
-      }, 300); // Half second for fade out
+      }, 600); // Longer fade out duration for smoother transition
     }, interval);
 
     return () => clearInterval(timer);
@@ -36,10 +36,10 @@ const DynamicSubheadlines = ({
 
   return (
     <span 
-      className={`transition-all duration-300 ease-in-out ${className}`}
+      className={`transition-all duration-[600ms] ease-in-out ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(10px)'
+        transform: isVisible ? 'translateY(0)' : 'translateY(5px)'
       }}
     >
       {subheadlines[currentIndex]}
