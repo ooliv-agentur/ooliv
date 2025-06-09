@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Layout, FileText, Target, PenTool } from 'lucide-react';
@@ -39,8 +38,9 @@ const WebDesignStructureFirst = () => {
       linkText: "Learn more about our content creation process"
     },
     de: {
-      title: "Struktur vor Stil – so starten wir jedes Projekt",
-      subtitle: "Erfolgreiches Webdesign beginnt mit Strategie, nicht mit Farben. Wir entwickeln klare Strukturen, zielgerichtete Inhalte und eine durchdachte Nutzerführung.",
+      title: "Design braucht eine gute Strategie — deshalb starten wir immer mit einem klaren Plan",
+      subtitle: "Erfolgreiches Webdesign beginnt immer mit einer klaren Strategie. Bevor wir mit Farben, Schriften und Bildern loslegen, entwickeln wir eine strukturierte Grundlage, die Ihre Zielgruppe anspricht und Ihre Marke stärkt. Mehr dazu erfahren Sie auf unserer Seite zur ",
+      strategyLinkText: "Strategie",
       points: [
         {
           icon: Layout,
@@ -71,6 +71,7 @@ const WebDesignStructureFirst = () => {
   
   const t = isGerman ? translations.de : translations.en;
   const contentCreationPath = isGerman ? "/content-erstellung" : "/en/content-creation";
+  const strategyPath = isGerman ? "/strategie" : "/en/strategy";
 
   return (
     <section className="py-24 bg-white">
@@ -81,6 +82,15 @@ const WebDesignStructureFirst = () => {
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
           {t.subtitle}
+          {isGerman && (
+            <Link 
+              to={strategyPath} 
+              className="text-brand-primary hover:underline font-medium"
+            >
+              {t.strategyLinkText}
+            </Link>
+          )}
+          {isGerman && "."}
         </p>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
