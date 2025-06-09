@@ -43,10 +43,10 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
+      <nav className="w-full z-40 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
         <div className="relative w-full h-24">
           {/* Logo - responsive positioning: desktop viewport edge, mobile content aligned */}
-          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-50">
+          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-40">
             <Link 
               to={language === 'de' ? '/' : '/en'} 
               className="flex items-center" 
@@ -64,7 +64,7 @@ const MainNavigation = () => {
           </div>
           
           {/* Right side controls - Language switcher and burger menu */}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 flex items-center gap-3">
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 flex items-center gap-3">
             <LanguageSwitcher />
             
             {/* Menu toggle button */}
@@ -95,7 +95,7 @@ const MainNavigation = () => {
       {/* Menu overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 z-[100]"
+          className="fixed inset-0 bg-black/40 z-[90]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
           style={{ cursor: 'none' }}

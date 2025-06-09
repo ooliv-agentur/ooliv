@@ -67,9 +67,24 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate="visible"
           exit="exit"
           variants={menuVariants}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden h-screen shadow-2xl"
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
           style={{ cursor: 'none' }}
         >
+          {/* Close button */}
+          <div className="absolute top-6 right-4 z-[96]">
+            <button 
+              className="flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+              style={{ 
+                cursor: 'none',
+                backgroundColor: '#32b1ab'
+              }}
+              onClick={onClose}
+              aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
+            >
+              <X className="w-6 h-6" aria-hidden="true" />
+            </button>
+          </div>
+
           {/* Main content area - fills full height */}
           <div className="flex-1 flex flex-col justify-center py-6 px-8" style={{ cursor: 'none' }}>
             <motion.nav 
