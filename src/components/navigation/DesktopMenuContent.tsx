@@ -67,7 +67,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate="visible"
           exit="exit"
           variants={menuVariants}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-primary-mintgreen text-primary-darkgreen z-[110] flex flex-col overflow-hidden h-screen"
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden h-screen"
           style={{ cursor: 'none' }}
         >
           {/* Main content area - fills full height */}
@@ -82,13 +82,13 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           
           {/* Company details section at bottom */}
           <motion.div 
-            className="border-t border-secondary-lightblue/20 p-8 bg-primary-mintgreen/95 backdrop-blur-sm"
+            className="border-t border-medico-turquoise/20 p-8 bg-medico-mint/95 backdrop-blur-sm"
             variants={itemVariants}
           >
             {/* Company name */}
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-primary-darkgreen mb-2">ooliv</h3>
-              <p className="text-lg text-primary-darkgreen/80">
+              <h3 className="text-2xl font-bold text-medico-darkGreen mb-2">ooliv</h3>
+              <p className="text-lg text-medico-darkGreen/80">
                 {language === 'de' ? 'Digitalagentur aus Mainz' : 'Digital Agency from Mainz'}
               </p>
             </div>
@@ -96,8 +96,8 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
             {/* Contact details */}
             <div className="space-y-4 text-center">
               {/* Address */}
-              <div className="flex items-center justify-center text-primary-darkgreen/80">
-                <MapPin className="h-4 w-4 mr-2 text-secondary-lightblue" />
+              <div className="flex items-center justify-center text-medico-darkGreen/80">
+                <MapPin className="h-4 w-4 mr-2" />
                 <span className="text-sm">Mainz, Deutschland</span>
               </div>
               
@@ -106,7 +106,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-secondary-lightblue/30 text-primary-darkgreen bg-secondary-white/80 hover:bg-secondary-lightblue hover:text-primary-darkgreen transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="mailto:info@ooliv.de" aria-label={language === 'de' ? "E-Mail senden" : "Send email"}>
@@ -118,7 +118,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-secondary-lightblue/30 text-primary-darkgreen bg-secondary-white/80 hover:bg-secondary-lightblue hover:text-primary-darkgreen transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="tel:+4961316367801" aria-label={language === 'de' ? "Anrufen" : "Call us"}>
@@ -130,7 +130,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-secondary-lightblue/30 text-primary-darkgreen bg-secondary-white/80 hover:bg-green-500 hover:text-white transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-green-500 hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="https://wa.me/4961316367801" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

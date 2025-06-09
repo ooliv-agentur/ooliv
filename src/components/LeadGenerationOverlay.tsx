@@ -52,13 +52,13 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-primary-darkgreen text-secondary-white border-l border-secondary-lightblue/10" 
+        className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
       >
         {/* Close button matching hamburger menu style */}
         <button 
           className={cn(
-            "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-secondary-lightblue text-primary-darkgreen hover:bg-primary-mintgreen transition-all duration-300 shadow-md hover:shadow-lg",
+            "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg",
             "w-10 h-10 min-w-10 min-h-10"
           )}
           onClick={handleClose}
@@ -70,10 +70,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         </button>
 
         <SheetHeader className="text-left pb-4 pr-12">
-          <SheetTitle className="text-xl font-bold text-secondary-white">
+          <SheetTitle className="text-xl font-bold text-white">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
           </SheetTitle>
-          <SheetDescription className="text-secondary-white/70">
+          <SheetDescription className="text-white/70">
             {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
           </SheetDescription>
         </SheetHeader>

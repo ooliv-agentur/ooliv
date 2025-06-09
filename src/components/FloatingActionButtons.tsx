@@ -26,20 +26,20 @@ const FloatingActionButtons = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
   };
 
-  // Updated button definitions with new color scheme
+  // Updated button definitions with consistent yellow color for project button
   const buttons = [
     { 
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: handleOpenLeadForm,
-      className: 'text-primary-darkgreen border-none shadow-md hover:shadow-lg',
+      className: 'text-white border-none shadow-md hover:shadow-lg',
       style: { 
-        backgroundColor: '#FFE600', // primary-yellow
-        color: '#00403D' // primary-darkgreen
+        backgroundColor: '#FFD700',
+        color: '#003347'
       },
       hoverStyle: {
-        backgroundColor: '#FFF38A' // tertiary-lightyellow
+        backgroundColor: '#FFC700'
       }
     },
     { 
@@ -47,14 +47,14 @@ const FloatingActionButtons = () => {
       icon: Mail, 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-secondary-white text-primary-darkgreen border border-secondary-lightblue/30 hover:bg-primary-mintgreen hover:border-secondary-lightblue'
+      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-secondary-white text-primary-darkgreen border border-secondary-lightblue/30 hover:bg-primary-mintgreen hover:border-secondary-lightblue'
+      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
     }
   ];
 
@@ -105,7 +105,7 @@ const FloatingActionButtons = () => {
                   <button.icon className="h-5 w-5" />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent side="left" className="bg-primary-darkgreen text-secondary-white border-0">
+              <TooltipContent side="left" className="bg-medico-darkGreen text-white border-0">
                 <p>{button.label}</p>
               </TooltipContent>
             </Tooltip>
@@ -118,14 +118,14 @@ const FloatingActionButtons = () => {
             onClick={toggleExpanded}
             className="w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg"
             style={{ 
-              backgroundColor: '#FFE600', // primary-yellow
-              color: '#00403D' // primary-darkgreen
+              backgroundColor: '#FFD700',
+              color: '#003347'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFF38A'; // tertiary-lightyellow
+              e.currentTarget.style.backgroundColor = '#FFC700';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFE600'; // primary-yellow
+              e.currentTarget.style.backgroundColor = '#FFD700';
             }}
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
