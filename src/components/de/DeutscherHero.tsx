@@ -77,10 +77,10 @@ const DeutscherHero = () => {
               </div>
             </Reveal>
             
-            {/* Body text - left-aligned */}
+            {/* Body text - updated with new B2B-focused copy */}
             <Reveal delay={0.2}>
               <p className="text-2xl text-medico-darkGreen mb-10 leading-relaxed text-left">
-                Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
+                Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand.
               </p>
             </Reveal>
             
