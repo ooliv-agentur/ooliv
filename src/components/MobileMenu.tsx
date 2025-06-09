@@ -81,7 +81,6 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
   // Navigation links based on language
   const navigationLinks = language === 'de' ? [
     { title: 'Home', path: '/' },
-    { title: 'Strategie', path: '/strategie' },
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
     { title: 'Content-Erstellung', path: '/content-erstellung' },
@@ -110,114 +109,81 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
 
   const backdropVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } },
-    exit: { opacity: 0, transition: { duration: 0.3, ease: 'easeIn' } }
+    visible: { opacity: 1, transition: { duration: 0.2, ease: 'easeOut' } },
+    exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } }
   };
 
-  const menuVariants = {
-    hidden: { 
-      opacity: 0,
-      scale: 0.95,
-      y: 20
-    },
-    visible: { 
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { 
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
-        delayChildren: 0.1,
-        staggerChildren: 0.05
+  const menuVariants = isDesktop 
+    ? {
+        hidden: { x: "100%" },
+        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
+        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
       }
-    },
-    exit: { 
-      opacity: 0,
-      scale: 0.95,
-      y: 20,
-      transition: { 
-        duration: 0.3,
-        ease: 'easeIn'
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
+    : {
+        hidden: { x: "100%" },
+        visible: { x: 0, transition: { type: "spring", damping: 25, stiffness: 300 } },
+        exit: { x: "100%", transition: { duration: 0.25, ease: 'easeIn' } }
+      };
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
-          className="fixed inset-0 bg-black/50 flex flex-col z-[100]"
-          variants={backdropVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
+        <motion.div className="fixed inset-0 bg-black/50 flex flex-col z-[100]">
           <motion.div 
             ref={menuRef}
             className={cn(
-              "flex flex-col bg-medico-mint text-medico-darkGreen", 
+              "flex flex-col bg-[#f7fafa] text-brand-heading", 
               isDesktop 
                 ? "ml-auto w-[40%] h-full" 
                 : "w-full h-full max-h-[100dvh] overflow-auto"
             )}
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
           >
+            <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-gray-100 bg-[#f7fafa]/95 backdrop-blur-sm">
+              {!isDesktop && (
+                <h2 className="text-lg font-semibold text-brand-heading font-sans">{menuText}</h2>
+              )}
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="w-12 h-12 flex items-center justify-center text-[#b1b497] hover:bg-accent rounded-full border border-gray-300" 
+                onClick={onClose}
+                aria-label={closeMenuText}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
+            
             <div className={cn(
               "flex-1 flex flex-col py-4 px-6 overflow-y-auto",
               isDesktop ? "pt-4" : "pt-6"
             )}>
               {/* Language Switcher */}
-              <motion.div 
-                className="flex justify-end mb-4"
-                variants={itemVariants}
-              >
+              <div className="flex justify-end mb-4">
                 <LanguageSwitcher />
-              </motion.div>
+              </div>
               
               <nav className={cn(
                 "space-y-4 text-center w-full",
                 isDesktop ? "space-y-3" : "space-y-4"
               )}>
                 {navigationLinks.map((link, index) => (
-                  <motion.div 
-                    key={index} 
-                    className={cn()}
-                    variants={itemVariants}
-                  >
+                  <div key={index} className={cn()}>
                     <Link 
                       to={link.path}
                       className={cn(
-                        "block py-2 font-bold text-medico-darkGreen hover:text-medico-turquoise transition-colors focus:outline-none focus:text-medico-turquoise focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
+                        "block py-2 font-bold text-brand-heading hover:text-[#b1b497] transition-colors focus:outline-none focus:text-[#b1b497] focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 rounded-md hover:scale-105 transition-transform font-sans",
                         isDesktop ? "text-lg py-2" : "text-3xl py-3"
                       )}
                       onClick={handleLinkClick}
                     >
                       {link.title}
                     </Link>
-                  </motion.div>
+                  </div>
                 ))}
               </nav>
             </div>
             
-            <motion.div 
-              className="sticky bottom-0 z-10 border-t border-medico-turquoise/20 p-6 space-y-5 bg-medico-mint/95 backdrop-blur-sm"
-              variants={itemVariants}
-            >
+            <div className="sticky bottom-0 z-10 border-t border-gray-200 p-6 space-y-5 bg-[#f7fafa]/95 backdrop-blur-sm">
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email ooliv", href: "mailto:info@ooliv.de" },
@@ -227,7 +193,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200 hover:border-medico-turquoise focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 flex items-center justify-center"
+                    className="w-full py-6 min-h-[60px] border-gray-300 text-[#b1b497] bg-gray-50/50 hover:bg-[#b1b497]/10 hover:text-[#b1b497] transition-all duration-200 hover:border-[#b1b497]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b1b497]/50 flex items-center justify-center"
                     aria-label={contact.label}
                     asChild
                   >
@@ -237,7 +203,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                   </Button>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       )}

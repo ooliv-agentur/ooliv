@@ -1,13 +1,25 @@
 
-import React from 'react';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   const isMobile = useIsMobile();
+  const isTablet = useMediaQuery('(max-width: 1023px)');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
   
   const translations = {
     en: {
@@ -100,6 +112,130 @@ const WebDesignProcess = () => {
   
   const t = isGerman ? translations.de : translations.en;
 
+  const scrollToIndex = (index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.scrollWidth / t.steps.length;
+      container.scrollTo({ 
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setActiveIndex(index);
+    }
+  };
+
+  const scrollPrev = () => {
+    if (activeIndex > 0) {
+      scrollToIndex(activeIndex - 1);
+    }
+  };
+
+  const scrollNext = () => {
+    if (activeIndex < t.steps.length - 1) {
+      scrollToIndex(activeIndex + 1);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      setScrollPosition(container.scrollLeft);
+      
+      const cardWidth = container.scrollWidth / t.steps.length;
+      const newIndex = Math.round(container.scrollLeft / cardWidth);
+      if (newIndex !== activeIndex && newIndex >= 0 && newIndex < t.steps.length) {
+        setActiveIndex(newIndex);
+      }
+      
+      // Update scroll buttons state
+      setCanScrollPrev(container.scrollLeft > 10);
+      setCanScrollNext(container.scrollLeft < container.scrollWidth - container.clientWidth - 10);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (scrollRef.current) {
+      setIsDragging(true);
+      setStartX(e.pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+      
+      if (scrollRef.current) {
+        scrollRef.current.style.cursor = 'grabbing';
+        scrollRef.current.style.userSelect = 'none';
+      }
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (scrollRef.current) {
+      setIsDragging(true);
+      setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = 'grab';
+      scrollRef.current.style.userSelect = 'auto';
+      
+      const container = scrollRef.current;
+      const cardWidth = container.scrollWidth / t.steps.length;
+      const targetIndex = Math.round(container.scrollLeft / cardWidth);
+      scrollToIndex(targetIndex);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    if (scrollRef.current) {
+      const x = e.pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 2.5;
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    if (scrollRef.current) {
+      const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+      const walk = (x - startX) * 2.5;
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        if (activeIndex > 0) {
+          scrollToIndex(activeIndex - 1);
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (activeIndex < t.steps.length - 1) {
+          scrollToIndex(activeIndex + 1);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeIndex, t.steps.length]);
+
+  // Initialize scroll buttons state
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
+  const scrollContainerClass = cn(
+    "flex overflow-x-auto snap-x snap-mandatory process-scroll pb-6 -mx-4 px-4 cursor-grab",
+    isDragging && "cursor-grabbing"
+  );
+
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,50 +247,37 @@ const WebDesignProcess = () => {
           {t.subtitle}
         </p>
         
-        {/* Desktop Version */}
-        <div className="hidden lg:block">
-          <div className="grid lg:grid-cols-5 gap-6">
+        <div className="w-full max-w-6xl mx-auto relative">
+          <style dangerouslySetInnerHTML={{ __html: `
+            .process-scroll::-webkit-scrollbar {
+              display: none;
+            }
+            .process-scroll {
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+              scroll-behavior: smooth;
+              -webkit-overflow-scrolling: touch;
+            }
+          `}} />
+          
+          <div 
+            ref={scrollRef}
+            className={scrollContainerClass}
+            onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleMouseUp}
+            onTouchMove={handleTouchMove}
+          >
             {t.steps.map((step, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
-                    {step.number}
-                  </div>
-                  <div>
-                    <div className="flex items-center mb-2">
-                      <step.icon className="h-5 w-5 text-brand-primary mr-2" />
-                      <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
-                    </div>
-                    <p className="text-brand-text text-sm mb-5">{step.description}</p>
-                    
-                    <div className="border-t border-brand-backgroundAlt pt-4">
-                      <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
-                        {t.deliverableTitle}
-                      </h4>
-                      <div className="space-y-2.5">
-                        {step.deliverables.map((deliverable, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
-                              <Check className="h-3 w-3 text-brand-primary" />
-                            </div>
-                            <p className="text-sm font-medium text-brand-text">{deliverable}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Mobile and Tablet Version with native scrolling */}
-        <div className="lg:hidden">
-          <div className="overflow-x-auto">
-            <div className="flex gap-6 pb-4 min-w-max">
-              {t.steps.map((step, index) => (
-                <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+              <div 
+                key={index}
+                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-3 snap-start"
+              >
+                <div className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
                       {step.number}
@@ -184,8 +307,39 @@ const WebDesignProcess = () => {
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Navigation Arrows */}
+          <div className="flex justify-center mt-8 items-center gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              className={cn(
+                "rounded-full w-10 h-10 flex items-center justify-center border-2 border-brand-primary text-brand-primary transition-all duration-200",
+                !canScrollPrev && "opacity-50 cursor-not-allowed"
+              )}
+              disabled={!canScrollPrev}
+              onClick={scrollPrev}
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              className={cn(
+                "rounded-full w-10 h-10 flex items-center justify-center border-2 border-brand-primary text-brand-primary transition-all duration-200",
+                !canScrollNext && "opacity-50 cursor-not-allowed"
+              )}
+              disabled={!canScrollNext}
+              onClick={scrollNext}
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </Button>
           </div>
           
           {isMobile && (

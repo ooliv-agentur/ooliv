@@ -12,20 +12,20 @@ export default {
       colors: {
         border: "#e2e8f0",
         brand: {
-          primary: "#38B593", // Updated to medico-turquoise
-          primaryHover: "#2a8a73",
-          secondary: "#FFE500", // Updated to medico-yellow
-          secondaryHover: "#e6ce00",
-          heading: "#003347", // Updated to medico-darkGreen
-          text: "#003347", // Updated to medico-darkGreen
-          background: "#D8F4E3", // Updated to medico-mint
-          backgroundAlt: "#D8F4E3", // Updated to medico-mint
-          footer: "#003347", // Updated to medico-darkGreen
-          success: "#38B593", // Updated to medico-turquoise
+          primary: "#006064",
+          primaryHover: "#004D40",
+          secondary: "#FF9800",
+          secondaryHover: "#F57C00",
+          heading: "#0D1B2A",
+          text: "#2B2D42",
+          background: "#F5F7FA",
+          backgroundAlt: "#E9ECEF",
+          footer: "#0D1B2A",
+          success: "#2E7D32",
           error: "#C62828",
-          warning: "#FFE500" // Updated to medico-yellow
+          warning: "#F9A825"
         },
-        // Primary medicosearch.ch color palette
+        // New medicosearch.ch color palette
         medico: {
           mint: "#D8F4E3",
           yellow: "#FFE500",

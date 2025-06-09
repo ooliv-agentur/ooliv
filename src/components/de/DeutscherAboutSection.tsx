@@ -11,25 +11,25 @@ const DeutscherAboutSection = () => {
     {
       title: "Strategie & UX",
       description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
-      icon: <Grid2X2 className="h-6 w-6 text-medico-turquoise" />,
+      icon: <Grid2X2 className="h-5 w-5 text-medico-turquoise" />,
       link: "/strategie"
     },
     {
       title: "Content & SEO",
       description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
-      icon: <Sparkles className="h-6 w-6 text-medico-turquoise" />,
+      icon: <Sparkles className="h-5 w-5 text-medico-turquoise" />,
       link: "/content-erstellung"
     },
     {
       title: "Design & Development",
       description: "Custom-coded, konversionsstark, skalierbar.",
-      icon: <Code2 className="h-6 w-6 text-medico-turquoise" />,
+      icon: <Code2 className="h-5 w-5 text-medico-turquoise" />,
       link: "/webentwicklung"
     },
     {
       title: "Kommunikation",
       description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
-      icon: <Phone className="h-6 w-6 text-medico-turquoise" />,
+      icon: <Phone className="h-5 w-5 text-medico-turquoise" />,
       link: "/kontakt"
     }
   ];
@@ -57,16 +57,15 @@ const DeutscherAboutSection = () => {
               <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
               <p className="text-gray-600 mb-6 text-base leading-relaxed">{service.description}</p>
               <div>
-                <Link 
-                  to={service.link}
-                  className="underline transition-colors duration-300 font-bold text-lg hover:text-medico-darkGreen"
-                  style={{ 
-                    color: '#32b1ab',
-                    fontSize: '18px'
-                  }}
+                <Button 
+                  variant="link" 
+                  className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                  asChild
                 >
-                  Mehr erfahren
-                </Link>
+                  <Link to={service.link}>
+                    Mehr erfahren
+                  </Link>
+                </Button>
               </div>
             </div>
           ))}

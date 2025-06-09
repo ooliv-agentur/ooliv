@@ -15,7 +15,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const isDesktop = useMediaQuery('(min-width: 1025px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const { language } = useLanguage();
 
   const toggleExpanded = () => {
@@ -39,35 +39,35 @@ const FloatingActionButtons = () => {
     };
   }, []);
 
-  // Updated button definitions with new medico colors
+  // Updated button definitions with translations
   const buttons = [
     { 
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => window.dispatchEvent(new Event('open-lead-form')),
-      className: 'bg-medico-turquoise text-white hover:bg-medico-darkGreen border-none shadow-md hover:shadow-lg'
+      className: 'bg-[#006064] text-white hover:bg-[#004d51] border-none shadow-md hover:shadow-lg' // Enhanced visibility
     },
     { 
       id: 'email', 
       icon: Mail, 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
+      className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
     },
     { 
       id: 'phone', 
       icon: Phone, 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
+      className: 'bg-white text-[#b1b497] border border-[#b1b497]/30 hover:bg-[#b1b497]/10'
     }
   ];
 
-  // On desktop: always show all buttons, no toggle needed
-  // On mobile/tablet: show toggle button and control visibility
-  const showAllButtons = isDesktop || isExpanded;
-  const showToggleButton = !isDesktop;
+  // For mobile, limit to first 2 actions when collapsed
+  const visibleButtons = isMobile 
+    ? (isExpanded ? buttons : []) 
+    : buttons;
 
   return (
     <TooltipProvider>
@@ -75,52 +75,32 @@ const FloatingActionButtons = () => {
         "fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
         "transition-all duration-300"
       )}>
-        {/* Action buttons with smooth transition */}
-        <div className={cn(
-          "flex flex-col gap-5 transition-all duration-500 ease-in-out",
-          showAllButtons 
-            ? "opacity-100 transform translate-y-0 scale-100" 
-            : "opacity-0 transform translate-y-4 scale-95 pointer-events-none"
-        )}>
-          {buttons.map((button, index) => (
-            <Tooltip key={button.id}>
-              <TooltipTrigger asChild>
-                <Button
-                  onClick={button.onClick}
-                  className={cn(
-                    "w-14 h-14 rounded-full p-4", 
-                    "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
-                    button.className
-                  )}
-                  style={{
-                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
-                  }}
-                  aria-label={button.label}
-                >
-                  <button.icon className="h-5 w-5" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="left" className="bg-medico-darkGreen text-white border-0">
-                <p>{button.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          ))}
-        </div>
+        {visibleButtons.map((button) => (
+          <Tooltip key={button.id}>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={button.onClick}
+                className={cn(
+                  "w-14 h-14 rounded-full p-4", 
+                  "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
+                  button.className
+                )}
+                aria-label={button.label}
+              >
+                <button.icon className="h-5 w-5" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="left" className="bg-[#006064] text-white border-0">
+              <p>{button.label}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
         
-        {/* Toggle button - only visible on mobile/tablet with new colors */}
-        {showToggleButton && (
+        {isMobile && (
           <Button
             onClick={toggleExpanded}
-            className={cn(
-              "w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg",
-              isExpanded 
-                ? "bg-medico-turquoise text-white hover:bg-medico-darkGreen" 
-                : "bg-medico-turquoise text-white hover:bg-medico-darkGreen"
-            )}
-            aria-label={isExpanded 
-              ? (language === 'de' ? "Menü schließen" : "Close menu")
-              : (language === 'de' ? "Menü öffnen" : "Open menu")
-            }
+            className="w-14 h-14 rounded-full bg-[#b1b497] text-white hover:bg-[#9a9c83] border-none transition-all"
+            aria-label={isExpanded ? "Close menu" : "Open menu"}
           >
             {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
           </Button>

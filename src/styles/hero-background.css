@@ -7,6 +7,46 @@
   z-index: 0; /* Ensure correct stacking context */
 }
 
+/* Temporarily commenting out the ::before pseudo-element with SVG background
+.bg-hero-pattern::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 70%;
+  height: 80%;
+  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1200 C 800 1000, 800 800, 1200 600 L 1200 0 L 0 0 Z' fill='%23f7f8fc' opacity='0.4'/%3E%3C/svg%3E");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.6;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+*/
+
+/* Temporarily commenting out the ::after pseudo-element with SVG background
+.bg-hero-pattern::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 60%;
+  height: 70%;
+  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='1200' viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1200 0 C 400 200, 400 400, 0 600 L 0 1200 L 1200 1200 Z' fill='%23f7f8fc' opacity='0.4'/%3E%3C/svg%3E");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 1;
+  animation: float-reverse 10s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+*/
+
 /* Video Background Styles */
 .video-background {
   position: absolute;
@@ -16,39 +56,6 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-}
-
-/* Floating Circles Animations */
-.floating-circle {
-  position: absolute;
-  background: linear-gradient(135deg, #38B593, #FFE500);
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-circle.slow {
-  animation: float-slow 8s ease-in-out infinite;
-}
-
-.floating-circle.delayed {
-  animation: float-delayed 6s ease-in-out infinite 2s;
-}
-
-.floating-circle.reverse {
-  animation: float-reverse 7s ease-in-out infinite;
-}
-
-.floating-circle.diagonal {
-  animation: float-diagonal 5s ease-in-out infinite;
-}
-
-.floating-circle.fast {
-  animation: float-fast 4s ease-in-out infinite;
-}
-
-.floating-circle.pulse {
-  animation: float-pulse 3s ease-in-out infinite;
 }
 
 /* Animation keyframes */
@@ -61,24 +68,6 @@
   }
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0) scale(1) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.03) rotate(180deg);
-  }
-}
-
-@keyframes float-delayed {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-25px) scale(1.04);
-  }
-}
-
 @keyframes float-reverse {
   0%, 100% {
     transform: translateY(0) scale(1);
@@ -88,38 +77,10 @@
   }
 }
 
-@keyframes float-diagonal {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-15px, -15px) scale(1.02);
-  }
-}
-
-@keyframes float-fast {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-35px) scale(1.06);
-  }
-}
-
-@keyframes float-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-}
-
 /* Optional: Reduziere Animationen wenn der Benutzer dies bevorzugt */
 @media (prefers-reduced-motion: reduce) {
-  .floating-circle {
+  .bg-hero-pattern::before,
+  .bg-hero-pattern::after {
     animation: none;
   }
 }

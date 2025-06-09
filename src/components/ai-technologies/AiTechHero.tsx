@@ -33,7 +33,7 @@ const AiTechHero = () => {
       }}
       secondaryCta={{
         text: language === 'de' ? "Referenzen ansehen" : "View Case Studies", 
-        link: language === 'de' ? "/referenzen" : "/en/case-studies"
+        link: language === 'de' ? "/case-studies" : "/en/case-studies"
       }}
     />
   );

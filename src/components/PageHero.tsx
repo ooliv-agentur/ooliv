@@ -45,6 +45,9 @@ const PageHero = ({
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   
+  // Set the background color based on whether this is the homepage or not
+  const bgColor = isHomepage ? '#f7f8fc' : '#f5f6fa';
+  
   useEffect(() => {
     // Check for reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -74,7 +77,7 @@ const PageHero = ({
   };
   
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
-  const caseStudiesPath = language === 'de' ? "/referenzen" : "/en/case-studies";
+  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
   
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
@@ -114,28 +117,10 @@ const PageHero = ({
   
   // Default content based on language
   const defaultHomepageTitle = language === 'de' ? (
-    <>
-      <span 
-        className="font-medium leading-tight text-center block"
-        style={{ 
-          fontSize: '52px', 
-          lineHeight: '68px', 
-          color: '#003343' 
-        }}
-      >
-        Werbeagentur Mainz
-      </span>
-      <span 
-        className="font-bold text-center block mt-2"
-        style={{ 
-          fontSize: '52px', 
-          lineHeight: '68px', 
-          color: '#32b1ab' 
-        }}
-      >
-        Für messbare Ergebnisse im Web.
-      </span>
-    </>
+    <div className="flex flex-col">
+      <span>Werbeagentur Mainz</span>
+      <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">Für messbare Ergebnisse im Web.</span>
+    </div>
   ) : (
     <div className="flex flex-col">
       <span>Web Design Agency Mainz</span>
@@ -145,7 +130,8 @@ const PageHero = ({
   
   const defaultHomepageDescription = language === 'de' ? (
     <>
-      Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
+      Wir entwickeln Websites, die besser ranken, mehr konvertieren<br />
+      und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
     </>
   ) : (
     <>
@@ -157,20 +143,13 @@ const PageHero = ({
   const renderTitle = () => {
     if (isHomepage) {
       return (
-        <h1 className="mb-2">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
           {title || defaultHomepageTitle}
         </h1>
       );
     } else {
       return (
-        <h1 
-          className="font-medium leading-tight text-center mb-2"
-          style={{ 
-            fontSize: '52px', 
-            lineHeight: '68px', 
-            color: '#003343' 
-          }}
-        >
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-heading mb-6 leading-tight">
           {title}
         </h1>
       );
@@ -180,13 +159,13 @@ const PageHero = ({
   const renderSubtitle = () => {
     if (isHomepage) {
       return (
-        <p className="text-xl text-medico-darkGreen mb-10 leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-700 mb-8">
           {subtitle || description || defaultHomepageDescription}
         </p>
       );
     } else {
       return (
-        <p className="text-xl text-medico-darkGreen mb-10 leading-relaxed">
+        <p className="text-xl md:text-2xl text-brand-heading/80 mb-8">
           {subtitle || description}
         </p>
       );
@@ -221,27 +200,27 @@ const PageHero = ({
         {openLeadForm ? (
           <Button 
             size="lg" 
-            className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group bg-[#006064] text-white hover:bg-[#004D40]"
             data-trigger-lead-form
             onClick={handleOpenLeadForm}
           >
             {primary.text}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : primary.onClick ? (
           <Button 
             size="lg" 
-            className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+            className="group bg-[#006064] text-white hover:bg-[#004D40]" 
             onClick={primary.onClick}
           >
             {primary.text}
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         ) : (
-          <Button size="lg" className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+          <Button size="lg" className="group bg-[#006064] text-white hover:bg-[#004D40]" asChild>
             <Link to={primary.link}>
               {primary.text}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         )}
@@ -251,17 +230,17 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              className="group" 
               onClick={secondary.onClick}
             >
               {secondary.text}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : (
-            <Button variant="outline" size="lg" className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <Button variant="outline" size="lg" className="group" asChild>
               <Link to={secondary.link}>
                 {secondary.text}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           )
@@ -271,32 +250,40 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
-      {/* Enhanced floating circles animation with more variety - same as homepage */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large slow moving circles */}
-        <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
-        <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
-        
-        {/* Medium circles with different animations */}
-        <div className="floating-circle reverse w-24 h-24 bottom-40 left-1/4 opacity-50"></div>
-        <div className="floating-circle diagonal w-20 h-20 bottom-20 right-1/3 opacity-45"></div>
-        
-        {/* Small fast moving circles */}
-        <div className="floating-circle fast w-16 h-16 top-1/2 left-3/4 opacity-60"></div>
-        <div className="floating-circle pulse w-12 h-12 top-1/3 right-1/4 opacity-70"></div>
-        
-        {/* Additional ambient circles */}
-        <div className="floating-circle slow w-14 h-14 top-60 left-1/2 opacity-35"></div>
-        <div className="floating-circle delayed reverse w-18 h-18 bottom-60 right-10 opacity-40"></div>
-        <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
+    <section className="relative overflow-hidden" style={{ backgroundColor: bgColor }}>
+      {/* Background container - using direct background instead of pattern with SVGs */}
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: bgColor }}>
+        {backgroundVideo && !videoError ? (
+          // Video background when provided - with error handling and loading feedback
+          <>
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="absolute w-full h-full object-cover opacity-20 z-10"
+              onLoadedData={handleVideoLoaded}
+              onError={handleVideoError}
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {!videoLoaded && (
+              <div className="absolute inset-0" style={{ backgroundColor: bgColor }}></div>
+            )}
+          </>
+        ) : (
+          // Simple flat background - no patterns or SVGs
+          <div className="absolute inset-0" style={{ backgroundColor: bgColor }}></div>
+        )}
       </div>
       
-      <div className="relative z-20 w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto">
+      {/* Fixed height container for consistent sizing */}
+      <div className="relative z-20 min-h-[680px] flex flex-col justify-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-32">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             {badge && !isHomepage && (
-              <div className="inline-flex items-center bg-medico-turquoise/10 text-medico-turquoise rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
+              <div className="inline-flex items-center bg-brand-primary/10 text-brand-primary rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
                 <span>{badge}</span>
               </div>
             )}
@@ -308,16 +295,20 @@ const PageHero = ({
         </div>
       </div>
       
-      {/* Visual transition indicator - on all pages as scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
-          <div className="flex space-x-1">
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-          </div>
-        </div>
+      {/* Fixed position for the wave - Increased height and adjusted position to eliminate line */}
+      <div className="absolute -bottom-1 left-0 right-0 h-20 z-30 pointer-events-none">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 1440 320" 
+          className="absolute bottom-0 w-full h-auto"
+          preserveAspectRatio="none"
+        >
+          <path 
+            fill="#ffffff" 
+            fillOpacity="1" 
+            d="M0,224L80,213.3C160,203,320,181,480,192C640,203,800,245,960,245.3C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
+        </svg>
       </div>
       
       {isHomepage && <ScrollIndicator />}

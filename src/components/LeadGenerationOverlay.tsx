@@ -5,10 +5,8 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
-  SheetOverlay
+  SheetDescription
 } from "@/components/ui/sheet";
-import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 
@@ -22,55 +20,35 @@ const LeadGenerationOverlay = () => {
       setOpen(true);
     };
 
+    // Register event listener
     window.addEventListener('open-lead-form', handleOpenLeadForm);
     
+    // Clean up
     return () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
   }, []);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  // Ensure the overlay click closes the sheet
-  const handleOverlayClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setOpen(false);
-  };
   
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetOverlay onClick={handleOverlayClick} />
       <SheetContent 
-        className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
+        className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
-        onPointerDownOutside={handleClose}
-        onEscapeKeyDown={handleClose}
+        style={{ cursor: 'none' }}
       >
-        {/* Close Button */}
-        <button 
-          onClick={handleClose}
-          className="absolute top-4 right-4 rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-colors duration-200 w-8 h-8 flex items-center justify-center z-10"
-          aria-label={language === 'de' ? "Formular schließen" : "Close form"}
-        >
-          <X className="w-4 h-4" />
-        </button>
-
-        <SheetHeader className="text-left pb-6 pr-12">
-          <SheetTitle className="text-2xl font-bold text-white">
+        <SheetHeader className="text-left pb-4">
+          <SheetTitle className="text-xl font-bold text-white">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
           </SheetTitle>
-          <SheetDescription className="text-medico-mint/80 text-base">
+          <SheetDescription className="text-white/70">
             {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={handleClose} />
+        <LeadFormContent onClose={() => setOpen(false)} />
       </SheetContent>
     </Sheet>
   );
 };
 
-export default LeadGenerationOverlay;
+export default React.memo(LeadGenerationOverlay);

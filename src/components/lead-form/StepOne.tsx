@@ -27,45 +27,42 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.3 }}
-      className="space-y-6"
+      className="space-y-4"
     >
-      <div className="space-y-4">
+      <div className="space-y-2">
         <FormField
           control={form.control}
           name="projectType"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-xl font-semibold text-white mb-3 block">{whatArePlanning}</FormLabel>
+              <FormLabel className="text-lg font-medium text-white">{whatArePlanning}</FormLabel>
               <Select 
                 onValueChange={field.onChange} 
                 defaultValue={field.value}
                 value={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="w-full h-12 bg-white/10 border-medico-mint/30 text-white text-base hover:bg-white/15 focus:border-medico-turquoise">
-                    <SelectValue 
-                      placeholder={selectProjectType} 
-                      className="text-white placeholder:text-white/70"
-                    />
+                  <SelectTrigger className="w-full bg-white/10 border-white/20 text-white">
+                    <SelectValue placeholder={selectProjectType} />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60">
-                  <SelectItem value="website-relaunch" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                <SelectContent className="bg-[#1e2830] text-white border-white/20">
+                  <SelectItem value="website-relaunch">
                     {language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"}
                   </SelectItem>
-                  <SelectItem value="new-website" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                  <SelectItem value="new-website">
                     {language === 'de' ? "Neue Website erstellen" : "Create a new website"}
                   </SelectItem>
-                  <SelectItem value="seo-optimization" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                  <SelectItem value="seo-optimization">
                     {language === 'de' ? "SEO-Optimierung" : "SEO Optimization"}
                   </SelectItem>
-                  <SelectItem value="lead-generation" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                  <SelectItem value="lead-generation">
                     {language === 'de' ? "Lead-Generierung mit Google Ads" : "Lead Generation with Google Ads"}
                   </SelectItem>
-                  <SelectItem value="ai-content" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                  <SelectItem value="ai-content">
                     {language === 'de' ? "KI-Inhalte & ChatGPT-Integration" : "AI Content & ChatGPT Integration"}
                   </SelectItem>
-                  <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
+                  <SelectItem value="other">
                     {language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"}
                   </SelectItem>
                 </SelectContent>
@@ -81,13 +78,9 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
             name="projectTypeOther"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-base font-medium">{pleaseSpecify}</FormLabel>
+                <FormLabel className="text-white">{pleaseSpecify}</FormLabel>
                 <FormControl>
-                  <Input 
-                    {...field} 
-                    placeholder={tellUsWhat} 
-                    className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
-                  />
+                  <Input {...field} placeholder={tellUsWhat} className="bg-white/10 border-white/20 text-white placeholder:text-white/60" />
                 </FormControl>
                 <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
               </FormItem>
