@@ -3,7 +3,7 @@ import React from 'react';
 
 const ContentSEOText = () => {
   return (
-    <section className="bg-[#f7fafa] pt-12 pb-16">
+    <section className="bg-white pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Content Agentur Mainz – Strategische Inhalte für Ihren Geschäftserfolg</h2>
