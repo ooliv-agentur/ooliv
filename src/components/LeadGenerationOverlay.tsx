@@ -19,6 +19,21 @@ interface LeadGenerationOverlayProps {
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const { language } = useLanguage();
   
+  // Listen for the global event to open the lead form - THIS WAS MISSING!
+  useEffect(() => {
+    const handleOpenLeadForm = () => {
+      onOpenChange(true);
+    };
+
+    // Register event listener
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    
+    // Clean up
+    return () => {
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+    };
+  }, [onOpenChange]);
+  
   const handleClose = () => {
     onOpenChange(false);
   };
