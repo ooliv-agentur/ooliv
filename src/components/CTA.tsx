@@ -62,7 +62,9 @@ const CTA = ({
   
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new Event('open-lead-form'));
+    e.stopPropagation();
+    console.log('CTA: Opening lead form');
+    window.dispatchEvent(new CustomEvent('open-lead-form'));
   };
 
   const defaultFooterNote = language === 'de' 
@@ -79,8 +81,7 @@ const CTA = ({
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              data-trigger-lead-form
+              variant="yellow"
               onClick={handleOpenLeadForm}
             >
               {primaryCta}
@@ -89,7 +90,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              variant="yellow"
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -100,9 +101,8 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              variant="yellow"
               onClick={handleOpenLeadForm}
-              data-trigger-lead-form
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
