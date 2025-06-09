@@ -203,7 +203,7 @@ const CaseStudiesSection = ({
   const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-background to-white overflow-hidden">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
