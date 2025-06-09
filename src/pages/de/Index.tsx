@@ -162,6 +162,11 @@ const GermanIndex = () => {
               Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
             </p>
             <BeforeAfterSlider />
+            <div className="mt-8 text-center">
+              <p className="text-brand-text">
+                Hinweis: Wir haben noch viele weitere Vorher-Nachher-Beispiele. Fragen Sie diese gerne direkt bei uns an — info@ooliv.de.
+              </p>
+            </div>
           </div>
         </div>
         

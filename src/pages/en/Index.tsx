@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -75,6 +76,11 @@ const EnglishIndex = () => {
               Many businesses struggle with websites that don't perform. We develop websites that generate leads, build trust, and rank well on Google.
             </p>
             <BeforeAfterSlider />
+            <div className="mt-8 text-center">
+              <p className="text-brand-text">
+                Note: We have many more before-and-after examples available. Feel free to request them directly from us — info@ooliv.de.
+              </p>
+            </div>
           </div>
         </div>
         
