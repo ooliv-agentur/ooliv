@@ -149,12 +149,6 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Additional SEO improvements */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="referrer" content="origin-when-cross-origin" />
-        
-        <style>{`
-          /* Ensure custom cursor works everywhere */
-          html, body, #root { cursor: none !important; }
-          * { cursor: inherit; }
-        `}</style>
       </Helmet>
       <MotionConfig reducedMotion="user">
         <div className={`min-h-screen flex flex-col ${className}`}>
