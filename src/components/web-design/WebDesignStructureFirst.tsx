@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Layout, FileText, Target, PenTool } from 'lucide-react';
@@ -11,6 +12,7 @@ const WebDesignStructureFirst = () => {
     en: {
       title: "Structure Before Style – Our First Step",
       subtitle: "Effective webdesign begins with planning. We help map your structure, define your messaging, and shape a clear UX strategy.",
+      strategyLinkText: "Strategy",
       points: [
         {
           icon: Layout,
