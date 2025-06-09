@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -34,6 +35,7 @@ import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
 import FloatingActionButtons from './components/FloatingActionButtons';
+import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import ChatbaseWidget from './components/ChatbaseWidget';
 import { Toaster } from 'sonner';
 import Strategie from './pages/de/Strategie';
@@ -45,6 +47,8 @@ import CookieNotification from './components/CookieNotification';
 const queryClient = new QueryClient();
 
 function App() {
+  const [showLeadForm, setShowLeadForm] = useState(false);
+
   return (
     <LanguageProvider>
       <CookieConsentProvider>
@@ -56,6 +60,12 @@ function App() {
               <FloatingActionButtons />
               <ChatbaseWidget />
               <CookieNotification />
+              
+              {/* Single LeadGenerationOverlay instance for the entire app */}
+              <LeadGenerationOverlay 
+                open={showLeadForm} 
+                onOpenChange={setShowLeadForm}
+              />
               
               <Routes>
                 {/* German Routes */}

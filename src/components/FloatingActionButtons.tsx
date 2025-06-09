@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Send, Mail, Phone, Plus, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { 
@@ -10,12 +10,10 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from '@/hooks/use-media-query';
-import LeadGenerationOverlay from './LeadGenerationOverlay';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [showLeadForm, setShowLeadForm] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1025px)');
   const { language } = useLanguage();
 
@@ -23,22 +21,10 @@ const FloatingActionButtons = () => {
     setIsExpanded(prev => !prev);
   };
 
-  // Add event listener for opening the lead form from other components
-  useEffect(() => {
-    console.log('🔧 FloatingActionButtons: Setting up event listeners');
-    
-    const handleOpenLeadForm = () => {
-      console.log('🎯 FloatingActionButtons: Lead form open event received');
-      setShowLeadForm(true);
-    };
-    
-    window.addEventListener('open-lead-form', handleOpenLeadForm);
-    
-    return () => {
-      console.log('🧹 FloatingActionButtons: Removing event listeners');
-      window.removeEventListener('open-lead-form', handleOpenLeadForm);
-    };
-  }, []);
+  const handleOpenLeadForm = () => {
+    console.log('🚀 FloatingActionButtons: Project button clicked - dispatching event');
+    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
+  };
 
   // Updated button definitions with consistent yellow color for project button
   const buttons = [
@@ -46,10 +32,7 @@ const FloatingActionButtons = () => {
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
-      onClick: () => {
-        console.log('🚀 FloatingActionButtons: Project button clicked');
-        setShowLeadForm(true);
-      },
+      onClick: handleOpenLeadForm,
       className: 'text-white border-none shadow-md hover:shadow-lg',
       style: { 
         backgroundColor: '#FFD700',
@@ -153,12 +136,6 @@ const FloatingActionButtons = () => {
           </Button>
         )}
       </div>
-
-      {/* Lead Generation Overlay - simple state management */}
-      <LeadGenerationOverlay 
-        open={showLeadForm} 
-        onOpenChange={setShowLeadForm}
-      />
     </TooltipProvider>
   );
 };
