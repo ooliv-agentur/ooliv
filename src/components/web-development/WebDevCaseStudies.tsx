@@ -4,131 +4,142 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '@/components/ui/carousel';
-import { caseStudiesData } from '@/components/CaseStudiesSection';
-import Reveal from '@/components/animations/Reveal';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const WebDevCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Use all 5 case studies instead of just selected ones
+  // Define case studies data locally to match the structure from CaseStudiesSection
+  const caseStudiesData = {
+    en: [
+      {
+        client: "Scheurich – Manufacturing Brand",
+        industry: "Manufacturing & Industrial",
+        headline: "Custom WordPress development with optimized performance and mobile experience.",
+        impact: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
+        logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
+      },
+      {
+        client: "COBUS – Enterprise Software",
+        industry: "B2B SaaS & Technology", 
+        headline: "Scalable WordPress solution with custom functionality and CRM integration.",
+        impact: ["80% More Qualified Leads", "3.2s Faster Load Time", "92% User Satisfaction"],
+        logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
+      }
+    ],
+    de: [
+      {
+        client: "Scheurich – Keramik & Lifestyle",
+        industry: "Fertigung & Industrie",
+        headline: "Individuelle WordPress-Entwicklung mit optimierter Performance und Mobile Experience.",
+        impact: ["120% mehr Leads", "45% weniger Absprünge", "89% Mobile Conversion"],
+        logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
+      },
+      {
+        client: "COBUS – Enterprise Software", 
+        industry: "B2B SaaS & Technologie",
+        headline: "Skalierbare WordPress-Lösung mit individuellen Funktionen und CRM-Anbindung.",
+        impact: ["80% mehr qualifizierte Leads", "3,2s schnellere Ladezeit", "92% Nutzerzufriedenheit"],
+        logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
+      }
+    ]
+  };
+  
   const relevantCases = isGerman 
     ? caseStudiesData.de
     : caseStudiesData.en;
   
   const translations = {
     en: {
-      title: "Development That Moves the Needle",
-      subtitle: "Real-world results from custom development projects.",
+      title: "WordPress Development Results",
+      subtitle: "See how our custom WordPress solutions deliver performance and business growth.",
       viewFull: "View Full Case Study",
-      viewAll: "View All Case Studies",
-      services: "SERVICES:"
+      viewAll: "View All Case Studies"
     },
     de: {
-      title: "Entwicklung, die wirklich etwas bewirkt",
-      subtitle: "Echte Ergebnisse aus maßgeschneiderten Entwicklungsprojekten.",
+      title: "WordPress-Entwicklung Ergebnisse",
+      subtitle: "Sehen Sie, wie unsere individuellen WordPress-Lösungen Performance und Geschäftswachstum liefern.",
       viewFull: "Vollständige Fallstudie ansehen",
-      viewAll: "Alle Fallstudien ansehen",
-      services: "LEISTUNGEN:"
+      viewAll: "Alle Fallstudien ansehen"
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/case-studies" : "/en/case-studies";
-  
-  // Adapt case studies data for web development display format
-  const cases = relevantCases.map(study => ({
-    client: study.client,
-    industry: study.industry,
-    summary: study.headline,
-    services: [
-      isGerman ? "WordPress-Entwicklung" : "WordPress Development", 
-      "ERP Integration", 
-      isGerman ? "Performance-Optimierung" : "Performance Optimization"
-    ], 
-    kpis: study.impact.map(impact => impact.split(' ')[0]),
-    image: study.image
-  }));
+  const caseStudiesPath = isGerman ? "/referenzen" : "/en/case-studies";
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-medico-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-            {t.title}
-          </h2>
-          
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-            {t.subtitle}
-          </p>
-        </Reveal>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+          {t.title}
+        </h2>
+        <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
         
-        <Reveal delay={0.2}>
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {cases.map((study, index) => (
-                <CarouselItem key={index} className="md:basis-full">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${study.image})` }} />
-                    <div className="p-6">
-                      <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
-                      <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>
-                      
-                      <p className="text-brand-text mb-5">{study.summary}</p>
-                      
-                      <div className="mb-5">
-                        <h4 className="text-xs font-bold text-brand-heading mb-2">{t.services}</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {study.services.map((service, sidx) => (
-                            <span key={sidx} className="text-xs bg-gray-100 py-1 px-2 rounded-full text-brand-text">
-                              {service}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-3 gap-2 mb-5">
-                        {study.kpis.map((kpi, kpiIndex) => (
-                          <div key={kpiIndex} className="text-xs font-medium text-brand-primary bg-brand-backgroundAlt p-2 rounded-md text-center">
-                            {kpi}
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <Link 
-                        to={caseStudiesPath} 
-                        className="text-sm font-medium text-brand-primary hover:underline inline-flex items-center"
-                      >
-                        {t.viewFull} <ArrowRight className="ml-1 h-3 w-3" />
-                      </Link>
-                    </div>
+        <p className="text-center text-lg md:text-xl mb-12 max-w-3xl mx-auto text-medico-darkGreen/80" style={{ lineHeight: '1.6' }}>
+          {t.subtitle}
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {relevantCases.map((study, index) => (
+            <div 
+              key={index}
+              className="bg-medico-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 border border-medico-turquoise/10"
+            >
+              <div className="flex items-center mb-4">
+                <div className="flex-shrink-0 w-16 h-10 mr-4">
+                  <AspectRatio ratio={16/10} className="h-full">
+                    <img 
+                      src={study.logo} 
+                      alt={`${study.client} logo`} 
+                      className="h-full w-full object-contain"
+                    />
+                  </AspectRatio>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-1 text-medico-darkGreen">{study.client}</h3>
+                  <p className="text-medico-turquoise text-sm font-medium">{study.industry}</p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-2 mb-6">
+                {study.impact.slice(0, 2).map((result, idx) => (
+                  <div key={idx} className="text-xs font-medium text-medico-turquoise bg-medico-mint/20 p-2 rounded-md text-center">
+                    {result}
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <CarouselPrevious className="relative static transform-none mx-2" />
-              <CarouselNext className="relative static transform-none mx-2" />
+                ))}
+              </div>
+              
+              <p className="text-medico-darkGreen/80 mb-6 text-sm">{study.headline}</p>
+              
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-medico-white font-medium transition-all duration-300"
+                asChild
+              >
+                <Link to={caseStudiesPath}>
+                  {t.viewFull}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
-          </Carousel>
-        </Reveal>
+          ))}
+        </div>
         
-        <Reveal delay={0.3}>
-          <div className="text-center mt-12">
-            <Button variant="outline" asChild>
-              <Link to={caseStudiesPath}>
-                {t.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </Reveal>
+        <div className="text-center mt-12">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-medico-white font-medium px-8 py-3 transition-all duration-300"
+            asChild
+          >
+            <Link to={caseStudiesPath}>
+              {t.viewAll}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
