@@ -30,12 +30,11 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  // Direct handler for Sheet's onOpenChange - this handles both overlay clicks and programmatic closing
+  // Let Sheet handle all overlay interactions naturally
   const handleOpenChange = (newOpen: boolean) => {
     setOpen(newOpen);
   };
 
-  // Simple close handler for the close button - just sets state directly
   const handleClose = () => {
     setOpen(false);
   };
@@ -46,10 +45,10 @@ const LeadGenerationOverlay = () => {
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
       >
-        {/* Close Button - using simpler event handling */}
+        {/* Close Button - removed high z-index, let it be part of natural flow */}
         <button 
           onClick={handleClose}
-          className="absolute top-7 right-4 z-50 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10"
+          className="absolute top-7 right-4 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
         >
           <X className="w-6 h-6" />
