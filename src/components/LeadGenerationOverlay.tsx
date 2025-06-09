@@ -5,8 +5,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
-  SheetOverlay
+  SheetDescription
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
