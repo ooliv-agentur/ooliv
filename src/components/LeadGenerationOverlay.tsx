@@ -18,6 +18,7 @@ const LeadGenerationOverlay = () => {
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
+      console.log('Opening lead form via event');
       setOpen(true);
     };
 
@@ -28,12 +29,18 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
+  const handleOpenChange = (newOpen: boolean) => {
+    console.log('Sheet onOpenChange called with:', newOpen);
+    setOpen(newOpen);
+  };
+
   const handleClose = () => {
+    console.log('Manual close button clicked');
     setOpen(false);
   };
   
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={handleOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
