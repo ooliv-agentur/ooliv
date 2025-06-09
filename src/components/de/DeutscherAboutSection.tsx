@@ -35,7 +35,7 @@ const DeutscherAboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-medico-mint font-satoshi">
+    <section className="py-20 bg-white font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-16 text-center">
@@ -50,8 +50,8 @@ const DeutscherAboutSection = () => {
         
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {services.map((service, index) => (
-            <div key={index} className="bg-medico-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-medico-mint to-medico-turquoise/20 rounded-full flex items-center justify-center mb-6 group-hover:from-medico-turquoise/20 group-hover:to-medico-mint transition-all duration-300">
+            <div key={index} className="bg-medico-mint p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-medico-turquoise/20 transition-all duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
