@@ -33,11 +33,9 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             duration: 0.3,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          className="fixed top-0 right-0 bottom-0 w-full bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden shadow-2xl"
+          className="fixed top-0 right-0 bottom-0 w-full bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden shadow-2xl h-screen-mobile"
           style={{ 
-            cursor: 'none',
-            height: '100vh',
-            height: '100dvh' // Use dynamic viewport height for better mobile support
+            cursor: 'none'
           }}
         >
           <div 
