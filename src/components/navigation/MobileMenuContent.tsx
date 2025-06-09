@@ -40,7 +40,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             <button 
               className="flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
               style={{ 
-                cursor: 'none',
                 backgroundColor: '#32b1ab'
               }}
               onClick={onClose}
