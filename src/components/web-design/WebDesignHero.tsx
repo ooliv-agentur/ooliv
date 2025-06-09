@@ -19,8 +19,8 @@ const WebDesignHero = () => {
       subtitle: "We design websites that improve your Google visibility, drive qualified leads, and align with your business goals. Our webdesign services are built on strategy – not on templates."
     },
     de: {
-      title: "Webdesign Mainz für B2B-Unternehmen mit Wachstumskurs",
-      subtitle: "Wir entwickeln maßgeschneiderte Websites, die Ihre Sichtbarkeit in Google stärken, mehr Leads generieren und Ihre Marke digital positionieren. Unser Webdesign für Unternehmen aus Mainz und darüber hinaus basiert auf Strategie, nicht auf Templates."
+      title: "Webdesign Mainz für B2B-Unternehmen – mobiloptimiert, strategisch, individuell.",
+      subtitle: "Wir gestalten Websites, die Ihr Unternehmen digital sichtbar machen, Leads generieren und Ihre Marke nachhaltig stärken – mobil und desktopfähig, vom Onepager bis zur SEO-optimierten Unternehmenswebsite."
     }
   };
   
