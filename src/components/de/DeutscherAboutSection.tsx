@@ -65,10 +65,10 @@ const DeutscherAboutSection = () => {
                     fontSize: '18px'
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.color = '#0a1e2c';
+                    (e.target as HTMLElement).style.color = '#0a1e2c';
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.color = '#32b1ab';
+                    (e.target as HTMLElement).style.color = '#32b1ab';
                   }}
                 >
                   Mehr erfahren
