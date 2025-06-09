@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Accordion,
@@ -15,6 +16,7 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 interface FAQItem {
   question: string;
   answer: string;
+  category?: string;
 }
 
 interface FAQProps {
@@ -35,38 +37,58 @@ const FAQ = ({
   
   const defaultFaqs = [
     {
-      question: isGerman ? "Wie läuft der Website-Erstellungsprozess bei ooliv ab?" : "What is your website creation process?",
+      question: isGerman ? "Wie läuft ein Website-Projekt bei ooliv ab?" : "What is your website creation process?",
       answer: isGerman ? 
-        "Unsere Website-Projekte folgen einem klaren 5-Schritte-Ablauf:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Strategie & Konzept</strong> – Wir analysieren Ziele, Zielgruppen und Wettbewerber – und schaffen eine fundierte inhaltliche Basis.</li><li><strong>Content-Erstellung</strong> – Texte, Bilder, Struktur – alles maßgeschneidert auf Ihre Marke und SEO-optimiert.</li><li><strong>UX/UI-Design</strong> – Modernes, individuelles Design mit Fokus auf Klarheit, Nutzerfreundlichkeit und Markenwirkung.</li><li><strong>Entwicklung</strong> – Technisch sauber umgesetzt mit aktueller Technik, responsive und DSGVO-konform.</li><li><strong>Launch & Support</strong> – Go-Live mit persönlicher Betreuung – inklusive technischer Unterstützung bei Bedarf.</li></ul>" 
-        : "We follow a clear 5-step process: 1) Strategy and planning, 2) UX/UI design, 3) Development, 4) Content creation, 5) Launch and support."
+        "Unser Prozess ist klar strukturiert:<br/><br/><strong>1. Strategie & Konzept</strong><br/>Wir analysieren gemeinsam Ihre Ziele und Zielgruppe.<br/><br/><strong>2. Content-Erstellung</strong><br/>Texte und Bilder werden maßgeschneidert entwickelt.<br/><br/><strong>3. Design & Entwicklung</strong><br/>Modernes, benutzerfreundliches Design wird technisch umgesetzt.<br/><br/><strong>4. Go-Live & Support</strong><br/>Nach dem Launch betreuen wir Sie weiter." 
+        : "We follow a clear 5-step process: 1) Strategy and planning, 2) UX/UI design, 3) Development, 4) Content creation, 5) Launch and support.",
+      category: "process"
     },
     {
-      question: isGerman ? "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?" : "How much does a WordPress website cost?",
+      question: isGerman ? "Was kostet eine professionelle Website?" : "How much does a WordPress website cost?",
       answer: isGerman ? 
-        "Die Kosten hängen von Umfang, Funktionalität und gewünschtem Design ab. Typische Projekte bewegen sich in diesen Bereichen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Basic:</strong> ab 4.000 € (Onepager, Starter-Seiten)</li><li><strong>Standard:</strong> 6.000 – 12.000 € (Corporate Sites, lokale SEO)</li><li><strong>Erweitert:</strong> ab 15.000 € (Shops, komplexe Funktionen, Multilinguale Seiten)</li></ul>Transparente Angebote – keine versteckten Kosten.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lassen Sie uns Ihr Projekt besprechen</a>" 
-        : "Pricing depends on scope and complexity. Projects typically start at $5,000 for small business sites and vary based on functionality needs, SEO optimization, and content strategy."
+        "Die Kosten richten sich nach Ihren Anforderungen:<br/><br/><strong>Einfache Websites:</strong> ab 4.000 €<br/>Ideal für kleine Unternehmen und Starter<br/><br/><strong>Professionelle Business-Websites:</strong> 6.000 – 12.000 €<br/>Mit SEO-Optimierung und umfangreichem Content<br/><br/><strong>Komplexe Projekte:</strong> ab 15.000 €<br/>Shops, mehrsprachige Websites, spezielle Funktionen<br/><br/>Sie erhalten von uns immer ein transparentes Angebot ohne versteckte Kosten." 
+        : "Pricing depends on scope and complexity. Projects typically start at $5,000 for small business sites and vary based on functionality needs, SEO optimization, and content strategy.",
+      category: "pricing"
     },
     {
-      question: isGerman ? "Wie lange dauert die Erstellung einer maßgeschneiderten Website?" : "How long does it take to build a website?",
+      question: isGerman ? "Wie lange dauert die Website-Erstellung?" : "How long does it take to build a website?",
       answer: isGerman ? 
-        "Das hängt vom Projektumfang ab – ein typischer Zeitrahmen:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Kompakte Seiten</strong> (z. B. Onepager): 3–4 Wochen</li><li><strong>Mittlere Projekte:</strong> ca. 5–8 Wochen</li><li><strong>Komplexe Umsetzungen:</strong> 10+ Wochen (z. B. Shop, Multisite)</li></ul>Wichtig: Qualität vor Schnelligkeit – aber mit realistischen Timings und klarer Projektstruktur.<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Jetzt Timing klären</a>" 
-        : "Timeframes vary by project scope. Small websites may be completed within 4-6 weeks, while more complex projects might require 2-3 months."
+        "Die Projektdauer hängt vom Umfang ab:<br/><br/><strong>Kompakte Websites:</strong> 3–4 Wochen<br/>Onepager und kleinere Projekte<br/><br/><strong>Standard Business-Websites:</strong> 5–8 Wochen<br/>Mittlere Projekte mit Content-Erstellung<br/><br/><strong>Umfangreiche Projekte:</strong> 10+ Wochen<br/>Shops, komplexe Funktionen, mehrsprachige Seiten<br/><br/>Wir arbeiten immer mit klaren Zeitplänen und halten Sie über den Fortschritt auf dem Laufenden." 
+        : "Timeframes vary by project scope. Small websites may be completed within 4-6 weeks, while more complex projects might require 2-3 months.",
+      category: "process"
     },
     {
-      question: isGerman ? "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?" : "Do you offer ongoing support after launch?",
+      question: isGerman ? "Welche Betreuung erhalte ich nach dem Launch?" : "Do you offer ongoing support after launch?",
       answer: isGerman ? 
-        "Wir begleiten Sie gerne auch nach dem Go-Live – mit Optionen wie:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Technische Wartung</strong> (Updates, Backups, Sicherheit)</li><li><strong>Content-Pflege</strong> (Texte, Medien, SEO)</li><li><strong>Erweiterungen & Optimierung</strong></li><li>Monatliche Support-Modelle oder nach Bedarf buchbar</li></ul>→ Betreuung, wie Sie sie brauchen – flexibel und transparent." 
-        : "Yes, we offer various support and maintenance packages that can include technical support, security updates, backups, and content updates."
+        "Wir lassen Sie nach dem Go-Live nicht allein:<br/><br/><strong>Technische Wartung</strong><br/>Updates, Backups und Sicherheit<br/><br/><strong>Content-Pflege</strong><br/>Neue Texte, Bilder und SEO-Optimierung<br/><br/><strong>Erweiterungen</strong><br/>Neue Funktionen und Optimierungen<br/><br/>Sie können zwischen monatlichen Support-Paketen oder Betreuung nach Bedarf wählen." 
+        : "Yes, we offer various support and maintenance packages that can include technical support, security updates, backups, and content updates.",
+      category: "support"
     },
     {
-      question: isGerman ? "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?" : "What sets your agency apart from others?",
+      question: isGerman ? "Warum sollte ich mich für ooliv entscheiden?" : "What sets your agency apart from others?",
       answer: isGerman ? 
-        "Weil wir anders arbeiten – und besser zusammenarbeiten:<ul class='list-disc pl-4 mt-4 space-y-2'><li><strong>Direkter Kontakt:</strong> Bei uns sprechen Sie immer mit dem CEO.</li><li><strong>Effiziente Prozesse:</strong> Strategie, Content, Design und Technik aus einer Hand.</li><li><strong>Volle Sichtbarkeit:</strong> SEO, Performance und Klarheit stehen im Fokus.</li><li><strong>Lokale Stärke & digitale Exzellenz:</strong> Mit Sitz in Mainz – und Kunden weit darüber hinaus.</li></ul>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Gemeinsam sichtbar werden</a>" 
-        : "We combine strategic thinking, creative design, and technical expertise to deliver websites that not only look great but also drive measurable business results."
+        "Das macht uns besonders:<br/><br/><strong>Direkter Kontakt zum Chef</strong><br/>Sie sprechen immer mit dem CEO – keine Umwege<br/><br/><strong>Alles aus einer Hand</strong><br/>Strategie, Design, Technik und Content von einem Team<br/><br/><strong>Messbare Erfolge</strong><br/>Websites, die bei Google ranken und Kunden gewinnen<br/><br/><strong>Lokale Nähe</strong><br/>In Mainz verwurzelt, aber deutschlandweit tätig<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lernen Sie uns persönlich kennen</a>" 
+        : "We combine strategic thinking, creative design, and technical expertise to deliver websites that not only look great but also drive measurable business results.",
+      category: "about"
     }
   ];
   
   const faqs = customFaqs || defaultFaqs;
+  
+  // Group FAQs by category for German version
+  const groupedFaqs = isGerman && !customFaqs ? {
+    process: faqs.filter(faq => faq.category === 'process'),
+    pricing: faqs.filter(faq => faq.category === 'pricing'),
+    support: faqs.filter(faq => faq.category === 'support'),
+    about: faqs.filter(faq => faq.category === 'about')
+  } : null;
+
+  const categoryTitles = {
+    process: "Projektablauf",
+    pricing: "Kosten & Preise", 
+    support: "Betreuung & Service",
+    about: "Warum ooliv?"
+  };
   
   const title = customTitle || (isGerman ? "Häufig gestellte Fragen" : "Frequently Asked Questions");
   
@@ -76,39 +98,86 @@ const FAQ = ({
     <section className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
-            {title}
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+              {title}
+            </h2>
+            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
+              {isGerman ? "Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihre neue Website." : "Find answers to the most common questions about our services."}
+            </p>
+          </div>
         </Reveal>
         
-        <Accordion type="single" collapsible className="w-full">
-          <StaggerReveal className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border border-gray-200 rounded-lg px-6 py-2"
-              >
-                <AccordionTrigger className="text-lg font-medium text-brand-heading hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-opacity-50">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-[16px] text-brand-text leading-relaxed mt-4">
-                  <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                </AccordionContent>
-              </AccordionItem>
+        {groupedFaqs ? (
+          // Grouped FAQ display for German
+          <div className="space-y-12">
+            {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
+              categoryFaqs.length > 0 && (
+                <div key={category} className="bg-medico-mint/20 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+                  <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen mb-6 text-center">
+                    {categoryTitles[category as keyof typeof categoryTitles]}
+                  </h3>
+                  <Accordion type="single" collapsible className="w-full">
+                    <StaggerReveal className="space-y-4">
+                      {categoryFaqs.map((faq, index) => (
+                        <AccordionItem 
+                          key={`${category}-${index}`} 
+                          value={`${category}-item-${index}`}
+                          className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                        >
+                          <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                            {faq.question}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                            <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </StaggerReveal>
+                  </Accordion>
+                </div>
+              )
             ))}
-          </StaggerReveal>
-        </Accordion>
+          </div>
+        ) : (
+          // Regular FAQ display for English or custom FAQs
+          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+            <Accordion type="single" collapsible className="w-full">
+              <StaggerReveal className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  >
+                    <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                      <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </StaggerReveal>
+            </Accordion>
+          </div>
+        )}
         
         {!hideCTA && (
           <Reveal delay={0.3}>
-            <div className="mt-12 text-center">
-              <Button asChild variant="outline" className="rounded-full">
-                <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
-                  <Plus className="h-4 w-4" />
-                  {ctaText}
-                </Link>
-              </Button>
+            <div className="mt-16 text-center">
+              <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20">
+                <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
+                  {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
+                </h3>
+                <Button asChild variant="outline" className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
+                  <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
+                    <Plus className="h-4 w-4" />
+                    {ctaText}
+                  </Link>
+                </Button>
+              </div>
             </div>
           </Reveal>
         )}
