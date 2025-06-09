@@ -26,13 +26,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet 
       open={open} 
-      onOpenChange={(newOpen) => {
-        // Disable closing via outside click - only allow programmatic closing
-        if (!newOpen) {
-          return;
-        }
-        onOpenChange(newOpen);
-      }}
+      onOpenChange={onOpenChange}
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
