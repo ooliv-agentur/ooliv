@@ -38,25 +38,39 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     onOpenChange(false);
   };
   
+  // Prevent any default sheet behaviors by completely disabling onOpenChange
+  const preventSheetClose = (openState: boolean) => {
+    // Do nothing - we handle closing manually only
+    return;
+  };
+  
   return (
     <Sheet 
       open={open} 
-      onOpenChange={() => {}} // Completely disable Sheet's default closing behavior
+      onOpenChange={preventSheetClose} // Completely disable all automatic closing
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
         onPointerDownOutside={(e) => {
-          // Prevent closing when clicking outside - completely disable this behavior
+          // Completely prevent any outside click handling
           e.preventDefault();
           e.stopPropagation();
+          return false;
         }}
         onEscapeKeyDown={(e) => {
-          // Allow ESC key to close
+          // Only allow ESC key to close
+          e.preventDefault();
           handleClose();
         }}
+        onInteractOutside={(e) => {
+          // Additional prevention for any outside interactions
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }}
       >
-        {/* Custom Close Button */}
+        {/* Custom Close Button - only way to close */}
         <button 
           onClick={handleClose}
           className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
