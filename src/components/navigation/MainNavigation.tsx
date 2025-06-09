@@ -18,11 +18,21 @@ const MainNavigation = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      // Prevent scrolling on mobile devices
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
     } else {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
     };
   }, [isOpen]);
   
@@ -73,7 +83,8 @@ const MainNavigation = () => {
         )}
         style={{ 
           cursor: 'none',
-          backgroundColor: '#32b1ab'
+          backgroundColor: '#32b1ab',
+          top: 'max(1.75rem, calc(env(safe-area-inset-top) + 1rem))' // Respect safe area on mobile
         }}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
@@ -87,7 +98,7 @@ const MainNavigation = () => {
         )}
       </button>
 
-      {/* Menu overlay - removed blur effect */}
+      {/* Menu overlay */}
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black/40 z-[100]"
