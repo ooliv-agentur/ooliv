@@ -87,10 +87,10 @@ const MainNavigation = () => {
         )}
       </button>
 
-      {/* Menu overlay */}
+      {/* Menu overlay - removed blur effect */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
+          className="fixed inset-0 bg-black/40 z-[100]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
           style={{ cursor: 'none' }}

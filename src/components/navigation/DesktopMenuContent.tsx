@@ -24,37 +24,37 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
 
   const menuVariants = {
     hidden: { 
-      opacity: 0,
-      scale: 0.95
+      x: "100%",
+      opacity: 0
     },
     visible: { 
+      x: 0,
       opacity: 1,
-      scale: 1,
       transition: { 
-        duration: 0.5,
-        ease: "easeInOut",
-        delayChildren: 0.2,
-        staggerChildren: 0.08
+        duration: 0.3,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
     },
     exit: { 
+      x: "100%",
       opacity: 0,
-      scale: 0.95,
       transition: { 
-        duration: 0.5,
-        ease: "easeInOut"
+        duration: 0.25,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, x: 20 },
     visible: { 
       opacity: 1, 
-      y: 0,
+      x: 0,
       transition: {
-        duration: 0.4,
-        ease: "easeInOut"
+        duration: 0.3,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -67,7 +67,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate="visible"
           exit="exit"
           variants={menuVariants}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden h-screen"
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden h-screen shadow-2xl"
           style={{ cursor: 'none' }}
         >
           {/* Main content area - fills full height */}
@@ -82,7 +82,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           
           {/* Company details section at bottom */}
           <motion.div 
-            className="border-t border-medico-turquoise/20 p-8 bg-medico-mint/95 backdrop-blur-sm"
+            className="border-t border-medico-turquoise/20 p-8 bg-medico-mint"
             variants={itemVariants}
           >
             {/* Company name */}
@@ -106,7 +106,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/90 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="mailto:info@ooliv.de" aria-label={language === 'de' ? "E-Mail senden" : "Send email"}>
@@ -118,7 +118,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/90 hover:bg-medico-turquoise hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="tel:+4961316367801" aria-label={language === 'de' ? "Anrufen" : "Call us"}>
@@ -130,7 +130,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-green-500 hover:text-white transition-all duration-200"
+                  className="border-medico-turquoise/30 text-medico-darkGreen bg-white/90 hover:bg-green-500 hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="https://wa.me/+4917680167641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

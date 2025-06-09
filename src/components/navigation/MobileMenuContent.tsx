@@ -26,18 +26,16 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "100%", opacity: 0 }}
           transition={{ 
-            duration: 0.5,
-            ease: "easeInOut"
+            duration: 0.3,
+            ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          className="fixed top-0 right-0 bottom-0 w-full md:w-[350px] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden"
+          className="fixed top-0 right-0 bottom-0 w-full md:w-[350px] bg-medico-mint text-medico-darkGreen z-[110] flex flex-col overflow-hidden shadow-2xl"
           style={{ cursor: 'none' }}
         >
-          {/* Removed the header with close button - we use the floating button instead */}
-          
           <div className="flex-1 flex flex-col py-4 px-6 overflow-y-auto" style={{ cursor: 'none' }}>
             <nav className="space-y-4 text-center w-full">
               <NavigationLinks layout="mobile" onLinkClick={handleLinkClick} />
