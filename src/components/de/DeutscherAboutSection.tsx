@@ -42,7 +42,7 @@ const DeutscherAboutSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Wo Strategie auf Umsetzung trifft – in Mainz.
             </h2>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.5' }}>
               Wir sind eine spezialisierte Digitalagentur aus Mainz. Seit 2008 entwickeln wir Websites, die das Wesentliche Ihres Unternehmens erfassen – strategisch geplant, inhaltsstark und technisch messbar.
             </p>
           </div>
@@ -54,22 +54,14 @@ const DeutscherAboutSection = () => {
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#32b1ab' }}>
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
-              <p className="text-gray-600 mb-6 text-base leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
+              <p className="text-gray-600 mb-6 text-base" style={{ lineHeight: '1.5' }}>
+                {service.description}
+              </p>
               <div>
                 <Link 
                   to={service.link}
-                  className="underline transition-colors duration-300 font-bold text-lg"
-                  style={{ 
-                    color: '#32b1ab',
-                    fontSize: '18px'
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.target as HTMLElement).style.color = '#0a1e2c';
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.target as HTMLElement).style.color = '#32b1ab';
-                  }}
+                  className="text-medico-turquoise hover:text-medico-darkGreen underline transition-colors duration-300 font-bold text-lg"
                 >
                   Mehr erfahren
                 </Link>
