@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -71,9 +70,9 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           style={{ cursor: 'none' }}
         >
           {/* Main content area - fills full height */}
-          <div className="flex-1 flex flex-col justify-center py-8 px-8" style={{ cursor: 'none' }}>
+          <div className="flex-1 flex flex-col justify-center py-6 px-8" style={{ cursor: 'none' }}>
             <motion.nav 
-              className="space-y-6 text-center w-full"
+              className="space-y-3 text-center w-full"
               variants={itemVariants}
             >
               <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />

@@ -68,7 +68,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
             className={cn(
               "block font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
               layout === 'desktop' 
-                ? "text-2xl py-3 leading-relaxed" // Larger font and more spacing for desktop
+                ? "text-2xl py-1.5 leading-tight" // Reduced padding from py-3 to py-1.5 and tighter line height for desktop
                 : "text-3xl py-3", // Keep original mobile sizing
               isActive(link.path) 
                 ? "text-medico-turquoise" // Active state: highlighted in medico turquoise
