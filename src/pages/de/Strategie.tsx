@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Search, Target, Monitor, ArrowRight, ArrowUp, User, Users, MessageCircle } from 'lucide-react';
+import { Search, Target, Monitor, ArrowRight, User, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Strategie = () => {
@@ -44,8 +44,8 @@ const Strategie = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Digitalstrategie & UX-Beratung Mainz | ooliv</title>
-        <meta name="description" content="Strategische Digitalberatung und UX-Optimierung in Mainz. Datenbasierte Entscheidungen für messbare Erfolge im digitalen Marketing." />
+        <title>Webkonzept & Strategie für Ihren Erfolg | ooliv Mainz</title>
+        <meta name="description" content="Wir entwickeln individuelle Digitalstrategien mit Webkonzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, mehr Leads und eine starke Marke." />
       </Helmet>
 
       {/* Hero Section */}
@@ -73,7 +73,7 @@ const Strategie = () => {
                   color: '#003343' 
                 }}
               >
-                Strategie & Konzept für Ihren digitalen Erfolg
+                Strategie & Webkonzept für Ihren digitalen Erfolg
               </h1>
               
               {/* Subtitle */}
@@ -81,7 +81,7 @@ const Strategie = () => {
                 className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
                 style={{ lineHeight: '1.6' }}
               >
-                Wir entwickeln individuelle Digitalstrategien mit Konzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, Leads und eine nachhaltige digitale Präsenz.
+                Wir entwickeln individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Leads und eine nachhaltige digitale Präsenz.
               </p>
               
               {/* CTA buttons - matching homepage style exactly */}
@@ -132,7 +132,7 @@ const Strategie = () => {
               Strategie & Konzept als Fundament Ihres digitalen Erfolgs
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem durchdachten Konzept sorgen wir dafür, dass jeder Euro zielgerichtet eingesetzt wird – von der Analyse bis zur Umsetzung.
+              Ohne eine klare Strategie und ein durchdachtes Webkonzept verpuffen Marketing-Budgets. Wir sorgen dafür, dass jeder Euro zielgerichtet eingesetzt wird – von der Analyse bis zur Umsetzung.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse & Marktverständnis</h3>
               <p className="text-brand-text">
-                Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie optimal erreichen.
+                Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie mit einem klaren Webkonzept optimal erreichen.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Nutzerführung & Conversion-Strategie</h3>
               <p className="text-brand-text">
-                Wir definieren, wie Ihre Besucher geführt werden – für mehr Leads und eine hohe Conversion-Rate.
+                Wir definieren, wie Ihre Besucher geführt werden – für mehr Leads und eine hohe Conversion-Rate. Ihr Webkonzept wird so zur tragenden Säule Ihrer digitalen Strategie.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Projektplan & Roadmap</h3>
               <p className="text-brand-text">
-                Wir entwickeln eine klare Roadmap mit Meilensteinen, damit Ihr Projekt strukturiert und erfolgreich umgesetzt wird.
+                Wir entwickeln eine klare Roadmap mit Meilensteinen, damit Ihr Projekt strukturiert umgesetzt wird und alle Beteiligten jederzeit den Überblick behalten – vom ersten Webkonzept bis zur Umsetzung.
               </p>
             </div>
           </div>
@@ -181,10 +181,10 @@ const Strategie = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              Unser strategischer Ansatz – von der Analyse bis zur Umsetzung
+              Unser strategischer Ansatz – von der Analyse bis zum Webkonzept und zur Umsetzung
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer Website bis zur erfolgreichen Umsetzung.
+              Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer aktuellen Website über das Webkonzept bis zur erfolgreichen Umsetzung.
             </p>
           </div>
 
@@ -194,9 +194,9 @@ const Strategie = () => {
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <Search className="w-8 h-8 text-medico-turquoise" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">Analyse & Konzept</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Analyse & Webkonzept</h3>
               <p className="text-brand-text">
-                Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln erste Wireframes.
+                Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln ein individuelles Webkonzept mit Sitemap und ersten Wireframes.
               </p>
             </div>
 
@@ -207,7 +207,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Strategie & Planung</h3>
               <p className="text-brand-text">
-                Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan.
+                Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan auf Basis Ihres Webkonzepts.
               </p>
             </div>
 
@@ -225,11 +225,13 @@ const Strategie = () => {
             {/* Step 4 */}
             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 text-center">
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
-                <ArrowUp className="w-8 h-8 text-medico-turquoise" />
+                <svg className="w-8 h-8 text-medico-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Optimierung & Reporting</h3>
               <p className="text-brand-text">
-                Wir definieren KPIs, messen den Erfolg und optimieren kontinuierlich.
+                Nach dem Go-Live definieren wir KPIs, messen den Erfolg und optimieren kontinuierlich.
               </p>
             </div>
           </div>
@@ -244,7 +246,7 @@ const Strategie = () => {
               Strategieberatung, die zu Ihnen passt
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Wir begleiten Sie von der ersten Idee bis zur erfolgreichen Umsetzung – persönlich, individuell und mit dem richtigen Blick fürs Detail.
+              Wir begleiten Sie von der ersten Idee bis zur Umsetzung – mit einem persönlichen Ansprechpartner, einem individuellen Webkonzept und dem richtigen Blick fürs Detail.
             </p>
           </div>
 
