@@ -62,9 +62,7 @@ const CTA = ({
   
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    e.stopPropagation();
-    console.log('CTA: Opening lead form');
-    window.dispatchEvent(new CustomEvent('open-lead-form'));
+    window.dispatchEvent(new Event('open-lead-form'));
   };
 
   const defaultFooterNote = language === 'de' 
@@ -81,7 +79,8 @@ const CTA = ({
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              variant="yellow"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
+              data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
               {primaryCta}
@@ -90,7 +89,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              variant="yellow"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl" 
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -101,8 +100,9 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              variant="yellow"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
               onClick={handleOpenLeadForm}
+              data-trigger-lead-form
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

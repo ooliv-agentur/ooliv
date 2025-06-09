@@ -19,22 +19,13 @@ interface LeadGenerationOverlayProps {
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const { language } = useLanguage();
   
-  const handleClose = (e?: React.MouseEvent) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    console.log('LeadGenerationOverlay: Manual close button clicked');
+  const handleClose = () => {
+    console.log('Manual close button clicked');
     onOpenChange(false);
   };
   
-  const handleSheetOpenChange = (newOpen: boolean) => {
-    console.log('LeadGenerationOverlay: Sheet open change triggered:', newOpen);
-    onOpenChange(newOpen);
-  };
-  
   return (
-    <Sheet open={open} onOpenChange={handleSheetOpenChange}>
+    <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
@@ -57,7 +48,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => handleClose()} />
+        <LeadFormContent onClose={handleClose} />
       </SheetContent>
     </Sheet>
   );
