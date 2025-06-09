@@ -36,27 +36,27 @@ const WebDesignBenefits = () => {
       ]
     },
     de: {
-      title: "Warum Unternehmen ooliv für Webdesign Mainz wählen",
+      title: "Warum ooliv die richtige Wahl für Webdesign in Mainz ist",
       features: [
         {
           icon: Target,
           title: "Strategie statt Standard",
-          description: "Wir gestalten Websites, die auf klare Ziele einzahlen: Leads, Sichtbarkeit, Wachstum."
+          description: "Wir entwickeln Websites, die auf Ihre Ziele einzahlen: Sichtbarkeit, Anfragen und Wachstum. Keine vorgefertigten Lösungen – alles individuell und auf Ihr Unternehmen zugeschnitten."
         },
         {
           icon: ArrowRight,
           title: "Conversion im Fokus",
-          description: "UX, die Besucher gezielt zur Anfrage führt und aus Interessenten Kunden macht."
+          description: "Eine Website ist nur dann gut, wenn sie Besucher überzeugt. Wir legen Wert auf eine klare Struktur, gute Lesbarkeit und eine Benutzerführung, die Anfragen generiert."
         },
         {
           icon: Zap,
           title: "SEO-ready & mobil optimiert",
-          description: "Technisch sauber, schnell und Google-freundlich für maximale Online-Sichtbarkeit."
+          description: "Ihre Website funktioniert auf allen Geräten – vom Smartphone bis zum Desktop – und ist technisch sauber umgesetzt, damit sie bei Google gut gefunden wird."
         },
         {
           icon: PhoneCall,
           title: "Langfristiger Support",
-          description: "Nach dem Launch begleiten wir Sie weiter – datenbasiert und transparent für Ihren Erfolg."
+          description: "Nach dem Livegang lassen wir Sie nicht allein. Wir begleiten Sie auch danach weiter – mit Analysen, Updates und allem, was Ihre Website braucht, um erfolgreich zu bleiben."
         }
       ]
     }
