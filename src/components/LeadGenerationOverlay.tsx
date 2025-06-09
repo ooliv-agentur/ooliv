@@ -20,7 +20,6 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const { language } = useLanguage();
   
   const handleClose = () => {
-    console.log('Manual close button clicked');
     onOpenChange(false);
   };
   

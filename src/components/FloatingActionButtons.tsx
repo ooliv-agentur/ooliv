@@ -39,14 +39,21 @@ const FloatingActionButtons = () => {
     };
   }, []);
 
-  // Updated button definitions with new medico colors
+  // Updated button definitions with consistent yellow color for project button
   const buttons = [
     { 
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-medico-turquoise text-white hover:bg-medico-darkGreen border-none shadow-md hover:shadow-lg'
+      className: 'text-white border-none shadow-md hover:shadow-lg',
+      style: { 
+        backgroundColor: '#FFD700',
+        color: '#003347'
+      },
+      hoverStyle: {
+        backgroundColor: '#FFC700'
+      }
     },
     { 
       id: 'email', 
@@ -93,7 +100,18 @@ const FloatingActionButtons = () => {
                     button.className
                   )}
                   style={{
-                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
+                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms',
+                    ...button.style
+                  }}
+                  onMouseEnter={(e) => {
+                    if (button.hoverStyle) {
+                      Object.assign(e.currentTarget.style, button.hoverStyle);
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (button.style) {
+                      Object.assign(e.currentTarget.style, button.style);
+                    }
                   }}
                   aria-label={button.label}
                 >
@@ -107,16 +125,21 @@ const FloatingActionButtons = () => {
           ))}
         </div>
         
-        {/* Toggle button - only visible on mobile/tablet with new colors */}
+        {/* Toggle button - only visible on mobile/tablet */}
         {showToggleButton && (
           <Button
             onClick={toggleExpanded}
-            className={cn(
-              "w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg",
-              isExpanded 
-                ? "bg-medico-turquoise text-white hover:bg-medico-darkGreen" 
-                : "bg-medico-turquoise text-white hover:bg-medico-darkGreen"
-            )}
+            className="w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg"
+            style={{ 
+              backgroundColor: '#FFD700',
+              color: '#003347'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#FFC700';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FFD700';
+            }}
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")
@@ -127,7 +150,7 @@ const FloatingActionButtons = () => {
         )}
       </div>
 
-      {/* Lead Generation Overlay with prop-based state management */}
+      {/* Lead Generation Overlay with proper close handling */}
       <LeadGenerationOverlay 
         open={showLeadForm} 
         onOpenChange={setShowLeadForm} 
