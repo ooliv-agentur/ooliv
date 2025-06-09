@@ -272,6 +272,7 @@ const Strategie = () => {
 
       <FAQ customFaqs={strategieFaqs} />
       <CTA 
+        lightBackground={true}
         title="Bereit für eine strategische Digitalberatung?"
         subtitle="Lassen Sie uns gemeinsam eine Strategie entwickeln, die messbare Ergebnisse liefert."
         primaryCta="Strategiegespräch vereinbaren"
