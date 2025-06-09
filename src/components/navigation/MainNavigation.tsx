@@ -63,40 +63,34 @@ const MainNavigation = () => {
             </Link>
           </div>
           
-          {/* Container for centered content */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-            <div className="flex items-center justify-end h-full">
-              {/* Language Switcher - positioned to the right with margin for burger menu */}
-              <div className="mr-16">
-                <LanguageSwitcher />
-              </div>
-            </div>
+          {/* Right side controls - Language switcher and burger menu */}
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50 flex items-center gap-3">
+            <LanguageSwitcher />
+            
+            {/* Menu toggle button */}
+            <button 
+              className={cn(
+                "flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
+                "w-10 h-10 min-w-10 min-h-10"
+              )}
+              style={{ 
+                cursor: 'none',
+                backgroundColor: '#32b1ab'
+              }}
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" aria-hidden="true" />
+              ) : (
+                <Menu className="w-6 h-6" aria-hidden="true" />
+              )}
+            </button>
           </div>
         </div>
       </nav>
-
-      {/* Menu toggle button - fixed position at top right */}
-      <button 
-        className={cn(
-          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
-          "w-10 h-10 min-w-10 min-h-10"
-        )}
-        style={{ 
-          cursor: 'none',
-          backgroundColor: '#32b1ab',
-          top: 'max(1.75rem, calc(env(safe-area-inset-top) + 1rem))' // Respect safe area on mobile
-        }}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
-        aria-expanded={isOpen}
-        aria-controls="mobile-menu"
-      >
-        {isOpen ? (
-          <X className="w-6 h-6" aria-hidden="true" />
-        ) : (
-          <Menu className="w-6 h-6" aria-hidden="true" />
-        )}
-      </button>
 
       {/* Menu overlay */}
       {isOpen && (
