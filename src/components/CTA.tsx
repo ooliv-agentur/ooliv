@@ -71,7 +71,7 @@ const CTA = ({
     : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
   
   return (
-    <section className={`py-24 ${lightBackground ? 'bg-medico-mint' : 'bg-medico-white'} font-satoshi`}>
+    <section className="py-24 bg-white font-satoshi">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
           {title}
