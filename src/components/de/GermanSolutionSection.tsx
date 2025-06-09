@@ -22,8 +22,8 @@ const GermanSolutionSection = () => {
             </p>
             <div className="mt-10">
               <Button variant="outline" className="group" asChild>
-                <Link to="/ueber-uns">
-                  Mehr über den Ablauf erfahren
+                <Link to="/kontakt">
+                  Jetzt Kontakt aufnehmen
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
