@@ -94,7 +94,7 @@ const WebDesignFAQ = () => {
   const t = isGerman ? translations.de : translations.en;
 
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
@@ -106,7 +106,7 @@ const WebDesignFAQ = () => {
           <Accordion type="single" collapsible className="w-full">
             <StaggerReveal className="w-full" stagger={0.08}>
               {faqItems.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden">
+                <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden border border-gray-100">
                   <AccordionTrigger className="px-6 py-4 hover:no-underline">
                     <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
                   </AccordionTrigger>
