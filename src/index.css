@@ -1,182 +1,127 @@
 
 @import url('./styles/satoshi-fonts.css');
+@import url('./styles/hero-background.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import hero background styles */
-@import './styles/hero-background.css';
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
 
-/* Ensure proper application of hero background styles */
-.bg-hero-pattern {
-  position: relative !important;
-  z-index: 0 !important;
-  background: #f7f8fc !important;
+    /* Brand Colors */
+    --brand-primary: 196 100% 20%;
+    --brand-secondary: 45 100% 51%;
+    --brand-background: 206 18% 96%;
+    --brand-backgroundAlt: 210 20% 94%;
+    --brand-text: 210 10% 23%;
+    --brand-heading: 210 22% 15%;
+
+    /* Medico Brand Colors for new design */
+    --medico-mint: 142 45% 91%; /* Changed to #def3e4 */
+    --medico-turquoise: 174 67% 41%;
+    --medico-yellow: 55 100% 50%;
+    --medico-white: 0 0% 100%;
+    --medico-darkGreen: 200 100% 20%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
 }
 
-/* Custom Scrollbar Styling - Only for desktop browsers that support it */
-/* For webkit browsers (Chrome, Safari, Edge) - but not mobile Safari */
-@media (hover: hover) and (pointer: fine) {
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #38B593;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #2a8a73;
-  }
-
-  /* For Firefox on desktop */
+@layer base {
   * {
-    scrollbar-width: thin;
-    scrollbar-color: #38B593 transparent;
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: url('/ooliv-cursor.svg'), auto;
+  }
+  
+  /* Custom cursor for clickable elements */
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: url('/ooliv-cursor.svg'), pointer;
   }
 }
 
-/* On mobile devices, use default scrollbars */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: auto;
-  }
+/* Custom font classes */
+.font-satoshi {
+  font-family: 'Satoshi', sans-serif;
 }
 
-/* Ensure proper z-index for menu components */
-.z-[1000] {
-  isolation: isolate;
-}
-
-/* Enhanced floating circles animation with improved performance */
-.floating-circle {
-  position: absolute;
-  background: radial-gradient(circle, rgba(56, 181, 147, 0.4) 0%, rgba(56, 181, 147, 0.2) 70%, transparent 100%);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-}
-
-.floating-circle.delayed {
-  animation: float 6s ease-in-out infinite 2s;
-}
-
-.floating-circle.slow {
-  animation: float 8s ease-in-out infinite;
-}
-
-.floating-circle.fast {
-  animation: float 4s ease-in-out infinite 1s;
-}
-
-.floating-circle.pulse {
-  animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Sanfter, minimalistischer Hero-Gradient mit helleren natürlichen Grüntönen */
+/* Hero gradient background */
 .hero-gradient-bg {
-  background: linear-gradient(135deg, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf, #ade6d5);
-  background-size: 600% 600%;
-  animation: gentle-gradient 45s ease-in-out infinite;
-  will-change: background-position;
-  backface-visibility: hidden;
+  background: linear-gradient(135deg, rgba(56, 181, 147, 0.1) 0%, rgba(255, 229, 0, 0.1) 100%);
 }
 
-.hero-gradient-bg.slow {
-  animation: gentle-gradient 60s ease-in-out infinite;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Keyframes for better floating animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg) scale(1);
-    opacity: 1;
-  }
-  25% {
-    transform: translateY(-10px) rotate(2deg) scale(1.02);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg) scale(1.05);
-    opacity: 0.9;
-  }
-  75% {
-    transform: translateY(-10px) rotate(3deg) scale(1.02);
-    opacity: 0.8;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Sanfte, natürliche Gradient-Animation */
-@keyframes gentle-gradient {
-  0% {
-    background-position: 0% 20%;
-  }
-  15% {
-    background-position: 20% 40%;
-  }
-  30% {
-    background-position: 60% 10%;
-  }
-  45% {
-    background-position: 80% 70%;
-  }
-  60% {
-    background-position: 40% 90%;
-  }
-  75% {
-    background-position: 10% 60%;
-  }
-  90% {
-    background-position: 30% 30%;
-  }
-  100% {
-    background-position: 0% 20%;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-/* Additional floating animation variants */
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(15px) rotate(-3deg) scale(1.05);
-  }
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
 }
 
-@keyframes float-diagonal {
-  0%, 100% {
-    transform: translateX(0px) translateY(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateX(10px) translateY(-15px) rotate(2deg);
-  }
-  75% {
-    transform: translateX(-10px) translateY(-10px) rotate(-2deg);
-  }
-}
-
-.floating-circle.reverse {
-  animation: float-reverse 7s ease-in-out infinite;
-}
-
-.floating-circle.diagonal {
-  animation: float-diagonal 9s ease-in-out infinite;
-}
-
-/* Reduce animations on devices that prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .floating-circle,
-  .hero-gradient-bg {
-    animation: none !important;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
