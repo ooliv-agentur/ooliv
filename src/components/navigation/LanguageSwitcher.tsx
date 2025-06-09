@@ -72,12 +72,15 @@ const LanguageSwitcher = ({ variant = 'default' }: LanguageSwitcherProps) => {
       variant="ghost" 
       size="sm" 
       onClick={toggleLanguage} 
-      className="flex items-center gap-1 font-medium text-medico-darkGreen hover:text-white transition-colors hover:bg-medico-turquoise border border-medico-turquoise/30 hover:border-medico-turquoise hover:shadow-sm px-3 py-2 rounded-full"
+      className="flex items-center gap-1 font-medium text-white transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10 rounded-full p-0"
+      style={{ 
+        cursor: 'none',
+        backgroundColor: '#32b1ab'
+      }}
       aria-label={language === 'de' ? "Switch to English" : "Zu Deutsch wechseln"}
-      style={{ cursor: 'none' }}
     >
       <Globe className="h-4 w-4" aria-hidden="true" />
-      <span>{language === 'de' ? 'EN' : 'DE'}</span>
+      <span className="sr-only">{language === 'de' ? 'EN' : 'DE'}</span>
     </Button>
   );
 };
