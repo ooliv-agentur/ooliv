@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Search, Target, Monitor, ArrowRight, User, Users, MessageCircle } from 'lucide-react';
+import { Search, Target, Monitor, ArrowRight, ArrowUp, User, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Strategie = () => {
