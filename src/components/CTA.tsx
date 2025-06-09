@@ -61,7 +61,9 @@ const CTA = ({
   };
   
   const handleOpenLeadForm = () => {
+    console.log('🚀 CTA: Lead form trigger button clicked, text:', primaryCta);
     window.dispatchEvent(new Event('open-lead-form'));
+    console.log('📡 CTA: open-lead-form event dispatched');
   };
 
   const defaultFooterNote = language === 'de' 
@@ -90,7 +92,10 @@ const CTA = ({
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFD700';
               }}
-              onClick={handleOpenLeadForm}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent event bubbling
+                handleOpenLeadForm();
+              }}
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -132,7 +137,10 @@ const CTA = ({
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFD700';
               }}
-              onClick={handleOpenLeadForm}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent event bubbling
+                handleOpenLeadForm();
+              }}
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

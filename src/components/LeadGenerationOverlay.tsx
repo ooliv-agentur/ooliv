@@ -21,14 +21,16 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   // Listen for the global event to open the lead form
   useEffect(() => {
+    console.log('🔧 LeadGenerationOverlay: Setting up event listener');
+    
     const handleOpenLeadForm = () => {
-      console.log('open-lead-form event triggered, current open state:', open);
+      console.log('🎯 open-lead-form event triggered, current open state:', open);
       // Only open if not already open to prevent double triggering
       if (!open) {
-        console.log('Opening lead form overlay');
+        console.log('✅ Opening lead form overlay');
         onOpenChange(true);
       } else {
-        console.log('Lead form already open, ignoring trigger');
+        console.log('⚠️ Lead form already open, ignoring trigger');
       }
     };
 
@@ -37,44 +39,45 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     
     // Clean up
     return () => {
+      console.log('🧹 LeadGenerationOverlay: Removing event listener');
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [onOpenChange, open]);
+  }, []); // Empty dependency array to prevent re-registration
   
   const handleClose = () => {
-    console.log('Manual close triggered');
+    console.log('❌ Manual close triggered via X button');
     onOpenChange(false);
+  };
+
+  const handleOpenChange = (isOpen: boolean) => {
+    console.log('🔄 Sheet onOpenChange triggered:', isOpen);
+    onOpenChange(isOpen);
   };
   
   return (
     <Sheet 
       open={open} 
-      onOpenChange={(isOpen) => {
-        // Only allow closing, never opening through this mechanism
-        // Opening should only happen via the global event
-        if (!isOpen) {
-          console.log('Sheet closing via onOpenChange');
-          onOpenChange(false);
-        }
-      }}
+      onOpenChange={handleOpenChange}
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
         onPointerDownOutside={(e) => {
-          // Prevent outside clicks but don't interfere with internal close logic
-          console.log('Outside pointer down prevented');
+          console.log('🚫 Outside pointer down prevented');
           e.preventDefault();
         }}
         onEscapeKeyDown={() => {
-          // Allow ESC to close
-          console.log('ESC key close triggered');
+          console.log('⌨️ ESC key close triggered');
           handleClose();
         }}
       >
         {/* Custom Close Button */}
         <button 
-          onClick={handleClose}
+          onClick={(e) => {
+            console.log('🖱️ X button clicked');
+            e.stopPropagation(); // Prevent event bubbling
+            handleClose();
+          }}
           className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"

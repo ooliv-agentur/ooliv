@@ -25,7 +25,10 @@ const FloatingActionButtons = () => {
 
   // Add event listener for opening the lead form from other components
   useEffect(() => {
+    console.log('🔧 FloatingActionButtons: Setting up event listeners');
+    
     const handleOpenLeadForm = () => {
+      console.log('🎯 FloatingActionButtons: Lead form open event received');
       setShowLeadForm(true);
     };
     
@@ -34,6 +37,7 @@ const FloatingActionButtons = () => {
     document.addEventListener('open-lead-generation', handleOpenLeadForm);
     
     return () => {
+      console.log('🧹 FloatingActionButtons: Removing event listeners');
       document.removeEventListener('open-lead-form', handleOpenLeadForm);
       document.removeEventListener('open-lead-generation', handleOpenLeadForm);
     };
@@ -45,7 +49,10 @@ const FloatingActionButtons = () => {
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
-      onClick: () => setShowLeadForm(true),
+      onClick: () => {
+        console.log('🚀 FloatingActionButtons: Project button clicked');
+        setShowLeadForm(true);
+      },
       className: 'text-white border-none shadow-md hover:shadow-lg',
       style: { 
         backgroundColor: '#FFD700',
@@ -153,7 +160,10 @@ const FloatingActionButtons = () => {
       {/* Lead Generation Overlay with proper close handling */}
       <LeadGenerationOverlay 
         open={showLeadForm} 
-        onOpenChange={setShowLeadForm} 
+        onOpenChange={(open) => {
+          console.log('🔄 FloatingActionButtons: onOpenChange called with:', open);
+          setShowLeadForm(open);
+        }} 
       />
     </TooltipProvider>
   );
