@@ -4,11 +4,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from '@/components/animations/Reveal';
+import DynamicSubheadlines from '@/components/animations/DynamicSubheadlines';
 
 const DeutscherHero = () => {
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form'));
   };
+
+  const subheadlines = [
+    "Für messbare Ergebnisse im Web.",
+    "Websites, die besser ranken und mehr verkaufen.",
+    "Mehr Sichtbarkeit und mehr Anfragen für Ihr Unternehmen.",
+    "Strategie, Design und Performance aus einer Hand."
+  ];
   
   return (
     <section className="relative bg-medico-mint overflow-hidden hero-gradient-bg font-satoshi min-h-screen flex items-center">
@@ -49,18 +57,13 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Subheadline - font-bold, 52px, line-height 68px, color #32b1ab */}
+            {/* Dynamic Subheadlines */}
             <Reveal delay={0.1}>
-              <p 
-                className="font-bold mb-10 text-center"
-                style={{ 
-                  fontSize: '52px', 
-                  lineHeight: '68px', 
-                  color: '#32b1ab' 
-                }}
-              >
-                Für messbare Ergebnisse im Web.
-              </p>
+              <DynamicSubheadlines 
+                subheadlines={subheadlines}
+                interval={4000}
+                className="mb-10"
+              />
             </Reveal>
             
             <Reveal delay={0.2}>
