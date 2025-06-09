@@ -80,19 +80,21 @@ const CTA = ({
           {subtitle}
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full sm:w-auto">
           {shouldOpenLeadForm(primaryCta) ? (
-            <button
-              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+            <Button 
+              size="lg" 
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
-                backgroundColor: '#FFE500', 
-                color: '#003347'
+                backgroundColor: '#FFD700', 
+                color: '#003347',
+                border: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFC700';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFE500';
+                e.currentTarget.style.backgroundColor = '#FFD700';
               }}
               onClick={(e) => {
                 e.stopPropagation();
@@ -100,38 +102,44 @@ const CTA = ({
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </button>
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           ) : primaryCtaLink ? (
-            <Link
-              to={primaryCtaLink}
-              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20 inline-flex items-center"
+            <Button 
+              size="lg" 
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
-                backgroundColor: '#FFE500', 
-                color: '#003347'
+                backgroundColor: '#FFD700', 
+                color: '#003347',
+                border: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFC700';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFE500';
+                e.currentTarget.style.backgroundColor = '#FFD700';
               }}
+              asChild
             >
-              {primaryCta}
-              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </Link>
+              <Link to={primaryCtaLink}>
+                {primaryCta}
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
           ) : (
-            <button 
-              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+            <Button 
+              size="lg" 
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
-                backgroundColor: '#FFE500', 
-                color: '#003347'
+                backgroundColor: '#FFD700', 
+                color: '#003347',
+                border: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#FFC700';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFE500';
+                e.currentTarget.style.backgroundColor = '#FFD700';
               }}
               onClick={(e) => {
                 e.stopPropagation();
@@ -139,35 +147,45 @@ const CTA = ({
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </button>
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           )}
           
           {secondaryCta && (
             isStrategyCallCta(secondaryCta) ? (
-              <Link 
-                to={contactPath}
-                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300 inline-flex items-center"
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                asChild
               >
-                {secondaryCta}
-                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Link>
+                <Link to={contactPath}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             ) : secondaryCtaLink ? (
-              <Link 
-                to={secondaryCtaLink}
-                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300 inline-flex items-center"
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                asChild
               >
-                {secondaryCta}
-                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Link>
+                <Link to={secondaryCtaLink}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             ) : (
-              <button 
-                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
-                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </button>
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
             )
           )}
         </div>
