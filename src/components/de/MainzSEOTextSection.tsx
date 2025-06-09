@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const MainzSEOTextSection = () => {
@@ -72,17 +73,17 @@ const MainzSEOTextSection = () => {
             <strong>Stimmen unserer Kunden:</strong>
           </p>
           
-          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-gray-600">
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-brand-primary">
             „Wir haben mit ooliv genau die Werbeagentur Mainz gefunden, die unsere Marke strategisch vorangebracht hat. Von der Beratung bis zur Umsetzung – alles lief reibungslos."<br />
             – Geschäftsführung, E-Commerce-Startup Mainz
           </blockquote>
           
-          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-gray-600">
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-brand-primary">
             „Besonders beeindruckt hat uns die Transparenz und die schnellen Ergebnisse. Wir konnten unsere Conversion-Rate in Rekordzeit steigern."<br />
             – Marketingleitung, Technologieunternehmen Mainz
           </blockquote>
           
-          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-gray-600">
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6 italic text-brand-primary">
             „ooliv liefert einfach ab – professionell, kreativ, messbar."<br />
             – Inhaber, medizinische Praxis Mainz
           </blockquote>
