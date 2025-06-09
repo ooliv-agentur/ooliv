@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -38,61 +37,70 @@ import FloatingActionButtons from './components/FloatingActionButtons';
 import ChatbaseWidget from './components/ChatbaseWidget';
 import { Toaster } from 'sonner';
 import Strategie from './pages/de/Strategie';
+import CookieRichtlinie from './pages/de/CookieRichtlinie';
+import CookiePolicyEN from './pages/en/CookiePolicyEN';
+import { CookieConsentProvider } from './contexts/CookieConsentContext';
+import CookieNotification from './components/CookieNotification';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <LanguageProvider>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <Router>
-            <CustomCursor />
-            <ScrollIndicator />
-            <FloatingActionButtons />
-            <ChatbaseWidget />
-            
-            <Routes>
-              {/* German Routes */}
-              <Route path="/" element={<GermanIndex />} />
-              <Route path="/webdesign" element={<GermanWebDesign />} />
-              <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-              <Route path="/strategie" element={<Strategie />} />
-              <Route path="/seo-optimierung" element={<GermanSEO />} />
-              <Route path="/content-erstellung" element={<GermanContentCreation />} />
-              <Route path="/google-ads" element={<GermanGoogleAds />} />
-              <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-              <Route path="/referenzen" element={<GermanCaseStudies />} />
-              <Route path="/ueber-uns" element={<GermanAboutUs />} />
-              <Route path="/kontakt" element={<GermanContact />} />
-              <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-              <Route path="/impressum" element={<GermanLegalNotice />} />
-              <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
-              <Route path="/danke" element={<GermanThankYou />} />
+      <CookieConsentProvider>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <Router>
+              <CustomCursor />
+              <ScrollIndicator />
+              <FloatingActionButtons />
+              <ChatbaseWidget />
+              <CookieNotification />
+              
+              <Routes>
+                {/* German Routes */}
+                <Route path="/" element={<GermanIndex />} />
+                <Route path="/webdesign" element={<GermanWebDesign />} />
+                <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+                <Route path="/strategie" element={<Strategie />} />
+                <Route path="/seo-optimierung" element={<GermanSEO />} />
+                <Route path="/content-erstellung" element={<GermanContentCreation />} />
+                <Route path="/google-ads" element={<GermanGoogleAds />} />
+                <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                <Route path="/referenzen" element={<GermanCaseStudies />} />
+                <Route path="/ueber-uns" element={<GermanAboutUs />} />
+                <Route path="/kontakt" element={<GermanContact />} />
+                <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
+                <Route path="/impressum" element={<GermanLegalNotice />} />
+                <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+                <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
+                <Route path="/danke" element={<GermanThankYou />} />
 
-              {/* English Routes */}
-              <Route path="/en" element={<EnglishIndex />} />
-              <Route path="/en/web-design" element={<EnglishWebDesign />} />
-              <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
-              <Route path="/en/seo" element={<EnglishSEO />} />
-              <Route path="/en/content-creation" element={<EnglishContentCreation />} />
-              <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
-              <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
-              <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
-              <Route path="/en/about-us" element={<EnglishAboutUs />} />
-              <Route path="/en/contact" element={<EnglishContact />} />
-              <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
-              <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
-              <Route path="/en/thank-you" element={<EnglishThankYou />} />
+                {/* English Routes */}
+                <Route path="/en" element={<EnglishIndex />} />
+                <Route path="/en/web-design" element={<EnglishWebDesign />} />
+                <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
+                <Route path="/en/seo" element={<EnglishSEO />} />
+                <Route path="/en/content-creation" element={<EnglishContentCreation />} />
+                <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
+                <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
+                <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
+                <Route path="/en/about-us" element={<EnglishAboutUs />} />
+                <Route path="/en/contact" element={<EnglishContact />} />
+                <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
+                <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
+                <Route path="/en/cookie-policy" element={<CookiePolicyEN />} />
+                <Route path="/en/thank-you" element={<EnglishThankYou />} />
 
-              {/* 404 Route */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            
-            <Toaster />
-          </Router>
-        </QueryClientProvider>
-      </HelmetProvider>
+                {/* 404 Route */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              
+              <Toaster />
+            </Router>
+          </QueryClientProvider>
+        </HelmetProvider>
+      </CookieConsentProvider>
     </LanguageProvider>
   );
 }
