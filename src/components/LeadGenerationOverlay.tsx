@@ -10,6 +10,7 @@ import {
 import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
+import { cn } from '@/lib/utils';
 
 interface LeadGenerationOverlayProps {
   open: boolean;
@@ -54,15 +55,18 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
       >
-        {/* Close button */}
+        {/* Close button matching hamburger menu style */}
         <button 
+          className={cn(
+            "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg",
+            "w-10 h-10 min-w-10 min-h-10"
+          )}
           onClick={handleClose}
-          className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"
+          style={{ cursor: 'none' }}
         >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
+          <X className="w-6 h-6" aria-hidden="true" />
         </button>
 
         <SheetHeader className="text-left pb-4 pr-12">
