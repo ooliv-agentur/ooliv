@@ -75,14 +75,14 @@ const WebDesignBenefits = () => {
         
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.features.map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
-              <div className="flex items-start gap-4">
-                <div className="p-2 rounded-full bg-brand-backgroundAlt">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
+              <div className="flex items-start gap-4 flex-grow">
+                <div className="p-2 rounded-full bg-brand-backgroundAlt flex-shrink-0">
                   <feature.icon className="h-5 w-5 text-brand-primary" />
                 </div>
-                <div>
+                <div className="flex flex-col flex-grow">
                   <h3 className="text-lg font-bold mb-2 text-brand-heading">{feature.title}</h3>
-                  <p className="text-brand-text text-sm">{feature.description}</p>
+                  <p className="text-brand-text text-sm leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             </div>
