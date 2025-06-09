@@ -36,8 +36,9 @@ const GermanWebDesign = () => {
         
         <WebDesignFAQ />
         
-        {/* Final CTA Section - removed footerNote to prevent duplication */}
+        {/* CTA Section with German startpage styling */}
         <CTA 
+          lightBackground={true}
           title="Sprechen wir über Ihr Webdesign-Projekt"
           subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch sichtbar wird und konvertiert."
           primaryCta="Projekt starten"
