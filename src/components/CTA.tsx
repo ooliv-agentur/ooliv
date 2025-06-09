@@ -82,9 +82,18 @@ const CTA = ({
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
           {shouldOpenLeadForm(primaryCta) ? (
-            <Button
-              size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+            <button
+              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+              style={{ 
+                backgroundColor: '#FFE500', 
+                color: '#003347'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFC700';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFE500';
+              }}
               onClick={(e) => {
                 e.stopPropagation();
                 handleOpenLeadForm();
@@ -92,22 +101,38 @@ const CTA = ({
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </button>
           ) : primaryCtaLink ? (
-            <Button
-              size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
-              asChild
+            <Link
+              to={primaryCtaLink}
+              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20 inline-flex items-center"
+              style={{ 
+                backgroundColor: '#FFE500', 
+                color: '#003347'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFC700';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFE500';
+              }}
             >
-              <Link to={primaryCtaLink}>
-                {primaryCta}
-                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
+              {primaryCta}
+              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+            </Link>
           ) : (
-            <Button 
-              size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+            <button 
+              className="group font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+              style={{ 
+                backgroundColor: '#FFE500', 
+                color: '#003347'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFC700';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFE500';
+              }}
               onClick={(e) => {
                 e.stopPropagation();
                 handleOpenLeadForm();
@@ -115,44 +140,34 @@ const CTA = ({
             >
               {primaryCta}
               <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </button>
           )}
           
           {secondaryCta && (
             isStrategyCallCta(secondaryCta) ? (
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
-                asChild
+              <Link 
+                to={contactPath}
+                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300 inline-flex items-center"
               >
-                <Link to={contactPath}>
-                  {secondaryCta}
-                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                {secondaryCta}
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+              </Link>
             ) : secondaryCtaLink ? (
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
-                asChild
+              <Link 
+                to={secondaryCtaLink}
+                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300 inline-flex items-center"
               >
-                <Link to={secondaryCtaLink}>
-                  {secondaryCta}
-                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                {secondaryCta}
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+              </Link>
             ) : (
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
+              <button 
+                className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
                 <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </button>
             )
           )}
         </div>
