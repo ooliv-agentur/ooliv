@@ -41,11 +41,11 @@ const DeutscherHero = () => {
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-left max-w-4xl mx-auto flex flex-col justify-center items-center min-h-[60vh]">
-            {/* Main heading - increased font size, left-aligned */}
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+            {/* Main heading - left-aligned */}
             <Reveal>
               <h1 
-                className="font-medium mb-8 leading-tight text-left w-full"
+                className="font-medium mb-8 leading-tight text-left"
                 style={{ 
                   fontSize: '64px', 
                   lineHeight: '76px', 
@@ -56,9 +56,9 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Dynamic Subheadlines with static part */}
+            {/* Dynamic Subheadlines with static part - left-aligned */}
             <Reveal delay={0.1}>
-              <div className="mb-10 text-left w-full">
+              <div className="mb-10 text-left">
                 <div
                   className="font-bold leading-tight"
                   style={{ 
@@ -77,15 +77,16 @@ const DeutscherHero = () => {
               </div>
             </Reveal>
             
+            {/* Body text - left-aligned */}
             <Reveal delay={0.2}>
-              <p className="text-2xl text-medico-darkGreen mb-10 leading-relaxed text-left w-full">
+              <p className="text-2xl text-medico-darkGreen mb-10 leading-relaxed text-left">
                 Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
               </p>
             </Reveal>
             
             {/* CTA buttons - left-aligned */}
             <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
                   className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
