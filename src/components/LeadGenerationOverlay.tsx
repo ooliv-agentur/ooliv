@@ -22,7 +22,14 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
-      onOpenChange(true);
+      console.log('open-lead-form event triggered, current open state:', open);
+      // Only open if not already open to prevent double triggering
+      if (!open) {
+        console.log('Opening lead form overlay');
+        onOpenChange(true);
+      } else {
+        console.log('Lead form already open, ignoring trigger');
+      }
     };
 
     // Register event listener
@@ -32,9 +39,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     return () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [onOpenChange]);
+  }, [onOpenChange, open]); // Include 'open' in dependencies to get current state
   
   const handleClose = (e?: React.MouseEvent | React.KeyboardEvent) => {
+    console.log('Manual close triggered');
     // Prevent any event propagation or bubbling
     if (e) {
       e.preventDefault();
@@ -48,7 +56,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     <Sheet 
       open={open} 
       onOpenChange={(isOpen) => {
+        console.log('Sheet onOpenChange triggered with:', isOpen);
+        // Allow normal closing behavior but prevent unwanted opening
         if (!isOpen) {
+          console.log('Closing via Sheet onOpenChange');
           onOpenChange(false);
         }
       }}
@@ -58,18 +69,21 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         side="right"
         onPointerDownOutside={(e) => {
           // Completely prevent any outside click handling
+          console.log('Outside pointer down prevented');
           e.preventDefault();
           e.stopPropagation();
           return false;
         }}
         onEscapeKeyDown={(e) => {
           // Only allow ESC key to close
+          console.log('ESC key close triggered');
           e.preventDefault();
           e.stopPropagation();
           handleClose();
         }}
         onInteractOutside={(e) => {
           // Additional prevention for any outside interactions
+          console.log('Outside interaction prevented');
           e.preventDefault();
           e.stopPropagation();
           return false;
