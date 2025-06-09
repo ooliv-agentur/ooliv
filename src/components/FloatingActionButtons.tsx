@@ -32,14 +32,11 @@ const FloatingActionButtons = () => {
       setShowLeadForm(true);
     };
     
-    // Listen for both events to ensure compatibility
-    document.addEventListener('open-lead-form', handleOpenLeadForm);
-    document.addEventListener('open-lead-generation', handleOpenLeadForm);
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
     
     return () => {
       console.log('🧹 FloatingActionButtons: Removing event listeners');
-      document.removeEventListener('open-lead-form', handleOpenLeadForm);
-      document.removeEventListener('open-lead-generation', handleOpenLeadForm);
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
   }, []);
 
@@ -157,13 +154,10 @@ const FloatingActionButtons = () => {
         )}
       </div>
 
-      {/* Lead Generation Overlay with proper close handling */}
+      {/* Lead Generation Overlay - simple state management */}
       <LeadGenerationOverlay 
         open={showLeadForm} 
-        onOpenChange={(open) => {
-          console.log('🔄 FloatingActionButtons: onOpenChange called with:', open);
-          setShowLeadForm(open);
-        }} 
+        onOpenChange={setShowLeadForm}
       />
     </TooltipProvider>
   );
