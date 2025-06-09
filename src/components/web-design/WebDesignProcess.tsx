@@ -54,38 +54,44 @@ const WebDesignProcess = () => {
       deliverableTitle: "DELIVERABLES"
     },
     de: {
-      title: "Unser Webdesign-Prozess – von der Planung bis zum Launch",
-      subtitle: "Ein klarer, kollaborativer Ansatz, der Ihre Geschäftsziele in eine erfolgreiche Website umsetzt.",
+      title: "Unser Webdesign-Prozess – vom Konzept zum visuellen Erlebnis",
+      subtitle: "Wenn die Strategie steht, gestalten wir das visuelle Erscheinungsbild Ihrer Website. Dabei legen wir großen Wert auf eine klare, ansprechende Optik, die Ihre Marke stärkt und Ihre Besucher überzeugt – mobil und auf allen Geräten.",
       steps: [
         {
           number: "01",
-          title: "Strategie & SEO-Planung",
-          description: "Wir definieren Ihre Ziele, analysieren den Wettbewerb und erstellen einen klaren Fahrplan.",
-          deliverables: ["Geschäftszielanalyse", "Wettbewerbsrecherche", "Zielgruppendefinition", "Projektplanung"]
+          title: "Übergabe des Konzepts",
+          description: "Wir übernehmen alle strategischen Grundlagen: Sitemap, Content-Strategie, Nutzerführung.",
+          deliverables: ["Sitemap-Analyse", "Content-Strategie-Review", "Nutzerführung-Konzept", "Zielgruppen-Definition"]
         },
         {
           number: "02",
-          title: "Struktur & Inhalte",
-          description: "Wir planen Ihre Seiten, erstellen Inhalte und entwickeln Wireframes.",
-          deliverables: ["Sitemap-Erstellung", "Content-Strategie", "Wireframes", "UX-Planung"]
+          title: "Moodboard & Designrichtung",
+          description: "Gemeinsam definieren wir Farbwelt, Typografie und das visuelle Grundgerüst.",
+          deliverables: ["Moodboard-Erstellung", "Farbpalette-Definition", "Typografie-Auswahl", "Visueller Stil-Guide"]
         },
         {
           number: "03",
-          title: "Design & Entwicklung",
-          description: "Wir bauen Ihre Website sauber, responsiv und skalierbar.",
-          deliverables: ["Individuelle Entwicklung", "Responsive Design", "Integrationen", "Performance-Optimierung"]
+          title: "Screendesign & Farbwelt",
+          description: "Wir entwickeln die visuelle Sprache Ihrer Website – passend zu Ihrer Marke.",
+          deliverables: ["Hauptseiten-Design", "Farbschema-Anwendung", "UI-Elemente-Design", "Marken-Integration"]
         },
         {
           number: "04",
-          title: "Testing & QA",
-          description: "Wir testen Geschwindigkeit, Design, SEO und mobile Erfahrung auf allen Geräten.",
-          deliverables: ["Browser-Tests", "Mobile Prüfungen", "Geschwindigkeitstests", "Funktionsprüfungen"]
+          title: "Responsive Design",
+          description: "Wir stellen sicher, dass Ihre Website auf allen Geräten perfekt aussieht.",
+          deliverables: ["Mobile-Design", "Tablet-Optimierung", "Desktop-Varianten", "Cross-Device-Tests"]
         },
         {
           number: "05",
-          title: "Launch & Betreuung",
-          description: "Wir gehen live, verfolgen die Ergebnisse und bleiben für technischen Support verfügbar.",
-          deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
+          title: "Design-Feinschliff & Animationen",
+          description: "Wir optimieren Details, Buttons und Interaktionen für eine moderne User Experience.",
+          deliverables: ["Micro-Interactions", "Button-Animationen", "Hover-Effekte", "UX-Verbesserungen"]
+        },
+        {
+          number: "06",
+          title: "Design-Abnahme & Übergabe",
+          description: "Sie erhalten alle Design-Assets (z. B. Figma-Prototypen) für die technische Umsetzung.",
+          deliverables: ["Figma-Prototyp", "Design-Assets", "Style-Guide", "Entwickler-Handoff"]
         }
       ],
       deliverableTitle: "WAS WIR LIEFERN"
