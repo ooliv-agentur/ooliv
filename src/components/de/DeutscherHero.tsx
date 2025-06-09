@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -61,13 +62,11 @@ const DeutscherHero = () => {
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-            {/* Main heading - left-aligned */}
+            {/* Main heading - responsive font sizes to prevent horizontal scrolling */}
             <Reveal>
               <h1 
-                className="font-medium mb-8 leading-tight text-left"
+                className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
                 style={{ 
-                  fontSize: '64px', 
-                  lineHeight: '76px', 
                   color: '#003343' 
                 }}
               >
@@ -75,14 +74,12 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Dynamic Subheadlines with static part - left-aligned */}
+            {/* Dynamic Subheadlines with static part - responsive sizing */}
             <Reveal delay={0.1}>
-              <div className="mb-10 text-left">
+              <div className="mb-8 sm:mb-10 text-left">
                 <div
-                  className="font-bold leading-tight"
+                  className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
                   style={{ 
-                    fontSize: '40px', 
-                    lineHeight: '50px', 
                     color: '#32b1ab' 
                   }}
                 >
@@ -96,19 +93,19 @@ const DeutscherHero = () => {
               </div>
             </Reveal>
             
-            {/* Body text - updated with new B2B-focused copy */}
+            {/* Body text - responsive sizing */}
             <Reveal delay={0.2}>
-              <p className="text-2xl text-medico-darkGreen mb-10 leading-relaxed text-left">
+              <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed text-left">
                 Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand.
               </p>
             </Reveal>
             
-            {/* CTA buttons - left-aligned */}
+            {/* CTA buttons - responsive sizing and stacking */}
             <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                   style={{ 
                     backgroundColor: '#FFD700', 
                     color: '#003347',
@@ -124,18 +121,18 @@ const DeutscherHero = () => {
                   disabled={isDispatching}
                 >
                   Projekt starten
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                  className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                   asChild
                 >
                   <Link to="/case-studies">
                     Arbeiten ansehen
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
               </div>
@@ -147,11 +144,11 @@ const DeutscherHero = () => {
       {/* Visual transition indicator - simplified */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>
