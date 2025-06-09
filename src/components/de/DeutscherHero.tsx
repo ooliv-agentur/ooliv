@@ -11,7 +11,7 @@ const DeutscherHero = () => {
   };
   
   return (
-    <section className="relative bg-medico-mint pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden hero-gradient-bg font-satoshi">
+    <section className="relative bg-medico-mint overflow-hidden hero-gradient-bg font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation with more variety */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large slow moving circles */}
@@ -32,7 +32,7 @@ const DeutscherHero = () => {
         <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
       </div>
       
-      <div className="relative z-20 py-16 md:py-24">
+      <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto">
             {/* Main heading - font-medium, 52px, line-height 68px, color #003343 */}
