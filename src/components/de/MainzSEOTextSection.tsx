@@ -7,69 +7,69 @@ const MainzSEOTextSection = () => {
   };
   
   return (
-    <section className="bg-medico-darkGreen pt-12 pb-16 font-satoshi">
+    <section className="pt-12 pb-16 font-satoshi" style={{ backgroundColor: '#0A1E2C' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-medico-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-medico-white mb-8">Werbeagentur Mainz – Klar. Strategisch. Messbar.</h2>
+        <article className="prose prose-lg max-w-none text-[17px] leading-relaxed" style={{ color: '#FFFFFF' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: '#FFFFFF' }}>Werbeagentur Mainz – Klar. Strategisch. Messbar.</h2>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             ooliv ist Ihre Werbeagentur in Mainz für digitale Markenführung, durchdachtes Webdesign und wirkungsvolles Online-Marketing. Seit über 16 Jahren entwickeln wir ganzheitliche Strategien für Unternehmen in Mainz und der Region – kreativ, technisch präzise und datenbasiert. Relaunch, neue Website oder Performance-Marketing: Wir denken Projekte immer ganzheitlich und setzen genau dort an, wo Ihre Marke sichtbar wird und Wirkung entfaltet.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Designagentur Mainz – Identität mit Wirkung</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Designagentur Mainz – Identität mit Wirkung</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Design ist Strategie – kein Selbstzweck. Als erfahrene Designagentur in Mainz gestalten wir Markenauftritte, die Unternehmen klar positionieren, Ihre Zielgruppe erreichen und langfristig Vertrauen aufbauen. Printdesign, Webdesign oder Corporate Design: Wir verbinden Ästhetik mit Funktion und schaffen eine Online-Außendarstellung, die überzeugt – online wie offline.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Erfolgreich wechseln – Ihr Agenturwechsel mit System</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Erfolgreich wechseln – Ihr Agenturwechsel mit System</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Der Wechsel zu einer neuen Werbeagentur Mainz kann Unsicherheit mit sich bringen – aber auch enormes Potenzial freisetzen. Mit ooliv wird der Wechsel planbar, transparent und partnerschaftlich:
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong className="text-medico-yellow">Analyse & Audit:</strong> Wir prüfen bestehende Maßnahmen, identifizieren Potenziale und vermeiden Reibungsverluste.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong className="text-medico-yellow">Strategische Übergabe:</strong> Inhalte, Zugänge und Zuständigkeiten werden dokumentiert und reibungslos übergeben.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong className="text-medico-yellow">Vertrauen & Struktur:</strong> Mit festen Ansprechpartnern, Basecamp-Projektsteuerung und offenen Workflows schaffen wir Klarheit und Sicherheit.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             So wird der Agenturwechsel zum Startpunkt für neue Erfolge.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Erfolgsanalysen & Referenzen – Vertrauen schaffen</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Erfolgsanalysen & Referenzen – Vertrauen schaffen</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Als Werbeagentur Mainz setzen wir auf echte Ergebnisse statt leere Versprechen. Über 100 erfolgreich abgeschlossene Projekte in verschiedensten Branchen – von Einzelhandel über B2B bis SaaS – sprechen für uns.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Ausgewählte Erfolgsbeispiele:</strong>
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>E-Commerce-Startup Mainz</strong><br />
             – Relaunch & SEO: +120 % Sichtbarkeit, +75 % Conversion-Rate in 6 Monaten
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Technologieunternehmen Mainz</strong><br />
             – Corporate Website & Content-Marketing: 3x mehr Leads, 2x höherer Umsatz
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Medizinische Praxis Mainz</strong><br />
             – Lokale SEO & UX-Optimierung: +95 % Online-Anfragen, Platz 1 bei Google Maps
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Stimmen unserer Kunden:</strong>
           </p>
           
@@ -99,13 +99,13 @@ const MainzSEOTextSection = () => {
             <li><strong>MarketingMeer:</strong> Mit unseren Strategien schaffen wir messbare Sichtbarkeit und eine positive Online-Außendarstellung für Ihre Marke.</li>
           </ul>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Marketingstrategien – individuell, datenbasiert, lokal verankert</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Marketingstrategien – individuell, datenbasiert, lokal verankert</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Als Werbeagentur Mainz entwickeln wir Marketingstrategien, die auf Ihre Marke, Ihr Unternehmen und Ihren Markt zugeschnitten sind. Keine Maßnahmen von der Stange, sondern individuelle Lösungen für maximale Wirkung.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Maßgeschneiderte Strategien für Mainz</strong>
           </p>
           
@@ -115,7 +115,7 @@ const MainzSEOTextSection = () => {
             <li><strong>Full-Service Agentur:</strong> Wir verbinden alle digitalen Kanäle und sorgen für eine ganzheitliche Strategie, die Ihre Marke erfolgreich macht.</li>
           </ul>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Alle Kanäle im Blick – für Ihren Geschäftserfolg</strong>
           </p>
           
@@ -128,25 +128,25 @@ const MainzSEOTextSection = () => {
             <li><strong>Digitale Kanäle:</strong> Wir denken kanalübergreifend – für maximale Wirkung.</li>
           </ul>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Datenbasierte Optimierung statt Bauchgefühl</strong>
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Wir messen alles: Sichtbarkeit, Leads, Conversion-Rate, ROI. Ihre Investition muss sich lohnen – deshalb optimieren wir Ihre Strategie kontinuierlich.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             <strong>Persönliche Beratung – Ihr Erfolg im Mittelpunkt</strong>
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Bei ooliv haben Sie immer einen festen Ansprechpartner. Wir begleiten Sie von der ersten Idee bis zur Umsetzung – individuell, partnerschaftlich, transparent.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Ganzheitliche Online-Strategien – alles aus einer Hand</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Ganzheitliche Online-Strategien – alles aus einer Hand</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Als Full-Service Agentur bieten wir kanalübergreifende Online-Strategien, die alle digitalen Kanäle bündeln – für eine starke Online-Präsenz. Unser Ziel: Ihre Marke wird online sichtbar, spürbar und erfolgreich.
           </p>
           
@@ -159,13 +159,13 @@ const MainzSEOTextSection = () => {
             <li><strong>Kontinuierliche Optimierung:</strong> Datenbasiert und zielgerichtet für nachhaltigen Erfolg.</li>
           </ul>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Mit ganzheitlichen Online-Strategien machen wir Ihre Marke zum Erlebnis – überall dort, wo Ihre Zielgruppe unterwegs ist.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">SEO & Online-Marketing aus Mainz – Sichtbarkeit zählt</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>SEO & Online-Marketing aus Mainz – Sichtbarkeit zählt</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Eine Website allein reicht nicht, wenn sie niemand findet. Als Werbeagentur Mainz entwickeln wir SEO- und Online-Marketing-Strategien, die wirken:
           </p>
           
@@ -176,23 +176,23 @@ const MainzSEOTextSection = () => {
             <li><strong>Lokale SEO:</strong> Sichtbarkeit in Mainz und Umgebung – dort, wo Ihre Zielgruppe sucht.</li>
           </ul>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Wir denken alle Maßnahmen integriert – für Reichweite, Vertrauen und Conversions.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Branding & Corporate Design – Marken mit Haltung</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Branding & Corporate Design – Marken mit Haltung</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Ihre Marke ist mehr als ein Logo. Wir übersetzen Ihre Werte in ein konsistentes Designsystem mit Haltung – vom Farbkonzept bis zur Bildsprache. Das Ergebnis: Wiedererkennbarkeit, Klarheit und eine starke Marktposition.
           </p>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Strategie und Kreativität vereint: für Markenidentitäten, die auffallen und bleiben.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">Mehr Umsatz mit smarter Marketingstrategie</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>Mehr Umsatz mit smarter Marketingstrategie</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Wir denken Marketing weiter – mit Konzepten, die alle Kanäle optimal verzahnen:
           </p>
           
@@ -202,13 +202,13 @@ const MainzSEOTextSection = () => {
             <li><strong>Feedback & Optimierung:</strong> Datenbasiert und kontinuierlich verbessert.</li>
           </ul>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             So werden Klicks zu Conversions und Interessenten zu Kunden.
           </p>
           
-          <h3 className="text-2xl md:text-3xl font-bold text-medico-white mt-12 mb-6">ooliv – Ihre Werbeagentur Mainz</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6" style={{ color: '#FFFFFF' }}>ooliv – Ihre Werbeagentur Mainz</h3>
           
-          <p className="my-6 text-medico-white/90">
+          <p className="my-6" style={{ color: '#F4F4F4' }}>
             Bereit für den nächsten Schritt? Mit ooliv haben Sie eine Werbeagentur Mainz an Ihrer Seite, die Strategie, Kreativität und messbare Ergebnisse vereint. Wir begleiten Sie von der Idee bis zur Umsetzung – digital, strategisch, partnerschaftlich. Ihre Marke verdient mehr als Standard.
           </p>
           
