@@ -15,9 +15,15 @@ const LeadGenerationOverlay = () => {
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
   
+  // Debug logging for state changes
+  useEffect(() => {
+    console.log('LeadGenerationOverlay open state changed:', open);
+  }, [open]);
+  
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
+      console.log('Opening lead form via global event');
       setOpen(true);
     };
 
@@ -30,16 +36,28 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  // Primary close handler - simplified to ensure reliable closing
+  // Primary close handler with detailed logging
   const handleOpenChange = (newOpen: boolean) => {
     console.log('Sheet onOpenChange triggered:', newOpen);
+    console.log('Current open state before update:', open);
     setOpen(newOpen);
+    
+    // Log the state immediately after setOpen call
+    setTimeout(() => {
+      console.log('Open state after setOpen call:', newOpen);
+    }, 0);
   };
 
   // Close button handler
   const handleClose = () => {
     console.log('Close button clicked');
+    console.log('Current open state before close:', open);
     setOpen(false);
+    
+    // Log the state immediately after setOpen call
+    setTimeout(() => {
+      console.log('Open state after close button:', false);
+    }, 0);
   };
   
   return (
