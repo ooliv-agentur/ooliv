@@ -1,148 +1,79 @@
 
-import type { Config } from "tailwindcss"
+import { type Config } from "tailwindcss";
 
-const config = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
-  prefix: "",
+export default {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        "brand-primary": "var(--brand-primary)",
-        "brand-secondary": "var(--brand-secondary)",
-        "brand-accent": "var(--brand-accent)",
-        "brand-background": "var(--brand-background)",
-        "brand-backgroundAlt": "var(--brand-backgroundAlt)",
-        "brand-text": "var(--brand-text)",
-        "brand-heading": "var(--brand-heading)",
-        "brand-muted": "var(--brand-muted)",
-        "brand-border": "var(--brand-border)",
-        "medico-darkGreen": "#003f2f",
-        "medico-turquoise": "#40e0d0",
-        "medico-mint": "#e6fffa", 
-        "medico-yellow": "#ffeb3b",
-        "medico-white": "#ffffff",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0", opacity: "0" },
-          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-          to: { height: "0", opacity: "0" },
-        },
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(10px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          }
-        },
-        "fade-out": {
-          "0%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          },
-          "100%": {
-            opacity: "0",
-            transform: "translateY(10px)"
-          }
-        },
-        "scale-in": {
-          "0%": {
-            transform: "scale(0.95)",
-            opacity: "0"
-          },
-          "100%": {
-            transform: "scale(1)",
-            opacity: "1"
-          }
-        },
-        "scale-out": {
-          from: { transform: "scale(1)", opacity: "1" },
-          to: { transform: "scale(0.95)", opacity: "0" }
-        },
-        "slide-in-right": {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(0)" }
-        },
-        "slide-out-right": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(100%)" }
-        }
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.3s ease-out",
-        "accordion-up": "accordion-up 0.3s ease-out",
-        "fade-in": "fade-in 0.3s ease-out",
-        "fade-out": "fade-out 0.3s ease-out",
-        "scale-in": "scale-in 0.2s ease-out",
-        "scale-out": "scale-out 0.2s ease-out",
-        "slide-in-right": "slide-in-right 0.3s ease-out",
-        "slide-out-right": "slide-out-right 0.3s ease-out",
-        "enter": "fade-in 0.3s ease-out, scale-in 0.2s ease-out",
-        "exit": "fade-out 0.3s ease-out, scale-out 0.2s ease-out"
-      },
       fontFamily: {
+        sans: ['Satoshi', 'sans-serif'],
         satoshi: ['Satoshi', 'sans-serif'],
       },
+      colors: {
+        border: "#e2e8f0",
+        brand: {
+          primary: "#38B593", // Updated to medico-turquoise
+          primaryHover: "#2a8a73",
+          secondary: "#FFE500", // Updated to medico-yellow
+          secondaryHover: "#e6ce00",
+          heading: "#003347", // Updated to medico-darkGreen
+          text: "#003347", // Updated to medico-darkGreen
+          background: "#D8F4E3", // Updated to medico-mint
+          backgroundAlt: "#D8F4E3", // Updated to medico-mint
+          footer: "#003347", // Updated to medico-darkGreen
+          success: "#38B593", // Updated to medico-turquoise
+          error: "#C62828",
+          warning: "#FFE500" // Updated to medico-yellow
+        },
+        // Primary medicosearch.ch color palette
+        medico: {
+          mint: "#D8F4E3",
+          yellow: "#FFE500",
+          turquoise: "#38B593",
+          darkGreen: "#003347",
+          white: "#FFFFFF"
+        }
+      },
+      boxShadow: {
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
+        'gradient': 'gradient 15s ease infinite',
+        'gradient-slow': 'gradient 20s ease infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0px) rotate(0deg)',
+          },
+          '50%': {
+            transform: 'translateY(-20px) rotate(5deg)',
+          },
+        },
+        gradient: {
+          '0%, 100%': {
+            'background-position': '0% 50%'
+          },
+          '50%': {
+            'background-position': '100% 50%'
+          }
+        }
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3)',
+        'hero-gradient-animated': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3, #38B593, #D8F4E3)',
+      },
+      backgroundSize: {
+        '400': '400% 400%',
+      }
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
-
-export default config
+  plugins: [],
+} satisfies Config;
