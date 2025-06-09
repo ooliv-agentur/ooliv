@@ -55,16 +55,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
       >
-        {/* Close button matching hamburger menu style */}
+        {/* Close button with proper cursor and increased z-index */}
         <button 
           className={cn(
-            "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg",
+            "fixed top-7 right-4 z-[210] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer",
             "w-10 h-10 min-w-10 min-h-10"
           )}
           onClick={handleClose}
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"
-          style={{ cursor: 'none' }}
         >
           <X className="w-6 h-6" aria-hidden="true" />
         </button>
