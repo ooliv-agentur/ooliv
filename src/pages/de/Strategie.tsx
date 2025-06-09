@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import { Search, Plan, Monitor, ArrowUp } from 'lucide-react';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -94,41 +95,92 @@ const Strategie = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-medico-mint">
+      {/* Process Section - Enhanced with Timeline */}
+      <section className="py-20 bg-gradient-to-b from-medico-mint to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              Unser strategischer Ansatz
+              Unser strategischer Ansatz: Von der Analyse bis zur Umsetzung
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Systematisch von der Analyse zur Umsetzung
+              Wir begleiten Sie Schritt für Schritt – von der Analyse Ihrer aktuellen Website bis zur erfolgreichen Umsetzung.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-              <h3 className="text-lg font-bold mb-2">Analyse</h3>
-              <p className="text-sm text-brand-text">Ist-Zustand, Zielgruppen, Wettbewerb</p>
+          {/* Modern Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden lg:block absolute top-24 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-medico-turquoise via-medico-yellow to-medico-turquoise rounded-full"></div>
+            
+            <div className="grid lg:grid-cols-4 gap-8 lg:gap-4">
+              {/* Step 1 */}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-medico-mint">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-medico-turquoise to-medico-darkGreen rounded-full flex items-center justify-center shadow-lg">
+                  <Search className="w-8 h-8 text-white" />
+                </div>
+                <div className="pt-8 text-center">
+                  <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">1</div>
+                  <h3 className="text-lg font-bold mb-3 text-brand-heading">Analyse & Konzept</h3>
+                  <p className="text-sm text-brand-text leading-relaxed">
+                    Wir prüfen den Ist-Zustand, Ihre Zielgruppen und den Wettbewerb. Dazu entwickeln wir eine Sitemap und erste Wireframes.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-medico-mint lg:mt-8">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-medico-yellow to-medico-turquoise rounded-full flex items-center justify-center shadow-lg">
+                  <Plan className="w-8 h-8 text-medico-darkGreen" />
+                </div>
+                <div className="pt-8 text-center">
+                  <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">2</div>
+                  <h3 className="text-lg font-bold mb-3 text-brand-heading">Strategie & Planung</h3>
+                  <p className="text-sm text-brand-text leading-relaxed">
+                    Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-medico-mint">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-medico-turquoise to-medico-darkGreen rounded-full flex items-center justify-center shadow-lg">
+                  <Monitor className="w-8 h-8 text-white" />
+                </div>
+                <div className="pt-8 text-center">
+                  <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">3</div>
+                  <h3 className="text-lg font-bold mb-3 text-brand-heading">Design-Übergabe & Umsetzung</h3>
+                  <p className="text-sm text-brand-text leading-relaxed">
+                    Nach der Designfreigabe geht es in die Webentwicklung: sauber, performant und individuell.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-medico-mint lg:mt-8">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-medico-yellow to-medico-turquoise rounded-full flex items-center justify-center shadow-lg">
+                  <ArrowUp className="w-8 h-8 text-medico-darkGreen" />
+                </div>
+                <div className="pt-8 text-center">
+                  <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">4</div>
+                  <h3 className="text-lg font-bold mb-3 text-brand-heading">Optimierung & Reporting</h3>
+                  <p className="text-sm text-brand-text leading-relaxed">
+                    Wir messen den Erfolg anhand definierter KPIs und optimieren kontinuierlich.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-              <h3 className="text-lg font-bold mb-2">Strategie</h3>
-              <p className="text-sm text-brand-text">Ziele definieren, Maßnahmen planen</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-              <h3 className="text-lg font-bold mb-2">Umsetzung</h3>
-              <p className="text-sm text-brand-text">Schrittweise Implementierung</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-              <h3 className="text-lg font-bold mb-2">Optimierung</h3>
-              <p className="text-sm text-brand-text">Kontinuierliche Verbesserung</p>
+            {/* Arrow connectors for mobile */}
+            <div className="lg:hidden flex justify-center mt-8">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-medico-turquoise rounded-full"></div>
+                <div className="w-8 h-0.5 bg-medico-turquoise"></div>
+                <div className="w-2 h-2 bg-medico-turquoise rounded-full"></div>
+                <div className="w-8 h-0.5 bg-medico-turquoise"></div>
+                <div className="w-2 h-2 bg-medico-turquoise rounded-full"></div>
+                <div className="w-8 h-0.5 bg-medico-turquoise"></div>
+                <div className="w-2 h-2 bg-medico-turquoise rounded-full"></div>
+              </div>
             </div>
           </div>
         </div>
