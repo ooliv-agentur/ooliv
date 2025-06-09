@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,25 +10,25 @@ const DeutscherAboutSection = () => {
     {
       title: "Strategie & UX",
       description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
-      icon: <Grid2X2 className="h-6 w-6" style={{ color: '#b4f4b2' }} />,
+      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/strategie"
     },
     {
       title: "Content & SEO",
       description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
-      icon: <Sparkles className="h-6 w-6" style={{ color: '#b4f4b2' }} />,
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/content-erstellung"
     },
     {
       title: "Design & Development",
       description: "Custom-coded, konversionsstark, skalierbar.",
-      icon: <Code2 className="h-6 w-6" style={{ color: '#b4f4b2' }} />,
+      icon: <Code2 className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/webentwicklung"
     },
     {
       title: "Kommunikation",
       description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
-      icon: <Phone className="h-6 w-6" style={{ color: '#b4f4b2' }} />,
+      icon: <Phone className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/kontakt"
     }
   ];
