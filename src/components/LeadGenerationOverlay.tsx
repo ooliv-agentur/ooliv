@@ -66,10 +66,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           return false;
         }}
         onEscapeKeyDown={(e) => {
-          // Only allow ESC key to close
+          // Only allow ESC key to close - fix the type issue
           e.preventDefault();
           e.stopPropagation();
-          handleClose(e);
+          handleClose();
         }}
         onInteractOutside={(e) => {
           // Additional prevention for any outside interactions
