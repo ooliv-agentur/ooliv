@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -30,10 +31,10 @@ const DeutscherHero = () => {
     }, 0);
   };
 
-  const subheadlines = [
-    "Wir helfen Unternehmen, online sichtbar zu werden.",
-    "Wir helfen Unternehmen, mehr Leads zu generieren.",
-    "Wir helfen Unternehmen, mit ihrer Website zu überzeugen."
+  const dynamicEndings = [
+    "online sichtbar zu werden.",
+    "mehr Leads zu generieren.",
+    "mit ihrer Website zu überzeugen."
   ];
   
   return (
@@ -73,7 +74,7 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Dynamic Subheadlines with static part - responsive sizing */}
+            {/* Dynamic Subheadlines with static and dynamic parts - responsive sizing */}
             <Reveal delay={0.1}>
               <div className="mb-8 sm:mb-10 text-left">
                 <div
@@ -82,8 +83,9 @@ const DeutscherHero = () => {
                     color: '#32b1ab' 
                   }}
                 >
+                  <span className="inline">Wir helfen Unternehmen, </span>
                   <DynamicSubheadlines 
-                    subheadlines={subheadlines}
+                    subheadlines={dynamicEndings}
                     interval={4000}
                     className="inline"
                   />
