@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface DynamicSubheadlinesProps {
   subheadlines: string[];
@@ -14,55 +13,37 @@ const DynamicSubheadlines = ({
   className = "" 
 }: DynamicSubheadlinesProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     if (subheadlines.length <= 1) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === subheadlines.length - 1 ? 0 : prevIndex + 1
-      );
+      // Start fade out
+      setIsVisible(false);
+      
+      // After fade out completes, change text and fade in
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => 
+          prevIndex === subheadlines.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsVisible(true);
+      }, 300); // Half second for fade out
     }, interval);
 
     return () => clearInterval(timer);
   }, [subheadlines.length, interval]);
 
-  const variants = {
-    enter: {
-      opacity: 0
-    },
-    center: {
-      opacity: 1
-    },
-    exit: {
-      opacity: 0
-    }
-  };
-
   return (
-    <div className={`relative ${className}`} style={{ minHeight: '68px' }}>
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={currentIndex}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut"
-          }}
-          className="font-bold text-center absolute inset-0 flex items-center justify-center"
-          style={{ 
-            fontSize: '52px', 
-            lineHeight: '68px', 
-            color: '#32b1ab' 
-          }}
-        >
-          {subheadlines[currentIndex]}
-        </motion.p>
-      </AnimatePresence>
-    </div>
+    <span 
+      className={`transition-all duration-300 ease-in-out ${className}`}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(10px)'
+      }}
+    >
+      {subheadlines[currentIndex]}
+    </span>
   );
 };
 

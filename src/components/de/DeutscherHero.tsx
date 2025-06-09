@@ -12,9 +12,9 @@ const DeutscherHero = () => {
   };
 
   const subheadlines = [
-    "Wir helfen Ihnen, online mehr Kunden zu gewinnen.",
-    "Wir helfen Ihnen, Ihre Website sichtbar zu machen.",
-    "Wir helfen Ihnen, Ihr Unternehmen digital zu stärken."
+    "online mehr Kunden zu gewinnen.",
+    "Ihre Website sichtbar zu machen.",
+    "Ihr Unternehmen digital zu stärken."
   ];
   
   return (
@@ -41,14 +41,14 @@ const DeutscherHero = () => {
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Main heading - font-medium, 52px, line-height 68px, color #003343 */}
+          <div className="text-left max-w-4xl mx-auto flex flex-col justify-center items-center min-h-[60vh]">
+            {/* Main heading - increased font size, left-aligned */}
             <Reveal>
               <h1 
-                className="font-medium mb-8 leading-tight text-center"
+                className="font-medium mb-8 leading-tight text-left w-full"
                 style={{ 
-                  fontSize: '52px', 
-                  lineHeight: '68px', 
+                  fontSize: '64px', 
+                  lineHeight: '76px', 
                   color: '#003343' 
                 }}
               >
@@ -56,24 +56,36 @@ const DeutscherHero = () => {
               </h1>
             </Reveal>
             
-            {/* Dynamic Subheadlines */}
+            {/* Dynamic Subheadlines with static part */}
             <Reveal delay={0.1}>
-              <DynamicSubheadlines 
-                subheadlines={subheadlines}
-                interval={4000}
-                className="mb-10"
-              />
+              <div className="mb-10 text-left w-full">
+                <div
+                  className="font-bold leading-tight"
+                  style={{ 
+                    fontSize: '40px', 
+                    lineHeight: '50px', 
+                    color: '#32b1ab' 
+                  }}
+                >
+                  <span>Wir helfen Ihnen, </span>
+                  <DynamicSubheadlines 
+                    subheadlines={subheadlines}
+                    interval={4000}
+                    className="inline"
+                  />
+                </div>
+              </div>
             </Reveal>
             
             <Reveal delay={0.2}>
-              <p className="text-xl text-medico-darkGreen mb-10 leading-relaxed">
+              <p className="text-2xl text-medico-darkGreen mb-10 leading-relaxed text-left w-full">
                 Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.
               </p>
             </Reveal>
             
-            {/* CTA buttons - center-aligned */}
+            {/* CTA buttons - left-aligned */}
             <Reveal delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <Button 
                   size="lg" 
                   className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
