@@ -53,7 +53,7 @@ const TeamTeaserDE = () => {
         
         <div className="flex justify-center">
           <Button variant="outline" size="lg" className="group" asChild>
-            <Link to="/ueber-ooliv">
+            <Link to="/ueber-uns">
               Das gesamte Team kennenlernen
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

@@ -21,7 +21,7 @@ interface TeamMember {
 
 const TeamTeaser = () => {
   const { language } = useLanguage();
-  const aboutPath = language === 'de' ? "/ueber-ooliv" : "/en/about-ooliv";
+  const aboutPath = language === 'de' ? "/ueber-uns" : "/en/about-us";
   
   const featuredTeamMembers: TeamMember[] = [
     {
