@@ -57,8 +57,8 @@ const Strategie = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Webkonzept & Strategie für Ihren Erfolg | ooliv Mainz</title>
-        <meta name="description" content="Wir entwickeln individuelle Digitalstrategien mit Webkonzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, mehr Leads und eine starke Marke." />
+        <title>Webkonzept & Strategie – Ihr Erfolgsfaktor im Web | ooliv Mainz</title>
+        <meta name="description" content="ooliv entwickelt individuelle Webkonzepte und Strategien für Websites – maßgeschneidert, zielgruppenorientiert und mit dem Blick fürs Detail. Jetzt Strategiegespräch buchen!" />
       </Helmet>
 
       {/* Hero Section */}
