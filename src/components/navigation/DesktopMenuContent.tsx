@@ -68,7 +68,6 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           exit="exit"
           variants={menuVariants}
           className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
-          style={{ cursor: 'none' }}
         >
           {/* Close button */}
           <div className="absolute top-6 right-4 z-[96]">
@@ -86,7 +85,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           </div>
 
           {/* Main content area - fills full height */}
-          <div className="flex-1 flex flex-col justify-center py-6 px-8" style={{ cursor: 'none' }}>
+          <div className="flex-1 flex flex-col justify-center py-6 px-8">
             <motion.nav 
               className="space-y-3 text-center w-full"
               variants={itemVariants}

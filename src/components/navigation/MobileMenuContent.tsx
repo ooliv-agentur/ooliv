@@ -34,9 +34,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
           className="fixed top-0 right-0 bottom-0 w-full bg-medico-mint text-medico-darkGreen z-[95] flex flex-col overflow-hidden shadow-2xl h-screen-mobile"
-          style={{ 
-            cursor: 'none'
-          }}
         >
           {/* Close button */}
           <div className="absolute top-6 right-4 z-[96]">
@@ -56,7 +53,6 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
           <div 
             className="flex-1 flex flex-col py-4 px-6 overflow-y-auto safe-area-inset-top" 
             style={{ 
-              cursor: 'none',
               minHeight: '0', // Allow flexbox to shrink
               paddingTop: 'max(1rem, env(safe-area-inset-top))' // Respect notch on iOS
             }}

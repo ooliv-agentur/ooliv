@@ -98,7 +98,6 @@ const MainNavigation = () => {
           className="fixed inset-0 bg-black/40 z-[90]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
-          style={{ cursor: 'none' }}
         />
       )}
 
