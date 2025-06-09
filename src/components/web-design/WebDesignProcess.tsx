@@ -2,12 +2,18 @@
 import React from 'react';
 import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
-  const isMobile = useIsMobile();
   
   const translations = {
     en: {
@@ -50,8 +56,7 @@ const WebDesignProcess = () => {
           deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
         }
       ],
-      deliverableTitle: "DELIVERABLES",
-      scrollHint: "Scroll to see more"
+      deliverableTitle: "DELIVERABLES"
     },
     de: {
       title: "Unser Webdesign-Prozess – von der Planung bis zum Launch",
@@ -93,8 +98,7 @@ const WebDesignProcess = () => {
           deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
         }
       ],
-      deliverableTitle: "WAS WIR LIEFERN",
-      scrollHint: "Weiter scrollen für mehr"
+      deliverableTitle: "WAS WIR LIEFERN"
     }
   };
   
@@ -111,89 +115,57 @@ const WebDesignProcess = () => {
           {t.subtitle}
         </p>
         
-        {/* Desktop Version */}
-        <div className="hidden lg:block">
-          <div className="grid lg:grid-cols-5 gap-6">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
             {t.steps.map((step, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
-                    {step.number}
-                  </div>
-                  <div>
-                    <div className="flex items-center mb-2">
-                      <step.icon className="h-5 w-5 text-brand-primary mr-2" />
-                      <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
-                    </div>
-                    <p className="text-brand-text text-sm mb-5">{step.description}</p>
-                    
-                    <div className="border-t border-brand-backgroundAlt pt-4">
-                      <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
-                        {t.deliverableTitle}
-                      </h4>
-                      <div className="space-y-2.5">
-                        {step.deliverables.map((deliverable, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
-                              <Check className="h-3 w-3 text-brand-primary" />
-                            </div>
-                            <p className="text-sm font-medium text-brand-text">{deliverable}</p>
-                          </div>
-                        ))}
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-[28.5%]">
+                <Card className="h-full">
+                  <CardContent className="p-6 h-full flex flex-col">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+                        {step.number}
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Mobile and Tablet Version with native scrolling */}
-        <div className="lg:hidden">
-          <div className="overflow-x-auto">
-            <div className="flex gap-6 pb-4 min-w-max">
-              {t.steps.map((step, index) => (
-                <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
-                      {step.number}
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <step.icon className="h-5 w-5 text-brand-primary mr-2" />
-                        <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
-                      </div>
-                      <p className="text-brand-text text-sm mb-5">{step.description}</p>
-                      
-                      <div className="border-t border-brand-backgroundAlt pt-4">
-                        <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
-                          {t.deliverableTitle}
-                        </h4>
-                        <div className="space-y-2.5">
-                          {step.deliverables.map((deliverable, idx) => (
-                            <div key={idx} className="flex items-center">
-                              <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
-                                <Check className="h-3 w-3 text-brand-primary" />
+                      <div className="flex-1">
+                        <div className="flex items-center mb-2">
+                          <step.icon className="h-5 w-5 text-brand-primary mr-2" />
+                          <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
+                        </div>
+                        <p className="text-brand-text text-sm mb-5">{step.description}</p>
+                        
+                        <div className="border-t border-brand-backgroundAlt pt-4 mt-auto">
+                          <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
+                            {t.deliverableTitle}
+                          </h4>
+                          <div className="space-y-2.5">
+                            {step.deliverables.map((deliverable, idx) => (
+                              <div key={idx} className="flex items-center">
+                                <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                                  <Check className="h-3 w-3 text-brand-primary" />
+                                </div>
+                                <p className="text-sm font-medium text-brand-text">{deliverable}</p>
                               </div>
-                              <p className="text-sm font-medium text-brand-text">{deliverable}</p>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
           
-          {isMobile && (
-            <div className="text-center mt-3 text-sm text-gray-500">
-              {t.scrollHint} ›
-            </div>
-          )}
-        </div>
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
