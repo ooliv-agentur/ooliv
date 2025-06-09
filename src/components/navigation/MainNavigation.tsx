@@ -46,7 +46,7 @@ const MainNavigation = () => {
                 style={{ cursor: 'none' }}
               >
                 <img 
-                  src="/lovable-uploads/be0cdb9b-07f1-49ef-aaf0-07a859efa382.png" 
+                  src="/ooliv_logo_2025.svg" 
                   alt="ooliv logo" 
                   className="h-6 md:h-8 w-auto" 
                   loading="lazy"
