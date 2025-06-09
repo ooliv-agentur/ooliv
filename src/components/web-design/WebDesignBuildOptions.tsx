@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Code, ShoppingBag, Settings, Database } from 'lucide-react';
+import { Code, ShoppingBag, Settings, Database, FileText, Building2, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
@@ -37,34 +38,36 @@ const WebDesignBuildOptions = () => {
       ]
     },
     de: {
-      title: "Webdesign Mainz – maßgeschneidert statt vorgefertigt",
-      subtitle: "Gemeinsam finden wir die passende Lösung für Ihr Unternehmen.",
+      title: "Design für jede digitale Lösung",
+      subtitle: "Egal ob Onepager, Unternehmenswebsite oder E-Commerce – wir entwickeln das passende Design für Ihre Anforderungen. Auf dieser Basis realisieren wir später Ihre Website mit WordPress, Shopify oder anderen Lösungen. Mehr zur technischen Umsetzung erfahren Sie auf unserer Seite ",
+      webdevLinkText: "Webentwicklung",
       options: [
         {
-          icon: Settings,
-          title: "Individuelles WordPress-Setup",
-          description: "Professionelle Websites mit voller Inhaltskontrolle"
+          icon: FileText,
+          title: "Onepager und Landingpages",
+          description: "Design für kleine, fokussierte Websites mit klarem Ziel."
+        },
+        {
+          icon: Building2,
+          title: "Unternehmenswebsites",
+          description: "Strukturierte Designs für wachsende B2B-Unternehmen."
         },
         {
           icon: ShoppingBag,
-          title: "WooCommerce für kleinere Shops",
-          description: "E-Commerce-Funktionalität innerhalb von WordPress"
+          title: "E-Commerce-Designs",
+          description: "Konzepte für Online-Shops, die verkaufen – später realisiert mit WordPress/WooCommerce oder Shopify."
         },
         {
-          icon: Code,
-          title: "Statische Website mit HTML/CSS/JS",
-          description: "Reiner Code für maximale Performance"
-        },
-        {
-          icon: Database,
-          title: "Shopify für ausgewählte B2B-Projekte",
-          description: "Optimierter E-Commerce für produktbasierte Unternehmen"
+          icon: Globe,
+          title: "Individuelle Webanwendungen",
+          description: "Designs für maßgeschneiderte Webanwendungen und komplexe Plattformen."
         }
       ]
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
+  const webdevPath = isGerman ? "/webentwicklung" : "/en/web-development";
 
   return (
     <section className="py-24 bg-brand-backgroundAlt">
@@ -76,6 +79,17 @@ const WebDesignBuildOptions = () => {
           
           <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
             {t.subtitle}
+            {isGerman && (
+              <>
+                <Link 
+                  to={webdevPath} 
+                  className="text-brand-primary hover:underline font-medium"
+                >
+                  {t.webdevLinkText}
+                </Link>
+                .
+              </>
+            )}
           </p>
         </Reveal>
         
