@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -50,7 +51,7 @@ const Strategie = () => {
               Strategie & Konzept als Fundament Ihres digitalen Erfolgs
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem soliden Konzept sorgen wir dafür, dass jeder Euro wirkt – von der ersten Idee bis zur Umsetzung.
+              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem durchdachten Konzept sorgen wir dafür, dass jeder Euro wirkt – von der Analyse bis zur erfolgreichen Umsetzung.
             </p>
           </div>
 
@@ -73,7 +74,7 @@ const Strategie = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">Nutzerführung & Conversion</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Nutzerführung & Conversion-Strategie</h3>
               <p className="text-brand-text">
                 Wir definieren, wie Ihre Besucher geführt werden und wie Ihre Website aus Interessenten Kunden macht.
               </p>
@@ -85,9 +86,9 @@ const Strategie = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">Messbare Ergebnisse & KPIs</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Projektplan & Roadmap</h3>
               <p className="text-brand-text">
-                Wir definieren messbare Ziele und sorgen für ein klares Tracking – damit Sie Ihren Erfolg jederzeit im Blick haben.
+                Wir entwickeln eine klare Roadmap mit Meilensteinen und Prioritäten, damit Ihr Projekt strukturiert und erfolgreich umgesetzt werden kann.
               </p>
             </div>
           </div>
