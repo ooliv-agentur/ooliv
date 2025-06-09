@@ -164,7 +164,7 @@ const GermanIndex = () => {
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
               <p className="text-brand-text">
-                Hinweis: Wir haben noch viele weitere Vorher-Nachher-Beispiele. Fragen Sie diese gerne direkt bei uns an — info@ooliv.de.
+                Hinweis: Wir haben noch viele weitere Vorher-Nachher-Beispiele. Fragen Sie diese gerne direkt bei uns an — <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>.
               </p>
             </div>
           </div>

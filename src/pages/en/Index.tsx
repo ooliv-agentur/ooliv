@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -78,7 +77,7 @@ const EnglishIndex = () => {
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
               <p className="text-brand-text">
-                Note: We have many more before-and-after examples available. Feel free to request them directly from us — info@ooliv.de.
+                Note: We have many more before-and-after examples available. Feel free to request them directly from us — <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>.
               </p>
             </div>
           </div>
