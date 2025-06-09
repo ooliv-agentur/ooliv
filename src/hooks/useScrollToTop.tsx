@@ -10,12 +10,16 @@ export const useScrollToTop = () => {
   const { pathname } = useLocation();
   
   useEffect(() => {
-    // Scroll to top with smooth animation
+    // Scroll to top immediately without animation for faster response
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: 'instant'
     });
+    
+    // Also ensure document body scroll is reset (for some edge cases)
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     
     // Log that scroll reset was performed
     console.log('Scrolled to top on navigation to:', pathname);

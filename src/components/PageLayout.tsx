@@ -8,6 +8,7 @@ import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { MotionConfig } from 'framer-motion';
+import { useScrollToTop } from '@/hooks/useScrollToTop';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -52,6 +53,9 @@ const pathMappings: Record<string, string> = {
 const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const location = useLocation();
   const { language } = useLanguage();
+  
+  // Use the scroll to top hook
+  useScrollToTop();
   
   // Get the canonical path (current path) - ensure no trailing slash
   const currentPath = location.pathname.replace(/\/$/, '') || '/';

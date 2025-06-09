@@ -46,11 +46,12 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   const navigationLinks = language === 'de' ? germanLinks : englishLinks;
 
   const handleClick = () => {
+    // Always scroll to top immediately when clicking any navigation link
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Call the provided onLinkClick callback if present
     if (onLinkClick) {
       onLinkClick();
-    } else {
-      // Default behavior: scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
