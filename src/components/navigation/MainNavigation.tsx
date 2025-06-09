@@ -35,8 +35,8 @@ const MainNavigation = () => {
     <>
       <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
         <div className="relative w-full h-24">
-          {/* Logo - positioned absolutely to align with viewport edge */}
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50">
+          {/* Logo - positioned absolutely to align with viewport edge with increased spacing */}
+          <div className="absolute left-12 top-1/2 transform -translate-y-1/2 z-50">
             <Link 
               to={language === 'de' ? '/' : '/en'} 
               className="flex items-center" 
