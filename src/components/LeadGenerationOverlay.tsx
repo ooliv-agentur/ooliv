@@ -41,19 +41,14 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet 
       open={open} 
-      onOpenChange={() => {}} // Disable all Sheet-based closing
+      onOpenChange={() => {}} // Komplett deaktiviert - nur manuelles Schließen erlaubt
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
-        style={{ cursor: 'none' }}
-        onPointerDownOutside={(e) => {
-          // Prevent closing when clicking outside
-          e.preventDefault();
-        }}
+        onPointerDownOutside={(e) => e.preventDefault()} // Outside-Clicks werden ignoriert
         onEscapeKeyDown={(e) => {
-          // Allow ESC key to close
-          e.preventDefault();
+          // ESC-Taste funktioniert weiterhin
           handleClose();
         }}
       >
