@@ -15,12 +15,10 @@ const WebDesignHero = () => {
   
   const translations = {
     en: {
-      badge: "Strategic Web Design for Business Growth",
       title: "Webdesign That Helps B2B Companies Grow",
       subtitle: "We design websites that improve your Google visibility, drive qualified leads, and align with your business goals. Our webdesign services are built on strategy – not on templates."
     },
     de: {
-      badge: "Strategisches Webdesign für Unternehmenswachstum",
       title: "Webdesign Mainz für B2B-Unternehmen mit Wachstumskurs",
       subtitle: "Wir entwickeln maßgeschneiderte Websites, die Ihre Sichtbarkeit in Google stärken, mehr Leads generieren und Ihre Marke digital positionieren. Unser Webdesign für Unternehmen aus Mainz und darüber hinaus basiert auf Strategie, nicht auf Templates."
     }
@@ -46,11 +44,6 @@ const WebDesignHero = () => {
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-            {/* Badge */}
-            <div className="inline-flex items-center bg-medico-turquoise/10 text-medico-turquoise rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
-              <span>{t.badge}</span>
-            </div>
-            
             {/* Main heading */}
             <h1 
               className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
