@@ -73,44 +73,48 @@ const CTA = ({
   return (
     <section className={`py-24 ${lightBackground ? 'bg-medico-mint' : 'bg-medico-white'} font-satoshi`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">{title}</h2>
-        <p className="text-xl mb-12 max-w-4xl mx-auto text-medico-darkGreen leading-relaxed">{subtitle}</p>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
+          {title}
+        </h2>
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-medico-darkGreen/90 leading-relaxed" style={{ lineHeight: '1.5' }}>
+          {subtitle}
+        </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
               onClick={(e) => {
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
               asChild
             >
               <Link to={primaryCtaLink}>
                 {primaryCta}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           ) : (
             <Button 
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
               onClick={(e) => {
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           )}
           
@@ -119,50 +123,61 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
                 asChild
               >
                 <Link to={contactPath}>
                   {secondaryCta}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : secondaryCtaLink ? (
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
                   {secondaryCta}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : (
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
               </Button>
             )
           )}
         </div>
         
+        {/* Trust elements with improved visual hierarchy */}
         {footerNote ? (
-          <p className="mt-12 text-sm text-medico-darkGreen/80 font-medium">{footerNote}</p>
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+                {footerNote}
+              </p>
+            </div>
+          </div>
         ) : children ? (
           <div className="mt-8">
             {children}
           </div>
         ) : (
-          <p className="mt-12 text-sm text-medico-darkGreen/80 font-medium">
-            {defaultFooterNote}
-          </p>
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+                {defaultFooterNote}
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </section>
