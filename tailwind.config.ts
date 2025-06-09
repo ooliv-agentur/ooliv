@@ -47,6 +47,8 @@ export default {
         'gradient-slow': 'gradient 20s ease infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
+        'accordion-down': 'accordion-down 0.3s ease-out',
+        'accordion-up': 'accordion-up 0.3s ease-out',
       },
       keyframes: {
         float: {
@@ -64,7 +66,27 @@ export default {
           '50%': {
             'background-position': '100% 50%'
           }
-        }
+        },
+        'accordion-down': {
+          from: { 
+            height: '0',
+            opacity: '0'
+          },
+          to: { 
+            height: 'var(--radix-accordion-content-height)',
+            opacity: '1'
+          },
+        },
+        'accordion-up': {
+          from: { 
+            height: 'var(--radix-accordion-content-height)',
+            opacity: '1'
+          },
+          to: { 
+            height: '0',
+            opacity: '0'
+          },
+        },
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3)',
