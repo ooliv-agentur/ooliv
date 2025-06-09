@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -107,55 +108,78 @@ const Strategie = () => {
           </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
-            Erfolgsgeschichten – echte Ergebnisse aus echten Projekten
+            Erfolgsgeschichten – unsere Projekte als strategischer Erfolgsfaktor
           </h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            Unsere Kundenprojekte sind so individuell wie die Unternehmen selbst. Ob B2B, E-Commerce oder Dienstleister – wir entwickeln für jede Branche das passende Webkonzept:
+            Unsere Kundenreferenzen sind mehr als nur Lob – sie sind Belege für unsere strategische Exzellenz und Innovationskraft. Jede Referenz zeigt, wie wir komplexe Herausforderungen individuell lösen, Projekte strukturiert begleiten und gemeinsam mit unseren Kunden messbare Ergebnisse erzielen.
           </p>
           
           <ul className={seoTextStyles.unorderedList}>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>Gärtnerei Zech</strong> (Mittelstand, E-Commerce)<br />
+              Ausgangslage: Fehlende Sichtbarkeit und geringe Online-Bestellungen.<br />
+              Unser Ansatz: Zielgruppenanalyse, individuelles Webkonzept mit SEO-Integration und Conversion-Optimierung.<br />
+              Ergebnis: +150 % Online-Bestellungen, Top-Rankings bei Google, Website-Link auf Anfrage.<br />
               <blockquote className={seoTextStyles.blockquote}>
                 <p className={seoTextStyles.quoteText}>
-                  „Dank ooliv haben wir endlich ein Webkonzept, das unsere Zielgruppe perfekt abholt. Die Workshops waren klasse, wir wurden professionell begleitet und das Ergebnis: +150 % Online-Bestellungen und Top-Rankings bei Google."
+                  „Dank ooliv haben wir endlich ein Webkonzept, das unsere Zielgruppe perfekt abholt. Die Workshops waren klasse, wir wurden professionell begleitet. Das Ergebnis: mehr Umsatz und eine Website, die überzeugt."
                 </p>
               </blockquote>
-              [Website-Link auf Anfrage]
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>IT-Startup Frankfurt</strong><br />
+              Ausgangslage: Unscharfe Markenbotschaft, wenig Struktur.<br />
+              Unser Ansatz: Zielgruppenanalyse, klare Markenpositionierung, maßgeschneidertes Webkonzept.<br />
+              Ergebnis: 3x mehr Leads, nachhaltige Markenwahrnehmung.<br />
               <blockquote className={seoTextStyles.blockquote}>
                 <p className={seoTextStyles.quoteText}>
-                  „Wir hatten anfangs kein klares Konzept, nur eine grobe Idee. ooliv hat uns strategisch abgeholt, die Zielgruppenanalyse war ein Augenöffner. Heute sind wir bei den relevanten Suchanfragen auf Seite 1 bei Google – und unsere Leads haben sich verdreifacht."
+                  „Wir hatten anfangs kein klares Konzept, nur eine grobe Idee. ooliv hat uns strategisch abgeholt und die Zielgruppenanalyse war ein echter Augenöffner."
                 </p>
               </blockquote>
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>B2B-Unternehmen Mainz</strong><br />
+              Ausgangslage: Geringe Conversion, veraltetes CMS.<br />
+              Unser Ansatz: Analyse, neue Sitemap, Conversion-Optimierung, individuelles Webkonzept.<br />
+              Ergebnis: +200 % Online-Anfragen, gesteigerte Kundenbindung.<br />
               <blockquote className={seoTextStyles.blockquote}>
                 <p className={seoTextStyles.quoteText}>
-                  „Vor dem Relaunch waren wir kaum sichtbar. ooliv hat unser Webkonzept von Grund auf neu entwickelt, inklusive SEO-Strategie. Nach dem Go-Live sind unsere Online-Anfragen um 200 % gestiegen – und das Design begeistert unsere Kunden."
+                  „Vor dem Relaunch waren wir kaum sichtbar. ooliv hat unser Webkonzept von Grund auf neu gedacht und uns eine klare Strategie gegeben."
                 </p>
               </blockquote>
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              <strong className={seoTextStyles.strongText}>Langfristige Zusammenarbeit</strong><br />
-              <blockquote className={seoTextStyles.blockquote}>
-                <p className={seoTextStyles.quoteText}>
-                  „Was uns besonders überzeugt: ooliv bleibt auch nach dem Go-Live an unserer Seite. Ob Updates, neue Features oder Monitoring – wir fühlen uns rundum betreut. Unser Webkonzept wird so kontinuierlich weiterentwickelt."
-                </p>
-              </blockquote>
+              <strong className={seoTextStyles.strongText}>Langfristige Zusammenarbeit – Vertrauen, das bleibt</strong><br />
+              Viele unserer Kunden kommen nach dem ersten Projekt wieder oder beauftragen uns direkt mit Folgeprojekten. Unsere strategische Herangehensweise und transparente Kommunikation schaffen Vertrauen und sorgen für langfristige Partnerschaften.
             </li>
           </ul>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
-            Transparente Prozesse – aus Kundensicht erklärt
+            Kundenfeedback aus Expertensicht – unsere Arbeitsweise im Spiegel
           </h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            Viele unserer Kunden berichten, dass sie vor der Zusammenarbeit Bedenken hatten: „Bekomme ich eine Lösung von der Stange?" oder „Versteht die Agentur wirklich meine Branche?" – Genau hier setzen wir an: In gemeinsamen Workshops und mit regelmäßigen Feedbackrunden holen wir Sie und Ihr Team aktiv ins Projekt. Ihre Ideen, Ihre Marke und Ihre Expertise sind für uns entscheidend. Das Ergebnis: ein Webkonzept, das nicht nur Ihr Unternehmen widerspiegelt, sondern auch die Bedürfnisse Ihrer Kunden.
+            Unsere Kunden schätzen besonders:
+          </p>
+          
+          <ul className={seoTextStyles.unorderedList}>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              Die Kombination aus Strategie und Kreativität – das Webkonzept als tragendes Fundament.
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              Die partnerschaftliche Zusammenarbeit in Workshops und persönlichen Meetings.
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              Die Transparenz im gesamten Projektablauf – von Analyse über Design bis zur Webentwicklung.
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              Die nachhaltigen Erfolge: mehr Sichtbarkeit, mehr Leads, mehr Umsatz.
+            </li>
+          </ul>
+          
+          <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+            Diese Rückmeldungen sind für uns mehr als nur Lob – sie bestätigen unseren Anspruch, Thought Leadership im Bereich Webkonzept und Digitalstrategie zu übernehmen.
           </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
@@ -164,7 +188,7 @@ const Strategie = () => {
           
           <ul className={seoTextStyles.unorderedList}>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              Individuelle Webkonzepte, die Ihre Marke stärken
+              Individuelle Webkonzepte, die Ihre Marke strategisch stärken
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               Branchenübergreifende Erfahrung – B2B, E-Commerce, Start-ups
