@@ -1,40 +1,44 @@
 
-// German Startpage SEO Text Section Style System
-// Reusable style definitions for the SEO text section that appears below the footer
-// Based on the ACTUAL master styling from German startpage (src/components/de/MainzSEOTextSection.tsx)
+// Master SEO Text Section Style System
+// Exakte Übernahme aller Designelemente von der deutschen Startseite (MainzSEOTextSection.tsx)
+// Alle Farben, Schriftgrößen, Abstände und Formatierungen sind 1:1 übernommen
 
 export const seoTextStyles = {
-  // Container styles - matches the German startpage DARK background
-  container: "bg-brand-footer text-white pt-12 pb-16",
+  // Container - exakt wie deutsche Startseite
+  container: "pt-12 pb-16 font-satoshi",
+  containerBackground: "bg-[#0A1E2C]", // Exakte Farbe der deutschen Startseite
   innerContainer: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8",
   
-  // Article wrapper - white text on dark background
-  articleWrapper: "prose prose-lg max-w-none text-[17px] leading-relaxed text-white prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white",
+  // Article wrapper - exakt wie deutsche Startseite
+  articleWrapper: "prose prose-lg max-w-none text-[17px] leading-relaxed",
+  articleColor: "color: #FFFFFF", // Inline style wie im Master
   
-  // Typography - white text on dark background like German startpage
-  mainHeading: "text-2xl md:text-3xl font-bold text-white mb-6",
-  sectionHeading: "text-xl md:text-2xl font-bold text-white mt-8 mb-4",
-  paragraph: "my-4 text-white",
-  strongText: "font-bold text-white",
+  // Typography - exakte Übernahme
+  mainHeading: "text-3xl md:text-4xl font-bold mb-8",
+  mainHeadingColor: "color: #FFFFFF", // Inline style wie im Master
+  sectionHeading: "text-2xl md:text-3xl font-bold mt-12 mb-6",
+  sectionHeadingColor: "color: #FFFFFF", // Inline style wie im Master
+  paragraph: "my-6",
+  paragraphColor: "color: #F4F4F4", // Inline style wie im Master
+  strongText: "font-bold",
   
-  // Lists - white text on dark background
-  unorderedList: "list-disc pl-6 my-4 space-y-2 text-white",
-  listItem: "text-white",
+  // Lists - exakte Übernahme
+  unorderedList: "list-disc pl-6 my-6 space-y-2",
+  listItem: "",
   
-  // Interactive elements - brand primary color for links
-  ctaButton: "text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block",
+  // Quote/Blockquote - exakte Übernahme vom Master
+  blockquote: "border-l-4 border-brand-primary pl-4 my-6 italic text-brand-primary",
   
-  // Quote/testimonial styles - white italic text like German startpage
-  quote: "block mt-2 text-white italic",
-  quoteAuthor: "text-white",
+  // Interactive elements - exakte Übernahme
+  ctaButton: "text-medico-yellow hover:text-yellow-300 hover:underline cursor-pointer inline-block font-bold text-lg",
   
-  // Special styling for highlighted text (like yellow text in German startpage)
-  highlightedText: "text-yellow-400 font-bold",
+  // Highlighted text - wie im Master verwendet
+  highlightedText: "text-medico-yellow",
   
-  // Spacing utilities
-  sectionSpacing: "mt-8 mb-4",
-  paragraphSpacing: "my-4",
-  listSpacing: "my-4 space-y-2"
+  // Spacing - exakte Übernahme
+  sectionSpacing: "mt-12 mb-6",
+  paragraphSpacing: "my-6",
+  listSpacing: "my-6 space-y-2"
 } as const;
 
 // Helper function to get SEO text styles
