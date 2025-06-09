@@ -12,22 +12,22 @@ const ContentBenefits = () => {
     {
       icon: FileText,
       problem: 'Keine Inhalte, keine Ergebnisse',
-      solution: 'Als Content Agentur Mainz liefern wir komplette Webinhalte – von Text bis Visual – damit Ihre Website wirkt.'
+      solution: 'Wir liefern komplette Webinhalte – Texte, Bilder, Videos und mehr – für eine Website, die überzeugt.'
     },
     {
       icon: Target,
       problem: 'Austauschbare Botschaften',
-      solution: 'Wir entwickeln Inhalte, die klingen wie Sie: präzise, markant und unverwechselbar.'
+      solution: 'Wir entwickeln Inhalte, die Ihre Marke widerspiegeln – präzise, markant und unverwechselbar.'
     },
     {
       icon: Users,
-      problem: 'Lücken oder Verzögerungen im Content',
-      solution: 'Mit Tools wie ChatGPT und Midjourney erstellen wir hochwertige Inhalte schneller denn je.'
+      problem: 'Lücken oder Verzögerungen',
+      solution: 'Mit KI-Tools und strategischer Planung erstellen wir Inhalte schnell, effizient und in hoher Qualität.'
     },
     {
       icon: Paintbrush,
       problem: 'Visuelle Inkonsistenz',
-      solution: 'Wir sorgen dafür, dass Ihr Markenauftritt visuell durchgängig ist – von Logos bis Bilder.'
+      solution: 'Wir sorgen für einen konsistenten Markenauftritt – von Texten über Bilder bis zu Videos.'
     }
   ] : [
     {
@@ -59,12 +59,11 @@ const ContentBenefits = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
             {isGerman ? "Unsere Leistungen als Content Agentur Mainz" : "Content Challenges That Cost You Business"}
-            <span className="block text-brand-primary">{isGerman ? " — für nachhaltige Ergebnisse" : " — We Fix Them"}</span>
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Hier die Probleme, die Ihr Business ausbremsen können – und wie wir sie lösen."
+              ? "Wir lösen die häufigsten Content-Probleme, die Ihr Business ausbremsen können – und sorgen für messbare Ergebnisse:"
               : "Here's what might be holding your business back—and how we fix it."
             }
           </p>
