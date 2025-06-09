@@ -32,6 +32,18 @@ const Strategie = () => {
     {
       question: "Arbeitet ihr auch mit bestehenden Websites?",
       answer: "Ja, wir analysieren gerne Ihre bestehende Website und entwickeln Optimierungsstrategien. Oft können bereits kleine Änderungen große Wirkung erzielen."
+    },
+    {
+      question: "Was ist ein Webkonzept?",
+      answer: "Ein Webkonzept beschreibt die strategische Grundlage für Ihre Website. Es enthält die Zielgruppenanalyse, die Sitemap, die Content-Strategie und erste Wireframes – alles, was Ihre Website erfolgreich macht."
+    },
+    {
+      question: "Warum ist ein Webkonzept so wichtig?",
+      answer: "Ohne Webkonzept fehlt Ihrer Website die Basis. Nur mit einer durchdachten Struktur und Strategie kann Ihre Website später erfolgreich Leads generieren und Ihre Marke stärken."
+    },
+    {
+      question: "Wie entwickelt ooliv ein Webkonzept für mein Unternehmen?",
+      answer: "Wir starten mit einer Analyse Ihrer Zielgruppe und des Wettbewerbs. Daraus entwickeln wir eine Sitemap, Content-Strategien und Wireframes. So entsteht ein individuelles Webkonzept, das genau zu Ihrem Unternehmen passt."
     }
   ];
 
