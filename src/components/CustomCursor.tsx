@@ -18,7 +18,7 @@ const CustomCursor = () => {
     if (isTouchDevice()) {
       document.body.style.cursor = 'auto';
       return;
-    }
+    };
     
     const addEventListeners = () => {
       document.addEventListener('mousemove', onMouseMove);
@@ -56,7 +56,8 @@ const CustomCursor = () => {
     };
     
     const onMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      // Round to nearest pixel to prevent sub-pixel positioning
+      setPosition({ x: Math.round(e.clientX), y: Math.round(e.clientY) });
     };
     
     const onMouseEnter = () => {
@@ -135,21 +136,22 @@ const CustomCursor = () => {
 
   return (
     <div 
-      className={`fixed pointer-events-none z-[1000] transition-transform duration-100 ${
+      className={`fixed pointer-events-none z-[1000] ${
         hidden ? 'opacity-0' : 'opacity-100'
-      } ${linkHovered ? 'scale-150' : ''} ${clicked ? 'scale-75' : ''}`}
+      } ${linkHovered ? 'scale-150' : 'scale-100'} ${clicked ? 'scale-75' : ''}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: 'translate(-50%, -50%)',
-        width: '24px',
-        height: '24px',
+        width: '20px',
+        height: '20px',
         backgroundImage: 'url(/ooliv-cursor.svg)',
-        backgroundSize: 'contain',
+        backgroundSize: '20px 20px',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         transition: 'transform 0.15s ease-out, opacity 0.2s ease',
-        filter: linkHovered ? 'brightness(0.8)' : 'none'
+        filter: linkHovered ? 'brightness(0.8)' : 'none',
+        imageRendering: 'crisp-edges'
       }}
     />
   );
