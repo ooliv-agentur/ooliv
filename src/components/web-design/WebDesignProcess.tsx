@@ -1,111 +1,199 @@
 
 import React from 'react';
-import { CheckCircle, Users, Palette, Code, Rocket } from 'lucide-react';
+import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const WebDesignProcess = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
+  const isMobile = useIsMobile();
   
   const translations = {
     en: {
-      title: "Our Webdesign Process",
-      subtitle: "From concept to launch – structured, transparent, and focused on your success.",
+      title: "Our Webdesign Process – Step by Step",
+      subtitle: "A clear, collaborative approach that turns your business objectives into a website that works.",
       steps: [
         {
-          icon: Users,
-          title: "Discovery & Strategy",
-          description: "We analyze your goals, target audience, and competitive landscape to create a solid foundation."
+          number: "01",
+          title: "Strategy & Planning",
+          description: "We define your goals, study your competitors, and create a clear roadmap.",
+          icon: FileSearch,
+          deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
         },
         {
-          icon: Palette,
-          title: "Design & User Experience",
-          description: "Creating wireframes and visual designs that align with your brand and convert visitors."
+          number: "02",
+          title: "Structure & Content",
+          description: "We plan your pages, write the content, and map out the wireframes.",
+          icon: PencilRuler,
+          deliverables: ["Sitemap Creation", "Content Strategy", "Wireframes", "UX Planning"]
         },
         {
+          number: "03",
+          title: "Design & Development",
+          description: "We build your site cleanly, responsively, and ready to scale.",
           icon: Code,
-          title: "Development & Implementation",
-          description: "Clean, efficient code that's optimized for performance, SEO, and user experience."
+          deliverables: ["Custom Development", "Responsive Design", "Integrations", "Performance Tuning"]
         },
         {
+          number: "04",
+          title: "Testing & QA",
+          description: "We test speed, design, SEO, and mobile experience across all devices.",
+          icon: TestTube,
+          deliverables: ["Browser Testing", "Mobile Checks", "Speed Tests", "Functionality Checks"]
+        },
+        {
+          number: "05",
+          title: "Launch & Support",
+          description: "We go live, track the results, and stay available for technical support and updates.",
           icon: Rocket,
-          title: "Launch & Optimization",
-          description: "Going live with thorough testing, plus ongoing support to ensure continued success."
+          deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
         }
-      ]
+      ],
+      deliverableTitle: "DELIVERABLES",
+      scrollHint: "Scroll to see more"
     },
     de: {
-      title: "Unser Webdesign-Prozess",
-      subtitle: "Von der Konzeption bis zum Launch – strukturiert, transparent und auf Ihren Erfolg fokussiert.",
+      title: "Unser Webdesign-Prozess – von der Planung bis zum Launch",
+      subtitle: "Ein klarer, kollaborativer Ansatz, der Ihre Geschäftsziele in eine erfolgreiche Website umsetzt.",
       steps: [
         {
-          icon: Users,
-          title: "Analyse & Strategie",
-          description: "Wir analysieren Ihre Ziele, Zielgruppe und Wettbewerb für ein solides Fundament."
+          number: "01",
+          title: "Strategie & SEO-Planung",
+          description: "Wir definieren Ihre Ziele, analysieren den Wettbewerb und erstellen einen klaren Fahrplan.",
+          icon: FileSearch,
+          deliverables: ["Geschäftszielanalyse", "Wettbewerbsrecherche", "Zielgruppendefinition", "Projektplanung"]
         },
         {
-          icon: Palette,
-          title: "Design & Nutzererfahrung",
-          description: "Wireframes und visuelle Designs, die zu Ihrer Marke passen und Besucher konvertieren."
+          number: "02",
+          title: "Struktur & Inhalte",
+          description: "Wir planen Ihre Seiten, erstellen Inhalte und entwickeln Wireframes.",
+          icon: PencilRuler,
+          deliverables: ["Sitemap-Erstellung", "Content-Strategie", "Wireframes", "UX-Planung"]
         },
         {
+          number: "03",
+          title: "Design & Entwicklung",
+          description: "Wir bauen Ihre Website sauber, responsiv und skalierbar.",
           icon: Code,
-          title: "Entwicklung & Umsetzung",
-          description: "Sauberer, effizienter Code, optimiert für Performance, SEO und Benutzererfahrung."
+          deliverables: ["Individuelle Entwicklung", "Responsive Design", "Integrationen", "Performance-Optimierung"]
         },
         {
+          number: "04",
+          title: "Testing & QA",
+          description: "Wir testen Geschwindigkeit, Design, SEO und mobile Erfahrung auf allen Geräten.",
+          icon: TestTube,
+          deliverables: ["Browser-Tests", "Mobile Prüfungen", "Geschwindigkeitstests", "Funktionsprüfungen"]
+        },
+        {
+          number: "05",
+          title: "Launch & Betreuung",
+          description: "Wir gehen live, verfolgen die Ergebnisse und bleiben für technischen Support verfügbar.",
           icon: Rocket,
-          title: "Launch & Optimierung",
-          description: "Live-Gang mit gründlichen Tests plus laufender Support für nachhaltigen Erfolg."
+          deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
         }
-      ]
+      ],
+      deliverableTitle: "WAS WIR LIEFERN",
+      scrollHint: "Weiter scrollen für mehr"
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
 
   return (
-    <section className="py-24" style={{ backgroundColor: '#0A1E2C' }}>
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-4" style={{ color: '#FFFFFF' }}>
-            {t.title}
-          </h2>
-          
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto" style={{ color: '#F4F4F4' }}>
-            {t.subtitle}
-          </p>
-        </Reveal>
+        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+          {t.title}
+        </h2>
         
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {t.steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300" style={{ backgroundColor: '#003347', border: '1px solid rgba(255, 229, 0, 0.2)' }}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative">
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: '#FFE500', color: '#003347' }}>
-                      {index + 1}
+        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+          {t.subtitle}
+        </p>
+        
+        {/* Desktop Version */}
+        <div className="hidden lg:block">
+          <div className="grid lg:grid-cols-5 gap-6">
+            {t.steps.map((step, index) => (
+              <div key={index} className="bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+                    {step.number}
+                  </div>
+                  <div>
+                    <div className="flex items-center mb-2">
+                      <step.icon className="h-5 w-5 text-brand-primary mr-2" />
+                      <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
                     </div>
-                    <div className="p-3 rounded-full mb-4" style={{ backgroundColor: 'rgba(255, 229, 0, 0.1)' }}>
-                      <step.icon className="h-6 w-6" style={{ color: '#FFE500' }} />
+                    <p className="text-brand-text text-sm mb-5">{step.description}</p>
+                    
+                    <div className="border-t border-brand-backgroundAlt pt-4">
+                      <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
+                        {t.deliverableTitle}
+                      </h4>
+                      <div className="space-y-2.5">
+                        {step.deliverables.map((deliverable, idx) => (
+                          <div key={idx} className="flex items-center">
+                            <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                              <Check className="h-3 w-3 text-brand-primary" />
+                            </div>
+                            <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>{step.title}</h3>
-                  <p className="text-sm" style={{ color: '#F4F4F4' }}>{step.description}</p>
                 </div>
               </div>
-              
-              {/* Connecting line */}
-              {index < t.steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5" style={{ backgroundColor: 'rgba(255, 229, 0, 0.3)' }}>
-                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full" style={{ backgroundColor: '#FFE500' }}></div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Mobile and Tablet Version with native scrolling */}
+        <div className="lg:hidden">
+          <div className="overflow-x-auto">
+            <div className="flex gap-6 pb-4 min-w-max">
+              {t.steps.map((step, index) => (
+                <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-brand-primary text-white flex items-center justify-center text-xl font-bold flex-shrink-0">
+                      {step.number}
+                    </div>
+                    <div>
+                      <div className="flex items-center mb-2">
+                        <step.icon className="h-5 w-5 text-brand-primary mr-2" />
+                        <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
+                      </div>
+                      <p className="text-brand-text text-sm mb-5">{step.description}</p>
+                      
+                      <div className="border-t border-brand-backgroundAlt pt-4">
+                        <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
+                          {t.deliverableTitle}
+                        </h4>
+                        <div className="space-y-2.5">
+                          {step.deliverables.map((deliverable, idx) => (
+                            <div key={idx} className="flex items-center">
+                              <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                                <Check className="h-3 w-3 text-brand-primary" />
+                              </div>
+                              <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              )}
+              ))}
             </div>
-          ))}
-        </StaggerReveal>
+          </div>
+          
+          {isMobile && (
+            <div className="text-center mt-3 text-sm text-gray-500">
+              {t.scrollHint} ›
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

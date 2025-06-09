@@ -27,7 +27,7 @@ const WebDesignHero = () => {
   const t = isGerman ? translations.de : translations.en;
   
   return (
-    <section className="relative overflow-hidden font-satoshi min-h-screen flex items-center" style={{ backgroundColor: '#0A1E2C' }}>
+    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation - same as startpage */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -47,15 +47,17 @@ const WebDesignHero = () => {
             {/* Main heading */}
             <h1 
               className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-              style={{ color: '#FFFFFF' }}
+              style={{ 
+                color: '#003343' 
+              }}
             >
               {t.title}
             </h1>
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-left"
-              style={{ lineHeight: '1.6', color: '#F4F4F4' }}
+              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+              style={{ lineHeight: '1.6' }}
             >
               {t.subtitle}
             </p>
@@ -66,15 +68,15 @@ const WebDesignHero = () => {
                 size="lg" 
                 className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 style={{ 
-                  backgroundColor: '#FFE500', 
+                  backgroundColor: '#FFD700', 
                   color: '#003347',
                   border: 'none'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#e6ce00';
+                  e.currentTarget.style.backgroundColor = '#FFC700';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFE500';
+                  e.currentTarget.style.backgroundColor = '#FFD700';
                 }}
                 onClick={handleStartProject}
               >
@@ -85,19 +87,7 @@ const WebDesignHero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#003347',
-                  borderColor: '#FFFFFF',
-                  borderWidth: '2px'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F4F4F4';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFFFFF';
-                }}
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                 asChild
               >
                 <Link to={isGerman ? "/referenzen" : "/en/case-studies"}>
@@ -113,11 +103,11 @@ const WebDesignHero = () => {
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-yellow/50 to-medico-yellow/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-yellow/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-yellow/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-yellow/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>

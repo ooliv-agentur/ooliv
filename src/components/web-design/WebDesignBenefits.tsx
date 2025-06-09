@@ -65,24 +65,24 @@ const WebDesignBenefits = () => {
   const t = isGerman ? translations.de : translations.en;
 
   return (
-    <section className="py-24" style={{ backgroundColor: '#0A1E2C' }}>
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#FFFFFF' }}>
+          <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
             {t.title}
           </h2>
         </Reveal>
         
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.features.map((feature, index) => (
-            <div key={index} className="p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300" style={{ backgroundColor: '#003347', border: '1px solid rgba(255, 229, 0, 0.2)' }}>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
               <div className="flex items-start gap-4">
-                <div className="p-2 rounded-full" style={{ backgroundColor: 'rgba(255, 229, 0, 0.1)' }}>
-                  <feature.icon className="h-5 w-5" style={{ color: '#FFE500' }} />
+                <div className="p-2 rounded-full bg-brand-backgroundAlt">
+                  <feature.icon className="h-5 w-5 text-brand-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>{feature.title}</h3>
-                  <p className="text-sm" style={{ color: '#F4F4F4' }}>{feature.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-brand-heading">{feature.title}</h3>
+                  <p className="text-brand-text text-sm">{feature.description}</p>
                 </div>
               </div>
             </div>
