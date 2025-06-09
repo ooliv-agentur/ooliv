@@ -47,10 +47,10 @@ const Strategie = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              Strategie ist der Grundstein Ihres digitalen Erfolgs
+              Strategie & Konzept als Fundament Ihres digitalen Erfolgs
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Ohne klare Strategie verpuffen Marketing-Budgets. Wir sorgen dafür, dass jeder Euro zielgerichtet eingesetzt wird.
+              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem soliden Konzept sorgen wir dafür, dass jeder Euro wirkt – von der ersten Idee bis zur Umsetzung.
             </p>
           </div>
 
@@ -61,9 +61,9 @@ const Strategie = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse & Marktverständnis</h3>
               <p className="text-brand-text">
-                Wir identifizieren genau, wer Ihre Kunden sind und wie sie online nach Ihren Lösungen suchen.
+                Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie am besten erreichen.
               </p>
             </div>
 
@@ -73,9 +73,9 @@ const Strategie = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">UX-Optimierung</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Nutzerführung & Conversion</h3>
               <p className="text-brand-text">
-                Nutzerfreundliche Websites, die Besucher zu Kunden machen. Basierend auf bewährten UX-Prinzipien.
+                Wir definieren, wie Ihre Besucher geführt werden und wie Ihre Website aus Interessenten Kunden macht.
               </p>
             </div>
 
@@ -85,9 +85,9 @@ const Strategie = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-brand-heading">Messbare Ergebnisse</h3>
+              <h3 className="text-xl font-bold mb-4 text-brand-heading">Messbare Ergebnisse & KPIs</h3>
               <p className="text-brand-text">
-                Klare KPIs und regelmäßiges Tracking sorgen dafür, dass Sie den ROI Ihrer Investition sehen.
+                Wir definieren messbare Ziele und sorgen für ein klares Tracking – damit Sie Ihren Erfolg jederzeit im Blick haben.
               </p>
             </div>
           </div>
