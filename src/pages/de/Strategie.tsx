@@ -6,7 +6,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Search, Target, Monitor, ArrowUp, User, Users, MessageCircle } from 'lucide-react';
+import { Search, Target, Monitor, ArrowRight, User, Users, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -33,6 +34,12 @@ const Strategie = () => {
       answer: "Ja, wir analysieren gerne Ihre bestehende Website und entwickeln Optimierungsstrategien. Oft können bereits kleine Änderungen große Wirkung erzielen."
     }
   ];
+
+  const handleOpenLeadForm = () => {
+    console.log('🚀 Strategy Hero: Lead form trigger button clicked');
+    window.dispatchEvent(new Event('open-lead-form'));
+    console.log('📡 Strategy Hero: open-lead-form event dispatched');
+  };
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -77,23 +84,28 @@ const Strategie = () => {
                 Wir entwickeln individuelle Digitalstrategien mit Konzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, Leads und eine nachhaltige digitale Präsenz.
               </p>
               
-              {/* CTA buttons - matching startpage style */}
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <button 
-                  className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 border-none"
-                  onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
+              {/* CTA buttons - matching homepage style exactly */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={handleOpenLeadForm}
                 >
                   Strategiegespräch vereinbaren
-                  <ArrowUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1 rotate-45" />
-                </button>
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
                 
-                <a 
-                  href="/webdesign"
-                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center"
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  asChild
                 >
-                  Mehr über unsere Leistungen
-                  <ArrowUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1 rotate-45" />
-                </a>
+                  <a href="/webdesign">
+                    Mehr über unsere Leistungen
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
