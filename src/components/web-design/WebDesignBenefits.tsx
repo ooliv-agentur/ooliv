@@ -16,22 +16,22 @@ const WebDesignBenefits = () => {
         {
           icon: Target,
           title: "Strategy Before Design",
-          description: "Every project starts with your goals – leads, visibility, results."
+          description: "Every project starts with your goals – leads, visibility, results that matter for growth."
         },
         {
           icon: ArrowRight,
           title: "Built to Convert",
-          description: "UX design that guides visitors toward action."
+          description: "UX design that guides visitors toward action and transforms clicks into customers."
         },
         {
           icon: Zap,
           title: "Mobile-First & SEO-Ready",
-          description: "Fast loading, responsive, and search engine friendly."
+          description: "Fast loading, responsive design that's search engine friendly and user-focused."
         },
         {
           icon: PhoneCall,
           title: "Long-Term Support",
-          description: "We stay involved – optimizing, supporting, and scaling with you."
+          description: "We stay involved – optimizing, supporting, and scaling with you for continued success."
         }
       ]
     },
@@ -46,17 +46,17 @@ const WebDesignBenefits = () => {
         {
           icon: ArrowRight,
           title: "Conversion im Fokus",
-          description: "UX, die Besucher gezielt zur Anfrage führt."
+          description: "UX, die Besucher gezielt zur Anfrage führt und aus Interessenten Kunden macht."
         },
         {
           icon: Zap,
           title: "SEO-ready & mobil optimiert",
-          description: "Technisch sauber, schnell und Google-freundlich."
+          description: "Technisch sauber, schnell und Google-freundlich für maximale Online-Sichtbarkeit."
         },
         {
           icon: PhoneCall,
           title: "Langfristiger Support",
-          description: "Nach dem Launch begleiten wir Sie weiter – datenbasiert und transparent."
+          description: "Nach dem Launch begleiten wir Sie weiter – datenbasiert und transparent für Ihren Erfolg."
         }
       ]
     }
@@ -76,14 +76,12 @@ const WebDesignBenefits = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.features.map((feature, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
-              <div className="flex items-start gap-4 flex-grow">
-                <div className="p-2 rounded-full bg-brand-backgroundAlt flex-shrink-0">
-                  <feature.icon className="h-5 w-5 text-brand-primary" />
+              <div className="flex flex-col items-start text-left h-full">
+                <div className="p-3 rounded-full bg-brand-backgroundAlt mb-4">
+                  <feature.icon className="h-6 w-6 text-brand-primary" />
                 </div>
-                <div className="flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold mb-2 text-brand-heading">{feature.title}</h3>
-                  <p className="text-brand-text text-sm leading-relaxed">{feature.description}</p>
-                </div>
+                <h3 className="text-lg font-bold mb-3 text-brand-heading">{feature.title}</h3>
+                <p className="text-brand-text text-sm leading-relaxed flex-grow">{feature.description}</p>
               </div>
             </div>
           ))}
