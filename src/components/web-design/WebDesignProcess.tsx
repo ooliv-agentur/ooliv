@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FileSearch, PencilRuler, Code, TestTube, Rocket, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Carousel,
@@ -24,35 +24,30 @@ const WebDesignProcess = () => {
           number: "01",
           title: "Strategy & Planning",
           description: "We define your goals, study your competitors, and create a clear roadmap.",
-          icon: FileSearch,
           deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
         },
         {
           number: "02",
           title: "Structure & Content",
           description: "We plan your pages, write the content, and map out the wireframes.",
-          icon: PencilRuler,
           deliverables: ["Sitemap Creation", "Content Strategy", "Wireframes", "UX Planning"]
         },
         {
           number: "03",
           title: "Design & Development",
           description: "We build your site cleanly, responsively, and ready to scale.",
-          icon: Code,
           deliverables: ["Custom Development", "Responsive Design", "Integrations", "Performance Tuning"]
         },
         {
           number: "04",
           title: "Testing & QA",
           description: "We test speed, design, SEO, and mobile experience across all devices.",
-          icon: TestTube,
           deliverables: ["Browser Testing", "Mobile Checks", "Speed Tests", "Functionality Checks"]
         },
         {
           number: "05",
           title: "Launch & Support",
           description: "We go live, track the results, and stay available for technical support and updates.",
-          icon: Rocket,
           deliverables: ["Site Deployment", "Analytics Setup", "Post-Launch Support", "Ongoing Monitoring"]
         }
       ],
@@ -66,35 +61,30 @@ const WebDesignProcess = () => {
           number: "01",
           title: "Strategie & SEO-Planung",
           description: "Wir definieren Ihre Ziele, analysieren den Wettbewerb und erstellen einen klaren Fahrplan.",
-          icon: FileSearch,
           deliverables: ["Geschäftszielanalyse", "Wettbewerbsrecherche", "Zielgruppendefinition", "Projektplanung"]
         },
         {
           number: "02",
           title: "Struktur & Inhalte",
           description: "Wir planen Ihre Seiten, erstellen Inhalte und entwickeln Wireframes.",
-          icon: PencilRuler,
           deliverables: ["Sitemap-Erstellung", "Content-Strategie", "Wireframes", "UX-Planung"]
         },
         {
           number: "03",
           title: "Design & Entwicklung",
           description: "Wir bauen Ihre Website sauber, responsiv und skalierbar.",
-          icon: Code,
           deliverables: ["Individuelle Entwicklung", "Responsive Design", "Integrationen", "Performance-Optimierung"]
         },
         {
           number: "04",
           title: "Testing & QA",
           description: "Wir testen Geschwindigkeit, Design, SEO und mobile Erfahrung auf allen Geräten.",
-          icon: TestTube,
           deliverables: ["Browser-Tests", "Mobile Prüfungen", "Geschwindigkeitstests", "Funktionsprüfungen"]
         },
         {
           number: "05",
           title: "Launch & Betreuung",
           description: "Wir gehen live, verfolgen die Ergebnisse und bleiben für technischen Support verfügbar.",
-          icon: Rocket,
           deliverables: ["Website-Deployment", "Analytics-Einrichtung", "Betreuung nach Launch", "Laufendes Monitoring"]
         }
       ],
@@ -132,10 +122,7 @@ const WebDesignProcess = () => {
                         {step.number}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center mb-2">
-                          <step.icon className="h-5 w-5 text-brand-primary mr-2" />
-                          <h3 className="text-xl font-bold text-brand-heading">{step.title}</h3>
-                        </div>
+                        <h3 className="text-xl font-bold text-brand-heading mb-2">{step.title}</h3>
                         <p className="text-brand-text text-sm mb-5">{step.description}</p>
                         
                         <div className="border-t border-brand-backgroundAlt pt-4 mt-auto">
