@@ -8,12 +8,12 @@ const EnglishTeamTeaser = () => {
   const teamMembers = [
     {
       name: "Uli Schönleber",
-      position: "CEO – Your direct point of contact",
+      position: "Managing Director",
       image: "/lovable-uploads/Uli.jpg"
     },
     {
       name: "Lisa Schönleber",
-      position: "Content",
+      position: "Managing Director",
       image: "/lovable-uploads/Lisa.jpg"
     }
   ];
@@ -22,9 +22,9 @@ const EnglishTeamTeaser = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-heading mb-4">Meet the Team Behind ooliv</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-4">The team behind ooliv</h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            Led by the CEO who handles all client communication, our team of designers, developers, and strategists works behind the scenes to deliver websites that drive measurable business value.
+            Every project is personally overseen by the management team (Lisa and Uli Schönleber). We focus on short lines of communication, fast response times and maximum transparency — so you always know where your project stands. With fairness, a personal commitment and direct contact throughout the entire process.
           </p>
         </div>
 

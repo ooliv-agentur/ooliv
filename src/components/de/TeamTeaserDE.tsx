@@ -13,7 +13,7 @@ const TeamTeaserDE = () => {
     },
     {
       name: "Lisa Schönleber",
-      position: "Content",
+      position: "Geschäftsführerin",
       image: "/lovable-uploads/Lisa.jpg"
     }
   ];
@@ -22,9 +22,9 @@ const TeamTeaserDE = () => {
     <section className="py-20 bg-medico-mint font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter den Ergebnissen</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter ooliv</h2>
           <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
-            Jedes Projekt wird direkt vom Geschäftsführer geführt. Im Hintergrund sorgt unser eingespieltes Team für die Umsetzung – mit Präzision in Content, Design und Development.
+            Jedes Projekt wird direkt von der Geschäftsführung (Lisa und Uli Schönleber) begleitet. Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
           </p>
         </div>
 
