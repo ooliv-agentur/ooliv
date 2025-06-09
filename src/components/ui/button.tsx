@@ -9,12 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 hover:shadow-lg font-bold border-2 border-transparent hover:border-medico-darkGreen/20",
+        default: "bg-primary-yellow text-primary-darkgreen hover:bg-tertiary-lightyellow hover:shadow-lg font-bold border-2 border-transparent hover:border-primary-darkgreen/20",
         destructive: "bg-red-500 text-white hover:bg-red-600 border-2 border-transparent",
-        outline: "border-2 border-medico-darkGreen bg-white text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise hover:text-medico-darkGreen",
-        secondary: "bg-medico-turquoise text-white hover:bg-teal-600 hover:shadow-lg border-2 border-transparent hover:border-medico-darkGreen/20",
-        ghost: "hover:bg-medico-mint hover:text-medico-darkGreen border-2 border-transparent hover:border-medico-mint",
-        link: "text-medico-darkGreen underline-offset-4 hover:underline hover:text-medico-turquoise",
+        outline: "border-2 border-primary-darkgreen bg-secondary-white text-primary-darkgreen hover:bg-primary-mintgreen hover:border-secondary-lightblue hover:text-primary-darkgreen",
+        secondary: "bg-secondary-lightblue text-primary-darkgreen hover:bg-tertiary-pastelgreen hover:shadow-lg border-2 border-transparent hover:border-primary-darkgreen/20",
+        ghost: "hover:bg-primary-mintgreen hover:text-primary-darkgreen border-2 border-transparent hover:border-primary-mintgreen",
+        link: "text-primary-darkgreen underline-offset-4 hover:underline hover:text-secondary-lightblue",
       },
       size: {
         default: "h-11 px-6 py-2",

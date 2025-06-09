@@ -35,12 +35,12 @@ const Footer = () => {
   const phoneNumber = language === 'de' ? '06131 – 63 67 801' : '+49 6131 – 63 67 801';
   
   return (
-    <footer className="bg-brand-footer text-white pt-20 pb-8">
+    <footer className="bg-primary-darkgreen text-secondary-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold font-sans text-white">{t('footer.about')}</h3>
-            <p className="text-white text-sm font-sans">
+            <h3 className="text-lg font-semibold font-sans text-secondary-white">{t('footer.about')}</h3>
+            <p className="text-secondary-white text-sm font-sans">
               {language === 'de' 
                 ? 'Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.'
                 : t('footer.aboutText')}
@@ -48,55 +48,55 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.services')}</h3>
-            <ul className="space-y-2 text-white text-sm font-sans">
-              <li><Link to={getUrl('web-design')} className="text-white hover:text-brand-background transition-colors">{t('footer.webDesign')}</Link></li>
-              <li><Link to={getUrl('web-development')} className="text-white hover:text-brand-background transition-colors">{language === 'de' ? t('footer.webDevelopment') : 'Web Development'}</Link></li>
-              <li><Link to={getUrl('content-creation')} className="text-white hover:text-brand-background transition-colors">{language === 'de' ? t('footer.contentCreation') : 'Content Creation'}</Link></li>
-              <li><Link to={getUrl('seo-optimization')} className="text-white hover:text-brand-background transition-colors">{t('footer.seo')}</Link></li>
-              <li><Link to={getUrl('google-ads')} className="text-white hover:text-brand-background transition-colors">{t('footer.ads')}</Link></li>
-              <li><Link to={getUrl('ai-technologies')} className="text-white hover:text-brand-background transition-colors">{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-secondary-white">{t('footer.services')}</h3>
+            <ul className="space-y-2 text-secondary-white text-sm font-sans">
+              <li><Link to={getUrl('web-design')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.webDesign')}</Link></li>
+              <li><Link to={getUrl('web-development')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{language === 'de' ? t('footer.webDevelopment') : 'Web Development'}</Link></li>
+              <li><Link to={getUrl('content-creation')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{language === 'de' ? t('footer.contentCreation') : 'Content Creation'}</Link></li>
+              <li><Link to={getUrl('seo-optimization')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.seo')}</Link></li>
+              <li><Link to={getUrl('google-ads')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.ads')}</Link></li>
+              <li><Link to={getUrl('ai-technologies')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.company')}</h3>
-            <ul className="space-y-2 text-white text-sm font-sans">
-              <li><Link to={getUrl('about-ooliv')} className="text-white hover:text-brand-background transition-colors">{t('footer.aboutUs')}</Link></li>
-              <li><Link to={getUrl('case-studies')} className="text-white hover:text-brand-background transition-colors">Case Studies</Link></li>
-              <li><Link to={getUrl('contact')} className="text-white hover:text-brand-background transition-colors">{t('footer.contact')}</Link></li>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-secondary-white">{t('footer.company')}</h3>
+            <ul className="space-y-2 text-secondary-white text-sm font-sans">
+              <li><Link to={getUrl('about-ooliv')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.aboutUs')}</Link></li>
+              <li><Link to={getUrl('case-studies')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">Case Studies</Link></li>
+              <li><Link to={getUrl('contact')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.contact')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{language === 'de' ? "Rechtliches" : "Legal"}</h3>
-            <ul className="space-y-2 text-white text-sm font-sans">
-              <li><Link to={getUrl('privacy-policy')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.privacy')}</Link></li>
-              <li><Link to={getUrl('legal-notice')} className="text-white hover:text-brand-background transition-colors">{t('footer.legal.imprint')}</Link></li>
+            <h3 className="text-lg font-semibold mb-4 font-sans text-secondary-white">{language === 'de' ? "Rechtliches" : "Legal"}</h3>
+            <ul className="space-y-2 text-secondary-white text-sm font-sans">
+              <li><Link to={getUrl('privacy-policy')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.legal.privacy')}</Link></li>
+              <li><Link to={getUrl('legal-notice')} className="text-secondary-white hover:text-secondary-lightblue transition-colors">{t('footer.legal.imprint')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4 font-sans text-white">{t('footer.contactInfo')}</h3>
-            <ul className="space-y-3 text-white text-sm font-sans">
+            <h3 className="text-lg font-semibold mb-4 font-sans text-secondary-white">{t('footer.contactInfo')}</h3>
+            <ul className="space-y-3 text-secondary-white text-sm font-sans">
               <li className="font-medium">ooliv</li>
               <li className="flex items-start">
-                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0" />
+                <MapPin className="h-4 w-4 mr-2 mt-1 shrink-0 text-secondary-lightblue" />
                 <span>Mombacher Str. 25<br />55122 Mainz</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 shrink-0" />
+                <Phone className="h-4 w-4 mr-2 shrink-0 text-secondary-lightblue" />
                 <span>{phoneNumber}</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 shrink-0" />
+                <Mail className="h-4 w-4 mr-2 shrink-0 text-secondary-lightblue" />
                 <span>info@ooliv.de</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-secondary-lightblue/20">
           <div className="flex flex-col items-center space-y-6">
             <div className="flex justify-center w-full">
               <a 
@@ -114,19 +114,19 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-sm text-white font-sans">
+              <div className="text-sm text-secondary-white font-sans">
                 © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
               </div>
               
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-[#facc15] text-[#facc15]" />
+                  <Star key={i} className="h-3.5 w-3.5 fill-primary-yellow text-primary-yellow" />
                 ))}
                 <a 
                   href="https://g.co/kgs/sgZX29W" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-300 transition-colors text-sm ml-2"
+                  className="text-secondary-lightblue hover:text-secondary-white transition-colors text-sm ml-2"
                 >
                   {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
                 </a>

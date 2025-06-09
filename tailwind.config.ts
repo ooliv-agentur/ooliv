@@ -1,4 +1,3 @@
-
 import { type Config } from "tailwindcss";
 
 export default {
@@ -11,28 +10,54 @@ export default {
       },
       colors: {
         border: "#e2e8f0",
-        brand: {
-          primary: "#38B593", // Updated to medico-turquoise
-          primaryHover: "#2a8a73",
-          secondary: "#FFE500", // Updated to medico-yellow
-          secondaryHover: "#e6ce00",
-          heading: "#003347", // Updated to medico-darkGreen
-          text: "#003347", // Updated to medico-darkGreen
-          background: "#D8F4E3", // Updated to medico-mint
-          backgroundAlt: "#D8F4E3", // Updated to medico-mint
-          footer: "#003347", // Updated to medico-darkGreen
-          success: "#38B593", // Updated to medico-turquoise
-          error: "#C62828",
-          warning: "#FFE500" // Updated to medico-yellow
+        
+        // New MedicoSearch-inspired palette
+        primary: {
+          mintgreen: '#D3F6E6',
+          darkgreen: '#00403D',
+          yellow: '#FFE600',
         },
-        // Primary medicosearch.ch color palette
+        secondary: {
+          lightblue: '#A6E6D9',
+          white: '#FFFFFF',
+          darkgray: '#333333',
+        },
+        tertiary: {
+          pastelgreen: '#CDF5E3',
+          lightyellow: '#FFF38A',
+          black: '#000000',
+        },
+        
+        // Legacy brand colors (maintaining compatibility)
+        brand: {
+          primary: "#A6E6D9", // Updated to secondary-lightblue
+          primaryHover: "#D3F6E6",
+          secondary: "#FFE600", // Updated to primary-yellow
+          secondaryHover: "#FFF38A", // Updated to tertiary-lightyellow
+          heading: "#00403D", // Updated to primary-darkgreen
+          text: "#333333", // Updated to secondary-darkgray
+          background: "#D3F6E6", // Updated to primary-mintgreen
+          backgroundAlt: "#CDF5E3", // Updated to tertiary-pastelgreen
+          footer: "#00403D", // Updated to primary-darkgreen
+          success: "#A6E6D9", // Updated to secondary-lightblue
+          error: "#C62828",
+          warning: "#FFE600" // Updated to primary-yellow
+        },
+        
+        // Keep existing medico colors for backward compatibility
         medico: {
-          mint: "#D8F4E3",
-          yellow: "#FFE500",
-          turquoise: "#38B593",
-          darkGreen: "#003347",
+          mint: "#D3F6E6", // Updated to primary-mintgreen
+          yellow: "#FFE600", // primary-yellow
+          turquoise: "#A6E6D9", // Updated to secondary-lightblue
+          darkGreen: "#00403D", // Updated to primary-darkgreen
           white: "#FFFFFF"
         }
+      },
+      fontSize: {
+        'h1': ['40px', { lineHeight: '1.5' }],
+        'h2': ['32px', { lineHeight: '1.5' }],
+        'h3': ['26px', { lineHeight: '1.5' }],
+        'body': ['18px', { lineHeight: '1.5' }],
       },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
@@ -67,8 +92,8 @@ export default {
         }
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3)',
-        'hero-gradient-animated': 'linear-gradient(-45deg, #D8F4E3, #38B593, #FFE500, #D8F4E3, #38B593, #D8F4E3)',
+        'hero-gradient': 'linear-gradient(-45deg, #D3F6E6, #A6E6D9, #FFE600, #D3F6E6)',
+        'hero-gradient-animated': 'linear-gradient(-45deg, #D3F6E6, #A6E6D9, #FFE600, #D3F6E6, #A6E6D9, #D3F6E6)',
       },
       backgroundSize: {
         '400': '400% 400%',

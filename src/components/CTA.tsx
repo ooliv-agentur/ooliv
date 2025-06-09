@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -71,29 +70,18 @@ const CTA = ({
     : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
   
   return (
-    <section className={`py-24 ${lightBackground ? 'bg-medico-mint' : 'bg-medico-white'} font-satoshi`}>
+    <section className={`py-24 ${lightBackground ? 'bg-primary-mintgreen' : 'bg-secondary-white'} font-satoshi`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">{title}</h2>
-        <p className="text-xl mb-12 max-w-4xl mx-auto text-medico-darkGreen leading-relaxed">{subtitle}</p>
+        <h2 className="text-h1 mb-8 text-primary-darkgreen leading-tight">{title}</h2>
+        <p className="text-xl mb-12 max-w-4xl mx-auto text-secondary-darkgray leading-relaxed">{subtitle}</p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl bg-primary-yellow text-primary-darkgreen hover:bg-tertiary-lightyellow border-none"
               onClick={(e) => {
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
@@ -103,18 +91,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl bg-primary-yellow text-primary-darkgreen hover:bg-tertiary-lightyellow border-none"
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -125,20 +102,9 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl bg-primary-yellow text-primary-darkgreen hover:bg-tertiary-lightyellow border-none"
               onClick={(e) => {
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
@@ -152,7 +118,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-primary-darkgreen text-primary-darkgreen hover:bg-primary-mintgreen hover:border-secondary-lightblue font-bold py-4 px-8 rounded-full text-lg"
                 asChild
               >
                 <Link to={contactPath}>
@@ -164,7 +130,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-primary-darkgreen text-primary-darkgreen hover:bg-primary-mintgreen hover:border-secondary-lightblue font-bold py-4 px-8 rounded-full text-lg"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
@@ -176,7 +142,7 @@ const CTA = ({
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg"
+                className="group border-2 border-primary-darkgreen text-primary-darkgreen hover:bg-primary-mintgreen hover:border-secondary-lightblue font-bold py-4 px-8 rounded-full text-lg"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
@@ -187,13 +153,13 @@ const CTA = ({
         </div>
         
         {footerNote ? (
-          <p className="mt-12 text-sm text-medico-darkGreen/80 font-medium">{footerNote}</p>
+          <p className="mt-12 text-sm text-secondary-darkgray/80 font-medium">{footerNote}</p>
         ) : children ? (
           <div className="mt-8">
             {children}
           </div>
         ) : (
-          <p className="mt-12 text-sm text-medico-darkGreen/80 font-medium">
+          <p className="mt-12 text-sm text-secondary-darkgray/80 font-medium">
             {defaultFooterNote}
           </p>
         )}

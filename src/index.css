@@ -7,11 +7,57 @@
 /* Import hero background styles */
 @import './styles/hero-background.css';
 
+/* New MedicoSearch color palette variables */
+:root {
+  /* Primary Colors */
+  --color-primary-mintgreen: #D3F6E6;
+  --color-primary-darkgreen: #00403D;
+  --color-primary-yellow: #FFE600;
+
+  /* Secondary Colors */
+  --color-secondary-lightblue: #A6E6D9;
+  --color-secondary-white: #FFFFFF;
+  --color-secondary-darkgray: #333333;
+
+  /* Tertiary Colors */
+  --color-tertiary-pastelgreen: #CDF5E3;
+  --color-tertiary-lightyellow: #FFF38A;
+  --color-tertiary-black: #000000;
+}
+
+/* Typography Scale */
+.text-h1 {
+  font-size: 40px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-primary-darkgreen);
+}
+
+.text-h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--color-primary-darkgreen);
+}
+
+.text-h3 {
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--color-primary-darkgreen);
+}
+
+.text-body {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-secondary-darkgray);
+}
+
 /* Ensure proper application of hero background styles */
 .bg-hero-pattern {
   position: relative !important;
   z-index: 0 !important;
-  background: #f7f8fc !important;
+  background: var(--color-primary-mintgreen) !important;
 }
 
 /* Custom Scrollbar Styling - Only for desktop browsers that support it */
@@ -27,19 +73,19 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #38B593;
+    background-color: var(--color-secondary-lightblue);
     border-radius: 10px;
     transition: background-color 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #2a8a73;
+    background-color: var(--color-primary-darkgreen);
   }
 
   /* For Firefox on desktop */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #38B593 transparent;
+    scrollbar-color: var(--color-secondary-lightblue) transparent;
   }
 }
 
@@ -94,7 +140,7 @@ input[type="button"],
 /* Enhanced floating circles animation with improved performance */
 .floating-circle {
   position: absolute;
-  background: radial-gradient(circle, rgba(56, 181, 147, 0.4) 0%, rgba(56, 181, 147, 0.2) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(166, 230, 217, 0.4) 0%, rgba(166, 230, 217, 0.2) 70%, transparent 100%);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
   will-change: transform, opacity;
@@ -117,9 +163,9 @@ input[type="button"],
   animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Sanfter, minimalistischer Hero-Gradient mit helleren natürlichen Grüntönen */
+/* Updated hero gradient with new color palette */
 .hero-gradient-bg {
-  background: linear-gradient(135deg, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf, #ade6d5);
+  background: linear-gradient(135deg, #D3F6E6, #CDF5E3, #A6E6D9, #D3F6E6, #CDF5E3, #A6E6D9);
   background-size: 600% 600%;
   animation: gentle-gradient 45s ease-in-out infinite;
   will-change: background-position;
@@ -150,7 +196,7 @@ input[type="button"],
   }
 }
 
-/* Sanfte, natürliche Gradient-Animation */
+/* Updated gradient animation with new colors */
 @keyframes gentle-gradient {
   0% {
     background-position: 0% 20%;
