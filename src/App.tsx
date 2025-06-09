@@ -34,7 +34,6 @@ import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
 import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
-import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import FloatingActionButtons from './components/FloatingActionButtons';
 import ChatbaseWidget from './components/ChatbaseWidget';
 import { Toaster } from 'sonner';
@@ -50,7 +49,6 @@ function App() {
           <Router>
             <CustomCursor />
             <ScrollIndicator />
-            <LeadGenerationOverlay />
             <FloatingActionButtons />
             <ChatbaseWidget />
             

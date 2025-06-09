@@ -15,6 +15,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showLeadForm, setShowLeadForm] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1025px)');
   const { language } = useLanguage();
 
@@ -25,8 +26,7 @@ const FloatingActionButtons = () => {
   // Add event listener for opening the lead form from other components
   useEffect(() => {
     const handleOpenLeadForm = () => {
-      // Dispatch the global event that LeadGenerationOverlay listens for
-      window.dispatchEvent(new Event('open-lead-form'));
+      setShowLeadForm(true);
     };
     
     // Listen for both events to ensure compatibility
@@ -45,7 +45,7 @@ const FloatingActionButtons = () => {
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
-      onClick: () => window.dispatchEvent(new Event('open-lead-form')),
+      onClick: () => setShowLeadForm(true),
       className: 'bg-medico-turquoise text-white hover:bg-medico-darkGreen border-none shadow-md hover:shadow-lg'
     },
     { 
@@ -127,8 +127,11 @@ const FloatingActionButtons = () => {
         )}
       </div>
 
-      {/* Lead Generation Overlay - no props needed as it manages its own state */}
-      <LeadGenerationOverlay />
+      {/* Lead Generation Overlay with prop-based state management */}
+      <LeadGenerationOverlay 
+        open={showLeadForm} 
+        onOpenChange={setShowLeadForm} 
+      />
     </TooltipProvider>
   );
 };

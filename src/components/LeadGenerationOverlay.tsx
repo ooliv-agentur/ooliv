@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -11,36 +11,21 @@ import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 
-const LeadGenerationOverlay = () => {
+interface LeadGenerationOverlayProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const { language } = useLanguage();
-  const [open, setOpen] = useState(false);
   
-  // Listen for the global event to open the lead form
-  useEffect(() => {
-    const handleOpenLeadForm = () => {
-      console.log('Opening lead form via event');
-      setOpen(true);
-    };
-
-    window.addEventListener('open-lead-form', handleOpenLeadForm);
-    
-    return () => {
-      window.removeEventListener('open-lead-form', handleOpenLeadForm);
-    };
-  }, []);
-
-  const handleOpenChange = (newOpen: boolean) => {
-    console.log('Sheet onOpenChange called with:', newOpen);
-    setOpen(newOpen);
-  };
-
   const handleClose = () => {
     console.log('Manual close button clicked');
-    setOpen(false);
+    onOpenChange(false);
   };
   
   return (
-    <Sheet open={open} onOpenChange={handleOpenChange}>
+    <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
@@ -69,4 +54,4 @@ const LeadGenerationOverlay = () => {
   );
 };
 
-export default LeadGenerationOverlay;
+export default React.memo(LeadGenerationOverlay);
