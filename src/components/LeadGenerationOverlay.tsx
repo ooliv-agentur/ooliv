@@ -30,11 +30,12 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  // Let Sheet handle all overlay interactions naturally
+  // Primary close handler - let Sheet handle overlay clicks naturally
   const handleOpenChange = (newOpen: boolean) => {
     setOpen(newOpen);
   };
 
+  // Close button handler
   const handleClose = () => {
     setOpen(false);
   };
@@ -44,17 +45,19 @@ const LeadGenerationOverlay = () => {
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
+        style={{ pointerEvents: 'auto' }}
       >
-        {/* Close Button - removed high z-index, let it be part of natural flow */}
+        {/* Close Button - positioned naturally without interfering with overlay */}
         <button 
           onClick={handleClose}
-          className="absolute top-7 right-4 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10"
+          className="absolute top-4 right-4 rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-8 h-8 flex items-center justify-center"
+          style={{ pointerEvents: 'auto' }}
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
         >
-          <X className="w-6 h-6" />
+          <X className="w-4 h-4" />
         </button>
 
-        <SheetHeader className="text-left pb-6 pr-14">
+        <SheetHeader className="text-left pb-6 pr-12">
           <SheetTitle className="text-2xl font-bold text-white">
             {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
           </SheetTitle>
