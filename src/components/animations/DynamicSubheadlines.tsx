@@ -29,19 +29,13 @@ const DynamicSubheadlines = ({
 
   const variants = {
     enter: {
-      opacity: 0,
-      y: 20,
-      scale: 0.95
+      opacity: 0
     },
     center: {
-      opacity: 1,
-      y: 0,
-      scale: 1
+      opacity: 1
     },
     exit: {
-      opacity: 0,
-      y: -20,
-      scale: 0.95
+      opacity: 0
     }
   };
 
@@ -55,8 +49,8 @@ const DynamicSubheadlines = ({
           animate="center"
           exit="exit"
           transition={{
-            duration: 0.6,
-            ease: [0.22, 1, 0.36, 1]
+            duration: 0.8,
+            ease: "easeInOut"
           }}
           className="font-bold text-center absolute inset-0 flex items-center justify-center"
           style={{ 
