@@ -84,10 +84,16 @@ const WebDesignFAQ = () => {
 
   const translations = {
     en: {
-      title: "Webdesign – Frequently Asked Questions"
+      title: "Webdesign – Frequently Asked Questions",
+      subtitle: "Find answers to the most common questions about our webdesign services.",
+      ctaTitle: "Have more questions?",
+      ctaButton: "Contact us for more details"
     },
     de: {
-      title: "Häufige Fragen zum Thema Webdesign Mainz"
+      title: "Häufig gestellte Fragen",
+      subtitle: "Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihre neue Website.",
+      ctaTitle: "Haben Sie noch weitere Fragen?",
+      ctaButton: "Weitere Fragen? Sprechen Sie mit uns"
     }
   };
   
@@ -95,29 +101,53 @@ const WebDesignFAQ = () => {
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-12 text-brand-heading">
-            {t.title}
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+              {t.title}
+            </h2>
+            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
+              {t.subtitle}
+            </p>
+          </div>
         </Reveal>
         
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
           <Accordion type="single" collapsible className="w-full">
-            <StaggerReveal className="w-full" stagger={0.08}>
+            <StaggerReveal className="space-y-4" stagger={0.08}>
               {faqItems.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-white mb-4 rounded-lg shadow-sm overflow-hidden border border-gray-100">
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                >
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                    {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4">
-                    <p className="text-brand-text">{faq.answer}</p>
+                  <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </StaggerReveal>
           </Accordion>
         </div>
+        
+        <Reveal delay={0.3}>
+          <div className="mt-16 text-center">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20">
+              <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
+                {t.ctaTitle}
+              </h3>
+              <button className="inline-flex items-center gap-2 rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
+                <span className="text-xl">+</span>
+                {t.ctaButton}
+              </button>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
