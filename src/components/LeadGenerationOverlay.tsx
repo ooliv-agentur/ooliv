@@ -39,7 +39,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     return () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [onOpenChange, open]); // Include 'open' in dependencies to get current state
+  }, [onOpenChange, open]);
   
   const handleClose = () => {
     console.log('Manual close triggered');
@@ -49,12 +49,28 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet 
       open={open} 
-      onOpenChange={onOpenChange} // Use direct onOpenChange without custom logic
+      onOpenChange={(isOpen) => {
+        // Only allow closing, never opening through this mechanism
+        // Opening should only happen via the global event
+        if (!isOpen) {
+          console.log('Sheet closing via onOpenChange');
+          onOpenChange(false);
+        }
+      }}
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
-        // Remove all the conflicting event handlers - let Sheet handle this naturally
+        onPointerDownOutside={(e) => {
+          // Prevent outside clicks but don't interfere with internal close logic
+          console.log('Outside pointer down prevented');
+          e.preventDefault();
+        }}
+        onEscapeKeyDown={() => {
+          // Allow ESC to close
+          console.log('ESC key close triggered');
+          handleClose();
+        }}
       >
         {/* Custom Close Button */}
         <button 
