@@ -10,7 +10,7 @@ const SEOCtaDE = () => {
   };
   
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-medico-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Reveal>
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
