@@ -5,11 +5,11 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const ContentHero = () => {
+const CaseStudiesHero = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  const handleStartProject = () => {
+  const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
@@ -33,7 +33,7 @@ const ContentHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Badge */}
             <div className="inline-flex items-center bg-medico-turquoise/10 text-medico-turquoise rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
-              <span>{isGerman ? "Content-Erstellung" : "Content Creation"}</span>
+              <span>{isGerman ? "Case Studies" : "Case Studies"}</span>
             </div>
             
             {/* Main heading */}
@@ -44,8 +44,8 @@ const ContentHero = () => {
               }}
             >
               {isGerman 
-                ? "Content-Erstellung für B2B-Unternehmen mit Strategie" 
-                : "Content Creation for B2B Companies with Strategy"
+                ? "Marketing aus Mainz mit echten Ergebnissen." 
+                : "Marketing from Mainz with Real Results."
               }
             </h1>
             
@@ -55,8 +55,8 @@ const ContentHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Wir entwickeln strategische B2B-Inhalte: Website-Texte, Landing Pages & SEO-Content mit Plan – klar, durchdacht, wirkungsvoll." 
-                : "We create strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful."
+                ? "Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen." 
+                : "See how we demonstrably help B2B companies grow through strategy, design and performance marketing in Mainz."
               }
             </p>
             
@@ -76,9 +76,9 @@ const ContentHero = () => {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#FFD700';
                 }}
-                onClick={handleStartProject}
+                onClick={handleOpenLeadForm}
               >
-                {isGerman ? "Content-Projekt starten" : "Start Content Project"}
+                {isGerman ? "Projekt starten" : "Start Project"}
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -88,8 +88,8 @@ const ContentHero = () => {
                 className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                 asChild
               >
-                <Link to={isGerman ? "/referenzen" : "/en/case-studies"}>
-                  {isGerman ? "Referenzen ansehen" : "View Case Studies"}
+                <Link to={isGerman ? "/kontakt" : "/en/contact"}>
+                  {isGerman ? "Strategiegespräch buchen" : "Book Strategy Call"}
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -113,4 +113,4 @@ const ContentHero = () => {
   );
 };
 
-export default ContentHero;
+export default CaseStudiesHero;

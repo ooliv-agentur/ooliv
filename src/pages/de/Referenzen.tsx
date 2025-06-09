@@ -1,8 +1,7 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import PageHero from '@/components/PageHero';
+import CaseStudiesHero from '@/components/case-studies/CaseStudiesHero';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -86,20 +85,7 @@ const GermanCaseStudies = () => {
         <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
       </Helmet>
       
-      <PageHero
-        badge="Case Studies"
-        title="Marketing aus Mainz mit echten Ergebnissen."
-        subtitle="Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen."
-        primaryCta={{
-          text: "Projekt starten",
-          link: "#",
-          onClick: handleOpenLeadForm
-        }}
-        secondaryCta={{
-          text: "Strategiegespräch buchen",
-          link: "/kontakt"
-        }}
-      />
+      <CaseStudiesHero />
       
       <div className="section-container">
         <CaseStudiesSection 
