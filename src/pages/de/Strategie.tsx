@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -6,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import { Search, Plan, Monitor, ArrowUp } from 'lucide-react';
+import { Search, Target, Monitor, ArrowUp } from 'lucide-react';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -59,7 +58,7 @@ const Strategie = () => {
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-medico-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 012-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse & Marktverständnis</h3>
@@ -130,7 +129,7 @@ const Strategie = () => {
               {/* Step 2 */}
               <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-medico-mint lg:mt-8">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-medico-yellow to-medico-turquoise rounded-full flex items-center justify-center shadow-lg">
-                  <Plan className="w-8 h-8 text-medico-darkGreen" />
+                  <Target className="w-8 h-8 text-medico-darkGreen" />
                 </div>
                 <div className="pt-8 text-center">
                   <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">2</div>
