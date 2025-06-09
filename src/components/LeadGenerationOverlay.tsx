@@ -30,12 +30,16 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
   
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={handleOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
