@@ -21,10 +21,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   
   // Listen for the global event to open the lead form
   useEffect(() => {
-    console.log('🔧 LeadGenerationOverlay: Setting up event listener');
+    console.log('🔧 LeadGenerationOverlay: Setting up event listener, current open state:', open);
     
-    const handleOpenLeadForm = () => {
-      console.log('🎯 LeadGenerationOverlay: open-lead-form event received');
+    const handleOpenLeadForm = (event) => {
+      console.log('🎯 LeadGenerationOverlay: open-lead-form event received, current open state:', open);
+      console.log('🎯 Event details:', event);
       if (!open) {
         console.log('✅ Opening lead form overlay');
         onOpenChange(true);
@@ -41,15 +42,26 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
   }, []); // Empty dependency array - no re-registration
   
+  // Add debugging for onOpenChange calls
+  const handleOpenChange = (newOpen: boolean) => {
+    console.log('📝 LeadGenerationOverlay: onOpenChange called with:', newOpen, 'current state:', open);
+    onOpenChange(newOpen);
+  };
+  
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={handleOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
       >
         {/* Simplified close button with direct onOpenChange call */}
         <button 
-          onClick={() => onOpenChange(false)}
+          onClick={(e) => {
+            console.log('❌ Close button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            handleOpenChange(false);
+          }}
           className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"
@@ -67,7 +79,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={() => onOpenChange(false)} />
+        <LeadFormContent onClose={() => {
+          console.log('📝 LeadFormContent onClose called');
+          handleOpenChange(false);
+        }} />
       </SheetContent>
     </Sheet>
   );

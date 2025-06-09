@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -7,10 +6,28 @@ import Reveal from '@/components/animations/Reveal';
 import DynamicSubheadlines from '@/components/animations/DynamicSubheadlines';
 
 const DeutscherHero = () => {
+  const [isDispatching, setIsDispatching] = useState(false);
+  
   const handleOpenLeadForm = () => {
+    if (isDispatching) {
+      console.log('🚫 DeutscherHero: Already dispatching, ignoring click');
+      return;
+    }
+    
+    setIsDispatching(true);
     console.log('🚀 DeutscherHero: "Projekt starten" button clicked');
-    window.dispatchEvent(new Event('open-lead-form'));
-    console.log('📡 DeutscherHero: open-lead-form event dispatched');
+    
+    // Use setTimeout to ensure we can track if multiple events are fired
+    setTimeout(() => {
+      const event = new CustomEvent('open-lead-form', { detail: { source: 'DeutscherHero' } });
+      window.dispatchEvent(event);
+      console.log('📡 DeutscherHero: open-lead-form event dispatched');
+      
+      // Reset the flag after a short delay
+      setTimeout(() => {
+        setIsDispatching(false);
+      }, 1000);
+    }, 0);
   };
 
   const subheadlines = [
@@ -104,6 +121,7 @@ const DeutscherHero = () => {
                     e.currentTarget.style.backgroundColor = '#FFD700';
                   }}
                   onClick={handleOpenLeadForm}
+                  disabled={isDispatching}
                 >
                   Projekt starten
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
