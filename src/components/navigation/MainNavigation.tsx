@@ -45,7 +45,7 @@ const MainNavigation = () => {
               style={{ cursor: 'none' }}
             >
               <img 
-                src="/ooliv_logo_2025.svg" 
+                src="/ooliv_logo_2025.svg?v=2" 
                 alt="ooliv logo" 
                 className="h-6 md:h-8 w-auto" 
                 loading="lazy"
