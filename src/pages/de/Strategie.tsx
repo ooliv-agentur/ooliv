@@ -41,7 +41,76 @@ const Strategie = () => {
         <meta name="description" content="Strategische Digitalberatung und UX-Optimierung in Mainz. Datenbasierte Entscheidungen für messbare Erfolge im digitalen Marketing." />
       </Helmet>
 
-      <StrategieHero />
+      {/* Hero Section */}
+      <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+        {/* Enhanced floating circles animation - same as homepage */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
+          <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
+          <div className="floating-circle reverse w-24 h-24 bottom-40 left-1/4 opacity-50"></div>
+          <div className="floating-circle diagonal w-20 h-20 bottom-20 right-1/3 opacity-45"></div>
+          <div className="floating-circle fast w-16 h-16 top-1/2 left-3/4 opacity-60"></div>
+          <div className="floating-circle pulse w-12 h-12 top-1/3 right-1/4 opacity-70"></div>
+          <div className="floating-circle slow w-14 h-14 top-60 left-1/2 opacity-35"></div>
+          <div className="floating-circle delayed reverse w-18 h-18 bottom-60 right-10 opacity-40"></div>
+          <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
+        </div>
+        
+        <div className="relative z-20 w-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+              {/* Main heading */}
+              <h1 
+                className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
+                style={{ 
+                  color: '#003343' 
+                }}
+              >
+                Strategie & Konzept für Ihren digitalen Erfolg
+              </h1>
+              
+              {/* Subtitle */}
+              <p 
+                className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+                style={{ lineHeight: '1.6' }}
+              >
+                Wir entwickeln individuelle Digitalstrategien mit Konzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, Leads und eine nachhaltige digitale Präsenz.
+              </p>
+              
+              {/* CTA buttons - matching startpage style */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <button 
+                  className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 border-none"
+                  onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
+                >
+                  Strategiegespräch vereinbaren
+                  <ArrowUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1 rotate-45" />
+                </button>
+                
+                <a 
+                  href="/webdesign"
+                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center"
+                >
+                  Mehr über unsere Leistungen
+                  <ArrowUp className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1 rotate-45" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Visual transition indicator */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="flex flex-col items-center space-y-2">
+            <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="flex space-x-1">
+              <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+              <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Strategy Benefits Section */}
       <section className="py-20 bg-white">
@@ -51,7 +120,7 @@ const Strategie = () => {
               Strategie & Konzept als Fundament Ihres digitalen Erfolgs
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem durchdachten Konzept sorgen wir dafür, dass jeder Euro wirkt – von der Analyse bis zur erfolgreichen Umsetzung.
+              Ohne eine klare Strategie verpuffen Marketing-Budgets. Mit einem durchdachten Konzept sorgen wir dafür, dass jeder Euro zielgerichtet eingesetzt wird – von der Analyse bis zur Umsetzung.
             </p>
           </div>
 
@@ -64,7 +133,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Zielgruppenanalyse & Marktverständnis</h3>
               <p className="text-brand-text">
-                Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie am besten erreichen.
+                Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie optimal erreichen.
               </p>
             </div>
 
@@ -76,7 +145,7 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Nutzerführung & Conversion-Strategie</h3>
               <p className="text-brand-text">
-                Wir definieren, wie Ihre Besucher geführt werden und wie Ihre Website aus Interessenten Kunden macht.
+                Wir definieren, wie Ihre Besucher geführt werden – für mehr Leads und eine hohe Conversion-Rate.
               </p>
             </div>
 
@@ -88,22 +157,22 @@ const Strategie = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Projektplan & Roadmap</h3>
               <p className="text-brand-text">
-                Wir entwickeln eine klare Roadmap mit Meilensteinen und Prioritäten, damit Ihr Projekt strukturiert und erfolgreich umgesetzt werden kann.
+                Wir entwickeln eine klare Roadmap mit Meilensteinen, damit Ihr Projekt strukturiert und erfolgreich umgesetzt wird.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section - Updated to match homepage styling */}
+      {/* Process Section */}
       <section className="py-20 bg-medico-mint">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-              Unser strategischer Ansatz: Von der Analyse bis zur Umsetzung
+              Unser strategischer Ansatz – von der Analyse bis zur Umsetzung
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Wir begleiten Sie Schritt für Schritt – von der Analyse Ihrer aktuellen Website bis zur erfolgreichen Umsetzung.
+              Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer Website bis zur erfolgreichen Umsetzung.
             </p>
           </div>
 
@@ -113,10 +182,9 @@ const Strategie = () => {
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <Search className="w-8 h-8 text-medico-turquoise" />
               </div>
-              <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">1</div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Analyse & Konzept</h3>
               <p className="text-brand-text">
-                Wir prüfen den Ist-Zustand, Ihre Zielgruppen und den Wettbewerb. Dazu entwickeln wir eine Sitemap und erste Wireframes.
+                Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln erste Wireframes.
               </p>
             </div>
 
@@ -125,7 +193,6 @@ const Strategie = () => {
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="w-8 h-8 text-medico-turquoise" />
               </div>
-              <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">2</div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Strategie & Planung</h3>
               <p className="text-brand-text">
                 Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan.
@@ -137,10 +204,9 @@ const Strategie = () => {
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <Monitor className="w-8 h-8 text-medico-turquoise" />
               </div>
-              <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">3</div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Design-Übergabe & Umsetzung</h3>
               <p className="text-brand-text">
-                Nach der Designfreigabe geht es in die Webentwicklung: sauber, performant und individuell.
+                Nach der Designfreigabe startet die Webentwicklung – sauber, performant und individuell.
               </p>
             </div>
 
@@ -149,17 +215,16 @@ const Strategie = () => {
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <ArrowUp className="w-8 h-8 text-medico-turquoise" />
               </div>
-              <div className="w-8 h-8 bg-medico-turquoise text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">4</div>
               <h3 className="text-xl font-bold mb-4 text-brand-heading">Optimierung & Reporting</h3>
               <p className="text-brand-text">
-                Wir messen den Erfolg anhand definierter KPIs und optimieren kontinuierlich.
+                Wir definieren KPIs, messen den Erfolg und optimieren kontinuierlich.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* New Strategy Consulting Section */}
+      {/* Strategy Consulting Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
