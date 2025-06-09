@@ -70,7 +70,7 @@ const WebDesignStructureFirst = () => {
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const contentCreationPath = isGerman ? "/de/content-erstellung" : "/content-creation";
+  const contentCreationPath = isGerman ? "/content-erstellung" : "/en/content-creation";
 
   return (
     <section className="py-24 bg-white">

@@ -12,100 +12,146 @@ import { ArrowRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Webdesign",
-    items: [
-      "Strategic UI/UX design",
-      "Mobile-responsive layouts",
-      "Brand-aligned visuals",
-      "Conversion optimization"
-    ],
-    link: "/web-design"
-  },
-  {
-    icon: Code,
-    title: "Development",
-    items: [
-      "Clean, semantic code",
-      "Performance optimization",
-      "Accessibility compliance",
-      "Cross-browser testing"
-    ],
-    link: "/web-development"
-  },
-  {
-    icon: FileText,
-    title: "Content & Structure",
-    items: [
-      "Content architecture",
-      "Conversion copywriting",
-      "Visual storytelling",
-      "Content management"
-    ],
-    link: "/content-creation"
-  },
-  {
-    icon: Search,
-    title: "SEO-Ready Foundations",
-    items: [
-      "Technical SEO setup",
-      "Performance optimization",
-      "Structured data markup",
-      "Local SEO integration"
-    ],
-    link: "/seo-optimization"
-  },
-  {
-    icon: Settings,
-    title: "Maintenance & Support",
-    items: [
-      "Regular updates & backups",
-      "Performance monitoring",
-      "Security maintenance",
-      "Growth-driven iterations"
-    ],
-    link: "/contact"
-  }
-];
-
-const specializedServices = [
-  {
-    icon: ShoppingBag,
-    title: "Shopify Development",
-    items: [
-      "Custom theme development",
-      "Performance optimization",
-      "Payment integration",
-      "Inventory management"
-    ],
-    link: "/contact"
-  },
-  {
-    icon: Bookmark,
-    title: "WordPress Maintenance",
-    items: [
-      "Regular updates & backups",
-      "Security monitoring",
-      "Performance optimization",
-      "WooCommerce support"
-    ],
-    link: "/contact"
-  }
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WebDesignServices = () => {
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  const services = [
+    {
+      icon: Palette,
+      title: isGerman ? "Webdesign" : "Webdesign",
+      items: isGerman ? [
+        "Strategisches UI/UX Design",
+        "Mobile-responsive Layouts",
+        "Markenkonformes Design",
+        "Conversion-Optimierung"
+      ] : [
+        "Strategic UI/UX design",
+        "Mobile-responsive layouts",
+        "Brand-aligned visuals",
+        "Conversion optimization"
+      ],
+      link: isGerman ? "/webdesign" : "/en/webdesign"
+    },
+    {
+      icon: Code,
+      title: isGerman ? "Entwicklung" : "Development",
+      items: isGerman ? [
+        "Sauberer, semantischer Code",
+        "Performance-Optimierung",
+        "Barrierefreiheit",
+        "Cross-Browser Testing"
+      ] : [
+        "Clean, semantic code",
+        "Performance optimization",
+        "Accessibility compliance",
+        "Cross-browser testing"
+      ],
+      link: isGerman ? "/webentwicklung" : "/en/webdevelopment"
+    },
+    {
+      icon: FileText,
+      title: isGerman ? "Content & Struktur" : "Content & Structure",
+      items: isGerman ? [
+        "Content-Architektur",
+        "Conversion-Texte",
+        "Visuelles Storytelling",
+        "Content-Management"
+      ] : [
+        "Content architecture",
+        "Conversion copywriting",
+        "Visual storytelling",
+        "Content management"
+      ],
+      link: isGerman ? "/content-erstellung" : "/en/content-creation"
+    },
+    {
+      icon: Search,
+      title: isGerman ? "SEO-ready Basis" : "SEO-Ready Foundations",
+      items: isGerman ? [
+        "Technisches SEO Setup",
+        "Performance-Optimierung",
+        "Strukturierte Daten",
+        "Lokale SEO-Integration"
+      ] : [
+        "Technical SEO setup",
+        "Performance optimization",
+        "Structured data markup",
+        "Local SEO integration"
+      ],
+      link: isGerman ? "/seo-optimierung" : "/en/seo"
+    },
+    {
+      icon: Settings,
+      title: isGerman ? "Wartung & Support" : "Maintenance & Support",
+      items: isGerman ? [
+        "Regelmäßige Updates & Backups",
+        "Performance-Monitoring",
+        "Sicherheitswartung",
+        "Wachstumsorientierte Iterationen"
+      ] : [
+        "Regular updates & backups",
+        "Performance monitoring",
+        "Security maintenance",
+        "Growth-driven iterations"
+      ],
+      link: isGerman ? "/kontakt" : "/en/contact"
+    }
+  ];
+
+  const specializedServices = [
+    {
+      icon: ShoppingBag,
+      title: isGerman ? "Shopify Entwicklung" : "Shopify Development",
+      items: isGerman ? [
+        "Custom Theme-Entwicklung",
+        "Performance-Optimierung",
+        "Payment-Integration",
+        "Inventar-Management"
+      ] : [
+        "Custom theme development",
+        "Performance optimization",
+        "Payment integration",
+        "Inventory management"
+      ],
+      link: isGerman ? "/kontakt" : "/en/contact"
+    },
+    {
+      icon: Bookmark,
+      title: isGerman ? "WordPress Wartung" : "WordPress Maintenance",
+      items: isGerman ? [
+        "Regelmäßige Updates & Backups",
+        "Sicherheits-Monitoring",
+        "Performance-Optimierung",
+        "WooCommerce Support"
+      ] : [
+        "Regular updates & backups",
+        "Security monitoring",
+        "Performance optimization",
+        "WooCommerce support"
+      ],
+      link: isGerman ? "/kontakt" : "/en/contact"
+    }
+  ];
+
+  const translations = {
+    title: isGerman ? "Was wir anbieten – Alles von einem Webdesign-Partner" : "What We Offer – All from One Webdesign Partner",
+    subtitle: isGerman ? "Umfassende Webdesign- und Entwicklungsdienstleistungen zum Aufbau und zur Pflege Ihrer digitalen Präsenz." : "Comprehensive webdesign and development services to build and maintain your digital presence.",
+    specializedTitle: isGerman ? "Spezialisierte Lösungen" : "Specialized Solutions",
+    learnMore: isGerman ? "Mehr erfahren" : "Learn More"
+  };
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
-          What We Offer – All from One Webdesign Partner
+          {translations.title}
         </h2>
         
         <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-          Comprehensive webdesign and development services to build and maintain your digital presence.
+          {translations.subtitle}
         </p>
         
         <Carousel
@@ -138,7 +184,7 @@ const WebDesignServices = () => {
                   <CardFooter>
                     <Button variant="link" className="p-0 h-auto" asChild>
                       <Link to={service.link} className="inline-flex items-center text-brand-primary hover:text-brand-primary/90">
-                        Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                        {translations.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardFooter>
@@ -153,7 +199,7 @@ const WebDesignServices = () => {
         </Carousel>
         
         <h3 className="text-2xl font-bold text-center mb-8 text-brand-heading">
-          Specialized Solutions
+          {translations.specializedTitle}
         </h3>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -178,7 +224,7 @@ const WebDesignServices = () => {
               <CardFooter>
                 <Button variant="link" className="p-0 h-auto" asChild>
                   <Link to={service.link} className="inline-flex items-center text-brand-primary hover:text-brand-primary/90">
-                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                    {translations.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>

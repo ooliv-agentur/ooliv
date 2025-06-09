@@ -83,6 +83,7 @@ const WebDesignCaseStudies = () => {
   };
   
   const t = translations[language as 'en' | 'de'] || translations.en;
+  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
 
   return (
     <section className="py-24 bg-white">
@@ -152,7 +153,7 @@ const WebDesignCaseStudies = () => {
                 </div>
                 
                 <Link 
-                  to={language === 'de' ? "/referenzen" : "/en/case-studies"} 
+                  to={caseStudiesPath} 
                   className="text-sm font-medium text-brand-primary hover:underline inline-flex items-center"
                 >
                   {t.viewFull} <ArrowRight className="ml-1 h-3 w-3" />
@@ -164,7 +165,7 @@ const WebDesignCaseStudies = () => {
         
         <div className="text-center">
           <Button variant="outline" asChild>
-            <Link to={language === 'de' ? "/referenzen" : "/en/case-studies"}>
+            <Link to={caseStudiesPath}>
               {t.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
