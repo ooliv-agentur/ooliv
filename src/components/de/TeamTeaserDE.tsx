@@ -24,7 +24,7 @@ const TeamTeaserDE = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter ooliv</h2>
           <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
-            Jedes Projekt wird direkt von der Geschäftsführung (Lisa und Uli Schönleber) begleitet. Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
+            Jedes Projekt wird direkt von der Geschäftsführung begleitet. Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
           </p>
         </div>
 

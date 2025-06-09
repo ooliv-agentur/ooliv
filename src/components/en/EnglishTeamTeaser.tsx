@@ -24,7 +24,7 @@ const EnglishTeamTeaser = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">The team behind ooliv</h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            Every project is personally overseen by the management team (Lisa and Uli Schönleber). We focus on short lines of communication, fast response times and maximum transparency — so you always know where your project stands. With fairness, a personal commitment and direct contact throughout the entire process.
+            Every project is personally overseen by the management team. We focus on short lines of communication, fast response times and maximum transparency — so you always know where your project stands. With fairness, a personal commitment and direct contact throughout the entire process.
           </p>
         </div>
 
