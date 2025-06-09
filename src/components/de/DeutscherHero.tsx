@@ -8,7 +8,7 @@ import DynamicSubheadlines from '@/components/animations/DynamicSubheadlines';
 
 const DeutscherHero = () => {
   const handleOpenLeadForm = () => {
-    document.dispatchEvent(new CustomEvent('open-lead-form'));
+    window.dispatchEvent(new Event('open-lead-form'));
   };
 
   const subheadlines = [
