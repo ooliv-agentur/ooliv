@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -94,7 +95,10 @@ const DeutscherHero = () => {
             
             {/* Body text with increased line spacing */}
             <Reveal delay={0.2}>
-              <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-[1.8] text-left">
+              <p 
+                className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+                style={{ lineHeight: '2.0' }}
+              >
                 Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand.
               </p>
             </Reveal>
