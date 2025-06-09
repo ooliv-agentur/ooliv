@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -64,7 +63,7 @@ const Strategie = () => {
           </h2>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            ooliv ist Ihr Partner für durchdachte Digitalstrategien und individuelle Webkonzepte, die Ihre Marke im Netz erfolgreich machen. Wir entwickeln Websites nicht nur visuell ansprechend, sondern auf Basis von Daten, Analysen und Zielgruppenverständnis – für maximale Sichtbarkeit, mehr Leads und eine nachhaltige Marktposition.
+            ooliv ist Ihr Partner für durchdachte Digitalstrategien und individuelle Webkonzepte, die Ihre Marke im Netz erfolgreich machen. Wir entwickeln Websites nicht nur optisch ansprechend, sondern auf Basis von Daten, Analysen und Zielgruppenverständnis – für maximale Sichtbarkeit, mehr Leads und eine nachhaltige Marktposition.
           </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
@@ -72,7 +71,7 @@ const Strategie = () => {
           </h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            Eine Website ohne Strategie ist wie ein Haus ohne Fundament. Viele Unternehmen investieren in ein schönes Design, ohne zu wissen, wer ihre Zielgruppe ist, wie ihre Nutzer ticken oder welche Inhalte überzeugen. Mit einem durchdachten Webkonzept sorgen wir dafür, dass Ihre Website nicht nur ästhetisch, sondern auch strategisch punktet: von der Zielgruppenanalyse über die Sitemap bis zu ersten Wireframes.
+            Eine Website ohne Strategie ist wie ein Haus ohne Fundament. Viele Unternehmen investieren in ein schönes Design, ohne zu wissen, wer ihre Zielgruppe ist, wie ihre Nutzer ticken oder welche Inhalte überzeugen. Mit einem durchdachten Webkonzept sorgen wir dafür, dass Ihre Website nicht nur gut aussieht, sondern auch strategisch funktioniert – von der Zielgruppenanalyse über die Sitemap bis zu ersten Wireframes.
           </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
@@ -108,35 +107,39 @@ const Strategie = () => {
           </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
-            Erfolgsgeschichten – unsere Kunden vertrauen uns
+            Erfolgsgeschichten – echte Ergebnisse aus echten Projekten
           </h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>B2B-Unternehmen, Mainz</strong><br />
-            – Relaunch & Webkonzept: +120 % Sichtbarkeit, 2x Conversion-Rate in 6 Monaten
+            Unsere Kundenprojekte sind so individuell wie die Unternehmen selbst. Ob B2B, E-Commerce oder Dienstleister – wir entwickeln für jede Branche das passende Webkonzept:
           </p>
           
-          <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Technologieunternehmen, Frankfurt</strong><br />
-            – Corporate Website & Webkonzept: 3x mehr Leads, 1,5x höherer Umsatz
-          </p>
-          
-          <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Medizinische Praxis, Rheinland-Pfalz</strong><br />
-            – UX-Optimierung & Webkonzept: +95 % Online-Anfragen, Platz 1 bei Google
-          </p>
+          <ul className={seoTextStyles.unorderedList}>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>Gärtnerei Zech</strong> (Mittelstand, E-Commerce)<br />
+              „Dank ooliv haben wir endlich ein Webkonzept, das unsere Zielgruppe perfekt abholt. Die Workshops waren klasse, wir wurden professionell begleitet und das Ergebnis: +150 % Online-Bestellungen und Top-Rankings bei Google." [Website-Link auf Anfrage]
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>IT-Startup Frankfurt</strong><br />
+              „Wir hatten anfangs kein klares Konzept, nur eine grobe Idee. ooliv hat uns strategisch abgeholt, die Zielgruppenanalyse war ein Augenöffner. Heute sind wir bei den relevanten Suchanfragen auf Seite 1 bei Google – und unsere Leads haben sich verdreifacht."
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>B2B-Unternehmen Mainz</strong><br />
+              „Vor dem Relaunch waren wir kaum sichtbar. ooliv hat unser Webkonzept von Grund auf neu entwickelt, inklusive SEO-Strategie. Nach dem Go-Live sind unsere Online-Anfragen um 200 % gestiegen – und das Design begeistert unsere Kunden."
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>Langfristige Zusammenarbeit</strong><br />
+              „Was uns besonders überzeugt: ooliv bleibt auch nach dem Go-Live an unserer Seite. Ob Updates, neue Features oder Monitoring – wir fühlen uns rundum betreut. Unser Webkonzept wird so kontinuierlich weiterentwickelt."
+            </li>
+          </ul>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
-            Das sagen unsere Kunden:
+            Transparente Prozesse – aus Kundensicht erklärt
           </h3>
           
-          <blockquote className={seoTextStyles.blockquote} style={{ borderLeftColor: '#FFD700', color: '#F4F4F4' }}>
-            „Das Webkonzept von ooliv hat unsere Marke auf ein neues Level gehoben. Vom ersten Workshop bis zum Go-Live war alles professionell, partnerschaftlich und messbar erfolgreich." – Geschäftsführung, B2B-Unternehmen Mainz
-          </blockquote>
-          
-          <blockquote className={seoTextStyles.blockquote} style={{ borderLeftColor: '#FFD700', color: '#F4F4F4' }}>
-            „Dank ooliv wissen wir jetzt genau, wie unsere Zielgruppe tickt – das Webkonzept war der Schlüssel für unsere neue Website." – Marketingleitung, Technologieunternehmen Frankfurt
-          </blockquote>
+          <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+            Viele unserer Kunden berichten, dass sie vor der Zusammenarbeit Bedenken hatten: „Bekomme ich eine Lösung von der Stange?" oder „Versteht die Agentur wirklich meine Branche?" – Genau hier setzen wir an: In gemeinsamen Workshops und mit regelmäßigen Feedbackrunden holen wir Sie und Ihr Team aktiv ins Projekt. Ihre Ideen, Ihre Marke und Ihre Expertise sind für uns entscheidend. Das Ergebnis: ein Webkonzept, das nicht nur Ihr Unternehmen widerspiegelt, sondern auch die Bedürfnisse Ihrer Kunden.
+          </p>
 
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
             Warum ooliv?
@@ -144,16 +147,19 @@ const Strategie = () => {
           
           <ul className={seoTextStyles.unorderedList}>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              ✅ Individuelle Webkonzepte statt Templates
+              Individuelle Webkonzepte, die Ihre Marke stärken
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              ✅ Messbare Ergebnisse: Sichtbarkeit, Leads, Umsatz
+              Branchenübergreifende Erfahrung – B2B, E-Commerce, Start-ups
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              ✅ Persönliche Beratung mit Workshops & Kick-offs
+              Messbare Ergebnisse mit klar definierten KPIs
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
-              ✅ Langfristige Betreuung – für nachhaltigen Erfolg
+              Persönliche Ansprechpartner, Workshops & Kick-offs
+            </li>
+            <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
+              Langfristige Betreuung – für nachhaltigen Erfolg
             </li>
           </ul>
 
@@ -174,7 +180,7 @@ const Strategie = () => {
       <PageLayout className="overflow-x-hidden" seoText={strategieSeoText}>
         <Helmet>
           <title>Webkonzept & Strategie – Ihr Erfolgsfaktor im Web | ooliv Mainz</title>
-          <meta name="description" content="ooliv entwickelt individuelle Webkonzepte und Strategien für Websites – maßgeschneidert, zielgruppenorientiert und mit dem Blick fürs Detail. Jetzt Strategiegespräch buchen!" />
+          <meta name="description" content="ooliv entwickelt Webkonzepte und Strategien, die Ihre Website erfolgreich machen – individuell, datenbasiert, transparent. Jetzt Beratung buchen!" />
         </Helmet>
 
         {/* Hero Section */}
