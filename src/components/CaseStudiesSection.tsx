@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -155,7 +154,7 @@ export const caseStudiesData = {
       quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
       websiteLink: "www.amkliff.de",
       impact: [
-        "Digitale Markenentwicklung inkl. Logo, CI & Naming",
+        "Digitale Markenentwicklung incl. Logo, CI & Naming",
         "Konzept, Text und Design der Verkaufs-Landingpage",
         "Umsetzung als performante HTML-Seite (ohne CMS)",
         "Bildbearbeitung & Bauschilder für die Projektkommunikation"
@@ -208,13 +207,13 @@ const CaseStudiesSection = ({
         {!hideHeaderText && (
           <Reveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6" style={{ lineHeight: '1.3' }}>
                 {customTitle || t.title}
               </h2>
-              <p className="text-xl text-brand-text max-w-3xl mx-auto mb-4">
+              <p className="text-lg md:text-xl text-medico-darkGreen max-w-3xl mx-auto mb-4" style={{ lineHeight: '1.6' }}>
                 {customSubtitle || t.subtitle}
               </p>
-              <p className="text-lg text-brand-text max-w-3xl mx-auto">
+              <p className="text-base md:text-lg text-medico-darkGreen max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
                 {customBodyText || t.bodyText}
               </p>
             </div>
@@ -228,7 +227,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100">
+                <div className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -240,16 +239,16 @@ const CaseStudiesSection = ({
                       </AspectRatio>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
-                      <p className="text-sm text-gray-500">{study.industry}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen">{study.client}</h3>
+                      <p className="text-sm md:text-base text-medico-darkGreen/70">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <h4 className="text-lg font-medium mb-6">
+                  <h4 className="text-base md:text-lg font-medium mb-6 text-medico-darkGreen" style={{ lineHeight: '1.5' }}>
                     {study.headline}
                   </h4>
                   
-                  <blockquote className="italic text-gray-600 text-sm border-l-4 border-brand-primary pl-4 my-6">
+                  <blockquote className="italic text-medico-darkGreen/80 text-sm md:text-base border-l-4 border-medico-turquoise pl-4 my-6" style={{ lineHeight: '1.6' }}>
                     "{study.quote}"
                   </blockquote>
                   
@@ -259,7 +258,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-brand-primary hover:underline inline-flex items-center"
+                        className="text-medico-turquoise hover:underline inline-flex items-center text-sm md:text-base font-medium"
                       >
                         {t.exploreWebsite} {study.websiteLink}
                       </a>
@@ -269,10 +268,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-brand-primary">
-                          <Check className="h-5 w-5" />
+                        <div className="mr-3 mt-1 text-medico-turquoise">
+                          <Check className="h-4 w-4 md:h-5 md:w-5" />
                         </div>
-                        <p className="text-sm text-gray-600">{point}</p>
+                        <p className="text-sm md:text-base text-medico-darkGreen/80" style={{ lineHeight: '1.5' }}>{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -294,13 +293,13 @@ const CaseStudiesSection = ({
         
         <Reveal delay={0.2}>
           <div className="mt-24 text-center">
-            <h3 className="text-2xl md:text-3xl font-medium text-brand-heading mb-8">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-medico-darkGreen mb-8" style={{ lineHeight: '1.4' }}>
               {t.ctaText}
             </h3>
             
             <Button 
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
               onClick={() => {
                 window.dispatchEvent(new Event('open-lead-form'));
               }}
