@@ -14,6 +14,7 @@ const WebDesignBuildOptions = () => {
     en: {
       title: "Webdesign Tailored to Your Business",
       subtitle: "Not sure what fits? Let's find the right solution for your business.",
+      webdevLinkText: "Web Development",
       options: [
         {
           icon: Settings,
