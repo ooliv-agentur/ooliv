@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { seoTextStyles } from '@/styles/seo-text-styles';
 
@@ -32,10 +33,10 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Wir berücksichtigen:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>Ihre Markenidentität und Zielgruppe</li>
-            <li>Ihre technischen Anforderungen (z. B. Corporate Website mit CRM-Anbindung)</li>
-            <li>Ihre bestehende Infrastruktur (Hosting, CMS, Domain)</li>
-            <li>Ihre Online-Marketing-Ziele (Leads, Sichtbarkeit, Conversion)</li>
+            <li className={seoTextStyles.listItem}>Ihre Markenidentität und Zielgruppe</li>
+            <li className={seoTextStyles.listItem}>Ihre technischen Anforderungen (z. B. Corporate Website mit CRM-Anbindung)</li>
+            <li className={seoTextStyles.listItem}>Ihre bestehende Infrastruktur (Hosting, CMS, Domain)</li>
+            <li className={seoTextStyles.listItem}>Ihre Online-Marketing-Ziele (Leads, Sichtbarkeit, Conversion)</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>Dabei achten wir auf eine durchgängige Designlogik, strukturierte Inhaltsmodelle und vollständige SEO-Integration.</p>
@@ -50,31 +51,31 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Unser Prozess umfasst:</p>
           
           <p className={seoTextStyles.paragraph}>
-            <span className={seoTextStyles.strongText}>Anamnesegespräch & Recherche- und Planungsphase</span><br />
+            <strong className={seoTextStyles.highlightedText}>Anamnesegespräch & Recherche- und Planungsphase</strong><br />
             – Zieldefinition, Ist-Analyse, Projektumfang<br />
             – Mitbewerberanalyse, Keyword-Recherche, Zielgruppenanalyse
           </p>
           
           <p className={seoTextStyles.paragraph}>
-            <span className={seoTextStyles.strongText}>Wireframes & Screendesign & Layout</span><br />
+            <strong className={seoTextStyles.highlightedText}>Wireframes & Screendesign & Layout</strong><br />
             – Strukturierung aller Seiten & Navigationspfade<br />
             – UX-Optimierung, Mobile-First-Ansatz, Conversion-Ziele
           </p>
           
           <p className={seoTextStyles.paragraph}>
-            <span className={seoTextStyles.strongText}>Technische Seite einer Website</span><br />
+            <strong className={seoTextStyles.highlightedText}>Technische Seite einer Website</strong><br />
             – CMS-Setup (z. B. WordPress), HTML/CSS, Webentwicklung<br />
             – Integration von Plugins, Tracking-Tools, Formularen
           </p>
           
           <p className={seoTextStyles.paragraph}>
-            <span className={seoTextStyles.strongText}>Relaunch- und Redesign-Service</span><br />
+            <strong className={seoTextStyles.highlightedText}>Relaunch- und Redesign-Service</strong><br />
             – Übernahme und Optimierung bestehender Inhalte<br />
             – Weiterleitungskonzepte, technische Migration
           </p>
           
           <p className={seoTextStyles.paragraph}>
-            <span className={seoTextStyles.strongText}>Launch & Full Service für Webprojekte</span><br />
+            <strong className={seoTextStyles.highlightedText}>Launch & Full Service für Webprojekte</strong><br />
             – Qualitätssicherung, Ladezeitenprüfung, Responsivität<br />
             – Optional: Betreuung, Wartung, Weiterentwicklung
           </p>
@@ -92,11 +93,11 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Highlights:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>Intuitives WordPress CMS für Corporate Websites, Landingpages & Portale</li>
-            <li>Integration mit Joomla oder TYPO3, wenn projektspezifisch sinnvoll</li>
-            <li>Strukturierte Inhaltsmodelle mit klarer Benutzerführung</li>
-            <li>Erstellung und Editieren von Inhalten im Live-Editor</li>
-            <li>Rechtemanagement, Mehrsprachigkeit, Medienverwaltung</li>
+            <li className={seoTextStyles.listItem}>Intuitives WordPress CMS für Corporate Websites, Landingpages & Portale</li>
+            <li className={seoTextStyles.listItem}>Integration mit Joomla oder TYPO3, wenn projektspezifisch sinnvoll</li>
+            <li className={seoTextStyles.listItem}>Strukturierte Inhaltsmodelle mit klarer Benutzerführung</li>
+            <li className={seoTextStyles.listItem}>Erstellung und Editieren von Inhalten im Live-Editor</li>
+            <li className={seoTextStyles.listItem}>Rechtemanagement, Mehrsprachigkeit, Medienverwaltung</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>So bleibt Ihre Seite auch nach dem Launch lebendig – ohne laufende Abhängigkeit von Entwicklerteams.</p>
@@ -111,11 +112,11 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Unsere Standards:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>Cookie-Banner mit aktiver Einwilligung (Consent Management)</li>
-            <li>SSL-Verschlüsselung und Hosting in der EU</li>
-            <li>Sicheres Kontaktformular mit Double Opt-in</li>
-            <li>Datenschutzerklärung, Impressum, Opt-Out-Logik</li>
-            <li>Barrierearme Gestaltung für mehr Zugänglichkeit</li>
+            <li className={seoTextStyles.listItem}>Cookie-Banner mit aktiver Einwilligung (Consent Management)</li>
+            <li className={seoTextStyles.listItem}>SSL-Verschlüsselung und Hosting in der EU</li>
+            <li className={seoTextStyles.listItem}>Sicheres Kontaktformular mit Double Opt-in</li>
+            <li className={seoTextStyles.listItem}>Datenschutzerklärung, Impressum, Opt-Out-Logik</li>
+            <li className={seoTextStyles.listItem}>Barrierearme Gestaltung für mehr Zugänglichkeit</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>So schützen Sie Ihre Besucher und Ihre Marke – ganz ohne Kompromisse beim Design.</p>
@@ -130,12 +131,12 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Unsere SEO-Strategie:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>Keyword-Strategie auf Basis von Suchvolumen & Wettbewerb</li>
-            <li>OnPage-Optimierung: Titles, Meta, H1-H6, ALT-Texte</li>
-            <li>Technisches SEO: Pagespeed, Crawling, saubere URL-Struktur</li>
-            <li>Lokale SEO: für regionale Sichtbarkeit (z. B. „Webdesign Mainz")</li>
-            <li>Linkaufbau & Content Seeding nach dem Launch</li>
-            <li>Erweiterbar durch: Google-AdWords (SEM) & Performance-Kampagnen</li>
+            <li className={seoTextStyles.listItem}>Keyword-Strategie auf Basis von Suchvolumen & Wettbewerb</li>
+            <li className={seoTextStyles.listItem}>OnPage-Optimierung: Titles, Meta, H1-H6, ALT-Texte</li>
+            <li className={seoTextStyles.listItem}>Technisches SEO: Pagespeed, Crawling, saubere URL-Struktur</li>
+            <li className={seoTextStyles.listItem}>Lokale SEO: für regionale Sichtbarkeit (z. B. „Webdesign Mainz")</li>
+            <li className={seoTextStyles.listItem}>Linkaufbau & Content Seeding nach dem Launch</li>
+            <li className={seoTextStyles.listItem}>Erweiterbar durch: Google-AdWords (SEM) & Performance-Kampagnen</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>Ob SEO-ready Webseiten, Conversion-Funnel oder datenbasiertes Kampagnen-Setup – wir bauen Websites, die sichtbar sind und bleiben.</p>
@@ -156,52 +157,52 @@ const SEOTextSection = () => {
           
           <p className={seoTextStyles.paragraph}>Auswahl realisierter Kundenprojekte:</p>
           
-          <p className="my-6">
-            <span className={seoTextStyles.strongText}>Klaiber Steuerberatung:</span> Webdesign & SEO-Relaunch mit strukturierter Seitenarchitektur und lokalem SEO für mehrere Standorte.
+          <p className={seoTextStyles.paragraph}>
+            <strong className={seoTextStyles.strongText}>Klaiber Steuerberatung:</strong> Webdesign & SEO-Relaunch mit strukturierter Seitenarchitektur und lokalem SEO für mehrere Standorte.
           </p>
           
-          <p className="my-6">
-            <span className={seoTextStyles.strongText}>COBUS Industries:</span> UX-Redesign mit Produktkommunikation für internationale Märkte – Umsetzung auf WordPress-Basis mit Fokus auf Performance.
+          <p className={seoTextStyles.paragraph}>
+            <strong className={seoTextStyles.strongText}>COBUS Industries:</strong> UX-Redesign mit Produktkommunikation für internationale Märkte – Umsetzung auf WordPress-Basis mit Fokus auf Performance.
           </p>
           
-          <p className="my-6">
-            <span className={seoTextStyles.strongText}>SPEZ AG:</span> Markteinführung & Corporate Website mit lokalem SEM und SEO – inkl. Logo, Tonalität und regionaler Landingpages.
+          <p className={seoTextStyles.paragraph}>
+            <strong className={seoTextStyles.strongText}>SPEZ AG:</strong> Markteinführung & Corporate Website mit lokalem SEM und SEO – inkl. Logo, Tonalität und regionaler Landingpages.
           </p>
           
-          <p className="my-6">
-            <span className={seoTextStyles.strongText}>IconPro GmbH:</span> KI-Software trifft Design – animierte Website-Module, technische Inhalte und UX-Optimierung.
+          <p className={seoTextStyles.paragraph}>
+            <strong className={seoTextStyles.strongText}>IconPro GmbH:</strong> KI-Software trifft Design – animierte Website-Module, technische Inhalte und UX-Optimierung.
           </p>
           
-          <p className="my-6">
-            <span className={seoTextStyles.strongText}>Quartier am Kliff:</span> HTML-basierter Immobilienauftritt – umgesetzt als visuell starke, performante Verkaufsseite mit klarer Nutzerführung.
+          <p className={seoTextStyles.paragraph}>
+            <strong className={seoTextStyles.strongText}>Quartier am Kliff:</strong> HTML-basierter Immobilienauftritt – umgesetzt als visuell starke, performante Verkaufsseite mit klarer Nutzerführung.
           </p>
           
           <p className={seoTextStyles.paragraph}>Kundenerfahrungen & Erfahrungsberichte:</p>
           
-          <p className="my-6">
-            <em className={seoTextStyles.quote}>"Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. 
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6">
+            <em className={seoTextStyles.quote}>„Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. 
             Die Zusammenarbeit mit ooliv war strukturiert und zielführend."</em><br />
-            – Katharina Klaiber, Geschäftsführung, Klaiber Steuerberatung
-          </p>
+            <span className={seoTextStyles.quoteAuthor}>– Katharina Klaiber, Geschäftsführung, Klaiber Steuerberatung</span>
+          </blockquote>
           
-          <p className="my-6">
-            <em className={seoTextStyles.quote}>"Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen."</em><br />
-            – Sandro Z., Geschäftsführer, SPEZ AG
-          </p>
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6">
+            <em className={seoTextStyles.quote}>„Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen."</em><br />
+            <span className={seoTextStyles.quoteAuthor}>– Sandro Z., Geschäftsführer, SPEZ AG</span>
+          </blockquote>
           
-          <p className="my-6">
-            <em className={seoTextStyles.quote}>"Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. 
+          <blockquote className="border-l-4 border-brand-primary pl-4 my-6">
+            <em className={seoTextStyles.quote}>„Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. 
             Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt."</em><br />
-            – Benjamin R., Head of Product, IconPro GmbH
-          </p>
+            <span className={seoTextStyles.quoteAuthor}>– Benjamin R., Head of Product, IconPro GmbH</span>
+          </blockquote>
           
           <p className={seoTextStyles.paragraph}>Unsere Expertise:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>Projektberatung mit klarem Ablauf – vom Kick-off bis zum GoLive</li>
-            <li>Betreuung nach dem Launch – technisch, strategisch und redaktionell</li>
-            <li>Erfahrung aus über 100 Webprojekten – mit Fokus auf B2B und erklärungsbedürftige Produkte</li>
-            <li>Transparente Kommunikation – direkt über Basecamp und persönliche Ansprechpartner</li>
+            <li className={seoTextStyles.listItem}>Projektberatung mit klarem Ablauf – vom Kick-off bis zum GoLive</li>
+            <li className={seoTextStyles.listItem}>Betreuung nach dem Launch – technisch, strategisch und redaktionell</li>
+            <li className={seoTextStyles.listItem}>Erfahrung aus über 100 Webprojekten – mit Fokus auf B2B und erklärungsbedürftige Produkte</li>
+            <li className={seoTextStyles.listItem}>Transparente Kommunikation – direkt über Basecamp und persönliche Ansprechpartner</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>
@@ -219,11 +220,11 @@ const SEOTextSection = () => {
           <p className={seoTextStyles.paragraph}>Mit ooliv profitieren Sie von:</p>
           
           <ul className={seoTextStyles.unorderedList}>
-            <li>maßgeschneiderten Webdesign-Lösungen, die technisch und rechtlich sauber sind</li>
-            <li>einem strukturierten Projektablauf mit klarer Betreuung</li>
-            <li>CMS-Systemen, die Sie selbst pflegen können</li>
-            <li>einer SEO-Strategie, die auf Sichtbarkeit und Conversion einzahlt</li>
-            <li>einem Team, das kreative Ideen mit technischer Tiefe verbindet</li>
+            <li className={seoTextStyles.listItem}>maßgeschneiderten Webdesign-Lösungen, die technisch und rechtlich sauber sind</li>
+            <li className={seoTextStyles.listItem}>einem strukturierten Projektablauf mit klarer Betreuung</li>
+            <li className={seoTextStyles.listItem}>CMS-Systemen, die Sie selbst pflegen können</li>
+            <li className={seoTextStyles.listItem}>einer SEO-Strategie, die auf Sichtbarkeit und Conversion einzahlt</li>
+            <li className={seoTextStyles.listItem}>einem Team, das kreative Ideen mit technischer Tiefe verbindet</li>
           </ul>
           
           <p className={seoTextStyles.paragraph}>
