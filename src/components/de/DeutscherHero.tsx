@@ -52,7 +52,7 @@ const DeutscherHero = () => {
                   color: '#003343' 
                 }}
               >
-                Werbeagentur Mainz
+                ooliv Werbeagentur Mainz
               </h1>
             </Reveal>
             
