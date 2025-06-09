@@ -11,6 +11,7 @@ import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import SEOTextSection from '@/components/web-design/SEOTextSection';
+import { footerStyles } from '@/styles/footer-styles';
 
 const GermanWebDesign = () => {
   return (
@@ -46,8 +47,12 @@ const GermanWebDesign = () => {
         />
       </PageLayout>
       
-      {/* SEO Text Section moved outside PageLayout to appear after footer */}
-      <SEOTextSection />
+      {/* SEO Text Section moved outside PageLayout to appear after footer with footer styles */}
+      <div className={footerStyles.container}>
+        <div className={footerStyles.innerContainer}>
+          <SEOTextSection />
+        </div>
+      </div>
     </>
   );
 };
