@@ -8,6 +8,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import { Search, Target, Monitor, ArrowRight, User, Users, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { seoTextStyles } from '@/styles/seo-text-styles';
 
 const Strategie = () => {
   const { setLanguage } = useLanguage();
@@ -316,6 +317,90 @@ const Strategie = () => {
         primaryCta="Strategiegespräch vereinbaren"
         secondaryCta="Kontakt aufnehmen"
       />
+
+      {/* SEO Text Section - Below Footer */}
+      <section className={`${seoTextStyles.container} ${seoTextStyles.containerBackground}`}>
+        <div className={seoTextStyles.innerContainer}>
+          <article className={seoTextStyles.articleWrapper} style={{ color: '#FFFFFF' }}>
+            <h2 className={seoTextStyles.mainHeading} style={{ color: '#FFFFFF' }}>
+              Webkonzept & Strategie für Ihren digitalen Erfolg
+            </h2>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              Ein erfolgreiches Webprojekt beginnt immer mit einer fundierten Strategie und einem durchdachten Webkonzept. Bei ooliv kombinieren wir beides: Wir analysieren Ihre Zielgruppen, prüfen den Wettbewerb und entwickeln ein Webkonzept, das Ihre Website zum Erfolgsfaktor macht. Damit Ihr Unternehmen digital wächst – mit mehr Sichtbarkeit, mehr Leads und einer Website, die überzeugt.
+            </p>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Warum braucht meine Website ein Webkonzept?
+            </h3>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              Viele Unternehmen unterschätzen die Bedeutung einer strategischen Planung vor dem eigentlichen Design oder der technischen Umsetzung. Ohne ein klares Webkonzept fehlt Ihrer Website die Struktur, um Ihre Zielgruppe optimal anzusprechen und Ihr Unternehmen erfolgreich zu positionieren. Wir entwickeln Ihr Webkonzept als Fundament: Von der Zielgruppenanalyse über die Sitemap bis zu ersten Wireframes. So entsteht eine Website, die genau zu Ihrem Unternehmen passt.
+            </p>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Maßgeschneiderte Strategien statt Standardlösungen
+            </h3>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              Wir wissen: Jedes Unternehmen ist einzigartig – und so sollte auch Ihre Website sein. Deshalb setzen wir nicht auf Templates oder vorgefertigte Lösungen, sondern auf individuelle Webkonzepte, die Ihre Marke authentisch widerspiegeln. Ihre Zielgruppe, Ihre Branche und Ihre Unternehmensziele stehen dabei immer im Mittelpunkt.
+            </p>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Unsere Vorgehensweise – transparent und professionell
+            </h3>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>1️⃣ Analyse & Webkonzept:</strong> Wir starten mit einer detaillierten Analyse Ihrer Zielgruppen, Ihres Wettbewerbs und Ihrer aktuellen Website (falls vorhanden). Daraus entwickeln wir ein maßgeschneidertes Webkonzept inklusive Sitemap, Content-Strategie und ersten Wireframes.
+            </p>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>2️⃣ Strategie & Planung:</strong> Auf Basis des Webkonzepts definieren wir klare Ziele, planen Maßnahmen und erstellen eine Projekt-Roadmap mit allen Meilensteinen.
+            </p>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>3️⃣ Design-Übergabe:</strong> Sobald das Konzept steht, übergeben wir es an unser Design-Team. Hier wird Ihre Website visuell zum Leben erweckt – passend zu Ihrer Marke und den Anforderungen Ihrer Zielgruppe.
+            </p>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              <strong className={seoTextStyles.strongText}>4️⃣ Technische Umsetzung:</strong> Nach der Designfreigabe startet die Webentwicklung – performant, sauber und individuell auf Ihr Webkonzept abgestimmt.
+            </p>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Langfristige Beratung & Betreuung
+            </h3>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              Auch nach dem Launch Ihrer Website stehen wir Ihnen als Partner zur Seite. Ob Updates, neue Funktionen oder eine langfristige Betreuung – mit ooliv haben Sie einen persönlichen Ansprechpartner, der Ihr Webkonzept weiterentwickelt und Ihre Website nachhaltig erfolgreich macht.
+            </p>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Ihre Vorteile mit ooliv
+            </h3>
+            
+            <ul className={seoTextStyles.unorderedList} style={{ color: '#F4F4F4' }}>
+              <li className={seoTextStyles.listItem}>✅ Individuelle Webkonzepte, die perfekt zu Ihrem Unternehmen passen</li>
+              <li className={seoTextStyles.listItem}>✅ Klare Strategie von Anfang an: Analyse, Planung und Umsetzung</li>
+              <li className={seoTextStyles.listItem}>✅ Persönliche Beratung, transparente Kommunikation und Workshops</li>
+              <li className={seoTextStyles.listItem}>✅ Expertise aus über 100 erfolgreichen Projekten für B2B-Kunden</li>
+            </ul>
+            
+            <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>
+              Jetzt starten
+            </h3>
+            
+            <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
+              Lassen Sie uns gemeinsam eine Strategie und ein Webkonzept entwickeln, das Ihr Unternehmen digital erfolgreich macht.{' '}
+              <button 
+                onClick={handleOpenLeadForm}
+                className={seoTextStyles.ctaButton}
+              >
+                Buchen Sie jetzt Ihr kostenloses Strategiegespräch!
+              </button>
+            </p>
+          </article>
+        </div>
+      </section>
     </PageLayout>
   );
 };
