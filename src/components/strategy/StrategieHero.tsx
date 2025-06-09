@@ -34,7 +34,7 @@ const StrategieHero = () => {
                 color: '#003343' 
               }}
             >
-              Klare Strategien für messbare Erfolge
+              Strategie & Konzept für digitale Erfolge
             </h1>
             
             {/* Subtitle */}
@@ -42,7 +42,7 @@ const StrategieHero = () => {
               className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
-              Wir entwickeln datenbasierte Digitalstrategien und optimieren die User Experience Ihrer Website für bessere Conversion-Raten und nachhaltige Geschäftserfolge.
+              Wir entwickeln individuelle Digitalstrategien inklusive Konzept und optimieren die User Experience Ihrer Website – für mehr Sichtbarkeit, mehr Leads und nachhaltigen Erfolg.
             </p>
             
             {/* CTA buttons - matching startpage style */}
