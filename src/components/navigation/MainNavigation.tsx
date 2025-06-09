@@ -36,7 +36,7 @@ const MainNavigation = () => {
       <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
-            {/* Logo */}
+            {/* Logo - positioned closer to left edge */}
             <div className="flex-shrink-0">
               <Link 
                 to={language === 'de' ? '/' : '/en'} 
@@ -62,17 +62,20 @@ const MainNavigation = () => {
         </div>
       </nav>
 
-      {/* Menu toggle button - fixed position at top right with new colors */}
+      {/* Menu toggle button - fixed position at top right with updated color */}
       <button 
         className={cn(
-          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg",
+          "fixed top-7 right-4 z-[200] flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
           "w-10 h-10 min-w-10 min-h-10"
         )}
+        style={{ 
+          cursor: 'none',
+          backgroundColor: '#32b1ab'
+        }}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
-        style={{ cursor: 'none' }}
       >
         {isOpen ? (
           <X className="w-6 h-6" aria-hidden="true" />
