@@ -36,8 +36,8 @@ const MainNavigation = () => {
       <nav className="w-full z-50 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
-            {/* Logo - positioned closer to left edge */}
-            <div className="flex-shrink-0">
+            {/* Logo - positioned with same margin as burger menu */}
+            <div className="flex-shrink-0 ml-0">
               <Link 
                 to={language === 'de' ? '/' : '/en'} 
                 className="flex items-center" 
@@ -55,7 +55,7 @@ const MainNavigation = () => {
             </div>
             
             {/* Language Switcher - visible on all devices */}
-            <div className="flex-1 flex justify-end items-center">
+            <div className="flex-1 flex justify-end items-center mr-16">
               <LanguageSwitcher />
             </div>
           </div>
