@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -299,7 +300,7 @@ const CaseStudiesSection = ({
             
             <Button 
               size="lg" 
-              className="group bg-[#006064] text-white hover:bg-[#004D40]" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
               onClick={() => {
                 window.dispatchEvent(new Event('open-lead-form'));
               }}
