@@ -41,61 +41,24 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
   }, [onOpenChange, open]); // Include 'open' in dependencies to get current state
   
-  const handleClose = (e?: React.MouseEvent | React.KeyboardEvent) => {
+  const handleClose = () => {
     console.log('Manual close triggered');
-    // Prevent any event propagation or bubbling
-    if (e) {
-      e.preventDefault();
-    }
-    
-    // Force immediate close
     onOpenChange(false);
   };
   
   return (
     <Sheet 
       open={open} 
-      onOpenChange={(isOpen) => {
-        console.log('Sheet onOpenChange triggered with:', isOpen);
-        // Allow normal closing behavior but prevent unwanted opening
-        if (!isOpen) {
-          console.log('Closing via Sheet onOpenChange');
-          onOpenChange(false);
-        }
-      }}
+      onOpenChange={onOpenChange} // Use direct onOpenChange without custom logic
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
-        onPointerDownOutside={(e) => {
-          // Completely prevent any outside click handling
-          console.log('Outside pointer down prevented');
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }}
-        onEscapeKeyDown={(e) => {
-          // Only allow ESC key to close
-          console.log('ESC key close triggered');
-          e.preventDefault();
-          e.stopPropagation();
-          handleClose();
-        }}
-        onInteractOutside={(e) => {
-          // Additional prevention for any outside interactions
-          console.log('Outside interaction prevented');
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }}
+        // Remove all the conflicting event handlers - let Sheet handle this naturally
       >
-        {/* Custom Close Button - only way to close */}
+        {/* Custom Close Button */}
         <button 
           onClick={handleClose}
-          onMouseDown={(e) => {
-            // Prevent any mouse down propagation
-            e.stopPropagation();
-          }}
           className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"

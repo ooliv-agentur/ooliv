@@ -1,3 +1,4 @@
+
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
@@ -59,7 +60,6 @@ const SheetContent = React.forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
-      onInteractOutside={(e) => e.preventDefault()}  // Prevent outside clicks from closing
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
