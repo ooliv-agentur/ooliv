@@ -26,8 +26,10 @@ export const seoTextStyles = {
   unorderedList: "list-disc pl-6 my-6 space-y-2",
   listItem: "",
   
-  // Quote/Blockquote - exakte Übernahme vom Master
-  blockquote: "border-l-4 border-brand-primary pl-4 my-6 italic text-brand-primary",
+  // Quote/Blockquote - exakte Übernahme vom Master (German homepage style)
+  blockquote: "border-l-4 border-medico-turquoise pl-6 my-8 italic text-medico-mint bg-opacity-10 bg-medico-turquoise rounded-r-lg py-4",
+  quoteText: "text-medico-mint italic text-lg leading-relaxed",
+  quoteAuthor: "text-medico-turquoise font-medium mt-2 not-italic text-base",
   
   // Interactive elements - exakte Übernahme
   ctaButton: "text-medico-yellow hover:text-yellow-300 hover:underline cursor-pointer inline-block font-bold text-lg",

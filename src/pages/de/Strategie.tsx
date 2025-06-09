@@ -117,19 +117,36 @@ const Strategie = () => {
           <ul className={seoTextStyles.unorderedList}>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>Gärtnerei Zech</strong> (Mittelstand, E-Commerce)<br />
-              „Dank ooliv haben wir endlich ein Webkonzept, das unsere Zielgruppe perfekt abholt. Die Workshops waren klasse, wir wurden professionell begleitet und das Ergebnis: +150 % Online-Bestellungen und Top-Rankings bei Google." [Website-Link auf Anfrage]
+              <blockquote className={seoTextStyles.blockquote}>
+                <p className={seoTextStyles.quoteText}>
+                  „Dank ooliv haben wir endlich ein Webkonzept, das unsere Zielgruppe perfekt abholt. Die Workshops waren klasse, wir wurden professionell begleitet und das Ergebnis: +150 % Online-Bestellungen und Top-Rankings bei Google."
+                </p>
+              </blockquote>
+              [Website-Link auf Anfrage]
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>IT-Startup Frankfurt</strong><br />
-              „Wir hatten anfangs kein klares Konzept, nur eine grobe Idee. ooliv hat uns strategisch abgeholt, die Zielgruppenanalyse war ein Augenöffner. Heute sind wir bei den relevanten Suchanfragen auf Seite 1 bei Google – und unsere Leads haben sich verdreifacht."
+              <blockquote className={seoTextStyles.blockquote}>
+                <p className={seoTextStyles.quoteText}>
+                  „Wir hatten anfangs kein klares Konzept, nur eine grobe Idee. ooliv hat uns strategisch abgeholt, die Zielgruppenanalyse war ein Augenöffner. Heute sind wir bei den relevanten Suchanfragen auf Seite 1 bei Google – und unsere Leads haben sich verdreifacht."
+                </p>
+              </blockquote>
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>B2B-Unternehmen Mainz</strong><br />
-              „Vor dem Relaunch waren wir kaum sichtbar. ooliv hat unser Webkonzept von Grund auf neu entwickelt, inklusive SEO-Strategie. Nach dem Go-Live sind unsere Online-Anfragen um 200 % gestiegen – und das Design begeistert unsere Kunden."
+              <blockquote className={seoTextStyles.blockquote}>
+                <p className={seoTextStyles.quoteText}>
+                  „Vor dem Relaunch waren wir kaum sichtbar. ooliv hat unser Webkonzept von Grund auf neu entwickelt, inklusive SEO-Strategie. Nach dem Go-Live sind unsere Online-Anfragen um 200 % gestiegen – und das Design begeistert unsere Kunden."
+                </p>
+              </blockquote>
             </li>
             <li className={seoTextStyles.listItem} style={{ color: '#F4F4F4' }}>
               <strong className={seoTextStyles.strongText}>Langfristige Zusammenarbeit</strong><br />
-              „Was uns besonders überzeugt: ooliv bleibt auch nach dem Go-Live an unserer Seite. Ob Updates, neue Features oder Monitoring – wir fühlen uns rundum betreut. Unser Webkonzept wird so kontinuierlich weiterentwickelt."
+              <blockquote className={seoTextStyles.blockquote}>
+                <p className={seoTextStyles.quoteText}>
+                  „Was uns besonders überzeugt: ooliv bleibt auch nach dem Go-Live an unserer Seite. Ob Updates, neue Features oder Monitoring – wir fühlen uns rundum betreut. Unser Webkonzept wird so kontinuierlich weiterentwickelt."
+                </p>
+              </blockquote>
             </li>
           </ul>
 
