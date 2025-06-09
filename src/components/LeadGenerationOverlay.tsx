@@ -30,10 +30,12 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
+  // Direct handler for Sheet's onOpenChange - this handles both overlay clicks and programmatic closing
   const handleOpenChange = (newOpen: boolean) => {
     setOpen(newOpen);
   };
 
+  // Simple close handler for the close button - just sets state directly
   const handleClose = () => {
     setOpen(false);
   };
@@ -44,7 +46,7 @@ const LeadGenerationOverlay = () => {
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
       >
-        {/* Close Button */}
+        {/* Close Button - using simpler event handling */}
         <button 
           onClick={handleClose}
           className="absolute top-7 right-4 z-50 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10"
