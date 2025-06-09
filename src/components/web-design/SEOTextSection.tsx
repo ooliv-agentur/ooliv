@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { seoTextStyles } from '@/styles/seo-text-styles';
 
