@@ -79,7 +79,7 @@ const CTA = ({
           {shouldOpenLeadForm(primaryCta) ? (
             <Button
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
+              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               data-trigger-lead-form
               onClick={handleOpenLeadForm}
             >
@@ -89,7 +89,7 @@ const CTA = ({
           ) : primaryCtaLink ? (
             <Button
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl" 
+              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
               asChild
             >
               <Link to={primaryCtaLink}>
@@ -100,7 +100,7 @@ const CTA = ({
           ) : (
             <Button 
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl"
+              className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               onClick={handleOpenLeadForm}
               data-trigger-lead-form
             >

@@ -30,23 +30,23 @@ const FloatingActionButtons = () => {
     };
     
     // Listen for both events to ensure compatibility
-    document.addEventListener('open-lead-form', handleOpenLeadForm);
-    document.addEventListener('open-lead-generation', handleOpenLeadForm);
+    window.addEventListener('open-lead-form', handleOpenLeadForm);
+    window.addEventListener('open-lead-generation', handleOpenLeadForm);
     
     return () => {
-      document.removeEventListener('open-lead-form', handleOpenLeadForm);
-      document.removeEventListener('open-lead-generation', handleOpenLeadForm);
+      window.removeEventListener('open-lead-form', handleOpenLeadForm);
+      window.removeEventListener('open-lead-generation', handleOpenLeadForm);
     };
   }, []);
 
-  // Updated button definitions with new medico colors
+  // Updated button definitions with yellow color for project starter
   const buttons = [
     { 
       id: 'project', 
       icon: Send, 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: () => setShowLeadForm(true),
-      className: 'bg-medico-turquoise text-white hover:bg-medico-darkGreen border-none shadow-md hover:shadow-lg'
+      className: 'bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] border-none shadow-md hover:shadow-lg'
     },
     { 
       id: 'email', 

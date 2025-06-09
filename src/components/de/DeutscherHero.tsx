@@ -89,7 +89,7 @@ const DeutscherHero = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                  className="group bg-[#FFD700] text-medico-darkGreen hover:bg-[#FFC700] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
                   onClick={handleOpenLeadForm}
                 >
                   Projekt starten
