@@ -51,7 +51,7 @@ const DeutscherAboutSection = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {services.map((service, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#b1f7b2' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#32b1ab' }}>
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
@@ -59,10 +59,16 @@ const DeutscherAboutSection = () => {
               <div>
                 <Link 
                   to={service.link}
-                  className="underline transition-colors duration-300 font-bold text-lg hover:text-medico-darkGreen"
+                  className="underline transition-colors duration-300 font-bold text-lg"
                   style={{ 
                     color: '#32b1ab',
                     fontSize: '18px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = '#0a1e2c';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = '#32b1ab';
                   }}
                 >
                   Mehr erfahren
