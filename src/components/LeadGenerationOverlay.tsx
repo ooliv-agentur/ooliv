@@ -5,7 +5,8 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription
+  SheetDescription,
+  SheetOverlay
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -26,18 +27,25 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet 
       open={open} 
-      onOpenChange={onOpenChange}
+      onOpenChange={() => {}} // Disable all Sheet-based closing
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
         onPointerDownOutside={(e) => {
-          // Prevent closing when clicking outside
+          // Completely prevent any outside interaction
           e.preventDefault();
+          e.stopPropagation();
         }}
         onEscapeKeyDown={(e) => {
           // Allow ESC key to close
+          e.preventDefault();
           handleClose();
+        }}
+        onInteractOutside={(e) => {
+          // Additional prevention of outside interaction
+          e.preventDefault();
+          e.stopPropagation();
         }}
       >
         {/* Close Button */}
