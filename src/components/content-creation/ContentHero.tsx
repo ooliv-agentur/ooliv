@@ -50,8 +50,8 @@ const ContentHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Wir entwickeln strategische B2B-Inhalte: Website-Texte, Landing Pages & SEO-Content mit Plan – klar, durchdacht, wirkungsvoll." 
-                : "We create strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful."
+                ? "Wir entwickeln strategische B2B-Inhalte: Website-Texte, Blog-Artikel, SEO-Content, Bilder, Videos und Infografiken – klar, durchdacht, wirkungsvoll." 
+                : "We create strategic B2B content: website copy, blog articles, SEO content, images, videos and infographics – clear, thoughtful, powerful."
               }
             </p>
             
