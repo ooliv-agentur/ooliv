@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import StrategieHero from '@/components/strategy/StrategieHero';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 
@@ -40,23 +40,7 @@ const Strategie = () => {
         <meta name="description" content="Strategische Digitalberatung und UX-Optimierung in Mainz. Datenbasierte Entscheidungen für messbare Erfolge im digitalen Marketing." />
       </Helmet>
 
-      <PageHero
-        badge="Strategie & UX"
-        title="Klare Strategien für messbare Erfolge"
-        subtitle="Wir entwickeln datenbasierte Digitalstrategien und optimieren die User Experience Ihrer Website für bessere Conversion-Raten und nachhaltige Geschäftserfolge."
-        primaryCta={{
-          text: "Strategiegespräch vereinbaren",
-          link: "#",
-          onClick: (e) => {
-            e.preventDefault();
-            window.dispatchEvent(new Event('open-lead-form'));
-          }
-        }}
-        secondaryCta={{
-          text: "Mehr über unsere Leistungen",
-          link: "/webdesign"
-        }}
-      />
+      <StrategieHero />
 
       {/* Strategy Benefits Section */}
       <section className="py-20 bg-white">
