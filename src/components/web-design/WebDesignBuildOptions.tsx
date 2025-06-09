@@ -67,27 +67,27 @@ const WebDesignBuildOptions = () => {
   const t = isGerman ? translations.de : translations.en;
 
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-24" style={{ backgroundColor: '#0A1E2C' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+          <h2 className="text-3xl font-bold text-center mb-4" style={{ color: '#FFFFFF' }}>
             {t.title}
           </h2>
           
-          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto" style={{ color: '#F4F4F4' }}>
             {t.subtitle}
           </p>
         </Reveal>
         
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {t.options.map((option, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+            <div key={index} className="p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300" style={{ backgroundColor: '#003347', border: '1px solid rgba(255, 229, 0, 0.2)' }}>
               <div className="flex flex-col items-center text-center">
-                <div className="p-3 rounded-full bg-brand-backgroundAlt mb-4">
-                  <option.icon className="h-6 w-6 text-brand-primary" />
+                <div className="p-3 rounded-full mb-4" style={{ backgroundColor: 'rgba(255, 229, 0, 0.1)' }}>
+                  <option.icon className="h-6 w-6" style={{ color: '#FFE500' }} />
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-brand-heading">{option.title}</h3>
-                <p className="text-brand-text text-sm">{option.description}</p>
+                <h3 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>{option.title}</h3>
+                <p className="text-sm" style={{ color: '#F4F4F4' }}>{option.description}</p>
               </div>
             </div>
           ))}

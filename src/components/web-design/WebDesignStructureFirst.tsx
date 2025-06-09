@@ -73,42 +73,42 @@ const WebDesignStructureFirst = () => {
   const contentCreationPath = isGerman ? "/de/content-erstellung" : "/content-creation";
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24" style={{ backgroundColor: '#0A1E2C' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-brand-heading">
+        <h2 className="text-3xl font-bold text-center mb-4" style={{ color: '#FFFFFF' }}>
           {t.title}
         </h2>
         
-        <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+        <p className="text-center text-lg mb-12 max-w-3xl mx-auto" style={{ color: '#F4F4F4' }}>
           {t.subtitle}
         </p>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {t.points.map((point, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+            <div key={index} className="p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300" style={{ backgroundColor: '#003347', border: '1px solid rgba(255, 229, 0, 0.2)' }}>
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-brand-backgroundAlt">
-                  <point.icon className="h-6 w-6 text-brand-primary" />
+                <div className="p-3 rounded-full" style={{ backgroundColor: 'rgba(255, 229, 0, 0.1)' }}>
+                  <point.icon className="h-6 w-6" style={{ color: '#FFE500' }} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3 text-brand-heading">
+                  <h3 className="text-xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
                     {point.title}
                   </h3>
-                  <p className="text-brand-text">{point.description}</p>
+                  <p style={{ color: '#F4F4F4' }}>{point.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="bg-brand-backgroundAlt p-8 rounded-lg">
+        <div className="p-8 rounded-lg" style={{ backgroundColor: '#003347', border: '1px solid rgba(255, 229, 0, 0.2)' }}>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div className="mb-6 md:mb-0">
-              <h4 className="text-lg font-bold text-brand-heading mb-2">{t.boxTitle}</h4>
+              <h4 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>{t.boxTitle}</h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                 {t.boxItems.map((item, index) => (
-                  <li key={index} className="flex items-center text-brand-text">
-                    <div className="h-1.5 w-1.5 rounded-full bg-brand-primary mr-2"></div>
+                  <li key={index} className="flex items-center" style={{ color: '#F4F4F4' }}>
+                    <div className="h-1.5 w-1.5 rounded-full mr-2" style={{ backgroundColor: '#FFE500' }}></div>
                     {item}
                   </li>
                 ))}
@@ -116,7 +116,8 @@ const WebDesignStructureFirst = () => {
             </div>
             <Link 
               to={contentCreationPath} 
-              className="inline-flex items-center text-brand-primary hover:underline font-medium"
+              className="inline-flex items-center hover:underline font-medium"
+              style={{ color: '#FFE500' }}
             >
               {t.linkText}
               <ArrowRight className="ml-2 h-4 w-4" />
