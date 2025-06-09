@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -164,7 +163,7 @@ const GermanContact = () => {
                 title="WhatsApp-Chat"
                 description="Direkter WhatsApp-Chat"
                 buttonText="WhatsApp öffnen"
-                href="http://wa.me/+4917680167641"
+                href="https://wa.me/+4917680167641"
               />
               
               <ContactCard 

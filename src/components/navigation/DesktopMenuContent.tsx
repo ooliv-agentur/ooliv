@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -132,7 +133,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                   className="border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-green-500 hover:text-white transition-all duration-200"
                   asChild
                 >
-                  <a href="https://wa.me/4961316367801" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <a href="https://wa.me/+4917680167641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     <span className="text-sm">WhatsApp</span>
                   </a>

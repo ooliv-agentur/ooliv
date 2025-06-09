@@ -156,7 +156,7 @@ const EnglishContact = () => {
                 title="WhatsApp Chat"
                 description="Direct WhatsApp chat"
                 buttonText="Open WhatsApp"
-                href="http://wa.me/+4917680167641"
+                href="https://wa.me/+4917680167641"
               />
               
               <ContactCard 
