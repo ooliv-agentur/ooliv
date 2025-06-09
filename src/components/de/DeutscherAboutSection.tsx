@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -50,7 +51,7 @@ const DeutscherAboutSection = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {services.map((service, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#dff7ba' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#b1f7b2' }}>
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
