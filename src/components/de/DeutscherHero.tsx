@@ -32,9 +32,9 @@ const DeutscherHero = () => {
   };
 
   const subheadlines = [
-    "online mehr Kunden zu gewinnen.",
-    "Ihre Website sichtbar zu machen.",
-    "Ihr Unternehmen digital zu stärken."
+    "Wir helfen Unternehmen, online sichtbar zu werden.",
+    "Wir helfen Unternehmen, mehr Leads zu generieren.",
+    "Wir helfen Unternehmen, mit ihrer Website zu überzeugen."
   ];
   
   return (
@@ -83,7 +83,6 @@ const DeutscherHero = () => {
                     color: '#32b1ab' 
                   }}
                 >
-                  <span>Wir helfen Ihnen, </span>
                   <DynamicSubheadlines 
                     subheadlines={subheadlines}
                     interval={4000}
