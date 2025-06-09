@@ -12,10 +12,9 @@ const DeutscherHero = () => {
   };
 
   const subheadlines = [
-    "Für messbare Ergebnisse im Web.",
-    "Websites, die besser ranken und mehr verkaufen.",
-    "Mehr Sichtbarkeit und mehr Anfragen für Ihr Unternehmen.",
-    "Strategie, Design und Performance aus einer Hand."
+    "Wir helfen Ihnen, online mehr Kunden zu gewinnen.",
+    "Wir helfen Ihnen, Ihre Website sichtbar zu machen.",
+    "Wir helfen Ihnen, Ihr Unternehmen digital zu stärken."
   ];
   
   return (
