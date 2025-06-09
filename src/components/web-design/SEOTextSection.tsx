@@ -7,10 +7,10 @@ const SEOTextSection = () => {
   };
   
   return (
-    <section className="bg-[#f7fafa] pt-12 pb-16">
+    <section className="bg-medico-mint/30 pt-12 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-gray-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Webdesign Mainz – individuelles Design, strategischer Aufbau, rechtliche Sicherheit</h2>
+        <article className="prose prose-lg max-w-none text-[17px] leading-relaxed text-medico-darkGreen">
+          <h2 className="text-2xl md:text-3xl font-bold text-medico-darkGreen mb-6">Webdesign Mainz – individuelles Design, strategischer Aufbau, rechtliche Sicherheit</h2>
           <p className="my-4">
             Als Webdesign-Agentur in Mainz entwickeln wir Websites, die nicht nur gut aussehen, sondern funktionieren: technisch, inhaltlich, rechtlich und strategisch. 
             Unsere Kunden kommen zu uns, wenn Templates nicht mehr reichen, wenn Ladezeiten zu lang sind oder wenn ein Relaunch mehr braucht als nur ein neues Screendesign.
@@ -228,7 +228,7 @@ const SEOTextSection = () => {
           <p className="my-4">
             <button
               onClick={handleOpenLeadForm}
-              className="text-brand-primary hover:text-brand-primaryHover hover:underline cursor-pointer inline-block"
+              className="text-medico-turquoise hover:text-medico-darkGreen hover:underline cursor-pointer inline-block font-medium"
             >
               👉 Starten wir gemeinsam Ihr Webprojekt – mit Strategie, Struktur und Substanz.
             </button>
