@@ -248,7 +248,7 @@ const Strategie = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mx-auto mb-6">
                 <User className="w-8 h-8 text-medico-turquoise" />
@@ -278,6 +278,18 @@ const Strategie = () => {
                 Über Basecamp oder persönliche Calls sind wir immer für Sie erreichbar – für Fragen, Feedback oder neue Ideen.
               </p>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={handleOpenLeadForm}
+            >
+              Jetzt Strategiegespräch buchen
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
           </div>
         </div>
       </section>
