@@ -38,23 +38,20 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     // Prevent any event propagation or bubbling
     if (e) {
       e.preventDefault();
-      e.stopPropagation();
     }
     
     // Force immediate close
     onOpenChange(false);
   };
   
-  // Prevent any default sheet behaviors by completely disabling onOpenChange
-  const preventSheetClose = (openState: boolean) => {
-    // Do nothing - we handle closing manually only
-    return;
-  };
-  
   return (
     <Sheet 
       open={open} 
-      onOpenChange={preventSheetClose} // Completely disable all automatic closing
+      onOpenChange={(isOpen) => {
+        if (!isOpen) {
+          onOpenChange(false);
+        }
+      }}
     >
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
@@ -66,7 +63,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           return false;
         }}
         onEscapeKeyDown={(e) => {
-          // Only allow ESC key to close - fix the type issue
+          // Only allow ESC key to close
           e.preventDefault();
           e.stopPropagation();
           handleClose();
