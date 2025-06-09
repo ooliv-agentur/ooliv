@@ -14,40 +14,26 @@ import LeadFormContent from './lead-form/LeadFormContent';
 const LeadGenerationOverlay = () => {
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
-
-  // Debugging: log state changes
-  useEffect(() => {
-    console.log("[LeadGenerationOverlay] State changed: open =", open);
-  }, [open]);
   
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
-      console.log("[LeadGenerationOverlay] open-lead-form event received");
       setOpen(true);
     };
 
-    // Register event listener
     window.addEventListener('open-lead-form', handleOpenLeadForm);
     
-    // Clean up
     return () => {
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
   }, []);
 
-  const handleOpenChange = (newOpen: boolean) => {
-    console.log("[LeadGenerationOverlay] onOpenChange triggered, newOpen =", newOpen);
-    setOpen(newOpen);
-  };
-
   const handleClose = () => {
-    console.log("[LeadGenerationOverlay] handleClose called");
     setOpen(false);
   };
   
   return (
-    <Sheet open={open} onOpenChange={handleOpenChange}>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-medico-darkGreen text-white border-l border-medico-turquoise/20" 
         side="right"
@@ -55,10 +41,10 @@ const LeadGenerationOverlay = () => {
         {/* Close Button */}
         <button 
           onClick={handleClose}
-          className="absolute top-7 right-4 z-50 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-8 h-8"
+          className="absolute top-4 right-4 rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-colors duration-200 w-8 h-8 flex items-center justify-center z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
         >
-          <X className="w-6 h-6" />
+          <X className="w-4 h-4" />
         </button>
 
         <SheetHeader className="text-left pb-6 pr-12">
@@ -76,4 +62,4 @@ const LeadGenerationOverlay = () => {
   );
 };
 
-export default React.memo(LeadGenerationOverlay);
+export default LeadGenerationOverlay;
