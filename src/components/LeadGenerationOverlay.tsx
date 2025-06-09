@@ -41,20 +41,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
   }, []); // Empty dependency array - no re-registration
   
-  const handleClose = () => {
-    console.log('❌ Closing lead form overlay');
-    onOpenChange(false);
-  };
-  
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"
       >
-        {/* Simple close button */}
+        {/* Simplified close button with direct onOpenChange call */}
         <button 
-          onClick={handleClose}
+          onClick={() => onOpenChange(false)}
           className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
           type="button"
@@ -72,7 +67,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={handleClose} />
+        <LeadFormContent onClose={() => onOpenChange(false)} />
       </SheetContent>
     </Sheet>
   );
