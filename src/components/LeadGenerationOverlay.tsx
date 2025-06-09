@@ -14,10 +14,16 @@ import LeadFormContent from './lead-form/LeadFormContent';
 const LeadGenerationOverlay = () => {
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
+
+  // Debugging: log state changes
+  useEffect(() => {
+    console.log("[LeadGenerationOverlay] State changed: open =", open);
+  }, [open]);
   
   // Listen for the global event to open the lead form
   useEffect(() => {
     const handleOpenLeadForm = () => {
+      console.log("[LeadGenerationOverlay] open-lead-form event received");
       setOpen(true);
     };
 
@@ -30,13 +36,13 @@ const LeadGenerationOverlay = () => {
     };
   }, []);
 
-  // Primary close handler
   const handleOpenChange = (newOpen: boolean) => {
+    console.log("[LeadGenerationOverlay] onOpenChange triggered, newOpen =", newOpen);
     setOpen(newOpen);
   };
 
-  // Close button handler
   const handleClose = () => {
+    console.log("[LeadGenerationOverlay] handleClose called");
     setOpen(false);
   };
   
@@ -49,10 +55,10 @@ const LeadGenerationOverlay = () => {
         {/* Close Button */}
         <button 
           onClick={handleClose}
-          className="absolute top-4 right-4 rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-8 h-8 flex items-center justify-center"
+          className="absolute top-7 right-4 z-50 flex items-center justify-center rounded-full bg-medico-turquoise text-white hover:bg-medico-mint hover:text-medico-darkGreen transition-all duration-300 shadow-md hover:shadow-lg w-8 h-8"
           aria-label={language === 'de' ? "Formular schließen" : "Close form"}
         >
-          <X className="w-4 h-4" />
+          <X className="w-6 h-6" />
         </button>
 
         <SheetHeader className="text-left pb-6 pr-12">
@@ -70,4 +76,4 @@ const LeadGenerationOverlay = () => {
   );
 };
 
-export default LeadGenerationOverlay;
+export default React.memo(LeadGenerationOverlay);
