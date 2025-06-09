@@ -2,111 +2,182 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Reveal from '@/components/animations/Reveal';
+import { Link } from 'react-router-dom';
 
 interface CTAProps {
-  title?: string;
-  subtitle?: string;
-  primaryCta?: string;
+  title: string;
+  subtitle: string;
+  primaryCta: string;
   secondaryCta?: string;
+  primaryCtaLink?: string;
   secondaryCtaLink?: string;
-  lightBackground?: boolean;
   footerNote?: string;
+  lightBackground?: boolean;
+  children?: React.ReactNode;
 }
 
-const CTA = ({ 
-  title, 
-  subtitle, 
-  primaryCta, 
-  secondaryCta, 
+const CTA = ({
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+  primaryCtaLink,
   secondaryCtaLink,
+  footerNote,
   lightBackground = false,
-  footerNote
+  children
 }: CTAProps) => {
   const { language } = useLanguage();
-  const isGerman = language === 'de';
   
-  const handleOpenLeadForm = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
+  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  
+  const isStrategyCallCta = (text: string) => {
+    return text.includes('Strategiegespräch vereinbaren') || 
+           text.includes('Schedule a Strategy Call') ||
+           text.includes('Technical Consultation') ||
+           text.includes('Technische Beratung');
   };
   
-  const defaultTitle = isGerman 
-    ? "Bereit für eine Website, die Ihr Unternehmen voranbringt?"
-    : "Ready to transform your digital presence?";
+  const shouldOpenLeadForm = (text: string) => {
+    if (
+      text === 'Projekt starten' || 
+      text === 'Start Your Project' ||
+      text === 'Start Your Web Project' ||
+      text === 'SEO-Strategie starten' ||
+      text === 'Start Your SEO Strategy' ||
+      text === 'Content-Projekt starten' ||
+      text === 'Launch Your Campaign' ||
+      text === 'Kampagne starten'
+    ) {
+      return true;
+    }
     
-  const defaultSubtitle = isGerman
-    ? "Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
-    : "Let's discuss how our team can help your business achieve its online goals.";
-    
-  const defaultPrimaryCta = isGerman ? "Projekt starten" : "Start Your Project";
-  const defaultSecondaryCta = isGerman ? "Strategiegespräch vereinbaren" : "Schedule Strategy Call";
-  const defaultSecondaryLink = isGerman ? "/kontakt" : "/contact";
+    return text.includes('Projekt starten') || 
+           text.includes('Start Your') || 
+           text.includes('Launch Your') ||
+           text.includes('SEO-Strategie starten') ||
+           text.includes('Kampagne starten');
+  };
+  
+  const handleOpenLeadForm = () => {
+    console.log('🚀 CTA: Lead form trigger button clicked, text:', primaryCta);
+    window.dispatchEvent(new Event('open-lead-form'));
+    console.log('📡 CTA: open-lead-form event dispatched');
+  };
 
+  const defaultFooterNote = language === 'de' 
+    ? "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz"
+    : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
+  
   return (
-    <section className={`py-24 ${lightBackground ? 'bg-medico-mint/10' : 'bg-medico-darkGreen'}`}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Reveal>
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${lightBackground ? 'text-medico-darkGreen' : 'text-medico-white'}`} style={{ lineHeight: '1.3' }}>
-            {title || defaultTitle}
-          </h2>
-        </Reveal>
+    <section className={`py-24 ${lightBackground ? 'bg-medico-mint' : 'bg-medico-white'} font-satoshi`}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
+          {title}
+        </h2>
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-medico-darkGreen/90 leading-relaxed" style={{ lineHeight: '1.5' }}>
+          {subtitle}
+        </p>
         
-        <Reveal delay={0.1}>
-          <p className={`text-lg md:text-xl mb-10 max-w-2xl mx-auto ${lightBackground ? 'text-medico-darkGreen/80' : 'text-medico-white/90'}`} style={{ lineHeight: '1.6' }}>
-            {subtitle || defaultSubtitle}
-          </p>
-        </Reveal>
-        
-        <Reveal delay={0.2}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+          {shouldOpenLeadForm(primaryCta) ? (
+            <Button
+              size="lg" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpenLeadForm();
+              }}
+            >
+              {primaryCta}
+              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+            </Button>
+          ) : primaryCtaLink ? (
+            <Button
+              size="lg" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+              asChild
+            >
+              <Link to={primaryCtaLink}>
+                {primaryCta}
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          ) : (
             <Button 
               size="lg" 
-              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-              style={{ 
-                backgroundColor: '#FFE500', 
-                color: '#003347',
-                border: 'none'
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-6 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-darkGreen/20"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleOpenLeadForm();
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFE500';
-              }}
-              onClick={handleOpenLeadForm}
             >
-              {primaryCta || defaultPrimaryCta}
-              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+              {primaryCta}
+              <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
-            
-            {(secondaryCta || defaultSecondaryCta) && (
+          )}
+          
+          {secondaryCta && (
+            isStrategyCallCta(secondaryCta) ? (
               <Button 
-                variant="outline" 
                 size="lg" 
-                className={`font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto ${
-                  lightBackground 
-                    ? 'bg-medico-white text-medico-darkGreen hover:bg-medico-mint border-2 border-medico-darkGreen hover:border-medico-turquoise' 
-                    : 'bg-medico-white text-medico-darkGreen hover:bg-medico-mint border-2 border-medico-white hover:border-medico-turquoise'
-                }`}
+                variant="outline" 
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
                 asChild
               >
-                <Link to={secondaryCtaLink || defaultSecondaryLink}>
-                  {secondaryCta || defaultSecondaryCta}
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                <Link to={contactPath}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-            )}
-          </div>
-        </Reveal>
+            ) : secondaryCtaLink ? (
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
+                asChild
+              >
+                <Link to={secondaryCtaLink}>
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            ) : (
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="group border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise font-bold py-6 px-10 rounded-full text-xl hover:shadow-lg transition-all duration-300"
+                onClick={handleOpenLeadForm}
+              >
+                {secondaryCta}
+                <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+              </Button>
+            )
+          )}
+        </div>
         
-        {footerNote && (
-          <Reveal delay={0.3}>
-            <p className={`text-sm mt-8 ${lightBackground ? 'text-medico-darkGreen/60' : 'text-medico-white/70'}`}>
-              {footerNote}
-            </p>
-          </Reveal>
+        {/* Trust elements with improved visual hierarchy */}
+        {footerNote ? (
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+                {footerNote}
+              </p>
+            </div>
+          </div>
+        ) : children ? (
+          <div className="mt-8">
+            {children}
+          </div>
+        ) : (
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+                {defaultFooterNote}
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </section>

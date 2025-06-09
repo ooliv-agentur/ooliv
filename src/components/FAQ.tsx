@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Accordion,
@@ -94,7 +95,7 @@ const FAQ = ({
   const ctaText = customCtaText || (isGerman ? "Weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
   
   return (
-    <section className="py-24 bg-medico-mint/10">
+    <section className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
@@ -113,7 +114,7 @@ const FAQ = ({
           <div className="space-y-12">
             {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
               categoryFaqs.length > 0 && (
-                <div key={category} className="bg-medico-white rounded-2xl p-6 md:p-8 border border-medico-turquoise/20 shadow-sm">
+                <div key={category} className="bg-medico-mint/20 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
                   <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen mb-6 text-center">
                     {categoryTitles[category as keyof typeof categoryTitles]}
                   </h3>
@@ -123,7 +124,7 @@ const FAQ = ({
                         <AccordionItem 
                           key={`${category}-${index}`} 
                           value={`${category}-item-${index}`}
-                          className="bg-medico-mint/20 border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                          className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                         >
                           <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
                             {faq.question}
@@ -141,14 +142,14 @@ const FAQ = ({
           </div>
         ) : (
           // Regular FAQ display for English or custom FAQs
-          <div className="bg-medico-white rounded-2xl p-6 md:p-8 border border-medico-turquoise/20 shadow-sm">
+          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
             <Accordion type="single" collapsible className="w-full">
               <StaggerReveal className="space-y-4">
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-medico-mint/20 border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                   >
                     <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
                       {faq.question}
@@ -170,7 +171,7 @@ const FAQ = ({
                 <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
                   {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
                 </h3>
-                <Button asChild variant="outline" className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-medico-white font-medium px-8 py-3 transition-all duration-300">
+                <Button asChild variant="outline" className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
                   <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
                     <Plus className="h-4 w-4" />
                     {ctaText}

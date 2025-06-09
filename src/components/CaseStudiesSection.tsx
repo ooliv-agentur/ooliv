@@ -1,201 +1,311 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+
+export const caseStudiesData = {
+  en: [
+    {
+      client: "KLAIBER",
+      industry: "Tax & Business Consulting",
+      headline: "Comprehensive website relaunch for increased visibility and modern brand presence",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
+      quote: "Our new website finally represents what defines us as consultants: clarity, trust, and dynamism. The collaboration with ooliv was structured and goal-oriented.",
+      websiteLink: "www.kl-klaiber.de",
+      impact: [
+        "Strategic repositioning including wireframes and content",
+        "Text development for services and locations",
+        "Custom web design with clear visual language",
+        "WordPress implementation with SEO basics"
+      ],
+      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+    },
+    {
+      client: "COBUS Industries",
+      industry: "Global Airport Bus Manufacturer",
+      headline: "Strategic website relaunch for increased visibility and modern user experience",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
+      quote: "Our new website combines technology, service and brand aspiration. The collaboration with ooliv was structured, creative and goal-oriented - fitting our standards as a global market leader.",
+      websiteLink: "www.cobus-industries.de",
+      impact: [
+        "Concept and content for international product communication",
+        "UX-oriented web design for technology and service",
+        "WordPress implementation with customized structure",
+        "SEO & video for market leader visibility"
+      ],
+      image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
+    },
+    {
+      client: "SPEZ AG",
+      industry: "Specialist for Tree Removal, Crane Work and Green Maintenance",
+      headline: "Market launch with holistic strategy - from initial idea to high-performance website",
+      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
+      quote: "With ooliv, we were able to make SPEZ visible. The new brand convinces both technically and emotionally - and has been consistently generating qualified inquiries since the launch.",
+      websiteLink: "www.spez-ag.ch",
+      impact: [
+        "Brand development incl. logo, design and tonality",
+        "Structure & content for web presence and services",
+        "WordPress launch with local SEO & SEM",
+        "Quick top ranking for main keyword in Zurich"
+      ],
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+    },
+    {
+      client: "IconPro GmbH",
+      industry: "AI Software for Predictive Quality & Smart Production",
+      headline: "Website relaunch with strong brand presentation for complex B2B tech solutions",
+      logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
+      quote: "Thanks to ooliv, our website now feels just like our software: thoughtful, structured, and visually compelling. The illustrations and animations in particular bring complex topics to the point.",
+      websiteLink: "www.iconpro.com",
+      impact: [
+        "Relaunch concept including structure, wireframes & text",
+        "UX-oriented design for AI software & use cases",
+        "Development of illustrative assets & animated modules",
+        "WordPress implementation with optimized performance"
+      ],
+      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
+    },
+    {
+      client: "Quartier Am Kliff",
+      industry: "Beachfront Condominiums on Rügen",
+      headline: "Market launch of a real estate brand - from logo to landing page",
+      logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
+      quote: "With ooliv, we have created a project that convincingly showcases our architecture, location, and vision digitally. The site actively supports us in sales - at all levels.",
+      websiteLink: "www.amkliff.de",
+      impact: [
+        "Digital brand development incl. logo, CI & naming",
+        "Concept, text and design of the sales landing page",
+        "Implementation as a high-performance HTML page (without CMS)",
+        "Image editing & construction signs for project communication"
+      ],
+      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
+    }
+  ],
+  de: [
+    {
+      client: "KLAIBER",
+      industry: "Steuerberatung & Unternehmensberatung",
+      headline: "Ganzheitlicher Website-Relaunch für mehr Sichtbarkeit und eine moderne Markenpräsenz",
+      logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
+      quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
+      websiteLink: "www.kl-klaiber.de",
+      impact: [
+        "Strategische Neuausrichtung inklusive Wireframes und Content",
+        "Textentwicklung für Leistungen und Standorte",
+        "Individuelles Webdesign mit klarer Bildsprache",
+        "WordPress-Umsetzung mit SEO-Basics"
+      ],
+      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+    },
+    {
+      client: "COBUS Industries",
+      industry: "Weltmarktführer für Flughafenbusse",
+      headline: "Strategischer Website-Relaunch für mehr Sichtbarkeit und ein modernes Nutzererlebnis",
+      logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
+      quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
+      websiteLink: "www.cobus-industries.de",
+      impact: [
+        "Konzeption und Content für internationale Produktkommunikation",
+        "UX-orientiertes Webdesign für Technik und Service",
+        "WordPress-Umsetzung mit maßgeschneiderter Struktur",
+        "SEO & Video zur Sichtbarkeit als Marktführer"
+      ],
+      image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
+    },
+    {
+      client: "SPEZ AG",
+      industry: "Spezialist für Baumfällung, Kranarbeiten und Grünpflege",
+      headline: "Markteinführung mit ganzheitlicher Strategie – von der ersten Idee zur performanten Website",
+      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
+      quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
+      websiteLink: "www.spez-ag.ch",
+      impact: [
+        "Markenentwicklung incl. Logo, Design und Tonalität",
+        "Struktur & Inhalte für Webauftritt und Leistungen",
+        "WordPress-Launch mit lokalem SEO & SEM",
+        "Schnell Top-Ranking für Hauptkeyword in Zürich"
+      ],
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+    },
+    {
+      client: "IconPro GmbH",
+      industry: "KI-Software für Predictive Quality & Smart Production",
+      headline: "Website-Relaunch mit starker Markeninszenierung für erklärungsbedürftige B2B-Techlösungen",
+      logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
+      quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
+      websiteLink: "www.iconpro.com",
+      impact: [
+        "Relaunch-Konzeption inkl. Struktur, Wireframes & Text",
+        "UX-orientiertes Design für KI-Software & Use Cases",
+        "Entwicklung illustrativer Assets & animierter Module",
+        "WordPress-Umsetzung mit optimierter Performance"
+      ],
+      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
+    },
+    {
+      client: "Quartier Am Kliff",
+      industry: "Strandnahe Eigentumswohnungen auf Rügen",
+      headline: "Markteinführung einer Immobilienmarke – von Logo bis Landingpage",
+      logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
+      quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
+      websiteLink: "www.amkliff.de",
+      impact: [
+        "Digitale Markenentwicklung incl. Logo, CI & Naming",
+        "Konzept, Text und Design der Verkaufs-Landingpage",
+        "Umsetzung als performante HTML-Seite (ohne CMS)",
+        "Bildbearbeitung & Bauschilder für die Projektkommunikation"
+      ],
+      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
+    }
+  ]
+};
 
 interface CaseStudiesSectionProps {
   customTitle?: string;
   customSubtitle?: string;
   customBodyText?: string;
+  hideHeaderText?: boolean;
 }
 
+const defaultTranslations = {
+  en: {
+    title: "Real Results from Real Clients",
+    subtitle: "We deliver websites and strategies that highlight what makes your business special.",
+    bodyText: "See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization.",
+    ctaText: "What results can we achieve for your business?",
+    startProject: "Start Your Project",
+    exploreWebsite: "Explore website →"
+  },
+  de: {
+    title: "Echte Ergebnisse von echten Kunden",
+    subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
+    bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
+    ctaText: "Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?",
+    startProject: "Projekt starten",
+    exploreWebsite: "Website live erleben →"
+  }
+};
+
 const CaseStudiesSection = ({ 
-  customTitle, 
-  customSubtitle, 
-  customBodyText 
+  customTitle,
+  customSubtitle,
+  customBodyText,
+  hideHeaderText = false
 }: CaseStudiesSectionProps) => {
   const { language } = useLanguage();
-  const isGerman = language === 'de';
-
-  const cases = {
-    en: [
-      {
-        client: "Scheurich – Manufacturing Brand",
-        industry: "Manufacturing & Industrial",
-        before: "Old website with poor lead generation and high bounce rate on mobile devices.",
-        after: "Strategic webdesign with clear user journeys and mobile-optimized experience.",
-        result: "120% increase in qualified leads and 45% lower bounce rate.",
-        services: ["Webdesign", "UX Optimization", "Mobile Redesign", "CMS Implementation"],
-        kpis: ["120% More Leads", "45% Lower Bounce Rate", "89% Mobile Conversion"],
-        image: "bg-[url('/case-study-1.jpg')]",
-        logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
-      },
-      {
-        client: "COBUS – Enterprise Software",
-        industry: "B2B SaaS & Technology",
-        before: "Complex product demonstration process with low conversion from demo to sale.",
-        after: "Streamlined website with clearer product positioning and demo request flow.",
-        result: "80% more qualified sales opportunities and significantly improved user satisfaction.",
-        services: ["Website Redesign", "Content Strategy", "UX Research", "CRM Integration"],
-        kpis: ["80% More Qualified Leads", "3.2s Faster Load Time", "92% User Satisfaction"],
-        image: "bg-[url('/case-study-2.jpg')]",
-        logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
-      }
-    ],
-    de: [
-      {
-        client: "Scheurich – Keramik & Lifestyle",
-        industry: "Fertigung & Industrie",
-        before: "Alte Website mit geringer Lead-Generierung und hoher Absprungrate auf Mobilgeräten.",
-        after: "Strategisches Webdesign mit klaren Nutzerführungen und mobiloptimierter Erfahrung.",
-        result: "120% mehr qualifizierte Leads und 45% niedrigere Absprungrate.",
-        services: ["Webdesign", "UX-Optimierung", "Mobile Redesign", "CMS-Implementierung"],
-        kpis: ["120% mehr Leads", "45% weniger Absprünge", "89% Mobile Conversion"],
-        image: "bg-[url('/case-study-1.jpg')]",
-        logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png"
-      },
-      {
-        client: "COBUS – Enterprise Software",
-        industry: "B2B SaaS & Technologie",
-        before: "Komplexer Produktdemonstrationsprozess mit geringer Konversion von Demo zu Verkauf.",
-        after: "Optimierte Website mit klarerer Produktpositionierung und Demo-Anfrage-Fluss.",
-        result: "80% mehr qualifizierte Verkaufschancen und deutlich verbesserte Nutzerzufriedenheit.",
-        services: ["Website-Redesign", "Content-Strategie", "UX-Research", "CRM-Integration"],
-        kpis: ["80% mehr qualifizierte Leads", "3,2s schnellere Ladezeit", "92% Nutzerzufriedenheit"],
-        image: "bg-[url('/case-study-2.jpg')]",
-        logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png"
-      }
-    ]
-  };
-
-  const displayCases = cases[language as 'en' | 'de'] || cases.en;
+  const cases = language === 'de' ? caseStudiesData.de : caseStudiesData.en;
   
-  const translations = {
-    en: {
-      title: "Real Results from Real Clients",
-      subtitle: "We deliver websites and strategies that make what's special about your business visible.",
-      bodyText: "See how we've helped companies achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization.",
-      viewFull: "View Full Case Study",
-      viewAll: "View All Case Studies",
-      before: "BEFORE:",
-      after: "AFTER:",
-      whatWeDid: "WHAT WE DID:"
-    },
-    de: {
-      title: "Echte Ergebnisse von echten Kunden",
-      subtitle: "Wir liefern Websites und Strategien, die das Besondere Ihres Unternehmens sichtbar machen.",
-      bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
-      viewFull: "Vollständige Fallstudie ansehen",
-      viewAll: "Alle Fallstudien ansehen",
-      before: "VORHER:",
-      after: "NACHHER:",
-      whatWeDid: "WAS WIR GEMACHT HABEN:"
-    }
-  };
-  
-  const t = translations[language as 'en' | 'de'] || translations.en;
+  const t = language === 'de' ? defaultTranslations.de : defaultTranslations.en;
 
   return (
-    <section className="py-24 bg-medico-white">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-              {customTitle || t.title}
-            </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-              {customSubtitle || t.subtitle}
-            </p>
-            {(customBodyText || t.bodyText) && (
-              <p className="text-base md:text-lg text-medico-darkGreen/70 max-w-4xl mx-auto mt-6" style={{ lineHeight: '1.6' }}>
+        {!hideHeaderText && (
+          <Reveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6" style={{ lineHeight: '1.3' }}>
+                {customTitle || t.title}
+              </h2>
+              <p className="text-lg md:text-xl text-medico-darkGreen max-w-3xl mx-auto mb-4" style={{ lineHeight: '1.6' }}>
+                {customSubtitle || t.subtitle}
+              </p>
+              <p className="text-base md:text-lg text-medico-darkGreen max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
                 {customBodyText || t.bodyText}
               </p>
-            )}
-          </div>
-        </Reveal>
+            </div>
+          </Reveal>
+        )}
         
-        <StaggerReveal className="grid md:grid-cols-2 gap-8 mb-12">
-          {displayCases.map((study, index) => (
+        <StaggerReveal className="space-y-20" stagger={0.15}>
+          {cases.map((study, index) => (
             <div 
               key={index}
-              className="bg-medico-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-medico-turquoise/10"
+              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
-              <div className={`h-56 ${study.image} bg-cover bg-center`} />
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  <div className="flex-shrink-0 w-16 h-10 mr-4">
-                    <AspectRatio ratio={16/10} className="h-full">
-                      <img 
-                        src={study.logo} 
-                        alt={`${study.client} logo`} 
-                        className="h-full w-full object-contain"
-                      />
-                    </AspectRatio>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium text-brand-primary block">{study.industry}</span>
-                    <h3 className="text-xl font-bold text-brand-heading">{study.client}</h3>
-                  </div>
-                </div>
-                
-                <div className="mb-4 grid grid-cols-2 gap-4">
-                  <div className="bg-brand-backgroundAlt p-3 rounded-md">
-                    <h4 className="text-xs font-bold text-brand-primary mb-1">{t.before}</h4>
-                    <p className="text-xs text-brand-text">{study.before}</p>
-                  </div>
-                  <div className="bg-brand-backgroundAlt p-3 rounded-md">
-                    <h4 className="text-xs font-bold text-brand-primary mb-1">{t.after}</h4>
-                    <p className="text-xs text-brand-text">{study.after}</p>
-                  </div>
-                </div>
-                
-                <p className="text-brand-text mb-3 text-sm font-medium">{study.result}</p>
-                
-                <div className="mb-3">
-                  <h4 className="text-xs font-bold text-brand-heading mb-2">{t.whatWeDid}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {study.services.map((service, sidx) => (
-                      <span key={sidx} className="text-xs bg-gray-100 py-1 px-2 rounded-full text-brand-text">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  {study.kpis.map((kpi, kpiIndex) => (
-                    <div key={kpiIndex} className="text-xs font-medium text-brand-primary bg-brand-backgroundAlt p-2 rounded-md text-center">
-                      {kpi}
+              <div className="w-full md:w-1/2">
+                <div className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="flex-shrink-0 mr-4 w-16 h-10">
+                      <AspectRatio ratio={16/10} className="h-full">
+                        <img 
+                          src={study.logo} 
+                          alt={`${study.client} logo`} 
+                          className="h-full w-full object-contain"
+                        />
+                      </AspectRatio>
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen">{study.client}</h3>
+                      <p className="text-sm md:text-base text-medico-darkGreen/70">{study.industry}</p>
+                    </div>
+                  </div>
+                  
+                  <h4 className="text-base md:text-lg font-medium mb-6 text-medico-darkGreen" style={{ lineHeight: '1.5' }}>
+                    {study.headline}
+                  </h4>
+                  
+                  <blockquote className="italic text-medico-darkGreen/80 text-sm md:text-base border-l-4 border-medico-turquoise pl-4 my-6" style={{ lineHeight: '1.6' }}>
+                    "{study.quote}"
+                  </blockquote>
+                  
+                  {study.websiteLink && (
+                    <div className="mb-6">
+                      <a 
+                        href={`https://${study.websiteLink}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-medico-turquoise hover:underline inline-flex items-center text-sm md:text-base font-medium"
+                      >
+                        {t.exploreWebsite} {study.websiteLink}
+                      </a>
+                    </div>
+                  )}
+                  
+                  <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
+                    {study.impact.map((point, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <div className="mr-3 mt-1 text-medico-turquoise">
+                          <Check className="h-4 w-4 md:h-5 md:w-5" />
+                        </div>
+                        <p className="text-sm md:text-base text-medico-darkGreen/80" style={{ lineHeight: '1.5' }}>{point}</p>
+                      </div>
+                    ))}
+                  </StaggerReveal>
                 </div>
-                
-                <Link 
-                  to={language === 'de' ? "/referenzen" : "/en/case-studies"} 
-                  className="text-sm font-medium text-medico-turquoise hover:text-medico-darkGreen hover:underline inline-flex items-center transition-colors duration-200"
-                >
-                  {t.viewFull} <ArrowRight className="ml-1 h-3 w-3" />
-                </Link>
+              </div>
+              
+              <div className="w-full md:w-1/2">
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src={study.image} 
+                    alt={`${study.client} case study`} 
+                    className="w-full h-80 object-cover"
+                  />
+                </div>
               </div>
             </div>
           ))}
         </StaggerReveal>
         
-        <Reveal delay={0.4}>
-          <div className="text-center">
+        <Reveal delay={0.2}>
+          <div className="mt-24 text-center">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-medico-darkGreen mb-8" style={{ lineHeight: '1.4' }}>
+              {t.ctaText}
+            </h3>
+            
             <Button 
-              variant="outline" 
-              asChild
-              className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-medico-white font-medium px-8 py-3 transition-all duration-300"
+              size="lg" 
+              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              onClick={() => {
+                window.dispatchEvent(new Event('open-lead-form'));
+              }}
             >
-              <Link to={language === 'de' ? "/referenzen" : "/en/case-studies"}>
-                {t.viewAll} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              {t.startProject}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </Reveal>
