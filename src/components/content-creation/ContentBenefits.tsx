@@ -56,7 +56,7 @@ const ContentBenefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-medico-mint/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
@@ -66,10 +66,10 @@ const ContentBenefits = () => {
             }
           </h2>
           
-          <p className="text-lg text-center max-w-4xl mx-auto mb-12 text-brand-text">
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Viele Unternehmen investieren viel Zeit und Budget in Content – und doch bleiben die Ergebnisse oft hinter den Erwartungen zurück. Warum? Weil Content ohne Strategie, klare Botschaften und eine starke visuelle Umsetzung oft wirkungslos bleibt. Als Content Agentur Mainz kennen wir die größten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen. Hier zeigen wir Ihnen, wie wir gemeinsam Content-Herausforderungen meistern."
-              : "Many companies invest a lot of time and budget in content – yet the results often fall short of expectations. Why? Because content without strategy, clear messages and strong visual implementation often remains ineffective. As a Content Agency in Mainz, we know the biggest stumbling blocks that slow down companies' digital growth. Here we show you how we master content challenges together."
+              ? "Als Content Agentur Mainz kennen wir die größten Stolpersteine beim digitalen Wachstum."
+              : "As a Content Agency, we know the biggest stumbling blocks in digital growth."
             }
           </p>
         </div>
@@ -102,16 +102,6 @@ const ContentBenefits = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Transition text to next section */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-brand-text max-w-4xl mx-auto leading-relaxed">
-            {isGerman 
-              ? "Als Content Agentur Mainz helfen wir Ihnen, diese Herausforderungen zu meistern – mit einem ganzheitlichen Ansatz, der Strategie, Kreativität und messbare Ergebnisse vereint. Lassen Sie uns gemeinsam Lösungen entwickeln, die Ihre Marke nachhaltig stärken."
-              : "As a Content Agency in Mainz, we help you master these challenges – with a holistic approach that combines strategy, creativity and measurable results. Let us develop solutions together that sustainably strengthen your brand."
-            }
-          </p>
         </div>
       </div>
     </section>
