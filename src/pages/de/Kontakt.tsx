@@ -3,9 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import ContactHero from '@/components/contact/ContactHero';
-import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactInfoSection from '@/components/contact/ContactInfoSection';
-import ContactBenefitsSection from '@/components/contact/ContactBenefitsSection';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanContact = () => {
@@ -43,8 +41,6 @@ const GermanContact = () => {
         }}
       />
       <ContactInfoSection />
-      <ContactPersonalSection />
-      <ContactBenefitsSection />
     </PageLayout>
   );
 };
