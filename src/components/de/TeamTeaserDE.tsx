@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -23,8 +22,11 @@ const TeamTeaserDE = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter ooliv</h2>
-          <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Jedes Projekt wird direkt von der Geschäftsführung begleitet. Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
+          <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.6' }}>
+            Jedes Projekt wird direkt von der Geschäftsführung begleitet.
+          </p>
+          <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
+            Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
           </p>
         </div>
 
@@ -52,7 +54,7 @@ const TeamTeaserDE = () => {
         </div>
         
         <div className="flex justify-center">
-          <Button variant="outline" size="lg" className="group" asChild>
+          <Button variant="primary" size="lg" className="group" asChild>
             <Link to="/ueber-uns">
               Das gesamte Team kennenlernen
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
