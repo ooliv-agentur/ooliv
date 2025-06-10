@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
@@ -14,7 +15,7 @@ const SEOServicesDE = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <Search className="h-6 w-6 text-white" />
@@ -26,7 +27,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <FileEdit className="h-6 w-6 text-white" />
@@ -38,7 +39,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <Code className="h-6 w-6 text-white" />
@@ -50,7 +51,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <FileText className="h-6 w-6 text-white" />
@@ -62,7 +63,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <Link2 className="h-6 w-6 text-white" />
@@ -74,7 +75,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <MapPin className="h-6 w-6 text-white" />
@@ -87,8 +88,8 @@ const SEOServicesDE = () => {
           </div>
         </div>
 
-        {/* AI-powered tools section - Better separated */}
-        <div className="mt-20 bg-white p-10 rounded-lg shadow-md max-w-4xl mx-auto border-l-4 border-brand-primary">
+        {/* AI-powered tools section - Better separated with more whitespace */}
+        <div className="mt-24 bg-white p-10 rounded-lg shadow-md max-w-4xl mx-auto border-l-4 border-brand-primary">
           <h3 className="text-2xl font-bold mb-4 text-brand-heading">Tools als Unterstützung — nicht als Ersatz für Strategie</h3>
           <p className="text-brand-text mb-6">
             Wir nutzen branchenführende Tools zur Unterstützung unserer SEO-Strategien, aber unsere Expertise ist es, die Ergebnisse liefert.
