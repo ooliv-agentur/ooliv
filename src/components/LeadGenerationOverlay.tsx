@@ -8,7 +8,6 @@ import {
   SheetDescription
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 import LeadFormContent from './lead-form/LeadFormContent';
 import { cn } from '@/lib/utils';
 
@@ -18,8 +17,6 @@ interface LeadGenerationOverlayProps {
 }
 
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
-  const { language } = useLanguage();
-  
   // Listen for the global event to open the lead form
   useEffect(() => {
     console.log('🔧 LeadGenerationOverlay: Setting up event listener');
@@ -62,7 +59,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
             "w-10 h-10 min-w-10 min-h-10"
           )}
           onClick={handleClose}
-          aria-label={language === 'de' ? "Formular schließen" : "Close form"}
+          aria-label="Formular schließen"
           type="button"
         >
           <X className="w-6 h-6" aria-hidden="true" />
@@ -70,10 +67,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
         <SheetHeader className="text-left pb-4 pr-12">
           <SheetTitle className="text-xl font-bold text-white">
-            {language === 'de' ? "Starten Sie Ihr Projekt" : "Let's Start Your Project"}
+            Starten Sie Ihr Projekt
           </SheetTitle>
           <SheetDescription className="text-white/70">
-            {language === 'de' ? "Füllen Sie das Formular aus, um loszulegen" : "Fill in the form to get started"}
+            Füllen Sie das Formular aus, um loszulegen
           </SheetDescription>
         </SheetHeader>
         
