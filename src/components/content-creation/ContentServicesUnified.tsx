@@ -23,19 +23,34 @@ const ContentServicesUnified = () => {
                 <FileText className="h-8 w-8 text-medico-turquoise" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3 text-brand-heading">
+                <h3 className="text-xl font-bold mb-4 text-brand-heading">
                   Text & Visual Content
                 </h3>
-                <p className="text-brand-text mb-4">
+                <p className="text-brand-text mb-6 text-base leading-relaxed">
                   Wir erstellen zielgruppengerechte und suchmaschinenoptimierte Inhalte, die Ihre Expertise unterstreichen und Vertrauen aufbauen.
                 </p>
-                <ul className="text-sm text-brand-text/80 text-left space-y-1">
-                  <li>• SEO-optimierte Texte</li>
-                  <li>• Blog-Artikel</li>
-                  <li>• Bilder, Illustrationen, Videos</li>
-                  <li>• Technische & B2B-Inhalte</li>
-                  <li>• Konsistenter Markenstil</li>
-                </ul>
+                <div className="text-left space-y-3">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">SEO-optimierte Texte</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Blog-Artikel</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Bilder, Illustrationen, Videos</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Technische & B2B-Inhalte</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Konsistenter Markenstil</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -47,17 +62,26 @@ const ContentServicesUnified = () => {
                 <LayoutList className="h-8 w-8 text-medico-turquoise" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3 text-brand-heading">
+                <h3 className="text-xl font-bold mb-4 text-brand-heading">
                   Struktur & Storytelling
                 </h3>
-                <p className="text-brand-text mb-4">
+                <p className="text-brand-text mb-6 text-base leading-relaxed">
                   Wir strukturieren Ihre Inhalte strategisch und entwickeln überzeugende Narratives, die Ihre Zielgruppe erreichen.
                 </p>
-                <ul className="text-sm text-brand-text/80 text-left space-y-1">
-                  <li>• Content-Architektur</li>
-                  <li>• Storytelling-Struktur</li>
-                  <li>• Conversion-Funnel-Unterstützung</li>
-                </ul>
+                <div className="text-left space-y-3">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Content-Architektur</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Storytelling-Struktur</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-medico-turquoise rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-brand-text font-medium">Conversion-Funnel-Unterstützung</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
