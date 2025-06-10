@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -37,7 +36,7 @@ const GermanLegalNotice = () => {
         }}
         secondaryCta={{
           text: "Kontakt aufnehmen",
-          link: "/de/kontakt"
+          link: "/kontakt"
         }}
       />
 
@@ -123,7 +122,7 @@ const GermanLegalNotice = () => {
               className="font-semibold py-3 px-8 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise transition-all duration-300"
               asChild
             >
-              <Link to="/de/datenschutz">
+              <Link to="/datenschutz">
                 Datenschutzerklärung →
               </Link>
             </Button>
