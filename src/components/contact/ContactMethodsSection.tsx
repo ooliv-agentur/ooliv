@@ -84,7 +84,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 
 const ContactMethodsSection = () => {
   const handleOpenSidebarForm = () => {
-    document.dispatchEvent(new CustomEvent('open-lead-form'));
+    window.dispatchEvent(new Event('open-lead-form'));
   };
 
   return (
