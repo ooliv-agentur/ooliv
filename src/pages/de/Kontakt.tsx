@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import ContactHero from '@/components/contact/ContactHero';
+import PageHero from '@/components/PageHero';
 import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactInfoSection from '@/components/contact/ContactInfoSection';
 import ContactMethodsSection from '@/components/contact/ContactMethodsSection';
@@ -29,7 +29,22 @@ const GermanContact = () => {
         <meta name="focus-keyword" content="Marketing Agentur Mainz" />
       </Helmet>
       
-      <ContactHero />
+      <PageHero
+        title="Kontakt – ooliv Marketing Agentur Mainz"
+        subtitle="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt."
+        primaryCta={{
+          text: "Projekt starten",
+          link: "#",
+          onClick: (e) => {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-lead-form'));
+          }
+        }}
+        secondaryCta={{
+          text: "Jetzt anrufen",
+          link: "tel:+4961316367801"
+        }}
+      />
       <ContactPersonalSection />
       <ContactInfoSection />
       <ContactMethodsSection />
