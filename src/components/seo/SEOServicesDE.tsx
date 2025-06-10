@@ -4,7 +4,7 @@ import { Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
 
 const SEOServicesDE = () => {
   return (
-    <section className="py-20 bg-brand-background">
+    <section className="py-20 bg-brand-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Services für nachhaltigen Erfolg</h2>
