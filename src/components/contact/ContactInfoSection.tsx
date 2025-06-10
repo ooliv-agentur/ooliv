@@ -6,61 +6,79 @@ import {
   Mail,
   Clock
 } from 'lucide-react';
-import { 
-  Card, 
-  CardTitle
-} from '@/components/ui/card';
 
 const ContactInfoSection = () => {
   return (
-    <section className="py-12 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <Card className="shadow-lg border-0 overflow-hidden">
-            <div className="bg-brand-primary text-white p-8">
-              <CardTitle className="text-2xl font-bold mb-6">Kontaktdaten</CardTitle>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="flex items-start">
-                  <MapPin className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium mb-1">Adresse</h3>
-                    <p>Mombacher Str. 25<br />55122 Mainz, Deutschland</p>
-                  </div>
+    <section className="py-16 md:py-24 bg-medico-turquoise">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Kontaktdaten
+            </h2>
+          </div>
+
+          {/* Contact Info Grid */}
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Address */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <MapPin className="h-6 w-6 text-medico-turquoise" />
                 </div>
-                
-                <div className="flex items-start">
-                  <Phone className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium mb-1">Telefon</h3>
-                    <p>06131 – 63 67 801</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium mb-1">E-Mail</h3>
-                    <a href="mailto:info@ooliv.de" className="hover:underline">info@ooliv.de</a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Clock className="h-5 w-5 mr-3 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium mb-1">Bürozeiten</h3>
-                    <p>Mo-Fr: 9:00 - 17:00 Uhr</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <p className="italic">
-                  Regionale Wurzeln. Globale Reichweite.
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Adresse</h3>
+                <p className="text-medico-darkGreen/80 leading-relaxed">
+                  Mombacher Str. 25<br />
+                  55122 Mainz, Deutschland
                 </p>
               </div>
+              
+              {/* Phone */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Phone className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Telefon</h3>
+                <a 
+                  href="tel:+4961316367801" 
+                  className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                >
+                  06131 – 63 67 801
+                </a>
+              </div>
+              
+              {/* Email */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Mail className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">E-Mail</h3>
+                <a 
+                  href="mailto:info@ooliv.de" 
+                  className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                >
+                  info@ooliv.de
+                </a>
+              </div>
+              
+              {/* Office Hours */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Bürozeiten</h3>
+                <p className="text-medico-darkGreen/80">Mo-Fr: 9:00 - 17:00 Uhr</p>
+              </div>
             </div>
-          </Card>
+            
+            {/* Tagline */}
+            <div className="mt-12 pt-8 border-t border-medico-darkGreen/10 text-center">
+              <p className="text-medico-darkGreen/80 text-lg italic">
+                Regionale Wurzeln. Globale Reichweite.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
