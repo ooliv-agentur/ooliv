@@ -274,8 +274,8 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-24" style={{ backgroundColor: '#0A1E2C' }}>
+      {/* Case Studies Section - Now with white background */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
