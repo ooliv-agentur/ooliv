@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -23,10 +22,10 @@ const GermanIndex = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Marketing Agentur Mainz – ooliv</title>
-        <meta name="description" content="ooliv – Ihre Marketing Agentur in Mainz: Kreativ, strategisch und individuell. Wir bringen Ihr Unternehmen mit durchdachten Konzepten und Expertise voran." />
-        <meta name="keywords" content="Marketing Agentur Mainz, Werbeagentur Mainz, Webdesign Mainz, SEO Mainz, Online Marketing Mainz, Website erstellen Mainz, Digitalagentur Mainz" />
-        <meta name="focus-keyword" content="Marketing Agentur Mainz" />
+        <title>Werbeagentur Mainz – Leistungsstarke Websites für SEO, Konversionen & Wachstum</title>
+        <meta name="description" content="Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen." />
+        <meta name="keywords" content="Werbeagentur Mainz, Webdesign Mainz, SEO Mainz, Online Marketing Mainz, Website erstellen Mainz, Digitalagentur Mainz" />
+        <meta name="focus-keyword" content="Werbeagentur Mainz" />
       </Helmet>
       
       <DeutscherHero />

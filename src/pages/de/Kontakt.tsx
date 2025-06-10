@@ -1,13 +1,12 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import ContactHero from '@/components/contact/ContactHero';
-import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
-import ContactInfoSection from '@/components/contact/ContactInfoSection';
 import ContactMethodsSection from '@/components/contact/ContactMethodsSection';
-import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
+import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactBenefitsSection from '@/components/contact/ContactBenefitsSection';
+import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
+import ContactInfoSection from '@/components/contact/ContactInfoSection';
 import ContactSEOText from '@/components/contact/ContactSEOText';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -23,18 +22,17 @@ const GermanContact = () => {
       seoText={<ContactSEOText />}
     >
       <Helmet>
-        <title>Kontakt – ooliv Marketing Agentur Mainz</title>
-        <meta name="description" content="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt." />
-        <meta name="keywords" content="Marketing Agentur Mainz, Kontakt ooliv Mainz, Beratung Werbeagentur Mainz, Digitalagentur Kontakt Mainz, Marketing Beratung Mainz, Agentur Mainz Kontakt" />
-        <meta name="focus-keyword" content="Marketing Agentur Mainz" />
+        <title>Kontakt | ooliv Werbeagentur Mainz</title>
+        <meta name="description" content="Kontaktieren Sie ooliv, Ihre Werbeagentur aus Mainz. Lassen Sie uns über Ihr nächstes Webprojekt sprechen - kostenlose Beratung inklusive." />
+        <meta name="keywords" content="Kontakt Werbeagentur Mainz, ooliv Kontakt, Webdesign Beratung Mainz, Kostenlose Beratung Mainz, Marketing Agentur Kontakt Mainz" />
       </Helmet>
       
       <ContactHero />
-      <ContactPersonalSection />
-      <ContactInfoSection />
       <ContactMethodsSection />
-      <ConsultationRequestSectionDE />
+      <ContactPersonalSection />
       <ContactBenefitsSection />
+      <ConsultationRequestSectionDE />
+      <ContactInfoSection />
     </PageLayout>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -24,10 +23,9 @@ const GermanWebDevelopment = () => {
       seoText={<WebDevSEOText />}
     >
       <Helmet>
-        <title>WordPress Agentur Mainz – Technisch stark</title>
-        <meta name="description" content="Ihre WordPress Agentur in Mainz: Moderne Webentwicklung, technisch ausgereift und individuell. Wir realisieren Ihre digitale Vision zuverlässig." />
-        <meta name="keywords" content="WordPress Agentur Mainz, Webentwicklung Mainz, CMS Entwicklung Mainz, React Development, JavaScript Agentur Mainz, Custom WordPress Mainz" />
-        <meta name="focus-keyword" content="WordPress Agentur Mainz" />
+        <title>Webentwicklung Mainz | Schnelle & Sichere Websites</title>
+        <meta name="description" content="Professionelle Webentwicklung aus Mainz: Moderne, sichere und schnelle Websites mit React, TypeScript und modernen Technologien." />
+        <meta name="keywords" content="Webentwicklung Mainz, Website Programmierung Mainz, React Entwicklung Mainz, TypeScript Entwicklung, Webentwickler Mainz, Custom Website Development" />
       </Helmet>
       
       <WebDevHeroDE />

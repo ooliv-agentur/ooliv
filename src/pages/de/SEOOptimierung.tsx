@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -24,10 +23,9 @@ const GermanSEO = () => {
       seoText={<SEOTextSectionDE />}
     >
       <Helmet>
-        <title>SEO Agentur Mainz – Sichtbar im Netz</title>
-        <meta name="description" content="Als SEO Agentur in Mainz sorgen wir für Top-Rankings. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung." />
-        <meta name="keywords" content="SEO Agentur Mainz, Suchmaschinenoptimierung Mainz, SEO Beratung Mainz, Google Ranking Mainz, Local SEO Mainz, SEO Optimierung Mainz" />
-        <meta name="focus-keyword" content="SEO Agentur Mainz" />
+        <title>SEO Agentur Mainz | Bessere Rankings & mehr Traffic</title>
+        <meta name="description" content="SEO Optimierung aus Mainz: Verbessern Sie Ihre Google Rankings und erhalten Sie mehr qualifizierten Traffic für Ihr Unternehmen." />
+        <meta name="keywords" content="SEO Mainz, SEO Agentur Mainz, Suchmaschinenoptimierung Mainz, Google Ranking verbessern Mainz, SEO Optimierung Mainz, Local SEO Mainz" />
       </Helmet>
       
       <SEOHeroDE />
