@@ -1,18 +1,17 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Cookie, 
-  Shield, 
+  Settings, 
   BarChart3, 
   Target, 
-  Settings, 
-  Clock,
-  Database,
-  FileText
+  Shield,
+  RefreshCw,
+  Globe
 } from 'lucide-react';
 import { 
   Accordion, 
@@ -21,7 +20,8 @@ import {
   AccordionTrigger 
 } from '@/components/ui/accordion';
 
-const GermanCookiePolicy = () => {
+const CookieRichtlinie = () => {
+  const policyRef = useRef<HTMLDivElement>(null);
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
@@ -37,7 +37,8 @@ const GermanCookiePolicy = () => {
     <PageLayout className="overflow-x-hidden">
       <Helmet>
         <title>Cookie-Richtlinie | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, wie wir Cookies verwenden und Ihre Privatsphäre schützen." />
+        <meta name="description" content="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, welche Cookies wir verwenden und wie Sie diese verwalten können." />
+        <meta name="keywords" content="Cookie Richtlinie ooliv Mainz, Cookies Werbeagentur Mainz, Cookie Einstellungen ooliv, Datenschutz Cookies Mainz" />
       </Helmet>
 
       <LegalHero
@@ -249,4 +250,4 @@ const GermanCookiePolicy = () => {
   );
 };
 
-export default GermanCookiePolicy;
+export default CookieRichtlinie;

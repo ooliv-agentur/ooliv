@@ -1,17 +1,12 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
+import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
-import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import CTA from '@/components/CTA';
 import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -53,8 +48,9 @@ const GermanGoogleAds = () => {
       seoText={<GoogleAdsSEOText />}
     >
       <Helmet>
-        <title>Google Ads Agentur Mainz – Kampagnenoptimierung & Leadgenerierung | ooliv</title>
-        <meta name="description" content="Mit ooliv als Google Ads Agentur Mainz sichern Sie sich Leads, Umsatzwachstum und volle Transparenz. Jetzt Analyse sichern!" />
+        <title>Google Ads Agentur Mainz | Professionelle Anzeigen</title>
+        <meta name="description" content="Google Ads Management aus Mainz: Professionelle Kampagnen für mehr Leads und Umsatz. Transparent, datengetrieben und erfolgsorientiert." />
+        <meta name="keywords" content="Google Ads Mainz, Google Ads Agentur Mainz, AdWords Mainz, Google Werbung Mainz, PPC Marketing Mainz, Google Ads Betreuung Mainz" />
       </Helmet>
 
       {/* Hero Section - Following German startpage master design */}
@@ -294,3 +290,5 @@ const GermanGoogleAds = () => {
 };
 
 export default GermanGoogleAds;
+
+</initial_code>
