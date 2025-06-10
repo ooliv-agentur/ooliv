@@ -4,6 +4,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Grid2X2, Sparkles, Code2, TrendingUp, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ContentProcessUnified = () => {
   const { language } = useLanguage();
@@ -21,6 +29,7 @@ const ContentProcessUnified = () => {
         'Content-Kalender'
       ],
       link: '/strategie',
+      linkText: 'Mehr zur Strategie',
       icon: Grid2X2
     },
     {
@@ -34,6 +43,7 @@ const ContentProcessUnified = () => {
         'Social Media Content'
       ],
       link: '/webdesign',
+      linkText: 'Mehr zum Design',
       icon: Sparkles
     },
     {
@@ -47,6 +57,7 @@ const ContentProcessUnified = () => {
         'Mobile Optimierung'
       ],
       link: '/webentwicklung',
+      linkText: 'Mehr zur Entwicklung',
       icon: Code2
     },
     {
@@ -60,6 +71,7 @@ const ContentProcessUnified = () => {
         'Monatliche Content-Updates'
       ],
       link: '/seo-optimierung',
+      linkText: 'Mehr zur Optimierung',
       icon: TrendingUp
     }
   ] : [
@@ -74,6 +86,7 @@ const ContentProcessUnified = () => {
         'Content calendar'
       ],
       link: '/strategy',
+      linkText: 'Learn about Strategy',
       icon: Grid2X2
     },
     {
@@ -87,6 +100,7 @@ const ContentProcessUnified = () => {
         'Social media content'
       ],
       link: '/creation',
+      linkText: 'Learn about Creation',
       icon: Sparkles
     },
     {
@@ -100,6 +114,7 @@ const ContentProcessUnified = () => {
         'Mobile optimization'
       ],
       link: '/implementation',
+      linkText: 'Learn about Implementation',
       icon: Code2
     },
     {
@@ -113,6 +128,7 @@ const ContentProcessUnified = () => {
         'Monthly content updates'
       ],
       link: '/optimization',
+      linkText: 'Learn about Optimization',
       icon: TrendingUp
     }
   ];
@@ -127,49 +143,85 @@ const ContentProcessUnified = () => {
               : "Our Content Process – From Strategy to Implementation"
             }
           </h2>
+          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+            {isGerman 
+              ? "Content ist mehr als Text und Bilder. Wir bringen Strategie, Kreativität und Technologie zusammen."
+              : "Content is more than text and images. We combine strategy, creativity, and technology."
+            }
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100">
-                <div className="w-12 h-12 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-                  <Icon className="h-6 w-6 text-medico-turquoise" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 mb-6 text-base leading-relaxed">
-                  {step.description}
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-brand-heading">
-                    {isGerman ? "Was wir liefern:" : "What we deliver:"}
-                  </h4>
-                  <ul className="space-y-2">
-                    {step.deliverables.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <CheckCircle className="h-4 w-4 text-medico-turquoise mr-3 flex-shrink-0 mt-0.5" />
-                        <span className="text-brand-text">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="mt-auto">
-                  <Button 
-                    variant="link" 
-                    className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
-                    asChild
-                  >
-                    <Link to={step.link}>
-                      {isGerman ? "Mehr erfahren" : "Learn more"}
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            );
-          })}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <CardContent className="p-8 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-medico-turquoise" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-4 text-brand-heading">
+                        {step.title}
+                      </h3>
+                      
+                      <p className="text-brand-text leading-relaxed mb-6">
+                        {step.description}
+                      </p>
+                      
+                      <div className="mb-6 flex-grow">
+                        <div className="space-y-2">
+                          {step.deliverables.map((item, itemIndex) => (
+                            <div key={itemIndex} className="flex items-start">
+                              <CheckCircle className="h-4 w-4 text-medico-turquoise mr-3 flex-shrink-0 mt-0.5" />
+                              <span className="text-brand-text text-sm">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="mt-auto">
+                        <Button 
+                          variant="link" 
+                          className="text-medico-turquoise hover:text-medico-turquoise/80 p-0 h-auto font-medium group" 
+                          asChild
+                        >
+                          <Link to={step.link} className="flex items-center">
+                            {step.linkText}
+                            <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0" />
+          </div>
+        </Carousel>
+
+        <div className="text-center mt-12">
+          <Button 
+            size="lg" 
+            className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90 px-8 py-3 rounded-full font-medium"
+            onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
+          >
+            {isGerman ? "Content-Strategie besprechen" : "Discuss Content Strategy"}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
