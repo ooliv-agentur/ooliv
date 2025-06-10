@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -171,18 +172,18 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Section 1: Introduction */}
-      <section className="py-24 bg-[#faf5eb]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section 1: Introduction - Revised to match master style guide */}
+      <section className="py-20 bg-white font-satoshi">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003343]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Mehr als eine Webagentur – Ihr strategischer Sparringspartner
             </h2>
-            <p className="text-xl mb-12 text-[#003343]/80 leading-relaxed">
+            <p className="text-xl mb-16 text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.5' }}>
               Kreativ, technisch präzise und partnerschaftlich. Ohne Hierarchien, ohne Buzzwords – mit echtem Ergebnisfokus.
             </p>
             
-            <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
+            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm mb-16 border border-gray-100">
               <ul className="space-y-6 text-left">
                 {[
                   'Gegründet 2008 von Uli Schönleber',
@@ -192,10 +193,10 @@ const GermanAboutUs = () => {
                   'Klarer Projektablauf über Basecamp (Feedback, Aufgaben, Dateien an einem Ort)'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="h-10 w-10 flex items-center justify-center bg-[#32b1ab]/10 rounded-full mr-4 flex-shrink-0">
-                      <CheckCircle className="h-5 w-5 text-[#32b1ab]" />
+                    <span className="h-12 w-12 flex items-center justify-center rounded-full mr-4 flex-shrink-0" style={{ backgroundColor: '#32b1ab' }}>
+                      <CheckCircle className="h-6 w-6" style={{ color: 'white' }} />
                     </span>
-                    <span className="text-[#003343] text-lg">{item}</span>
+                    <span className="text-medico-darkGreen text-lg font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -203,7 +204,17 @@ const GermanAboutUs = () => {
             
             <Button 
               size="lg" 
-              className="group bg-[#ffea1f] text-[#003343] hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ 
+                backgroundColor: '#FFE500', 
+                color: '#003347'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#e6ce00';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFE500';
+              }}
               asChild
             >
               <Link to="/de/kontakt">
