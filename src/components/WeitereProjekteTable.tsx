@@ -143,7 +143,7 @@ const WeitereProjekteTable = () => {
               {projekte.map((projekt) => (
                 <TableRow
                   key={projekt.name}
-                  className="bg-white even:bg-brand-backgroundAlt/70 border-b border-brand-backgroundAlt hover:bg-brand-backgroundAlt transition"
+                  className="bg-white border-b border-gray-200 hover:bg-gray-50 transition"
                 >
                   <TableCell className="font-semibold text-brand-heading py-3 px-4 text-base">
                     {projekt.name}
@@ -171,7 +171,7 @@ const WeitereProjekteTable = () => {
           {projekte.map((projekt, idx) => (
             <div
               key={projekt.name}
-              className="bg-white rounded-xl shadow-card px-4 py-4 flex flex-col gap-2 border border-brand-backgroundAlt"
+              className="bg-white rounded-xl shadow-card px-4 py-4 flex flex-col gap-2 border border-gray-200"
             >
               <div className="font-semibold text-brand-heading text-base">
                 {projekt.name}
@@ -191,7 +191,7 @@ const WeitereProjekteTable = () => {
               </div>
               {idx !== projekte.length - 1 && (
                 <div className="mt-4">
-                  <hr className="border-t border-brand-backgroundAlt/90" />
+                  <hr className="border-t border-gray-200" />
                 </div>
               )}
             </div>
