@@ -30,8 +30,8 @@ const GermanContact = () => {
       </Helmet>
       
       <ContactHero
-        title="Lassen Sie uns über Ihr Projekt sprechen – direkt und persönlich."
-        subtitle="Wir sind für Sie da – von der ersten Idee bis zum erfolgreichen Launch. Kontaktieren Sie uns jetzt ohne Zwischenstellen."
+        title="Kontaktieren Sie ooliv direkt"
+        subtitle="Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege."
         primaryCta={{
           text: "Projekt starten",
           link: "#",
@@ -42,8 +42,8 @@ const GermanContact = () => {
           link: "tel:+4961316367801"
         }}
       />
-      <ContactPersonalSection />
       <ContactInfoSection />
+      <ContactPersonalSection />
       <ContactBenefitsSection />
     </PageLayout>
   );

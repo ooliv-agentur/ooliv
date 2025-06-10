@@ -5,7 +5,6 @@ import {
   Phone,
   Mail,
   Clock,
-  MessageCircle,
   Send,
   ArrowRight
 } from 'lucide-react';
@@ -20,11 +19,13 @@ const ContactInfoSection = () => {
     <section className="relative py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
+          {/* Introduction Text */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Kontaktieren Sie uns direkt
-            </h2>
+            <p className="text-lg md:text-xl text-medico-darkGreen max-w-3xl mx-auto leading-relaxed">
+              Bei ooliv erhalten Sie individuelle Beratung und direkte Kommunikation mit unserem Gründerteam. 
+              Kein Projektmanager dazwischen – nur maßgeschneiderte Lösungen, die funktionieren. 
+              Wir freuen uns auf Ihre Nachricht!
+            </p>
           </div>
 
           {/* Contact Details */}
@@ -79,68 +80,20 @@ const ContactInfoSection = () => {
             </div>
           </div>
 
-          {/* Contact Methods - Simple Layout */}
+          {/* Primary CTA Button */}
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-medico-darkGreen mb-8">So erreichen Sie uns</h3>
-            <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto mb-12">
-              Wählen Sie den für Sie angenehmsten Kommunikationsweg – wir sind auf allen Kanälen für Sie da.
+            <Button 
+              size="lg"
+              className="bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+              onClick={handleOpenSidebarForm}
+            >
+              <Send className="h-5 w-5 mr-2" />
+              Anfrage senden
+              <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <p className="text-sm text-medico-darkGreen/70 mt-3">
+              Projekt-Details über unser Formular teilen
             </p>
-            
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mb-12">
-              {/* Phone & WhatsApp Combined */}
-              <div className="flex flex-col items-center group hover:scale-105 transition-transform">
-                <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-medico-turquoise/20 transition-colors">
-                  <Phone className="h-8 w-8 text-medico-turquoise" />
-                </div>
-                <h4 className="font-semibold text-medico-darkGreen mb-2">Telefon & WhatsApp</h4>
-                <div className="flex flex-col gap-1">
-                  <a 
-                    href="tel:+4961316367801"
-                    className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
-                  >
-                    06131 – 63 67 801 (Anrufen)
-                  </a>
-                  <a 
-                    href="https://wa.me/+4917680167641"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-medico-darkGreen/80 hover:text-green-600 transition-colors"
-                  >
-                    WhatsApp Chat
-                  </a>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex flex-col items-center group hover:scale-105 transition-transform">
-                <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-amber-100 transition-colors">
-                  <Mail className="h-8 w-8 text-amber-600" />
-                </div>
-                <h4 className="font-semibold text-medico-darkGreen mb-2">E-Mail</h4>
-                <a 
-                  href="mailto:info@ooliv.de"
-                  className="text-medico-darkGreen/80 hover:text-amber-600 transition-colors"
-                >
-                  info@ooliv.de
-                </a>
-              </div>
-            </div>
-
-            {/* Primary CTA Button */}
-            <div className="mb-12">
-              <Button 
-                size="lg"
-                className="bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
-                onClick={handleOpenSidebarForm}
-              >
-                <Send className="h-5 w-5 mr-2" />
-                Anfrage senden
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <p className="text-sm text-medico-darkGreen/70 mt-3">
-                Projekt-Details über unser Formular teilen
-              </p>
-            </div>
           </div>
           
           <div className="text-center mb-8">
