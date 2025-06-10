@@ -9,12 +9,12 @@ import {
 
 const ContactInfoSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-medico-turquoise">
+    <section className="py-16 md:py-24 bg-medico-mint">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Kontaktdaten
             </h2>
           </div>
