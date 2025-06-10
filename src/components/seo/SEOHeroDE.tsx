@@ -42,7 +42,7 @@ const SEOHeroDE = () => {
               className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
-              Mehr Sichtbarkeit, mehr Anfragen: Wir optimieren Ihre Website strategisch für Google – mit Technik, Content und messbaren Ergebnissen.
+              SEO für nachhaltiges Wachstum: Mit einer fundierten Strategie, überzeugenden Inhalten und technischer Präzision steigern wir Ihre Sichtbarkeit und sorgen für mehr qualifizierte Anfragen.
             </p>
             
             {/* CTA buttons - matching startpage style */}
