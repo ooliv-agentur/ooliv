@@ -68,8 +68,8 @@ const GermanContentCreation = () => {
       {/* 6. Why ooliv? with added elements - White background */}
       <ContentExpertInsight />
       
-      {/* 7. Case Studies - Light background */}
-      <section className="py-24 bg-brand-backgroundAlt">
+      {/* 7. Case Studies - White background */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
