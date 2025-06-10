@@ -188,11 +188,11 @@ const GermanGoogleAds = () => {
 
       <GoogleAdsLeadGeneration />
 
-      {/* Services Section - Following startpage color scheme */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: '#0A1E2C' }}>
+      {/* Services Section - White background instead of dark */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
               Erweiterte Leistungen für maximale Performance
             </h2>
           </div>
