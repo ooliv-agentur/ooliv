@@ -25,10 +25,10 @@ const DeutscherHero = () => {
     }, 0);
   };
 
-  const dynamicSubheadlines = [
-    "Wir helfen Unternehmen, mehr Leads zu generieren.",
-    "Wir entwickeln Websites, die Vertrauen schaffen.",
-    "Wir machen Ihre Marke digital erfolgreich."
+  const dynamicEndings = [
+    "online sichtbar zu werden.",
+    "mehr Leads zu generieren.",
+    "mit ihrer Website zu überzeugen."
   ];
   
   return (
@@ -36,8 +36,8 @@ const DeutscherHero = () => {
       isHomepage={true}
       title="ooliv Werbeagentur Mainz"
       subtitle="Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand."
-      dynamicPrefix=""
-      dynamicSubheadlines={dynamicSubheadlines}
+      dynamicPrefix="Wir helfen Unternehmen,"
+      dynamicSubheadlines={dynamicEndings}
       primaryCta={{
         text: "Projekt starten",
         link: "#",
