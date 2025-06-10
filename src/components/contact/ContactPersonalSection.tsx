@@ -4,7 +4,7 @@ import { Users, MessageCircle, CheckCircle } from 'lucide-react';
 
 const ContactPersonalSection = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-white">
+    <section className="relative py-16 md:py-24 bg-medico-mint">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-4xl mx-auto">
           {/* Section Header - matching homepage style */}
@@ -63,7 +63,7 @@ const ContactPersonalSection = () => {
             
             {/* Visual Section - simplified to match homepage */}
             <div className="relative">
-              <div className="aspect-square bg-medico-mint/30 rounded-2xl overflow-hidden">
+              <div className="aspect-square bg-medico-white/50 rounded-2xl overflow-hidden">
                 <img 
                   src="/lovable-uploads/Uli.jpg" 
                   alt="ooliv Gründerteam" 
