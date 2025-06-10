@@ -6,7 +6,6 @@ import ContactHero from '@/components/contact/ContactHero';
 import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactInfoSection from '@/components/contact/ContactInfoSection';
 import ContactBenefitsSection from '@/components/contact/ContactBenefitsSection';
-import ContactSEOText from '@/components/contact/ContactSEOText';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanContact = () => {
@@ -22,9 +21,7 @@ const GermanContact = () => {
   };
 
   return (
-    <PageLayout 
-      seoText={<ContactSEOText />}
-    >
+    <PageLayout>
       <Helmet>
         <title>Kontakt – ooliv Marketing Agentur Mainz</title>
         <meta name="description" content="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt." />

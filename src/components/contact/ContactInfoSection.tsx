@@ -79,58 +79,51 @@ const ContactInfoSection = () => {
             </div>
           </div>
 
-          {/* Contact Methods - Open Layout */}
+          {/* Contact Methods - Simple Layout */}
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-medico-darkGreen mb-8">So erreichen Sie uns</h3>
             <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto mb-12">
               Wählen Sie den für Sie angenehmsten Kommunikationsweg – wir sind auf allen Kanälen für Sie da.
             </p>
             
-            {/* Contact Methods - Simple Layout */}
             <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mb-12">
-              {/* Phone */}
-              <a 
-                href="tel:+4961316367801"
-                className="flex flex-col items-center group hover:scale-105 transition-transform"
-              >
+              {/* Phone & WhatsApp Combined */}
+              <div className="flex flex-col items-center group hover:scale-105 transition-transform">
                 <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-medico-turquoise/20 transition-colors">
                   <Phone className="h-8 w-8 text-medico-turquoise" />
                 </div>
-                <span className="font-semibold text-medico-darkGreen group-hover:text-medico-turquoise transition-colors">
-                  06131 – 63 67 801
-                </span>
-                <span className="text-sm text-medico-darkGreen/70">Anrufen</span>
-              </a>
-
-              {/* WhatsApp */}
-              <a 
-                href="https://wa.me/+4917680167641"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center group hover:scale-105 transition-transform"
-              >
-                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-green-100 transition-colors">
-                  <MessageCircle className="h-8 w-8 text-green-600" />
+                <h4 className="font-semibold text-medico-darkGreen mb-2">Telefon & WhatsApp</h4>
+                <div className="flex flex-col gap-1">
+                  <a 
+                    href="tel:+4961316367801"
+                    className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                  >
+                    06131 – 63 67 801 (Anrufen)
+                  </a>
+                  <a 
+                    href="https://wa.me/+4917680167641"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-medico-darkGreen/80 hover:text-green-600 transition-colors"
+                  >
+                    WhatsApp Chat
+                  </a>
                 </div>
-                <span className="font-semibold text-medico-darkGreen group-hover:text-green-600 transition-colors">
-                  WhatsApp Chat
-                </span>
-                <span className="text-sm text-medico-darkGreen/70">Nachricht senden</span>
-              </a>
+              </div>
 
               {/* Email */}
-              <a 
-                href="mailto:info@ooliv.de"
-                className="flex flex-col items-center group hover:scale-105 transition-transform"
-              >
+              <div className="flex flex-col items-center group hover:scale-105 transition-transform">
                 <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-amber-100 transition-colors">
                   <Mail className="h-8 w-8 text-amber-600" />
                 </div>
-                <span className="font-semibold text-medico-darkGreen group-hover:text-amber-600 transition-colors">
+                <h4 className="font-semibold text-medico-darkGreen mb-2">E-Mail</h4>
+                <a 
+                  href="mailto:info@ooliv.de"
+                  className="text-medico-darkGreen/80 hover:text-amber-600 transition-colors"
+                >
                   info@ooliv.de
-                </span>
-                <span className="text-sm text-medico-darkGreen/70">E-Mail senden</span>
-              </a>
+                </a>
+              </div>
             </div>
 
             {/* Primary CTA Button */}
