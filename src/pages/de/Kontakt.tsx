@@ -35,8 +35,8 @@ const GermanContact = () => {
       </Helmet>
       
       <ContactHero
-        title="ooliv Werbeagentur"
-        subtitle="Wir hören zu, verstehen Ihr Projekt und setzen es mit System um. Keine leeren Versprechen, sondern individuelle Lösungen, die funktionieren."
+        title="Lassen Sie uns über Ihr Projekt sprechen – direkt und persönlich."
+        subtitle="Wir sind für Sie da – von der ersten Idee bis zum erfolgreichen Launch. Kontaktieren Sie uns jetzt ohne Zwischenstellen."
         primaryCta={{
           text: "Projekt starten",
           link: "#",
