@@ -134,8 +134,8 @@ const ContentProcessUnified = () => {
             const Icon = step.icon;
             return (
               <div key={index} className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100">
-                <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-                  <Icon className="h-10 w-10 text-medico-turquoise" />
+                <div className="w-12 h-12 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+                  <Icon className="h-6 w-6 text-medico-turquoise" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -149,7 +149,7 @@ const ContentProcessUnified = () => {
                   <ul className="space-y-2">
                     {step.deliverables.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-4 w-4 text-medico-turquoise mr-3 flex-shrink-0 mt-0.5" />
                         <span className="text-brand-text">{item}</span>
                       </li>
                     ))}
