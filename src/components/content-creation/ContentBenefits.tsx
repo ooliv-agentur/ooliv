@@ -1,89 +1,117 @@
 
 import React from 'react';
-import { FileText, Target, Users, Paintbrush } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Target, FileText, Video } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentBenefits = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  const benefits = isGerman ? [
-    {
-      icon: FileText,
-      problem: 'Keine Inhalte, keine Ergebnisse',
-      solution: 'Wir liefern komplette Webinhalte – Texte, Bilder, Videos und mehr – für eine Website, die überzeugt.'
-    },
+  const challengeGroups = isGerman ? [
     {
       icon: Target,
-      problem: 'Austauschbare Botschaften',
-      solution: 'Wir entwickeln Inhalte, die Ihre Marke widerspiegeln – präzise, markant und unverwechselbar.'
+      title: 'Content Strategy Challenges',
+      germanTitle: 'Content-Strategie-Herausforderungen',
+      challenges: [
+        'Fehlende Strategie und Zielgruppenanalyse',
+        'Unklare Botschaften ohne Markenidentität',
+        'Mangelnde einheitliche Struktur für SEO und Conversion'
+      ]
     },
     {
-      icon: Users,
-      problem: 'Lücken oder Verzögerungen',
-      solution: 'Mit KI-Tools und strategischer Planung erstellen wir Inhalte schnell, effizient und in hoher Qualität.'
+      icon: FileText,
+      title: 'Content Creation Challenges',
+      germanTitle: 'Content-Erstellungs-Herausforderungen',
+      challenges: [
+        'Keine oder zu wenige Website-Inhalte',
+        'Unstrukturierte Inhalte ohne Storytelling',
+        'Fehlende SEO-Optimierung (Keywords, Meta, Struktur)'
+      ]
     },
     {
-      icon: Paintbrush,
-      problem: 'Visuelle Inkonsistenz',
-      solution: 'Wir sorgen für einen konsistenten Markenauftritt – von Texten über Bilder bis zu Videos.'
+      icon: Video,
+      title: 'Visuals & Video Challenges',
+      germanTitle: 'Visuals & Video-Herausforderungen',
+      challenges: [
+        'Visuelle Inkonsistenz (kein einheitliches visuelles Konzept)',
+        'Schwache Visuals und Videos (z. B. nur Stock-Fotos)',
+        'Fehlende Integration von Bildern, Videos und Animationen in den Content-Flow'
+      ]
     }
   ] : [
     {
-      icon: FileText,
-      problem: 'No Content, No Results',
-      solution: 'We create complete web content — from text to visuals — to make sure your website works.'
-    },
-    {
       icon: Target,
-      problem: 'Generic Messaging',
-      solution: 'We develop content that sounds like you — sharp, on-brand, and impossible to ignore.'
+      title: 'Content Strategy Challenges',
+      germanTitle: 'Content Strategy Challenges',
+      challenges: [
+        'Missing strategy and target group analysis',
+        'Unclear messages without brand identity',
+        'Lack of consistent structure for SEO and conversion'
+      ]
     },
     {
-      icon: Users,
-      problem: 'Content Gaps or Delays',
-      solution: 'Using AI tools like ChatGPT and Midjourney, we create high-quality content faster than ever.'
+      icon: FileText,
+      title: 'Content Creation Challenges',
+      germanTitle: 'Content Creation Challenges',
+      challenges: [
+        'No or too few website content',
+        'Unstructured content without storytelling',
+        'Missing SEO optimization (keywords, meta, structure)'
+      ]
     },
     {
-      icon: Paintbrush,
-      problem: 'Visual Inconsistency',
-      solution: 'We ensure your brand\'s visuals stay consistent across all touchpoints — logos, icons, images.'
+      icon: Video,
+      title: 'Visuals & Video Challenges',
+      germanTitle: 'Visuals & Video Challenges',
+      challenges: [
+        'Visual inconsistency (no cohesive visual concept)',
+        'Weak visuals and videos (e.g., only stock photos)',
+        'Lack of integration of images, videos, and animations into content flow'
+      ]
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Two-tone heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
-            {isGerman ? "Unsere Leistungen als Content Agentur Mainz" : "Content Challenges That Cost You Business"}
+            {isGerman 
+              ? "Probleme, die Ihr Business ausbremsen können – und wie wir sie lösen"
+              : "Problems That Can Slow Down Your Business – And How We Solve Them"
+            }
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Wir lösen die häufigsten Content-Probleme, die Ihr Business ausbremsen können – und sorgen für messbare Ergebnisse:"
-              : "Here's what might be holding your business back—and how we fix it."
+              ? "Als Content Agentur Mainz lösen wir die häufigsten Content-Herausforderungen, die Unternehmen daran hindern, online erfolgreich zu sein:"
+              : "As a Content Agency in Mainz, we solve the most common content challenges that prevent businesses from succeeding online:"
             }
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {challengeGroups.map((group, index) => (
             <div 
               key={index}
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="p-3 rounded-full bg-brand-backgroundAlt mb-4">
-                  <benefit.icon className="h-8 w-8 text-brand-primary" />
+                <div className="p-3 rounded-full bg-brand-primary/10 mb-6">
+                  <group.icon className="h-8 w-8 text-brand-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                    {benefit.problem}
+                  <h3 className="text-xl font-bold mb-4 text-brand-heading">
+                    {isGerman ? group.germanTitle : group.title}
                   </h3>
-                  <p className="text-brand-text">{benefit.solution}</p>
+                  <ul className="text-brand-text text-left space-y-3">
+                    {group.challenges.map((challenge, challengeIndex) => (
+                      <li key={challengeIndex} className="flex items-start">
+                        <span className="text-brand-primary mr-2 flex-shrink-0">•</span>
+                        <span>{challenge}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -91,16 +119,11 @@ const ContentBenefits = () => {
         </div>
         
         <div className="mt-8 text-center">
-          <p className="text-brand-text">
-            {isGerman ? "Mehr über unsere" : "Learn more about our"}{' '}
-            <Link to={isGerman ? "/de/content-erstellung" : "/content-creation"} className="text-brand-primary hover:underline">
-              {isGerman ? "Content-Erstellung" : "Content Creation"}
-            </Link>{' '}
-            {isGerman ? "und" : "and"}{' '}
-            <Link to={isGerman ? "/de/seo-optimierung" : "/seo-optimization"} className="text-brand-primary hover:underline">
-              SEO
-            </Link>{' '}
-            {isGerman ? "Leistungen" : "services"}
+          <p className="text-brand-text font-medium">
+            {isGerman 
+              ? "ooliv als Content Agentur Mainz bietet maßgeschneiderte Lösungen für all diese Herausforderungen."
+              : "ooliv as a Content Agency in Mainz offers tailored solutions for all these challenges."
+            }
           </p>
         </div>
       </div>
