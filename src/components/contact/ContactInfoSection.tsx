@@ -10,168 +10,6 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { 
-  Card, 
-  CardHeader, 
-  CardContent, 
-  CardFooter, 
-  CardTitle
-} from '@/components/ui/card';
-import { cn } from '@/lib/utils';
-
-interface ContactCardProps {
-  icon: React.ReactNode;
-  color: 'blue' | 'green' | 'amber' | 'purple';
-  title: string;
-  description: string;
-  buttonText: string;
-  onClick?: () => void;
-  href?: string;
-}
-
-const ContactCard: React.FC<ContactCardProps> = ({
-  icon,
-  color,
-  title,
-  description,
-  buttonText,
-  onClick,
-  href
-}) => {
-  const colorClasses = {
-    blue: 'bg-blue-50',
-    green: 'bg-green-50',
-    amber: 'bg-amber-50',
-    purple: 'bg-purple-50'
-  };
-
-  const ButtonElement = () => (
-    <Button 
-      variant="outline" 
-      className="w-full justify-between group"
-      onClick={onClick}
-      asChild={Boolean(href)}
-    >
-      {href ? (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <span>{buttonText}</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </a>
-      ) : (
-        <>
-          <span>{buttonText}</span>
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-        </>
-      )}
-    </Button>
-  );
-
-  return (
-    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-brand-primary/50 flex flex-col">
-      <CardHeader className="pb-2">
-        <div className={cn("rounded-full w-12 h-12 flex items-center justify-center mb-2", colorClasses[color])}>
-          {icon}
-        </div>
-        <CardTitle className="text-xl font-bold">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="pb-3 flex-grow">
-        <p className="text-gray-600">{description}</p>
-      </CardContent>
-      <CardFooter className="pt-0 mt-auto">
-        <ButtonElement />
-      </CardFooter>
-    </Card>
-  );
-};
-
-interface PhoneWhatsAppCardProps {
-  title: string;
-  description: string;
-  phoneNumber: string;
-  whatsappLink: string;
-}
-
-const PhoneWhatsAppCard: React.FC<PhoneWhatsAppCardProps> = ({
-  title,
-  description,
-  phoneNumber,
-  whatsappLink
-}) => {
-  return (
-    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-medico-turquoise/50 flex flex-col">
-      <CardHeader className="pb-2">
-        <div className="rounded-full w-12 h-12 flex items-center justify-center mb-2 bg-blue-50">
-          <Phone className="h-6 w-6 text-gray-600" />
-        </div>
-        <CardTitle className="text-xl font-bold">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="pb-3 flex-grow">
-        <p className="text-gray-600 mb-4">{description}</p>
-      </CardContent>
-      <CardFooter className="pt-0 mt-auto flex flex-col gap-2">
-        <Button 
-          variant="outline" 
-          className="w-full justify-between group"
-          asChild
-        >
-          <a href={`tel:${phoneNumber.replace(/\s/g, '')}`}>
-            <span>Anrufen: {phoneNumber}</span>
-            <Phone className="h-4 w-4" />
-          </a>
-        </Button>
-        <Button 
-          variant="outline" 
-          className="w-full justify-between group"
-          asChild
-        >
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <span>WhatsApp Chat</span>
-            <MessageCircle className="h-4 w-4" />
-          </a>
-        </Button>
-      </CardFooter>
-    </Card>
-  );
-};
-
-interface CTACardProps {
-  title: string;
-  description: string;
-  buttonText: string;
-  onClick?: () => void;
-}
-
-const CTACard: React.FC<CTACardProps> = ({
-  title,
-  description,
-  buttonText,
-  onClick
-}) => {
-  return (
-    <Card className="overflow-hidden h-full transition-all hover:shadow-lg border border-medico-turquoise/30 hover:border-medico-turquoise flex flex-col bg-gradient-to-br from-white to-medico-mint/20">
-      <CardHeader className="pb-2">
-        <div className="rounded-full w-12 h-12 flex items-center justify-center mb-2 bg-medico-yellow/20">
-          <Send className="h-6 w-6 text-medico-darkGreen" />
-        </div>
-        <CardTitle className="text-xl font-bold text-medico-darkGreen">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="pb-3 flex-grow">
-        <p className="text-medico-darkGreen/80">{description}</p>
-      </CardContent>
-      <CardFooter className="pt-0 mt-auto">
-        <Button 
-          variant="default"
-          size="lg"
-          className="w-full justify-center group bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-bold"
-          onClick={onClick}
-        >
-          <span>{buttonText}</span>
-          <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-        </Button>
-      </CardFooter>
-    </Card>
-  );
-};
 
 const ContactInfoSection = () => {
   const handleOpenSidebarForm = () => {
@@ -192,7 +30,7 @@ const ContactInfoSection = () => {
           {/* Contact Details */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Address */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
+            <div className="flex flex-col items-center text-center">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <MapPin className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -204,7 +42,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Phone */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
+            <div className="flex flex-col items-center text-center">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Phone className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -218,7 +56,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Email */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
+            <div className="flex flex-col items-center text-center">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Mail className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -232,7 +70,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Office Hours */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
+            <div className="flex flex-col items-center text-center">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Clock className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -241,37 +79,75 @@ const ContactInfoSection = () => {
             </div>
           </div>
 
-          {/* Contact Methods */}
+          {/* Contact Methods - Open Layout */}
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-medico-darkGreen mb-3">So erreichen Sie uns</h3>
-            <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-medico-darkGreen mb-8">So erreichen Sie uns</h3>
+            <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto mb-12">
               Wählen Sie den für Sie angenehmsten Kommunikationsweg – wir sind auf allen Kanälen für Sie da.
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <PhoneWhatsAppCard 
-              title="Telefon & WhatsApp"
-              description="Direkter Kontakt per Anruf oder WhatsApp-Chat"
-              phoneNumber="06131 - 63 67 801"
-              whatsappLink="https://wa.me/+4917680167641"
-            />
             
-            <ContactCard 
-              icon={<Mail className="h-6 w-6 text-gray-600" />} 
-              color="amber"
-              title="E-Mail"
-              description="Direkt an unser Postfach schreiben"
-              buttonText="Mail verfassen"
-              href="mailto:info@ooliv.de"
-            />
-            
-            <CTACard 
-              title="Anfrage senden"
-              description="Projekt-Details über unser Formular teilen"
-              buttonText="Formular öffnen"
-              onClick={handleOpenSidebarForm}
-            />
+            {/* Contact Methods - Simple Layout */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mb-12">
+              {/* Phone */}
+              <a 
+                href="tel:+4961316367801"
+                className="flex flex-col items-center group hover:scale-105 transition-transform"
+              >
+                <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-medico-turquoise/20 transition-colors">
+                  <Phone className="h-8 w-8 text-medico-turquoise" />
+                </div>
+                <span className="font-semibold text-medico-darkGreen group-hover:text-medico-turquoise transition-colors">
+                  06131 – 63 67 801
+                </span>
+                <span className="text-sm text-medico-darkGreen/70">Anrufen</span>
+              </a>
+
+              {/* WhatsApp */}
+              <a 
+                href="https://wa.me/+4917680167641"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center group hover:scale-105 transition-transform"
+              >
+                <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-green-100 transition-colors">
+                  <MessageCircle className="h-8 w-8 text-green-600" />
+                </div>
+                <span className="font-semibold text-medico-darkGreen group-hover:text-green-600 transition-colors">
+                  WhatsApp Chat
+                </span>
+                <span className="text-sm text-medico-darkGreen/70">Nachricht senden</span>
+              </a>
+
+              {/* Email */}
+              <a 
+                href="mailto:info@ooliv.de"
+                className="flex flex-col items-center group hover:scale-105 transition-transform"
+              >
+                <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mb-3 group-hover:bg-amber-100 transition-colors">
+                  <Mail className="h-8 w-8 text-amber-600" />
+                </div>
+                <span className="font-semibold text-medico-darkGreen group-hover:text-amber-600 transition-colors">
+                  info@ooliv.de
+                </span>
+                <span className="text-sm text-medico-darkGreen/70">E-Mail senden</span>
+              </a>
+            </div>
+
+            {/* Primary CTA Button */}
+            <div className="mb-12">
+              <Button 
+                size="lg"
+                className="bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+                onClick={handleOpenSidebarForm}
+              >
+                <Send className="h-5 w-5 mr-2" />
+                Anfrage senden
+                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <p className="text-sm text-medico-darkGreen/70 mt-3">
+                Projekt-Details über unser Formular teilen
+              </p>
+            </div>
           </div>
           
           <div className="text-center mb-8">
