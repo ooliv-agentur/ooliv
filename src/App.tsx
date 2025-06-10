@@ -31,7 +31,6 @@ import EnglishPrivacyPolicy from './pages/en/PrivacyPolicyEN';
 import GermanThankYou from './pages/de/Danke';
 import EnglishThankYou from './pages/en/ThankYouEN';
 import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
-import EnglishStrategy from './pages/en/StrategyEN';
 import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
@@ -89,11 +88,10 @@ function App() {
 
                 {/* English Routes */}
                 <Route path="/en" element={<EnglishIndex />} />
-                <Route path="/en/webdesign" element={<EnglishWebDesign />} />
-                <Route path="/en/webdevelopment" element={<EnglishWebDevelopment />} />
-                <Route path="/en/strategy" element={<EnglishStrategy />} />
-                <Route path="/en/content-creation" element={<EnglishContentCreation />} />
+                <Route path="/en/web-design" element={<EnglishWebDesign />} />
+                <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
                 <Route path="/en/seo" element={<EnglishSEO />} />
+                <Route path="/en/content-creation" element={<EnglishContentCreation />} />
                 <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
                 <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
                 <Route path="/en/case-studies" element={<EnglishCaseStudies />} />

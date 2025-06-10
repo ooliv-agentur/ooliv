@@ -2,11 +2,16 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import SEOHero from '@/components/seo/SEOHero';
+import SEOBenefits from '@/components/seo/SEOBenefits';
+import SEOServices from '@/components/seo/SEOServices';
+import SEOProcess from '@/components/seo/SEOProcess';
+import SEOApproach from '@/components/seo/SEOApproach';
+import SEOCta from '@/components/seo/SEOCta';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import ClientLogos from '@/components/ClientLogos';
+import { useLanguage } from '@/contexts/LanguageContext';
+import SEOTextSectionEN from '@/components/en/SEOTextSectionEN';
 
 const EnglishSEO = () => {
   const { setLanguage } = useLanguage();
@@ -14,60 +19,60 @@ const EnglishSEO = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
-
+  
   const seoFaqs = [
     {
-      question: "How long does it take to see SEO results?",
-      answer: "SEO is a long-term strategy. You can typically expect to see initial improvements within 3-6 months, with significant results becoming apparent after 6-12 months. The timeline depends on your industry competitiveness and current website status."
+      question: "How long does it take for SEO measures to show results?",
+      answer: "First effects in a few weeks, sustainable results usually from 3 months onwards."
     },
     {
-      question: "What does your SEO service include?",
-      answer: "Our comprehensive SEO service includes keyword research, on-page optimization, technical SEO, content strategy, link building, local SEO optimization, performance monitoring, and regular reporting to track your progress."
+      question: "What makes your SEO approach in Mainz special?",
+      answer: "Strategy, tech know-how and content – combined in a scalable process."
     },
     {
-      question: "Do you guarantee first page rankings?",
-      answer: "While we cannot guarantee specific rankings (as search algorithms are constantly changing), we can guarantee that we'll use proven, white-hat SEO strategies to improve your visibility and organic traffic significantly."
+      question: "Do you also offer local SEO services?",
+      answer: "Yes – including Google Business, industry directories and targeted visibility in Mainz & region."
     },
     {
-      question: "How do you measure SEO success?",
-      answer: "We track multiple metrics including organic traffic growth, keyword ranking improvements, conversion rates, local search visibility, and overall business impact. We provide detailed monthly reports showing your progress."
+      question: "Is link building part of your SEO services?",
+      answer: "Yes – we coordinate sustainable backlink campaigns including authority building."
     },
     {
-      question: "Do you work with local businesses in Mainz?",
-      answer: "Yes, we specialize in local SEO for Mainz and surrounding areas. We optimize your Google My Business profile, local citations, and location-based keywords to help you dominate local search results."
+      question: "How do you ensure that technical SEO is up to date?",
+      answer: "Through structured audits, Core Web Vitals checks and technical implementation by our team."
+    },
+    {
+      question: "Why should I work with a local SEO agency in Mainz?",
+      answer: "Because regional market knowledge, language and SEO tactics make a decisive difference."
     }
   ];
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>SEO Agency Mainz – Visible Online</title>
-        <meta name="description" content="As an SEO agency in Mainz, we ensure top rankings. ooliv increases your online presence with customized search engine optimization." />
-        <meta name="keywords" content="SEO Agency Mainz, Search Engine Optimization Mainz, SEO Consulting Mainz, Google Ranking Mainz, Local SEO Mainz" />
-        <meta name="focus-keyword" content="SEO Agency Mainz" />
+        <title>SEO Agency Mainz | Visibility for B2B with ooliv</title>
+        <meta name="description" content="More visibility for your website: ooliv is your SEO agency in Mainz – Onpage, content & strategy for sustainable rankings." />
       </Helmet>
+
+      <SEOHero />
+      <SEOBenefits />
+      <SEOServices />
+      <SEOApproach />
+      <SEOProcess />
       
-      <PageHero 
-        title="SEO Agency Mainz – Visible Online"
-        subtitle="As an SEO agency in Mainz, we ensure top rankings. ooliv increases your online presence with customized search engine optimization."
-        startProjectText="Start Your SEO Strategy"
-        seeWorkText="View SEO Case Studies"
-      />
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
       
       <FAQ 
-        customFaqs={seoFaqs}
-        customTitle="Frequently Asked Questions About SEO"
-        customCtaText="More SEO questions? Contact us"
+        customFaqs={seoFaqs} 
+        customTitle="Frequently Asked Questions about SEO Agency Mainz"
       />
       
-      <CTA 
-        title="Ready to dominate search results?"
-        subtitle="Let's develop an SEO strategy that drives organic traffic and grows your business."
-        primaryCta="Start Your SEO Strategy"
-        secondaryCta="SEO Consultation"
-      />
-      
-      <ClientLogos />
+      <SEOCta />
+      <SEOTextSectionEN />
     </PageLayout>
   );
 };

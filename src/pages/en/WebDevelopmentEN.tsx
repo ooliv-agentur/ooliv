@@ -2,11 +2,16 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import WebDevHero from '@/components/web-development/WebDevHero';
+import WebDevBenefits from '@/components/web-development/WebDevBenefits';
+import WebDevProcess from '@/components/web-development/WebDevProcessNew';
+import WebDevServices from '@/components/web-development/WebDevServices';
+import WebDevCmsVsStatic from '@/components/web-development/WebDevCmsVsStatic';
+import WebDevCTA from '@/components/web-development/WebDevCTA';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
-import ClientLogos from '@/components/ClientLogos';
+import { useLanguage } from '@/contexts/LanguageContext';
+import WebDevSEOTextEN from '@/components/web-development/WebDevSEOTextEN';
 
 const EnglishWebDevelopment = () => {
   const { setLanguage } = useLanguage();
@@ -15,60 +20,60 @@ const EnglishWebDevelopment = () => {
     setLanguage('en');
   }, [setLanguage]);
 
-  const webdevFaqs = [
+  // Define FAQs for web development - same structure as German page
+  const webDevFaqs = [
     {
-      question: "What technologies do you use for web development?",
-      answer: "We primarily work with WordPress for content management systems, but also develop custom solutions using modern technologies like React, TypeScript, and Node.js. We choose the best technology stack based on your specific requirements and goals."
+      question: "What platforms do you work with?",
+      answer: "We develop fully coded websites (without CMS) and custom WordPress solutions - depending on what better suits your business."
     },
     {
-      question: "Do you develop e-commerce websites?",
-      answer: "Yes, we develop comprehensive e-commerce solutions using WooCommerce for WordPress or Shopify for specialized online stores. We create secure, scalable, and user-friendly online shops that drive sales and growth."
+      question: "Can ooliv develop online shops?",
+      answer: "Yes - WooCommerce within WordPress or Shopify for targeted B2B cases."
     },
     {
-      question: "Can you integrate third-party services and APIs?",
-      answer: "Absolutely! We have extensive experience integrating various third-party services including payment gateways, CRM systems, email marketing tools, analytics platforms, and custom APIs to enhance your website's functionality."
+      question: "Is performance a standard feature?",
+      answer: "Absolutely. Our sites are fast, SEO-optimized, and run reliably on all devices."
     },
     {
-      question: "Do you provide website maintenance and updates?",
-      answer: "Yes, we offer comprehensive maintenance packages including security updates, performance optimization, content updates, backup management, and technical support to keep your website running smoothly."
+      question: "Is there support after launch?",
+      answer: "Yes. We continue to support you with technical assistance, updates, and tracking."
     },
     {
-      question: "How do you ensure website security?",
-      answer: "We implement multiple security layers including SSL certificates, regular security updates, secure coding practices, firewall protection, malware scanning, and regular backups to protect your website and data."
+      question: "Can you improve existing websites?",
+      answer: "Yes. We analyze whether optimization makes sense - or if a relaunch would be more efficient."
     }
   ];
 
   return (
-    <PageLayout>
-      <Helmet>
-        <title>WordPress Agency Mainz – Technically Strong</title>
-        <meta name="description" content="Your WordPress agency in Mainz: Modern web development, technically sophisticated and individual. We implement your digital vision reliably." />
-        <meta name="keywords" content="WordPress Agency Mainz, Web Development Mainz, Custom WordPress Development, Professional WordPress Developers, Technical Web Solutions" />
-        <meta name="focus-keyword" content="WordPress Agency Mainz" />
-      </Helmet>
+    <>
+      <PageLayout className="overflow-x-hidden">
+        <Helmet>
+          <title>Web Development Services | Front-End, Back-End & Full-Stack Solutions | ooliv</title>
+          <meta name="description" content="Scalable web development with front-end, back-end, and full-stack expertise. Build a secure, SEO-optimized website with ooliv today!" />
+        </Helmet>
+
+        <WebDevHero />
+        <WebDevBenefits />
+        <WebDevCmsVsStatic />
+        <WebDevProcess />
+        <WebDevServices />
+        
+        {/* Using Global Case Studies Component */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
+        
+        {/* Using Global FAQ Component with custom FAQs - matching German page structure */}
+        <FAQ customFaqs={webDevFaqs} />
+        
+        <WebDevCTA />
+      </PageLayout>
       
-      <PageHero 
-        title="WordPress Agency Mainz – Technically Strong"
-        subtitle="Your WordPress agency in Mainz: Modern web development, technically sophisticated and individual. We implement your digital vision reliably."
-        startProjectText="Start Your Development Project"
-        seeWorkText="View Our Technical Work"
-      />
-      
-      <FAQ 
-        customFaqs={webdevFaqs}
-        customTitle="Frequently Asked Questions About Web Development"
-        customCtaText="Have technical questions? Contact us"
-      />
-      
-      <CTA 
-        title="Ready to build your technical solution?"
-        subtitle="Let's develop a robust, scalable website that meets your exact technical requirements."
-        primaryCta="Start Your Development Project"
-        secondaryCta="Technical Consultation"
-      />
-      
-      <ClientLogos />
-    </PageLayout>
+      {/* SEO Text Section moved outside PageLayout to appear after footer */}
+      <WebDevSEOTextEN />
+    </>
   );
 };
 

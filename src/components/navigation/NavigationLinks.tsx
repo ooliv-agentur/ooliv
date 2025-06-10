@@ -31,7 +31,6 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   // Navigation links for English language
   const englishLinks = [
     { title: 'Home', path: '/en' },
-    { title: 'Strategy', path: '/en/strategy' },
     { title: 'Web Design', path: '/en/webdesign' },
     { title: 'Web Development', path: '/en/webdevelopment' },
     { title: 'Content Creation', path: '/en/content-creation' },

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -9,10 +10,6 @@ interface LanguageSwitcherProps {
 }
 
 const LanguageSwitcher = ({ variant = 'default' }: LanguageSwitcherProps) => {
-  // Disable language switcher for now
-  return null;
-
-  
   const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
@@ -86,7 +83,6 @@ const LanguageSwitcher = ({ variant = 'default' }: LanguageSwitcherProps) => {
       <span className="sr-only">{language === 'de' ? 'EN' : 'DE'}</span>
     </Button>
   );
-  
 };
 
 export default LanguageSwitcher;

@@ -3,10 +3,15 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import ContentHero from '@/components/content-creation/ContentHero';
+import ContentBenefits from '@/components/content-creation/ContentBenefits';
+import ContentService from '@/components/content-creation/ContentService';
+import ContentServices from '@/components/content-creation/ContentServices';
+import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
+import ContentProcess from '@/components/content-creation/ContentProcess';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import ClientLogos from '@/components/ClientLogos';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const EnglishContentCreation = () => {
   const { setLanguage } = useLanguage();
@@ -15,59 +20,84 @@ const EnglishContentCreation = () => {
     setLanguage('en');
   }, [setLanguage]);
 
+  // Custom FAQ items for Content Creation page - English version
   const contentFaqs = [
     {
-      question: "What types of content do you create?",
-      answer: "We create comprehensive content including website copy, blog articles, product descriptions, landing page content, social media posts, email newsletters, and SEO-optimized content that engages your audience and drives conversions."
+      question: "How do you create content for websites?",
+      answer: "We develop a comprehensive content strategy, starting with keyword research, and then deliver modular, conversion-oriented assets: text, images, videos, and illustrations – all ready to launch."
     },
     {
-      question: "How do you ensure content aligns with our brand voice?",
-      answer: "We start by understanding your brand personality, target audience, and communication style. We create detailed brand guidelines and tone of voice documentation to ensure all content consistently reflects your brand identity."
+      question: "Can I order just content without design?",
+      answer: "Yes – we can deliver just content (text, images, videos) that you can integrate into your existing website."
     },
     {
-      question: "Do you write SEO-optimized content?",
-      answer: "Yes, all our content is created with SEO best practices in mind. We conduct thorough keyword research, optimize for search intent, and create content that ranks well while providing genuine value to your readers."
+      question: "What if I don't have a logo or visual brand elements?",
+      answer: "We can help with that too. Our team creates logos, icons, and visual systems that match your brand identity."
     },
     {
-      question: "Can you help with content strategy?",
-      answer: "Absolutely! We develop comprehensive content strategies that align with your business goals, including content calendars, topic clusters, audience personas, and distribution strategies across multiple channels."
+      question: "Do you use AI for content?",
+      answer: "Yes, but we don't blindly rely on AI. We use tools like ChatGPT and Midjourney, but everything is refined and curated by our team."
     },
     {
-      question: "How do you measure content performance?",
-      answer: "We track various metrics including organic traffic, engagement rates, conversion rates, time on page, social shares, and lead generation to measure content effectiveness and continuously optimize our approach."
+      question: "Do you optimize content for SEO?",
+      answer: "Yes. Every content element is SEO-friendly, from headlines to metadata."
     }
   ];
 
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
-        <title>Content Agency Mainz – Texts that Work</title>
-        <meta name="description" content="ooliv – Your content agency in Mainz. We create compelling texts that reach your target audience and strengthen your brand." />
-        <meta name="keywords" content="Content Agency Mainz, Content Creation Mainz, Professional Copywriting, Content Marketing Mainz, SEO Content Writing" />
-        <meta name="focus-keyword" content="Content Agency Mainz" />
+        <title>Content Creation for B2B | Text that Converts</title>
+        <meta name="description" content="ooliv creates strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful." />
       </Helmet>
       
-      <PageHero 
-        title="Content Agency Mainz – Texts that Work"
-        subtitle="ooliv – Your content agency in Mainz. We create compelling texts that reach your target audience and strengthen your brand."
-        startProjectText="Start Your Content Project"
-        seeWorkText="View Content Examples"
-      />
+      {/* 1. Hero Section - White background */}
+      <ContentHero />
       
-      <FAQ 
-        customFaqs={contentFaqs}
-        customTitle="Frequently Asked Questions About Content Creation"
-        customCtaText="More content questions? Contact us"
-      />
+      {/* 2. Problem-Solution Area - Light mint background */}
+      <div className="bg-medico-mint/20">
+        <ContentBenefits />
+      </div>
       
-      <CTA 
-        title="Ready to create compelling content?"
-        subtitle="Let's develop content that engages your audience and drives meaningful business results."
-        primaryCta="Start Your Content Project"
-        secondaryCta="Content Strategy Consultation"
-      />
+      {/* 3. Content Service - White background */}
+      <ContentService />
       
-      <ClientLogos />
+      {/* 4. Content Services - Light background */}
+      <ContentServices />
+      
+      {/* 5. Process - Light gray background */}
+      <ContentProcess />
+      
+      {/* 6. Use the standardized global CaseStudiesSection - White background */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CaseStudiesSection />
+        </div>
+      </section>
+      
+      {/* 7. Why ooliv - Light background */}
+      <div className="bg-brand-backgroundAlt">
+        <ContentExpertInsight />
+      </div>
+      
+      {/* 8. FAQs - White background */}
+      <div className="bg-white">
+        <FAQ 
+          customFaqs={contentFaqs}
+          customTitle="Frequently Asked Questions About Content Creation" 
+        />
+      </div>
+      
+      {/* 9. CTA - Mint background */}
+      <div className="bg-medico-mint/30">
+        <CTA 
+          title="Let's create content that converts"
+          subtitle="We don't just fill pages – we build momentum. Let's create content that ranks, resonates and delivers real business results."
+          primaryCta="Discuss Content Project"
+          secondaryCta="View Showcase"
+          secondaryCtaLink="/en/case-studies"
+        />
+      </div>
     </PageLayout>
   );
 };

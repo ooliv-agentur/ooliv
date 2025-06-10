@@ -2,15 +2,18 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
-import FAQ from '@/components/FAQ';
+import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
-import ClientLogos from '@/components/ClientLogos';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import WebDesignSEOTextEN from '@/components/web-design/WebDesignSEOTextEN';
+import { useLanguage } from '@/contexts/LanguageContext';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const EnglishWebDesign = () => {
   const { setLanguage } = useLanguage();
@@ -19,59 +22,87 @@ const EnglishWebDesign = () => {
     setLanguage('en');
   }, [setLanguage]);
 
-  const webdesignFaqs = [
-    {
-      question: "How much does professional web design cost?",
-      answer: "The cost depends on the scope and requirements of your project. Simple business websites start at around €3,000, while more complex projects with e-commerce functionality or custom features typically range from €5,000 to €15,000. We always provide transparent pricing without hidden costs."
-    },
-    {
-      question: "How long does it take to design and develop a website?",
-      answer: "The timeline varies based on project complexity. A simple business website typically takes 4-6 weeks, while larger projects with custom functionality may take 8-12 weeks. We'll provide you with a detailed timeline during our initial consultation."
-    },
-    {
-      question: "Do you design mobile-responsive websites?",
-      answer: "Absolutely! All our websites are designed mobile-first and are fully responsive across all devices. We ensure your website looks and functions perfectly on smartphones, tablets, and desktop computers."
-    },
-    {
-      question: "Can you redesign my existing website?",
-      answer: "Yes, we specialize in website redesigns. We'll analyze your current site, identify areas for improvement, and create a modern, high-performing website that better serves your business goals and user needs."
-    },
-    {
-      question: "Do you provide ongoing support after the website launch?",
-      answer: "Yes, we offer comprehensive post-launch support including technical maintenance, content updates, security monitoring, and performance optimization. We're here to ensure your website continues to perform at its best."
-    }
-  ];
+  // Example demonstration section for our new animation components
+  const AnimationShowcase = () => (
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">
+            Smooth Animations for Better User Experience
+          </h2>
+        </Reveal>
+        
+        <Reveal delay={0.2}>
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            Our websites include subtle animations that guide users and highlight important content.
+          </p>
+        </Reveal>
+        
+        <StaggerReveal className="grid md:grid-cols-3 gap-6 mb-12">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="bg-brand-backgroundAlt p-6 rounded-lg border border-gray-100">
+              <h3 className="text-xl font-bold mb-3 text-brand-heading">Animation Example {item}</h3>
+              <p className="text-brand-text">Smooth, subtle animations make your website feel more responsive and engaging.</p>
+            </div>
+          ))}
+        </StaggerReveal>
+        
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <Reveal direction="left">
+            <div className="bg-brand-backgroundAlt p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3">Left Animation</h3>
+              <p>This content slides in from the left side.</p>
+            </div>
+          </Reveal>
+          
+          <Reveal direction="right" delay={0.2}>
+            <div className="bg-brand-backgroundAlt p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3">Right Animation</h3>
+              <p>This content slides in from the right side.</p>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
 
   return (
-    <PageLayout>
-      <Helmet>
-        <title>Web Design Mainz – Individual & Successful</title>
-        <meta name="description" content="Creative web design in Mainz – individually tailored to your goals. We design websites that inspire and deliver measurable results." />
-        <meta name="keywords" content="Web Design Mainz, Creative Website Design, Custom Web Design, Professional Web Design Agency Mainz, Responsive Web Design" />
-        <meta name="focus-keyword" content="Web Design Mainz" />
-      </Helmet>
+    <>
+      <PageLayout className="overflow-x-hidden">
+        <Helmet>
+          <title>Webdesign by ooliv – Custom Websites for Business Growth</title>
+          <meta name="description" content="Discover tailor-made webdesign solutions by ooliv. Scalable WordPress websites, SEO strategies, and high-performance design for international businesses." />
+        </Helmet>
+        
+        <WebDesignHero />
+        <WebDesignBenefits />
+        <WebDesignStructureFirst />
+        <AnimationShowcase />
+        <WebDesignBuildOptions />
+        <WebDesignProcess />
+        
+        {/* Full Case Studies Section with global titles */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <CaseStudiesSection />
+          </div>
+        </section>
+        
+        <WebDesignFAQ />
+        
+        {/* Final CTA Section - removed footerNote to prevent duplication */}
+        <CTA 
+          title="Let's talk about your web design project"
+          subtitle="Let's develop a website together that not only looks good but also becomes visible and converts."
+          primaryCta="Start Project"
+          secondaryCta="Schedule Strategy Talk"
+          secondaryCtaLink="/en/contact"
+        />
+      </PageLayout>
       
-      <WebDesignHero />
-      <WebDesignBenefits />
-      <WebDesignStructureFirst />
-      <WebDesignBuildOptions />
-      <WebDesignProcess />
-      
-      <FAQ 
-        customFaqs={webdesignFaqs}
-        customTitle="Frequently Asked Questions About Web Design"
-        customCtaText="Have more questions? Contact us"
-      />
-      
-      <CTA 
-        title="Ready to create your perfect website?"
-        subtitle="Let's design a website that not only looks amazing but also drives real business results."
-        primaryCta="Start Your Web Design Project"
-        secondaryCta="Schedule a Design Consultation"
-      />
-      
-      <ClientLogos />
-    </PageLayout>
+      {/* SEO Text Section moved outside PageLayout to appear after footer */}
+      <WebDesignSEOTextEN />
+    </>
   );
 };
 

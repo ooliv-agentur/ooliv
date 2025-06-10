@@ -2,11 +2,15 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { useLanguage } from '@/contexts/LanguageContext';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
+import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
+import AiTechServices from '@/components/ai-technologies/AiTechServices';
+import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
-import ClientLogos from '@/components/ClientLogos';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import { useLanguage } from '@/contexts/LanguageContext';
+import KiSEOTextEN from '@/components/ai-technologies/KiSEOTextEN';
 
 const EnglishAiTechnologies = () => {
   const { setLanguage } = useLanguage();
@@ -14,55 +18,80 @@ const EnglishAiTechnologies = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
-
-  const aiFaqs = [
+  
+  // AI tools data for English page
+  const aiTools = [
     {
-      question: "How can AI improve our business processes?",
-      answer: "AI can automate repetitive tasks, improve content creation, enhance customer service through chatbots, optimize marketing campaigns, and provide data-driven insights. We assess your specific needs and implement AI solutions that deliver measurable efficiency gains."
+      name: "ChatGPT",
+      logoSrc: "/lovable-uploads/chatgpt.png",
+      description: "Texts, FAQs, SEO snippets and translations - developed with AI, refined by our editors."
     },
     {
-      question: "What AI tools do you work with?",
-      answer: "We work with leading AI platforms including ChatGPT, Claude, Google AI, Microsoft Copilot, and specialized tools for content creation, data analysis, and workflow automation. We select the best tools based on your specific requirements."
+      name: "Midjourney",
+      logoSrc: "/lovable-uploads/Midjourney.png", 
+      description: "Individual visuals & illustrations for brands that don't want stock photos."
     },
     {
-      question: "Is our data secure when using AI tools?",
-      answer: "Yes, data security is our top priority. We only work with enterprise-grade AI platforms that meet strict security standards, implement proper data handling protocols, and ensure your sensitive information remains protected."
-    },
-    {
-      question: "How do you measure the ROI of AI implementation?",
-      answer: "We track metrics such as time savings, cost reduction, productivity improvements, quality enhancements, and revenue impact. We establish clear benchmarks before implementation and provide regular reports showing the measurable benefits."
-    },
-    {
-      question: "Do you provide AI training for our team?",
-      answer: "Absolutely! We offer comprehensive training programs to help your team effectively use AI tools and integrate them into daily workflows. This includes workshops, documentation, and ongoing support to maximize adoption and results."
+      name: "Sora (Video AI)",
+      logoSrc: "/lovable-uploads/sora.png",
+      description: "Animated video elements, background videos and motion design - tailored to your brand."
     }
   ];
 
+  // Custom FAQ items for AI page
+  const aiFaqs = [
+    {
+      question: "How do we integrate AI into existing marketing processes?",
+      answer: "We analyze your current processes, identify the biggest efficiency potentials and seamlessly integrate the appropriate AI tools into your workflow."
+    },
+    {
+      question: "Do we stay within legal boundaries with AI-created content?",
+      answer: "Absolutely. We pay attention to legal and ethical compliance, from copyright to data protection, and maintain human control over all outputs."
+    },
+    {
+      question: "What concrete ROI advantages does AI bring in marketing?",
+      answer: "Typical benefits: 70-80% time savings in content creation, 30-50% lower costs per lead, and significantly faster response times to market changes."
+    },
+    {
+      question: "Is the quality of AI-generated content really good?",
+      answer: "With the right prompt engineering and human post-processing, the quality is excellent. AI creates the raw text, experts refine it for optimal results."
+    },
+    {
+      question: "Which AI tools do we use in our projects?",
+      answer: "We use a broad spectrum: ChatGPT for text creation, DALL-E and Midjourney for image generation, Claude for complex tasks, and specialized tools for SEO and data analysis."
+    }
+  ];
+  
   return (
-    <PageLayout>
+    <PageLayout className="overflow-x-hidden" seoText={<KiSEOTextEN />}>
       <Helmet>
-        <title>AI Agency Mainz – Future Technologies</title>
-        <meta name="description" content="As an AI agency in Mainz, we use cutting-edge technologies for individual solutions. We increase your efficiency and competitiveness." />
-        <meta name="keywords" content="AI Agency Mainz, Artificial Intelligence Mainz, AI Solutions, Machine Learning Mainz, AI Consulting" />
-        <meta name="focus-keyword" content="AI Agency Mainz" />
+        <title>AI Agency in Mainz – AI Technologies for Webdesign, Content & Marketing | ooliv</title>
+        <meta name="description" content="Your AI Agency in Mainz: Faster, more scalable, more efficient with AI-powered web design, content and strategy. Get your potential analysis now!" />
       </Helmet>
-      
+
       <AiTechHero />
+      <AiTechBenefits />
+      <AiTechServices />
+      <AiToolsSection 
+        title="AI-powered - human-led"
+        subtitle="We integrate AI where it saves time and adds value - not to replace expertise."
+        tools={aiTools}
+        note="We use AI as a creative accelerator - never as a shortcut. Quality and strategy always come from humans."
+      />
+      
+      <CaseStudiesSection />
       
       <FAQ 
-        customFaqs={aiFaqs}
-        customTitle="Frequently Asked Questions About AI Technologies"
-        customCtaText="More AI questions? Contact us"
+        customFaqs={aiFaqs} 
+        customTitle="Frequently Asked Questions about AI"
       />
-      
       <CTA 
-        title="Ready to leverage AI for your business?"
-        subtitle="Let's explore how artificial intelligence can transform your workflows and drive efficiency."
-        primaryCta="Request AI Analysis"
-        secondaryCta="AI Strategy Consultation"
+        title="AI-based marketing solutions for your company"
+        subtitle="Discover how we can take your marketing to the next level with AI-powered strategies and tools."
+        primaryCta="Request AI potential analysis"
+        secondaryCta="Schedule strategy talk"
+        secondaryCtaLink="/en/contact"
       />
-      
-      <ClientLogos />
     </PageLayout>
   );
 };
