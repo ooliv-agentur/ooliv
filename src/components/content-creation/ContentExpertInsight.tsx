@@ -136,10 +136,10 @@ const ContentExpertInsight = () => {
               const Icon = benefit.icon;
               return (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full">
+                  <Card className="h-full bg-white shadow-card hover:shadow-cardHover transition-shadow duration-300">
                     <CardContent className="p-8 h-full flex flex-col">
-                      <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <Icon className="w-8 h-8 text-brand-primary" />
+                      <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-medico-turquoise" />
                       </div>
                       
                       <h3 className="text-xl font-bold mb-4 text-brand-heading">
