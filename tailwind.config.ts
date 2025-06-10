@@ -34,6 +34,23 @@ export default {
           white: "#FFFFFF"
         }
       },
+      // Icon-specific design tokens
+      iconSize: {
+        xs: '0.75rem',    // 12px
+        sm: '1rem',       // 16px
+        base: '1.25rem',  // 20px
+        md: '1.5rem',     // 24px
+        lg: '2rem',       // 32px
+        xl: '2.5rem',     // 40px
+        '2xl': '3rem',    // 48px
+      },
+      iconColors: {
+        primary: '#38B593',
+        secondary: '#FFE500',
+        muted: '#003347',
+        background: '#D8F4E3',
+        accent: '#38B593',
+      },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'cardHover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',

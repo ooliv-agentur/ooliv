@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Send, Mail, Phone, Plus, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { 
   Tooltip,
@@ -8,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from "@/components/ui/tooltip";
+import { RegisteredIcon } from "@/components/ui/registered-icon";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -26,11 +26,11 @@ const FloatingActionButtons = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
   };
 
-  // Updated button definitions with consistent yellow color for project button
+  // Updated button definitions with RegisteredIcon
   const buttons = [
     { 
       id: 'project', 
-      icon: Send, 
+      icon: 'send', 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: handleOpenLeadForm,
       className: 'text-white border-none shadow-md hover:shadow-lg',
@@ -44,14 +44,14 @@ const FloatingActionButtons = () => {
     },
     { 
       id: 'email', 
-      icon: Mail, 
+      icon: 'mail', 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
       className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
     },
     { 
       id: 'phone', 
-      icon: Phone, 
+      icon: 'phone', 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
       className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
@@ -102,7 +102,11 @@ const FloatingActionButtons = () => {
                   }}
                   aria-label={button.label}
                 >
-                  <button.icon className="h-5 w-5" />
+                  <RegisteredIcon 
+                    name={button.icon as any}
+                    variant="default"
+                    size="default"
+                  />
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="left" className="bg-medico-darkGreen text-white border-0">
@@ -132,7 +136,11 @@ const FloatingActionButtons = () => {
               : (language === 'de' ? "Menü öffnen" : "Open menu")
             }
           >
-            {isExpanded ? <X className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+            <RegisteredIcon 
+              name={isExpanded ? "close" : "plus"}
+              variant="default"
+              size="default"
+            />
           </Button>
         )}
       </div>

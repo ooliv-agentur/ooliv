@@ -3,6 +3,7 @@ import React from 'react';
 import { LucideIcon } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import { Icon } from '@/components/ui/icon';
 
 interface ProcessStep {
   icon: LucideIcon;
@@ -52,8 +53,14 @@ const BaseProcess = ({
             <div key={index} className="relative">
               <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
                 <div className="flex items-center justify-center mb-6">
-                  <div className="bg-medico-turquoise/20 rounded-full p-4 relative">
-                    <step.icon className="h-8 w-8 text-medico-turquoise" />
+                  <div className="relative">
+                    <Icon 
+                      icon={step.icon}
+                      variant="round"
+                      size="lg"
+                      background="strong"
+                      className="text-medico-turquoise"
+                    />
                     <div className="absolute -top-2 -right-2 bg-medico-turquoise text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
                       {step.number}
                     </div>
