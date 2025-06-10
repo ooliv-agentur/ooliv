@@ -27,8 +27,9 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
         <Button 
           type="button"
           variant="outline"
+          size="lg"
           onClick={onPrevStep}
-          className="flex-1 border-medico-mint text-medico-mint hover:bg-medico-mint hover:text-medico-darkGreen"
+          className="flex-1 bg-white text-medico-darkGreen border-2 border-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise hover:text-medico-darkGreen font-semibold"
         >
           <ArrowLeft className="mr-2 h-5 w-5" />
           {language === 'de' ? "Zurück" : "Back"}
@@ -38,8 +39,20 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
       {currentStep < totalSteps ? (
         <Button 
           type="button"
+          size="lg"
           onClick={onNextStep}
-          className="flex-1 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white font-semibold h-12"
+          className="flex-1 font-semibold"
+          style={{ 
+            backgroundColor: '#FFD700', 
+            color: '#003347',
+            border: 'none'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#FFC700';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#FFD700';
+          }}
         >
           {language === 'de' ? "Weiter" : "Next"}
           <ArrowRight className="ml-2 h-5 w-5" />
@@ -47,7 +60,23 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
       ) : (
         <Button 
           type="submit"
-          className="flex-1 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white font-semibold h-12"
+          size="lg"
+          className="flex-1 font-semibold"
+          style={{ 
+            backgroundColor: '#FFD700', 
+            color: '#003347',
+            border: 'none'
+          }}
+          onMouseEnter={(e) => {
+            if (!isSubmitting) {
+              e.currentTarget.style.backgroundColor = '#FFC700';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!isSubmitting) {
+              e.currentTarget.style.backgroundColor = '#FFD700';
+            }
+          }}
           disabled={isSubmitting}
         >
           {isSubmitting ? (

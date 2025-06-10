@@ -75,21 +75,21 @@ const Danke = () => {
             animate="visible"
           >
             <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-              <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-[#004d51]" aria-hidden="true" />
+              <div className="h-16 w-16 rounded-full bg-medico-turquoise/10 flex items-center justify-center">
+                <CheckCircle className="h-8 w-8 text-medico-turquoise" aria-hidden="true" />
               </div>
             </motion.div>
             
-            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading" variants={itemVariants}>
+            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen" variants={itemVariants}>
               Vielen Dank für Ihre Anfrage!
             </motion.h1>
             
-            <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
+            <motion.p className="text-lg mb-8 text-medico-darkGreen/80" variants={itemVariants}>
               Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
               Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
                 href="mailto:info@ooliv.de" 
-                className="text-[#004d51] hover:underline"
+                className="text-medico-turquoise hover:text-medico-turquoise/80 underline"
                 aria-label="E-Mail an info@ooliv.de senden"
               >
                 info@ooliv.de
@@ -99,7 +99,19 @@ const Danke = () => {
             <motion.div variants={itemVariants}>
               <Button 
                 asChild
-                className="bg-[#004d51] hover:bg-[#003d41]"
+                size="lg"
+                className="font-semibold"
+                style={{ 
+                  backgroundColor: '#FFD700', 
+                  color: '#003347',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFC700';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFD700';
+                }}
               >
                 <Link to="/" aria-label="Zurück zur Startseite">
                   Zurück zur Startseite
