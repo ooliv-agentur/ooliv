@@ -1,70 +1,94 @@
 
 import React from 'react';
-import { CheckCircle, Quote } from 'lucide-react';
+import { CheckCircle, Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ContactTrustSectionDE = () => {
   const trustPoints = [
     "Persönliche Ansprechpartner, keine Zwischenstellen",
-    "Klare, messbare Ergebnisse",
+    "Klare, messbare Ergebnisse", 
     "Direkte Kommunikation mit der Geschäftsführung",
     "Über 100 erfolgreiche Projekte"
   ];
 
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
-    <section className="py-24 bg-medico-mint relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-medico-turquoise/10 rounded-full -translate-y-48 translate-x-48"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-medico-yellow/20 rounded-full translate-y-32 -translate-x-32"></div>
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Quote className="h-12 w-12 mx-auto mb-6 text-medico-turquoise" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
             Warum ooliv?
           </h2>
-          <p className="text-lg text-medico-darkGreen/80 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+          <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
             Erfahren Sie, was uns zu Ihrem idealen Partner für digitales Marketing macht
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-4xl mx-auto">
           {/* Trust Points */}
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             {trustPoints.map((point, index) => (
               <div 
                 key={index} 
-                className="flex items-start bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="flex items-start bg-medico-mint/30 rounded-xl p-6 border border-medico-turquoise/20 hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-medico-turquoise/10 rounded-full p-2 mr-4 flex-shrink-0">
+                <div className="bg-medico-turquoise/20 rounded-full p-2 mr-4 flex-shrink-0">
                   <CheckCircle className="h-6 w-6 text-medico-turquoise" />
                 </div>
-                <p className="text-medico-darkGreen font-medium text-lg">{point}</p>
+                <p className="text-medico-darkGreen font-medium text-lg leading-relaxed">{point}</p>
               </div>
             ))}
           </div>
-          
-          {/* Uli's Photo and Quote */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative max-w-md">
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/Uli.jpg" 
-                  alt="Uli Schönleber, Geschäftsführer von ooliv" 
-                  className="w-80 h-80 object-cover object-center rounded-2xl shadow-xl"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-medico-yellow text-medico-darkGreen px-6 py-3 rounded-full font-bold shadow-lg">
-                  Uli Schönleber, Geschäftsführer
+
+          {/* Trust Box with Ratings */}
+          <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20 mb-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-center">
+                <div className="flex justify-center items-center mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-medico-yellow text-medico-yellow" />
+                  ))}
                 </div>
+                <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>
+                <div className="text-medico-darkGreen/70 text-sm">Google Bewertungen</div>
               </div>
               
-              {/* Quote bubble */}
-              <div className="absolute -top-4 -left-8 bg-white rounded-xl p-4 shadow-lg max-w-xs">
-                <p className="text-sm text-medico-darkGreen italic">
-                  "Persönliche Betreuung und messbare Erfolge stehen bei uns an erster Stelle."
-                </p>
-                <div className="absolute bottom-0 left-8 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white transform translate-y-full"></div>
+              <div className="text-center">
+                <div className="flex justify-center items-center mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-medico-yellow text-medico-yellow" />
+                  ))}
+                </div>
+                <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>
+                <div className="text-medico-darkGreen/70 text-sm">Sortlist Bewertungen</div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              className="font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ 
+                backgroundColor: '#FFD700', 
+                color: '#003347',
+                border: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFC700';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFD700';
+              }}
+              onClick={handleOpenLeadForm}
+            >
+              Projekt starten
+            </Button>
           </div>
         </div>
       </div>
