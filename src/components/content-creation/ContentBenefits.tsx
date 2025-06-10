@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Target, Video, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -68,7 +67,7 @@ const ContentBenefits = () => {
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Als Content Agentur Mainz kennen wir die größten Stolpersteine beim digitalen Wachstum."
+              ? "Viele Unternehmen investieren viel Zeit und Budget in Content, aber die Ergebnisse bleiben oft hinter den Erwartungen zurück. Hier zeigen wir, wie wir als Content Agentur Mainz gemeinsam mit Ihnen diese Herausforderungen meistern."
               : "As a Content Agency, we know the biggest stumbling blocks in digital growth."
             }
           </p>
