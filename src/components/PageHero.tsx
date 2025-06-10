@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -294,13 +295,7 @@ const PageHero = ({
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto">
-            {badge && !isHomepage && (
-              <div className="inline-flex items-center bg-medico-turquoise/10 text-medico-turquoise rounded-full px-4 py-1.5 text-sm font-medium mb-6 backdrop-blur-sm">
-                <span>{badge}</span>
-              </div>
-            )}
-            
+          <div className="text-center max-w-4xl mx-auto">            
             {renderTitle()}
             {renderSubtitle()}
             {renderCtas()}
