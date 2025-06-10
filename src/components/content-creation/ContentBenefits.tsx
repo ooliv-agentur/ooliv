@@ -103,6 +103,16 @@ const ContentBenefits = () => {
             </div>
           ))}
         </div>
+        
+        {/* Transition text to next section */}
+        <div className="text-center mt-16">
+          <p className="text-lg text-brand-text max-w-4xl mx-auto leading-relaxed">
+            {isGerman 
+              ? "Als Content Agentur Mainz helfen wir Ihnen, diese Herausforderungen zu meistern – mit einem ganzheitlichen Ansatz, der Strategie, Kreativität und messbare Ergebnisse vereint. Lassen Sie uns gemeinsam Lösungen entwickeln, die Ihre Marke nachhaltig stärken."
+              : "As a Content Agency in Mainz, we help you master these challenges – with a holistic approach that combines strategy, creativity and measurable results. Let us develop solutions together that sustainably strengthen your brand."
+            }
+          </p>
+        </div>
       </div>
     </section>
   );
