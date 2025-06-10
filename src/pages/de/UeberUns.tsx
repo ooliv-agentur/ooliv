@@ -556,5 +556,3 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
-
-</edits_to_apply>
