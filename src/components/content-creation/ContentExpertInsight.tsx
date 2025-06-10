@@ -1,88 +1,127 @@
 
 import React from 'react';
-import { Bot, Image, Video, CheckCircle } from 'lucide-react';
+import { CheckCircle, Users, Lightbulb, Bot, TrendingUp, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentExpertInsight = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
+  const benefits = isGerman ? [
+    {
+      icon: CheckCircle,
+      title: "Strategischer Content-Ansatz",
+      description: "Wir entwickeln keine isolierten Inhalte, sondern denken ganzheitlich – von der ersten Idee bis zur messbaren Performance."
+    },
+    {
+      icon: Users,
+      title: "Erfahrenes Content-Team",
+      description: "Unser Team vereint Content-Strategen, SEO-Experten, Designer und Texter unter einem Dach."
+    },
+    {
+      icon: Lightbulb,
+      title: "Workshops & Trendberatung",
+      description: "Wir teilen unser Wissen in Content-Workshops und beraten Sie zu aktuellen Trends und Best Practices."
+    },
+    {
+      icon: Bot,
+      title: "KI-gestützte Effizienz",
+      description: "Wir nutzen modernste KI-Tools wie ChatGPT und Midjourney, um schneller und effizienter zu arbeiten – ohne dabei die menschliche Expertise zu ersetzen."
+    },
+    {
+      icon: TrendingUp,
+      title: "Messbare Ergebnisse",
+      description: "Content ohne Kennzahlen ist nur Kunst. Wir tracken Performance und optimieren kontinuierlich."
+    },
+    {
+      icon: Zap,
+      title: "Schnelle Umsetzung",
+      description: "Dank strukturierter Prozesse und einem eingespielten Team liefern wir Content schnell und in hoher Qualität."
+    }
+  ] : [
+    {
+      icon: CheckCircle,
+      title: "Strategic Content Approach",
+      description: "We don't create isolated content – we think holistically, from initial idea to measurable performance."
+    },
+    {
+      icon: Users,
+      title: "Experienced Content Team", 
+      description: "Our team combines content strategists, SEO experts, designers, and copywriters under one roof."
+    },
+    {
+      icon: Lightbulb,
+      title: "Workshops & Trend Consulting",
+      description: "We share our knowledge in content workshops and advise you on current trends and best practices."
+    },
+    {
+      icon: Bot,
+      title: "AI-Powered Efficiency",
+      description: "We use cutting-edge AI tools like ChatGPT and Midjourney to work faster and more efficiently – without replacing human expertise."
+    },
+    {
+      icon: TrendingUp,
+      title: "Measurable Results",
+      description: "Content without metrics is just art. We track performance and continuously optimize."
+    },
+    {
+      icon: Zap,
+      title: "Fast Implementation",
+      description: "Thanks to structured processes and a well-coordinated team, we deliver content quickly and with high quality."
+    }
+  ];
+
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">
+    <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-brand-heading text-center md:text-left">
-            {isGerman 
-              ? "Wir nutzen KI nicht nur – wir trainieren sie" 
-              : "We Don't Just Use AI — We Train It"
-            }
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading">
+            {isGerman ? "Warum ooliv als Content Agentur?" : "Why Choose ooliv for Content?"}
           </h2>
-          
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-            <p className="text-lg mb-6 text-brand-text">
-              {isGerman
-                ? "Bei ooliv entwickeln wir eigene GPTs, abgestimmt auf Ihre Marke. Unsere Tools werden gezielt trainiert – das Ergebnis ist markengerechter Content, der konvertiert."
-                : "At ooliv, we build custom GPTs for each client — designed to match your voice, business goals, and market. We teach our tools through deep research and active guidance, so every output is tailored for your business."
-              }
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="flex items-start gap-3">
-                <Bot className="h-6 w-6 text-brand-primary mt-1" />
-                <div>
-                  <h3 className="font-bold mb-1 text-brand-heading">ChatGPT</h3>
-                  <p className="text-sm text-brand-text">
-                    {isGerman
-                      ? "Für intelligente, markenkonforme Texte"
-                      : "For intelligent, brand-aligned text"
-                    }
-                  </p>
+          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+            {isGerman 
+              ? "Content ist mehr als Text und Bilder. Wir bringen Strategie, Kreativität und Technologie zusammen."
+              : "Content is more than text and images. We combine strategy, creativity, and technology."
+            }
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8 text-brand-primary" />
                 </div>
+                
+                <h3 className="text-xl font-bold mb-4 text-brand-heading">
+                  {benefit.title}
+                </h3>
+                
+                <p className="text-brand-text leading-relaxed">
+                  {benefit.description}
+                </p>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <Image className="h-6 w-6 text-brand-primary mt-1" />
-                <div>
-                  <h3 className="font-bold mb-1 text-brand-heading">Midjourney</h3>
-                  <p className="text-sm text-brand-text">
-                    {isGerman 
-                      ? "Für markengerechte Bildsprache" 
-                      : "For brand-aligned images"
-                    }
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <Video className="h-6 w-6 text-brand-primary mt-1" />
-                <div>
-                  <h3 className="font-bold mb-1 text-brand-heading">Sora</h3>
-                  <p className="text-sm text-brand-text">
-                    {isGerman 
-                      ? "Für dynamische Videoinhalte" 
-                      : "For dynamic video creation"
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex items-start gap-3">
-              <CheckCircle className="h-6 w-6 text-brand-primary mt-1" />
-              <p className="text-brand-text">
-                <strong>
-                  {isGerman
-                    ? "Alle Inhalte werden redaktionell geprüft und finalisiert."
-                    : "Every piece of content is refined, reviewed, and finalized by our team."
-                  }
-                </strong>{' '}
-                {isGerman
-                  ? "KI ist bei uns Unterstützung – kein Ersatz für Qualität."
-                  : "We don't rely on AI blindly — we make sure everything works for your brand."
-                }
-              </p>
-            </div>
-          </div>
+            );
+          })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button 
+            size="lg" 
+            className="bg-brand-primary text-white hover:bg-brand-primaryHover"
+            onClick={handleStartProject}
+          >
+            {isGerman ? "Content-Strategie besprechen" : "Discuss Content Strategy"}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>

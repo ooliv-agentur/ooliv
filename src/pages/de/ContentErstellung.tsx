@@ -1,12 +1,11 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
-import ContentServices from '@/components/content-creation/ContentServices';
-import ContentProcess from '@/components/content-creation/ContentProcess';
-import ContentServiceDE from '@/components/content-creation/ContentServiceDE';
+import ContentServicesUnified from '@/components/content-creation/ContentServicesUnified';
+import ContentProcessUnified from '@/components/content-creation/ContentProcessUnified';
+import ContentExpertInsight from '@/components/content-creation/ContentExpertInsight';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -47,23 +46,34 @@ const GermanContentCreation = () => {
         <meta name="description" content="Content Agentur Mainz – Wir entwickeln Texte, Visuals und Videos, die Vertrauen aufbauen, Google-Rankings verbessern und Leads generieren." />
       </Helmet>
 
+      {/* 1. Hero Section - unchanged */}
       <ContentHero />
-      <ContentBenefits />
-      <ContentServiceDE />
-      <ContentServices />
-      <ContentProcess />
       
-      {/* Use the standardized global CaseStudiesSection */}
+      {/* 2. Problem-Lösungs-Bereich - light green background */}
+      <ContentBenefits />
+      
+      {/* 3. Unified Services Section - green background */}
+      <ContentServicesUnified />
+      
+      {/* 4. Unified Process Section - white background */}
+      <ContentProcessUnified />
+      
+      {/* 5. Why ooliv? with added elements */}
+      <ContentExpertInsight />
+      
+      {/* 6. Case Studies */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
+      {/* 7. FAQs - white background */}
       <FAQ 
         customFaqs={contentFaqs}
         customTitle="Häufig gestellte Fragen zur Content-Erstellung" 
       />
+      
       <CTA 
         title="Lassen Sie uns Content erstellen, der konvertiert"
         subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
