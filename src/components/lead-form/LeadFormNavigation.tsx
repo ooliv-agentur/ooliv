@@ -26,10 +26,9 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
       {currentStep > 1 && (
         <Button 
           type="button"
-          variant="outline"
+          variant="minimal"
           size="lg"
           onClick={onPrevStep}
-          className="flex-1 bg-white text-medico-darkGreen border-2 border-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise hover:text-medico-darkGreen font-semibold"
         >
           <ArrowLeft className="mr-2 h-5 w-5" />
           {language === 'de' ? "Zurück" : "Back"}
@@ -39,9 +38,9 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
       {currentStep < totalSteps ? (
         <Button 
           type="button"
+          variant="primary"
           size="lg"
           onClick={onNextStep}
-          className="flex-1 font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400"
         >
           {language === 'de' ? "Weiter" : "Next"}
           <ArrowRight className="ml-2 h-5 w-5" />
@@ -49,8 +48,8 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
       ) : (
         <Button 
           type="submit"
+          variant="primary"
           size="lg"
-          className="flex-1 font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400 disabled:opacity-50"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

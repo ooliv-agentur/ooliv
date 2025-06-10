@@ -32,7 +32,11 @@ const ThankYouScreen: React.FC<ThankYouScreenProps> = ({ onRedirectToHome }) => 
         }
       </p>
       <div className="pt-4">
-        <Button onClick={onRedirectToHome} variant="outline" className="mt-4">
+        <Button 
+          onClick={onRedirectToHome} 
+          variant="light" 
+          size="default"
+        >
           {language === 'de' ? "Zurück zur Website" : "Back to Site"}
         </Button>
       </div>

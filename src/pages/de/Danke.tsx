@@ -99,8 +99,8 @@ const Danke = () => {
             <motion.div variants={itemVariants}>
               <Button 
                 asChild
+                variant="primary"
                 size="lg"
-                className="font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400"
               >
                 <Link to="/" aria-label="Zurück zur Startseite">
                   Zurück zur Startseite

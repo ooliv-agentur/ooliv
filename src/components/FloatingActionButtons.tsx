@@ -26,28 +26,28 @@ const FloatingActionButtons = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
   };
 
-  // Updated button definitions using design tokens
+  // Updated button definitions using design system variants
   const buttons = [
     { 
       id: 'project', 
       icon: 'send', 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: handleOpenLeadForm,
-      className: 'bg-medico-yellow text-medico-darkGreen border-none shadow-md hover:bg-yellow-400 hover:shadow-lg font-semibold'
+      variant: 'floating' as const
     },
     { 
       id: 'email', 
       icon: 'mail', 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => window.location.href = 'mailto:info@ooliv.de',
-      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
+      variant: 'light' as const
     },
     { 
       id: 'phone', 
       icon: 'phone', 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => window.location.href = 'tel:+4961316367801',
-      className: 'bg-white text-medico-darkGreen border border-medico-turquoise/30 hover:bg-medico-mint hover:border-medico-turquoise'
+      variant: 'light' as const
     }
   ];
 
@@ -74,11 +74,8 @@ const FloatingActionButtons = () => {
               <TooltipTrigger asChild>
                 <Button
                   onClick={button.onClick}
-                  className={cn(
-                    "w-14 h-14 rounded-full p-4", 
-                    "transition-all transform hover:scale-105 shadow-sm hover:shadow-md",
-                    button.className
-                  )}
+                  variant={button.variant}
+                  size="floating"
                   style={{
                     transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
                   }}
@@ -102,7 +99,8 @@ const FloatingActionButtons = () => {
         {showToggleButton && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-semibold"
+            variant="floating"
+            size="floating"
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")
