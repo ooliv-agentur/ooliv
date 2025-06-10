@@ -11,7 +11,6 @@ import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
 import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
 import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
 import AboutUsLocation from '@/components/about-us/AboutUsLocation';
-import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
 import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
@@ -33,7 +32,6 @@ const GermanAboutUs = () => {
         <title>Über ooliv | Ihre Werbeagentur aus Mainz</title>
         <meta name="description" content="Lernen Sie ooliv kennen: Ihre Werbeagentur aus Mainz für Webdesign, Entwicklung und digitales Marketing. Erfahren Sie mehr über unser Team und unsere Mission." />
         <meta name="keywords" content="Über ooliv Mainz, Werbeagentur Team Mainz, Digitalagentur Geschichte Mainz, Webdesign Agentur Mainz, Marketing Experten Mainz" />
-        <meta name="focus-keyword" content="Über ooliv Mainz" />
       </Helmet>
       
       <AboutUsHero />
@@ -52,6 +50,7 @@ const GermanAboutUs = () => {
       <AboutUsDigitalServices />
       <AboutUsTargetBusinesses />
       <AboutUsLocation />
+      <AboutUsFAQ />
       <AboutUsCTA />
     </PageLayout>
   );

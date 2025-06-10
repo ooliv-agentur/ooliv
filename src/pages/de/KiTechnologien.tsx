@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -18,25 +17,6 @@ const GermanAiTechnologies = () => {
     setLanguage('de');
   }, [setLanguage]);
 
-  // AI tools data for German page
-  const aiTools = [
-    {
-      name: "ChatGPT",
-      logoSrc: "/lovable-uploads/chatgpt.png",
-      description: "Texte, FAQs, SEO-Snippets und Übersetzungen – entwickelt mit KI, verfeinert von unseren Redakteuren."
-    },
-    {
-      name: "Midjourney",
-      logoSrc: "/lovable-uploads/Midjourney.png", 
-      description: "Individuelle Visuals & Illustrationen für Marken, die keine Stock-Fotos wollen."
-    },
-    {
-      name: "Sora (Video-KI)",
-      logoSrc: "/lovable-uploads/sora.png",
-      description: "Animierte Video-Elemente, Hintergrundvideos und Motion Design – passend zu Ihrer Marke."
-    }
-  ];
-
   return (
     <PageLayout 
       seoText={<KiSEOText />}
@@ -50,12 +30,7 @@ const GermanAiTechnologies = () => {
       
       <AiTechHero />
       <AiTechServices />
-      <AiToolsSection 
-        title="KI-gestützt – menschlich geführt"
-        subtitle="Wir integrieren KI dort, wo sie Zeit spart und Mehrwert schafft – nicht um Expertise zu ersetzen."
-        tools={aiTools}
-        note="Wir nutzen KI als kreativen Beschleuniger – niemals als Abkürzung. Qualität und Strategie kommen immer vom Menschen."
-      />
+      <AiToolsSection />
       <AiTechBenefits />
       <AiTechCaseStudies />
       <CTA 
