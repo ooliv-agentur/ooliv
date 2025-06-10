@@ -84,6 +84,95 @@ const ContactCard: React.FC<ContactCardProps> = ({
   );
 };
 
+interface PhoneWhatsAppCardProps {
+  title: string;
+  description: string;
+  phoneNumber: string;
+  whatsappLink: string;
+}
+
+const PhoneWhatsAppCard: React.FC<PhoneWhatsAppCardProps> = ({
+  title,
+  description,
+  phoneNumber,
+  whatsappLink
+}) => {
+  return (
+    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-medico-turquoise/50 flex flex-col">
+      <CardHeader className="pb-2">
+        <div className="rounded-full w-12 h-12 flex items-center justify-center mb-2 bg-blue-50">
+          <Phone className="h-6 w-6 text-gray-600" />
+        </div>
+        <CardTitle className="text-xl font-bold">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="pb-3 flex-grow">
+        <p className="text-gray-600 mb-4">{description}</p>
+      </CardContent>
+      <CardFooter className="pt-0 mt-auto flex flex-col gap-2">
+        <Button 
+          variant="outline" 
+          className="w-full justify-between group"
+          asChild
+        >
+          <a href={`tel:${phoneNumber.replace(/\s/g, '')}`}>
+            <span>Anrufen: {phoneNumber}</span>
+            <Phone className="h-4 w-4" />
+          </a>
+        </Button>
+        <Button 
+          variant="outline" 
+          className="w-full justify-between group"
+          asChild
+        >
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <span>WhatsApp Chat</span>
+            <MessageCircle className="h-4 w-4" />
+          </a>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+};
+
+interface CTACardProps {
+  title: string;
+  description: string;
+  buttonText: string;
+  onClick?: () => void;
+}
+
+const CTACard: React.FC<CTACardProps> = ({
+  title,
+  description,
+  buttonText,
+  onClick
+}) => {
+  return (
+    <Card className="overflow-hidden h-full transition-all hover:shadow-lg border border-medico-turquoise/30 hover:border-medico-turquoise flex flex-col bg-gradient-to-br from-white to-medico-mint/20">
+      <CardHeader className="pb-2">
+        <div className="rounded-full w-12 h-12 flex items-center justify-center mb-2 bg-medico-yellow/20">
+          <Send className="h-6 w-6 text-medico-darkGreen" />
+        </div>
+        <CardTitle className="text-xl font-bold text-medico-darkGreen">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="pb-3 flex-grow">
+        <p className="text-medico-darkGreen/80">{description}</p>
+      </CardContent>
+      <CardFooter className="pt-0 mt-auto">
+        <Button 
+          variant="default"
+          size="lg"
+          className="w-full justify-center group bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-bold"
+          onClick={onClick}
+        >
+          <span>{buttonText}</span>
+          <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+};
+
 const ContactInfoSection = () => {
   const handleOpenSidebarForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
@@ -100,10 +189,10 @@ const ContactInfoSection = () => {
             </h2>
           </div>
 
-          {/* Contact Details - directly on white background */}
+          {/* Contact Details */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Address */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100">
+            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <MapPin className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -115,7 +204,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Phone */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100">
+            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Phone className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -129,7 +218,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Email */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100">
+            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Mail className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -143,7 +232,7 @@ const ContactInfoSection = () => {
             </div>
             
             {/* Office Hours */}
-            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100">
+            <div className="flex flex-col items-center text-center shadow-sm rounded-lg p-6 border border-gray-100 bg-white">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Clock className="h-6 w-6 text-medico-turquoise" />
               </div>
@@ -152,7 +241,7 @@ const ContactInfoSection = () => {
             </div>
           </div>
 
-          {/* Contact Methods with increased spacing */}
+          {/* Contact Methods */}
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-medico-darkGreen mb-3">So erreichen Sie uns</h3>
             <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto">
@@ -160,41 +249,28 @@ const ContactInfoSection = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <ContactCard 
-              icon={<MessageCircle className="h-6 w-6 text-gray-600" />} 
-              color="blue"
-              title="WhatsApp"
-              description="Direkter WhatsApp-Chat"
-              buttonText="WhatsApp öffnen"
-              href="https://wa.me/+4917680167641"
-            />
-            
-            <ContactCard 
-              icon={<Send className="h-6 w-6 text-gray-600" />} 
-              color="green"
-              title="Anfrage senden"
-              description="Projekt-Details über unser Formular teilen"
-              buttonText="Formular öffnen"
-              onClick={handleOpenSidebarForm}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <PhoneWhatsAppCard 
+              title="Telefon & WhatsApp"
+              description="Direkter Kontakt per Anruf oder WhatsApp-Chat"
+              phoneNumber="06131 - 63 67 801"
+              whatsappLink="https://wa.me/+4917680167641"
             />
             
             <ContactCard 
               icon={<Mail className="h-6 w-6 text-gray-600" />} 
               color="amber"
-              title="E-Mail schreiben"
+              title="E-Mail"
               description="Direkt an unser Postfach schreiben"
               buttonText="Mail verfassen"
               href="mailto:info@ooliv.de"
             />
             
-            <ContactCard 
-              icon={<Phone className="h-6 w-6 text-gray-600" />} 
-              color="purple"
-              title="Anrufen"
-              description="Direktes Gespräch mit unserem Team"
-              buttonText="06131 - 63 67 801"
-              href="tel:+4961316367801"
+            <CTACard 
+              title="Anfrage senden"
+              description="Projekt-Details über unser Formular teilen"
+              buttonText="Formular öffnen"
+              onClick={handleOpenSidebarForm}
             />
           </div>
           
