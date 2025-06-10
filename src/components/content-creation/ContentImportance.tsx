@@ -11,17 +11,17 @@ const ContentImportance = () => {
     {
       icon: TrendingUp,
       title: 'Vertrauen und Glaubwürdigkeit',
-      description: 'Hochwertiger Content positioniert Sie als Experte in Ihrer Branche und baut Vertrauen bei potenziellen Kunden auf.'
+      description: 'Hochwertige Inhalte positionieren Sie als Expert:in in Ihrer Branche, schaffen Vertrauen und geben potenziellen Kund:innen das sichere Gefühl, mit dem richtigen Partner zusammenzuarbeiten.'
     },
     {
       icon: Users,
       title: 'Zielgruppenansprache',
-      description: 'Strategischer Content spricht Ihre idealen Kunden direkt an und führt sie durch den gesamten Kaufprozess.'
+      description: 'Strategische Inhalte sprechen Ihre ideale Zielgruppe an, holen sie genau dort ab, wo sie steht, und begleiten sie vom ersten Kontakt bis zur Kaufentscheidung.'
     },
     {
       icon: Search,
       title: 'Sichtbarkeit & SEO',
-      description: 'Optimierter Content verbessert Ihre Google-Rankings und macht Sie für Ihre Zielgruppe auffindbar.'
+      description: 'Mit SEO-optimierten Inhalten verbessern Sie Ihre Sichtbarkeit in den Suchmaschinen, gewinnen mehr qualifizierte Besucher:innen und steigern so Ihre Chancen auf nachhaltigen Unternehmenserfolg.'
     }
   ] : [
     {
@@ -53,8 +53,8 @@ const ContentImportance = () => {
           </h2>
           <p className="text-lg text-center max-w-3xl mx-auto text-brand-text">
             {isGerman 
-              ? "In einer digitalen Welt, die von Inhalten überflutet wird, entscheidet die Qualität Ihres Contents über Erfolg oder Misserfolg Ihres Unternehmens."
-              : "In a digital world flooded with content, the quality of your content determines the success or failure of your business."
+              ? "In einer digitalen Welt, in der täglich tausende Inhalte um Aufmerksamkeit kämpfen, entscheidet die Qualität Ihrer Inhalte über Sichtbarkeit, Vertrauen und nachhaltigen Geschäftserfolg."
+              : "In a digital world where thousands of content pieces compete for attention daily, the quality of your content determines visibility, trust and sustainable business success."
             }
           </p>
         </div>
