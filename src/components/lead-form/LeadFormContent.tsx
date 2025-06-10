@@ -188,9 +188,9 @@ const LeadFormContent: React.FC<LeadFormContentProps> = ({ onClose }) => {
           {step > 1 && (
             <Button 
               type="button"
-              variant="outline"
+              variant="secondary"
               onClick={prevStep}
-              className="flex-1 border-medico-mint text-medico-mint hover:bg-medico-mint hover:text-medico-darkGreen"
+              className="flex-1 bg-white/10 border-2 border-white/20 text-white hover:bg-white/20 hover:border-white/30 font-semibold h-12"
             >
               <ArrowLeft className="mr-2 h-5 w-5" />
               {language === 'de' ? "Zurück" : "Back"}
