@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -273,10 +272,10 @@ const GermanAboutUs = () => {
                   'Wir bleiben neugierig, präzise und brutal ehrlich'
                 ].map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="h-10 w-10 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-4 flex-shrink-0 mt-1">
-                      <CheckCircle className="h-5 w-5 text-medico-turquoise" />
+                    <div className="h-6 w-6 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-3 flex-shrink-0 mt-0.5">
+                      <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                     </div>
-                    <span className="text-lg text-medico-darkGreen">{point}</span>
+                    <span className="text-base text-medico-darkGreen leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
