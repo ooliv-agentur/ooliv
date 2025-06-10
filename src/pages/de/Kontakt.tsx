@@ -40,7 +40,7 @@ const GermanContact = () => {
 
       {/* Footer CTA Section - consistent with site CTA styling */}
       <CTA 
-        title="Über 100 erfolgreiche Projekte umgesetzt – starten Sie jetzt Ihr digitales Projekt mit ooliv."
+        title="Starten Sie jetzt Ihr digitales Projekt mit ooliv."
         subtitle=""
         primaryCta="Jetzt Projekt starten"
         lightBackground={true}
