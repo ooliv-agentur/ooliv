@@ -160,7 +160,7 @@ const PageHero = ({
     } else {
       return (
         <h1 
-          className="font-medium leading-tight text-center mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
+          className="font-medium leading-tight text-left mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
           style={{ color: '#003343' }}
         >
           {title}
@@ -171,7 +171,7 @@ const PageHero = ({
   
   const renderSubtitle = () => {
     return (
-      <p className={`text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed ${isHomepage ? 'text-left' : 'text-center'}`}>
+      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed text-left">
         {subtitle || description || (isHomepage ? defaultHomepageDescription : '')}
       </p>
     );
@@ -201,7 +201,7 @@ const PageHero = ({
     const openLeadForm = shouldOpenLeadForm(primary.text);
     
     return (
-      <div className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto ${isHomepage ? '' : 'justify-center'}`}>
+      <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
         {openLeadForm ? (
           <Button 
             size="lg" 
@@ -312,7 +312,7 @@ const PageHero = ({
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className={`max-w-4xl mx-auto flex flex-col justify-center ${isHomepage ? 'items-start' : 'items-center text-center'} min-h-[60vh]`}>            
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">            
             {renderTitle()}
             {renderSubtitle()}
             {renderCtas()}
