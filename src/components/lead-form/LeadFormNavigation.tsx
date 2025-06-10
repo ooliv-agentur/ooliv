@@ -41,18 +41,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           type="button"
           size="lg"
           onClick={onNextStep}
-          className="flex-1 font-semibold"
-          style={{ 
-            backgroundColor: '#FFD700', 
-            color: '#003347',
-            border: 'none'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#FFC700';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#FFD700';
-          }}
+          className="flex-1 font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400"
         >
           {language === 'de' ? "Weiter" : "Next"}
           <ArrowRight className="ml-2 h-5 w-5" />
@@ -61,22 +50,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
         <Button 
           type="submit"
           size="lg"
-          className="flex-1 font-semibold"
-          style={{ 
-            backgroundColor: '#FFD700', 
-            color: '#003347',
-            border: 'none'
-          }}
-          onMouseEnter={(e) => {
-            if (!isSubmitting) {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!isSubmitting) {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }
-          }}
+          className="flex-1 font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400 disabled:opacity-50"
           disabled={isSubmitting}
         >
           {isSubmitting ? (

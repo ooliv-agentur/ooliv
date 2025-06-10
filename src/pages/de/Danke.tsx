@@ -100,18 +100,7 @@ const Danke = () => {
               <Button 
                 asChild
                 size="lg"
-                className="font-semibold"
-                style={{ 
-                  backgroundColor: '#FFD700', 
-                  color: '#003347',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFC700';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                }}
+                className="font-semibold bg-medico-yellow text-medico-darkGreen border-none hover:bg-yellow-400"
               >
                 <Link to="/" aria-label="Zurück zur Startseite">
                   Zurück zur Startseite

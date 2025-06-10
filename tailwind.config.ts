@@ -32,6 +32,19 @@ export default {
           turquoise: "#38B593",
           darkGreen: "#003347",
           white: "#FFFFFF"
+        },
+        // Extended yellow variants for better design system
+        yellow: {
+          50: "#fffbeb",
+          100: "#fef3c7",
+          200: "#fed570",
+          300: "#feca57",
+          400: "#FFC700", // hover state
+          500: "#FFE500", // medico-yellow
+          600: "#d97706",
+          700: "#b45309",
+          800: "#92400e",
+          900: "#78350f"
         }
       },
       // Icon-specific design tokens

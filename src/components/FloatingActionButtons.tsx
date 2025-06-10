@@ -26,21 +26,14 @@ const FloatingActionButtons = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
   };
 
-  // Updated button definitions with RegisteredIcon
+  // Updated button definitions using design tokens
   const buttons = [
     { 
       id: 'project', 
       icon: 'send', 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
       onClick: handleOpenLeadForm,
-      className: 'text-white border-none shadow-md hover:shadow-lg',
-      style: { 
-        backgroundColor: '#FFD700',
-        color: '#003347'
-      },
-      hoverStyle: {
-        backgroundColor: '#FFC700'
-      }
+      className: 'bg-medico-yellow text-medico-darkGreen border-none shadow-md hover:bg-yellow-400 hover:shadow-lg font-semibold'
     },
     { 
       id: 'email', 
@@ -87,18 +80,7 @@ const FloatingActionButtons = () => {
                     button.className
                   )}
                   style={{
-                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms',
-                    ...button.style
-                  }}
-                  onMouseEnter={(e) => {
-                    if (button.hoverStyle) {
-                      Object.assign(e.currentTarget.style, button.hoverStyle);
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (button.style) {
-                      Object.assign(e.currentTarget.style, button.style);
-                    }
+                    transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
                   }}
                   aria-label={button.label}
                 >
@@ -120,17 +102,7 @@ const FloatingActionButtons = () => {
         {showToggleButton && (
           <Button
             onClick={toggleExpanded}
-            className="w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg"
-            style={{ 
-              backgroundColor: '#FFD700',
-              color: '#003347'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }}
+            className="w-14 h-14 rounded-full border-none transition-all duration-300 shadow-md hover:shadow-lg bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-semibold"
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")
