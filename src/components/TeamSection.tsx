@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -30,8 +29,8 @@ const TeamSection = () => {
     { 
       name: "Lisa Schönleber", 
       role: {
-        en: "Content",
-        de: "Content"
+        en: "CEO · Content",
+        de: "CEO · Content"
       }, 
       image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
