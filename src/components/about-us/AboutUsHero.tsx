@@ -5,6 +5,10 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutUsHero = () => {
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
     <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Floating circles animation - consistent with master */}
@@ -23,24 +27,44 @@ const AboutUsHero = () => {
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-            <h1 className="font-medium mb-6 sm:mb-8 leading-tight text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-medico-darkGreen">
+            {/* Main heading - following master font size and line height rules */}
+            <h1 
+              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
+              style={{ 
+                color: '#003343' 
+              }}
+            >
               Marketing Agentur Mainz
             </h1>
             
-            <p className="text-lg sm:text-xl text-medico-darkGreen mb-8 sm:mb-10 text-left leading-relaxed">
+            {/* Subtitle - matching master line height and spacing */}
+            <p 
+              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+              style={{ lineHeight: '1.6' }}
+            >
               Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
             </p>
             
+            {/* CTA buttons - matching master responsive sizing and styling */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Button 
                 size="lg" 
-                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 border-none"
-                asChild
+                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                style={{ 
+                  backgroundColor: '#FFD700', 
+                  color: '#003347',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFC700';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFD700';
+                }}
+                onClick={handleStartProject}
               >
-                <Link to="/kontakt">
-                  Projekt starten
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                Projekt starten
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <Button 
@@ -59,6 +83,7 @@ const AboutUsHero = () => {
         </div>
       </div>
       
+      {/* Visual transition indicator - consistent with master */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
           <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
