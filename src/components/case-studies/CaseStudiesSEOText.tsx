@@ -1,8 +1,11 @@
-
 import React from 'react';
 import { seoTextStyles } from '@/styles/seo-text-styles';
 
 const CaseStudiesSEOText = () => {
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
     <section className={`${seoTextStyles.container} ${seoTextStyles.containerBackground}`}>
       <div className={seoTextStyles.innerContainer}>
@@ -178,7 +181,6 @@ const CaseStudiesSEOText = () => {
             </table>
           </div>
           
-          <p className="text-sm text-gray-400 mb-6">(plus weitere Kunden im Überblick weiter unten)</p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
             Weitere Branchen: Gartenbedarf, Bauunternehmen, E-Commerce, SaaS, Energieversorgung, MedTech und mehr.
@@ -210,8 +212,13 @@ const CaseStudiesSEOText = () => {
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
             Ob Markenaufbau, Website-Relaunch oder Conversion-Optimierung:
-            Mit ooliv als Partner für Marketing Mainz erreichen Sie Ihre Ziele schneller, klarer und nachhaltiger.
-            👉 Jetzt Projekt starten oder Strategiegespräch buchen.
+            Mit ooliv als Partner für Marketing Mainz erreichen Sie Ihre Ziele schneller, klarer und nachhaltiger.{' '}
+            <span 
+              className="text-medico-yellow hover:text-yellow-300 hover:underline cursor-pointer font-bold"
+              onClick={handleOpenLeadForm}
+            >
+              👉 Jetzt Projekt starten oder Strategiegespräch buchen.
+            </span>
           </p>
         </article>
       </div>
