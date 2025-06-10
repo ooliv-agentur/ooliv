@@ -170,7 +170,7 @@ const PageHero = ({
   
   const renderSubtitle = () => {
     return (
-      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left" style={{ lineHeight: '1.75' }}>
+      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left" style={{ lineHeight: '1.7' }}>
         {subtitle || description || (isHomepage ? defaultHomepageDescription : '')}
       </p>
     );
