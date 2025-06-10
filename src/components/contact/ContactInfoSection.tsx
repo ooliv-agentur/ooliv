@@ -111,121 +111,117 @@ const ContactInfoSection = () => {
               </h2>
             </div>
 
-            {/* Contact Details */}
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg mb-12">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                {/* Address */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
-                    <MapPin className="h-6 w-6 text-medico-turquoise" />
-                  </div>
-                  <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Adresse</h3>
-                  <p className="text-medico-darkGreen/80 leading-relaxed">
-                    Mombacher Str. 25<br />
-                    55122 Mainz, Deutschland
-                  </p>
+            {/* Contact Details - directly on mint background */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {/* Address */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <MapPin className="h-6 w-6 text-medico-turquoise" />
                 </div>
-                
-                {/* Phone */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
-                    <Phone className="h-6 w-6 text-medico-turquoise" />
-                  </div>
-                  <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Telefon</h3>
-                  <a 
-                    href="tel:+4961316367801" 
-                    className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
-                  >
-                    06131 – 63 67 801
-                  </a>
-                </div>
-                
-                {/* Email */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
-                    <Mail className="h-6 w-6 text-medico-turquoise" />
-                  </div>
-                  <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">E-Mail</h3>
-                  <a 
-                    href="mailto:info@ooliv.de" 
-                    className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
-                  >
-                    info@ooliv.de
-                  </a>
-                </div>
-                
-                {/* Office Hours */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
-                    <Clock className="h-6 w-6 text-medico-turquoise" />
-                  </div>
-                  <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Bürozeiten</h3>
-                  <p className="text-medico-darkGreen/80">Mo-Fr: 9:00 - 17:00 Uhr</p>
-                </div>
-              </div>
-
-              {/* Contact Methods */}
-              <div className="pt-8 border-t border-medico-darkGreen/10">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-medico-darkGreen mb-3">So erreichen Sie uns</h3>
-                  <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto">
-                    Wählen Sie den für Sie angenehmsten Kommunikationsweg – wir sind auf allen Kanälen für Sie da.
-                  </p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-                  <ContactCard 
-                    icon={<MessageCircle className="h-6 w-6 text-gray-600" />} 
-                    color="blue"
-                    title="WhatsApp"
-                    description="Direkter WhatsApp-Chat"
-                    buttonText="WhatsApp öffnen"
-                    href="https://wa.me/+4917680167641"
-                  />
-                  
-                  <ContactCard 
-                    icon={<Send className="h-6 w-6 text-gray-600" />} 
-                    color="green"
-                    title="Anfrage senden"
-                    description="Projekt-Details über unser Formular teilen"
-                    buttonText="Formular öffnen"
-                    onClick={handleOpenSidebarForm}
-                  />
-                  
-                  <ContactCard 
-                    icon={<Mail className="h-6 w-6 text-gray-600" />} 
-                    color="amber"
-                    title="E-Mail schreiben"
-                    description="Direkt an unser Postfach schreiben"
-                    buttonText="Mail verfassen"
-                    href="mailto:info@ooliv.de"
-                  />
-                  
-                  <ContactCard 
-                    icon={<Phone className="h-6 w-6 text-gray-600" />} 
-                    color="purple"
-                    title="Anrufen"
-                    description="Direktes Gespräch mit unserem Team"
-                    buttonText="06131 - 63 67 801"
-                    href="tel:+4961316367801"
-                  />
-                </div>
-                
-                <div className="text-center">
-                  <div className="inline-block bg-medico-mint/50 border border-medico-turquoise/20 rounded-lg px-6 py-3 shadow-sm">
-                    <p className="text-medico-darkGreen font-medium">
-                      Keine Zwischenstellen. Keine Warteschleifen. Ihre Nachricht landet direkt im Team.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Tagline */}
-              <div className="mt-12 pt-8 border-t border-medico-darkGreen/10 text-center">
-                <p className="text-medico-darkGreen/80 text-lg italic">
-                  Regionale Wurzeln. Globale Reichweite.
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Adresse</h3>
+                <p className="text-medico-darkGreen/80 leading-relaxed">
+                  Mombacher Str. 25<br />
+                  55122 Mainz, Deutschland
                 </p>
               </div>
+              
+              {/* Phone */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Phone className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Telefon</h3>
+                <a 
+                  href="tel:+4961316367801" 
+                  className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                >
+                  06131 – 63 67 801
+                </a>
+              </div>
+              
+              {/* Email */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Mail className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">E-Mail</h3>
+                <a 
+                  href="mailto:info@ooliv.de" 
+                  className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                >
+                  info@ooliv.de
+                </a>
+              </div>
+              
+              {/* Office Hours */}
+              <div className="flex flex-col items-center text-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-medico-turquoise" />
+                </div>
+                <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Bürozeiten</h3>
+                <p className="text-medico-darkGreen/80">Mo-Fr: 9:00 - 17:00 Uhr</p>
+              </div>
+            </div>
+
+            {/* Contact Methods with increased spacing */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-medico-darkGreen mb-3">So erreichen Sie uns</h3>
+              <p className="text-lg text-medico-darkGreen/80 max-w-3xl mx-auto">
+                Wählen Sie den für Sie angenehmsten Kommunikationsweg – wir sind auf allen Kanälen für Sie da.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <ContactCard 
+                icon={<MessageCircle className="h-6 w-6 text-gray-600" />} 
+                color="blue"
+                title="WhatsApp"
+                description="Direkter WhatsApp-Chat"
+                buttonText="WhatsApp öffnen"
+                href="https://wa.me/+4917680167641"
+              />
+              
+              <ContactCard 
+                icon={<Send className="h-6 w-6 text-gray-600" />} 
+                color="green"
+                title="Anfrage senden"
+                description="Projekt-Details über unser Formular teilen"
+                buttonText="Formular öffnen"
+                onClick={handleOpenSidebarForm}
+              />
+              
+              <ContactCard 
+                icon={<Mail className="h-6 w-6 text-gray-600" />} 
+                color="amber"
+                title="E-Mail schreiben"
+                description="Direkt an unser Postfach schreiben"
+                buttonText="Mail verfassen"
+                href="mailto:info@ooliv.de"
+              />
+              
+              <ContactCard 
+                icon={<Phone className="h-6 w-6 text-gray-600" />} 
+                color="purple"
+                title="Anrufen"
+                description="Direktes Gespräch mit unserem Team"
+                buttonText="06131 - 63 67 801"
+                href="tel:+4961316367801"
+              />
+            </div>
+            
+            <div className="text-center mb-8">
+              <div className="inline-block bg-medico-mint/50 border border-medico-turquoise/20 rounded-lg px-6 py-3 shadow-sm">
+                <p className="text-medico-darkGreen font-medium">
+                  Keine Zwischenstellen. Keine Warteschleifen. Ihre Nachricht landet direkt im Team.
+                </p>
+              </div>
+            </div>
+            
+            {/* Tagline */}
+            <div className="text-center">
+              <p className="text-medico-darkGreen/80 text-lg italic">
+                Regionale Wurzeln. Globale Reichweite.
+              </p>
             </div>
           </div>
         </div>
