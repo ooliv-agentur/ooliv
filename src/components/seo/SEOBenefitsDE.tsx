@@ -62,7 +62,7 @@ const SEOBenefitsDE = () => {
 
         <Reveal delay={0.2}>
           <div className="text-center mt-10">
-            <Link to="/de/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+            <Link to="/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
               Mehr zu Content-Erstellung & Webentwicklung
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
