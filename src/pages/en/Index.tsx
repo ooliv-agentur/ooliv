@@ -60,33 +60,21 @@ const EnglishIndex = () => {
       
       <PageHero 
         isHomepage={true}
-        title={
-          <div className="flex flex-col">
-            <span 
-              className="font-medium leading-tight text-center block"
-              style={{ 
-                fontSize: '52px', 
-                lineHeight: '68px', 
-                color: '#003343' 
-              }}
-            >
-              Web Design Agency Mainz
-            </span>
-            <span 
-              className="font-bold text-center block mt-2"
-              style={{ 
-                fontSize: '52px', 
-                lineHeight: '68px', 
-                color: '#32b1ab' 
-              }}
-            >
-              For Websites That Convert, Rank & Drive Growth
-            </span>
-          </div>
-        }
-        subtitle="We build websites that outperform – with clear strategy, custom design and measurable results from day one."
-        startProjectText="Start Your Website Project"
-        seeWorkText="See Our Work"
+        title="Web Design Agency Mainz"
+        subtitle="for Websites That Convert, Rank & Drive Growth"
+        description="We build websites that outperform – with clear strategy, custom design and measurable results from day one."
+        primaryCta={{
+          text: "Start Your Website Project",
+          link: "#",
+          onClick: (e) => {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-lead-form'));
+          }
+        }}
+        secondaryCta={{
+          text: "See Our Work",
+          link: "/en/case-studies"
+        }}
       />
       
       <EnglishAboutSection />

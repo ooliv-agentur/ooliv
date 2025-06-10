@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -30,6 +31,7 @@ import EnglishPrivacyPolicy from './pages/en/PrivacyPolicyEN';
 import GermanThankYou from './pages/de/Danke';
 import EnglishThankYou from './pages/en/ThankYouEN';
 import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
+import EnglishStrategy from './pages/en/StrategyEN';
 import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
@@ -89,6 +91,7 @@ function App() {
                 <Route path="/en" element={<EnglishIndex />} />
                 <Route path="/en/webdesign" element={<EnglishWebDesign />} />
                 <Route path="/en/webdevelopment" element={<EnglishWebDevelopment />} />
+                <Route path="/en/strategy" element={<EnglishStrategy />} />
                 <Route path="/en/content-creation" element={<EnglishContentCreation />} />
                 <Route path="/en/seo" element={<EnglishSEO />} />
                 <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
