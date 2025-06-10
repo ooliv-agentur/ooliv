@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { H1, LargeParagraph } from '@/components/ui/typography';
 
 const AboutUsHero = () => {
   const handleStartProject = () => {
@@ -27,23 +28,15 @@ const AboutUsHero = () => {
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-            {/* Main heading - following master font size and line height rules */}
-            <h1 
-              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-              style={{ 
-                color: '#003343' 
-              }}
-            >
+            {/* Main heading - using typography system */}
+            <H1 className="mb-6 sm:mb-8">
               Marketing Agentur Mainz
-            </h1>
+            </H1>
             
-            {/* Subtitle - matching master line height and spacing */}
-            <p 
-              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
-              style={{ lineHeight: '1.6' }}
-            >
+            {/* Subtitle - using typography system */}
+            <LargeParagraph className="mb-8 sm:mb-10">
               Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
-            </p>
+            </LargeParagraph>
             
             {/* CTA buttons - now using design system */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

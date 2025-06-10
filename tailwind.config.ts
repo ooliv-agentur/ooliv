@@ -9,6 +9,32 @@ export default {
         sans: ['Satoshi', 'sans-serif'],
         satoshi: ['Satoshi', 'sans-serif'],
       },
+      
+      // Enhanced typography scale
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
+        'hero': ['4rem', { lineHeight: '4.5rem' }],
+      },
+      
+      // Enhanced line heights for better readability
+      lineHeight: {
+        'tight': '1.25',
+        'snug': '1.375',
+        'normal': '1.5',
+        'relaxed': '1.625',
+        'loose': '2',
+        'extra-loose': '2.5',
+      },
+      
       colors: {
         border: "#e2e8f0",
         brand: {
@@ -45,6 +71,16 @@ export default {
           700: "#b45309",
           800: "#92400e",
           900: "#78350f"
+        },
+        // Enhanced text color tokens
+        text: {
+          primary: "#003347",
+          secondary: "#374151",
+          muted: "#6B7280",
+          light: "#9CA3AF",
+          accent: "#38B593",
+          white: "#FFFFFF",
+          warning: "#FFE500"
         }
       },
       // Icon-specific design tokens
