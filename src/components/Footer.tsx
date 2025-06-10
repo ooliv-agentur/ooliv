@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,6 +9,7 @@ const Footer = () => {
   
   const pathMap: Record<string, string> = {
     'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-us',
+    'strategy': language === 'de' ? 'strategie' : 'strategy',
     'web-design': language === 'de' ? 'webdesign' : 'webdesign',
     'web-development': language === 'de' ? 'webentwicklung' : 'webdevelopment',
     'content-creation': language === 'de' ? 'content-erstellung' : 'content-creation',
@@ -51,6 +51,7 @@ const Footer = () => {
           <div>
             <h3 className={footerStyles.sectionHeading}>{t('footer.services')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
+              <li><Link to={getUrl('strategy')} className={footerStyles.linkText}>Strategie</Link></li>
               <li><Link to={getUrl('web-design')} className={footerStyles.linkText}>{t('footer.webDesign')}</Link></li>
               <li><Link to={getUrl('web-development')} className={footerStyles.linkText}>{language === 'de' ? t('footer.webDevelopment') : 'Web Development'}</Link></li>
               <li><Link to={getUrl('content-creation')} className={footerStyles.linkText}>{language === 'de' ? t('footer.contentCreation') : 'Content Creation'}</Link></li>
