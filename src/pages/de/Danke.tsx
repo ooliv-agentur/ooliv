@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -41,7 +40,7 @@ const GermanThankYou = () => {
                     <Phone className="h-8 w-8 text-blue-500 mb-3" />
                     <h3 className="text-xl font-semibold text-gray-700 mb-2">Direkt anrufen</h3>
                     <p className="text-gray-500 mb-4">Für dringende Anliegen</p>
-                    <Button asChild variant="default" className="bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                    <Button asChild variant="outline">
                       <a href="tel:+4961316367801" className="flex items-center gap-2">
                         Jetzt anrufen <ArrowRight className="h-4 w-4" />
                       </a>
@@ -54,7 +53,7 @@ const GermanThankYou = () => {
                     <Mail className="h-8 w-8 text-orange-500 mb-3" />
                     <h3 className="text-xl font-semibold text-gray-700 mb-2">E-Mail schreiben</h3>
                     <p className="text-gray-500 mb-4">Für detaillierte Anfragen</p>
-                    <Button asChild variant="default" className="bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                    <Button asChild variant="outline">
                       <a href="mailto:info@ooliv.de" className="flex items-center gap-2">
                         E-Mail senden <ArrowRight className="h-4 w-4" />
                       </a>
@@ -67,7 +66,7 @@ const GermanThankYou = () => {
                     <MessageCircle className="h-8 w-8 text-purple-500 mb-3" />
                     <h3 className="text-xl font-semibold text-gray-700 mb-2">WhatsApp</h3>
                     <p className="text-gray-500 mb-4">Schnelle Hilfe per Chat</p>
-                    <Button asChild variant="default" className="bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                    <Button asChild variant="outline">
                       <a href="https://wa.me/+4917680167641" className="flex items-center gap-2">
                         Chat starten <ArrowRight className="h-4 w-4" />
                       </a>
@@ -76,7 +75,7 @@ const GermanThankYou = () => {
                 </Card>
               </div>
               
-              <Button asChild className="mt-8 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+              <Button asChild className="mt-8">
                 <Link to="/" className="flex items-center gap-2">
                   Zurück zur Startseite <ArrowRight className="h-4 w-4" />
                 </Link>
