@@ -5,31 +5,18 @@ import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './contexts/LanguageContext';
 import GermanIndex from './pages/de/Index';
-import EnglishIndex from './pages/en/Index';
 import GermanWebDesign from './pages/de/Webdesign';
-import EnglishWebDesign from './pages/en/WebDesignEN';
 import GermanWebDevelopment from './pages/de/Webentwicklung';
-import EnglishWebDevelopment from './pages/en/WebDevelopmentEN';
 import GermanSEO from './pages/de/SEOOptimierung';
-import EnglishSEO from './pages/en/SEOEN';
 import GermanContentCreation from './pages/de/ContentErstellung';
-import EnglishContentCreation from './pages/en/ContentCreationEN';
 import GermanGoogleAds from './pages/de/GoogleAds';
-import EnglishGoogleAds from './pages/en/GoogleAdsEN';
 import GermanAiTechnologies from './pages/de/KiTechnologien';
-import EnglishAiTechnologies from './pages/en/AiTechnologiesEN';
 import GermanCaseStudies from './pages/de/Referenzen';
-import EnglishCaseStudies from './pages/en/CaseStudiesEN';
 import GermanAboutUs from './pages/de/UeberUns';
-import EnglishAboutUs from './pages/en/AboutUsEN';
 import GermanContact from './pages/de/Kontakt';
-import EnglishContact from './pages/en/ContactEN';
 import GermanLegalNotice from './pages/de/Impressum';
-import EnglishLegalNotice from './pages/en/LegalNoticeEN';
 import GermanPrivacyPolicy from './pages/de/Datenschutz';
-import EnglishPrivacyPolicy from './pages/en/PrivacyPolicyEN';
 import GermanThankYou from './pages/de/Danke';
-import EnglishThankYou from './pages/en/ThankYouEN';
 import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
 import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
@@ -40,7 +27,6 @@ import ChatbaseWidget from './components/ChatbaseWidget';
 import { Toaster } from 'sonner';
 import Strategie from './pages/de/Strategie';
 import CookieRichtlinie from './pages/de/CookieRichtlinie';
-import CookiePolicyEN from './pages/en/CookiePolicyEN';
 import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import CookieNotification from './components/CookieNotification';
 
@@ -85,22 +71,6 @@ function App() {
                 <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                 <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
                 <Route path="/danke" element={<GermanThankYou />} />
-
-                {/* English Routes */}
-                <Route path="/en" element={<EnglishIndex />} />
-                <Route path="/en/web-design" element={<EnglishWebDesign />} />
-                <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
-                <Route path="/en/seo" element={<EnglishSEO />} />
-                <Route path="/en/content-creation" element={<EnglishContentCreation />} />
-                <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
-                <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
-                <Route path="/en/case-studies" element={<EnglishCaseStudies />} />
-                <Route path="/en/about-us" element={<EnglishAboutUs />} />
-                <Route path="/en/contact" element={<EnglishContact />} />
-                <Route path="/en/legal-notice" element={<EnglishLegalNotice />} />
-                <Route path="/en/privacy-policy" element={<EnglishPrivacyPolicy />} />
-                <Route path="/en/cookie-policy" element={<CookiePolicyEN />} />
-                <Route path="/en/thank-you" element={<EnglishThankYou />} />
 
                 {/* 404 Route */}
                 <Route path="*" element={<NotFound />} />
