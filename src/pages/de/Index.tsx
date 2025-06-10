@@ -25,6 +25,7 @@ const GermanIndex = () => {
         <title>Werbeagentur Mainz – Leistungsstarke Websites für SEO, Konversionen & Wachstum</title>
         <meta name="description" content="Bei ooliv erstellen wir Websites, die besser ranken, mehr konvertieren und messbaren Geschäftserfolg bringen." />
         <meta name="keywords" content="Werbeagentur Mainz, Webdesign Mainz, SEO Mainz, Online Marketing Mainz, Website erstellen Mainz, Digitalagentur Mainz" />
+        <meta name="focus-keyword" content="Werbeagentur Mainz" />
       </Helmet>
       
       <DeutscherHero />
@@ -33,7 +34,12 @@ const GermanIndex = () => {
       <TeamTeaserDE />
       <CaseStudiesSection />
       <FAQ />
-      <CTA />
+      <CTA 
+        title="Bereit für Ihren digitalen Erfolg?"
+        subtitle="Lassen Sie uns gemeinsam eine Website erstellen, die nicht nur gut aussieht, sondern auch messbare Ergebnisse liefert."
+        primaryCta="Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
       <ClientLogos />
       <SEOTextSection />
     </PageLayout>

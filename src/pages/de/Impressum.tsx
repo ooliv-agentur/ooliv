@@ -1,9 +1,12 @@
-
 import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Building, Phone, Mail, FileText, AlertTriangle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const GermanLegalNotice = () => {
   const impressumRef = useRef<HTMLDivElement>(null);

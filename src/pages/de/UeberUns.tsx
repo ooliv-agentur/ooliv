@@ -1,17 +1,18 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import AboutUsHero from '@/components/about-us/AboutUsHero';
 import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
 import AboutUsStory from '@/components/about-us/AboutUsStory';
-import AboutUsLocation from '@/components/about-us/AboutUsLocation';
 import AboutUsWhySmall from '@/components/about-us/AboutUsWhySmall';
-import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
 import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
-import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
-import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
 import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
-import AboutUsFAQ from '@/components/about-us/AboutUsFAQ';
+import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
+import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
+import AboutUsLocation from '@/components/about-us/AboutUsLocation';
+import TeamSection from '@/components/TeamSection';
+import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
 import AboutUsSEOText from '@/components/about-us/AboutUsSEOText';
 import { useLanguage } from '@/contexts/LanguageContext';

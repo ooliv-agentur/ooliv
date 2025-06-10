@@ -25,6 +25,7 @@ const GermanAiTechnologies = () => {
         <title>KI Technologien | Innovative AI-Lösungen für Ihr Business</title>
         <meta name="description" content="Entdecken Sie innovative KI-Technologien für Ihr Unternehmen. Von Automatisierung bis hin zu intelligenten Datenanalysen - wir bringen AI in Ihr Business." />
         <meta name="keywords" content="KI Technologien Mainz, Künstliche Intelligenz Mainz, AI Integration Mainz, Machine Learning Mainz, KI Beratung Mainz, AI Lösungen Mainz" />
+        <meta name="focus-keyword" content="KI Technologien Mainz" />
       </Helmet>
       
       <AiTechHero />
@@ -32,7 +33,12 @@ const GermanAiTechnologies = () => {
       <AiToolsSection />
       <AiTechBenefits />
       <AiTechCaseStudies />
-      <CTA />
+      <CTA 
+        title="Revolutionieren Sie Ihr Business mit KI"
+        subtitle="Entdecken Sie, wie künstliche Intelligenz Ihre Geschäftsprozesse optimieren und neue Möglichkeiten schaffen kann."
+        primaryCta="KI-Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };
