@@ -17,63 +17,87 @@ const ContentExpertInsight = () => {
     {
       icon: CheckCircle,
       title: "Strategischer Content-Ansatz",
-      description: "Wir entwickeln Inhalte, die alle Kanäle und Zielgruppen erreichen – für nachhaltigen Erfolg."
+      description: "Wir entwickeln Inhalte, die alle Kanäle und Zielgruppen erreichen – für nachhaltigen Erfolg.",
+      link: "/strategie",
+      linkText: "Mehr zur Strategie"
     },
     {
       icon: Users,
       title: "Content-Expertise",
-      description: "Unsere Content-Strategen, Designer und Texter sorgen für professionelle Umsetzung."
+      description: "Unsere Content-Strategen, Designer und Texter sorgen für professionelle Umsetzung.",
+      link: "/ueber-uns",
+      linkText: "Unser Team kennenlernen"
     },
     {
       icon: Lightbulb,
       title: "Workshops",
-      description: "Wir geben unser Wissen weiter und schulen Ihr Team in Content-Strategien und Trends."
+      description: "Wir geben unser Wissen weiter und schulen Ihr Team in Content-Strategien und Trends.",
+      link: "/kontakt",
+      linkText: "Workshop anfragen"
     },
     {
       icon: Bot,
       title: "KI-Tools",
-      description: "Mit modernen KI-Tools arbeiten wir effizient und sichern höchste Qualität."
+      description: "Mit modernen KI-Tools arbeiten wir effizient und sichern höchste Qualität.",
+      link: "/ki-technologien",
+      linkText: "KI-Ansatz entdecken"
     },
     {
       icon: TrendingUp,
       title: "Messbare Ergebnisse",
-      description: "Wir tracken die Performance Ihrer Inhalte und optimieren kontinuierlich."
+      description: "Wir tracken die Performance Ihrer Inhalte und optimieren kontinuierlich.",
+      link: "/seo-optimierung",
+      linkText: "SEO-Ansatz erfahren"
     },
     {
       icon: Zap,
       title: "Schnelle Umsetzung",
-      description: "Dank eingespielter Abläufe liefern wir Content zügig und zuverlässig."
+      description: "Dank eingespielter Abläufe liefern wir Content zügig und zuverlässig.",
+      link: "/referenzen",
+      linkText: "Projekte ansehen"
     }
   ] : [
     {
       icon: CheckCircle,
       title: "Strategic Content Approach",
-      description: "We don't create isolated content – we think holistically, from initial idea to measurable performance."
+      description: "We don't create isolated content – we think holistically, from initial idea to measurable performance.",
+      link: "/en/strategy",
+      linkText: "Learn about Strategy"
     },
     {
       icon: Users,
       title: "Experienced Content Team", 
-      description: "Our team combines content strategists, SEO experts, designers, and copywriters under one roof."
+      description: "Our team combines content strategists, SEO experts, designers, and copywriters under one roof.",
+      link: "/en/about-us",
+      linkText: "Meet our Team"
     },
     {
       icon: Lightbulb,
       title: "Workshops & Trend Consulting",
-      description: "We share our knowledge in content workshops and advise you on current trends and best practices."
+      description: "We share our knowledge in content workshops and advise you on current trends and best practices.",
+      link: "/en/contact",
+      linkText: "Request Workshop"
     },
     {
       icon: Bot,
       title: "AI-Powered Efficiency",
-      description: "We use cutting-edge AI tools like ChatGPT and Midjourney to work faster and more efficiently – without replacing human expertise."
+      description: "We use cutting-edge AI tools like ChatGPT and Midjourney to work faster and more efficiently – without replacing human expertise.",
+      link: "/en/ai-technologies",
+      linkText: "Discover AI Approach"
     },
     {
       icon: TrendingUp,
       title: "Measurable Results",
-      description: "Content without metrics is just art. We track performance and continuously optimize."
+      description: "Content without metrics is just art. We track performance and continuously optimize.",
+      link: "/en/seo",
+      linkText: "Learn about SEO"
     },
     {
       icon: Zap,
       title: "Fast Implementation",
-      description: "Thanks to structured processes and a well-coordinated team, we deliver content quickly and with high quality."
+      description: "Thanks to structured processes and a well-coordinated team, we deliver content quickly and with high quality.",
+      link: "/en/case-studies",
+      linkText: "View Projects"
     }
   ];
 
@@ -105,9 +129,20 @@ const ContentExpertInsight = () => {
                   {benefit.title}
                 </h3>
                 
-                <p className="text-brand-text leading-relaxed">
+                <p className="text-brand-text leading-relaxed mb-6">
                   {benefit.description}
                 </p>
+                
+                <Button 
+                  variant="link" 
+                  className="text-brand-primary hover:text-brand-primaryHover p-0 h-auto font-medium" 
+                  asChild
+                >
+                  <a href={benefit.link}>
+                    {benefit.linkText}
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
             );
           })}
