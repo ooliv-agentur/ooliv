@@ -2,8 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, Mail } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactHero = () => {
+  const { language } = useLanguage();
+  
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
@@ -13,10 +16,16 @@ const ContactHero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-heading mb-6">
-            Contact – ooliv Marketing Agency Mainz
+            {language === 'de' 
+              ? 'Kontakt – ooliv Marketing Agentur Mainz'
+              : 'Contact – ooliv Marketing Agency Mainz'
+            }
           </h1>
           <p className="text-xl md:text-2xl text-brand-text max-w-4xl mx-auto mb-10">
-            Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project.
+            {language === 'de'
+              ? 'Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt.'
+              : 'Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project.'
+            }
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -25,7 +34,7 @@ const ContactHero = () => {
               className="bg-brand-primary text-white hover:bg-brand-primaryHover"
               onClick={handleOpenLeadForm}
             >
-              Start Your Project
+              {language === 'de' ? 'Projekt starten' : 'Start Your Project'}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -37,7 +46,7 @@ const ContactHero = () => {
             >
               <a href="tel:+4961316367801">
                 <Phone className="mr-2 h-5 w-5" />
-                Call Now
+                {language === 'de' ? 'Jetzt anrufen' : 'Call Now'}
               </a>
             </Button>
           </div>
