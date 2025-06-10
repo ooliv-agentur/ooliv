@@ -11,7 +11,7 @@ import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
-import SEOTextSection from '@/components/de/SEOTextSection';
+import SEOTextSectionDE from '@/components/seo/SEOTextSectionDE';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -50,7 +50,7 @@ const GermanSEO = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<SEOTextSection />}
+      seoText={<SEOTextSectionDE />}
     >
       <Helmet>
         <title>SEO Agentur Mainz | Sichtbarkeit und Wachstum mit ooliv</title>
