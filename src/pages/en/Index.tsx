@@ -13,7 +13,9 @@ import CTA from "@/components/CTA";
 import ClientLogos from "@/components/ClientLogos";
 import SEOTextSectionEN from "@/components/en/SEOTextSectionEN";
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
@@ -21,6 +23,10 @@ const EnglishIndex = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
+  
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   const simplifiedFaqs = [
     {
@@ -58,24 +64,94 @@ const EnglishIndex = () => {
         <meta name="focus-keyword" content="Web Design Agency Mainz" />
       </Helmet>
       
-      <PageHero 
-        isHomepage={true}
-        title="Web Design Agency Mainz"
-        subtitle="for Websites That Convert, Rank & Drive Growth"
-        description="We build websites that outperform – with clear strategy, custom design and measurable results from day one."
-        primaryCta={{
-          text: "Start Your Website Project",
-          link: "#",
-          onClick: (e) => {
-            e.preventDefault();
-            window.dispatchEvent(new Event('open-lead-form'));
-          }
-        }}
-        secondaryCta={{
-          text: "See Our Work",
-          link: "/en/case-studies"
-        }}
-      />
+      {/* Hero Section - exactly matching German design */}
+      <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+        {/* Enhanced floating circles animation - same as German version */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
+          <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
+          <div className="floating-circle reverse w-24 h-24 bottom-40 left-1/4 opacity-50"></div>
+          <div className="floating-circle diagonal w-20 h-20 bottom-20 right-1/3 opacity-45"></div>
+          <div className="floating-circle fast w-16 h-16 top-1/2 left-3/4 opacity-60"></div>
+          <div className="floating-circle pulse w-12 h-12 top-1/3 right-1/4 opacity-70"></div>
+          <div className="floating-circle slow w-14 h-14 top-60 left-1/2 opacity-35"></div>
+          <div className="floating-circle delayed reverse w-18 h-18 bottom-60 right-10 opacity-40"></div>
+          <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
+        </div>
+        
+        <div className="relative z-20 w-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="text-center max-w-4xl mx-auto">
+              {/* Main heading - exactly matching German size and styling */}
+              <h1 className="mb-2">
+                <span 
+                  className="font-medium leading-tight text-center block"
+                  style={{ 
+                    fontSize: '52px', 
+                    lineHeight: '68px', 
+                    color: '#003343' 
+                  }}
+                >
+                  ooliv Web Design Agency Mainz
+                </span>
+              </h1>
+              
+              {/* Subtitle - exactly matching German size and styling */}
+              <h2 
+                className="font-bold text-center block mt-2 mb-6"
+                style={{ 
+                  fontSize: '52px', 
+                  lineHeight: '68px', 
+                  color: '#32b1ab' 
+                }}
+              >
+                We help businesses become visible online.
+              </h2>
+              
+              {/* Description - matching German styling */}
+              <p className="text-xl text-medico-darkGreen mb-10 leading-relaxed">
+                We develop websites for B2B companies that measurably generate more leads and build trust. No templates, no buzzwords — just strategy, design and performance from one source.
+              </p>
+              
+              {/* CTA buttons - exactly matching German styling */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={handleOpenLeadForm}
+                >
+                  Start Project
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                  asChild
+                >
+                  <Link to="/en/case-studies">
+                    View Work
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Visual transition indicator - matching German version */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="flex flex-col items-center space-y-2">
+            <div className="w-1 h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="flex space-x-1">
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="w-1.5 h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       <EnglishAboutSection />
       <EnglishSolutionSection />
