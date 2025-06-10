@@ -12,13 +12,13 @@ const StrategieHero = () => {
       title="Strategie & Webkonzept für Ihren digitalen Erfolg"
       subtitle="Wir entwickeln individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Leads und eine nachhaltige digitale Präsenz."
       primaryCta={{
-        text: "Strategiegespräch vereinbaren",
+        text: "Projekt starten",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Mehr über unsere Leistungen",
-        link: "/webdesign"
+        text: "Über ooliv",
+        link: "/ueber-uns"
       }}
     />
   );

@@ -73,7 +73,7 @@ const AiTechHero = () => {
                 }}
                 onClick={handleStartProject}
               >
-                {isGerman ? "KI-Potenzialanalyse anfordern" : "Request AI Analysis"}
+                Projekt starten
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -83,8 +83,8 @@ const AiTechHero = () => {
                 className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                 asChild
               >
-                <Link to={isGerman ? "/kontakt" : "/en/contact"}>
-                  {isGerman ? "Strategiegespräch vereinbaren" : "Schedule Strategy Call"}
+                <Link to="/ueber-uns">
+                  Über ooliv
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

@@ -26,13 +26,13 @@ const WebDevHero = () => {
         : "Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
       }
       primaryCta={{
-        text: isGerman ? "Projekt starten" : "Start Your Project",
+        text: "Projekt starten",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: isGerman ? "Fallstudien ansehen" : "View Case Studies",
-        link: isGerman ? "/referenzen" : "/en/case-studies"
+        text: "Über ooliv",
+        link: "/ueber-uns"
       }}
     />
   );

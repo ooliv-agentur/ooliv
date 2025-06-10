@@ -24,13 +24,13 @@ const ContentHero = () => {
       title={title}
       subtitle={subtitle}
       primaryCta={{
-        text: isGerman ? "Content-Projekt starten" : "Start Content Project",
+        text: "Projekt starten",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: isGerman ? "Referenzen ansehen" : "View Case Studies",
-        link: isGerman ? "/referenzen" : "/en/case-studies"
+        text: "Über ooliv",
+        link: "/ueber-uns"
       }}
     />
   );

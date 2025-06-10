@@ -29,13 +29,13 @@ const WebDesignHero = () => {
       title={t.title}
       subtitle={t.subtitle}
       primaryCta={{
-        text: isGerman ? 'Projekt starten' : 'Start Your Web Project',
+        text: 'Projekt starten',
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: isGerman ? 'Referenzen ansehen' : 'View Case Studies',
-        link: isGerman ? "/referenzen" : "/en/case-studies"
+        text: 'Über ooliv',
+        link: "/ueber-uns"
       }}
     />
   );

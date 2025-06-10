@@ -12,13 +12,13 @@ const GoogleAdsHero = () => {
       title="Google Ads Agentur Mainz – Leads statt nur Klicks"
       subtitle="Wir entwickeln und optimieren Google Ads Kampagnen, die nicht nur sichtbar sind, sondern qualifizierte Anfragen generieren. KI-gestützt, datenbasiert, auf Conversion ausgelegt."
       primaryCta={{
-        text: "Kampagne starten",
+        text: "Projekt starten",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Kostenlose Analyse anfordern",
-        link: "/kontakt"
+        text: "Über ooliv",
+        link: "/ueber-uns"
       }}
     />
   );
