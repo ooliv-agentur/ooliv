@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -226,34 +225,38 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Section 2: Story */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section 2: Story - Revised to match master style guide */}
+      <section className="py-20 bg-medico-mint font-satoshi">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003343]">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
               Wo Leidenschaft auf Leistung trifft
             </h2>
-            <div className="flex justify-center mb-8">
-              <div className="h-16 w-16 bg-[#32b1ab]/10 rounded-full flex items-center justify-center">
-                <Globe className="h-8 w-8 text-[#32b1ab]" />
+            <div className="flex justify-center mb-12">
+              <div className="h-16 w-16 flex items-center justify-center rounded-full" style={{ backgroundColor: '#32b1ab' }}>
+                <Globe className="h-8 w-8" style={{ color: 'white' }} />
               </div>
             </div>
-            <div className="prose prose-lg max-w-none text-center">
-              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed" style={{ lineHeight: '1.6' }}>
                 Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
               </p>
-              <blockquote className="text-2xl md:text-3xl font-medium mb-8 text-[#32b1ab] italic">
-                "Können Sie mit uns weitermachen?"
-              </blockquote>
-              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+              <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
+                <blockquote className="text-2xl md:text-3xl font-bold text-medico-turquoise italic leading-tight">
+                  "Können Sie mit uns weitermachen?"
+                </blockquote>
+              </div>
+              <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed" style={{ lineHeight: '1.6' }}>
                 Das war der Anfang von ooliv.
               </p>
-              <p className="text-xl mb-6 text-[#003343]/80 leading-relaxed">
+              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed" style={{ lineHeight: '1.6' }}>
                 Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
               </p>
-              <p className="text-2xl font-bold text-[#003343]">
-                Jede Website sollte echten Unternehmenswert schaffen.
-              </p>
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <p className="text-2xl md:text-3xl font-bold text-medico-darkGreen leading-tight">
+                  Jede Website sollte echten Unternehmenswert schaffen.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -551,3 +554,5 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
+</edits_to_apply>
