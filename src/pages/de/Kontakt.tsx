@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import PageHero from '@/components/PageHero';
+import ContactHero from '@/components/contact/ContactHero';
 import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactInfoSection from '@/components/contact/ContactInfoSection';
 import ContactMethodsSection from '@/components/contact/ContactMethodsSection';
@@ -18,6 +18,11 @@ const GermanContact = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
     <PageLayout 
       seoText={<ContactSEOText />}
@@ -29,16 +34,13 @@ const GermanContact = () => {
         <meta name="focus-keyword" content="Marketing Agentur Mainz" />
       </Helmet>
       
-      <PageHero
+      <ContactHero
         title="Kontakt – ooliv Marketing Agentur Mainz"
         subtitle="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt."
         primaryCta={{
           text: "Projekt starten",
           link: "#",
-          onClick: (e) => {
-            e.preventDefault();
-            window.dispatchEvent(new Event('open-lead-form'));
-          }
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
           text: "Jetzt anrufen",

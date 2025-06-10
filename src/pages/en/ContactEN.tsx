@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import ContactHero from '@/components/contact/ContactHero';
 import ContactInfo from '@/components/contact/ContactInfo';
 import ContactCta from '@/components/contact/ContactCta';
 import FAQ from '@/components/FAQ';
@@ -16,6 +16,11 @@ const EnglishContact = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
+
+  const handleOpenLeadForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
 
   const contactFaqs = [
     {
@@ -49,16 +54,13 @@ const EnglishContact = () => {
         <meta name="focus-keyword" content="Marketing Agency Mainz" />
       </Helmet>
       
-      <PageHero
+      <ContactHero
         title="Contact – ooliv Marketing Agency Mainz"
         subtitle="Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project."
         primaryCta={{
           text: "Start Your Project",
           link: "#",
-          onClick: (e) => {
-            e.preventDefault();
-            window.dispatchEvent(new Event('open-lead-form'));
-          }
+          onClick: handleOpenLeadForm
         }}
         secondaryCta={{
           text: "Call Now",
