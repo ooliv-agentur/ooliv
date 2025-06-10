@@ -10,6 +10,7 @@ import TechnologiesSection from "@/components/en/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import ClientLogos from "@/components/ClientLogos";
 import SEOTextSectionEN from "@/components/en/SEOTextSectionEN";
 import { useLanguage } from '@/contexts/LanguageContext';
 import PageHero from '@/components/PageHero';
@@ -45,7 +46,7 @@ const EnglishIndex = () => {
   ];
 
   return (
-    <>
+    <PageLayout>
       <Helmet>
         <html lang="en" />
         <title>Web Design Agency Mainz – Custom Websites That Deliver Results</title>
@@ -56,55 +57,81 @@ const EnglishIndex = () => {
         <meta name="keywords" content="Web Design Agency Mainz, WordPress Development Mainz, SEO Agency Mainz, Digital Marketing Mainz, Custom Website Design Mainz" />
         <meta name="focus-keyword" content="Web Design Agency Mainz" />
       </Helmet>
-      <PageLayout className="overflow-x-hidden">
-        <PageHero 
-          isHomepage={true}
-        />
-        <EnglishAboutSection />
-        <EnglishTeamTeaser />
-        
-        <div className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Your Website Should Work for You—Not Against You.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-              Many businesses struggle with websites that don't perform. We develop websites that generate leads, build trust, and rank well on Google.
+      
+      <PageHero 
+        isHomepage={true}
+        title={
+          <div className="flex flex-col">
+            <span 
+              className="font-medium leading-tight text-center block"
+              style={{ 
+                fontSize: '52px', 
+                lineHeight: '68px', 
+                color: '#003343' 
+              }}
+            >
+              Web Design Agency Mainz
+            </span>
+            <span 
+              className="font-bold text-center block mt-2"
+              style={{ 
+                fontSize: '52px', 
+                lineHeight: '68px', 
+                color: '#32b1ab' 
+              }}
+            >
+              For Websites That Convert, Rank & Drive Growth
+            </span>
+          </div>
+        }
+        subtitle="We build websites that outperform – with clear strategy, custom design and measurable results from day one."
+        startProjectText="Start Your Website Project"
+        seeWorkText="See Our Work"
+      />
+      
+      <EnglishAboutSection />
+      <EnglishSolutionSection />
+      <EnglishTeamTeaser />
+      
+      <div className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Your Website Should Work for You—Not Against You.</h2>
+          <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
+            Many businesses struggle with websites that don't perform. We develop websites that generate leads, build trust, and rank well on Google.
+          </p>
+          <BeforeAfterSlider />
+          <div className="mt-8 text-center">
+            <p className="text-brand-text">
+              Note: We have many more before-and-after examples available. Feel free to request them directly from us — <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>.
             </p>
-            <BeforeAfterSlider />
-            <div className="mt-8 text-center">
-              <p className="text-brand-text">
-                Note: We have many more before-and-after examples available. Feel free to request them directly from us — <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>.
-              </p>
-            </div>
           </div>
         </div>
-        
-        <EnglishSolutionSection />
-        
-        <TechnologiesSection />
-        
-        <CaseStudiesSection 
-          customTitle="Real Results from Real Clients"
-          customSubtitle="We deliver websites and strategies that showcase what makes your business special."
-          customBodyText="See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
-        />
-        
-        <FAQ 
-          customFaqs={simplifiedFaqs}
-          customTitle="Frequently Asked Questions"
-          customCtaText="More questions? Contact us"
-        />
-        
-        <CTA 
-          lightBackground={true}
-          title="Ready to transform your digital presence?"
-          subtitle="Let's discuss how our team can help your business achieve its online goals."
-          primaryCta="Start Your Website Project"
-        />
-      </PageLayout>
+      </div>
       
-      {/* SEO Text Section placed OUTSIDE PageLayout to match German style */}
+      <TechnologiesSection />
+      
+      <CaseStudiesSection 
+        customTitle="Real Results from Real Clients"
+        customSubtitle="We deliver websites and strategies that showcase what makes your business special."
+        customBodyText="See how we've helped businesses achieve sustainable growth through clear positioning, strong content, SEO performance, and measurable UX optimization."
+      />
+      
+      <FAQ 
+        customFaqs={simplifiedFaqs}
+        customTitle="Frequently Asked Questions"
+        customCtaText="More questions? Contact us"
+      />
+      
+      <CTA 
+        title="Ready for your digital success?"
+        subtitle="Let's create a website together that not only looks good, but also delivers measurable results."
+        primaryCta="Start Your Project"
+        secondaryCta="Schedule a Strategy Call"
+      />
+      
+      <ClientLogos />
       <SEOTextSectionEN />
-    </>
+    </PageLayout>
   );
 };
 
