@@ -11,7 +11,7 @@ const ContentImportance = () => {
     {
       icon: TrendingUp,
       title: 'Vertrauen und Glaubwürdigkeit',
-      description: 'Hochwertige Inhalte positionieren Sie als Expert:in in Ihrer Branche, schaffen Vertrauen und geben potenziellen Kund:innen das sichere Gefühl, mit dem richtigen Partner zusammenzuarbeiten.'
+      description: 'Hochwertige Inhalte positionieren Sie als Experte in Ihrer Branche, schaffen Vertrauen und geben potenziellen Kunden das sichere Gefühl, mit dem richtigen Partner zusammenzuarbeiten.'
     },
     {
       icon: Users,
@@ -21,7 +21,7 @@ const ContentImportance = () => {
     {
       icon: Search,
       title: 'Sichtbarkeit & SEO',
-      description: 'Mit SEO-optimierten Inhalten verbessern Sie Ihre Sichtbarkeit in den Suchmaschinen, gewinnen mehr qualifizierte Besucher:innen und steigern so Ihre Chancen auf nachhaltigen Unternehmenserfolg.'
+      description: 'Mit SEO-optimierten Inhalten verbessern Sie Ihre Sichtbarkeit in den Suchmaschinen, gewinnen mehr qualifizierte Besucher und steigern so Ihre Chancen auf nachhaltigen Unternehmenserfolg.'
     }
   ] : [
     {
