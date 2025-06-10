@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Grid2X2, Sparkles, Code2, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ContentProcessUnified = () => {
@@ -20,7 +20,8 @@ const ContentProcessUnified = () => {
         'Zielgruppen-Personas',
         'Content-Kalender'
       ],
-      link: '/strategie'
+      link: '/strategie',
+      icon: Grid2X2
     },
     {
       number: "02", 
@@ -32,7 +33,8 @@ const ContentProcessUnified = () => {
         'Video-Content',
         'Social Media Content'
       ],
-      link: '/kreation'
+      link: '/webdesign',
+      icon: Sparkles
     },
     {
       number: "03",
@@ -44,7 +46,8 @@ const ContentProcessUnified = () => {
         'Performance-Optimierung',
         'Mobile Optimierung'
       ],
-      link: '/umsetzung'
+      link: '/webentwicklung',
+      icon: Code2
     },
     {
       number: "04",
@@ -56,7 +59,8 @@ const ContentProcessUnified = () => {
         'Optimierungsempfehlungen',
         'Monatliche Content-Updates'
       ],
-      link: '/optimierung'
+      link: '/seo-optimierung',
+      icon: TrendingUp
     }
   ] : [
     {
@@ -110,54 +114,58 @@ const ContentProcessUnified = () => {
   ];
 
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-20 bg-medico-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
-          {isGerman
-            ? "Unser Content-Prozess – von der Strategie zur Umsetzung"
-            : "Our Content Process – From Strategy to Implementation"
-          }
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">
+            {isGerman
+              ? "Unser Content-Prozess – von der Strategie zur Umsetzung"
+              : "Our Content Process – From Strategy to Implementation"
+            }
+          </h2>
+        </div>
         
-        <div className="grid lg:grid-cols-2 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="bg-white rounded-lg p-8 shadow-card hover:shadow-cardHover transition-shadow border border-gray-100">
-              <div className="flex items-start mb-6">
-                <div className="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">
-                  {step.number}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+                  <Icon className="h-10 w-10 text-medico-turquoise" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-3 text-brand-heading">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-text mb-4">
-                    {step.description}
-                  </p>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{step.title}</h3>
+                <p className="text-gray-600 mb-6 text-base leading-relaxed">
+                  {step.description}
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold mb-3 text-brand-heading">
+                    {isGerman ? "Was wir liefern:" : "What we deliver:"}
+                  </h4>
+                  <ul className="space-y-2">
+                    {step.deliverables.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <div className="w-2 h-2 rounded-full bg-brand-primary mr-3 flex-shrink-0 mt-2"></div>
+                        <span className="text-brand-text">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <Button 
+                    variant="link" 
+                    className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                    asChild
+                  >
+                    <Link to={step.link}>
+                      {isGerman ? "Mehr erfahren" : "Learn more"}
+                    </Link>
+                  </Button>
                 </div>
               </div>
-              
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-3 text-brand-heading">
-                  {isGerman ? "Was wir liefern:" : "What we deliver:"}
-                </h4>
-                <ul className="space-y-2">
-                  {step.deliverables.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start">
-                      <div className="w-2 h-2 rounded-full bg-brand-primary mr-3 flex-shrink-0 mt-2"></div>
-                      <span className="text-brand-text">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <Button variant="outline" asChild className="w-full">
-                <Link to={step.link} className="flex items-center justify-center gap-2">
-                  {isGerman ? "Mehr erfahren" : "Learn more"}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
