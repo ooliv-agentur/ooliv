@@ -74,7 +74,7 @@ const SEOHeroDE = () => {
                 asChild
               >
                 <Link to="/referenzen">
-                  SEO Erfolge ansehen
+                  Referenzen ansehen
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
