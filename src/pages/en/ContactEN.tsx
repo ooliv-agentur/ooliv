@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ContactHero from '@/components/contact/ContactHero';
+import PageHero from '@/components/PageHero';
 import ContactInfo from '@/components/contact/ContactInfo';
 import ContactCta from '@/components/contact/ContactCta';
 import FAQ from '@/components/FAQ';
@@ -49,7 +49,22 @@ const EnglishContact = () => {
         <meta name="focus-keyword" content="Marketing Agency Mainz" />
       </Helmet>
       
-      <ContactHero />
+      <PageHero
+        title="Contact – ooliv Marketing Agency Mainz"
+        subtitle="Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project."
+        primaryCta={{
+          text: "Start Your Project",
+          link: "#",
+          onClick: (e) => {
+            e.preventDefault();
+            window.dispatchEvent(new Event('open-lead-form'));
+          }
+        }}
+        secondaryCta={{
+          text: "Call Now",
+          link: "tel:+4961316367801"
+        }}
+      />
       <ContactInfo />
       <ContactCta />
       
