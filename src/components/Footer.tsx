@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -8,7 +9,7 @@ const Footer = () => {
   const { t, language } = useLanguage();
   
   const pathMap: Record<string, string> = {
-    'about-ooliv': language === 'de' ? 'ueber-ooliv' : 'about-us',
+    'about-ooliv': language === 'de' ? 'ueber-uns' : 'about-us',
     'strategy': language === 'de' ? 'strategie' : 'strategy',
     'web-design': language === 'de' ? 'webdesign' : 'webdesign',
     'web-development': language === 'de' ? 'webentwicklung' : 'webdevelopment',
