@@ -14,17 +14,17 @@ const AiTechBenefits = () => {
       subtitle: "Our AI tools increase speed, precision, and scalability—without giving up creativity or control. We use AI where it creates measurable benefits—and rely on humans when it matters.",
       cards: [
         {
-          icon: <LineChart className="h-10 w-10 text-brand-primary" />,
+          icon: <LineChart className="h-8 w-8 text-brand-primary" />,
           title: "Strategically Integrated—Not Automated",
           description: "AI supports our workflows—but we make the decisions."
         },
         {
-          icon: <Clock className="h-10 w-10 text-brand-primary" />,
+          icon: <Clock className="h-8 w-8 text-brand-primary" />,
           title: "Faster Results",
           description: "AI helps us deliver research, variations, and initial drafts much faster—without compromising quality."
         },
         {
-          icon: <Lightbulb className="h-10 w-10 text-brand-primary" />,
+          icon: <Lightbulb className="h-8 w-8 text-brand-primary" />,
           title: "Creativity Remains Human",
           description: "Ideas, concepts, and storytelling always come from real minds."
         }
@@ -35,17 +35,17 @@ const AiTechBenefits = () => {
       subtitle: "Unsere KI-Tools steigern Tempo, Präzision und Skalierbarkeit – ohne Kreativität oder Kontrolle aus der Hand zu geben. Wir nutzen KI dort, wo sie messbare Vorteile schafft – und vertrauen auf Menschen, wenn es zählt.",
       cards: [
         {
-          icon: <LineChart className="h-10 w-10 text-brand-primary" />,
+          icon: <LineChart className="h-8 w-8 text-brand-primary" />,
           title: "Strategisch integriert – nicht automatisiert",
           description: "KI unterstützt unsere Workflows – aber Entscheidungen treffen wir."
         },
         {
-          icon: <Clock className="h-10 w-10 text-brand-primary" />,
+          icon: <Clock className="h-8 w-8 text-brand-primary" />,
           title: "Schneller zum Ergebnis",
           description: "KI hilft uns, Recherche, Varianten und erste Entwürfe deutlich schneller zu liefern – ohne Kompromisse bei der Qualität."
         },
         {
-          icon: <Lightbulb className="h-10 w-10 text-brand-primary" />,
+          icon: <Lightbulb className="h-8 w-8 text-brand-primary" />,
           title: "Kreativität bleibt menschlich",
           description: "Ideen, Konzepte und Storytelling kommen immer aus echten Köpfen."
         }
@@ -82,14 +82,16 @@ const AiTechBenefits = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="h-full flex flex-col p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div className="flex items-center justify-center mb-4">
-                  {card.icon}
+              <div className="h-full flex flex-col p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center">
+                    {card.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                <h3 className="text-xl font-bold mb-4 text-gray-900 text-center">
                   {card.title}
                 </h3>
-                <p className="text-gray-700 flex-grow">
+                <p className="text-gray-700 flex-grow text-center">
                   {card.description}
                 </p>
               </div>
