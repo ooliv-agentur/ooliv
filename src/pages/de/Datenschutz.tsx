@@ -45,6 +45,7 @@ const GermanPrivacyPolicy = () => {
       <Helmet>
         <title>Datenschutz | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen." />
+        <meta name="keywords" content="Datenschutz ooliv Mainz, DSGVO Werbeagentur Mainz, Datenschutzerklärung ooliv, Datenverarbeitung Mainz, Privatsphäre Schutz Mainz" />
       </Helmet>
 
       <LegalHero
