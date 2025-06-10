@@ -6,7 +6,7 @@ const CaseStudiesSEOText = () => {
   return (
     <section className={`${seoTextStyles.container} ${seoTextStyles.containerBackground}`}>
       <div className={seoTextStyles.innerContainer}>
-        <article className={seoTextStyles.articleWrapper} style={{ color: '#FFFFFF' }}>
+        <article className={seoTextStyles.articleWrapper}>
           <h2 className={seoTextStyles.mainHeading} style={{ color: '#FFFFFF' }}>Marketing Mainz – Echte Ergebnisse aus erfolgreichen Projekten</h2>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
@@ -16,19 +16,19 @@ const CaseStudiesSEOText = () => {
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>Warum ooliv der richtige Partner für Marketing in Mainz ist</h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>✓ Strategie-First Ansatz</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>✓ Strategie-First Ansatz</strong><br />
             Jedes erfolgreiche Projekt beginnt bei uns mit einer klaren strategischen Basis:
             Zieldefinition, Customer Journey Mapping, KPI-Entwicklung und maßgeschneiderte Strukturierung bilden das Fundament für nachhaltiges Wachstum.
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>✓ Individuelles Design & Content-Erstellung</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>✓ Individuelles Design & Content-Erstellung</strong><br />
             Keine Templates, keine Massenlösungen: Wir entwickeln individuelles Webdesign, einzigartige Inhalte und Messaging-Frameworks, die Marken klar und überzeugend positionieren.
             Alle Inhalte entstehen im Spannungsfeld von Kreativität, Conversion-Optimierung und Suchmaschinenfreundlichkeit.
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>✓ Technische Exzellenz und SEO-Performance</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>✓ Technische Exzellenz und SEO-Performance</strong><br />
             Unsere Websites und Kampagnen sind nicht nur visuell ansprechend, sondern auch technisch überdurchschnittlich:
             Schnelle Ladezeiten, skalierbare Architekturen und strukturierte SEO-Implementierungen sorgen für langfristige Ergebnisse im digitalen Marketing.
           </p>
@@ -40,7 +40,7 @@ const CaseStudiesSEOText = () => {
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Unsere Leistungen im Bereich Branding:</strong>
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Unsere Leistungen im Bereich Branding:</strong>
           </p>
           <ul className={seoTextStyles.unorderedList} style={{ color: '#F4F4F4' }}>
             <li>Entwicklung neuer Markenidentitäten mit klarem Wiedererkennungswert</li>
@@ -61,7 +61,7 @@ const CaseStudiesSEOText = () => {
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Unser Angebot im Bereich Marketing-Support:</strong>
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Unser Angebot im Bereich Marketing-Support:</strong>
           </p>
           <ul className={seoTextStyles.unorderedList} style={{ color: '#F4F4F4' }}>
             <li>Online-Marketing Betreuung: Suchmaschinenoptimierung, SEA, Performance-Kampagnen</li>
@@ -83,7 +83,7 @@ const CaseStudiesSEOText = () => {
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Unsere Webdesign-Philosophie:</strong>
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Unsere Webdesign-Philosophie:</strong>
           </p>
           <ul className={seoTextStyles.unorderedList} style={{ color: '#F4F4F4' }}>
             <li>Zielgerichtete Webseiten mit klarem Nutzerfokus</li>
@@ -101,37 +101,84 @@ const CaseStudiesSEOText = () => {
             Unsere erfolgreich umgesetzten Projekte im Bereich Marketing und digitale Markenentwicklung:
           </p>
           
-          <table className="w-full mt-4 border-collapse">
-            <tbody>
-              <tr className="border-b border-gray-200">
-                <td className="py-2 font-medium" style={{ color: '#FFFFFF' }}>KLAIBER</td>
-                <td className="py-2" style={{ color: '#F4F4F4' }}>Steuerberatung</td>
-                <td className="py-2"><a href="https://kl-klaiber.de" target="_blank" rel="noopener noreferrer" className="text-medico-yellow hover:underline">Website</a></td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-2 font-medium" style={{ color: '#FFFFFF' }}>COBUS Industries</td>
-                <td className="py-2" style={{ color: '#F4F4F4' }}>Flughafenbusse</td>
-                <td className="py-2"><a href="https://cobus-industries.de" target="_blank" rel="noopener noreferrer" className="text-medico-yellow hover:underline">Website</a></td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-2 font-medium" style={{ color: '#FFFFFF' }}>SPEZ AG</td>
-                <td className="py-2" style={{ color: '#F4F4F4' }}>Kranarbeiten & Grünpflege</td>
-                <td className="py-2"><a href="https://spez-ag.ch" target="_blank" rel="noopener noreferrer" className="text-medico-yellow hover:underline">Website</a></td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-2 font-medium" style={{ color: '#FFFFFF' }}>IconPro GmbH</td>
-                <td className="py-2" style={{ color: '#F4F4F4' }}>KI-Software</td>
-                <td className="py-2"><a href="https://iconpro.com" target="_blank" rel="noopener noreferrer" className="text-medico-yellow hover:underline">Website</a></td>
-              </tr>
-              <tr className="border-b border-gray-200">
-                <td className="py-2 font-medium" style={{ color: '#FFFFFF' }}>Quartier Am Kliff</td>
-                <td className="py-2" style={{ color: '#F4F4F4' }}>Immobilien</td>
-                <td className="py-2"><a href="https://amkliff.de" target="_blank" rel="noopener noreferrer" className="text-medico-yellow hover:underline">Website</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="w-full mt-6 mb-6">
+            <table className="w-full border-collapse">
+              <tbody>
+                <tr className="border-b border-gray-600">
+                  <td className="py-3 font-medium text-base" style={{ color: '#FFFFFF' }}>KLAIBER</td>
+                  <td className="py-3 text-sm" style={{ color: '#F4F4F4' }}>Steuerberatung</td>
+                  <td className="py-3">
+                    <a 
+                      href="https://kl-klaiber.de" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-medico-yellow hover:underline font-medium"
+                    >
+                      Website
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-600">
+                  <td className="py-3 font-medium text-base" style={{ color: '#FFFFFF' }}>COBUS Industries</td>
+                  <td className="py-3 text-sm" style={{ color: '#F4F4F4' }}>Flughafenbusse</td>
+                  <td className="py-3">
+                    <a 
+                      href="https://cobus-industries.de" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-medico-yellow hover:underline font-medium"
+                    >
+                      Website
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-600">
+                  <td className="py-3 font-medium text-base" style={{ color: '#FFFFFF' }}>SPEZ AG</td>
+                  <td className="py-3 text-sm" style={{ color: '#F4F4F4' }}>Kranarbeiten & Grünpflege</td>
+                  <td className="py-3">
+                    <a 
+                      href="https://spez-ag.ch" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-medico-yellow hover:underline font-medium"
+                    >
+                      Website
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-600">
+                  <td className="py-3 font-medium text-base" style={{ color: '#FFFFFF' }}>IconPro GmbH</td>
+                  <td className="py-3 text-sm" style={{ color: '#F4F4F4' }}>KI-Software</td>
+                  <td className="py-3">
+                    <a 
+                      href="https://iconpro.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-medico-yellow hover:underline font-medium"
+                    >
+                      Website
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-600">
+                  <td className="py-3 font-medium text-base" style={{ color: '#FFFFFF' }}>Quartier Am Kliff</td>
+                  <td className="py-3 text-sm" style={{ color: '#F4F4F4' }}>Immobilien</td>
+                  <td className="py-3">
+                    <a 
+                      href="https://amkliff.de" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-medico-yellow hover:underline font-medium"
+                    >
+                      Website
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           
-          <p className="mt-2 text-gray-600">(plus weitere Kunden im Überblick weiter unten)</p>
+          <p className="text-sm text-gray-400 mb-6">(plus weitere Kunden im Überblick weiter unten)</p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
             Weitere Branchen: Gartenbedarf, Bauunternehmen, E-Commerce, SaaS, Energieversorgung, MedTech und mehr.
@@ -140,22 +187,22 @@ const CaseStudiesSEOText = () => {
           <h3 className={seoTextStyles.sectionHeading} style={{ color: '#FFFFFF' }}>Häufige Fragen zu Projekten & Marketing Mainz</h3>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Mit welchen Unternehmen arbeitet ooliv als Marketing Agentur in Mainz?</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Mit welchen Unternehmen arbeitet ooliv als Marketing Agentur in Mainz?</strong><br />
             Wir arbeiten mit B2B- und B2C-Unternehmen aller Größen – vom regionalen Mittelstand bis zu internationalen Marktführern.
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Sind die Ergebnisse wirklich übertragbar auf andere Branchen?</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Sind die Ergebnisse wirklich übertragbar auf andere Branchen?</strong><br />
             Ja. Durch unseren Strategie-First-Ansatz und individuelle Lösungen erzielen wir messbare Ergebnisse in unterschiedlichsten Märkten.
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Bietet ooliv auch langfristige Marketingbegleitung an?</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Bietet ooliv auch langfristige Marketingbegleitung an?</strong><br />
             Ja – wir sehen uns als strategischen Geschäftspartner, nicht nur als Projektumsetzer. Langfristige Betreuung ist Teil unseres Modells.
           </p>
           
           <p className={seoTextStyles.paragraph} style={{ color: '#F4F4F4' }}>
-            <strong className={seoTextStyles.strongText}>Wie kann ich ein Projekt mit ooliv starten?</strong><br />
+            <strong className={seoTextStyles.strongText} style={{ color: '#FFFFFF' }}>Wie kann ich ein Projekt mit ooliv starten?</strong><br />
             Einfach unverbindlich ein Strategiegespräch buchen – gemeinsam analysieren wir Ihre Ziele und entwickeln einen ersten klaren Fahrplan.
           </p>
           
