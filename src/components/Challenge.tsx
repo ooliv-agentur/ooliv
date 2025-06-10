@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import { CheckCircle, X } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
@@ -50,13 +50,15 @@ const Challenge = ({ title, description, challenges, solutions }: ChallengeProps
             <Reveal direction="right" delay={0.1}>
               <div className="bg-green-50 p-8 rounded-lg">
                 <h3 className="text-xl font-bold text-green-700 mb-4 flex items-center">
-                  <Check className="mr-2 h-5 w-5" />
+                  <CheckCircle className="mr-2 h-5 w-5" />
                   Unsere Lösungen
                 </h3>
                 <StaggerReveal className="space-y-4">
                   {solutions.map((solution, index) => (
                     <li key={index} className="flex">
-                      <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                      <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                        <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                      </div>
                       <span>{solution}</span>
                     </li>
                   ))}

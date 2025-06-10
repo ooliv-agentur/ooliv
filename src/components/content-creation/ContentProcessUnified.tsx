@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target, Search, Users, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRight, Target, Search, Users, Zap, TrendingUp, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ContentProcessUnified = () => {
@@ -83,8 +83,8 @@ const ContentProcessUnified = () => {
                 return (
                   <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
                     <div className="flex items-start">
-                      <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
-                        <Icon className="h-5 w-5 text-brand-primary" />
+                      <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon className="h-6 w-6 text-medico-turquoise" />
                       </div>
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
@@ -103,8 +103,8 @@ const ContentProcessUnified = () => {
                 return (
                   <div key={index + 3} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
                     <div className="flex items-start">
-                      <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
-                        <Icon className="h-5 w-5 text-brand-primary" />
+                      <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon className="h-6 w-6 text-medico-turquoise" />
                       </div>
                       <div>
                         <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
@@ -124,8 +124,8 @@ const ContentProcessUnified = () => {
               return (
                 <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
-                      <Icon className="h-5 w-5 text-brand-primary" />
+                    <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon className="h-6 w-6 text-medico-turquoise" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
@@ -153,8 +153,8 @@ const ContentProcessUnified = () => {
               return (
                 <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg hover:shadow-md transition-shadow">
                   <div className="flex items-start">
-                    <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
-                      <Icon className="h-5 w-5 text-brand-primary" />
+                    <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon className="h-6 w-6 text-medico-turquoise" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-2 text-brand-heading">{format.title}</h3>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, Video } from 'lucide-react';
+import { Target, Video, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentBenefits = () => {
@@ -81,8 +81,8 @@ const ContentBenefits = () => {
               className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="p-3 rounded-full bg-brand-primary/10 mb-6">
-                  <group.icon className="h-8 w-8 text-brand-primary" />
+                <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mb-6">
+                  <group.icon className="h-6 w-6 text-medico-turquoise" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4 text-brand-heading">
@@ -91,7 +91,9 @@ const ContentBenefits = () => {
                   <ul className="text-brand-text text-left space-y-3">
                     {group.challenges.map((challenge, challengeIndex) => (
                       <li key={challengeIndex} className="flex items-start">
-                        <span className="text-brand-primary mr-2 flex-shrink-0">•</span>
+                        <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                          <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                        </div>
                         <span>{challenge}</span>
                       </li>
                     ))}
