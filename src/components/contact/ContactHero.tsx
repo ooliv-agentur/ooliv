@@ -45,22 +45,12 @@ const ContactHero = () => {
               Wir betreuen Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation.
             </p>
             
-            {/* CTA buttons - matching startpage style */}
+            {/* CTA buttons - now using design system */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Button 
+                variant="primary"
                 size="lg" 
-                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                style={{ 
-                  backgroundColor: '#FFD700', 
-                  color: '#003347',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFC700';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                }}
+                className="group w-full sm:w-auto"
                 onClick={handleStartProject}
               >
                 Projekt starten
@@ -70,7 +60,7 @@ const ContactHero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                className="group w-full sm:w-auto" 
                 asChild
               >
                 <Link to="/referenzen">
