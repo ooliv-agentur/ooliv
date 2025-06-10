@@ -118,7 +118,7 @@ const WeitereProjekteTable = () => {
   console.log("Rendering WeitereProjekteTable with language:", language);
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-brand-backgroundAlt to-white">
+    <section className="py-20 md:py-28 bg-white">
       <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8">
         <h3 className="text-2xl md:text-3xl font-bold text-brand-heading mb-8 text-center">
           {translations.title}
