@@ -41,91 +41,93 @@ const GermanLegalNotice = () => {
         }}
       />
 
-      <section className="section-standard">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <Card className="card-layout h-full">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="icon-background text-brand-primary">
-                      <Building className="h-6 w-6" />
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Firmendaten Card */}
+            <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
+                    <Building className="h-6 w-6 text-medico-turquoise" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-medico-darkGreen">Firmendaten</h3>
+                </div>
+                
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-xl font-semibold text-medico-darkGreen mb-2">ooliv</p>
+                    <div className="text-gray-600 leading-relaxed">
+                      <p>Eduard von Heuss Str. 29</p>
+                      <p>55294 Bodenheim</p>
+                      <p>Germany</p>
                     </div>
-                    <h3 className="text-2xl font-bold">Firmendaten</h3>
                   </div>
                   
-                  <div className="space-y-4">
-                    <p className="text-lg font-semibold text-brand-heading">ooliv</p>
-                    <p className="text-brand-text">
-                      Eduard von Heuss Str. 29<br />
-                      55294 Bodenheim<br />
-                      Germany
-                    </p>
-                    
-                    <div className="flex items-center text-brand-text space-x-2">
-                      <Phone className="h-4 w-4 text-brand-primary" />
-                      <span>06131-6367801</span>
-                    </div>
-                    
-                    <div className="flex items-center text-brand-text space-x-2">
-                      <Mail className="h-4 w-4 text-brand-primary" />
-                      <span>info@ooliv.de</span>
-                    </div>
-                    
-                    <div className="pt-4">
-                      <p className="font-medium">Inhaber:</p>
-                      <p>Uli Schönleber</p>
-                    </div>
-                    
-                    <div className="pt-2">
-                      <p className="font-medium">USt.-IdNr.:</p>
-                      <p>DE265704357</p>
-                    </div>
+                  <div className="flex items-center text-gray-600 space-x-3">
+                    <Phone className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
+                    <span className="font-medium">06131-6367801</span>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  
+                  <div className="flex items-center text-gray-600 space-x-3">
+                    <Mail className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
+                    <span className="font-medium">info@ooliv.de</span>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-gray-100">
+                    <p className="font-semibold text-medico-darkGreen mb-1">Inhaber:</p>
+                    <p className="text-gray-600">Uli Schönleber</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-semibold text-medico-darkGreen mb-1">USt.-IdNr.:</p>
+                    <p className="text-gray-600">DE265704357</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-            <div className="space-y-6">
-              <Card className="card-layout">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="icon-background text-brand-primary">
-                      <FileText className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold">Urheberrechtshinweis</h3>
+            {/* Urheberrechtshinweis Card */}
+            <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <CardContent className="p-8">
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
+                    <FileText className="h-6 w-6 text-medico-turquoise" />
                   </div>
-                  
-                  <p className="text-brand-text">
-                    Alle Inhalte und Medien auf dieser Website sind durch das deutsche Urheberrecht und verwandte Schutzrechte geschützt. Jede Form der Wiederverwendung, Vervielfältigung oder Verbreitung außerhalb der Grenzen des Urheberrechts erfordert eine schriftliche Zustimmung. Unbefugte Nutzung wird rechtlich verfolgt.
-                  </p>
-                </CardContent>
-              </Card>
+                  <h3 className="text-2xl font-bold text-medico-darkGreen">Urheberrechtshinweis</h3>
+                </div>
+                
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  Alle Inhalte und Medien auf dieser Website sind durch das deutsche Urheberrecht und verwandte Schutzrechte geschützt. Jede Form der Wiederverwendung, Vervielfältigung oder Verbreitung außerhalb der Grenzen des Urheberrechts erfordert eine schriftliche Zustimmung. Unbefugte Nutzung wird rechtlich verfolgt.
+                </p>
 
-              <Card className="card-layout">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="icon-background text-brand-primary">
-                      <AlertTriangle className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-2xl font-bold">Einspruch gegen Werbe-E-Mails</h3>
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
+                    <AlertTriangle className="h-5 w-5 text-yellow-600" />
                   </div>
-                  
-                  <p className="text-brand-text">
-                    Wir widersprechen der Nutzung unserer veröffentlichten Kontaktdaten für unaufgeforderte Werbung. Wir behalten uns das Recht vor, im Falle unaufgeforderter Werbe-E-Mails (Spam) rechtliche Schritte einzuleiten.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <div className="flex justify-center md:justify-start pt-4">
-                <Button variant="outline" asChild data-trigger-lead-form>
-                  <Link to="/de/datenschutz">Datenschutzerklärung →</Link>
-                </Button>
-              </div>
-            </div>
+                  <h4 className="text-lg font-semibold text-medico-darkGreen">Einspruch gegen Werbe-E-Mails</h4>
+                </div>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  Wir widersprechen der Nutzung unserer veröffentlichten Kontaktdaten für unaufgeforderte Werbung. Wir behalten uns das Recht vor, im Falle unaufgeforderter Werbe-E-Mails (Spam) rechtliche Schritte einzuleiten.
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="pb-16"></div>
+          {/* Datenschutzerklärung Link */}
+          <div className="flex justify-center mt-12">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="font-semibold py-3 px-8 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise transition-all duration-300"
+              asChild
+            >
+              <Link to="/de/datenschutz">
+                Datenschutzerklärung →
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </PageLayout>
