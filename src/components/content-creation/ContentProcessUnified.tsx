@@ -1,180 +1,163 @@
 
 import React from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target, Search, Users, Zap, TrendingUp, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ContentProcessUnified = () => {
-  const steps = [
+  const { language } = useLanguage();
+  const isGerman = language === 'de';
+  
+  const steps = isGerman ? [
     {
-      icon: Target,
-      title: 'Strategie & Kickoff',
-      description: 'Ziele definieren, Tonalität festlegen, SEO-Recherche (z. B. mit Ahrefs).'
+      number: "01",
+      title: 'Analyse & Strategie',
+      description: 'Zielgruppenanalyse, Keyword-Recherche, Content-Audit und strategische Planung.',
+      deliverables: [
+        'Content-Strategie-Dokument',
+        'Keyword-Map & SEO-Plan',
+        'Zielgruppen-Personas',
+        'Content-Kalender'
+      ],
+      link: '/strategie'
     },
     {
-      icon: Search,
-      title: 'Erstellung & Design',
-      description: 'Inhalte entwickeln – Texte, Bilder, Videos – mit Fokus auf UX & Conversion.'
+      number: "02", 
+      title: 'Kreation & Design',
+      description: 'Content-Erstellung: Texte, Bilder, Videos, Grafiken – alles abgestimmt auf Ihre Ziele.',
+      deliverables: [
+        'Website-Texte & Blog-Artikel',
+        'Visuelle Assets (Bilder, Grafiken)',
+        'Video-Content',
+        'Social Media Content'
+      ],
+      link: '/kreation'
     },
     {
-      icon: Users,
-      title: 'Review & Integration',
-      description: 'Freigabe durch Sie, Einbindung über uns oder Ihr CMS.'
+      number: "03",
+      title: 'Umsetzung & Integration', 
+      description: 'Technische Integration in Ihre Website, CMS-Setup und Performance-Optimierung.',
+      deliverables: [
+        'CMS-Integration',
+        'SEO-technische Umsetzung',
+        'Performance-Optimierung',
+        'Mobile Optimierung'
+      ],
+      link: '/umsetzung'
     },
     {
-      icon: Zap,
-      title: 'Testing & Launch',
-      description: 'SEO-Checks, Performance, Struktur – dann Go Live.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Laufende Content-Pakete',
-      description: 'Monatliche Pakete zur Pflege, Optimierung & strategischen Weiterentwicklung.'
+      number: "04",
+      title: 'Optimierung & Weiterentwicklung',
+      description: 'Kontinuierliche Analyse, A/B-Testing und strategische Weiterentwicklung.',
+      deliverables: [
+        'Performance-Reports',
+        'A/B-Testing-Ergebnisse',
+        'Optimierungsempfehlungen',
+        'Monatliche Content-Updates'
+      ],
+      link: '/optimierung'
     }
-  ];
-
-  const contentFormats = [
+  ] : [
     {
-      icon: Target,
-      title: "Website-Content",
-      description: "Starke Startseiten, überzeugende Leistungsseiten und klare CTAs"
+      number: "01",
+      title: 'Analysis & Strategy',
+      description: 'Target audience analysis, keyword research, content audit and strategic planning.',
+      deliverables: [
+        'Content strategy document',
+        'Keyword map & SEO plan',
+        'Target audience personas',
+        'Content calendar'
+      ],
+      link: '/strategy'
     },
     {
-      icon: Search,
-      title: "SEO-Content",
-      description: "Keyword-optimierte Texte, die bei Google gefunden werden"
+      number: "02",
+      title: 'Creation & Design', 
+      description: 'Content creation: texts, images, videos, graphics – all aligned with your goals.',
+      deliverables: [
+        'Website copy & blog articles',
+        'Visual assets (images, graphics)',
+        'Video content',
+        'Social media content'
+      ],
+      link: '/creation'
     },
     {
-      icon: Users,
-      title: "Social Content",
-      description: "Visueller Content für LinkedIn, Instagram und weitere Kanäle"
+      number: "03",
+      title: 'Implementation & Integration',
+      description: 'Technical integration into your website, CMS setup and performance optimization.',
+      deliverables: [
+        'CMS integration',
+        'Technical SEO implementation',
+        'Performance optimization',
+        'Mobile optimization'
+      ],
+      link: '/implementation'
     },
     {
-      icon: Zap,
-      title: "Conversion-Content",
-      description: "Landing Pages und Sales-Texte, die zum Handeln motivieren"
-    },
-    {
-      icon: TrendingUp,
-      title: "Blog & Thought Leadership",
-      description: "Expertenbeiträge, die Vertrauen aufbauen und Expertise zeigen"
+      number: "04",
+      title: 'Optimization & Development',
+      description: 'Continuous analysis, A/B testing and strategic development.',
+      deliverables: [
+        'Performance reports',
+        'A/B testing results',
+        'Optimization recommendations',
+        'Monthly content updates'
+      ],
+      link: '/optimization'
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
+          {isGerman
+            ? "Unser Content-Prozess – von der Strategie zur Umsetzung"
+            : "Our Content Process – From Strategy to Implementation"
+          }
+        </h2>
         
-        {/* Process Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-6 text-brand-heading">
-            So bringen wir Ihr Content-Projekt zum Erfolg
-          </h2>
-          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
-            Von der Strategie bis zum Go-Live: unser bewährter 5-Schritte-Prozess sorgt für klare Strukturen und messbare Ergebnisse.
-          </p>
-          
-          {/* Desktop Version - Two rows layout */}
-          <div className="hidden md:block">
-            {/* First row - 3 steps */}
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              {steps.slice(0, 3).map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon className="h-6 w-6 text-medico-turquoise" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
-                        <p className="text-brand-text text-sm">{step.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            
-            {/* Second row - 2 steps centered */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {steps.slice(3, 5).map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div key={index + 3} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon className="h-6 w-6 text-medico-turquoise" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
-                        <p className="text-brand-text text-sm">{step.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          
-          {/* Mobile Version */}
-          <div className="md:hidden space-y-4">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
-                      <Icon className="h-6 w-6 text-medico-turquoise" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
-                      <p className="text-brand-text text-sm">{step.description}</p>
-                    </div>
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {steps.map((step, index) => (
+            <div key={index} className="bg-white rounded-lg p-8 shadow-card hover:shadow-cardHover transition-shadow border border-gray-100">
+              <div className="flex items-start mb-6">
+                <div className="w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold mr-4 flex-shrink-0">
+                  {step.number}
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Content Formats Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-6 text-brand-heading">
-            Content, der gefunden wird – und konvertiert
-          </h2>
-          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
-            Content-Formate, die Ihre Ziele unterstützen
-          </p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {contentFormats.map((format, index) => {
-              const Icon = format.icon;
-              return (
-                <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg hover:shadow-md transition-shadow">
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4 flex-shrink-0">
-                      <Icon className="h-6 w-6 text-medico-turquoise" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold mb-2 text-brand-heading">{format.title}</h3>
-                      <p className="text-brand-text text-sm">{format.description}</p>
-                    </div>
-                  </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold mb-3 text-brand-heading">
+                    {step.title}
+                  </h3>
+                  <p className="text-brand-text mb-4">
+                    {step.description}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-        
-        {/* Additional link at the bottom */}
-        <div className="text-center">
-          <Button variant="link" asChild className="group">
-            <Link to="/webentwicklung" className="flex items-center gap-2 text-brand-primary">
-              Mehr über unsere Webentwicklung
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+              </div>
+              
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-3 text-brand-heading">
+                  {isGerman ? "Was wir liefern:" : "What we deliver:"}
+                </h4>
+                <ul className="space-y-2">
+                  {step.deliverables.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-brand-primary mr-3 flex-shrink-0 mt-2"></div>
+                      <span className="text-brand-text">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <Button variant="outline" asChild className="w-full">
+                <Link to={step.link} className="flex items-center justify-center gap-2">
+                  {isGerman ? "Mehr erfahren" : "Learn more"}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
