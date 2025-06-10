@@ -33,7 +33,6 @@ const CTA = ({
   const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
   
   const isStrategyCallCta = (text: string) => {
-    if (!text) return false;
     return text.includes('Strategiegespräch vereinbaren') || 
            text.includes('Schedule a Strategy Call') ||
            text.includes('Technical Consultation') ||
@@ -41,8 +40,6 @@ const CTA = ({
   };
   
   const shouldOpenLeadForm = (text: string) => {
-    if (!text) return false;
-    
     if (
       text === 'Projekt starten' || 
       text === 'Start Your Project' ||

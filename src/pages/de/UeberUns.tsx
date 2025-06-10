@@ -1,22 +1,24 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import AboutUsSEOText from '@/components/about-us/AboutUsSEOText';
 import AboutUsHero from '@/components/about-us/AboutUsHero';
 import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
 import AboutUsStory from '@/components/about-us/AboutUsStory';
 import AboutUsWhySmall from '@/components/about-us/AboutUsWhySmall';
-import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
-import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
 import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
+import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
 import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
-import AboutUsLocation from '@/components/about-us/AboutUsLocation';
-import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
 import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
+import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
+import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
+import AboutUsLocation from '@/components/about-us/AboutUsLocation';
+import AboutUsFAQ from '@/components/about-us/AboutUsFAQ';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
-import AboutUsSEOText from '@/components/about-us/AboutUsSEOText';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -27,15 +29,14 @@ const GermanAboutUs = () => {
 
   return (
     <PageLayout 
+      className="overflow-x-hidden" 
       seoText={<AboutUsSEOText />}
     >
       <Helmet>
-        <title>Über ooliv | Ihre Werbeagentur aus Mainz</title>
-        <meta name="description" content="Lernen Sie ooliv kennen: Ihre Werbeagentur aus Mainz für Webdesign, Entwicklung und digitales Marketing. Erfahren Sie mehr über unser Team und unsere Mission." />
-        <meta name="keywords" content="Über ooliv Mainz, Werbeagentur Team Mainz, Digitalagentur Geschichte Mainz, Webdesign Agentur Mainz, Marketing Experten Mainz" />
-        <meta name="focus-keyword" content="Über ooliv Mainz" />
+        <title>Marketing Agentur Mainz – Strategie, SEO & Wachstum | ooliv</title>
+        <meta name="description" content="Ihre Marketing Agentur Mainz für Websites, SEO, SEA und Content. Maßgeschneiderte Strategien für echtes Wachstum. Jetzt Beratung sichern!" />
       </Helmet>
-      
+
       <AboutUsHero />
       <AboutUsIntroduction />
       <AboutUsStory />
@@ -52,6 +53,7 @@ const GermanAboutUs = () => {
       <AboutUsDigitalServices />
       <AboutUsTargetBusinesses />
       <AboutUsLocation />
+      <AboutUsFAQ />
       <AboutUsCTA />
     </PageLayout>
   );

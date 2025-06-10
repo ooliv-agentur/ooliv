@@ -1,32 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Building, Phone, Mail, FileText, AlertTriangle } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const GermanLegalNotice = () => {
-  const impressumRef = useRef<HTMLDivElement>(null);
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
 
-  const handleOpenLeadForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
-
   return (
     <PageLayout className="overflow-x-hidden">
       <Helmet>
         <title>Impressum | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Impressum der ooliv Werbeagentur Mainz. Alle rechtlichen Informationen und Kontaktdaten unserer Agentur für Webdesign und digitales Marketing." />
-        <meta name="keywords" content="Impressum ooliv Mainz, Rechtliche Informationen Werbeagentur, Kontaktdaten ooliv Mainz, Angaben nach TMG Mainz" />
+        <meta name="description" content="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG." />
       </Helmet>
 
       <LegalHero
