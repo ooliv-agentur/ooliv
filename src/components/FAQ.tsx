@@ -22,15 +22,21 @@ interface FAQItem {
 interface FAQProps {
   customFaqs?: FAQItem[];
   customTitle?: string;
+  customSubtitle?: string;
   customCtaText?: string;
   hideCTA?: boolean;
+  useLeadForm?: boolean;
+  groupByCategory?: boolean;
 }
 
 const FAQ = ({ 
   customFaqs, 
   customTitle, 
+  customSubtitle,
   customCtaText, 
-  hideCTA = false
+  hideCTA = false,
+  useLeadForm = false,
+  groupByCategory = false
 }: FAQProps) => {
   const { language, t } = useLanguage();
   const isGerman = language === 'de';
@@ -75,8 +81,8 @@ const FAQ = ({
   
   const faqs = customFaqs || defaultFaqs;
   
-  // Group FAQs by category for German version
-  const groupedFaqs = isGerman && !customFaqs ? {
+  // Group FAQs by category if requested and not using custom FAQs
+  const groupedFaqs = groupByCategory && !customFaqs ? {
     process: faqs.filter(faq => faq.category === 'process'),
     pricing: faqs.filter(faq => faq.category === 'pricing'),
     support: faqs.filter(faq => faq.category === 'support'),
@@ -91,8 +97,12 @@ const FAQ = ({
   };
   
   const title = customTitle || (isGerman ? "Häufig gestellte Fragen" : "Frequently Asked Questions");
-  
+  const subtitle = customSubtitle || (isGerman ? "Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihre neue Website." : "Find answers to the most common questions about our services.");
   const ctaText = customCtaText || (isGerman ? "Weitere Fragen? Kontaktieren Sie uns" : "Have more questions? Contact us");
+  
+  const handleOpenLeadForm = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   return (
     <section className="py-24 bg-white">
@@ -104,7 +114,7 @@ const FAQ = ({
             </h2>
             <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              {isGerman ? "Hier finden Sie Antworten auf die wichtigsten Fragen rund um Ihre neue Website." : "Find answers to the most common questions about our services."}
+              {subtitle}
             </p>
           </div>
         </Reveal>
@@ -144,7 +154,7 @@ const FAQ = ({
           // Regular FAQ display for English or custom FAQs
           <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
             <Accordion type="single" collapsible className="w-full">
-              <StaggerReveal className="space-y-4">
+              <StaggerReveal className="space-y-4" stagger={0.08}>
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
@@ -171,12 +181,22 @@ const FAQ = ({
                 <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
                   {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
                 </h3>
-                <Button asChild variant="outline" className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
-                  <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
+                {useLeadForm ? (
+                  <button 
+                    onClick={handleOpenLeadForm}
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300"
+                  >
                     <Plus className="h-4 w-4" />
                     {ctaText}
-                  </Link>
-                </Button>
+                  </button>
+                ) : (
+                  <Button asChild variant="outline" className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
+                    <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
+                      <Plus className="h-4 w-4" />
+                      {ctaText}
+                    </Link>
+                  </Button>
+                )}
               </div>
             </div>
           </Reveal>
