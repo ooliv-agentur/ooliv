@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Globe } from 'lucide-react';
-import { H2, Paragraph } from '@/components/ui/typography';
+import { H2, Paragraph, LargeParagraph } from '@/components/ui/typography';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 
 const AboutUsStory = () => {
@@ -33,9 +33,9 @@ const AboutUsStory = () => {
               Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
             </Paragraph>
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <Paragraph size="large" className="font-bold">
+              <LargeParagraph className="font-bold">
                 Jede Website sollte echten Unternehmenswert schaffen.
-              </Paragraph>
+              </LargeParagraph>
             </div>
           </div>
         </div>
