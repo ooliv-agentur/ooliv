@@ -6,13 +6,18 @@ import {
   Mail,
   Clock,
   Send,
-  ArrowRight
+  ArrowRight,
+  MessageCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ContactInfoSection = () => {
   const handleOpenSidebarForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/4961316367801', '_blank');
   };
 
   return (
@@ -42,18 +47,25 @@ const ContactInfoSection = () => {
               </p>
             </div>
             
-            {/* Phone */}
+            {/* Phone & WhatsApp */}
             <div className="flex flex-col items-center text-center">
               <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-4">
                 <Phone className="h-6 w-6 text-medico-turquoise" />
               </div>
-              <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Telefon</h3>
+              <h3 className="font-bold text-medico-darkGreen mb-2 text-lg">Telefon & WhatsApp</h3>
               <a 
                 href="tel:+4961316367801" 
-                className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors"
+                className="text-medico-darkGreen/80 hover:text-medico-turquoise transition-colors mb-3"
               >
                 06131 – 63 67 801
               </a>
+              <button
+                onClick={handleWhatsAppClick}
+                className="inline-flex items-center text-sm bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-full transition-colors font-medium"
+              >
+                <MessageCircle className="h-4 w-4 mr-1" />
+                WhatsApp-Chat starten
+              </button>
             </div>
             
             {/* Email */}
