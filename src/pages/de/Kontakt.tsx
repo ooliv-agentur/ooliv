@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async';
 import ContactHero from '@/components/contact/ContactHero';
 import ContactPersonalSection from '@/components/contact/ContactPersonalSection';
 import ContactInfoSection from '@/components/contact/ContactInfoSection';
-import ConsultationRequestSectionDE from '@/components/contact/ConsultationRequestSectionDE';
 import ContactBenefitsSection from '@/components/contact/ContactBenefitsSection';
 import ContactSEOText from '@/components/contact/ContactSEOText';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -48,7 +47,6 @@ const GermanContact = () => {
       />
       <ContactPersonalSection />
       <ContactInfoSection />
-      <ConsultationRequestSectionDE />
       <ContactBenefitsSection />
     </PageLayout>
   );
