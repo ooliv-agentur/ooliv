@@ -4,6 +4,10 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
+import StrategieBenefits from '@/components/strategy/StrategieBenefits';
+import StrategieProcess from '@/components/strategy/StrategieProcess';
+import StrategieServices from '@/components/strategy/StrategieServices';
+import CTA from '@/components/CTA';
 
 const GermanStrategy = () => {
   const { setLanguage } = useLanguage();
@@ -20,6 +24,17 @@ const GermanStrategy = () => {
       </Helmet>
 
       <StrategieHero />
+      <StrategieBenefits />
+      <StrategieProcess />
+      <StrategieServices />
+      
+      {/* Footer CTA Section */}
+      <CTA 
+        title="Bereit für eine strategische Website?"
+        subtitle="Lassen Sie uns gemeinsam eine digitale Strategie entwickeln, die Ihre Geschäftsziele erreicht."
+        primaryCta="Strategiegespräch vereinbaren"
+        lightBackground={true}
+      />
     </PageLayout>
   );
 };
