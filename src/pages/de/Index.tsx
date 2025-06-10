@@ -14,6 +14,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const germanFaqs = [
   {
@@ -178,6 +179,7 @@ const GermanIndex = () => {
                 onClick={handleStartProject}
               >
                 Projekt starten
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
@@ -208,3 +210,5 @@ const GermanIndex = () => {
 };
 
 export default GermanIndex;
+
+}
