@@ -65,17 +65,17 @@ const ContactCard: React.FC<ContactCardProps> = ({
   );
 
   return (
-    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-brand-primary/50">
+    <Card className="overflow-hidden h-full transition-all hover:shadow-md border border-gray-100 hover:border-brand-primary/50 flex flex-col">
       <CardHeader className="pb-2">
         <div className={cn("rounded-full w-12 h-12 flex items-center justify-center mb-2", colorClasses[color])}>
           {icon}
         </div>
         <CardTitle className="text-xl font-bold">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="pb-3">
+      <CardContent className="pb-3 flex-grow">
         <p className="text-gray-600">{description}</p>
       </CardContent>
-      <CardFooter className="pt-0">
+      <CardFooter className="pt-0 mt-auto">
         <ButtonElement />
       </CardFooter>
     </Card>
@@ -100,16 +100,16 @@ const ContactMethodsSection = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <ContactCard 
-              icon={<MessageCircle className="h-6 w-6 text-blue-600" />} 
+              icon={<MessageCircle className="h-6 w-6 text-gray-600" />} 
               color="blue"
-              title="WhatsApp-Chat"
+              title="WhatsApp"
               description="Direkter WhatsApp-Chat"
               buttonText="WhatsApp öffnen"
               href="https://wa.me/+4917680167641"
             />
             
             <ContactCard 
-              icon={<Send className="h-6 w-6 text-green-600" />} 
+              icon={<Send className="h-6 w-6 text-gray-600" />} 
               color="green"
               title="Anfrage senden"
               description="Projekt-Details über unser Formular teilen"
@@ -118,7 +118,7 @@ const ContactMethodsSection = () => {
             />
             
             <ContactCard 
-              icon={<Mail className="h-6 w-6 text-amber-600" />} 
+              icon={<Mail className="h-6 w-6 text-gray-600" />} 
               color="amber"
               title="E-Mail schreiben"
               description="Direkt an unser Postfach schreiben"
@@ -127,7 +127,7 @@ const ContactMethodsSection = () => {
             />
             
             <ContactCard 
-              icon={<Phone className="h-6 w-6 text-purple-600" />} 
+              icon={<Phone className="h-6 w-6 text-gray-600" />} 
               color="purple"
               title="Anrufen"
               description="Direktes Gespräch mit unserem Team"
