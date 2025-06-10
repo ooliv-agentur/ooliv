@@ -262,23 +262,25 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* Section 3: Why Small */}
-      <section className="py-24 bg-[#faf5eb]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#003343]">
+      {/* Section 3: Why Small - Revised to match master style guide */}
+      <section className="py-20 bg-white font-satoshi">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
               Warum wir bewusst klein bleiben
             </h2>
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm mb-8 border border-gray-100">
+              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed" style={{ lineHeight: '1.6' }}>
                 Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Im Hintergrund deckt unser kompaktes Team alle Bereiche von Strategie, Design, Content und Entwicklung ab.
               </p>
-              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed" style={{ lineHeight: '1.6' }}>
                 Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.
               </p>
-              <blockquote className="bg-[#faf5eb] p-8 rounded-xl text-2xl font-medium text-center border-l-4 border-[#32b1ab] text-[#003343]">
-                "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
-              </blockquote>
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                <blockquote className="text-2xl md:text-3xl font-bold text-medico-turquoise italic leading-tight">
+                  "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
+                </blockquote>
+              </div>
             </div>
           </div>
         </div>
@@ -554,3 +556,5 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
+</edits_to_apply>
