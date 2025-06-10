@@ -94,11 +94,11 @@ const GermanAboutUs = () => {
         <div className="relative z-20 w-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-              <h1 className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-medico-darkGreen">
+              <h1 className="font-medium mb-6 sm:mb-8 leading-tight text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-medico-darkGreen">
                 Marketing Agentur Mainz
               </h1>
               
-              <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left leading-relaxed">
+              <p className="text-lg sm:text-xl text-medico-darkGreen mb-8 sm:mb-10 text-left leading-relaxed">
                 Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
               </p>
               
@@ -143,18 +143,18 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Mehr als eine Webagentur – Ihr strategischer Sparringspartner
             </h2>
-            <p className="text-xl mb-16 text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg mb-12 text-medico-darkGreen max-w-4xl mx-auto leading-relaxed">
               Kreativ, technisch präzise und partnerschaftlich. Ohne Hierarchien, ohne Buzzwords – mit echtem Ergebnisfokus.
             </p>
             
-            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm mb-16 border border-gray-100">
-              <ul className="space-y-6 text-left">
+            <div className="bg-medico-mint rounded-2xl p-6 shadow-sm mb-12 border border-gray-100">
+              <ul className="space-y-4 text-left">
                 {[
                   'Gegründet 2008 von Uli Schönleber',
                   'Standort Mainz, Kunden europaweit',
@@ -163,10 +163,10 @@ const GermanAboutUs = () => {
                   'Klarer Projektablauf über Basecamp (Feedback, Aufgaben, Dateien an einem Ort)'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="h-12 w-12 flex items-center justify-center bg-medico-turquoise rounded-full mr-4 flex-shrink-0">
-                      <CheckCircle className="h-6 w-6 text-white" />
+                    <span className="h-10 w-10 flex items-center justify-center bg-medico-turquoise rounded-full mr-4 flex-shrink-0">
+                      <CheckCircle className="h-5 w-5 text-white" />
                     </span>
-                    <span className="text-medico-darkGreen text-lg font-medium">{item}</span>
+                    <span className="text-medico-darkGreen text-base font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -174,12 +174,12 @@ const GermanAboutUs = () => {
             
             <Button 
               size="lg" 
-              className="group font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400"
+              className="group font-bold py-3 px-6 rounded-full text-base shadow-lg hover:shadow-xl transition-all duration-300 bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400"
               asChild
             >
               <Link to="/kontakt">
                 Lassen Sie uns zusammenarbeiten
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
@@ -187,34 +187,34 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-medico-mint font-satoshi">
+      <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Wo Leidenschaft auf Leistung trifft
             </h2>
-            <div className="flex justify-center mb-12">
-              <div className="h-16 w-16 flex items-center justify-center bg-medico-turquoise rounded-full">
-                <Globe className="h-8 w-8 text-white" />
+            <div className="flex justify-center mb-8">
+              <div className="h-12 w-12 flex items-center justify-center bg-medico-turquoise rounded-full">
+                <Globe className="h-6 w-6 text-white" />
               </div>
             </div>
             <div className="max-w-4xl mx-auto">
-              <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed">
+              <p className="text-lg mb-8 text-medico-darkGreen leading-relaxed">
                 Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
               </p>
-              <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
-                <blockquote className="text-2xl md:text-3xl font-bold text-medico-turquoise italic leading-tight">
+              <div className="bg-white rounded-2xl p-6 shadow-sm mb-8 border border-gray-100">
+                <blockquote className="text-xl md:text-2xl font-bold text-medico-turquoise italic leading-tight">
                   "Können Sie mit uns weitermachen?"
                 </blockquote>
               </div>
-              <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed">
+              <p className="text-lg mb-8 text-medico-darkGreen leading-relaxed">
                 Das war der Anfang von ooliv.
               </p>
-              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed">
+              <p className="text-lg mb-6 text-medico-darkGreen leading-relaxed">
                 Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
               </p>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <p className="text-2xl md:text-3xl font-bold text-medico-darkGreen leading-tight">
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <p className="text-xl md:text-2xl font-bold text-medico-darkGreen leading-tight">
                   Jede Website sollte echten Unternehmenswert schaffen.
                 </p>
               </div>
@@ -224,21 +224,21 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Why Small Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Warum wir bewusst klein bleiben
             </h2>
-            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm mb-8 border border-gray-100">
-              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed">
+            <div className="bg-medico-mint rounded-2xl p-6 shadow-sm mb-6 border border-gray-100">
+              <p className="text-lg mb-6 text-medico-darkGreen leading-relaxed">
                 Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Im Hintergrund deckt unser kompaktes Team alle Bereiche von Strategie, Design, Content und Entwicklung ab.
               </p>
-              <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed">
+              <p className="text-lg mb-6 text-medico-darkGreen leading-relaxed">
                 Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.
               </p>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <blockquote className="text-2xl md:text-3xl font-bold text-medico-turquoise italic leading-tight">
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <blockquote className="text-xl md:text-2xl font-bold text-medico-turquoise italic leading-tight">
                   "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
                 </blockquote>
               </div>
@@ -248,12 +248,12 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Digital Partner Section */}
-      <section className="py-20 bg-medico-mint font-satoshi">
+      <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-medico-darkGreen leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-12 text-center text-medico-darkGreen leading-tight">
             Ein digitaler Partner, nicht nur ein Dienstleister
           </h2>
-          <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <AspectRatio ratio={4/3}>
                 <img 
@@ -264,7 +264,7 @@ const GermanAboutUs = () => {
               </AspectRatio>
             </div>
             <div>
-              <ul className="space-y-8">
+              <ul className="space-y-6">
                 {[
                   'Wir hören zu, bevor wir bauen',
                   'Wir vereinfachen Komplexität',
@@ -273,10 +273,10 @@ const GermanAboutUs = () => {
                   'Wir bleiben neugierig, präzise und brutal ehrlich'
                 ].map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="h-12 w-12 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-4 flex-shrink-0 mt-1">
-                      <CheckCircle className="h-6 w-6 text-medico-turquoise" />
+                    <div className="h-10 w-10 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-4 flex-shrink-0 mt-1">
+                      <CheckCircle className="h-5 w-5 text-medico-turquoise" />
                     </div>
-                    <span className="text-xl text-medico-darkGreen">{point}</span>
+                    <span className="text-lg text-medico-darkGreen">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -286,23 +286,23 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Individual Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Individuell. Durchdacht. Messbar.
             </h2>
-            <p className="text-xl mb-8 text-medico-darkGreen leading-relaxed">
+            <p className="text-lg mb-6 text-medico-darkGreen leading-relaxed">
               Keine Templates. Kein Schnickschnack. Wir entwickeln maßgeschneiderte Websites basierend auf Ihren spezifischen Zielen, Ihrer Zielgruppe und Ihrer Wachstumsphase.
               Ob B2B-SaaS-Anbieter, Fertigungsunternehmen oder regionaler Dienstleister – <strong>wir erstellen digitale Erlebnisse, die konvertieren</strong>.
             </p>
-            <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed">
+            <p className="text-lg mb-8 text-medico-darkGreen leading-relaxed">
               Vom ersten Konzept bis zur Betreuung nach dem Launch arbeiten wir mit Transparenz, strategischem Weitblick und hohen Designstandards.
             </p>
-            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm border border-gray-100">
-              <blockquote className="text-2xl font-medium text-center text-medico-darkGreen italic">
+            <div className="bg-medico-mint rounded-2xl p-6 shadow-sm border border-gray-100">
+              <blockquote className="text-xl font-medium text-center text-medico-darkGreen italic">
                 "Wir liefern nicht nur Websites. Wir bauen digitale Assets, die performen."
-                <footer className="mt-6 font-bold text-medico-turquoise text-lg">– Uli, Gründer</footer>
+                <footer className="mt-4 font-bold text-medico-turquoise text-base">– Uli, Gründer</footer>
               </blockquote>
             </div>
           </div>
@@ -310,15 +310,15 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Team Capabilities Section */}
-      <section className="py-20 bg-medico-mint font-satoshi">
+      <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-medico-darkGreen leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center text-medico-darkGreen leading-tight">
             Kleines Team. Volle Kompetenz.
           </h2>
-          <p className="text-xl mb-16 text-center max-w-4xl mx-auto text-medico-darkGreen leading-relaxed">
+          <p className="text-lg mb-12 text-center max-w-4xl mx-auto text-medico-darkGreen leading-relaxed">
             Sie arbeiten mit dem CEO – aber Ihr Projekt wird von einem dedizierten Team aus Spezialisten geprägt, die synchron in diesen Bereichen arbeiten:
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               { title: 'UX & UI Design', icon: Users },
               { title: 'WordPress & Headless Development', icon: Briefcase },
@@ -327,11 +327,11 @@ const GermanAboutUs = () => {
               { title: 'KI-unterstütztes Copywriting', icon: Sparkles },
               { title: 'Branding & Visuelle Identität', icon: Award }
             ].map((role, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100">
-                <div className="mb-6 h-14 w-14 flex items-center justify-center bg-medico-turquoise/10 rounded-full">
-                  <role.icon className="h-7 w-7 text-medico-turquoise" />
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100">
+                <div className="mb-4 h-12 w-12 flex items-center justify-center bg-medico-turquoise/10 rounded-full">
+                  <role.icon className="h-6 w-6 text-medico-turquoise" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">{role.title}</h3>
+                <h3 className="text-lg font-bold mb-2 text-medico-darkGreen">{role.title}</h3>
               </div>
             ))}
           </div>
@@ -345,32 +345,32 @@ const GermanAboutUs = () => {
       <AboutCompactFAQ />
 
       {/* Digital Services Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Digital. Aber nicht nur.
             </h2>
-            <p className="text-xl mb-16 text-medico-darkGreen leading-relaxed">
+            <p className="text-lg mb-12 text-medico-darkGreen leading-relaxed">
               Unsere Kernkompetenz ist digitale Strategie und Webentwicklung – aber unsere Arbeit hört nicht am Bildschirm auf.
               Wir unterstützen Kunden auch bei visuellem Branding, Offline-Materialien und Content in verschiedenen Formaten.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
             {[
               'Conversion-optimierte Websites',
               'Markengerechte Logos und Icons',
               'Texte, Fotos und Videos für Web und Social Media',
               'Gedruckte Broschüren, Visitenkarten & mehr'
             ].map((service, index) => (
-              <div key={index} className="bg-medico-mint rounded-2xl p-8 shadow-sm h-full flex items-center justify-center text-center border border-gray-100">
-                <p className="text-lg font-semibold text-medico-darkGreen">{service}</p>
+              <div key={index} className="bg-medico-mint rounded-2xl p-6 shadow-sm h-full flex items-center justify-center text-center border border-gray-100">
+                <p className="text-base font-semibold text-medico-darkGreen">{service}</p>
               </div>
             ))}
           </div>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-medico-mint rounded-2xl p-8 shadow-sm text-center border border-gray-100">
-              <p className="text-xl text-medico-darkGreen leading-relaxed">
+            <div className="bg-medico-mint rounded-2xl p-6 shadow-sm text-center border border-gray-100">
+              <p className="text-lg text-medico-darkGreen leading-relaxed">
                 Wir beherrschen KI-Tools wie <strong>ChatGPT</strong>, <strong>Midjourney</strong> und <strong>Sora</strong>, um unsere menschliche Kreativität zu erweitern – nicht zu ersetzen.
               </p>
             </div>
@@ -379,15 +379,15 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Target Businesses Section */}
-      <section className="py-20 bg-medico-mint font-satoshi">
+      <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-medico-darkGreen leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-12 text-center text-medico-darkGreen leading-tight">
             Für Unternehmen, die vorankommen wollen
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <p className="text-2xl font-bold mb-8 text-medico-darkGreen">Wir helfen:</p>
-              <ul className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <p className="text-xl font-bold mb-6 text-medico-darkGreen">Wir helfen:</p>
+              <ul className="space-y-4">
                 {[
                   'B2B-Unternehmen mit komplexen Angeboten',
                   'Mittelständischen Marken, die einen Relaunch brauchen',
@@ -396,21 +396,21 @@ const GermanAboutUs = () => {
                   'Lokalen Dienstleistern, die den nächsten Schritt gehen wollen'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="h-10 w-10 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-4 flex-shrink-0">
-                      <CheckCircle className="h-5 w-5 text-medico-turquoise" />
+                    <span className="h-8 w-8 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-3 flex-shrink-0">
+                      <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                     </span>
-                    <span className="text-medico-darkGreen text-lg">{item}</span>
+                    <span className="text-medico-darkGreen text-base">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <p className="text-2xl font-bold mb-8 text-medico-darkGreen">Typische Branchen:</p>
-              <div className="grid grid-cols-1 gap-4">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <p className="text-xl font-bold mb-6 text-medico-darkGreen">Typische Branchen:</p>
+              <div className="grid grid-cols-1 gap-3">
                 {industries.slice(0, 10).map((industry, index) => (
                   <div 
                     key={index} 
-                    className="bg-medico-mint p-4 rounded-lg text-center text-medico-darkGreen font-medium transition-all duration-300 hover:bg-gray-50 border border-gray-100"
+                    className="bg-medico-mint p-3 rounded-lg text-center text-medico-darkGreen font-medium transition-all duration-300 hover:bg-gray-50 border border-gray-100"
                   >
                     {industry.split('/')[0].trim()}
                   </div>
@@ -422,18 +422,18 @@ const GermanAboutUs = () => {
       </section>
 
       {/* Location Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Hauptsitz in Mainz. Aktiv im DACH-Raum und darüber hinaus.
             </h2>
-            <p className="text-xl text-medico-darkGreen leading-relaxed">
+            <p className="text-lg text-medico-darkGreen leading-relaxed">
               Während unser Hauptsitz in Mainz steht, arbeiten wir mit Kunden in Deutschland, der Schweiz und Mallorca.
               Digital-first, standortflexibel – und immer responsiv.
             </p>
           </div>
-          <div className="bg-medico-mint rounded-2xl p-6 shadow-sm h-[500px] flex items-center justify-center max-w-5xl mx-auto border border-gray-100">
+          <div className="bg-medico-mint rounded-2xl p-4 shadow-sm h-[400px] flex items-center justify-center max-w-5xl mx-auto border border-gray-100">
             <img 
               src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
               alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
@@ -444,37 +444,37 @@ const GermanAboutUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-medico-mint font-satoshi">
+      <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-medico-darkGreen leading-tight">
               Lassen Sie uns gemeinsam etwas Großartiges aufbauen
             </h2>
-            <p className="text-xl mb-12 text-medico-darkGreen leading-relaxed">
+            <p className="text-lg mb-8 text-medico-darkGreen leading-relaxed">
               Ob Sie einen Relaunch planen, eine neue Website benötigen oder Hilfe dabei brauchen, Komplexität in Klarheit zu verwandeln – lassen Sie uns gemeinsam Ihren nächsten Schritt erkunden.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-3 px-6 rounded-full text-base shadow-lg hover:shadow-xl transition-all duration-300" 
                 onClick={handleOpenLeadForm}
               >
                 Projekt starten
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="group bg-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                className="group bg-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 px-6 rounded-full text-base shadow-lg hover:shadow-xl transition-all duration-300" 
                 asChild
               >
                 <Link to="/kontakt">
                   Strategiegespräch buchen
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
-            <p className="text-center text-sm text-medico-darkGreen/60 mt-12">
+            <p className="text-center text-sm text-medico-darkGreen/60 mt-8">
               100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
             </p>
           </div>
@@ -482,29 +482,29 @@ const GermanAboutUs = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white font-satoshi">
+      <section className="py-16 bg-white font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-medico-darkGreen leading-tight">Häufig gestellte Fragen</h2>
-            <p className="text-xl max-w-3xl mx-auto text-medico-darkGreen leading-relaxed">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-medico-darkGreen leading-tight">Häufig gestellte Fragen</h2>
+            <p className="text-lg max-w-3xl mx-auto text-medico-darkGreen leading-relaxed">
               Antworten auf die wichtigsten Fragen über unsere Leistungen als Marketing Agentur in Mainz
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               {faqItems.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
                   className="bg-medico-mint rounded-2xl shadow-sm overflow-hidden border border-gray-100"
                 >
-                  <AccordionTrigger className="px-8 py-6 hover:no-underline">
-                    <h3 className="text-lg font-bold text-medico-darkGreen text-left">{faq.question}</h3>
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <h3 className="text-base font-bold text-medico-darkGreen text-left">{faq.question}</h3>
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-medico-darkGreen">
-                    <Separator className="mb-4" />
-                    <p className="text-lg leading-relaxed">{faq.answer}</p>
+                  <AccordionContent className="px-6 pb-4 text-medico-darkGreen">
+                    <Separator className="mb-3" />
+                    <p className="text-base leading-relaxed">{faq.answer}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
