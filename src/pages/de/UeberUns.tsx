@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -90,16 +91,19 @@ const GermanAboutUs = () => {
         }}
       />
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Mehr als eine Webagentur – Ihr strategischer Sparringspartner</h2>
-            <p className="text-lg mb-10 text-brand-text">
+      {/* Section 1: Introduction */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003343]">
+              Mehr als eine Webagentur – Ihr strategischer Sparringspartner
+            </h2>
+            <p className="text-xl mb-12 text-[#003343]/80 leading-relaxed">
               Kreativ, technisch präzise und partnerschaftlich. Ohne Hierarchien, ohne Buzzwords – mit echtem Ergebnisfokus.
             </p>
             
-            <div className="bg-brand-background rounded-xl p-8 shadow-sm mb-10">
-              <ul className="space-y-4 text-left">
+            <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
+              <ul className="space-y-6 text-left">
                 {[
                   'Gegründet 2008 von Uli Schönleber',
                   'Standort Mainz, Kunden europaweit',
@@ -108,65 +112,77 @@ const GermanAboutUs = () => {
                   'Klarer Projektablauf über Basecamp (Feedback, Aufgaben, Dateien an einem Ort)'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="h-8 w-8 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3 flex-shrink-0">
-                      <CheckCircle className="h-4 w-4 text-brand-primary" />
+                    <span className="h-10 w-10 flex items-center justify-center bg-[#32b1ab]/10 rounded-full mr-4 flex-shrink-0">
+                      <CheckCircle className="h-5 w-5 text-[#32b1ab]" />
                     </span>
-                    <span className="text-brand-text">{item}</span>
+                    <span className="text-[#003343] text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <Button size="lg" className="group bg-brand-primary hover:bg-brand-primary/90 text-white" asChild>
+            <Button 
+              size="lg" 
+              className="group bg-[#ffea1f] text-[#003343] hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              asChild
+            >
               <Link to="/de/kontakt">
                 Lassen Sie uns zusammenarbeiten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-brand-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Wo Leidenschaft auf Leistung trifft</h2>
-            <div className="flex justify-center mb-6">
-              <div className="h-16 w-16 bg-brand-primary/10 rounded-full flex items-center justify-center">
-                <Globe className="h-8 w-8 text-brand-primary" />
+      {/* Section 2: Story */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003343]">
+              Wo Leidenschaft auf Leistung trifft
+            </h2>
+            <div className="flex justify-center mb-8">
+              <div className="h-16 w-16 bg-[#32b1ab]/10 rounded-full flex items-center justify-center">
+                <Globe className="h-8 w-8 text-[#32b1ab]" />
               </div>
             </div>
-            <p className="text-lg mb-6 text-brand-text">
-              Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
-            </p>
-            <p className="text-xl italic mb-6 text-brand-heading">
-              "Können Sie mit uns weitermachen?"
-            </p>
-            <p className="text-lg mb-6 text-brand-text">
-              Das war der Anfang von ooliv.
-            </p>
-            <p className="text-lg text-brand-text">
-              Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
-            </p>
-            <p className="text-xl font-bold mt-4 text-brand-heading">
-              Jede Website sollte echten Unternehmenswert schaffen.
-            </p>
+            <div className="prose prose-lg max-w-none text-center">
+              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+                Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
+              </p>
+              <blockquote className="text-2xl md:text-3xl font-medium mb-8 text-[#32b1ab] italic">
+                "Können Sie mit uns weitermachen?"
+              </blockquote>
+              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
+                Das war der Anfang von ooliv.
+              </p>
+              <p className="text-xl mb-6 text-[#003343]/80 leading-relaxed">
+                Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
+              </p>
+              <p className="text-2xl font-bold text-[#003343]">
+                Jede Website sollte echten Unternehmenswert schaffen.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-brand-heading">Warum wir bewusst klein bleiben</h2>
-            <div className="bg-brand-background rounded-xl p-8 shadow-sm">
-              <p className="text-lg mb-6 text-brand-text">
+      {/* Section 3: Why Small */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#003343]">
+              Warum wir bewusst klein bleiben
+            </h2>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
                 Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Im Hintergrund deckt unser kompaktes Team alle Bereiche von Strategie, Design, Content und Entwicklung ab.
               </p>
-              <p className="text-lg mb-6 text-brand-text">
+              <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
                 Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.
               </p>
-              <blockquote className="bg-white p-6 rounded-xl shadow-sm text-xl italic text-center border-l-4 border-brand-primary">
+              <blockquote className="bg-[#faf5eb] p-8 rounded-xl text-2xl font-medium text-center border-l-4 border-[#32b1ab] text-[#003343]">
                 "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
               </blockquote>
             </div>
@@ -174,11 +190,14 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Ein digitaler Partner, nicht nur ein Dienstleister</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+      {/* Section 4: Digital Partner */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-[#003343]">
+            Ein digitaler Partner, nicht nur ein Dienstleister
+          </h2>
+          <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <AspectRatio ratio={4/3}>
                 <img 
                   src="/lovable-uploads/b1bdd6f6-0801-4a5d-ba2f-cad413494d55.png" 
@@ -188,7 +207,7 @@ const GermanAboutUs = () => {
               </AspectRatio>
             </div>
             <div>
-              <ul className="space-y-6">
+              <ul className="space-y-8">
                 {[
                   'Wir hören zu, bevor wir bauen',
                   'Wir vereinfachen Komplexität',
@@ -197,10 +216,10 @@ const GermanAboutUs = () => {
                   'Wir bleiben neugierig, präzise und brutal ehrlich'
                 ].map((point, index) => (
                   <li key={index} className="flex items-start">
-                    <div className="h-10 w-10 flex items-center justify-center bg-brand-primary/10 rounded-full mr-4 flex-shrink-0 mt-1">
-                      <CheckCircle className="h-5 w-5 text-brand-primary" />
+                    <div className="h-12 w-12 flex items-center justify-center bg-[#32b1ab]/10 rounded-full mr-4 flex-shrink-0 mt-1">
+                      <CheckCircle className="h-6 w-6 text-[#32b1ab]" />
                     </div>
-                    <span className="text-lg text-brand-text">{point}</span>
+                    <span className="text-xl text-[#003343]">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -209,47 +228,53 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Individuell. Durchdacht. Messbar.</h2>
-            <p className="text-lg mb-8 text-brand-text">
+      {/* Section 5: Individual */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#003343]">
+              Individuell. Durchdacht. Messbar.
+            </h2>
+            <p className="text-xl mb-8 text-[#003343]/80 leading-relaxed">
               Keine Templates. Kein Schnickschnack. Wir entwickeln maßgeschneiderte Websites basierend auf Ihren spezifischen Zielen, Ihrer Zielgruppe und Ihrer Wachstumsphase.
               Ob B2B-SaaS-Anbieter, Fertigungsunternehmen oder regionaler Dienstleister – <strong>wir erstellen digitale Erlebnisse, die konvertieren</strong>.
             </p>
-            <p className="text-lg mb-10 text-brand-text">
+            <p className="text-xl mb-12 text-[#003343]/80 leading-relaxed">
               Vom ersten Konzept bis zur Betreuung nach dem Launch arbeiten wir mit Transparenz, strategischem Weitblick und hohen Designstandards.
             </p>
-            <div className="bg-brand-background rounded-xl p-8 shadow-sm">
-              <blockquote className="text-xl italic text-center text-brand-heading">
-                "Wir liefern nicht nur Websites. Wir bauen digitale Assets, die Leistung bringen."
-                <footer className="mt-4 font-medium text-brand-text">– Uli, Gründer</footer>
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <blockquote className="text-2xl font-medium text-center text-[#003343] italic">
+                "Wir liefern nicht nur Websites. Wir bauen digitale Assets, die performen."
+                <footer className="mt-6 font-bold text-[#32b1ab] text-lg">– Uli, Gründer</footer>
               </blockquote>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-3xl font-bold mb-6 text-center text-brand-heading">Kleines Team. Volle Leistungsfähigkeit.</h2>
-          <p className="text-lg mb-12 text-center max-w-3xl mx-auto text-brand-text">
-            Sie arbeiten mit dem CEO zusammen – aber Ihr Projekt wird von einem engagierten Team von Spezialisten geprägt, die synchron in folgenden Bereichen arbeiten:
+      {/* Section 6: Team Capabilities */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-[#003343]">
+            Kleines Team. Volle Kompetenz.
+          </h2>
+          <p className="text-xl mb-16 text-center max-w-4xl mx-auto text-[#003343]/80 leading-relaxed">
+            Sie arbeiten mit dem CEO – aber Ihr Projekt wird von einem dedizierten Team aus Spezialisten geprägt, die synchron in diesen Bereichen arbeiten:
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: 'UX & UI Design', icon: Users },
-              { title: 'WordPress & Headless Entwicklung', icon: Briefcase },
-              { title: 'SEO-Optimierung', icon: Target },
+              { title: 'WordPress & Headless Development', icon: Briefcase },
+              { title: 'SEO Optimierung', icon: Target },
               { title: 'Motion Design & Illustration', icon: Award },
-              { title: 'KI-gestütztes Copywriting', icon: Sparkles },
-              { title: 'Branding & visuelle Identität', icon: Award }
+              { title: 'KI-unterstütztes Copywriting', icon: Sparkles },
+              { title: 'Branding & Visuelle Identität', icon: Award }
             ].map((role, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm transform transition-transform hover:translate-y-[-5px]">
-                <div className="mb-4 h-12 w-12 flex items-center justify-center bg-brand-primary/10 rounded-full">
-                  <role.icon className="h-6 w-6 text-brand-primary" />
+              <div key={index} className="bg-[#faf5eb] rounded-2xl p-8 shadow-sm transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100">
+                <div className="mb-6 h-14 w-14 flex items-center justify-center bg-[#32b1ab]/10 rounded-full">
+                  <role.icon className="h-7 w-7 text-[#32b1ab]" />
                 </div>
-                <h3 className="text-xl font-medium mb-2 text-brand-heading">{role.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-[#003343]">{role.title}</h3>
               </div>
             ))}
           </div>
@@ -262,30 +287,33 @@ const GermanAboutUs = () => {
 
       <AboutCompactFAQ />
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Digital. Aber nicht nur.</h2>
-            <p className="text-lg mb-12 text-brand-text">
-              Unsere Kernkompetenz ist digitale Strategie und Webentwicklung – aber unsere Arbeit hört nicht beim Bildschirm auf.
+      {/* Section 7: Digital Services */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#003343]">
+              Digital. Aber nicht nur.
+            </h2>
+            <p className="text-xl mb-16 text-[#003343]/80 leading-relaxed">
+              Unsere Kernkompetenz ist digitale Strategie und Webentwicklung – aber unsere Arbeit hört nicht am Bildschirm auf.
               Wir unterstützen Kunden auch bei visuellem Branding, Offline-Materialien und Content in verschiedenen Formaten.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
             {[
-              'Konversionsoptimierte Websites',
+              'Conversion-optimierte Websites',
               'Markengerechte Logos und Icons',
               'Texte, Fotos und Videos für Web und Social Media',
               'Gedruckte Broschüren, Visitenkarten & mehr'
             ].map((service, index) => (
-              <div key={index} className="bg-brand-background rounded-xl p-6 shadow-sm h-full flex items-center justify-center text-center">
-                <p className="text-lg font-medium text-brand-heading">{service}</p>
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm h-full flex items-center justify-center text-center border border-gray-100">
+                <p className="text-lg font-semibold text-[#003343]">{service}</p>
               </div>
             ))}
           </div>
-          <div className="max-w-3xl mx-auto mt-12">
-            <div className="bg-brand-background rounded-xl p-8 shadow-sm text-center">
-              <p className="text-lg text-brand-text">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 shadow-sm text-center border border-gray-100">
+              <p className="text-xl text-[#003343]/80 leading-relaxed">
                 Wir beherrschen KI-Tools wie <strong>ChatGPT</strong>, <strong>Midjourney</strong> und <strong>Sora</strong>, um unsere menschliche Kreativität zu erweitern – nicht zu ersetzen.
               </p>
             </div>
@@ -293,36 +321,39 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-brand-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-3xl font-bold mb-12 text-center text-brand-heading">Für Unternehmen, die vorankommen wollen</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <p className="text-xl font-medium mb-6 text-brand-heading">Wir helfen:</p>
-              <ul className="space-y-4">
+      {/* Section 8: Target Businesses */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-[#003343]">
+            Für Unternehmen, die vorankommen wollen
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="bg-[#faf5eb] rounded-2xl p-8 shadow-sm border border-gray-100">
+              <p className="text-2xl font-bold mb-8 text-[#003343]">Wir helfen:</p>
+              <ul className="space-y-6">
                 {[
                   'B2B-Unternehmen mit komplexen Angeboten',
-                  'Mittelständischen Marken, die einen Relaunch benötigen',
+                  'Mittelständischen Marken, die einen Relaunch brauchen',
                   'Schnell wachsenden Startups',
-                  'Nischenmarktführern mit globaler Reichweite',
-                  'Lokalen Dienstleistern, die bereit für den nächsten Schritt sind'
+                  'Nischenmartführern mit globaler Reichweite',
+                  'Lokalen Dienstleistern, die den nächsten Schritt gehen wollen'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <span className="h-8 w-8 flex items-center justify-center bg-brand-primary/10 rounded-full mr-3 flex-shrink-0">
-                      <CheckCircle className="h-4 w-4 text-brand-primary" />
+                    <span className="h-10 w-10 flex items-center justify-center bg-[#32b1ab]/10 rounded-full mr-4 flex-shrink-0">
+                      <CheckCircle className="h-5 w-5 text-[#32b1ab]" />
                     </span>
-                    <span className="text-brand-text">{item}</span>
+                    <span className="text-[#003343] text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <p className="text-xl font-medium mb-6 text-brand-heading">Typische Branchen:</p>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-[#faf5eb] rounded-2xl p-8 shadow-sm border border-gray-100">
+              <p className="text-2xl font-bold mb-8 text-[#003343]">Typische Branchen:</p>
+              <div className="grid grid-cols-1 gap-4">
                 {industries.slice(0, 10).map((industry, index) => (
                   <div 
                     key={index} 
-                    className="bg-brand-background p-4 rounded-md text-center text-brand-text hover:bg-brand-background/80 transition-colors duration-300"
+                    className="bg-white p-4 rounded-lg text-center text-[#003343] font-medium transition-all duration-300 hover:bg-gray-50 border border-gray-100"
                   >
                     {industry.split('/')[0].trim()}
                   </div>
@@ -333,16 +364,19 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Hauptsitz in Mainz. Aktiv im DACH-Raum und darüber hinaus.</h2>
-            <p className="text-lg text-brand-text">
-              Während unser Hauptsitz in Mainz ist, arbeiten wir mit Kunden in Deutschland, der Schweiz und auf Mallorca zusammen.
-              Digital-first, ortsflexibel – und immer reaktionsschnell.
+      {/* Section 9: Location */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#003343]">
+              Hauptsitz in Mainz. Aktiv im DACH-Raum und darüber hinaus.
+            </h2>
+            <p className="text-xl text-[#003343]/80 leading-relaxed">
+              Während unser Hauptsitz in Mainz steht, arbeiten wir mit Kunden in Deutschland, der Schweiz und Mallorca.
+              Digital-first, standortflexibel – und immer responsiv.
             </p>
           </div>
-          <div className="bg-brand-background rounded-xl p-6 shadow-sm h-[500px] flex items-center justify-center max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl p-6 shadow-sm h-[500px] flex items-center justify-center max-w-5xl mx-auto border border-gray-100">
             <img 
               src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
               alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
@@ -352,42 +386,51 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-brand-heading">Lassen Sie uns gemeinsam etwas Großartiges aufbauen</h2>
-            <p className="text-lg mb-10 text-brand-text">
-              Ob Sie einen Relaunch planen, eine neue Website benötigen oder Hilfe brauchen, um Komplexität in Klarheit zu verwandeln – lassen Sie uns gemeinsam Ihren nächsten Schritt erkunden.
+      {/* Section 10: CTA */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#003343]">
+              Lassen Sie uns gemeinsam etwas Großartiges aufbauen
+            </h2>
+            <p className="text-xl mb-12 text-[#003343]/80 leading-relaxed">
+              Ob Sie einen Relaunch planen, eine neue Website benötigen oder Hilfe dabei brauchen, Komplexität in Klarheit zu verwandeln – lassen Sie uns gemeinsam Ihren nächsten Schritt erkunden.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 size="lg" 
-                className="group bg-brand-primary hover:bg-brand-primary/90 text-white" 
+                className="group bg-[#ffea1f] text-[#003343] hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
                 onClick={handleOpenLeadForm}
               >
                 Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="group" asChild>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="group bg-white text-[#003343] hover:bg-gray-50 border-2 border-[#003343] hover:border-[#32b1ab] font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                asChild
+              >
                 <Link to="/de/kontakt">
                   Strategiegespräch buchen
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
-            <p className="text-center text-sm text-gray-600 mt-10">
+            <p className="text-center text-sm text-[#003343]/60 mt-12">
               100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-Strategien, die menschlich und messbar sind
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-brand-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-brand-heading">Häufig gestellte Fragen</h2>
-            <p className="text-lg max-w-2xl mx-auto text-brand-text">
-              Antworten auf die wichtigsten Fragen zu unseren Leistungen als Marketing Agentur in Mainz
+      {/* FAQ Section */}
+      <section className="py-24 bg-[#faf5eb]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003343]">Häufig gestellte Fragen</h2>
+            <p className="text-xl max-w-3xl mx-auto text-[#003343]/80 leading-relaxed">
+              Antworten auf die wichtigsten Fragen über unsere Leistungen als Marketing Agentur in Mainz
             </p>
           </div>
           
@@ -397,14 +440,14 @@ const GermanAboutUs = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100"
+                  className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-lg font-medium text-brand-heading text-left">{faq.question}</h3>
+                  <AccordionTrigger className="px-8 py-6 hover:no-underline">
+                    <h3 className="text-lg font-bold text-[#003343] text-left">{faq.question}</h3>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-brand-text">
+                  <AccordionContent className="px-8 pb-6 text-[#003343]/80">
                     <Separator className="mb-4" />
-                    <p>{faq.answer}</p>
+                    <p className="text-lg leading-relaxed">{faq.answer}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
