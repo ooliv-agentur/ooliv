@@ -129,8 +129,6 @@ const GermanCaseStudies = () => {
           title="Lassen Sie uns Ihre Erfolgsgeschichte schreiben"
           subtitle="Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um."
           primaryCta="Projekt starten"
-          secondaryCta="Strategiegespräch buchen"
-          secondaryCtaLink="/kontakt"
         />
       </div>
       
