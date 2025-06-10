@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   Dialog,
@@ -8,24 +9,12 @@ import {
   DialogFooter,
   DialogClose
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Send } from 'lucide-react';
-import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
-
-const sanitizeInput = (text: string): string => {
-  if (!text) return '';
-  return text
-    .replace(/=20/g, ' ')
-    .replace(/\r\n/g, '\n')
-    .replace(/\r/g, '\n')
-    .trim();
-};
+import ContactFormFields from './contact/ContactFormFields';
+import { useContactFormValidation, FormValues } from './contact/ContactFormValidation';
+import { useContactFormSubmission } from './contact/useContactFormSubmission';
 
 interface ContactFormProps {
   open: boolean;
@@ -34,17 +23,17 @@ interface ContactFormProps {
 }
 
 const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
-  const { toast } = useToast();
   const { language } = useLanguage();
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [formError, setFormError] = React.useState<string | null>(null);
-  const [formValues, setFormValues] = React.useState({
+  const [formValues, setFormValues] = React.useState<FormValues>({
     name: '',
     email: '',
     message: '',
     privacy: false
   });
   const [validationErrors, setValidationErrors] = React.useState<{[key: string]: string}>({});
+  
+  const { validateForm } = useContactFormValidation();
+  const { submitForm, isSubmitting, formError } = useContactFormSubmission(formType, () => onOpenChange(false));
   
   React.useEffect(() => {
     if (open) {
@@ -55,7 +44,6 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         privacy: false
       });
       setValidationErrors({});
-      setFormError(null);
     }
   }, [open]);
   
@@ -108,97 +96,14 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
     }
   };
 
-  const validateForm = () => {
-    const errors: {[key: string]: string} = {};
-    
-    if (!formValues.name.trim()) {
-      errors.name = language === 'de' ? 'Name ist erforderlich' : 'Name is required';
-    }
-    
-    if (!formValues.email.trim()) {
-      errors.email = language === 'de' ? 'E-Mail ist erforderlich' : 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-      errors.email = language === 'de' ? 'Ungültige E-Mail-Adresse' : 'Invalid email address';
-    }
-    
-    if (!formValues.message.trim()) {
-      errors.message = language === 'de' ? 'Nachricht ist erforderlich' : 'Message is required';
-    }
-    
-    if (!formValues.privacy) {
-      errors.privacy = language === 'de' ? 'Zustimmung erforderlich' : 'Consent is required';
-    }
-    
-    setValidationErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateForm()) {
-      return;
-    }
+    const errors = validateForm(formValues);
+    setValidationErrors(errors);
     
-    setIsSubmitting(true);
-    setFormError(null);
-    
-    try {
-      const formData = {
-        projectType: sanitizeInput(formType),
-        companyName: '',
-        industry: '',
-        name: sanitizeInput(formValues.name),
-        email: sanitizeInput(formValues.email),
-        message: sanitizeInput(formValues.message),
-        websiteUrl: '',
-        location: '',
-        goal: sanitizeInput(formType === 'audit' ? 'website_audit' : (formType === 'call' ? 'strategy_call' : 'collaboration')),
-        phone: '',
-        language: language // Add language parameter
-      };
-      
-      const headers = getSupabaseHeaders();
-      console.log("ContactForm - Headers being sent:", headers);
-      console.log("ContactForm - Sending form with language:", language);
-      
-      const response = await fetch(SEND_PROJECT_FORM_URL, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(formData)
-      });
-      
-      console.log("Response status:", response.status);
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Server error details:", errorData);
-        throw new Error(errorData.message || 'Network response was not ok');
-      }
-      
-      const responseData = await response.json();
-      console.log("Form submission successful:", responseData);
-      
-      onOpenChange(false);
-      
-      toast({
-        title: language === 'de' ? 'Nachricht gesendet!' : 'Message sent!',
-        description: language === 'de' ? 'Wir melden uns in Kürze bei Ihnen.' : 'We\'ll get back to you soon.',
-        duration: 5000,
-        className: "bg-[#004d51] text-white border-[#006064]",
-      });
-
-      // Redirect based on the current language
-      setTimeout(() => {
-        window.location.href = language === 'de' ? "/danke" : "/en/thank-you";
-      }, 1000);
-    } catch (error: any) {
-      console.error("Error submitting form:", error);
-      setFormError(language === 'de' 
-        ? 'Es gab ein Problem bei der Übermittlung Ihrer Nachricht. Bitte versuchen Sie es erneut.' 
-        : 'There was a problem submitting your message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+    if (Object.keys(errors).length === 0) {
+      await submitForm(formValues);
     }
   };
 
@@ -219,83 +124,12 @@ const ContactForm = ({ open, onOpenChange, formType }: ContactFormProps) => {
         )}
         
         <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-          <div className="space-y-2">
-            <Label htmlFor="name" className="text-white">
-              {language === 'de' ? 'Name' : 'Name'}
-            </Label>
-            <Input 
-              id="name" 
-              name="name" 
-              value={formValues.name}
-              onChange={handleInputChange}
-              className={`bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.name ? 'border-red-500' : ''}`}
-              aria-required="true"
-              placeholder={language === 'de' ? 'Geben Sie Ihren Namen ein' : 'Enter your name'}
-            />
-            {validationErrors.name && (
-              <p className="text-sm text-red-500 mt-1">{validationErrors.name}</p>
-            )}
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white">
-              {language === 'de' ? 'E-Mail' : 'Email'}
-            </Label>
-            <Input 
-              id="email" 
-              name="email" 
-              type="email"
-              value={formValues.email}
-              onChange={handleInputChange}
-              className={`bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.email ? 'border-red-500' : ''}`}
-              aria-required="true"
-              placeholder={language === 'de' ? 'Geben Sie Ihre E-Mail-Adresse ein' : 'Enter your email'}
-            />
-            {validationErrors.email && (
-              <p className="text-sm text-red-500 mt-1">{validationErrors.email}</p>
-            )}
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="message" className="text-white">
-              {language === 'de' ? 'Nachricht' : 'Message'}
-            </Label>
-            <Textarea 
-              id="message" 
-              name="message" 
-              value={formValues.message}
-              onChange={handleInputChange}
-              className={`resize-none h-24 bg-white/10 border-white/20 text-white placeholder:text-white/60 ${validationErrors.message ? 'border-red-500' : ''}`}
-              aria-required="true"
-              placeholder={language === 'de' ? 'Wie können wir Ihnen helfen?' : 'How can we help you?'}
-            />
-            {validationErrors.message && (
-              <p className="text-sm text-red-500 mt-1">{validationErrors.message}</p>
-            )}
-          </div>
-          
-          <div className="flex items-start space-x-3">
-            <Checkbox 
-              id="privacy" 
-              name="privacy" 
-              checked={formValues.privacy}
-              onCheckedChange={handleCheckboxChange}
-              className={`data-[state=checked]:bg-[#006064] data-[state=checked]:border-[#006064] ${validationErrors.privacy ? 'border-red-500' : ''}`} 
-            />
-            <div className="flex flex-col">
-              <Label 
-                htmlFor="privacy" 
-                className="text-sm font-normal leading-tight cursor-pointer text-white/90"
-              >
-                {language === 'de' 
-                  ? 'Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzrichtlinie zu.' 
-                  : 'I agree to the processing of my data as outlined in the privacy policy.'}
-              </Label>
-              {validationErrors.privacy && (
-                <p className="text-sm text-red-500 mt-1">{validationErrors.privacy}</p>
-              )}
-            </div>
-          </div>
+          <ContactFormFields
+            formValues={formValues}
+            validationErrors={validationErrors}
+            onInputChange={handleInputChange}
+            onCheckboxChange={handleCheckboxChange}
+          />
           
           <DialogFooter className="mt-6 sm:mt-6 flex gap-4">
             <DialogClose asChild>
