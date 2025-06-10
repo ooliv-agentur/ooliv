@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getTextClasses } from '@/styles/typography';
 
 interface NavigationLinksProps {
   layout: 'mobile' | 'desktop';
@@ -67,13 +68,14 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
+              "block transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
+              getTextClasses('bold'),
               layout === 'desktop' 
-                ? "text-2xl py-1.5 leading-tight" // Reduced padding from py-3 to py-1.5 and tighter line height for desktop
-                : "text-3xl py-3", // Keep original mobile sizing
+                ? "text-2xl py-1.5 leading-tight"
+                : "text-3xl py-3",
               isActive(link.path) 
-                ? "text-medico-turquoise" // Active state: highlighted in medico turquoise
-                : "text-medico-darkGreen hover:text-medico-turquoise" // Default state: dark green with turquoise hover
+                ? "text-medico-turquoise"
+                : "text-medico-darkGreen hover:text-medico-turquoise"
             )}
             onClick={handleClick}
           >
