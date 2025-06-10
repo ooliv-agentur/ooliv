@@ -442,7 +442,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - moved below FAQ */}
       <section className="py-16 bg-medico-mint font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -480,7 +480,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Updated to match master style guide */}
+      {/* FAQ Section - Updated to match master style guide and moved above CTA */}
       <section className="py-24 bg-white font-satoshi">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -536,3 +536,5 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
+</edits_to_apply>
