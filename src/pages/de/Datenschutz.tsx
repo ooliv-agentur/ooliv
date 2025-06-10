@@ -58,7 +58,7 @@ const GermanPrivacyPolicy = () => {
         }}
         secondaryCta={{
           text: "Strategiegespräch vereinbaren",
-          link: "/de/kontakt"
+          link: "/kontakt"
         }}
       />
 
