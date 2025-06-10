@@ -7,6 +7,7 @@ import StrategieHero from '@/components/strategy/StrategieHero';
 import StrategieBenefits from '@/components/strategy/StrategieBenefits';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
+import StrategieFAQ from '@/components/strategy/StrategieFAQ';
 import CTA from '@/components/CTA';
 
 // SEO Text Section Component
@@ -230,6 +231,7 @@ const GermanStrategy = () => {
       <StrategieBenefits />
       <StrategieProcess />
       <StrategieServices />
+      <StrategieFAQ />
       
       {/* Footer CTA Section */}
       <CTA 
