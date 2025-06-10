@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, FileText, Video } from 'lucide-react';
+import { Target, Video } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContentBenefits = () => {
@@ -10,91 +10,75 @@ const ContentBenefits = () => {
   const challengeGroups = isGerman ? [
     {
       icon: Target,
-      title: 'Content Strategy Challenges',
-      germanTitle: 'Content-Strategie-Herausforderungen',
+      title: 'Strategie & Content-Erstellung',
+      germanTitle: 'Strategie & Content-Erstellung',
       challenges: [
         'Fehlende Strategie und Zielgruppenanalyse',
         'Unklare Botschaften ohne Markenidentität',
-        'Mangelnde einheitliche Struktur für SEO und Conversion'
-      ]
-    },
-    {
-      icon: FileText,
-      title: 'Content Creation Challenges',
-      germanTitle: 'Content-Erstellungs-Herausforderungen',
-      challenges: [
-        'Keine oder zu wenige Website-Inhalte',
+        'Fehlende SEO-Optimierung (Keywords, Meta, Struktur)',
         'Unstrukturierte Inhalte ohne Storytelling',
-        'Fehlende SEO-Optimierung (Keywords, Meta, Struktur)'
+        'Keine oder zu wenige Website-Inhalte'
       ]
     },
     {
       icon: Video,
-      title: 'Visuals & Video Challenges',
-      germanTitle: 'Visuals & Video-Herausforderungen',
+      title: 'Visuals & Video',
+      germanTitle: 'Visuals & Video',
       challenges: [
         'Visuelle Inkonsistenz (kein einheitliches visuelles Konzept)',
-        'Schwache Visuals und Videos (z. B. nur Stock-Fotos)',
-        'Fehlende Integration von Bildern, Videos und Animationen in den Content-Flow'
+        'Schwache Visuals (nur Stock-Fotos)',
+        'Fehlende Integration von Videos und Bildern in den Content-Flow'
       ]
     }
   ] : [
     {
       icon: Target,
-      title: 'Content Strategy Challenges',
-      germanTitle: 'Content Strategy Challenges',
+      title: 'Strategy & Content Creation',
+      germanTitle: 'Strategy & Content Creation',
       challenges: [
         'Missing strategy and target group analysis',
         'Unclear messages without brand identity',
-        'Lack of consistent structure for SEO and conversion'
-      ]
-    },
-    {
-      icon: FileText,
-      title: 'Content Creation Challenges',
-      germanTitle: 'Content Creation Challenges',
-      challenges: [
-        'No or too few website content',
+        'Missing SEO optimization (keywords, meta, structure)',
         'Unstructured content without storytelling',
-        'Missing SEO optimization (keywords, meta, structure)'
+        'No or too few website content'
       ]
     },
     {
       icon: Video,
-      title: 'Visuals & Video Challenges',
-      germanTitle: 'Visuals & Video Challenges',
+      title: 'Visuals & Video',
+      germanTitle: 'Visuals & Video',
       challenges: [
         'Visual inconsistency (no cohesive visual concept)',
-        'Weak visuals and videos (e.g., only stock photos)',
-        'Lack of integration of images, videos, and animations into content flow'
+        'Weak visuals (only stock photos)',
+        'Lack of integration of videos and images into content flow'
       ]
     }
   ];
 
   return (
-    <section className="py-20 bg-brand-backgroundAlt">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
             {isGerman 
-              ? "Probleme, die Ihr Business ausbremsen können – und wie wir sie lösen"
-              : "Problems That Can Slow Down Your Business – And How We Solve Them"
+              ? "Typische Content-Herausforderungen — und wie wir sie lösen"
+              : "Typical Content Challenges — And How We Solve Them"
             }
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Als Content Agentur Mainz lösen wir die häufigsten Content-Herausforderungen, die Unternehmen daran hindern, online erfolgreich zu sein:"
-              : "As a Content Agency in Mainz, we solve the most common content challenges that prevent businesses from succeeding online:"
+              ? "Als Content Agentur Mainz kennen wir die größten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen. Hier zeigen wir Ihnen, wie wir gemeinsam Content-Herausforderungen meistern."
+              : "As a Content Agency in Mainz, we know the biggest stumbling blocks that slow down companies' digital growth. Here we show you how we master content challenges together."
             }
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {challengeGroups.map((group, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+              className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-brand-primary/10 mb-6">
