@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -6,6 +7,10 @@ import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import CTA from '@/components/CTA';
 import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
+import FAQ from '@/components/FAQ';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Target, Bot, Layout, MousePointerClick, Shield, LineChart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const GermanGoogleAds = () => {
@@ -51,6 +56,7 @@ const GermanGoogleAds = () => {
         <title>Google Ads Agentur Mainz | Professionelle Anzeigen</title>
         <meta name="description" content="Google Ads Management aus Mainz: Professionelle Kampagnen für mehr Leads und Umsatz. Transparent, datengetrieben und erfolgsorientiert." />
         <meta name="keywords" content="Google Ads Mainz, Google Ads Agentur Mainz, AdWords Mainz, Google Werbung Mainz, PPC Marketing Mainz, Google Ads Betreuung Mainz" />
+        <meta name="focus-keyword" content="Google Ads Agentur Mainz" />
       </Helmet>
 
       {/* Hero Section - Following German startpage master design */}
@@ -290,5 +296,3 @@ const GermanGoogleAds = () => {
 };
 
 export default GermanGoogleAds;
-
-</initial_code>
