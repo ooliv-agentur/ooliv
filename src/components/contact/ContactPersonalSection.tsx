@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { User, MessageCircle, CheckCircle } from 'lucide-react';
+import { Users, MessageCircle, CheckCircle } from 'lucide-react';
 
 const ContactPersonalSection = () => {
   return (
@@ -16,15 +16,15 @@ const ContactPersonalSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-medico-yellow/20 text-medico-darkGreen px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <User className="h-4 w-4" />
-              Ihr persönlicher Ansprechpartner
+              <Users className="h-4 w-4" />
+              Persönliche Betreuung
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Uli — Ihr Ansprechpartner für<br />
-              <span className="text-medico-turquoise">digitale Projekte</span>
+              Persönliche Betreuung<br />
+              <span className="text-medico-turquoise">von Anfang bis Ende</span>
             </h2>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto leading-relaxed">
-              Direkte Kommunikation, klare Prozesse und individuelle Betreuung — so arbeiten wir bei ooliv.
+              Direkte Kommunikation, transparente Prozesse und maßgeschneiderte Lösungen — unser Gründerteam begleitet Sie persönlich.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const ContactPersonalSection = () => {
               <div className="lg:col-span-2 relative h-80 lg:h-full overflow-hidden bg-gradient-to-br from-medico-mint to-medico-turquoise/20">
                 <img 
                   src="/lovable-uploads/Uli.jpg" 
-                  alt="Uli, Gründer & CEO bei ooliv" 
+                  alt="Gründerteam bei ooliv" 
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-medico-darkGreen/20 to-transparent"></div>
@@ -44,7 +44,7 @@ const ContactPersonalSection = () => {
                 <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-medico-turquoise rounded-full animate-pulse"></div>
-                    <span className="text-medico-darkGreen font-medium text-sm">Gründer & CEO</span>
+                    <span className="text-medico-darkGreen font-medium text-sm">Gründerteam</span>
                   </div>
                 </div>
               </div>
@@ -55,11 +55,12 @@ const ContactPersonalSection = () => {
                   {/* Main Content */}
                   <div>
                     <h3 className="text-2xl lg:text-3xl font-bold text-medico-darkGreen mb-6 leading-tight">
-                      Persönliche Betreuung von Anfang bis Ende
+                      Kompetenz und Struktur für Ihren Erfolg
                     </h3>
                     <p className="text-base lg:text-lg text-medico-darkGreen/80 mb-6 leading-relaxed">
-                      Uli ist der Gründer von ooliv – und die erste Person, mit der Sie sprechen. Er begleitet jede Anfrage persönlich, 
-                      sorgt für klare Abläufe und entwickelt gemeinsam mit Ihnen eine Strategie, die wirklich zu Ihrem Unternehmen passt.
+                      Unser Gründerteam begleitet jedes Projekt persönlich von der ersten Anfrage bis zur erfolgreichen Umsetzung. 
+                      Sie erhalten klare Ansprechpartner, transparente Kommunikation und strukturierte Prozesse, die messbare 
+                      Ergebnisse liefern.
                     </p>
                     
                     {/* Key Benefits */}
@@ -68,25 +69,25 @@ const ContactPersonalSection = () => {
                         <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
                           <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                         </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Direkter Draht zum Entscheider</span>
+                        <span className="text-medico-darkGreen/80 text-sm">Direkter Zugang zu Entscheidern</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
                           <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                         </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Klare Kommunikation</span>
+                        <span className="text-medico-darkGreen/80 text-sm">Transparente Kommunikation</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
                           <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                         </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Individuelle Lösungen</span>
+                        <span className="text-medico-darkGreen/80 text-sm">Maßgeschneiderte Lösungen</span>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
                           <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                         </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Transparente Prozesse</span>
+                        <span className="text-medico-darkGreen/80 text-sm">Strukturierte Prozesse</span>
                       </div>
                     </div>
                   </div>
@@ -98,10 +99,10 @@ const ContactPersonalSection = () => {
                         <MessageCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
                         <div>
                           <blockquote className="text-medico-darkGreen font-medium text-lg mb-3 leading-relaxed italic">
-                            "Kein Verkaufsdruck, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt."
+                            "Keine Umwege, keine Zwischenstellen – nur professionelle Beratung und messbare Ergebnisse für Ihr Unternehmen."
                           </blockquote>
                           <footer className="text-medico-darkGreen/70 text-sm font-medium">
-                            — Uli, Gründer & CEO ooliv
+                            — ooliv Gründerteam
                           </footer>
                         </div>
                       </div>
