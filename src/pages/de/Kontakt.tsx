@@ -143,8 +143,8 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Contact Information Section - same style as other contact sections */}
-      <section className="py-24 bg-medico-mint/20">
+      {/* Contact Information Section - changed to mint green background */}
+      <section className="py-24 bg-medico-mint">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
