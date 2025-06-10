@@ -2,9 +2,6 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Button } from "@/components/ui/button";
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const GoogleAdsProcess = () => {
   const { language } = useLanguage();
@@ -41,7 +38,6 @@ const GoogleAdsProcess = () => {
           description: "We iterate and improve your funnel through weekly insights and A/B tests"
         }
       ],
-      learnMore: "Explore our landing page & web development services",
       scrollHint: "Scroll to see more"
     },
     de: {
@@ -73,13 +69,11 @@ const GoogleAdsProcess = () => {
           description: "A/B-Tests, Funnel-Analysen & wöchentliche Verbesserungen"
         }
       ],
-      learnMore: "Mehr über unsere Landingpages & Webentwicklung",
       scrollHint: "Weiter scrollen für mehr"
     }
   };
   
   const t = isGerman ? translations.de : translations.en;
-  const webDevPath = isGerman ? "/de/webentwicklung" : "/web-development";
 
   return (
     <section className="py-16 md:py-24 bg-brand-backgroundAlt overflow-hidden">
@@ -126,15 +120,6 @@ const GoogleAdsProcess = () => {
               {t.scrollHint} ›
             </div>
           )}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button variant="link" asChild className="group">
-            <Link to={webDevPath} className="flex items-center justify-center gap-2 text-brand-primary">
-              {t.learnMore}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
