@@ -27,7 +27,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <FileEdit className="h-6 w-6 text-white" />
@@ -51,7 +51,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <FileText className="h-6 w-6 text-white" />
@@ -75,7 +75,7 @@ const SEOServicesDE = () => {
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <MapPin className="h-6 w-6 text-white" />
@@ -88,8 +88,8 @@ const SEOServicesDE = () => {
           </div>
         </div>
 
-        {/* AI-powered tools section - Removed emoji from heading */}
-        <div className="mt-16 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto">
+        {/* AI-powered tools section - Better separated */}
+        <div className="mt-20 bg-white p-10 rounded-lg shadow-md max-w-4xl mx-auto border-l-4 border-brand-primary">
           <h3 className="text-2xl font-bold mb-4 text-brand-heading">Tools als Unterstützung — nicht als Ersatz für Strategie</h3>
           <p className="text-brand-text mb-6">
             Wir nutzen branchenführende Tools zur Unterstützung unserer SEO-Strategien, aber unsere Expertise ist es, die Ergebnisse liefert.
@@ -98,7 +98,7 @@ const SEOServicesDE = () => {
           <div className="flex flex-wrap gap-3 justify-center">
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Ahrefs</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Google Search Console</div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">YoastSEO (WordPress)</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">YoastSEO</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">ChatGPT (für Inhalte)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Midjourney (für Visuals)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Sora (für Video)</div>
