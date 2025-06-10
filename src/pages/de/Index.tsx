@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -13,6 +12,8 @@ import CTA from "@/components/CTA";
 import MainzSEOTextSection from "@/components/de/MainzSEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
+import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 const germanFaqs = [
   {
@@ -48,6 +49,10 @@ const GermanIndex = () => {
     // Force title update immediately
     document.title = 'ooliv - Werbeagentur Mainz';
   }, []);
+
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
 
   // Comprehensive LocalBusiness schema markup
   const localBusinessSchema = {
@@ -157,15 +162,23 @@ const GermanIndex = () => {
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google gut ranken.
+            <h2 className="text-3xl font-bold text-center mb-8 text-medico-darkGreen">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-medico-darkGreen">
+              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google sichtbar werden.
             </p>
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
-              <p className="text-brand-text">
-                Hinweis: Wir haben noch viele weitere Vorher-Nachher-Beispiele. Fragen Sie diese gerne direkt bei uns an — <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>.
+              <p className="text-medico-darkGreen mb-6">
+                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-medico-turquoise hover:underline">info@ooliv.de</a>
               </p>
+              <Button 
+                variant="primary"
+                size="lg" 
+                className="group"
+                onClick={handleStartProject}
+              >
+                Projekt starten
+              </Button>
             </div>
           </div>
         </div>
