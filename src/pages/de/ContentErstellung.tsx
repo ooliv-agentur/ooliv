@@ -1,7 +1,9 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import ContentHero from '@/components/content-creation/ContentHero';
+import ContentImportance from '@/components/content-creation/ContentImportance';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
 import ContentServicesUnified from '@/components/content-creation/ContentServicesUnified';
 import ContentProcessUnified from '@/components/content-creation/ContentProcessUnified';
@@ -46,29 +48,32 @@ const GermanContentCreation = () => {
         <meta name="description" content="Content Agentur Mainz – Wir entwickeln Texte, Visuals und Videos, die Vertrauen aufbauen, Google-Rankings verbessern und Leads generieren." />
       </Helmet>
 
-      {/* 1. Hero Section - unchanged */}
+      {/* 1. Hero Section */}
       <ContentHero />
       
-      {/* 2. Problem-Lösungs-Bereich - light green background */}
+      {/* 2. New Section: Warum Content entscheidend ist */}
+      <ContentImportance />
+      
+      {/* 3. Problem-Lösungs-Bereich */}
       <ContentBenefits />
       
-      {/* 3. Unified Services Section - green background */}
+      {/* 4. Unified Services Section */}
       <ContentServicesUnified />
       
-      {/* 4. Unified Process Section - white background */}
+      {/* 5. Unified Process Section */}
       <ContentProcessUnified />
       
-      {/* 5. Why ooliv? with added elements */}
+      {/* 6. Why ooliv? with added elements */}
       <ContentExpertInsight />
       
-      {/* 6. Case Studies */}
+      {/* 7. Case Studies */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
-      {/* 7. FAQs - white background */}
+      {/* 8. FAQs */}
       <FAQ 
         customFaqs={contentFaqs}
         customTitle="Häufig gestellte Fragen zur Content-Erstellung" 

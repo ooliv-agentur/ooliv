@@ -66,10 +66,10 @@ const ContentBenefits = () => {
             }
           </h2>
           
-          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
+          <p className="text-lg text-center max-w-4xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Als Content Agentur Mainz kennen wir die größten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen. Hier zeigen wir Ihnen, wie wir gemeinsam Content-Herausforderungen meistern."
-              : "As a Content Agency in Mainz, we know the biggest stumbling blocks that slow down companies' digital growth. Here we show you how we master content challenges together."
+              ? "Viele Unternehmen investieren viel Zeit und Budget in Content – und doch bleiben die Ergebnisse oft hinter den Erwartungen zurück. Warum? Weil Content ohne Strategie, klare Botschaften und eine starke visuelle Umsetzung oft wirkungslos bleibt. Als Content Agentur Mainz kennen wir die größten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen. Hier zeigen wir Ihnen, wie wir gemeinsam Content-Herausforderungen meistern."
+              : "Many companies invest a lot of time and budget in content – yet the results often fall short of expectations. Why? Because content without strategy, clear messages and strong visual implementation often remains ineffective. As a Content Agency in Mainz, we know the biggest stumbling blocks that slow down companies' digital growth. Here we show you how we master content challenges together."
             }
           </p>
         </div>
@@ -102,15 +102,6 @@ const ContentBenefits = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-8 text-center">
-          <p className="text-brand-text font-medium">
-            {isGerman 
-              ? "ooliv als Content Agentur Mainz bietet maßgeschneiderte Lösungen für all diese Herausforderungen."
-              : "ooliv as a Content Agency in Mainz offers tailored solutions for all these challenges."
-            }
-          </p>
         </div>
       </div>
     </section>

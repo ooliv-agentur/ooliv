@@ -7,6 +7,9 @@ const ContentServicesUnified = () => {
     <section className="py-20 bg-medico-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <p className="text-lg text-brand-text max-w-3xl mx-auto mb-6">
+            ooliv als Content Agentur Mainz bietet maßgeschneiderte Lösungen für all diese Herausforderungen.
+          </p>
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
             Content, der wirkt — von Text bis Visuals
           </h2>
