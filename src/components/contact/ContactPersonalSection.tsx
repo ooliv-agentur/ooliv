@@ -10,10 +10,10 @@ const ContactPersonalSection = () => {
           {/* Section Header - matching homepage style */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-medico-darkGreen mb-8 leading-tight">
-              Persönliche Betreuung von Anfang bis Ende
+              Direkte Ansprechpartner – persönlich & individuell
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen/80 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Direkte Kommunikation, transparente Prozesse und maßgeschneiderte Lösungen — unser Gründerteam begleitet Sie persönlich.
+              Unser Gründerteam begleitet Sie persönlich von der ersten Idee bis zum erfolgreichen Launch. Keine Umwege, keine Zwischenstellen.
             </p>
           </div>
 
