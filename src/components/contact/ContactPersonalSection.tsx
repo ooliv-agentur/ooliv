@@ -4,132 +4,107 @@ import { Users, MessageCircle, CheckCircle } from 'lucide-react';
 
 const ContactPersonalSection = () => {
   return (
-    <section className="relative -mt-8 z-10 pb-32 pt-16 bg-gradient-to-b from-medico-mint/30 to-white">
-      {/* Floating background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="floating-circle slow w-20 h-20 top-20 left-10 opacity-20"></div>
-        <div className="floating-circle delayed w-16 h-16 bottom-20 right-20 opacity-25"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+    <section className="relative py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header - matching homepage style */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-medico-darkGreen px-4 py-2 rounded-full text-sm font-medium mb-6 border border-medico-mint/50">
-              <Users className="h-4 w-4" />
-              Persönliche Betreuung
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Persönliche Betreuung<br />
-              von Anfang bis Ende
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-medico-darkGreen mb-8 leading-tight">
+              Persönliche Betreuung von Anfang bis Ende
             </h2>
-            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen/80 mb-12 leading-relaxed max-w-3xl mx-auto">
               Direkte Kommunikation, transparente Prozesse und maßgeschneiderte Lösungen — unser Gründerteam begleitet Sie persönlich.
             </p>
           </div>
 
-          {/* Main Content Card */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-medico-mint/50">
-            <div className="grid lg:grid-cols-5 gap-0">
-              {/* Image Section */}
-              <div className="lg:col-span-2 relative h-80 lg:h-full overflow-hidden bg-gradient-to-br from-medico-mint to-medico-turquoise/20">
-                <img 
-                  src="/lovable-uploads/Uli.jpg" 
-                  alt="Gründerteam bei ooliv" 
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-medico-darkGreen/20 to-transparent"></div>
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-medico-turquoise rounded-full animate-pulse"></div>
-                    <span className="text-medico-darkGreen font-medium text-sm">Gründerteam</span>
+          {/* Main Content Grid - matching homepage layout */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+            {/* Content Section */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-medium text-medico-darkGreen mb-6 leading-tight">
+                  Kompetenz und Struktur für Ihren Erfolg
+                </h3>
+                <p className="text-lg text-medico-darkGreen/80 mb-8 leading-relaxed">
+                  Unser Gründerteam begleitet jedes Projekt persönlich von der ersten Anfrage bis zur erfolgreichen Umsetzung. 
+                  Sie erhalten klare Ansprechpartner, transparente Kommunikation und strukturierte Prozesse, die messbare 
+                  Ergebnisse liefern.
+                </p>
+              </div>
+
+              {/* Key Benefits - matching homepage icon style */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-medico-darkGreen/10 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                   </div>
+                  <span className="text-medico-darkGreen/80 text-base">Direkter Zugang zu Entscheidern</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-medico-darkGreen/10 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
+                  </div>
+                  <span className="text-medico-darkGreen/80 text-base">Transparente Kommunikation</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-medico-darkGreen/10 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
+                  </div>
+                  <span className="text-medico-darkGreen/80 text-base">Maßgeschneiderte Lösungen</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-medico-darkGreen/10 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
+                  </div>
+                  <span className="text-medico-darkGreen/80 text-base">Strukturierte Prozesse</span>
                 </div>
               </div>
-              
-              {/* Content Section */}
-              <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center">
-                <div className="space-y-8">
-                  {/* Main Content */}
-                  <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-medico-darkGreen mb-6 leading-tight">
-                      Kompetenz und Struktur für Ihren Erfolg
-                    </h3>
-                    <p className="text-base lg:text-lg text-medico-darkGreen/80 mb-6 leading-relaxed">
-                      Unser Gründerteam begleitet jedes Projekt persönlich von der ersten Anfrage bis zur erfolgreichen Umsetzung. 
-                      Sie erhalten klare Ansprechpartner, transparente Kommunikation und strukturierte Prozesse, die messbare 
-                      Ergebnisse liefern.
-                    </p>
-                    
-                    {/* Key Benefits */}
-                    <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
-                          <CheckCircle className="h-4 w-4 text-medico-turquoise" />
-                        </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Direkter Zugang zu Entscheidern</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
-                          <CheckCircle className="h-4 w-4 text-medico-turquoise" />
-                        </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Transparente Kommunikation</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
-                          <CheckCircle className="h-4 w-4 text-medico-turquoise" />
-                        </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Maßgeschneiderte Lösungen</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-medico-turquoise/20 rounded-full flex items-center justify-center mt-1">
-                          <CheckCircle className="h-4 w-4 text-medico-turquoise" />
-                        </div>
-                        <span className="text-medico-darkGreen/80 text-sm">Strukturierte Prozesse</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Quote */}
-                  <div className="relative">
-                    <div className="bg-medico-mint/30 rounded-xl p-6 border-l-4 border-medico-turquoise">
-                      <div className="flex items-start gap-4">
-                        <MessageCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
-                        <div>
-                          <blockquote className="text-medico-darkGreen font-medium text-lg mb-3 leading-relaxed italic">
-                            "Keine Umwege, keine Zwischenstellen – nur professionelle Beratung und messbare Ergebnisse für Ihr Unternehmen."
-                          </blockquote>
-                          <footer className="text-medico-darkGreen/70 text-sm font-medium">
-                            — ooliv Gründerteam
-                          </footer>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            
+            {/* Visual Section - simplified to match homepage */}
+            <div className="relative">
+              <div className="aspect-square bg-medico-mint/30 rounded-2xl overflow-hidden">
+                <img 
+                  src="/lovable-uploads/Uli.jpg" 
+                  alt="ooliv Gründerteam" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
 
-          {/* Bottom CTA Section */}
-          <div className="text-center mt-16 pt-8 border-t border-medico-mint/50">
-            <p className="text-medico-darkGreen/70 text-sm mb-4">
+          {/* Quote Section - matching homepage yellow highlight style */}
+          <div className="bg-medico-yellow/20 rounded-2xl p-8 mb-16">
+            <div className="flex items-start gap-4">
+              <MessageCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
+              <div>
+                <blockquote className="text-medico-darkGreen font-medium text-xl mb-3 leading-relaxed">
+                  „Keine Umwege, keine Zwischenstellen – nur professionelle Beratung und messbare Ergebnisse für Ihr Unternehmen."
+                </blockquote>
+                <footer className="text-medico-darkGreen/70 text-base font-medium">
+                  — ooliv Gründerteam
+                </footer>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section - matching homepage style */}
+          <div className="text-center">
+            <p className="text-medico-darkGreen/70 text-lg mb-6">
               Bereit für Ihr nächstes digitales Projekt?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="tel:+4961316367801" 
-                className="inline-flex items-center gap-2 bg-medico-turquoise text-white px-6 py-3 rounded-full font-medium hover:bg-medico-turquoise/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-medico-turquoise text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-medico-turquoise/90 transition-colors"
               >
-                <span>+49 (0) 6131 63 67 801</span>
+                +49 (0) 6131 63 67 801
               </a>
               <a 
                 href="mailto:info@ooliv.de" 
-                className="inline-flex items-center gap-2 bg-medico-yellow text-medico-darkGreen px-6 py-3 rounded-full font-medium hover:bg-medico-yellow/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-medico-yellow text-medico-darkGreen px-8 py-4 rounded-full font-medium text-lg hover:bg-medico-yellow/90 transition-colors"
               >
-                <span>info@ooliv.de</span>
+                info@ooliv.de
               </a>
             </div>
           </div>
