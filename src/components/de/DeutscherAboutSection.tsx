@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -42,9 +41,26 @@ const DeutscherAboutSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Wo Strategie auf Umsetzung trifft – in Mainz.
             </h2>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.5' }}>
-              Wir sind eine spezialisierte Digitalagentur aus Mainz. Seit 2008 entwickeln wir Websites, die das Wesentliche Ihres Unternehmens erfassen – strategisch geplant, inhaltsstark und technisch messbar.
+            <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
+              Wir sind Ihre spezialisierte Digitalagentur, die Websites strategisch plant und technisch perfekt umsetzt.
             </p>
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
+              Seit über 16 Jahren entwickeln wir Websites für B2B-Unternehmen in Mainz und der Region. Mit einer klaren Strategie, datenbasierten Entscheidungen und einem strukturierten Prozess schaffen wir Websites, die Ihr Unternehmen digital voranbringen.
+            </p>
+            
+            {/* Single CTA Button */}
+            <div className="flex justify-center">
+              <Button 
+                variant="primary"
+                size="lg" 
+                className="group"
+                asChild
+              >
+                <Link to="/strategie">
+                  Mehr erfahren
+                </Link>
+              </Button>
+            </div>
           </div>
         </Reveal>
         
