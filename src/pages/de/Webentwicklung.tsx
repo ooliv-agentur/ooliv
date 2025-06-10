@@ -42,8 +42,8 @@ const GermanWebDevelopment = () => {
       seoText={<WebDevSEOText />}
     >
       <Helmet>
-        <title>WordPress Agentur Mainz für skalierbare Lösungen</title>
-        <meta name="description" content="WordPress Agentur Mainz – maßgeschneiderte Unternehmenswebsites mit WordPress & WooCommerce. Skalierbar, sicher, SEO-optimiert." />
+        <title>WordPress Agentur Mainz – Technisch stark</title>
+        <meta name="description" content="Ihre WordPress Agentur in Mainz: Moderne Webentwicklung, technisch ausgereift und individuell. Wir realisieren Ihre digitale Vision zuverlässig." />
       </Helmet>
 
       <WebDevHero />

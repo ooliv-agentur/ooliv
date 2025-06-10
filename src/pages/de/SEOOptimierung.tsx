@@ -53,8 +53,8 @@ const GermanSEO = () => {
       seoText={<SEOTextSectionDE />}
     >
       <Helmet>
-        <title>SEO Agentur Mainz | Sichtbarkeit und Wachstum mit ooliv</title>
-        <meta name="description" content="Mehr Sichtbarkeit, mehr Anfragen: Ihre SEO Agentur Mainz. Strategie, Onpage, Technik, Content und Backlinks – alles für Ihren SEO-Erfolg." />
+        <title>SEO Agentur Mainz – Sichtbar im Netz</title>
+        <meta name="description" content="Als SEO Agentur in Mainz sorgen wir für Top-Rankings. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung." />
       </Helmet>
 
       <SEOHeroDE />

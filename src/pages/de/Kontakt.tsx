@@ -25,8 +25,8 @@ const GermanContact = () => {
       seoText={<ContactSEOText />}
     >
       <Helmet>
-        <title>Kontakt ooliv – Ihre Digitalagentur Mainz</title>
-        <meta name="description" content="Kontaktieren Sie ooliv – Ihre Digitalagentur aus Mainz für individuelles Webdesign, SEO und Online-Marketing. Persönlich, direkt, effizient. Jetzt Nachricht senden!" />
+        <title>Kontakt – ooliv Marketing Agentur Mainz</title>
+        <meta name="description" content="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt." />
       </Helmet>
 
       {/* Hero Section */}

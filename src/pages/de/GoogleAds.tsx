@@ -53,8 +53,8 @@ const GermanGoogleAds = () => {
       seoText={<GoogleAdsSEOText />}
     >
       <Helmet>
-        <title>Google Ads Agentur Mainz – Kampagnenoptimierung & Leadgenerierung | ooliv</title>
-        <meta name="description" content="Mit ooliv als Google Ads Agentur Mainz sichern Sie sich Leads, Umsatzwachstum und volle Transparenz. Jetzt Analyse sichern!" />
+        <title>Google Ads Agentur Mainz – Mehr Leads</title>
+        <meta name="description" content="Mit ooliv als Google Ads Agentur in Mainz erreichen Sie neue Kunden. Wir optimieren Ihre Kampagnen für maximale Ergebnisse." />
       </Helmet>
 
       {/* Hero Section - Following German startpage master design */}

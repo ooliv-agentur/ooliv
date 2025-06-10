@@ -44,8 +44,8 @@ const GermanContentCreation = () => {
       seoText={<ContentSEOText />}
     >
       <Helmet>
-        <title>Content Agentur Mainz für strategische Inhalte & SEO</title>
-        <meta name="description" content="Content Agentur Mainz – Wir entwickeln Texte, Visuals und Videos, die Vertrauen aufbauen, Google-Rankings verbessern und Leads generieren." />
+        <title>Content Agentur Mainz – Texte, die wirken</title>
+        <meta name="description" content="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken." />
       </Helmet>
 
       {/* 1. Hero Section - White background */}

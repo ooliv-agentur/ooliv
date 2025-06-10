@@ -53,7 +53,7 @@ const GermanCaseStudies = () => {
   
   // Force document title update to ensure it works across all domains
   useEffect(() => {
-    document.title = "Marketing Mainz – Erfolgreiche Markenentwicklung & Webprojekte | ooliv";
+    document.title = "Marketing Mainz – Erfolgreiche Projekte";
     
     // Create and update meta description if it doesn't exist
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -62,7 +62,7 @@ const GermanCaseStudies = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Marketing Mainz: Branding, Webdesign und nachhaltige Marketinglösungen für Unternehmen. ooliv – Ihre Agentur für strategisches Wachstum. Jetzt beraten lassen!');
+    metaDescription.setAttribute('content', 'Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern.');
     
     // Create and update meta keywords if it doesn't exist
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -77,10 +77,10 @@ const GermanCaseStudies = () => {
   return (
     <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOText />}>
       <Helmet>
-        <title>Marketing Mainz – Erfolgreiche Markenentwicklung & Webprojekte | ooliv</title>
+        <title>Marketing Mainz – Erfolgreiche Projekte</title>
         <meta 
           name="description" 
-          content="Marketing Mainz: Branding, Webdesign und nachhaltige Marketinglösungen für Unternehmen. ooliv – Ihre Agentur für strategisches Wachstum. Jetzt beraten lassen!" 
+          content="Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern." 
         />
         <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
       </Helmet>

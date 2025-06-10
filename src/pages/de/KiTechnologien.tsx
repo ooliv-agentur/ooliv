@@ -58,8 +58,8 @@ const GermanAiTechnologies = () => {
   return (
     <PageLayout className="overflow-x-hidden" seoText={<KiSEOText />}>
       <Helmet>
-        <title>KI Agentur Mainz – KI-Technologien für Webdesign, Content & Marketing | ooliv</title>
-        <meta name="description" content="Ihre KI Agentur Mainz: Schneller, skalierbarer, effizienter mit KI-gestütztem Webdesign, Content und Strategie. Jetzt Potenzialanalyse sichern!" />
+        <title>KI Agentur Mainz – Zukunftstechnologien</title>
+        <meta name="description" content="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit." />
       </Helmet>
 
       <AiTechHero />

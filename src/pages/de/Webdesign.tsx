@@ -17,8 +17,8 @@ const GermanWebDesign = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <Helmet>
-          <title>Strategisches Webdesign Mainz für B2B-Unternehmen</title>
-          <meta name="description" content="Webdesign Mainz – keine Templates, sondern maßgeschneiderte Lösungen. Für mehr Leads, Sichtbarkeit und digitale Markenstärke." />
+          <title>Webdesign Mainz – Individuell & Erfolgreich</title>
+          <meta name="description" content="Kreatives Webdesign in Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern." />
         </Helmet>
         
         <WebDesignHero />

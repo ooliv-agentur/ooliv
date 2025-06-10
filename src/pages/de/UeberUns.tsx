@@ -33,8 +33,8 @@ const GermanAboutUs = () => {
       seoText={<AboutUsSEOText />}
     >
       <Helmet>
-        <title>Marketing Agentur Mainz – Strategie, SEO & Wachstum | ooliv</title>
-        <meta name="description" content="Ihre Marketing Agentur Mainz für Websites, SEO, SEA und Content. Maßgeschneiderte Strategien für echtes Wachstum. Jetzt Beratung sichern!" />
+        <title>Über ooliv – Ihre Marketing Agentur Mainz</title>
+        <meta name="description" content="Erfahren Sie mehr über ooliv – Ihre Marketing Agentur Mainz. Persönlich, erfahren und individuell. Gemeinsam gestalten wir Ihre digitale Zukunft." />
       </Helmet>
 
       <AboutUsHero />
