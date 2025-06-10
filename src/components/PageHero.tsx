@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -170,7 +171,7 @@ const PageHero = ({
   
   const renderSubtitle = () => {
     return (
-      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed text-left" style={{ lineHeight: '28px' }}>
+      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed text-left">
         {subtitle || description || (isHomepage ? defaultHomepageDescription : '')}
       </p>
     );
