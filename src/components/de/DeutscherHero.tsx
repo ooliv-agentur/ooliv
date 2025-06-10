@@ -45,7 +45,7 @@ const DeutscherHero = () => {
       }}
       secondaryCta={{
         text: "Arbeiten ansehen",
-        link: "/case-studies"
+        link: "/referenzen"
       }}
     />
   );
