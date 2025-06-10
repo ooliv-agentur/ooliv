@@ -7,27 +7,27 @@ import { Link } from 'react-router-dom';
 const ContentProcessUnified = () => {
   const steps = [
     {
-      number: "01",
+      icon: Target,
       title: 'Strategie & Kickoff',
       description: 'Ziele definieren, Tonalität festlegen, SEO-Recherche (z. B. mit Ahrefs).'
     },
     {
-      number: "02",
+      icon: Search,
       title: 'Erstellung & Design',
       description: 'Inhalte entwickeln – Texte, Bilder, Videos – mit Fokus auf UX & Conversion.'
     },
     {
-      number: "03",
+      icon: Users,
       title: 'Review & Integration',
       description: 'Freigabe durch Sie, Einbindung über uns oder Ihr CMS.'
     },
     {
-      number: "04",
+      icon: Zap,
       title: 'Testing & Launch',
       description: 'SEO-Checks, Performance, Struktur – dann Go Live.'
     },
     {
-      number: "05",
+      icon: TrendingUp,
       title: 'Laufende Content-Pakete',
       description: 'Monatliche Pakete zur Pflege, Optimierung & strategischen Weiterentwicklung.'
     }
@@ -62,54 +62,84 @@ const ContentProcessUnified = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Process Section */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-16 text-brand-heading">
-            Unser Kampagnen-Prozess – von Strategie bis Skalierung
+          <h2 className="text-3xl font-bold text-center mb-6 text-brand-heading">
+            So bringen wir Ihr Content-Projekt zum Erfolg
           </h2>
+          <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
+            Von der Strategie bis zum Go-Live: unser bewährter 5-Schritte-Prozess sorgt für klare Strukturen und messbare Ergebnisse.
+          </p>
           
-          {/* Desktop Version */}
-          <div className="hidden lg:block">
-            <div className="grid lg:grid-cols-5 gap-6">
-              {steps.map((step, index) => (
-                <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 pt-12 h-full shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
-                  <div className="absolute -top-7 left-6 h-14 w-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold">
-                    {step.number}
+          {/* Desktop Version - Two rows layout */}
+          <div className="hidden md:block">
+            {/* First row - 3 steps */}
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              {steps.slice(0, 3).map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-start">
+                      <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
+                        <Icon className="h-5 w-5 text-brand-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
+                        <p className="text-brand-text text-sm">{step.description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="mt-3">
-                    <h3 className="text-xl font-bold mb-3 text-brand-heading">{step.title}</h3>
-                    <p className="text-brand-text">{step.description}</p>
+                );
+              })}
+            </div>
+            
+            {/* Second row - 2 steps centered */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {steps.slice(3, 5).map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div key={index + 3} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div className="flex items-start">
+                      <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
+                        <Icon className="h-5 w-5 text-brand-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
+                        <p className="text-brand-text text-sm">{step.description}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           
-          {/* Mobile and Tablet Version */}
-          <div className="lg:hidden">
-            <div className="overflow-x-auto">
-              <div className="flex gap-6 pb-4 min-w-max">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex-shrink-0 w-80 bg-brand-backgroundAlt rounded-lg p-6 pt-12 shadow-sm hover:shadow-md transition-shadow border-l-4 border-brand-primary relative">
-                    <div className="absolute -top-7 left-6 h-14 w-14 bg-brand-primary text-white rounded-full flex items-center justify-center text-xl font-bold">
-                      {step.number}
+          {/* Mobile Version */}
+          <div className="md:hidden space-y-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className="bg-brand-backgroundAlt rounded-lg p-6 hover:shadow-md transition-shadow">
+                  <div className="flex items-start">
+                    <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
+                      <Icon className="h-5 w-5 text-brand-primary" />
                     </div>
-                    <div className="mt-3">
-                      <h3 className="text-xl font-bold mb-3 text-brand-heading">{step.title}</h3>
-                      <p className="text-brand-text">{step.description}</p>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-brand-heading">{step.title}</h3>
+                      <p className="text-brand-text text-sm">{step.description}</p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* Content Formats Section */}
-        <div className="mb-20">
+        <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-6 text-brand-heading">
             Content, der gefunden wird – und konvertiert
           </h2>
@@ -117,18 +147,18 @@ const ContentProcessUnified = () => {
             Content-Formate, die Ihre Ziele unterstützen
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {contentFormats.map((format, index) => {
               const Icon = format.icon;
               return (
                 <div key={index} className="bg-brand-backgroundAlt p-6 rounded-lg hover:shadow-md transition-shadow">
                   <div className="flex items-start">
                     <div className="p-3 rounded-full bg-brand-primary/10 mr-4 flex-shrink-0">
-                      <Icon className="h-6 w-6 text-brand-primary" />
+                      <Icon className="h-5 w-5 text-brand-primary" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-2 text-brand-heading">{format.title}</h3>
-                      <p className="text-brand-text">{format.description}</p>
+                      <p className="text-brand-text text-sm">{format.description}</p>
                     </div>
                   </div>
                 </div>
