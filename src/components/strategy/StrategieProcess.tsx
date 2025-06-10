@@ -7,26 +7,26 @@ const StrategieProcess = () => {
     {
       icon: Search,
       number: "01",
-      title: "Analyse & Research",
-      description: "Wir analysieren Ihre Branche, Zielgruppe und Wettbewerber, um eine solide Grundlage für Ihre Strategie zu schaffen."
+      title: "Analyse & Webkonzept",
+      description: "Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln ein individuelles Webkonzept mit Sitemap und ersten Wireframes."
     },
     {
       icon: Lightbulb,
       number: "02", 
-      title: "Konzeptentwicklung",
-      description: "Basierend auf unseren Erkenntnissen entwickeln wir ein maßgeschneidertes Konzept mit klaren Zielen und Strategien."
+      title: "Strategie & Planung",
+      description: "Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan auf Basis Ihres Webkonzepts."
     },
     {
       icon: PenTool,
       number: "03",
-      title: "UX/UI Design",
-      description: "Wir gestalten intuitive Benutzeroberflächen, die Ihre Zielgruppe optimal ansprechen und zur Conversion führen."
+      title: "Design-Übergabe & Umsetzung",
+      description: "Nach der Designfreigabe startet die Webentwicklung – sauber, performant und individuell."
     },
     {
       icon: Rocket,
       number: "04",
-      title: "Umsetzung & Launch",
-      description: "Nach erfolgreicher Umsetzung begleiten wir Sie beim Launch und der kontinuierlichen Optimierung."
+      title: "Optimierung & Reporting",
+      description: "Nach dem Go-Live definieren wir KPIs, messen den Erfolg und optimieren kontinuierlich."
     }
   ];
 
@@ -35,11 +35,11 @@ const StrategieProcess = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-            Unser Strategie-Prozess
+            Unser strategischer Ansatz – von der Analyse bis zum Webkonzept und zur Umsetzung
           </h2>
           <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Von der ersten Idee bis zur erfolgreichen Umsetzung – so entwickeln wir Ihre digitale Strategie
+            Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer aktuellen Website über das Webkonzept bis zur erfolgreichen Umsetzung.
           </p>
         </div>
         

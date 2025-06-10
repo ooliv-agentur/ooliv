@@ -10,8 +10,8 @@ const StrategieHero = () => {
   return (
     <PageHero
       isHomepage={true}
-      title="Strategie & Konzept für digitale Erfolge"
-      subtitle="Wir entwickeln individuelle Digitalstrategien inklusive Konzept und optimieren die User Experience Ihrer Website – für mehr Sichtbarkeit, mehr Leads und nachhaltigen Erfolg."
+      title="Strategie & Webkonzept für Ihren digitalen Erfolg"
+      subtitle="Wir entwickeln individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Leads und eine nachhaltige digitale Präsenz."
       primaryCta={{
         text: "Strategiegespräch vereinbaren",
         link: "#",
