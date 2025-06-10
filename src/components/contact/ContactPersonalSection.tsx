@@ -13,7 +13,7 @@ const ContactPersonalSection = () => {
               Direkte Ansprechpartner – persönlich & individuell
             </h2>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.5' }}>
-              Unser Gründerteam begleitet Sie persönlich von der ersten Idee bis zum erfolgreichen Launch. Keine Umwege, keine Zwischenstellen.
+              Unsere Geschäftsführung begleitet Sie persönlich von der ersten Idee bis zum erfolgreichen Launch. Keine Umwege, keine Zwischenstellen.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ const ContactPersonalSection = () => {
                   Kompetenz und Struktur für Ihren Erfolg
                 </h3>
                 <p className="text-lg text-medico-darkGreen/80 mb-8 leading-relaxed">
-                  Unser Gründerteam begleitet jedes Projekt persönlich von der ersten Anfrage bis zur erfolgreichen Umsetzung. 
+                  Unsere Geschäftsführung begleitet jedes Projekt persönlich von der ersten Anfrage bis zur erfolgreichen Umsetzung. 
                   Sie erhalten klare Ansprechpartner, transparente Kommunikation und strukturierte Prozesse, die messbare 
                   Ergebnisse liefern.
                 </p>
@@ -66,7 +66,7 @@ const ContactPersonalSection = () => {
               <div className="aspect-square bg-medico-white/50 rounded-2xl overflow-hidden">
                 <img 
                   src="/lovable-uploads/Uli.jpg" 
-                  alt="ooliv Gründerteam" 
+                  alt="ooliv Geschäftsführung" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -82,7 +82,7 @@ const ContactPersonalSection = () => {
                   „Keine Umwege, keine Zwischenstellen – nur professionelle Beratung und messbare Ergebnisse für Ihr Unternehmen."
                 </blockquote>
                 <footer className="text-medico-darkGreen/70 text-base font-medium">
-                  — ooliv Gründerteam
+                  — ooliv Geschäftsführung
                 </footer>
               </div>
             </div>

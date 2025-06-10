@@ -27,7 +27,7 @@ const ContactInfoSection = () => {
           {/* Introduction Text */}
           <div className="text-center mb-16">
             <p className="text-lg md:text-xl text-medico-darkGreen max-w-3xl mx-auto leading-relaxed">
-              Bei ooliv erhalten Sie individuelle Beratung und direkte Kommunikation mit unserem Gründerteam. 
+              Bei ooliv erhalten Sie individuelle Beratung und direkte Kommunikation mit unserer Geschäftsführung. 
               Kein Projektmanager dazwischen – nur maßgeschneiderte Lösungen, die funktionieren. 
               Wir freuen uns auf Ihre Nachricht!
             </p>
