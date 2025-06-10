@@ -44,8 +44,8 @@ const DeutscherHero = () => {
         onClick: handleOpenLeadForm
       }}
       secondaryCta={{
-        text: "Arbeiten ansehen",
-        link: "/referenzen"
+        text: "Über ooliv",
+        link: "/ueber-uns"
       }}
     />
   );
