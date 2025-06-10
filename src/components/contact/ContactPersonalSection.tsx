@@ -15,13 +15,13 @@ const ContactPersonalSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-medico-yellow/20 text-medico-darkGreen px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-medico-darkGreen px-4 py-2 rounded-full text-sm font-medium mb-6 border border-medico-mint/50">
               <Users className="h-4 w-4" />
               Persönliche Betreuung
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Persönliche Betreuung<br />
-              <span className="text-medico-turquoise">von Anfang bis Ende</span>
+              von Anfang bis Ende
             </h2>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto leading-relaxed">
               Direkte Kommunikation, transparente Prozesse und maßgeschneiderte Lösungen — unser Gründerteam begleitet Sie persönlich.
