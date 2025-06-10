@@ -15,9 +15,9 @@ const ContentBenefits = () => {
       challenges: [
         'Fehlende Strategie und Zielgruppenanalyse',
         'Unklare Botschaften ohne Markenidentität',
-        'Fehlende SEO-Optimierung (Keywords, Meta, Struktur)',
-        'Unstrukturierte Inhalte ohne Storytelling',
-        'Keine oder zu wenige Website-Inhalte'
+        'Fehlende SEO-Optimierung',
+        'Inhalte ohne Storytelling',
+        'Zu wenige Website-Inhalte'
       ]
     },
     {
@@ -25,9 +25,9 @@ const ContentBenefits = () => {
       title: 'Visuals & Video',
       germanTitle: 'Visuals & Video',
       challenges: [
-        'Visuelle Inkonsistenz (kein einheitliches visuelles Konzept)',
-        'Schwache Visuals (nur Stock-Fotos)',
-        'Fehlende Integration von Videos und Bildern in den Content-Flow'
+        'Keine einheitliche visuelle Sprache',
+        'Schwache Visuals (Stockfotos)',
+        'Keine Integration von Bildern und Videos'
       ]
     }
   ] : [
@@ -38,9 +38,9 @@ const ContentBenefits = () => {
       challenges: [
         'Missing strategy and target group analysis',
         'Unclear messages without brand identity',
-        'Missing SEO optimization (keywords, meta, structure)',
-        'Unstructured content without storytelling',
-        'No or too few website content'
+        'Missing SEO optimization',
+        'Content without storytelling',
+        'Too few website content'
       ]
     },
     {
@@ -48,9 +48,9 @@ const ContentBenefits = () => {
       title: 'Visuals & Video',
       germanTitle: 'Visuals & Video',
       challenges: [
-        'Visual inconsistency (no cohesive visual concept)',
-        'Weak visuals (only stock photos)',
-        'Lack of integration of videos and images into content flow'
+        'No consistent visual language',
+        'Weak visuals (stock photos)',
+        'No integration of images and videos'
       ]
     }
   ];
@@ -68,33 +68,40 @@ const ContentBenefits = () => {
           
           <p className="text-lg text-center max-w-4xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Viele Unternehmen investieren viel Zeit und Budget in Content – und doch bleiben die Ergebnisse oft hinter den Erwartungen zurück. Warum? Weil Content ohne Strategie, klare Botschaften und eine starke visuelle Umsetzung oft wirkungslos bleibt. Als Content Agentur Mainz kennen wir die größten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen. Hier zeigen wir Ihnen, wie wir gemeinsam Content-Herausforderungen meistern."
-              : "Many companies invest a lot of time and budget in content – yet the results often fall short of expectations. Why? Because content without strategy, clear messages and strong visual implementation often remains ineffective. As a Content Agency in Mainz, we know the biggest stumbling blocks that slow down companies' digital growth. Here we show you how we master content challenges together."
+              ? "Hier sind die häufigsten Stolpersteine, die Unternehmen beim digitalen Wachstum bremsen – und wie wir als Content Agentur Mainz sie gemeinsam überwinden."
+              : "Here are the most common stumbling blocks that slow down companies' digital growth – and how we overcome them together as a Content Agency."
             }
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {challengeGroups.map((group, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100"
+              className={`p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 ${
+                index === 0 
+                  ? 'bg-gradient-to-br from-medico-mint to-white md:-mt-4' 
+                  : 'bg-gradient-to-br from-blue-50 to-white md:mt-4'
+              }`}
+              style={{
+                boxShadow: '0 8px 25px rgba(0, 51, 71, 0.08)'
+              }}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mb-6">
-                  <group.icon className="h-6 w-6 text-medico-turquoise" />
+                <div className="w-16 h-16 rounded-full bg-medico-turquoise flex items-center justify-center mb-6 shadow-md">
+                  <group.icon className="h-8 w-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-4 text-brand-heading">
+                  <h3 className="text-xl font-bold mb-6 text-brand-heading">
                     {isGerman ? group.germanTitle : group.title}
                   </h3>
-                  <ul className="text-brand-text text-left space-y-3">
+                  <ul className="text-brand-text text-left space-y-4">
                     {group.challenges.map((challenge, challengeIndex) => (
                       <li key={challengeIndex} className="flex items-start">
-                        <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                          <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                        <div className="w-5 h-5 rounded-full bg-medico-turquoise flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                          <CheckCircle className="h-3 w-3 text-white" />
                         </div>
-                        <span>{challenge}</span>
+                        <span className="leading-relaxed">{challenge}</span>
                       </li>
                     ))}
                   </ul>
@@ -106,10 +113,10 @@ const ContentBenefits = () => {
         
         {/* Transition text to next section */}
         <div className="text-center mt-16">
-          <p className="text-lg text-brand-text max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-brand-text max-w-3xl mx-auto leading-relaxed">
             {isGerman 
-              ? "Als Content Agentur Mainz helfen wir Ihnen, diese Herausforderungen zu meistern – mit einem ganzheitlichen Ansatz, der Strategie, Kreativität und messbare Ergebnisse vereint. Lassen Sie uns gemeinsam Lösungen entwickeln, die Ihre Marke nachhaltig stärken."
-              : "As a Content Agency in Mainz, we help you master these challenges – with a holistic approach that combines strategy, creativity and measurable results. Let us develop solutions together that sustainably strengthen your brand."
+              ? "Als Content Agentur Mainz entwickeln wir Lösungen, die Ihre Marke nachhaltig stärken."
+              : "As a Content Agency, we develop solutions that sustainably strengthen your brand."
             }
           </p>
         </div>
