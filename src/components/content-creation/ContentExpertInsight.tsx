@@ -22,17 +22,17 @@ const ContentExpertInsight = () => {
     {
       icon: Users,
       title: "Erfahrenes Content-Team",
-      description: "Unser Team vereint Content-Strategen, SEO-Experten, Designer und Texter unter einem Dach."
+      description: "Unser Team vereint Content-Strategen, Designer und Texter unter einem Dach."
     },
     {
       icon: Lightbulb,
       title: "Workshops & Trendberatung",
-      description: "Wir teilen unser Wissen in Content-Workshops und beraten Sie zu aktuellen Trends und Best Practices."
+      description: "Wir teilen unser Wissen in Workshops und beraten zu aktuellen Trends und Best Practices."
     },
     {
       icon: Bot,
       title: "KI-gestützte Effizienz",
-      description: "Wir nutzen modernste KI-Tools wie ChatGPT und Midjourney, um schneller und effizienter zu arbeiten – ohne dabei die menschliche Expertise zu ersetzen."
+      description: "Wir nutzen moderne KI-Tools, um effizienter zu arbeiten – ohne die menschliche Expertise zu ersetzen."
     },
     {
       icon: TrendingUp,
@@ -42,7 +42,7 @@ const ContentExpertInsight = () => {
     {
       icon: Zap,
       title: "Schnelle Umsetzung",
-      description: "Dank strukturierter Prozesse und einem eingespielten Team liefern wir Content schnell und in hoher Qualität."
+      description: "Dank strukturierter Prozesse liefern wir Content schnell und in hoher Qualität."
     }
   ] : [
     {
