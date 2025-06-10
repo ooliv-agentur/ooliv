@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -101,13 +100,6 @@ const GermanAboutUs = () => {
         <div className="relative z-20 w-full">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-              {/* Badge */}
-              <div className="mb-6">
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 text-medico-darkGreen border border-medico-darkGreen/20">
-                  Über ooliv
-                </span>
-              </div>
-              
               {/* Main heading - matching master typography */}
               <h1 
                 className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
@@ -548,3 +540,5 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
+</edits_to_apply>
