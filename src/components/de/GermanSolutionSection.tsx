@@ -34,12 +34,6 @@ const GermanSolutionSection = () => {
                 Jetzt Kontakt aufnehmen
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" className="group" asChild>
-                <Link to="/kontakt">
-                  Jetzt Kontakt aufnehmen
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
             </div>
           </div>
         </Reveal>

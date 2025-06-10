@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Reveal from '@/components/animations/Reveal';
@@ -51,13 +52,14 @@ const DeutscherAboutSection = () => {
             {/* Single CTA Button */}
             <div className="flex justify-center">
               <Button 
-                variant="primary"
+                variant="outline"
                 size="lg" 
                 className="group"
                 asChild
               >
                 <Link to="/strategie">
                   Mehr erfahren
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
