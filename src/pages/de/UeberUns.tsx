@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -481,11 +482,11 @@ const GermanAboutUs = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white font-satoshi">
+      <section className="py-16 bg-medico-darkGreen font-satoshi">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-medico-darkGreen leading-tight">Häufig gestellte Fragen</h2>
-            <p className="text-lg max-w-3xl mx-auto text-medico-darkGreen leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white leading-tight">Häufig gestellte Fragen</h2>
+            <p className="text-lg max-w-3xl mx-auto text-gray-300 leading-relaxed">
               Antworten auf die wichtigsten Fragen über unsere Leistungen als Marketing Agentur in Mainz
             </p>
           </div>
@@ -496,13 +497,13 @@ const GermanAboutUs = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-medico-mint rounded-2xl shadow-sm overflow-hidden border border-gray-100"
+                  className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-white/10"
                 >
                   <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-base font-bold text-medico-darkGreen text-left">{faq.question}</h3>
+                    <h3 className="text-base font-bold text-white text-left">{faq.question}</h3>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-medico-darkGreen">
-                    <Separator className="mb-3" />
+                  <AccordionContent className="px-6 pb-4 text-gray-300">
+                    <Separator className="mb-3 bg-white/20" />
                     <p className="text-base leading-relaxed">{faq.answer}</p>
                   </AccordionContent>
                 </AccordionItem>
