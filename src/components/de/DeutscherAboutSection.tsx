@@ -52,7 +52,7 @@ const DeutscherAboutSection = () => {
             {/* Single CTA Button */}
             <div className="flex justify-center">
               <Button 
-                variant="outline"
+                variant="primary"
                 size="lg" 
                 className="group"
                 asChild
