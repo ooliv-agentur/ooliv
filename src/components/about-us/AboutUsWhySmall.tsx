@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { H2, Paragraph } from '@/components/ui/typography';
+import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 
 const AboutUsWhySmall = () => {
   return (
-    <section className="py-16 bg-white font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+    <section className={`${getSectionClasses('medium', 'white')} font-satoshi`}>
+      <div className={getContainerClasses('default')}>
+        <div className={getContainerClasses('narrow')}>
           <H2 alignment="center" className="mb-6">
             Warum wir bewusst klein bleiben
           </H2>

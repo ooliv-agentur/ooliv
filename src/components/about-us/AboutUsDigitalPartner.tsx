@@ -2,15 +2,17 @@
 import React from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { CheckCircle } from 'lucide-react';
+import { H2, Body } from '@/components/ui/typography';
+import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 
 const AboutUsDigitalPartner = () => {
   return (
-    <section className="py-16 bg-medico-mint font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-12 text-center text-medico-darkGreen leading-tight">
+    <section className={`${getSectionClasses('medium', 'mint')} font-satoshi`}>
+      <div className={getContainerClasses('default')}>
+        <H2 alignment="center" className="mb-12">
           Ein digitaler Partner, nicht nur ein Dienstleister
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        </H2>
+        <div className={`${getGridClasses(2, 'large')} items-center max-w-6xl mx-auto`}>
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
             <AspectRatio ratio={4/3}>
               <img 
@@ -33,7 +35,7 @@ const AboutUsDigitalPartner = () => {
                   <div className="h-6 w-6 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-3 flex-shrink-0 mt-0.5">
                     <CheckCircle className="h-4 w-4 text-medico-turquoise" />
                   </div>
-                  <span className="text-base text-medico-darkGreen leading-relaxed">{point}</span>
+                  <Body size="base">{point}</Body>
                 </li>
               ))}
             </ul>

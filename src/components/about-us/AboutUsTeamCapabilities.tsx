@@ -1,18 +1,20 @@
 
 import React from 'react';
 import { Users, Target, Briefcase, Award, Sparkles } from 'lucide-react';
+import { H2, H3, Paragraph } from '@/components/ui/typography';
+import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 
 const AboutUsTeamCapabilities = () => {
   return (
-    <section className="py-16 bg-medico-mint font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center text-medico-darkGreen leading-tight">
+    <section className={`${getSectionClasses('medium', 'mint')} font-satoshi`}>
+      <div className={getContainerClasses('default')}>
+        <H2 alignment="center" className="mb-6">
           Kleines Team. Volle Kompetenz.
-        </h2>
-        <p className="text-lg mb-12 text-center max-w-4xl mx-auto text-medico-darkGreen leading-relaxed">
+        </H2>
+        <Paragraph alignment="center" className={`mb-12 ${getContainerClasses('narrow')}`}>
           Sie arbeiten mit dem CEO – aber Ihr Projekt wird von einem dedizierten Team aus Spezialisten geprägt, die synchron in diesen Bereichen arbeiten:
-        </p>
-        <div className="grid md:grid-cols-3 gap-6">
+        </Paragraph>
+        <div className={getGridClasses(3, 'medium')}>
           {[
             { title: 'UX & UI Design', icon: Users },
             { title: 'WordPress & Headless Development', icon: Briefcase },
@@ -25,7 +27,7 @@ const AboutUsTeamCapabilities = () => {
               <div className="mb-4 h-12 w-12 flex items-center justify-center bg-medico-turquoise/10 rounded-full">
                 <role.icon className="h-6 w-6 text-medico-turquoise" />
               </div>
-              <h3 className="text-lg font-bold mb-2 text-medico-darkGreen">{role.title}</h3>
+              <H3 className="mb-2">{role.title}</H3>
             </div>
           ))}
         </div>
