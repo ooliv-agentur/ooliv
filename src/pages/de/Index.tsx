@@ -210,5 +210,3 @@ const GermanIndex = () => {
 };
 
 export default GermanIndex;
-
-}
