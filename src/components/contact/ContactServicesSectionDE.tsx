@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ContactServicesSectionDE = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-medico-mint/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
           Von der ersten Idee bis zum erfolgreichen GoLive begleiten wir Sie als verlässlicher Partner. Mit klarem Fokus auf digitale Lösungen, die funktionieren – individuell und messbar.
