@@ -11,11 +11,8 @@ const ContentServicesUnified = () => {
   return (
     <section className="py-20 bg-medico-mint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Moved intro text here */}
+        {/* Main heading and description */}
         <div className="text-center mb-16">
-          <p className="text-lg text-brand-text max-w-3xl mx-auto mb-6">
-            ooliv als Content Agentur Mainz bietet maßgeschneiderte Lösungen für all diese Herausforderungen.
-          </p>
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
             Content, der wirkt — von Text bis Visuals
           </h2>
@@ -110,8 +107,15 @@ const ContentServicesUnified = () => {
           </div>
         </div>
 
+        {/* Introductory text moved below the boxes */}
+        <div className="text-center mt-12 mb-8">
+          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+            ooliv als Content Agentur Mainz bietet maßgeschneiderte Lösungen für all diese Herausforderungen.
+          </p>
+        </div>
+
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center">
           <Button 
             onClick={handleStartProject}
             className="bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
