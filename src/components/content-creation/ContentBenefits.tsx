@@ -78,7 +78,7 @@ const ContentBenefits = () => {
           {challengeGroups.map((group, index) => (
             <div 
               key={index}
-              className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+              className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 rounded-full bg-brand-primary/10 mb-6">
