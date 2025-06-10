@@ -8,66 +8,81 @@ const SEOServicesDE = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Leistungen für langfristiges Wachstum</h2>
+          <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Services für nachhaltigen Erfolg</h2>
+          <p className="text-xl text-brand-text max-w-3xl mx-auto">
+            Unsere SEO-Leistungen decken alle relevanten Bereiche ab – von Strategie bis Technik – für messbare Erfolge.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Search className="h-10 w-10" />
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <Search className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Keyword-Strategie</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Keyword-Strategie</h3>
+            <p className="text-brand-text text-center">
               Tiefgreifende Recherche nach relevanten, branchenspezifischen und lokalen Suchbegriffen.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <FileEdit className="h-10 w-10" />
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <FileEdit className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">On-Page-Optimierung</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">On-Page-Optimierung</h3>
+            <p className="text-brand-text text-center">
               Metadaten, URLs, Überschriften und strukturierter Content für bessere Rankings und UX.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Code className="h-10 w-10" />
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <Code className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technische SEO</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Technische SEO</h3>
+            <p className="text-brand-text text-center">
               Website-Geschwindigkeit, Core Web Vitals, saubere Indizierung – das Fundament für SEO-Erfolg.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <FileText className="h-10 w-10" />
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <FileText className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Content-Optimierung</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Content-Optimierung</h3>
+            <p className="text-brand-text text-center">
               Verbesserung bestehender Inhalte oder Erstellung neuer Seiten basierend auf Nutzerbedürfnissen und Suchintention.
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Link2 className="h-10 w-10" />
+          <div className="p-8 rounded-lg shadow-sm" style={{ backgroundColor: '#EAF8F4' }}>
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <Link2 className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Link-Strategie</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Link-Strategie</h3>
+            <p className="text-brand-text text-center">
               Strategische interne Verlinkung und nachhaltige Backlink-Kampagnen zum Aufbau von Autorität.
             </p>
           </div>
 
           <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <MapPin className="h-10 w-10" />
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Lokale SEO</h3>
-            <p className="text-brand-text">
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Lokale SEO</h3>
+            <p className="text-brand-text text-center">
               Steigern Sie Ihre Sichtbarkeit in Mainz und im Rhein-Main-Gebiet: Google Business, Brancheneinträge, Verzeichnisse.
             </p>
           </div>
@@ -91,7 +106,7 @@ const SEOServicesDE = () => {
         </div>
 
         <div className="text-center mt-10">
-          <Link to="/de/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+          <Link to="/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
             Mehr zu On-Page-SEO & Backlink-Strategie
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
