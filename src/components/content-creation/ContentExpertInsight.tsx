@@ -17,32 +17,32 @@ const ContentExpertInsight = () => {
     {
       icon: CheckCircle,
       title: "Strategischer Content-Ansatz",
-      description: "Wir entwickeln keine isolierten Inhalte, sondern denken ganzheitlich – von der ersten Idee bis zur messbaren Performance."
+      description: "Wir entwickeln Inhalte, die alle Kanäle und Zielgruppen erreichen – für nachhaltigen Erfolg."
     },
     {
       icon: Users,
-      title: "Erfahrenes Content-Team",
-      description: "Unser Team vereint Content-Strategen, Designer und Texter unter einem Dach."
+      title: "Content-Expertise",
+      description: "Unsere Content-Strategen, Designer und Texter sorgen für professionelle Umsetzung."
     },
     {
       icon: Lightbulb,
-      title: "Workshops & Trendberatung",
-      description: "Wir teilen unser Wissen in Workshops und beraten zu aktuellen Trends und Best Practices."
+      title: "Workshops",
+      description: "Wir geben unser Wissen weiter und schulen Ihr Team in Content-Strategien und Trends."
     },
     {
       icon: Bot,
-      title: "KI-gestützte Effizienz",
-      description: "Wir nutzen moderne KI-Tools, um effizienter zu arbeiten – ohne die menschliche Expertise zu ersetzen."
+      title: "KI-Tools",
+      description: "Mit modernen KI-Tools arbeiten wir effizient und sichern höchste Qualität."
     },
     {
       icon: TrendingUp,
       title: "Messbare Ergebnisse",
-      description: "Content ohne Kennzahlen ist nur Kunst. Wir tracken Performance und optimieren kontinuierlich."
+      description: "Wir tracken die Performance Ihrer Inhalte und optimieren kontinuierlich."
     },
     {
       icon: Zap,
       title: "Schnelle Umsetzung",
-      description: "Dank strukturierter Prozesse liefern wir Content schnell und in hoher Qualität."
+      description: "Dank eingespielter Abläufe liefern wir Content zügig und zuverlässig."
     }
   ] : [
     {
