@@ -4,6 +4,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Grid2X2, Sparkles, Code2, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ContentProcessUnified = () => {
   const { language } = useLanguage();
@@ -73,7 +81,8 @@ const ContentProcessUnified = () => {
         'Target audience personas',
         'Content calendar'
       ],
-      link: '/strategy'
+      link: '/strategy',
+      icon: Grid2X2
     },
     {
       number: "02",
@@ -85,7 +94,8 @@ const ContentProcessUnified = () => {
         'Video content',
         'Social media content'
       ],
-      link: '/creation'
+      link: '/creation',
+      icon: Sparkles
     },
     {
       number: "03",
@@ -97,7 +107,8 @@ const ContentProcessUnified = () => {
         'Performance optimization',
         'Mobile optimization'
       ],
-      link: '/implementation'
+      link: '/implementation',
+      icon: Code2
     },
     {
       number: "04",
@@ -109,12 +120,13 @@ const ContentProcessUnified = () => {
         'Optimization recommendations',
         'Monthly content updates'
       ],
-      link: '/optimization'
+      link: '/optimization',
+      icon: TrendingUp
     }
   ];
 
   return (
-    <section className="py-20 bg-medico-mint">
+    <section className="py-20 bg-brand-backgroundAlt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-heading mb-6">
@@ -125,48 +137,65 @@ const ContentProcessUnified = () => {
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-                  <Icon className="h-10 w-10 text-medico-turquoise" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 mb-6 text-base leading-relaxed">
-                  {step.description}
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-brand-heading">
-                    {isGerman ? "Was wir liefern:" : "What we deliver:"}
-                  </h4>
-                  <ul className="space-y-2">
-                    {step.deliverables.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-brand-primary mr-3 flex-shrink-0 mt-2"></div>
-                        <span className="text-brand-text">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <Button 
-                    variant="link" 
-                    className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
-                    asChild
-                  >
-                    <Link to={step.link}>
-                      {isGerman ? "Mehr erfahren" : "Learn more"}
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <Card className="h-full">
+                    <CardContent className="p-8 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
+                        <Icon className="h-10 w-10 text-medico-turquoise" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3 text-gray-900">{step.title}</h3>
+                      <p className="text-gray-600 mb-6 text-base leading-relaxed">
+                        {step.description}
+                      </p>
+                      
+                      <div className="mb-6 flex-grow">
+                        <h4 className="text-lg font-semibold mb-3 text-brand-heading">
+                          {isGerman ? "Was wir liefern:" : "What we deliver:"}
+                        </h4>
+                        <ul className="space-y-2">
+                          {step.deliverables.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start">
+                              <div className="w-2 h-2 rounded-full bg-brand-primary mr-3 flex-shrink-0 mt-2"></div>
+                              <span className="text-brand-text">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="mt-auto">
+                        <Button 
+                          variant="link" 
+                          className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                          asChild
+                        >
+                          <Link to={step.link}>
+                            {isGerman ? "Mehr erfahren" : "Learn more"}
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );

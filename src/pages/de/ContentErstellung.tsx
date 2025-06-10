@@ -48,44 +48,51 @@ const GermanContentCreation = () => {
         <meta name="description" content="Content Agentur Mainz – Wir entwickeln Texte, Visuals und Videos, die Vertrauen aufbauen, Google-Rankings verbessern und Leads generieren." />
       </Helmet>
 
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section - White background */}
       <ContentHero />
       
-      {/* 2. New Section: Warum Content entscheidend ist */}
-      <ContentImportance />
+      {/* 2. New Section: Warum Content entscheidend ist - Light mint background */}
+      <div className="bg-medico-mint/20">
+        <ContentImportance />
+      </div>
       
-      {/* 3. Problem-Lösungs-Bereich */}
+      {/* 3. Problem-Lösungs-Bereich - White background */}
       <ContentBenefits />
       
-      {/* 4. Unified Services Section */}
+      {/* 4. Unified Services Section - Mint background */}
       <ContentServicesUnified />
       
-      {/* 5. Unified Process Section */}
+      {/* 5. Unified Process Section - Light gray background */}
       <ContentProcessUnified />
       
-      {/* 6. Why ooliv? with added elements */}
+      {/* 6. Why ooliv? with added elements - White background */}
       <ContentExpertInsight />
       
-      {/* 7. Case Studies */}
-      <section className="py-24 bg-white">
+      {/* 7. Case Studies - Light background */}
+      <section className="py-24 bg-brand-backgroundAlt">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
-      {/* 8. FAQs */}
-      <FAQ 
-        customFaqs={contentFaqs}
-        customTitle="Häufig gestellte Fragen zur Content-Erstellung" 
-      />
+      {/* 8. FAQs - White background */}
+      <div className="bg-white">
+        <FAQ 
+          customFaqs={contentFaqs}
+          customTitle="Häufig gestellte Fragen zur Content-Erstellung" 
+        />
+      </div>
       
-      <CTA 
-        title="Lassen Sie uns Content erstellen, der konvertiert"
-        subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
-        primaryCta="Content-Projekt besprechen"
-        secondaryCta="Showcase ansehen"
-        secondaryCtaLink="/case-studies"
-      />
+      {/* 9. CTA - Mint background */}
+      <div className="bg-medico-mint/30">
+        <CTA 
+          title="Lassen Sie uns Content erstellen, der konvertiert"
+          subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
+          primaryCta="Content-Projekt besprechen"
+          secondaryCta="Showcase ansehen"
+          secondaryCtaLink="/case-studies"
+        />
+      </div>
     </PageLayout>
   );
 };

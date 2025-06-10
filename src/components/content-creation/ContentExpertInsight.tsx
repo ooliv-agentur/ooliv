@@ -4,6 +4,14 @@ import { CheckCircle, Users, Lightbulb, Bot, TrendingUp, Zap } from 'lucide-reac
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ContentExpertInsight = () => {
   const { language } = useLanguage();
@@ -102,7 +110,7 @@ const ContentExpertInsight = () => {
   ];
 
   return (
-    <section className="py-24 bg-brand-backgroundAlt">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading">
@@ -116,37 +124,56 @@ const ContentExpertInsight = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-brand-primary" />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-4 text-brand-heading">
-                  {benefit.title}
-                </h3>
-                
-                <p className="text-brand-text leading-relaxed mb-6">
-                  {benefit.description}
-                </p>
-                
-                <Button 
-                  variant="link" 
-                  className="text-brand-primary hover:text-brand-primaryHover p-0 h-auto font-medium" 
-                  asChild
-                >
-                  <a href={benefit.link}>
-                    {benefit.linkText}
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-            );
-          })}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full">
+                    <CardContent className="p-8 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-brand-primary" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-4 text-brand-heading">
+                        {benefit.title}
+                      </h3>
+                      
+                      <p className="text-brand-text leading-relaxed mb-6 flex-grow">
+                        {benefit.description}
+                      </p>
+                      
+                      <div className="mt-auto">
+                        <Button 
+                          variant="link" 
+                          className="text-brand-primary hover:text-brand-primaryHover p-0 h-auto font-medium" 
+                          asChild
+                        >
+                          <a href={benefit.link}>
+                            {benefit.linkText}
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0" />
+          </div>
+        </Carousel>
 
         <div className="text-center mt-12">
           <Button 

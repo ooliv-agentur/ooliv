@@ -51,30 +51,53 @@ const EnglishContentCreation = () => {
         <meta name="description" content="ooliv creates strategic B2B content: website copy, landing pages & SEO content with a plan – clear, thoughtful, powerful." />
       </Helmet>
       
+      {/* 1. Hero Section - White background */}
       <ContentHero />
-      <ContentBenefits />
+      
+      {/* 2. Problem-Solution Area - Light mint background */}
+      <div className="bg-medico-mint/20">
+        <ContentBenefits />
+      </div>
+      
+      {/* 3. Content Service - White background */}
       <ContentService />
+      
+      {/* 4. Content Services - Light background */}
       <ContentServices />
+      
+      {/* 5. Process - Light gray background */}
       <ContentProcess />
       
-      {/* Use the standardized global CaseStudiesSection */}
+      {/* 6. Use the standardized global CaseStudiesSection - White background */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
-      <FAQ 
-        customFaqs={contentFaqs}
-        customTitle="Frequently Asked Questions About Content Creation" 
-      />
-      <CTA 
-        title="Let's create content that converts"
-        subtitle="We don't just fill pages – we build momentum. Let's create content that ranks, resonates and delivers real business results."
-        primaryCta="Discuss Content Project"
-        secondaryCta="View Showcase"
-        secondaryCtaLink="/en/case-studies"
-      />
+      {/* 7. Why ooliv - Light background */}
+      <div className="bg-brand-backgroundAlt">
+        <ContentExpertInsight />
+      </div>
+      
+      {/* 8. FAQs - White background */}
+      <div className="bg-white">
+        <FAQ 
+          customFaqs={contentFaqs}
+          customTitle="Frequently Asked Questions About Content Creation" 
+        />
+      </div>
+      
+      {/* 9. CTA - Mint background */}
+      <div className="bg-medico-mint/30">
+        <CTA 
+          title="Let's create content that converts"
+          subtitle="We don't just fill pages – we build momentum. Let's create content that ranks, resonates and delivers real business results."
+          primaryCta="Discuss Content Project"
+          secondaryCta="View Showcase"
+          secondaryCtaLink="/en/case-studies"
+        />
+      </div>
     </PageLayout>
   );
 };

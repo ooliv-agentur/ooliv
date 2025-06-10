@@ -4,6 +4,14 @@ import { FileText, Image, Palette, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ContentServices = () => {
   const { language } = useLanguage();
@@ -93,7 +101,7 @@ const ContentServices = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-medico-mint/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen">
@@ -110,35 +118,52 @@ const ContentServices = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div key={index} className="bg-medico-mint/10 p-8 rounded-2xl hover:bg-medico-mint/20 transition-all duration-300">
-                <div className="w-16 h-16 bg-medico-turquoise/20 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-8 h-8 text-medico-turquoise" />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-4 text-medico-darkGreen">
-                  {isGerman ? service.titleDE : service.titleEN}
-                </h3>
-                
-                <p className="text-medico-darkGreen/80 mb-6 leading-relaxed">
-                  {isGerman ? service.descriptionDE : service.descriptionEN}
-                </p>
-                
-                <ul className="space-y-2">
-                  {(isGerman ? service.featuresDE : service.featuresEN).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <span className="w-1.5 h-1.5 bg-medico-turquoise rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-sm text-medico-darkGreen/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <Card className="h-full bg-medico-mint/10 border-none">
+                    <CardContent className="p-8 h-full flex flex-col">
+                      <div className="w-16 h-16 bg-medico-turquoise/20 rounded-xl flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-medico-turquoise" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold mb-4 text-medico-darkGreen">
+                        {isGerman ? service.titleDE : service.titleEN}
+                      </h3>
+                      
+                      <p className="text-medico-darkGreen/80 mb-6 leading-relaxed">
+                        {isGerman ? service.descriptionDE : service.descriptionEN}
+                      </p>
+                      
+                      <ul className="space-y-2 flex-grow">
+                        {(isGerman ? service.featuresDE : service.featuresEN).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start">
+                            <span className="w-1.5 h-1.5 bg-medico-turquoise rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span className="text-sm text-medico-darkGreen/70">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
+            <CarouselNext className="relative right-0 top-0 translate-y-0" />
+          </div>
+        </Carousel>
 
         <div className="text-center mt-12">
           <p className="text-medico-turquoise font-medium mb-4">
