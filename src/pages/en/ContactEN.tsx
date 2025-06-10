@@ -3,9 +3,12 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import ContactHero from '@/components/contact/ContactHero';
+import ContactInfo from '@/components/contact/ContactInfo';
+import ContactCta from '@/components/contact/ContactCta';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
+import ContactSEOTextEN from '@/components/contact/ContactSEOTextEN';
 
 const EnglishContact = () => {
   const { setLanguage } = useLanguage();
@@ -38,7 +41,7 @@ const EnglishContact = () => {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout seoText={<ContactSEOTextEN />}>
       <Helmet>
         <title>Contact – ooliv Marketing Agency Mainz</title>
         <meta name="description" content="Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project." />
@@ -46,12 +49,9 @@ const EnglishContact = () => {
         <meta name="focus-keyword" content="Marketing Agency Mainz" />
       </Helmet>
       
-      <PageHero 
-        title="Contact – ooliv Marketing Agency Mainz"
-        subtitle="Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project."
-        startProjectText="Start Your Project"
-        seeWorkText="Learn About Our Services"
-      />
+      <ContactHero />
+      <ContactInfo />
+      <ContactCta />
       
       <FAQ 
         customFaqs={contactFaqs}

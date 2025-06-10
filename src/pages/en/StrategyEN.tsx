@@ -3,10 +3,14 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import PageHero from '@/components/PageHero';
+import StrategyHero from '@/components/strategy/StrategyHero';
+import StrategyBenefits from '@/components/strategy/StrategyBenefits';
+import StrategyApproach from '@/components/strategy/StrategyApproach';
+import StrategyCta from '@/components/strategy/StrategyCta';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import ClientLogos from '@/components/ClientLogos';
+import StrategySEOTextEN from '@/components/strategy/StrategySEOTextEN';
 
 const EnglishStrategy = () => {
   const { setLanguage } = useLanguage();
@@ -39,7 +43,7 @@ const EnglishStrategy = () => {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout seoText={<StrategySEOTextEN />}>
       <Helmet>
         <title>Strategy & Concept for Digital Success – ooliv Agency Mainz</title>
         <meta name="description" content="We develop individual digital strategies including concept and optimize your website's user experience – for more visibility, more leads and sustainable success." />
@@ -47,18 +51,10 @@ const EnglishStrategy = () => {
         <meta name="focus-keyword" content="Digital Strategy Mainz" />
       </Helmet>
       
-      <PageHero 
-        title="Strategy & Concept for Digital Success"
-        subtitle="We develop individual digital strategies including concept and optimize your website's user experience – for more visibility, more leads and sustainable success."
-        primaryCta={{
-          text: "Schedule Strategy Call",
-          link: "/en/contact"
-        }}
-        secondaryCta={{
-          text: "Learn About Our Services",
-          link: "/en/webdesign"
-        }}
-      />
+      <StrategyHero />
+      <StrategyBenefits />
+      <StrategyApproach />
+      <StrategyCta />
       
       <FAQ 
         customFaqs={strategyFaqs}

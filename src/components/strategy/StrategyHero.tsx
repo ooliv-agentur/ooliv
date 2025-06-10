@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Phone, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ContactHero = () => {
+const StrategyHero = () => {
   const handleOpenLeadForm = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
@@ -13,19 +14,19 @@ const ContactHero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-heading mb-6">
-            Contact – ooliv Marketing Agency Mainz
+            Strategy & Concept for Digital Success
           </h1>
           <p className="text-xl md:text-2xl text-brand-text max-w-4xl mx-auto mb-10">
-            Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project.
+            We develop individual digital strategies including concept and optimize your website's user experience – for more visibility, more leads and sustainable success.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
               className="bg-brand-primary text-white hover:bg-brand-primaryHover"
               onClick={handleOpenLeadForm}
             >
-              Start Your Project
+              Schedule Strategy Call
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -35,22 +36,11 @@ const ContactHero = () => {
               className="border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
               asChild
             >
-              <a href="tel:+4961316367801">
-                <Phone className="mr-2 h-5 w-5" />
-                Call Now
-              </a>
+              <Link to="/en/webdesign">
+                Learn About Our Services
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-brand-text">
-            <div className="flex items-center gap-2">
-              <Phone className="h-5 w-5" />
-              <span>+49 (0) 6131 63 67 801</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="h-5 w-5" />
-              <span>info@ooliv.de</span>
-            </div>
           </div>
         </div>
       </div>
@@ -58,4 +48,4 @@ const ContactHero = () => {
   );
 };
 
-export default ContactHero;
+export default StrategyHero;
