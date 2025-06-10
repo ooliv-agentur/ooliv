@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
+import { Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
 
 const SEOServicesDE = () => {
   return (
@@ -102,13 +101,6 @@ const SEOServicesDE = () => {
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Midjourney (für Visuals)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Sora (für Video)</div>
           </div>
-        </div>
-
-        <div className="text-center mt-10">
-          <Link to="/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
-            Mehr zu On-Page-SEO & Backlink-Strategie
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
         </div>
       </div>
     </section>
