@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -16,16 +17,9 @@ import PageHero from '@/components/PageHero';
 const EnglishIndex = () => {
   const { setLanguage } = useLanguage();
   
-  // Use useEffect to set language once after component mounts
   useEffect(() => {
     setLanguage('en');
-    // Add a more detailed debug console log
-    console.log('EnglishIndex component mounted - setting language to English');
   }, [setLanguage]);
-  
-  // Update to correct video path in lovable-uploads folder
-  const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
-  console.log('English homepage: Using video path:', videoPath);
   
   const simplifiedFaqs = [
     {
@@ -53,13 +47,14 @@ const EnglishIndex = () => {
   return (
     <>
       <Helmet>
-        {/* Force immediate application of these tags with higher priority */}
         <html lang="en" />
         <title>Web Design Agency Mainz – Custom Websites That Deliver Results</title>
         <meta 
           name="description" 
           content="ooliv – Your Web Design Agency in Mainz. We create WordPress, e-commerce, and custom websites focused on SEO, UX, and measurable business growth." 
         />
+        <meta name="keywords" content="Web Design Agency Mainz, WordPress Development Mainz, SEO Agency Mainz, Digital Marketing Mainz, Custom Website Design Mainz" />
+        <meta name="focus-keyword" content="Web Design Agency Mainz" />
       </Helmet>
       <PageLayout className="overflow-x-hidden">
         <PageHero 

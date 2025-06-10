@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -88,10 +87,10 @@ function App() {
 
                 {/* English Routes */}
                 <Route path="/en" element={<EnglishIndex />} />
-                <Route path="/en/web-design" element={<EnglishWebDesign />} />
-                <Route path="/en/web-development" element={<EnglishWebDevelopment />} />
-                <Route path="/en/seo" element={<EnglishSEO />} />
+                <Route path="/en/webdesign" element={<EnglishWebDesign />} />
+                <Route path="/en/webdevelopment" element={<EnglishWebDevelopment />} />
                 <Route path="/en/content-creation" element={<EnglishContentCreation />} />
+                <Route path="/en/seo" element={<EnglishSEO />} />
                 <Route path="/en/google-ads" element={<EnglishGoogleAds />} />
                 <Route path="/en/ai-technologies" element={<EnglishAiTechnologies />} />
                 <Route path="/en/case-studies" element={<EnglishCaseStudies />} />

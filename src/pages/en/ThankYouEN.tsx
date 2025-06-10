@@ -2,115 +2,78 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight, Phone, Mail, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import ConfettiCelebration from '@/components/ConfettiCelebration';
-import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const ThankYouEN = () => {
+const EnglishThankYou = () => {
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
     setLanguage('en');
-    
-    // Auto-redirect after 8 seconds
-    const redirectTimeout = setTimeout(() => {
-      // Apply fade-out effect to the content
-      const content = document.querySelector('.thank-you-content');
-      if (content) {
-        content.classList.add('opacity-0', 'transition-opacity', 'duration-1000');
-      }
-      
-      // Wait for the fade animation to complete before redirecting
-      setTimeout(() => {
-        window.location.href = '/en';
-      }, 1000);
-    }, 8000);
-    
-    return () => {
-      clearTimeout(redirectTimeout);
-    };
   }, [setLanguage]);
-
-  // Create a nice entrance effect for the content
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
-  
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
 
   return (
     <PageLayout>
-      <Helmet prioritizeSeoTags>
-        <title>Thank You for Your Inquiry | ooliv</title>
-        <meta name="description" content="Thank you for your message! We will get back to you shortly – Your advertising agency ooliv from Mainz, Germany." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://ooliv.de/en/thank-you" />
+      <Helmet>
+        <title>Thank You | ooliv Marketing Agency Mainz</title>
+        <meta name="description" content="Thank you for your inquiry! We have received your message and will get back to you shortly." />
+        <meta name="keywords" content="Thank you message ooliv Mainz, Inquiry received marketing agency, Contact confirmation Mainz, ooliv response Mainz" />
       </Helmet>
-      
-      {/* Add the confetti animation */}
-      <ConfettiCelebration />
-      
-      <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
-        <div className="container px-4">
-          <motion.div 
-            className="max-w-[720px] mx-auto text-center thank-you-content"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-              <div className="h-16 w-16 rounded-full bg-[#004d51]/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-[#004d51]" aria-hidden="true" />
+
+      <section className="bg-white py-24 font-satoshi">
+        <ConfettiCelebration />
+        <div className="container mx-auto px-4 md:px-6">
+          <Card className="max-w-3xl mx-auto border-none shadow-xl rounded-lg overflow-hidden">
+            <CardContent className="p-8 text-center">
+              <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Thank you for your inquiry!</h2>
+              <p className="text-gray-600 mb-6">
+                We have received your message and will get back to you as soon as possible.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="shadow-md border-none hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6 flex flex-col items-center justify-center">
+                    <Phone className="h-8 w-8 text-blue-500 mb-3" />
+                    <h3 className="text-xl font-semibold text-gray-700 mb-2">Call directly</h3>
+                    <p className="text-gray-500 mb-4">For urgent matters</p>
+                    <Button asChild variant="default" className="bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                      <a href="tel:+4961316367801" className="flex items-center gap-2">
+                        Call now <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="shadow-md border-none hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6 flex flex-col items-center justify-center">
+                    <Mail className="h-8 w-8 text-orange-500 mb-3" />
+                    <h3 className="text-xl font-semibold text-gray-700 mb-2">Send email</h3>
+                    <p className="text-gray-500 mb-4">For detailed inquiries</p>
+                    <Button asChild variant="default" className="bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                      <a href="mailto:info@ooliv.de" className="flex items-center gap-2">
+                        Send email <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
-            </motion.div>
-            
-            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-brand-heading" variants={itemVariants}>
-              Thank you for your inquiry!
-            </motion.h1>
-            
-            <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
-              We have received your information and will get back to you as soon as possible.
-              If you have any questions in the meantime, please feel free to write to us at{' '}
-              <a 
-                href="mailto:info@ooliv.de" 
-                className="text-[#004d51] hover:underline"
-                aria-label="Send an email to info@ooliv.de"
-              >
-                info@ooliv.de
-              </a>.
-            </motion.p>
-            
-            <motion.div variants={itemVariants}>
-              <Button 
-                asChild
-                className="bg-[#004d51] hover:bg-[#003d41]"
-              >
-                <Link to="/en" aria-label="Back to Home">
-                  Back to Home
+              
+              <Button asChild className="mt-8 bg-medico-turquoise hover:bg-medico-turquoise/90 text-white">
+                <Link to="/en" className="flex items-center gap-2">
+                  Back to homepage <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-            </motion.div>
-          </motion.div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
+      </section>
     </PageLayout>
   );
 };
 
-export default ThankYouEN;
+export default EnglishThankYou;
