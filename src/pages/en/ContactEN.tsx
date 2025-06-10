@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import PageHero from '@/components/PageHero';
+import FAQ from '@/components/FAQ';
+import CTA from '@/components/CTA';
 
 const EnglishContact = () => {
   const { setLanguage } = useLanguage();
@@ -10,6 +13,29 @@ const EnglishContact = () => {
   useEffect(() => {
     setLanguage('en');
   }, [setLanguage]);
+
+  const contactFaqs = [
+    {
+      question: "What's the best way to get in touch?",
+      answer: "You can reach us via email at info@ooliv.de, call us at +49 (0) 6131 63 67 801, or use our contact form. For urgent matters, phone calls often get the quickest response during business hours."
+    },
+    {
+      question: "Do you offer free consultations?",
+      answer: "Yes, we offer free initial consultations to discuss your project needs, goals, and how we can help. This allows us to understand your requirements and provide you with a tailored proposal."
+    },
+    {
+      question: "What information should I prepare for our consultation?",
+      answer: "Please prepare information about your business goals, target audience, current website (if any), timeline, budget range, and any specific requirements or challenges you're facing. This helps us provide more targeted advice."
+    },
+    {
+      question: "How quickly do you respond to inquiries?",
+      answer: "We typically respond to all inquiries within 24 hours on business days. For urgent matters, calling us directly often provides the fastest response during our office hours."
+    },
+    {
+      question: "Can we meet in person in Mainz?",
+      answer: "Absolutely! We're happy to meet in person at our office in Mainz or at your location. We also offer video consultations for clients who prefer remote meetings or are located outside the Mainz area."
+    }
+  ];
 
   return (
     <PageLayout>
@@ -20,16 +46,25 @@ const EnglishContact = () => {
         <meta name="focus-keyword" content="Marketing Agency Mainz" />
       </Helmet>
       
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-heading mb-6">
-            Contact – ooliv Marketing Agency Mainz
-          </h1>
-          <p className="text-xl text-brand-text max-w-3xl mx-auto">
-            Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        title="Contact – ooliv Marketing Agency Mainz"
+        subtitle="Contact ooliv – Your marketing agency in Mainz. Personal consultation, clear communication and individual solutions for your project."
+        startProjectText="Start Your Project"
+        seeWorkText="Learn About Our Services"
+      />
+      
+      <FAQ 
+        customFaqs={contactFaqs}
+        customTitle="Frequently Asked Questions About Getting Started"
+        customCtaText="Ready to get started? Contact us"
+      />
+      
+      <CTA 
+        title="Ready to start your project?"
+        subtitle="Let's discuss how we can help you achieve your digital marketing goals."
+        primaryCta="Contact Us Now"
+        secondaryCta="Schedule a Call"
+      />
     </PageLayout>
   );
 };
