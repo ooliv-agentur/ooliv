@@ -39,7 +39,7 @@ const ContentHero = () => {
               }}
             >
               {isGerman 
-                ? "Content-Erstellung für B2B-Unternehmen mit Strategie" 
+                ? "Ihre Content Agentur Mainz – strategische Inhalte für B2B-Erfolg" 
                 : "Content Creation for B2B Companies with Strategy"
               }
             </h1>
@@ -50,7 +50,7 @@ const ContentHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Wir entwickeln strategische B2B-Inhalte: Website-Texte, Blog-Artikel, SEO-Content, Bilder, Videos und Infografiken – klar, durchdacht, wirkungsvoll." 
+                ? "Wir entwickeln durchdachte Inhalte für Websites, Blogs, SEO und Visuals – effizient, konversionsstark und KI-unterstützt." 
                 : "We create strategic B2B content: website copy, blog articles, SEO content, images, videos and infographics – clear, thoughtful, powerful."
               }
             </p>
