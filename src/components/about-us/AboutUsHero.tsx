@@ -22,12 +22,12 @@ const AboutUsHero = () => {
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-4xl mx-auto flex flex-col justify-center items-center text-center min-h-[60vh]">
-            <h1 className="font-medium mb-6 sm:mb-8 leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-medico-darkGreen">
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+            <h1 className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-medico-darkGreen">
               Marketing Agentur Mainz
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 leading-relaxed max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left leading-relaxed">
               Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
             </p>
             
