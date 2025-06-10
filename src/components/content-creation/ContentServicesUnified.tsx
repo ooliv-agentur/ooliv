@@ -21,7 +21,7 @@ const ContentServicesUnified = () => {
           {/* Left Column - Text & Visual Content */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div className="flex items-center mb-6">
-              <div className="p-3 rounded-xl bg-medico-mint mr-4">
+              <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4">
                 <FileText className="h-6 w-6 text-medico-turquoise" />
               </div>
               <h3 className="text-xl font-bold text-brand-heading">
@@ -35,23 +35,33 @@ const ContentServicesUnified = () => {
             
             <div className="space-y-3">
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">SEO-optimierte Texte</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Blog-Artikel</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Bilder, Illustrationen, Videos</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Technische & B2B-Inhalte</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Konsistenter Markenstil</span>
               </div>
             </div>
@@ -60,7 +70,7 @@ const ContentServicesUnified = () => {
           {/* Right Column - Struktur & Storytelling */}
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div className="flex items-center mb-6">
-              <div className="p-3 rounded-xl bg-medico-mint mr-4">
+              <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mr-4">
                 <LayoutList className="h-6 w-6 text-medico-turquoise" />
               </div>
               <h3 className="text-xl font-bold text-brand-heading">
@@ -74,15 +84,21 @@ const ContentServicesUnified = () => {
             
             <div className="space-y-3">
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Content-Architektur</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Storytelling-Struktur</span>
               </div>
               <div className="flex items-center">
-                <CheckCircle className="h-5 w-5 text-medico-turquoise mr-3 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                </div>
                 <span className="text-brand-text">Conversion-Funnel-Unterstützung</span>
               </div>
             </div>
