@@ -1,16 +1,19 @@
 
 import React from 'react';
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from '@/contexts/LanguageContext';
+
+interface AiTool {
+  name: string;
+  logoSrc: string;
+  description: string;
+}
 
 interface AiToolsSectionProps {
   title: string;
   subtitle: string;
-  tools: {
-    name: string;
-    logoSrc: string;
-    description: string;
-  }[];
+  tools: AiTool[];
   note: string;
 }
 
@@ -18,8 +21,8 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
   const { language } = useLanguage();
   
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-white font-satoshi">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,15 +30,15 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 text-brand-heading">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen">
             {title}
           </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
           {tools.map((tool, index) => (
             <motion.div
               key={index}
@@ -43,50 +46,41 @@ const AiToolsSection = ({ title, subtitle, tools, note }: AiToolsSectionProps) =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col"
             >
-              {/* Logo container with fixed height */}
-              <div className="h-24 flex items-center justify-center mb-6">
-                <img 
-                  src={tool.logoSrc} 
-                  alt={tool.name} 
-                  className="max-h-full max-w-full object-contain" 
-                />
-              </div>
-              
-              {/* Text content container with fixed padding and top alignment */}
-              <div className="flex flex-col items-center">
-                {/* Headline container with fixed height */}
-                <div className="h-8 mb-3 flex items-center">
-                  <h3 className="text-xl font-bold text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis max-w-full">
+              <Card className="h-full border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center p-3">
+                      <img 
+                        src={tool.logoSrc} 
+                        alt={`${tool.name} Logo`}
+                        className="w-10 h-10 object-contain"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-center text-medico-darkGreen">
                     {tool.name}
                   </h3>
-                </div>
-                
-                {/* Description container with same height */}
-                <div className="text-center">
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 text-center flex-grow leading-relaxed">
                     {tool.description}
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
-        
-        {note && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center mt-6"
-          >
-            <p className="text-sm text-gray-600 max-w-4xl mx-auto">
-              {note}
-            </p>
-          </motion.div>
-        )}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center"
+        >
+          <p className="text-gray-600 italic max-w-4xl mx-auto leading-relaxed">
+            {note}
+          </p>
+        </motion.div>
       </div>
     </section>
   );
