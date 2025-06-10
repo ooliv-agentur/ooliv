@@ -26,9 +26,9 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "online erfolgreich zu werden.",
-    "ihre Marke zu stärken.",
-    "digital zu überzeugen."
+    "online sichtbar zu werden.",
+    "mehr Leads zu generieren.",
+    "mit ihrer Website zu überzeugen."
   ];
   
   return (

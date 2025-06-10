@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -7,28 +7,6 @@ import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const DeutscherAboutSection = () => {
-  const [isDispatching, setIsDispatching] = useState(false);
-  
-  const handleOpenLeadForm = () => {
-    if (isDispatching) {
-      console.log('🚫 DeutscherAboutSection: Already dispatching, ignoring click');
-      return;
-    }
-    
-    setIsDispatching(true);
-    console.log('🚀 DeutscherAboutSection: "Projekt starten" button clicked');
-    
-    setTimeout(() => {
-      const event = new CustomEvent('open-lead-form', { detail: { source: 'DeutscherAboutSection' } });
-      window.dispatchEvent(event);
-      console.log('📡 DeutscherAboutSection: open-lead-form event dispatched');
-      
-      setTimeout(() => {
-        setIsDispatching(false);
-      }, 1000);
-    }, 0);
-  };
-
   const services = [
     {
       title: "Strategie & UX",
@@ -62,47 +40,11 @@ const DeutscherAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Ihre Werbeagentur Mainz: Strategie, Content, Design.
+              Wo Strategie auf Umsetzung trifft – in Mainz.
             </h2>
-            <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Wo Strategie auf Umsetzung trifft – damit Ihre Website messbar mehr Leads generiert und Ihre Marke stärkt.
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.5' }}>
+              Wir sind eine spezialisierte Digitalagentur aus Mainz. Seit 2008 entwickeln wir Websites, die das Wesentliche Ihres Unternehmens erfassen – strategisch geplant, inhaltsstark und technisch messbar.
             </p>
-            <p className="text-lg text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-              Seit 2008 entwickeln wir Websites für B2B-Unternehmen, die das Wesentliche Ihrer Marke auf den Punkt bringen: strategisch geplant, inhaltsstark und technisch messbar. Mit dem richtigen Mix aus Analyse, Content und Design sorgen wir dafür, dass Ihre Website wirklich für Sie arbeitet.
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                style={{ 
-                  backgroundColor: '#FFD700', 
-                  color: '#003347',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFC700';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                }}
-                onClick={handleOpenLeadForm}
-              >
-                Projekt starten
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
-                asChild
-              >
-                <Link to="/strategie">
-                  Strategie entdecken
-                </Link>
-              </Button>
-            </div>
           </div>
         </Reveal>
         
