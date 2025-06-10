@@ -170,12 +170,14 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         {category.description}
                       </p>
                     </div>
-                    <Switch
-                      checked={settings[category.key]}
-                      onCheckedChange={() => handleToggle(category.key)}
-                      disabled={category.required}
-                      className="mt-1"
-                    />
+                    <div className="flex-shrink-0">
+                      <Switch
+                        checked={settings[category.key]}
+                        onCheckedChange={() => handleToggle(category.key)}
+                        disabled={category.required}
+                        className="data-[state=checked]:bg-medico-turquoise"
+                      />
+                    </div>
                   </div>
                 </div>
               );
