@@ -7,6 +7,13 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone, MapPin, Mail, Clock, MessageCircle, Send, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ContactSEOText from '@/components/contact/ContactSEOText';
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import CTA from '@/components/CTA';
 
 const GermanContact = () => {
   const { setLanguage } = useLanguage();
@@ -19,6 +26,29 @@ const GermanContact = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
+  const contactFaqs = [
+    {
+      question: "Wie schnell erhalte ich eine Antwort auf meine Anfrage?",
+      answer: "Wir antworten in der Regel noch am selben Tag – ohne Warteschleifen."
+    },
+    {
+      question: "Habe ich einen festen Ansprechpartner für mein Projekt?",
+      answer: "Ja, bei ooliv haben Sie immer einen direkten Ansprechpartner aus unserer Geschäftsführung."
+    },
+    {
+      question: "Kann ich ein kostenloses Erstgespräch vereinbaren?",
+      answer: "Ja, selbstverständlich! Kontaktieren Sie uns telefonisch, per E-Mail oder über das Formular."
+    },
+    {
+      question: "Welche Leistungen bietet ooliv an?",
+      answer: "Strategie, Webdesign, Webentwicklung, Content-Erstellung, SEO-Optimierung, Google Ads und KI-Technologien."
+    },
+    {
+      question: "Wie läuft der Projektprozess bei ooliv ab?",
+      answer: "Klar strukturiert: Erstgespräch, Strategie, Umsetzung, Testing und Launch – alles transparent und ohne Zwischenstellen."
+    }
+  ];
+
   return (
     <PageLayout 
       className="overflow-x-hidden"
@@ -29,9 +59,9 @@ const GermanContact = () => {
         <meta name="description" content="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt." />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero Section - consistent with other subpages */}
       <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
-        {/* Enhanced floating circles animation */}
+        {/* Floating circles animation - same as other subpages */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
           <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
@@ -65,7 +95,7 @@ const GermanContact = () => {
                 Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege.
               </p>
               
-              {/* CTA buttons */}
+              {/* CTA buttons - consistent with other subpages */}
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Button 
                   size="lg" 
@@ -104,18 +134,18 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      {/* Introduction Section - consistent spacing and typography */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-lg md:text-xl text-medico-darkGreen leading-relaxed text-center">
             Wir sind Ihr Partner für individuelle Websites, SEO und digitales Marketing. Bei ooliv steht persönliche Beratung an erster Stelle – ohne Zwischenstellen und ohne Warteschleifen. Unser Team begleitet Sie von der ersten Idee bis zum erfolgreichen Launch. Lassen Sie uns gemeinsam Ihr nächstes Projekt erfolgreich umsetzen.
           </p>
         </div>
       </section>
 
-      {/* Contact Information Section */}
-      <section className="py-16 bg-medico-mint">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      {/* Contact Information Section - same style as other contact sections */}
+      <section className="py-24 bg-medico-mint/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
               <MapPin className="h-8 w-8 mx-auto mb-4 text-medico-turquoise" />
@@ -160,11 +190,11 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Project Inquiry Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+      {/* Project Inquiry Section - consistent styling */}
+      <section className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Send className="h-12 w-12 mx-auto mb-6 text-medico-turquoise" />
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-medico-darkGreen">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-medico-darkGreen">
             Projekt-Details über unser Formular teilen
           </h2>
           <Button 
@@ -189,9 +219,9 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-16 bg-medico-mint">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      {/* Trust Section - same bullet/icon style as other subpages */}
+      <section className="py-24 bg-medico-mint/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-medico-darkGreen">
             Warum ooliv?
           </h2>
@@ -211,84 +241,53 @@ const GermanContact = () => {
         </div>
       </section>
 
-      {/* Services Overview Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+      {/* Services Overview Section - consistent typography */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg md:text-xl text-medico-darkGreen leading-relaxed">
             Unser Leistungsportfolio umfasst Strategie, Webdesign, Webentwicklung, Content-Erstellung, SEO-Optimierung, Google Ads und KI-Technologien. Dabei setzen wir auf durchdachte Prozesse und messbare Ergebnisse – individuell auf Ihr Unternehmen abgestimmt.
           </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-medico-darkGreen">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      {/* FAQ Section - same accordion component as other pages */}
+      <section className="py-24 bg-medico-darkGreen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
             Häufige Fragen
           </h2>
-          <div className="space-y-6">
-            {[
-              {
-                question: "Wie schnell erhalte ich eine Antwort auf meine Anfrage?",
-                answer: "Wir antworten in der Regel noch am selben Tag – ohne Warteschleifen."
-              },
-              {
-                question: "Habe ich einen festen Ansprechpartner für mein Projekt?",
-                answer: "Ja, bei ooliv haben Sie immer einen direkten Ansprechpartner aus unserer Geschäftsführung."
-              },
-              {
-                question: "Kann ich ein kostenloses Erstgespräch vereinbaren?",
-                answer: "Ja, selbstverständlich! Kontaktieren Sie uns telefonisch, per E-Mail oder über das Formular."
-              },
-              {
-                question: "Welche Leistungen bietet ooliv an?",
-                answer: "Strategie, Webdesign, Webentwicklung, Content-Erstellung, SEO-Optimierung, Google Ads und KI-Technologien."
-              },
-              {
-                question: "Wie läuft der Projektprozess bei ooliv ab?",
-                answer: "Klar strukturiert: Erstgespräch, Strategie, Umsetzung, Testing und Launch – alles transparent und ohne Zwischenstellen."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300 cursor-pointer group">
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-medico-yellow transition-colors">
-                  • {faq.question}
-                </h3>
-                <p className="text-white/90 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          
+          <div className="bg-medico-darkGreen/10 backdrop-blur-sm rounded-2xl p-6 md:p-8">
+            <Accordion type="single" collapsible className="w-full">
+              {contactFaqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-2 mb-4 shadow-sm hover:bg-white/20 transition-all duration-200"
+                >
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-white hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-yellow transition-colors duration-200">
+                    <span className="flex items-center">
+                      <span className="text-medico-yellow mr-3">•</span>
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[15px] md:text-[16px] text-white/90 leading-relaxed mt-4 pb-4 ml-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
 
-      {/* Footer CTA Section */}
-      <section className="py-16 bg-medico-mint">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <p className="text-xl md:text-2xl text-medico-darkGreen leading-relaxed mb-8">
-            Über 100 erfolgreiche Projekte umgesetzt – starten Sie jetzt Ihr digitales Projekt mit ooliv.
-          </p>
-          <Button 
-            size="lg" 
-            className="font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            style={{ 
-              backgroundColor: '#FFD700', 
-              color: '#003347',
-              border: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }}
-            onClick={handleStartProject}
-          >
-            Jetzt Projekt starten
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </div>
-      </section>
+      {/* Footer CTA Section - consistent with site CTA styling */}
+      <CTA 
+        title="Über 100 erfolgreiche Projekte umgesetzt – starten Sie jetzt Ihr digitales Projekt mit ooliv."
+        subtitle=""
+        primaryCta="Jetzt Projekt starten"
+        lightBackground={true}
+      />
     </PageLayout>
   );
 };
