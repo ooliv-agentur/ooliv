@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -481,34 +480,54 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-medico-darkGreen font-satoshi">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white leading-tight">Häufig gestellte Fragen</h2>
-            <p className="text-lg max-w-3xl mx-auto text-gray-300 leading-relaxed">
+      {/* FAQ Section - Updated to match master style guide */}
+      <section className="py-24 bg-white font-satoshi">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+              Häufig gestellte Fragen
+            </h2>
+            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
               Antworten auf die wichtigsten Fragen über unsere Leistungen als Marketing Agentur in Mainz
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-3">
+          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqItems.map((faq, index) => (
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-white/5 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden border border-white/10"
+                  className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-base font-bold text-white text-left">{faq.question}</h3>
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                    {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-300">
-                    <Separator className="mb-3 bg-white/20" />
-                    <p className="text-base leading-relaxed">{faq.answer}</p>
+                  <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                    {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20">
+              <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
+                Haben Sie noch weitere Fragen?
+              </h3>
+              <Button 
+                asChild 
+                variant="outline" 
+                className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300"
+              >
+                <Link to="/kontakt" className="flex items-center gap-2">
+                  <span className="text-xl">+</span>
+                  Weitere Fragen? Sprechen Sie mit uns
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -517,3 +536,5 @@ const GermanAboutUs = () => {
 };
 
 export default GermanAboutUs;
+
+</edits_to_apply>
