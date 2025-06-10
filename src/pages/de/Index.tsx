@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -45,7 +46,7 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'Marketing Agentur Mainz – ooliv';
+    document.title = 'ooliv - Werbeagentur Mainz';
   }, []);
 
   // Comprehensive LocalBusiness schema markup
@@ -127,7 +128,7 @@ const GermanIndex = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>Marketing Agentur Mainz – ooliv</title>
+        <title>ooliv - Werbeagentur Mainz</title>
         <meta
           name="description"
           content="ooliv – Ihre Marketing Agentur in Mainz: Kreativ, strategisch und individuell. Wir bringen Ihr Unternehmen mit durchdachten Konzepten und Expertise voran."
@@ -138,7 +139,7 @@ const GermanIndex = () => {
         <meta name="geo.placename" content="Mainz" />
         <meta name="geo.position" content="49.9928617;8.2472526" />
         <meta name="ICBM" content="49.9928617, 8.2472526" />
-        <meta name="DC.title" content="Marketing Agentur Mainz - ooliv" />
+        <meta name="DC.title" content="ooliv - Werbeagentur Mainz" />
         
         {/* LocalBusiness Schema Markup */}
         <script type="application/ld+json">
