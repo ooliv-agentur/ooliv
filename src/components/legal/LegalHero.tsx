@@ -38,10 +38,10 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading */}
             <h1 
-              className="font-medium mb-6 sm:mb-8 leading-tight text-center text-4xl sm:text-5xl md:text-6xl lg:text-[52px] lg:leading-[68px]"
+              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
               style={{ 
                 color: '#003343' 
               }}
@@ -51,17 +51,17 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-xl text-medico-darkGreen mb-8 sm:mb-10 text-center max-w-3xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
               {subtitle}
             </p>
             
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Button 
                 size="lg" 
-                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 style={{ 
                   backgroundColor: '#FFD700', 
                   color: '#003347',
@@ -93,7 +93,7 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                   onClick={secondaryCta.onClick}
                   asChild={!secondaryCta.onClick}
                 >
