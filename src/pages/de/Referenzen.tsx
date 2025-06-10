@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -20,10 +21,10 @@ const GermanCaseStudies = () => {
       seoText={<CaseStudiesSEOText />}
     >
       <Helmet>
-        <title>Referenzen & Case Studies | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Entdecken Sie unsere Erfolgsgeschichten: Case Studies und Referenzen von ooliv, Ihrer Werbeagentur aus Mainz für digitales Marketing." />
-        <meta name="keywords" content="Referenzen Werbeagentur Mainz, Case Studies Webdesign Mainz, Portfolio ooliv Mainz, Erfolgsgeschichten Digital Marketing, Kundenprojekte Mainz" />
-        <meta name="focus-keyword" content="Referenzen Werbeagentur Mainz" />
+        <title>Marketing Mainz – Erfolgreiche Projekte</title>
+        <meta name="description" content="Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern." />
+        <meta name="keywords" content="Marketing Mainz, Referenzen Werbeagentur Mainz, Case Studies Webdesign Mainz, Portfolio ooliv Mainz, Erfolgsgeschichten Digital Marketing, Kundenprojekte Mainz" />
+        <meta name="focus-keyword" content="Marketing Mainz" />
       </Helmet>
       
       <CaseStudiesHero />

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -22,10 +23,10 @@ const GermanContentCreation = () => {
       seoText={<ContentSEOText />}
     >
       <Helmet>
-        <title>Content Creation Mainz | Professionelle Inhalte für Ihr Marketing</title>
-        <meta name="description" content="Professionelle Content-Erstellung aus Mainz: SEO-optimierte Texte, Bilder und Videos für Ihre Website und Social Media Kanäle." />
-        <meta name="keywords" content="Content Creation Mainz, Content Marketing Mainz, SEO Texte Mainz, Social Media Content, Professionelle Texte Mainz, Content Erstellung Mainz" />
-        <meta name="focus-keyword" content="Content Creation Mainz" />
+        <title>Content Agentur Mainz – Texte, die wirken</title>
+        <meta name="description" content="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken." />
+        <meta name="keywords" content="Content Agentur Mainz, Content Marketing Mainz, SEO Texte Mainz, Social Media Content, Professionelle Texte Mainz, Content Erstellung Mainz" />
+        <meta name="focus-keyword" content="Content Agentur Mainz" />
       </Helmet>
       
       <ContentHero />

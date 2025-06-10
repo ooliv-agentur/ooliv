@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -14,9 +15,10 @@ const Strategie = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Digitale Strategie | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Entwickeln Sie mit ooliv eine maßgeschneiderte digitale Strategie für Ihr Unternehmen. Strategieberatung für nachhaltigen Online-Erfolg." />
-        <meta name="keywords" content="Digitale Strategie Mainz, Strategieberatung Mainz, Online Marketing Strategie, Digital Marketing Beratung Mainz, Unternehmensstrategie Digital" />
+        <title>Webkonzept – Strategie für Ihre Website</title>
+        <meta name="description" content="Durchdachtes Webkonzept von ooliv: Strategie und Struktur für erfolgreiche Websites. Wir entwickeln maßgeschneiderte Lösungen für Ihr Unternehmen." />
+        <meta name="keywords" content="Webkonzept, Digitale Strategie Mainz, Strategieberatung Mainz, Online Marketing Strategie, Digital Marketing Beratung Mainz, Unternehmensstrategie Digital" />
+        <meta name="focus-keyword" content="Webkonzept" />
       </Helmet>
       
       <StrategieHero />

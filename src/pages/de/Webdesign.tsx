@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -23,8 +24,8 @@ const GermanWebDesign = () => {
       seoText={<SEOTextSection />}
     >
       <Helmet>
-        <title>Webdesign Mainz | Professionelle Websites die konvertieren</title>
-        <meta name="description" content="Professionelles Webdesign aus Mainz: Moderne, responsive Websites die Ihre Zielgruppe begeistern und zu Kunden machen. Jetzt kostenlos beraten lassen!" />
+        <title>Webdesign Mainz – Individuell & Erfolgreich</title>
+        <meta name="description" content="Kreatives Webdesign in Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern." />
         <meta name="keywords" content="Webdesign Mainz, Website erstellen Mainz, Responsive Webdesign, WordPress Webdesign Mainz, Professionelle Website Mainz, Webdesigner Mainz" />
         <meta name="focus-keyword" content="Webdesign Mainz" />
       </Helmet>

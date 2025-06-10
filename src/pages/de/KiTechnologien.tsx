@@ -42,10 +42,10 @@ const GermanAiTechnologies = () => {
       seoText={<KiSEOText />}
     >
       <Helmet>
-        <title>KI Technologien | Innovative AI-Lösungen für Ihr Business</title>
-        <meta name="description" content="Entdecken Sie innovative KI-Technologien für Ihr Unternehmen. Von Automatisierung bis hin zu intelligenten Datenanalysen - wir bringen AI in Ihr Business." />
-        <meta name="keywords" content="KI Technologien Mainz, Künstliche Intelligenz Mainz, AI Integration Mainz, Machine Learning Mainz, KI Beratung Mainz, AI Lösungen Mainz" />
-        <meta name="focus-keyword" content="KI Technologien Mainz" />
+        <title>KI Agentur Mainz – Zukunftstechnologien</title>
+        <meta name="description" content="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit." />
+        <meta name="keywords" content="KI Agentur Mainz, Künstliche Intelligenz Mainz, AI Integration Mainz, Machine Learning Mainz, KI Beratung Mainz, AI Lösungen Mainz" />
+        <meta name="focus-keyword" content="KI Agentur Mainz" />
       </Helmet>
       
       <AiTechHero />
