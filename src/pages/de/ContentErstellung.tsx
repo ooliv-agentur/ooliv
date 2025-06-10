@@ -25,6 +25,7 @@ const GermanContentCreation = () => {
         <title>Content Creation Mainz | Professionelle Inhalte für Ihr Marketing</title>
         <meta name="description" content="Professionelle Content-Erstellung aus Mainz: SEO-optimierte Texte, Bilder und Videos für Ihre Website und Social Media Kanäle." />
         <meta name="keywords" content="Content Creation Mainz, Content Marketing Mainz, SEO Texte Mainz, Social Media Content, Professionelle Texte Mainz, Content Erstellung Mainz" />
+        <meta name="focus-keyword" content="Content Creation Mainz" />
       </Helmet>
       
       <ContentHero />
@@ -32,7 +33,12 @@ const GermanContentCreation = () => {
       <ContentProcessUnified />
       <ContentBenefits />
       <ContentCaseStudies />
-      <CTA />
+      <CTA 
+        title="Starten Sie Ihr Content-Projekt"
+        subtitle="Lassen Sie uns gemeinsam Inhalte erstellen, die Ihre Zielgruppe begeistern und zu echten Ergebnissen führen."
+        primaryCta="Content-Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };

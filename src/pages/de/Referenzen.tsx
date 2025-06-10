@@ -23,12 +23,18 @@ const GermanCaseStudies = () => {
         <title>Referenzen & Case Studies | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Entdecken Sie unsere Erfolgsgeschichten: Case Studies und Referenzen von ooliv, Ihrer Werbeagentur aus Mainz für digitales Marketing." />
         <meta name="keywords" content="Referenzen Werbeagentur Mainz, Case Studies Webdesign Mainz, Portfolio ooliv Mainz, Erfolgsgeschichten Digital Marketing, Kundenprojekte Mainz" />
+        <meta name="focus-keyword" content="Referenzen Werbeagentur Mainz" />
       </Helmet>
       
       <CaseStudiesHero />
       <CaseStudiesSection />
       <TeamSection />
-      <CTA />
+      <CTA 
+        title="Lassen Sie uns Ihre Erfolgsgeschichte schreiben"
+        subtitle="Werden Sie Teil unserer Referenzen und profitieren Sie von unserer Expertise im digitalen Marketing."
+        primaryCta="Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };

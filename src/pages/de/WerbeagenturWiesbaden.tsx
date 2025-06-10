@@ -25,20 +25,10 @@ const GermanWiesbaden = () => {
         <title>Werbeagentur Wiesbaden | ooliv - Webdesign & Marketing</title>
         <meta name="description" content="ooliv Werbeagentur in Wiesbaden: Professionelles Webdesign, SEO und digitales Marketing für Unternehmen im Rhein-Main-Gebiet." />
         <meta name="keywords" content="Werbeagentur Wiesbaden, Webdesign Wiesbaden, SEO Wiesbaden, Online Marketing Wiesbaden, Digitalagentur Wiesbaden, ooliv Wiesbaden" />
+        <meta name="focus-keyword" content="Werbeagentur Wiesbaden" />
       </Helmet>
       
-      <DeutscherHero 
-        title="Ihre Werbeagentur in Wiesbaden"
-        subtitle="Wir machen Websites, die verkaufen. Und gefunden werden."
-        primaryCta={{
-          text: "Kostenlose Beratung",
-          link: "/kontakt"
-        }}
-        secondaryCta={{
-          text: "Unsere Referenzen",
-          link: "/referenzen"
-        }}
-      />
+      <DeutscherHero />
 
       <WiesbadenAboutSection />
 
@@ -50,7 +40,12 @@ const GermanWiesbaden = () => {
 
       <FAQ />
 
-      <CTA />
+      <CTA 
+        title="Ihre digitale Zukunft beginnt jetzt"
+        subtitle="Lassen Sie uns gemeinsam Ihr Unternehmen in Wiesbaden digital erfolgreich machen."
+        primaryCta="Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
 
       <ClientLogos />
 

@@ -11,7 +11,10 @@ import {
   Target, 
   Shield,
   RefreshCw,
-  Globe
+  Globe,
+  Clock,
+  Database,
+  FileText
 } from 'lucide-react';
 import { 
   Accordion, 

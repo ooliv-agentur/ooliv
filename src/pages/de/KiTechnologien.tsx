@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -17,6 +18,25 @@ const GermanAiTechnologies = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  // AI tools data for German page
+  const aiTools = [
+    {
+      name: "ChatGPT",
+      logoSrc: "/lovable-uploads/chatgpt.png",
+      description: "Texte, FAQs, SEO-Snippets und Übersetzungen – entwickelt mit KI, verfeinert von unseren Redakteuren."
+    },
+    {
+      name: "Midjourney",
+      logoSrc: "/lovable-uploads/Midjourney.png", 
+      description: "Individuelle Visuals & Illustrationen für Marken, die keine Stock-Fotos wollen."
+    },
+    {
+      name: "Sora (Video-KI)",
+      logoSrc: "/lovable-uploads/sora.png",
+      description: "Animierte Video-Elemente, Hintergrundvideos und Motion Design – passend zu Ihrer Marke."
+    }
+  ];
+
   return (
     <PageLayout 
       seoText={<KiSEOText />}
@@ -25,14 +45,25 @@ const GermanAiTechnologies = () => {
         <title>KI Technologien | Innovative AI-Lösungen für Ihr Business</title>
         <meta name="description" content="Entdecken Sie innovative KI-Technologien für Ihr Unternehmen. Von Automatisierung bis hin zu intelligenten Datenanalysen - wir bringen AI in Ihr Business." />
         <meta name="keywords" content="KI Technologien Mainz, Künstliche Intelligenz Mainz, AI Integration Mainz, Machine Learning Mainz, KI Beratung Mainz, AI Lösungen Mainz" />
+        <meta name="focus-keyword" content="KI Technologien Mainz" />
       </Helmet>
       
       <AiTechHero />
       <AiTechServices />
-      <AiToolsSection />
+      <AiToolsSection 
+        title="KI-gestützt – menschlich geführt"
+        subtitle="Wir integrieren KI dort, wo sie Zeit spart und Mehrwert schafft – nicht um Expertise zu ersetzen."
+        tools={aiTools}
+        note="Wir nutzen KI als kreativen Beschleuniger – niemals als Abkürzung. Qualität und Strategie kommen immer vom Menschen."
+      />
       <AiTechBenefits />
       <AiTechCaseStudies />
-      <CTA />
+      <CTA 
+        title="Revolutionieren Sie Ihr Business mit KI"
+        subtitle="Entdecken Sie, wie künstliche Intelligenz Ihre Geschäftsprozesse optimieren und neue Möglichkeiten schaffen kann."
+        primaryCta="KI-Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };

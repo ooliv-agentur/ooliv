@@ -26,6 +26,7 @@ const GermanWebDesign = () => {
         <title>Webdesign Mainz | Professionelle Websites die konvertieren</title>
         <meta name="description" content="Professionelles Webdesign aus Mainz: Moderne, responsive Websites die Ihre Zielgruppe begeistern und zu Kunden machen. Jetzt kostenlos beraten lassen!" />
         <meta name="keywords" content="Webdesign Mainz, Website erstellen Mainz, Responsive Webdesign, WordPress Webdesign Mainz, Professionelle Website Mainz, Webdesigner Mainz" />
+        <meta name="focus-keyword" content="Webdesign Mainz" />
       </Helmet>
       
       <WebDesignHero />
@@ -34,7 +35,12 @@ const GermanWebDesign = () => {
       <WebDesignBenefits />
       <WebDesignCaseStudies />
       <WebDesignFAQ />
-      <CTA />
+      <CTA 
+        title="Starten Sie Ihr Webdesign-Projekt"
+        subtitle="Lassen Sie uns gemeinsam eine Website erstellen, die Ihre Marke perfekt repräsentiert und Ihre Geschäftsziele erreicht."
+        primaryCta="Webdesign-Projekt starten"
+        secondaryCta="Strategiegespräch vereinbaren"
+      />
     </PageLayout>
   );
 };
