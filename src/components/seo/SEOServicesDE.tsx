@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
@@ -98,7 +97,6 @@ const SEOServicesDE = () => {
           <div className="flex flex-wrap gap-3 justify-center">
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Ahrefs</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Google Search Console</div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">YoastSEO</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">ChatGPT (für Inhalte)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Midjourney (für Visuals)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Sora (für Video)</div>
