@@ -8,8 +8,6 @@ import { CheckCircle } from 'lucide-react';
 import ConfettiCelebration from '@/components/ConfettiCelebration';
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { H1, Paragraph } from '@/components/ui/typography';
-import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 
 const Danke = () => {
   const { setLanguage } = useLanguage();
@@ -65,12 +63,13 @@ const Danke = () => {
         <link rel="canonical" href="https://ooliv.de/danke" />
       </Helmet>
       
+      {/* Add the confetti animation */}
       <ConfettiCelebration />
       
       <div className="h-[calc(100vh-6rem)] flex items-center justify-center bg-white">
-        <div className={getContainerClasses('default')}>
+        <div className="container px-4">
           <motion.div 
-            className={`${getContainerClasses('narrow')} text-center thank-you-content`}
+            className="max-w-[720px] mx-auto text-center thank-you-content"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -81,25 +80,21 @@ const Danke = () => {
               </div>
             </motion.div>
             
-            <motion.div variants={itemVariants}>
-              <H1 alignment="center" className="mb-6">
-                Vielen Dank für Ihre Anfrage!
-              </H1>
-            </motion.div>
+            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen" variants={itemVariants}>
+              Vielen Dank für Ihre Anfrage!
+            </motion.h1>
             
-            <motion.div variants={itemVariants}>
-              <Paragraph alignment="center" className="mb-8 text-medico-darkGreen/80">
-                Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
-                Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
-                <a 
-                  href="mailto:info@ooliv.de" 
-                  className="text-medico-turquoise hover:text-medico-turquoise/80 underline"
-                  aria-label="E-Mail an info@ooliv.de senden"
-                >
-                  info@ooliv.de
-                </a>.
-              </Paragraph>
-            </motion.div>
+            <motion.p className="text-lg mb-8 text-medico-darkGreen/80" variants={itemVariants}>
+              Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
+              Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
+              <a 
+                href="mailto:info@ooliv.de" 
+                className="text-medico-turquoise hover:text-medico-turquoise/80 underline"
+                aria-label="E-Mail an info@ooliv.de senden"
+              >
+                info@ooliv.de
+              </a>.
+            </motion.p>
             
             <motion.div variants={itemVariants}>
               <Button 

@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { NavigationLinks } from './NavigationLinks';
-import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 
 interface MobileMenuContentProps {
   isOpen: boolean;
@@ -49,13 +50,10 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
           </div>
 
           <div 
-            className={cn(
-              "flex-1 flex flex-col overflow-y-auto safe-area-inset-top",
-              getContainerClasses('default')
-            )} 
+            className="flex-1 flex flex-col py-4 px-6 overflow-y-auto safe-area-inset-top" 
             style={{ 
-              minHeight: '0',
-              paddingTop: 'max(1rem, env(safe-area-inset-top))'
+              minHeight: '0', // Allow flexbox to shrink
+              paddingTop: 'max(1rem, env(safe-area-inset-top))' // Respect notch on iOS
             }}
           >
             <nav className="space-y-4 text-center w-full flex-1 flex flex-col justify-center">
