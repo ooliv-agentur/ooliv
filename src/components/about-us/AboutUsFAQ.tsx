@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutUsFAQ = () => {
@@ -73,10 +74,10 @@ const AboutUsFAQ = () => {
             <Button 
               asChild 
               variant="outline" 
-              className="rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300"
+              className="rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-turquoise hover:text-white hover:border-medico-turquoise font-medium px-8 py-3 transition-all duration-300"
             >
               <Link to="/kontakt" className="flex items-center gap-2">
-                <span className="text-xl">+</span>
+                <ArrowRight className="h-4 w-4" />
                 Weitere Fragen? Sprechen Sie mit uns
               </Link>
             </Button>

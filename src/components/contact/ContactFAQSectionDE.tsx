@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ArrowRight } from 'lucide-react';
 
 const ContactFAQSectionDE = () => {
   const contactFaqs = [
@@ -61,6 +62,18 @@ const ContactFAQSectionDE = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+        
+        <div className="mt-16 text-center">
+          <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20">
+            <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
+              Haben Sie noch weitere Fragen?
+            </h3>
+            <button className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-turquoise hover:text-white hover:border-medico-turquoise font-medium px-8 py-3 transition-all duration-300">
+              <ArrowRight className="h-4 w-4" />
+              Weitere Fragen? Sprechen Sie mit uns
+            </button>
+          </div>
         </div>
       </div>
     </section>

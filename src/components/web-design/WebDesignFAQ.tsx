@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
@@ -141,9 +142,9 @@ const WebDesignFAQ = () => {
               <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
                 {t.ctaTitle}
               </h3>
-              <button className="inline-flex items-center gap-2 rounded-full border-2 border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white font-medium px-8 py-3 transition-all duration-300">
-                <span className="text-xl">+</span>
-                {t.ctaButton}
+              <button className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-turquoise hover:text-white hover:border-medico-turquoise font-medium px-8 py-3 transition-all duration-300">
+                <ArrowRight className="h-4 w-4" />
+                Weitere Fragen? Sprechen Sie mit uns
               </button>
             </div>
           </div>

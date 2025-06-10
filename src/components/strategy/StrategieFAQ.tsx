@@ -55,7 +55,7 @@ const StrategieFAQ = () => {
       customFaqs={strategieFaqs}
       customTitle="Häufig gestellte Fragen"
       customSubtitle="Hier finden Sie Antworten auf die wichtigsten Fragen rund um strategische Webkonzepte."
-      customCtaText="Jetzt Strategiegespräch vereinbaren"
+      customCtaText="Weitere Fragen? Sprechen Sie mit uns"
       useLeadForm={true}
     />
   );
