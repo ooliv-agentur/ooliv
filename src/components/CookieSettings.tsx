@@ -129,8 +129,8 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-white">
+    <div className="fixed inset-0 z-[200] bg-black/50 flex items-center justify-center p-4 overflow-y-auto">
+      <Card className="w-full max-w-2xl bg-white my-8 mx-auto">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
@@ -143,7 +143,8 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
             </div>
             <button
               onClick={onClose}
-              className="p-1 text-gray-400 hover:text-gray-600"
+              className="p-1 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors"
+              type="button"
             >
               <X className="w-5 h-5" />
             </button>
@@ -170,7 +171,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         {category.description}
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 ml-4">
                       <Switch
                         checked={settings[category.key]}
                         onCheckedChange={() => handleToggle(category.key)}

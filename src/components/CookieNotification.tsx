@@ -43,7 +43,7 @@ const CookieNotification = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
+    <div className="fixed bottom-0 left-0 right-0 z-[100] p-4">
       <Card className="max-w-4xl mx-auto bg-white border-2 border-medico-turquoise/20 shadow-xl">
         <div className="p-6">
           <div className="flex items-start gap-4">
