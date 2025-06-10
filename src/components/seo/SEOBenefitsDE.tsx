@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart2, Clock, FileText, ShieldAlert } from 'lucide-react';
+import { BarChart2, Clock, FileText, ShieldAlert } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
@@ -67,15 +66,6 @@ const SEOBenefitsDE = () => {
             </p>
           </div>
         </StaggerReveal>
-
-        <Reveal delay={0.2}>
-          <div className="text-center mt-10">
-            <Link to="/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline">
-              Mehr zu Content-Erstellung & Webentwicklung
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
