@@ -12,6 +12,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOTextSectionDE from '@/components/seo/SEOTextSectionDE';
+import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -59,6 +60,9 @@ const GermanSEO = () => {
 
       <SEOHeroDE />
       <SEOBenefitsDE />
+      
+      <GooglePartnerBadgeSEO />
+      
       <SEOServicesDE />
       <SEOApproachDE />
       <SEOProcessDE />
