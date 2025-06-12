@@ -26,7 +26,6 @@ const KlickbetrugCTA = () => {
             <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
               Starten Sie jetzt – und schützen Sie Ihre Kampagnen dauerhaft
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
             
             <p className={`${getBodyClasses('large', 'primary', 'center')} mb-10`}>
               Unsere Lösung läuft im Hintergrund, ist sofort aktiv und schützt Ihr Google Ads Budget zuverlässig.

@@ -39,7 +39,6 @@ const KlickbetrugFeatures = () => {
             <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
               Das erkennt unsere KI – automatisch & DSGVO-konform
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto"></div>
           </div>
         </Reveal>
         

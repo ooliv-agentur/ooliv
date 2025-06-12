@@ -23,7 +23,6 @@ const KlickbetrugIntroduction = () => {
             <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
               Was ist Klickbetrug – und warum betrifft er auch Ihre Kampagnen?
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
             
             <div className="max-w-4xl mx-auto">
               <p className={`${getBodyClasses('large', 'primary', 'center')} mb-12`}>

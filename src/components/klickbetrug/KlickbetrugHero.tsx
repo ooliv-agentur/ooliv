@@ -20,7 +20,7 @@ const KlickbetrugHero = () => {
 
   return (
     <section className={`${getSectionClasses('extraLarge', 'mint')} font-satoshi relative overflow-hidden min-h-screen flex items-center`}>
-      {/* Floating circles animation - same as other hero sections */}
+      {/* Floating circles animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
         <div className="floating-circle delayed w-40 h-40 top-40 right-20 opacity-30"></div>
@@ -36,20 +36,20 @@ const KlickbetrugHero = () => {
       <div className="relative z-20 w-full">
         <div className={getContainerClasses()}>
           <Reveal>
-            <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-              <h1 className={getHeadingClasses('h1', 'primary', 'left')}>
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className={getHeadingClasses('h1', 'primary', 'center')}>
                 Klickbetrug erkennen. Google Ads schützen.
               </h1>
               
-              <p className={`${getBodyClasses('large', 'primary', 'left')} mb-8 sm:mb-10`}>
+              <p className={`${getBodyClasses('large', 'primary', 'center')} mb-8 sm:mb-10`}>
                 Unbemerkter Klickbetrug kann Ihr gesamtes Werbebudget vernichten. Unsere KI erkennt verdächtige Klicks – und blockiert sie automatisch.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   variant="primary"
                   size="xl"
-                  className="group w-full sm:w-auto"
+                  className="group"
                   onClick={handleStartTest}
                 >
                   Jetzt kostenlos testen
@@ -59,7 +59,7 @@ const KlickbetrugHero = () => {
                 <Button 
                   variant="outline"
                   size="xl"
-                  className="group w-full sm:w-auto"
+                  className="group"
                   onClick={scrollToSolution}
                 >
                   Wie funktioniert das?
