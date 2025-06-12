@@ -1,12 +1,10 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
 
 // Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
@@ -16,6 +14,7 @@ import WiesbadenCaseStudies from '@/components/de/WiesbadenCaseStudies';
 import WiesbadenFAQ from '@/components/de/WiesbadenFAQ';
 import WiesbadenSEOText from '@/components/de/WiesbadenSEOText';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
+import WiesbadenBeforeAfterSection from '@/components/de/WiesbadenBeforeAfterSection';
 
 const WerbeagenturWiesbaden = () => {
   const { setLanguage } = useLanguage();
@@ -25,10 +24,6 @@ const WerbeagenturWiesbaden = () => {
     console.log('WerbeagenturWiesbaden component mounted - setting language to German');
     document.title = 'Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg';
   }, []);
-
-  const handleStartProject = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
   
   return (
     <>
@@ -50,31 +45,7 @@ const WerbeagenturWiesbaden = () => {
         <WiesbadenHero />
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />
-        
-        <div className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre digitale Präsenz sollte Geschäfte generieren – nicht nur existieren.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-              Viele Wiesbadener Unternehmen haben Websites, die nicht zum Unternehmenserfolg beitragen. Als erfahrene Werbeagentur entwickeln wir digitale Auftritte, die aktiv Kunden gewinnen, Vertrauen schaffen und nachweislich zu besseren Geschäftsergebnissen führen.
-            </p>
-            <BeforeAfterSlider />
-            <div className="mt-8 text-center">
-              <p className="text-brand-text mb-6">
-                Weitere Referenzen gerne im persönlichen Gespräch – <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>
-              </p>
-              <Button 
-                variant="primary"
-                size="lg" 
-                className="group"
-                onClick={handleStartProject}
-              >
-                Digitales Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
-          </div>
-        </div>
-        
+        <WiesbadenBeforeAfterSection />
         <WiesbadenLeistungen />
         <TechnologiesSection />
         <WiesbadenCaseStudies />
