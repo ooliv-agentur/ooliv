@@ -5,7 +5,6 @@ import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
-import { Icon } from '@/components/ui/icon';
 
 const KlickbetrugIntroduction = () => {
   const fraudTypes = [
@@ -52,19 +51,15 @@ const KlickbetrugIntroduction = () => {
               key={index} 
               className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group"
             >
-              <div className="text-center mb-6">
-                <Icon 
-                  icon={item.icon}
-                  variant="round"
-                  size="lg"
-                  background="light"
-                  className="mx-auto text-gray-500 group-hover:text-medico-turquoise transition-colors duration-300"
-                />
+              <div className="mb-6">
+                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-medico-turquoise/10 transition-colors duration-300">
+                  <item.icon className="w-8 h-8 text-gray-600 group-hover:text-medico-turquoise transition-colors duration-300" />
+                </div>
               </div>
-              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-4`}>
                 {item.title}
               </h3>
-              <p className={`${getBodyClasses('base', 'secondary', 'center')}`}>
+              <p className={`${getBodyClasses('base', 'secondary', 'left')}`}>
                 {item.description}
               </p>
             </div>
