@@ -10,6 +10,7 @@ import KlickbetrugSolution from '@/components/klickbetrug/KlickbetrugSolution';
 import KlickbetrugFeatures from '@/components/klickbetrug/KlickbetrugFeatures';
 import KlickbetrugTestimonial from '@/components/klickbetrug/KlickbetrugTestimonial';
 import KlickbetrugCTA from '@/components/klickbetrug/KlickbetrugCTA';
+import KlickbetrugFAQ from '@/components/klickbetrug/KlickbetrugFAQ';
 import KlickbetrugSEOText from '@/components/klickbetrug/KlickbetrugSEOText';
 
 const Klickbetrug = () => {
@@ -30,6 +31,7 @@ const Klickbetrug = () => {
       <KlickbetrugFeatures />
       <KlickbetrugTestimonial />
       <KlickbetrugCTA />
+      <KlickbetrugFAQ />
     </PageLayout>
   );
 };
