@@ -3,10 +3,10 @@ import React from 'react';
 import { LucideIcon } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
-import { Icon } from '@/components/ui/icon';
+import { RegisteredIcon, IconName } from '@/components/ui/registered-icon';
 
 interface Benefit {
-  icon: LucideIcon;
+  icon: LucideIcon | IconName;
   title: string;
   description: string;
 }
@@ -62,13 +62,19 @@ const BaseBenefits = ({
               className="text-center group hover:transform hover:scale-105 transition-all duration-300"
             >
               <div className="mb-6 group-hover:bg-medico-turquoise/20 transition-colors duration-300">
-                <Icon 
-                  icon={benefit.icon}
-                  variant="round"
-                  size="xl"
-                  background="light"
-                  className="mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
-                />
+                {typeof benefit.icon === 'string' ? (
+                  <RegisteredIcon 
+                    name={benefit.icon as IconName}
+                    variant="round"
+                    size="xl"
+                    background="light"
+                    className="mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="inline-flex items-center justify-center transition-colors rounded-full h-10 w-10 bg-medico-mint/20 p-2 mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="h-5 w-5" />
+                  </div>
+                )}
               </div>
               <h3 className="text-xl font-bold mb-4 text-medico-darkGreen">{benefit.title}</h3>
               <p className="text-medico-darkGreen/80 leading-relaxed">{benefit.description}</p>
