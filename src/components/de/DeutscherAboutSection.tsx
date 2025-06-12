@@ -9,26 +9,26 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const DeutscherAboutSection = () => {
   const services = [
     {
-      title: "Strategie & UX",
-      description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
+      title: "Webdesign",
+      description: "Professionelle Websites, die Ihre Wiesbadener Zielgruppe überzeugen und Vertrauen schaffen.",
       icon: <Grid2X2 className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/strategie"
     },
     {
-      title: "Content & SEO",
-      description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
+      title: "Entwicklung",
+      description: "Technisch ausgereifte Lösungen für nachhaltiges Wachstum Ihres Unternehmens.",
       icon: <Sparkles className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/content-erstellung"
     },
     {
-      title: "Design & Development",
-      description: "Custom-coded, konversionsstark, skalierbar.",
+      title: "SEO",
+      description: "Bessere Sichtbarkeit in Wiesbaden und dem Rhein-Main-Gebiet für mehr qualifizierte Anfragen.",
       icon: <Code2 className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/webentwicklung"
     },
     {
-      title: "Kommunikation",
-      description: "Sie sprechen immer direkt mit dem CEO – ohne Umwege.",
+      title: "Strategie",
+      description: "Datenbasierte Konzepte, die Ihre Marktposition stärken und Umsätze steigern.",
       icon: <Phone className="h-6 w-6" style={{ color: 'white' }} />,
       link: "/kontakt"
     }
@@ -40,13 +40,13 @@ const DeutscherAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Wo Strategie auf Umsetzung trifft – in Mainz.
+              Ihre Werbeagentur Wiesbaden für messbare Erfolge
             </h2>
             <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Wir sind Ihre spezialisierte Digitalagentur, die Websites strategisch plant und technisch perfekt umsetzt.
+              Digitale Lösungen, die Ihr Unternehmen nachhaltig voranbringen
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Seit über 16 Jahren entwickeln wir Websites für B2B-Unternehmen in Mainz und der Region. Mit einer klaren Strategie, datenbasierten Entscheidungen und einem strukturierten Prozess schaffen wir Websites, die Ihr Unternehmen digital voranbringen.
+              Als spezialisierte Werbeagentur in Wiesbaden entwickeln wir strategische Online-Auftritte, die Ihre Zielgruppe erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
             </p>
             
             {/* Single CTA Button */}
