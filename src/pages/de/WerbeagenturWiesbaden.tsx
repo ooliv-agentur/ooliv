@@ -16,6 +16,11 @@ import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import WiesbadenSolutionSection from '@/components/de/WiesbadenSolutionSection';
 
+// Use the actual homepage components instead
+import DeutscherAboutSection from '@/components/de/DeutscherAboutSection';
+import GermanSolutionSection from '@/components/de/GermanSolutionSection';
+import TeamTeaserDE from '@/components/de/TeamTeaserDE';
+
 // Updated FAQ items for Wiesbaden
 const wiesbadenFaqs = [
   {
@@ -68,8 +73,8 @@ const WerbeagenturWiesbaden = () => {
       
       <PageLayout className="overflow-x-hidden">
         <WiesbadenHero />
-        <WiesbadenAboutSection />
-        <WiesbadenTeamSection />
+        <DeutscherAboutSection />
+        <TeamTeaserDE />
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,7 +100,7 @@ const WerbeagenturWiesbaden = () => {
           </div>
         </div>
         
-        <WiesbadenSolutionSection />
+        <GermanSolutionSection />
         <TechnologiesSection />
         
         <CaseStudiesSection />
