@@ -1,0 +1,35 @@
+
+import React from 'react';
+
+const GooglePartnerBadge = () => {
+  return (
+    <section className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+          {/* Text Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
+              Zertifiziert für messbare Ergebnisse
+            </h2>
+            <p className="text-lg md:text-xl text-medico-darkGreen leading-relaxed">
+              Als offizieller Google Partner erfüllen wir die höchsten Anforderungen an Performance, Wissen und Kundenerfolg im Bereich Google Ads.
+            </p>
+          </div>
+          
+          {/* Google Partner Badge */}
+          <div className="flex-shrink-0">
+            <div className="bg-gray-100 p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <img 
+                src="/lovable-uploads/e3b55cd1-2d14-4763-ac56-c1f282c0c16f.png"
+                alt="Google Partner Badge"
+                className="w-48 h-auto mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GooglePartnerBadge;

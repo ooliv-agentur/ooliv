@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -9,6 +8,7 @@ import CTA from '@/components/CTA';
 import GoogleAdsProcess from '@/components/google-ads/GoogleAdsProcess';
 import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGeneration';
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
+import GooglePartnerBadge from '@/components/google-ads/GooglePartnerBadge';
 import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout } from 'lucide-react';
 import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
 
@@ -101,6 +101,8 @@ const GermanGoogleAds = () => {
           </div>
         </div>
       </section>
+
+      <GooglePartnerBadge />
 
       <GoogleAdsLeadGeneration />
 
