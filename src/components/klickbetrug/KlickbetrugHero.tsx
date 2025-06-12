@@ -56,7 +56,7 @@ const KlickbetrugHero = () => {
                   }}
                   onClick={handleStartTest}
                 >
-                  Jetzt kostenlos testen
+                  Kampagne analysieren
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
