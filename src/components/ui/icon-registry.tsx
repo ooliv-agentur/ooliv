@@ -51,7 +51,7 @@ export const iconRegistry = {
   penTool: PenTool,
   rocket: Rocket,
   
-  // Benefits & Features
+  // Benefits & Features - Fixed mappings
   target: Target,
   trendingUp: TrendingUp,
   users: Users,
@@ -69,5 +69,7 @@ export type IconName = keyof typeof iconRegistry;
 
 // Helper function to get icon component by name
 export const getIcon = (name: IconName) => {
-  return iconRegistry[name];
+  const IconComponent = iconRegistry[name];
+  console.log(`Getting icon for "${name}":`, IconComponent); // Debug log
+  return IconComponent;
 };
