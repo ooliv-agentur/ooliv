@@ -12,9 +12,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import WiesbadenHero from '@/components/de/WiesbadenHero';
-import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
-import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
-import WiesbadenSolutionSection from '@/components/de/WiesbadenSolutionSection';
 
 // Use the actual homepage components instead
 import DeutscherAboutSection from '@/components/de/DeutscherAboutSection';
