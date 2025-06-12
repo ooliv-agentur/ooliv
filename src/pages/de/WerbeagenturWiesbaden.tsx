@@ -15,6 +15,7 @@ import WiesbadenFAQ from '@/components/de/WiesbadenFAQ';
 import WiesbadenSEOText from '@/components/de/WiesbadenSEOText';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import WiesbadenBeforeAfterSection from '@/components/de/WiesbadenBeforeAfterSection';
+import WiesbadenFullServiceTeaser from '@/components/de/WiesbadenFullServiceTeaser';
 
 const WerbeagenturWiesbaden = () => {
   const { setLanguage } = useLanguage();
@@ -46,6 +47,7 @@ const WerbeagenturWiesbaden = () => {
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />
         <WiesbadenBeforeAfterSection />
+        <WiesbadenFullServiceTeaser />
         <WiesbadenLeistungen />
         <TechnologiesSection />
         <WiesbadenCaseStudies />
