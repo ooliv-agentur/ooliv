@@ -13,22 +13,22 @@ const WiesbadenTechStack = () => {
   const technologies: Technology[] = [
     {
       name: "ChatGPT",
-      description: "Texte schneller entwickeln, Ideen strukturieren, dynamische Video-Snippets generieren — KI-gestützt, von Menschen finalisiert.",
+      description: "KI als Werkzeug: strukturierte Texte, Content-Vorschläge, Ideenentwicklung – von uns geprüft, verfeinert und umgesetzt.",
       icon: <img src="/lovable-uploads/ac2faaf0-3c11-47bd-a829-aafb0bd09f24.png" alt="ChatGPT Logo" className="h-16 w-16" />
     },
     {
       name: "Midjourney",
-      description: "Einzigartige Bilder statt Stock-Optik — visuell passend zu Ihrer Marke und individuell gestaltet.",
+      description: "Individuelle Visuals, die sich von Standardbildern abheben – markengerecht und originell, statt beliebig.",
       icon: <img src="/lovable-uploads/c2e2bd92-40a4-4a70-a1bd-6a3d5d936f87.png" alt="Midjourney Logo" className="h-16 w-16" />
     },
     {
       name: "Ahrefs",
-      description: "Suchverhalten analysieren, Chancen erkennen, Wettbewerb verstehen — datenbasiert und strategisch.",
+      description: "Markt verstehen, Chancen erkennen, SEO-Potenziale strategisch nutzen – datenbasiert und mit klarem Ziel.",
       icon: <img src="/lovable-uploads/db6a0e7f-92b8-4ebb-bf06-c9b9930fba55.png" alt="Ahrefs Logo" className="h-16 w-16" />
     },
     {
       name: "Basecamp",
-      description: "Klarer Projektverlauf, direkte Kommunikation — alles an einem Ort für maximale Transparenz.",
+      description: "Klare Aufgaben, saubere Abläufe und direkte Kommunikation – alles an einem Ort, ohne Umwege.",
       icon: <img src="/lovable-uploads/a58c92c6-bfd7-4602-acaa-db2fba947360.png" alt="Basecamp Logo" className="h-16 w-16" />
     }
   ];
@@ -39,10 +39,10 @@ const WiesbadenTechStack = () => {
         <div className="mb-12">
           <Reveal>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 text-medico-darkGreen" style={{ lineHeight: '1.4' }}>
-              Technologie ist kein Selbstzweck — sondern Mittel zum Ziel.
+              Technologie unterstützt — ersetzt aber nicht.
             </h3>
             <p className="text-base md:text-lg text-center text-medico-darkGreen max-w-4xl mx-auto mb-16" style={{ lineHeight: '1.6' }}>
-              Wir setzen auf leistungsstarke Tools, die unsere Arbeit unterstützen — nicht ersetzen. KI, Analyse und Projektkommunikation: Alles mit klarem Menschenverstand eingesetzt.
+              Wir nutzen moderne Tools zur Effizienzsteigerung – nicht als Selbstzweck. KI, Datenanalyse und Projektsteuerung setzen wir gezielt ein, mit Erfahrung und gesundem Menschenverstand.
             </p>
           </Reveal>
           
@@ -63,7 +63,7 @@ const WiesbadenTechStack = () => {
 
         <div className="mt-16 text-center border-t-2 border-medico-turquoise/20 pt-12">
           <p className="text-medico-darkGreen italic max-w-3xl mx-auto text-base md:text-lg" style={{ lineHeight: '1.6' }}>
-            KI ist ein Werkzeug. Die Verantwortung bleibt bei uns.
+            KI ist ein Werkzeug. Die Verantwortung liegt immer bei uns.
           </p>
         </div>
       </div>
