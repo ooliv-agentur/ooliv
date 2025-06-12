@@ -17,7 +17,7 @@ const KlickbetrugIntroduction = () => {
 
   return (
     <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
-      <div className={getContainerClasses('narrow')}>
+      <div className={getContainerClasses()}>
         <Reveal>
           <div className="text-center mb-16">
             <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
@@ -26,26 +26,26 @@ const KlickbetrugIntroduction = () => {
             <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
             
             <div className="max-w-4xl mx-auto">
-              <p className={getBodyClasses('large', 'primary', 'center')}>
+              <p className={`${getBodyClasses('large', 'primary', 'center')} mb-12`}>
                 Klickbetrug (englisch „Click Fraud") bezeichnet künstlich erzeugte Klicks auf Ihre Google Ads – meist ohne echtes Interesse an Ihrem Angebot. Diese Klicks stammen von Bots, Konkurrenten oder Klickfarmen und treiben Ihre Werbekosten in die Höhe, ohne dass daraus Kunden werden. Das Problem: Google erkennt diese Angriffe nur unzureichend – und Sie bezahlen trotzdem.
               </p>
             </div>
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <StaggerReveal className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {bulletPoints.map((point, index) => (
-            <div key={index} className="flex items-start gap-4">
+            <div key={index} className="flex items-start gap-4 group">
               <div className="mt-1 flex-shrink-0">
                 <Icon 
                   icon={Check}
                   variant="round"
                   size="md"
                   background="light"
-                  className="text-medico-turquoise"
+                  className="text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <p className={getBodyClasses('base', 'primary')}>
+              <p className={`${getBodyClasses('base', 'primary')} group-hover:text-medico-turquoise transition-colors duration-300`}>
                 {point}
               </p>
             </div>
