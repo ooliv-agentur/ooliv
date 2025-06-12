@@ -1,27 +1,27 @@
 
 import React from 'react';
-import { Target, TrendingUp, Users, Zap } from 'lucide-react';
 import BaseBenefits from '@/components/common/BaseBenefits';
+import { getIcon } from '@/components/ui/icon-registry';
 
 const StrategieBenefits = () => {
   const benefits = [
     {
-      icon: Target,
+      icon: getIcon('target'),
       title: "Zielgruppenanalyse & Marktverständnis",
       description: "Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie mit einem klaren Webkonzept optimal erreichen."
     },
     {
-      icon: TrendingUp,
+      icon: getIcon('trendingUp'),
       title: "Nutzerführung & Conversion-Strategie",
       description: "Wir definieren, wie Ihre Besucher geführt werden – für mehr Leads und eine hohe Conversion-Rate. Ihr Webkonzept wird so zur tragenden Säule Ihrer digitalen Strategie."
     },
     {
-      icon: Users,
+      icon: getIcon('users'),
       title: "Projektplan & Roadmap",
       description: "Wir entwickeln eine klare Roadmap mit Meilensteinen, damit Ihr Projekt strukturiert umgesetzt wird und alle Beteiligten jederzeit den Überblick behalten – vom ersten Webkonzept bis zur Umsetzung."
     },
     {
-      icon: Zap,
+      icon: getIcon('zap'),
       title: "Persönliche Betreuung",
       description: "Wir begleiten Sie von der ersten Idee bis zur Umsetzung – mit einem persönlichen Ansprechpartner, einem individuellen Webkonzept und dem richtigen Blick fürs Detail."
     }
