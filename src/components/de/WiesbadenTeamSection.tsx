@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -22,12 +21,12 @@ const WiesbadenTeamSection = () => {
     <section className="py-20 bg-medico-mint font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter ooliv</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Ihre Ansprechpartner bei ooliv</h2>
           <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.6' }}>
-            Jedes Projekt wird direkt von der Geschäftsführung begleitet.
+            Direkter Kontakt mit der Geschäftsführung – vom ersten Gespräch bis zum GoLive
           </p>
           <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-            Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
+            Wir betreuen Ihr Projekt persönlich, effizient und verbindlich. Bei ooliv haben Sie feste Ansprechpartner mit Entscheidungskompetenz – keine Umwege, keine Weiterleitungen. Sie wissen jederzeit, wo Ihr Projekt steht.
           </p>
         </div>
 
