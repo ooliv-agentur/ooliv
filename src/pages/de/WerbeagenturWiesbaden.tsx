@@ -13,80 +13,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import WiesbadenHero from '@/components/de/WiesbadenHero';
 
-// Import AboutSection and modify its content for Wiesbaden
-import { LayoutGrid, Sparkles, Code, PhoneCall } from 'lucide-react';
-import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
-
 // Use the actual homepage components instead
+import DeutscherAboutSection from '@/components/de/DeutscherAboutSection';
 import GermanSolutionSection from '@/components/de/GermanSolutionSection';
 import TeamTeaserDE from '@/components/de/TeamTeaserDE';
-
-// Wiesbaden About Section with same layout as AboutSection but different text
-const WiesbadenAboutSection = () => {
-  // Define the 4 pillars of service with Wiesbaden content
-  const services = [
-    {
-      title: "Webdesign",
-      description: "Professionelle Websites, die Ihre Wiesbadener Zielgruppe überzeugen und Vertrauen schaffen.",
-      icon: <LayoutGrid className="h-6 w-6 text-brand-primary" />
-    },
-    {
-      title: "Entwicklung",
-      description: "Technisch ausgereifte Lösungen für nachhaltiges Wachstum Ihres Unternehmens.",
-      icon: <Sparkles className="h-6 w-6 text-brand-primary" />
-    },
-    {
-      title: "SEO",
-      description: "Bessere Sichtbarkeit in Wiesbaden und dem Rhein-Main-Gebiet für mehr qualifizierte Anfragen.",
-      icon: <Code className="h-6 w-6 text-brand-primary" />
-    },
-    {
-      title: "Strategie",
-      description: "Datenbasierte Konzepte, die Ihre Marktposition stärken und Umsätze steigern.",
-      icon: <PhoneCall className="h-6 w-6 text-brand-primary" />
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold text-brand-heading mb-4 text-center">
-              Ihre Werbeagentur Wiesbaden für messbare Erfolge
-            </h2>
-            <p className="text-xl text-brand-text max-w-3xl mx-auto text-center">
-              Digitale Lösungen, die Ihr Unternehmen nachhaltig voranbringen
-            </p>
-          </div>
-        </Reveal>
-        
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {services.map((service, index) => (
-            <div key={index} className="bg-brand-background/50 p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="mb-4 p-3 rounded-full bg-brand-primary/10 inline-flex">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-brand-heading">{service.title}</h3>
-              <p className="text-brand-text">{service.description}</p>
-            </div>
-          ))}
-        </StaggerReveal>
-        
-        <div className="mt-12 text-center">
-          <p className="text-brand-text mb-6">
-            Als spezialisierte Werbeagentur in Wiesbaden entwickeln wir strategische Online-Auftritte, die Ihre Zielgruppe erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
-          </p>
-          <Button variant="outline" size="lg" className="group">
-            Mehr erfahren
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Updated FAQ items for Wiesbaden
 const wiesbadenFaqs = [
@@ -143,7 +73,7 @@ const WerbeagenturWiesbaden = () => {
         seoText={<SEOTextSection />}
       >
         <WiesbadenHero />
-        <WiesbadenAboutSection />
+        <DeutscherAboutSection />
         <TeamTeaserDE />
         
         <div className="py-16 bg-white">
