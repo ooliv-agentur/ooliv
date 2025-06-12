@@ -10,16 +10,16 @@ const KlickbetrugTestimonial = () => {
     <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
       <div className={getContainerClasses('narrow')}>
         <Reveal>
-          <div className="text-center">
+          <div className="text-left">
             <div className="mb-8">
-              <Quote className="h-12 w-12 text-medico-turquoise mx-auto" />
+              <Quote className="h-12 w-12 text-medico-turquoise" />
             </div>
             
-            <blockquote className={`${getHeadingClasses('h3', 'primary', 'center')} mb-8 italic font-medium`}>
+            <blockquote className={`${getHeadingClasses('h3', 'primary', 'left')} mb-8 italic font-medium`}>
               „Wir wussten gar nicht, dass Klickbetrug überhaupt existiert. Jetzt sparen wir mehrere Hundert Euro im Monat – ohne unser Budget zu erhöhen."
             </blockquote>
             
-            <cite className={getBodyClasses('base', 'muted', 'center')}>
+            <cite className={getBodyClasses('base', 'muted', 'left')}>
               Inhaberin eines Online-Shops (anonymisiert)
             </cite>
           </div>

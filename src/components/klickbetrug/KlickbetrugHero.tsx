@@ -36,33 +36,44 @@ const KlickbetrugHero = () => {
       <div className="relative z-20 w-full">
         <div className={getContainerClasses()}>
           <Reveal>
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className={getHeadingClasses('h1', 'primary', 'center')}>
+            <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+              <h1 className={`${getHeadingClasses('h1', 'primary', 'left')} mb-6 sm:mb-8`}>
                 Klickbetrug erkennen. Google Ads schützen.
               </h1>
               
-              <p className={`${getBodyClasses('large', 'primary', 'center')} mb-8 sm:mb-10`}>
+              <p className={`${getBodyClasses('large', 'primary', 'left')} mb-8 sm:mb-10`}>
                 Unbemerkter Klickbetrug kann Ihr gesamtes Werbebudget vernichten. Unsere KI erkennt verdächtige Klicks – und blockiert sie automatisch.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Button 
-                  variant="primary"
-                  size="xl"
-                  className="group"
+                  size="lg" 
+                  className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                  style={{ 
+                    backgroundColor: '#FFD700', 
+                    color: '#003347',
+                    border: 'none'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#FFC700';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#FFD700';
+                  }}
                   onClick={handleStartTest}
                 >
                   Jetzt kostenlos testen
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 
                 <Button 
-                  variant="outline"
-                  size="xl"
-                  className="group"
+                  variant="outline" 
+                  size="lg" 
+                  className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto group" 
                   onClick={scrollToSolution}
                 >
                   Wie funktioniert das?
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </div>
             </div>

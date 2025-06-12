@@ -35,8 +35,8 @@ const KlickbetrugFeatures = () => {
     <section className={`${getSectionClasses('large', 'mint')} font-satoshi`}>
       <div className={getContainerClasses()}>
         <Reveal>
-          <div className="text-center mb-16">
-            <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
+          <div className="text-left mb-16">
+            <h2 className={`${getHeadingClasses('h2', 'primary', 'left')} mb-6`}>
               Das erkennt unsere KI – automatisch & DSGVO-konform
             </h2>
           </div>
@@ -44,20 +44,20 @@ const KlickbetrugFeatures = () => {
         
         <StaggerReveal className={getGridClasses(4, 'large')}>
           {features.map((feature, index) => (
-            <div key={index} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div key={index} className="text-left group hover:transform hover:scale-105 transition-all duration-300">
               <div className="mb-6">
                 <Icon 
                   icon={feature.icon}
                   variant="round"
                   size="xl"
                   background="light"
-                  className="mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
+                  className="text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-4`}>
                 {feature.title}
               </h3>
-              <p className={getBodyClasses('base', 'secondary', 'center')}>
+              <p className={getBodyClasses('base', 'secondary', 'left')}>
                 {feature.description}
               </p>
             </div>
