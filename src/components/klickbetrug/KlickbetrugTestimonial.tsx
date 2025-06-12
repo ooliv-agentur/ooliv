@@ -8,12 +8,31 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from '@/components/ui/carousel';
 import Reveal from '@/components/animations/Reveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
+import { cn } from '@/lib/utils';
 
 const KlickbetrugTestimonial = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   const testimonials = [
     {
       quote: "Wir dachten, Google filtert sowas automatisch raus. Erst durch das Tool haben wir gesehen, wie viel wir verlieren.",
@@ -48,7 +67,7 @@ const KlickbetrugTestimonial = () => {
   ];
 
   return (
-    <section className={`${getSectionClasses('large', 'white')} font-satoshi overflow-hidden`}>
+    <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
       <div className={getContainerClasses('narrow')}>
         <Reveal>
           <div className="text-center mb-12">
@@ -63,6 +82,7 @@ const KlickbetrugTestimonial = () => {
 
         <Reveal delay={0.2}>
           <Carousel
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
@@ -73,7 +93,7 @@ const KlickbetrugTestimonial = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4">
                   <div className="p-1">
-                    <Card className="bg-medico-mint/10 border-medico-turquoise/20 min-h-[300px] overflow-hidden">
+                    <Card className="bg-medico-mint/10 border-medico-turquoise/20 min-h-[300px]">
                       <CardContent className="flex flex-col justify-center p-6 sm:p-8 md:p-12 text-center h-full">
                         <div className="mb-6">
                           <Quote className="h-10 w-10 md:h-12 md:w-12 text-medico-turquoise mx-auto" />
@@ -106,6 +126,23 @@ const KlickbetrugTestimonial = () => {
             <CarouselPrevious className="hidden md:flex -left-12 bg-white shadow-lg hover:shadow-xl border-gray-200 hover:border-medico-turquoise" />
             <CarouselNext className="hidden md:flex -right-12 bg-white shadow-lg hover:shadow-xl border-gray-200 hover:border-medico-turquoise" />
           </Carousel>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center space-x-2 mt-8">
+            {Array.from({ length: count }).map((_, index) => (
+              <button
+                key={index}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  index === current 
+                    ? "bg-medico-turquoise w-6" 
+                    : "bg-gray-300 hover:bg-gray-400"
+                )}
+                onClick={() => api?.scrollTo(index)}
+                aria-label={`Gehe zu Testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
 
           {/* Summary stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-200">
