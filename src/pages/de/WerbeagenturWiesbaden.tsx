@@ -4,43 +4,19 @@ import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
-import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import SEOTextSection from "@/components/de/SEOTextSection";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+
+// Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
-
-// Use the dedicated Wiesbaden components
 import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
-import GermanSolutionSection from '@/components/de/GermanSolutionSection';
+import WiesbadenLeistungen from '@/components/de/WiesbadenLeistungen';
+import WiesbadenCaseStudies from '@/components/de/WiesbadenCaseStudies';
+import WiesbadenFAQ from '@/components/de/WiesbadenFAQ';
+import WiesbadenSEOText from '@/components/de/WiesbadenSEOText';
 import TeamTeaserDE from '@/components/de/TeamTeaserDE';
-
-// Updated FAQ items for Wiesbaden
-const wiesbadenFaqs = [
-  {
-    question: "Wie arbeitet eine Werbeagentur in Wiesbaden mit lokalen Unternehmen?",
-    answer: "Als Werbeagentur in Wiesbaden verstehen wir die besonderen Herausforderungen lokaler Unternehmen. Wir entwickeln maßgeschneiderte Strategien, die sowohl regional als auch überregional wirken – von der lokalen Sichtbarkeit bis zur deutschlandweiten Expansion."
-  },
-  {
-    question: "Was unterscheidet ooliv von anderen Werbeagenturen in Wiesbaden?",
-    answer: "Unsere Stärke liegt in der Kombination aus strategischer Planung und technischer Exzellenz. Während andere Agenturen oft nur Teilbereiche abdecken, bieten wir als Werbeagentur einen ganzheitlichen Ansatz – von der Konzeption bis zur Umsetzung und Betreuung."
-  },
-  {
-    question: "Welche Investition ist für eine professionelle Website nötig?",
-    answer: "Die Investition richtet sich nach Ihren Zielen und Anforderungen. Einfache Websites beginnen bei 4.000 €, umfassende Projekte mit erweiterten Funktionen liegen zwischen 8.000 € und 15.000 €. Wir erstellen transparente Angebote ohne versteckte Kosten."
-  },
-  {
-    question: "Wie schnell kann eine neue Website realisiert werden?",
-    answer: "Die Umsetzungsdauer variiert je nach Projektumfang. Standardprojekte realisieren wir in 4-8 Wochen, komplexere Vorhaben benötigen entsprechend mehr Zeit. Eine strukturierte Planung sorgt für verlässliche Termine."
-  },
-  {
-    question: "Warum ist ooliv die ideale Werbeagentur für Wiesbadener Unternehmen?",
-    answer: "Weil wir die Bedürfnisse von Unternehmen im Rhein-Main-Gebiet genau kennen. Als Werbeagentur kombinieren wir regionale Expertise mit überregionaler Erfahrung und liefern messbare Resultate statt leerer Versprechungen."
-  }
-];
 
 const WerbeagenturWiesbaden = () => {
   const { setLanguage } = useLanguage();
@@ -70,7 +46,7 @@ const WerbeagenturWiesbaden = () => {
       
       <PageLayout 
         className="overflow-x-hidden"
-        seoText={<SEOTextSection />}
+        seoText={<WiesbadenSEOText />}
       >
         <WiesbadenHero />
         <WiesbadenAboutSection />
@@ -100,16 +76,10 @@ const WerbeagenturWiesbaden = () => {
           </div>
         </div>
         
-        <GermanSolutionSection />
+        <WiesbadenLeistungen />
         <TechnologiesSection />
-        
-        <CaseStudiesSection />
-        
-        <FAQ 
-          customFaqs={wiesbadenFaqs}
-          customTitle="Häufige Fragen zur Werbeagentur-Zusammenarbeit"
-          customCtaText="Weitere Fragen? Sprechen Sie direkt mit uns"
-        />
+        <WiesbadenCaseStudies />
+        <WiesbadenFAQ />
         
         <CTA
           lightBackground={true}
