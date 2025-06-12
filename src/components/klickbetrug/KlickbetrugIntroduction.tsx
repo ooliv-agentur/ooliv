@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { AlertTriangle, Users, TrendingDown, BarChart3 } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
@@ -8,11 +8,27 @@ import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 import { Icon } from '@/components/ui/icon';
 
 const KlickbetrugIntroduction = () => {
-  const bulletPoints = [
-    'Künstlicher Traffic: Klicks ohne echtes Nutzerinteresse',
-    'Wettbewerbsmanipulation: Konkurrenten leeren Ihr Tagesbudget',
-    'Unnütze Ausgaben: Kein ROI, trotz hoher Klickzahlen',
-    'Verfälschte Daten: Conversion-Raten und KPIs verlieren Aussagekraft'
+  const fraudTypes = [
+    {
+      icon: AlertTriangle,
+      title: 'Künstlicher Traffic',
+      description: 'Klicks ohne echtes Nutzerinteresse'
+    },
+    {
+      icon: Users,
+      title: 'Wettbewerbsmanipulation',
+      description: 'Konkurrenten leeren Ihr Tagesbudget'
+    },
+    {
+      icon: TrendingDown,
+      title: 'Unnütze Ausgaben',
+      description: 'Kein ROI, trotz hoher Klickzahlen'
+    },
+    {
+      icon: BarChart3,
+      title: 'Verfälschte Daten',
+      description: 'Conversion-Raten und KPIs verlieren Aussagekraft'
+    }
   ];
 
   return (
@@ -31,19 +47,25 @@ const KlickbetrugIntroduction = () => {
         </Reveal>
         
         <StaggerReveal className="grid md:grid-cols-2 gap-8 max-w-5xl">
-          {bulletPoints.map((point, index) => (
-            <div key={index} className="flex items-start gap-4 group">
-              <div className="mt-1 flex-shrink-0">
+          {fraudTypes.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div className="text-center mb-6">
                 <Icon 
-                  icon={Check}
+                  icon={item.icon}
                   variant="round"
-                  size="md"
+                  size="lg"
                   background="light"
-                  className="text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
+                  className="mx-auto text-gray-500 group-hover:text-medico-turquoise transition-colors duration-300"
                 />
               </div>
-              <p className={`${getBodyClasses('base', 'primary')} group-hover:text-medico-turquoise transition-colors duration-300`}>
-                {point}
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>
+                {item.title}
+              </h3>
+              <p className={`${getBodyClasses('base', 'secondary', 'center')}`}>
+                {item.description}
               </p>
             </div>
           ))}
