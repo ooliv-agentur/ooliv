@@ -5,6 +5,7 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 import { RegisteredIcon, IconName } from '@/components/ui/registered-icon';
 import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
+import { Target, TrendingUp, Users, Zap } from 'lucide-react';
 
 const StrategieBenefits = () => {
   const benefits = [
@@ -30,6 +31,14 @@ const StrategieBenefits = () => {
     }
   ];
 
+  // Direct icon mapping for fallback testing
+  const iconComponents = {
+    target: Target,
+    trendingUp: TrendingUp,
+    users: Users,
+    zap: Zap
+  };
+
   return (
     <section className={getSectionClasses('large', 'white')}>
       <div className={getContainerClasses()}>
@@ -45,24 +54,38 @@ const StrategieBenefits = () => {
         </Reveal>
         
         <StaggerReveal className={getGridClasses(4, 'large')}>
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="text-center"
-            >
-              <div className="mb-6 flex justify-center">
-                <RegisteredIcon 
-                  name={benefit.icon}
-                  variant="round"
-                  size="xl" 
-                  background="light"
-                  className="text-medico-turquoise"
-                />
+          {benefits.map((benefit, index) => {
+            const DirectIcon = iconComponents[benefit.icon];
+            
+            return (
+              <div 
+                key={index}
+                className="text-center"
+              >
+                <div className="mb-6 flex justify-center border-2 border-red-200 bg-gray-100 p-4 min-h-[80px]">
+                  {/* Testing RegisteredIcon */}
+                  <div className="bg-blue-100 p-2 mr-2">
+                    <RegisteredIcon 
+                      name={benefit.icon}
+                      variant="round"
+                      size="xl" 
+                      background="light"
+                      className="text-medico-turquoise"
+                    />
+                  </div>
+                  
+                  {/* Testing direct Lucide icon as fallback */}
+                  <div className="bg-green-100 p-2">
+                    <div className="h-10 w-10 rounded-full bg-medico-mint/20 p-2 flex items-center justify-center">
+                      <DirectIcon className="h-6 w-6 text-medico-turquoise" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
+                <p className={getBodyClasses('base', 'secondary', 'center')}>{benefit.description}</p>
               </div>
-              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
-              <p className={getBodyClasses('base', 'secondary', 'center')}>{benefit.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </StaggerReveal>
       </div>
     </section>
