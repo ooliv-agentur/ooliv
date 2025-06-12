@@ -50,13 +50,13 @@ const StrategieBenefits = () => {
               key={index}
               className="text-center"
             >
-              <div className="mb-6">
+              <div className="mb-6 flex justify-center">
                 <RegisteredIcon 
                   name={benefit.icon}
                   variant="round"
                   size="xl" 
                   background="light"
-                  className="mx-auto text-medico-turquoise"
+                  className="text-medico-turquoise"
                 />
               </div>
               <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
