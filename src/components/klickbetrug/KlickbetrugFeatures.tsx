@@ -5,7 +5,6 @@ import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
-import { Icon } from '@/components/ui/icon';
 
 const KlickbetrugFeatures = () => {
   const features = [
@@ -51,15 +50,11 @@ const KlickbetrugFeatures = () => {
         
         <StaggerReveal className={getGridClasses(4, 'large')}>
           {features.map((feature, index) => (
-            <div key={index} className="text-left group hover:transform hover:scale-105 transition-all duration-300">
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 text-left group hover:transform hover:scale-105">
               <div className="mb-6">
-                <Icon 
-                  icon={feature.icon}
-                  variant="round"
-                  size="xl"
-                  background="light"
-                  className="text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
-                />
+                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-medico-turquoise/10 transition-colors duration-300">
+                  <feature.icon className="w-8 h-8 text-gray-600 group-hover:text-medico-turquoise transition-colors duration-300" />
+                </div>
               </div>
               <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-3`}>
                 {feature.title}
