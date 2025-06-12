@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -60,6 +59,13 @@ const WerbeagenturWiesbaden = () => {
   // Update to correct video path in lovable-uploads folder - using same as homepage
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
   console.log('Wiesbaden page: Using video path:', videoPath);
+
+  // Dynamic subheadlines for Wiesbaden
+  const dynamicEndings = [
+    "digital sichtbar zu werden.",
+    "neue Kunden zu gewinnen.",
+    "im Wettbewerb zu überzeugen."
+  ];
   
   return (
     <>
@@ -78,15 +84,19 @@ const WerbeagenturWiesbaden = () => {
         <PageHero 
           isHomepage={true} 
           backgroundVideo={videoPath}
-          title={
-            <div className="flex flex-col">
-              <span>Werbeagentur Wiesbaden</span>
-              <span className="text-2xl md:text-3xl lg:text-4xl mt-2 text-brand-primary font-medium">
-                Klar positioniert. Digital sichtbar. Erfolgreich im Wettbewerb.
-              </span>
-            </div>
-          }
-          subtitle="Wir gestalten Websites, die wirken: sichtbar, überzeugend, strategisch durchdacht. Ohne Templates, ohne Umwege – sondern mit System und Substanz."
+          title="Werbeagentur Wiesbaden"
+          subtitle="Wir gestalten Websites für Unternehmen aus Wiesbaden, die messbar mehr Leads generieren und nachhaltiges Vertrauen schaffen. Strategisch geplant, individuell umgesetzt – ohne Templates, dafür mit System."
+          dynamicPrefix="Wir helfen Unternehmen aus Wiesbaden,"
+          dynamicSubheadlines={dynamicEndings}
+          primaryCta={{
+            text: "Projekt starten",
+            link: "#",
+            onClick: handleStartProject
+          }}
+          secondaryCta={{
+            text: "Über ooliv",
+            link: "/ueber-uns"
+          }}
         />
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />
