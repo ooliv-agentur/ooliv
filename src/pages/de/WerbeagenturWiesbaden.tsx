@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -14,7 +15,6 @@ import WiesbadenSEOText from '@/components/de/WiesbadenSEOText';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import WiesbadenBeforeAfterSection from '@/components/de/WiesbadenBeforeAfterSection';
 import WiesbadenFullServiceTeaser from '@/components/de/WiesbadenFullServiceTeaser';
-import WiesbadenTechStack from '@/components/de/WiesbadenTechStack';
 
 const WerbeagenturWiesbaden = () => {
   const { setLanguage } = useLanguage();
@@ -48,7 +48,6 @@ const WerbeagenturWiesbaden = () => {
         <WiesbadenBeforeAfterSection />
         <WiesbadenFullServiceTeaser />
         <WiesbadenLeistungen />
-        <WiesbadenTechStack />
         <WiesbadenCaseStudies />
         <WiesbadenFAQ />
         
