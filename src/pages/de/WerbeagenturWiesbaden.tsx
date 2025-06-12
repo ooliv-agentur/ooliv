@@ -14,6 +14,8 @@ import PageHero from '@/components/PageHero';
 import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import Reveal from '@/components/animations/Reveal';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
 
 // Updated FAQ items for Wiesbaden
 const wiesbadenFaqs = [
@@ -50,6 +52,10 @@ const WerbeagenturWiesbaden = () => {
     // Force title update immediately
     document.title = 'Werbeagentur Wiesbaden – Sichtbarkeit & Weblösungen für Unternehmen';
   }, []);
+
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
   
   // Update to correct video path in lovable-uploads folder - using same as homepage
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -94,9 +100,24 @@ const WerbeagenturWiesbaden = () => {
               </p>
             </Reveal>
             <BeforeAfterSlider />
+            <div className="mt-8 text-center">
+              <p className="text-brand-text mb-6">
+                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-brand-primary hover:underline">info@ooliv.de</a>
+              </p>
+              <Button 
+                variant="primary"
+                size="lg" 
+                className="group"
+                onClick={handleStartProject}
+              >
+                Projekt starten
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
           </div>
         </div>
         
+        <GermanSolutionSection />
         <TechnologiesSection />
         
         <CaseStudiesSection />
