@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Phone, MapPin, Mail, Star } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -59,6 +58,9 @@ const Footer = () => {
               <li><Link to={getUrl('seo-optimization')} className={footerStyles.linkText}>{t('footer.seo')}</Link></li>
               <li><Link to={getUrl('google-ads')} className={footerStyles.linkText}>{t('footer.ads')}</Link></li>
               <li><Link to={getUrl('ai-technologies')} className={footerStyles.linkText}>{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
+              {language === 'de' && (
+                <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
+              )}
             </ul>
           </div>
 

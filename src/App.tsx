@@ -18,6 +18,7 @@ import GermanLegalNotice from './pages/de/Impressum';
 import GermanPrivacyPolicy from './pages/de/Datenschutz';
 import GermanThankYou from './pages/de/Danke';
 import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
+import Klickbetrug from './pages/de/Klickbetrug';
 import NotFound from './pages/NotFound';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
@@ -63,6 +64,7 @@ function App() {
                 <Route path="/content-erstellung" element={<GermanContentCreation />} />
                 <Route path="/google-ads" element={<GermanGoogleAds />} />
                 <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                <Route path="/klickbetrug" element={<Klickbetrug />} />
                 <Route path="/referenzen" element={<GermanCaseStudies />} />
                 <Route path="/ueber-uns" element={<GermanAboutUs />} />
                 <Route path="/kontakt" element={<GermanContact />} />
