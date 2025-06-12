@@ -1,41 +1,31 @@
 
 import React from 'react';
-import { LayoutGrid, Sparkles, Code, PhoneCall } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { Target, TrendingUp, Settings, Users } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const WiesbadenAboutSection = () => {
-  const handleStartProject = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
-  };
-
-  // Define the 4 pillars of service with Wiesbaden-specific content
-  const services = [
+  // Define the 4 core competencies for Wiesbaden market
+  const competencies = [
     {
-      title: "Strategie & UX",
-      description: "Klare Struktur, datenbasierte Entscheidungen, B2B-ready.",
-      icon: <LayoutGrid className="h-6 w-6 text-medico-turquoise" />,
-      link: "#"
+      title: "Digitale Strategien",
+      description: "Datenbasierte Konzepte, zielgruppenspezifisch, marktorientiert.",
+      icon: <Target className="h-6 w-6 text-medico-turquoise" />
     },
     {
-      title: "Content & SEO",
-      description: "Keyword-getrieben, mehrsprachig, KI-gestützt.",
-      icon: <Sparkles className="h-6 w-6 text-medico-turquoise" />,
-      link: "#"
+      title: "Performance Marketing",
+      description: "Messbare Kampagnen, ROI-fokussiert, kontinuierlich optimiert.",
+      icon: <TrendingUp className="h-6 w-6 text-medico-turquoise" />
     },
     {
-      title: "Design & Development", 
-      description: "Custom-coded, konversionsstark, skalierbar.",
-      icon: <Code className="h-6 w-6 text-medico-turquoise" />,
-      link: "#"
+      title: "Technische Umsetzung",
+      description: "Maßgeschneiderte Lösungen, zukunftssicher, skalierbar.",
+      icon: <Settings className="h-6 w-6 text-medico-turquoise" />
     },
     {
-      title: "Kommunikation",
-      description: "Sie sprechen immer direkt mit dem CEO — ohne Umwege.",
-      icon: <PhoneCall className="h-6 w-6 text-medico-turquoise" />,
-      link: "#"
+      title: "Persönliche Betreuung",
+      description: "Direkter Draht zum Geschäftsführer – ohne Hierarchien.",
+      icon: <Users className="h-6 w-6 text-medico-turquoise" />
     }
   ];
 
@@ -45,29 +35,22 @@ const WiesbadenAboutSection = () => {
         <Reveal>
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-medico-darkGreen mb-4 text-center">
-              Wo Strategie auf Umsetzung trifft — in Wiesbaden.
+              Digitale Kompetenz trifft regionale Expertise – in Wiesbaden.
             </h2>
             <p className="text-xl text-medico-turquoise max-w-3xl mx-auto text-center">
-              Wir sind Ihre spezialisierte Digitalagentur aus der Region. Seit 2008 entwickeln wir Websites für B2B-Unternehmen in Wiesbaden und Umgebung — strategisch durchdacht, technisch perfekt umgesetzt.
+              Als etablierte Werbeagentur im Rhein-Main-Gebiet verstehen wir sowohl lokale Marktbedingungen als auch überregionale Trends. Seit über 15 Jahren realisieren wir digitale Projekte für Unternehmen verschiedenster Branchen.
             </p>
           </div>
         </Reveal>
         
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {services.map((service, index) => (
+          {competencies.map((competency, index) => (
             <div key={index} className="bg-medico-mint/10 p-6 rounded-lg border border-medico-turquoise/20 hover:shadow-md transition-shadow">
               <div className="mb-4 p-3 rounded-full bg-medico-turquoise/10 inline-flex">
-                {service.icon}
+                {competency.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">{service.title}</h3>
-              <p className="text-medico-darkGreen/80 mb-4">{service.description}</p>
-              <a 
-                href={service.link}
-                className="text-medico-turquoise hover:text-medico-turquoise/80 font-medium transition-colors duration-200 inline-flex items-center group-hover:underline"
-              >
-                Mehr erfahren
-                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">{competency.title}</h3>
+              <p className="text-medico-darkGreen/80 mb-4">{competency.description}</p>
             </div>
           ))}
         </StaggerReveal>
