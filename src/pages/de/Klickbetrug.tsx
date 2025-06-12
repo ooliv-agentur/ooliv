@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import KlickbetrugHero from '@/components/klickbetrug/KlickbetrugHero';
 import KlickbetrugIntroduction from '@/components/klickbetrug/KlickbetrugIntroduction';
+import KlickbetrugProcess from '@/components/klickbetrug/KlickbetrugProcess';
 import KlickbetrugProblem from '@/components/klickbetrug/KlickbetrugProblem';
 import KlickbetrugSolution from '@/components/klickbetrug/KlickbetrugSolution';
 import KlickbetrugFeatures from '@/components/klickbetrug/KlickbetrugFeatures';
@@ -23,6 +24,7 @@ const Klickbetrug = () => {
       
       <KlickbetrugHero />
       <KlickbetrugIntroduction />
+      <KlickbetrugProcess />
       <KlickbetrugProblem />
       <KlickbetrugSolution />
       <KlickbetrugFeatures />

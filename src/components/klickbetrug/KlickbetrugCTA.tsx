@@ -47,7 +47,7 @@ const KlickbetrugCTA = () => {
               }}
               onClick={handleStartTest}
             >
-              Kostenlosen Test starten
+              Kampagne analysieren lassen – unverbindlich
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bot, Users, Shield, Smartphone } from 'lucide-react';
+import { Bot, MapPin, Clock, Shield } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
@@ -11,23 +11,27 @@ const KlickbetrugFeatures = () => {
   const features = [
     {
       icon: Bot,
-      title: 'Bots & Scripts',
-      description: 'Maschinenhafte Klickmuster ohne Nutzerverhalten'
+      title: 'Bot-Klicks',
+      description: 'Kein Mausverlauf, 0 Sekunden Verweildauer',
+      detail: 'Erkennung automatisierter Klicks durch fehlende natürliche Nutzermuster'
     },
     {
-      icon: Users,
-      title: 'Wettbewerber-Klicks',
-      description: 'Wiederholte IPs, ähnliche Geo-Daten, keine Conversion'
+      icon: MapPin,
+      title: 'VPN-Nutzer',
+      description: 'Geolocation-Abweichung zwischen IP und Zielregion',
+      detail: 'Identifikation von Proxy-Servern und anonymisierten Verbindungen'
+    },
+    {
+      icon: Clock,
+      title: 'Wiederholungsklicks',
+      description: 'Zeitintervallanalyse identischer IPs oder Geräte',
+      detail: 'Mustererkennung bei verdächtig regelmäßigen Klicksequenzen'
     },
     {
       icon: Shield,
-      title: 'Klickfarmen & VPNs',
-      description: 'Auffällige Zugriffsmuster aus Anonymisierungsnetzwerken'
-    },
-    {
-      icon: Smartphone,
-      title: 'Fake Traffic & Mobile Clicks',
-      description: 'Ungewöhnlich hohe Bounce-Rates bei mobilen Anzeigen'
+      title: 'Wettbewerber-Angriffe',
+      description: 'Auffällige Klickmuster aus Konkurrenz-Regionen',
+      detail: 'Schutz vor gezielten Attacken auf Ihr Werbebudget'
     }
   ];
 
@@ -37,8 +41,11 @@ const KlickbetrugFeatures = () => {
         <Reveal>
           <div className="text-left mb-16">
             <h2 className={`${getHeadingClasses('h2', 'primary', 'left')} mb-6`}>
-              Das erkennt unsere KI – automatisch & DSGVO-konform
+              Unsere KI erkennt Muster – bevor sie teuer werden
             </h2>
+            <p className={`${getBodyClasses('large', 'secondary', 'left')} max-w-3xl`}>
+              Moderne Klickbetrug-Methoden sind raffiniert – unsere Erkennung ist noch raffinierter.
+            </p>
           </div>
         </Reveal>
         
@@ -54,11 +61,14 @@ const KlickbetrugFeatures = () => {
                   className="text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-4`}>
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-3`}>
                 {feature.title}
               </h3>
-              <p className={getBodyClasses('base', 'secondary', 'left')}>
+              <p className={`${getBodyClasses('base', 'accent', 'left')} font-semibold mb-3`}>
                 {feature.description}
+              </p>
+              <p className={getBodyClasses('small', 'secondary', 'left')}>
+                {feature.detail}
               </p>
             </div>
           ))}

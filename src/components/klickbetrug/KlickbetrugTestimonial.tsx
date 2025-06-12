@@ -16,11 +16,11 @@ const KlickbetrugTestimonial = () => {
             </div>
             
             <blockquote className={`${getHeadingClasses('h3', 'primary', 'left')} mb-8 italic font-medium`}>
-              „Wir wussten gar nicht, dass Klickbetrug überhaupt existiert. Jetzt sparen wir mehrere Hundert Euro im Monat – ohne unser Budget zu erhöhen."
+              „Wir dachten, Google filtert sowas automatisch raus. Erst durch das Tool haben wir gesehen, wie viel wir verlieren."
             </blockquote>
             
             <cite className={getBodyClasses('base', 'muted', 'left')}>
-              Inhaberin eines Online-Shops (anonymisiert)
+              Kunde aus München (E-Commerce)
             </cite>
           </div>
         </Reveal>

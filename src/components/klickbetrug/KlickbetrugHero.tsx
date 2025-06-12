@@ -42,7 +42,7 @@ const KlickbetrugHero = () => {
               </h1>
               
               <p className={`${getBodyClasses('large', 'primary', 'left')} mb-8 sm:mb-10`}>
-                Unbemerkter Klickbetrug kann Ihr gesamtes Werbebudget vernichten. Unsere KI erkennt verdächtige Klicks – und blockiert sie automatisch.
+                Wir schützen Ihr Werbebudget vor unsichtbaren Angriffen – vollautomatisch, sofort wirksam und ohne Integration.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
