@@ -48,7 +48,7 @@ const KlickbetrugTestimonial = () => {
   ];
 
   return (
-    <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
+    <section className={`${getSectionClasses('large', 'white')} font-satoshi overflow-hidden`}>
       <div className={getContainerClasses('narrow')}>
         <Reveal>
           <div className="text-center mb-12">
@@ -69,27 +69,27 @@ const KlickbetrugTestimonial = () => {
             }}
             className="w-full max-w-4xl mx-auto"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={index} className="pl-2 md:pl-4">
                   <div className="p-1">
-                    <Card className="bg-medico-mint/10 border-medico-turquoise/20 min-h-[300px]">
-                      <CardContent className="flex flex-col justify-center p-8 sm:p-12 text-center">
+                    <Card className="bg-medico-mint/10 border-medico-turquoise/20 min-h-[300px] overflow-hidden">
+                      <CardContent className="flex flex-col justify-center p-6 sm:p-8 md:p-12 text-center h-full">
                         <div className="mb-6">
-                          <Quote className="h-12 w-12 text-medico-turquoise mx-auto" />
+                          <Quote className="h-10 w-10 md:h-12 md:w-12 text-medico-turquoise mx-auto" />
                         </div>
                         
-                        <blockquote className={`${getHeadingClasses('h3', 'primary', 'center')} mb-8 italic font-medium leading-relaxed`}>
+                        <blockquote className={`${getHeadingClasses('h3', 'primary', 'center')} mb-6 md:mb-8 italic font-medium leading-relaxed text-lg md:text-xl lg:text-2xl`}>
                           "{testimonial.quote}"
                         </blockquote>
                         
-                        <div className="text-center">
+                        <div className="text-center mt-auto">
                           <cite className={`${getBodyClasses('base', 'muted', 'center')} block mb-2`}>
                             {testimonial.author}
                           </cite>
                           {testimonial.savings && (
-                            <div className="inline-flex items-center px-4 py-2 bg-medico-turquoise/10 rounded-full">
-                              <span className="text-medico-turquoise font-bold text-sm">
+                            <div className="inline-flex items-center px-3 py-2 md:px-4 md:py-2 bg-medico-turquoise/10 rounded-full">
+                              <span className="text-medico-turquoise font-bold text-sm whitespace-nowrap">
                                 ✓ {testimonial.savings}
                               </span>
                             </div>
@@ -110,15 +110,15 @@ const KlickbetrugTestimonial = () => {
           {/* Summary stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-200">
             <div className="text-center">
-              <div className="text-3xl font-bold text-medico-turquoise mb-2">850€+</div>
+              <div className="text-2xl md:text-3xl font-bold text-medico-turquoise mb-2">850€+</div>
               <div className="text-sm text-gray-600">Durchschnittliche monatliche Ersparnis</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-medico-turquoise mb-2">35%</div>
+              <div className="text-2xl md:text-3xl font-bold text-medico-turquoise mb-2">35%</div>
               <div className="text-sm text-gray-600">Weniger Klickbetrug im Schnitt</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-medico-turquoise mb-2">2.8x</div>
+              <div className="text-2xl md:text-3xl font-bold text-medico-turquoise mb-2">2.8x</div>
               <div className="text-sm text-gray-600">Besserer ROAS nach Implementierung</div>
             </div>
           </div>

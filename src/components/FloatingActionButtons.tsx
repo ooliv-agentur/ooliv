@@ -59,8 +59,10 @@ const FloatingActionButtons = () => {
   return (
     <TooltipProvider>
       <div className={cn(
-        "fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-5",
-        "transition-all duration-300"
+        "fixed right-4 z-40 flex flex-col gap-5",
+        "transition-all duration-300",
+        // Perfekte vertikale Zentrierung
+        "top-1/2 -translate-y-1/2"
       )}>
         {/* Action buttons with smooth transition */}
         <div className={cn(
