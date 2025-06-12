@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const StrategieServices = () => {
   const services = [
@@ -36,21 +38,22 @@ const StrategieServices = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-            Unsere Strategie-Leistungen
-          </h2>
-          <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Umfassende Beratung und Konzeption für Ihren digitalen Erfolg
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
+              Unsere Strategie-Leistungen
+            </h2>
+            <p className="text-lg md:text-xl text-medico-turquoise max-w-3xl mx-auto">
+              Umfassende Beratung und Konzeption für Ihren digitalen Erfolg
+            </p>
+          </div>
+        </Reveal>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-medico-mint/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
+              className="bg-medico-mint/20 rounded-2xl p-8 shadow-sm"
             >
               <h3 className="text-2xl font-bold mb-6 text-medico-darkGreen">{service.title}</h3>
               <ul className="space-y-4">
@@ -63,7 +66,7 @@ const StrategieServices = () => {
               </ul>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
