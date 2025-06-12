@@ -26,7 +26,7 @@ const WiesbadenAboutSection = () => {
       link: "#"
     },
     {
-      title: "Design & Development",
+      title: "Design & Development", 
       description: "Custom-coded, konversionsstark, skalierbar.",
       icon: <Code className="h-6 w-6 text-medico-turquoise" />,
       link: "#"
@@ -42,61 +42,25 @@ const WiesbadenAboutSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main heading and intro */}
         <Reveal>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-medico-darkGreen mb-4 text-center">
               Wo Strategie auf Umsetzung trifft — in Wiesbaden.
             </h2>
-            <p className="text-lg md:text-xl text-medico-turquoise max-w-3xl mx-auto mb-12" style={{ lineHeight: '1.6' }}>
-              Wir sind Ihre spezialisierte Digitalagentur, die Websites strategisch plant und technisch perfekt umsetzt.
+            <p className="text-xl text-medico-turquoise max-w-3xl mx-auto text-center">
+              Wir sind Ihre spezialisierte Digitalagentur aus der Region. Seit 2008 entwickeln wir Websites für B2B-Unternehmen in Wiesbaden und Umgebung — strategisch durchdacht, technisch perfekt umgesetzt.
             </p>
           </div>
         </Reveal>
-
-        {/* Highlighted intro text box */}
-        <Reveal delay={0.2}>
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-medico-mint/10 rounded-2xl p-8 md:p-12 border border-medico-turquoise/20">
-              <p className="text-lg md:text-xl text-medico-darkGreen leading-relaxed text-center mb-8">
-                Seit über 16 Jahren entwickeln wir Websites für B2B-Unternehmen in Wiesbaden und der Region. Mit einer klaren Strategie, datenbasierten Entscheidungen und einem strukturierten Prozess schaffen wir Websites, die Ihr Unternehmen digital voranbringen.
-              </p>
-              <div className="text-center">
-                <Button 
-                  size="lg" 
-                  className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                  style={{ 
-                    backgroundColor: '#FFD700', 
-                    color: '#003347',
-                    border: 'none'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FFC700';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FFD700';
-                  }}
-                  onClick={handleStartProject}
-                >
-                  Mehr erfahren
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </Reveal>
         
-        {/* Service cards grid */}
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {services.map((service, index) => (
-            <div key={index} className="text-center group">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-medico-turquoise/20 transition-colors duration-300">
-                  {service.icon}
-                </div>
+            <div key={index} className="bg-medico-mint/10 p-6 rounded-lg border border-medico-turquoise/20 hover:shadow-md transition-shadow">
+              <div className="mb-4 p-3 rounded-full bg-medico-turquoise/10 inline-flex">
+                {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-medico-darkGreen">{service.title}</h3>
-              <p className="text-medico-darkGreen/80 leading-relaxed mb-4">{service.description}</p>
+              <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">{service.title}</h3>
+              <p className="text-medico-darkGreen/80 mb-4">{service.description}</p>
               <a 
                 href={service.link}
                 className="text-medico-turquoise hover:text-medico-turquoise/80 font-medium transition-colors duration-200 inline-flex items-center group-hover:underline"
