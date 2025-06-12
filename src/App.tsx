@@ -1,88 +1,84 @@
 
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Suspense, lazy } from "react";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { LanguageProvider } from './contexts/LanguageContext';
-import GermanIndex from './pages/de/Index';
-import GermanWebDesign from './pages/de/Webdesign';
-import GermanWebDevelopment from './pages/de/Webentwicklung';
-import GermanSEO from './pages/de/SEOOptimierung';
-import GermanContentCreation from './pages/de/ContentErstellung';
-import GermanGoogleAds from './pages/de/GoogleAds';
-import GermanAiTechnologies from './pages/de/KiTechnologien';
-import GermanCaseStudies from './pages/de/Referenzen';
-import GermanAboutUs from './pages/de/UeberUns';
-import GermanContact from './pages/de/Kontakt';
-import GermanLegalNotice from './pages/de/Impressum';
-import GermanPrivacyPolicy from './pages/de/Datenschutz';
-import GermanThankYou from './pages/de/Danke';
-import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
-import NotFound from './pages/NotFound';
-import CustomCursor from './components/CustomCursor';
-import ScrollIndicator from './components/ScrollIndicator';
-import FloatingActionButtons from './components/FloatingActionButtons';
-import LeadGenerationOverlay from './components/LeadGenerationOverlay';
-import ChatbaseWidget from './components/ChatbaseWidget';
-import { Toaster } from 'sonner';
-import Strategie from './pages/de/Strategie';
-import CookieRichtlinie from './pages/de/CookieRichtlinie';
-import { CookieConsentProvider } from './contexts/CookieConsentContext';
-import CookieNotification from './components/CookieNotification';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import ScrollToTop from '@/components/ScrollToTop';
+import LeadFormContainer from '@/components/lead-form/LeadFormContainer';
+import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
+import ChatbaseWidget from '@/components/ChatbaseWidget';
+import ScrollIndicator from '@/components/ScrollIndicator';
+
+// Lazy load components for better performance
+const Index = lazy(() => import("./pages/de/Index"));
+const Webdesign = lazy(() => import("./pages/de/Webdesign"));
+const Webentwicklung = lazy(() => import("./pages/de/Webentwicklung"));
+const ContentErstellung = lazy(() => import("./pages/de/ContentErstellung"));
+const SEOOptimierung = lazy(() => import("./pages/de/SEOOptimierung"));
+const GoogleAds = lazy(() => import("./pages/de/GoogleAds"));
+const KiTechnologien = lazy(() => import("./pages/de/KiTechnologien"));
+const Klickbetrug = lazy(() => import("./pages/de/Klickbetrug"));
+const Strategie = lazy(() => import("./pages/de/Strategie"));
+const Referenzen = lazy(() => import("./pages/de/Referenzen"));
+const UeberUns = lazy(() => import("./pages/de/UeberUns"));
+const Kontakt = lazy(() => import("./pages/de/Kontakt"));
+const Impressum = lazy(() => import("./pages/de/Impressum"));
+const Datenschutz = lazy(() => import("./pages/de/Datenschutz"));
+const WerbeagenturWiesbaden = lazy(() => import("./pages/de/WerbeagenturWiesbaden"));
+const Danke = lazy(() => import("./pages/de/Danke"));
+const CookieRichtlinie = lazy(() => import("./pages/de/CookieRichtlinie"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
-function App() {
-  const [showLeadForm, setShowLeadForm] = useState(false);
-
-  return (
-    <LanguageProvider>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <HelmetProvider>
       <CookieConsentProvider>
-        <HelmetProvider>
-          <QueryClientProvider client={queryClient}>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
             <Router>
-              <CustomCursor />
+              <ScrollToTop />
               <ScrollIndicator />
-              <FloatingActionButtons />
-              <ChatbaseWidget />
-              <CookieNotification />
-              
-              {/* Single LeadGenerationOverlay instance for the entire app */}
-              <LeadGenerationOverlay 
-                open={showLeadForm} 
-                onOpenChange={setShowLeadForm}
-              />
-              
-              <Routes>
-                {/* German Routes */}
-                <Route path="/" element={<GermanIndex />} />
-                <Route path="/webdesign" element={<GermanWebDesign />} />
-                <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-                <Route path="/strategie" element={<Strategie />} />
-                <Route path="/seo-optimierung" element={<GermanSEO />} />
-                <Route path="/content-erstellung" element={<GermanContentCreation />} />
-                <Route path="/google-ads" element={<GermanGoogleAds />} />
-                <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-                <Route path="/referenzen" element={<GermanCaseStudies />} />
-                <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                <Route path="/kontakt" element={<GermanContact />} />
-                <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-                <Route path="/impressum" element={<GermanLegalNotice />} />
-                <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
-                <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
-                <Route path="/danke" element={<GermanThankYou />} />
-
-                {/* 404 Route */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-              
-              <Toaster />
+              <div className="min-h-screen">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Routes>
+                    {/* German routes */}
+                    <Route path="/" element={<Index />} />
+                    <Route path="/webdesign" element={<Webdesign />} />
+                    <Route path="/webentwicklung" element={<Webentwicklung />} />
+                    <Route path="/content-erstellung" element={<ContentErstellung />} />
+                    <Route path="/seo-optimierung" element={<SEOOptimierung />} />
+                    <Route path="/google-ads" element={<GoogleAds />} />
+                    <Route path="/ki-technologien" element={<KiTechnologien />} />
+                    <Route path="/klickbetrug" element={<Klickbetrug />} />
+                    <Route path="/strategie" element={<Strategie />} />
+                    <Route path="/case-studies" element={<Referenzen />} />
+                    <Route path="/ueber-ooliv" element={<UeberUns />} />
+                    <Route path="/kontakt" element={<Kontakt />} />
+                    <Route path="/impressum" element={<Impressum />} />
+                    <Route path="/datenschutz" element={<Datenschutz />} />
+                    <Route path="/werbeagentur-wiesbaden" element={<WerbeagenturWiesbaden />} />
+                    <Route path="/danke" element={<Danke />} />
+                    <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </Suspense>
+                <LeadFormContainer />
+                <ChatbaseWidget />
+              </div>
             </Router>
-          </QueryClientProvider>
-        </HelmetProvider>
+          </TooltipProvider>
+        </LanguageProvider>
       </CookieConsentProvider>
-    </LanguageProvider>
-  );
-}
+    </HelmetProvider>
+  </QueryClientProvider>
+);
 
 export default App;
