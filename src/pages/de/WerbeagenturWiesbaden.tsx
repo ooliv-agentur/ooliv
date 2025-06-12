@@ -68,7 +68,10 @@ const WerbeagenturWiesbaden = () => {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Helmet>
       
-      <PageLayout className="overflow-x-hidden">
+      <PageLayout 
+        className="overflow-x-hidden"
+        seoText={<SEOTextSection />}
+      >
         <WiesbadenHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
@@ -115,8 +118,6 @@ const WerbeagenturWiesbaden = () => {
           primaryCta="Digitales Projekt starten"
         />
       </PageLayout>
-      
-      <SEOTextSection />
     </>
   );
 };
