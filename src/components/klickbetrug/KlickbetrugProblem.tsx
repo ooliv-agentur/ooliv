@@ -3,6 +3,9 @@ import React from 'react';
 import { Bot, Users, Shield, TrendingUp } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
+import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
+import { Icon } from '@/components/ui/icon';
 
 const KlickbetrugProblem = () => {
   const problems = [
@@ -29,26 +32,33 @@ const KlickbetrugProblem = () => {
   ];
 
   return (
-    <section className="py-20 bg-white font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
+      <div className={getContainerClasses()}>
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
+            <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
               Typische Arten von Klickbetrug – so läuft der Angriff ab
             </h2>
+            <div className="w-20 h-1 bg-medico-turquoise mx-auto"></div>
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className={getGridClasses(4, 'large')}>
           {problems.map((problem, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 text-center">
-              <div className="w-16 h-16 rounded-full bg-gray-300 flex items-center justify-center mx-auto mb-6">
-                <problem.icon className="h-8 w-8 text-white" />
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 text-center group hover:transform hover:scale-105">
+              <div className="mb-6">
+                <Icon 
+                  icon={problem.icon}
+                  variant="round"
+                  size="xl"
+                  background="light"
+                  className="mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-xl font-bold text-medico-darkGreen mb-4">
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>
                 {problem.title}
               </h3>
-              <p className="text-medico-darkGreen/80" style={{ lineHeight: '1.5' }}>
+              <p className={getBodyClasses('base', 'secondary', 'center')}>
                 {problem.description}
               </p>
             </div>

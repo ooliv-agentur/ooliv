@@ -3,6 +3,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
+import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
+import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 
 const KlickbetrugCTA = () => {
   const handleStartTest = () => {
@@ -17,14 +19,16 @@ const KlickbetrugCTA = () => {
   ];
 
   return (
-    <section className="py-20 bg-medico-mint font-satoshi">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${getSectionClasses('large', 'mint')} font-satoshi`}>
+      <div className={getContainerClasses('narrow')}>
         <Reveal>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
+            <h2 className={getHeadingClasses('h2', 'primary', 'center')}>
               Starten Sie jetzt – und schützen Sie Ihre Kampagnen dauerhaft
             </h2>
-            <p className="text-xl text-medico-darkGreen max-w-3xl mx-auto mb-10" style={{ lineHeight: '1.5' }}>
+            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            
+            <p className={`${getBodyClasses('large', 'primary', 'center')} mb-10`}>
               Unsere Lösung läuft im Hintergrund, ist sofort aktiv und schützt Ihr Google Ads Budget zuverlässig.
             </p>
             
@@ -43,11 +47,11 @@ const KlickbetrugCTA = () => {
         <Reveal delay={0.2}>
           <div className="max-w-2xl mx-auto">
             <div className="bg-white rounded-2xl p-8 border-2 border-medico-turquoise shadow-lg">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 {trustPoints.map((point, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
-                    <span className="text-medico-darkGreen font-medium">
+                    <span className={getBodyClasses('base', 'primary', 'left')}>
                       {point}
                     </span>
                   </div>

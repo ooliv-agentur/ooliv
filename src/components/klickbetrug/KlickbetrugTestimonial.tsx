@@ -2,22 +2,24 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
+import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
+import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 
 const KlickbetrugTestimonial = () => {
   return (
-    <section className="py-20 bg-white font-satoshi">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${getSectionClasses('large', 'white')} font-satoshi`}>
+      <div className={getContainerClasses('narrow')}>
         <Reveal>
           <div className="text-center">
             <div className="mb-8">
               <Quote className="h-12 w-12 text-medico-turquoise mx-auto" />
             </div>
             
-            <blockquote className="text-2xl md:text-3xl font-medium text-medico-darkGreen mb-8 leading-relaxed">
+            <blockquote className={`${getHeadingClasses('h3', 'primary', 'center')} mb-8 italic font-medium`}>
               „Wir wussten gar nicht, dass Klickbetrug überhaupt existiert. Jetzt sparen wir mehrere Hundert Euro im Monat – ohne unser Budget zu erhöhen."
             </blockquote>
             
-            <cite className="text-lg text-medico-darkGreen/80 font-medium">
+            <cite className={getBodyClasses('base', 'muted', 'center')}>
               Inhaberin eines Online-Shops (anonymisiert)
             </cite>
           </div>
