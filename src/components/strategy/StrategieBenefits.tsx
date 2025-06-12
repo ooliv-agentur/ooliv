@@ -3,6 +3,8 @@ import React from 'react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { RegisteredIcon, IconName } from '@/components/ui/registered-icon';
+import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
+import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 
 const StrategieBenefits = () => {
   const benefits = [
@@ -29,20 +31,20 @@ const StrategieBenefits = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={getSectionClasses('large', 'white')}>
+      <div className={getContainerClasses()}>
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
+            <h2 className={`${getHeadingClasses('h2', 'primary', 'center')} mb-6`}>
               Strategie & Konzept als Fundament
             </h2>
-            <p className="text-lg md:text-xl text-medico-turquoise max-w-3xl mx-auto">
+            <p className={`${getBodyClasses('large', 'secondary', 'center')} max-w-3xl mx-auto`}>
               Ohne eine klare Strategie und ein durchdachtes Webkonzept verpuffen Marketing-Budgets. Wir sorgen dafür, dass jeder Euro zielgerichtet eingesetzt wird – von der Analyse bis zur Umsetzung.
             </p>
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className={getGridClasses(4, 'large')}>
           {benefits.map((benefit, index) => (
             <div 
               key={index}
@@ -52,13 +54,13 @@ const StrategieBenefits = () => {
                 <RegisteredIcon 
                   name={benefit.icon}
                   variant="round"
-                  size="xl"
+                  size="xl" 
                   background="light"
                   className="mx-auto text-medico-turquoise"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-medico-darkGreen">{benefit.title}</h3>
-              <p className="text-medico-darkGreen/80 leading-relaxed">{benefit.description}</p>
+              <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
+              <p className={getBodyClasses('base', 'secondary', 'center')}>{benefit.description}</p>
             </div>
           ))}
         </StaggerReveal>
