@@ -19,8 +19,7 @@ const Footer = () => {
           { name: "Content-Erstellung", path: "/content-erstellung" },
           { name: "SEO-Optimierung", path: "/seo-optimierung" },
           { name: "Google Ads", path: "/google-ads" },
-          { name: "KI-Technologien", path: "/ki-technologien" },
-          { name: "Klickbetrug-Schutz", path: "/klickbetrug" }
+          { name: "KI-Technologien", path: "/ki-technologien" }
         ]
       },
       company: {
