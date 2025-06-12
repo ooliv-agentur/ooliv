@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
@@ -9,13 +10,6 @@ import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 const KlickbetrugHero = () => {
   const handleStartTest = () => {
     window.dispatchEvent(new Event('open-lead-form'));
-  };
-
-  const scrollToSolution = () => {
-    const solutionSection = document.getElementById('klickbetrug-solution');
-    if (solutionSection) {
-      solutionSection.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -69,11 +63,13 @@ const KlickbetrugHero = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto group" 
-                  onClick={scrollToSolution}
+                  className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto group"
+                  asChild
                 >
-                  Wie funktioniert das?
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                  <Link to="/kontakt">
+                    Fragen? Kontaktieren Sie uns
+                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
               </div>
             </div>
