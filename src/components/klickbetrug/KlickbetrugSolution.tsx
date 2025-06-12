@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
@@ -21,8 +22,12 @@ const KlickbetrugSolution = () => {
                 Wir stoppen Klickbetrug – bevor er Schaden anrichtet
               </h2>
               
-              <p className={`${getBodyClasses('large', 'primary', 'left')} mb-8`}>
+              <p className={`${getBodyClasses('large', 'primary', 'left')} mb-6`}>
                 Unsere Lösung analysiert jede Anzeige in Echtzeit: Woher kommt der Klick? Wie verhält sich der Nutzer? Welche Muster deuten auf Betrug hin? Verdächtige Klicks werden automatisch blockiert – bevor sie Geld kosten.
+              </p>
+
+              <p className={`${getBodyClasses('base', 'secondary', 'left')} mb-8`}>
+                Als zertifizierter <strong>Google Partner</strong> bieten wir Ihnen komplette Online-Marketing-Lösungen aus einer Hand: Vom professionellen <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads Management</Link> über strategische <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline font-medium">SEO-Optimierung</Link> bis hin zum automatischen Klickbetrug-Schutz. Vertrauen Sie auf unsere Expertise für maximale Werbeeffizienz.
               </p>
               
               <Button 
@@ -48,13 +53,36 @@ const KlickbetrugSolution = () => {
           </Reveal>
           
           <Reveal delay={0.2}>
-            <div className="lg:text-right">
-              <div className="bg-medico-mint/30 rounded-2xl p-8 backdrop-blur-sm border border-medico-turquoise/20">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🛡️</div>
-                  <p className={getBodyClasses('base', 'primary', 'center')}>
-                    KI-basierter Schutz in Echtzeit
-                  </p>
+            <div className="lg:text-center">
+              <div className="bg-medico-mint/20 rounded-2xl p-8 backdrop-blur-sm border border-medico-turquoise/20">
+                <h3 className={`${getHeadingClasses('h3', 'primary', 'center')} mb-6`}>
+                  Zertifizierter Google Partner
+                </h3>
+                <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow mb-6">
+                  <img 
+                    src="/lovable-uploads/e3b55cd1-2d14-4763-ac56-c1f282c0c16f.png"
+                    alt="Google Partner Badge"
+                    className="w-40 h-auto mx-auto"
+                  />
+                </div>
+                <p className={`${getBodyClasses('base', 'secondary', 'center')} mb-4`}>
+                  Höchste Qualitätsstandards für Ihre Google Ads Performance
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Link 
+                    to="/google-ads"
+                    className="inline-flex items-center justify-center gap-2 text-sm font-medium text-medico-turquoise hover:text-medico-darkGreen transition-colors"
+                  >
+                    Google Ads Management
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link 
+                    to="/seo-optimierung"
+                    className="inline-flex items-center justify-center gap-2 text-sm font-medium text-medico-turquoise hover:text-medico-darkGreen transition-colors"
+                  >
+                    SEO-Optimierung
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </div>
