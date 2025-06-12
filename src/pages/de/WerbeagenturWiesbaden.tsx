@@ -12,7 +12,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import WiesbadenHero from '@/components/de/WiesbadenHero';
-import WiesbadenServices from '@/components/de/WiesbadenServices';
 
 // Use the actual homepage components instead
 import DeutscherAboutSection from '@/components/de/DeutscherAboutSection';
@@ -74,7 +73,6 @@ const WerbeagenturWiesbaden = () => {
         seoText={<SEOTextSection />}
       >
         <WiesbadenHero />
-        <WiesbadenServices />
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
