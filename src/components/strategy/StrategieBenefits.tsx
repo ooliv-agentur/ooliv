@@ -2,29 +2,30 @@
 import React from 'react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
-import { RegisteredIcon, IconName } from '@/components/ui/registered-icon';
+import { Target, TrendingUp, Users, Zap } from 'lucide-react';
+import { Icon } from '@/components/ui/icon';
 import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 
 const StrategieBenefits = () => {
   const benefits = [
     {
-      icon: 'target' as IconName,
+      icon: Target,
       title: "Zielgruppenanalyse & Marktverständnis",
       description: "Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie mit einem klaren Webkonzept optimal erreichen."
     },
     {
-      icon: 'trendingUp' as IconName,
+      icon: TrendingUp,
       title: "Nutzerführung & Conversion-Strategie",
       description: "Wir definieren, wie Ihre Besucher geführt werden – für mehr Leads und eine hohe Conversion-Rate. Ihr Webkonzept wird so zur tragenden Säule Ihrer digitalen Strategie."
     },
     {
-      icon: 'users' as IconName,
+      icon: Users,
       title: "Projektplan & Roadmap",
       description: "Wir entwickeln eine klare Roadmap mit Meilensteinen, damit Ihr Projekt strukturiert umgesetzt wird und alle Beteiligten jederzeit den Überblick behalten – vom ersten Webkonzept bis zur Umsetzung."
     },
     {
-      icon: 'zap' as IconName,
+      icon: Zap,
       title: "Persönliche Betreuung",
       description: "Wir begleiten Sie von der ersten Idee bis zur Umsetzung – mit einem persönlichen Ansprechpartner, einem individuellen Webkonzept und dem richtigen Blick fürs Detail."
     }
@@ -51,8 +52,8 @@ const StrategieBenefits = () => {
               className="text-center"
             >
               <div className="mb-6 flex justify-center">
-                <RegisteredIcon 
-                  name={benefit.icon}
+                <Icon 
+                  icon={benefit.icon}
                   variant="round"
                   size="xl" 
                   background="light"
