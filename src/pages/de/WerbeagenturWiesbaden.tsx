@@ -22,23 +22,23 @@ import TeamTeaserDE from '@/components/de/TeamTeaserDE';
 const wiesbadenFaqs = [
   {
     question: "Wie arbeitet eine Werbeagentur in Wiesbaden mit lokalen Unternehmen?",
-    answer: "Als Werbeagentur verstehen wir die besonderen Herausforderungen von Wiesbadener Unternehmen. Wir entwickeln maßgeschneiderte digitale Strategien, die sowohl lokal als auch überregional wirken – von der regionalen Sichtbarkeit bis zur deutschlandweiten Expansion."
+    answer: "Als Werbeagentur in Wiesbaden verstehen wir die besonderen Herausforderungen lokaler Unternehmen. Wir entwickeln maßgeschneiderte Strategien, die sowohl regional als auch überregional wirken – von der lokalen Sichtbarkeit bis zur deutschlandweiten Expansion."
   },
   {
-    question: "Was unterscheidet ooliv von anderen Werbeagenturen in der Region?",
-    answer: "Unsere Stärke liegt in der Kombination aus strategischer Planung und technischer Exzellenz. Während andere Agenturen oft nur Teilbereiche abdecken, bieten wir einen ganzheitlichen Ansatz – von der digitalen Konzeption bis zur technischen Umsetzung und langfristigen Betreuung."
+    question: "Was unterscheidet ooliv von anderen Werbeagenturen in Wiesbaden?",
+    answer: "Unsere Stärke liegt in der Kombination aus strategischer Planung und technischer Exzellenz. Während andere Agenturen oft nur Teilbereiche abdecken, bieten wir als Werbeagentur einen ganzheitlichen Ansatz – von der Konzeption bis zur Umsetzung und Betreuung."
   },
   {
-    question: "Welche Investition ist für eine professionelle Website in Wiesbaden nötig?",
-    answer: "Die Investition richtet sich nach Ihren Zielen und Anforderungen. Strategische Websites beginnen bei 4.000 €, umfassende Projekte mit erweiterten Funktionen liegen zwischen 8.000 € und 15.000 €. Wir erstellen transparente Angebote ohne versteckte Kosten."
+    question: "Welche Investition ist für eine professionelle Website nötig?",
+    answer: "Die Investition richtet sich nach Ihren Zielen und Anforderungen. Einfache Websites beginnen bei 4.000 €, umfassende Projekte mit erweiterten Funktionen liegen zwischen 8.000 € und 15.000 €. Wir erstellen transparente Angebote ohne versteckte Kosten."
   },
   {
-    question: "Wie schnell kann eine neue Website für Wiesbadener Unternehmen realisiert werden?",
-    answer: "Die Umsetzungsdauer variiert je nach Projektumfang. Standardprojekte realisieren wir in 4-8 Wochen, komplexere digitale Vorhaben benötigen entsprechend mehr Zeit. Eine strukturierte Planung sorgt für verlässliche Termine."
+    question: "Wie schnell kann eine neue Website realisiert werden?",
+    answer: "Die Umsetzungsdauer variiert je nach Projektumfang. Standardprojekte realisieren wir in 4-8 Wochen, komplexere Vorhaben benötigen entsprechend mehr Zeit. Eine strukturierte Planung sorgt für verlässliche Termine."
   },
   {
-    question: "Warum ist ooliv die ideale digitale Agentur für Wiesbadener Unternehmen?",
-    answer: "Weil wir die Bedürfnisse von Unternehmen in der Region Wiesbaden genau kennen. Als spezialisierte Digitalagentur kombinieren wir regionale Expertise mit überregionaler Erfahrung und liefern messbare Resultate statt leerer Versprechungen."
+    question: "Warum ist ooliv die ideale Werbeagentur für Wiesbadener Unternehmen?",
+    answer: "Weil wir die Bedürfnisse von Unternehmen im Rhein-Main-Gebiet genau kennen. Als Werbeagentur kombinieren wir regionale Expertise mit überregionaler Erfahrung und liefern messbare Resultate statt leerer Versprechungen."
   }
 ];
 
@@ -48,7 +48,7 @@ const WerbeagenturWiesbaden = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturWiesbaden component mounted - setting language to German');
-    document.title = 'Digitalagentur Wiesbaden – Wo Strategie auf Umsetzung trifft';
+    document.title = 'Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg';
   }, []);
 
   const handleStartProject = () => {
@@ -59,10 +59,10 @@ const WerbeagenturWiesbaden = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>Digitalagentur Wiesbaden – Wo Strategie auf Umsetzung trifft</title>
+        <title>Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg</title>
         <meta
           name="description"
-          content="ooliv – Ihre spezialisierte Digitalagentur in Wiesbaden für strategische Websites, die Geschäftsergebnisse liefern. Über 16 Jahre Erfahrung mit B2B-Unternehmen in der Region."
+          content="ooliv – Ihre kompetente Werbeagentur in Wiesbaden für digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -78,9 +78,9 @@ const WerbeagenturWiesbaden = () => {
         
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Strategische Websites, die Wiesbadener Unternehmen digital voranbringen.</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-brand-heading">Ihre digitale Präsenz sollte Geschäfte generieren – nicht nur existieren.</h2>
             <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-brand-text">
-              Viele Unternehmen in Wiesbaden haben Websites, die nicht zu ihrem Geschäftserfolg beitragen. Als erfahrene Digitalagentur entwickeln wir strategische Online-Auftritte, die aktiv Kunden gewinnen, Vertrauen schaffen und nachweislich zu besseren Geschäftsergebnissen führen. Seit über 16 Jahren für B2B-Unternehmen in der Region aktiv.
+              Viele Wiesbadener Unternehmen haben Websites, die nicht zum Unternehmenserfolg beitragen. Als erfahrene Werbeagentur entwickeln wir digitale Auftritte, die aktiv Kunden gewinnen, Vertrauen schaffen und nachweislich zu besseren Geschäftsergebnissen führen.
             </p>
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
@@ -107,14 +107,14 @@ const WerbeagenturWiesbaden = () => {
         
         <FAQ 
           customFaqs={wiesbadenFaqs}
-          customTitle="Häufige Fragen zur Zusammenarbeit mit einer Digitalagentur in Wiesbaden"
+          customTitle="Häufige Fragen zur Werbeagentur-Zusammenarbeit"
           customCtaText="Weitere Fragen? Sprechen Sie direkt mit uns"
         />
         
         <CTA
           lightBackground={true}
-          title="Bereit für eine Website, die strategisch funktioniert?"
-          subtitle="Lassen Sie uns in einem unverbindlichen Gespräch klären, wie wir Ihre digitale Präsenz zu einem echten Geschäftsinstrument machen – strategisch fundiert, technisch ausgereift und messbar erfolgreich. Für Wiesbadener Unternehmen, die digital wachsen wollen."
+          title="Bereit für eine Website, die wirklich funktioniert?"
+          subtitle="Lassen Sie uns in einem unverbindlichen Gespräch klären, wie wir Ihre digitale Präsenz zu einem echten Geschäftsinstrument machen – strategisch fundiert, technisch ausgereift und messbar erfolgreich."
           primaryCta="Digitales Projekt starten"
         />
       </PageLayout>

@@ -9,9 +9,9 @@ const WiesbadenHero = () => {
 
   // Dynamic subheadlines specifically for Wiesbaden businesses
   const dynamicEndings = [
-    "strategisch zu planen.",
-    "technisch perfekt umzusetzen.", 
-    "messbar erfolgreich zu werden."
+    "regional sichtbar zu werden.",
+    "digitale Marktführer zu werden.", 
+    "nachhaltiges Wachstum zu erzielen."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -20,12 +20,12 @@ const WiesbadenHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Wo Strategie auf Umsetzung trifft — in Wiesbaden."
-      subtitle="Wir sind Ihre spezialisierte Digitalagentur, die Websites strategisch plant und technisch perfekt umsetzt. Seit über 16 Jahren entwickeln wir für B2B-Unternehmen in Wiesbaden und der Region Websites, die Ihr Unternehmen digital voranbringen."
-      dynamicPrefix="Wir unterstützen Wiesbadener Unternehmen dabei, digital"
+      title="Werbeagentur Wiesbaden"
+      subtitle="Als spezialisierte Werbeagentur in Wiesbaden entwickeln wir digitale Strategien, die Ihr Unternehmen messbar voranbringen. Professionell, zielgerichtet und mit nachweisbaren Resultaten – für nachhaltigen Geschäftserfolg."
+      dynamicPrefix="Wir unterstützen Wiesbadener Unternehmen dabei,"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{
-        text: "Mehr erfahren",
+        text: "Digitales Projekt starten",
         link: "#",
         onClick: handleStartProject
       }}
