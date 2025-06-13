@@ -15,7 +15,7 @@
   }
 }
 
-/* Optimize font loading */
+/* Optimize font loading with font-display: swap */
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Regular.otf') format('opentype');
@@ -83,10 +83,52 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.aspect-[3/1] {
+.aspect-\[3\/1\] {
   aspect-ratio: 3 / 1;
 }
 
-.aspect-[16/9] {
+.aspect-\[16\/9\] {
   aspect-ratio: 16 / 9;
+}
+
+/* Desktop-only scrollbar styling - deferred loading */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #38B593;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #2a8a73;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #38B593 transparent;
+  }
+}
+
+/* Resource loading optimization */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Preload hints for better resource prioritization */
+.preload-important {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
 }

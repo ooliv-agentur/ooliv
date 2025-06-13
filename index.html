@@ -7,18 +7,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ooliv</title>
     
-    <!-- Preload critical resources - optimized for performance -->
+    <!-- Critical CSS inline for fastest rendering -->
+    <style>
+      /* Critical CSS - Above the fold styles only */
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background-color: #f7f8fc;
+        color: #1a202c;
+      }
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #def3e4, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf);
+        background-size: 600% 600%;
+        contain: layout style paint;
+      }
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 1rem 0;
+        color: #1a202c;
+      }
+      @media (min-width: 768px) {
+        h1 { font-size: 3.5rem; }
+      }
+      @media (min-width: 1024px) {
+        h1 { font-size: 4rem; }
+      }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background-color: #38B593;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+      .btn-primary:hover {
+        background-color: #2a8a73;
+      }
+      ::-webkit-scrollbar { width: 0; }
+    </style>
+    
+    <!-- Preload critical resources with highest priority -->
     <link rel="preload" href="/fonts/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin>
     
+    <!-- Preload hero video for LCP optimization -->
+    <link rel="preload" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4">
+    
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://analytics.ahrefs.com">
     
-    <!-- DNS prefetch for analytics -->
+    <!-- DNS prefetch for additional performance -->
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
     
-    <!-- Google Tag Manager - async loading for better performance -->
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
+    
+    <!-- Google Tag Manager - optimized loading -->
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -26,7 +90,6 @@
     'https://www.googletagmanager.com/gtm.js?id=GTM-P4JBH6JZ'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P4JBH6JZ');
     </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -34,9 +97,19 @@
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4JBH6JZ"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
     <div id="root"></div>
+    
+    <!-- Load main script with high priority -->
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Async CSS loading fallback script -->
+    <script>
+      // Fallback for browsers that don't support rel="preload"
+      var cssLink = document.querySelector('link[rel="preload"][as="style"]');
+      if (cssLink && !cssLink.onload) {
+        cssLink.rel = 'stylesheet';
+      }
+    </script>
   </body>
 </html>
