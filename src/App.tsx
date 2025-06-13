@@ -1,4 +1,3 @@
-
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -27,6 +26,7 @@ const GermanLegalNotice = lazy(() => import('./pages/de/Impressum'));
 const GermanPrivacyPolicy = lazy(() => import('./pages/de/Datenschutz'));
 const GermanThankYou = lazy(() => import('./pages/de/Danke'));
 const GermanWiesbaden = lazy(() => import('./pages/de/WerbeagenturWiesbaden'));
+const GermanFrankfurt = lazy(() => import('./pages/de/WerbeagenturFrankfurt'));
 const Klickbetrug = lazy(() => import('./pages/de/Klickbetrug'));
 const Strategie = lazy(() => import('./pages/de/Strategie'));
 const CookieRichtlinie = lazy(() => import('./pages/de/CookieRichtlinie'));
@@ -80,6 +80,7 @@ function App() {
                   <Route path="/ueber-uns" element={<GermanAboutUs />} />
                   <Route path="/kontakt" element={<GermanContact />} />
                   <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
+                  <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
                   <Route path="/impressum" element={<GermanLegalNotice />} />
                   <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                   <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
