@@ -24,7 +24,6 @@ import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
 import FloatingActionButtons from './components/FloatingActionButtons';
 import LeadGenerationOverlay from './components/LeadGenerationOverlay';
-import ChatbaseWidget from './components/ChatbaseWidget';
 import { Toaster } from 'sonner';
 import Strategie from './pages/de/Strategie';
 import CookieRichtlinie from './pages/de/CookieRichtlinie';
@@ -45,7 +44,6 @@ function App() {
               <CustomCursor />
               <ScrollIndicator />
               <FloatingActionButtons />
-              <ChatbaseWidget />
               <CookieNotification />
               
               {/* Single LeadGenerationOverlay instance for the entire app */}
