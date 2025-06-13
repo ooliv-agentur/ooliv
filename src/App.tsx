@@ -1,34 +1,46 @@
 
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './contexts/LanguageContext';
-import GermanIndex from './pages/de/Index';
-import GermanWebDesign from './pages/de/Webdesign';
-import GermanWebDevelopment from './pages/de/Webentwicklung';
-import GermanSEO from './pages/de/SEOOptimierung';
-import GermanContentCreation from './pages/de/ContentErstellung';
-import GermanGoogleAds from './pages/de/GoogleAds';
-import GermanAiTechnologies from './pages/de/KiTechnologien';
-import GermanCaseStudies from './pages/de/Referenzen';
-import GermanAboutUs from './pages/de/UeberUns';
-import GermanContact from './pages/de/Kontakt';
-import GermanLegalNotice from './pages/de/Impressum';
-import GermanPrivacyPolicy from './pages/de/Datenschutz';
-import GermanThankYou from './pages/de/Danke';
-import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
-import Klickbetrug from './pages/de/Klickbetrug';
-import NotFound from './pages/NotFound';
+import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
 import FloatingActionButtons from './components/FloatingActionButtons';
 import LeadGenerationOverlay from './components/LeadGenerationOverlay';
-import { Toaster } from 'sonner';
-import Strategie from './pages/de/Strategie';
-import CookieRichtlinie from './pages/de/CookieRichtlinie';
-import { CookieConsentProvider } from './contexts/CookieConsentContext';
 import CookieNotification from './components/CookieNotification';
+import { Toaster } from 'sonner';
+
+// Lazy load pages for better performance
+const GermanIndex = lazy(() => import('./pages/de/Index'));
+const GermanWebDesign = lazy(() => import('./pages/de/Webdesign'));
+const GermanWebDevelopment = lazy(() => import('./pages/de/Webentwicklung'));
+const GermanSEO = lazy(() => import('./pages/de/SEOOptimierung'));
+const GermanContentCreation = lazy(() => import('./pages/de/ContentErstellung'));
+const GermanGoogleAds = lazy(() => import('./pages/de/GoogleAds'));
+const GermanAiTechnologies = lazy(() => import('./pages/de/KiTechnologien'));
+const GermanCaseStudies = lazy(() => import('./pages/de/Referenzen'));
+const GermanAboutUs = lazy(() => import('./pages/de/UeberUns'));
+const GermanContact = lazy(() => import('./pages/de/Kontakt'));
+const GermanLegalNotice = lazy(() => import('./pages/de/Impressum'));
+const GermanPrivacyPolicy = lazy(() => import('./pages/de/Datenschutz'));
+const GermanThankYou = lazy(() => import('./pages/de/Danke'));
+const GermanWiesbaden = lazy(() => import('./pages/de/WerbeagenturWiesbaden'));
+const Klickbetrug = lazy(() => import('./pages/de/Klickbetrug'));
+const Strategie = lazy(() => import('./pages/de/Strategie'));
+const CookieRichtlinie = lazy(() => import('./pages/de/CookieRichtlinie'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Loading component for Suspense fallback
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
+      <p className="text-medico-darkGreen">Lädt...</p>
+    </div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -52,29 +64,31 @@ function App() {
                 onOpenChange={setShowLeadForm}
               />
               
-              <Routes>
-                {/* German Routes */}
-                <Route path="/" element={<GermanIndex />} />
-                <Route path="/webdesign" element={<GermanWebDesign />} />
-                <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-                <Route path="/strategie" element={<Strategie />} />
-                <Route path="/seo-optimierung" element={<GermanSEO />} />
-                <Route path="/content-erstellung" element={<GermanContentCreation />} />
-                <Route path="/google-ads" element={<GermanGoogleAds />} />
-                <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-                <Route path="/klickbetrug" element={<Klickbetrug />} />
-                <Route path="/referenzen" element={<GermanCaseStudies />} />
-                <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                <Route path="/kontakt" element={<GermanContact />} />
-                <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-                <Route path="/impressum" element={<GermanLegalNotice />} />
-                <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
-                <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
-                <Route path="/danke" element={<GermanThankYou />} />
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  {/* German Routes */}
+                  <Route path="/" element={<GermanIndex />} />
+                  <Route path="/webdesign" element={<GermanWebDesign />} />
+                  <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+                  <Route path="/strategie" element={<Strategie />} />
+                  <Route path="/seo-optimierung" element={<GermanSEO />} />
+                  <Route path="/content-erstellung" element={<GermanContentCreation />} />
+                  <Route path="/google-ads" element={<GermanGoogleAds />} />
+                  <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                  <Route path="/klickbetrug" element={<Klickbetrug />} />
+                  <Route path="/referenzen" element={<GermanCaseStudies />} />
+                  <Route path="/ueber-uns" element={<GermanAboutUs />} />
+                  <Route path="/kontakt" element={<GermanContact />} />
+                  <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
+                  <Route path="/impressum" element={<GermanLegalNotice />} />
+                  <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+                  <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
+                  <Route path="/danke" element={<GermanThankYou />} />
 
-                {/* 404 Route */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+                  {/* 404 Route */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
               
               <Toaster />
             </Router>
