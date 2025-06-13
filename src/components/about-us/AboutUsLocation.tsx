@@ -14,12 +14,20 @@ const AboutUsLocation = () => {
             Digital-first, standortflexibel – und immer responsiv.
           </p>
         </div>
-        <div className="bg-medico-mint rounded-2xl p-4 shadow-sm h-[400px] flex items-center justify-center max-w-5xl mx-auto border border-gray-100">
-          <img 
-            src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
-            alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
-            className="h-full w-full object-cover rounded-xl"
-          />
+        <div className="bg-medico-mint rounded-2xl p-4 shadow-sm max-w-5xl mx-auto border border-gray-100">
+          {/* Optimized image with explicit dimensions to prevent layout shift */}
+          <div className="relative w-full h-[400px] rounded-xl overflow-hidden">
+            <img 
+              src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
+              alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
+              width="1200"
+              height="400"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              style={{ aspectRatio: '3/1' }}
+            />
+          </div>
         </div>
       </div>
     </section>

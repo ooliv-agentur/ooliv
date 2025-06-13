@@ -32,22 +32,27 @@ const DeutscherHero = () => {
   ];
   
   return (
-    <PageHero
-      isHomepage={true}
-      title="ooliv Werbeagentur Mainz"
-      subtitle="Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand."
-      dynamicPrefix="Wir helfen Unternehmen,"
-      dynamicSubheadlines={dynamicEndings}
-      primaryCta={{
-        text: "Projekt starten",
-        link: "#",
-        onClick: handleOpenLeadForm
-      }}
-      secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
-      }}
-    />
+    <div className="relative">
+      {/* Preload hint for hero content */}
+      <link rel="preload" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4" />
+      
+      <PageHero
+        isHomepage={true}
+        title="ooliv Werbeagentur Mainz"
+        subtitle="Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren und Vertrauen schaffen. Keine Templates, keine Buzzwords – nur Strategie, Design und Performance aus einer Hand."
+        dynamicPrefix="Wir helfen Unternehmen,"
+        dynamicSubheadlines={dynamicEndings}
+        primaryCta={{
+          text: "Projekt starten",
+          link: "#",
+          onClick: handleOpenLeadForm
+        }}
+        secondaryCta={{
+          text: "Über ooliv",
+          link: "/ueber-uns"
+        }}
+      />
+    </div>
   );
 };
 

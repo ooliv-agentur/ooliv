@@ -1,5 +1,6 @@
 
 @import url('./styles/satoshi-fonts.css');
+@import url('./styles/performance-optimizations.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,6 +88,8 @@
   animation: float 6s ease-in-out infinite;
   will-change: transform, opacity;
   backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout style paint;
 }
 
 .floating-circle.delayed {
@@ -112,6 +115,7 @@
   animation: gentle-gradient 45s ease-in-out infinite;
   will-change: background-position;
   backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .hero-gradient-bg.slow {
@@ -121,19 +125,19 @@
 /* Keyframes for better floating animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg) scale(1);
+    transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
     opacity: 1;
   }
   25% {
-    transform: translateY(-10px) rotate(2deg) scale(1.02);
+    transform: translateY(-10px) rotate(2deg) scale(1.02) translateZ(0);
     opacity: 0.8;
   }
   50% {
-    transform: translateY(-20px) rotate(5deg) scale(1.05);
+    transform: translateY(-20px) rotate(5deg) scale(1.05) translateZ(0);
     opacity: 0.9;
   }
   75% {
-    transform: translateY(-10px) rotate(3deg) scale(1.02);
+    transform: translateY(-10px) rotate(3deg) scale(1.02) translateZ(0);
     opacity: 0.8;
   }
 }
@@ -169,22 +173,22 @@
 /* Additional floating animation variants */
 @keyframes float-reverse {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg) scale(1);
+    transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
   }
   50% {
-    transform: translateY(15px) rotate(-3deg) scale(1.05);
+    transform: translateY(15px) rotate(-3deg) scale(1.05) translateZ(0);
   }
 }
 
 @keyframes float-diagonal {
   0%, 100% {
-    transform: translateX(0px) translateY(0px) rotate(0deg);
+    transform: translateX(0px) translateY(0px) rotate(0deg) translateZ(0);
   }
   25% {
-    transform: translateX(10px) translateY(-15px) rotate(2deg);
+    transform: translateX(10px) translateY(-15px) rotate(2deg) translateZ(0);
   }
   75% {
-    transform: translateX(-10px) translateY(-10px) rotate(-2deg);
+    transform: translateX(-10px) translateY(-10px) rotate(-2deg) translateZ(0);
   }
 }
 
@@ -202,4 +206,19 @@
   .hero-gradient-bg {
     animation: none !important;
   }
+}
+
+/* Critical CSS for performance */
+.hero-section {
+  contain: layout style paint;
+}
+
+/* Optimize images */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+img[width][height] {
+  height: auto;
 }
