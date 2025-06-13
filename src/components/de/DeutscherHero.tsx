@@ -33,9 +33,6 @@ const DeutscherHero = () => {
   
   return (
     <div className="relative">
-      {/* Preload hint for hero content */}
-      <link rel="preload" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4" />
-      
       <PageHero
         isHomepage={true}
         title="ooliv Werbeagentur Mainz"

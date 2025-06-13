@@ -41,8 +41,20 @@
 }
 
 /* Prevent layout shifts - critical for performance */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
 img[width][height] {
   height: auto;
+}
+
+/* Optimize images for better loading */
+img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Critical CSS for above-the-fold content */
@@ -54,4 +66,27 @@ img[width][height] {
 .floating-circle {
   contain: layout style paint;
   transform: translateZ(0);
+}
+
+/* Optimize video loading */
+video {
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+/* Aspect ratio containers to prevent layout shift */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-[3/1] {
+  aspect-ratio: 3 / 1;
+}
+
+.aspect-[16/9] {
+  aspect-ratio: 16 / 9;
 }
