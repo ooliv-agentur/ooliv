@@ -63,26 +63,41 @@
       ::-webkit-scrollbar { width: 0; }
     </style>
     
-    <!-- Preload critical resources with highest priority -->
+    <!-- High Priority Resource Preloads -->
     <link rel="preload" href="/fonts/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin>
     
-    <!-- Preload hero video for LCP optimization -->
+    <!-- Preload critical hero video for LCP optimization -->
     <link rel="preload" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4">
     
-    <!-- Preconnect to external domains -->
+    <!-- Preload hero images for immediate LCP -->
+    <link rel="preload" href="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" as="image" type="image/png">
+    
+    <!-- High priority preconnects -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://analytics.ahrefs.com">
     
-    <!-- DNS prefetch for additional performance -->
+    <!-- Medium priority DNS prefetch -->
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
+    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Prefetch likely next page resources -->
+    <link rel="prefetch" href="/webdesign">
+    <link rel="prefetch" href="/webentwicklung">
+    <link rel="prefetch" href="/kontakt">
+    
+    <!-- Preload key case study images that appear early -->
+    <link rel="prefetch" href="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" as="image">
+    <link rel="prefetch" href="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" as="image">
     
     <!-- Load non-critical CSS asynchronously -->
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
-    <!-- Google Tag Manager - optimized loading -->
+    <!-- Optimized Google Tag Manager loading -->
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -90,6 +105,10 @@
     'https://www.googletagmanager.com/gtm.js?id=GTM-P4JBH6JZ'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P4JBH6JZ');
     </script>
+    
+    <!-- Resource hints for performance -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/App.tsx">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -110,6 +129,21 @@
       if (cssLink && !cssLink.onload) {
         cssLink.rel = 'stylesheet';
       }
+      
+      // Intelligent prefetching based on user behavior
+      let prefetchTimer;
+      document.addEventListener('mouseover', function(e) {
+        if (e.target.tagName === 'A' && e.target.href && !e.target.prefetched) {
+          clearTimeout(prefetchTimer);
+          prefetchTimer = setTimeout(function() {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = e.target.href;
+            document.head.appendChild(link);
+            e.target.prefetched = true;
+          }, 100);
+        }
+      });
     </script>
   </body>
 </html>

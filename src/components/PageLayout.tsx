@@ -50,6 +50,24 @@ const pathMappings: Record<string, string> = {
   '/en/thank-you': '/danke',
 };
 
+// Define page-specific preload resources
+const pagePreloadResources: Record<string, Array<{type: string, href: string, as?: string}>> = {
+  '/': [
+    { type: 'image', href: '/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png', as: 'image' },
+    { type: 'video', href: '/lovable-uploads/Startpage-german-english.mp4', as: 'video' }
+  ],
+  '/webdesign': [
+    { type: 'image', href: '/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png', as: 'image' },
+    { type: 'image', href: '/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png', as: 'image' }
+  ],
+  '/webentwicklung': [
+    { type: 'image', href: '/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png', as: 'image' }
+  ],
+  '/ueber-ooliv': [
+    { type: 'image', href: '/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png', as: 'image' }
+  ]
+};
+
 const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const location = useLocation();
   const { language } = useLanguage();
@@ -106,6 +124,30 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
     }
   }, [currentPath, location.pathname]);
 
+  // Intelligent resource preloading based on current page
+  useEffect(() => {
+    const resources = pagePreloadResources[currentPath] || [];
+    
+    resources.forEach(resource => {
+      const existingLink = document.querySelector(`link[href="${resource.href}"]`);
+      if (!existingLink) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource.href;
+        if (resource.as) {
+          link.as = resource.as;
+        }
+        
+        // Set fetchpriority for critical resources
+        if (resource.type === 'image' || resource.type === 'video') {
+          link.fetchPriority = 'high';
+        }
+        
+        document.head.appendChild(link);
+      }
+    });
+  }, [currentPath]);
+
   // Console log for debugging canonical and hreflang
   useEffect(() => {
     console.log('Current canonical URL:', canonicalUrl);
@@ -139,16 +181,30 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Add meta tag to indicate preferred domain variant */}
         <meta name="google" content="notranslate" />
         
-        {/* Add preconnect for fonts to improve loading performance */}
+        {/* Enhanced preconnect for fonts to improve loading performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Add preconnect for analytics domains to improve performance */}
+        
+        {/* Preconnect for analytics domains to improve performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         
-        {/* Additional SEO improvements */}
+        {/* Additional performance optimizations */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="referrer" content="origin-when-cross-origin" />
+        
+        {/* Resource hints for improved performance */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Preload critical CSS */}
+        <link rel="preload" href="/src/styles/critical.css" as="style" />
+        <link rel="preload" href="/src/styles/performance-optimizations.css" as="style" />
+        
+        {/* Module preload for better JavaScript loading */}
+        <link rel="modulepreload" href="/src/components/Navbar.tsx" />
+        <link rel="modulepreload" href="/src/components/Footer.tsx" />
       </Helmet>
       <MotionConfig reducedMotion="user">
         <div className={`min-h-screen flex flex-col ${className}`}>
