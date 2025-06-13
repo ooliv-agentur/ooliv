@@ -40,15 +40,9 @@
   font-display: swap;
 }
 
-/* Prevent layout shifts */
+/* Prevent layout shifts - critical for performance */
 img[width][height] {
   height: auto;
-}
-
-/* Optimize video loading */
-video {
-  object-fit: cover;
-  object-position: center;
 }
 
 /* Critical CSS for above-the-fold content */

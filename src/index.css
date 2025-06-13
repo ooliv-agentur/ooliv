@@ -15,35 +15,16 @@
   background: #f7f8fc !important;
 }
 
-/* Safe area utilities for mobile devices */
-.safe-area-inset-top {
-  padding-top: env(safe-area-inset-top);
-}
-
-.safe-area-inset-bottom {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-.safe-area-inset-left {
-  padding-left: env(safe-area-inset-left);
-}
-
-.safe-area-inset-right {
-  padding-right: env(safe-area-inset-right);
-}
-
 /* Mobile viewport height utilities */
 .h-screen-mobile {
   height: 100vh;
-  height: 100dvh; /* Dynamic viewport height for mobile */
+  height: 100dvh;
 }
 
-/* Custom Scrollbar Styling - Only for desktop browsers that support it */
-/* For webkit browsers (Chrome, Safari, Edge) - but not mobile Safari */
+/* Desktop-only scrollbar styling */
 @media (hover: hover) and (pointer: fine) {
   ::-webkit-scrollbar {
     width: 8px;
-    height: 8px;
   }
 
   ::-webkit-scrollbar-track {
@@ -60,24 +41,10 @@
     background-color: #2a8a73;
   }
 
-  /* For Firefox on desktop */
   * {
     scrollbar-width: thin;
     scrollbar-color: #38B593 transparent;
   }
-}
-
-/* On mobile devices, use default scrollbars */
-@media (hover: none) and (pointer: coarse) {
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: auto;
-  }
-}
-
-/* Ensure proper z-index for menu components */
-.z-[1000] {
-  isolation: isolate;
 }
 
 /* Enhanced floating circles animation with improved performance */
@@ -108,7 +75,7 @@
   animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Updated hero gradient with the new mint color #def3e4 */
+/* Updated hero gradient */
 .hero-gradient-bg {
   background: linear-gradient(135deg, #def3e4, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf);
   background-size: 600% 600%;
@@ -122,7 +89,7 @@
   animation: gentle-gradient 60s ease-in-out infinite;
 }
 
-/* Keyframes for better floating animations */
+/* Keyframes for animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
@@ -142,35 +109,17 @@
   }
 }
 
-/* Sanfte, natürliche Gradient-Animation */
 @keyframes gentle-gradient {
-  0% {
-    background-position: 0% 20%;
-  }
-  15% {
-    background-position: 20% 40%;
-  }
-  30% {
-    background-position: 60% 10%;
-  }
-  45% {
-    background-position: 80% 70%;
-  }
-  60% {
-    background-position: 40% 90%;
-  }
-  75% {
-    background-position: 10% 60%;
-  }
-  90% {
-    background-position: 30% 30%;
-  }
-  100% {
-    background-position: 0% 20%;
-  }
+  0% { background-position: 0% 20%; }
+  15% { background-position: 20% 40%; }
+  30% { background-position: 60% 10%; }
+  45% { background-position: 80% 70%; }
+  60% { background-position: 40% 90%; }
+  75% { background-position: 10% 60%; }
+  90% { background-position: 30% 30%; }
+  100% { background-position: 0% 20%; }
 }
 
-/* Additional floating animation variants */
 @keyframes float-reverse {
   0%, 100% {
     transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
