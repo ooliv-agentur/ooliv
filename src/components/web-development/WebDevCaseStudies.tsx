@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -13,6 +12,7 @@ import {
 } from '@/components/ui/carousel';
 import { caseStudiesData } from '@/components/CaseStudiesSection';
 import Reveal from '@/components/animations/Reveal';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const WebDevCaseStudies = () => {
   const { language } = useLanguage();
@@ -76,7 +76,18 @@ const WebDevCaseStudies = () => {
               {cases.map((study, index) => (
                 <CarouselItem key={index} className="md:basis-full">
                   <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                    <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${study.image})` }} />
+                    <div className="relative w-full aspect-[16/9]">
+                      <OptimizedImage
+                        src={study.image}
+                        alt={`${study.client} development case study`}
+                        width={600}
+                        height={338}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        priority={index === 0}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 600px"
+                      />
+                    </div>
                     <div className="p-6">
                       <span className="text-sm font-medium text-brand-primary mb-1 block">{study.industry}</span>
                       <h3 className="text-xl font-bold mb-3 text-brand-heading">{study.client}</h3>

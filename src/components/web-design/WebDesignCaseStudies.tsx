@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const cases = {
   en: [
@@ -102,27 +102,28 @@ const WebDesignCaseStudies = () => {
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="relative w-full aspect-[16/9]">
-                <img 
+                <OptimizedImage
                   src={study.image}
                   alt={`${study.client} case study`}
-                  width="600"
-                  height="338"
+                  width={600}
+                  height={338}
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  decoding="async"
+                  priority={index < 2}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <div className="flex-shrink-0 w-16 h-10 mr-4">
-                    <img 
-                      src={study.logo} 
-                      alt={`${study.client} logo`} 
-                      width="64"
-                      height="40"
+                    <OptimizedImage
+                      src={study.logo}
+                      alt={`${study.client} logo`}
+                      width={64}
+                      height={40}
                       className="h-full w-full object-contain"
                       loading="lazy"
-                      decoding="async"
+                      priority={false}
                     />
                   </div>
                   <div>

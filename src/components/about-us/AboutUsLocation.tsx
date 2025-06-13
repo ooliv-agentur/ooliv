@@ -1,5 +1,6 @@
 
 import React from 'react';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const AboutUsLocation = () => {
   return (
@@ -15,17 +16,16 @@ const AboutUsLocation = () => {
           </p>
         </div>
         <div className="bg-medico-mint rounded-2xl p-4 shadow-sm max-w-5xl mx-auto border border-gray-100">
-          {/* Optimized image with explicit dimensions and preload hint */}
           <div className="relative w-full aspect-[3/1] rounded-xl overflow-hidden">
-            <img 
-              src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" 
-              alt="Ooliv Bürogebäude in Mainz mit moderner Glasarchitektur" 
-              width="1200"
-              height="400"
+            <OptimizedImage
+              src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
+              alt="ooliv Bürogebäude in Mainz mit moderner Glasarchitektur"
+              width={1200}
+              height={400}
               className="w-full h-full object-cover"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
+              loading="lazy"
+              priority={false}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
           </div>
         </div>

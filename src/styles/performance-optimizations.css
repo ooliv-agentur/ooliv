@@ -41,7 +41,7 @@
 }
 
 /* Prevent layout shifts - critical for performance */
-img {
+img, picture {
   height: auto;
   max-width: 100%;
 }
@@ -55,6 +55,37 @@ img {
   image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: -webkit-optimize-contrast;
+}
+
+/* Image loading states */
+.img-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Modern image formats support */
+picture {
+  display: block;
+  position: relative;
+}
+
+/* Progressive image loading */
+.progressive-image {
+  transition: opacity 0.3s ease;
+}
+
+.progressive-image.loading {
+  opacity: 0;
+}
+
+.progressive-image.loaded {
+  opacity: 1;
 }
 
 /* Critical CSS for above-the-fold content */
@@ -131,4 +162,20 @@ video {
 .preload-important {
   content-visibility: auto;
   contain-intrinsic-size: 200px;
+}
+
+/* Image optimization hints */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* WebP and AVIF support detection */
+.webp .no-webp,
+.avif .no-avif {
+  display: none;
+}
+
+.no-webp .webp,
+.no-avif .avif {
+  display: none;
 }
