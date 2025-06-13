@@ -8,9 +8,9 @@ import './index.css';
 // Performance monitoring
 if (typeof window !== 'undefined') {
   // Monitor Core Web Vitals
-  import('web-vitals').then(({ onCLS, onFID, onFCP, onLCP, onTTFB }) => {
+  import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
     onCLS(console.log);
-    onFID(console.log);
+    onINP(console.log); // onFID is deprecated, replaced with onINP
     onFCP(console.log);
     onLCP(console.log);
     onTTFB(console.log);
