@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { RefreshCw, ExternalLink } from 'lucide-react';
+import { RefreshCw, ExternalLink, Copy, Check } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -21,6 +21,7 @@ const LatestContentDisplay = () => {
   const [latestPost, setLatestPost] = useState<ContentPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [urlCopied, setUrlCopied] = useState(false);
 
   const fetchLatestPost = async () => {
     try {
@@ -51,6 +52,19 @@ const LatestContentDisplay = () => {
     setIsRefreshing(true);
     await fetchLatestPost();
     toast.success('Inhalt aktualisiert');
+  };
+
+  const copyUrlToClipboard = async () => {
+    if (latestPost?.public_url) {
+      try {
+        await navigator.clipboard.writeText(latestPost.public_url);
+        setUrlCopied(true);
+        toast.success('URL kopiert');
+        setTimeout(() => setUrlCopied(false), 2000);
+      } catch (error) {
+        toast.error('Fehler beim Kopieren der URL');
+      }
+    }
   };
 
   useEffect(() => {
@@ -118,16 +132,35 @@ const LatestContentDisplay = () => {
           )}
 
           {latestPost.public_url && (
-            <div className="mb-4">
-              <a 
-                href={latestPost.public_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen transition-colors font-medium"
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Artikel auf BabyLoveGrowth.ai lesen
-              </a>
+            <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-gray-700">Artikel-URL:</span>
+                <Button
+                  onClick={copyUrlToClipboard}
+                  variant="outline"
+                  size="sm"
+                  className="ml-2"
+                >
+                  {urlCopied ? (
+                    <Check className="w-4 h-4" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
+                </Button>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600 break-all font-mono bg-white px-2 py-1 rounded border flex-1">
+                  {latestPost.public_url}
+                </span>
+                <a 
+                  href={latestPost.public_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen transition-colors font-medium"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           )}
 
