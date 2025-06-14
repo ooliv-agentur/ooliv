@@ -203,7 +203,7 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
                       to={link.path}
                       className={cn(
                         "block py-2 font-bold text-medico-darkGreen hover:text-medico-turquoise transition-colors focus:outline-none focus:text-medico-turquoise focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 rounded-md hover:scale-105 transition-transform font-sans",
-                        isDesktop ? "text-lg py-2" : "text-3xl py-3"
+                        isDesktop ? "text-lg py-2" : "text-2xl sm:text-3xl py-3"
                       )}
                       onClick={handleLinkClick}
                     >
@@ -215,24 +215,24 @@ const MobileMenu = ({ isOpen, onClose, isDesktop }: MobileMenuProps) => {
             </div>
             
             <motion.div 
-              className="sticky bottom-0 z-10 border-t border-medico-turquoise/20 p-6 space-y-5 bg-medico-mint/95 backdrop-blur-sm"
+              className="sticky bottom-0 z-10 border-t border-medico-turquoise/20 p-4 sm:p-6 space-y-4 sm:space-y-5 bg-medico-mint/95 backdrop-blur-sm"
               variants={itemVariants}
             >
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
                 {[
-                  { icon: Mail, label: language === 'de' ? "E-Mail an ooliv" : "Email ooliv", href: "mailto:info@ooliv.de" },
-                  { icon: Phone, label: language === 'de' ? "ooliv anrufen" : "Call ooliv", href: "tel:+4961316367801" }
+                  { icon: Mail, label: language === 'de' ? "E-Mail" : "Email", href: "mailto:info@ooliv.de" },
+                  { icon: Phone, label: language === 'de' ? "Anrufen" : "Call", href: "tel:+4961316367801" }
                 ].map((contact, index) => (
                   <Button 
                     key={index}
                     variant="outline" 
                     size="lg" 
-                    className="w-full py-6 min-h-[60px] border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200 hover:border-medico-turquoise focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 flex items-center justify-center"
+                    className="w-full py-4 sm:py-6 min-h-[50px] sm:min-h-[60px] border-medico-turquoise/30 text-medico-darkGreen bg-white/80 hover:bg-medico-turquoise hover:text-white transition-all duration-200 hover:border-medico-turquoise focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise/50 flex items-center justify-center text-xs sm:text-base"
                     aria-label={contact.label}
                     asChild
                   >
                     <a href={contact.href}>
-                      <contact.icon className="h-6 w-6" />
+                      <contact.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                     </a>
                   </Button>
                 ))}

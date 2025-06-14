@@ -46,14 +46,14 @@ const buttonVariants = cva(
         minimal: "bg-white text-medico-darkGreen border-2 border-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise hover:text-medico-darkGreen font-semibold"
       },
       size: {
-        sm: "h-9 px-4 text-sm",
-        default: "h-11 px-6 py-2",
-        lg: "h-12 px-8 text-base font-bold",
-        xl: "h-14 px-10 text-lg font-bold",
-        icon: "h-11 w-11",
-        iconSm: "h-9 w-9",
-        iconLg: "h-12 w-12",
-        floating: "h-14 w-14 rounded-full p-4"
+        sm: "h-9 px-3 text-xs sm:px-4 sm:text-sm",
+        default: "h-10 px-4 py-2 text-sm sm:h-11 sm:px-6 sm:text-base",
+        lg: "h-11 px-5 text-sm sm:h-12 sm:px-8 sm:text-base font-bold",
+        xl: "h-12 px-6 text-base sm:h-14 sm:px-10 sm:text-lg font-bold",
+        icon: "h-10 w-10 sm:h-11 sm:w-11",
+        iconSm: "h-8 w-8 sm:h-9 sm:w-9",
+        iconLg: "h-11 w-11 sm:h-12 sm:w-12",
+        floating: "h-12 w-12 sm:h-14 sm:w-14 rounded-full p-3 sm:p-4"
       },
     },
     defaultVariants: {
