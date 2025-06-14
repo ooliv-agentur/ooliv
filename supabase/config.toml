@@ -3,3 +3,6 @@ project_id = "ycloufmcjjfvjxhmslbm"
 
 [functions.sendProjectForm]
 verify_jwt = true
+
+[functions.receiveContentWebhook]
+verify_jwt = false

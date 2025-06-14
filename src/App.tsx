@@ -1,3 +1,4 @@
+
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -30,6 +31,7 @@ const GermanFrankfurt = lazy(() => import('./pages/de/WerbeagenturFrankfurt'));
 const Klickbetrug = lazy(() => import('./pages/de/Klickbetrug'));
 const Strategie = lazy(() => import('./pages/de/Strategie'));
 const CookieRichtlinie = lazy(() => import('./pages/de/CookieRichtlinie'));
+const LatestContent = lazy(() => import('./pages/de/LatestContent'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading component for Suspense fallback
@@ -81,6 +83,7 @@ function App() {
                   <Route path="/kontakt" element={<GermanContact />} />
                   <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                   <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
+                  <Route path="/neuester-artikel" element={<LatestContent />} />
                   <Route path="/impressum" element={<GermanLegalNotice />} />
                   <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                   <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
