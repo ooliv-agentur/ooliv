@@ -73,18 +73,18 @@ const CTA = ({
   return (
     <section className="py-24 bg-medico-mint font-satoshi">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
           {title}
         </h2>
-        <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 max-w-4xl mx-auto text-medico-darkGreen/90 leading-relaxed" style={{ lineHeight: '1.5' }}>
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-medico-darkGreen/90 leading-relaxed" style={{ lineHeight: '1.5' }}>
           {subtitle}
         </p>
         
-        <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row justify-center items-center mb-6 sm:mb-8 w-full">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full sm:w-auto">
           {shouldOpenLeadForm(primaryCta) ? (
             <Button 
               size="lg" 
-              className="group font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4"
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
                 backgroundColor: '#FFD700', 
                 color: '#003347',
@@ -101,13 +101,13 @@ const CTA = ({
                 handleOpenLeadForm();
               }}
             >
-              <span className="truncate">{primaryCta}</span>
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+              {primaryCta}
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : primaryCtaLink ? (
             <Button 
               size="lg" 
-              className="group font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4"
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
                 backgroundColor: '#FFD700', 
                 color: '#003347',
@@ -122,14 +122,14 @@ const CTA = ({
               asChild
             >
               <Link to={primaryCtaLink}>
-                <span className="truncate">{primaryCta}</span>
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                {primaryCta}
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           ) : (
             <Button 
               size="lg" 
-              className="group font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4"
+              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               style={{ 
                 backgroundColor: '#FFD700', 
                 color: '#003347',
@@ -146,8 +146,8 @@ const CTA = ({
                 handleOpenLeadForm();
               }}
             >
-              <span className="truncate">{primaryCta}</span>
-              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+              {primaryCta}
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           )}
           
@@ -156,35 +156,35 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                 asChild
               >
                 <Link to={contactPath}>
-                  <span className="truncate">{secondaryCta}</span>
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : secondaryCtaLink ? (
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
                 asChild
               >
                 <Link to={secondaryCtaLink}>
-                  <span className="truncate">{secondaryCta}</span>
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                  {secondaryCta}
+                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : (
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-xs sm:max-w-none sm:w-auto text-sm sm:text-base px-4 sm:px-8 py-3 sm:py-4"
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
-                <span className="truncate">{secondaryCta}</span>
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
+                {secondaryCta}
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             )
           )}
@@ -192,21 +192,21 @@ const CTA = ({
         
         {/* Trust elements with improved visual hierarchy */}
         {footerNote ? (
-          <div className="mt-8 sm:mt-12 max-w-4xl mx-auto">
-            <div className="bg-medico-turquoise/5 rounded-2xl p-4 sm:p-6 border border-medico-turquoise/20">
-              <p className="text-sm sm:text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
                 {footerNote}
               </p>
             </div>
           </div>
         ) : children ? (
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-8">
             {children}
           </div>
         ) : (
-          <div className="mt-8 sm:mt-12 max-w-4xl mx-auto">
-            <div className="bg-medico-turquoise/5 rounded-2xl p-4 sm:p-6 border border-medico-turquoise/20">
-              <p className="text-sm sm:text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
                 {defaultFooterNote}
               </p>
             </div>
