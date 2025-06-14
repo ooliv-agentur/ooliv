@@ -58,7 +58,8 @@ serve(async (req) => {
       });
     }
 
-    // Insert the new content post
+    // Map the payload to our database schema
+    // BabyLoveGrowth.ai uses camelCase, our DB uses snake_case
     const { data, error } = await supabase
       .from('content_posts')
       .insert({
@@ -68,7 +69,7 @@ serve(async (req) => {
         content_html: payload.content_html,
         content_md: payload.content_markdown,
         language_code: payload.languageCode,
-        public_url: payload.publicUrl,
+        public_url: payload.publicUrl, // Map camelCase to snake_case
         created_at: payload.createdAt || new Date().toISOString()
       });
 
