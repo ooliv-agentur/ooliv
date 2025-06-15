@@ -18,7 +18,7 @@ const AboutUsLocation = () => {
         <div className="bg-medico-mint rounded-2xl p-4 shadow-sm max-w-5xl mx-auto border border-gray-100">
           <div className="relative w-full aspect-[3/1] rounded-xl overflow-hidden">
             <OptimizedImage
-              src="/lovable-uploads/8efaf09d-abe4-4663-b112-7aa4567165d5.png"
+              src="/lovable-uploads/ab6ece19-672d-4658-ae9a-06bae29f4ade.png"
               alt="ooliv Bürogebäude in Mainz mit moderner Glasarchitektur"
               width={1200}
               height={400}
