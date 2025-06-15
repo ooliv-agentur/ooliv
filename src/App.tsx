@@ -34,16 +34,6 @@ const CookieRichtlinie = lazy(() => import('./pages/de/CookieRichtlinie'));
 const LatestContent = lazy(() => import('./pages/de/LatestContent'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-// Loading component for Suspense fallback
-const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-gray-50">
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
-      <p className="text-medico-darkGreen">Lädt...</p>
-    </div>
-  </div>
-);
-
 const queryClient = new QueryClient();
 
 function App() {
@@ -66,7 +56,7 @@ function App() {
                 onOpenChange={setShowLeadForm}
               />
               
-              <Suspense fallback={<PageLoader />}>
+              <Suspense fallback={null}>
                 <Routes>
                   {/* German Routes */}
                   <Route path="/" element={<GermanIndex />} />
