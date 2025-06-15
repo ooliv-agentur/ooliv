@@ -1,185 +1,167 @@
 
 {
-  "redirects": [
+  "routes": [
     {
-      "source": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(sitemap\\.xml|robots\\.txt)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.ooliv.de"
         }
       ],
-      "destination": "https://ooliv.de/$1",
-      "permanent": true,
-      "statusCode": 301
+      "status": 301,
+      "dest": "https://ooliv.de/$1"
     },
     {
-      "source": "/de/:path*",
-      "destination": "/:path*",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/de/:path*",
+      "status": 301,
+      "dest": "/:path*"
     },
     {
-      "source": "/de/?",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/de/?",
+      "status": 301,
+      "dest": "/"
     },
     {
-      "source": "/:path*.php",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/:path*.php",
+      "status": 301,
+      "dest": "/"
     },
     {
-      "source": "/author/:path*",
-      "destination": "/ueber-uns",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/author/:path*",
+      "status": 301,
+      "dest": "/ueber-uns"
     },
     {
-      "source": "/projekte/:path*",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/projekte/:path*",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/projekte",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/projekte",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/leistungen/:path*",
-      "destination": "/webdesign",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/leistungen/:path*",
+      "status": 301,
+      "dest": "/webdesign"
     },
     {
-      "source": "/leistungen",
-      "destination": "/webdesign",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/leistungen",
+      "status": 301,
+      "dest": "/webdesign"
     },
     {
-      "source": "/ooliv/:path*",
-      "destination": "/ueber-uns",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/ooliv/:path*",
+      "status": 301,
+      "dest": "/ueber-uns"
     },
     {
-      "source": "/ooliv",
-      "destination": "/ueber-uns",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/ooliv",
+      "status": 301,
+      "dest": "/ueber-uns"
     },
     {
-      "source": "/ueber-ooliv/:path*",
-      "destination": "/ueber-uns",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/ueber-ooliv/:path*",
+      "status": 301,
+      "dest": "/ueber-uns"
     },
     {
-      "source": "/ueber-ooliv",
-      "destination": "/ueber-uns",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/ueber-ooliv",
+      "status": 301,
+      "dest": "/ueber-uns"
     },
     {
-      "source": "/case-studies/:path*",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/case-studies/:path*",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/case-studies",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/case-studies",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/werbeagentur-frankfurt/:path*",
-      "destination": "/werbeagentur-frankfurt",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/werbeagentur-frankfurt/:path*",
+      "status": 301,
+      "dest": "/werbeagentur-frankfurt"
     },
     {
-      "source": "/webdesign-agentur-wiesbaden/:path*",
-      "destination": "/werbeagentur-wiesbaden",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/webdesign-agentur-wiesbaden/:path*",
+      "status": 301,
+      "dest": "/werbeagentur-wiesbaden"
     },
     {
-      "source": "/webdesign-agentur-wiesbaden",
-      "destination": "/werbeagentur-wiesbaden",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/webdesign-agentur-wiesbaden",
+      "status": 301,
+      "dest": "/werbeagentur-wiesbaden"
     },
     {
-      "source": "/webdesign-agentur-frankfurt/:path*",
-      "destination": "/werbeagentur-frankfurt",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/webdesign-agentur-frankfurt/:path*",
+      "status": 301,
+      "dest": "/werbeagentur-frankfurt"
     },
     {
-      "source": "/webdesign-agentur-frankfurt",
-      "destination": "/werbeagentur-frankfurt",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/webdesign-agentur-frankfurt",
+      "status": 301,
+      "dest": "/werbeagentur-frankfurt"
     },
     {
-      "source": "/wordpress-agentur-wiesbaden/:path*",
-      "destination": "/werbeagentur-wiesbaden",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/wordpress-agentur-wiesbaden/:path*",
+      "status": 301,
+      "dest": "/werbeagentur-wiesbaden"
     },
     {
-      "source": "/wordpress-agentur-wiesbaden",
-      "destination": "/werbeagentur-wiesbaden",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/wordpress-agentur-wiesbaden",
+      "status": 301,
+      "dest": "/werbeagentur-wiesbaden"
     },
     {
-      "source": "/wordpress-agentur-mainz/:path*",
-      "destination": "/webentwicklung",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/wordpress-agentur-mainz/:path*",
+      "status": 301,
+      "dest": "/webentwicklung"
     },
     {
-      "source": "/wordpress-agentur-mainz",
-      "destination": "/webentwicklung",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/wordpress-agentur-mainz",
+      "status": 301,
+      "dest": "/webentwicklung"
     },
     {
-      "source": "/kunden/:path*",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/kunden/:path*",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/kunden",
-      "destination": "/referenzen",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/kunden",
+      "status": 301,
+      "dest": "/referenzen"
     },
     {
-      "source": "/en/:path*",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/en/:path*",
+      "status": 301,
+      "dest": "/"
     },
     {
-      "source": "/en/?",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/en/?",
+      "status": 301,
+      "dest": "/"
     },
     {
-      "source": "/:path(.*)/",
-      "destination": "/:path*",
-      "permanent": true,
-      "statusCode": 301
+      "src": "/:path(.*)/",
+      "status": 301,
+      "dest": "/:path*"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
     }
   ],
   "headers": [
