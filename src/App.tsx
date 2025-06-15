@@ -74,6 +74,7 @@ function App() {
                 <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                 <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
                 <Route path="/neuester-artikel" element={<LatestContent />} />
+                <Route path="/artikel/:slug" element={<SingleArticle />} />
                 <Route path="/impressum" element={<GermanLegalNotice />} />
                 <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                 <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />

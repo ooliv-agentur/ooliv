@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -178,11 +179,7 @@ const LatestContentDisplay = () => {
       ) : (
         <Card className="border-medico-turquoise/20 bg-white shadow-lg">
           <CardContent className="p-8 lg:p-12">
-            <ArticleHeader 
-              article={latestPost} 
-              onRefresh={handleRefresh} 
-              isRefreshing={isRefreshing} 
-            />
+            <ArticleHeader article={latestPost} />
             <ArticleContent article={latestPost} />
           </CardContent>
         </Card>
