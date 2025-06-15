@@ -1,10 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { RefreshCw, ExternalLink, Copy, Check } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
+import { H1, H2 } from '@/components/ui/typography';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import ArticleHeader from './ArticleHeader';
+import ArticleContent from './ArticleContent';
 
 interface ContentPost {
   id: number;
@@ -22,14 +24,12 @@ const LatestContentDisplay = () => {
   const [allPosts, setAllPosts] = useState<ContentPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const [urlCopied, setUrlCopied] = useState(false);
   const [showDebug, setShowDebug] = useState(false);
 
   const fetchLatestPost = async () => {
     try {
       console.log('Fetching latest post...');
       
-      // Fetch latest post
       const { data: latestData, error: latestError } = await supabase
         .from('content_posts')
         .select('*')
@@ -43,7 +43,6 @@ const LatestContentDisplay = () => {
         return;
       }
 
-      // Fetch all posts for debug
       const { data: allData, error: allError } = await supabase
         .from('content_posts')
         .select('*')
@@ -74,19 +73,6 @@ const LatestContentDisplay = () => {
     toast.success('Inhalt aktualisiert');
   };
 
-  const copyUrlToClipboard = async () => {
-    if (latestPost?.public_url) {
-      try {
-        await navigator.clipboard.writeText(latestPost.public_url);
-        setUrlCopied(true);
-        toast.success('URL kopiert');
-        setTimeout(() => setUrlCopied(false), 2000);
-      } catch (error) {
-        toast.error('Fehler beim Kopieren der URL');
-      }
-    }
-  };
-
   useEffect(() => {
     fetchLatestPost();
   }, []);
@@ -94,10 +80,10 @@ const LatestContentDisplay = () => {
   if (isLoading) {
     return (
       <div className="w-full max-w-4xl mx-auto p-6">
-        <Card>
-          <CardContent className="p-8 text-center">
+        <Card className="border-medico-turquoise/20">
+          <CardContent className="p-12 text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
-            <p className="text-gray-600">Lade neuesten Artikel...</p>
+            <p className="text-medico-darkGreen">Lade neuesten Artikel...</p>
           </CardContent>
         </Card>
       </div>
@@ -106,19 +92,23 @@ const LatestContentDisplay = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-medico-darkGreen">
-          Neuester Artikel
-        </h1>
-        <div className="flex gap-2">
+      <div className="mb-8 flex justify-between items-center">
+        <H1>Neuester Artikel</H1>
+        <div className="flex gap-3">
           <Button 
             onClick={() => setShowDebug(!showDebug)} 
             variant="outline"
             size="sm"
+            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
           >
             Debug {showDebug ? 'ausblenden' : 'anzeigen'}
           </Button>
-          <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline">
+          <Button 
+            onClick={handleRefresh} 
+            disabled={isRefreshing} 
+            variant="outline"
+            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+          >
             <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
             Aktualisieren
           </Button>
@@ -126,11 +116,9 @@ const LatestContentDisplay = () => {
       </div>
 
       {showDebug && (
-        <Card className="mb-6 border-orange-200 bg-orange-50">
-          <CardHeader>
-            <CardTitle className="text-lg text-orange-800">Debug Information</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <Card className="mb-8 border-medico-yellow/40 bg-medico-yellow/10">
+          <CardContent className="p-6">
+            <H2 className="text-lg mb-4 text-medico-darkGreen">Debug Information</H2>
             <div className="space-y-4 text-sm">
               <div>
                 <strong>Anzahl Artikel in DB:</strong> {allPosts.length}
@@ -166,117 +154,36 @@ const LatestContentDisplay = () => {
       )}
 
       {!latestPost ? (
-        <Card>
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold text-medico-darkGreen">
+        <Card className="border-medico-turquoise/20 bg-medico-mint/30">
+          <CardContent className="text-center p-12">
+            <H2 className="mb-6">
               Noch keine Artikel verfügbar
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-gray-600 mb-4">
+            </H2>
+            <p className="text-gray-600 mb-4 text-lg">
               Es wurden noch keine Artikel von BabyLoveGrowth.ai empfangen.
             </p>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-gray-500 mb-6">
               Überprüfen Sie die Debug-Information oben für Details.
             </p>
-            <Button onClick={handleRefresh} disabled={isRefreshing}>
+            <Button 
+              onClick={handleRefresh} 
+              disabled={isRefreshing}
+              className="bg-medico-turquoise hover:bg-medico-turquoise/90"
+            >
               <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
               Aktualisieren
             </Button>
           </CardContent>
         </Card>
       ) : (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-medico-darkGreen mb-4">
-              {latestPost.title}
-            </CardTitle>
-            
-            {latestPost.meta_description && (
-              <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                {latestPost.meta_description}
-              </p>
-            )}
-
-            {latestPost.public_url && (
-              <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-700">Artikel-URL:</span>
-                  <Button
-                    onClick={copyUrlToClipboard}
-                    variant="outline"
-                    size="sm"
-                    className="ml-2"
-                  >
-                    {urlCopied ? (
-                      <Check className="w-4 h-4" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                  </Button>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-600 break-all font-mono bg-white px-2 py-1 rounded border flex-1">
-                    {latestPost.public_url}
-                  </span>
-                  <a 
-                    href={latestPost.public_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen transition-colors font-medium"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            )}
-
-            <div className="text-sm text-gray-500">
-              Veröffentlicht: {new Date(latestPost.created_at).toLocaleDateString('de-DE', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-              })}
-            </div>
-          </CardHeader>
-
-          <CardContent>
-            {latestPost.content_md ? (
-              <div className="prose prose-lg max-w-none">
-                <div 
-                  className="markdown-content leading-relaxed"
-                  dangerouslySetInnerHTML={{ 
-                    __html: latestPost.content_md
-                      .split('\n')
-                      .map(line => {
-                        // Simple markdown parsing for headers, bold, italic
-                        line = line.replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-medico-darkGreen">$1</h3>');
-                        line = line.replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-8 mb-4 text-medico-darkGreen">$1</h2>');
-                        line = line.replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-medico-darkGreen">$1</h1>');
-                        line = line.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>');
-                        line = line.replace(/\*(.+?)\*/g, '<em class="italic">$1</em>');
-                        line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline" target="_blank" rel="noopener noreferrer">$1</a>');
-                        
-                        if (line.trim() === '') return '<br>';
-                        if (!line.includes('<h') && !line.includes('<br>')) {
-                          return `<p class="mb-4 text-gray-700 leading-relaxed">${line}</p>`;
-                        }
-                        return line;
-                      })
-                      .join('')
-                  }}
-                />
-              </div>
-            ) : latestPost.content_html ? (
-              <div 
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: latestPost.content_html }}
-              />
-            ) : (
-              <p className="text-gray-600 italic">Kein Inhalt verfügbar</p>
-            )}
+        <Card className="border-medico-turquoise/20 bg-white shadow-lg">
+          <CardContent className="p-8 lg:p-12">
+            <ArticleHeader 
+              article={latestPost} 
+              onRefresh={handleRefresh} 
+              isRefreshing={isRefreshing} 
+            />
+            <ArticleContent article={latestPost} />
           </CardContent>
         </Card>
       )}
