@@ -1,36 +1,28 @@
 
 User-agent: *
 Allow: /
-Allow: /en/
 Allow: /webdesign
-Allow: /en/webdesign
 Allow: /webentwicklung
-Allow: /en/webdevelopment
 Allow: /content-erstellung
-Allow: /en/content-creation
 Allow: /seo-optimierung
-Allow: /en/seo
 Allow: /google-ads
-Allow: /en/google-ads
 Allow: /ki-technologien
-Allow: /en/ai-technologies
-Allow: /case-studies
-Allow: /en/case-studies
-Allow: /ueber-ooliv
-Allow: /en/about-us
+Allow: /referenzen
+Allow: /ueber-uns
 Allow: /kontakt
-Allow: /en/contact
 Allow: /impressum
-Allow: /en/legal-notice
 Allow: /datenschutz
-Allow: /en/privacy-policy
 Allow: /danke
-Allow: /en/thank-you
 Allow: /werbeagentur-wiesbaden
+Allow: /werbeagentur-frankfurt
 
 # Block old /de/ paths - they redirect anyway
 Disallow: /de/
 Disallow: /de
+
+# Block old English paths - no longer used
+Disallow: /en/
+Disallow: /en
 
 # Block old PHP paths
 Disallow: /*.php$
@@ -47,6 +39,8 @@ Disallow: /webdesign-agentur-frankfurt/
 Disallow: /wordpress-agentur-wiesbaden/
 Disallow: /wordpress-agentur-mainz/
 Disallow: /kunden/
+Disallow: /case-studies/
+Disallow: /ueber-ooliv/
 
 # Block common crawling patterns that shouldn't be indexed
 Disallow: /*?utm_source=*
