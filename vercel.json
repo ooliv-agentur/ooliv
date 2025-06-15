@@ -33,19 +33,19 @@
     },
     {
       "source": "/author/:path*",
-      "destination": "/ueber-ooliv",
+      "destination": "/ueber-uns",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/projekte/:path*",
-      "destination": "/case-studies",
+      "destination": "/referenzen",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/projekte",
-      "destination": "/case-studies",
+      "destination": "/referenzen",
       "permanent": true,
       "statusCode": 301
     },
@@ -63,25 +63,19 @@
     },
     {
       "source": "/ooliv/:path*",
-      "destination": "/ueber-ooliv",
+      "destination": "/ueber-uns",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/ooliv",
-      "destination": "/ueber-ooliv",
+      "destination": "/ueber-uns",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/werbeagentur-frankfurt/:path*",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
-    },
-    {
-      "source": "/werbeagentur-frankfurt",
-      "destination": "/",
+      "destination": "/werbeagentur-frankfurt",
       "permanent": true,
       "statusCode": 301
     },
@@ -99,13 +93,13 @@
     },
     {
       "source": "/webdesign-agentur-frankfurt/:path*",
-      "destination": "/",
+      "destination": "/werbeagentur-frankfurt",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/webdesign-agentur-frankfurt",
-      "destination": "/",
+      "destination": "/werbeagentur-frankfurt",
       "permanent": true,
       "statusCode": 301
     },
@@ -135,13 +129,13 @@
     },
     {
       "source": "/kunden/:path*",
-      "destination": "/case-studies",
+      "destination": "/referenzen",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/kunden",
-      "destination": "/case-studies",
+      "destination": "/referenzen",
       "permanent": true,
       "statusCode": 301
     },
