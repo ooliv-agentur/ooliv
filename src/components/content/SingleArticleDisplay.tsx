@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -54,19 +53,18 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
       const matchedArticle = articles?.find(article => {
         if (!article.public_url) return false;
         
-        // Extract the slug from the public_url
-        // Assuming the URL format is like: https://domain.com/slug or just /slug
+        // Extract the slug from the public_url - take the last part after the final slash
+        let urlSlug: string;
         try {
           const url = new URL(article.public_url);
-          const urlSlug = url.pathname.replace(/^\//, ''); // Remove leading slash
-          console.log('Comparing slugs:', { urlSlug, requestedSlug: slug });
-          return urlSlug === slug;
+          urlSlug = url.pathname.split('/').pop() || '';
         } catch {
-          // If it's not a full URL, treat it as a path
-          const urlSlug = article.public_url.replace(/^\//, '');
-          console.log('Comparing path slugs:', { urlSlug, requestedSlug: slug });
-          return urlSlug === slug;
+          // If it's not a full URL, treat it as a path and get the last part
+          urlSlug = article.public_url.split('/').pop() || '';
         }
+        
+        console.log('Comparing slugs:', { urlSlug, requestedSlug: slug, publicUrl: article.public_url });
+        return urlSlug === slug;
       });
 
       if (matchedArticle) {
