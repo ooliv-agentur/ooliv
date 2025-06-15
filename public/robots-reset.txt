@@ -1,0 +1,21 @@
+
+User-agent: *
+Allow: /
+
+# Block old /de/ paths - they redirect anyway
+Disallow: /de/
+Disallow: /de
+
+# Block common tracking parameters
+Disallow: /*?utm_source=*
+Disallow: /*?utm_medium=*
+Disallow: /*?utm_campaign=*
+Disallow: /*?*utm_source=*
+
+# Set canonical domain
+Host: ooliv.de
+
+# Provide sitemap location
+Sitemap: https://ooliv.de/sitemap.xml
+
+# Last updated: 2025-06-15

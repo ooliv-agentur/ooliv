@@ -5,8 +5,12 @@
       "handle": "filesystem"
     },
     {
-      "src": "/(sitemap\\.xml|robots\\.txt)",
-      "dest": "/$1"
+      "src": "/sitemap.xml",
+      "dest": "/sitemap-reset.xml"
+    },
+    {
+      "src": "/robots.txt", 
+      "dest": "/robots-reset.txt"
     },
     {
       "src": "/(.*)",
