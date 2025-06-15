@@ -28,20 +28,6 @@ Disallow: /en
 Disallow: /*.php$
 Disallow: /*.php/
 
-# Block old directory paths that redirect
-Disallow: /projekte/
-Disallow: /leistungen/
-Disallow: /ooliv/
-Disallow: /author/
-Disallow: /werbeagentur-frankfurt/
-Disallow: /webdesign-agentur-wiesbaden/
-Disallow: /webdesign-agentur-frankfurt/
-Disallow: /wordpress-agentur-wiesbaden/
-Disallow: /wordpress-agentur-mainz/
-Disallow: /kunden/
-Disallow: /case-studies/
-Disallow: /ueber-ooliv/
-
 # Block common crawling patterns that shouldn't be indexed
 Disallow: /*?utm_source=*
 Disallow: /*?utm_medium=*

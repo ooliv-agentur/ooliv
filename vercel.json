@@ -74,6 +74,30 @@
       "statusCode": 301
     },
     {
+      "source": "/ueber-ooliv/:path*",
+      "destination": "/ueber-uns",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/ueber-ooliv",
+      "destination": "/ueber-uns",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/:path*",
+      "destination": "/referenzen",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/referenzen",
+      "permanent": true,
+      "statusCode": 301
+    },
+    {
       "source": "/werbeagentur-frankfurt/:path*",
       "destination": "/werbeagentur-frankfurt",
       "permanent": true,
@@ -117,13 +141,13 @@
     },
     {
       "source": "/wordpress-agentur-mainz/:path*",
-      "destination": "/",
+      "destination": "/webentwicklung",
       "permanent": true,
       "statusCode": 301
     },
     {
       "source": "/wordpress-agentur-mainz",
-      "destination": "/",
+      "destination": "/webentwicklung",
       "permanent": true,
       "statusCode": 301
     },
