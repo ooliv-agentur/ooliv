@@ -139,19 +139,20 @@ export const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Get initial language based on URL path
-  const getInitialLanguage = (): Language => {
-    if (typeof window !== 'undefined') {
-      const path = window.location.pathname;
-      if (path.startsWith('/en')) {
-        return 'en';
-      }
+// Helper function to get initial language
+const getInitialLanguage = (): Language => {
+  if (typeof window !== 'undefined') {
+    const path = window.location.pathname;
+    if (path.startsWith('/en')) {
+      return 'en';
     }
-    return 'de'; // Default to German
-  };
+  }
+  return 'de'; // Default to German
+};
 
-  const [language, setLanguage] = useState<Language>(getInitialLanguage());
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Initialize state with proper error handling
+  const [language, setLanguage] = useState<Language>(() => getInitialLanguage());
 
   // Debug language changes
   useEffect(() => {
@@ -159,11 +160,18 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, [language]);
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+    const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
+    return translation || key;
   };
 
+  const contextValue = React.useMemo(() => ({
+    language,
+    setLanguage,
+    t
+  }), [language]);
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );
