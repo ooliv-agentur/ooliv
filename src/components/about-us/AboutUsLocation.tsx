@@ -26,7 +26,7 @@ const AboutUsLocation = () => {
         <div className="bg-medico-mint rounded-2xl p-4 shadow-sm max-w-5xl mx-auto border border-gray-100">
           <div className="relative w-full aspect-[3/1] rounded-xl overflow-hidden bg-gray-100">
             <img
-              src="/lovable-uploads/ab6ece19-672d-4658-ae9a-06bae29f4ade.png"
+              src="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
               alt="ooliv Bürogebäude in Mainz mit moderner Glasarchitektur"
               className="w-full h-full object-cover transition-opacity duration-300"
               onLoad={handleImageLoad}
