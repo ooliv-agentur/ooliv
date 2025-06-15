@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Copy, Check, ExternalLink, RefreshCw } from 'lucide-react';
+import { Copy, Check, ExternalLink } from 'lucide-react';
 import { H1, LargeParagraph } from '@/components/ui/typography';
 import { toast } from 'sonner';
 
@@ -18,11 +18,9 @@ interface ContentPost {
 
 interface ArticleHeaderProps {
   article: ContentPost;
-  onRefresh: () => void;
-  isRefreshing: boolean;
 }
 
-const ArticleHeader = ({ article, onRefresh, isRefreshing }: ArticleHeaderProps) => {
+const ArticleHeader = ({ article }: ArticleHeaderProps) => {
   const [urlCopied, setUrlCopied] = useState(false);
 
   const copyUrlToClipboard = async () => {
@@ -40,13 +38,6 @@ const ArticleHeader = ({ article, onRefresh, isRefreshing }: ArticleHeaderProps)
 
   return (
     <div className="mb-8">
-      <div className="flex justify-end mb-6">
-        <Button onClick={onRefresh} disabled={isRefreshing} variant="outline">
-          <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-          Aktualisieren
-        </Button>
-      </div>
-
       <H1 className="mb-6">{article.title}</H1>
       
       {article.meta_description && (

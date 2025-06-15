@@ -118,13 +118,16 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
     <div className="w-full max-w-4xl mx-auto p-6">
       <ArticleNavigation />
 
+      <div className="flex justify-end mb-6">
+        <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline">
+          <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+          Aktualisieren
+        </Button>
+      </div>
+
       <Card className="border-medico-turquoise/20 bg-white shadow-lg">
         <CardContent className="p-8 lg:p-12">
-          <ArticleHeader 
-            article={article} 
-            onRefresh={handleRefresh} 
-            isRefreshing={isRefreshing} 
-          />
+          <ArticleHeader article={article} />
           <ArticleContent article={article} />
         </CardContent>
       </Card>
