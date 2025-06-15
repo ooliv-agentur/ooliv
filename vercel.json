@@ -1,4 +1,3 @@
-
 {
   "redirects": [
     {
@@ -182,24 +181,6 @@
       "statusCode": 301
     }
   ],
-  "rewrites": [
-    {
-      "source": "/robots.txt",
-      "destination": "/api/robots.txt"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/api/sitemap.xml"
-    }
-  ],
-  "functions": {
-    "api/robots.txt.js": {
-      "maxDuration": 30
-    },
-    "api/sitemap.xml.js": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/sitemap.xml",

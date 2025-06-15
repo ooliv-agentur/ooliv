@@ -15,18 +15,14 @@ Allow: /datenschutz
 Allow: /danke
 Allow: /werbeagentur-wiesbaden
 Allow: /werbeagentur-frankfurt
+Allow: /strategie
+Allow: /klickbetrug
+Allow: /neuester-artikel
+Allow: /cookie-richtlinie
 
 # Block old /de/ paths - they redirect anyway
 Disallow: /de/
 Disallow: /de
-
-# Block old English paths - no longer used
-Disallow: /en/
-Disallow: /en
-
-# Block old PHP paths
-Disallow: /*.php$
-Disallow: /*.php/
 
 # Block common crawling patterns that shouldn't be indexed
 Disallow: /*?utm_source=*
