@@ -35,25 +35,48 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
     try {
       console.log('Fetching article with slug:', slug);
       
-      const { data, error } = await supabase
+      // First, try to get all articles and then match the slug from the public_url
+      const { data: articles, error } = await supabase
         .from('content_posts')
         .select('*')
-        .ilike('public_url', `%${slug}%`)
-        .single();
+        .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('Error fetching article:', error);
-        if (error.code === 'PGRST116') {
-          setNotFound(true);
-        } else {
-          toast.error('Fehler beim Laden des Artikels');
-        }
+        console.error('Error fetching articles:', error);
+        toast.error('Fehler beim Laden der Artikel');
+        setNotFound(true);
         return;
       }
 
-      console.log('Article found:', data);
-      setArticle(data);
-      setNotFound(false);
+      console.log('All articles found:', articles);
+
+      // Find the article that matches the slug
+      const matchedArticle = articles?.find(article => {
+        if (!article.public_url) return false;
+        
+        // Extract the slug from the public_url
+        // Assuming the URL format is like: https://domain.com/slug or just /slug
+        try {
+          const url = new URL(article.public_url);
+          const urlSlug = url.pathname.replace(/^\//, ''); // Remove leading slash
+          console.log('Comparing slugs:', { urlSlug, requestedSlug: slug });
+          return urlSlug === slug;
+        } catch {
+          // If it's not a full URL, treat it as a path
+          const urlSlug = article.public_url.replace(/^\//, '');
+          console.log('Comparing path slugs:', { urlSlug, requestedSlug: slug });
+          return urlSlug === slug;
+        }
+      });
+
+      if (matchedArticle) {
+        console.log('Article found:', matchedArticle);
+        setArticle(matchedArticle);
+        setNotFound(false);
+      } else {
+        console.log('No matching article found for slug:', slug);
+        setNotFound(true);
+      }
     } catch (error) {
       console.error('Error fetching article:', error);
       toast.error('Fehler beim Laden des Artikels');
@@ -98,7 +121,7 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
               Artikel nicht gefunden
             </H2>
             <p className="text-gray-600 mb-6 text-lg">
-              Der gesuchte Artikel konnte nicht gefunden werden.
+              Der gesuchte Artikel "{slug}" konnte nicht gefunden werden.
             </p>
             <Button 
               onClick={handleRefresh} 
