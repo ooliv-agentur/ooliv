@@ -182,11 +182,21 @@
       "statusCode": 301
     }
   ],
+  "rewrites": [
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap.xml"
+    }
+  ],
   "functions": {
-    "public/robots.txt": {
+    "api/robots.txt.js": {
       "maxDuration": 30
     },
-    "public/sitemap.xml": {
+    "api/sitemap.xml.js": {
       "maxDuration": 30
     }
   },
