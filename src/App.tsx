@@ -1,4 +1,3 @@
-
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -12,17 +11,19 @@ import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
 import { Toaster } from 'sonner';
 
-// Lazy load pages for better performance
-const GermanIndex = lazy(() => import('./pages/de/Index'));
-const GermanWebDesign = lazy(() => import('./pages/de/Webdesign'));
-const GermanWebDevelopment = lazy(() => import('./pages/de/Webentwicklung'));
+// Load critical pages immediately (no lazy loading)
+import GermanIndex from './pages/de/Index';
+import GermanWebDesign from './pages/de/Webdesign';
+import GermanWebDevelopment from './pages/de/Webentwicklung';
+import GermanAiTechnologies from './pages/de/KiTechnologien';
+import GermanContact from './pages/de/Kontakt';
+
+// Keep lazy loading for less critical pages
 const GermanSEO = lazy(() => import('./pages/de/SEOOptimierung'));
 const GermanContentCreation = lazy(() => import('./pages/de/ContentErstellung'));
 const GermanGoogleAds = lazy(() => import('./pages/de/GoogleAds'));
-const GermanAiTechnologies = lazy(() => import('./pages/de/KiTechnologien'));
 const GermanCaseStudies = lazy(() => import('./pages/de/Referenzen'));
 const GermanAboutUs = lazy(() => import('./pages/de/UeberUns'));
-const GermanContact = lazy(() => import('./pages/de/Kontakt'));
 const GermanLegalNotice = lazy(() => import('./pages/de/Impressum'));
 const GermanPrivacyPolicy = lazy(() => import('./pages/de/Datenschutz'));
 const GermanThankYou = lazy(() => import('./pages/de/Danke'));
@@ -33,6 +34,13 @@ const Strategie = lazy(() => import('./pages/de/Strategie'));
 const CookieRichtlinie = lazy(() => import('./pages/de/CookieRichtlinie'));
 const LatestContent = lazy(() => import('./pages/de/LatestContent'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Minimal loading component
+const MinimalLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-6 h-6 border-2 border-medico-turquoise border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -56,21 +64,23 @@ function App() {
                 onOpenChange={setShowLeadForm}
               />
               
-              <Suspense fallback={null}>
+              <Suspense fallback={<MinimalLoader />}>
                 <Routes>
-                  {/* German Routes */}
+                  {/* German Routes - Critical pages loaded immediately */}
                   <Route path="/" element={<GermanIndex />} />
                   <Route path="/webdesign" element={<GermanWebDesign />} />
                   <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+                  <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                  <Route path="/kontakt" element={<GermanContact />} />
+                  
+                  {/* Less critical pages - lazy loaded */}
                   <Route path="/strategie" element={<Strategie />} />
                   <Route path="/seo-optimierung" element={<GermanSEO />} />
                   <Route path="/content-erstellung" element={<GermanContentCreation />} />
                   <Route path="/google-ads" element={<GermanGoogleAds />} />
-                  <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
                   <Route path="/klickbetrug" element={<Klickbetrug />} />
                   <Route path="/referenzen" element={<GermanCaseStudies />} />
                   <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                  <Route path="/kontakt" element={<GermanContact />} />
                   <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                   <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
                   <Route path="/neuester-artikel" element={<LatestContent />} />
