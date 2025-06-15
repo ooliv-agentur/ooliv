@@ -61,4 +61,4 @@ Disallow: /*/
 Host: ooliv.de
 
 # Provide sitemap location
-Sitemap: https://ooliv.de/sitemap-final-ooliv.xml
+Sitemap: https://ooliv.de/sitemap.xml
