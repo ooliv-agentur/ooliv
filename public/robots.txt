@@ -1,40 +1,20 @@
-
 User-agent: *
 Allow: /
-Allow: /webdesign
-Allow: /webentwicklung
-Allow: /content-erstellung
-Allow: /seo-optimierung
-Allow: /google-ads
-Allow: /ki-technologien
-Allow: /referenzen
-Allow: /ueber-uns
-Allow: /kontakt
-Allow: /impressum
-Allow: /datenschutz
-Allow: /danke
-Allow: /werbeagentur-wiesbaden
-Allow: /werbeagentur-frankfurt
-Allow: /strategie
-Allow: /klickbetrug
-Allow: /neuester-artikel
-Allow: /cookie-richtlinie
 
 # Block old /de/ paths - they redirect anyway
 Disallow: /de/
 Disallow: /de
 
-# Block common crawling patterns that shouldn't be indexed
+# Block common tracking parameters
 Disallow: /*?utm_source=*
 Disallow: /*?utm_medium=*
 Disallow: /*?utm_campaign=*
 Disallow: /*?*utm_source=*
 
-# Block trailing slashes (they redirect)
-Disallow: /*/
-
-# Set canonical domain - no www
+# Set canonical domain
 Host: ooliv.de
 
 # Provide sitemap location
 Sitemap: https://ooliv.de/sitemap.xml
+
+# Last updated: 2025-06-15
