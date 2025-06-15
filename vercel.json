@@ -1,5 +1,9 @@
 
 {
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap-reset.xml" },
+    { "source": "/robots.txt", "destination": "/robots-reset.txt" }
+  ],
   "routes": [
     {
       "handle": "filesystem"
