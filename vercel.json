@@ -183,36 +183,6 @@
   ],
   "headers": [
     {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
-      ]
-    },
-    {
-      "source": "/robots.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         {
@@ -222,19 +192,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
-      "source": "/danke",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        },
-        {
-          "key": "Link",
-          "value": "<https://ooliv.de/danke>; rel=\"canonical\""
         }
       ]
     },
