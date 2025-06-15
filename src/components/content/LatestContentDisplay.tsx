@@ -19,26 +19,46 @@ interface ContentPost {
 
 const LatestContentDisplay = () => {
   const [latestPost, setLatestPost] = useState<ContentPost | null>(null);
+  const [allPosts, setAllPosts] = useState<ContentPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [urlCopied, setUrlCopied] = useState(false);
+  const [showDebug, setShowDebug] = useState(false);
 
   const fetchLatestPost = async () => {
     try {
-      const { data, error } = await supabase
+      console.log('Fetching latest post...');
+      
+      // Fetch latest post
+      const { data: latestData, error: latestError } = await supabase
         .from('content_posts')
         .select('*')
         .order('created_at', { ascending: false })
         .limit(1)
         .single();
 
-      if (error && error.code !== 'PGRST116') { // PGRST116 = no rows returned
-        console.error('Error fetching latest post:', error);
+      if (latestError && latestError.code !== 'PGRST116') {
+        console.error('Error fetching latest post:', latestError);
         toast.error('Fehler beim Laden des neuesten Artikels');
         return;
       }
 
-      setLatestPost(data || null);
+      // Fetch all posts for debug
+      const { data: allData, error: allError } = await supabase
+        .from('content_posts')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (allError) {
+        console.error('Error fetching all posts:', allError);
+      } else {
+        console.log('All posts found:', allData?.length || 0);
+        console.log('Posts:', allData);
+        setAllPosts(allData || []);
+      }
+
+      console.log('Latest post:', latestData);
+      setLatestPost(latestData || null);
     } catch (error) {
       console.error('Error fetching latest post:', error);
       toast.error('Fehler beim Laden des neuesten Artikels');
@@ -84,9 +104,68 @@ const LatestContentDisplay = () => {
     );
   }
 
-  if (!latestPost) {
-    return (
-      <div className="w-full max-w-4xl mx-auto p-6">
+  return (
+    <div className="w-full max-w-4xl mx-auto p-6">
+      <div className="mb-6 flex justify-between items-center">
+        <h1 className="text-3xl font-bold text-medico-darkGreen">
+          Neuester Artikel
+        </h1>
+        <div className="flex gap-2">
+          <Button 
+            onClick={() => setShowDebug(!showDebug)} 
+            variant="outline"
+            size="sm"
+          >
+            Debug {showDebug ? 'ausblenden' : 'anzeigen'}
+          </Button>
+          <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline">
+            <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+            Aktualisieren
+          </Button>
+        </div>
+      </div>
+
+      {showDebug && (
+        <Card className="mb-6 border-orange-200 bg-orange-50">
+          <CardHeader>
+            <CardTitle className="text-lg text-orange-800">Debug Information</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4 text-sm">
+              <div>
+                <strong>Anzahl Artikel in DB:</strong> {allPosts.length}
+              </div>
+              <div>
+                <strong>Artikel gefunden:</strong>
+                {allPosts.length > 0 ? (
+                  <ul className="mt-2 space-y-2 ml-4">
+                    {allPosts.map((post, index) => (
+                      <li key={post.id} className="border-l-2 border-gray-300 pl-3">
+                        <div className="font-medium">{index + 1}. {post.title}</div>
+                        <div className="text-gray-600">ID: {post.id}</div>
+                        <div className="text-gray-600">Erstellt: {new Date(post.created_at).toLocaleString('de-DE')}</div>
+                        {post.public_url && (
+                          <div className="text-gray-600">URL: {post.public_url}</div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="text-gray-600"> Keine Artikel gefunden</span>
+                )}
+              </div>
+              {latestPost && (
+                <div>
+                  <strong>Aktuell angezeigter Artikel:</strong>
+                  <div className="mt-1 text-gray-600">"{latestPost.title}" (ID: {latestPost.id})</div>
+                </div>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {!latestPost ? (
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold text-medico-darkGreen">
@@ -97,121 +176,110 @@ const LatestContentDisplay = () => {
             <p className="text-gray-600 mb-4">
               Es wurden noch keine Artikel von BabyLoveGrowth.ai empfangen.
             </p>
+            <p className="text-sm text-gray-500 mb-4">
+              Überprüfen Sie die Debug-Information oben für Details.
+            </p>
             <Button onClick={handleRefresh} disabled={isRefreshing}>
               <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
               Aktualisieren
             </Button>
           </CardContent>
         </Card>
-      </div>
-    );
-  }
+      ) : (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-medico-darkGreen mb-4">
+              {latestPost.title}
+            </CardTitle>
+            
+            {latestPost.meta_description && (
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                {latestPost.meta_description}
+              </p>
+            )}
 
-  return (
-    <div className="w-full max-w-4xl mx-auto p-6">
-      <div className="mb-6 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-medico-darkGreen">
-          Neuester Artikel
-        </h1>
-        <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline">
-          <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-          Aktualisieren
-        </Button>
-      </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-medico-darkGreen mb-4">
-            {latestPost.title}
-          </CardTitle>
-          
-          {latestPost.meta_description && (
-            <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              {latestPost.meta_description}
-            </p>
-          )}
-
-          {latestPost.public_url && (
-            <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">Artikel-URL:</span>
-                <Button
-                  onClick={copyUrlToClipboard}
-                  variant="outline"
-                  size="sm"
-                  className="ml-2"
-                >
-                  {urlCopied ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
-                </Button>
+            {latestPost.public_url && (
+              <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700">Artikel-URL:</span>
+                  <Button
+                    onClick={copyUrlToClipboard}
+                    variant="outline"
+                    size="sm"
+                    className="ml-2"
+                  >
+                    {urlCopied ? (
+                      <Check className="w-4 h-4" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </Button>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600 break-all font-mono bg-white px-2 py-1 rounded border flex-1">
+                    {latestPost.public_url}
+                  </span>
+                  <a 
+                    href={latestPost.public_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen transition-colors font-medium"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-600 break-all font-mono bg-white px-2 py-1 rounded border flex-1">
-                  {latestPost.public_url}
-                </span>
-                <a 
-                  href={latestPost.public_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen transition-colors font-medium"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
+            )}
+
+            <div className="text-sm text-gray-500">
+              Veröffentlicht: {new Date(latestPost.created_at).toLocaleDateString('de-DE', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              })}
             </div>
-          )}
+          </CardHeader>
 
-          <div className="text-sm text-gray-500">
-            Veröffentlicht: {new Date(latestPost.created_at).toLocaleDateString('de-DE', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit'
-            })}
-          </div>
-        </CardHeader>
-
-        <CardContent>
-          {latestPost.content_md ? (
-            <div className="prose prose-lg max-w-none">
+          <CardContent>
+            {latestPost.content_md ? (
+              <div className="prose prose-lg max-w-none">
+                <div 
+                  className="markdown-content leading-relaxed"
+                  dangerouslySetInnerHTML={{ 
+                    __html: latestPost.content_md
+                      .split('\n')
+                      .map(line => {
+                        // Simple markdown parsing for headers, bold, italic
+                        line = line.replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-medico-darkGreen">$1</h3>');
+                        line = line.replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-8 mb-4 text-medico-darkGreen">$1</h2>');
+                        line = line.replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-medico-darkGreen">$1</h1>');
+                        line = line.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>');
+                        line = line.replace(/\*(.+?)\*/g, '<em class="italic">$1</em>');
+                        line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline" target="_blank" rel="noopener noreferrer">$1</a>');
+                        
+                        if (line.trim() === '') return '<br>';
+                        if (!line.includes('<h') && !line.includes('<br>')) {
+                          return `<p class="mb-4 text-gray-700 leading-relaxed">${line}</p>`;
+                        }
+                        return line;
+                      })
+                      .join('')
+                  }}
+                />
+              </div>
+            ) : latestPost.content_html ? (
               <div 
-                className="markdown-content leading-relaxed"
-                dangerouslySetInnerHTML={{ 
-                  __html: latestPost.content_md
-                    .split('\n')
-                    .map(line => {
-                      // Simple markdown parsing for headers, bold, italic
-                      line = line.replace(/^### (.+)$/gm, '<h3 class="text-xl font-semibold mt-6 mb-3 text-medico-darkGreen">$1</h3>');
-                      line = line.replace(/^## (.+)$/gm, '<h2 class="text-2xl font-bold mt-8 mb-4 text-medico-darkGreen">$1</h2>');
-                      line = line.replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold mt-8 mb-6 text-medico-darkGreen">$1</h1>');
-                      line = line.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>');
-                      line = line.replace(/\*(.+?)\*/g, '<em class="italic">$1</em>');
-                      line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline" target="_blank" rel="noopener noreferrer">$1</a>');
-                      
-                      if (line.trim() === '') return '<br>';
-                      if (!line.includes('<h') && !line.includes('<br>')) {
-                        return `<p class="mb-4 text-gray-700 leading-relaxed">${line}</p>`;
-                      }
-                      return line;
-                    })
-                    .join('')
-                }}
+                className="prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{ __html: latestPost.content_html }}
               />
-            </div>
-          ) : latestPost.content_html ? (
-            <div 
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: latestPost.content_html }}
-            />
-          ) : (
-            <p className="text-gray-600 italic">Kein Inhalt verfügbar</p>
-          )}
-        </CardContent>
-      </Card>
+            ) : (
+              <p className="text-gray-600 italic">Kein Inhalt verfügbar</p>
+            )}
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 };
