@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Copy, Check, ExternalLink, RefreshCw } from 'lucide-react';
-import { H1, Paragraph } from '@/components/ui/typography';
+import { H1, LargeParagraph } from '@/components/ui/typography';
 import { toast } from 'sonner';
 
 interface ContentPost {
@@ -50,9 +50,9 @@ const ArticleHeader = ({ article, onRefresh, isRefreshing }: ArticleHeaderProps)
       <H1 className="mb-6">{article.title}</H1>
       
       {article.meta_description && (
-        <Paragraph size="large" color="secondary" className="mb-6">
+        <LargeParagraph color="secondary" className="mb-6">
           {article.meta_description}
-        </Paragraph>
+        </LargeParagraph>
       )}
 
       {article.public_url && (
