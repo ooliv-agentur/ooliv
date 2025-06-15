@@ -32,6 +32,7 @@ import Klickbetrug from './pages/de/Klickbetrug';
 import Strategie from './pages/de/Strategie';
 import CookieRichtlinie from './pages/de/CookieRichtlinie';
 import LatestContent from './pages/de/LatestContent';
+import SingleArticle from './pages/de/SingleArticle';
 import NotFound from './pages/NotFound';
 
 const queryClient = new QueryClient();
