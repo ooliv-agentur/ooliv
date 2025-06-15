@@ -1,8 +1,15 @@
 
 import React from 'react';
-import OptimizedImage from '@/components/OptimizedImage';
 
 const AboutUsLocation = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    console.error('Failed to load headquarters image:', e);
+  };
+
+  const handleImageLoad = () => {
+    console.log('Headquarters image loaded successfully');
+  };
+
   return (
     <section className="py-16 bg-white font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,17 +22,16 @@ const AboutUsLocation = () => {
             Digital-first, standortflexibel – und immer responsiv.
           </p>
         </div>
+        
         <div className="bg-medico-mint rounded-2xl p-4 shadow-sm max-w-5xl mx-auto border border-gray-100">
-          <div className="relative w-full aspect-[3/1] rounded-xl overflow-hidden">
-            <OptimizedImage
+          <div className="relative w-full aspect-[3/1] rounded-xl overflow-hidden bg-gray-100">
+            <img
               src="/lovable-uploads/ab6ece19-672d-4658-ae9a-06bae29f4ade.png"
               alt="ooliv Bürogebäude in Mainz mit moderner Glasarchitektur"
-              width={1200}
-              height={400}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-opacity duration-300"
+              onLoad={handleImageLoad}
+              onError={handleImageError}
               loading="lazy"
-              priority={false}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
           </div>
         </div>
