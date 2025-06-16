@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -53,17 +54,33 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
       const matchedArticle = articles?.find(article => {
         if (!article.public_url) return false;
         
-        // Extract the slug from the public_url - take the last part after the final slash
-        let urlSlug: string;
+        // Extract the slug from the public_url - try multiple methods
+        let urlSlug: string = '';
+        
         try {
+          // Method 1: Try to parse as full URL and get the last segment
           const url = new URL(article.public_url);
-          urlSlug = url.pathname.split('/').pop() || '';
+          const pathSegments = url.pathname.split('/').filter(segment => segment.length > 0);
+          urlSlug = pathSegments[pathSegments.length - 1] || '';
         } catch {
-          // If it's not a full URL, treat it as a path and get the last part
-          urlSlug = article.public_url.split('/').pop() || '';
+          // Method 2: If it's not a full URL, treat it as a path
+          const pathSegments = article.public_url.split('/').filter(segment => segment.length > 0);
+          urlSlug = pathSegments[pathSegments.length - 1] || '';
         }
         
-        console.log('Comparing slugs:', { urlSlug, requestedSlug: slug, publicUrl: article.public_url });
+        // Method 3: If still no slug, try the entire path without leading slash
+        if (!urlSlug) {
+          urlSlug = article.public_url.replace(/^\/+/, '').replace(/\/+$/, '');
+        }
+        
+        console.log('Comparing slugs:', { 
+          urlSlug, 
+          requestedSlug: slug, 
+          publicUrl: article.public_url,
+          articleId: article.id,
+          articleTitle: article.title
+        });
+        
         return urlSlug === slug;
       });
 
@@ -73,6 +90,11 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
         setNotFound(false);
       } else {
         console.log('No matching article found for slug:', slug);
+        console.log('Available articles with URLs:', articles?.map(a => ({
+          id: a.id,
+          title: a.title,
+          public_url: a.public_url
+        })));
         setNotFound(true);
       }
     } catch (error) {
