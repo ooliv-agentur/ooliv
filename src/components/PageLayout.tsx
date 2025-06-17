@@ -197,14 +197,6 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
-        {/* Preload critical CSS */}
-        <link rel="preload" href="/src/styles/critical.css" as="style" />
-        <link rel="preload" href="/src/styles/performance-optimizations.css" as="style" />
-        
-        {/* Module preload for better JavaScript loading */}
-        <link rel="modulepreload" href="/src/components/Navbar.tsx" />
-        <link rel="modulepreload" href="/src/components/Footer.tsx" />
       </Helmet>
       <MotionConfig reducedMotion="user">
         <div className={`min-h-screen flex flex-col ${className}`}>
