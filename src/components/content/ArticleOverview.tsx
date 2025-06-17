@@ -85,7 +85,7 @@ const ArticleOverview = () => {
         <div className="text-center mb-16">
           <H1 className="mb-8 text-medico-darkGreen font-satoshi">Unsere Artikel</H1>
           <Paragraph color="secondary" className="text-xl font-satoshi max-w-4xl mx-auto mb-10 leading-relaxed">
-            Aktuelle Artikel, Studien und Insights von Ooliv für zukunftsfähige B2B-Websites
+            Aktuelle Beiträge zu Webdesign, B2B-Marketing, SEO, Lokalisierung und digitale Strategie. ooliv teilt hier regelmäßig Insights für zukunftsfähige Unternehmenswebsites.
           </Paragraph>
         </div>
 
