@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { H2 } from '@/components/ui/typography';
 import { supabase } from '@/integrations/supabase/client';
@@ -21,9 +20,10 @@ interface ContentPost {
 
 interface SingleArticleDisplayProps {
   slug: string;
+  onArticleLoad?: (article: ContentPost) => void;
 }
 
-const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
+const SingleArticleDisplay = ({ slug, onArticleLoad }: SingleArticleDisplayProps) => {
   const [article, setArticle] = useState<ContentPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
@@ -54,6 +54,10 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
         console.log('Article found:', article);
         setArticle(article);
         setNotFound(false);
+        // Call the callback to pass article data to parent
+        if (onArticleLoad) {
+          onArticleLoad(article);
+        }
       } else {
         console.log('No article found for slug:', slug);
         setNotFound(true);

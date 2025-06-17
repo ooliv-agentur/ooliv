@@ -1,12 +1,29 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import SingleArticleDisplay from '@/components/content/SingleArticleDisplay';
 
+interface ContentPost {
+  id: number;
+  title: string;
+  meta_description: string | null;
+  content_html: string | null;
+  content_md: string | null;
+  language_code: string | null;
+  public_url: string | null;
+  slug: string | null;
+  created_at: string;
+}
+
 const SingleArticle = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [article, setArticle] = useState<ContentPost | null>(null);
+
+  const handleArticleLoad = (loadedArticle: ContentPost) => {
+    setArticle(loadedArticle);
+  };
 
   if (!slug) {
     return (
@@ -23,14 +40,19 @@ const SingleArticle = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Artikel | ooliv - Ihre Werbeagentur</title>
+        <title>
+          {article?.title ? `${article.title} | ooliv - Ihre Werbeagentur` : 'Artikel | ooliv - Ihre Werbeagentur'}
+        </title>
         <meta 
           name="description" 
-          content="Entdecken Sie unseren Artikel von BabyLoveGrowth.ai mit wertvollen Insights und Tipps."
+          content={
+            article?.meta_description || 
+            'Entdecken Sie unseren Artikel von BabyLoveGrowth.ai mit wertvollen Insights und Tipps.'
+          }
         />
       </Helmet>
       
-      <SingleArticleDisplay slug={slug} />
+      <SingleArticleDisplay slug={slug} onArticleLoad={handleArticleLoad} />
     </PageLayout>
   );
 };
