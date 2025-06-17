@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -62,26 +63,11 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
     };
     
-    // Custom list renderer - handle the container and items
-    renderer.list = function({ items, ordered }) {
+    // Custom list renderer - simplified approach
+    renderer.list = function({ body, ordered }) {
       const type = ordered ? 'ol' : 'ul';
       const listClass = ordered ? 'list-decimal' : 'list-disc';
-      
-      // Process the items array to generate the list content
-      const listItems = items.map((item: any) => {
-        if (item.task !== undefined) {
-          // Handle task list items
-          const checked = item.checked ? 'checked' : '';
-          const itemContent = this.parser.parseInline(item.tokens);
-          return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light"><input type="checkbox" ${checked} disabled> ${itemContent}</li>`;
-        } else {
-          // Handle regular list items
-          const itemContent = this.parser.parseInline(item.tokens);
-          return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${itemContent}</li>`;
-        }
-      }).join('');
-      
-      return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${listItems}</${type}>`;
+      return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
     };
     
     // Custom link renderer with ooliv styling
