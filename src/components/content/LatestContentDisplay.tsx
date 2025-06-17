@@ -17,6 +17,7 @@ interface ContentPost {
   content_md: string | null;
   language_code: string | null;
   public_url: string | null;
+  slug: string | null;
   created_at: string;
 }
 
