@@ -11,9 +11,9 @@ const SingleArticle = () => {
   if (!slug) {
     return (
       <PageLayout>
-        <div className="min-h-screen bg-gray-50 py-16">
-          <div className="w-full max-w-4xl mx-auto p-6">
-            <h1>Ungültiger Artikel-Link</h1>
+        <div className="min-h-screen bg-gray-50 py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold text-medico-darkGreen font-satoshi">Ungültiger Artikel-Link</h1>
           </div>
         </div>
       </PageLayout>
@@ -30,9 +30,7 @@ const SingleArticle = () => {
         />
       </Helmet>
       
-      <div className="min-h-screen bg-gray-50 py-16">
-        <SingleArticleDisplay slug={slug} />
-      </div>
+      <SingleArticleDisplay slug={slug} />
     </PageLayout>
   );
 };

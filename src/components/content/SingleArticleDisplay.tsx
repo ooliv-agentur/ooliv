@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { H2 } from '@/components/ui/typography';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -74,14 +73,12 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
 
   if (isLoading) {
     return (
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-medico-turquoise/20 shadow-lg">
-            <CardContent className="p-16 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
-              <p className="text-medico-darkGreen font-satoshi text-lg">Lade Artikel...</p>
-            </CardContent>
-          </Card>
+          <div className="text-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
+            <p className="text-medico-darkGreen font-satoshi text-lg">Lade Artikel...</p>
+          </div>
         </div>
       </section>
     );
@@ -89,36 +86,32 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
 
   if (notFound || !article) {
     return (
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ArticleNavigation />
           
-          <Card className="border-medico-turquoise/20 bg-medico-mint/30 shadow-lg mt-8">
-            <CardContent className="text-center p-16">
-              <H2 className="mb-8 text-medico-darkGreen font-satoshi">
-                Artikel nicht gefunden
-              </H2>
-              <p className="text-gray-600 mb-8 text-lg font-satoshi leading-relaxed">
-                Der gesuchte Artikel "{slug}" konnte nicht gefunden werden.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="text-center py-20">
+            <H2 className="mb-8 text-medico-darkGreen font-satoshi font-bold">
+              Artikel nicht gefunden
+            </H2>
+            <p className="text-gray-600 mb-8 text-lg font-satoshi leading-relaxed">
+              Der gesuchte Artikel "{slug}" konnte nicht gefunden werden.
+            </p>
+          </div>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-16 md:py-24 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ArticleNavigation />
-
-        <Card className="border-medico-turquoise/20 bg-white shadow-lg mt-12 rounded-2xl">
-          <CardContent className="p-12 lg:p-16">
-            <ArticleHeader article={article} />
-            <ArticleContent article={article} />
-          </CardContent>
-        </Card>
+        
+        <div className="mt-12">
+          <ArticleHeader article={article} />
+          <ArticleContent article={article} />
+        </div>
       </div>
     </section>
   );

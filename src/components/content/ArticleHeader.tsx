@@ -38,12 +38,14 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
   };
 
   return (
-    <header className="mb-16">
-      <H1 className="mb-8 text-medico-darkGreen font-satoshi">{article.title}</H1>
+    <header className="mb-20">
+      <H1 className="mb-10 text-medico-darkGreen font-satoshi font-bold text-4xl md:text-5xl lg:text-6xl leading-tight">
+        {article.title}
+      </H1>
       
-      <div className="flex items-center text-base text-gray-600 mb-10">
-        <Calendar className="w-5 h-5 mr-3 text-medico-turquoise" />
-        <span className="font-satoshi">
+      <div className="flex items-center text-lg text-medico-turquoise mb-12">
+        <Calendar className="w-6 h-6 mr-4 text-medico-turquoise" />
+        <span className="font-satoshi font-medium">
           Veröffentlicht am {new Date(article.created_at).toLocaleDateString('de-DE', {
             year: 'numeric',
             month: 'long',
@@ -55,47 +57,47 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
       </div>
 
       {article.meta_description && (
-        <Paragraph color="secondary" className="mb-12 text-xl leading-relaxed font-satoshi max-w-4xl">
+        <Paragraph color="secondary" className="mb-16 text-xl md:text-2xl leading-relaxed font-satoshi font-light max-w-5xl">
           {article.meta_description}
         </Paragraph>
       )}
 
       {article.public_url && (
-        <div className="mb-12 p-8 bg-medico-mint/50 rounded-2xl border border-medico-turquoise/20">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-lg font-semibold text-medico-darkGreen font-satoshi">
+        <div className="mb-16 p-10 bg-medico-mint/30 rounded-3xl">
+          <div className="flex items-center justify-between mb-6">
+            <span className="text-xl font-bold text-medico-darkGreen font-satoshi">
               Originalartikel:
             </span>
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               <Button
                 onClick={copyUrlToClipboard}
-                variant="outline"
+                variant="outlineTurquoise"
                 size="sm"
-                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
+                className="font-satoshi font-semibold"
               >
                 {urlCopied ? (
-                  <Check className="w-4 h-4 text-medico-turquoise" />
+                  <Check className="w-5 h-5 text-medico-turquoise" />
                 ) : (
-                  <Copy className="w-4 h-4" />
+                  <Copy className="w-5 h-5" />
                 )}
               </Button>
               <Button
                 asChild
-                variant="outline"
+                variant="outlineTurquoise"
                 size="sm"
-                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
+                className="font-satoshi font-semibold"
               >
                 <a 
                   href={article.public_url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-5 h-5" />
                 </a>
               </Button>
             </div>
           </div>
-          <div className="text-base text-medico-darkGreen break-all font-mono bg-white px-4 py-3 rounded-lg border border-medico-turquoise/20">
+          <div className="text-lg text-medico-darkGreen break-all font-mono bg-white px-6 py-4 rounded-xl">
             {article.public_url}
           </div>
         </div>
