@@ -18,6 +18,7 @@ export type Database = {
           language_code: string | null
           meta_description: string | null
           public_url: string | null
+          slug: string | null
           title: string
         }
         Insert: {
@@ -28,6 +29,7 @@ export type Database = {
           language_code?: string | null
           meta_description?: string | null
           public_url?: string | null
+          slug?: string | null
           title: string
         }
         Update: {
@@ -38,6 +40,7 @@ export type Database = {
           language_code?: string | null
           meta_description?: string | null
           public_url?: string | null
+          slug?: string | null
           title?: string
         }
         Relationships: []

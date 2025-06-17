@@ -18,6 +18,7 @@ interface ContentPost {
   content_md: string | null;
   language_code: string | null;
   public_url: string | null;
+  slug: string | null;
   created_at: string;
 }
 
@@ -31,84 +32,36 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
-  const extractSlugFromUrl = (url: string): string => {
-    if (!url) return '';
-    
-    console.log('Processing URL:', url);
-    
-    // Remove protocol and domain if present
-    let cleanUrl = url.replace(/^https?:\/\/[^\/]+/, '');
-    
-    // Remove leading and trailing slashes
-    cleanUrl = cleanUrl.replace(/^\/+|\/+$/g, '');
-    
-    console.log('Clean URL after processing:', cleanUrl);
-    
-    // If it's a direct slug without path
-    if (!cleanUrl.includes('/')) {
-      return cleanUrl;
-    }
-    
-    // Split by slash and get the last non-empty segment
-    const segments = cleanUrl.split('/').filter(segment => segment.length > 0);
-    const lastSegment = segments[segments.length - 1];
-    
-    console.log('URL segments:', segments, 'Last segment:', lastSegment);
-    
-    return lastSegment || '';
-  };
-
   const fetchArticleBySlug = async () => {
     try {
       console.log('Fetching article with slug:', slug);
       
-      const { data: articles, error } = await supabase
+      // Query directly using the slug field
+      const { data: article, error } = await supabase
         .from('content_posts')
         .select('*')
-        .order('created_at', { ascending: false });
+        .eq('slug', slug)
+        .single();
 
       if (error) {
-        console.error('Error fetching articles:', error);
-        toast.error('Fehler beim Laden der Artikel');
-        setNotFound(true);
+        if (error.code === 'PGRST116') {
+          // No rows returned
+          console.log('No article found with slug:', slug);
+          setNotFound(true);
+        } else {
+          console.error('Error fetching article:', error);
+          toast.error('Fehler beim Laden des Artikels');
+          setNotFound(true);
+        }
         return;
       }
 
-      console.log('All articles found:', articles);
-
-      // Find the article that matches the slug
-      const matchedArticle = articles?.find(article => {
-        if (!article.public_url) {
-          console.log(`Article ${article.id} has no public_url`);
-          return false;
-        }
-        
-        const urlSlug = extractSlugFromUrl(article.public_url);
-        
-        console.log('Comparing slugs:', { 
-          urlSlug, 
-          requestedSlug: slug, 
-          publicUrl: article.public_url,
-          articleId: article.id,
-          articleTitle: article.title,
-          match: urlSlug === slug
-        });
-        
-        return urlSlug === slug;
-      });
-
-      if (matchedArticle) {
-        console.log('Article found:', matchedArticle);
-        setArticle(matchedArticle);
+      if (article) {
+        console.log('Article found:', article);
+        setArticle(article);
         setNotFound(false);
       } else {
-        console.log('No matching article found for slug:', slug);
-        console.log('Available articles with URLs:', articles?.map(a => ({
-          id: a.id,
-          title: a.title,
-          public_url: a.public_url,
-          extractedSlug: extractSlugFromUrl(a.public_url || '')
-        })));
+        console.log('No article found for slug:', slug);
         setNotFound(true);
       }
     } catch (error) {

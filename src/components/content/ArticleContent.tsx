@@ -10,6 +10,7 @@ interface ContentPost {
   content_md: string | null;
   language_code: string | null;
   public_url: string | null;
+  slug: string | null;
   created_at: string;
 }
 
@@ -35,13 +36,16 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
                 line = line.replace(/\*(.+?)\*/g, '<em class="italic text-medico-darkGreen">$1</em>');
                 line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/30 hover:decoration-medico-darkGreen transition-colors font-medium" target="_blank" rel="noopener noreferrer">$1</a>');
                 
+                // Handle images - convert markdown images to HTML with proper styling
+                line = line.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="w-full max-w-2xl mx-auto my-8 rounded-lg shadow-md border border-medico-turquoise/20" loading="lazy" />');
+                
                 // Handle lists
                 if (line.match(/^- /)) {
                   return `<li class="mb-2 text-gray-700 leading-relaxed ml-4">${line.replace(/^- /, '')}</li>`;
                 }
                 
                 if (line.trim() === '') return '<br class="mb-4">';
-                if (!line.includes('<h') && !line.includes('<br>') && !line.includes('<li>')) {
+                if (!line.includes('<h') && !line.includes('<br>') && !line.includes('<li>') && !line.includes('<img')) {
                   return `<p class="mb-6 text-gray-700 leading-relaxed text-lg">${line}</p>`;
                 }
                 return line;
