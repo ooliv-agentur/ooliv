@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
+import { marked } from 'marked';
 
 interface ContentPost {
   id: number;
@@ -20,55 +21,98 @@ interface ArticleContentProps {
 
 const ArticleContent = ({ article }: ArticleContentProps) => {
   if (article.content_md) {
+    // Configure marked with custom renderer for ooliv styling
+    const renderer = new marked.Renderer();
+    
+    // Custom heading renderer with ooliv styling and IDs
+    renderer.heading = function(text, level) {
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
+      
+      switch(level) {
+        case 1:
+          return `<h1 id="${id}" class="${baseClasses} text-4xl md:text-5xl mt-24 mb-16">${text}</h1>`;
+        case 2:
+          return `<h2 id="${id}" class="${baseClasses} text-3xl md:text-4xl mt-20 mb-12">${text}</h2>`;
+        case 3:
+          return `<h3 id="${id}" class="${baseClasses} text-2xl md:text-3xl mt-16 mb-10 border-l-4 border-medico-turquoise pl-8">${text}</h3>`;
+        case 4:
+          return `<h4 id="${id}" class="${baseClasses} text-xl md:text-2xl mt-12 mb-8">${text}</h4>`;
+        case 5:
+          return `<h5 id="${id}" class="${baseClasses} text-lg md:text-xl mt-10 mb-6">${text}</h5>`;
+        case 6:
+          return `<h6 id="${id}" class="${baseClasses} text-base md:text-lg mt-8 mb-4">${text}</h6>`;
+        default:
+          return `<h${level} id="${id}" class="${baseClasses}">${text}</h${level}>`;
+      }
+    };
+    
+    // Custom paragraph renderer
+    renderer.paragraph = function(text) {
+      return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
+    };
+    
+    // Custom list renderer
+    renderer.list = function(body, ordered) {
+      const type = ordered ? 'ol' : 'ul';
+      const listClass = ordered ? 'list-decimal' : 'list-disc';
+      return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
+    };
+    
+    // Custom list item renderer
+    renderer.listitem = function(text) {
+      return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
+    };
+    
+    // Custom link renderer with ooliv styling
+    renderer.link = function(href, title, text) {
+      // Handle anchor links - convert full URLs with anchors to relative anchors
+      if (href && href.includes('#')) {
+        const anchorMatch = href.match(/#(.+)$/);
+        if (anchorMatch && (href.includes('/artikel/') || href.startsWith('#'))) {
+          const anchor = anchorMatch[1];
+          return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${text}</a>`;
+        }
+      }
+      
+      // External links
+      const target = href?.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : '';
+      const titleAttr = title ? ` title="${title}"` : '';
+      return `<a href="${href}"${titleAttr} class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"${target}>${text}</a>`;
+    };
+    
+    // Custom image renderer
+    renderer.image = function(href, title, text) {
+      const titleAttr = title ? ` title="${title}"` : '';
+      const caption = text || title || '';
+      return `<figure class="my-16"><img src="${href}" alt="${text}"${titleAttr} class="w-full max-w-6xl mx-auto rounded-3xl shadow-xl" loading="lazy" />${caption ? `<figcaption class="text-center text-lg text-gray-600 mt-8 italic font-satoshi font-light">${caption}</figcaption>` : ''}</figure>`;
+    };
+    
+    // Custom strong renderer
+    renderer.strong = function(text) {
+      return `<strong class="font-bold text-medico-darkGreen font-satoshi">${text}</strong>`;
+    };
+    
+    // Custom em renderer
+    renderer.em = function(text) {
+      return `<em class="italic text-medico-darkGreen font-satoshi">${text}</em>`;
+    };
+    
+    // Configure marked options
+    marked.setOptions({
+      renderer: renderer,
+      gfm: true,
+      breaks: true,
+      sanitize: false
+    });
+    
+    const htmlContent = marked(article.content_md);
+    
     return (
       <article className="prose prose-lg max-w-none">
         <div 
           className="markdown-content leading-relaxed font-satoshi"
-          dangerouslySetInnerHTML={{ 
-            __html: article.content_md
-              .split('\n')
-              .map(line => {
-                // Enhanced markdown parsing with ooliv brand colors and Satoshi font
-                line = line.replace(/^### (.+)$/gm, '<h3 id="' + '$1'.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '" class="text-2xl md:text-3xl font-bold mt-16 mb-10 text-medico-darkGreen border-l-4 border-medico-turquoise pl-8 font-satoshi">$1</h3>');
-                line = line.replace(/^## (.+)$/gm, '<h2 id="' + '$1'.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '" class="text-3xl md:text-4xl font-bold mt-20 mb-12 text-medico-darkGreen font-satoshi">$1</h2>');
-                line = line.replace(/^# (.+)$/gm, '<h1 id="' + '$1'.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '" class="text-4xl md:text-5xl font-bold mt-24 mb-16 text-medico-darkGreen font-satoshi">$1</h1>');
-                line = line.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-medico-darkGreen font-satoshi">$1</strong>');
-                line = line.replace(/\*(.+?)\*/g, '<em class="italic text-medico-darkGreen font-satoshi">$1</em>');
-                
-                // Handle anchor links - first process internal anchor links, then external links
-                line = line.replace(/\[(.+?)\]\(#(.+?)\)/g, '<a href="#$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">$1</a>');
-                
-                // Handle links to other articles with anchors - convert to relative anchors only
-                line = line.replace(/\[(.+?)\]\(https?:\/\/[^\/]+\/artikel\/[^\/]+#([^)]+)\)/g, '<a href="#$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">$1</a>');
-                
-                // Handle other external links
-                line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" target="_blank" rel="noopener noreferrer">$1</a>');
-                
-                // Handle images - convert markdown images to HTML with proper styling
-                line = line.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<figure class="my-16"><img src="$2" alt="$1" class="w-full max-w-6xl mx-auto rounded-3xl shadow-xl" loading="lazy" /><figcaption class="text-center text-lg text-gray-600 mt-8 italic font-satoshi font-light">$1</figcaption></figure>');
-                
-                // Handle lists with better styling
-                if (line.match(/^- /)) {
-                  return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${line.replace(/^- /, '')}</li>`;
-                }
-                
-                // Handle numbered lists
-                if (line.match(/^\d+\. /)) {
-                  return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise marker:font-bold font-satoshi text-lg font-light">${line.replace(/^\d+\. /, '')}</li>`;
-                }
-                
-                if (line.trim() === '') return '<div class="mb-10"></div>';
-                if (!line.includes('<h') && !line.includes('<div>') && !line.includes('<li>') && !line.includes('<figure')) {
-                  return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${line}</p>`;
-                }
-                return line;
-              })
-              .join('')
-              // Wrap consecutive list items
-              .replace(/(<li[^>]*>.*?<\/li>)(\s*<li[^>]*>.*?<\/li>)+/g, (match) => {
-                return `<ul class="list-disc ml-12 mb-16 space-y-4 font-satoshi">${match}</ul>`;
-              })
-          }}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
       </article>
     );
