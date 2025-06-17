@@ -82,9 +82,9 @@ const ArticleOverview = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <H1 className="mb-8 text-medico-darkGreen font-satoshi">Unsere Artikel</H1>
-          <Paragraph color="secondary" className="text-xl font-satoshi max-w-4xl mx-auto mb-10 leading-relaxed">
+          <Paragraph color="secondary" className="text-xl font-satoshi max-w-4xl mb-10 leading-relaxed">
             Aktuelle Beiträge zu Webdesign, B2B-Marketing, SEO, Lokalisierung und digitale Strategie. ooliv teilt hier regelmäßig Insights für zukunftsfähige Unternehmenswebsites.
           </Paragraph>
         </div>
