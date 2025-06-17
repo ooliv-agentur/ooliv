@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { RefreshCw, ArrowRight, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
 import { H1, H2, H3, Paragraph } from '@/components/ui/typography';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
-import { getContainerClasses, getSectionClasses } from '@/styles/spacing';
 
 interface ContentPost {
   id: number;
@@ -24,15 +23,17 @@ interface ContentPost {
 const ArticleOverview = () => {
   const [articles, setArticles] = useState<ContentPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const fetchArticles = async () => {
     try {
-      console.log('Fetching all articles...');
+      console.log('Fetching German articles with slugs...');
       
       const { data, error } = await supabase
         .from('content_posts')
         .select('*')
+        .eq('language_code', 'de')
+        .not('slug', 'is', null)
+        .neq('slug', '')
         .order('created_at', { ascending: false });
 
       if (error) {
@@ -41,21 +42,14 @@ const ArticleOverview = () => {
         return;
       }
 
-      console.log('Articles found:', data?.length || 0);
+      console.log('German articles with slugs found:', data?.length || 0);
       setArticles(data || []);
     } catch (error) {
       console.error('Error fetching articles:', error);
       toast.error('Fehler beim Laden der Artikel');
     } finally {
       setIsLoading(false);
-      setIsRefreshing(false);
     }
-  };
-
-  const handleRefresh = async () => {
-    setIsRefreshing(true);
-    await fetchArticles();
-    toast.success('Artikel aktualisiert');
   };
 
   useEffect(() => {
@@ -91,17 +85,8 @@ const ArticleOverview = () => {
         <div className="text-center mb-16">
           <H1 className="mb-8 text-medico-darkGreen font-satoshi">Unsere Artikel</H1>
           <Paragraph color="secondary" className="text-xl font-satoshi max-w-4xl mx-auto mb-10 leading-relaxed">
-            Entdecken Sie wertvolle Insights und Tipps von BabyLoveGrowth.ai für Ihr Business
+            Aktuelle Artikel, Studien und Insights von Ooliv für zukunftsfähige B2B-Websites
           </Paragraph>
-          <Button 
-            onClick={handleRefresh} 
-            disabled={isRefreshing} 
-            variant="outline"
-            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
-          >
-            <RefreshCw className={`w-5 h-5 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-            Aktualisieren
-          </Button>
         </div>
 
         {articles.length === 0 ? (
@@ -109,16 +94,8 @@ const ArticleOverview = () => {
             <CardContent className="text-center p-16">
               <H2 className="mb-8 text-medico-darkGreen font-satoshi">Noch keine Artikel verfügbar</H2>
               <Paragraph color="secondary" className="mb-8 text-lg font-satoshi">
-                Es wurden noch keine Artikel von BabyLoveGrowth.ai empfangen.
+                Es wurden noch keine deutschen Artikel mit gültigen URLs gefunden.
               </Paragraph>
-              <Button 
-                onClick={handleRefresh} 
-                disabled={isRefreshing}
-                className="bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold"
-              >
-                <RefreshCw className={`w-5 h-5 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-                Aktualisieren
-              </Button>
             </CardContent>
           </Card>
         ) : (
@@ -157,26 +134,15 @@ const ArticleOverview = () => {
                   </div>
                   
                   <div className="flex items-center gap-3 mt-auto">
-                    {article.slug ? (
-                      <Button 
-                        asChild 
-                        className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
-                      >
-                        <Link to={`/artikel/${article.slug}`}>
-                          Artikel lesen
-                          <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                        </Link>
-                      </Button>
-                    ) : (
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="flex-1 font-satoshi"
-                        disabled
-                      >
-                        Kein Slug verfügbar
-                      </Button>
-                    )}
+                    <Button 
+                      asChild 
+                      className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
+                    >
+                      <Link to={`/artikel/${article.slug}`}>
+                        Artikel lesen
+                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                      </Link>
+                    </Button>
                     
                     {article.public_url && (
                       <Button
