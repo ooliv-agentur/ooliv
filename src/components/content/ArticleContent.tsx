@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -63,14 +64,14 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
     };
     
-    // Custom listitem renderer to style individual list items and handle TOC
+    // Custom listitem renderer - parse inline content first
     renderer.listitem = function({ text, task, checked }) {
       if (task) {
         const checkedAttr = checked ? 'checked' : '';
         return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${text}</li>`;
       }
       
-      // Check if this list item contains anchor links (TOC items)
+      // Check if this list item contains anchor links (TOC items) after parsing
       if (text.includes('href="#')) {
         return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${text}</li>`;
       }
@@ -78,10 +79,27 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${text}</li>`;
     };
     
-    // Enhanced list styling with TOC detection
+    // Enhanced list styling with proper TOC detection
     renderer.list = function(token) {
       const type = token.ordered ? 'ol' : 'ul';
-      const items = token.items.map(item => this.listitem(item)).join('');
+      
+      // Parse all list items and check if any contain anchor links
+      const items = token.items.map(item => {
+        // Parse inline content for each list item
+        const parsedText = this.parser.parseInline(item.tokens);
+        
+        if (item.task) {
+          const checkedAttr = item.checked ? 'checked' : '';
+          return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${parsedText}</li>`;
+        }
+        
+        // Check if this is a TOC item (contains anchor links)
+        if (parsedText.includes('href="#')) {
+          return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${parsedText}</li>`;
+        }
+        
+        return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
+      }).join('');
       
       // Check if this is a TOC list (contains anchor links)
       const isTOC = items.includes('href="#');
@@ -227,3 +245,4 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
 };
 
 export default ArticleContent;
+
