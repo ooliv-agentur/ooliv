@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -83,23 +81,8 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     renderer.list = function(token) {
       const type = token.ordered ? 'ol' : 'ul';
       
-      // Parse all list items and check if any contain anchor links
-      const items = token.items.map(item => {
-        // Parse inline content for each list item
-        const parsedText = this.parser.parseInline(item.tokens);
-        
-        if (item.task) {
-          const checkedAttr = item.checked ? 'checked' : '';
-          return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${parsedText}</li>`;
-        }
-        
-        // Check if this is a TOC item (contains anchor links)
-        if (parsedText.includes('href="#')) {
-          return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${parsedText}</li>`;
-        }
-        
-        return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
-      }).join('');
+      // Let marked handle the list items through the listitem renderer
+      const items = token.items.map(item => this.listitem(item)).join('');
       
       // Check if this is a TOC list (contains anchor links)
       const isTOC = items.includes('href="#');
@@ -245,4 +228,3 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
 };
 
 export default ArticleContent;
-
