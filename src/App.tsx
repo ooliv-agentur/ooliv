@@ -31,6 +31,7 @@ import GermanFrankfurt from './pages/de/WerbeagenturFrankfurt';
 import Klickbetrug from './pages/de/Klickbetrug';
 import Strategie from './pages/de/Strategie';
 import CookieRichtlinie from './pages/de/CookieRichtlinie';
+import Artikel from './pages/de/Artikel';
 import LatestContent from './pages/de/LatestContent';
 import SingleArticle from './pages/de/SingleArticle';
 import NotFound from './pages/NotFound';
@@ -73,6 +74,7 @@ function App() {
                 <Route path="/ueber-uns" element={<GermanAboutUs />} />
                 <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                 <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
+                <Route path="/artikel" element={<Artikel />} />
                 <Route path="/neuester-artikel" element={<LatestContent />} />
                 <Route path="/artikel/:slug" element={<SingleArticle />} />
                 <Route path="/impressum" element={<GermanLegalNotice />} />

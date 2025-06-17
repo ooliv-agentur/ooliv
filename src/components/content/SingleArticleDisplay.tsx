@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import ArticleNavigation from './ArticleNavigation';
 import ArticleHeader from './ArticleHeader';
 import ArticleContent from './ArticleContent';
+import { getContainerClasses, getSectionClasses } from '@/styles/spacing';
 
 interface ContentPost {
   id: number;
@@ -36,7 +37,6 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
     try {
       console.log('Fetching article with slug:', slug);
       
-      // Query directly using the slug field
       const { data: article, error } = await supabase
         .from('content_posts')
         .select('*')
@@ -45,7 +45,6 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
 
       if (error) {
         if (error.code === 'PGRST116') {
-          // No rows returned
           console.log('No article found with slug:', slug);
           setNotFound(true);
         } else {
@@ -86,62 +85,73 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
 
   if (isLoading) {
     return (
-      <div className="w-full max-w-4xl mx-auto p-6">
-        <Card className="border-medico-turquoise/20">
-          <CardContent className="p-12 text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
-            <p className="text-medico-darkGreen">Lade Artikel...</p>
-          </CardContent>
-        </Card>
-      </div>
+      <section className={getSectionClasses('medium')}>
+        <div className={getContainerClasses('narrow')}>
+          <Card className="border-medico-turquoise/20">
+            <CardContent className="p-12 text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
+              <p className="text-medico-darkGreen">Lade Artikel...</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     );
   }
 
   if (notFound || !article) {
     return (
-      <div className="w-full max-w-4xl mx-auto p-6">
-        <ArticleNavigation />
-        
-        <Card className="border-medico-turquoise/20 bg-medico-mint/30">
-          <CardContent className="text-center p-12">
-            <H2 className="mb-6">
-              Artikel nicht gefunden
-            </H2>
-            <p className="text-gray-600 mb-6 text-lg">
-              Der gesuchte Artikel "{slug}" konnte nicht gefunden werden.
-            </p>
-            <Button 
-              onClick={handleRefresh} 
-              disabled={isRefreshing}
-              className="bg-medico-turquoise hover:bg-medico-turquoise/90"
-            >
-              <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-              Erneut versuchen
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      <section className={getSectionClasses('medium')}>
+        <div className={getContainerClasses('narrow')}>
+          <ArticleNavigation />
+          
+          <Card className="border-medico-turquoise/20 bg-medico-mint/30">
+            <CardContent className="text-center p-12">
+              <H2 className="mb-6">
+                Artikel nicht gefunden
+              </H2>
+              <p className="text-gray-600 mb-6 text-lg">
+                Der gesuchte Artikel "{slug}" konnte nicht gefunden werden.
+              </p>
+              <Button 
+                onClick={handleRefresh} 
+                disabled={isRefreshing}
+                className="bg-medico-turquoise hover:bg-medico-turquoise/90"
+              >
+                <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+                Erneut versuchen
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     );
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6">
-      <ArticleNavigation />
+    <section className={getSectionClasses('medium')}>
+      <div className={getContainerClasses('narrow')}>
+        <ArticleNavigation />
 
-      <div className="flex justify-end mb-6">
-        <Button onClick={handleRefresh} disabled={isRefreshing} variant="outline">
-          <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
-          Aktualisieren
-        </Button>
+        <div className="flex justify-end mb-8">
+          <Button 
+            onClick={handleRefresh} 
+            disabled={isRefreshing} 
+            variant="outline"
+            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+          >
+            <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+            Aktualisieren
+          </Button>
+        </div>
+
+        <Card className="border-medico-turquoise/20 bg-white shadow-lg">
+          <CardContent className="p-8 lg:p-12">
+            <ArticleHeader article={article} />
+            <ArticleContent article={article} />
+          </CardContent>
+        </Card>
       </div>
-
-      <Card className="border-medico-turquoise/20 bg-white shadow-lg">
-        <CardContent className="p-8 lg:p-12">
-          <ArticleHeader article={article} />
-          <ArticleContent article={article} />
-        </CardContent>
-      </Card>
-    </div>
+    </section>
   );
 };
 
