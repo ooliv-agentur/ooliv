@@ -58,14 +58,11 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     renderer.list = function({ items, ordered }) {
       const type = ordered ? 'ol' : 'ul';
       const listClass = ordered ? 'list-decimal' : 'list-disc';
-      const body = items.map(item => this.listitem(item)).join('');
+      const body = items.map(item => {
+        const itemText = this.parser.parseInline(item.tokens);
+        return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${itemText}</li>`;
+      }).join('');
       return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
-    };
-    
-    // Custom list item renderer
-    renderer.listitem = function({ tokens }) {
-      const text = this.parser.parseInline(tokens);
-      return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
     };
     
     // Custom link renderer with ooliv styling
