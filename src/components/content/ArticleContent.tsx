@@ -35,8 +35,13 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
                 line = line.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-medico-darkGreen font-satoshi">$1</strong>');
                 line = line.replace(/\*(.+?)\*/g, '<em class="italic text-medico-darkGreen font-satoshi">$1</em>');
                 
-                // Links should scroll to anchors, not open new tabs for internal links
+                // Handle anchor links - first process internal anchor links, then external links
                 line = line.replace(/\[(.+?)\]\(#(.+?)\)/g, '<a href="#$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">$1</a>');
+                
+                // Handle links to other articles with anchors - convert to relative anchors only
+                line = line.replace(/\[(.+?)\]\(https?:\/\/[^\/]+\/artikel\/[^\/]+#([^)]+)\)/g, '<a href="#$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">$1</a>');
+                
+                // Handle other external links
                 line = line.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" target="_blank" rel="noopener noreferrer">$1</a>');
                 
                 // Handle images - convert markdown images to HTML with proper styling
