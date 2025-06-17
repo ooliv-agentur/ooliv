@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const ArticleNavigation = () => {
   return (
-    <div className="mb-8">
+    <div className="mb-12">
       <Button 
         variant="outline" 
         asChild 
-        className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+        className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi font-semibold"
       >
         <Link to="/artikel">
-          <ArrowLeft className="w-4 h-4 mr-2" />
+          <ArrowLeft className="w-5 h-5 mr-3" />
           Zurück zu den Artikeln
         </Link>
       </Button>

@@ -72,49 +72,51 @@ const ArticleOverview = () => {
 
   if (isLoading) {
     return (
-      <div className={getContainerClasses('narrow')}>
-        <Card className="border-medico-turquoise/20">
-          <CardContent className="p-12 text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
-            <Paragraph color="muted">Lade Artikel...</Paragraph>
-          </CardContent>
-        </Card>
-      </div>
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-medico-turquoise/20 shadow-lg">
+            <CardContent className="p-16 text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
+              <Paragraph color="muted" className="font-satoshi text-lg">Lade Artikel...</Paragraph>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     );
   }
 
   return (
-    <section className={getSectionClasses('large')}>
-      <div className={getContainerClasses('narrow')}>
-        <div className="mb-12 text-center">
-          <H1 className="mb-6">Unsere Artikel</H1>
-          <Paragraph size="large" color="secondary" className="max-w-3xl mx-auto mb-8">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <H1 className="mb-8 text-medico-darkGreen font-satoshi">Unsere Artikel</H1>
+          <Paragraph color="secondary" className="text-xl font-satoshi max-w-4xl mx-auto mb-10 leading-relaxed">
             Entdecken Sie wertvolle Insights und Tipps von BabyLoveGrowth.ai für Ihr Business
           </Paragraph>
           <Button 
             onClick={handleRefresh} 
             disabled={isRefreshing} 
             variant="outline"
-            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+            className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
           >
-            <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`w-5 h-5 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
             Aktualisieren
           </Button>
         </div>
 
         {articles.length === 0 ? (
-          <Card className="border-medico-turquoise/20 bg-medico-mint/30">
-            <CardContent className="text-center p-12">
-              <H2 className="mb-6">Noch keine Artikel verfügbar</H2>
-              <Paragraph color="secondary" className="mb-4">
+          <Card className="border-medico-turquoise/20 bg-medico-mint/30 shadow-lg">
+            <CardContent className="text-center p-16">
+              <H2 className="mb-8 text-medico-darkGreen font-satoshi">Noch keine Artikel verfügbar</H2>
+              <Paragraph color="secondary" className="mb-8 text-lg font-satoshi">
                 Es wurden noch keine Artikel von BabyLoveGrowth.ai empfangen.
               </Paragraph>
               <Button 
                 onClick={handleRefresh} 
                 disabled={isRefreshing}
-                className="bg-medico-turquoise hover:bg-medico-turquoise/90"
+                className="bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold"
               >
-                <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+                <RefreshCw className={`w-5 h-5 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
                 Aktualisieren
               </Button>
             </CardContent>
@@ -124,28 +126,28 @@ const ArticleOverview = () => {
             {articles.map((article) => (
               <Card 
                 key={article.id} 
-                className="border-medico-turquoise/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="border-medico-turquoise/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden"
               >
                 <CardContent className="p-8 h-full flex flex-col">
                   <div className="flex-1">
-                    <H3 className="mb-4 line-clamp-2 group-hover:text-medico-turquoise transition-colors">
+                    <H3 className="mb-6 font-satoshi text-medico-darkGreen group-hover:text-medico-turquoise transition-colors leading-tight">
                       {article.title}
                     </H3>
                     
                     {article.meta_description && (
-                      <Paragraph color="secondary" className="mb-4 line-clamp-3">
+                      <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
                         {article.meta_description}
                       </Paragraph>
                     )}
                     
                     {!article.meta_description && (article.content_md || article.content_html) && (
-                      <Paragraph color="secondary" className="mb-4 line-clamp-3">
+                      <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
                         {truncateContent(article.content_md || article.content_html)}
                       </Paragraph>
                     )}
                     
-                    <div className="flex items-center text-sm text-gray-500 mb-6">
-                      <Calendar className="w-4 h-4 mr-2" />
+                    <div className="flex items-center text-sm text-gray-500 mb-8 font-satoshi">
+                      <Calendar className="w-4 h-4 mr-2 text-medico-turquoise" />
                       {new Date(article.created_at).toLocaleDateString('de-DE', {
                         year: 'numeric',
                         month: 'long',
@@ -158,9 +160,7 @@ const ArticleOverview = () => {
                     {article.slug ? (
                       <Button 
                         asChild 
-                        variant="primary" 
-                        size="sm"
-                        className="flex-1 group/btn"
+                        className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
                       >
                         <Link to={`/artikel/${article.slug}`}>
                           Artikel lesen
@@ -171,7 +171,7 @@ const ArticleOverview = () => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        className="flex-1"
+                        className="flex-1 font-satoshi"
                         disabled
                       >
                         Kein Slug verfügbar
@@ -191,7 +191,7 @@ const ArticleOverview = () => {
                           rel="noopener noreferrer"
                           title="Originalartikel öffnen"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-4 h-4 text-medico-turquoise" />
                         </a>
                       </Button>
                     )}

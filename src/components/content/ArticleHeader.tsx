@@ -38,12 +38,12 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
   };
 
   return (
-    <header className="mb-12">
-      <H1 className="mb-6 text-medico-darkGreen">{article.title}</H1>
+    <header className="mb-16">
+      <H1 className="mb-8 text-medico-darkGreen font-satoshi">{article.title}</H1>
       
-      <div className="flex items-center text-sm text-gray-500 mb-8">
-        <Calendar className="w-4 h-4 mr-2" />
-        <span>
+      <div className="flex items-center text-base text-gray-600 mb-10">
+        <Calendar className="w-5 h-5 mr-3 text-medico-turquoise" />
+        <span className="font-satoshi">
           Veröffentlicht am {new Date(article.created_at).toLocaleDateString('de-DE', {
             year: 'numeric',
             month: 'long',
@@ -55,23 +55,23 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
       </div>
 
       {article.meta_description && (
-        <Paragraph size="large" color="secondary" className="mb-8 leading-relaxed">
+        <Paragraph color="secondary" className="mb-12 text-xl leading-relaxed font-satoshi max-w-4xl">
           {article.meta_description}
         </Paragraph>
       )}
 
       {article.public_url && (
-        <div className="mb-8 p-6 bg-medico-mint/50 rounded-lg border border-medico-turquoise/20">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-sm font-semibold text-medico-darkGreen">
+        <div className="mb-12 p-8 bg-medico-mint/50 rounded-2xl border border-medico-turquoise/20">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-lg font-semibold text-medico-darkGreen font-satoshi">
               Originalartikel:
             </span>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <Button
                 onClick={copyUrlToClipboard}
                 variant="outline"
                 size="sm"
-                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
               >
                 {urlCopied ? (
                   <Check className="w-4 h-4 text-medico-turquoise" />
@@ -83,7 +83,7 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
                 asChild
                 variant="outline"
                 size="sm"
-                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10"
+                className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi"
               >
                 <a 
                   href={article.public_url}
@@ -95,7 +95,7 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
               </Button>
             </div>
           </div>
-          <div className="text-sm text-medico-darkGreen break-all font-mono bg-white px-3 py-2 rounded border border-medico-turquoise/20">
+          <div className="text-base text-medico-darkGreen break-all font-mono bg-white px-4 py-3 rounded-lg border border-medico-turquoise/20">
             {article.public_url}
           </div>
         </div>
