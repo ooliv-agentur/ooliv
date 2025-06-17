@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -63,10 +62,11 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
     };
     
-    // Custom list renderer - simplified approach
-    renderer.list = function({ body, ordered }) {
-      const type = ordered ? 'ol' : 'ul';
-      const listClass = ordered ? 'list-decimal' : 'list-disc';
+    // Custom list renderer - remove custom implementation to use default
+    renderer.list = function(token) {
+      const type = token.ordered ? 'ol' : 'ul';
+      const listClass = token.ordered ? 'list-decimal' : 'list-disc';
+      const body = this.parser.parse(token.items);
       return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
     };
     
