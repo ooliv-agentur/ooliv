@@ -96,13 +96,13 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
-      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${parsedText}</li>`;
+      return `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-base font-light list-none">${parsedText}</li>`;
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
   };
   
-  // Enhanced list styling with proper TOC detection
+  // Enhanced list styling with proper TOC detection and nested list support
   renderer.list = function(token) {
     const type = token.ordered ? 'ol' : 'ul';
     
@@ -115,7 +115,19 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     const isTOC = items.includes('href="#');
     
     if (isTOC) {
-      return `<TOC_PLACEHOLDER>${items}</TOC_PLACEHOLDER>`;
+      // For TOC lists, we need to handle nested structure with proper indentation
+      const processedItems = items.replace(/<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-base font-light list-none">/g, (match, offset) => {
+        // Count the depth based on nested ul/ol tags before this li
+        const beforeLi = items.substring(0, offset);
+        const nestedLevels = (beforeLi.match(/<ul|<ol/g) || []).length - (beforeLi.match(/<\/ul>|<\/ol>/g) || []).length;
+        
+        // Apply indentation based on nesting level
+        const indentClass = nestedLevels > 0 ? `pl-${Math.min(nestedLevels * 6, 24)}` : '';
+        
+        return `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-base font-light list-none ${indentClass}">`;
+      });
+      
+      return `<TOC_PLACEHOLDER><ul class="space-y-1 font-satoshi">${processedItems}</ul></TOC_PLACEHOLDER>`;
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
@@ -237,7 +249,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       const tocItems = match[1];
       const tocComponent = `<div class="toc-container bg-medico-mint/20 rounded-2xl p-8 mb-12 border-l-4 border-medico-turquoise">
         <h3 class="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
-        <ul class="space-y-2 font-satoshi">${tocItems}</ul>
+        ${tocItems}
       </div>`;
       processedHtmlContent = processedHtmlContent.replace(match[0], tocComponent);
     });
