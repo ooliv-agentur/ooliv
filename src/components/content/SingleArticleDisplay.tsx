@@ -31,11 +31,37 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
+  const extractSlugFromUrl = (url: string): string => {
+    if (!url) return '';
+    
+    console.log('Processing URL:', url);
+    
+    // Remove protocol and domain if present
+    let cleanUrl = url.replace(/^https?:\/\/[^\/]+/, '');
+    
+    // Remove leading and trailing slashes
+    cleanUrl = cleanUrl.replace(/^\/+|\/+$/g, '');
+    
+    console.log('Clean URL after processing:', cleanUrl);
+    
+    // If it's a direct slug without path
+    if (!cleanUrl.includes('/')) {
+      return cleanUrl;
+    }
+    
+    // Split by slash and get the last non-empty segment
+    const segments = cleanUrl.split('/').filter(segment => segment.length > 0);
+    const lastSegment = segments[segments.length - 1];
+    
+    console.log('URL segments:', segments, 'Last segment:', lastSegment);
+    
+    return lastSegment || '';
+  };
+
   const fetchArticleBySlug = async () => {
     try {
       console.log('Fetching article with slug:', slug);
       
-      // First, try to get all articles and then match the slug from the public_url
       const { data: articles, error } = await supabase
         .from('content_posts')
         .select('*')
@@ -52,33 +78,20 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
 
       // Find the article that matches the slug
       const matchedArticle = articles?.find(article => {
-        if (!article.public_url) return false;
-        
-        // Extract the slug from the public_url - try multiple methods
-        let urlSlug: string = '';
-        
-        try {
-          // Method 1: Try to parse as full URL and get the last segment
-          const url = new URL(article.public_url);
-          const pathSegments = url.pathname.split('/').filter(segment => segment.length > 0);
-          urlSlug = pathSegments[pathSegments.length - 1] || '';
-        } catch {
-          // Method 2: If it's not a full URL, treat it as a path
-          const pathSegments = article.public_url.split('/').filter(segment => segment.length > 0);
-          urlSlug = pathSegments[pathSegments.length - 1] || '';
+        if (!article.public_url) {
+          console.log(`Article ${article.id} has no public_url`);
+          return false;
         }
         
-        // Method 3: If still no slug, try the entire path without leading slash
-        if (!urlSlug) {
-          urlSlug = article.public_url.replace(/^\/+/, '').replace(/\/+$/, '');
-        }
+        const urlSlug = extractSlugFromUrl(article.public_url);
         
         console.log('Comparing slugs:', { 
           urlSlug, 
           requestedSlug: slug, 
           publicUrl: article.public_url,
           articleId: article.id,
-          articleTitle: article.title
+          articleTitle: article.title,
+          match: urlSlug === slug
         });
         
         return urlSlug === slug;
@@ -93,7 +106,8 @@ const SingleArticleDisplay = ({ slug }: SingleArticleDisplayProps) => {
         console.log('Available articles with URLs:', articles?.map(a => ({
           id: a.id,
           title: a.title,
-          public_url: a.public_url
+          public_url: a.public_url,
+          extractedSlug: extractSlugFromUrl(a.public_url || '')
         })));
         setNotFound(true);
       }
