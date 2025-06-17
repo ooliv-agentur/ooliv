@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -152,11 +151,10 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<a href="${href}"${titleAttr} class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"${target}>${text}</a>`;
     };
     
-    // Custom image renderer
+    // Custom image renderer - NO CAPTIONS for German articles
     renderer.image = function({ href, title, text }) {
       const titleAttr = title ? ` title="${title}"` : '';
-      const caption = text || title || '';
-      return `<figure class="my-16"><img src="${href}" alt="${text}"${titleAttr} class="w-full max-w-6xl mx-auto rounded-3xl shadow-xl" loading="lazy" />${caption ? `<figcaption class="text-center text-lg text-gray-600 mt-8 italic font-satoshi font-light">${caption}</figcaption>` : ''}</figure>`;
+      return `<figure class="my-16"><img src="${href}" alt="${text}"${titleAttr} class="w-full max-w-6xl mx-auto rounded-3xl shadow-xl" loading="lazy" /></figure>`;
     };
     
     // Custom strong renderer
