@@ -50,19 +50,22 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
   };
   
-  // Custom listitem renderer - parse inline content first
-  renderer.listitem = function({ text, task, checked }) {
+  // Custom listitem renderer - properly parse inline content including links
+  renderer.listitem = function({ text, task, checked, tokens }) {
+    // Parse the tokens to get properly rendered inline content including links
+    const parsedText = this.parser.parseInline(tokens);
+    
     if (task) {
       const checkedAttr = checked ? 'checked' : '';
-      return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${text}</li>`;
+      return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${parsedText}</li>`;
     }
     
     // Check if this list item contains anchor links (TOC items) after parsing
-    if (text.includes('href="#')) {
-      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${text}</li>`;
+    if (parsedText.includes('href="#')) {
+      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${parsedText}</li>`;
     }
     
-    return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${text}</li>`;
+    return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
   };
   
   // Enhanced list styling with proper TOC detection
