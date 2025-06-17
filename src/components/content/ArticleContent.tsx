@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -22,6 +21,15 @@ interface ArticleContentProps {
 
 const ArticleContent = ({ article }: ArticleContentProps) => {
   if (article.content_md) {
+    // Remove the first H1 from markdown content since it's already handled by ArticleHeader
+    let processedMarkdown = article.content_md;
+    
+    // Remove the first H1 (# title) from the markdown content
+    const firstH1Match = processedMarkdown.match(/^#\s+[^\n]*\n*/);
+    if (firstH1Match) {
+      processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
+    }
+    
     // Configure marked with custom renderer for ooliv styling
     const renderer = new marked.Renderer();
     
@@ -175,7 +183,7 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       breaks: true
     });
     
-    const htmlContent = marked(article.content_md);
+    const htmlContent = marked(processedMarkdown);
     
     return (
       <article className="prose prose-lg max-w-none">
@@ -204,4 +212,3 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
 };
 
 export default ArticleContent;
-
