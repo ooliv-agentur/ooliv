@@ -49,18 +49,44 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
   };
   
-  // Custom listitem renderer - with proper error handling
+  // Custom listitem renderer - with proper error handling and markdown link parsing
   renderer.listitem = function({ text, task, checked, tokens }) {
-    // Safely parse tokens with fallback to text
     let parsedText = text;
     
+    // Try to parse tokens if they exist and are in the correct format
     try {
       if (tokens && Array.isArray(tokens) && tokens.length > 0) {
-        parsedText = this.parser.parseInline(tokens);
+        // Check if tokens are valid for parsing
+        const hasValidTokens = tokens.every(token => token && typeof token === 'object');
+        if (hasValidTokens) {
+          parsedText = this.parser.parseInline(tokens);
+        } else {
+          // Fallback: manually parse markdown links in text
+          parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+            if (href.startsWith('#')) {
+              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+            }
+            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+          });
+        }
+      } else {
+        // Fallback: manually parse markdown links in text if no tokens
+        parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+          if (href.startsWith('#')) {
+            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+          }
+          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+        });
       }
     } catch (error) {
-      console.warn('Error parsing list item tokens, falling back to text:', error);
-      parsedText = text;
+      console.warn('Error parsing list item tokens, using manual markdown parsing:', error);
+      // Fallback: manually parse markdown links in text
+      parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+        if (href.startsWith('#')) {
+          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+        }
+        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+      });
     }
     
     if (task) {
