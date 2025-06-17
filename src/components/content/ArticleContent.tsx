@@ -25,11 +25,12 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     const renderer = new marked.Renderer();
     
     // Custom heading renderer with ooliv styling and IDs
-    renderer.heading = function(text, level) {
+    renderer.heading = function({ tokens, depth }) {
+      const text = this.parser.parseInline(tokens);
       const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
       
-      switch(level) {
+      switch(depth) {
         case 1:
           return `<h1 id="${id}" class="${baseClasses} text-4xl md:text-5xl mt-24 mb-16">${text}</h1>`;
         case 2:
@@ -43,29 +44,34 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
         case 6:
           return `<h6 id="${id}" class="${baseClasses} text-base md:text-lg mt-8 mb-4">${text}</h6>`;
         default:
-          return `<h${level} id="${id}" class="${baseClasses}">${text}</h${level}>`;
+          return `<h${depth} id="${id}" class="${baseClasses}">${text}</h${depth}>`;
       }
     };
     
     // Custom paragraph renderer
-    renderer.paragraph = function(text) {
+    renderer.paragraph = function({ tokens }) {
+      const text = this.parser.parseInline(tokens);
       return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
     };
     
     // Custom list renderer
-    renderer.list = function(body, ordered) {
+    renderer.list = function({ items, ordered }) {
       const type = ordered ? 'ol' : 'ul';
       const listClass = ordered ? 'list-decimal' : 'list-disc';
+      const body = items.map(item => this.listitem(item)).join('');
       return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
     };
     
     // Custom list item renderer
-    renderer.listitem = function(text) {
+    renderer.listitem = function({ tokens }) {
+      const text = this.parser.parseInline(tokens);
       return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
     };
     
     // Custom link renderer with ooliv styling
-    renderer.link = function(href, title, text) {
+    renderer.link = function({ href, title, tokens }) {
+      const text = this.parser.parseInline(tokens);
+      
       // Handle anchor links - convert full URLs with anchors to relative anchors
       if (href && href.includes('#')) {
         const anchorMatch = href.match(/#(.+)$/);
@@ -82,19 +88,21 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     };
     
     // Custom image renderer
-    renderer.image = function(href, title, text) {
+    renderer.image = function({ href, title, text }) {
       const titleAttr = title ? ` title="${title}"` : '';
       const caption = text || title || '';
       return `<figure class="my-16"><img src="${href}" alt="${text}"${titleAttr} class="w-full max-w-6xl mx-auto rounded-3xl shadow-xl" loading="lazy" />${caption ? `<figcaption class="text-center text-lg text-gray-600 mt-8 italic font-satoshi font-light">${caption}</figcaption>` : ''}</figure>`;
     };
     
     // Custom strong renderer
-    renderer.strong = function(text) {
+    renderer.strong = function({ tokens }) {
+      const text = this.parser.parseInline(tokens);
       return `<strong class="font-bold text-medico-darkGreen font-satoshi">${text}</strong>`;
     };
     
     // Custom em renderer
-    renderer.em = function(text) {
+    renderer.em = function({ tokens }) {
+      const text = this.parser.parseInline(tokens);
       return `<em class="italic text-medico-darkGreen font-satoshi">${text}</em>`;
     };
     
@@ -102,8 +110,7 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     marked.setOptions({
       renderer: renderer,
       gfm: true,
-      breaks: true,
-      sanitize: false
+      breaks: true
     });
     
     const htmlContent = marked(article.content_md);
