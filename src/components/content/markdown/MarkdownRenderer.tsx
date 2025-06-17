@@ -186,11 +186,14 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     breaks: true
   });
   
-  let htmlContent = marked(processedMarkdown);
+  // Convert markdown to HTML string - ensure we get a string, not a promise
+  const htmlContent = marked.parse(processedMarkdown) as string;
   
   // Process TOC placeholders and replace with actual TOC components
   const tocRegex = /<TOC_PLACEHOLDER>(.*?)<\/TOC_PLACEHOLDER>/gs;
   const tocMatches = Array.from(htmlContent.matchAll(tocRegex));
+  
+  let processedHtmlContent = htmlContent;
   
   if (tocMatches.length > 0) {
     tocMatches.forEach((match, index) => {
@@ -199,7 +202,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         <h3 class="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
         <ul class="space-y-2 font-satoshi">${tocItems}</ul>
       </div>`;
-      htmlContent = htmlContent.replace(match[0], tocComponent);
+      processedHtmlContent = processedHtmlContent.replace(match[0], tocComponent);
     });
   }
   
@@ -207,7 +210,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     <article className="prose prose-lg max-w-none">
       <div 
         className="markdown-content leading-relaxed font-satoshi"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
+        dangerouslySetInnerHTML={{ __html: processedHtmlContent }}
       />
     </article>
   );
