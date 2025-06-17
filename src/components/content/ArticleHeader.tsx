@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Copy, Check, ExternalLink, Calendar } from 'lucide-react';
-import { H1, Paragraph } from '@/components/ui/typography';
+import { H1 } from '@/components/ui/typography';
 import { toast } from 'sonner';
 
 interface ContentPost {
@@ -55,12 +55,6 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
           })}
         </span>
       </div>
-
-      {article.meta_description && (
-        <Paragraph color="secondary" className="mb-16 text-xl md:text-2xl leading-relaxed font-satoshi font-light max-w-5xl">
-          {article.meta_description}
-        </Paragraph>
-      )}
 
       {article.public_url && (
         <div className="mb-16 p-10 bg-medico-mint/30 rounded-3xl">
