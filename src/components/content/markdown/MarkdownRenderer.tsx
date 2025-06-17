@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { marked } from 'marked';
 import TOCBlock from './TOCBlock';
@@ -50,10 +49,19 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
   };
   
-  // Custom listitem renderer - properly parse inline content including links
+  // Custom listitem renderer - with proper error handling
   renderer.listitem = function({ text, task, checked, tokens }) {
-    // Parse the tokens to get properly rendered inline content including links
-    const parsedText = this.parser.parseInline(tokens);
+    // Safely parse tokens with fallback to text
+    let parsedText = text;
+    
+    try {
+      if (tokens && Array.isArray(tokens) && tokens.length > 0) {
+        parsedText = this.parser.parseInline(tokens);
+      }
+    } catch (error) {
+      console.warn('Error parsing list item tokens, falling back to text:', error);
+      parsedText = text;
+    }
     
     if (task) {
       const checkedAttr = checked ? 'checked' : '';
