@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -58,15 +59,15 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
     renderer.listitem = function({ text, task, checked }) {
       if (task) {
         const checkedAttr = checked ? 'checked' : '';
-        return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled> ${text}</li>`;
+        return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${text}</li>`;
       }
-      return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${text}</li>`;
+      return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${text}</li>`;
     };
     
     // Override list styling without custom parsing - let marked handle the parsing
     renderer.list = function(token) {
       const type = token.ordered ? 'ol' : 'ul';
-      const listClass = token.ordered ? 'list-decimal' : 'list-disc';
+      const listClass = token.ordered ? 'list-none' : 'list-none';
       
       // Use the default parsing but apply our custom classes
       const originalList = marked.Renderer.prototype.list.call(this, token);
@@ -74,8 +75,54 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       // Replace the default class with our custom styling
       return originalList.replace(
         `<${type}>`,
-        `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">`
+        `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">`
       );
+    };
+    
+    // Custom table renderer with ooliv styling
+    renderer.table = function({ header, rows }) {
+      const headerCells = header.map(cell => {
+        const text = this.parser.parseInline(cell.tokens);
+        return `<th class="px-6 py-4 text-left text-medico-darkGreen font-bold font-satoshi bg-medico-mint/20 border-b-2 border-medico-turquoise">${text}</th>`;
+      }).join('');
+      
+      const bodyRows = rows.map(row => {
+        const cells = row.map(cell => {
+          const text = this.parser.parseInline(cell.tokens);
+          return `<td class="px-6 py-4 text-medico-darkGreen font-satoshi font-light border-b border-medico-turquoise/20">${text}</td>`;
+        }).join('');
+        return `<tr class="hover:bg-medico-mint/10 transition-colors duration-200">${cells}</tr>`;
+      }).join('');
+      
+      return `<div class="my-12 overflow-x-auto rounded-xl border border-medico-turquoise/20 shadow-lg">
+        <table class="w-full min-w-full bg-white">
+          <thead>
+            <tr>${headerCells}</tr>
+          </thead>
+          <tbody>
+            ${bodyRows}
+          </tbody>
+        </table>
+      </div>`;
+    };
+    
+    // Custom blockquote renderer
+    renderer.blockquote = function({ tokens }) {
+      const text = this.parser.parseInline(tokens);
+      return `<blockquote class="border-l-4 border-medico-turquoise pl-8 my-12 italic text-medico-darkGreen bg-medico-mint/10 rounded-r-xl py-6 text-xl font-satoshi font-light leading-relaxed">${text}</blockquote>`;
+    };
+    
+    // Custom code block renderer
+    renderer.code = function({ text, lang }) {
+      const language = lang ? ` language-${lang}` : '';
+      return `<div class="my-12 rounded-xl overflow-hidden border border-medico-turquoise/20 shadow-lg">
+        <pre class="bg-medico-darkGreen text-medico-mint p-6 overflow-x-auto font-mono text-sm leading-relaxed"><code class="${language}">${text}</code></pre>
+      </div>`;
+    };
+    
+    // Custom inline code renderer
+    renderer.codespan = function({ text }) {
+      return `<code class="bg-medico-mint/30 text-medico-darkGreen px-2 py-1 rounded font-mono text-sm font-medium">${text}</code>`;
     };
     
     // Custom link renderer with ooliv styling
@@ -116,6 +163,11 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<em class="italic text-medico-darkGreen font-satoshi">${text}</em>`;
     };
     
+    // Custom horizontal rule renderer
+    renderer.hr = function() {
+      return `<hr class="my-16 border-0 h-px bg-gradient-to-r from-transparent via-medico-turquoise to-transparent" />`;
+    };
+    
     // Configure marked options
     marked.setOptions({
       renderer: renderer,
@@ -152,3 +204,4 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
 };
 
 export default ArticleContent;
+
