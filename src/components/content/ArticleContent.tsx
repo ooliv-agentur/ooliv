@@ -54,14 +54,26 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
     };
     
-    // Custom list renderer
+    // Custom list renderer - simplified approach
     renderer.list = function({ items, ordered }) {
       const type = ordered ? 'ol' : 'ul';
       const listClass = ordered ? 'list-decimal' : 'list-disc';
-      const body = items.map(item => {
-        const itemText = this.parser.parseInline(item.tokens);
-        return `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${itemText}</li>`;
-      }).join('');
+      
+      // Use the default rendering and just apply our classes
+      let body = '';
+      for (const item of items) {
+        if (item.task !== undefined) {
+          // Handle task list items
+          const checked = item.checked ? 'checked' : '';
+          const itemContent = this.parser.parseInline(item.tokens);
+          body += `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light"><input type="checkbox" ${checked} disabled> ${itemContent}</li>`;
+        } else {
+          // Handle regular list items
+          const itemContent = this.parser.parseInline(item.tokens);
+          body += `<li class="mb-6 text-medico-darkGreen leading-relaxed ml-8 marker:text-medico-turquoise font-satoshi text-lg font-light">${itemContent}</li>`;
+        }
+      }
+      
       return `<${type} class="${listClass} ml-12 mb-16 space-y-4 font-satoshi">${body}</${type}>`;
     };
     
