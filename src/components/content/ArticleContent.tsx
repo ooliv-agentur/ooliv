@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Paragraph } from '@/components/ui/typography';
 import { marked } from 'marked';
@@ -62,28 +63,38 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
     };
     
-    // Custom listitem renderer to style individual list items
+    // Custom listitem renderer to style individual list items and handle TOC
     renderer.listitem = function({ text, task, checked }) {
       if (task) {
         const checkedAttr = checked ? 'checked' : '';
         return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${text}</li>`;
       }
+      
+      // Check if this list item contains anchor links (TOC items)
+      if (text.includes('href="#')) {
+        return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${text}</li>`;
+      }
+      
       return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${text}</li>`;
     };
     
-    // Override list styling without custom parsing - let marked handle the parsing
+    // Enhanced list styling with TOC detection
     renderer.list = function(token) {
       const type = token.ordered ? 'ol' : 'ul';
+      const items = token.items.map(item => this.listitem(item)).join('');
+      
+      // Check if this is a TOC list (contains anchor links)
+      const isTOC = items.includes('href="#');
+      
+      if (isTOC) {
+        return `<div class="toc-container bg-medico-mint/20 rounded-2xl p-8 mb-12 border-l-4 border-medico-turquoise">
+          <h3 class="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
+          <${type} class="space-y-2 font-satoshi">${items}</${type}>
+        </div>`;
+      }
+      
       const listClass = token.ordered ? 'list-none' : 'list-none';
-      
-      // Use the default parsing but apply our custom classes
-      const originalList = marked.Renderer.prototype.list.call(this, token);
-      
-      // Replace the default class with our custom styling
-      return originalList.replace(
-        `<${type}>`,
-        `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">`
-      );
+      return `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">${items}</${type}>`;
     };
     
     // Custom table renderer with ooliv styling
@@ -132,16 +143,22 @@ const ArticleContent = ({ article }: ArticleContentProps) => {
       return `<code class="bg-medico-mint/30 text-medico-darkGreen px-2 py-1 rounded font-mono text-sm font-medium">${text}</code>`;
     };
     
-    // Custom link renderer with ooliv styling
+    // Enhanced link renderer with smooth scrolling for anchors
     renderer.link = function({ href, title, tokens }) {
       const text = this.parser.parseInline(tokens);
+      
+      // Handle anchor links with smooth scrolling
+      if (href && href.startsWith('#')) {
+        const anchor = href.substring(1);
+        return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
+      }
       
       // Handle anchor links - convert full URLs with anchors to relative anchors
       if (href && href.includes('#')) {
         const anchorMatch = href.match(/#(.+)$/);
         if (anchorMatch && (href.includes('/artikel/') || href.startsWith('#'))) {
           const anchor = anchorMatch[1];
-          return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${text}</a>`;
+          return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
         }
       }
       
