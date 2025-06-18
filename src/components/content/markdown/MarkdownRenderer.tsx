@@ -1,28 +1,71 @@
 import React from 'react';
 import { marked } from 'marked';
 import TOCBlock from './TOCBlock';
-import { preprocessMarkdown, generateAnchor } from '@/utils/anchorUtils';
-import { extractTOCFromMarkdown } from './TOCExtractor';
 
 interface MarkdownRendererProps {
   content: string;
 }
 
 const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
-  // Preprocess markdown to clean up formatting issues
-  const processedMarkdown = preprocessMarkdown(content);
+  // Remove the first H1 from markdown content since it's already handled by ArticleHeader
+  let processedMarkdown = content;
   
-  // Extract TOC items using marked.lexer for clean parsing
-  const tocItems = extractTOCFromMarkdown(processedMarkdown);
+  // Remove the first H1 (# title) from the markdown content
+  const firstH1Match = processedMarkdown.match(/^#\s+[^\n]*\n*/);
+  if (firstH1Match) {
+    processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
+  }
+  
+  // Enhanced anchor generation function - used consistently for both TOC and headings
+  const generateAnchor = (text: string) => {
+    return text
+      .toLowerCase()
+      .replace(/[äöüß]/g, (char) => {
+        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
+        return map[char] || char;
+      })
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single
+      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+  };
+  
+  // Extract TOC items from markdown with improved anchor generation
+  const extractTOCItems = (markdown: string) => {
+    const headingRegex = /^(#{2,6})\s+(.+)$/gm;
+    const tocItems: Array<{text: string, anchor: string, level: number}> = [];
+    let match;
+    
+    while ((match = headingRegex.exec(markdown)) !== null) {
+      const level = match[1].length; // Number of # characters
+      const text = match[2].trim();
+      
+      // Skip "Inhaltsverzeichnis" heading from TOC
+      if (text.toLowerCase() === 'inhaltsverzeichnis' || text.toLowerCase() === 'inhalt' || text.toLowerCase() === 'table of contents') {
+        continue;
+      }
+      
+      const anchor = generateAnchor(text);
+      console.log(`TOC item: "${text}" -> anchor: "${anchor}" (level: ${level})`);
+      tocItems.push({ text, anchor, level });
+    }
+    
+    console.log('Extracted TOC items:', tocItems);
+    return tocItems;
+  };
 
-  // Configure marked with custom renderer
+  // Check if content has TOC markers
+  const hasTOCMarker = processedMarkdown.includes('- [') && processedMarkdown.includes('](#');
+  const tocItems = hasTOCMarker ? [] : extractTOCItems(processedMarkdown);
+
+  // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
-  // Enhanced heading renderer with consistent ID generation
+  // Enhanced heading renderer with improved ID generation
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
     const id = generateAnchor(text);
-    console.log(`Rendering heading: "${text}" -> id: "${id}" (depth: ${depth})`);
+    console.log(`Heading: "${text}" -> id: "${id}" (depth: ${depth})`);
       
     const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
     
@@ -50,46 +93,46 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
   };
   
-  // Fixed listitem renderer with proper error handling
+  // Custom listitem renderer - with proper error handling and markdown link parsing
   renderer.listitem = function({ text, task, checked, tokens }) {
     let parsedText = text;
     
     // Skip if this is the "Inhaltsverzeichnis" title itself
     if (text && (text.trim() === 'Inhaltsverzeichnis' || text.trim() === 'Inhalt' || text.trim() === 'Table of Contents')) {
-      return '';
+      return ''; // Return empty string to skip this item
     }
     
-    // Safe token parsing with proper fallback
+    // Try to parse tokens if they exist and are in the correct format
     try {
       if (tokens && Array.isArray(tokens) && tokens.length > 0) {
-        // Validate tokens before parsing
-        const validTokens = tokens.filter(token => token && typeof token === 'object' && token.type);
-        if (validTokens.length > 0) {
-          parsedText = this.parser.parseInline(validTokens);
+        // Check if tokens are valid for parsing
+        const hasValidTokens = tokens.every(token => token && typeof token === 'object');
+        if (hasValidTokens) {
+          parsedText = this.parser.parseInline(tokens);
         } else {
           // Fallback: manually parse markdown links in text
           parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
             if (href.startsWith('#')) {
-              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
             }
             return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
           });
         }
       } else {
-        // Direct fallback to text with manual markdown parsing
+        // Fallback: manually parse markdown links in text if no tokens
         parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
           if (href.startsWith('#')) {
-            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
           }
           return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
         });
       }
     } catch (error) {
-      console.warn('Token parsing failed, using fallback text processing:', error);
-      // Safe fallback: use original text with manual markdown link parsing
+      console.warn('Error parsing list item tokens, using manual markdown parsing:', error);
+      // Fallback: manually parse markdown links in text
       parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
         if (href.startsWith('#')) {
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
         }
         return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
       });
@@ -105,28 +148,30 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${parsedText}</li>`;
     }
     
-    // Check if this list item contains anchor links (TOC items)
+    // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
+      // Mark as TOC item for later processing - return empty to hide from regular rendering
       return '';
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
   };
   
-  // Enhanced list styling
+  // Enhanced list styling with proper TOC detection and nesting
   renderer.list = function(token) {
     const type = token.ordered ? 'ol' : 'ul';
     
+    // Process each list item and check for TOC patterns
     const items = token.items.map(item => {
       return this.listitem(item);
-    }).join('').replace(/\n\s*\n/g, '\n');
+    }).join('').replace(/\n\s*\n/g, '\n'); // Clean up extra newlines
     
-    // Remove empty items
+    // Remove empty items (from skipped "Inhaltsverzeichnis" entries and TOC items)
     const cleanedItems = items.replace(/<li[^>]*>\s*<\/li>/g, '').trim();
     
     // Check if this was a TOC list (all items were removed)
     if (!cleanedItems || cleanedItems.length === 0) {
-      return '';
+      return ''; // Return empty for TOC lists
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
@@ -234,7 +279,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     breaks: true
   });
   
-  // Convert markdown to HTML
+  // Convert markdown to HTML string - ensure we get a string, not a promise
   const htmlContent = marked.parse(processedMarkdown) as string;
   
   // Split content at "Inhaltsverzeichnis" to insert TOC in correct position
