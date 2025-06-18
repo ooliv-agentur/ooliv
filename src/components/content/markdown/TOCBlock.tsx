@@ -42,7 +42,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
               parentItems[lastParentIndex] = React.cloneElement(lastParent, {
                 children: [
                   lastParent.props.children,
-                  <ul key={`nested-${index}`} className="ml-6 mt-2 space-y-2">
+                  <ul key={`nested-${index}`} className="ml-4 mt-2 space-y-1">
                     {nestedItems}
                   </ul>
                 ]
@@ -53,9 +53,20 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         }
       }
 
+      // Determine styling based on level
+      const isMainChapter = level === 3; // H3 sections
+      const isSubChapter = level === 4;  // H4 sections
+      
+      const itemClasses = [
+        "leading-relaxed font-satoshi",
+        isMainChapter ? "font-bold text-lg mt-4 first:mt-0" : "",
+        isSubChapter ? "font-normal text-base pl-4" : "",
+        !isMainChapter && !isSubChapter ? "font-normal text-base" : ""
+      ].filter(Boolean).join(" ");
+
       // Create the list item
       const listItem = (
-        <li key={`toc-${index}`} className="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light">
+        <li key={`toc-${index}`} className={itemClasses}>
           <a 
             href={`#${anchor}`} 
             className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
@@ -84,7 +95,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
           parentItems[lastParentIndex] = React.cloneElement(lastParent, {
             children: [
               lastParent.props.children,
-              <ul key="nested-final" className="ml-6 mt-2 space-y-2">
+              <ul key="nested-final" className="ml-4 mt-2 space-y-1">
                 {nestedItems}
               </ul>
             ]
@@ -97,9 +108,8 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
   };
 
   return (
-    <div className="toc-container bg-medico-mint/20 rounded-2xl p-8 mb-12 border-l-4 border-medico-turquoise">
-      <h3 className="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
-      <ul className="space-y-2 font-satoshi">
+    <div className="toc-container mb-12">
+      <ul className="space-y-2 font-satoshi list-none">
         {renderTOCItems(items)}
       </ul>
     </div>

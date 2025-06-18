@@ -25,6 +25,12 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     while ((match = headingRegex.exec(markdown)) !== null) {
       const level = match[1].length; // Number of # characters
       const text = match[2].trim();
+      
+      // Skip "Inhaltsverzeichnis" heading from TOC
+      if (text.toLowerCase() === 'inhaltsverzeichnis' || text.toLowerCase() === 'inhalt' || text.toLowerCase() === 'table of contents') {
+        continue;
+      }
+      
       const anchor = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       tocItems.push({ text, anchor, level });
     }
@@ -257,6 +263,29 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   
   // Convert markdown to HTML string - ensure we get a string, not a promise
   const htmlContent = marked.parse(processedMarkdown) as string;
+  
+  // Split content at "Inhaltsverzeichnis" to insert TOC in correct position
+  const inhaltsverzeichnisRegex = /<h2[^>]*id="inhaltsverzeichnis"[^>]*>.*?<\/h2>/i;
+  const match = htmlContent.match(inhaltsverzeichnisRegex);
+  
+  if (match && tocItems.length > 0) {
+    const beforeTOC = htmlContent.substring(0, match.index! + match[0].length);
+    const afterTOC = htmlContent.substring(match.index! + match[0].length);
+    
+    return (
+      <article className="prose prose-lg max-w-none">
+        <div 
+          className="markdown-content leading-relaxed font-satoshi"
+          dangerouslySetInnerHTML={{ __html: beforeTOC }}
+        />
+        <TOCBlock items={tocItems} />
+        <div 
+          className="markdown-content leading-relaxed font-satoshi"
+          dangerouslySetInnerHTML={{ __html: afterTOC }}
+        />
+      </article>
+    );
+  }
   
   return (
     <article className="prose prose-lg max-w-none">
