@@ -1,7 +1,7 @@
 import React from 'react';
 import { marked } from 'marked';
 import TOCBlock from './TOCBlock';
-import { generateAnchor } from '../../utils/anchorUtils';
+import { generateAnchor } from '../../../utils/anchorUtils';
 
 interface MarkdownRendererProps {
   content: string;
