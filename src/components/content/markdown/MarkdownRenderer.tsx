@@ -16,7 +16,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
-  // Extract TOC items from markdown
+  // Extract TOC items from markdown with improved anchor generation
   const extractTOCItems = (markdown: string) => {
     const headingRegex = /^(#{2,6})\s+(.+)$/gm;
     const tocItems: Array<{text: string, anchor: string, level: number}> = [];
@@ -31,7 +31,18 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         continue;
       }
       
-      const anchor = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      // Improved anchor generation - handle special characters and ensure uniqueness
+      const anchor = text
+        .toLowerCase()
+        .replace(/[äöüß]/g, (char) => {
+          const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
+          return map[char] || char;
+        })
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+        
       tocItems.push({ text, anchor, level });
     }
     
@@ -45,10 +56,22 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
-  // Custom heading renderer with ooliv styling and IDs
+  // Enhanced heading renderer with improved ID generation
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
-    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    
+    // Use the same anchor generation logic as TOC
+    const id = text
+      .toLowerCase()
+      .replace(/[äöüß]/g, (char) => {
+        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
+        return map[char] || char;
+      })
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+      
     const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
     
     switch(depth) {

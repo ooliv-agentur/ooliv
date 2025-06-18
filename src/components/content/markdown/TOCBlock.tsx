@@ -53,7 +53,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         }
       }
 
-      // Determine styling based on level
+      // Determine styling based on level - H3 are main chapters, H4 are sub-items
       const isMainChapter = level === 3; // H3 sections
       const isSubChapter = level === 4;  // H4 sections
       
@@ -64,7 +64,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         !isMainChapter && !isSubChapter ? "font-normal text-base" : ""
       ].filter(Boolean).join(" ");
 
-      // Create the list item
+      // Create the list item with enhanced scroll handling
       const listItem = (
         <li key={`toc-${index}`} className={itemClasses}>
           <a 
@@ -72,7 +72,17 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
             className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById(anchor)?.scrollIntoView({behavior: 'smooth'});
+              const target = document.getElementById(anchor);
+              if (target) {
+                // Scroll with offset to account for potential fixed headers and spacing
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              } else {
+                console.warn(`Anchor target not found: ${anchor}`);
+              }
             }}
           >
             {text}
