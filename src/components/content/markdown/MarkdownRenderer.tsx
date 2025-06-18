@@ -1,8 +1,6 @@
 
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkSlug from 'remark-slug';
-import remarkGfm from 'remark-gfm';
 import TOCBlock from './TOCBlock';
 import { generateAnchor } from '../../../utils/anchorUtils';
 
@@ -323,7 +321,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       <article className="prose prose-lg max-w-none">
         <div className="markdown-content leading-relaxed font-satoshi">
           <ReactMarkdown
-            remarkPlugins={[remarkSlug, remarkGfm]}
             components={components}
           >
             {beforeTOC}
@@ -332,7 +329,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         <TOCBlock items={tocItems} />
         <div className="markdown-content leading-relaxed font-satoshi">
           <ReactMarkdown
-            remarkPlugins={[remarkSlug, remarkGfm]}
             components={components}
           >
             {afterTOC}
@@ -347,7 +343,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       {tocItems.length > 0 && <TOCBlock items={tocItems} />}
       <div className="markdown-content leading-relaxed font-satoshi">
         <ReactMarkdown
-          remarkPlugins={[remarkSlug, remarkGfm]}
           components={components}
         >
           {processedMarkdown}
