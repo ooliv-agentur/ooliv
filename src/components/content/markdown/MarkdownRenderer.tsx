@@ -16,6 +16,53 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
+  // Helper function to create nested TOC structure
+  const createNestedTOCStructure = (itemsHtml: string) => {
+    // Parse individual list items and their nesting levels
+    const itemMatches = itemsHtml.match(/<li[^>]*data-toc-level="(\d+)"[^>]*>(.*?)<\/li>/g);
+    
+    if (!itemMatches) return itemsHtml;
+    
+    let result = '';
+    let currentLevel = 1;
+    let openUls = [];
+    
+    itemMatches.forEach(item => {
+      const levelMatch = item.match(/data-toc-level="(\d+)"/);
+      const contentMatch = item.match(/<li[^>]*>(.*?)<\/li>/);
+      
+      if (!levelMatch || !contentMatch) return;
+      
+      const level = parseInt(levelMatch[1]);
+      const content = contentMatch[1];
+      
+      // Close nested lists if we're going back to a higher level
+      while (currentLevel > level && openUls.length > 0) {
+        result += '</ul></li>';
+        openUls.pop();
+        currentLevel--;
+      }
+      
+      // Open new nested list if we're going deeper
+      if (level > currentLevel) {
+        result += '<li><ul class="ml-6 mt-2 space-y-2">';
+        openUls.push(level);
+        currentLevel = level;
+      }
+      
+      // Add the actual list item
+      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light">${content}</li>`;
+    });
+    
+    // Close any remaining open nested lists
+    while (openUls.length > 0) {
+      result += '</ul></li>';
+      openUls.pop();
+    }
+    
+    return result;
+  };
+  
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
@@ -106,14 +153,20 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
-      // Determine nesting level by counting asterisks or dashes at the beginning
-      const nestingMatch = text.match(/^(\*+|\-+)\s*/);
-      const nestingLevel = nestingMatch ? nestingMatch[1].length : 1;
+      // Determine nesting level by counting # symbols in the original markdown
+      const originalText = text || '';
+      const headingMatch = originalText.match(/\[([^\]]+)\]\(#([^)]+)\)/);
       
-      // Apply progressive indentation based on nesting level
-      const indentClass = nestingLevel > 1 ? `pl-${Math.min(nestingLevel * 4, 16)}` : '';
+      if (headingMatch) {
+        const anchor = headingMatch[2];
+        // Try to determine level from the anchor structure or default to level 1
+        const levelMatch = anchor.match(/^h(\d+)-/);
+        const nestingLevel = levelMatch ? parseInt(levelMatch[1]) - 1 : 1; // Convert h2- to level 1, h3- to level 2, etc.
+        
+        return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none" data-toc-level="${nestingLevel}">${parsedText}</li>`;
+      }
       
-      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none ${indentClass}" data-toc-level="${nestingLevel}">${parsedText}</li>`;
+      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none" data-toc-level="1">${parsedText}</li>`;
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
@@ -136,58 +189,11 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     if (isTOC) {
       // For TOC, we need to create proper nested structure
-      return `<TOC_PLACEHOLDER>${this.createNestedTOCStructure(cleanedItems)}</TOC_PLACEHOLDER>`;
+      return `<TOC_PLACEHOLDER>${createNestedTOCStructure(cleanedItems)}</TOC_PLACEHOLDER>`;
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
     return `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">${cleanedItems}</${type}>`;
-  };
-  
-  // Helper method to create nested TOC structure
-  renderer.createNestedTOCStructure = function(itemsHtml) {
-    // Parse individual list items and their nesting levels
-    const itemMatches = itemsHtml.match(/<li[^>]*data-toc-level="(\d+)"[^>]*>(.*?)<\/li>/g);
-    
-    if (!itemMatches) return itemsHtml;
-    
-    let result = '';
-    let currentLevel = 1;
-    let openUls = [];
-    
-    itemMatches.forEach(item => {
-      const levelMatch = item.match(/data-toc-level="(\d+)"/);
-      const contentMatch = item.match(/<li[^>]*>(.*?)<\/li>/);
-      
-      if (!levelMatch || !contentMatch) return;
-      
-      const level = parseInt(levelMatch[1]);
-      const content = contentMatch[1];
-      
-      // Close nested lists if we're going back to a higher level
-      while (currentLevel > level && openUls.length > 0) {
-        result += '</ul></li>';
-        openUls.pop();
-        currentLevel--;
-      }
-      
-      // Open new nested list if we're going deeper
-      if (level > currentLevel) {
-        result += '<li><ul class="ml-6 mt-2 space-y-2">';
-        openUls.push(level);
-        currentLevel = level;
-      }
-      
-      // Add the actual list item
-      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light">${content}</li>`;
-    });
-    
-    // Close any remaining open nested lists
-    while (openUls.length > 0) {
-      result += '</ul></li>';
-      openUls.pop();
-    }
-    
-    return result;
   };
   
   // Custom table renderer with ooliv styling
