@@ -45,12 +45,9 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         continue;
       }
       
-      // Only include H3 and H4 in TOC for proper hierarchy
-      if (level === 3 || level === 4) {
-        const anchor = generateAnchor(text);
-        console.log(`TOC extraction: "${text}" -> anchor: "${anchor}" (level: ${level})`);
-        tocItems.push({ text, anchor, level });
-      }
+      const anchor = generateAnchor(text);
+      console.log(`TOC item: "${text}" -> anchor: "${anchor}" (level: ${level})`);
+      tocItems.push({ text, anchor, level });
     }
     
     console.log('Extracted TOC items:', tocItems);
@@ -68,7 +65,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
     const id = generateAnchor(text);
-    console.log(`Heading renderer: "${text}" -> id: "${id}" (depth: ${depth})`);
+    console.log(`Heading: "${text}" -> id: "${id}" (depth: ${depth})`);
       
     const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
     
