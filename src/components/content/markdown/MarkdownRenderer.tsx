@@ -30,11 +30,13 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
   };
   
-  // Extract TOC items from markdown - only H3 and H4
+  // Extract TOC items from raw markdown - only process ### and #### headings
   const extractTOCItems = (markdown: string) => {
-    const headingRegex = /^(#{2,4})\s+(.+)$/gm;
+    const headingRegex = /^(#{3,4})\s+(.+)$/gm;
     const tocItems: Array<{text: string, anchor: string, level: number}> = [];
     let match;
+    
+    console.log('Processing markdown for TOC extraction...');
     
     while ((match = headingRegex.exec(markdown)) !== null) {
       const level = match[1].length; // Number of # characters
@@ -42,10 +44,11 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       
       // Skip "Inhaltsverzeichnis" heading from TOC
       if (text.toLowerCase() === 'inhaltsverzeichnis' || text.toLowerCase() === 'inhalt' || text.toLowerCase() === 'table of contents') {
+        console.log(`Skipping TOC heading: "${text}"`);
         continue;
       }
       
-      // Include H3 and H4 in TOC
+      // Only include H3 (###) and H4 (####) in TOC
       if (level === 3 || level === 4) {
         const anchor = generateAnchor(text);
         console.log(`TOC extraction: "${text}" -> anchor: "${anchor}" (level: ${level})`);

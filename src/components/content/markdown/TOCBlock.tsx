@@ -22,7 +22,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
       const item = tocItems[i];
       
       if (item.level === 3) {
-        // H3 item - check for following H4 items
+        // H3 item - collect following H4 items
         const h4Items: TOCItem[] = [];
         let j = i + 1;
         
@@ -32,7 +32,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
           j++;
         }
         
-        // Render H3 with optional nested H4 items
+        // Render H3 with nested H4 items
         result.push(
           <li key={`h3-${i}`} className="mb-4">
             <a 
@@ -56,7 +56,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
               {item.text}
             </a>
             {h4Items.length > 0 && (
-              <ul className="mt-2 space-y-1 ml-0">
+              <ul className="mt-2 space-y-1">
                 {h4Items.map((h4Item, h4Index) => (
                   <li key={`h4-${i}-${h4Index}`} className="pl-4">
                     <a 
@@ -88,15 +88,15 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         
         i = j; // Skip to next non-H4 item
       } else {
-        // Handle other levels (though we mainly expect H3/H4)
+        // Handle H4 items that don't follow an H3 (standalone)
         result.push(
-          <li key={`other-${i}`} className="mb-2">
+          <li key={`h4-standalone-${i}`} className="mb-2 pl-4">
             <a 
               href={`#${item.anchor}`}
-              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
+              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-normal font-satoshi text-base"
               onClick={(e) => {
                 e.preventDefault();
-                console.log(`TOC: Scrolling to anchor: ${item.anchor}`);
+                console.log(`TOC: Scrolling to standalone H4 anchor: ${item.anchor}`);
                 const target = document.getElementById(item.anchor);
                 if (target) {
                   const offsetTop = target.offsetTop - 100;
@@ -105,7 +105,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
                     behavior: 'smooth'
                   });
                 } else {
-                  console.warn(`TOC: Anchor target not found: ${item.anchor}`);
+                  console.warn(`TOC: Standalone H4 anchor target not found: ${item.anchor}`);
                 }
               }}
             >
