@@ -17,47 +17,42 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   }
   
   // Helper function to create nested TOC structure
-  const createNestedTOCStructure = (itemsHtml: string) => {
-    // Parse individual list items and their nesting levels
-    const itemMatches = itemsHtml.match(/<li[^>]*data-toc-level="(\d+)"[^>]*>(.*?)<\/li>/g);
-    
-    if (!itemMatches) return itemsHtml;
+  const createNestedTOCStructure = (items: Array<{text: string, anchor: string, level: number}>) => {
+    if (items.length === 0) return '';
     
     let result = '';
-    let currentLevel = 1;
-    let openUls = [];
+    let currentLevel = items[0].level;
+    let openUls = 0;
     
-    itemMatches.forEach(item => {
-      const levelMatch = item.match(/data-toc-level="(\d+)"/);
-      const contentMatch = item.match(/<li[^>]*>(.*?)<\/li>/);
-      
-      if (!levelMatch || !contentMatch) return;
-      
-      const level = parseInt(levelMatch[1]);
-      const content = contentMatch[1];
+    items.forEach((item, index) => {
+      const { text, anchor, level } = item;
       
       // Close nested lists if we're going back to a higher level
-      while (currentLevel > level && openUls.length > 0) {
-        result += '</ul></li>';
-        openUls.pop();
+      while (currentLevel > level && openUls > 0) {
+        result += '</ul>';
+        openUls--;
         currentLevel--;
       }
       
       // Open new nested list if we're going deeper
       if (level > currentLevel) {
-        result += '<li><ul class="ml-6 mt-2 space-y-2">';
-        openUls.push(level);
+        const indent = level - 1; // Convert to 0-based indenting
+        result += `<ul class="ml-${indent * 6} mt-2 space-y-2">`;
+        openUls++;
         currentLevel = level;
       }
       
-      // Add the actual list item
-      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light">${content}</li>`;
+      // Add the actual list item with proper indentation
+      const indentClass = level > 2 ? `pl-${(level - 2) * 4}` : '';
+      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light ${indentClass}">
+        <a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>
+      </li>`;
     });
     
     // Close any remaining open nested lists
-    while (openUls.length > 0) {
-      result += '</ul></li>';
-      openUls.pop();
+    while (openUls > 0) {
+      result += '</ul>';
+      openUls--;
     }
     
     return result;
@@ -153,20 +148,8 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
-      // Determine nesting level by counting # symbols in the original markdown
-      const originalText = text || '';
-      const headingMatch = originalText.match(/\[([^\]]+)\]\(#([^)]+)\)/);
-      
-      if (headingMatch) {
-        const anchor = headingMatch[2];
-        // Try to determine level from the anchor structure or default to level 1
-        const levelMatch = anchor.match(/^h(\d+)-/);
-        const nestingLevel = levelMatch ? parseInt(levelMatch[1]) - 1 : 1; // Convert h2- to level 1, h3- to level 2, etc.
-        
-        return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none" data-toc-level="${nestingLevel}">${parsedText}</li>`;
-      }
-      
-      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none" data-toc-level="1">${parsedText}</li>`;
+      // Mark as TOC item for later processing
+      return `<li class="toc-item" data-toc-content="${parsedText}">${parsedText}</li>`;
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
@@ -185,11 +168,32 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     const cleanedItems = items.replace(/<li[^>]*>\s*<\/li>/g, '').trim();
     
     // Check if this is a TOC list (contains anchor links)
-    const isTOC = cleanedItems.includes('href="#');
+    const isTOC = cleanedItems.includes('href="#') && cleanedItems.includes('toc-item');
     
     if (isTOC) {
-      // For TOC, we need to create proper nested structure
-      return `<TOC_PLACEHOLDER>${createNestedTOCStructure(cleanedItems)}</TOC_PLACEHOLDER>`;
+      // Extract TOC items and process them
+      const tocItemMatches = Array.from(cleanedItems.matchAll(/<li class="toc-item"[^>]*data-toc-content="([^"]*)"[^>]*>.*?<\/li>/g));
+      
+      const tocItems = tocItemMatches.map(match => {
+        const content = match[1];
+        const linkMatch = content.match(/<a href="#([^"]+)"[^>]*>([^<]+)<\/a>/);
+        if (linkMatch) {
+          const anchor = linkMatch[1];
+          const text = linkMatch[2];
+          
+          // Determine level from anchor (h2-, h3-, etc.)
+          const levelMatch = anchor.match(/^h(\d+)-/);
+          const level = levelMatch ? parseInt(levelMatch[1]) : 2;
+          
+          return { text, anchor, level };
+        }
+        return null;
+      }).filter(Boolean);
+      
+      if (tocItems.length > 0) {
+        const nestedStructure = createNestedTOCStructure(tocItems);
+        return `<TOC_PLACEHOLDER>${nestedStructure}</TOC_PLACEHOLDER>`;
+      }
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
@@ -311,7 +315,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       const tocItems = match[1];
       const tocComponent = `<div class="toc-container bg-medico-mint/20 rounded-2xl p-8 mb-12 border-l-4 border-medico-turquoise">
         <h3 class="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
-        <ul class="space-y-2 font-satoshi">${tocItems}</ul>
+        <div class="space-y-2 font-satoshi">${tocItems}</div>
       </div>`;
       processedHtmlContent = processedHtmlContent.replace(match[0], tocComponent);
     });
