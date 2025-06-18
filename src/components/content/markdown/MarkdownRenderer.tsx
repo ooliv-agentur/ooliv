@@ -33,15 +33,29 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       }
       
       const anchor = generateAnchor(text);
-      console.log(`TOC item: "${text}" -> anchor: "${anchor}" (level: ${level})`);
+      console.log(`[TOC] Extracted item: "${text}" -> anchor: "${anchor}" (level: ${level})`);
       tocItems.push({ text, anchor, level });
     }
     
-    console.log('Extracted TOC items:', tocItems);
+    console.log('[TOC] All extracted items:', tocItems);
     return tocItems;
   };
 
   const tocItems = extractTOCItems(processedMarkdown);
+
+  // Remove TOC content from markdown after "## Inhaltsverzeichnis" until next H2 or end
+  const removeTOCContent = (markdown: string): string => {
+    console.log('[Markdown] Before TOC cleanup:', markdown.substring(0, 500) + '...');
+    
+    // Match "## Inhaltsverzeichnis" and everything until the next ## heading or end of content
+    const tocContentRegex = /^##\s+Inhaltsverzeichnis\s*\n([\s\S]*?)(?=\n##|\n#(?!#)|$)/m;
+    const cleanedMarkdown = markdown.replace(tocContentRegex, '## Inhaltsverzeichnis\n');
+    
+    console.log('[Markdown] After TOC cleanup:', cleanedMarkdown.substring(0, 500) + '...');
+    return cleanedMarkdown;
+  };
+
+  processedMarkdown = removeTOCContent(processedMarkdown);
 
   // Custom components for react-markdown
   const components = {
@@ -241,14 +255,12 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       </td>
     ),
     
-    // Custom blockquote renderer
     blockquote: ({ children, ...props }: any) => (
       <blockquote className="border-l-4 border-medico-turquoise pl-8 my-12 italic text-medico-darkGreen bg-medico-mint/10 rounded-r-xl py-6 text-xl font-satoshi font-light leading-relaxed" {...props}>
         {children}
       </blockquote>
     ),
     
-    // Custom code renderers
     pre: ({ children, ...props }: any) => (
       <div className="my-12 rounded-xl overflow-hidden border border-medico-turquoise/20 shadow-lg">
         <pre className="bg-medico-darkGreen text-medico-mint p-6 overflow-x-auto font-mono text-sm leading-relaxed" {...props}>
@@ -258,7 +270,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     ),
     
     code: ({ children, className, ...props }: any) => {
-      // Check if this is inline code (no className from remark-gfm) or block code
       const isInline = !className;
       
       if (isInline) {
@@ -276,7 +287,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       );
     },
     
-    // Custom image renderer
     img: ({ src, alt, title, ...props }: any) => (
       <figure className="my-16">
         <img 
@@ -290,7 +300,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       </figure>
     ),
     
-    // Custom emphasis renderers
     strong: ({ children, ...props }: any) => (
       <strong className="font-bold text-medico-darkGreen font-satoshi" {...props}>
         {children}
@@ -303,7 +312,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       </em>
     ),
     
-    // Custom horizontal rule
     hr: ({ ...props }: any) => (
       <hr className="my-16 border-0 h-px bg-gradient-to-r from-transparent via-medico-turquoise to-transparent" {...props} />
     ),
@@ -314,6 +322,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   const match = processedMarkdown.match(inhaltsverzeichnisRegex);
   
   if (match && tocItems.length > 0) {
+    console.log('[TOC] Inserting TOCBlock at position:', match.index);
     const beforeTOC = processedMarkdown.substring(0, match.index! + match[0].length);
     const afterTOC = processedMarkdown.substring(match.index! + match[0].length);
     
