@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface TOCItem {
@@ -22,7 +21,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
       const item = tocItems[i];
       
       if (item.level === 3) {
-        // H3 - main section
+        // H3 - main section (bold, top-level)
         const h3Children: JSX.Element[] = [];
         let j = i + 1;
         
@@ -30,7 +29,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         while (j < tocItems.length && tocItems[j].level === 4) {
           const h4Item = tocItems[j];
           h3Children.push(
-            <li key={`h4-${j}`} className="font-normal text-base pl-4">
+            <li key={`h4-${j}`} className="pl-4 font-normal text-base leading-tight">
               <a 
                 href={`#${h4Item.anchor}`}
                 className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
@@ -55,7 +54,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
 
         // Render H3 with nested H4s
         result.push(
-          <li key={`h3-${i}`} className="font-bold text-lg mt-4 first:mt-0">
+          <li key={`h3-${i}`} className="font-bold text-lg leading-tight mt-4 first:mt-0">
             <a 
               href={`#${item.anchor}`}
               className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
@@ -74,7 +73,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
               {item.text}
             </a>
             {h3Children.length > 0 && (
-              <ul className="mt-2 space-y-1">
+              <ul className="mt-2 space-y-1 list-none">
                 {h3Children}
               </ul>
             )}
@@ -82,10 +81,34 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         );
         
         i = j; // Skip processed H4 items
-      } else {
-        // Handle other levels (H4 without preceding H3, etc.)
+      } else if (item.level === 4) {
+        // Standalone H4 (without preceding H3)
         result.push(
-          <li key={`other-${i}`} className={item.level === 4 ? "font-normal text-base pl-4" : "font-normal text-base"}>
+          <li key={`h4-standalone-${i}`} className="pl-4 font-normal text-base leading-tight">
+            <a 
+              href={`#${item.anchor}`}
+              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById(item.anchor);
+                if (target) {
+                  const offsetTop = target.offsetTop - 100;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
+              {item.text}
+            </a>
+          </li>
+        );
+        i++;
+      } else {
+        // Other levels (should not happen with H3/H4 only, but just in case)
+        result.push(
+          <li key={`other-${i}`} className="font-normal text-base leading-tight">
             <a 
               href={`#${item.anchor}`}
               className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"

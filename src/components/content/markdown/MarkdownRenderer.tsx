@@ -41,9 +41,8 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return tocItems;
   };
 
-  // Check if content has TOC markers
-  const hasTOCMarker = processedMarkdown.includes('- [') && processedMarkdown.includes('](#');
-  const tocItems = hasTOCMarker ? [] : extractTOCItems(processedMarkdown);
+  // Always extract TOC items from headings - don't skip based on TOC markers
+  const tocItems = extractTOCItems(processedMarkdown);
 
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
