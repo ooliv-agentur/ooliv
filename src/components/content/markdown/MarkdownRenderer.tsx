@@ -53,6 +53,11 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   renderer.listitem = function({ text, task, checked, tokens }) {
     let parsedText = text;
     
+    // Skip if this is the "Inhaltsverzeichnis" title itself
+    if (text && (text.trim() === 'Inhaltsverzeichnis' || text.trim() === 'Inhalt' || text.trim() === 'Table of Contents')) {
+      return ''; // Return empty string to skip this item
+    }
+    
     // Try to parse tokens if they exist and are in the correct format
     try {
       if (tokens && Array.isArray(tokens) && tokens.length > 0) {
@@ -83,10 +88,15 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       // Fallback: manually parse markdown links in text
       parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
         if (href.startsWith('#')) {
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
         }
         return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
       });
+    }
+    
+    // Return empty string if this was a skipped item
+    if (!parsedText || parsedText.trim() === '') {
+      return '';
     }
     
     if (task) {
@@ -96,30 +106,88 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
-      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none">${parsedText}</li>`;
+      // Determine nesting level by counting asterisks or dashes at the beginning
+      const nestingMatch = text.match(/^(\*+|\-+)\s*/);
+      const nestingLevel = nestingMatch ? nestingMatch[1].length : 1;
+      
+      // Apply progressive indentation based on nesting level
+      const indentClass = nestingLevel > 1 ? `pl-${Math.min(nestingLevel * 4, 16)}` : '';
+      
+      return `<li class="mb-3 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light list-none ${indentClass}" data-toc-level="${nestingLevel}">${parsedText}</li>`;
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
   };
   
-  // Enhanced list styling with proper TOC detection
+  // Enhanced list styling with proper TOC detection and nesting
   renderer.list = function(token) {
     const type = token.ordered ? 'ol' : 'ul';
     
     // Process each list item and check for TOC patterns
     const items = token.items.map(item => {
       return this.listitem(item);
-    }).join('');
+    }).join('').replace(/\n\s*\n/g, '\n'); // Clean up extra newlines
+    
+    // Remove empty items (from skipped "Inhaltsverzeichnis" entries)
+    const cleanedItems = items.replace(/<li[^>]*>\s*<\/li>/g, '').trim();
     
     // Check if this is a TOC list (contains anchor links)
-    const isTOC = items.includes('href="#');
+    const isTOC = cleanedItems.includes('href="#');
     
     if (isTOC) {
-      return `<TOC_PLACEHOLDER>${items}</TOC_PLACEHOLDER>`;
+      // For TOC, we need to create proper nested structure
+      return `<TOC_PLACEHOLDER>${this.createNestedTOCStructure(cleanedItems)}</TOC_PLACEHOLDER>`;
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
-    return `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">${items}</${type}>`;
+    return `<${type} class="${listClass} mb-12 space-y-2 font-satoshi">${cleanedItems}</${type}>`;
+  };
+  
+  // Helper method to create nested TOC structure
+  renderer.createNestedTOCStructure = function(itemsHtml) {
+    // Parse individual list items and their nesting levels
+    const itemMatches = itemsHtml.match(/<li[^>]*data-toc-level="(\d+)"[^>]*>(.*?)<\/li>/g);
+    
+    if (!itemMatches) return itemsHtml;
+    
+    let result = '';
+    let currentLevel = 1;
+    let openUls = [];
+    
+    itemMatches.forEach(item => {
+      const levelMatch = item.match(/data-toc-level="(\d+)"/);
+      const contentMatch = item.match(/<li[^>]*>(.*?)<\/li>/);
+      
+      if (!levelMatch || !contentMatch) return;
+      
+      const level = parseInt(levelMatch[1]);
+      const content = contentMatch[1];
+      
+      // Close nested lists if we're going back to a higher level
+      while (currentLevel > level && openUls.length > 0) {
+        result += '</ul></li>';
+        openUls.pop();
+        currentLevel--;
+      }
+      
+      // Open new nested list if we're going deeper
+      if (level > currentLevel) {
+        result += '<li><ul class="ml-6 mt-2 space-y-2">';
+        openUls.push(level);
+        currentLevel = level;
+      }
+      
+      // Add the actual list item
+      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light">${content}</li>`;
+    });
+    
+    // Close any remaining open nested lists
+    while (openUls.length > 0) {
+      result += '</ul></li>';
+      openUls.pop();
+    }
+    
+    return result;
   };
   
   // Custom table renderer with ooliv styling
