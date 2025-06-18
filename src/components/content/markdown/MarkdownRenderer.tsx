@@ -16,18 +16,29 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
-  // Enhanced anchor generation function - used consistently for both TOC and headings
+  // Enhanced anchor generation function - properly handles HTML entities
   const generateAnchor = (text: string) => {
     return text
       .toLowerCase()
+      // First decode HTML entities like &amp; to &
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      // Handle German umlauts
       .replace(/[äöüß]/g, (char) => {
         const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
         return map[char] || char;
       })
-      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
-      .replace(/\s+/g, '-') // Replace spaces with hyphens
-      .replace(/-+/g, '-') // Replace multiple hyphens with single
-      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+      // Remove all special characters except spaces and hyphens
+      .replace(/[^a-z0-9\s-]/g, '') 
+      // Replace spaces with hyphens
+      .replace(/\s+/g, '-') 
+      // Replace multiple hyphens with single
+      .replace(/-+/g, '-') 
+      // Remove leading/trailing hyphens
+      .replace(/^-|-$/g, '');
   };
   
   // Extract TOC items from markdown with improved anchor generation
@@ -54,9 +65,21 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return tocItems;
   };
 
-  // Check if content has TOC markers
-  const hasTOCMarker = processedMarkdown.includes('- [') && processedMarkdown.includes('](#');
-  const tocItems = hasTOCMarker ? [] : extractTOCItems(processedMarkdown);
+  // Improved TOC marker detection - look for <!-- toc --> or markdown list patterns
+  const hasTOCMarker = processedMarkdown.includes('<!-- toc -->') || 
+                       (processedMarkdown.includes('- [') && processedMarkdown.includes('](#'));
+  
+  // Remove existing TOC lists from markdown if they exist
+  if (hasTOCMarker) {
+    // Remove markdown TOC lists (lines that start with - [ and contain ](#)
+    processedMarkdown = processedMarkdown.replace(/^- \[.*\]\(#.*\)$/gm, '');
+    // Remove <!-- toc --> markers
+    processedMarkdown = processedMarkdown.replace(/<!-- toc -->/g, '');
+    // Clean up empty lines left by removed TOC items
+    processedMarkdown = processedMarkdown.replace(/\n\s*\n\s*\n/g, '\n\n');
+  }
+  
+  const tocItems = extractTOCItems(processedMarkdown);
 
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
@@ -281,6 +304,18 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   
   // Convert markdown to HTML string - ensure we get a string, not a promise
   const htmlContent = marked.parse(processedMarkdown) as string;
+  
+  // Debug: Log all heading IDs that will be rendered
+  React.useEffect(() => {
+    setTimeout(() => {
+      const allHeadings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6')).map(h => ({
+        tag: h.tagName.toLowerCase(),
+        id: h.id,
+        text: h.textContent?.trim()
+      }));
+      console.log('🔍 All rendered heading IDs in DOM:', allHeadings);
+    }, 100);
+  }, [htmlContent]);
   
   // Split content at "Inhaltsverzeichnis" to insert TOC in correct position
   const inhaltsverzeichnisRegex = /<h2[^>]*id="inhaltsverzeichnis"[^>]*>.*?<\/h2>/i;

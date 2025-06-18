@@ -14,13 +14,40 @@ interface TOCBlockProps {
 const TOCBlock = ({ items }: TOCBlockProps) => {
   if (items.length === 0) return null;
 
+  // Enhanced anchor generation function - matches MarkdownRenderer exactly
+  const generateAnchor = (text: string) => {
+    return text
+      .toLowerCase()
+      // First decode HTML entities like &amp; to &
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      // Handle German umlauts
+      .replace(/[äöüß]/g, (char) => {
+        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
+        return map[char] || char;
+      })
+      // Remove all special characters except spaces and hyphens
+      .replace(/[^a-z0-9\s-]/g, '') 
+      // Replace spaces with hyphens
+      .replace(/\s+/g, '-') 
+      // Replace multiple hyphens with single
+      .replace(/-+/g, '-') 
+      // Remove leading/trailing hyphens
+      .replace(/^-|-$/g, '');
+  };
+
   const renderTOCItems = (tocItems: TOCItem[]): JSX.Element[] => {
     const result: JSX.Element[] = [];
     let currentLevel = 2; // Start with H2
     let nestedStack: JSX.Element[][] = [[]];
 
     tocItems.forEach((item, index) => {
-      const { text, anchor, level } = item;
+      const { text, level } = item;
+      // Use our enhanced anchor generation to ensure consistency
+      const anchor = generateAnchor(text);
 
       // Handle level changes
       if (level > currentLevel) {
@@ -72,21 +99,21 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
             className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
             onClick={(e) => {
               e.preventDefault();
-              console.log(`Attempting to scroll to anchor: ${anchor}`);
+              console.log(`🎯 Attempting to scroll to anchor: ${anchor}`);
               const target = document.getElementById(anchor);
               if (target) {
                 // Scroll with offset to account for potential fixed headers and spacing
                 const offsetTop = target.offsetTop - 100;
-                console.log(`Scrolling to element at offset: ${offsetTop}`);
+                console.log(`✅ Scrolling to element at offset: ${offsetTop}`);
                 window.scrollTo({
                   top: offsetTop,
                   behavior: 'smooth'
                 });
               } else {
-                console.warn(`Anchor target not found: ${anchor}`);
+                console.warn(`❌ Anchor target not found: ${anchor}`);
                 // List all available IDs for debugging
                 const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
-                console.log('Available IDs:', allIds);
+                console.log('📋 Available IDs:', allIds);
               }
             }}
           >
