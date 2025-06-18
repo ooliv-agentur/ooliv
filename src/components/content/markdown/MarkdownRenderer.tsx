@@ -30,7 +30,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
   };
   
-  // Extract TOC items from markdown - only H2, H3, and H4
+  // Extract TOC items from markdown - only H3 and H4
   const extractTOCItems = (markdown: string) => {
     const headingRegex = /^(#{2,4})\s+(.+)$/gm;
     const tocItems: Array<{text: string, anchor: string, level: number}> = [];
@@ -45,7 +45,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         continue;
       }
       
-      // Only include H3 and H4 in TOC for this content
+      // Include H3 and H4 in TOC
       if (level === 3 || level === 4) {
         const anchor = generateAnchor(text);
         console.log(`TOC extraction: "${text}" -> anchor: "${anchor}" (level: ${level})`);
@@ -117,7 +117,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         );
         
         if (hasValidTokens) {
-          // Check for unsupported token types
+          // Check for unsupported token types that cause errors
           const hasUnsupportedTokens = tokens.some(token => 
             token.type === 'list' || 
             token.type === 'list_item'
@@ -126,44 +126,30 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
           if (!hasUnsupportedTokens) {
             parsedText = this.parser.parseInline(tokens);
           } else {
-            console.warn('Skipping token parsing due to unsupported list tokens, using manual parsing');
-            // Fallback to manual parsing
-            parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-              if (href.startsWith('#')) {
-                return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link">${linkText}</a>`;
-              }
-              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-            });
+            console.warn('Skipping token parsing due to unsupported list tokens, using text fallback');
+            // Use text fallback for problematic tokens
+            parsedText = text;
           }
         } else {
-          console.warn('Invalid tokens detected, using manual markdown parsing');
-          // Fallback to manual parsing
-          parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-            if (href.startsWith('#')) {
-              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link">${linkText}</a>`;
-            }
-            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-          });
+          console.warn('Invalid tokens detected, using text fallback');
+          parsedText = text;
         }
       } else {
-        // No tokens or invalid tokens - use manual parsing
-        parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-          if (href.startsWith('#')) {
-            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link">${linkText}</a>`;
-          }
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-        });
+        // No tokens or invalid tokens - use text directly
+        parsedText = text;
       }
     } catch (error) {
-      console.warn('Error parsing list item tokens, falling back to manual parsing:', error);
-      // Fallback: manually parse markdown links in text
-      parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-        if (href.startsWith('#')) {
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-        }
-        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-      });
+      console.warn('Error parsing list item tokens, falling back to text:', error);
+      parsedText = text;
     }
+    
+    // Manual markdown link parsing for cases where token parsing fails
+    parsedText = parsedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+      if (href.startsWith('#')) {
+        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link">${linkText}</a>`;
+      }
+      return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+    });
     
     // Return empty string if this was a skipped item
     if (!parsedText || parsedText.trim() === '') {

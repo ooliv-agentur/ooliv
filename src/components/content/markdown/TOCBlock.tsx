@@ -56,12 +56,12 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
               {item.text}
             </a>
             {h4Items.length > 0 && (
-              <ul className="mt-2 space-y-1">
+              <ul className="mt-2 space-y-1 ml-0">
                 {h4Items.map((h4Item, h4Index) => (
                   <li key={`h4-${i}-${h4Index}`} className="pl-4">
                     <a 
                       href={`#${h4Item.anchor}`}
-                      className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi text-base"
+                      className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-normal font-satoshi text-base"
                       onClick={(e) => {
                         e.preventDefault();
                         console.log(`TOC: Scrolling to H4 anchor: ${h4Item.anchor}`);
