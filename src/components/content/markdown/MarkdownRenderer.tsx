@@ -1,6 +1,7 @@
 import React from 'react';
 import { marked } from 'marked';
 import TOCBlock from './TOCBlock';
+import { generateAnchor } from '../../utils/anchorUtils';
 
 interface MarkdownRendererProps {
   content: string;
@@ -16,23 +17,9 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
-  // Enhanced anchor generation function - used consistently for both TOC and headings
-  const generateAnchor = (text: string) => {
-    return text
-      .toLowerCase()
-      .replace(/[äöüß]/g, (char) => {
-        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
-        return map[char] || char;
-      })
-      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
-      .replace(/\s+/g, '-') // Replace spaces with hyphens
-      .replace(/-+/g, '-') // Replace multiple hyphens with single
-      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-  };
-  
-  // Extract TOC items from markdown with improved anchor generation
+  // Extract TOC items from markdown - only H3 and H4
   const extractTOCItems = (markdown: string) => {
-    const headingRegex = /^(#{2,6})\s+(.+)$/gm;
+    const headingRegex = /^(#{3,4})\s+(.+)$/gm;
     const tocItems: Array<{text: string, anchor: string, level: number}> = [];
     let match;
     
@@ -61,7 +48,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
-  // Enhanced heading renderer with improved ID generation
+  // Enhanced heading renderer with shared anchor generation
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
     const id = generateAnchor(text);
