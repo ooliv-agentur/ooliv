@@ -16,6 +16,20 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
+  // Enhanced anchor generation function - used consistently for both TOC and headings
+  const generateAnchor = (text: string) => {
+    return text
+      .toLowerCase()
+      .replace(/[äöüß]/g, (char) => {
+        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
+        return map[char] || char;
+      })
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single
+      .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+  };
+  
   // Extract TOC items from markdown with improved anchor generation
   const extractTOCItems = (markdown: string) => {
     const headingRegex = /^(#{2,6})\s+(.+)$/gm;
@@ -31,21 +45,12 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
         continue;
       }
       
-      // Improved anchor generation - handle special characters and ensure uniqueness
-      const anchor = text
-        .toLowerCase()
-        .replace(/[äöüß]/g, (char) => {
-          const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
-          return map[char] || char;
-        })
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
-        .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-        
+      const anchor = generateAnchor(text);
+      console.log(`TOC item: "${text}" -> anchor: "${anchor}" (level: ${level})`);
       tocItems.push({ text, anchor, level });
     }
     
+    console.log('Extracted TOC items:', tocItems);
     return tocItems;
   };
 
@@ -59,18 +64,8 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   // Enhanced heading renderer with improved ID generation
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
-    
-    // Use the same anchor generation logic as TOC
-    const id = text
-      .toLowerCase()
-      .replace(/[äöüß]/g, (char) => {
-        const map: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'ß': 'ss' };
-        return map[char] || char;
-      })
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
+    const id = generateAnchor(text);
+    console.log(`Heading: "${text}" -> id: "${id}" (depth: ${depth})`);
       
     const baseClasses = "font-satoshi text-medico-darkGreen font-bold";
     

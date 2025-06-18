@@ -53,7 +53,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         }
       }
 
-      // Determine styling based on level - H3 are main chapters, H4 are sub-items
+      // Enhanced styling based on level - H3 are main chapters, H4 are sub-items
       const isMainChapter = level === 3; // H3 sections
       const isSubChapter = level === 4;  // H4 sections
       
@@ -72,16 +72,21 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
             className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
             onClick={(e) => {
               e.preventDefault();
+              console.log(`Attempting to scroll to anchor: ${anchor}`);
               const target = document.getElementById(anchor);
               if (target) {
                 // Scroll with offset to account for potential fixed headers and spacing
-                const offsetTop = target.offsetTop - 80;
+                const offsetTop = target.offsetTop - 100;
+                console.log(`Scrolling to element at offset: ${offsetTop}`);
                 window.scrollTo({
                   top: offsetTop,
                   behavior: 'smooth'
                 });
               } else {
                 console.warn(`Anchor target not found: ${anchor}`);
+                // List all available IDs for debugging
+                const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
+                console.log('Available IDs:', allIds);
               }
             }}
           >
