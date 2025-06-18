@@ -14,119 +14,93 @@ interface TOCBlockProps {
 const TOCBlock = ({ items }: TOCBlockProps) => {
   if (items.length === 0) return null;
 
-  const renderTOCItems = (tocItems: TOCItem[]): JSX.Element[] => {
+  const renderNestedTOC = (tocItems: TOCItem[]): JSX.Element => {
     const result: JSX.Element[] = [];
-    let currentLevel = 2; // Start with H2
-    let nestedStack: JSX.Element[][] = [[]];
-
-    tocItems.forEach((item, index) => {
-      const { text, anchor, level } = item;
-
-      // Handle level changes
-      if (level > currentLevel) {
-        // Going deeper - create new nested level
-        while (level > currentLevel) {
-          nestedStack.push([]);
-          currentLevel++;
-        }
-      } else if (level < currentLevel) {
-        // Going back up - close nested levels
-        while (level < currentLevel && nestedStack.length > 1) {
-          const nestedItems = nestedStack.pop();
-          if (nestedItems && nestedItems.length > 0) {
-            const parentItems = nestedStack[nestedStack.length - 1];
-            if (parentItems.length > 0) {
-              // Add nested ul to the last parent item
-              const lastParentIndex = parentItems.length - 1;
-              const lastParent = parentItems[lastParentIndex];
-              parentItems[lastParentIndex] = React.cloneElement(lastParent, {
-                children: [
-                  lastParent.props.children,
-                  <ul key={`nested-${index}`} className="ml-4 mt-2 space-y-1">
-                    {nestedItems}
-                  </ul>
-                ]
-              });
-            }
-          }
-          currentLevel--;
-        }
-      }
-
-      // Enhanced styling based on level - H3 are main chapters, H4 are sub-items
-      const isMainChapter = level === 3; // H3 sections
-      const isSubChapter = level === 4;  // H4 sections
+    
+    for (let i = 0; i < tocItems.length; i++) {
+      const item = tocItems[i];
       
-      const itemClasses = [
-        "leading-relaxed font-satoshi",
-        isMainChapter ? "font-bold text-lg mt-4 first:mt-0" : "",
-        isSubChapter ? "font-normal text-base pl-4" : "",
-        !isMainChapter && !isSubChapter ? "font-normal text-base" : ""
-      ].filter(Boolean).join(" ");
-
-      // Create the list item with enhanced scroll handling
-      const listItem = (
-        <li key={`toc-${index}`} className={itemClasses}>
-          <a 
-            href={`#${anchor}`} 
-            className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
-            onClick={(e) => {
-              e.preventDefault();
-              console.log(`Attempting to scroll to anchor: ${anchor}`);
-              const target = document.getElementById(anchor);
-              if (target) {
-                // Scroll with offset to account for potential fixed headers and spacing
-                const offsetTop = target.offsetTop - 100;
-                console.log(`Scrolling to element at offset: ${offsetTop}`);
-                window.scrollTo({
-                  top: offsetTop,
-                  behavior: 'smooth'
-                });
-              } else {
-                console.warn(`Anchor target not found: ${anchor}`);
-                // List all available IDs for debugging
-                const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
-                console.log('Available IDs:', allIds);
+      if (item.level === 3) {
+        // H3 - main category
+        const h3Item = (
+          <li key={`h3-${i}`} className="mb-3">
+            <a 
+              href={`#${item.anchor}`}
+              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-bold text-lg font-satoshi"
+              onClick={(e) => {
+                e.preventDefault();
+                console.log(`Scrolling to H3 anchor: ${item.anchor}`);
+                const target = document.getElementById(item.anchor);
+                if (target) {
+                  const offsetTop = target.offsetTop - 100;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                } else {
+                  console.warn(`H3 anchor target not found: ${item.anchor}`);
+                }
+              }}
+            >
+              {item.text}
+            </a>
+            
+            {/* Look for H4 children */}
+            {(() => {
+              const h4Children: JSX.Element[] = [];
+              let j = i + 1;
+              
+              while (j < tocItems.length && tocItems[j].level === 4) {
+                const h4Item = tocItems[j];
+                h4Children.push(
+                  <li key={`h4-${j}`} className="mb-2">
+                    <a 
+                      href={`#${h4Item.anchor}`}
+                      className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-normal text-base font-satoshi"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        console.log(`Scrolling to H4 anchor: ${h4Item.anchor}`);
+                        const target = document.getElementById(h4Item.anchor);
+                        if (target) {
+                          const offsetTop = target.offsetTop - 100;
+                          window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                          });
+                        } else {
+                          console.warn(`H4 anchor target not found: ${h4Item.anchor}`);
+                        }
+                      }}
+                    >
+                      {h4Item.text}
+                    </a>
+                  </li>
+                );
+                j++;
               }
-            }}
-          >
-            {text}
-          </a>
-        </li>
-      );
-
-      // Add to current level
-      nestedStack[nestedStack.length - 1].push(listItem);
-    });
-
-    // Close any remaining nested levels
-    while (nestedStack.length > 1) {
-      const nestedItems = nestedStack.pop();
-      if (nestedItems && nestedItems.length > 0) {
-        const parentItems = nestedStack[nestedStack.length - 1];
-        if (parentItems.length > 0) {
-          const lastParentIndex = parentItems.length - 1;
-          const lastParent = parentItems[lastParentIndex];
-          parentItems[lastParentIndex] = React.cloneElement(lastParent, {
-            children: [
-              lastParent.props.children,
-              <ul key="nested-final" className="ml-4 mt-2 space-y-1">
-                {nestedItems}
-              </ul>
-            ]
-          });
-        }
+              
+              // Skip processed H4 items in main loop
+              i = j - 1;
+              
+              return h4Children.length > 0 ? (
+                <ul className="mt-2 pl-4 space-y-1 list-none">
+                  {h4Children}
+                </ul>
+              ) : null;
+            })()}
+          </li>
+        );
+        
+        result.push(h3Item);
       }
     }
-
-    return nestedStack[0];
+    
+    return <ul className="space-y-2 font-satoshi list-none">{result}</ul>;
   };
 
   return (
     <div className="toc-container mb-12">
-      <ul className="space-y-2 font-satoshi list-none">
-        {renderTOCItems(items)}
-      </ul>
+      {renderNestedTOC(items)}
     </div>
   );
 };
