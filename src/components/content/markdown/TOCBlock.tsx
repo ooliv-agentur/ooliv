@@ -14,115 +14,119 @@ interface TOCBlockProps {
 const TOCBlock = ({ items }: TOCBlockProps) => {
   if (items.length === 0) return null;
 
-  const renderNestedTOC = (tocItems: TOCItem[]): JSX.Element => {
+  const renderTOCItems = (tocItems: TOCItem[]): JSX.Element[] => {
     const result: JSX.Element[] = [];
-    let i = 0;
+    let currentLevel = 2; // Start with H2
+    let nestedStack: JSX.Element[][] = [[]];
 
-    while (i < tocItems.length) {
-      const item = tocItems[i];
-      
-      if (item.level === 3) {
-        // H3 item - collect following H4 items
-        const h4Items: TOCItem[] = [];
-        let j = i + 1;
-        
-        // Collect all H4 items that follow this H3
-        while (j < tocItems.length && tocItems[j].level === 4) {
-          h4Items.push(tocItems[j]);
-          j++;
+    tocItems.forEach((item, index) => {
+      const { text, anchor, level } = item;
+
+      // Handle level changes
+      if (level > currentLevel) {
+        // Going deeper - create new nested level
+        while (level > currentLevel) {
+          nestedStack.push([]);
+          currentLevel++;
         }
-        
-        // Render H3 with nested H4 items
-        result.push(
-          <li key={`h3-${i}`} className="mb-4">
-            <a 
-              href={`#${item.anchor}`}
-              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-bold font-satoshi text-lg"
-              onClick={(e) => {
-                e.preventDefault();
-                console.log(`TOC: Scrolling to H3 anchor: ${item.anchor}`);
-                const target = document.getElementById(item.anchor);
-                if (target) {
-                  const offsetTop = target.offsetTop - 100;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                  });
-                } else {
-                  console.warn(`TOC: H3 anchor target not found: ${item.anchor}`);
-                }
-              }}
-            >
-              {item.text}
-            </a>
-            {h4Items.length > 0 && (
-              <ul className="mt-2 space-y-1">
-                {h4Items.map((h4Item, h4Index) => (
-                  <li key={`h4-${i}-${h4Index}`} className="pl-4">
-                    <a 
-                      href={`#${h4Item.anchor}`}
-                      className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-normal font-satoshi text-base"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        console.log(`TOC: Scrolling to H4 anchor: ${h4Item.anchor}`);
-                        const target = document.getElementById(h4Item.anchor);
-                        if (target) {
-                          const offsetTop = target.offsetTop - 100;
-                          window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                          });
-                        } else {
-                          console.warn(`TOC: H4 anchor target not found: ${h4Item.anchor}`);
-                        }
-                      }}
-                    >
-                      {h4Item.text}
-                    </a>
-                  </li>
-                ))}
+      } else if (level < currentLevel) {
+        // Going back up - close nested levels
+        while (level < currentLevel && nestedStack.length > 1) {
+          const nestedItems = nestedStack.pop();
+          if (nestedItems && nestedItems.length > 0) {
+            const parentItems = nestedStack[nestedStack.length - 1];
+            if (parentItems.length > 0) {
+              // Add nested ul to the last parent item
+              const lastParentIndex = parentItems.length - 1;
+              const lastParent = parentItems[lastParentIndex];
+              parentItems[lastParentIndex] = React.cloneElement(lastParent, {
+                children: [
+                  lastParent.props.children,
+                  <ul key={`nested-${index}`} className="ml-4 mt-2 space-y-1">
+                    {nestedItems}
+                  </ul>
+                ]
+              });
+            }
+          }
+          currentLevel--;
+        }
+      }
+
+      // Enhanced styling based on level - H3 are main chapters, H4 are sub-items
+      const isMainChapter = level === 3; // H3 sections
+      const isSubChapter = level === 4;  // H4 sections
+      
+      const itemClasses = [
+        "leading-relaxed font-satoshi",
+        isMainChapter ? "font-bold text-lg mt-4 first:mt-0" : "",
+        isSubChapter ? "font-normal text-base pl-4" : "",
+        !isMainChapter && !isSubChapter ? "font-normal text-base" : ""
+      ].filter(Boolean).join(" ");
+
+      // Create the list item with enhanced scroll handling
+      const listItem = (
+        <li key={`toc-${index}`} className={itemClasses}>
+          <a 
+            href={`#${anchor}`} 
+            className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log(`Attempting to scroll to anchor: ${anchor}`);
+              const target = document.getElementById(anchor);
+              if (target) {
+                // Scroll with offset to account for potential fixed headers and spacing
+                const offsetTop = target.offsetTop - 100;
+                console.log(`Scrolling to element at offset: ${offsetTop}`);
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              } else {
+                console.warn(`Anchor target not found: ${anchor}`);
+                // List all available IDs for debugging
+                const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
+                console.log('Available IDs:', allIds);
+              }
+            }}
+          >
+            {text}
+          </a>
+        </li>
+      );
+
+      // Add to current level
+      nestedStack[nestedStack.length - 1].push(listItem);
+    });
+
+    // Close any remaining nested levels
+    while (nestedStack.length > 1) {
+      const nestedItems = nestedStack.pop();
+      if (nestedItems && nestedItems.length > 0) {
+        const parentItems = nestedStack[nestedStack.length - 1];
+        if (parentItems.length > 0) {
+          const lastParentIndex = parentItems.length - 1;
+          const lastParent = parentItems[lastParentIndex];
+          parentItems[lastParentIndex] = React.cloneElement(lastParent, {
+            children: [
+              lastParent.props.children,
+              <ul key="nested-final" className="ml-4 mt-2 space-y-1">
+                {nestedItems}
               </ul>
-            )}
-          </li>
-        );
-        
-        i = j; // Skip to next non-H4 item
-      } else {
-        // Handle H4 items that don't follow an H3 (standalone)
-        result.push(
-          <li key={`h4-standalone-${i}`} className="mb-2 pl-4">
-            <a 
-              href={`#${item.anchor}`}
-              className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-normal font-satoshi text-base"
-              onClick={(e) => {
-                e.preventDefault();
-                console.log(`TOC: Scrolling to standalone H4 anchor: ${item.anchor}`);
-                const target = document.getElementById(item.anchor);
-                if (target) {
-                  const offsetTop = target.offsetTop - 100;
-                  window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                  });
-                } else {
-                  console.warn(`TOC: Standalone H4 anchor target not found: ${item.anchor}`);
-                }
-              }}
-            >
-              {item.text}
-            </a>
-          </li>
-        );
-        i++;
+            ]
+          });
+        }
       }
     }
 
-    return <ul className="space-y-2 font-satoshi list-none">{result}</ul>;
+    return nestedStack[0];
   };
 
   return (
     <div className="toc-container mb-12">
-      {renderNestedTOC(items)}
+      <ul className="space-y-2 font-satoshi list-none">
+        {renderTOCItems(items)}
+      </ul>
     </div>
   );
 };
