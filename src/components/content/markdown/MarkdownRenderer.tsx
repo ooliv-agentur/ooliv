@@ -16,48 +16,26 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
-  // Helper function to create nested TOC structure
-  const createNestedTOCStructure = (items: Array<{text: string, anchor: string, level: number}>) => {
-    if (items.length === 0) return '';
+  // Extract TOC items from markdown
+  const extractTOCItems = (markdown: string) => {
+    const headingRegex = /^(#{2,6})\s+(.+)$/gm;
+    const tocItems: Array<{text: string, anchor: string, level: number}> = [];
+    let match;
     
-    let result = '';
-    let currentLevel = items[0].level;
-    let openUls = 0;
-    
-    items.forEach((item, index) => {
-      const { text, anchor, level } = item;
-      
-      // Close nested lists if we're going back to a higher level
-      while (currentLevel > level && openUls > 0) {
-        result += '</ul>';
-        openUls--;
-        currentLevel--;
-      }
-      
-      // Open new nested list if we're going deeper
-      if (level > currentLevel) {
-        const indent = level - 1; // Convert to 0-based indenting
-        result += `<ul class="ml-${indent * 6} mt-2 space-y-2">`;
-        openUls++;
-        currentLevel = level;
-      }
-      
-      // Add the actual list item with proper indentation
-      const indentClass = level > 2 ? `pl-${(level - 2) * 4}` : '';
-      result += `<li class="mb-2 text-medico-darkGreen leading-relaxed font-satoshi text-lg font-light ${indentClass}">
-        <a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>
-      </li>`;
-    });
-    
-    // Close any remaining open nested lists
-    while (openUls > 0) {
-      result += '</ul>';
-      openUls--;
+    while ((match = headingRegex.exec(markdown)) !== null) {
+      const level = match[1].length; // Number of # characters
+      const text = match[2].trim();
+      const anchor = text.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      tocItems.push({ text, anchor, level });
     }
     
-    return result;
+    return tocItems;
   };
-  
+
+  // Check if content has TOC markers
+  const hasTOCMarker = processedMarkdown.includes('- [') && processedMarkdown.includes('](#');
+  const tocItems = hasTOCMarker ? [] : extractTOCItems(processedMarkdown);
+
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
@@ -148,8 +126,8 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     
     // Check if this list item contains anchor links (TOC items) after parsing
     if (parsedText.includes('href="#')) {
-      // Mark as TOC item for later processing
-      return `<li class="toc-item" data-toc-content="${parsedText}">${parsedText}</li>`;
+      // Mark as TOC item for later processing - return empty to hide from regular rendering
+      return '';
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
@@ -164,36 +142,12 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       return this.listitem(item);
     }).join('').replace(/\n\s*\n/g, '\n'); // Clean up extra newlines
     
-    // Remove empty items (from skipped "Inhaltsverzeichnis" entries)
+    // Remove empty items (from skipped "Inhaltsverzeichnis" entries and TOC items)
     const cleanedItems = items.replace(/<li[^>]*>\s*<\/li>/g, '').trim();
     
-    // Check if this is a TOC list (contains anchor links)
-    const isTOC = cleanedItems.includes('href="#') && cleanedItems.includes('toc-item');
-    
-    if (isTOC) {
-      // Extract TOC items and process them
-      const tocItemMatches = Array.from(cleanedItems.matchAll(/<li class="toc-item"[^>]*data-toc-content="([^"]*)"[^>]*>.*?<\/li>/g));
-      
-      const tocItems = tocItemMatches.map(match => {
-        const content = match[1];
-        const linkMatch = content.match(/<a href="#([^"]+)"[^>]*>([^<]+)<\/a>/);
-        if (linkMatch) {
-          const anchor = linkMatch[1];
-          const text = linkMatch[2];
-          
-          // Determine level from anchor (h2-, h3-, etc.)
-          const levelMatch = anchor.match(/^h(\d+)-/);
-          const level = levelMatch ? parseInt(levelMatch[1]) : 2;
-          
-          return { text, anchor, level };
-        }
-        return null;
-      }).filter(Boolean);
-      
-      if (tocItems.length > 0) {
-        const nestedStructure = createNestedTOCStructure(tocItems);
-        return `<TOC_PLACEHOLDER>${nestedStructure}</TOC_PLACEHOLDER>`;
-      }
+    // Check if this was a TOC list (all items were removed)
+    if (!cleanedItems || cleanedItems.length === 0) {
+      return ''; // Return empty for TOC lists
     }
     
     const listClass = token.ordered ? 'list-none' : 'list-none';
@@ -304,28 +258,12 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   // Convert markdown to HTML string - ensure we get a string, not a promise
   const htmlContent = marked.parse(processedMarkdown) as string;
   
-  // Process TOC placeholders and replace with actual TOC components
-  const tocRegex = /<TOC_PLACEHOLDER>(.*?)<\/TOC_PLACEHOLDER>/gs;
-  const tocMatches = Array.from(htmlContent.matchAll(tocRegex));
-  
-  let processedHtmlContent = htmlContent;
-  
-  if (tocMatches.length > 0) {
-    tocMatches.forEach((match, index) => {
-      const tocItems = match[1];
-      const tocComponent = `<div class="toc-container bg-medico-mint/20 rounded-2xl p-8 mb-12 border-l-4 border-medico-turquoise">
-        <h3 class="text-xl font-bold text-medico-darkGreen mb-6 font-satoshi">Inhaltsverzeichnis</h3>
-        <div class="space-y-2 font-satoshi">${tocItems}</div>
-      </div>`;
-      processedHtmlContent = processedHtmlContent.replace(match[0], tocComponent);
-    });
-  }
-  
   return (
     <article className="prose prose-lg max-w-none">
+      {tocItems.length > 0 && <TOCBlock items={tocItems} />}
       <div 
         className="markdown-content leading-relaxed font-satoshi"
-        dangerouslySetInnerHTML={{ __html: processedHtmlContent }}
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     </article>
   );
