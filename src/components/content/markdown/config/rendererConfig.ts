@@ -121,7 +121,7 @@ export const createCustomRenderer = () => {
   return renderer;
 };
 
-export const createStyledRenderers = (renderer: marked.Renderer) => {
+export const createStyledRenderers = (renderer: InstanceType<typeof marked.Renderer>) => {
   // Custom table renderer with ooliv styling
   renderer.table = function({ header, rows }) {
     const headerCells = header.map(cell => {
