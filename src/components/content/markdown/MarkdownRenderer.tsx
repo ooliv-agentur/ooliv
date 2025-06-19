@@ -84,6 +84,19 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   // Configure marked with custom renderer for ooliv styling
   const renderer = new marked.Renderer();
   
+  // Define fallback text parsing function directly on renderer
+  (renderer as any).fallbackParseText = function(text: string) {
+    if (!text) return '';
+    
+    // Manually parse markdown links in text
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+      if (href.startsWith('#')) {
+        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+      }
+      return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+    });
+  };
+  
   // Enhanced heading renderer with improved ID generation
   renderer.heading = function({ tokens, depth }) {
     const text = this.parser.parseInline(tokens);
@@ -139,11 +152,11 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
           parsedText = this.parser.parseInline(tokens);
         } else {
           console.warn('Invalid token structure detected, using fallback parsing');
-          parsedText = this.fallbackParseText(text);
+          parsedText = (this as any).fallbackParseText(text);
         }
       } else if (text) {
         // Fallback: use text directly and parse markdown links manually
-        parsedText = this.fallbackParseText(text);
+        parsedText = (this as any).fallbackParseText(text);
       } else {
         console.warn('No valid text or tokens found for list item');
         return '';
@@ -151,7 +164,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     } catch (error) {
       console.warn('Error parsing list item tokens, using fallback:', error);
       // Final fallback: manually parse markdown links in text
-      parsedText = this.fallbackParseText(text);
+      parsedText = (this as any).fallbackParseText(text);
     }
     
     // Return empty string if this was a skipped item
@@ -171,19 +184,6 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
-  };
-  
-  // Add fallback text parsing method to renderer
-  renderer.fallbackParseText = function(text) {
-    if (!text) return '';
-    
-    // Manually parse markdown links in text
-    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-      if (href.startsWith('#')) {
-        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
-      }
-      return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-    });
   };
   
   // Enhanced list styling with proper TOC detection and nesting
