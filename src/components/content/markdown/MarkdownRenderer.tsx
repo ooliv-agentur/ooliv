@@ -116,7 +116,7 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     return `<p class="mb-10 text-medico-darkGreen leading-relaxed text-lg font-satoshi font-light">${text}</p>`;
   };
   
-  // Custom listitem renderer - with proper error handling and markdown link parsing
+  // Custom listitem renderer with robust error handling for token parsing
   renderer.listitem = function({ text, task, checked, tokens }) {
     let parsedText = text;
     
@@ -125,40 +125,33 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
       return ''; // Return empty string to skip this item
     }
     
-    // Try to parse tokens if they exist and are in the correct format
+    // Robust token parsing with multiple fallback strategies
     try {
       if (tokens && Array.isArray(tokens) && tokens.length > 0) {
-        // Check if tokens are valid for parsing
-        const hasValidTokens = tokens.every(token => token && typeof token === 'object');
+        // Validate tokens structure before parsing
+        const hasValidTokens = tokens.every(token => 
+          token && 
+          typeof token === 'object' && 
+          ('type' in token || 'text' in token || 'raw' in token)
+        );
+        
         if (hasValidTokens) {
           parsedText = this.parser.parseInline(tokens);
         } else {
-          // Fallback: manually parse markdown links in text
-          parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-            if (href.startsWith('#')) {
-              return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
-            }
-            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-          });
+          console.warn('Invalid token structure detected, using fallback parsing');
+          parsedText = this.fallbackParseText(text);
         }
+      } else if (text) {
+        // Fallback: use text directly and parse markdown links manually
+        parsedText = this.fallbackParseText(text);
       } else {
-        // Fallback: manually parse markdown links in text if no tokens
-        parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-          if (href.startsWith('#')) {
-            return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
-          }
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-        });
+        console.warn('No valid text or tokens found for list item');
+        return '';
       }
     } catch (error) {
-      console.warn('Error parsing list item tokens, using manual markdown parsing:', error);
-      // Fallback: manually parse markdown links in text
-      parsedText = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
-        if (href.startsWith('#')) {
-          return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
-        }
-        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
-      });
+      console.warn('Error parsing list item tokens, using fallback:', error);
+      // Final fallback: manually parse markdown links in text
+      parsedText = this.fallbackParseText(text);
     }
     
     // Return empty string if this was a skipped item
@@ -178,6 +171,19 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
     }
     
     return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
+  };
+  
+  // Add fallback text parsing method to renderer
+  renderer.fallbackParseText = function(text) {
+    if (!text) return '';
+    
+    // Manually parse markdown links in text
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
+      if (href.startsWith('#')) {
+        return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+      }
+      return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+    });
   };
   
   // Enhanced list styling with proper TOC detection and nesting
