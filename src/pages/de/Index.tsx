@@ -137,7 +137,7 @@ const GermanIndex = () => {
         <title>ooliv - Werbeagentur Mainz</title>
         <meta
           name="description"
-          content="ooliv – Ihre Marketing Agentur in Mainz: Kreativ, strategisch und individuell. Wir bringen Ihr Unternehmen mit durchdachten Konzepten und Expertise voran."
+          content="ooliv – Werbeagentur Mainz für messbare Ergebnisse im Web. Kreativ, strategisch und individuell bringen wir Ihr Unternehmen mit durchdachten Konzepten voran."
         />
         
         {/* Geographic Metadata for Mainz */}
