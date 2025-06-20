@@ -32,7 +32,7 @@ const WerbeagenturFrankfurt = () => {
         <title>Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg</title>
         <meta
           name="description"
-          content="ooliv – Ihre kompetente Werbeagentur in Frankfurt für digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
+          content="Werbeagentur Frankfurt – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
         />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

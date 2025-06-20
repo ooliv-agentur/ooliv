@@ -18,7 +18,7 @@ const GermanWebDesign = () => {
       <PageLayout className="overflow-x-hidden">
         <Helmet>
           <title>Webdesign Mainz – Individuell & Erfolgreich</title>
-          <meta name="description" content="Kreatives Webdesign in Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern." />
+          <meta name="description" content="Professionelles Webdesign Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern." />
         </Helmet>
         
         <WebDesignHero />

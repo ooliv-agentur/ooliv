@@ -34,7 +34,7 @@ const GermanAboutUs = () => {
     >
       <Helmet>
         <title>Über ooliv – Ihre Marketing Agentur Mainz</title>
-        <meta name="description" content="Erfahren Sie mehr über ooliv – Ihre Marketing Agentur Mainz. Persönlich, erfahren und individuell. Gemeinsam gestalten wir Ihre digitale Zukunft." />
+        <meta name="description" content="Über ooliv – Ihre Marketing Agentur Mainz. Persönlich, erfahren und individuell gestalten wir gemeinsam Ihre digitale Zukunft." />
       </Helmet>
 
       <AboutUsHero />

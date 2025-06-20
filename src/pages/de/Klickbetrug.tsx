@@ -18,7 +18,7 @@ const Klickbetrug = () => {
     <PageLayout seoText={<KlickbetrugSEOText />}>
       <Helmet>
         <title>Klickbetrug bei Google Ads stoppen – Automatischer Schutz vor Fake-Klicks</title>
-        <meta name="description" content="Vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Google Ads Budget automatisch." />
+        <meta name="description" content="Klickbetrug bei Google Ads stoppen – vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Budget automatisch." />
         <meta name="keywords" content="Klickbetrug, Click Fraud, Google Ads Schutz, Fake Klicks, Bot Erkennung, Werbebudget schützen" />
         <link rel="canonical" href="https://ooliv.de/klickbetrug" />
       </Helmet>

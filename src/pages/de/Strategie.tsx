@@ -25,7 +25,7 @@ const GermanStrategy = () => {
     >
       <Helmet>
         <title>Webkonzept & Strategie für Ihren Erfolg – ooliv Mainz</title>
-        <meta name="description" content="Wir entwickeln individuelle Digitalstrategien mit Webkonzepten, die messbare Ergebnisse liefern – für mehr Sichtbarkeit, mehr Leads und eine starke Marke." />
+        <meta name="description" content="Webkonzept & Strategie für messbare Erfolge – ooliv entwickelt individuelle Digitalstrategien für mehr Sichtbarkeit, mehr Leads und eine starke Marke." />
       </Helmet>
 
       <StrategieHero />

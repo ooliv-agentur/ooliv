@@ -55,7 +55,7 @@ const GermanSEO = () => {
     >
       <Helmet>
         <title>SEO Agentur Mainz – Sichtbar im Netz</title>
-        <meta name="description" content="Als SEO Agentur in Mainz sorgen wir für Top-Rankings. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung." />
+        <meta name="description" content="SEO Agentur Mainz für Top-Rankings und mehr Sichtbarkeit. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung." />
       </Helmet>
 
       <SEOHeroDE />

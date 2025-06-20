@@ -27,7 +27,7 @@ const GermanContact = () => {
     >
       <Helmet>
         <title>Kontakt – ooliv Marketing Agentur Mainz</title>
-        <meta name="description" content="Kontaktieren Sie ooliv – Ihre Marketing Agentur Mainz. Persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr Projekt." />
+        <meta name="description" content="Kontakt zur ooliv Marketing Agentur Mainz – persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr digitales Projekt." />
       </Helmet>
 
       <ContactHeroDE />
