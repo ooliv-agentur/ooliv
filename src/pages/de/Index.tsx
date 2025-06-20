@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -48,7 +49,7 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'ooliv - Werbeagentur Mainz';
+    document.title = 'ooliv Werbeagentur Mainz – Websites für messbare Erfolge';
   }, []);
 
   const handleStartProject = () => {
@@ -134,10 +135,10 @@ const GermanIndex = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>ooliv - Werbeagentur Mainz</title>
+        <title>ooliv Werbeagentur Mainz – Websites für messbare Erfolge</title>
         <meta
           name="description"
-          content="ooliv – Ihre Marketing Agentur in Mainz: Kreativ, strategisch und individuell. Wir bringen Ihr Unternehmen mit durchdachten Konzepten und Expertise voran."
+          content="Ihre Werbeagentur Mainz für Websites, die mehr Leads generieren. Strategie, Design und Performance aus einer Hand – ohne Templates, mit messbaren Ergebnissen."
         />
         
         {/* Geographic Metadata for Mainz */}
@@ -145,7 +146,7 @@ const GermanIndex = () => {
         <meta name="geo.placename" content="Mainz" />
         <meta name="geo.position" content="49.9928617;8.2472526" />
         <meta name="ICBM" content="49.9928617, 8.2472526" />
-        <meta name="DC.title" content="ooliv - Werbeagentur Mainz" />
+        <meta name="DC.title" content="ooliv Werbeagentur Mainz – Websites für messbare Erfolge" />
         
         {/* LocalBusiness Schema Markup */}
         <script type="application/ld+json">
@@ -157,6 +158,17 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
+        {/* Main H1 heading for SEO */}
+        <div className="bg-medico-mint pt-8 pb-4">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] font-bold text-medico-darkGreen text-left mb-4">
+                Werbeagentur Mainz für digitale Erfolge
+              </h1>
+            </div>
+          </div>
+        </div>
+        
         <DeutscherHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
