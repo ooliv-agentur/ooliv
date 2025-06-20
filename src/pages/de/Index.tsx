@@ -49,7 +49,7 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'ooliv - Werbeagentur Mainz';
+    document.title = 'Ihre Full-Service Werbeagentur Mainz entdecken';
   }, []);
 
   const handleStartProject = () => {
@@ -135,7 +135,7 @@ const GermanIndex = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>ooliv - Werbeagentur Mainz</title>
+        <title>Ihre Full-Service Werbeagentur Mainz entdecken</title>
         <meta
           name="description"
           content="ooliv – Werbeagentur Mainz für messbare Ergebnisse im Web. Kreativ, strategisch und individuell bringen wir Ihr Unternehmen mit durchdachten Konzepten voran."
