@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -174,13 +175,29 @@ const GermanIndex = () => {
         <DeutscherHero />
         <DeutscherAboutSection />
         
-        {/* New unique positioning section */}
+        {/* Updated unique positioning section */}
         <div className="py-12 bg-medico-mint">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-lg text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
-                Als spezialisierte <strong>Werbeagentur Mainz</strong> mit über 16 Jahren Erfahrung verbinden wir strategisches Denken mit technischer Exzellenz. Unser <strong>Webdesign Mainz</strong> fokussiert sich auf B2B-Unternehmen und kombiniert datenbasierte SEO-Optimierung mit konversionsstarken Websites. Sie arbeiten direkt mit unserem Gründer – ohne Umwege, ohne Buzzwords, nur messbare Ergebnisse.
-              </p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-medico-darkGreen">
+                Warum ooliv die richtige Wahl für Ihr Unternehmen ist
+              </h2>
+              <div className="max-w-4xl mx-auto space-y-4">
+                <p className="text-lg text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                  Als erfahrene <strong>Werbeagentur in Mainz</strong> begleiten wir B2B-Unternehmen bei der digitalen Transformation – mit maßgeschneiderten Websites, datengetriebener SEO und messbaren Ergebnissen.
+                </p>
+                <p className="text-lg text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                  Unsere Leistungen im Bereich <strong>Webdesign Mainz</strong> vereinen Strategie, Technologie und Conversion-Optimierung. Dabei arbeiten Sie direkt mit unserem Gründer – effizient, transparent und ohne Umwege.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors">
+                    ➤ Webdesign Mainz entdecken
+                  </Link>
+                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors">
+                    ➤ SEO-Optimierung erfahren
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
