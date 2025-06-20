@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -49,7 +48,7 @@ const GermanIndex = () => {
     console.log('GermanIndex component mounted - setting language to German');
     
     // Force title update immediately
-    document.title = 'ooliv Werbeagentur Mainz - Websites für messbare Erfolge';
+    document.title = 'ooliv - Werbeagentur Mainz';
   }, []);
 
   const handleStartProject = () => {
@@ -135,10 +134,10 @@ const GermanIndex = () => {
     <>
       <Helmet prioritizeSeoTags>
         <html lang="de" />
-        <title>ooliv Werbeagentur Mainz - Websites für messbare Erfolge</title>
+        <title>ooliv - Werbeagentur Mainz</title>
         <meta
           name="description"
-          content="Werbeagentur Mainz für Websites, die mehr Kunden bringen. SEO-optimiert, professionell entwickelt. Kostenloses Beratungsgespräch vereinbaren!"
+          content="ooliv – Ihre Marketing Agentur in Mainz: Kreativ, strategisch und individuell. Wir bringen Ihr Unternehmen mit durchdachten Konzepten und Expertise voran."
         />
         
         {/* Geographic Metadata for Mainz */}
@@ -146,7 +145,7 @@ const GermanIndex = () => {
         <meta name="geo.placename" content="Mainz" />
         <meta name="geo.position" content="49.9928617;8.2472526" />
         <meta name="ICBM" content="49.9928617, 8.2472526" />
-        <meta name="DC.title" content="ooliv Werbeagentur Mainz - Websites für messbare Erfolge" />
+        <meta name="DC.title" content="ooliv - Werbeagentur Mainz" />
         
         {/* LocalBusiness Schema Markup */}
         <script type="application/ld+json">
@@ -158,12 +157,6 @@ const GermanIndex = () => {
       </Helmet>
       
       <PageLayout className="overflow-x-hidden">
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-medico-darkGreen text-center mb-8">
-            Werbeagentur Mainz
-          </h1>
-        </div>
-        
         <DeutscherHero />
         <DeutscherAboutSection />
         <TeamTeaserDE />
