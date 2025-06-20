@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -139,6 +140,20 @@ const GermanIndex = () => {
           name="description"
           content="ooliv – Werbeagentur Mainz für messbare Ergebnisse im Web. Kreativ, strategisch und individuell bringen wir Ihr Unternehmen mit durchdachten Konzepten voran."
         />
+        
+        {/* Open Graph tags */}
+        <meta property="og:title" content="ooliv – Werbeagentur Mainz" />
+        <meta property="og:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen. Jetzt starten." />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+        <meta property="og:url" content="https://ooliv.de/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ooliv Werbeagentur Mainz" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ooliv – Werbeagentur Mainz" />
+        <meta name="twitter:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen." />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475" />
         
         {/* Geographic Metadata for Mainz */}
         <meta name="geo.region" content="DE-RP" />
