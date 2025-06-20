@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -62,7 +61,7 @@ const GermanIndex = () => {
     "@type": "LocalBusiness",
     "name": "ooliv Werbeagentur Mainz",
     "alternateName": "ooliv",
-    "description": "Werbeagentur Mainz für messbare Ergebnisse im Web. Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen.",
+    "description": "Werbeagentur Mainz für messbare Ergebnisse im Web. Professionelles Webdesign Mainz, SEO-Optimierung und digitale Strategien für nachhaltigen Unternehmenserfolg.",
     "url": "https://ooliv.de",
     "telephone": "+49-6131-5544041",
     "email": "hallo@ooliv.de",
@@ -138,7 +137,7 @@ const GermanIndex = () => {
         <title>Ihre Full-Service Werbeagentur Mainz entdecken</title>
         <meta
           name="description"
-          content="ooliv – Werbeagentur Mainz für messbare Ergebnisse im Web. Kreativ, strategisch und individuell bringen wir Ihr Unternehmen mit durchdachten Konzepten voran."
+          content="ooliv – Werbeagentur Mainz für messbare Ergebnisse im Web. Professionelles Webdesign Mainz, SEO-Optimierung und digitale Strategien für nachhaltigen Unternehmenserfolg."
         />
         
         {/* Open Graph tags */}
@@ -174,6 +173,18 @@ const GermanIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <DeutscherHero />
         <DeutscherAboutSection />
+        
+        {/* New unique positioning section */}
+        <div className="py-12 bg-medico-mint">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <p className="text-lg text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
+                Als spezialisierte <strong>Werbeagentur Mainz</strong> mit über 16 Jahren Erfahrung verbinden wir strategisches Denken mit technischer Exzellenz. Unser <strong>Webdesign Mainz</strong> fokussiert sich auf B2B-Unternehmen und kombiniert datenbasierte SEO-Optimierung mit konversionsstarken Websites. Sie arbeiten direkt mit unserem Gründer – ohne Umwege, ohne Buzzwords, nur messbare Ergebnisse.
+              </p>
+            </div>
+          </div>
+        </div>
+        
         <TeamTeaserDE />
         
         <div className="py-16 bg-white">
