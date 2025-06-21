@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -104,8 +103,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       required: false,
       cookies: [
         'Google Analytics (_ga, _ga_*, _gid)',
-        'Performance-Tracking Cookies',
-        'Besucheranalyse Cookies'
+        'Performance-Tracking Cookies'
       ]
     },
     {
@@ -116,8 +114,6 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       required: false,
       cookies: [
         'Google Ads Cookies (_gcl_*)',
-        'Facebook Pixel Cookies (_fbp, _fbc)',
-        'Remarketing Cookies',
         'Conversion-Tracking Cookies'
       ]
     },
@@ -128,9 +124,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       description: t.preferences.description,
       required: false,
       cookies: [
-        'Spracheinstellungen (language-preference)',
-        'Theme-Einstellungen',
-        'Benutzerinterface Präferenzen'
+        'Spracheinstellungen (language-preference)'
       ]
     }
   ];
