@@ -89,28 +89,49 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       icon: Shield,
       title: t.essential.title,
       description: t.essential.description,
-      required: true
+      required: true,
+      cookies: [
+        'cookie-consent (Speichert Ihre Cookie-Einstellungen)',
+        'cookie-session-id (Session-Identifikation)',
+        'sb-* (Supabase Authentication Cookies)'
+      ]
     },
     {
       key: 'analytics' as const,
       icon: BarChart3,
       title: t.analytics.title,
       description: t.analytics.description,
-      required: false
+      required: false,
+      cookies: [
+        'Google Analytics (_ga, _ga_*, _gid)',
+        'Performance-Tracking Cookies',
+        'Besucheranalyse Cookies'
+      ]
     },
     {
       key: 'marketing' as const,
       icon: Target,
       title: t.marketing.title,
       description: t.marketing.description,
-      required: false
+      required: false,
+      cookies: [
+        'Google Ads Cookies (_gcl_*)',
+        'Facebook Pixel Cookies (_fbp, _fbc)',
+        'Remarketing Cookies',
+        'Conversion-Tracking Cookies'
+      ]
     },
     {
       key: 'preferences' as const,
       icon: Settings,
       title: t.preferences.title,
       description: t.preferences.description,
-      required: false
+      required: false,
+      cookies: [
+        'Spracheinstellungen (language-preference)',
+        'Theme-Einstellungen',
+        'Benutzerinterface Präferenzen'
+      ]
     }
   ];
 
@@ -188,9 +209,17 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-gray-600 pr-4">
+                      <p className="text-sm text-gray-600 pr-4 mb-2">
                         {category.description}
                       </p>
+                      <div className="text-xs text-gray-500">
+                        <strong>Verwendete Cookies:</strong>
+                        <ul className="mt-1 list-disc list-inside space-y-1">
+                          {category.cookies.map((cookie, index) => (
+                            <li key={index}>{cookie}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                     <div className="flex-shrink-0 ml-4">
                       <Switch
