@@ -117,6 +117,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   const handleToggle = (key: keyof typeof settings) => {
     if (key === 'essential') return; // Cannot disable essential cookies
     
+    console.log(`Toggling ${key} from ${settings[key]} to ${!settings[key]}`);
     setSettings(prev => ({
       ...prev,
       [key]: !prev[key]
@@ -143,7 +144,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[10000] bg-black/50 flex items-center justify-center p-4">
       <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-white">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
@@ -173,7 +174,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
               const isChecked = settings[category.key];
               
               return (
-                <div key={category.key} className="border rounded-lg p-4">
+                <div key={category.key} className="border border-gray-200 rounded-lg p-4 hover:border-medico-turquoise/30 transition-colors">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
@@ -186,12 +187,12 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         {category.description}
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 ml-4">
                       <Switch
                         checked={isChecked}
                         onCheckedChange={() => handleToggle(category.key)}
                         disabled={category.required}
-                        className="data-[state=checked]:bg-medico-turquoise"
+                        className="data-[state=checked]:bg-medico-turquoise data-[state=unchecked]:bg-gray-200"
                       />
                     </div>
                   </div>
