@@ -34,7 +34,7 @@ interface CookieConsentProviderProps {
 
 export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) => {
   const [consent, setConsent] = useState<CookieConsent | null>(null);
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(true); // Default to true, will be set to false if consent exists
 
   const getSessionId = () => {
     let sessionId = localStorage.getItem('cookie-session-id');
@@ -64,7 +64,7 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       localStorage.setItem('cookie-consent', JSON.stringify(newConsent));
       setConsent(newConsent);
       setShowBanner(false);
-      console.log('Cookie consent saved successfully');
+      console.log('Cookie consent saved successfully, banner hidden');
     } catch (error) {
       console.error('Error saving cookie consent:', error);
     }
@@ -103,18 +103,33 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
   };
 
   useEffect(() => {
-    console.log('CookieConsentProvider: Checking for existing consent');
+    console.log('CookieConsentProvider: Initializing...');
     const storedConsent = localStorage.getItem('cookie-consent');
     
     if (storedConsent) {
-      console.log('Found existing consent:', storedConsent);
-      setConsent(JSON.parse(storedConsent));
-      setShowBanner(false);
+      try {
+        const parsedConsent = JSON.parse(storedConsent);
+        console.log('Found existing consent:', parsedConsent);
+        setConsent(parsedConsent);
+        setShowBanner(false);
+        console.log('Banner set to false due to existing consent');
+      } catch (error) {
+        console.error('Error parsing stored consent:', error);
+        // If parsing fails, remove the invalid data and show banner
+        localStorage.removeItem('cookie-consent');
+        setShowBanner(true);
+        console.log('Invalid consent data removed, showing banner');
+      }
     } else {
       console.log('No existing consent found, showing banner');
       setShowBanner(true);
     }
   }, []);
+
+  // Debug log whenever showBanner changes
+  useEffect(() => {
+    console.log('CookieConsentProvider: showBanner changed to:', showBanner);
+  }, [showBanner]);
 
   return (
     <CookieConsentContext.Provider

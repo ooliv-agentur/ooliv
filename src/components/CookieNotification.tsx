@@ -16,6 +16,7 @@ const CookieNotification = () => {
   // Debug logging
   useEffect(() => {
     console.log('CookieNotification: showBanner state changed to:', showBanner);
+    console.log('CookieNotification: localStorage cookie-consent:', localStorage.getItem('cookie-consent'));
   }, [showBanner]);
 
   const content = {
@@ -46,7 +47,7 @@ const CookieNotification = () => {
     return null;
   }
 
-  console.log('CookieNotification: Rendering banner');
+  console.log('CookieNotification: Rendering banner - should be visible now!');
 
   return (
     <>
