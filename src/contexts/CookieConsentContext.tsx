@@ -49,6 +49,8 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
     try {
       const sessionId = getSessionId();
       
+      console.log('Saving cookie consent:', newConsent);
+      
       await supabase.from('cookie_consents').insert({
         session_id: sessionId,
         essential: newConsent.essential,
@@ -62,6 +64,7 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       localStorage.setItem('cookie-consent', JSON.stringify(newConsent));
       setConsent(newConsent);
       setShowBanner(false);
+      console.log('Cookie consent saved successfully');
     } catch (error) {
       console.error('Error saving cookie consent:', error);
     }
@@ -74,6 +77,7 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       marketing: true,
       preferences: true
     };
+    console.log('Accepting all cookies');
     saveConsent(allConsent);
   };
 
@@ -84,23 +88,30 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       marketing: false,
       preferences: false
     };
+    console.log('Accepting essential cookies only');
     saveConsent(essentialConsent);
   };
 
   const updateConsent = (newConsent: CookieConsent) => {
+    console.log('Updating cookie consent:', newConsent);
     saveConsent(newConsent);
   };
 
   const hideBanner = () => {
+    console.log('Hiding cookie banner');
     setShowBanner(false);
   };
 
   useEffect(() => {
+    console.log('CookieConsentProvider: Checking for existing consent');
     const storedConsent = localStorage.getItem('cookie-consent');
+    
     if (storedConsent) {
+      console.log('Found existing consent:', storedConsent);
       setConsent(JSON.parse(storedConsent));
       setShowBanner(false);
     } else {
+      console.log('No existing consent found, showing banner');
       setShowBanner(true);
     }
   }, []);

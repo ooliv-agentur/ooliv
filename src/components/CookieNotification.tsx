@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { X, Settings, Cookie } from 'lucide-react';
@@ -12,6 +12,11 @@ const CookieNotification = () => {
   const { showBanner, acceptAll, acceptEssential, hideBanner } = useCookieConsent();
   const { language } = useLanguage();
   const [showSettings, setShowSettings] = useState(false);
+
+  // Debug logging
+  useEffect(() => {
+    console.log('CookieNotification: showBanner state changed to:', showBanner);
+  }, [showBanner]);
 
   const content = {
     de: {
@@ -34,9 +39,14 @@ const CookieNotification = () => {
 
   const t = content[language];
 
+  console.log('CookieNotification render: showBanner =', showBanner);
+
   if (!showBanner) {
+    console.log('CookieNotification: Banner hidden, returning null');
     return null;
   }
+
+  console.log('CookieNotification: Rendering banner');
 
   return (
     <>
