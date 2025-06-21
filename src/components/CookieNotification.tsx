@@ -9,8 +9,108 @@ import { Link } from 'react-router-dom';
 import CookieSettings from './CookieSettings';
 
 const CookieNotification = () => {
-  // Always return null to hide the cookie banner
-  return null;
+  const { showBanner, acceptAll, acceptEssential, hideBanner } = useCookieConsent();
+  const { language } = useLanguage();
+  const [showSettings, setShowSettings] = useState(false);
+
+  const content = {
+    de: {
+      title: "Diese Website verwendet Cookies",
+      description: "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Einige sind notwendig, andere helfen uns, die Website zu verbessern.",
+      acceptAll: "Alle akzeptieren",
+      acceptEssential: "Nur notwendige",
+      settings: "Einstellungen",
+      privacy: "Datenschutz"
+    },
+    en: {
+      title: "This website uses cookies",
+      description: "We use cookies to provide you with the best possible experience on our website. Some are necessary, others help us improve the site.",
+      acceptAll: "Accept all",
+      acceptEssential: "Essential only", 
+      settings: "Settings",
+      privacy: "Privacy"
+    }
+  };
+
+  const t = content[language];
+
+  if (!showBanner) {
+    return null;
+  }
+
+  return (
+    <>
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200 shadow-lg">
+        <Card className="max-w-4xl mx-auto p-6">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Cookie className="w-4 h-4 text-medico-turquoise" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-medico-darkGreen mb-2">
+                  {t.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {t.description}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={hideBanner}
+              className="p-1 text-gray-400 hover:text-gray-600 flex-shrink-0"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
+            <div className="flex flex-wrap gap-2 text-sm">
+              <Link 
+                to="/datenschutz" 
+                className="text-medico-turquoise hover:underline"
+              >
+                {t.privacy}
+              </Link>
+            </div>
+            
+            <div className="flex gap-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowSettings(true)}
+                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white"
+              >
+                <Settings className="w-4 h-4 mr-2" />
+                {t.settings}
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={acceptEssential}
+                className="border-gray-300"
+              >
+                {t.acceptEssential}
+              </Button>
+              
+              <Button
+                size="sm"
+                onClick={acceptAll}
+                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white"
+              >
+                {t.acceptAll}
+              </Button>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      {showSettings && (
+        <CookieSettings onClose={() => setShowSettings(false)} />
+      )}
+    </>
+  );
 };
 
 export default CookieNotification;

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
@@ -16,11 +16,23 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   const { language } = useLanguage();
   
   const [settings, setSettings] = useState({
-    essential: consent?.essential ?? true,
-    analytics: consent?.analytics ?? false,
-    marketing: consent?.marketing ?? false,
-    preferences: consent?.preferences ?? false
+    essential: true,
+    analytics: false,
+    marketing: false,
+    preferences: false
   });
+
+  // Initialize settings from current consent when component mounts
+  useEffect(() => {
+    if (consent) {
+      setSettings({
+        essential: consent.essential,
+        analytics: consent.analytics,
+        marketing: consent.marketing,
+        preferences: consent.preferences
+      });
+    }
+  }, [consent]);
 
   const content = {
     de: {
@@ -53,7 +65,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
         description: "These cookies are necessary for the proper functioning of the website and cannot be disabled."
       },
       analytics: {
-        title: "Analytics Cookies",
+        title: "Analytics Cookies", 
         description: "These cookies help us understand how visitors interact with our website."
       },
       marketing: {
@@ -112,6 +124,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   };
 
   const handleSave = () => {
+    console.log('Saving cookie settings:', settings);
     updateConsent(settings);
     onClose();
   };
@@ -123,6 +136,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       marketing: true,
       preferences: true
     };
+    console.log('Accepting all cookies:', allAccepted);
     setSettings(allAccepted);
     updateConsent(allAccepted);
     onClose();
@@ -156,6 +170,8 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
           <div className="space-y-4 mb-6">
             {cookieCategories.map((category) => {
               const Icon = category.icon;
+              const isChecked = settings[category.key];
+              
               return (
                 <div key={category.key} className="border rounded-lg p-4">
                   <div className="flex items-start justify-between">
@@ -172,7 +188,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                     </div>
                     <div className="flex-shrink-0">
                       <Switch
-                        checked={settings[category.key]}
+                        checked={isChecked}
                         onCheckedChange={() => handleToggle(category.key)}
                         disabled={category.required}
                         className="data-[state=checked]:bg-medico-turquoise"
