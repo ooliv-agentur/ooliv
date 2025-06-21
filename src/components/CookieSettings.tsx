@@ -182,6 +182,11 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         <h3 className="font-medium text-medico-darkGreen">
                           {category.title}
                         </h3>
+                        {category.required && (
+                          <span className="text-xs bg-medico-turquoise/10 text-medico-turquoise px-2 py-1 rounded-full font-medium">
+                            Erforderlich
+                          </span>
+                        )}
                       </div>
                       <p className="text-sm text-gray-600 pr-4">
                         {category.description}
@@ -192,8 +197,25 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         checked={isChecked}
                         onCheckedChange={() => handleToggle(category.key)}
                         disabled={category.required}
-                        className="data-[state=checked]:bg-medico-turquoise data-[state=unchecked]:bg-gray-200"
+                        className={`
+                          ${isChecked 
+                            ? 'data-[state=checked]:bg-medico-turquoise' 
+                            : 'data-[state=unchecked]:bg-gray-300'
+                          }
+                          ${category.required 
+                            ? 'opacity-75 cursor-not-allowed' 
+                            : 'hover:shadow-sm transition-all'
+                          }
+                          data-[state=checked]:border-medico-turquoise
+                          data-[state=unchecked]:border-gray-300
+                          border-2
+                        `}
                       />
+                      <div className="text-xs text-center mt-1 font-medium">
+                        <span className={isChecked ? 'text-medico-turquoise' : 'text-gray-500'}>
+                          {isChecked ? 'AN' : 'AUS'}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
