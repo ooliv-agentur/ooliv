@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
-import { X, Cookie, Shield, BarChart3, Target, Settings } from 'lucide-react';
+import { X, Cookie, Shield, BarChart3, Target } from 'lucide-react';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -17,8 +17,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
   const [settings, setSettings] = useState({
     essential: true,
     analytics: false,
-    marketing: false,
-    preferences: false
+    marketing: false
   });
 
   // Initialize settings from current consent when component mounts
@@ -27,8 +26,7 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       setSettings({
         essential: consent.essential,
         analytics: consent.analytics,
-        marketing: consent.marketing,
-        preferences: consent.preferences
+        marketing: consent.marketing
       });
     }
   }, [consent]);
@@ -49,10 +47,6 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
         title: "Marketing-Cookies",
         description: "Diese Cookies werden verwendet, um Ihnen relevante Werbung basierend auf Ihren Interessen zu zeigen."
       },
-      preferences: {
-        title: "Präferenz-Cookies",
-        description: "Diese Cookies speichern Ihre Einstellungen und Präferenzen für zukünftige Besuche."
-      },
       save: "Einstellungen speichern",
       acceptAll: "Alle akzeptieren"
     },
@@ -70,10 +64,6 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       marketing: {
         title: "Marketing Cookies",
         description: "These cookies are used to show you relevant advertising based on your interests."
-      },
-      preferences: {
-        title: "Preference Cookies",
-        description: "These cookies store your settings and preferences for future visits."
       },
       save: "Save Settings",
       acceptAll: "Accept All"
@@ -116,16 +106,6 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
         'Google Ads Cookies (_gcl_*)',
         'Conversion-Tracking Cookies'
       ]
-    },
-    {
-      key: 'preferences' as const,
-      icon: Settings,
-      title: t.preferences.title,
-      description: t.preferences.description,
-      required: false,
-      cookies: [
-        'Spracheinstellungen (language-preference)'
-      ]
     }
   ];
 
@@ -141,7 +121,9 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
 
   const handleSave = () => {
     console.log('Saving cookie settings:', settings);
-    updateConsent(settings);
+    // Add preferences: false since we removed it
+    const settingsWithPreferences = { ...settings, preferences: false };
+    updateConsent(settingsWithPreferences);
     onClose();
   };
 
@@ -150,10 +132,10 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
       essential: true,
       analytics: true,
       marketing: true,
-      preferences: true
+      preferences: false // Always false since we don't use preferences
     };
     console.log('Accepting all cookies:', allAccepted);
-    setSettings(allAccepted);
+    setSettings({ essential: true, analytics: true, marketing: true });
     updateConsent(allAccepted);
     onClose();
   };
