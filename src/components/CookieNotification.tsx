@@ -52,10 +52,10 @@ const CookieNotification = () => {
   return (
     <>
       <div 
-        className="fixed bottom-0 left-0 right-0 z-[9999] p-4 bg-white border-t border-gray-200 shadow-lg"
+        className="fixed bottom-0 left-0 right-0 z-[9999] p-4"
         style={{ zIndex: 9999 }}
       >
-        <Card className="max-w-4xl mx-auto p-6 border-medico-turquoise/20">
+        <Card className="max-w-4xl mx-auto p-6 bg-white/95 backdrop-blur-sm border-medico-turquoise/20 shadow-lg">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
