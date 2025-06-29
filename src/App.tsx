@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -10,6 +9,7 @@ import ScrollIndicator from './components/ScrollIndicator';
 import FloatingActionButtons from './components/FloatingActionButtons';
 import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
+import OliviaChatButton from './components/OliviaChatButton';
 import { Toaster } from 'sonner';
 
 // Import all pages directly (no lazy loading)
@@ -51,6 +51,7 @@ function App() {
               <ScrollIndicator />
               <FloatingActionButtons />
               <CookieNotification />
+              <OliviaChatButton />
               
               {/* Single LeadGenerationOverlay instance for the entire app */}
               <LeadGenerationOverlay 
