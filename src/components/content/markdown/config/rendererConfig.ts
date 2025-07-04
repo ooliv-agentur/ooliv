@@ -137,8 +137,8 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
       return `<tr class="hover:bg-medico-mint/10 transition-colors duration-200">${cells}</tr>`;
     }).join('');
     
-    return `<div class="my-12 overflow-x-auto rounded-xl border border-medico-turquoise/20 shadow-lg">
-      <table class="w-full min-w-full bg-white">
+    return `<div class="my-12 rounded-xl border border-medico-turquoise/20 shadow-lg">
+      <table class="w-full bg-white">
         <thead>
           <tr>${headerCells}</tr>
         </thead>
