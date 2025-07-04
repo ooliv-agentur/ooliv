@@ -88,12 +88,12 @@ const CookieNotification = () => {
               </Link>
             </div>
             
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowSettings(true)}
-                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white transition-colors"
+                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white transition-colors w-full sm:w-auto"
               >
                 <Settings className="w-4 h-4 mr-2" />
                 {t.settings}
@@ -103,7 +103,7 @@ const CookieNotification = () => {
                 variant="outline"
                 size="sm"
                 onClick={acceptEssential}
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors w-full sm:w-auto"
               >
                 {t.acceptEssential}
               </Button>
@@ -111,7 +111,7 @@ const CookieNotification = () => {
               <Button
                 size="sm"
                 onClick={acceptAll}
-                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors"
+                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors w-full sm:w-auto"
               >
                 {t.acceptAll}
               </Button>
