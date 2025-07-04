@@ -228,17 +228,17 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
             })}
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button
               onClick={handleSave}
-              className="flex-1 bg-medico-turquoise hover:bg-medico-darkGreen text-white"
+              className="flex-1 bg-medico-turquoise hover:bg-medico-darkGreen text-white w-full sm:w-auto"
             >
               {t.save}
             </Button>
             <Button
               onClick={handleAcceptAll}
               variant="outline"
-              className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white"
+              className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white w-full sm:w-auto"
             >
               {t.acceptAll}
             </Button>
