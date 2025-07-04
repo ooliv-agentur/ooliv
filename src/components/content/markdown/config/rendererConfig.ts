@@ -138,7 +138,7 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
     }).join('');
     
     return `<div class="my-12 rounded-xl border border-medico-turquoise/20 shadow-lg">
-      <table class="w-full bg-white">
+      <table class="w-full table-fixed bg-white">
         <thead>
           <tr>${headerCells}</tr>
         </thead>
