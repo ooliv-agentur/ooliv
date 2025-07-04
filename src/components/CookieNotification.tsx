@@ -52,50 +52,50 @@ const CookieNotification = () => {
   return (
     <>
       <div 
-        className="fixed bottom-0 left-0 right-0 z-[9999] p-2 sm:p-4"
+        className="fixed bottom-0 left-0 right-0 z-[9999] p-4"
         style={{ zIndex: 9999 }}
       >
-        <Card className="max-w-4xl mx-auto p-3 sm:p-6 bg-white/95 backdrop-blur-sm border-medico-turquoise/20 shadow-lg">
-          <div className="flex items-start justify-between mb-3 sm:mb-4">
-            <div className="flex items-start gap-2 sm:gap-3 flex-1 mr-2">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <Cookie className="w-3 h-3 sm:w-4 sm:h-4 text-medico-turquoise" />
+        <Card className="max-w-4xl mx-auto p-6 bg-white/95 backdrop-blur-sm border-medico-turquoise/20 shadow-lg">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Cookie className="w-4 h-4 text-medico-turquoise" />
               </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-medico-darkGreen mb-1 sm:mb-2 text-sm sm:text-base leading-tight">
+              <div>
+                <h3 className="font-semibold text-medico-darkGreen mb-2">
                   {t.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {t.description}
                 </p>
               </div>
             </div>
             <button
               onClick={hideBanner}
-              className="p-1 text-gray-400 hover:text-gray-600 flex-shrink-0 transition-colors touch-manipulation"
+              className="p-1 text-gray-400 hover:text-gray-600 flex-shrink-0 transition-colors"
             >
-              <X className="w-4 h-4 sm:w-5 sm:h-5" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <div className="flex justify-center sm:justify-start">
+          <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
+            <div className="flex flex-wrap gap-2 text-sm">
               <Link 
                 to="/datenschutz" 
-                className="text-medico-turquoise hover:text-medico-darkGreen hover:underline transition-colors text-xs sm:text-sm touch-manipulation"
+                className="text-medico-turquoise hover:text-medico-darkGreen hover:underline transition-colors"
               >
                 {t.privacy}
               </Link>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <div className="flex gap-3">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowSettings(true)}
-                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white transition-colors text-xs sm:text-sm h-10 sm:h-9 touch-manipulation flex-1 sm:flex-none"
+                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white transition-colors"
               >
-                <Settings className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                <Settings className="w-4 h-4 mr-2" />
                 {t.settings}
               </Button>
               
@@ -103,7 +103,7 @@ const CookieNotification = () => {
                 variant="outline"
                 size="sm"
                 onClick={acceptEssential}
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors text-xs sm:text-sm h-10 sm:h-9 touch-manipulation flex-1 sm:flex-none"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 {t.acceptEssential}
               </Button>
@@ -111,7 +111,7 @@ const CookieNotification = () => {
               <Button
                 size="sm"
                 onClick={acceptAll}
-                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors text-xs sm:text-sm h-10 sm:h-9 touch-manipulation flex-1 sm:flex-none font-medium"
+                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors"
               >
                 {t.acceptAll}
               </Button>
