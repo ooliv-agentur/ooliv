@@ -1,9 +1,9 @@
 User-agent: *
 Allow: /
 
-# Block old /de/ paths - they redirect anyway
-Disallow: /de/
-Disallow: /de
+# Allow all German pages - they are the main content now
+Allow: /de/
+Allow: /de
 
 # Block common tracking parameters
 Disallow: /*?utm_source=*
