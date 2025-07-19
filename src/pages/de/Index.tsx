@@ -196,7 +196,7 @@ const GermanIndex = () => {
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 
-                      href="https://www.ihk-rheinhessen.de/" 
+                      href="https://www.rheinhessen.ihk24.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors"
@@ -205,7 +205,7 @@ const GermanIndex = () => {
                       IHK Rheinhessen
                     </a>
                     <a 
-                      href="https://www.wirtschaft.rlp.de/" 
+                      href="https://isb.rlp.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors"
