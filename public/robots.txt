@@ -1,9 +1,10 @@
+
 User-agent: *
 Allow: /
 
-# Allow all German pages - they are the main content now
-Allow: /de/
-Allow: /de
+# Block old /de/ paths - they redirect anyway
+Disallow: /de/
+Disallow: /de
 
 # Block common tracking parameters
 Disallow: /*?utm_source=*
@@ -17,4 +18,4 @@ Host: ooliv.de
 # Provide sitemap location
 Sitemap: https://ooliv.de/sitemap.xml
 
-# Last updated: 2025-06-15
+# Last updated: 2025-07-19

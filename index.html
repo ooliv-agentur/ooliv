@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://ooliv.de/" />
     <title>ooliv Werbeagentur Mainz - Webdesign & Marketing für B2B</title>
-    <meta name="description" content="ooliv Werbeagentur entwickelt Websites für B2B-Unternehmen, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads und Content-Marketing aus Mainz." />
+    <meta name="description" content="ooliv Werbeagentur entwickelt Websites für B2B-Unternehunden, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads und Content-Marketing aus Mainz." />
     
-    <!-- Critical CSS inline for fastest rendering -->
+    <!-- Enhanced Critical CSS inline for fastest rendering and better LCP -->
     <style>
       /* Critical CSS - Above the fold styles only */
       *, *::before, *::after {
@@ -62,10 +62,41 @@
       .btn-primary:hover {
         background-color: #2a8a73;
       }
+      /* Hide scrollbar initially to prevent CLS */
       ::-webkit-scrollbar { width: 0; }
+      
+      /* Prevent layout shifts with aspect ratios */
+      .video-container {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+      }
+      
+      /* Optimize font loading to prevent FOIT */
+      @font-face {
+        font-family: 'Satoshi';
+        src: url('/fonts/Satoshi-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Satoshi';
+        src: url('/fonts/Satoshi-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Satoshi';
+        src: url('/fonts/Satoshi-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
     </style>
     
-    <!-- High Priority Resource Preloads -->
+    <!-- Optimized Resource Preloads for better LCP -->
     <link rel="preload" href="/fonts/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin>
@@ -76,36 +107,51 @@
     <!-- Preload hero images for immediate LCP -->
     <link rel="preload" href="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" as="image" type="image/png">
     
-    <!-- High priority preconnects -->
+    <!-- High priority preconnects for Core Web Vitals -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://analytics.ahrefs.com">
     
-    <!-- Medium priority DNS prefetch -->
+    <!-- DNS prefetch for performance -->
     <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
     <link rel="dns-prefetch" href="https://www.google.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
-    <!-- Prefetch likely next page resources -->
+    <!-- Prefetch likely next page resources for better navigation -->
     <link rel="prefetch" href="/webdesign">
     <link rel="prefetch" href="/webentwicklung">
     <link rel="prefetch" href="/kontakt">
     
-    <!-- Preload key case study images that appear early -->
-    <link rel="prefetch" href="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" as="image">
-    <link rel="prefetch" href="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" as="image">
-    
-    <!-- Load non-critical CSS asynchronously -->
+    <!-- Load non-critical CSS asynchronously to improve FCP -->
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
-    <!-- Optimized Google Tag Manager loading -->
+    <!-- Optimized Google Tag Manager loading for performance -->
     <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id=GTM-P4JBH6JZ'+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P4JBH6JZ');
+    </script>
+    
+    <!-- Structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ooliv Werbeagentur",
+      "url": "https://ooliv.de",
+      "logo": "https://ooliv.de/ooliv_logo_2025.svg",
+      "description": "Werbeagentur aus Mainz für B2B-Unternehmen. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mainz",
+        "addressCountry": "DE"
+      },
+      "serviceArea": ["Mainz", "Wiesbaden", "Frankfurt", "Rhein-Main-Gebiet"],
+      "services": ["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing"]
+    }
     </script>
     
     <!-- Resource hints for performance -->
@@ -121,10 +167,10 @@
     
     <div id="root"></div>
     
-    <!-- Load main script with high priority -->
+    <!-- Load main script with optimized priority -->
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Async CSS loading fallback script -->
+    <!-- Performance optimization scripts -->
     <script>
       // Fallback for browsers that don't support rel="preload"
       var cssLink = document.querySelector('link[rel="preload"][as="style"]');
@@ -145,6 +191,17 @@
             e.target.prefetched = true;
           }, 100);
         }
+      });
+      
+      // Lazy load non-critical resources after page load
+      window.addEventListener('load', function() {
+        // Load performance monitoring after main content
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.src = '/src/styles/performance-optimizations.css';
+          script.async = true;
+          document.head.appendChild(script);
+        }, 1000);
       });
     </script>
   </body>
