@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
@@ -53,7 +52,6 @@ const GermanIndex = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Enhanced LocalBusiness schema markup with Mainz focus
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "AdvertisingAgency"],
@@ -211,77 +209,6 @@ const GermanIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <DeutscherHero />
         
-        {/* Enhanced Mainz-specific positioning section with more content */}
-        <div className="py-16 bg-medico-mint">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-medico-darkGreen">
-                Ihre Werbeagentur in Mainz für digitalen Erfolg
-              </h2>
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-lg text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Als etablierte <strong>Werbeagentur in Mainz</strong> verstehen wir die Besonderheiten des rheinland-pfälzischen Marktes. Seit 2008 entwickeln wir für Unternehmen in Mainz und Umgebung digitale Strategien, die messbare Ergebnisse liefern – von der ersten Idee bis zum nachhaltigen Online-Erfolg.
-                </p>
-                <p className="text-lg text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Unser <strong>Webdesign Mainz</strong> Service verbindet lokale Marktkenntnis mit modernster Technologie. Wir gestalten Websites, die nicht nur optisch überzeugen, sondern auch bei Google gefunden werden und Ihre Zielgruppe in qualifizierte Leads verwandeln.
-                </p>
-                <p className="text-lg text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Als <strong>Digitalagentur Mainz</strong> bieten wir Ihnen den kompletten Service aus einer Hand: Strategieentwicklung, Webdesign, SEO-Optimierung, Content-Erstellung und Online-Marketing. Dabei arbeiten Sie direkt mit unserem Gründer zusammen – ohne Umwege, ohne Missverständnisse.
-                </p>
-                
-                {/* Strategic outgoing links */}
-                <div className="bg-white p-6 rounded-lg shadow-sm mt-8">
-                  <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
-                    Nützliche Ressourcen für Unternehmen in Mainz
-                  </h3>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a 
-                      href="https://www.rheinhessen.ihk24.de/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      IHK Rheinhessen
-                    </a>
-                    <a 
-                      href="https://isb.rlp.de/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Wirtschaftsförderung RLP
-                    </a>
-                    <a 
-                      href="https://www.mainz.de/wirtschaft/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Wirtschaftsförderung Mainz
-                    </a>
-                  </div>
-                </div>
-                
-                {/* Internal linking with location-based anchor text */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors">
-                    ➤ Webdesign Mainz Services
-                  </Link>
-                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors">
-                    ➤ SEO Agentur Mainz
-                  </Link>
-                  <Link to="/kontakt" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors">
-                    ➤ Beratung in Mainz
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <DeutscherAboutSection />
         <TeamTeaserDE />
         
@@ -309,69 +236,6 @@ const GermanIndex = () => {
           </div>
         </div>
         
-        {/* Additional Mainz-specific business section */}
-        <div className="py-16 bg-medico-mint">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen">
-                Warum Mainzer Unternehmen auf ooliv setzen
-              </h2>
-              <p className="text-xl text-medico-darkGreen max-w-3xl mx-auto mb-8">
-                Als <strong>Online Marketing Agentur Mainz</strong> verstehen wir die lokalen Herausforderungen und Chancen. Unsere Expertise in <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-semibold">Webentwicklung Mainz</Link> und <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-semibold">Content Marketing Mainz</Link> hilft Ihrem Unternehmen, online erfolgreich zu sein.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
-                  Lokale Marktkenntnis
-                </h3>
-                <p className="text-medico-darkGreen mb-4">
-                  Als <strong>SEO Agentur Mainz</strong> kennen wir die lokalen Suchtrends und Zielgruppen. Unsere <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline">SEO Optimierung</Link> zielt gezielt auf Mainzer und rheinland-pfälzische Kunden ab.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
-                  Persönliche Betreuung
-                </h3>
-                <p className="text-medico-darkGreen mb-4">
-                  Kurze Wege, direkte Kommunikation – als <strong>Webdesign Agentur Mainz</strong> sind wir für Sie vor Ort erreichbar. Unser <Link to="/webdesign" className="text-medico-turquoise hover:underline">Webdesign Service</Link> ist auf Ihre individuellen Bedürfnisse zugeschnitten.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
-                  Messbare Erfolge
-                </h3>
-                <p className="text-medico-darkGreen mb-4">
-                  Unsere <strong>digitalen Strategien für Mainz</strong> basieren auf Daten und liefern messbare Ergebnisse. Von <Link to="/google-ads" className="text-medico-turquoise hover:underline">Google Ads Betreuung</Link> bis zur <Link to="/ki-technologien" className="text-medico-turquoise hover:underline">KI-Integration</Link>.
-                </p>
-              </div>
-            </div>
-            
-            <div className="text-center mt-8">
-              <p className="text-medico-darkGreen mb-6">
-                Interessiert an einer <Link to="/strategie" className="text-medico-turquoise hover:underline font-semibold">digitalen Strategie für Ihr Mainzer Unternehmen</Link>?
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link 
-                  to="/ueber-uns" 
-                  className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors"
-                >
-                  ➤ Mehr über unser Mainzer Team
-                </Link>
-                <Link 
-                  to="/referenzen" 
-                  className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors"
-                >
-                  ➤ Erfolgsgeschichten aus Mainz
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <GermanSolutionSection />
         <TechnologiesSection />
         
@@ -389,6 +253,104 @@ const GermanIndex = () => {
           subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
           primaryCta="Projekt starten"
         />
+
+        {/* Moved Mainz-specific positioning section to just before footer for better UX */}
+        <div className="py-12 bg-medico-mint">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-medico-darkGreen">
+                Ihre Werbeagentur in Mainz für digitalen Erfolg
+              </h2>
+              <div className="max-w-4xl mx-auto space-y-4">
+                <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                  Als etablierte <strong>Werbeagentur in Mainz</strong> verstehen wir die Besonderheiten des rheinland-pfälzischen Marktes. Seit 2008 entwickeln wir für Unternehmen in Mainz und Umgebung digitale Strategien, die messbare Ergebnisse liefern.
+                </p>
+                <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                  Unser <strong>Webdesign Mainz</strong> Service verbindet lokale Marktkenntnis mit modernster Technologie. Als <strong>Digitalagentur Mainz</strong> bieten wir Ihnen den kompletten Service aus einer Hand.
+                </p>
+                
+                {/* Strategic outgoing links */}
+                <div className="bg-white p-4 rounded-lg shadow-sm mt-6">
+                  <h3 className="text-lg font-semibold mb-3 text-medico-darkGreen">
+                    Nützliche Ressourcen für Unternehmen in Mainz
+                  </h3>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a 
+                      href="https://www.rheinhessen.ihk24.de/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      IHK Rheinhessen
+                    </a>
+                    <a 
+                      href="https://isb.rlp.de/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      Wirtschaftsförderung RLP
+                    </a>
+                    <a 
+                      href="https://www.mainz.de/wirtschaft/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      Wirtschaftsförderung Mainz
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Condensed benefits section */}
+                <div className="grid md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                      Lokale Marktkenntnis
+                    </h4>
+                    <p className="text-sm text-medico-darkGreen">
+                      Als <strong>SEO Agentur Mainz</strong> kennen wir die lokalen Suchtrends und Zielgruppen.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                      Persönliche Betreuung
+                    </h4>
+                    <p className="text-sm text-medico-darkGreen">
+                      Kurze Wege, direkte Kommunikation – als <strong>Webdesign Agentur Mainz</strong> sind wir vor Ort erreichbar.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                      Messbare Erfolge
+                    </h4>
+                    <p className="text-sm text-medico-darkGreen">
+                      Unsere <strong>digitalen Strategien für Mainz</strong> basieren auf Daten und liefern messbare Ergebnisse.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Internal linking */}
+                <div className="flex flex-wrap justify-center gap-3 mt-6">
+                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                    ➤ Webdesign Mainz Services
+                  </Link>
+                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                    ➤ SEO Agentur Mainz
+                  </Link>
+                  <Link to="/kontakt" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                    ➤ Beratung in Mainz
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </PageLayout>
       
       <MainzSEOTextSection />
