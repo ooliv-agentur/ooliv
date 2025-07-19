@@ -175,7 +175,7 @@ const GermanIndex = () => {
         {/* Open Graph tags */}
         <meta property="og:title" content="Werbeagentur Mainz | ooliv - Ihre digitale Marketing Agentur" />
         <meta property="og:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen. Jetzt starten." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+        <meta property="og:image" content="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" />
         <meta property="og:url" content="https://ooliv.de/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="ooliv Werbeagentur Mainz" />
@@ -184,7 +184,7 @@ const GermanIndex = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ooliv – Werbeagentur Mainz" />
         <meta name="twitter:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+        <meta name="twitter:image" content="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" />
         
         {/* Geographic Metadata for Mainz */}
         <meta name="geo.region" content="DE-RP" />
@@ -192,6 +192,12 @@ const GermanIndex = () => {
         <meta name="geo.position" content="49.9928617;8.2472526" />
         <meta name="ICBM" content="49.9928617, 8.2472526" />
         <meta name="DC.title" content="ooliv - Werbeagentur Mainz" />
+        
+        {/* Performance optimization meta tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         
         {/* LocalBusiness Schema Markup */}
         <script type="application/ld+json">

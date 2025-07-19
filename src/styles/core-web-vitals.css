@@ -1,0 +1,189 @@
+/* Core Web Vitals Optimization CSS */
+
+/* LCP (Largest Contentful Paint) Optimizations */
+.lcp-optimized {
+  /* Ensure critical images load immediately */
+  content-visibility: auto;
+  contain-intrinsic-size: 1200px 675px;
+}
+
+/* Hero section optimizations for LCP */
+.hero-container {
+  min-height: 100vh;
+  background-color: #f7f8fc; /* Fallback color to prevent layout shift */
+  contain: layout style paint;
+}
+
+/* Video optimizations for LCP */
+.hero-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background-color: #f7f8fc; /* Prevent flashing */
+  will-change: auto; /* Reset after load */
+}
+
+/* CLS (Cumulative Layout Shift) Prevention */
+.prevent-cls {
+  /* Reserve space for dynamic content */
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image containers to prevent CLS */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.image-container img[loading="lazy"] {
+  opacity: 0;
+}
+
+.image-container img[data-loaded="true"] {
+  opacity: 1;
+}
+
+/* FID (First Input Delay) Optimizations */
+.interactive-element {
+  /* Optimize for immediate interaction */
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Button optimizations for FID */
+.btn-optimized {
+  /* Reduce paint complexity */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout style paint;
+}
+
+.btn-optimized:hover,
+.btn-optimized:focus {
+  transform: translateZ(0) scale(1.02);
+}
+
+/* Scroll optimizations */
+.scroll-container {
+  /* Hardware acceleration for smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  will-change: scroll-position;
+}
+
+/* Text rendering optimizations */
+.optimized-text {
+  /* Better text rendering */
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animation performance optimizations */
+.performance-animation {
+  /* Only animate properties that don't trigger layout/paint */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Lazy loading optimizations */
+.lazy-load-container {
+  /* Intersection observer targets */
+  min-height: 200px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lazy-loaded {
+  /* Loaded state */
+  background-color: transparent;
+}
+
+/* Reduce motion for accessibility and performance */
+@media (prefers-reduced-motion: reduce) {
+  .performance-animation,
+  .btn-optimized {
+    will-change: auto;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Critical CSS loading states */
+.critical-loading {
+  /* Show loading state for critical resources */
+  position: relative;
+}
+
+.critical-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+.critical-loaded::before {
+  display: none;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Image optimization classes */
+.webp-image {
+  /* WebP image fallback */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Progressive image loading */
+.progressive-image {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.progressive-image.loaded {
+  filter: blur(0);
+}
+
+/* Resource prioritization */
+.critical-resource {
+  /* High priority resources */
+  font-display: swap;
+  loading: eager;
+}
+
+.non-critical-resource {
+  /* Low priority resources */
+  loading: lazy;
+  content-visibility: auto;
+}
