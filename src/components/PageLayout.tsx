@@ -1,4 +1,3 @@
-
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
@@ -86,43 +85,25 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const alternateLanguagePath = pathMappings[currentPath];
   const alternateLanguageUrl = alternateLanguagePath ? `${baseUrl}${alternateLanguagePath}` : null;
 
-  // Handle www to non-www redirect at the client level as an extra safety measure
+  // Removed redundant www redirect - handled by .htaccess
+  // Removed /de/ path redirect - handled by .htaccess  
+  // Removed .php path redirect - handled by .htaccess
+  // Removed trailing slash redirect - handled by .htaccess
+
+  // Keep only essential client-side redirects as backup safety measures
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // Only handle edge cases that might not be caught by server redirects
       const hostname = window.location.hostname;
-      if (hostname.startsWith('www.')) {
-        const nonWwwUrl = window.location.href.replace(/^https?:\/\/www\./, 'https://');
-        console.log('Client-side redirect from www to non-www:', nonWwwUrl);
-        window.location.replace(nonWwwUrl);
+      const pathname = window.location.pathname;
+      
+      // Emergency fallback for www redirect (should rarely trigger)
+      if (hostname.startsWith('www.') && !window.location.search.includes('debug')) {
+        console.log('Emergency client-side www redirect');
+        window.location.replace(window.location.href.replace(/^https?:\/\/www\./, 'https://'));
       }
     }
   }, []);
-
-  // Handle old /de/ paths redirect at client level (backup to server redirects)
-  useEffect(() => {
-    if (typeof window !== 'undefined' && currentPath.startsWith('/de/')) {
-      const newPath = currentPath.replace(/^\/de/, '') || '/';
-      console.log('Client-side redirect from /de/ path to root path:', newPath);
-      window.location.replace(`${baseUrl}${newPath}`);
-    }
-  }, [currentPath]);
-  
-  // Handle old .php paths redirect at client level (backup to server redirects)
-  useEffect(() => {
-    if (typeof window !== 'undefined' && currentPath.endsWith('.php')) {
-      console.log('Client-side redirect from PHP path to homepage');
-      window.location.replace(`${baseUrl}/`);
-    }
-  }, [currentPath]);
-
-  // Handle trailing slash removal at client level
-  useEffect(() => {
-    if (typeof window !== 'undefined' && currentPath !== '/' && location.pathname.endsWith('/')) {
-      const newPath = location.pathname.slice(0, -1);
-      console.log('Client-side redirect to remove trailing slash:', newPath);
-      window.location.replace(`${baseUrl}${newPath}`);
-    }
-  }, [currentPath, location.pathname]);
 
   // Intelligent resource preloading based on current page
   useEffect(() => {

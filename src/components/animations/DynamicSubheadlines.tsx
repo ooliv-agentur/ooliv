@@ -14,12 +14,22 @@ const DynamicSubheadlines = ({
 }: DynamicSubheadlinesProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (subheadlines.length <= 1) return;
+    // Add a small delay before starting the animation to prevent initial flicker
+    const readyTimer = setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+
+    return () => clearTimeout(readyTimer);
+  }, []);
+
+  useEffect(() => {
+    if (subheadlines.length <= 1 || !isReady) return;
 
     const timer = setInterval(() => {
-      // Start fade out
+      // Start fade out with faster transition
       setIsVisible(false);
       
       // After fade out completes, change text and fade in
@@ -28,18 +38,18 @@ const DynamicSubheadlines = ({
           prevIndex === subheadlines.length - 1 ? 0 : prevIndex + 1
         );
         setIsVisible(true);
-      }, 800); // Even longer fade out duration for ultra-smooth transition
+      }, 300); // Reduced from 800ms to 300ms for snappier transitions
     }, interval);
 
     return () => clearInterval(timer);
-  }, [subheadlines.length, interval]);
+  }, [subheadlines.length, interval, isReady]);
 
   return (
     <span 
-      className={`transition-all duration-[800ms] ease-out ${className}`}
+      className={`transition-all duration-300 ease-out ${className}`}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(3px)'
+        opacity: isReady && isVisible ? 1 : 0,
+        transform: isReady && isVisible ? 'translateY(0)' : 'translateY(3px)'
       }}
     >
       {subheadlines[currentIndex]}
