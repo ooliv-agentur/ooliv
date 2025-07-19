@@ -53,13 +53,13 @@ const GermanIndex = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Comprehensive LocalBusiness schema markup
+  // Enhanced LocalBusiness schema markup with Mainz focus
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "AdvertisingAgency"],
     "name": "ooliv Werbeagentur Mainz",
-    "alternateName": "ooliv",
-    "description": "Werbeagentur Mainz für messbare Ergebnisse im Web. Professionelles Webdesign Mainz, SEO-Optimierung und digitale Strategien für nachhaltigen Unternehmenserfolg.",
+    "alternateName": ["ooliv", "Digitalagentur Mainz", "SEO Agentur Mainz", "Webdesign Mainz"],
+    "description": "Etablierte Werbeagentur Mainz seit 2008. Spezialisiert auf Webdesign Mainz, SEO Optimierung, Online Marketing Mainz und digitale Strategien für Unternehmen in Rheinland-Pfalz.",
     "url": "https://ooliv.de",
     "telephone": "+49-6131-5544041",
     "email": "hallo@ooliv.de",
@@ -79,28 +79,33 @@ const GermanIndex = () => {
     "areaServed": [
       {
         "@type": "City",
-        "name": "Mainz"
+        "name": "Mainz",
+        "sameAs": "https://de.wikipedia.org/wiki/Mainz"
       },
       {
         "@type": "City", 
-        "name": "Wiesbaden"
+        "name": "Wiesbaden",
+        "sameAs": "https://de.wikipedia.org/wiki/Wiesbaden"
       },
       {
-        "@type": "State",
-        "name": "Rheinland-Pfalz"
+        "@type": "AdministrativeArea",
+        "name": "Rheinland-Pfalz",
+        "sameAs": "https://de.wikipedia.org/wiki/Rheinland-Pfalz"
       },
       {
-        "@type": "State",
-        "name": "Hessen"
+        "@type": "AdministrativeArea",
+        "name": "Hessen",
+        "sameAs": "https://de.wikipedia.org/wiki/Hessen"
       }
     ],
     "serviceType": [
-      "Webdesign",
-      "Webentwicklung", 
-      "SEO-Optimierung",
-      "Content-Erstellung",
-      "Google Ads",
-      "KI-Technologien"
+      "Webdesign Mainz",
+      "Webentwicklung Mainz", 
+      "SEO Optimierung Mainz",
+      "Content Marketing Mainz",
+      "Google Ads Betreuung Mainz",
+      "Online Marketing Mainz",
+      "Digitale Strategieberatung"
     ],
     "priceRange": "€€€",
     "openingHoursSpecification": [
@@ -125,6 +130,35 @@ const GermanIndex = () => {
     "sameAs": [
       "https://www.linkedin.com/company/ooliv",
       "https://www.xing.com/companies/ooliv"
+    ],
+    "slogan": "Individuelle Websites für mehr Sichtbarkeit und Vertrauen",
+    "knowsAbout": [
+      "Webdesign Mainz",
+      "SEO Optimierung Mainz", 
+      "Online Marketing Mainz",
+      "Content Strategie Mainz",
+      "Digitale Transformation",
+      "Local SEO",
+      "Responsive Webdesign",
+      "E-Commerce Entwicklung"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Webdesign Mainz",
+          "description": "Professionelles Webdesign für Unternehmen in Mainz"
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Optimierung Mainz",
+          "description": "Suchmaschinenoptimierung für bessere Sichtbarkeit in Mainz"
+        }
+      }
     ]
   };
   
@@ -265,6 +299,69 @@ const GermanIndex = () => {
                 Projekt starten
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Additional Mainz-specific business section */}
+        <div className="py-16 bg-medico-mint">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen">
+                Warum Mainzer Unternehmen auf ooliv setzen
+              </h2>
+              <p className="text-xl text-medico-darkGreen max-w-3xl mx-auto mb-8">
+                Als <strong>Online Marketing Agentur Mainz</strong> verstehen wir die lokalen Herausforderungen und Chancen. Unsere Expertise in <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-semibold">Webentwicklung Mainz</Link> und <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-semibold">Content Marketing Mainz</Link> hilft Ihrem Unternehmen, online erfolgreich zu sein.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
+                  Lokale Marktkenntnis
+                </h3>
+                <p className="text-medico-darkGreen mb-4">
+                  Als <strong>SEO Agentur Mainz</strong> kennen wir die lokalen Suchtrends und Zielgruppen. Unsere <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline">SEO Optimierung</Link> zielt gezielt auf Mainzer und rheinland-pfälzische Kunden ab.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
+                  Persönliche Betreuung
+                </h3>
+                <p className="text-medico-darkGreen mb-4">
+                  Kurze Wege, direkte Kommunikation – als <strong>Webdesign Agentur Mainz</strong> sind wir für Sie vor Ort erreichbar. Unser <Link to="/webdesign" className="text-medico-turquoise hover:underline">Webdesign Service</Link> ist auf Ihre individuellen Bedürfnisse zugeschnitten.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-medico-darkGreen">
+                  Messbare Erfolge
+                </h3>
+                <p className="text-medico-darkGreen mb-4">
+                  Unsere <strong>digitalen Strategien für Mainz</strong> basieren auf Daten und liefern messbare Ergebnisse. Von <Link to="/google-ads" className="text-medico-turquoise hover:underline">Google Ads Betreuung</Link> bis zur <Link to="/ki-technologien" className="text-medico-turquoise hover:underline">KI-Integration</Link>.
+                </p>
+              </div>
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-medico-darkGreen mb-6">
+                Interessiert an einer <Link to="/strategie" className="text-medico-turquoise hover:underline font-semibold">digitalen Strategie für Ihr Mainzer Unternehmen</Link>?
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link 
+                  to="/ueber-uns" 
+                  className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors"
+                >
+                  ➤ Mehr über unser Mainzer Team
+                </Link>
+                <Link 
+                  to="/referenzen" 
+                  className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors"
+                >
+                  ➤ Erfolgsgeschichten aus Mainz
+                </Link>
+              </div>
             </div>
           </div>
         </div>
