@@ -43,11 +43,19 @@ RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^(.*)$ /%1 [R=301,L]
 
-# Add canonical header to all responses
+# Add canonical header and other SEO headers
 <IfModule mod_headers.c>
-    Header set Link "<https://ooliv.de%{REQUEST_URI}s>; rel=\"canonical\""
+    # Set proper canonical header (fixed typo - removed extra 's')
+    Header set Link "<https://ooliv.de%{REQUEST_URI}>; rel=\"canonical\""
+    
+    # Help Google understand that responses vary based on host header
+    Header set Vary "Host"
+    
     # Ensure X-Robots-Tag is set to index, follow for all responses
     Header set X-Robots-Tag "index, follow"
+    
+    # Add explicit canonical header for www redirect scenario
+    Header always set Link "<https://ooliv.de%{REQUEST_URI}>; rel=\"canonical\"" env=REDIRECT_STATUS
 </IfModule>
 
 # Improve server performance
