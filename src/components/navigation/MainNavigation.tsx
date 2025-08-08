@@ -35,6 +35,13 @@ const MainNavigation = () => {
       document.body.style.height = '';
     };
   }, [isOpen]);
+
+  // Open menu via global event
+  useEffect(() => {
+    const openMenu = () => setIsOpen(true);
+    window.addEventListener('open-main-menu', openMenu);
+    return () => window.removeEventListener('open-main-menu', openMenu);
+  }, []);
   
   // Scroll to top on logo click
   const handleLogoClick = () => {

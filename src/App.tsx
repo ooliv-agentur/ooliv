@@ -42,6 +42,15 @@ const queryClient = new QueryClient();
 function App() {
   const [showLeadForm, setShowLeadForm] = useState(false);
 
+  const handleLeadOpenChange = (next: boolean) => {
+    setShowLeadForm(next);
+    if (!next) {
+      // Notify controller to snooze and open the main menu afterwards
+      window.dispatchEvent(new Event('lead-overlay-closed'));
+      window.dispatchEvent(new Event('open-main-menu'));
+    }
+  };
+
   return (
     <LanguageProvider>
       <CookieConsentProvider>
@@ -57,7 +66,7 @@ function App() {
               {/* Single LeadGenerationOverlay instance for the entire app */}
               <LeadGenerationOverlay 
                 open={showLeadForm} 
-                onOpenChange={setShowLeadForm}
+                onOpenChange={handleLeadOpenChange}
               />
               
               <Routes>

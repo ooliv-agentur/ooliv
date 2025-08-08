@@ -1,9 +1,5 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import EmailCaptureModal from "./EmailCaptureModal";
+import React, { useCallback, useEffect, useMemo, useRef } from "react";
 import { useCookieConsent } from "@/contexts/CookieConsentContext";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useToast } from "@/hooks/use-toast";
-import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from "@/utils/apiUtils";
 import { useLocation } from "react-router-dom";
 
 const SNOOZE_DAYS = 7;
@@ -33,12 +29,7 @@ const storage = {
 
 const EmailCaptureController: React.FC = () => {
   const { consent, showBanner } = useCookieConsent();
-  const { language } = useLanguage();
-  const { toast } = useToast();
   const location = useLocation();
-
-  const [open, setOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const triggeredRef = useRef(false);
 
   const canShow = useMemo(() => {
@@ -53,31 +44,33 @@ const EmailCaptureController: React.FC = () => {
     return true;
   }, [consent, showBanner, location.pathname, location.search]);
 
-  const openModal = useCallback(() => {
+  const openOverlay = useCallback(() => {
     if (triggeredRef.current || !canShow) return;
     triggeredRef.current = true;
     storage.markShown();
-    setOpen(true);
+    window.dispatchEvent(
+      new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController" } })
+    );
   }, [canShow]);
 
   // Dwell time trigger
   useEffect(() => {
     if (!canShow) return;
-    const id = window.setTimeout(openModal, 8000);
+    const id = window.setTimeout(openOverlay, 8000);
     return () => window.clearTimeout(id);
-  }, [canShow, openModal]);
+  }, [canShow, openOverlay]);
 
   // Exit-intent trigger (desktop)
   useEffect(() => {
     if (!canShow) return;
     const onMouseOut = (e: MouseEvent) => {
       if (!e.relatedTarget && e.clientY <= 0) {
-        openModal();
+        openOverlay();
       }
     };
     document.addEventListener("mouseout", onMouseOut);
     return () => document.removeEventListener("mouseout", onMouseOut);
-  }, [canShow, openModal]);
+  }, [canShow, openOverlay]);
 
   // Scroll-depth trigger (mobile fallback)
   useEffect(() => {
@@ -88,96 +81,39 @@ const EmailCaptureController: React.FC = () => {
       const winHeight = window.innerHeight;
       const progress = (scrollTop + winHeight) / docHeight;
       if (progress >= 0.5) {
-        openModal();
+        openOverlay();
         window.removeEventListener("scroll", onScroll);
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [canShow, openModal]);
+  }, [canShow, openOverlay]);
 
   // Open immediately after consent (banner hides)
   useEffect(() => {
-    if (!showBanner && canShow && !open) {
-      console.info("EmailCapture: opening immediately after consent");
-      openModal();
+    if (!showBanner && canShow) {
+      console.info("LeadOverlay: opening immediately after consent");
+      openOverlay();
     }
-  }, [showBanner, canShow, open, openModal]);
+  }, [showBanner, canShow, openOverlay]);
 
   // Force open via URL param for testing
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("forceEmailCapture") === "1") {
-      console.info("EmailCapture: forcing open via URL param");
-      setOpen(true);
+      console.info("LeadOverlay: forcing open via URL param");
+      openOverlay();
     }
-  }, [location.search]);
+  }, [location.search, openOverlay]);
 
-  const snooze = useCallback(() => {
-    storage.snoozeUntil = getNow() + daysToMs(SNOOZE_DAYS);
+  // Snooze when the overlay is closed (event dispatched from App)
+  useEffect(() => {
+    const onClosed = () => {
+      storage.snoozeUntil = getNow() + daysToMs(SNOOZE_DAYS);
+    };
+    window.addEventListener("lead-overlay-closed", onClosed);
+    return () => window.removeEventListener("lead-overlay-closed", onClosed);
   }, []);
-
-  const handleOpenChange = (next: boolean) => {
-    if (!next) {
-      snooze();
-    }
-    setOpen(next);
-  };
-
-  const submitEmail = useCallback(async (email: string) => {
-    try {
-      setIsSubmitting(true);
-
-      const payload = {
-        projectType: "prototype_request",
-        companyName: "",
-        industry: "",
-        websiteUrl: window.location.origin,
-        location: "",
-        goal: "receive_prototype",
-        name: "",
-        email,
-        phone: "",
-        message:
-          "Popup email capture: Interested in a free prototype for website redesign.",
-        language,
-      };
-
-      const headers = getSupabaseHeaders();
-      const res = await fetch(SEND_PROJECT_FORM_URL, {
-        method: "POST",
-        headers,
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err.message || `HTTP ${res.status}`);
-      }
-
-      toast({
-        title: language === "de" ? "Super!" : "Great!",
-        description:
-          language === "de"
-            ? "Wir melden uns kurzfristig mit einem Vorschlag."
-            : "We’ll get back to you shortly with a proposal.",
-      });
-
-      snooze();
-      setOpen(false);
-    } catch (e: any) {
-      toast({
-        title: language === "de" ? "Fehler" : "Error",
-        description:
-          language === "de"
-            ? "Leider hat es nicht geklappt. Bitte später erneut versuchen."
-            : "Something went wrong. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [language, toast, snooze]);
 
   // Debug info
   useEffect(() => {
@@ -187,18 +123,10 @@ const EmailCaptureController: React.FC = () => {
     if (!consent) reasons.push("no consent yet");
     if (excludedPaths.has(location.pathname)) reasons.push("excluded path");
     if (storage.snoozeUntil && storage.snoozeUntil > now) reasons.push(`snoozed until ${new Date(storage.snoozeUntil).toISOString()}`);
-    console.info("EmailCapture canShow=", canShow, { reasons });
+    console.info("LeadOverlay canShow=", canShow, { reasons });
   }, [canShow, consent, showBanner, location.pathname]);
 
-  // Render modal
-  return (
-    <EmailCaptureModal
-      open={open}
-      onOpenChange={handleOpenChange}
-      onSubmitEmail={submitEmail}
-      isSubmitting={isSubmitting}
-    />
-  );
+  return null;
 };
 
 export default React.memo(EmailCaptureController);
