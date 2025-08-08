@@ -197,10 +197,10 @@
       window.addEventListener('load', function() {
         // Load performance monitoring after main content
         setTimeout(function() {
-          const script = document.createElement('script');
-          script.src = '/src/styles/performance-optimizations.css';
-          script.async = true;
-          document.head.appendChild(script);
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '/src/styles/performance-optimizations.css';
+          document.head.appendChild(link);
         }, 1000);
       });
     </script>

@@ -42,13 +42,16 @@ const EmailCaptureController: React.FC = () => {
   const triggeredRef = useRef(false);
 
   const canShow = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    const force = params.get("forceEmailCapture") === "1";
+    if (force) return true;
     if (showBanner) return false; // banner visible → not accepted yet
     if (!consent) return false;   // no consent stored yet
     if (excludedPaths.has(location.pathname)) return false;
     const now = getNow();
     if (storage.snoozeUntil && storage.snoozeUntil > now) return false;
     return true;
-  }, [consent, showBanner, location.pathname]);
+  }, [consent, showBanner, location.pathname, location.search]);
 
   const openModal = useCallback(() => {
     if (triggeredRef.current || !canShow) return;
@@ -60,7 +63,7 @@ const EmailCaptureController: React.FC = () => {
   // Dwell time trigger
   useEffect(() => {
     if (!canShow) return;
-    const id = window.setTimeout(openModal, 10000);
+    const id = window.setTimeout(openModal, 8000);
     return () => window.clearTimeout(id);
   }, [canShow, openModal]);
 
@@ -92,6 +95,23 @@ const EmailCaptureController: React.FC = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [canShow, openModal]);
+
+  // Open immediately after consent (banner hides)
+  useEffect(() => {
+    if (!showBanner && canShow && !open) {
+      console.info("EmailCapture: opening immediately after consent");
+      openModal();
+    }
+  }, [showBanner, canShow, open, openModal]);
+
+  // Force open via URL param for testing
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("forceEmailCapture") === "1") {
+      console.info("EmailCapture: forcing open via URL param");
+      setOpen(true);
+    }
+  }, [location.search]);
 
   const snooze = useCallback(() => {
     storage.snoozeUntil = getNow() + daysToMs(SNOOZE_DAYS);
@@ -159,7 +179,18 @@ const EmailCaptureController: React.FC = () => {
     }
   }, [language, toast, snooze]);
 
-  // Do not render anything until we can show (keeps tree light)
+  // Debug info
+  useEffect(() => {
+    const now = getNow();
+    const reasons: string[] = [];
+    if (showBanner) reasons.push("showBanner=true");
+    if (!consent) reasons.push("no consent yet");
+    if (excludedPaths.has(location.pathname)) reasons.push("excluded path");
+    if (storage.snoozeUntil && storage.snoozeUntil > now) reasons.push(`snoozed until ${new Date(storage.snoozeUntil).toISOString()}`);
+    console.info("EmailCapture canShow=", canShow, { reasons });
+  }, [canShow, consent, showBanner, location.pathname]);
+
+  // Render modal
   return (
     <EmailCaptureModal
       open={open}
