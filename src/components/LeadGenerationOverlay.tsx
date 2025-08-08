@@ -45,7 +45,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     if (!next) {
       // Trigger bubble flight animation towards FAB before closing
       window.dispatchEvent(new Event('lead-overlay-bubble'));
-      setTimeout(() => onOpenChange(false), 350);
+      setTimeout(() => onOpenChange(false), 600);
       return;
     }
     onOpenChange(true);

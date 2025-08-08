@@ -12,7 +12,7 @@ import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
 import { Toaster } from 'sonner';
 import EmailCaptureController from './components/email-capture/EmailCaptureController';
-import LeadCaptureFab from './components/email-capture/LeadCaptureFab';
+
 // Import all pages directly (no lazy loading)
 import GermanIndex from './pages/de/Index';
 import GermanWebDesign from './pages/de/Webdesign';
@@ -45,9 +45,8 @@ function App() {
   const handleLeadOpenChange = (next: boolean) => {
     setShowLeadForm(next);
     if (!next) {
-      // Notify controller to snooze and open the main menu afterwards
+      // Notify controller to snooze; keep menu state unchanged
       window.dispatchEvent(new Event('lead-overlay-closed'));
-      window.dispatchEvent(new Event('open-main-menu'));
     }
   };
 
@@ -97,7 +96,7 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
               
-              <LeadCaptureFab />
+              
               <Toaster />
             </Router>
           </QueryClientProvider>
