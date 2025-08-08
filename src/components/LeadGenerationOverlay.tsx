@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   Sheet,
   SheetContent,
@@ -10,6 +10,7 @@ import {
 import { X } from 'lucide-react';
 import LeadFormContent from './lead-form/LeadFormContent';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LeadGenerationOverlayProps {
   open: boolean;
@@ -17,19 +18,20 @@ interface LeadGenerationOverlayProps {
 }
 
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
+  const [mode, setMode] = useState<'project' | 'prototype'>('project');
+  const { language } = useLanguage();
   // Listen for the global event to open the lead form
   useEffect(() => {
     console.log('🔧 LeadGenerationOverlay: Setting up event listener');
     
     const handleOpenLeadForm = (event: any) => {
-      console.log('🎯 LeadGenerationOverlay: open-lead-form event received from:', event.detail?.source);
-      console.log('🎯 Current open state:', open);
-      
+      const variant = event?.detail?.variant as 'prototype' | 'project' | undefined;
+      const source = event?.detail?.source as string | undefined;
+      const nextMode: 'project' | 'prototype' = variant ?? (source?.toLowerCase().includes('prototype') ? 'prototype' : 'project');
+      setMode(nextMode);
+      console.log('🎯 LeadGenerationOverlay: open-lead-form variant:', nextMode);
       if (!open) {
-        console.log('✅ Opening lead form overlay');
         onOpenChange(true);
-      } else {
-        console.log('⚠️ Lead form already open, ignoring trigger');
       }
     };
 
@@ -52,6 +54,13 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   };
 
   const handleClose = () => internalOnOpenChange(false);
+
+  // Dynamic header text based on mode and language
+  const isPrototype = mode === 'prototype';
+  const title = language === 'de' ? (isPrototype ? 'Kostenloser Prototyp' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Prototype' : 'Start your project');
+  const description = language === 'de'
+    ? (isPrototype ? 'Erhalten Sie in 48 Stunden einen klickbaren Prototyp – kostenlos und unverbindlich.' : 'Füllen Sie das Formular aus, um loszulegen')
+    : (isPrototype ? 'Get a clickable prototype within 48 hours – free and without obligation.' : 'Fill out the form to get started');
   return (
     <Sheet open={open} onOpenChange={internalOnOpenChange}>
       <SheetContent 
@@ -73,10 +82,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
         <SheetHeader className="text-left pb-4 pr-12">
           <SheetTitle className="text-xl font-bold text-white">
-            Starten Sie Ihr Projekt
+            {title}
           </SheetTitle>
           <SheetDescription className="text-white/70">
-            Füllen Sie das Formular aus, um loszulegen
+            {description}
           </SheetDescription>
         </SheetHeader>
         

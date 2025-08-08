@@ -26,7 +26,7 @@ const FloatingActionButtons = () => {
 
   const handleOpenLeadForm = () => {
     console.log('🚀 FloatingActionButtons: Project button clicked - dispatching event');
-    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons' } }));
+    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons', variant: 'project' } }));
   };
 
   // Updated button definitions using design system variants
@@ -56,7 +56,7 @@ const FloatingActionButtons = () => {
       id: 'prototype',
       icon: 'rocket',
       label: language === 'de' ? 'Kostenloser Prototyp' : 'Free prototype',
-      onClick: () => window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons:prototype' } })),
+      onClick: () => window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons:prototype', variant: 'prototype' } })),
       variant: 'light' as const
     }
   ];

@@ -49,7 +49,7 @@ const EmailCaptureController: React.FC = () => {
     triggeredRef.current = true;
     storage.markShown();
     window.dispatchEvent(
-      new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController" } })
+      new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController", variant: "prototype" } })
     );
   }, [canShow]);
 
