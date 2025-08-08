@@ -11,6 +11,7 @@ import FloatingActionButtons from './components/FloatingActionButtons';
 import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
 import { Toaster } from 'sonner';
+import EmailCaptureController from './components/email-capture/EmailCaptureController';
 
 // Import all pages directly (no lazy loading)
 import GermanIndex from './pages/de/Index';
@@ -51,6 +52,7 @@ function App() {
               <ScrollIndicator />
               <FloatingActionButtons />
               <CookieNotification />
+              <EmailCaptureController />
               
               {/* Single LeadGenerationOverlay instance for the entire app */}
               <LeadGenerationOverlay 
