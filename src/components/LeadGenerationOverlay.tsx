@@ -41,13 +41,19 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     };
   }, [open, onOpenChange]);
   
-  const handleClose = () => {
-    console.log('❌ LeadGenerationOverlay: Closing overlay');
-    onOpenChange(false);
+  const internalOnOpenChange = (next: boolean) => {
+    if (!next) {
+      // Trigger bubble flight animation towards FAB before closing
+      window.dispatchEvent(new Event('lead-overlay-bubble'));
+      setTimeout(() => onOpenChange(false), 350);
+      return;
+    }
+    onOpenChange(true);
   };
-  
+
+  const handleClose = () => internalOnOpenChange(false);
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={internalOnOpenChange}>
       <SheetContent 
         className="sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10" 
         side="right"

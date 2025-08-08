@@ -12,7 +12,7 @@ import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
 import { Toaster } from 'sonner';
 import EmailCaptureController from './components/email-capture/EmailCaptureController';
-
+import LeadCaptureFab from './components/email-capture/LeadCaptureFab';
 // Import all pages directly (no lazy loading)
 import GermanIndex from './pages/de/Index';
 import GermanWebDesign from './pages/de/Webdesign';
@@ -97,6 +97,7 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Routes>
               
+              <LeadCaptureFab />
               <Toaster />
             </Router>
           </QueryClientProvider>
