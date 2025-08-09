@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -41,15 +41,15 @@ import NotFound from './pages/NotFound';
 const queryClient = new QueryClient();
 
 function App() {
-  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [showLeadForm, setShowLeadForm] = React.useState(false);
 
-  const handleLeadOpenChange = (next: boolean) => {
+  const handleLeadOpenChange = React.useCallback((next: boolean) => {
     setShowLeadForm(next);
     if (!next) {
       // Notify controller to snooze; keep menu state unchanged
       window.dispatchEvent(new Event('lead-overlay-closed'));
     }
-  };
+  }, []);
 
   return (
     <ErrorBoundary>
