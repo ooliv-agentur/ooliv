@@ -151,24 +151,36 @@ const getInitialLanguage = (): Language => {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize state with proper error handling
-  const [language, setLanguage] = useState<Language>(() => getInitialLanguage());
+  // Initialize state with proper error handling for hot reload
+  const [language, setLanguage] = React.useState<Language>(() => {
+    try {
+      return getInitialLanguage();
+    } catch (error) {
+      console.warn('Error getting initial language, defaulting to German:', error);
+      return 'de';
+    }
+  });
 
   // Debug language changes
-  useEffect(() => {
+  React.useEffect(() => {
     console.log('Language context updated:', language);
   }, [language]);
 
-  const t = (key: string): string => {
-    const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
-    return translation || key;
-  };
+  const t = React.useCallback((key: string): string => {
+    try {
+      const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
+      return translation || key;
+    } catch (error) {
+      console.warn('Translation error for key:', key, error);
+      return key;
+    }
+  }, [language]);
 
   const contextValue = React.useMemo(() => ({
     language,
     setLanguage,
     t
-  }), [language]);
+  }), [language, t]);
 
   return (
     <LanguageContext.Provider value={contextValue}>
@@ -178,8 +190,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 };
 
 export const useLanguage = (): LanguageContextType => {
-  const context = useContext(LanguageContext);
+  const context = React.useContext(LanguageContext);
   if (context === undefined) {
+    console.error('useLanguage must be used within a LanguageProvider');
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;

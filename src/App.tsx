@@ -12,6 +12,7 @@ import LeadGenerationOverlay from './components/LeadGenerationOverlay';
 import CookieNotification from './components/CookieNotification';
 import { Toaster } from 'sonner';
 import EmailCaptureController from './components/email-capture/EmailCaptureController';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Import all pages directly (no lazy loading)
 import GermanIndex from './pages/de/Index';
@@ -51,7 +52,8 @@ function App() {
   };
 
   return (
-    <LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
       <CookieConsentProvider>
         <HelmetProvider>
           <QueryClientProvider client={queryClient}>
@@ -102,7 +104,8 @@ function App() {
           </QueryClientProvider>
         </HelmetProvider>
       </CookieConsentProvider>
-    </LanguageProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
 
