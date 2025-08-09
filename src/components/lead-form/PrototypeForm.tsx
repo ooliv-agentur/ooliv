@@ -59,13 +59,6 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           : "We'll get back to you within 48 hours",
       });
 
-      // Close after short delay to show success
-      setTimeout(() => {
-        onClose();
-        setIsSubmitted(false);
-        setEmail('');
-      }, 2000);
-
     } catch (error) {
       console.error('Prototype form submission error:', error);
       toast({
