@@ -89,7 +89,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={handleClose} />
+        <LeadFormContent onClose={handleClose} mode={mode} />
       </SheetContent>
     </Sheet>
   );

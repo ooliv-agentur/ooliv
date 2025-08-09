@@ -14,12 +14,14 @@ import StepThree from './StepThree';
 import StepFour from './StepFour';
 import LeadFormStepIndicator from './LeadFormStepIndicator';
 import LeadFormNavigation from './LeadFormNavigation';
+import PrototypeForm from './PrototypeForm';
 
 interface LeadFormContainerProps {
   onClose: () => void;
+  mode: 'project' | 'prototype';
 }
 
-const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose }) => {
+const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { language } = useLanguage();
@@ -117,6 +119,12 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose }) => {
     }
   }, [step, form]);
 
+  // Render prototype form if in prototype mode
+  if (mode === 'prototype') {
+    return <PrototypeForm onClose={onClose} />;
+  }
+
+  // Render project form (4 steps) if in project mode
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(submitForm)} className="space-y-6">
