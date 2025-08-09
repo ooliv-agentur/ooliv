@@ -94,8 +94,12 @@ const EmailCaptureController: React.FC = () => {
   // Open immediately after consent (banner hides)
   React.useEffect(() => {
     console.log('🔄 EmailCaptureController: showBanner:', showBanner, 'canShow:', canShow, 'consent:', consent);
-    if (!showBanner && canShow && consent) {
-      console.info("✅ LeadOverlay: opening prototype form immediately after consent");
+    console.log('🔍 Storage snooze until:', storage.snoozeUntil, 'Current time:', getNow());
+    if (!showBanner && consent) {
+      console.info("✅ LeadOverlay: Trying to open prototype form after consent");
+      // Force reset snooze and trigger
+      storage.snoozeUntil = 0;
+      triggeredRef.current = false;
       openOverlay();
     } else {
       console.log('❌ Not opening overlay:', { showBanner, canShow, consent });
