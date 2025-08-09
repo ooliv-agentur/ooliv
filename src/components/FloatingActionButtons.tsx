@@ -42,21 +42,30 @@ const FloatingActionButtons = () => {
       id: 'email', 
       icon: 'mail', 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
-      onClick: () => window.location.href = 'mailto:info@ooliv.de',
+      onClick: () => {
+        console.log('📧 Email button clicked - mobile test');
+        window.location.href = 'mailto:info@ooliv.de';
+      },
       variant: 'light' as const
     },
     { 
       id: 'phone', 
       icon: 'phone', 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
-      onClick: () => window.location.href = 'tel:+4961316367801',
+      onClick: () => {
+        console.log('📞 Phone button clicked - mobile test');
+        window.location.href = 'tel:+4961316367801';
+      },
       variant: 'light' as const
     },
     {
       id: 'prototype',
       icon: 'rocket',
       label: language === 'de' ? 'Kostenloser Prototyp' : 'Free prototype',
-      onClick: () => window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons:prototype', variant: 'prototype' } })),
+      onClick: () => {
+        console.log('🚀 Prototype button clicked - mobile test');
+        window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons:prototype', variant: 'prototype' } }));
+      },
       variant: 'light' as const
     }
   ];

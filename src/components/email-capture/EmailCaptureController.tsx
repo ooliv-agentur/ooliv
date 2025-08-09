@@ -32,9 +32,11 @@ const EmailCaptureController: React.FC = () => {
   const location = useLocation();
   const triggeredRef = useRef(false);
 
-  const canShow = useMemo(() => {
+  const canShow = React.useMemo(() => {
     const params = new URLSearchParams(location.search);
     const force = params.get("forceEmailCapture") === "1";
+    console.log('🔍 EmailCaptureController canShow check:', { force, showBanner, consent, pathname: location.pathname });
+    
     if (force) return true;
     if (showBanner) return false; // banner visible → not accepted yet
     if (!consent) return false;   // no consent stored yet
@@ -91,20 +93,21 @@ const EmailCaptureController: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [canShow, openOverlay]);
 
-  // Open immediately after consent (banner hides)
+  // Open immediately after consent (banner hides) - SIMPLIFIED APPROACH
   React.useEffect(() => {
-    console.log('🔄 EmailCaptureController: showBanner:', showBanner, 'canShow:', canShow, 'consent:', consent);
-    console.log('🔍 Storage snooze until:', storage.snoozeUntil, 'Current time:', getNow());
-    if (!showBanner && consent) {
-      console.info("✅ LeadOverlay: Trying to open prototype form after consent");
-      // Force reset snooze and trigger
-      storage.snoozeUntil = 0;
-      triggeredRef.current = false;
-      openOverlay();
-    } else {
-      console.log('❌ Not opening overlay:', { showBanner, canShow, consent });
+    console.log('🔄 EmailCaptureController: Cookie banner dismissed check');
+    console.log('   showBanner:', showBanner, 'consent:', !!consent, 'triggered:', triggeredRef.current);
+    
+    // If banner just got hidden and we have consent, open immediately
+    if (!showBanner && consent && !triggeredRef.current) {
+      console.info("✅ LeadOverlay: FORCE opening prototype form after cookie dismissal");
+      triggeredRef.current = true;
+      storage.markShown();
+      window.dispatchEvent(
+        new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController-AutoOpen", variant: "prototype" } })
+      );
     }
-  }, [showBanner, canShow, openOverlay, consent]);
+  }, [showBanner, consent]);
 
   // Force open via URL param for testing
   React.useEffect(() => {
