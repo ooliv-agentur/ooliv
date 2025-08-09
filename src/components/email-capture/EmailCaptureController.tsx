@@ -45,9 +45,11 @@ const EmailCaptureController: React.FC = () => {
   }, [consent, showBanner, location.pathname, location.search]);
 
   const openOverlay = useCallback(() => {
+    console.log('🚀 EmailCaptureController: openOverlay called, triggered:', triggeredRef.current, 'canShow:', canShow);
     if (triggeredRef.current || !canShow) return;
     triggeredRef.current = true;
     storage.markShown();
+    console.log('📧 EmailCaptureController: Dispatching prototype overlay event');
     window.dispatchEvent(
       new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController", variant: "prototype" } })
     );
@@ -91,8 +93,9 @@ const EmailCaptureController: React.FC = () => {
 
   // Open immediately after consent (banner hides)
   useEffect(() => {
+    console.log('🔄 EmailCaptureController: showBanner:', showBanner, 'canShow:', canShow);
     if (!showBanner && canShow) {
-      console.info("LeadOverlay: opening immediately after consent");
+      console.info("✅ LeadOverlay: opening prototype form immediately after consent");
       openOverlay();
     }
   }, [showBanner, canShow, openOverlay]);
