@@ -118,15 +118,16 @@ const EmailCaptureController: React.FC = () => {
     return () => window.removeEventListener("lead-overlay-closed", onClosed);
   }, []);
 
-  // Debug info
+  // Debug info with mobile detection
   useEffect(() => {
     const now = getNow();
     const reasons: string[] = [];
+    const isMobile = window.innerWidth < 768;
     if (showBanner) reasons.push("showBanner=true");
     if (!consent) reasons.push("no consent yet");
     if (excludedPaths.has(location.pathname)) reasons.push("excluded path");
     if (storage.snoozeUntil && storage.snoozeUntil > now) reasons.push(`snoozed until ${new Date(storage.snoozeUntil).toISOString()}`);
-    console.info("LeadOverlay canShow=", canShow, { reasons });
+    console.info(`📱 LeadOverlay canShow=${canShow} | Mobile: ${isMobile}`, { reasons, consent, showBanner, path: location.pathname });
   }, [canShow, consent, showBanner, location.pathname]);
 
   return null;
