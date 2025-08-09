@@ -92,19 +92,23 @@ const EmailCaptureController: React.FC = () => {
   }, [canShow, openOverlay]);
 
   // Open immediately after consent (banner hides)
-  useEffect(() => {
-    console.log('🔄 EmailCaptureController: showBanner:', showBanner, 'canShow:', canShow);
-    if (!showBanner && canShow) {
+  React.useEffect(() => {
+    console.log('🔄 EmailCaptureController: showBanner:', showBanner, 'canShow:', canShow, 'consent:', consent);
+    if (!showBanner && canShow && consent) {
       console.info("✅ LeadOverlay: opening prototype form immediately after consent");
       openOverlay();
+    } else {
+      console.log('❌ Not opening overlay:', { showBanner, canShow, consent });
     }
-  }, [showBanner, canShow, openOverlay]);
+  }, [showBanner, canShow, openOverlay, consent]);
 
   // Force open via URL param for testing
-  useEffect(() => {
+  React.useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("forceEmailCapture") === "1") {
-      console.info("LeadOverlay: forcing open via URL param");
+      console.info("🔧 LeadOverlay: forcing open via URL param");
+      // Reset snooze for testing
+      storage.snoozeUntil = 0;
       openOverlay();
     }
   }, [location.search, openOverlay]);

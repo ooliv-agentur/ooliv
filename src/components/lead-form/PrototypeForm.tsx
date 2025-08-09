@@ -85,17 +85,17 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center py-12 text-center"
+        className="flex flex-col items-center justify-center py-8 px-4 text-center min-h-[300px]"
       >
-        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-          <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
+          <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-white mb-2">
+        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
           {language === 'de' ? 'Anfrage gesendet!' : 'Request sent!'}
         </h3>
-        <p className="text-white/70">
+        <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">
           {language === 'de' 
             ? 'Wir erstellen Ihren kostenlosen Prototyp und melden uns binnen 48 Stunden.' 
             : 'We\'ll create your free prototype and get back to you within 48 hours.'}
