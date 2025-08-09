@@ -11,7 +11,7 @@ import { X } from 'lucide-react';
 import LeadFormContent from './lead-form/LeadFormContent';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
-
+import { useCookieConsent } from '@/contexts/CookieConsentContext';
 interface LeadGenerationOverlayProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -20,11 +20,16 @@ interface LeadGenerationOverlayProps {
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const [mode, setMode] = useState<'project' | 'prototype'>('project');
   const { language } = useLanguage();
+  const { showBanner } = useCookieConsent();
   // Listen for the global event to open the lead form
   useEffect(() => {
     console.log('🔧 LeadGenerationOverlay: Setting up event listener');
     
     const handleOpenLeadForm = (event: any) => {
+      if (showBanner) {
+        console.log('⏳ LeadGenerationOverlay: Cookie banner visible, ignoring open-lead-form');
+        return;
+      }
       const variant = event?.detail?.variant as 'prototype' | 'project' | undefined;
       const source = event?.detail?.source as string | undefined;
       const nextMode: 'project' | 'prototype' = variant ?? (source?.toLowerCase().includes('prototype') ? 'prototype' : 'project');
@@ -41,7 +46,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       console.log('🧹 LeadGenerationOverlay: Removing event listener');
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [open, onOpenChange]);
+  }, [open, onOpenChange, showBanner]);
   
   const internalOnOpenChange = (next: boolean) => {
     if (!next) {

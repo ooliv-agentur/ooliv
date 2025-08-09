@@ -31,8 +31,6 @@ const EmailCaptureController: React.FC = () => {
   const { consent, showBanner } = useCookieConsent();
   const location = useLocation();
   const triggeredRef = useRef(false);
-  const openedAckRef = useRef(false);
-  const retryTimerRef = useRef<number | null>(null);
 
   const canShow = React.useMemo(() => {
     const params = new URLSearchParams(location.search);
@@ -95,34 +93,6 @@ const EmailCaptureController: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [canShow, openOverlay]);
 
-  // Open immediately after consent (banner hides) - SIMPLIFIED APPROACH
-  React.useEffect(() => {
-    console.log('🔄 EmailCaptureController: Cookie banner dismissed check');
-    console.log('   showBanner:', showBanner, 'consent:', !!consent, 'triggered:', triggeredRef.current);
-    
-    // If banner just got hidden and we have consent, open immediately
-    if (!showBanner && consent && !triggeredRef.current) {
-      console.info("✅ LeadOverlay: FORCE opening prototype form after cookie dismissal");
-      triggeredRef.current = true;
-      openedAckRef.current = false;
-      storage.markShown();
-      window.dispatchEvent(
-        new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController-AutoOpen", variant: "prototype" } })
-      );
-      // Retry once if no acknowledgement
-      if (retryTimerRef.current) window.clearTimeout(retryTimerRef.current);
-      retryTimerRef.current = window.setTimeout(() => {
-        if (!openedAckRef.current) {
-          console.warn('♻️ Retrying open-lead-form (no opened ack)');
-          window.dispatchEvent(new CustomEvent("open-lead-form", { detail: { source: "EmailCaptureController-Retry", variant: "prototype" } }));
-        }
-      }, 600);
-    }
-
-    return () => {
-      if (retryTimerRef.current) window.clearTimeout(retryTimerRef.current!);
-    };
-  }, [showBanner, consent]);
 
   // Force open via URL param for testing
   React.useEffect(() => {
@@ -144,15 +114,6 @@ const EmailCaptureController: React.FC = () => {
     return () => window.removeEventListener("lead-overlay-closed", onClosed);
   }, []);
 
-  // Listen for overlay opened acknowledgement
-  useEffect(() => {
-    const onOpened = () => {
-      console.log('✅ lead-overlay-opened acknowledged');
-      openedAckRef.current = true;
-    };
-    window.addEventListener('lead-overlay-opened', onOpened);
-    return () => window.removeEventListener('lead-overlay-opened', onOpened);
-  }, []);
 
   // Debug info with mobile detection
   useEffect(() => {

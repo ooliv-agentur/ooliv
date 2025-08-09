@@ -34,7 +34,7 @@ interface CookieConsentProviderProps {
 
 export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) => {
   const [consent, setConsent] = useState<CookieConsent | null>(null);
-  const [showBanner, setShowBanner] = useState(true); // Default to true, will be set to false if consent exists
+  const [showBanner, setShowBanner] = useState(false); // Start hidden to avoid flicker; will show after init if needed
 
   const getSessionId = () => {
     let sessionId = localStorage.getItem('cookie-session-id');
