@@ -55,6 +55,15 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   const handleClose = () => internalOnOpenChange(false);
 
+  // Notify when overlay opened (handshake for controllers)
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent('lead-overlay-opened', { detail: { mode } }));
+      }, 0);
+    }
+  }, [open, mode]);
+
   // Dynamic header text based on mode and language
   const isPrototype = mode === 'prototype';
   const title = language === 'de' ? (isPrototype ? 'Kostenloser Prototyp' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Prototype' : 'Start your project');
