@@ -11,6 +11,7 @@ import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 import WebDevSEOText from '@/components/web-development/WebDevSEOText';
+import { Link } from 'react-router-dom';
 
 const GermanWebDevelopment = () => {
   const webDevFaqs = [
@@ -50,7 +51,11 @@ const GermanWebDevelopment = () => {
       <WebDevBenefits />
       <WebDevCmsVsStaticDE />
       <WebDevProcessNewDE />
-      <WebDevServices />
+       <WebDevServices />
+
+       <p className="text-center text-sm text-medico-darkGreen mt-4">
+         Mehr über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+       </p>
       
       {/* Global Case Studies Section */}
       <section className="py-24 bg-white">

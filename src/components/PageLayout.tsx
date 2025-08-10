@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
-import { useLanguage } from '@/contexts/LanguageContext';
+
 import { MotionConfig } from 'framer-motion';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
 
@@ -16,38 +16,8 @@ interface PageLayoutProps {
 }
 
 // Map paths between languages
-const pathMappings: Record<string, string> = {
-  // German to English
-  '/': '/en',
-  '/webdesign': '/en/webdesign',
-  '/webentwicklung': '/en/webdevelopment',
-  '/content-erstellung': '/en/content-creation',
-  '/seo-optimierung': '/en/seo',
-  '/google-ads': '/en/google-ads',
-  '/ki-technologien': '/en/ai-technologies',
-  '/case-studies': '/en/case-studies',
-  '/ueber-ooliv': '/en/about-us',
-  '/kontakt': '/en/contact',
-  '/impressum': '/en/legal-notice',
-  '/datenschutz': '/en/privacy-policy',
-  '/danke': '/en/thank-you',
-  '/werbeagentur-wiesbaden': '/en',
-  
-  // English to German
-  '/en': '/',
-  '/en/webdesign': '/webdesign',
-  '/en/webdevelopment': '/webentwicklung',
-  '/en/content-creation': '/content-erstellung',
-  '/en/seo': '/seo-optimierung',
-  '/en/google-ads': '/google-ads',
-  '/en/ai-technologies': '/ki-technologien',
-  '/en/case-studies': '/case-studies',
-  '/en/about-us': '/ueber-ooliv',
-  '/en/contact': '/kontakt',
-  '/en/legal-notice': '/impressum',
-  '/en/privacy-policy': '/datenschutz',
-  '/en/thank-you': '/danke',
-};
+// DE-only site: path mappings removed
+
 
 // Define page-specific preload resources
 const pagePreloadResources: Record<string, Array<{type: string, href: string, as?: string}>> = {
@@ -69,7 +39,7 @@ const pagePreloadResources: Record<string, Array<{type: string, href: string, as
 
 const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const location = useLocation();
-  const { language } = useLanguage();
+  
   
   // Use the scroll to top hook
   useScrollToTop();
@@ -81,9 +51,8 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
   const baseUrl = 'https://ooliv.de';
   const canonicalUrl = `${baseUrl}${currentPath}`;
   
-  // Get the alternate language URL
-  const alternateLanguagePath = pathMappings[currentPath];
-  const alternateLanguageUrl = alternateLanguagePath ? `${baseUrl}${alternateLanguagePath}` : null;
+  // No alternate language URL on DE-only site
+  const alternateLanguageUrl = null;
 
   // Removed redundant www redirect - handled by .htaccess
   // Removed /de/ path redirect - handled by .htaccess  
@@ -129,13 +98,10 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
     });
   }, [currentPath]);
 
-  // Console log for debugging canonical and hreflang
+  // Console log for debugging canonical
   useEffect(() => {
     console.log('Current canonical URL:', canonicalUrl);
-    if (alternateLanguageUrl) {
-      console.log('Alternate language URL:', alternateLanguageUrl);
-    }
-  }, [canonicalUrl, alternateLanguageUrl]);
+  }, [canonicalUrl]);
 
   return (
     <>
@@ -146,18 +112,9 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* CRITICAL: Only index,follow - no noindex anywhere */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         
-        {/* Hreflang tags for language alternates - always non-www */}
-        <link rel="alternate" hrefLang={language} href={canonicalUrl} />
-        {alternateLanguageUrl && (
-          <link 
-            rel="alternate" 
-            hrefLang={language === 'de' ? 'en' : 'de'} 
-            href={alternateLanguageUrl}
-          />
-        )}
-        
-        {/* x-default hreflang pointing to German version as default */}
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${language === 'de' ? currentPath : pathMappings[currentPath] || '/'}`} />
+        {/* Hreflang tags - DE only */}
+        <link rel="alternate" hrefLang="de" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
         
         {/* Add meta tag to indicate preferred domain variant */}
         <meta name="google" content="notranslate" />

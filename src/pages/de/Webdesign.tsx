@@ -11,6 +11,7 @@ import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import SEOTextSection from '@/components/web-design/SEOTextSection';
+import { Link } from 'react-router-dom';
 
 const GermanWebDesign = () => {
   return (
@@ -26,6 +27,10 @@ const GermanWebDesign = () => {
         <WebDesignStructureFirst />
         <WebDesignBuildOptions />
         <WebDesignProcess />
+
+        <p className="text-center text-sm text-medico-darkGreen mt-4">
+          Mehr über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+        </p>
         
         {/* Full Case Studies Section with global titles */}
         <section className="py-24 bg-white">

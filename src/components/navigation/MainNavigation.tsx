@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import MobileMenuContent from './MobileMenuContent';
 import DesktopMenuContent from './DesktopMenuContent';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import LanguageSwitcher from './LanguageSwitcher';
+
 
 const MainNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +55,7 @@ const MainNavigation = () => {
           {/* Logo - responsive positioning: desktop viewport edge, mobile content aligned */}
           <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-40">
             <Link 
-              to={language === 'de' ? '/' : '/en'} 
+              to='/' 
               className="flex items-center" 
               onClick={handleLogoClick}
               aria-label="ooliv Homepage"
@@ -72,7 +72,7 @@ const MainNavigation = () => {
           
           {/* Right side controls - Language switcher and burger menu */}
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 flex items-center gap-3">
-            <LanguageSwitcher />
+            
             
             {/* Menu toggle button */}
             <button 

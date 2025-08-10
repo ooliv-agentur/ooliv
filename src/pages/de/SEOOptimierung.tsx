@@ -13,6 +13,7 @@ import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOTextSectionDE from '@/components/seo/SEOTextSectionDE';
 import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
+import { Link } from 'react-router-dom';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -66,6 +67,10 @@ const GermanSEO = () => {
       <SEOServicesDE />
       <SEOApproachDE />
       <SEOProcessDE />
+
+      <p className="text-center text-sm text-medico-darkGreen mt-4">
+        Informieren Sie sich über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+      </p>
       
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

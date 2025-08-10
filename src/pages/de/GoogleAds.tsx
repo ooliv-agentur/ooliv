@@ -11,6 +11,7 @@ import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GooglePartnerBadge from '@/components/google-ads/GooglePartnerBadge';
 import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout } from 'lucide-react';
 import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
+import { Link } from 'react-router-dom';
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -199,13 +200,17 @@ const GermanGoogleAds = () => {
         </div>
       </section>
 
+      <p className="text-center text-sm text-medico-darkGreen mt-4">
+        Lernen Sie unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link> kennen.
+      </p>
+
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />
 
       <CTA 
         title="Lassen Sie uns Ihre Google Ads messbar machen"
         subtitle="Sie brauchen keine weiteren Klicks – sondern Leads, die konvertieren. Gemeinsam entwickeln wir einen Performance-Funnel, der von der Anzeige bis zur Conversion funktioniert."
         primaryCta="Kampagne starten"
-        secondaryCtaLink="/de/kontakt"
+        secondaryCtaLink="/kontakt"
       />
     </PageLayout>
   );

@@ -33,8 +33,7 @@ const Footer = () => {
     return `${langPrefix}/${translatedPath}`;
   };
 
-  // Phone number with international format for English users
-  const phoneNumber = language === 'de' ? '06131 – 63 67 801' : '+49 6131 – 63 67 801';
+  const phoneNumber = '06131 – 63 67 801';
   
   return (
     <footer className={footerStyles.container}>
@@ -95,11 +94,11 @@ const Footer = () => {
               </li>
               <li className={footerStyles.phoneText}>
                 <Phone className={footerStyles.contactIcon} />
-                <span>{phoneNumber}</span>
+                <a href="tel:+4961316367801" className={footerStyles.linkText}>{phoneNumber}</a>
               </li>
               <li className={footerStyles.emailText}>
                 <Mail className={footerStyles.contactIcon} />
-                <span>info@ooliv.de</span>
+                <a href="mailto:info@ooliv.de" className={footerStyles.linkText}>info@ooliv.de</a>
               </li>
             </ul>
           </div>

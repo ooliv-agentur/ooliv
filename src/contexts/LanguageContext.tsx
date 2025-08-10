@@ -139,15 +139,9 @@ export const translations = {
   }
 };
 
-// Helper function to get initial language
+// Helper function to get initial language (DE-only)
 const getInitialLanguage = (): Language => {
-  if (typeof window !== 'undefined') {
-    const path = window.location.pathname;
-    if (path.startsWith('/en')) {
-      return 'en';
-    }
-  }
-  return 'de'; // Default to German
+  return 'de';
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

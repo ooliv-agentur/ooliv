@@ -59,20 +59,15 @@ const GermanIndex = () => {
     "alternateName": ["ooliv", "Digitalagentur Mainz", "SEO Agentur Mainz", "Webdesign Mainz"],
     "description": "Etablierte Werbeagentur Mainz seit 2008. Spezialisiert auf Webdesign Mainz, SEO Optimierung, Online Marketing Mainz und digitale Strategien für Unternehmen in Rheinland-Pfalz.",
     "url": "https://ooliv.de",
-    "telephone": "+49-6131-5544041",
-    "email": "hallo@ooliv.de",
+    "telephone": "+4961316367801",
+    "email": "info@ooliv.de",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Große Bleiche 60-62",
+      "streetAddress": "Mombacher Str. 25",
       "addressLocality": "Mainz",
-      "postalCode": "55116",
+      "postalCode": "55122",
       "addressRegion": "Rheinland-Pfalz",
       "addressCountry": "DE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 49.9928617,
-      "longitude": 8.2472526
     },
     "areaServed": [
       {
