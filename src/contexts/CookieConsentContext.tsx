@@ -51,6 +51,7 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
       
       console.log('Saving cookie consent:', newConsent);
       
+      // Save to database for analytics (write-only)
       await supabase.from('cookie_consents').insert({
         session_id: sessionId,
         essential: newConsent.essential,
@@ -61,12 +62,20 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
         user_agent: navigator.userAgent
       });
 
+      // Store locally for future reference (primary source of truth for frontend)
       localStorage.setItem('cookie-consent', JSON.stringify(newConsent));
+      localStorage.setItem('cookie-consent-timestamp', Date.now().toString());
+      
       setConsent(newConsent);
       setShowBanner(false);
       console.log('Cookie consent saved successfully, banner hidden');
     } catch (error) {
-      console.error('Error saving cookie consent:', error);
+      console.error('Error saving cookie consent to database:', error);
+      // Still save locally even if database insert fails
+      localStorage.setItem('cookie-consent', JSON.stringify(newConsent));
+      localStorage.setItem('cookie-consent-timestamp', Date.now().toString());
+      setConsent(newConsent);
+      setShowBanner(false);
     }
   };
 
