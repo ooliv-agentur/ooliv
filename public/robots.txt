@@ -2,9 +2,8 @@
 User-agent: *
 Allow: /
 
-# Block old /de/ paths - they redirect anyway
-Disallow: /de/
-Disallow: /de
+# Allow crawling of all content
+# Note: /de/ paths redirect to clean URLs via .htaccess
 
 # Block common tracking parameters
 Disallow: /*?utm_source=*
@@ -18,4 +17,5 @@ Host: ooliv.de
 # Provide sitemap location
 Sitemap: https://ooliv.de/sitemap.xml
 
-# Last updated: 2025-07-19
+# Last updated: 2025-01-12 - Fixed crawling issues
+# Removed /de/ disallow to fix Ahrefs link detection
