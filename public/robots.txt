@@ -2,8 +2,8 @@
 User-agent: *
 Allow: /
 
-# Allow crawling of all content
-# Note: /de/ paths redirect to clean URLs via .htaccess
+# Crawl-Delay to ensure proper rendering
+Crawl-delay: 1
 
 # Block common tracking parameters
 Disallow: /*?utm_source=*
