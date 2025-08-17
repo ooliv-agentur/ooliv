@@ -91,6 +91,130 @@ async function sendAdminEmail(client, data, smtpUsername, language) {
     }
   }
 
+  // Check if this is a prototype request
+  const isPrototype = sanitizedData.projectType === 'prototype';
+
+  if (isPrototype) {
+    // Send prototype-specific email
+    await sendPrototypeAdminEmail(client, sanitizedData, smtpUsername, language);
+  } else {
+    // Send regular project inquiry email
+    await sendRegularAdminEmail(client, sanitizedData, smtpUsername, language);
+  }
+}
+
+async function sendPrototypeAdminEmail(client, data, smtpUsername, language) {
+  const currentTime = new Date().toLocaleString(language === "en" ? "en-US" : "de-DE", {
+    timeZone: "Europe/Berlin",
+    year: "numeric",
+    month: "2-digit", 
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  const labels = language === "en" 
+    ? {
+        subject: "🚀 New Free Concept Request via ooliv.de",
+        title: "New Free Website Concept Request",
+        email: "Email",
+        timestamp: "Requested at",
+        source: "Source",
+        description: "The customer has requested a free website concept. This is a 48-hour commitment to provide strategic wireframes and content concept.",
+        action: "Next Steps",
+        actionItems: [
+          "• Confirm receipt within 24 hours",
+          "• Prepare strategic wireframes based on AIDA principle",
+          "• Create content concept and user journey",
+          "• Deliver concept within 48 hours"
+        ],
+        footer: `This email was sent automatically.\n© ${new Date().getFullYear()} ooliv`
+      }
+    : {
+        subject: "🚀 Neue Prototyp-Anfrage über ooliv.de",
+        title: "Neue Website-Konzept Anfrage",
+        email: "E-Mail",
+        timestamp: "Angefragt am",
+        source: "Quelle",
+        description: "Der Kunde hat ein kostenloses Website-Konzept angefragt. Hierbei handelt es sich um eine 48-Stunden-Zusage für strategische Wireframes und Inhaltskonzept.",
+        action: "Nächste Schritte",
+        actionItems: [
+          "• Eingangsbestätigung innerhalb von 24 Stunden",
+          "• Strategische Wireframes nach AIDA-Prinzip erstellen",
+          "• Inhaltskonzept und User Journey entwickeln", 
+          "• Konzept innerhalb von 48 Stunden liefern"
+        ],
+        footer: `Diese E-Mail wurde automatisch gesendet.\n© ${new Date().getFullYear()} ooliv`
+      };
+
+  const htmlContent = `<!DOCTYPE html>
+<html lang="${language}">
+<head><meta charset="UTF-8"></head>
+<body style="font-family: Arial, sans-serif; color: #333;">
+  <div style="display:none; max-height:0; overflow:hidden;">${language === "en" ? "New free concept request via ooliv.de" : "Neue Prototyp-Anfrage über ooliv.de"}</div>
+  
+  <h1 style="color: #006064; margin-bottom: 10px;">${labels.title}</h1>
+  <p style="color: #666; font-style: italic; margin-bottom: 25px;">${labels.description}</p>
+  
+  <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; border-left: 4px solid #006064; margin-bottom: 25px;">
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; font-weight: bold; width: 120px;">${labels.email}:</td>
+        <td style="padding: 8px 0; color: #006064; font-weight: 600;">${data.email}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; font-weight: bold;">${labels.timestamp}:</td>
+        <td style="padding: 8px 0;">${currentTime}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; font-weight: bold;">${labels.source}:</td>
+        <td style="padding: 8px 0;">ooliv.de (Prototyp-Formular)</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="background: #fff3cd; padding: 20px; border-radius: 8px; border-left: 4px solid #ffc107;">
+    <h3 style="color: #856404; margin-top: 0; margin-bottom: 15px;">${labels.action}:</h3>
+    <div style="color: #856404;">
+      ${labels.actionItems.map(item => `<div style="margin-bottom: 5px;">${item}</div>`).join('')}
+    </div>
+  </div>
+  
+  <p style="font-size: 14px; color: #777; margin-top: 30px;">
+    ${language === "en" ? "This email was sent automatically." : "Diese E-Mail wurde automatisch gesendet."}<br>
+    &copy; ${new Date().getFullYear()} ooliv
+  </p>
+</body>
+</html>`;
+
+  const textContent = `${labels.title}
+
+${labels.description}
+
+${labels.email}: ${data.email}
+${labels.timestamp}: ${currentTime}
+${labels.source}: ooliv.de (Prototyp-Formular)
+
+${labels.action}:
+${labels.actionItems.join('\n')}
+
+${labels.footer}`;
+
+  await client.send({
+    from: "info@ooliv.de",
+    to: smtpUsername,
+    replyTo: data.email,
+    subject: labels.subject,
+    html: htmlContent,
+    text: textContent,
+    encoding: "8bit",
+    contentType: "text/html; charset=utf-8",
+    textEncoding: "8bit",
+    textContentType: "text/plain; charset=utf-8"
+  });
+}
+
+async function sendRegularAdminEmail(client, data, smtpUsername, language) {
   // Different labels and content based on language
   const labels = language === "en" 
     ? {
@@ -129,16 +253,16 @@ async function sendAdminEmail(client, data, smtpUsername, language) {
       };
   
   const rows = [
-    { label: labels.projectType, value: sanitizedData.projectType },
-    { label: labels.companyName, value: sanitizedData.companyName },
-    { label: labels.industry, value: sanitizedData.industry },
-    { label: labels.websiteUrl, value: sanitizedData.websiteUrl || labels.notSpecified },
-    { label: labels.location, value: sanitizedData.location || labels.notSpecified },
-    { label: labels.goal, value: sanitizedData.goal },
-    { label: labels.name, value: sanitizedData.name },
-    { label: labels.email, value: sanitizedData.email },
-    { label: labels.phone, value: sanitizedData.phone || labels.notSpecified },
-    { label: labels.message, value: sanitizedData.message || labels.noMessage }
+    { label: labels.projectType, value: data.projectType },
+    { label: labels.companyName, value: data.companyName },
+    { label: labels.industry, value: data.industry },
+    { label: labels.websiteUrl, value: data.websiteUrl || labels.notSpecified },
+    { label: labels.location, value: data.location || labels.notSpecified },
+    { label: labels.goal, value: data.goal },
+    { label: labels.name, value: data.name },
+    { label: labels.email, value: data.email },
+    { label: labels.phone, value: data.phone || labels.notSpecified },
+    { label: labels.message, value: data.message || labels.noMessage }
   ];
 
   const htmlContent = `<!DOCTYPE html><html lang="${language}"><head><meta charset="UTF-8"></head><body style="font-family: Arial, sans-serif; color: #333;"><div style="display:none; max-height:0; overflow:hidden;">${language === "en" ? "New project inquiry via ooliv.de – all details in overview." : "Neue Projektanfrage über ooliv.de – alle Details im Überblick."}</div><h1 style="color: #006064;">${labels.title}</h1><div style="background: #f9f9f9; padding: 20px; border-radius: 8px;"><table style="width: 100%; border-collapse: collapse;">${rows.map((row) => `<tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:bold;width:150px;">${row.label}:</td><td style="padding:10px;border-bottom:1px solid #eee;">${row.value}</td></tr>`).join("")}</table></div><p style="font-size: 14px; color: #777;">${language === "en" ? "This email was sent automatically." : "Diese E-Mail wurde automatisch gesendet."}<br>&copy; ${new Date().getFullYear()} ooliv</p></body></html>`;
@@ -148,7 +272,7 @@ async function sendAdminEmail(client, data, smtpUsername, language) {
   await client.send({
     from: "info@ooliv.de",
     to: smtpUsername,
-    replyTo: sanitizedData.email, // Set reply-to to the user's email for faster replies
+    replyTo: data.email, // Set reply-to to the user's email for faster replies
     subject: labels.subject,
     html: htmlContent,
     text: textContent,
