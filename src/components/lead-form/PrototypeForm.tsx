@@ -112,13 +112,10 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold text-white mb-2">
-            {language === 'de' ? 'Kostenloses Website-Konzept in 48 Stunden' : 'Free Website Concept in 48 Hours'}
-          </h3>
-          <p className="text-white/70 text-sm leading-relaxed">
+          <p className="text-white/80 text-sm leading-relaxed">
             {language === 'de' 
-              ? 'Wir erstellen strategische Wireframes nach AIDA-Prinzip mit durchdachter User Journey und Inhaltskonzept – kostenlos und unverbindlich.' 
-              : 'We\'ll create strategic wireframes following AIDA principles with thoughtful user journey and content concept – free and without obligation.'}
+              ? 'Wir zeigen Ihnen, wie Ihre neue Website Kunden gewinnt. Mit klaren Strukturen und durchdachtem Aufbau – damit Besucher zu Kunden werden.' 
+              : 'We\'ll show you how your new website attracts customers. With clear structures and thoughtful design – turning visitors into customers.'}
           </p>
         </div>
       </div>
