@@ -88,11 +88,18 @@ const DynamicSubheadlines = ({
     return <span className={className}></span>;
   }
 
+  // Calculate min width based on longest subheadline
+  const longestText = subheadlines.reduce((longest, current) => 
+    current.length > longest.length ? current : longest, '');
+
   return (
-    <span className={`${className} inline-flex items-center`}>
-      <span>{displayText}</span>
+    <span className={`${className} inline-flex items-center relative`} style={{ minWidth: `${longestText.length * 0.6}em` }}>
+      {/* Invisible placeholder to maintain space */}
+      <span className="invisible absolute">{longestText}</span>
+      {/* Visible text */}
+      <span className="relative">{displayText || '\u00A0'}</span>
       <span 
-        className="ml-0.5 w-0.5 h-[1em] bg-current"
+        className="ml-0.5 w-0.5 h-[1em] bg-current flex-shrink-0"
         style={{
           animation: 'blink 1s infinite'
         }}
