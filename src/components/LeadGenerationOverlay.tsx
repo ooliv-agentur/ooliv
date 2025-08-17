@@ -72,10 +72,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   // Dynamic header text based on mode and language
   const isPrototype = mode === 'prototype';
-  const title = language === 'de' ? (isPrototype ? 'Kostenloser Prototyp' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Prototype' : 'Start your project');
+  const title = language === 'de' ? (isPrototype ? 'Kostenloses Konzept' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Concept' : 'Start your project');
   const description = language === 'de'
-    ? (isPrototype ? 'Erhalten Sie in 48 Stunden einen klickbaren Prototyp – kostenlos und unverbindlich.' : 'Füllen Sie das Formular aus, um loszulegen')
-    : (isPrototype ? 'Get a clickable prototype within 48 hours – free and without obligation.' : 'Fill out the form to get started');
+    ? (isPrototype ? 'Erhalten Sie in 48 Stunden ein strategisches Website-Konzept mit Wireframes nach AIDA-Prinzip – kostenlos und unverbindlich.' : 'Füllen Sie das Formular aus, um loszulegen')
+    : (isPrototype ? 'Get a strategic website concept with AIDA-based wireframes within 48 hours – free and without obligation.' : 'Fill out the form to get started');
   return (
     <Sheet open={open} onOpenChange={internalOnOpenChange}>
       <SheetContent 

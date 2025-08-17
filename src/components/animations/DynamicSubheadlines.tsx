@@ -92,7 +92,7 @@ const DynamicSubheadlines = ({
     <span className={`${className} inline-flex items-center`}>
       <span>{displayText}</span>
       <span 
-        className="ml-0.5 w-0.5 h-5 bg-current"
+        className="ml-0.5 w-0.5 h-[1em] bg-current"
         style={{
           animation: 'blink 1s infinite'
         }}
