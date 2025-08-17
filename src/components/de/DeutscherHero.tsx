@@ -26,16 +26,16 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "online sichtbar zu werden.",
-    "mehr Leads zu generieren.",
-    "mit ihrer Website zu überzeugen."
+    "einen kostenlosen Prototyp zu erhalten.",
+    "zu sehen, was möglich ist.",
+    "unverbindlich zu testen."
   ];
   
   return (
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="ooliv – Digitalagentur in Mainz für B2B-Unternehmen"
+        title="Kostenloser Website-Prototyp in 48 Stunden für B2B-Unternehmen"
         subtitle="Lassen Sie uns Ihnen zeigen, was möglich ist: Kostenloser Website-Prototyp in 48 Stunden – unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
         dynamicPrefix="Wir helfen Unternehmen,"
         dynamicSubheadlines={dynamicEndings}
