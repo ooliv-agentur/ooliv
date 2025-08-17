@@ -122,18 +122,18 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
               ? 'Wir analysieren Ihr Geschäft und erstellen ein maßgeschneidertes Website-Konzept, das Ihre Zielgruppe überzeugt und zu mehr Kunden führt.' 
               : 'We analyze your business and create a tailored website concept that convinces your target audience and leads to more customers.'}
           </p>
-          <ul className="space-y-3 text-sm text-white/85">
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5 text-lg">•</span>
-              <span>{language === 'de' ? 'Strategische Seitenstruktur nach bewährten Verkaufsprinzipien' : 'Strategic page structure based on proven sales principles'}</span>
+          <ul className="space-y-3 text-sm text-white/85 pl-1">
+            <li className="flex items-start">
+              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="flex-1">{language === 'de' ? 'Strategische Seitenstruktur nach bewährten Verkaufsprinzipien' : 'Strategic page structure based on proven sales principles'}</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5 text-lg">•</span>
-              <span>{language === 'de' ? 'Optimierte Benutzerführung für maximale Conversion' : 'Optimized user guidance for maximum conversion'}</span>
+            <li className="flex items-start">
+              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="flex-1">{language === 'de' ? 'Optimierte Benutzerführung für maximale Conversion' : 'Optimized user guidance for maximum conversion'}</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary mt-0.5 text-lg">•</span>
-              <span>{language === 'de' ? 'Konkrete Inhaltsempfehlungen für Ihre Branche' : 'Concrete content recommendations for your industry'}</span>
+            <li className="flex items-start">
+              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="flex-1">{language === 'de' ? 'Konkrete Inhaltsempfehlungen für Ihre Branche' : 'Concrete content recommendations for your industry'}</span>
             </li>
           </ul>
         </div>
