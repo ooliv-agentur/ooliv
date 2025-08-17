@@ -37,7 +37,7 @@ const DeutscherHero = () => {
         isHomepage={true}
         title="Kostenloser Website-Prototyp in 48 Stunden für B2B-Unternehmen"
         subtitle="Lassen Sie uns Ihnen zeigen, was möglich ist: Kostenloser Website-Prototyp in 48 Stunden – unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
-        dynamicPrefix="Wir helfen Unternehmen,"
+        dynamicPrefix="Lassen Sie uns Ihnen zeigen,"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
           text: "Kostenloser Prototyp",
