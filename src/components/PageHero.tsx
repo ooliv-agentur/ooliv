@@ -119,7 +119,7 @@ const PageHero = ({
   };
   
   // Default content based on language
-  const defaultHomepageTitle = language === 'de' ? "ooliv Werbeagentur Mainz" : "Web Design Agency Mainz";
+  const defaultHomepageTitle = language === 'de' ? "ooliv Digitalagentur Mainz" : "Web Design Agency Mainz";
   
   const defaultHomepageDescription = language === 'de' ? (
     "Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege."

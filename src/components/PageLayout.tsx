@@ -131,7 +131,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         {/* Enhanced Open Graph meta tags */}
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="ooliv Werbeagentur" />
+        <meta property="og:site_name" content="ooliv Digitalagentur" />
         <meta property="og:locale" content="de_DE" />
         
         {/* Twitter Card meta tags */}
