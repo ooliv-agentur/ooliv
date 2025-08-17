@@ -205,8 +205,8 @@ const GermanIndex = () => {
         <DeutscherHero />
         
         <DeutscherAboutSection />
-        <TeamTeaserDE />
         
+        {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-8 text-medico-darkGreen">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
@@ -231,10 +231,12 @@ const GermanIndex = () => {
           </div>
         </div>
         
-        <GermanSolutionSection />
-        <TechnologiesSection />
-        
+        {/* Case Studies früher für sofortiges Vertrauen */}
         <CaseStudiesSection />
+        
+        <GermanSolutionSection />
+        <TeamTeaserDE />
+        <TechnologiesSection />
         
         <FAQ 
           customFaqs={germanFaqs}

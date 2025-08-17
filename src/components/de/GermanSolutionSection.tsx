@@ -16,13 +16,51 @@ const GermanSolutionSection = () => {
         <Reveal>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-medico-darkGreen leading-tight">
-              Von der Strategie bis zum GoLive – alles aus einer Hand.
+              Kennen Sie diese Probleme?
             </h2>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+              <div className="bg-medico-mint p-6 rounded-lg">
+                <h3 className="font-semibold text-medico-darkGreen mb-2">
+                  Website generiert keine Anfragen
+                </h3>
+                <p className="text-medico-darkGreen text-sm">
+                  Viel Traffic, aber wenig Leads? Das frustriert.
+                </p>
+              </div>
+              <div className="bg-medico-mint p-6 rounded-lg">
+                <h3 className="font-semibold text-medico-darkGreen mb-2">
+                  Bei Google nicht auffindbar
+                </h3>
+                <p className="text-medico-darkGreen text-sm">
+                  Ihre Konkurrenz steht auf Seite 1, Sie nicht.
+                </p>
+              </div>
+              <div className="bg-medico-mint p-6 rounded-lg">
+                <h3 className="font-semibold text-medico-darkGreen mb-2">
+                  Komplizierte Agentur-Zusammenarbeit
+                </h3>
+                <p className="text-medico-darkGreen text-sm">
+                  Endlose Meetings, aber wenig Fortschritt.
+                </p>
+              </div>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-medico-darkGreen">
+              Wir lösen sie pragmatisch und nachhaltig.
+            </h3>
+            
             <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-              Ob <Link to="/webdesign" className="text-medico-turquoise hover:underline font-medium">Website-Relaunch</Link>, <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> oder <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-medium">Content-Erstellung</Link>: Wir begleiten Sie von der Strategie bis zum GoLive. Unsere Projekte basieren auf klaren Prozessen, erprobten Tools – und auf echtem Interesse an Ihrem Erfolg.
+              Von der <Link to="/webdesign" className="text-medico-turquoise hover:underline font-medium">Website-Entwicklung</Link> über 
+              <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline font-medium"> SEO-Optimierung</Link> bis hin zu 
+              <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-medium"> Content-Marketing</Link> – 
+              alles koordiniert aus einer Hand.
             </p>
-            <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Unser Leistungsspektrum umfasst <Link to="/strategie" className="text-medico-turquoise hover:underline font-medium">Strategie & UX</Link>, <Link to="/webdesign" className="text-medico-turquoise hover:underline font-medium">Webdesign</Link>, <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-medium">Webentwicklung</Link>, <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-medium">Content-Erstellung</Link>, <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline font-medium">SEO-Optimierung</Link>, <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> und <Link to="/ki-technologien" className="text-medico-turquoise hover:underline font-medium">KI-Technologien</Link>.
+            <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
+              Modernste <Link to="/ki-technologien" className="text-medico-turquoise hover:underline font-medium">KI-Integration</Link>, 
+              strategische <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads Betreuung</Link> und 
+              <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-medium"> professionelle Entwicklung</Link> 
+              runden unser Angebot ab.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -31,7 +69,7 @@ const GermanSolutionSection = () => {
                 className="group"
                 onClick={handleStartProject}
               >
-                Jetzt Kontakt aufnehmen
+                Lassen Sie uns über Ihr Projekt sprechen
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
