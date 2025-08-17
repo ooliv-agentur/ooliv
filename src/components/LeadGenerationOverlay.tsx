@@ -74,8 +74,8 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   const isPrototype = mode === 'prototype';
   const title = language === 'de' ? (isPrototype ? 'Kostenloses Website-Konzept' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Website Concept' : 'Start your project');
   const description = language === 'de'
-    ? (isPrototype ? 'Wir erstellen für Sie kostenlos ein Konzept' : 'Füllen Sie das Formular aus, um loszulegen')
-    : (isPrototype ? 'We create a free concept for you' : 'Fill out the form to get started');
+    ? (isPrototype ? 'Professionelle Beratung und strategische Planung für Ihren Online-Erfolg' : 'Füllen Sie das Formular aus, um loszulegen')
+    : (isPrototype ? 'Professional consultation and strategic planning for your online success' : 'Fill out the form to get started');
   return (
     <Sheet open={open} onOpenChange={internalOnOpenChange}>
       <SheetContent 

@@ -104,19 +104,38 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       exit={{ opacity: 0, y: -20 }}
       className="space-y-6"
     >
-      <div className="text-center space-y-4">
-        <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
-          <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+      <div className="text-left space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-white">
+            {language === 'de' ? 'Was Sie erhalten' : 'What you get'}
+          </h2>
         </div>
         
-        <div>
-          <p className="text-white/80 text-sm leading-relaxed">
+        <div className="space-y-4">
+          <p className="text-base text-white/90 leading-relaxed">
             {language === 'de' 
-              ? 'Wir zeigen Ihnen, wie Ihre neue Website Kunden gewinnt. Mit klaren Strukturen und durchdachtem Aufbau – damit Besucher zu Kunden werden.' 
-              : 'We\'ll show you how your new website attracts customers. With clear structures and thoughtful design – turning visitors into customers.'}
+              ? 'Wir analysieren Ihr Geschäft und erstellen ein maßgeschneidertes Website-Konzept, das Ihre Zielgruppe überzeugt und zu mehr Kunden führt.' 
+              : 'We analyze your business and create a tailored website concept that convinces your target audience and leads to more customers.'}
           </p>
+          <ul className="space-y-3 text-sm text-white/85">
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-0.5 text-lg">•</span>
+              <span>{language === 'de' ? 'Strategische Seitenstruktur nach bewährten Verkaufsprinzipien' : 'Strategic page structure based on proven sales principles'}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-0.5 text-lg">•</span>
+              <span>{language === 'de' ? 'Optimierte Benutzerführung für maximale Conversion' : 'Optimized user guidance for maximum conversion'}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-primary mt-0.5 text-lg">•</span>
+              <span>{language === 'de' ? 'Konkrete Inhaltsempfehlungen für Ihre Branche' : 'Concrete content recommendations for your industry'}</span>
+            </li>
+          </ul>
         </div>
       </div>
 
