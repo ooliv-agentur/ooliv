@@ -127,7 +127,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) 
   // Render project form (4 steps) if in project mode
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(submitForm)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(submitForm)} className="flex flex-col h-full">
         <LeadFormStepIndicator currentStep={step} totalSteps={totalSteps} />
         
         <div dangerouslySetInnerHTML={{ 
@@ -150,13 +150,13 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) 
           `
         }} />
         
-        <div className="min-h-[400px]">
+        <div className="flex-1 overflow-y-auto min-h-0">
           <AnimatePresence mode="wait">
             {renderStepContent()}
           </AnimatePresence>
         </div>
         
-        <SheetFooter>
+        <div className="sticky bottom-0 bg-[#1a2630] pt-4 border-t border-white/10 mt-6">
           <LeadFormNavigation 
             currentStep={step}
             totalSteps={totalSteps}
@@ -164,7 +164,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) 
             onPrevStep={prevStep}
             onNextStep={nextStep}
           />
-        </SheetFooter>
+        </div>
       </form>
     </Form>
   );
