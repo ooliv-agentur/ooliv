@@ -26,21 +26,21 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "mehr Leads",
-    "bessere Conversion", 
-    "professionelle Präsenz"
+    "strategische Klarheit",
+    "durchdachte User Journey", 
+    "optimierte Conversion"
   ];
   
   return (
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Kostenloser Website-Prototyp in 48 Stunden"
-        subtitle="Professionelles Design, moderne Technik, vollständig responsive – alles unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
+        title="Kostenloses Website-Konzept in 48 Stunden"
+        subtitle="Strategische Wireframes nach AIDA-Prinzip mit durchdachter User Journey und Inhaltskonzept – alles unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
         dynamicPrefix="Für"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Kostenloser Prototyp",
+          text: "Kostenloses Konzept",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}

@@ -42,7 +42,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           projectType: 'prototype',
           email: email,
           name: '',
-          message: language === 'de' ? 'Kostenloser Prototyp angefordert' : 'Free prototype requested',
+          message: language === 'de' ? 'Kostenloses Website-Konzept angefordert' : 'Free website concept requested',
           language: language
         }),
       });
@@ -55,8 +55,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       toast({
         title: language === 'de' ? "Vielen Dank!" : "Thank you!",
         description: language === 'de' 
-          ? "Wir melden uns innerhalb von 48 Stunden bei Ihnen" 
-          : "We'll get back to you within 48 hours",
+          ? "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen" 
+          : "We'll get back to you within 48 hours with your concept",
       });
 
     } catch (error) {
@@ -90,8 +90,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
         </h3>
         <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">
           {language === 'de' 
-            ? 'Wir erstellen Ihren kostenlosen Prototyp und melden uns binnen 48 Stunden.' 
-            : 'We\'ll create your free prototype and get back to you within 48 hours.'}
+            ? 'Wir erstellen Ihr kostenloses Website-Konzept und melden uns binnen 48 Stunden.' 
+            : 'We\'ll create your free website concept and get back to you within 48 hours.'}
         </p>
       </motion.div>
     );
@@ -113,12 +113,12 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
         
         <div>
           <h3 className="text-lg font-semibold text-white mb-2">
-            {language === 'de' ? 'Kostenloser Prototyp in 48 Stunden' : 'Free Prototype in 48 Hours'}
+            {language === 'de' ? 'Kostenloses Website-Konzept in 48 Stunden' : 'Free Website Concept in 48 Hours'}
           </h3>
           <p className="text-white/70 text-sm leading-relaxed">
             {language === 'de' 
-              ? 'Wir erstellen einen klickbaren Prototyp Ihrer Website – kostenlos und unverbindlich. Einfach E-Mail eingeben und wir legen los.' 
-              : 'We\'ll create a clickable prototype of your website – free and without obligation. Just enter your email and we\'ll get started.'}
+              ? 'Wir erstellen strategische Wireframes nach AIDA-Prinzip mit durchdachter User Journey und Inhaltskonzept – kostenlos und unverbindlich.' 
+              : 'We\'ll create strategic wireframes following AIDA principles with thoughtful user journey and content concept – free and without obligation.'}
           </p>
         </div>
       </div>
@@ -146,7 +146,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
         >
           {isSubmitting 
             ? (language === 'de' ? 'Wird gesendet...' : 'Sending...') 
-            : (language === 'de' ? 'Kostenlosen Prototyp anfordern' : 'Request Free Prototype')
+            : (language === 'de' ? 'Kostenloses Konzept anfordern' : 'Request Free Concept')
           }
         </Button>
       </form>
