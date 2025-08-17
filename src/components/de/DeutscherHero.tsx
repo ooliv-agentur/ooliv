@@ -36,7 +36,7 @@ const DeutscherHero = () => {
       <PageHero
         isHomepage={true}
         title="ooliv – Digitalagentur in Mainz für B2B-Unternehmen"
-        subtitle="Wir entwickeln digitale Lösungen für B2B-Unternehmen: Websites, SEO-Strategien, Content-Marketing und KI-Integration. Messbar mehr Leads, überregional erfolgreich. Seit 2008 vom Standort Mainz aus deutschlandweit tätig."
+        subtitle="Lassen Sie uns Ihnen zeigen, was möglich ist: Kostenloser Website-Prototyp in 48 Stunden – unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
         dynamicPrefix="Wir helfen Unternehmen,"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{

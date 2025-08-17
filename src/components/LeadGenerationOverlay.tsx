@@ -30,9 +30,10 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
         console.log('⏳ LeadGenerationOverlay: Cookie banner visible, ignoring open-lead-form');
         return;
       }
+      const mode = event?.detail?.mode as 'prototype' | 'project' | undefined;
       const variant = event?.detail?.variant as 'prototype' | 'project' | undefined;
       const source = event?.detail?.source as string | undefined;
-      const nextMode: 'project' | 'prototype' = variant ?? (source?.toLowerCase().includes('prototype') ? 'prototype' : 'project');
+      const nextMode: 'project' | 'prototype' = mode ?? variant ?? (source?.toLowerCase().includes('prototype') ? 'prototype' : 'project');
       setMode(nextMode);
       console.log('🎯 LeadGenerationOverlay: open-lead-form variant:', nextMode);
       if (!open) {
