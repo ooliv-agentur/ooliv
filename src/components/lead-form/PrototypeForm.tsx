@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from "@/hooks/use-toast";
 import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
@@ -157,13 +158,22 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
 
         <Button
           type="submit"
+          variant="primary"
+          size="lg"
           disabled={isSubmitting || !email}
-          className="w-full bg-primary hover:bg-primary/90 text-white font-medium"
+          className="w-full"
         >
-          {isSubmitting 
-            ? (language === 'de' ? 'Wird gesendet...' : 'Sending...') 
-            : (language === 'de' ? 'Kostenloses Konzept anfordern' : 'Request Free Concept')
-          }
+          {isSubmitting ? (
+            <span className="flex items-center gap-2">
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+              {language === 'de' ? 'Wird gesendet...' : 'Sending...'}
+            </span>
+          ) : (
+            <>
+              {language === 'de' ? 'Kostenloses Konzept anfordern' : 'Request Free Concept'}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </>
+          )}
         </Button>
       </form>
 
