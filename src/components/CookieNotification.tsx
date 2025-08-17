@@ -71,12 +71,7 @@ const CookieNotification = () => {
               </div>
             </div>
             <button
-              onClick={() => {
-                hideBanner();
-                setTimeout(() => {
-                  window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'CookieNotification:close', variant: 'prototype' } }));
-                }, 100);
-              }}
+              onClick={hideBanner}
               className="p-1 text-gray-400 hover:text-gray-600 flex-shrink-0 transition-colors"
             >
               <X className="w-5 h-5" />
@@ -107,12 +102,7 @@ const CookieNotification = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => {
-                  acceptEssential();
-                  setTimeout(() => {
-                    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'CookieNotification:essential', variant: 'prototype' } }));
-                  }, 100);
-                }}
+                onClick={acceptEssential}
                 className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors w-full sm:w-auto"
               >
                 {t.acceptEssential}
@@ -120,12 +110,7 @@ const CookieNotification = () => {
               
               <Button
                 size="sm"
-                onClick={() => {
-                  acceptAll();
-                  setTimeout(() => {
-                    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'CookieNotification:all', variant: 'prototype' } }));
-                  }, 100);
-                }}
+                onClick={acceptAll}
                 className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors w-full sm:w-auto"
               >
                 {t.acceptAll}
