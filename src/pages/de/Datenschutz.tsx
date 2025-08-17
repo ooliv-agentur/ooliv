@@ -4,6 +4,7 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { 
   Lock, 
   Database, 
@@ -40,12 +41,29 @@ const GermanPrivacyPolicy = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Datenschutzerklärung",
+    "description": "Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO",
+    "url": "https://ooliv.de/datenschutz",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "ooliv Werbeagentur",
+      "url": "https://ooliv.de",
+      "privacyPolicy": "https://ooliv.de/datenschutz"
+    }
+  };
+
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Datenschutz | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Datenschutz | ooliv Werbeagentur Mainz"
+        description="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben."
+        canonicalUrl="https://ooliv.de/datenschutz"
+        structuredData={structuredData}
+        keywords="Datenschutz, DSGVO, Datenschutzerklärung, ooliv, Werbeagentur Mainz"
+      />
 
       <LegalHero
         badge="Datenschutz"

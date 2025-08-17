@@ -57,13 +57,14 @@ const Footer = () => {
               <li><Link to={getUrl('content-creation')} className={footerStyles.linkText}>{language === 'de' ? t('footer.contentCreation') : 'Content Creation'}</Link></li>
               <li><Link to={getUrl('seo-optimization')} className={footerStyles.linkText}>{t('footer.seo')}</Link></li>
               <li><Link to={getUrl('google-ads')} className={footerStyles.linkText}>{t('footer.ads')}</Link></li>
-              <li><Link to={getUrl('ai-technologies')} className={footerStyles.linkText}>{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
-              {language === 'de' && (
-                <>
-                  <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
-                  <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
-                </>
-              )}
+               <li><Link to={getUrl('ai-technologies')} className={footerStyles.linkText}>{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
+               {language === 'de' && (
+                 <>
+                   <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
+                   <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
+                   <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
+                 </>
+               )}
             </ul>
           </div>
 
@@ -71,8 +72,14 @@ const Footer = () => {
             <h3 className={footerStyles.sectionHeading}>{t('footer.company')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
               <li><Link to={getUrl('about-ooliv')} className={footerStyles.linkText}>{t('footer.aboutUs')}</Link></li>
-              <li><Link to={getUrl('case-studies')} className={footerStyles.linkText}>Case Studies</Link></li>
+              <li><Link to={getUrl('case-studies')} className={footerStyles.linkText}>Referenzen</Link></li>
               <li><Link to={getUrl('contact')} className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
+              {language === 'de' && (
+                <>
+                  <li><Link to="/artikel" className={footerStyles.linkText}>Blog</Link></li>
+                  <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
+                </>
+              )}
             </ul>
           </div>
 

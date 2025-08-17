@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
+import BreadcrumbNavigation from './seo/BreadcrumbNavigation';
 
 import { MotionConfig } from 'framer-motion';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
@@ -127,6 +128,16 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://analytics.ahrefs.com" />
         
+        {/* Enhanced Open Graph meta tags */}
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ooliv Werbeagentur" />
+        <meta property="og:locale" content="de_DE" />
+        
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@ooliv_de" />
+        
         {/* Additional performance optimizations */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="referrer" content="origin-when-cross-origin" />
@@ -140,6 +151,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         <div className={`min-h-screen flex flex-col ${className}`}>
           <CustomCursor />
           <Navbar />
+          <BreadcrumbNavigation />
           <main className="flex-grow">
             {children}
           </main>

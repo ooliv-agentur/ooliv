@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LegalHero from '@/components/legal/LegalHero';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -15,12 +16,37 @@ const GermanLegalNotice = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ooliv",
+    "description": "Werbeagentur Mainz für Webdesign, SEO und digitales Marketing",
+    "url": "https://ooliv.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Eduard von Heuss Str. 29",
+      "addressLocality": "Bodenheim",
+      "postalCode": "55294",
+      "addressCountry": "DE"
+    },
+    "telephone": "+49-6131-6367801",
+    "email": "info@ooliv.de",
+    "founder": {
+      "@type": "Person",
+      "name": "Uli Schönleber"
+    },
+    "vatID": "DE265704357"
+  };
+
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Impressum | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Impressum | ooliv Werbeagentur Mainz"
+        description="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG. Vollständige Unternehmensdaten und Kontaktinformationen."
+        canonicalUrl="https://ooliv.de/impressum"
+        structuredData={structuredData}
+        keywords="Impressum, ooliv, Werbeagentur Mainz, Anbieterkennzeichnung, TMG"
+      />
 
       <LegalHero
         badge="Impressum"
