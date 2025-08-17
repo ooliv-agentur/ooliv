@@ -40,13 +40,13 @@ const DeutscherAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Wo Strategie auf Umsetzung trifft – in Mainz.
+              Wo Strategie auf Umsetzung trifft – deutschlandweit.
             </h2>
             <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Wir sind Ihre spezialisierte Digitalagentur, die Websites strategisch plant und technisch perfekt umsetzt.
+              Wir sind Ihre spezialisierte Digitalagentur für digitale Lösungen: Websites, SEO-Strategien, Content-Marketing und KI-Integration.
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Seit über 16 Jahren entwickeln wir Websites für B2B-Unternehmen in Mainz und der Region. Mit einer klaren Strategie, datenbasierten Entscheidungen und einem strukturierten Prozess schaffen wir Websites, die Ihr Unternehmen digital voranbringen.
+              Seit über 16 Jahren entwickeln wir digitale Lösungen für B2B-Unternehmen im Rhein-Main-Gebiet, in Rheinhessen und deutschlandweit. Von unserem Standort Mainz aus betreuen wir Kunden remote und vor Ort – mit klarer Strategie und messbaren Ergebnissen.
             </p>
             
             {/* Single CTA Button */}
