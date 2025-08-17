@@ -5,19 +5,19 @@ import PageHero from '@/components/PageHero';
 const DeutscherHero = () => {
   const [isDispatching, setIsDispatching] = useState(false);
   
-  const handleOpenLeadForm = () => {
+  const handleOpenPrototypeForm = () => {
     if (isDispatching) {
       console.log('🚫 DeutscherHero: Already dispatching, ignoring click');
       return;
     }
     
     setIsDispatching(true);
-    console.log('🚀 DeutscherHero: "Projekt starten" button clicked');
+    console.log('🚀 DeutscherHero: "Kostenloser Prototyp" button clicked');
     
     setTimeout(() => {
-      const event = new CustomEvent('open-lead-form', { detail: { source: 'DeutscherHero' } });
+      const event = new CustomEvent('open-lead-form', { detail: { source: 'DeutscherHero', mode: 'prototype' } });
       window.dispatchEvent(event);
-      console.log('📡 DeutscherHero: open-lead-form event dispatched');
+      console.log('📡 DeutscherHero: open-lead-form event dispatched with prototype mode');
       
       setTimeout(() => {
         setIsDispatching(false);
@@ -40,9 +40,9 @@ const DeutscherHero = () => {
         dynamicPrefix="Wir helfen Unternehmen,"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Projekt starten",
+          text: "Kostenloser Prototyp",
           link: "#",
-          onClick: handleOpenLeadForm
+          onClick: handleOpenPrototypeForm
         }}
         secondaryCta={{
           text: "Über ooliv",
