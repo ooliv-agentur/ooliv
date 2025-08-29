@@ -26,31 +26,53 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks for better caching
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-accordion', 'framer-motion'],
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'query-vendor': ['@tanstack/react-query'],
-          'helmet-vendor': ['react-helmet-async'],
-          // Split large pages into separate chunks
-          'pages-main': [
-            './src/pages/de/Index.tsx',
-            './src/pages/de/Webdesign.tsx',
-            './src/pages/de/Webentwicklung.tsx'
-          ],
-          'pages-services': [
-            './src/pages/de/SEOOptimierung.tsx',
-            './src/pages/de/ContentErstellung.tsx',
-            './src/pages/de/GoogleAds.tsx',
-            './src/pages/de/KiTechnologien.tsx'
-          ],
-          'pages-info': [
-            './src/pages/de/Referenzen.tsx',
-            './src/pages/de/UeberUns.tsx',
-            './src/pages/de/Kontakt.tsx'
-          ]
+        manualChunks: (id) => {
+          // Critical: Keep homepage with main bundle for instant loading
+          if (id.includes('pages/de/Index')) {
+            return 'main';
+          }
+          
+          // Vendor chunks for optimal caching
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('react-router-dom')) {
+              return 'router-vendor';
+            }
+            if (id.includes('@radix-ui') || id.includes('framer-motion')) {
+              return 'ui-vendor';
+            }
+            if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+              return 'form-vendor';
+            }
+            if (id.includes('@tanstack/react-query')) {
+              return 'query-vendor';
+            }
+            if (id.includes('react-helmet-async')) {
+              return 'helmet-vendor';
+            }
+            return 'vendor';
+          }
+          
+          // Individual page chunks for lazy loading
+          if (id.includes('pages/de/')) {
+            const match = id.match(/pages\/de\/([^/]+)/);
+            if (match) {
+              return `page-${match[1].toLowerCase()}`;
+            }
+          }
+          
+          // Component chunks
+          if (id.includes('components/')) {
+            if (id.includes('ui/')) {
+              return 'ui-components';
+            }
+            if (id.includes('email-capture/') || id.includes('lead-form/')) {
+              return 'forms';
+            }
+            return 'components';
+          }
         },
         // Optimize chunk file names for better caching
         chunkFileNames: (chunkInfo) => {

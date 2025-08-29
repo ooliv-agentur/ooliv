@@ -1,5 +1,9 @@
 
+/* Critical inline styles for instant first paint */
 @import url('./styles/satoshi-fonts.css');
+@import url('./styles/critical.css');
+
+/* Non-critical styles loaded after first paint */
 @import url('./styles/performance-optimizations.css');
 @import url('./styles/core-web-vitals.css');
 @tailwind base;
