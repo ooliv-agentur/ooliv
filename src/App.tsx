@@ -46,6 +46,7 @@ import PageSpinner from './components/PageSpinner';
 const queryClient = new QueryClient();
 
 function App() {
+  console.log('🚀 App component loading...');
   const [showLeadForm, setShowLeadForm] = React.useState(false);
 
   const handleLeadOpenChange = React.useCallback((next: boolean) => {
@@ -77,8 +78,14 @@ function App() {
               />
               
               <Routes>
-                {/* Critical: Homepage loaded immediately */}
-                <Route path="/" element={<GermanIndex />} />
+                {/* DEBUG: Simple test first */}
+                <Route path="/" element={
+                  <div style={{ padding: '20px', background: 'white', minHeight: '100vh' }}>
+                    <h1>🔥 WEBSITE FUNKTIONIERT!</h1>
+                    <p>Debug: App lädt erfolgreich</p>
+                    <button onClick={() => console.log('Button works!')}>Test Button</button>
+                  </div>
+                } />
                 
                 {/* All other pages lazy loaded */}
                 <Route path="/webdesign" element={
