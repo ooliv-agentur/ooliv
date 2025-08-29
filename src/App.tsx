@@ -76,37 +76,119 @@ function App() {
                 onOpenChange={handleLeadOpenChange}
               />
               
-              <Suspense fallback={<PageSpinner />}>
-                <Routes>
-                  {/* Critical: Homepage loaded immediately */}
-                  <Route path="/" element={<GermanIndex />} />
-                  
-                  {/* All other pages lazy loaded */}
-                  <Route path="/webdesign" element={<GermanWebDesign />} />
-                  <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-                  <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-                  <Route path="/kontakt" element={<GermanContact />} />
-                  <Route path="/strategie" element={<Strategie />} />
-                  <Route path="/seo-optimierung" element={<GermanSEO />} />
-                  <Route path="/content-erstellung" element={<GermanContentCreation />} />
-                  <Route path="/google-ads" element={<GermanGoogleAds />} />
-                  <Route path="/klickbetrug" element={<Klickbetrug />} />
-                  <Route path="/referenzen" element={<GermanCaseStudies />} />
-                  <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                  <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-                  <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
-                  <Route path="/artikel" element={<Artikel />} />
-                  <Route path="/neuester-artikel" element={<LatestContent />} />
-                  <Route path="/artikel/:slug" element={<SingleArticle />} />
-                  <Route path="/impressum" element={<GermanLegalNotice />} />
-                  <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
-                  <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
-                  <Route path="/danke" element={<GermanThankYou />} />
+              <Routes>
+                {/* Critical: Homepage loaded immediately */}
+                <Route path="/" element={<GermanIndex />} />
+                
+                {/* All other pages lazy loaded */}
+                <Route path="/webdesign" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanWebDesign />
+                  </Suspense>
+                } />
+                <Route path="/webentwicklung" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanWebDevelopment />
+                  </Suspense>
+                } />
+                <Route path="/ki-technologien" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanAiTechnologies />
+                  </Suspense>
+                } />
+                <Route path="/kontakt" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanContact />
+                  </Suspense>
+                } />
+                <Route path="/strategie" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <Strategie />
+                  </Suspense>
+                } />
+                <Route path="/seo-optimierung" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanSEO />
+                  </Suspense>
+                } />
+                <Route path="/content-erstellung" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanContentCreation />
+                  </Suspense>
+                } />
+                <Route path="/google-ads" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanGoogleAds />
+                  </Suspense>
+                } />
+                <Route path="/klickbetrug" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <Klickbetrug />
+                  </Suspense>
+                } />
+                <Route path="/referenzen" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanCaseStudies />
+                  </Suspense>
+                } />
+                <Route path="/ueber-uns" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanAboutUs />
+                  </Suspense>
+                } />
+                <Route path="/werbeagentur-wiesbaden" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanWiesbaden />
+                  </Suspense>
+                } />
+                <Route path="/werbeagentur-frankfurt" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanFrankfurt />
+                  </Suspense>
+                } />
+                <Route path="/artikel" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <Artikel />
+                  </Suspense>
+                } />
+                <Route path="/neuester-artikel" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <LatestContent />
+                  </Suspense>
+                } />
+                <Route path="/artikel/:slug" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <SingleArticle />
+                  </Suspense>
+                } />
+                <Route path="/impressum" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanLegalNotice />
+                  </Suspense>
+                } />
+                <Route path="/datenschutz" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanPrivacyPolicy />
+                  </Suspense>
+                } />
+                <Route path="/cookie-richtlinie" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <CookieRichtlinie />
+                  </Suspense>
+                } />
+                <Route path="/danke" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <GermanThankYou />
+                  </Suspense>
+                } />
 
-                  {/* 404 Route */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
+                {/* 404 Route */}
+                <Route path="*" element={
+                  <Suspense fallback={<PageSpinner />}>
+                    <NotFound />
+                  </Suspense>
+                } />
+              </Routes>
               
               
               <Toaster />
