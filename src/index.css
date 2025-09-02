@@ -2,12 +2,10 @@
 @import url('./styles/satoshi-fonts.css');
 @import url('./styles/performance-optimizations.css');
 @import url('./styles/core-web-vitals.css');
+@import './styles/hero-background.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import hero background styles */
-@import './styles/hero-background.css';
 
 /* Ensure proper application of hero background styles */
 .bg-hero-pattern {

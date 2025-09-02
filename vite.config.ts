@@ -36,20 +36,20 @@ export default defineConfig(({ mode }) => ({
           'helmet-vendor': ['react-helmet-async'],
           // Split large pages into separate chunks
           'pages-main': [
-            './src/pages/de/Index.tsx',
-            './src/pages/de/Webdesign.tsx',
-            './src/pages/de/Webentwicklung.tsx'
+            './src/pages/Index.tsx',
+            './src/pages/Webdesign.tsx',
+            './src/pages/Webentwicklung.tsx'
           ],
           'pages-services': [
-            './src/pages/de/SEOOptimierung.tsx',
-            './src/pages/de/ContentErstellung.tsx',
-            './src/pages/de/GoogleAds.tsx',
-            './src/pages/de/KiTechnologien.tsx'
+            './src/pages/SEOOptimierung.tsx',
+            './src/pages/ContentErstellung.tsx',
+            './src/pages/GoogleAds.tsx',
+            './src/pages/KiTechnologien.tsx'
           ],
           'pages-info': [
-            './src/pages/de/Referenzen.tsx',
-            './src/pages/de/UeberUns.tsx',
-            './src/pages/de/Kontakt.tsx'
+            './src/pages/Referenzen.tsx',
+            './src/pages/UeberUns.tsx',
+            './src/pages/Kontakt.tsx'
           ]
         },
         // Optimize chunk file names for better caching

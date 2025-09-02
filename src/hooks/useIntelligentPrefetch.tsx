@@ -15,25 +15,25 @@ const prefetchRules: PrefetchRule[] = [
   {
     path: '/',
     resources: [
-      { type: 'script', url: '/src/pages/de/Webdesign.tsx', priority: 'high' },
-      { type: 'script', url: '/src/pages/de/Webentwicklung.tsx', priority: 'high' },
-      { type: 'script', url: '/src/pages/de/Kontakt.tsx', priority: 'low' },
+      { type: 'script', url: '/src/pages/Webdesign.tsx', priority: 'high' },
+      { type: 'script', url: '/src/pages/Webentwicklung.tsx', priority: 'high' },
+      { type: 'script', url: '/src/pages/Kontakt.tsx', priority: 'low' },
       { type: 'image', url: '/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png', priority: 'low' }
     ]
   },
   {
     path: '/webdesign',
     resources: [
-      { type: 'script', url: '/src/pages/de/Webentwicklung.tsx', priority: 'high' },
-      { type: 'script', url: '/src/pages/de/Kontakt.tsx', priority: 'high' },
+      { type: 'script', url: '/src/pages/Webentwicklung.tsx', priority: 'high' },
+      { type: 'script', url: '/src/pages/Kontakt.tsx', priority: 'high' },
       { type: 'image', url: '/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png', priority: 'low' }
     ]
   },
   {
     path: '/webentwicklung',
     resources: [
-      { type: 'script', url: '/src/pages/de/Webdesign.tsx', priority: 'high' },
-      { type: 'script', url: '/src/pages/de/Kontakt.tsx', priority: 'high' }
+      { type: 'script', url: '/src/pages/Webdesign.tsx', priority: 'high' },
+      { type: 'script', url: '/src/pages/Kontakt.tsx', priority: 'high' }
     ]
   }
 ];
