@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect, useCallback, useMemo } from 'react';
 
 type Language = 'de' | 'en';
 
@@ -146,7 +146,7 @@ const getInitialLanguage = (): Language => {
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Initialize state with proper error handling for hot reload
-  const [language, setLanguage] = React.useState<Language>(() => {
+  const [language, setLanguage] = useState<Language>(() => {
     try {
       return getInitialLanguage();
     } catch (error) {
@@ -156,11 +156,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   });
 
   // Debug language changes
-  React.useEffect(() => {
+  useEffect(() => {
     console.log('Language context updated:', language);
   }, [language]);
 
-  const t = React.useCallback((key: string): string => {
+  const t = useCallback((key: string): string => {
     try {
       const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
       return translation || key;
@@ -170,7 +170,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   }, [language]);
 
-  const contextValue = React.useMemo(() => ({
+  const contextValue = useMemo(() => ({
     language,
     setLanguage,
     t
@@ -184,7 +184,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 };
 
 export const useLanguage = (): LanguageContextType => {
-  const context = React.useContext(LanguageContext);
+  const context = useContext(LanguageContext);
   if (context === undefined) {
     console.error('useLanguage must be used within a LanguageProvider');
     throw new Error('useLanguage must be used within a LanguageProvider');
