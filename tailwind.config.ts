@@ -59,6 +59,39 @@ export default {
           darkGreen: "#003347",
           white: "#FFFFFF"
         },
+        // Service-specific color variants (subtle professional differentiation)
+        service: {
+          seo: {
+            primary: "#38B593",     // medico-turquoise
+            accent: "#D8F4E3",      // medico-mint
+            hover: "#2a8a73"
+          },
+          webdesign: {
+            primary: "#38B593",     // medico-turquoise
+            accent: "#B8E6D3",      // mint blend
+            hover: "#2a8a73"
+          },
+          webdev: {
+            primary: "#2a8a73",     // darker turquoise
+            accent: "#38B593",      // medico-turquoise
+            hover: "#1e6b5a"
+          },
+          googleads: {
+            primary: "#FFE500",     // medico-yellow
+            accent: "#FFF59D",      // lighter yellow
+            hover: "#E6CE00"
+          },
+          content: {
+            primary: "#B8E6D3",     // soft mint-turquoise
+            accent: "#D8F4E3",      // medico-mint
+            hover: "#9DD9C1"
+          },
+          ai: {
+            primary: "#38B593",     // gradient start
+            accent: "#D8F4E3",      // gradient end
+            hover: "#2a8a73"
+          }
+        },
         // Extended yellow variants for better design system
         yellow: {
           50: "#fffbeb",

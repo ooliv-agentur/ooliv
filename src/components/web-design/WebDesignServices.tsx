@@ -18,6 +18,16 @@ const WebDesignServices = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
+  // Helper function to get service-specific CSS class
+  const getServiceClass = (title: string) => {
+    if (title.toLowerCase().includes('webdesign') || title.toLowerCase().includes('palette')) return 'service-webdesign';
+    if (title.toLowerCase().includes('entwicklung') || title.toLowerCase().includes('development') || title.toLowerCase().includes('code')) return 'service-webdev';
+    if (title.toLowerCase().includes('content') || title.toLowerCase().includes('struktur')) return 'service-content';
+    if (title.toLowerCase().includes('seo')) return 'service-seo';
+    if (title.toLowerCase().includes('wartung') || title.toLowerCase().includes('maintenance')) return 'service-webdev';
+    return 'service-webdesign'; // default
+  };
+  
   const services = [
     {
       icon: Palette,
@@ -164,10 +174,10 @@ const WebDesignServices = () => {
           <CarouselContent>
             {services.map((service, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                <Card className="h-full">
+                <Card className={`h-full ${getServiceClass(service.title)}`}>
                   <CardHeader>
-                    <div className="p-2 w-10 h-10 rounded-full bg-brand-backgroundAlt flex items-center justify-center mb-2">
-                      <service.icon className="h-5 w-5 text-brand-primary" />
+                    <div className="p-2 w-10 h-10 rounded-full service-accent-bg flex items-center justify-center mb-2">
+                      <service.icon className="h-5 w-5 service-icon" />
                     </div>
                     <CardTitle>{service.title}</CardTitle>
                   </CardHeader>
@@ -175,15 +185,15 @@ const WebDesignServices = () => {
                     <ul className="space-y-2">
                       {service.items.map((item, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-brand-primary flex-shrink-0"></span>
+                          <span className="mr-2 mt-1.5 h-1 w-1 rounded-full service-icon flex-shrink-0"></span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="link" className="p-0 h-auto" asChild>
-                      <Link to={service.link} className="inline-flex items-center text-brand-primary hover:text-brand-primary/90">
+                    <Button variant="link" className="p-0 h-auto service-hover" asChild>
+                      <Link to={service.link} className="inline-flex items-center service-icon">
                         {translations.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
@@ -204,10 +214,10 @@ const WebDesignServices = () => {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {specializedServices.map((service, index) => (
-            <Card key={index} className="h-full">
+            <Card key={index} className={`h-full ${getServiceClass(service.title)}`}>
               <CardHeader>
-                <div className="p-2 w-10 h-10 rounded-full bg-brand-backgroundAlt flex items-center justify-center mb-2">
-                  <service.icon className="h-5 w-5 text-brand-primary" />
+                <div className="p-2 w-10 h-10 rounded-full service-accent-bg flex items-center justify-center mb-2">
+                  <service.icon className="h-5 w-5 service-icon" />
                 </div>
                 <CardTitle>{service.title}</CardTitle>
               </CardHeader>
@@ -215,15 +225,15 @@ const WebDesignServices = () => {
                 <ul className="space-y-2">
                   {service.items.map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-brand-primary flex-shrink-0"></span>
+                      <span className="mr-2 mt-1.5 h-1 w-1 rounded-full service-icon flex-shrink-0"></span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant="link" className="p-0 h-auto" asChild>
-                  <Link to={service.link} className="inline-flex items-center text-brand-primary hover:text-brand-primary/90">
+                <Button variant="link" className="p-0 h-auto service-hover" asChild>
+                  <Link to={service.link} className="inline-flex items-center service-icon">
                     {translations.learnMore} <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>

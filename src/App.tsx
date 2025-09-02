@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -15,27 +14,27 @@ import EmailCaptureController from './components/email-capture/EmailCaptureContr
 import ErrorBoundary from './components/ErrorBoundary';
 
 // Import all pages directly (no lazy loading)
-import GermanIndex from './pages/de/Index';
-import GermanWebDesign from './pages/de/Webdesign';
-import GermanWebDevelopment from './pages/de/Webentwicklung';
-import GermanAiTechnologies from './pages/de/KiTechnologien';
-import GermanContact from './pages/de/Kontakt';
-import GermanSEO from './pages/de/SEOOptimierung';
-import GermanContentCreation from './pages/de/ContentErstellung';
-import GermanGoogleAds from './pages/de/GoogleAds';
-import GermanCaseStudies from './pages/de/Referenzen';
-import GermanAboutUs from './pages/de/UeberUns';
-import GermanLegalNotice from './pages/de/Impressum';
-import GermanPrivacyPolicy from './pages/de/Datenschutz';
-import GermanThankYou from './pages/de/Danke';
-import GermanWiesbaden from './pages/de/WerbeagenturWiesbaden';
-import GermanFrankfurt from './pages/de/WerbeagenturFrankfurt';
-import Klickbetrug from './pages/de/Klickbetrug';
-import Strategie from './pages/de/Strategie';
-import CookieRichtlinie from './pages/de/CookieRichtlinie';
-import Artikel from './pages/de/Artikel';
-import LatestContent from './pages/de/LatestContent';
-import SingleArticle from './pages/de/SingleArticle';
+import GermanIndex from './pages/Index';
+import GermanWebDesign from './pages/Webdesign';
+import GermanWebDevelopment from './pages/Webentwicklung';
+import GermanAiTechnologies from './pages/KiTechnologien';
+import GermanContact from './pages/Kontakt';
+import GermanSEO from './pages/SEOOptimierung';
+import GermanContentCreation from './pages/ContentErstellung';
+import GermanGoogleAds from './pages/GoogleAds';
+import GermanCaseStudies from './pages/Referenzen';
+import GermanAboutUs from './pages/UeberUns';
+import GermanLegalNotice from './pages/Impressum';
+import GermanPrivacyPolicy from './pages/Datenschutz';
+import GermanThankYou from './pages/Danke';
+import GermanWiesbaden from './pages/WerbeagenturWiesbaden';
+import GermanFrankfurt from './pages/WerbeagenturFrankfurt';
+import Klickbetrug from './pages/Klickbetrug';
+import Strategie from './pages/Strategie';
+import CookieRichtlinie from './pages/CookieRichtlinie';
+import Artikel from './pages/Artikel';
+import LatestContent from './pages/LatestContent';
+import SingleArticle from './pages/SingleArticle';
 import NotFound from './pages/NotFound';
 
 const queryClient = new QueryClient();

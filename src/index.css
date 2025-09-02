@@ -158,6 +158,56 @@
   }
 }
 
+/* Service-specific color utilities */
+.service-seo {
+  --service-primary: theme(colors.service.seo.primary);
+  --service-accent: theme(colors.service.seo.accent);
+  --service-hover: theme(colors.service.seo.hover);
+}
+
+.service-webdesign {
+  --service-primary: theme(colors.service.webdesign.primary);
+  --service-accent: theme(colors.service.webdesign.accent);
+  --service-hover: theme(colors.service.webdesign.hover);
+}
+
+.service-webdev {
+  --service-primary: theme(colors.service.webdev.primary);
+  --service-accent: theme(colors.service.webdev.accent);
+  --service-hover: theme(colors.service.webdev.hover);
+}
+
+.service-googleads {
+  --service-primary: theme(colors.service.googleads.primary);
+  --service-accent: theme(colors.service.googleads.accent);
+  --service-hover: theme(colors.service.googleads.hover);
+}
+
+.service-content {
+  --service-primary: theme(colors.service.content.primary);
+  --service-accent: theme(colors.service.content.accent);
+  --service-hover: theme(colors.service.content.hover);
+}
+
+.service-ai {
+  --service-primary: theme(colors.service.ai.primary);
+  --service-accent: theme(colors.service.ai.accent);
+  --service-hover: theme(colors.service.ai.hover);
+}
+
+/* Service icon colors */
+.service-icon {
+  color: var(--service-primary);
+}
+
+.service-accent-bg {
+  background-color: var(--service-accent);
+}
+
+.service-hover:hover {
+  color: var(--service-hover);
+}
+
 /* Critical CSS for performance */
 .hero-section {
   contain: layout style paint;

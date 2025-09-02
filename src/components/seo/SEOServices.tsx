@@ -4,6 +4,24 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
 
 const SEOServices = () => {
+  // Helper function to get service-specific CSS class
+  const getServiceClass = (title: string) => {
+    if (title.toLowerCase().includes('seo') || title.toLowerCase().includes('keyword') || title.toLowerCase().includes('search')) return 'service-seo';
+    if (title.toLowerCase().includes('content') || title.toLowerCase().includes('optimization')) return 'service-content';
+    if (title.toLowerCase().includes('technical') || title.toLowerCase().includes('code')) return 'service-webdev';
+    if (title.toLowerCase().includes('link')) return 'service-seo';
+    if (title.toLowerCase().includes('local')) return 'service-seo';
+    return 'service-seo'; // default for SEO services
+  };
+
+  const services = [
+    { title: "Keyword Strategy", icon: Search },
+    { title: "On-Page Optimization", icon: FileEdit },
+    { title: "Technical SEO", icon: Code },
+    { title: "Content Optimization", icon: FileText },
+    { title: "Link Strategy", icon: Link2 },
+    { title: "Local SEO", icon: MapPin }
+  ];
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,65 +30,22 @@ const SEOServices = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Search className="h-10 w-10" />
+          {services.map((service, index) => (
+            <div key={index} className={`bg-white p-8 rounded-lg shadow-sm ${getServiceClass(service.title)}`}>
+              <div className="mb-4 service-icon">
+                <service.icon className="h-10 w-10" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-brand-heading">{service.title}</h3>
+              <p className="text-brand-text">
+                {service.title === "Keyword Strategy" && "In-depth research focused on relevant, industry-specific and local search terms."}
+                {service.title === "On-Page Optimization" && "Metadata, URLs, headings, and structured content to improve rankings and UX."}
+                {service.title === "Technical SEO" && "Site speed, Core Web Vitals, clean indexing — the foundation of SEO success."}
+                {service.title === "Content Optimization" && "Improve existing content or build new pages based on user needs and search intent."}
+                {service.title === "Link Strategy" && "Strategic internal linking and sustainable backlink campaigns to build authority."}
+                {service.title === "Local SEO" && "Boost visibility in Mainz and the Rhein-Main area: Google Business, citations, listings."}
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Keyword Strategy</h3>
-            <p className="text-brand-text">
-              In-depth research focused on relevant, industry-specific and local search terms.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <FileEdit className="h-10 w-10" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">On-Page Optimization</h3>
-            <p className="text-brand-text">
-              Metadata, URLs, headings, and structured content to improve rankings and UX.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Code className="h-10 w-10" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technical SEO</h3>
-            <p className="text-brand-text">
-              Site speed, Core Web Vitals, clean indexing — the foundation of SEO success.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <FileText className="h-10 w-10" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Content Optimization</h3>
-            <p className="text-brand-text">
-              Improve existing content or build new pages based on user needs and search intent.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <Link2 className="h-10 w-10" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Link Strategy</h3>
-            <p className="text-brand-text">
-              Strategic internal linking and sustainable backlink campaigns to build authority.
-            </p>
-          </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <div className="mb-4 text-brand-primary">
-              <MapPin className="h-10 w-10" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Local SEO</h3>
-            <p className="text-brand-text">
-              Boost visibility in Mainz and the Rhein-Main area: Google Business, citations, listings.
-            </p>
-          </div>
+          ))}
         </div>
 
         {/* AI-powered tools section - Removed emoji from heading */}
@@ -91,7 +66,7 @@ const SEOServices = () => {
         </div>
 
         <div className="text-center mt-10">
-          <Link to="/en/content-creation" className="inline-flex items-center text-brand-primary font-medium hover:underline">
+          <Link to="/content-erstellung" className="inline-flex items-center text-brand-primary font-medium hover:underline service-hover">
             Learn more about On-Page SEO & Backlink Strategy
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
