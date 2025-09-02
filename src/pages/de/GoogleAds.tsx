@@ -11,6 +11,8 @@ import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GooglePartnerBadge from '@/components/google-ads/GooglePartnerBadge';
 import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout } from 'lucide-react';
 import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
+import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
 
 const GermanGoogleAds = () => {
@@ -19,6 +21,11 @@ const GermanGoogleAds = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Google Ads", url: "https://ooliv.de/google-ads" }
+  ];
 
   const googleAdsFaqs = [
     {
@@ -52,10 +59,37 @@ const GermanGoogleAds = () => {
       className="overflow-x-hidden"
       seoText={<GoogleAdsSEOText />}
     >
-      <Helmet>
-        <title>Google Ads Agentur Mainz – Mehr Leads</title>
-        <meta name="description" content="Mit ooliv als Google Ads Agentur in Mainz erreichen Sie neue Kunden. Wir optimieren Ihre Kampagnen für maximale Ergebnisse." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Google Ads Agentur Mainz – Mehr Leads"
+        description="Mit ooliv als Google Ads Agentur in Mainz erreichen Sie neue Kunden. Wir optimieren Ihre Kampagnen für maximale Ergebnisse."
+        canonicalUrl="https://ooliv.de/google-ads"
+        keywords="Google Ads Agentur Mainz, Google Werbung, PPC Marketing, Online Werbung"
+        breadcrumbs={breadcrumbs}
+      />
+      
+      <ServiceSchemaGenerator
+        serviceName="Google Ads Betreuung Mainz"
+        description="Professionelle Google Ads Kampagnen-Betreuung für maximale Conversion und ROI."
+        serviceType="AdvertisingService"
+        priceRange="€1000-€5000"
+        offers={[
+          {
+            name: "Google Ads Setup",
+            description: "Kampagnen-Erstellung und erste Optimierung",
+            priceRange: "€1000-€2000"
+          },
+          {
+            name: "Monatliche Betreuung",
+            description: "Laufende Optimierung und Reporting",
+            priceRange: "€1500-€3000"
+          },
+          {
+            name: "Performance Marketing Plus",
+            description: "Vollbetreuung mit Landingpages und CRO",
+            priceRange: "€3000-€5000"
+          }
+        ]}
+      />
 
       <GoogleAdsHero />
 

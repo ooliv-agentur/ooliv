@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 
 // Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
@@ -25,23 +27,49 @@ const WerbeagenturWiesbaden = () => {
     document.title = 'Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg';
   }, []);
   
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Werbeagentur Wiesbaden", url: "https://ooliv.de/werbeagentur-wiesbaden" }
+  ];
+  
   return (
     <>
-      <Helmet prioritizeSeoTags>
-        <html lang="de" />
-        <title>Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg</title>
-        <meta
-          name="description"
-          content="Werbeagentur Wiesbaden – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
-        />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-      </Helmet>
-      
       <PageLayout 
         className="overflow-x-hidden"
         seoText={<WiesbadenSEOText />}
       >
+        <EnhancedSEOHead
+          title="Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg"
+          description="Werbeagentur Wiesbaden – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
+          canonicalUrl="https://ooliv.de/werbeagentur-wiesbaden"
+          keywords="Werbeagentur Wiesbaden, Webdesign Wiesbaden, Online Marketing Wiesbaden, SEO Wiesbaden"
+          breadcrumbs={breadcrumbs}
+        />
+        
+        <ServiceSchemaGenerator
+          serviceName="Werbeagentur Wiesbaden"
+          description="Full-Service Werbeagentur in Wiesbaden für Webdesign, SEO, Google Ads und digitale Strategien."
+          serviceType="AdvertisingAgency"
+          areaServed={["Wiesbaden", "Mainz", "Frankfurt", "Rhein-Main-Gebiet", "Hessen"]}
+          priceRange="€3000-€25000"
+          offers={[
+            {
+              name: "Webdesign Wiesbaden",
+              description: "Professionelle Websites für Unternehmen in Wiesbaden",
+              priceRange: "€4000-€15000"
+            },
+            {
+              name: "SEO Wiesbaden",
+              description: "Suchmaschinenoptimierung für lokale Sichtbarkeit",
+              priceRange: "€1500-€5000"
+            },
+            {
+              name: "Online Marketing Wiesbaden",
+              description: "Ganzheitliche digitale Marketing-Strategien",
+              priceRange: "€2000-€8000"
+            }
+          ]}
+        />
         <WiesbadenHero />
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />

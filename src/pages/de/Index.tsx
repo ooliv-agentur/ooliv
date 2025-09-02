@@ -15,6 +15,8 @@ import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 
 const germanFaqs = [
   {
@@ -51,157 +53,39 @@ const GermanIndex = () => {
   const handleStartProject = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "AdvertisingAgency"],
-    "name": "ooliv Werbeagentur Mainz",
-    "alternateName": ["ooliv", "Digitalagentur Mainz", "SEO Agentur Mainz", "Webdesign Mainz"],
-    "description": "Etablierte Werbeagentur Mainz seit 2008. Spezialisiert auf Webdesign Mainz, SEO Optimierung, Online Marketing Mainz und digitale Strategien für Unternehmen in Rheinland-Pfalz.",
-    "url": "https://ooliv.de",
-    "telephone": "+4961316367801",
-    "email": "info@ooliv.de",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Mombacher Str. 25",
-      "addressLocality": "Mainz",
-      "postalCode": "55122",
-      "addressRegion": "Rheinland-Pfalz",
-      "addressCountry": "DE"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Mainz",
-        "sameAs": "https://de.wikipedia.org/wiki/Mainz"
-      },
-      {
-        "@type": "City", 
-        "name": "Wiesbaden",
-        "sameAs": "https://de.wikipedia.org/wiki/Wiesbaden"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Rheinland-Pfalz",
-        "sameAs": "https://de.wikipedia.org/wiki/Rheinland-Pfalz"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "Hessen",
-        "sameAs": "https://de.wikipedia.org/wiki/Hessen"
-      }
-    ],
-    "serviceType": [
-      "Webdesign Mainz",
-      "Webentwicklung Mainz", 
-      "SEO Optimierung Mainz",
-      "Content Marketing Mainz",
-      "Google Ads Betreuung Mainz",
-      "Online Marketing Mainz",
-      "Digitale Strategieberatung"
-    ],
-    "priceRange": "€€€",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday", 
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "foundingDate": "2008",
-    "founder": {
-      "@type": "Person",
-      "name": "Uli Schönleber"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/ooliv",
-      "https://www.xing.com/companies/ooliv"
-    ],
-    "slogan": "Individuelle Websites für mehr Sichtbarkeit und Vertrauen",
-    "knowsAbout": [
-      "Webdesign Mainz",
-      "SEO Optimierung Mainz", 
-      "Online Marketing Mainz",
-      "Content Strategie Mainz",
-      "Digitale Transformation",
-      "Local SEO",
-      "Responsive Webdesign",
-      "E-Commerce Entwicklung"
-    ],
-    "makesOffer": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Webdesign Mainz",
-          "description": "Professionelles Webdesign für Unternehmen in Mainz"
-        }
-      },
-      {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "SEO Optimierung Mainz",
-          "description": "Suchmaschinenoptimierung für bessere Sichtbarkeit in Mainz"
-        }
-      }
-    ]
-  };
   
   return (
     <>
-      <Helmet prioritizeSeoTags>
-        <html lang="de" />
-        <title>Werbeagentur Mainz | ooliv - Ihre digitale Marketing Agentur</title>
-        <meta
-          name="description"
-          content="ooliv - Ihre Werbeagentur in Mainz für professionelles Webdesign, SEO-Optimierung und digitale Strategien. Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren. Seit 2008 in Mainz verwurzelt."
+      <PageLayout className="overflow-x-hidden">
+        <EnhancedSEOHead
+          title="Werbeagentur Mainz | ooliv - Ihre digitale Marketing Agentur"
+          description="ooliv - Ihre Werbeagentur in Mainz für professionelles Webdesign, SEO-Optimierung und digitale Strategien. Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren. Seit 2008 in Mainz verwurzelt."
+          canonicalUrl="https://ooliv.de/"
+          keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
+          ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
         />
         
-        {/* Open Graph tags */}
-        <meta property="og:title" content="Werbeagentur Mainz | ooliv - Ihre digitale Marketing Agentur" />
-        <meta property="og:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen. Jetzt starten." />
-        <meta property="og:image" content="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" />
-        <meta property="og:url" content="https://ooliv.de/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="ooliv Werbeagentur Mainz" />
-        
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ooliv – Werbeagentur Mainz" />
-        <meta name="twitter:description" content="Individuelle Websites für mehr Sichtbarkeit und Vertrauen." />
-        <meta name="twitter:image" content="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" />
-        
-        {/* Geographic Metadata for Mainz */}
-        <meta name="geo.region" content="DE-RP" />
-        <meta name="geo.placename" content="Mainz" />
-        <meta name="geo.position" content="49.9928617;8.2472526" />
-        <meta name="ICBM" content="49.9928617, 8.2472526" />
-        <meta name="DC.title" content="ooliv - Werbeagentur Mainz" />
-        
-        {/* Performance optimization meta tags */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        
-        {/* LocalBusiness Schema Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-        
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-      </Helmet>
-      
-      <PageLayout className="overflow-x-hidden">
+        <LocalBusinessSchemaGenerator
+          businessName="ooliv Werbeagentur Mainz"
+          description="Etablierte Werbeagentur Mainz seit 2008. Spezialisiert auf Webdesign Mainz, SEO Optimierung, Online Marketing Mainz und digitale Strategien für Unternehmen in Rheinland-Pfalz."
+          address={{
+            streetAddress: "Am Brand 8",
+            addressLocality: "Mainz",
+            postalCode: "55116",
+            addressRegion: "Rheinland-Pfalz",
+            addressCountry: "DE"
+          }}
+          geo={{
+            latitude: 49.9928617,
+            longitude: 8.2472526
+          }}
+          telephone="+49-6131-9027640"
+          email="hallo@ooliv.de"
+          url="https://ooliv.de"
+          priceRange="€€€"
+          areaServed={["Mainz", "Wiesbaden", "Frankfurt", "Rheinland-Pfalz", "Hessen"]}
+          services={["Webdesign Mainz", "SEO Optimierung Mainz", "Google Ads Betreuung Mainz", "Online Marketing Mainz", "Digitale Strategieberatung"]}
+        />
         <DeutscherHero />
         
         <DeutscherAboutSection />

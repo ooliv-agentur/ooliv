@@ -59,8 +59,24 @@ const BreadcrumbNavigation = () => {
     }
   }
 
+  // Generate breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((breadcrumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": breadcrumb.label,
+      "item": `https://ooliv.de${breadcrumb.path}`
+    }))
+  };
+
   return (
     <div className="bg-background/80 backdrop-blur-sm border-b border-border/50">
+      {/* Breadcrumb Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <Breadcrumb>
           <BreadcrumbList>

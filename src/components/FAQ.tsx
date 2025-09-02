@@ -41,6 +41,20 @@ const FAQ = ({
   const { language, t } = useLanguage();
   const isGerman = language === 'de';
   
+  // Generate FAQ structured data
+  const generateFAQSchema = (faqs: FAQItem[]) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question", 
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer.replace(/<[^>]*>/g, '') // Strip HTML tags for schema
+      }
+    }))
+  });
+  
   const defaultFaqs = [
     {
       question: isGerman ? "Wie läuft ein Website-Projekt bei ooliv ab?" : "What is your website creation process?",
@@ -104,8 +118,14 @@ const FAQ = ({
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
+  const faqSchema = generateFAQSchema(faqs);
+  
   return (
     <section className="py-24 bg-white">
+      {/* FAQ Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(faqSchema)}
+      </script>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">

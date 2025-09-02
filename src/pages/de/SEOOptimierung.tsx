@@ -13,6 +13,8 @@ import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOTextSectionDE from '@/components/seo/SEOTextSectionDE';
 import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
+import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
 
 const GermanSEO = () => {
@@ -21,6 +23,11 @@ const GermanSEO = () => {
   useEffect(() => {
     setLanguage('de');
   }, [setLanguage]);
+  
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "SEO Optimierung", url: "https://ooliv.de/seo-optimierung" }
+  ];
   
   const seoFaqs = [
     {
@@ -54,10 +61,37 @@ const GermanSEO = () => {
       className="overflow-x-hidden"
       seoText={<SEOTextSectionDE />}
     >
-      <Helmet>
-        <title>SEO Agentur Mainz – Sichtbar im Netz</title>
-        <meta name="description" content="SEO Agentur Mainz für Top-Rankings und mehr Sichtbarkeit. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="SEO Agentur Mainz – Sichtbar im Netz"
+        description="SEO Agentur Mainz für Top-Rankings und mehr Sichtbarkeit. ooliv steigert Ihre Online-Präsenz mit maßgeschneiderter Suchmaschinenoptimierung."
+        canonicalUrl="https://ooliv.de/seo-optimierung"
+        keywords="SEO Agentur Mainz, Suchmaschinenoptimierung, Google Rankings, Online Marketing"
+        breadcrumbs={breadcrumbs}
+      />
+      
+      <ServiceSchemaGenerator
+        serviceName="Suchmaschinenoptimierung Mainz"
+        description="Professionelle SEO-Dienstleistungen für bessere Google-Rankings und mehr organische Sichtbarkeit."
+        serviceType="SearchEngineOptimization"
+        priceRange="€1500-€5000"
+        offers={[
+          {
+            name: "SEO Basis-Audit",
+            description: "Technische Analyse und erste Optimierungen",
+            priceRange: "€1500-€2500"
+          },
+          {
+            name: "Lokale SEO",
+            description: "Google My Business und lokale Sichtbarkeit",
+            priceRange: "€2000-€3500"
+          },
+          {
+            name: "SEO-Komplettbetreuung",
+            description: "Umfassende SEO-Strategie mit Content und Linkaufbau",
+            priceRange: "€3000-€5000"
+          }
+        ]}
+      />
 
       <SEOHeroDE />
       <SEOBenefitsDE />

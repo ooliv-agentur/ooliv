@@ -11,16 +11,50 @@ import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import SEOTextSection from '@/components/web-design/SEOTextSection';
+import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
 
 const GermanWebDesign = () => {
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Webdesign", url: "https://ooliv.de/webdesign" }
+  ];
+
   return (
     <>
       <PageLayout className="overflow-x-hidden">
-        <Helmet>
-          <title>Webdesign Mainz – Individuell & Erfolgreich</title>
-          <meta name="description" content="Professionelles Webdesign Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern." />
-        </Helmet>
+        <EnhancedSEOHead
+          title="Webdesign Mainz – Individuell & Erfolgreich"
+          description="Professionelles Webdesign Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern."
+          canonicalUrl="https://ooliv.de/webdesign"
+          keywords="Webdesign Mainz, Website erstellen, Responsive Design, UX Design, UI Design"
+          breadcrumbs={breadcrumbs}
+        />
+        
+        <ServiceSchemaGenerator
+          serviceName="Webdesign Mainz"
+          description="Professionelles Webdesign und Website-Entwicklung in Mainz. Individuelle, responsive Websites die konvertieren."
+          serviceType="WebDesign"
+          priceRange="€4000-€15000"
+          offers={[
+            {
+              name: "Einfache Website",
+              description: "Professionelle Website für kleine Unternehmen",
+              priceRange: "€4000-€6000"
+            },
+            {
+              name: "Business Website",
+              description: "Umfangreiche Website mit SEO-Optimierung",
+              priceRange: "€6000-€12000"
+            },
+            {
+              name: "E-Commerce Website",
+              description: "Online-Shop mit erweiterten Funktionen",
+              priceRange: "€12000-€25000"
+            }
+          ]}
+        />
         
         <WebDesignHero />
         <WebDesignBenefits />
