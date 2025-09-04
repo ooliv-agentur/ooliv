@@ -148,6 +148,7 @@ export default {
         'bounce-slow': 'bounce 3s infinite',
         'accordion-down': 'accordion-down 0.3s ease-out',
         'accordion-up': 'accordion-up 0.3s ease-out',
+        'slide-in-bottom': 'slide-in-bottom 0.3s ease-out',
       },
       keyframes: {
         float: {
@@ -184,6 +185,16 @@ export default {
           to: { 
             height: '0',
             opacity: '0'
+          },
+        },
+        'slide-in-bottom': {
+          from: {
+            transform: 'translateY(100%)',
+            opacity: '0'
+          },
+          to: {
+            transform: 'translateY(0)',
+            opacity: '1'
           },
         },
       },

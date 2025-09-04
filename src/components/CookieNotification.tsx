@@ -52,72 +52,71 @@ const CookieNotification = () => {
   return (
     <>
       <div 
-        className="fixed bottom-0 left-0 right-0 z-[9999] p-4"
+        className="fixed bottom-0 left-0 right-0 z-[9999] animate-slide-in-bottom"
         style={{ zIndex: 9999 }}
       >
-        <Card className="max-w-4xl mx-auto p-6 bg-white/95 backdrop-blur-sm border-medico-turquoise/20 shadow-lg">
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <Cookie className="w-4 h-4 text-medico-turquoise" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-medico-darkGreen mb-2">
-                  {t.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {t.description}
+        <div className="bg-white/95 backdrop-blur-sm border-t border-border/50 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4 flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <Cookie className="w-4 h-4 text-medico-turquoise flex-shrink-0" />
+                  <span className="text-sm font-medium text-medico-darkGreen">
+                    {language === 'de' ? 'Cookies' : 'Cookies'}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground hidden sm:block truncate">
+                  {language === 'de' 
+                    ? 'Wir nutzen Cookies für die beste Erfahrung.' 
+                    : 'We use cookies for the best experience.'
+                  }
+                  <Link 
+                    to="/datenschutz" 
+                    className="ml-1 text-medico-turquoise hover:underline"
+                  >
+                    {t.privacy}
+                  </Link>
                 </p>
               </div>
-            </div>
-            <button
-              onClick={hideBanner}
-              className="p-1 text-gray-400 hover:text-gray-600 flex-shrink-0 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
-            <div className="flex flex-wrap gap-2 text-sm">
-              <Link 
-                to="/datenschutz" 
-                className="text-medico-turquoise hover:text-medico-darkGreen hover:underline transition-colors"
-              >
-                {t.privacy}
-              </Link>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowSettings(true)}
-                className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white transition-colors w-full sm:w-auto"
-              >
-                <Settings className="w-4 h-4 mr-2" />
-                {t.settings}
-              </Button>
               
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={acceptEssential}
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors w-full sm:w-auto"
-              >
-                {t.acceptEssential}
-              </Button>
-              
-              <Button
-                size="sm"
-                onClick={acceptAll}
-                className="bg-medico-turquoise hover:bg-medico-darkGreen text-white transition-colors w-full sm:w-auto"
-              >
-                {t.acceptAll}
-              </Button>
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setShowSettings(true)}
+                  className="text-xs h-7 px-2 text-muted-foreground hover:text-medico-turquoise"
+                >
+                  <Settings className="w-3 h-3 mr-1" />
+                  <span className="hidden sm:inline">{t.settings}</span>
+                </Button>
+                
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={acceptEssential}
+                  className="text-xs h-7 px-2 text-muted-foreground hover:text-foreground"
+                >
+                  {language === 'de' ? 'Nur nötige' : 'Essential'}
+                </Button>
+                
+                <Button
+                  size="sm"
+                  onClick={acceptAll}
+                  className="text-xs h-7 px-3 bg-medico-turquoise hover:bg-medico-darkGreen text-white"
+                >
+                  {language === 'de' ? 'Alle' : 'Accept'}
+                </Button>
+                
+                <button
+                  onClick={hideBanner}
+                  className="p-1 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
 
       {showSettings && (
