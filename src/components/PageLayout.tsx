@@ -14,6 +14,7 @@ interface PageLayoutProps {
   children: ReactNode;
   className?: string;
   seoText?: ReactNode;
+  showBreadcrumbs?: boolean;
 }
 
 // Map paths between languages
@@ -38,7 +39,7 @@ const pagePreloadResources: Record<string, Array<{type: string, href: string, as
   ]
 };
 
-const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
+const PageLayout = ({ children, className = '', seoText, showBreadcrumbs = true }: PageLayoutProps) => {
   const location = useLocation();
   
   
@@ -151,7 +152,7 @@ const PageLayout = ({ children, className = '', seoText }: PageLayoutProps) => {
         <div className={`min-h-screen flex flex-col ${className}`}>
           <CustomCursor />
           <Navbar />
-          <BreadcrumbNavigation />
+          {showBreadcrumbs && <BreadcrumbNavigation />}
           <main className="flex-grow">
             {children}
           </main>
