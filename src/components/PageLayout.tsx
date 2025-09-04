@@ -33,7 +33,7 @@ const pagePreloadResources: Record<string, Array<{type: string, href: string, as
   '/webentwicklung': [
     { type: 'image', href: '/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png', as: 'image' }
   ],
-  '/ueber-ooliv': [
+  '/ueber-uns': [
     { type: 'image', href: '/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png', as: 'image' }
   ]
 };
