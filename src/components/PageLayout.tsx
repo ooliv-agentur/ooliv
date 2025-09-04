@@ -39,7 +39,7 @@ const pagePreloadResources: Record<string, Array<{type: string, href: string, as
   ]
 };
 
-const PageLayout = ({ children, className = '', seoText, showBreadcrumbs = true }: PageLayoutProps) => {
+const PageLayout = ({ children, className = '', seoText, showBreadcrumbs = false }: PageLayoutProps) => {
   const location = useLocation();
   
   

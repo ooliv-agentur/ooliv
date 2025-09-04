@@ -75,7 +75,7 @@ const GermanCaseStudies = () => {
   }, []);
 
   return (
-    <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOText />} showBreadcrumbs={false}>
+    <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOText />}>
       <Helmet>
         <title>Marketing Mainz – Erfolgreiche Projekte</title>
         <meta 
