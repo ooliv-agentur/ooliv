@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowRight } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from "@/hooks/use-toast";
 import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
 
@@ -16,7 +15,6 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
   const [email, setEmail] = React.useState('');
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const { language } = useLanguage();
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,10 +22,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
     
     if (!email || !email.includes('@')) {
       toast({
-        title: language === 'de' ? "Fehler" : "Error",
-        description: language === 'de' 
-          ? "Bitte geben Sie eine gültige E-Mail-Adresse ein" 
-          : "Please enter a valid email address",
+        title: "Fehler",
+        description: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
         variant: "destructive",
       });
       return;
@@ -43,8 +39,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           projectType: 'prototype',
           email: email,
           name: '',
-          message: language === 'de' ? 'Kostenloses Website-Konzept angefordert' : 'Free website concept requested',
-          language: language
+          message: 'Kostenloses Website-Konzept angefordert'
         }),
       });
 
@@ -54,19 +49,15 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
 
       setIsSubmitted(true);
       toast({
-        title: language === 'de' ? "Vielen Dank!" : "Thank you!",
-        description: language === 'de' 
-          ? "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen" 
-          : "We'll get back to you within 48 hours with your concept",
+        title: "Vielen Dank!",
+        description: "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen",
       });
 
     } catch (error) {
       console.error('Prototype form submission error:', error);
       toast({
-        title: language === 'de' ? "Fehler" : "Error",
-        description: language === 'de' 
-          ? "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut." 
-          : "An error occurred. Please try again.",
+        title: "Fehler",
+        description: "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
         variant: "destructive",
       });
     } finally {
@@ -87,12 +78,10 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           </svg>
         </div>
         <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
-          {language === 'de' ? 'Anfrage gesendet!' : 'Request sent!'}
+          Anfrage gesendet!
         </h3>
         <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">
-          {language === 'de' 
-            ? 'Wir erstellen Ihr kostenloses Website-Konzept und melden uns binnen 48 Stunden.' 
-            : 'We\'ll create your free website concept and get back to you within 48 hours.'}
+          Wir erstellen Ihr kostenloses Website-Konzept und melden uns binnen 48 Stunden.
         </p>
       </motion.div>
     );
@@ -113,28 +102,26 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
             </svg>
           </div>
           <h2 className="text-xl font-bold text-white">
-            {language === 'de' ? 'Was Sie erhalten' : 'What you get'}
+            Was Sie erhalten
           </h2>
         </div>
         
         <div className="space-y-4">
           <p className="text-base text-white/90 leading-relaxed">
-            {language === 'de' 
-              ? 'Wir analysieren Ihr Geschäft und erstellen ein maßgeschneidertes Website-Konzept, das Ihre Zielgruppe überzeugt und zu mehr Kunden führt.' 
-              : 'We analyze your business and create a tailored website concept that convinces your target audience and leads to more customers.'}
+            Wir analysieren Ihr Geschäft und erstellen ein maßgeschneidertes Website-Konzept, das Ihre Zielgruppe überzeugt und zu mehr Kunden führt.
           </p>
           <ul className="space-y-3 text-sm text-white/85 pl-1">
             <li className="flex items-start">
               <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
-              <span className="flex-1">{language === 'de' ? 'Strategische Seitenstruktur nach bewährten Verkaufsprinzipien' : 'Strategic page structure based on proven sales principles'}</span>
+              <span className="flex-1">Strategische Seitenstruktur nach bewährten Verkaufsprinzipien</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
-              <span className="flex-1">{language === 'de' ? 'Optimierte Benutzerführung für maximale Conversion' : 'Optimized user guidance for maximum conversion'}</span>
+              <span className="flex-1">Optimierte Benutzerführung für maximale Conversion</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
-              <span className="flex-1">{language === 'de' ? 'Konkrete Inhaltsempfehlungen für Ihre Branche' : 'Concrete content recommendations for your industry'}</span>
+              <span className="flex-1">Konkrete Inhaltsempfehlungen für Ihre Branche</span>
             </li>
           </ul>
         </div>
@@ -143,14 +130,14 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="prototype-email" className="text-white text-sm">
-            {language === 'de' ? 'E-Mail-Adresse *' : 'Email Address *'}
+            E-Mail-Adresse *
           </Label>
           <Input
             id="prototype-email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={language === 'de' ? 'ihre.email@beispiel.de' : 'your.email@example.com'}
+            placeholder="ihre.email@beispiel.de"
             required
             className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary focus:ring-primary"
           />
@@ -166,11 +153,11 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           {isSubmitting ? (
             <span className="flex items-center gap-2">
               <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
-              {language === 'de' ? 'Wird gesendet...' : 'Sending...'}
+              Wird gesendet...
             </span>
           ) : (
             <>
-              {language === 'de' ? 'Kostenloses Konzept anfordern' : 'Request Free Concept'}
+              Kostenloses Konzept anfordern
               <ArrowRight className="ml-2 h-5 w-5" />
             </>
           )}
@@ -178,9 +165,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       </form>
 
       <div className="text-xs text-white/50 text-center">
-        {language === 'de' 
-          ? '100% kostenlos • Keine Verpflichtungen • Antwort in 48h' 
-          : '100% free • No obligations • Response within 48h'}
+        100% kostenlos • Keine Verpflichtungen • Antwort in 48h
       </div>
     </motion.div>
   );
