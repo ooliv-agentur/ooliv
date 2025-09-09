@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { Mail } from 'lucide-react';
 
 interface ConsultationRequestSectionDEProps {
@@ -9,6 +10,67 @@ interface ConsultationRequestSectionDEProps {
 }
 
 const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSectionDEProps) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.email || !formData.name || !formData.message) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mvgblkeg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Vielen Dank!",
+          description: "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -23,12 +85,14 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm">
-              <form action="https://formspree.io/f/mvgblkeg" method="POST" className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                   <Input 
                     id="name"
                     name="name" 
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="Ihr Name" 
                     required 
                     className="bg-white" 
@@ -41,6 +105,8 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
                     id="email"
                     name="email" 
                     type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="ihre.email@beispiel.de" 
                     required 
                     className="bg-white" 
@@ -52,6 +118,8 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
                   <Input 
                     id="company"
                     name="company" 
+                    value={formData.company}
+                    onChange={handleInputChange}
                     placeholder="Ihre Firma" 
                     className="bg-white" 
                   />
@@ -62,14 +130,27 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
                   <Textarea 
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Zielen" 
                     className="resize-none h-32 bg-white" 
                     required
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
-                  Beratungsgespräch anfragen
+                <Button 
+                  type="submit" 
+                  className="w-full"
+                  disabled={isSubmitting || !formData.email || !formData.name || !formData.message}
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                      Wird gesendet...
+                    </span>
+                  ) : (
+                    'Beratungsgespräch anfragen'
+                  )}
                 </Button>
               </form>
               
