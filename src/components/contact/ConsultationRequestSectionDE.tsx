@@ -12,6 +12,7 @@ interface ConsultationRequestSectionDEProps {
 const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSectionDEProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -51,6 +52,8 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
           description: "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen",
         });
         
+        setIsSubmitted(true);
+        
         // Reset form
         setFormData({
           name: '',
@@ -85,74 +88,90 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                  <Input 
-                    id="name"
-                    name="name" 
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Ihr Name" 
-                    required 
-                    className="bg-white" 
-                  />
+              {isSubmitted ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    Anfrage gesendet!
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Wir erstellen Ihr kostenloses Website-Konzept und melden uns binnen 48 Stunden.
+                  </p>
                 </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">E-Mail</label>
-                  <Input 
-                    id="email"
-                    name="email" 
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="ihre.email@beispiel.de" 
-                    required 
-                    className="bg-white" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">Firma (optional)</label>
-                  <Input 
-                    id="company"
-                    name="company" 
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Ihre Firma" 
-                    className="bg-white" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Nachricht</label>
-                  <Textarea 
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Zielen" 
-                    className="resize-none h-32 bg-white" 
-                    required
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full"
-                  disabled={isSubmitting || !formData.email || !formData.name || !formData.message}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                      Wird gesendet...
-                    </span>
-                  ) : (
-                    'Beratungsgespräch anfragen'
-                  )}
-                </Button>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                    <Input 
+                      id="name"
+                      name="name" 
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Ihr Name" 
+                      required 
+                      className="bg-white" 
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">E-Mail</label>
+                    <Input 
+                      id="email"
+                      name="email" 
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="ihre.email@beispiel.de" 
+                      required 
+                      className="bg-white" 
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium mb-2">Firma (optional)</label>
+                    <Input 
+                      id="company"
+                      name="company" 
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Ihre Firma" 
+                      className="bg-white" 
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Nachricht</label>
+                    <Textarea 
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Zielen" 
+                      className="resize-none h-32 bg-white" 
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full"
+                    disabled={isSubmitting || !formData.email || !formData.name || !formData.message}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-2">
+                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                        Wird gesendet...
+                      </span>
+                    ) : (
+                      'Beratungsgespräch anfragen'
+                    )}
+                  </Button>
+                </form>
+              )}
               
               {requestAudit && (
                 <div className="mt-8 pt-6 border-t border-gray-200 text-center">
