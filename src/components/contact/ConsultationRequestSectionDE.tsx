@@ -1,117 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { 
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from "@/components/ui/form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { Mail } from 'lucide-react';
-import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name muss mindestens 2 Zeichen lang sein." }),
-  email: z.string().email({ message: "Bitte geben Sie eine gültige E-Mail-Adresse ein." }),
-  company: z.string().optional(),
-  message: z.string().min(10, { message: "Nachricht muss mindestens 10 Zeichen lang sein." }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 interface ConsultationRequestSectionDEProps {
   requestAudit?: () => void;
 }
 
 const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSectionDEProps) => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      company: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = async (data: FormValues) => {
-    if (!data.name || !data.email || !data.message) {
-      console.error("Formular-Übermittlung abgebrochen: Erforderliche Daten fehlen");
-      return;
-    }
-    
-    setIsSubmitting(true);
-    console.log("Anfrage wird gesendet:", data);
-    
-    try {
-      const formData = {
-        projectType: "consultation",
-        companyName: data.company || '',
-        industry: '',
-        name: data.name,
-        email: data.email,
-        message: data.message || '',
-        websiteUrl: '',
-        location: '',
-        goal: 'website_consultation',
-        phone: '',
-        language: 'de' // This is the German component, so hardcode 'de'
-      };
-      
-      const headers = getSupabaseHeaders();
-      console.log("ConsultationRequestSectionDE - Headers being sent:", headers);
-      
-      const response = await fetch(SEND_PROJECT_FORM_URL, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(formData)
-      });
-      
-      console.log("Response status:", response.status);
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Serverfehlerdaten:", errorData);
-        throw new Error(errorData.message || 'Netzwerkantwort war nicht in Ordnung');
-      }
-      
-      const responseData = await response.json();
-      console.log("Formular erfolgreich gesendet:", responseData);
-      
-      toast({
-        title: "Anfrage gesendet!",
-        description: "Wir melden uns in Kürze bei Ihnen.",
-        className: "bg-[#004d51] text-white border-[#006064]",
-      });
-      
-      form.reset();
-      
-      // Redirect to thank you page after a short delay
-      setTimeout(() => {
-        window.location.href = "/danke";
-      }, 1000);
-    } catch (error: any) {
-      console.error("Fehler beim Senden des Formulars:", error);
-      
-      toast({
-        title: "Fehler",
-        description: "Es gab ein Problem bei der Übermittlung Ihrer Anfrage. Bitte versuchen Sie es erneut.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section className="py-16 md:py-24 bg-white">
@@ -126,82 +23,55 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ihr Name" {...field} className="bg-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+              <form action="https://formspree.io/f/mvgblkeg" method="POST" className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                  <Input 
+                    id="name"
+                    name="name" 
+                    placeholder="Ihr Name" 
+                    required 
+                    className="bg-white" 
                   />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>E-Mail</FormLabel>
-                        <FormControl>
-                          <Input placeholder="ihre.email@beispiel.de" {...field} className="bg-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">E-Mail</label>
+                  <Input 
+                    id="email"
+                    name="email" 
+                    type="email"
+                    placeholder="ihre.email@beispiel.de" 
+                    required 
+                    className="bg-white" 
                   />
-                  
-                  <FormField
-                    control={form.control}
-                    name="company"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Firma (optional)</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Ihre Firma" {...field} className="bg-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                </div>
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium mb-2">Firma (optional)</label>
+                  <Input 
+                    id="company"
+                    name="company" 
+                    placeholder="Ihre Firma" 
+                    className="bg-white" 
                   />
-                  
-                  <FormField
-                    control={form.control}
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">Nachricht</label>
+                  <Textarea 
+                    id="message"
                     name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Nachricht</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Zielen" 
-                            className="resize-none h-32 bg-white" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                    placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Zielen" 
+                    className="resize-none h-32 bg-white" 
+                    required
                   />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <span className="flex items-center gap-2">
-                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                        Wird gesendet...
-                      </span>
-                    ) : 'Beratungsgespräch anfragen'}
-                  </Button>
-                </form>
-              </Form>
+                </div>
+                
+                <Button type="submit" className="w-full">
+                  Beratungsgespräch anfragen
+                </Button>
+              </form>
               
               {requestAudit && (
                 <div className="mt-8 pt-6 border-t border-gray-200 text-center">
