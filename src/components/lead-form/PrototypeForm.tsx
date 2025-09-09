@@ -32,13 +32,13 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(SEND_PROJECT_FORM_URL, {
+      const response = await fetch('https://formspree.io/f/mvgblkeg', {
         method: 'POST',
-        headers: getSupabaseHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
-          projectType: 'prototype',
           email: email,
-          name: '',
           message: 'Kostenloses Website-Konzept angefordert'
         }),
       });
@@ -134,6 +134,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           </Label>
           <Input
             id="prototype-email"
+            name="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
