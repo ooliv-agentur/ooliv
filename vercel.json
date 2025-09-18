@@ -4,7 +4,8 @@
     { "source": "/robots.txt", "destination": "/robots-reset.txt" }
   ],
   "redirects": [
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true }
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true },
+    { "source": "/sitemap-test.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true }
   ],
   "routes": [
     {
