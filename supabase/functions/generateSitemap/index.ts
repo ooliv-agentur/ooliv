@@ -88,12 +88,9 @@ serve(async (req) => {
     // Join parts with newlines to create clean XML
     let sitemap = sitemapParts.join('\n');
 
-    // Aggressive whitespace cleanup - remove ALL leading whitespace characters
-    // including CR, LF, tabs, and spaces to ensure XML declaration is first
-    if (sitemap.charCodeAt(0) === 0xFEFF) {
-      sitemap = sitemap.slice(1); // Remove BOM if present
-    }
-    sitemap = sitemap.replace(/^[\r\n\t ]+/, ''); // Remove all leading whitespace
+    // HARD CUT: Ensure XML declaration is absolutely first character
+    // Replace everything before <?xml with <?xml to guarantee clean start
+    sitemap = sitemap.replace(/^[\s\S]*?(?=<\?xml)/, '<?xml');
 
     // Build and return clean XML response
     return new Response(sitemap, {
