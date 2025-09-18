@@ -1,5 +1,3 @@
-// Complete rebuild - RAW streaming proxy for Supabase Edge Function
-// Zero buffer manipulation, direct stream passthrough
 export default async function handler(req, res) {
   // Only GET requests
   if (req.method !== 'GET') {
@@ -23,45 +21,31 @@ export default async function handler(req, res) {
       throw new Error(`Edge function returned ${response.status}`);
     }
 
-    // Get response body as stream
-    const body = await response.arrayBuffer();
-    const buffer = Buffer.from(body);
+    // Get response as text and send directly - no buffer manipulation
+    const xmlText = await response.text();
     
-    // Find XML start - no manipulation, just validation
-    let xmlStart = 0;
-    while (xmlStart < buffer.length && buffer[xmlStart] !== 0x3C) {
-      xmlStart++;
+    // Simple validation - ensure it starts with <?xml
+    if (!xmlText.startsWith('<?xml')) {
+      throw new Error('Invalid XML response');
     }
     
-    if (xmlStart === buffer.length) {
-      throw new Error('No XML content found');
-    }
-    
-    // Extract clean XML buffer
-    const cleanBuffer = buffer.subarray(xmlStart);
-    
-    // RAW headers - prevent any Vercel processing
+    // Send headers and response directly
     res.writeHead(200, {
       'Content-Type': 'application/xml; charset=UTF-8',
-      'Content-Length': cleanBuffer.length.toString(),
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       'Pragma': 'no-cache',
-      'Expires': '0',
-      'X-Content-Type-Options': 'nosniff'
+      'Expires': '0'
     });
     
-    // Direct buffer output - no processing
-    res.end(cleanBuffer);
+    res.end(xmlText);
 
   } catch (error) {
     // XML error response
     const errorXml = '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>';
-    const errorBuffer = Buffer.from(errorXml, 'utf8');
     
     res.writeHead(500, {
-      'Content-Type': 'application/xml; charset=UTF-8',
-      'Content-Length': errorBuffer.length.toString()
+      'Content-Type': 'application/xml; charset=UTF-8'
     });
-    res.end(errorBuffer);
+    res.end(errorXml);
   }
 }
