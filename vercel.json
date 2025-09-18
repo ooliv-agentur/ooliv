@@ -14,7 +14,8 @@
   "rewrites": [
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/test-sitemap.xml", "destination": "/api/test-sitemap" },
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?v=6&cb=20250918154500" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/sitemap-backup.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?v=7&cb=20250918155500" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
@@ -40,6 +41,17 @@
     },
     {
       "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" },
+        { "key": "Expires", "value": "0" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    },
+    {
+      "source": "/api/sitemap",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
