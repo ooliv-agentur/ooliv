@@ -86,7 +86,7 @@ serve(async (req) => {
     const urlsetClose = '</urlset>';
     
     // Construct final XML - NO LOGGING, NO OUTPUT
-    const sitemap = xmlDeclaration + urlsetOpen + '\n' + urlEntries.join('\n') + '\n' + urlsetClose;
+    const sitemap = xmlDeclaration + urlsetOpen + urlEntries.join('\n') + '\n' + urlsetClose;
     
     // CRITICAL: Only byte-level validation - NO CONSOLE OUTPUT
     const sitemapBytes = new TextEncoder().encode(sitemap);
