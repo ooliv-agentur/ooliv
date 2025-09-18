@@ -1,4 +1,5 @@
 {
+  "_note": "force redeploy",
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
