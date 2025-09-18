@@ -28,9 +28,20 @@ export default async function handler(req, res) {
 
     // Get raw bytes directly - no string manipulation
     const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
+    let buffer = Buffer.from(arrayBuffer);
 
-    // Set headers explicitly with writeHead
+    // CRITICAL: Remove any leading bytes that are not XML (< = 0x3C)
+    // This ensures absolutely clean XML output in RAW mode
+    while (buffer.length > 0 && buffer[0] !== 0x3C) {
+      buffer = buffer.subarray(1);
+    }
+
+    // Emergency validation - buffer must start with XML
+    if (buffer.length === 0 || buffer[0] !== 0x3C) {
+      throw new Error('Invalid XML buffer after cleaning');
+    }
+
+    // Set headers explicitly with writeHead using cleaned buffer length
     const headers = {
       'Content-Type': 'application/xml; charset=UTF-8',
       'Cache-Control': 'public, max-age=300, must-revalidate',
@@ -38,7 +49,7 @@ export default async function handler(req, res) {
       'Content-Length': buffer.length.toString()
     };
 
-    // Stream raw bytes directly - no Next.js string processing
+    // Stream cleaned raw bytes directly - no Next.js string processing
     res.writeHead(200, headers);
     res.end(buffer);
 
