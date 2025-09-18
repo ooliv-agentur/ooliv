@@ -15,7 +15,6 @@
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/test-sitemap.xml", "destination": "/api/test-sitemap" },
     { "source": "/sitemap.xml", "destination": "/api/xml-sitemap" },
-    { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
