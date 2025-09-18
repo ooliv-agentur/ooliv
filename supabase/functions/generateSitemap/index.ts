@@ -85,8 +85,11 @@ serve(async (req) => {
 
     const urlsetClose = '</urlset>';
     
-    // Construct final XML - NO LOGGING, NO OUTPUT
-    const sitemap = xmlDeclaration + urlsetOpen + urlEntries.join('\n') + '\n' + urlsetClose;
+    // Construct final XML - NO LOGGING, NO OUTPUT, NO LEADING WHITESPACE
+    const rawSitemap = xmlDeclaration + urlsetOpen + urlEntries.join('\n') + '\n' + urlsetClose;
+    
+    // CRITICAL: Remove any leading whitespace, BOM, or newlines to ensure XML starts with <?xml
+    const sitemap = rawSitemap.trimStart();
     
     // CRITICAL: Only byte-level validation - NO CONSOLE OUTPUT
     const sitemapBytes = new TextEncoder().encode(sitemap);
