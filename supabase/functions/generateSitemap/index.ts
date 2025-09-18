@@ -59,8 +59,7 @@ serve(async (req) => {
     console.log(`Generating sitemap with ${articles?.length || 0} articles`);
 
     // Build sitemap XML with absolutely clean start - no leading characters
-    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
-    sitemap += '\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
     // Add static pages
     staticPages.forEach(page => {
@@ -82,7 +81,8 @@ serve(async (req) => {
       .trim() // Remove all leading/trailing whitespace
       .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
       .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
-      .replace(/^\n+/, ''); // Remove any remaining leading newlines
+      .replace(/^\n+/, '') // Remove any remaining leading newlines
+      .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2'); // Remove any whitespace between XML declaration and urlset
 
     // Final content validation
     if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {

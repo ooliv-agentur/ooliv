@@ -23,6 +23,7 @@ export default async function handler(req, res) {
       .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
       .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
       .replace(/^\n+/, '') // Remove leading newlines specifically
+      .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2') // Remove whitespace between XML declaration and urlset
       .replace(/^[\x00-\x1F\x7F-\x9F]*(?=<\?xml)/g, ''); // Remove any control characters
     
     // Byte-level validation: ensure clean start
