@@ -1,7 +1,46 @@
 {
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" }
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "src": "/(.*)",
+      "has": [
+        { "type": "host", "value": "www.ooliv.de" }
+      ],
+      "status": 301,
+      "dest": "https://ooliv.de/$1"
+    },
+    { "src": "/de/:path*", "status": 301, "dest": "/:path*" },
+    { "src": "/de/?", "status": 301, "dest": "/" },
+    { "src": "/:path*.php", "status": 301, "dest": "/" },
+    { "src": "/author/:path*", "status": 301, "dest": "/ueber-uns" },
+    { "src": "/projekte/:path*", "status": 301, "dest": "/referenzen" },
+    { "src": "/projekte", "status": 301, "dest": "/referenzen" },
+    { "src": "/leistungen/:path*", "status": 301, "dest": "/webdesign" },
+    { "src": "/leistungen", "status": 301, "dest": "/webdesign" },
+    { "src": "/ooliv/:path*", "status": 301, "dest": "/ueber-uns" },
+    { "src": "/ooliv", "status": 301, "dest": "/ueber-uns" },
+    { "src": "/ueber-ooliv/:path*", "status": 301, "dest": "/ueber-uns" },
+    { "src": "/ueber-ooliv", "status": 301, "dest": "/ueber-uns" },
+    { "src": "/case-studies/:path*", "status": 301, "dest": "/referenzen" },
+    { "src": "/case-studies", "status": 301, "dest": "/referenzen" },
+    { "src": "/werbeagentur-frankfurt/:path*", "status": 301, "dest": "/werbeagentur-frankfurt" },
+    { "src": "/webdesign-agentur-wiesbaden/:path*", "status": 301, "dest": "/werbeagentur-wiesbaden" },
+    { "src": "/webdesign-agentur-wiesbaden", "status": 301, "dest": "/werbeagentur-wiesbaden" },
+    { "src": "/webdesign-agentur-frankfurt/:path*", "status": 301, "dest": "/werbeagentur-frankfurt" },
+    { "src": "/webdesign-agentur-frankfurt", "status": 301, "dest": "/werbeagentur-frankfurt" },
+    { "src": "/wordpress-agentur-wiesbaden/:path*", "status": 301, "dest": "/werbeagentur-wiesbaden" },
+    { "src": "/wordpress-agentur-wiesbaden", "status": 301, "dest": "/werbeagentur-wiesbaden" },
+    { "src": "/wordpress-agentur-mainz/:path*", "status": 301, "dest": "/webentwicklung" },
+    { "src": "/wordpress-agentur-mainz", "status": 301, "dest": "/webentwicklung" },
+    { "src": "/kunden/:path*", "status": 301, "dest": "/referenzen" },
+    { "src": "/kunden", "status": 301, "dest": "/referenzen" },
+    { "src": "/en/:path*", "status": 301, "dest": "/" },
+    { "src": "/en/?", "status": 301, "dest": "/" },
+    { "src": "/:path(.*)/", "status": 301, "dest": "/:path*" }
   ],
   "headers": [
     {
@@ -9,6 +48,25 @@
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=UTF-8", "override": true },
         { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate", "override": true }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "index, follow" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ]
