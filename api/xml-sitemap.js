@@ -1,4 +1,17 @@
+// Completely independent XML sitemap handler - no HTML fallbacks, no string processing
 export default async function handler(req, res) {
+  // Only allow GET requests
+  if (req.method !== 'GET') {
+    const errorXml = '<?xml version="1.0" encoding="UTF-8"?><error>Method not allowed</error>';
+    const errorBuffer = Buffer.from(errorXml, 'utf8');
+    res.writeHead(405, {
+      'Content-Type': 'application/xml; charset=UTF-8',
+      'Content-Length': errorBuffer.length.toString()
+    });
+    res.end(errorBuffer);
+    return;
+  }
+
   try {
     // Fetch raw bytes from Supabase Edge Function
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
