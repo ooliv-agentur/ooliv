@@ -15,6 +15,7 @@
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/test-sitemap.xml", "destination": "/api/test-sitemap" },
     { "source": "/sitemap.xml", "destination": "/api/generate-sitemap" },
+    { "source": "/sitemap-local.xml", "destination": "/api/sitemap-local" },
     { "source": "/sitemap-backup.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?backup=true&v=9&cb=20250918160000" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
@@ -41,15 +42,6 @@
     },
     {
       "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Robots-Tag", "value": "index, follow" }
-      ]
-    },
-    {
-      "source": "/api/generate-sitemap",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" },

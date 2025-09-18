@@ -1,20 +1,33 @@
-// Comprehensive Sitemap Generator - Vercel API Route
-// This function internally calls the Supabase Edge Function to generate the sitemap
+// Enhanced Sitemap Generator - Multi-Strategy Approach
+// This function tries multiple approaches to generate the sitemap reliably
 module.exports = async function handler(req, res) {
-  console.log('Generate Sitemap API: Starting sitemap generation');
-  console.log('Generate Sitemap API: Method:', req.method);
-  console.log('Generate Sitemap API: URL:', req.url);
+  console.log('Enhanced Sitemap API: Starting multi-strategy sitemap generation');
   
   // Only allow GET requests
   if (req.method !== 'GET') {
-    console.log('Generate Sitemap API: Method not allowed:', req.method);
+    console.log('Enhanced Sitemap API: Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Strategy 1: Try local generation first (most reliable)
   try {
-    // Set response headers first
+    console.log('Enhanced Sitemap API: Attempting local generation');
+    
+    // Import and call the local sitemap generator
+    const localSitemap = require('./sitemap-local');
+    return await localSitemap(req, res);
+    
+  } catch (localError) {
+    console.error('Enhanced Sitemap API: Local generation failed:', localError.message);
+  }
+
+  // Strategy 2: Try Edge Function call (fallback)
+  try {
+    console.log('Enhanced Sitemap API: Attempting Edge Function fallback');
+    
+    // Set response headers (no conflicts now)
     res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
-    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+    res.setHeader('Cache-Control', 'public, max-age=1800, s-maxage=1800');
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('X-Robots-Tag', 'index, follow');
     
