@@ -91,8 +91,14 @@ serve(async (req) => {
     // CRITICAL: Remove any leading whitespace, BOM, or newlines to ensure XML starts with <?xml
     const sitemap = rawSitemap.trimStart();
     
+    // ADDITIONAL CLEANING: Remove BOM and additional whitespace characters
+    const cleanSitemap = sitemap
+      .replace(/^\uFEFF/, '') // Remove BOM (Byte Order Mark)
+      .replace(/^[\s\n\r\t]+/, '') // Remove any remaining leading whitespace
+      .trimStart(); // Final trim for absolute safety
+    
     // CRITICAL: Only byte-level validation - NO CONSOLE OUTPUT
-    const sitemapBytes = new TextEncoder().encode(sitemap);
+    const sitemapBytes = new TextEncoder().encode(cleanSitemap);
     
     // Emergency validation without logging
     if (sitemapBytes[0] !== 0x3C) { // 0x3C is '<'
@@ -100,14 +106,14 @@ serve(async (req) => {
     }
     
     // Final structure check without output
-    if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || 
-        !sitemap.includes('<urlset') || 
-        !sitemap.includes('</urlset>')) {
+    if (!cleanSitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || 
+        !cleanSitemap.includes('<urlset') || 
+        !cleanSitemap.includes('</urlset>')) {
       throw new Error('XML structure validation failed');
     }
 
     // Return completely clean XML response - NO CACHE
-    return new Response(sitemap, {
+    return new Response(cleanSitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
         'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
