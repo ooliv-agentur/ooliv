@@ -88,8 +88,8 @@ serve(async (req) => {
     // Join parts with newlines
     let sitemap = sitemapParts.join('\n');
 
-    // ULTIMATE FIX: remove everything before first < character
-    sitemap = sitemap.replace(/^[\s\S]*?(?=<)/, '');
+    // 🔥 Finaler Fix: ALLES vor dem ersten "<" entfernen
+    sitemap = sitemap.replace(/^[^<]*/, '');
 
     // Build and return clean XML response
     return new Response(sitemap, {
