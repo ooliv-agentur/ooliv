@@ -1,4 +1,5 @@
 {
+  "buildCommand": "npm run build",
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs18.x"
@@ -25,7 +26,9 @@
       "source": "/api/test-sitemap",
       "headers": [
         { "key": "Content-Type", "value": "application/json; charset=UTF-8" },
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma", "value": "no-cache" },
+        { "key": "Expires", "value": "0" }
       ]
     },
     {

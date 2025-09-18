@@ -9,11 +9,12 @@ module.exports = async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
     
     const response = { 
-      message: 'API Route is working!',
+      message: 'API Route is working! (Fresh deployment)',
       timestamp: new Date().toISOString(),
       method: req.method,
       url: req.url,
-      status: 'success'
+      status: 'success',
+      deployment: 'v2.0'
     };
     
     console.log('Test API Route: Sending response:', response);
