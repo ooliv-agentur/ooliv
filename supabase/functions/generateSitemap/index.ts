@@ -56,45 +56,51 @@ serve(async (req) => {
       { url: 'https://ooliv.de/cookie-richtlinie', lastmod: currentDate, priority: '0.3', changefreq: 'yearly' }
     ];
 
-    // Generate sitemap XML - no whitespace before XML declaration
-    let sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    // Build sitemap XML as array for clean generation
+    const sitemapParts = ['<?xml version="1.0" encoding="UTF-8"?>'];
+    sitemapParts.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
 
     // Add static pages
     staticPages.forEach(page => {
-      sitemap += `
-  <url>
-    <loc>${page.url}</loc>
-    <lastmod>${page.lastmod}</lastmod>
-    <priority>${page.priority}</priority>
-    <changefreq>${page.changefreq}</changefreq>
-  </url>`;
+      sitemapParts.push('  <url>');
+      sitemapParts.push(`    <loc>${page.url}</loc>`);
+      sitemapParts.push(`    <lastmod>${page.lastmod}</lastmod>`);
+      sitemapParts.push(`    <priority>${page.priority}</priority>`);
+      sitemapParts.push(`    <changefreq>${page.changefreq}</changefreq>`);
+      sitemapParts.push('  </url>');
     });
 
     // Add dynamic article pages
     if (articles && articles.length > 0) {
       articles.forEach(article => {
         const lastmod = new Date(article.created_at).toISOString().split('T')[0];
-        sitemap += `
-  <url>
-    <loc>https://ooliv.de/artikel/${article.slug}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <priority>0.6</priority>
-    <changefreq>daily</changefreq>
-  </url>`;
+        sitemapParts.push('  <url>');
+        sitemapParts.push(`    <loc>https://ooliv.de/artikel/${article.slug}</loc>`);
+        sitemapParts.push(`    <lastmod>${lastmod}</lastmod>`);
+        sitemapParts.push(`    <priority>0.6</priority>`);
+        sitemapParts.push(`    <changefreq>daily</changefreq>`);
+        sitemapParts.push('  </url>');
       });
     }
 
-    sitemap += `</urlset>`;
+    sitemapParts.push('</urlset>');
 
-    console.log(`Generated sitemap with ${staticPages.length} static pages and ${articles?.length || 0} articles`);
+    // Join parts with newlines to create clean XML
+    const sitemap = sitemapParts.join('\n');
 
-    return new Response(sitemap, {
+    // Create response with proper XML headers
+    const response = new Response(sitemap, {
       headers: {
-        'Content-Type': 'application/xml; charset=utf-8',
+        'Content-Type': 'application/xml; charset=UTF-8',
         'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
         ...corsHeaders
       },
     });
+
+    // Log after response is created (won't interfere with output)
+    console.log(`Generated sitemap with ${staticPages.length} static pages and ${articles?.length || 0} articles`);
+
+    return response;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
