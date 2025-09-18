@@ -1,6 +1,7 @@
 {
   "_note": "complete rebuild - clean slate",
   "rewrites": [
+    { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/sitemap.xml", "destination": "/api/xml-sitemap" },
     { "source": "/(?!api/)(.*)/*", "destination": "/index.html" }
   ],

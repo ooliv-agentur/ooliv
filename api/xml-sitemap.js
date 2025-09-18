@@ -1,3 +1,4 @@
+// Vercel API Route for XML Sitemap
 export default async function handler(req, res) {
   // Only GET requests
   if (req.method !== 'GET') {
@@ -8,6 +9,8 @@ export default async function handler(req, res) {
 
   try {
     console.log('API Route: Starting sitemap generation request');
+    console.log('API Route: Request method:', req.method);
+    console.log('API Route: Request URL:', req.url);
     
     // Direct fetch to Supabase Edge Function
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
@@ -44,6 +47,7 @@ export default async function handler(req, res) {
     res.end(xmlText);
 
   } catch (error) {
+    console.log('API Route: Error occurred:', error);
     // XML error response
     const errorXml = '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>';
     
