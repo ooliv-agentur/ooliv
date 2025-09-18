@@ -15,10 +15,6 @@ export default async function handler(req, res) {
 
     let sitemapContent = await response.text();
     
-    // Debug: log first few bytes before cleaning
-    console.log('Before cleaning - first 20 chars as hex:', 
-      Buffer.from(sitemapContent.substring(0, 20), 'utf8').toString('hex'));
-    
     // Aggressive cleaning - remove ALL leading whitespace including newlines
     sitemapContent = sitemapContent.replace(/^\uFEFF/, '').replace(/^[\s\n\r]+/, '');
     
@@ -32,10 +28,6 @@ export default async function handler(req, res) {
     
     // Final safety: ensure no leading whitespace remains
     sitemapContent = sitemapContent.replace(/^[\s\n\r]+/, '');
-    
-    // Debug: log first few bytes after cleaning
-    console.log('After cleaning - first 20 chars as hex:', 
-      Buffer.from(sitemapContent.substring(0, 20), 'utf8').toString('hex'));
 
     // Validate XML structure
     if (!sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>') ||
