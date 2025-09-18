@@ -15,15 +15,19 @@ export default async function handler(req, res) {
 
     let sitemapContent = await response.text();
     
-    // Clean any leading whitespace or newlines
-    sitemapContent = sitemapContent.trim();
+    // Multi-layer content cleaning for robust XML output
+    sitemapContent = sitemapContent
+      .trim() // Remove leading/trailing whitespace
+      .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
+      .replace(/^\n+/, ''); // Remove leading newlines specifically
     
-    // Ensure it starts with XML declaration
+    // Final validation: ensure it starts with XML declaration
     if (!sitemapContent.startsWith('<?xml')) {
-      // Find the first occurrence of <?xml and remove everything before it
       const xmlStart = sitemapContent.indexOf('<?xml');
       if (xmlStart > 0) {
         sitemapContent = sitemapContent.substring(xmlStart);
+      } else {
+        throw new Error('Invalid XML content received from Edge Function');
       }
     }
 

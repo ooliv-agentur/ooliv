@@ -56,40 +56,26 @@ serve(async (req) => {
       { url: 'https://ooliv.de/cookie-richtlinie', lastmod: currentDate, priority: '0.3', changefreq: 'yearly' }
     ];
 
-    // Build sitemap XML as array for clean generation
-    const sitemapParts = ['<?xml version="1.0" encoding="UTF-8"?>'];
-    sitemapParts.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+    // Build sitemap XML directly as string to avoid newline issues
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
     // Add static pages
     staticPages.forEach(page => {
-      sitemapParts.push('  <url>');
-      sitemapParts.push(`    <loc>${page.url}</loc>`);
-      sitemapParts.push(`    <lastmod>${page.lastmod}</lastmod>`);
-      sitemapParts.push(`    <priority>${page.priority}</priority>`);
-      sitemapParts.push(`    <changefreq>${page.changefreq}</changefreq>`);
-      sitemapParts.push('  </url>');
+      sitemap += `\n  <url>\n    <loc>${page.url}</loc>\n    <lastmod>${page.lastmod}</lastmod>\n    <priority>${page.priority}</priority>\n    <changefreq>${page.changefreq}</changefreq>\n  </url>`;
     });
 
     // Add dynamic article pages
     if (articles && articles.length > 0) {
       articles.forEach(article => {
         const lastmod = new Date(article.created_at).toISOString().split('T')[0];
-        sitemapParts.push('  <url>');
-        sitemapParts.push(`    <loc>https://ooliv.de/artikel/${article.slug}</loc>`);
-        sitemapParts.push(`    <lastmod>${lastmod}</lastmod>`);
-        sitemapParts.push(`    <priority>0.6</priority>`);
-        sitemapParts.push(`    <changefreq>daily</changefreq>`);
-        sitemapParts.push('  </url>');
+        sitemap += `\n  <url>\n    <loc>https://ooliv.de/artikel/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>0.6</priority>\n    <changefreq>daily</changefreq>\n  </url>`;
       });
     }
 
-    sitemapParts.push('</urlset>');
+    sitemap += '\n</urlset>';
 
-    // Join parts with newlines
-    let sitemap = sitemapParts.join('\n');
-
-    // 🔥 Finaler Fix: ALLES vor dem ersten "<" entfernen
-    sitemap = sitemap.replace(/^[^<]*/, '');
+    // Ensure clean XML with robust cleaning
+    sitemap = sitemap.trim().replace(/^[\s\n\r]*(?=<\?xml)/g, '');
 
     // Build and return clean XML response
     return new Response(sitemap, {
