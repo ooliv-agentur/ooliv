@@ -2,7 +2,7 @@
   "_note": "force redeploy",
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
-    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/sitemap.xml", "destination": "/api/xml-sitemap" },
     { "source": "/(?!api/)(.*)/*", "destination": "/index.html" }
   ],
   "redirects": [
