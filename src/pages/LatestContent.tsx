@@ -13,6 +13,7 @@ const LatestContent = () => {
           name="description" 
           content="Entdecken Sie unseren neuesten Artikel von BabyLoveGrowth.ai mit wertvollen Insights und Tipps."
         />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 py-16">

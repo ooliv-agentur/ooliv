@@ -38,6 +38,7 @@ const GermanCookiePolicy = () => {
       <Helmet>
         <title>Cookie-Richtlinie | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, wie wir Cookies verwenden und Ihre Privatsphäre schützen." />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <LegalHero

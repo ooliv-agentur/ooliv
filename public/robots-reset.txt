@@ -2,6 +2,7 @@
 User-agent: *
 Disallow: /danke
 Disallow: /cookie-richtlinie
+Disallow: /neuester-artikel
 
 Allow: /
 

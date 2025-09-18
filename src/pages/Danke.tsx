@@ -59,7 +59,7 @@ const Danke = () => {
       <Helmet prioritizeSeoTags>
         <title>Danke für Ihre Anfrage | ooliv</title>
         <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://ooliv.de/danke" />
       </Helmet>
       
