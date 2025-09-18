@@ -54,18 +54,24 @@ serve(async (req) => {
       { url: 'https://ooliv.de/cookie-richtlinie', lastmod: currentDate, priority: '0.3', changefreq: 'yearly' }
     ];
 
-    // MINIMAL XML TEST - Direct string construction to eliminate any whitespace issues
-    const cleanSitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://ooliv.de/</loc><lastmod>${currentDate}</lastmod><priority>1.0</priority><changefreq>daily</changefreq></url></urlset>`;
-    
-    // CRITICAL: Only byte-level validation - NO CONSOLE OUTPUT
-    const sitemapBytes = new TextEncoder().encode(cleanSitemap);
-    
-    // Emergency validation without logging
-    if (sitemapBytes[0] !== 0x3C) { // 0x3C is '<'
-      throw new Error('XML validation failed');
+    // Generate URLs for static pages
+    let urlElements = staticPages.map(page => 
+      `<url><loc>${page.url}</loc><lastmod>${page.lastmod}</lastmod><priority>${page.priority}</priority><changefreq>${page.changefreq}</changefreq></url>`
+    );
+
+    // Add blog articles if available
+    if (articles && articles.length > 0) {
+      const articleUrls = articles.map(article => {
+        const articleDate = new Date(article.created_at).toISOString().split('T')[0];
+        return `<url><loc>https://ooliv.de/artikel/${article.slug}</loc><lastmod>${articleDate}</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>`;
+      });
+      urlElements = urlElements.concat(articleUrls);
     }
+
+    // Build complete sitemap - no leading whitespace
+    const cleanSitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlElements.join('')}</urlset>`;
     
-    // Final structure check without output
+    // Validate XML structure
     if (!cleanSitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || 
         !cleanSitemap.includes('<urlset') || 
         !cleanSitemap.includes('</urlset>')) {
@@ -79,7 +85,7 @@ serve(async (req) => {
         'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
         'Pragma': 'no-cache',
         'Expires': '0',
-        'Content-Length': sitemapBytes.length.toString(),
+        'Content-Length': new TextEncoder().encode(cleanSitemap).length.toString(),
         ...corsHeaders
       },
     });
