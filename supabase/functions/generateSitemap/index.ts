@@ -95,6 +95,7 @@ serve(async (req) => {
     return new Response(sitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
+        'content-type': 'application/xml; charset=UTF-8',  // Explicit lowercase override
         'Cache-Control': 'public, max-age=300, must-revalidate',
         ...corsHeaders
       },
