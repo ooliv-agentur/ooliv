@@ -58,74 +58,84 @@ serve(async (req) => {
 
     console.log(`Generating sitemap with ${articles?.length || 0} articles`);
 
-    // ULTRA-HARDENED XML GENERATION - Build sitemap XML with absolutely clean start
-    let sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    // NUCLEAR-LEVEL XML GENERATION - Build completely clean XML from scratch
+    const xmlParts = ['<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
 
     // Add static pages
     staticPages.forEach(page => {
-      sitemap += `\n  <url>\n    <loc>${page.url}</loc>\n    <lastmod>${page.lastmod}</lastmod>\n    <priority>${page.priority}</priority>\n    <changefreq>${page.changefreq}</changefreq>\n  </url>`;
+      xmlParts.push(`\n  <url>\n    <loc>${page.url}</loc>\n    <lastmod>${page.lastmod}</lastmod>\n    <priority>${page.priority}</priority>\n    <changefreq>${page.changefreq}</changefreq>\n  </url>`);
     });
 
     // Add dynamic article pages
     if (articles && articles.length > 0) {
       articles.forEach(article => {
         const lastmod = new Date(article.created_at).toISOString().split('T')[0];
-        sitemap += `\n  <url>\n    <loc>https://ooliv.de/artikel/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>0.6</priority>\n    <changefreq>daily</changefreq>\n  </url>`;
+        xmlParts.push(`\n  <url>\n    <loc>https://ooliv.de/artikel/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>0.6</priority>\n    <changefreq>daily</changefreq>\n  </url>`);
       });
     }
 
-    sitemap += '\n</urlset>';
+    xmlParts.push('\n</urlset>');
+    let sitemap = xmlParts.join('');
 
-    // ULTRA-HARDENED CLEANING - Multi-layered byte-level sanitization
+    // NUCLEAR-LEVEL BYTE CONTROL - Use TextEncoder for absolute precision
     const originalLength = sitemap.length;
-    console.log(`Pre-cleaning sitemap: ${originalLength} chars, hex start: ${Array.from(new TextEncoder().encode(sitemap.substring(0, 10))).map(b => b.toString(16).padStart(2, '0')).join(' ')}`);
-
-    // 1. Remove BOM (Byte Order Mark) if present - U+FEFF
-    sitemap = sitemap.replace(/^\uFEFF/, '');
-    
-    // 2. Remove ALL Unicode whitespace characters (including hidden ones)
-    sitemap = sitemap.replace(/^[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200F\u2028\u2029\u202F\u205F\u3000]*(?=<\?xml)/g, '');
-    
-    // 3. Remove control characters (NULL, etc.) before XML
-    sitemap = sitemap.replace(/^[\x00-\x1F\x7F-\x9F]*(?=<\?xml)/g, '');
-    
-    // 4. Basic cleanup
-    sitemap = sitemap
-      .trim() // Remove all leading/trailing whitespace
-      .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
-      .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
-      .replace(/^\n+/, '') // Remove any remaining leading newlines
-      .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2'); // Remove whitespace between XML declaration and urlset
-    
-    // 5. Aggressive byte-level validation and correction
     const sitemapBytes = new TextEncoder().encode(sitemap);
-    if (sitemapBytes[0] !== 0x3C) { // 0x3C is '<' in hex
-      console.error(`CRITICAL: First byte is not '<', found: 0x${sitemapBytes[0].toString(16)}`);
-      // Find first '<' and slice from there
-      for (let i = 0; i < sitemapBytes.length; i++) {
-        if (sitemapBytes[i] === 0x3C) {
-          sitemap = new TextDecoder().decode(sitemapBytes.slice(i));
-          console.log(`Corrected by removing ${i} leading bytes`);
+    const deploymentTimestamp = new Date().toISOString();
+    console.log(`DEPLOYMENT ${deploymentTimestamp}: Pre-cleaning raw bytes (length: ${originalLength}): ${Array.from(sitemapBytes.slice(0, 30)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
+    
+    // Find the exact start of XML declaration at byte level
+    let xmlStartIndex = -1;
+    const xmlDeclarationBytes = new TextEncoder().encode('<?xml');
+    
+    for (let i = 0; i <= sitemapBytes.length - xmlDeclarationBytes.length; i++) {
+      let match = true;
+      for (let j = 0; j < xmlDeclarationBytes.length; j++) {
+        if (sitemapBytes[i + j] !== xmlDeclarationBytes[j]) {
+          match = false;
           break;
         }
       }
+      if (match) {
+        xmlStartIndex = i;
+        break;
+      }
     }
-
-    console.log(`Post-cleaning: ${sitemap.length} chars (removed ${originalLength - sitemap.length}), hex start: ${Array.from(new TextEncoder().encode(sitemap.substring(0, 20))).map(b => b.toString(16).padStart(2, '0')).join(' ')}`);
+    
+    if (xmlStartIndex === -1) {
+      console.error(`DEPLOYMENT FAILURE ${deploymentTimestamp}: No XML declaration found in sitemap content`);
+      throw new Error('No XML declaration found in sitemap content');
+    }
+    
+    if (xmlStartIndex > 0) {
+      console.log(`EMERGENCY BYTE CORRECTION ${deploymentTimestamp}: Removing ${xmlStartIndex} leading bytes before XML declaration`);
+      const cleanBytes = sitemapBytes.slice(xmlStartIndex);
+      sitemap = new TextDecoder().decode(cleanBytes);
+    }
+    
+    // FINAL BYTE VALIDATION - Absolute guarantee with deployment timestamp
+    const finalBytes = new TextEncoder().encode(sitemap);
+    console.log(`FINAL VALIDATION ${deploymentTimestamp}: ${sitemap.length} chars, first 30 bytes: ${Array.from(finalBytes.slice(0, 30)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
+    
+    if (finalBytes[0] !== 0x3C) { // 0x3C is '<'
+      console.error(`CRITICAL DEPLOYMENT FAILURE ${deploymentTimestamp}: Sitemap STILL doesn't start with '<' - first byte: 0x${finalBytes[0].toString(16)}`);
+      throw new Error(`CRITICAL DEPLOYMENT FAILURE: Sitemap validation failed - first byte is 0x${finalBytes[0].toString(16)} not 0x3C (<)`);
+    }
+    
+    console.log(`SUCCESS ${deploymentTimestamp}: Nuclear-level cleaning complete - ${sitemap.length} chars (removed ${originalLength - sitemap.length}), validated clean start`);
 
     // Final content validation
     if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
-      console.error('Invalid sitemap format detected:', sitemap.substring(0, 50));
+      console.error(`VALIDATION ERROR ${deploymentTimestamp}: Invalid sitemap format:`, sitemap.substring(0, 50));
       throw new Error('Generated sitemap does not start with proper XML declaration');
     }
 
     // Validate sitemap contains expected content
     if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) {
-      console.error('Invalid sitemap structure detected');
+      console.error(`STRUCTURE ERROR ${deploymentTimestamp}: Invalid sitemap structure detected`);
       throw new Error('Generated sitemap missing required XML structure');
     }
 
-    console.log(`Sitemap generated successfully, ${sitemap.length} bytes, starts with: "${sitemap.substring(0, 50)}"`);
+    console.log(`SITEMAP SUCCESS ${deploymentTimestamp}: Generated ${sitemap.length} bytes, starts with: "${sitemap.substring(0, 50)}"`);
 
     // Build and return clean XML response with explicit Content-Length
     return new Response(sitemap, {
@@ -139,7 +149,8 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('Error generating sitemap:', error);
+    const errorTimestamp = new Date().toISOString();
+    console.error(`ERROR ${errorTimestamp}: Sitemap generation failed:`, error);
     return new Response('Error generating sitemap', { 
       status: 500,
       headers: corsHeaders 
