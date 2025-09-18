@@ -1,9 +1,0 @@
-
-User-agent: *
-Disallow: /danke
-Disallow: /cookie-richtlinie
-Disallow: /neuester-artikel
-
-Allow: /
-
-Sitemap: https://ooliv.de/sitemap.xml

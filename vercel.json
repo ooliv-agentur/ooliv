@@ -2,7 +2,6 @@
   "_note": "complete rebuild - clean slate",
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/xml-sitemap" },
-    { "source": "/robots.txt", "destination": "/robots-reset.txt" },
     { "source": "/(?!api/)(.*)/*", "destination": "/index.html" }
   ],
   "redirects": [

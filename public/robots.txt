@@ -1,21 +1,11 @@
 
 User-agent: *
+Disallow: /api/
+Disallow: /preview/
+Disallow: /*.php$
+
+Allow: /danke
+Allow: /en/thank-you
 Allow: /
 
-# Crawl-Delay to ensure proper rendering
-Crawl-delay: 1
-
-# Block common tracking parameters
-Disallow: /*?utm_source=*
-Disallow: /*?utm_medium=*
-Disallow: /*?utm_campaign=*
-Disallow: /*?*utm_source=*
-
-# Set canonical domain
-Host: ooliv.de
-
-# Provide sitemap location
-Sitemap: https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap
-
-# Last updated: 2025-01-12 - Fixed crawling issues
-# Removed /de/ disallow to fix Ahrefs link detection
+Sitemap: https://ooliv.de/sitemap.xml
