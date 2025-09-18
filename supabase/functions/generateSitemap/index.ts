@@ -94,25 +94,14 @@ serve(async (req) => {
     }
     sitemap = sitemap.replace(/^\s+/, ''); // remove any leading spaces/newlines
 
-    // Build response (headers unchanged)
-    const response = new Response(sitemap, {
+    // Build and return clean XML response
+    return new Response(sitemap.trimStart(), {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': 'public, max-age=300, must-revalidate',
         ...corsHeaders
       },
     });
-
-    // Post-response diagnostics (safe: does not affect body)
-    if (sitemap[0] !== '<') {
-      console.warn('Sitemap does not start with "<". First bytes:',
-        Array.from(sitemap.slice(0,5)).map(c => c.charCodeAt(0).toString(16)));
-    }
-
-    // Log after response is created (won't interfere with output)
-    console.log(`Generated sitemap with ${staticPages.length} static pages and ${articles?.length || 0} articles`);
-
-    return response;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
