@@ -18,7 +18,8 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Fetch all articles with slugs
+    // Fetch all articles with their canonical slugs from BabyloveGrowth webhook
+    // CRITICAL: Use slugs exactly as provided by webhook - do not generate or modify
     const { data: articles, error } = await supabase
       .from('content_posts')
       .select('slug, created_at')
