@@ -15,25 +15,37 @@ serve(async (req) => {
   try {
     console.log('Edge Function: Starting sitemap generation');
     
-    // Initialize Supabase client
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
+    // Initialize Supabase client with detailed logging
+    const supabaseUrl = 'https://ycloufmcjjfvjxhmslbm.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4';
+    
+    console.log('Edge Function: Using hardcoded credentials');
+    console.log('Edge Function: URL:', supabaseUrl);
+    
     const supabase = createClient(supabaseUrl, supabaseKey);
+    console.log('Edge Function: Supabase client initialized with URL:', supabaseUrl.substring(0, 20) + '...');
 
-    console.log('Edge Function: Supabase client initialized');
-
-    // Fetch all articles
+    // Fetch all articles with detailed error handling
+    console.log('Edge Function: Starting database query to content_posts table');
+    
     const { data: articles, error } = await supabase
       .from('content_posts')
       .select('slug, created_at')
       .not('slug', 'is', null)
       .order('created_at', { ascending: false });
 
-    console.log('Edge Function: Articles fetched', articles?.length || 0, 'articles');
+    console.log('Edge Function: Query completed');
+    console.log('Edge Function: Articles data:', articles);
+    console.log('Edge Function: Articles count:', articles?.length || 0);
+    console.log('Edge Function: Query error:', error);
 
     if (error) {
-      console.log('Edge Function: Database error:', error);
-      throw error;
+      console.error('Edge Function: Database error details:', JSON.stringify(error));
+      throw new Error(`Database query failed: ${error.message} (Code: ${error.code})`);
+    }
+
+    if (!articles) {
+      console.log('Edge Function: No articles returned (null/undefined)');
     }
 
     console.log('Edge Function: Building sitemap with', articles?.length || 0, 'articles');
@@ -101,9 +113,13 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.log('Edge Function: Error occurred:', error);
-    // Error response without logging details
-    return new Response('<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>', { 
+    console.error('Edge Function: Critical error occurred:', error);
+    console.error('Edge Function: Error type:', typeof error);
+    console.error('Edge Function: Error message:', error?.message);
+    console.error('Edge Function: Error stack:', error?.stack);
+    
+    const errorMessage = error?.message || 'Unknown error occurred';
+    return new Response(`<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed: ${errorMessage}</error>`, { 
       status: 500,
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
