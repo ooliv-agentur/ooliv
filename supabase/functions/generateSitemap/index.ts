@@ -86,13 +86,7 @@ serve(async (req) => {
     sitemapParts.push('</urlset>');
 
     // Join parts with newlines to create clean XML
-    let sitemap = sitemapParts.join('\n');
-
-    // Hard-strip BOM and any leading whitespace just in case
-    if (sitemap.charCodeAt(0) === 0xFEFF) {
-      sitemap = sitemap.slice(1);
-    }
-    sitemap = sitemap.replace(/^\s+/, ''); // remove any leading spaces/newlines
+    const sitemap = sitemapParts.join('\n');
 
     // Build and return clean XML response
     return new Response(sitemap.trimStart(), {
