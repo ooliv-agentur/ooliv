@@ -3,27 +3,12 @@ import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import { Helmet } from "react-helmet-async";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
-  const { language, setLanguage } = useLanguage();
-  
-  // Detect language from URL path for better language handling
-  useEffect(() => {
-    const isEnglishPath = location.pathname.startsWith('/en');
-    if (isEnglishPath && language !== 'en') {
-      setLanguage('en');
-    } else if (!isEnglishPath && language !== 'de') {
-      setLanguage('de');
-    }
-  }, [location.pathname, language, setLanguage]);
-  
-  // Determine language for content
-  const isEnglish = language === 'en' || location.pathname.startsWith('/en');
   
   useEffect(() => {
     console.error(
@@ -55,10 +40,10 @@ const NotFound = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>{isEnglish ? "Page Not Found | ooliv" : "Seite nicht gefunden | ooliv"}</title>
+        <title>Seite nicht gefunden | ooliv</title>
         <meta 
           name="description" 
-          content={isEnglish ? "The page you are looking for does not exist." : "Die von Ihnen gesuchte Seite existiert nicht."} 
+          content="Die von Ihnen gesuchte Seite existiert nicht." 
         />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
@@ -76,13 +61,11 @@ const NotFound = () => {
             </motion.div>
             
             <motion.h1 className="text-2xl md:text-3xl font-bold mb-4 text-brand-heading" variants={itemVariants}>
-              {isEnglish ? "Page Not Found" : "Seite nicht gefunden"}
+              Seite nicht gefunden
             </motion.h1>
             
             <motion.p className="text-lg mb-8 text-brand-text" variants={itemVariants}>
-              {isEnglish 
-                ? "The page you are looking for doesn't exist or has been moved." 
-                : "Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben."}
+              Die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.
             </motion.p>
             
             <motion.div variants={itemVariants}>
@@ -90,9 +73,9 @@ const NotFound = () => {
                 asChild
                 className="bg-brand-primary hover:bg-brand-primary/90 text-white flex items-center gap-2"
               >
-                <Link to={isEnglish ? "/en" : "/"}>
+                <Link to="/">
                   <Home className="h-4 w-4" />
-                  {isEnglish ? "Back to Homepage" : "Zurück zur Startseite"}
+                  Zurück zur Startseite
                 </Link>
               </Button>
             </motion.div>
