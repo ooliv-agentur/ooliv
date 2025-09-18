@@ -15,8 +15,8 @@ export default async function handler(req, res) {
 
     let sitemapContent = await response.text();
     
-    // Clean response - remove BOM and find XML start
-    sitemapContent = sitemapContent.replace(/^\uFEFF/, '').trim();
+    // Aggressive cleaning - remove ALL leading whitespace including newlines
+    sitemapContent = sitemapContent.replace(/^\uFEFF/, '').replace(/^[\s\n\r]+/, '');
     
     // Find XML declaration start and slice from there
     const xmlStart = sitemapContent.indexOf('<?xml');
@@ -25,6 +25,9 @@ export default async function handler(req, res) {
     } else if (xmlStart === -1) {
       throw new Error('No XML declaration found in response');
     }
+    
+    // Final safety: ensure no leading whitespace remains
+    sitemapContent = sitemapContent.replace(/^[\s\n\r]+/, '');
 
     // Validate XML structure
     if (!sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>') ||
