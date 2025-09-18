@@ -14,7 +14,7 @@
   "rewrites": [
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/test-sitemap.xml", "destination": "/api/test-sitemap" },
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?v=4&cb=${now}" },
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?v=5&cb=20250918" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
