@@ -209,3 +209,16 @@ module.exports = async function handler(req, res) {
     return res.status(200).send(fallbackSitemap);
   }
 };
+  <url>
+    <loc>https://ooliv.de/artikel</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Fallback sitemap due to error: ${error.message} -->
+</urlset>`;
+    
+    console.log('Generate Sitemap API: Returning fallback sitemap');
+    return res.status(200).send(fallbackSitemap);
+  }
+};
