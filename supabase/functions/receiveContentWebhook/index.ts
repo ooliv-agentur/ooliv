@@ -58,22 +58,32 @@ serve(async (req) => {
       });
     }
 
-    // Generate slug from title
-    const generateSlug = (title: string): string => {
-      return title
+    // Generate slug using database function for consistency
+    const { data: slugData, error: slugError } = await supabase
+      .rpc('generate_slug', { title_text: payload.title });
+    
+    let slug = slugData;
+    
+    if (slugError || !slug) {
+      console.error('Error generating slug or empty result:', slugError);
+      // Fallback to simple slug generation
+      slug = payload.title
         .toLowerCase()
         .trim()
-        .replace(/[üÜ]/g, 'ue')
-        .replace(/[äÄ]/g, 'ae')
-        .replace(/[öÖ]/g, 'oe')
-        .replace(/[ß]/g, 'ss')
+        .replace(/[üÜäÄöÖß]/g, (match) => {
+          const replacements: { [key: string]: string } = {
+            'ü': 'ue', 'Ü': 'ue', 'ä': 'ae', 'Ä': 'ae', 
+            'ö': 'oe', 'Ö': 'oe', 'ß': 'ss'
+          };
+          return replacements[match] || match;
+        })
         .replace(/[^a-z0-9\s-]/g, '')
         .replace(/\s+/g, '-')
         .replace(/-+/g, '-')
-        .replace(/^-|-$/g, '');
-    };
+        .replace(/^-|-$/g, '') || 'fallback-slug';
+    }
 
-    const slug = generateSlug(payload.title);
+    console.log(`Generated slug "${slug}" for title "${payload.title}"`);
 
     // Map the payload to our database schema
     // BabyLoveGrowth.ai uses camelCase, our DB uses snake_case
