@@ -86,10 +86,17 @@ serve(async (req) => {
     sitemapParts.push('</urlset>');
 
     // Join parts with newlines to create clean XML
-    const sitemap = sitemapParts.join('\n');
+    let sitemap = sitemapParts.join('\n');
+
+    // Aggressive whitespace cleanup - remove ALL leading whitespace characters
+    // including CR, LF, tabs, and spaces to ensure XML declaration is first
+    if (sitemap.charCodeAt(0) === 0xFEFF) {
+      sitemap = sitemap.slice(1); // Remove BOM if present
+    }
+    sitemap = sitemap.replace(/^[\r\n\t ]+/, ''); // Remove all leading whitespace
 
     // Build and return clean XML response
-    return new Response(sitemap.trimStart(), {
+    return new Response(sitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
         'Cache-Control': 'public, max-age=300, must-revalidate',
