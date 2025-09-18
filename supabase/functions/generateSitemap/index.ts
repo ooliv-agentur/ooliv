@@ -58,7 +58,7 @@ serve(async (req) => {
 
     console.log(`Generating sitemap with ${articles?.length || 0} articles`);
 
-    // Build sitemap XML with absolutely clean start - no leading characters
+    // ULTRA-HARDENED XML GENERATION - Build sitemap XML with absolutely clean start
     let sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
     // Add static pages
@@ -76,13 +76,42 @@ serve(async (req) => {
 
     sitemap += '\n</urlset>';
 
-    // Multi-layered robust XML cleaning - absolutely no leading whitespace
+    // ULTRA-HARDENED CLEANING - Multi-layered byte-level sanitization
+    const originalLength = sitemap.length;
+    console.log(`Pre-cleaning sitemap: ${originalLength} chars, hex start: ${Array.from(new TextEncoder().encode(sitemap.substring(0, 10))).map(b => b.toString(16).padStart(2, '0')).join(' ')}`);
+
+    // 1. Remove BOM (Byte Order Mark) if present - U+FEFF
+    sitemap = sitemap.replace(/^\uFEFF/, '');
+    
+    // 2. Remove ALL Unicode whitespace characters (including hidden ones)
+    sitemap = sitemap.replace(/^[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200F\u2028\u2029\u202F\u205F\u3000]*(?=<\?xml)/g, '');
+    
+    // 3. Remove control characters (NULL, etc.) before XML
+    sitemap = sitemap.replace(/^[\x00-\x1F\x7F-\x9F]*(?=<\?xml)/g, '');
+    
+    // 4. Basic cleanup
     sitemap = sitemap
       .trim() // Remove all leading/trailing whitespace
       .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
       .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
       .replace(/^\n+/, '') // Remove any remaining leading newlines
-      .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2'); // Remove any whitespace between XML declaration and urlset
+      .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2'); // Remove whitespace between XML declaration and urlset
+    
+    // 5. Aggressive byte-level validation and correction
+    const sitemapBytes = new TextEncoder().encode(sitemap);
+    if (sitemapBytes[0] !== 0x3C) { // 0x3C is '<' in hex
+      console.error(`CRITICAL: First byte is not '<', found: 0x${sitemapBytes[0].toString(16)}`);
+      // Find first '<' and slice from there
+      for (let i = 0; i < sitemapBytes.length; i++) {
+        if (sitemapBytes[i] === 0x3C) {
+          sitemap = new TextDecoder().decode(sitemapBytes.slice(i));
+          console.log(`Corrected by removing ${i} leading bytes`);
+          break;
+        }
+      }
+    }
+
+    console.log(`Post-cleaning: ${sitemap.length} chars (removed ${originalLength - sitemap.length}), hex start: ${Array.from(new TextEncoder().encode(sitemap.substring(0, 20))).map(b => b.toString(16).padStart(2, '0')).join(' ')}`);
 
     // Final content validation
     if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {

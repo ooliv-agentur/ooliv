@@ -15,9 +15,28 @@ export default async function handler(req, res) {
 
     let sitemapContent = await response.text();
     
-    console.log(`Raw sitemap from Edge Function: ${sitemapContent.length} bytes, starts with: "${sitemapContent.substring(0, 50).replace(/\n/g, '\\n')}"`);
+    const originalLength = sitemapContent.length;
+    console.log(`Raw sitemap from Edge Function: ${originalLength} bytes, starts with: "${sitemapContent.substring(0, 50).replace(/\n/g, '\\n')}"`);
+    console.log(`Raw hex start: ${Array.from(new TextEncoder().encode(sitemapContent.substring(0, 10))).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
     
-    // Multi-layer content cleaning for bulletproof XML output
+    // ULTRA-HARDENED API ROUTE CLEANING - Maximum security against all whitespace variants
+    
+    // 1. Remove BOM (Byte Order Mark) - U+FEFF, UTF-8 BOM (EF BB BF)
+    sitemapContent = sitemapContent.replace(/^\uFEFF/, ''); // Unicode BOM
+    const bomBytes = new Uint8Array([0xEF, 0xBB, 0xBF]); // UTF-8 BOM bytes
+    const contentBytes = new TextEncoder().encode(sitemapContent);
+    if (contentBytes.length >= 3 && 
+        contentBytes[0] === bomBytes[0] && 
+        contentBytes[1] === bomBytes[1] && 
+        contentBytes[2] === bomBytes[2]) {
+      sitemapContent = new TextDecoder().decode(contentBytes.slice(3));
+      console.log('Removed UTF-8 BOM from content');
+    }
+    
+    // 2. Remove ALL Unicode whitespace variants (including invisible ones)
+    sitemapContent = sitemapContent.replace(/^[\u0009-\u000D\u0020\u0085\u00A0\u1680\u2000-\u200F\u2028\u2029\u202F\u205F\u3000]*(?=<\?xml)/g, '');
+    
+    // 3. Multi-layer content cleaning for bulletproof XML output
     sitemapContent = sitemapContent
       .trim() // Remove leading/trailing whitespace
       .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
@@ -25,15 +44,20 @@ export default async function handler(req, res) {
       .replace(/^\n+/, '') // Remove leading newlines specifically
       .replace(/(<\?xml[^>]*\?>)\s*(<urlset)/g, '$1$2') // Remove whitespace between XML declaration and urlset
       .replace(/^[\x00-\x1F\x7F-\x9F]*(?=<\?xml)/g, ''); // Remove any control characters
-    
-    // Byte-level validation: ensure clean start
+
+    // 4. Enhanced byte-level validation with hex analysis
     const sitemapBytes = new TextEncoder().encode(sitemapContent);
-    if (sitemapBytes[0] !== 60) { // 60 is '<' in ASCII
-      console.error('Sitemap does not start with < character, first byte:', sitemapBytes[0]);
+    console.log(`Cleaned content: ${sitemapContent.length} chars (removed ${originalLength - sitemapContent.length}), hex start: ${Array.from(sitemapBytes.slice(0, 10)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
+    
+    if (sitemapBytes[0] !== 0x3C) { // 0x3C is '<' in hex
+      console.error(`CRITICAL: Sitemap does not start with < character, first byte: 0x${sitemapBytes[0].toString(16)} (decimal: ${sitemapBytes[0]})`);
+      console.error(`First 20 bytes in hex: ${Array.from(sitemapBytes.slice(0, 20)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
+      
       // Find first < character and slice from there
       for (let i = 0; i < sitemapBytes.length; i++) {
-        if (sitemapBytes[i] === 60) {
+        if (sitemapBytes[i] === 0x3C) {
           sitemapContent = new TextDecoder().decode(sitemapBytes.slice(i));
+          console.log(`Emergency correction: Removed ${i} leading bytes to reach first '<'`);
           break;
         }
       }
