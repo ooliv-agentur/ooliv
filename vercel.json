@@ -172,11 +172,13 @@
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/xml; charset=UTF-8"
+          "value": "application/xml; charset=UTF-8",
+          "override": true
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=300, must-revalidate"
+          "value": "public, max-age=300, must-revalidate",
+          "override": true
         }
       ]
     },
