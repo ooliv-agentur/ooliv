@@ -4,8 +4,7 @@
     { "source": "/robots.txt", "destination": "/robots-reset.txt" }
   ],
   "redirects": [
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true },
-    { "source": "/sitemap-test.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true }
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true, "force": true }
   ],
   "routes": [
     {
@@ -177,7 +176,7 @@
         },
         {
           "key": "Cache-Control",
-          "value": "public, max-age=300"
+          "value": "public, max-age=300, must-revalidate"
         }
       ]
     },
