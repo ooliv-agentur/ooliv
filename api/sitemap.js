@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    // Fetch clean XML from Supabase Edge Function
+    // Fetch clean XML from Supabase Edge Function - Cache bust v2
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
       method: 'GET',
       headers: {
