@@ -20,29 +20,50 @@ module.exports = async function handler(req, res) {
     const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
     
     try {
-      // Direct fetch to Supabase Edge Function with timeout
-      const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
-          'Accept': 'application/xml',
-          'User-Agent': 'Vercel-API-Route/1.0'
-        },
-        signal: controller.signal
-      });
-
-      clearTimeout(timeoutId);
-      console.log('XML Sitemap API: Edge function response status:', response.status);
-      console.log('XML Sitemap API: Edge function response headers:', Object.fromEntries(response.headers.entries()));
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.log('XML Sitemap API: Edge function error response:', errorText);
-        throw new Error(`Edge function returned ${response.status}: ${errorText}`);
+      // Multiple retry attempts with backoff
+      let lastError;
+      const maxRetries = 3;
+      
+      for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+          console.log(`XML Sitemap API: Attempt ${attempt}/${maxRetries}`);
+          
+          // Direct fetch to Supabase Edge Function with timeout
+          const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
+            method: 'GET',
+            headers: {
+              'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
+              'Accept': 'application/xml',
+              'User-Agent': 'Vercel-API-Route/2.0',
+              'Cache-Control': 'no-cache'
+            },
+            signal: controller.signal
+          });
+          
+          if (response.ok) {
+            clearTimeout(timeoutId);
+            lastError = null;
+            break;
+          }
+          
+          lastError = new Error(`Edge function returned ${response.status}: ${await response.text()}`);
+          if (attempt < maxRetries) {
+            await new Promise(resolve => setTimeout(resolve, attempt * 1000)); // Exponential backoff
+          }
+        } catch (error) {
+          lastError = error;
+          if (attempt < maxRetries && error.name !== 'AbortError') {
+            await new Promise(resolve => setTimeout(resolve, attempt * 1000));
+          }
+        }
+      }
+      
+      if (lastError) {
+        throw lastError;
       }
 
-      // Get response as text
+      // Get response as text - response is already validated above
       const xmlText = await response.text();
       console.log('XML Sitemap API: Received XML length:', xmlText.length);
       console.log('XML Sitemap API: XML preview:', xmlText.substring(0, 200) + '...');
