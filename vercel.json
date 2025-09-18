@@ -2,7 +2,8 @@
 {
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" }
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" },
+    { "source": "^(?!/sitemap.*\\.xml).*", "destination": "/index.html" }
   ],
   "redirects": [
     {
@@ -155,10 +156,6 @@
       "src": "/:path(.*)/",
       "status": 301,
       "dest": "/:path*"
-    },
-    {
-      "src": "^(?!/sitemap.*\\.xml).*",
-      "dest": "/index.html"
     }
   ],
   "headers": [
