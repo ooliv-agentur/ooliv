@@ -52,9 +52,8 @@ serve(async (req) => {
       { url: 'https://ooliv.de/cookie-richtlinie', lastmod: '2025-01-15T10:00:00+00:00', priority: '0.3', changefreq: 'yearly' }
     ];
 
-    // Generate sitemap XML
-    let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+    // Generate sitemap XML - no whitespace before XML declaration
+    let sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
     // Add static pages
     staticPages.forEach(page => {
@@ -81,8 +80,7 @@ serve(async (req) => {
       });
     }
 
-    sitemap += `
-</urlset>`;
+    sitemap += `</urlset>`;
 
     console.log(`Generated sitemap with ${staticPages.length} static pages and ${articles?.length || 0} articles`);
 

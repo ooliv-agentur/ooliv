@@ -1,7 +1,7 @@
 
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap-reset.xml" },
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" },
     { "source": "/robots.txt", "destination": "/robots-reset.txt" }
   ],
   "routes": [

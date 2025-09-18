@@ -15,7 +15,7 @@ Disallow: /*?*utm_source=*
 Host: ooliv.de
 
 # Provide sitemap location
-Sitemap: https://ooliv.de/sitemap.xml
+Sitemap: https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap
 
 # Last updated: 2025-01-12 - Fixed crawling issues
 # Removed /de/ disallow to fix Ahrefs link detection
