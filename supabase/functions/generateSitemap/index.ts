@@ -47,7 +47,7 @@ serve(async (req) => {
       { url: 'https://ooliv.de/ki-technologien', lastmod: currentDate, priority: '0.9', changefreq: 'monthly' },
       { url: 'https://ooliv.de/strategie', lastmod: currentDate, priority: '0.9', changefreq: 'monthly' },
       { url: 'https://ooliv.de/klickbetrug', lastmod: currentDate, priority: '0.9', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/referenzen', lastmod: currentDate, priority: '0.8', changefreq: 'monthly' },
+      { url: 'https://ooliv.de/referenzen', lastmod: currentDate, priority: '0.9', changefreq: 'weekly' },
       { url: 'https://ooliv.de/ueber-uns', lastmod: currentDate, priority: '0.8', changefreq: 'monthly' },
       { url: 'https://ooliv.de/kontakt', lastmod: currentDate, priority: '0.8', changefreq: 'monthly' },
       { url: 'https://ooliv.de/artikel', lastmod: currentDate, priority: '0.7', changefreq: 'daily' },
@@ -86,16 +86,28 @@ serve(async (req) => {
     sitemapParts.push('</urlset>');
 
     // Join parts with newlines to create clean XML
-    const sitemap = sitemapParts.join('\n');
+    let sitemap = sitemapParts.join('\n');
 
-    // Create response with proper XML headers
+    // Hard-strip BOM and any leading whitespace just in case
+    if (sitemap.charCodeAt(0) === 0xFEFF) {
+      sitemap = sitemap.slice(1);
+    }
+    sitemap = sitemap.replace(/^\s+/, ''); // remove any leading spaces/newlines
+
+    // Build response (headers unchanged)
     const response = new Response(sitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
-        'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
+        'Cache-Control': 'public, max-age=3600',
         ...corsHeaders
       },
     });
+
+    // Post-response diagnostics (safe: does not affect body)
+    if (sitemap[0] !== '<') {
+      console.warn('Sitemap does not start with "<". First bytes:',
+        Array.from(sitemap.slice(0,5)).map(c => c.charCodeAt(0).toString(16)));
+    }
 
     // Log after response is created (won't interfere with output)
     console.log(`Generated sitemap with ${staticPages.length} static pages and ${articles?.length || 0} articles`);
