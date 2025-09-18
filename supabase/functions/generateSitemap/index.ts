@@ -99,7 +99,8 @@ serve(async (req) => {
       throw new Error('XML structure validation failed');
     }
 
-    // Return completely clean XML response
+    // Return completely clean XML response with aggressive cache busting
+    const timestamp = new Date().toISOString();
     console.log('Edge Function: Returning sitemap with', new TextEncoder().encode(cleanSitemap).length, 'bytes');
     return new Response(cleanSitemap, {
       headers: {
@@ -107,6 +108,8 @@ serve(async (req) => {
         'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
         'Pragma': 'no-cache',
         'Expires': '0',
+        'X-Generated-At': timestamp,
+        'X-Cache-Buster': Date.now().toString(),
         'Content-Length': new TextEncoder().encode(cleanSitemap).length.toString(),
         ...corsHeaders
       },
