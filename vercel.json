@@ -1,15 +1,10 @@
 
 {
   "rewrites": [
-    { "source": "/robots.txt", "destination": "/robots-reset.txt" }
+    { "source": "/robots.txt", "destination": "/robots-reset.txt" },
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" }
   ],
   "redirects": [
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap", "permanent": true, "force": true }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
     {
       "src": "/(.*)",
       "has": [
