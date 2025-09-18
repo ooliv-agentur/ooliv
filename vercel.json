@@ -14,8 +14,8 @@
   "rewrites": [
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/test-sitemap.xml", "destination": "/api/test-sitemap" },
-    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/sitemap-backup.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?v=7&cb=20250918155500" },
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?direct=true&v=8&cb=20250918160000" },
+    { "source": "/sitemap-backup.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?backup=true&v=8&cb=20250918160000" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
