@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    // Call the Supabase Edge Function directly
+    // Call the Supabase Edge Function directly - NO LOGGING BEFORE RESPONSE
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
       method: 'GET',
       headers: {
@@ -13,16 +13,8 @@ export default async function handler(req, res) {
       throw new Error(`Supabase function returned ${response.status}`);
     }
 
-    // NUCLEAR-LEVEL BYTE ANALYSIS & SECURITY - Maximum protection against all encoding issues
+    // NUCLEAR BYTE-LEVEL CLEANING - NO CONSOLE OUTPUT before res.end()
     let sitemapContent = await response.text();
-    
-    const originalLength = sitemapContent.length;
-    const deploymentTimestamp = new Date().toISOString();
-    const originalBytes = new TextEncoder().encode(sitemapContent);
-    console.log(`DEPLOYMENT ${deploymentTimestamp}: Raw sitemap from Edge Function: ${originalLength} bytes`);
-    console.log(`DEPLOYMENT ${deploymentTimestamp}: First 40 raw bytes: ${Array.from(originalBytes.slice(0, 40)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
-    
-    // ULTRA-HARDENED API ROUTE CLEANING - Maximum security against all whitespace variants
     
     // 1. Remove BOM (Byte Order Mark) - U+FEFF, UTF-8 BOM (EF BB BF)
     sitemapContent = sitemapContent.replace(/^\uFEFF/, ''); // Unicode BOM
@@ -33,10 +25,9 @@ export default async function handler(req, res) {
         contentBytes[1] === bomBytes[1] && 
         contentBytes[2] === bomBytes[2]) {
       sitemapContent = new TextDecoder().decode(contentBytes.slice(3));
-      console.log(`BOM REMOVAL ${deploymentTimestamp}: UTF-8 BOM detected and removed`);
     }
     
-    // 2. NUCLEAR BYTE-LEVEL SEARCH for XML start
+    // 2. NUCLEAR BYTE-LEVEL SEARCH for XML start - NO LOGGING
     const xmlStartBytes = new TextEncoder().encode('<?xml');
     const currentBytes = new TextEncoder().encode(sitemapContent);
     let xmlStartIndex = -1;
@@ -56,56 +47,47 @@ export default async function handler(req, res) {
     }
     
     if (xmlStartIndex === -1) {
-      console.error(`XML SEARCH FAILURE ${deploymentTimestamp}: No XML declaration found`);
       throw new Error('No XML declaration found in Edge Function response');
     }
     
     if (xmlStartIndex > 0) {
-      console.log(`BYTE CORRECTION ${deploymentTimestamp}: Removing ${xmlStartIndex} leading bytes before XML`);
       sitemapContent = new TextDecoder().decode(currentBytes.slice(xmlStartIndex));
     }
 
-    // 3. Enhanced byte-level validation with hex analysis
+    // 3. FINAL BYTE VALIDATION - NO LOGGING
     const finalBytes = new TextEncoder().encode(sitemapContent);
-    console.log(`FINAL CHECK ${deploymentTimestamp}: ${sitemapContent.length} chars (removed ${originalLength - sitemapContent.length})`);
-    console.log(`FINAL CHECK ${deploymentTimestamp}: First 30 bytes: ${Array.from(finalBytes.slice(0, 30)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
     
     if (finalBytes[0] !== 0x3C) { // 0x3C is '<' in hex
-      console.error(`API FAILURE ${deploymentTimestamp}: Sitemap does not start with < character, first byte: 0x${finalBytes[0].toString(16)} (decimal: ${finalBytes[0]})`);
-      console.error(`API FAILURE ${deploymentTimestamp}: First 20 bytes: ${Array.from(finalBytes.slice(0, 20)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`);
       throw new Error(`API validation failed: First byte is 0x${finalBytes[0].toString(16)} not 0x3C (<)`);
     }
-    
+
     // Final validation: ensure it starts with XML declaration
     if (!sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
       const xmlStart = sitemapContent.indexOf('<?xml');
       if (xmlStart > 0) {
         sitemapContent = sitemapContent.substring(xmlStart);
-        console.log(`Corrected sitemap start by removing ${xmlStart} characters`);
       } else {
-        console.error('No valid XML declaration found in sitemap content');
         throw new Error('Invalid XML content received from Edge Function - no XML declaration found');
       }
     }
 
     // Additional content validation
     if (!sitemapContent.includes('<urlset') || !sitemapContent.includes('</urlset>')) {
-      console.error('Sitemap missing required XML structure');
       throw new Error('Invalid sitemap structure - missing urlset elements');
     }
 
-    console.log(`Clean sitemap ready: ${sitemapContent.length} bytes, starts correctly with XML declaration`);
-
-    // Set proper headers for XML sitemap with explicit Content-Length
+    // CRITICAL: Set headers and send response - NO LOGGING AFTER THIS POINT
     const contentLength = new TextEncoder().encode(sitemapContent).length;
     res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
-    res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
     res.setHeader('Content-Length', contentLength.toString());
     res.status(200);
     res.end(sitemapContent);
 
   } catch (error) {
-    console.error('Error generating sitemap:', error);
+    // CRITICAL: No console.log here - could interfere with response
     res.status(500).json({ error: 'Failed to generate sitemap' });
   }
 }
