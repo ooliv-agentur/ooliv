@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    // Fetch clean XML from Supabase Edge Function
+    // Fetch raw bytes from Supabase Edge Function
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
       method: 'GET',
       headers: {
@@ -13,45 +13,31 @@ export default async function handler(req, res) {
       throw new Error(`Edge function returned ${response.status}`);
     }
 
-    let sitemapContent = await response.text();
-    
-    // Ultra-aggressive cleaning: Remove BOM, all leading whitespace and invisible characters
-    sitemapContent = sitemapContent
-      .replace(/^\uFEFF/, '') // Remove BOM
-      .replace(/^[\s\n\r\t\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000\uFEFF]+/, '') // Remove all types of whitespace
-      .replace(/^[^\<]*/, ''); // Remove everything before first <
-    
-    // Find XML declaration and ensure it starts the content
-    const xmlStart = sitemapContent.indexOf('<?xml');
-    if (xmlStart > 0) {
-      sitemapContent = sitemapContent.substring(xmlStart);
-    } else if (xmlStart === -1) {
-      throw new Error('No XML declaration found in response');
-    }
-    
-    // Final cleaning pass
-    sitemapContent = sitemapContent.replace(/^[\s\n\r\t]+/, '');
+    // Get raw bytes directly - no string manipulation
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
 
-    // Validate XML structure
-    if (!sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>') ||
-        !sitemapContent.includes('<urlset') || 
-        !sitemapContent.includes('</urlset>')) {
-      throw new Error('Invalid XML structure in response');
-    }
+    // Set headers explicitly with writeHead
+    const headers = {
+      'Content-Type': 'application/xml; charset=UTF-8',
+      'Cache-Control': 'public, max-age=300, must-revalidate',
+      'Content-Disposition': 'inline; filename="sitemap.xml"',
+      'Content-Length': buffer.length.toString()
+    };
 
-    // Set proper XML headers - no HTML fallbacks
-    res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
-    res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
-    res.setHeader('Content-Disposition', 'inline; filename="sitemap.xml"');
-    res.setHeader('Content-Length', Buffer.byteLength(sitemapContent, 'utf8').toString());
-    
-    // Send only XML content
-    res.status(200).end(sitemapContent);
+    // Stream raw bytes directly - no Next.js string processing
+    res.writeHead(200, headers);
+    res.end(buffer);
 
   } catch (error) {
-    // Return XML error response, no HTML
+    // Return XML error response
     const errorXml = '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>';
-    res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
-    res.status(500).end(errorXml);
+    const errorBuffer = Buffer.from(errorXml, 'utf8');
+    
+    res.writeHead(500, {
+      'Content-Type': 'application/xml; charset=UTF-8',
+      'Content-Length': errorBuffer.length.toString()
+    });
+    res.end(errorBuffer);
   }
 }
