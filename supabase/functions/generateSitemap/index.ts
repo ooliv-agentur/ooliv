@@ -86,14 +86,14 @@ serve(async (req) => {
     sitemapParts.push('</urlset>');
 
     // Join parts with newlines to create clean XML
-    let sitemap = sitemapParts.join('\n');
+    const sitemap = sitemapParts.join('\n');
 
-    // HARD CUT: Ensure XML declaration is absolutely first character
-    // Replace everything before <?xml with <?xml to guarantee clean start
-    sitemap = sitemap.replace(/^[\s\S]*?(?=<\?xml)/, '<?xml');
+    // ULTIMATE FIX: Remove everything before <?xml while preserving the original declaration
+    // Uses capture group to keep the XML declaration intact
+    const cleanSitemap = sitemap.replace(/^[\s\S]*?(<\?xml)/, '$1');
 
     // Build and return clean XML response
-    return new Response(sitemap, {
+    return new Response(cleanSitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
         'Cache-Control': 'public, max-age=300, must-revalidate',
