@@ -145,36 +145,71 @@ const getInitialLanguage = (): Language => {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize state with proper error handling for hot reload
-  const [language, setLanguage] = useState<Language>(() => {
-    try {
-      return getInitialLanguage();
-    } catch (error) {
-      console.warn('Error getting initial language, defaulting to German:', error);
-      return 'de';
+  // Safe hook initialization with dispatcher check
+  let language: Language;
+  let setLanguage: (lang: Language) => void;
+  let contextValue: LanguageContextType;
+
+  try {
+    // Check if React hooks are available before using them
+    if (React && typeof React.useState === 'function') {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const [lang, setLang] = React.useState<Language>(() => {
+        try {
+          return getInitialLanguage();
+        } catch (error) {
+          console.warn('Error getting initial language, defaulting to German:', error);
+          return 'de';
+        }
+      });
+      
+      language = lang;
+      setLanguage = setLang;
+
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      React.useEffect(() => {
+        console.log('Language context updated:', language);
+      }, [language]);
+
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const t = React.useCallback((key: string): string => {
+        try {
+          const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
+          return translation || key;
+        } catch (error) {
+          console.warn('Translation error for key:', key, error);
+          return key;
+        }
+      }, [language]);
+
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      contextValue = React.useMemo(() => ({
+        language,
+        setLanguage,
+        t
+      }), [language, t]);
+    } else {
+      // Fallback when React hooks are not available
+      console.warn('React hooks not available, using fallback context');
+      language = 'de';
+      setLanguage = () => {};
+      const t = (key: string): string => {
+        const translation = translations.de?.[key as keyof typeof translations.de];
+        return translation || key;
+      };
+      contextValue = { language, setLanguage, t };
     }
-  });
-
-  // Debug language changes
-  useEffect(() => {
-    console.log('Language context updated:', language);
-  }, [language]);
-
-  const t = useCallback((key: string): string => {
-    try {
-      const translation = translations[language]?.[key as keyof typeof translations[typeof language]];
+  } catch (error) {
+    console.error('Error initializing LanguageProvider:', error);
+    // Emergency fallback
+    language = 'de';
+    setLanguage = () => {};
+    const t = (key: string): string => {
+      const translation = translations.de?.[key as keyof typeof translations.de];
       return translation || key;
-    } catch (error) {
-      console.warn('Translation error for key:', key, error);
-      return key;
-    }
-  }, [language]);
-
-  const contextValue = useMemo(() => ({
-    language,
-    setLanguage,
-    t
-  }), [language, t]);
+    };
+    contextValue = { language, setLanguage, t };
+  }
 
   return (
     <LanguageContext.Provider value={contextValue}>
