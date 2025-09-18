@@ -58,6 +58,23 @@ serve(async (req) => {
       });
     }
 
+    // Generate slug from title
+    const generateSlug = (title: string): string => {
+      return title
+        .toLowerCase()
+        .trim()
+        .replace(/[üÜ]/g, 'ue')
+        .replace(/[äÄ]/g, 'ae')
+        .replace(/[öÖ]/g, 'oe')
+        .replace(/[ß]/g, 'ss')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+    };
+
+    const slug = generateSlug(payload.title);
+
     // Map the payload to our database schema
     // BabyLoveGrowth.ai uses camelCase, our DB uses snake_case
     const { data, error } = await supabase
@@ -70,6 +87,7 @@ serve(async (req) => {
         content_md: payload.content_markdown,
         language_code: payload.languageCode,
         public_url: payload.publicUrl, // Map camelCase to snake_case
+        slug: slug, // Add the generated slug
         created_at: payload.createdAt || new Date().toISOString()
       });
 
