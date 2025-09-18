@@ -2,8 +2,7 @@
 {
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
-    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" },
-    { "source": "^(?!/sitemap.*\\.xml).*", "destination": "/index.html" }
+    { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" }
   ],
   "redirects": [
     {
