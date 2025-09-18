@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/robots.txt", "destination": "/robots-reset.txt" },
-    { "source": "/sitemap.xml", "destination": "/api/sitemap.xml" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
@@ -43,13 +43,6 @@
     { "src": "/:path(.*)/", "status": 301, "dest": "/:path*" }
   ],
   "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=UTF-8", "override": true },
-        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate", "override": true }
-      ]
-    },
     {
       "source": "/(.*)",
       "headers": [

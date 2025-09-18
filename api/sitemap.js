@@ -27,10 +27,11 @@ export default async function handler(req, res) {
       }
     }
 
-    // Set proper headers for XML sitemap
+    // Set proper headers for XML sitemap - use res.end() for direct control
     res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
     res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
-    res.status(200).send(sitemapContent);
+    res.status(200);
+    res.end(sitemapContent);
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
