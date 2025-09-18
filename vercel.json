@@ -162,7 +162,7 @@
       "dest": "/:path*"
     },
     {
-      "src": "/(?!sitemap.*\\.xml).*",
+      "src": "^(?!/sitemap.*\\.xml).*",
       "dest": "/index.html"
     }
   ],
