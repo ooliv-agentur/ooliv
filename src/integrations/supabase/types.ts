@@ -101,6 +101,10 @@ export type Database = {
         Args: { title_text: string }
         Returns: string
       }
+      trigger_sitemap_regeneration: {
+        Args: Record<PropertyKey, never>
+        Returns: Json
+      }
     }
     Enums: {
       [_ in never]: never
