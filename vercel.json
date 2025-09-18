@@ -1,5 +1,9 @@
 {
-  "_note": "complete rebuild - clean slate",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     { "source": "/test-sitemap", "destination": "/api/test-sitemap" },
     { "source": "/sitemap.xml", "destination": "/api/xml-sitemap" },
@@ -17,6 +21,13 @@
     { "src": "/:path(.*)/", "status": 301, "dest": "/:path*" }
   ],
   "headers": [
+    {
+      "source": "/api/test-sitemap",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=UTF-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
     {
       "source": "/api/xml-sitemap",
       "headers": [

@@ -1,9 +1,9 @@
 // Vercel API Route for XML Sitemap
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Only GET requests
   if (req.method !== 'GET') {
-    res.writeHead(405, { 'Content-Type': 'application/xml; charset=UTF-8' });
-    res.end('<?xml version="1.0" encoding="UTF-8"?><error>Method not allowed</error>');
+    res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
+    res.status(405).send('<?xml version="1.0" encoding="UTF-8"?><error>Method not allowed</error>');
     return;
   }
 
@@ -37,23 +37,19 @@ export default async function handler(req, res) {
     }
     
     // Send headers and response directly
-    res.writeHead(200, {
-      'Content-Type': 'application/xml; charset=UTF-8',
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
+    res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
     
-    res.end(xmlText);
+    res.status(200).send(xmlText);
 
   } catch (error) {
     console.log('API Route: Error occurred:', error);
     // XML error response
     const errorXml = '<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>';
     
-    res.writeHead(500, {
-      'Content-Type': 'application/xml; charset=UTF-8'
-    });
-    res.end(errorXml);
+    res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
+    res.status(500).send(errorXml);
   }
-}
+};
