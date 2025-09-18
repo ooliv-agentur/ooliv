@@ -56,8 +56,11 @@ serve(async (req) => {
       { url: 'https://ooliv.de/cookie-richtlinie', lastmod: currentDate, priority: '0.3', changefreq: 'yearly' }
     ];
 
-    // Build sitemap XML directly as string to avoid newline issues
-    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    console.log(`Generating sitemap with ${articles?.length || 0} articles`);
+
+    // Build sitemap XML with absolutely clean start - no leading characters
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
+    sitemap += '\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
     // Add static pages
     staticPages.forEach(page => {
@@ -74,15 +77,34 @@ serve(async (req) => {
 
     sitemap += '\n</urlset>';
 
-    // Ensure clean XML with robust cleaning
-    sitemap = sitemap.trim().replace(/^[\s\n\r]*(?=<\?xml)/g, '');
+    // Multi-layered robust XML cleaning - absolutely no leading whitespace
+    sitemap = sitemap
+      .trim() // Remove all leading/trailing whitespace
+      .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
+      .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
+      .replace(/^\n+/, ''); // Remove any remaining leading newlines
 
-    // Build and return clean XML response
+    // Final content validation
+    if (!sitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
+      console.error('Invalid sitemap format detected:', sitemap.substring(0, 50));
+      throw new Error('Generated sitemap does not start with proper XML declaration');
+    }
+
+    // Validate sitemap contains expected content
+    if (!sitemap.includes('<urlset') || !sitemap.includes('</urlset>')) {
+      console.error('Invalid sitemap structure detected');
+      throw new Error('Generated sitemap missing required XML structure');
+    }
+
+    console.log(`Sitemap generated successfully, ${sitemap.length} bytes, starts with: "${sitemap.substring(0, 50)}"`);
+
+    // Build and return clean XML response with explicit Content-Length
     return new Response(sitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
         'content-type': 'application/xml; charset=UTF-8',  // Explicit lowercase override
         'Cache-Control': 'public, max-age=300, must-revalidate',
+        'Content-Length': new TextEncoder().encode(sitemap).length.toString(),
         ...corsHeaders
       },
     });

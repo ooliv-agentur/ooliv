@@ -15,25 +15,54 @@ export default async function handler(req, res) {
 
     let sitemapContent = await response.text();
     
-    // Multi-layer content cleaning for robust XML output
+    console.log(`Raw sitemap from Edge Function: ${sitemapContent.length} bytes, starts with: "${sitemapContent.substring(0, 50).replace(/\n/g, '\\n')}"`);
+    
+    // Multi-layer content cleaning for bulletproof XML output
     sitemapContent = sitemapContent
       .trim() // Remove leading/trailing whitespace
       .replace(/^[\s\n\r]*(?=<\?xml)/g, '') // Remove any whitespace before XML declaration
-      .replace(/^\n+/, ''); // Remove leading newlines specifically
+      .replace(/^[^\<]*(?=<\?xml)/g, '') // Remove any non-XML characters before declaration
+      .replace(/^\n+/, '') // Remove leading newlines specifically
+      .replace(/^[\x00-\x1F\x7F-\x9F]*(?=<\?xml)/g, ''); // Remove any control characters
+    
+    // Byte-level validation: ensure clean start
+    const sitemapBytes = new TextEncoder().encode(sitemapContent);
+    if (sitemapBytes[0] !== 60) { // 60 is '<' in ASCII
+      console.error('Sitemap does not start with < character, first byte:', sitemapBytes[0]);
+      // Find first < character and slice from there
+      for (let i = 0; i < sitemapBytes.length; i++) {
+        if (sitemapBytes[i] === 60) {
+          sitemapContent = new TextDecoder().decode(sitemapBytes.slice(i));
+          break;
+        }
+      }
+    }
     
     // Final validation: ensure it starts with XML declaration
-    if (!sitemapContent.startsWith('<?xml')) {
+    if (!sitemapContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>')) {
       const xmlStart = sitemapContent.indexOf('<?xml');
       if (xmlStart > 0) {
         sitemapContent = sitemapContent.substring(xmlStart);
+        console.log(`Corrected sitemap start by removing ${xmlStart} characters`);
       } else {
-        throw new Error('Invalid XML content received from Edge Function');
+        console.error('No valid XML declaration found in sitemap content');
+        throw new Error('Invalid XML content received from Edge Function - no XML declaration found');
       }
     }
 
-    // Set proper headers for XML sitemap - use res.end() for direct control
+    // Additional content validation
+    if (!sitemapContent.includes('<urlset') || !sitemapContent.includes('</urlset>')) {
+      console.error('Sitemap missing required XML structure');
+      throw new Error('Invalid sitemap structure - missing urlset elements');
+    }
+
+    console.log(`Clean sitemap ready: ${sitemapContent.length} bytes, starts correctly with XML declaration`);
+
+    // Set proper headers for XML sitemap with explicit Content-Length
+    const contentLength = new TextEncoder().encode(sitemapContent).length;
     res.setHeader('Content-Type', 'application/xml; charset=UTF-8');
     res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
+    res.setHeader('Content-Length', contentLength.toString());
     res.status(200);
     res.end(sitemapContent);
 
