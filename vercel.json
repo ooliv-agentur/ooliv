@@ -13,6 +13,8 @@
   },
   "rewrites": [
     { "source": "/debug-sitemap", "destination": "/api/debug-sitemap" },
+    { "source": "/sitemap.xml", "destination": "/api/store-sitemap" },
+    { "source": "/webhook/sitemap-update", "destination": "/api/webhook-sitemap-update" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "redirects": [
