@@ -7,6 +7,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('API Route: Starting sitemap generation request');
+    
     // Direct fetch to Supabase Edge Function
     const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap', {
       method: 'GET',
@@ -16,6 +18,8 @@ export default async function handler(req, res) {
         'Accept': 'application/xml'
       }
     });
+
+    console.log('API Route: Edge function response status:', response.status);
 
     if (!response.ok) {
       throw new Error(`Edge function returned ${response.status}`);

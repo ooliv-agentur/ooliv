@@ -13,21 +13,30 @@ serve(async (req) => {
   }
 
   try {
+    console.log('Edge Function: Starting sitemap generation');
+    
     // Initialize Supabase client
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Fetch all articles - NO LOGGING DURING PRODUCTION XML GENERATION
+    console.log('Edge Function: Supabase client initialized');
+
+    // Fetch all articles
     const { data: articles, error } = await supabase
       .from('content_posts')
       .select('slug, created_at')
       .not('slug', 'is', null)
       .order('created_at', { ascending: false });
 
+    console.log('Edge Function: Articles fetched', articles?.length || 0, 'articles');
+
     if (error) {
-      throw error; // Throw without logging to avoid output
+      console.log('Edge Function: Database error:', error);
+      throw error;
     }
+
+    console.log('Edge Function: Building sitemap with', articles?.length || 0, 'articles');
 
     // Get current date in ISO format (YYYY-MM-DD)
     const currentDate = new Date().toISOString().split('T')[0];
@@ -78,7 +87,8 @@ serve(async (req) => {
       throw new Error('XML structure validation failed');
     }
 
-    // Return completely clean XML response - NO CACHE
+    // Return completely clean XML response
+    console.log('Edge Function: Returning sitemap with', new TextEncoder().encode(cleanSitemap).length, 'bytes');
     return new Response(cleanSitemap, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
@@ -91,6 +101,7 @@ serve(async (req) => {
     });
 
   } catch (error) {
+    console.log('Edge Function: Error occurred:', error);
     // Error response without logging details
     return new Response('<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>', { 
       status: 500,
