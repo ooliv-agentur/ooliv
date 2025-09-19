@@ -46,132 +46,74 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ message: 'Table not relevant for sitemap' });
     }
 
-    // Initialize Supabase client
-    const supabase = createClient(
-      'https://ycloufmcjjfvjxhmslbm.supabase.co',
-      process.env.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4'
-    );
+    console.log('🔄 Triggering sitemap regeneration via Supabase Edge Function...');
+    console.log('📝 Content change detected:', { type, recordId: record?.id || old_record?.id });
 
-    console.log('🔄 Fetching all articles for sitemap regeneration...');
-
-    // Fetch all published articles
-    const { data: articles, error } = await supabase
-      .from('content_posts')
-      .select('slug, created_at')
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      console.error('❌ Database error:', error);
-      throw new Error(`Database fetch failed: ${error.message}`);
-    }
-
-    console.log(`📊 Found ${articles?.length || 0} articles`);
-
-    // Define static pages
-    const staticPages = [
-      { url: 'https://ooliv.de/', priority: '1.0', changefreq: 'daily' },
-      { url: 'https://ooliv.de/ueber-uns', priority: '0.8', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/kontakt', priority: '0.9', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/referenzen', priority: '0.8', changefreq: 'weekly' },
-      { url: 'https://ooliv.de/webdesign', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/webentwicklung', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/seo-optimierung', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/google-ads', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/ki-technologien', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/content-erstellung', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/strategie', priority: '0.7', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/klickbetrug', priority: '0.6', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/werbeagentur-frankfurt', priority: '0.6', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/werbeagentur-wiesbaden', priority: '0.6', changefreq: 'monthly' },
-      { url: 'https://ooliv.de/artikel', priority: '0.8', changefreq: 'daily' },
-      { url: 'https://ooliv.de/danke', priority: '0.3', changefreq: 'yearly' },
-      { url: 'https://ooliv.de/en/thank-you', priority: '0.3', changefreq: 'yearly' },
-      { url: 'https://ooliv.de/impressum', priority: '0.3', changefreq: 'yearly' }
-    ];
-
-    // Generate sitemap XML
-    const currentDate = new Date().toISOString();
+    // Trigger sitemap regeneration via Supabase Edge Function with force revalidate
+    const sitemapUrl = 'https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?revalidate=true';
     
-    let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-    // Add static pages
-    staticPages.forEach(page => {
-      sitemapXML += `
-  <url>
-    <loc>${page.url}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`;
+    console.log('🚀 Calling Supabase Edge Function:', sitemapUrl);
+    
+    const sitemapResponse = await fetch(sitemapUrl, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4`,
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
+        'Content-Type': 'application/json'
+      }
     });
 
-    // Add article pages
-    if (articles && articles.length > 0) {
-      articles.forEach(article => {
-        if (article.slug) {
-          const articleDate = new Date(article.created_at).toISOString();
-          sitemapXML += `
-  <url>
-    <loc>https://ooliv.de/artikel/${article.slug}</loc>
-    <lastmod>${articleDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
-        }
-      });
+    const sitemapText = await sitemapResponse.text();
+    const urlCount = (sitemapText.match(/<url>/g) || []).length;
+    const isValidXml = sitemapText.includes('<?xml') && sitemapText.includes('</urlset>');
+
+    console.log('📊 Edge Function response:', {
+      status: sitemapResponse.status,
+      urlCount,
+      isValidXml,
+      cacheStatus: sitemapResponse.headers.get('X-Cache-Status'),
+      generatedAt: sitemapResponse.headers.get('X-Generated-At'),
+      sitemapSize: sitemapText.length
+    });
+
+    if (!sitemapResponse.ok) {
+      throw new Error(`Sitemap generation failed: ${sitemapResponse.status} ${sitemapResponse.statusText}`);
     }
 
-    sitemapXML += `
-</urlset>`;
-
-    // Validate XML structure
-    if (!sitemapXML.includes('<urlset') || !sitemapXML.includes('</urlset>')) {
-      throw new Error('Generated XML structure validation failed');
+    if (!isValidXml) {
+      throw new Error('Generated sitemap is not valid XML');
     }
 
-    const urlCount = (sitemapXML.match(/<url>/g) || []).length;
-    const expectedCount = staticPages.length + (articles?.length || 0);
-    
-    console.log(`📈 Generated sitemap: ${urlCount} URLs (${articles?.length || 0} articles + ${staticPages.length} static pages)`);
-
-    // Store the updated sitemap (for now, we'll use Supabase storage or return it)
-    // In production, you might want to store this in Vercel's file system or external storage
-    
-    // For immediate response, we'll also call the generate-sitemap endpoint to update the cached version
-    try {
-      const sitemapUpdateResponse = await fetch(`${req.headers.host ? `https://${req.headers.host}` : 'http://localhost:8080'}/api/store-sitemap`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/xml',
-          'X-Internal-Request': 'true'
-        },
-        body: sitemapXML
-      });
-      
-      if (sitemapUpdateResponse.ok) {
-        console.log('✅ Sitemap cache updated successfully');
-      } else {
-        console.log('⚠️ Failed to update sitemap cache');
-      }
-    } catch (updateError) {
-      console.log('⚠️ Could not update sitemap cache:', updateError.message);
+    if (urlCount === 0) {
+      throw new Error('Generated sitemap contains no URLs');
     }
+
+    console.log('✅ Sitemap regenerated successfully via Edge Function');
     
-    // Return success response
+    // Return success response with detailed stats
     return res.status(200).json({
       success: true,
-      message: 'Sitemap regenerated successfully',
-      timestamp: currentDate,
+      message: 'Sitemap regenerated successfully via Supabase Edge Function',
+      timestamp: new Date().toISOString(),
       stats: {
         totalUrls: urlCount,
-        articleUrls: articles?.length || 0,
-        staticUrls: staticPages.length,
-        triggeredBy: {
-          event: type,
-          table: table,
-          recordId: record?.id,
-          slug: record?.slug
+        sitemapSize: sitemapText.length,
+        cacheStatus: sitemapResponse.headers.get('X-Cache-Status') || 'UNKNOWN',
+        regeneratedAt: sitemapResponse.headers.get('X-Generated-At') || new Date().toISOString()
+      },
+      trigger: {
+        event: type,
+        table: table,
+        recordId: record?.id || old_record?.id,
+        slug: record?.slug || old_record?.slug
+      },
+      edgeFunction: {
+        url: sitemapUrl,
+        status: sitemapResponse.status,
+        responseHeaders: {
+          cacheStatus: sitemapResponse.headers.get('X-Cache-Status'),
+          generatedAt: sitemapResponse.headers.get('X-Generated-At'),
+          urlCount: sitemapResponse.headers.get('X-URL-Count')
         }
       }
     });

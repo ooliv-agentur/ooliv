@@ -92,11 +92,45 @@ export type Database = {
         }
         Relationships: []
       }
+      sitemap_cache: {
+        Row: {
+          cache_key: string
+          created_at: string
+          generated_at: string
+          id: string
+          sitemap_xml: string
+          updated_at: string
+          url_count: number
+        }
+        Insert: {
+          cache_key?: string
+          created_at?: string
+          generated_at?: string
+          id?: string
+          sitemap_xml: string
+          updated_at?: string
+          url_count?: number
+        }
+        Update: {
+          cache_key?: string
+          created_at?: string
+          generated_at?: string
+          id?: string
+          sitemap_xml?: string
+          updated_at?: string
+          url_count?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      cleanup_old_sitemap_cache: {
+        Args: Record<PropertyKey, never>
+        Returns: number
+      }
       generate_slug: {
         Args: { title_text: string }
         Returns: string
