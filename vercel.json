@@ -30,30 +30,10 @@
   ],
   "headers": [
     {
-      "source": "/api/test-sitemap",
-      "headers": [
-        { "key": "Content-Type", "value": "application/json; charset=UTF-8" },
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
-        { "key": "Pragma", "value": "no-cache" },
-        { "key": "Expires", "value": "0" }
-      ]
-    },
-    {
       "source": "/sitemap.xml",
       "headers": [
         { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Robots-Tag", "value": "index, follow" }
-      ]
-    },
-    {
-      "source": "/api/sitemap",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=UTF-8" },
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
-        { "key": "Pragma", "value": "no-cache" },
-        { "key": "Expires", "value": "0" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Robots-Tag", "value": "index, follow" }
       ]
