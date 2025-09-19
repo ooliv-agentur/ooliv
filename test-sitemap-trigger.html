@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Sitemap Trigger</title>
+</head>
+<body>
+    <h1>Testing Initial Sitemap Generation</h1>
+    <button onclick="triggerSitemap()">Trigger Initial Sitemap</button>
+    <div id="results"></div>
+
+    <script>
+    async function triggerSitemap() {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '<p>🚀 Triggering initial sitemap generation...</p>';
+        
+        try {
+            const response = await fetch('https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap?revalidate=true', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
+                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljbG91Zm1jampmdmp4aG1zbGJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMxNTg0MjgsImV4cCI6MjA1ODczNDQyOH0.IGQR9IAllyoHfW_9w_js2KSZQTRXLxUU_aXFT0gCgN4',
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const sitemapText = await response.text();
+            const urlCount = (sitemapText.match(/<url>/g) || []).length;
+            const isValidXml = sitemapText.includes('<?xml') && sitemapText.includes('</urlset>');
+
+            const results = {
+                status: response.status,
+                statusText: response.statusText,
+                urlCount,
+                isValidXml,
+                sitemapSize: sitemapText.length,
+                cacheStatus: response.headers.get('X-Cache-Status') || 'UNKNOWN',
+                generatedAt: response.headers.get('X-Generated-At') || 'Not available'
+            };
+
+            console.log('📊 Sitemap Generation Results:', results);
+
+            if (response.ok && isValidXml && urlCount > 0) {
+                resultsDiv.innerHTML = `
+                    <div style="color: green;">
+                        <h3>✅ Success! Initial sitemap generated</h3>
+                        <p><strong>URLs Generated:</strong> ${urlCount} (Expected: ~134)</p>
+                        <p><strong>Sitemap Size:</strong> ${sitemapText.length} characters</p>
+                        <p><strong>Cache Status:</strong> ${results.cacheStatus}</p>
+                        <p><strong>Generated At:</strong> ${results.generatedAt}</p>
+                        <p>🔄 Webhook system is now active for automatic updates</p>
+                    </div>
+                `;
+                
+                // Show sample URLs
+                const urlMatches = sitemapText.match(/<loc>([^<]+)<\/loc>/g);
+                if (urlMatches) {
+                    const sampleUrls = urlMatches.slice(0, 10).map(url => 
+                        url.replace('<loc>', '').replace('</loc>', '')
+                    );
+                    resultsDiv.innerHTML += `
+                        <h4>Sample URLs Generated:</h4>
+                        <ul>
+                            ${sampleUrls.map(url => `<li>${url}</li>`).join('')}
+                        </ul>
+                        ${urlMatches.length > 10 ? `<p>... and ${urlMatches.length - 10} more URLs</p>` : ''}
+                    `;
+                }
+            } else {
+                resultsDiv.innerHTML = `
+                    <div style="color: red;">
+                        <h3>❌ Failed to generate sitemap</h3>
+                        <p><strong>Status:</strong> ${response.status} ${response.statusText}</p>
+                        <p><strong>Valid XML:</strong> ${isValidXml}</p>
+                        <p><strong>URL Count:</strong> ${urlCount}</p>
+                        <p><strong>Response Size:</strong> ${sitemapText.length}</p>
+                    </div>
+                `;
+            }
+
+        } catch (error) {
+            console.error('❌ Error:', error);
+            resultsDiv.innerHTML = `
+                <div style="color: red;">
+                    <h3>❌ Error triggering sitemap</h3>
+                    <p>${error.message}</p>
+                </div>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>
