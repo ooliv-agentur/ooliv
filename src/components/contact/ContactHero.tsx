@@ -34,7 +34,7 @@ const ContactHero = () => {
                 color: '#003343' 
               }}
             >
-              Lassen Sie uns über Ihr Projekt sprechen
+              Reden wir über Ihr Projekt – direkt und unverbindlich
             </h1>
             
             {/* Subtitle */}
@@ -42,7 +42,7 @@ const ContactHero = () => {
               className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
-              Wir betreuen Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation.
+              Als Digitalagentur in Mainz betreuen wir Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation.
             </p>
             
             {/* CTA buttons - now using design system */}

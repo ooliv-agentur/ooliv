@@ -30,12 +30,12 @@ const AboutUsHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
-              Marketing Agentur Mainz
+              Die Agentur, die Ihr Business versteht
             </H1>
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Wir verbinden Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
+              Als Marketing Agentur in Mainz verbinden wir Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}
