@@ -58,6 +58,10 @@ export const processMarkdownContent = (content: string) => {
     processedMarkdown = processedMarkdown.replace(firstH1Match[0], '');
   }
   
+  // Remove "Empfehlung" section and all content after it
+  const empfehlungRegex = /^##?\s*(Empfehlung|Recommendation)[\s\S]*$/mi;
+  processedMarkdown = processedMarkdown.replace(empfehlungRegex, '');
+  
   // Improved TOC marker detection - look for <!-- toc --> or markdown list patterns
   const hasTOCMarker = processedMarkdown.includes('<!-- toc -->') || 
                        (processedMarkdown.includes('- [') && processedMarkdown.includes('](#'));
