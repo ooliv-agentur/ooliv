@@ -39,7 +39,7 @@ export const useFormSchema = () => {
     website: z.string().optional(),
     location: z.string().optional(),
     
-    goal: z.string().min(1, { message: validationMessages.goal }),
+    goal: z.array(z.string()).min(1, { message: validationMessages.goal }),
     goalOther: z.string().optional(),
     
     name: z.string().min(2, { message: validationMessages.name }),

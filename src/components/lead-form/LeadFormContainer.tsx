@@ -37,7 +37,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
       industry: "",
       website: "",
       location: "",
-      goal: "",
+      goal: [],
       name: "",
       email: "",
       phone: "",
@@ -84,7 +84,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
       isValid = await form.trigger('industry');
     } else if (step === 3) {
       isValid = await form.trigger('goal');
-      if (watchGoal === 'other' && !form.getValues('goalOther')) {
+      if (watchGoal?.includes('other') && !form.getValues('goalOther')) {
         form.setError('goalOther', { 
           message: language === 'de' 
             ? "Bitte geben Sie Ihr Ziel an" 

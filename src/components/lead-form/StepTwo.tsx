@@ -58,7 +58,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Branche" : "Industry"}
+                {language === 'de' ? "Branche" : "Industry"} <span className="text-red-400">*</span>
               </FormLabel>
               <Select 
                 onValueChange={field.onChange} 

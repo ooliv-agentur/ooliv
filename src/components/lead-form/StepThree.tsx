@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from './FormSchema';
 
@@ -16,6 +16,34 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
   const { language } = useLanguage();
   const watchGoal = form.watch("goal");
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
+  const selectMultiple = language === 'de' ? "Wählen Sie alle zutreffenden Ziele aus:" : "Select all goals that apply:";
+
+  const goalOptions = [
+    {
+      value: "generate-leads",
+      label: language === 'de' ? "Leads generieren" : "Generate Leads"
+    },
+    {
+      value: "improve-design", 
+      label: language === 'de' ? "Design verbessern" : "Improve Design"
+    },
+    {
+      value: "improve-rankings",
+      label: language === 'de' ? "Google-Rankings steigern" : "Improve Google Rankings"
+    },
+    {
+      value: "launch-brand",
+      label: language === 'de' ? "Neue Marke einführen" : "Launch a New Brand"
+    },
+    {
+      value: "mobile-ready",
+      label: language === 'de' ? "Schneller machen / Mobil optimieren" : "Make It Faster / Mobile-Ready"
+    },
+    {
+      value: "other",
+      label: language === 'de' ? "Anderes Ziel" : "Other"
+    }
+  ];
 
   return (
     <motion.div
@@ -29,55 +57,58 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
         <FormField
           control={form.control}
           name="goal"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
-              <FormLabel className="text-xl font-semibold text-white mb-4 block">
+              <FormLabel className="text-xl font-semibold text-white mb-3 block">
                 {language === 'de' 
                   ? "Was ist das Hauptziel Ihres Projekts?" 
                   : "What's your main goal with this project?"}
               </FormLabel>
-              <Select 
-                onValueChange={field.onChange} 
-                defaultValue={field.value}
-                value={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger className="w-full h-12 bg-white/10 border-medico-mint/30 text-white text-base hover:bg-white/15 focus:border-medico-turquoise">
-                    <SelectValue 
-                      placeholder={language === 'de' 
-                        ? "Hauptziel auswählen" 
-                        : "Select your main goal"} 
-                    />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60">
-                  {language === 'de' ? (
-                    <>
-                      <SelectItem value="generate-leads" className="text-base py-3 hover:bg-medico-turquoise/20">Leads generieren</SelectItem>
-                      <SelectItem value="improve-design" className="text-base py-3 hover:bg-medico-turquoise/20">Design verbessern</SelectItem>
-                      <SelectItem value="improve-rankings" className="text-base py-3 hover:bg-medico-turquoise/20">Google-Rankings steigern</SelectItem>
-                      <SelectItem value="launch-brand" className="text-base py-3 hover:bg-medico-turquoise/20">Neue Marke einführen</SelectItem>
-                      <SelectItem value="mobile-ready" className="text-base py-3 hover:bg-medico-turquoise/20">Schneller machen / Mobil optimieren</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20">Anderes Ziel</SelectItem>
-                    </>
-                  ) : (
-                    <>
-                      <SelectItem value="generate-leads" className="text-base py-3 hover:bg-medico-turquoise/20">Generate Leads</SelectItem>
-                      <SelectItem value="improve-design" className="text-base py-3 hover:bg-medico-turquoise/20">Improve Design</SelectItem>
-                      <SelectItem value="improve-rankings" className="text-base py-3 hover:bg-medico-turquoise/20">Improve Google Rankings</SelectItem>
-                      <SelectItem value="launch-brand" className="text-base py-3 hover:bg-medico-turquoise/20">Launch a New Brand</SelectItem>
-                      <SelectItem value="mobile-ready" className="text-base py-3 hover:bg-medico-turquoise/20">Make It Faster / Mobile-Ready</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20">Other</SelectItem>
-                    </>
-                  )}
-                </SelectContent>
-              </Select>
+              <p className="text-white/80 text-sm mb-4">{selectMultiple}</p>
+              <div className="space-y-3">
+                {goalOptions.map((option) => (
+                  <FormField
+                    key={option.value}
+                    control={form.control}
+                    name="goal"
+                    render={({ field }) => {
+                      return (
+                        <FormItem
+                          key={option.value}
+                          className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-medico-mint/30 p-4 hover:bg-white/5 transition-colors"
+                        >
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value?.includes(option.value)}
+                              onCheckedChange={(checked) => {
+                                return checked
+                                  ? field.onChange([...field.value, option.value])
+                                  : field.onChange(
+                                      field.value?.filter(
+                                        (value: string) => value !== option.value
+                                      )
+                                    )
+                              }}
+                              className="border-medico-mint/50 data-[state=checked]:bg-medico-turquoise data-[state=checked]:border-medico-turquoise"
+                            />
+                          </FormControl>
+                          <div className="space-y-1 leading-none">
+                            <FormLabel className="text-white text-base font-medium cursor-pointer">
+                              {option.label}
+                            </FormLabel>
+                          </div>
+                        </FormItem>
+                      )
+                    }}
+                  />
+                ))}
+              </div>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
         
-        {watchGoal === "other" && (
+        {watchGoal?.includes("other") && (
           <FormField
             control={form.control}
             name="goalOther"

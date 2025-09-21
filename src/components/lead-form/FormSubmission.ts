@@ -56,7 +56,9 @@ export const useFormSubmission = (
       industry: sanitizeInput(data.industry),
       websiteUrl: sanitizeInput(data.website || ''),
       location: sanitizeInput(data.location || ''),
-      goal: sanitizeInput(data.goal === 'other' ? data.goalOther : data.goal),
+      goal: sanitizeInput(data.goal.includes('other') 
+        ? data.goal.filter(goal => goal !== 'other').concat(data.goalOther || '').join(', ')
+        : data.goal.join(', ')),
       name: sanitizeInput(data.name),
       email: sanitizeInput(data.email),
       phone: sanitizeInput(data.phone || ''),
