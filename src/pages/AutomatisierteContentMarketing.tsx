@@ -35,12 +35,12 @@ const AutomatisierteContentMarketing = () => {
     },
     {
       icon: Globe,
-      title: "Multi-Sprachen Support",
+      title: "Mehrsprachiger Support",
       description: "Content in über 20 Sprachen – perfekt für internationale Märkte."
     },
     {
       icon: TrendingUp,
-      title: "SEO & AI-Optimiert",
+      title: "SEO & KI-Optimiert",
       description: "Optimiert für Google UND ChatGPT, Claude, Gemini – die Zukunft der Suche."
     },
     {
@@ -63,7 +63,7 @@ const AutomatisierteContentMarketing = () => {
     },
     {
       step: "02", 
-      title: "AI-Training",
+      title: "KI-Training",
       description: "Unsere Systeme lernen Ihre Markenstimme, damit die Inhalte klingen, als kämen sie von Ihrem eigenen Team."
     },
     {
@@ -81,7 +81,7 @@ const AutomatisierteContentMarketing = () => {
   const faqs = [
     {
       question: "Wie funktioniert die automatische Content-Erstellung?",
-      answer: "Unser AI-System analysiert täglich aktuelle Trends, Ihre Branche und Zielgruppe. Basierend darauf erstellt es SEO-optimierte Artikel, die Ihrem Tonfall entsprechen und automatisch auf Ihrer Website und Social Media veröffentlicht werden."
+      answer: "Unser KI-System analysiert täglich aktuelle Trends, Ihre Branche und Zielgruppe. Basierend darauf erstellt es SEO-optimierte Artikel, die Ihrem Tonfall entsprechen und automatisch auf Ihrer Website und Social Media veröffentlicht werden."
     },
     {
       question: "Welche Plattformen werden für die automatische Verteilung unterstützt?",
@@ -89,7 +89,7 @@ const AutomatisierteContentMarketing = () => {
     },
     {
       question: "Wie wird die Qualität des automatisch erstellten Contents sichergestellt?",
-      answer: "Alle Artikel durchlaufen mehrere Qualitätsprüfungen: AI-basierte Faktenprüfung, Plagiatskontrolle, SEO-Optimierung und Brand-Consistency-Check. Bei Bedarf können Sie auch manuell Freigaben einrichten."
+      answer: "Alle Artikel durchlaufen mehrere Qualitätsprüfungen: KI-basierte Faktenprüfung, Plagiatskontrolle, SEO-Optimierung und Brand-Consistency-Check. Bei Bedarf können Sie auch manuell Freigaben einrichten."
     },
     {
       question: "Was kostet die automatisierte Content-Marketing Lösung?",
@@ -107,7 +107,7 @@ const AutomatisierteContentMarketing = () => {
         <title>Automatisierte Content Marketing Lösung | ooliv Mainz</title>
         <meta 
           name="description" 
-          content="Revolutionieren Sie Ihr Content Marketing mit AI-gestützter automatischer Content-Erstellung und -Verteilung. Täglich frische, SEO-optimierte Artikel ohne Aufwand. ooliv Mainz macht's möglich." 
+          content="Revolutionieren Sie Ihr Content Marketing mit KI-gestützter automatischer Content-Erstellung und -Verteilung. Täglich frische, SEO-optimierte Artikel ohne Aufwand. ooliv Mainz macht's möglich." 
         />
         <link rel="canonical" href="https://ooliv.de/automatisierte-content-marketing" />
       </Helmet>
@@ -115,8 +115,8 @@ const AutomatisierteContentMarketing = () => {
       <PageLayout>
         <PageHero
           title="Ihr Content-Team, das niemals schläft"
-          subtitle="Automatisierte Content-Erstellung und -Verteilung mit AI"
-          description="Täglich frische, SEO-optimierte Artikel. Automatische Social Media Distribution. Backlink-Aufbau im Autopilot. Lassen Sie AI für Ihr Content Marketing arbeiten."
+          subtitle="Automatisierte Content-Erstellung und -Verteilung mit KI"
+          description="Täglich frische, SEO-optimierte Artikel. Automatische Social Media Distribution. Backlink-Aufbau im Autopilot. Lassen Sie KI für Ihr Content Marketing arbeiten."
           primaryCta={{
             text: "Kostenlose Testphase starten",
             link: "#",
@@ -239,7 +239,7 @@ const AutomatisierteContentMarketing = () => {
                         Bewährte Enterprise-Technologie aus dem Silicon Valley
                       </h3>
                       <p className="text-brand-text">
-                        Als zertifizierte Partner bringen wir diese erprobte AI-Technologie mit lokaler Betreuung und deutschsprachigem Support zu Ihnen.
+                        Als zertifizierte Partner bringen wir diese erprobte KI-Technologie mit lokaler Betreuung und deutschsprachigem Support zu Ihnen.
                       </p>
                     </div>
                   </div>
@@ -251,7 +251,7 @@ const AutomatisierteContentMarketing = () => {
                         Ranking bei Google UND ChatGPT
                       </h3>
                       <p className="text-brand-text">
-                        Optimiert für traditionelle Suchmaschinen und neue AI-basierte Suchsysteme.
+                        Optimiert für traditionelle Suchmaschinen und neue KI-basierte Suchsysteme.
                       </p>
                     </div>
                   </div>
@@ -314,7 +314,7 @@ const AutomatisierteContentMarketing = () => {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <p className="text-white/90 mb-6">
-                  <strong className="text-white">Automatisiertes Content Marketing</strong> ist mehr als nur ein Trend – es ist die Zukunft effizienter Unternehmenskommunikation. Mit AI Content Distribution erreichen Sie Ihre Zielgruppe präzise und kontinuierlich, während traditionelle Ansätze an ihre Grenzen stoßen.
+                  <strong className="text-white">Automatisiertes Content Marketing</strong> ist mehr als nur ein Trend – es ist die Zukunft effizienter Unternehmenskommunikation. Mit KI Content Distribution erreichen Sie Ihre Zielgruppe präzise und kontinuierlich, während traditionelle Ansätze an ihre Grenzen stoßen.
                 </p>
                 <p className="text-white/90 mb-6">
                   Unsere <strong className="text-white">SEO Automation Mainz</strong> Services kombinieren lokale Expertise mit internationaler Technologie. So entstehen Content-Systeme, die nicht nur heute funktionieren, sondern auch für die Herausforderungen von morgen gerüstet sind.
