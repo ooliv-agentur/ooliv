@@ -31,7 +31,7 @@ export const useFormSchema = () => {
   }), [language]);
   
   const formSchema = useMemo(() => z.object({
-    projectType: z.string().min(1, { message: validationMessages.projectType }),
+    projectType: z.array(z.string()).min(1, { message: validationMessages.projectType }),
     projectTypeOther: z.string().optional(),
     
     companyName: z.string().optional(),

@@ -32,7 +32,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      projectType: initialData?.projectType || "",
+      projectType: initialData?.projectType ? [initialData.projectType] : [],
       companyName: "",
       industry: "",
       website: "",
@@ -72,7 +72,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
     
     if (step === 1) {
       isValid = await form.trigger('projectType');
-      if (watchProjectType === 'other' && !form.getValues('projectTypeOther')) {
+      if (watchProjectType?.includes('other') && !form.getValues('projectTypeOther')) {
         form.setError('projectTypeOther', { 
           message: language === 'de' 
             ? "Bitte geben Sie Ihren Projekttyp an" 

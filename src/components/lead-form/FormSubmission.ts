@@ -49,7 +49,9 @@ export const useFormSubmission = (
     
     // Sanitize text fields to avoid MIME encoding issues
     const formData = {
-      projectType: sanitizeInput(data.projectType === 'other' ? data.projectTypeOther : data.projectType),
+      projectType: sanitizeInput(data.projectType.includes('other') 
+        ? data.projectType.filter(type => type !== 'other').concat(data.projectTypeOther || '').join(', ')
+        : data.projectType.join(', ')),
       companyName: sanitizeInput(data.companyName || ''),
       industry: sanitizeInput(data.industry),
       websiteUrl: sanitizeInput(data.website || ''),

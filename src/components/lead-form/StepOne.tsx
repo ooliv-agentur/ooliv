@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectScrollUpButton, SelectScrollDownButton } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from './FormSchema';
 
@@ -17,9 +17,36 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
   const watchProjectType = form.watch("projectType");
   
   const whatArePlanning = language === 'de' ? "Was planen Sie mit uns?" : "What are you planning with us?";
-  const selectProjectType = language === 'de' ? "Projekttyp auswählen" : "Select project type";
   const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
   const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
+  const selectMultiple = language === 'de' ? "Wählen Sie alle zutreffenden Optionen aus:" : "Select all that apply:";
+
+  const projectOptions = [
+    {
+      value: "website-relaunch",
+      label: language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"
+    },
+    {
+      value: "new-website", 
+      label: language === 'de' ? "Neue Website erstellen" : "Create a new website"
+    },
+    {
+      value: "seo-optimization",
+      label: language === 'de' ? "SEO-Optimierung" : "SEO Optimization"
+    },
+    {
+      value: "lead-generation",
+      label: language === 'de' ? "Lead-Generierung mit Google Ads" : "Lead Generation with Google Ads"
+    },
+    {
+      value: "ai-content",
+      label: language === 'de' ? "KI-Inhalte & ChatGPT-Integration" : "AI Content & ChatGPT Integration"
+    },
+    {
+      value: "other",
+      label: language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"
+    }
+  ];
 
   return (
     <motion.div
@@ -33,51 +60,54 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
         <FormField
           control={form.control}
           name="projectType"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel className="text-xl font-semibold text-white mb-3 block">{whatArePlanning}</FormLabel>
-              <Select 
-                onValueChange={field.onChange} 
-                defaultValue={field.value}
-                value={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger className="w-full h-12 bg-white/10 border-medico-mint/30 text-white text-base hover:bg-white/15 focus:border-medico-turquoise">
-                    <SelectValue 
-                      placeholder={selectProjectType} 
-                      className="text-white placeholder:text-white/70"
-                    />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60 pointer-events-auto">
-                  <SelectScrollUpButton />
-                  <SelectItem value="website-relaunch" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"}
-                  </SelectItem>
-                  <SelectItem value="new-website" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "Neue Website erstellen" : "Create a new website"}
-                  </SelectItem>
-                  <SelectItem value="seo-optimization" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "SEO-Optimierung" : "SEO Optimization"}
-                  </SelectItem>
-                  <SelectItem value="lead-generation" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "Lead-Generierung mit Google Ads" : "Lead Generation with Google Ads"}
-                  </SelectItem>
-                  <SelectItem value="ai-content" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "KI-Inhalte & ChatGPT-Integration" : "AI Content & ChatGPT Integration"}
-                  </SelectItem>
-                  <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
-                    {language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"}
-                  </SelectItem>
-                  <SelectScrollDownButton />
-                </SelectContent>
-              </Select>
+              <p className="text-white/80 text-sm mb-4">{selectMultiple}</p>
+              <div className="space-y-3">
+                {projectOptions.map((option) => (
+                  <FormField
+                    key={option.value}
+                    control={form.control}
+                    name="projectType"
+                    render={({ field }) => {
+                      return (
+                        <FormItem
+                          key={option.value}
+                          className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-medico-mint/30 p-4 hover:bg-white/5 transition-colors"
+                        >
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value?.includes(option.value)}
+                              onCheckedChange={(checked) => {
+                                return checked
+                                  ? field.onChange([...field.value, option.value])
+                                  : field.onChange(
+                                      field.value?.filter(
+                                        (value: string) => value !== option.value
+                                      )
+                                    )
+                              }}
+                              className="border-medico-mint/50 data-[state=checked]:bg-medico-turquoise data-[state=checked]:border-medico-turquoise"
+                            />
+                          </FormControl>
+                          <div className="space-y-1 leading-none">
+                            <FormLabel className="text-white text-base font-medium cursor-pointer">
+                              {option.label}
+                            </FormLabel>
+                          </div>
+                        </FormItem>
+                      )
+                    }}
+                  />
+                ))}
+              </div>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
             </FormItem>
           )}
         />
         
-        {watchProjectType === "other" && (
+        {watchProjectType?.includes("other") && (
           <FormField
             control={form.control}
             name="projectTypeOther"
