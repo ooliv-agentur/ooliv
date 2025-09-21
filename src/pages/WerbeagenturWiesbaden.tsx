@@ -12,7 +12,7 @@ import WiesbadenHero from '@/components/de/WiesbadenHero';
 import WiesbadenAboutSection from '@/components/de/WiesbadenAboutSection';
 import WiesbadenCaseStudies from '@/components/de/WiesbadenCaseStudies';
 import WiesbadenFAQ from '@/components/de/WiesbadenFAQ';
-import WiesbadenSEOText from '@/components/de/WiesbadenSEOText';
+
 import WiesbadenTeamSection from '@/components/de/WiesbadenTeamSection';
 import WiesbadenBeforeAfterSection from '@/components/de/WiesbadenBeforeAfterSection';
 import WiesbadenFullServiceTeaser from '@/components/de/WiesbadenFullServiceTeaser';
@@ -36,7 +36,6 @@ const WerbeagenturWiesbaden = () => {
     <>
       <PageLayout 
         className="overflow-x-hidden"
-        seoText={<WiesbadenSEOText />}
       >
         <EnhancedSEOHead
           title="Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg"

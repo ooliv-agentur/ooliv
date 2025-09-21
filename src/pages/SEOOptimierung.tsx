@@ -11,7 +11,7 @@ import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import { useLanguage } from '@/contexts/LanguageContext';
-import SEOTextSectionDE from '@/components/seo/SEOTextSectionDE';
+
 import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
@@ -59,7 +59,6 @@ const GermanSEO = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<SEOTextSectionDE />}
     >
       <EnhancedSEOHead
         title="SEO Agentur Mainz – Sichtbar im Netz"

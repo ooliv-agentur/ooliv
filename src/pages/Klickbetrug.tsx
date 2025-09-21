@@ -11,11 +11,11 @@ import KlickbetrugFeatures from '@/components/klickbetrug/KlickbetrugFeatures';
 import KlickbetrugTestimonial from '@/components/klickbetrug/KlickbetrugTestimonial';
 import KlickbetrugCTA from '@/components/klickbetrug/KlickbetrugCTA';
 import KlickbetrugFAQ from '@/components/klickbetrug/KlickbetrugFAQ';
-import KlickbetrugSEOText from '@/components/klickbetrug/KlickbetrugSEOText';
+
 
 const Klickbetrug = () => {
   return (
-    <PageLayout seoText={<KlickbetrugSEOText />}>
+    <PageLayout>
       <Helmet>
         <title>Klickbetrug bei Google Ads stoppen – Automatischer Schutz vor Fake-Klicks</title>
         <meta name="description" content="Klickbetrug bei Google Ads stoppen – vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Budget automatisch." />

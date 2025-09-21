@@ -6,7 +6,7 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
-import CaseStudiesSEOText from '@/components/case-studies/CaseStudiesSEOText';
+
 
 // Success pillars
 const successPillars = [
@@ -75,7 +75,7 @@ const GermanCaseStudies = () => {
   }, []);
 
   return (
-    <PageLayout className="overflow-x-hidden" seoText={<CaseStudiesSEOText />}>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
         <title>Marketing Mainz – Erfolgreiche Projekte</title>
         <meta 

@@ -8,7 +8,7 @@ import StrategieBenefits from '@/components/strategy/StrategieBenefits';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
 import StrategieFAQ from '@/components/strategy/StrategieFAQ';
-import StrategieSEOText from '@/components/strategy/StrategieSEOText';
+
 import CTA from '@/components/CTA';
 
 const GermanStrategy = () => {
@@ -21,7 +21,6 @@ const GermanStrategy = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<StrategieSEOText />}
     >
       <Helmet>
         <title>Webkonzept & Strategie für Ihren Erfolg – ooliv Mainz</title>

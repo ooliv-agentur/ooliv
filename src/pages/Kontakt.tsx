@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
-import ContactSEOText from '@/components/contact/ContactSEOText';
+
 import ContactHeroDE from '@/components/contact/ContactHeroDE';
 import ContactIntroductionDE from '@/components/contact/ContactIntroductionDE';
 import ContactInfoSectionDE from '@/components/contact/ContactInfoSectionDE';
@@ -23,7 +23,6 @@ const GermanContact = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<ContactSEOText />}
     >
       <Helmet>
         <title>Kontakt – ooliv Marketing Agentur Mainz</title>

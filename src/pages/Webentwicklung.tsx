@@ -10,7 +10,7 @@ import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticD
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
-import WebDevSEOText from '@/components/web-development/WebDevSEOText';
+
 import { Link } from 'react-router-dom';
 
 const GermanWebDevelopment = () => {
@@ -40,7 +40,6 @@ const GermanWebDevelopment = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<WebDevSEOText />}
     >
       <Helmet>
         <title>WordPress Agentur Mainz – Technisch stark</title>

@@ -11,7 +11,7 @@ import ContentExpertInsight from '@/components/content-creation/ContentExpertIns
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import ContentSEOText from '@/components/content-creation/ContentSEOText';
+
 
 const GermanContentCreation = () => {
   // Custom FAQ items for Content Creation page
@@ -41,7 +41,6 @@ const GermanContentCreation = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<ContentSEOText />}
     >
       <Helmet>
         <title>Content Agentur Mainz – Texte, die wirken</title>

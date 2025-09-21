@@ -10,7 +10,7 @@ import GoogleAdsLeadGeneration from '@/components/google-ads/GoogleAdsLeadGenera
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero';
 import GooglePartnerBadge from '@/components/google-ads/GooglePartnerBadge';
 import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout } from 'lucide-react';
-import GoogleAdsSEOText from '@/components/google-ads/GoogleAdsSEOText';
+
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
@@ -57,7 +57,6 @@ const GermanGoogleAds = () => {
   return (
     <PageLayout 
       className="overflow-x-hidden"
-      seoText={<GoogleAdsSEOText />}
     >
       <EnhancedSEOHead
         title="Google Ads Agentur Mainz – Mehr Leads"

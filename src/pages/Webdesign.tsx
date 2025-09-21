@@ -10,7 +10,7 @@ import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import SEOTextSection from '@/components/web-design/SEOTextSection';
+
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
@@ -85,9 +85,6 @@ const GermanWebDesign = () => {
           secondaryCtaLink="/kontakt"
         />
       </PageLayout>
-      
-      {/* SEO Text Section moved outside PageLayout to appear after footer with its own light background */}
-      <SEOTextSection />
     </>
   );
 };

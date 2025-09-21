@@ -10,7 +10,7 @@ import FrankfurtWerbeagenturHero from '@/components/de/FrankfurtWerbeagenturHero
 import FrankfurtWerbeagenturAboutSection from '@/components/de/FrankfurtWerbeagenturAboutSection';
 import FrankfurtWerbeagenturCaseStudies from '@/components/de/FrankfurtWerbeagenturCaseStudies';
 import FrankfurtWerbeagenturFAQ from '@/components/de/FrankfurtWerbeagenturFAQ';
-import FrankfurtWerbeagenturSEOText from '@/components/de/FrankfurtWerbeagenturSEOText';
+
 import FrankfurtWerbeagenturTeamSection from '@/components/de/FrankfurtWerbeagenturTeamSection';
 import FrankfurtWerbeagenturBeforeAfterSection from '@/components/de/FrankfurtWerbeagenturBeforeAfterSection';
 import FrankfurtWerbeagenturFullServiceTeaser from '@/components/de/FrankfurtWerbeagenturFullServiceTeaser';
@@ -40,7 +40,6 @@ const WerbeagenturFrankfurt = () => {
       
       <PageLayout 
         className="overflow-x-hidden"
-        seoText={<FrankfurtWerbeagenturSEOText />}
       >
         <FrankfurtWerbeagenturHero />
         <FrankfurtWerbeagenturAboutSection />

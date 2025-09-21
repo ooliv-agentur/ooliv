@@ -9,7 +9,7 @@ import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import MainzSEOTextSection from "@/components/de/MainzSEOTextSection";
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
@@ -233,8 +233,6 @@ const GermanIndex = () => {
           </div>
         </div>
       </PageLayout>
-      
-      <MainzSEOTextSection />
     </>
   );
 };

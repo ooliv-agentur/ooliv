@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
-import AboutUsSEOText from '@/components/about-us/AboutUsSEOText';
+
 import AboutUsHero from '@/components/about-us/AboutUsHero';
 import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
 import AboutUsStory from '@/components/about-us/AboutUsStory';
@@ -46,8 +46,7 @@ const GermanAboutUs = () => {
 
   return (
     <PageLayout 
-      className="overflow-x-hidden" 
-      seoText={<AboutUsSEOText />}
+      className="overflow-x-hidden"
     >
       <EnhancedSEOHead
         title="Über ooliv – Ihre Marketing Agentur Mainz"

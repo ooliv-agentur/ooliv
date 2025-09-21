@@ -9,7 +9,7 @@ import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import KiSEOText from '@/components/ai-technologies/KiSEOText';
+
 
 const GermanAiTechnologies = () => {
   // AI tools data for German page
@@ -56,7 +56,7 @@ const GermanAiTechnologies = () => {
   ];
   
   return (
-    <PageLayout className="overflow-x-hidden" seoText={<KiSEOText />}>
+    <PageLayout className="overflow-x-hidden">
       <Helmet>
         <title>KI Agentur Mainz – Zukunftstechnologien</title>
         <meta name="description" content="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit." />

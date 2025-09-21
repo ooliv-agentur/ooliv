@@ -13,7 +13,6 @@ import { useScrollToTop } from '@/hooks/useScrollToTop';
 interface PageLayoutProps {
   children: ReactNode;
   className?: string;
-  seoText?: ReactNode;
   showBreadcrumbs?: boolean;
 }
 
@@ -39,7 +38,7 @@ const pagePreloadResources: Record<string, Array<{type: string, href: string, as
   ]
 };
 
-const PageLayout = ({ children, className = '', seoText, showBreadcrumbs = false }: PageLayoutProps) => {
+const PageLayout = ({ children, className = '', showBreadcrumbs = false }: PageLayoutProps) => {
   const location = useLocation();
   
   
@@ -159,8 +158,6 @@ const PageLayout = ({ children, className = '', seoText, showBreadcrumbs = false
           <Footer />
           <FloatingActionButtons />
         </div>
-        {/* SEO Text section - placed after Footer */}
-        {seoText}
       </MotionConfig>
     </>
   );
