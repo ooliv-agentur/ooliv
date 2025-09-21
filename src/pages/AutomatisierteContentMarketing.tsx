@@ -57,7 +57,7 @@ const AutomatisierteContentMarketing = () => {
     {
       step: "02", 
       title: "AI-Training",
-      description: "Unser System lernt Ihren Tonfall, Ihre Marke und Ihre Expertise für authentischen Content."
+      description: "Unsere Systeme lernen Ihre Markenstimme, damit die Inhalte klingen, als kämen sie von Ihrem eigenen Team."
     },
     {
       step: "03",
@@ -111,7 +111,7 @@ const AutomatisierteContentMarketing = () => {
           subtitle="Automatisierte Content-Erstellung und -Verteilung mit AI"
           description="Täglich frische, SEO-optimierte Artikel. Automatische Social Media Distribution. Backlink-Aufbau im Autopilot. Lassen Sie AI für Ihr Content Marketing arbeiten."
           primaryCta={{
-            text: "Jetzt Demo anfragen",
+            text: "Kostenlose Testphase starten",
             link: "#",
             onClick: handleStartProject
           }}
@@ -151,6 +151,27 @@ const AutomatisierteContentMarketing = () => {
                 );
               })}
             </StaggerReveal>
+          </div>
+        </section>
+
+        {/* Mini-CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-medico-turquoise to-medico-turquoise-dark text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Reveal>
+              <h3 className="text-2xl font-bold mb-4">
+                👉 Lassen Sie uns zeigen, wie Ihr Content-System in wenigen Tagen live ist.
+              </h3>
+              <p className="text-lg mb-8 text-white/90">
+                Kostenlose Demo und individuelle Beratung – ohne Verpflichtung.
+              </p>
+              <Button 
+                onClick={handleStartProject}
+                size="lg"
+                className="bg-white text-medico-turquoise hover:bg-gray-50 font-semibold px-8 py-3"
+              >
+                Kostenlose Beratung vereinbaren
+              </Button>
+            </Reveal>
           </div>
         </section>
 
@@ -208,10 +229,10 @@ const AutomatisierteContentMarketing = () => {
                     <CheckCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-brand-heading mb-2">
-                        900+ Unternehmen vertrauen bereits auf Automation
+                        Bewährte Enterprise-Technologie aus dem Silicon Valley
                       </h3>
                       <p className="text-brand-text">
-                        In 18 Ländern setzen Unternehmen auf automatisierte Content-Systeme für konstantes Wachstum.
+                        Als zertifizierte Partner bringen wir diese erprobte AI-Technologie mit lokaler Betreuung und deutschsprachigem Support zu Ihnen.
                       </p>
                     </div>
                   </div>
@@ -269,7 +290,44 @@ const AutomatisierteContentMarketing = () => {
           </div>
         </section>
 
-        <FAQ 
+        {/* SEO Content Section */}
+        <section className="py-20 bg-brand-heading text-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Reveal>
+              <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold mb-6">
+                  Automatisiertes Content Marketing in Mainz und Rhein-Main-Gebiet
+                </h2>
+                <p className="text-lg text-white/90 max-w-3xl mx-auto">
+                  Als spezialisierte Agentur für SEO Automation in Mainz revolutionieren wir die Art, wie Unternehmen Content erstellen und verteilen.
+                </p>
+              </div>
+            </Reveal>
+            
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-white/90 mb-6">
+                  <strong className="text-white">Automatisiertes Content Marketing</strong> ist mehr als nur ein Trend – es ist die Zukunft effizienter Unternehmenskommunikation. Mit AI Content Distribution erreichen Sie Ihre Zielgruppe präzise und kontinuierlich, während traditionelle Ansätze an ihre Grenzen stoßen.
+                </p>
+                <p className="text-white/90 mb-6">
+                  Unsere <strong className="text-white">SEO Automation Mainz</strong> Services kombinieren lokale Expertise mit internationaler Technologie. So entstehen Content-Systeme, die nicht nur heute funktionieren, sondern auch für die Herausforderungen von morgen gerüstet sind.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-white">Ihre Vorteile im Überblick:</h3>
+                <ul className="space-y-3 text-white/90">
+                  <li>• <strong className="text-white">Lokale Betreuung:</strong> Direkter Ansprechpartner in Mainz</li>
+                  <li>• <strong className="text-white">Bewährte Technologie:</strong> Enterprise-Systeme aus dem Silicon Valley</li>
+                  <li>• <strong className="text-white">Deutschsprachiger Support:</strong> Kommunikation ohne Barrieren</li>
+                  <li>• <strong className="text-white">Branchenexpertise:</strong> Spezialisiert auf B2B-Unternehmen</li>
+                  <li>• <strong className="text-white">Messbare Erfolge:</strong> ROI-fokussierte Implementierung</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <FAQ
           customFaqs={faqs}
           customTitle="Häufige Fragen zu automatisiertem Content Marketing"
         />
