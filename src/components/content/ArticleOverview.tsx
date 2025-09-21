@@ -1,60 +1,28 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowRight, Calendar, ExternalLink, Loader2 } from 'lucide-react';
 import { H1, H2, H3, Paragraph } from '@/components/ui/typography';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from 'sonner';
 import { Link } from 'react-router-dom';
-
-interface ContentPost {
-  id: number;
-  title: string;
-  meta_description: string | null;
-  content_html: string | null;
-  content_md: string | null;
-  language_code: string | null;
-  public_url: string | null;
-  slug: string | null;
-  created_at: string;
-}
+import { useArticles } from '@/hooks/useArticles';
+import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 
 const ArticleOverview = () => {
-  const [articles, setArticles] = useState<ContentPost[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { 
+    articles, 
+    isLoading, 
+    isLoadingMore, 
+    hasMore, 
+    error, 
+    loadMore 
+  } = useArticles({ pageSize: 12 });
 
-  const fetchArticles = async () => {
-    try {
-      console.log('Fetching German articles with slugs...');
-      
-      const { data, error } = await supabase
-        .from('content_posts')
-        .select('*')
-        .eq('language_code', 'de')
-        .not('slug', 'is', null)
-        .neq('slug', '')
-        .order('created_at', { ascending: false });
-
-      if (error) {
-        console.error('Error fetching articles:', error);
-        toast.error('Fehler beim Laden der Artikel');
-        return;
-      }
-
-      console.log('German articles with slugs found:', data?.length || 0);
-      setArticles(data || []);
-    } catch (error) {
-      console.error('Error fetching articles:', error);
-      toast.error('Fehler beim Laden der Artikel');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  const { lastElementRef } = useInfiniteScroll({
+    loading: isLoadingMore,
+    hasMore,
+    onLoadMore: loadMore
+  });
 
   const truncateContent = (content: string | null, maxLength: number = 150) => {
     if (!content) return '';
@@ -72,6 +40,21 @@ const ArticleOverview = () => {
             <CardContent className="p-16 text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
               <Paragraph color="muted" className="font-satoshi text-lg">Lade Artikel...</Paragraph>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-red-200 bg-red-50 shadow-lg">
+            <CardContent className="p-16 text-center">
+              <H2 className="mb-4 text-red-600 font-satoshi">Fehler beim Laden der Artikel</H2>
+              <Paragraph color="muted" className="font-satoshi">{error}</Paragraph>
             </CardContent>
           </Card>
         </div>
@@ -99,73 +82,101 @@ const ArticleOverview = () => {
             </CardContent>
           </Card>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <Card 
-                key={article.id} 
-                className="border-medico-turquoise/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden"
-              >
-                <CardContent className="p-8 h-full flex flex-col">
-                  <div className="flex-1">
-                    <H3 className="mb-6 font-satoshi text-medico-darkGreen group-hover:text-medico-turquoise transition-colors leading-tight">
-                      {article.title}
-                    </H3>
-                    
-                    {article.meta_description && (
-                      <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
-                        {article.meta_description}
-                      </Paragraph>
-                    )}
-                    
-                    {!article.meta_description && (article.content_md || article.content_html) && (
-                      <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
-                        {truncateContent(article.content_md || article.content_html)}
-                      </Paragraph>
-                    )}
-                    
-                    <div className="flex items-center text-sm text-gray-500 mb-8 font-satoshi">
-                      <Calendar className="w-4 h-4 mr-2 text-medico-turquoise" />
-                      {new Date(article.created_at).toLocaleDateString('de-DE', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}
+          <>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article, index) => (
+                <Card 
+                  key={article.id} 
+                  ref={index === articles.length - 1 ? lastElementRef : null}
+                  className="border-medico-turquoise/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden"
+                >
+                  <CardContent className="p-8 h-full flex flex-col">
+                    <div className="flex-1">
+                      <H3 className="mb-6 font-satoshi text-medico-darkGreen group-hover:text-medico-turquoise transition-colors leading-tight">
+                        {article.title}
+                      </H3>
+                      
+                      {article.meta_description && (
+                        <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
+                          {article.meta_description}
+                        </Paragraph>
+                      )}
+                      
+                      {!article.meta_description && (article.content_md || article.content_html) && (
+                        <Paragraph color="secondary" className="mb-6 font-satoshi leading-relaxed">
+                          {truncateContent(article.content_md || article.content_html)}
+                        </Paragraph>
+                      )}
+                      
+                      <div className="flex items-center text-sm text-gray-500 mb-8 font-satoshi">
+                        <Calendar className="w-4 h-4 mr-2 text-medico-turquoise" />
+                        {new Date(article.created_at).toLocaleDateString('de-DE', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 mt-auto">
-                    <Button 
-                      asChild 
-                      className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
-                    >
-                      <Link to={`/artikel/${article.slug}`}>
-                        Artikel lesen
-                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-                      </Link>
-                    </Button>
                     
-                    {article.public_url && (
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="iconSm"
-                        className="hover:bg-medico-turquoise/10"
+                    <div className="flex items-center gap-3 mt-auto">
+                      <Button 
+                        asChild 
+                        className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
                       >
-                        <a 
-                          href={article.public_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Originalartikel öffnen"
-                        >
-                          <ExternalLink className="w-4 h-4 text-medico-turquoise" />
-                        </a>
+                        <Link to={`/artikel/${article.slug}`}>
+                          Artikel lesen
+                          <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
+                        </Link>
                       </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      
+                      {article.public_url && (
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="iconSm"
+                          className="hover:bg-medico-turquoise/10"
+                        >
+                          <a 
+                            href={article.public_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Originalartikel öffnen"
+                          >
+                            <ExternalLink className="w-4 h-4 text-medico-turquoise" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Loading indicator for infinite scroll */}
+            {isLoadingMore && (
+              <div className="flex justify-center items-center py-12">
+                <Card className="border-medico-turquoise/20 shadow-lg">
+                  <CardContent className="p-8 text-center">
+                    <Loader2 className="h-8 w-8 animate-spin text-medico-turquoise mx-auto mb-4" />
+                    <Paragraph color="muted" className="font-satoshi">Lade weitere Artikel...</Paragraph>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+
+            {/* End of articles indicator */}
+            {!hasMore && articles.length > 0 && (
+              <div className="text-center py-12">
+                <Card className="border-medico-turquoise/20 bg-medico-mint/30 shadow-lg">
+                  <CardContent className="p-8">
+                    <Paragraph color="secondary" className="font-satoshi text-lg">
+                      Sie haben alle verfügbaren Artikel gesehen. 📚
+                    </Paragraph>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>
