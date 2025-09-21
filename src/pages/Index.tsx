@@ -58,7 +58,7 @@ const GermanIndex = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Werbeagentur Mainz | ooliv - Ihre digitale Marketing Agentur"
+          title="ooliv Werbeagentur Mainz - Webdesign & Marketing für B2B"
           description="ooliv - Ihre Werbeagentur in Mainz für professionelles Webdesign, SEO-Optimierung und digitale Strategien. Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren. Seit 2008 in Mainz verwurzelt."
           canonicalUrl="https://ooliv.de/"
           keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
