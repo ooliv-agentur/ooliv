@@ -14,7 +14,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 
@@ -89,6 +89,37 @@ const GermanIndex = () => {
         <DeutscherHero />
         
         <DeutscherAboutSection />
+        
+        {/* Automated Content Marketing Highlight */}
+        <section className="py-12 bg-gradient-to-r from-medico-yellow/10 to-medico-turquoise/10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+              <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-medico-turquoise mr-3" />
+                NEU: Automatisierte Content-Marketing Lösung
+              </h2>
+              <p className="text-lg text-medico-darkGreen mb-6 max-w-3xl mx-auto">
+                Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
+                Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
+              </p>
+              <Button 
+                variant="outline" 
+                className="text-medico-turquoise border-medico-turquoise hover:bg-medico-turquoise/10 mr-4"
+                asChild
+              >
+                <Link to="/automatisierte-content-marketing">
+                  Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button 
+                onClick={handleStartProject}
+                className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90"
+              >
+                Demo anfragen
+              </Button>
+            </div>
+          </div>
+        </section>
         
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">

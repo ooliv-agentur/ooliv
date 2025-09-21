@@ -73,6 +73,20 @@ const ContentProcessUnified = () => {
       link: '/seo-optimierung',
       linkText: 'Mehr zur Optimierung',
       icon: TrendingUp
+    },
+    {
+      number: "05",
+      title: 'Automatisierte Content-Verteilung',
+      description: 'AI-gestützte tägliche Content-Erstellung und automatische Verteilung auf alle Kanäle.',
+      deliverables: [
+        'Tägliche SEO-optimierte Artikel',
+        'Automatische Social Media Posts',
+        'Multi-Platform Publishing',
+        'Backlink-Netzwerk Integration'
+      ],
+      link: '/automatisierte-content-marketing',
+      linkText: 'Mehr zur Automation',
+      icon: Sparkles
     }
   ] : [
     {
@@ -130,6 +144,20 @@ const ContentProcessUnified = () => {
       link: '/optimization',
       linkText: 'Learn about Optimization',
       icon: TrendingUp
+    },
+    {
+      number: "05",
+      title: 'Automated Content Distribution',
+      description: 'AI-powered daily content creation and automated distribution across all channels.',
+      deliverables: [
+        'Daily SEO-optimized articles',
+        'Automatic social media posts',
+        'Multi-platform publishing',
+        'Backlink network integration'
+      ],
+      link: '/automated-content-marketing',
+      linkText: 'Learn about Automation',
+      icon: Sparkles
     }
   ];
 

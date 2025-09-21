@@ -23,6 +23,7 @@ import GermanAiTechnologies from './pages/KiTechnologien';
 import GermanContact from './pages/Kontakt';
 import GermanSEO from './pages/SEOOptimierung';
 import GermanContentCreation from './pages/ContentErstellung';
+import AutomatisierteContentMarketing from './pages/AutomatisierteContentMarketing';
 import GermanGoogleAds from './pages/GoogleAds';
 import GermanCaseStudies from './pages/Referenzen';
 import GermanAboutUs from './pages/UeberUns';
@@ -84,6 +85,7 @@ function App() {
                   <Route path="/strategie" element={<Strategie />} />
                   <Route path="/seo-optimierung" element={<GermanSEO />} />
                   <Route path="/content-erstellung" element={<GermanContentCreation />} />
+                  <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />
                   <Route path="/google-ads" element={<GermanGoogleAds />} />
                   <Route path="/klickbetrug" element={<Klickbetrug />} />
                   <Route path="/referenzen" element={<GermanCaseStudies />} />

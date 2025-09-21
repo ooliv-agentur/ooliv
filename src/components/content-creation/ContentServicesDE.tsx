@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Image, Video, Edit3, Palette, Search } from 'lucide-react';
+import { FileText, Image, Video, Edit3, Palette, Search, Zap } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const ContentServicesDE = () => {
@@ -37,9 +37,9 @@ const ContentServicesDE = () => {
       description: "Authentische Markengeschichten, die emotional bewegen und Vertrauen schaffen."
     },
     {
-      icon: Search,
-      title: "Keyword-Optimierung",
-      description: "Strategische Integration relevanter Suchbegriffe für bessere Auffindbarkeit."
+      icon: Zap,
+      title: "Automatisierte Content-Verteilung",
+      description: "AI-gestützte tägliche Content-Erstellung und automatische Verteilung auf alle Kanäle für kontinuierliches Wachstum."
     }
   ];
 
