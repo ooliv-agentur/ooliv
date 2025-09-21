@@ -10,8 +10,8 @@ const SEOHero = () => {
   return (
     <PageHero
       badge="SEO Optimization"
-      title="SEO Services in Mainz That Deliver Visibility & Qualified Leads"
-      subtitle="We turn your website into a scalable growth engine. Strategy-first SEO to boost visibility, attract B2B leads, and achieve long-term business results — in Mainz and beyond."
+      title="More Inquiries Through Your Website – Guaranteed Measurable"
+      subtitle="SEO services in Mainz that turn your website into a scalable growth engine. Strategy-first optimization to boost visibility, attract B2B leads, and achieve long-term business results."
       primaryCta={{
         text: "Projekt starten",
         link: "#",

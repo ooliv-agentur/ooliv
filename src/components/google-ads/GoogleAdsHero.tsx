@@ -9,8 +9,8 @@ const GoogleAdsHero = () => {
 
   return (
     <PageHero
-      title="Google Ads Agentur Mainz – Leads statt nur Klicks"
-      subtitle="Wir entwickeln und optimieren Google Ads Kampagnen, die nicht nur sichtbar sind, sondern qualifizierte Anfragen generieren. KI-gestützt, datenbasiert, auf Conversion ausgelegt."
+      title="Budget rein, Anfragen raus – ohne Streuverluste"
+      subtitle="Als Google Ads Agentur in Mainz entwickeln und optimieren wir Kampagnen, die qualifizierte Anfragen generieren. KI-gestützt, datenbasiert, auf Conversion ausgelegt."
       primaryCta={{
         text: "Projekt starten",
         link: "#",

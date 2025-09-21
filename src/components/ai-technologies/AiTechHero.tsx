@@ -14,12 +14,12 @@ const AiTechHero = () => {
   return (
     <PageHero
       title={isGerman 
-        ? "KI Agentur Mainz – Effizienz durch intelligente Technologie" 
-        : "AI Agency Mainz – Efficiency Through Intelligent Technology"
+        ? "Weniger Aufwand, bessere Ergebnisse – mit KI-Power" 
+        : "Less Effort, Better Results – With AI Power"
       }
       subtitle={isGerman 
-        ? "Wir integrieren KI-Tools strategisch in Ihre Workflows – für schnelleren Content, bessere Prozesse und messbaren Mehrwert." 
-        : "We strategically integrate AI tools into your workflows – for faster content, better processes, and measurable value."
+        ? "Als KI Agentur in Mainz integrieren wir intelligente Technologien strategisch in Ihre Workflows – für schnelleren Content, bessere Prozesse und messbaren Mehrwert durch Effizienz." 
+        : "As AI agency in Mainz, we strategically integrate intelligent technologies into your workflows – for faster content, better processes, and measurable value through efficiency."
       }
       primaryCta={{
         text: "Projekt starten",

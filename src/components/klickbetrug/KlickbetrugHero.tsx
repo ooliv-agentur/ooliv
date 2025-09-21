@@ -32,11 +32,11 @@ const KlickbetrugHero = () => {
           <Reveal>
             <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
               <h1 className={`${getHeadingClasses('h1', 'primary', 'left')} mb-6 sm:mb-8`}>
-                Klickbetrug erkennen. Google Ads schützen.
+                Ihr Werbebudget vor Fake-Klicks schützen – vollautomatisch
               </h1>
               
               <p className={`${getBodyClasses('large', 'primary', 'left')} mb-8 sm:mb-10`}>
-                Wir schützen Ihr Werbebudget vor unsichtbaren Angriffen – vollautomatisch, sofort wirksam und ohne Integration.
+                Klickbetrug erkennen und Google Ads schützen: Wir schützen Ihr Werbebudget vor unsichtbaren Angriffen – vollautomatisch, sofort wirksam und ohne Integration.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

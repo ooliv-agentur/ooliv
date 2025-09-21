@@ -18,12 +18,12 @@ const WebDevHero = () => {
         : "Web Development"
       }
       title={isGerman 
-        ? "WordPress Agentur Mainz für skalierbare Unternehmenslösungen" 
-        : "Web Development That Drives Business Growth"
+        ? "Schnelle Websites, die Google liebt – und Ihre Kunden auch" 
+        : "Websites That Drive Business Growth – Not Just Look Good"
       }
       subtitle={isGerman 
-        ? "Maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code." 
-        : "Scalable, secure, and search-optimized websites – from custom WordPress to pure code."
+        ? "Als WordPress Agentur in Mainz entwickeln wir maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis Custom Code für skalierbare Unternehmenslösungen." 
+        : "Web development in Mainz: Scalable, secure, and search-optimized websites – from custom WordPress to pure code that drives real business results."
       }
       primaryCta={{
         text: "Projekt starten",

@@ -9,8 +9,8 @@ const StrategieHero = () => {
 
   return (
     <PageHero
-      title="Strategie & Webkonzept für Ihren digitalen Erfolg"
-      subtitle="Wir entwickeln individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Leads und eine nachhaltige digitale Präsenz."
+      title="Klare Strategie, messbare Ergebnisse – ohne Ratespiele"
+      subtitle="Wir entwickeln in Mainz individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Leads und eine nachhaltige digitale Präsenz."
       primaryCta={{
         text: "Projekt starten",
         link: "#",

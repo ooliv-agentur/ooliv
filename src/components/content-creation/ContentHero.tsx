@@ -12,12 +12,12 @@ const ContentHero = () => {
   };
 
   const title = isGerman 
-    ? "Ihre Content Agentur Mainz – strategische Inhalte für B2B-Erfolg" 
-    : "Content Creation for B2B Companies with Strategy";
+    ? "Content, der konvertiert – statt nur zu informieren" 
+    : "Content That Converts – Not Just Informs";
 
   const subtitle = isGerman 
-    ? "Wir entwickeln durchdachte Inhalte für Websites, Blogs, SEO und Visuals – effizient, konversionsstark und KI-unterstützt." 
-    : "We create strategic B2B content: website copy, blog articles, SEO content, images, videos and infographics – clear, thoughtful, powerful.";
+    ? "Als Content Agentur in Mainz entwickeln wir strategische Inhalte für B2B-Erfolg: Websites, Blogs, SEO und Visuals – durchdacht, effizient, konversionsstark und KI-unterstützt." 
+    : "As content agency in Mainz, we create strategic B2B content for success: website copy, blog articles, SEO content, images, videos and infographics – clear, thoughtful, powerful.";
 
   return (
     <PageHero
