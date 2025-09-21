@@ -12,7 +12,14 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const AutomatisierteContentMarketing = () => {
   const handleStartProject = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form', { 
+      detail: { 
+        mode: 'project',
+        initialData: {
+          projectType: 'ai-content'
+        }
+      } 
+    }));
   };
 
   const benefits = [
@@ -164,13 +171,13 @@ const AutomatisierteContentMarketing = () => {
               <p className="text-lg mb-8 text-white/90">
                 Kostenlose Demo und individuelle Beratung – ohne Verpflichtung.
               </p>
-              <Button 
-                onClick={handleStartProject}
-                size="lg"
-                className="bg-white text-medico-turquoise hover:bg-gray-50 font-semibold px-8 py-3"
-              >
-                Kostenlose Beratung vereinbaren
-              </Button>
+          <Button 
+            onClick={handleStartProject}
+            size="lg"
+            className="bg-white text-medico-turquoise hover:bg-gray-50 font-semibold px-8 py-3"
+          >
+            Kostenlose Beratung vereinbaren
+          </Button>
             </Reveal>
           </div>
         </section>

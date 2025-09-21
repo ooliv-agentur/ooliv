@@ -19,6 +19,7 @@ interface LeadGenerationOverlayProps {
 
 const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProps) => {
   const [mode, setMode] = useState<'project' | 'prototype'>('project');
+  const [initialData, setInitialData] = useState<any>(null);
   const { language } = useLanguage();
   const { showBanner } = useCookieConsent();
   // Listen for the global event to open the lead form
@@ -33,9 +34,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       const mode = event?.detail?.mode as 'prototype' | 'project' | undefined;
       const variant = event?.detail?.variant as 'prototype' | 'project' | undefined;
       const source = event?.detail?.source as string | undefined;
+      const data = event?.detail?.initialData;
       const nextMode: 'project' | 'prototype' = mode ?? variant ?? (source?.toLowerCase().includes('prototype') ? 'prototype' : 'project');
       setMode(nextMode);
-      console.log('🎯 LeadGenerationOverlay: open-lead-form variant:', nextMode);
+      setInitialData(data || null);
+      console.log('🎯 LeadGenerationOverlay: open-lead-form variant:', nextMode, 'with initial data:', data);
       if (!open) {
         onOpenChange(true);
       }
@@ -104,7 +107,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           </SheetDescription>
         </SheetHeader>
         
-        <LeadFormContent onClose={handleClose} mode={mode} />
+        <LeadFormContent onClose={handleClose} mode={mode} initialData={initialData} />
       </SheetContent>
     </Sheet>
   );

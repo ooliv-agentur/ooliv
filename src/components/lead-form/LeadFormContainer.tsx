@@ -19,9 +19,10 @@ import PrototypeForm from './PrototypeForm';
 interface LeadFormContainerProps {
   onClose: () => void;
   mode: 'project' | 'prototype';
+  initialData?: any;
 }
 
-const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) => {
+const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, initialData }) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { language } = useLanguage();
@@ -31,7 +32,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode }) 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      projectType: "",
+      projectType: initialData?.projectType || "",
       companyName: "",
       industry: "",
       website: "",

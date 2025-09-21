@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectScrollUpButton, SelectScrollDownButton } from "@/components/ui/select";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from './FormSchema';
 
@@ -49,7 +49,8 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                     />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60">
+                <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60 pointer-events-auto">
+                  <SelectScrollUpButton />
                   <SelectItem value="website-relaunch" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
                     {language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"}
                   </SelectItem>
@@ -68,6 +69,7 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                   <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20 focus:bg-medico-turquoise/20">
                     {language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"}
                   </SelectItem>
+                  <SelectScrollDownButton />
                 </SelectContent>
               </Select>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
