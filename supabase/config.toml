@@ -15,3 +15,6 @@ verify_jwt = false
 
 [functions.linkedinAutomation]
 verify_jwt = false
+
+[functions.linkedinCompanyPost]
+verify_jwt = false

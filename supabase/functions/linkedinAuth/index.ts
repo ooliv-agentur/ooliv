@@ -23,9 +23,9 @@ serve(async (req) => {
     const { action, code, state, userId } = await req.json();
 
     if (action === 'getAuthUrl') {
-      // Generate LinkedIn OAuth URL
+      // Generate LinkedIn OAuth URL with company permissions
       const redirectUri = `${supabaseUrl}/functions/v1/linkedinAuth`;
-      const scope = 'r_liteprofile,r_emailaddress,w_member_social';
+      const scope = 'r_liteprofile,r_emailaddress,w_member_social,r_organization_social,w_organization_social';
       const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${linkedinClientId}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${userId}&scope=${encodeURIComponent(scope)}`;
 
       return new Response(JSON.stringify({ authUrl }), {
@@ -70,6 +70,21 @@ serve(async (req) => {
 
       const profileData = await profileResponse.json();
 
+      // Get user's companies
+      let companiesData = null;
+      try {
+        const companiesResponse = await fetch('https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee', {
+          headers: {
+            'Authorization': `Bearer ${tokenData.access_token}`,
+          },
+        });
+        if (companiesResponse.ok) {
+          companiesData = await companiesResponse.json();
+        }
+      } catch (error) {
+        console.log('Companies fetch failed (optional):', error);
+      }
+
       if (!profileResponse.ok) {
         console.error('LinkedIn profile fetch failed:', profileData);
         return new Response(JSON.stringify({ error: 'Profile fetch failed' }), {
@@ -87,7 +102,10 @@ serve(async (req) => {
           access_token: tokenData.access_token,
           refresh_token: tokenData.refresh_token,
           token_expires_at: new Date(Date.now() + tokenData.expires_in * 1000).toISOString(),
-          profile_data: profileData,
+          profile_data: { 
+            ...profileData, 
+            companies: companiesData?.elements || [] 
+          },
           is_active: true,
         }, {
           onConflict: 'linkedin_user_id',
