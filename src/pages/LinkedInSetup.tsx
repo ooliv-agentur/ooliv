@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -19,17 +18,7 @@ interface LinkedInAccount {
 const LinkedInSetup = () => {
   const [accounts, setAccounts] = useState<LinkedInAccount[]>([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
   const { toast } = useToast();
-
-  // Check authentication on component mount
-  useEffect(() => {
-    const isAuthenticated = sessionStorage.getItem('linkedin-admin-auth');
-    if (!isAuthenticated) {
-      navigate('/linkedin-setup-auth');
-      return;
-    }
-  }, [navigate]);
 
   useEffect(() => {
     loadAccounts();
@@ -80,7 +69,15 @@ const LinkedInSetup = () => {
     <PageLayout>
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4">LinkedIn Integration Setup</h1>
+          <h1 className="text-3xl font-bold mb-4">LinkedIn Integration für Artikel-Posting</h1>
+          <div className="bg-blue-50 p-4 rounded-lg mb-4">
+            <p className="text-blue-700">
+              <strong>Warum LinkedIn OAuth?</strong><br/>
+              • Sie empfangen bereits Artikel über Webhook ✅<br/>
+              • Um diese automatisch auf LinkedIn zu posten, brauchen Sie LinkedIn's API<br/>
+              • Dafür sind LinkedIn OAuth-Tokens erforderlich (separate von Supabase)
+            </p>
+          </div>
           <p className="text-muted-foreground">
             Verbinden Sie Ihr LinkedIn-Unternehmenskonto für automatische Artikel-Posts
           </p>
