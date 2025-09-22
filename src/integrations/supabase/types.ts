@@ -94,42 +94,36 @@ export type Database = {
       }
       linkedin_accounts: {
         Row: {
-          access_token: string
           access_token_encrypted: string | null
           created_at: string
           id: string
           is_active: boolean
           linkedin_user_id: string
           profile_data: Json | null
-          refresh_token: string | null
           refresh_token_encrypted: string | null
           token_expires_at: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
-          access_token: string
           access_token_encrypted?: string | null
           created_at?: string
           id?: string
           is_active?: boolean
           linkedin_user_id: string
           profile_data?: Json | null
-          refresh_token?: string | null
           refresh_token_encrypted?: string | null
           token_expires_at?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
-          access_token?: string
           access_token_encrypted?: string | null
           created_at?: string
           id?: string
           is_active?: boolean
           linkedin_user_id?: string
           profile_data?: Json | null
-          refresh_token?: string | null
           refresh_token_encrypted?: string | null
           token_expires_at?: string | null
           updated_at?: string
@@ -287,6 +281,10 @@ export type Database = {
         Returns: string
       }
       migrate_linkedin_tokens: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      secure_migrate_existing_tokens: {
         Args: Record<PropertyKey, never>
         Returns: undefined
       }
