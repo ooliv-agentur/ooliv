@@ -9,3 +9,9 @@ verify_jwt = false
 
 [functions.generateSitemap]
 verify_jwt = false
+
+[functions.linkedinAuth]
+verify_jwt = false
+
+[functions.linkedinAutomation]
+verify_jwt = false

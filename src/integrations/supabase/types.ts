@@ -92,6 +92,151 @@ export type Database = {
         }
         Relationships: []
       }
+      linkedin_accounts: {
+        Row: {
+          access_token: string
+          created_at: string
+          id: string
+          is_active: boolean
+          linkedin_user_id: string
+          profile_data: Json | null
+          refresh_token: string | null
+          token_expires_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          access_token: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          linkedin_user_id: string
+          profile_data?: Json | null
+          refresh_token?: string | null
+          token_expires_at?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          access_token?: string
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          linkedin_user_id?: string
+          profile_data?: Json | null
+          refresh_token?: string | null
+          token_expires_at?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      linkedin_actions: {
+        Row: {
+          action_type: string
+          campaign_id: string
+          created_at: string
+          error_message: string | null
+          executed_at: string | null
+          id: string
+          message_content: string | null
+          response_data: Json | null
+          scheduled_at: string | null
+          status: string
+          target_profile_data: Json | null
+          target_profile_id: string | null
+        }
+        Insert: {
+          action_type: string
+          campaign_id: string
+          created_at?: string
+          error_message?: string | null
+          executed_at?: string | null
+          id?: string
+          message_content?: string | null
+          response_data?: Json | null
+          scheduled_at?: string | null
+          status?: string
+          target_profile_data?: Json | null
+          target_profile_id?: string | null
+        }
+        Update: {
+          action_type?: string
+          campaign_id?: string
+          created_at?: string
+          error_message?: string | null
+          executed_at?: string | null
+          id?: string
+          message_content?: string | null
+          response_data?: Json | null
+          scheduled_at?: string | null
+          status?: string
+          target_profile_data?: Json | null
+          target_profile_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "linkedin_actions_campaign_id_fkey"
+            columns: ["campaign_id"]
+            isOneToOne: false
+            referencedRelation: "linkedin_campaigns"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      linkedin_campaigns: {
+        Row: {
+          automation_settings: Json | null
+          created_at: string
+          description: string | null
+          end_date: string | null
+          id: string
+          linkedin_account_id: string
+          name: string
+          start_date: string | null
+          status: string
+          target_audience: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          automation_settings?: Json | null
+          created_at?: string
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          linkedin_account_id: string
+          name: string
+          start_date?: string | null
+          status?: string
+          target_audience?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          automation_settings?: Json | null
+          created_at?: string
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          linkedin_account_id?: string
+          name?: string
+          start_date?: string | null
+          status?: string
+          target_audience?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "linkedin_campaigns_linkedin_account_id_fkey"
+            columns: ["linkedin_account_id"]
+            isOneToOne: false
+            referencedRelation: "linkedin_accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       sitemap_cache: {
         Row: {
           cache_key: string
