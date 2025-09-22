@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import SingleArticleDisplay from '@/components/content/SingleArticleDisplay';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 
 interface ContentPost {
   id: number;
@@ -39,18 +39,17 @@ const SingleArticle = () => {
 
   return (
     <PageLayout>
-      <Helmet>
-        <title>
-          {article?.title ? `${article.title} | ooliv - Ihre Werbeagentur` : 'Artikel | ooliv - Ihre Werbeagentur'}
-        </title>
-        <meta 
-          name="description" 
-          content={
-            article?.meta_description || 
-            'Entdecken Sie unseren Artikel von BabyLoveGrowth.ai mit wertvollen Insights und Tipps.'
-          }
-        />
-      </Helmet>
+      <EnhancedSEOHead
+        title={article?.title ? `${article.title} | ooliv - Ihre Werbeagentur` : 'Artikel | ooliv - Ihre Werbeagentur'}
+        description={article?.meta_description || 'Entdecken Sie unseren Artikel von BabyLoveGrowth.ai mit wertvollen Insights und Tipps.'}
+        canonicalUrl={`https://ooliv.de/artikel/${slug}`}
+        keywords="Artikel, Insights, Digitales Marketing, ooliv Werbeagentur"
+        ogType="article"
+        articleData={article ? {
+          datePublished: article.created_at,
+          dateModified: article.created_at
+        } : undefined}
+      />
       
       <SingleArticleDisplay slug={slug} onArticleLoad={handleArticleLoad} />
     </PageLayout>

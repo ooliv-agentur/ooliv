@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -39,14 +39,12 @@ const NotFound = () => {
 
   return (
     <PageLayout>
-      <Helmet>
-        <title>Seite nicht gefunden | ooliv</title>
-        <meta 
-          name="description" 
-          content="Die von Ihnen gesuchte Seite existiert nicht." 
-        />
-        <meta name="robots" content="noindex, follow" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Seite nicht gefunden | ooliv"
+        description="Die von Ihnen gesuchte Seite existiert nicht."
+        canonicalUrl="https://ooliv.de/404"
+      />
+      <meta name="robots" content="noindex, follow" />
       
       <div className="min-h-[calc(100vh-12rem)] flex items-center justify-center bg-gradient-to-br from-white to-brand-backgroundAlt py-16">
         <div className="container px-4">

@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import KlickbetrugHero from '@/components/klickbetrug/KlickbetrugHero';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import KlickbetrugIntroduction from '@/components/klickbetrug/KlickbetrugIntroduction';
 import KlickbetrugProcess from '@/components/klickbetrug/KlickbetrugProcess';
 import KlickbetrugProblem from '@/components/klickbetrug/KlickbetrugProblem';
@@ -14,14 +14,20 @@ import KlickbetrugFAQ from '@/components/klickbetrug/KlickbetrugFAQ';
 
 
 const Klickbetrug = () => {
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Klickbetrug Schutz", url: "https://ooliv.de/klickbetrug" }
+  ];
+
   return (
     <PageLayout>
-      <Helmet>
-        <title>Klickbetrug bei Google Ads stoppen – Automatischer Schutz vor Fake-Klicks</title>
-        <meta name="description" content="Klickbetrug bei Google Ads stoppen – vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Budget automatisch." />
-        <meta name="keywords" content="Klickbetrug, Click Fraud, Google Ads Schutz, Fake Klicks, Bot Erkennung, Werbebudget schützen" />
-        <link rel="canonical" href="https://ooliv.de/klickbetrug" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Klickbetrug bei Google Ads stoppen – Automatischer Schutz vor Fake-Klicks"
+        description="Klickbetrug bei Google Ads stoppen – vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Budget automatisch."
+        canonicalUrl="https://ooliv.de/klickbetrug"
+        keywords="Klickbetrug, Click Fraud, Google Ads Schutz, Fake Klicks, Bot Erkennung, Werbebudget schützen"
+        breadcrumbs={breadcrumbs}
+      />
       
       <KlickbetrugHero />
       <KlickbetrugIntroduction />

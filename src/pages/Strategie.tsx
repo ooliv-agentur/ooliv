@@ -1,9 +1,9 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import StrategieBenefits from '@/components/strategy/StrategieBenefits';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
@@ -18,14 +18,22 @@ const GermanStrategy = () => {
     setLanguage('de');
   }, [setLanguage]);
 
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Strategie", url: "https://ooliv.de/strategie" }
+  ];
+
   return (
     <PageLayout 
       className="overflow-x-hidden"
     >
-      <Helmet>
-        <title>Webkonzept & Strategie für Ihren Erfolg – ooliv Mainz</title>
-        <meta name="description" content="Webkonzept & Strategie für messbare Erfolge – ooliv entwickelt individuelle Digitalstrategien für mehr Sichtbarkeit, mehr Leads und eine starke Marke." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Webkonzept & Strategie für Ihren Erfolg – ooliv Mainz"
+        description="Webkonzept & Strategie für messbare Erfolge – ooliv entwickelt individuelle Digitalstrategien für mehr Sichtbarkeit, mehr Leads und eine starke Marke."
+        canonicalUrl="https://ooliv.de/strategie"
+        keywords="Webkonzept, Digitalstrategie, SEO Strategie, Marketing Konzept, ooliv Mainz"
+        breadcrumbs={breadcrumbs}
+      />
 
       <StrategieHero />
       <StrategieBenefits />

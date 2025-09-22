@@ -1,8 +1,8 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
@@ -55,12 +55,20 @@ const GermanAiTechnologies = () => {
     }
   ];
   
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "KI Technologien", url: "https://ooliv.de/ki-technologien" }
+  ];
+  
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>KI Agentur Mainz – Zukunftstechnologien</title>
-        <meta name="description" content="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="KI Agentur Mainz – Zukunftstechnologien"
+        description="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit."
+        canonicalUrl="https://ooliv.de/ki-technologien"
+        keywords="KI Agentur Mainz, Artificial Intelligence, ChatGPT, Midjourney, Automatisierung"
+        breadcrumbs={breadcrumbs}
+      />
 
       <AiTechHero />
       <AiTechBenefits />

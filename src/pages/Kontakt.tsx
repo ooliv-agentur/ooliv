@@ -1,8 +1,8 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 
 import ContactHeroDE from '@/components/contact/ContactHeroDE';
 import ContactIntroductionDE from '@/components/contact/ContactIntroductionDE';
@@ -24,10 +24,12 @@ const GermanContact = () => {
     <PageLayout 
       className="overflow-x-hidden"
     >
-      <Helmet>
-        <title>Kontakt – ooliv Marketing Agentur Mainz</title>
-        <meta name="description" content="Kontakt zur ooliv Marketing Agentur Mainz – persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr digitales Projekt." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Kontakt – ooliv Marketing Agentur Mainz"
+        description="Kontakt zur ooliv Marketing Agentur Mainz – persönliche Beratung, klare Kommunikation und individuelle Lösungen für Ihr digitales Projekt."
+        canonicalUrl="https://ooliv.de/kontakt"
+        keywords="Kontakt, ooliv Mainz, Werbeagentur Mainz, Beratung, Digitales Marketing"
+      />
 
       <ContactHeroDE />
       <ContactIntroductionDE />

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import { Button } from "@/components/ui/button";
@@ -101,18 +101,21 @@ const AutomatisierteContentMarketing = () => {
     }
   ];
 
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Automatisierte Content Marketing", url: "https://ooliv.de/automatisierte-content-marketing" }
+  ];
+
   return (
     <>
-      <Helmet>
-        <title>Automatisierte Content Marketing Lösung | ooliv Mainz</title>
-        <meta 
-          name="description" 
-          content="Revolutionieren Sie Ihr Content Marketing mit KI-gestützter automatischer Content-Erstellung und -Verteilung. Täglich frische, SEO-optimierte Artikel ohne Aufwand. ooliv Mainz macht's möglich." 
-        />
-        <link rel="canonical" href="https://ooliv.de/automatisierte-content-marketing" />
-      </Helmet>
-      
       <PageLayout>
+        <EnhancedSEOHead
+          title="Automatisierte Content Marketing Lösung | ooliv Mainz"
+          description="Revolutionieren Sie Ihr Content Marketing mit KI-gestützter automatischer Content-Erstellung und -Verteilung. Täglich frische, SEO-optimierte Artikel ohne Aufwand. ooliv Mainz macht's möglich."
+          canonicalUrl="https://ooliv.de/automatisierte-content-marketing"
+          keywords="Automatisierte Content Marketing, KI Content, SEO Automation, Content Erstellung, ooliv Mainz"
+          breadcrumbs={breadcrumbs}
+        />
         <PageHero
           title="Ihr Content-Team, das niemals schläft"
           subtitle="Automatisierte Content-Erstellung und -Verteilung mit KI"

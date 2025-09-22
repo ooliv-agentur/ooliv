@@ -1,8 +1,8 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import WebDevHero from '@/components/web-development/WebDevHeroDE';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
 import WebDevServices from '@/components/web-development/WebDevServicesDE';
 import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
@@ -37,14 +37,22 @@ const GermanWebDevelopment = () => {
     }
   ];
 
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Webentwicklung", url: "https://ooliv.de/webentwicklung" }
+  ];
+
   return (
     <PageLayout 
       className="overflow-x-hidden"
     >
-      <Helmet>
-        <title>WordPress Agentur Mainz – Technisch stark</title>
-        <meta name="description" content="WordPress Agentur Mainz für moderne Webentwicklung – technisch ausgereift und individuell. Wir realisieren Ihre digitale Vision zuverlässig." />
-      </Helmet>
+      <EnhancedSEOHead
+        title="WordPress Agentur Mainz – Technisch stark"
+        description="WordPress Agentur Mainz für moderne Webentwicklung – technisch ausgereift und individuell. Wir realisieren Ihre digitale Vision zuverlässig."
+        canonicalUrl="https://ooliv.de/webentwicklung"
+        keywords="WordPress Agentur Mainz, Webentwicklung, PHP Entwicklung, Custom Development"
+        breadcrumbs={breadcrumbs}
+      />
 
       <WebDevHero />
       <WebDevBenefits />

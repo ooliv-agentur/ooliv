@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
 import CaseStudiesHero from '@/components/case-studies/CaseStudiesHero';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
@@ -74,16 +74,20 @@ const GermanCaseStudies = () => {
     metaKeywords.setAttribute('content', 'Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
   }, []);
 
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Referenzen", url: "https://ooliv.de/referenzen" }
+  ];
+
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Marketing Mainz – Erfolgreiche Projekte</title>
-        <meta 
-          name="description" 
-          content="Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern." 
-        />
-        <meta name="keywords" content="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Marketing Mainz – Erfolgreiche Projekte"
+        description="Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern."
+        canonicalUrl="https://ooliv.de/referenzen"
+        keywords="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies"
+        breadcrumbs={breadcrumbs}
+      />
       
       <CaseStudiesHero />
       

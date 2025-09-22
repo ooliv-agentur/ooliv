@@ -1,9 +1,9 @@
 
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 
 // Import all dedicated Frankfurt components
 import FrankfurtWerbeagenturHero from '@/components/de/FrankfurtWerbeagenturHero';
@@ -24,23 +24,24 @@ const WerbeagenturFrankfurt = () => {
     console.log('WerbeagenturFrankfurt component mounted - setting language to German');
     document.title = 'Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg';
   }, []);
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://ooliv.de/" },
+    { name: "Werbeagentur Frankfurt", url: "https://ooliv.de/werbeagentur-frankfurt" }
+  ];
   
   return (
     <>
-      <Helmet prioritizeSeoTags>
-        <html lang="de" />
-        <title>Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg</title>
-        <meta
-          name="description"
-          content="Werbeagentur Frankfurt – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
-        />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-      </Helmet>
-      
       <PageLayout 
         className="overflow-x-hidden"
       >
+        <EnhancedSEOHead
+          title="Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg"
+          description="Werbeagentur Frankfurt – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
+          canonicalUrl="https://ooliv.de/werbeagentur-frankfurt"
+          keywords="Werbeagentur Frankfurt, Webdesign Frankfurt, Online Marketing Frankfurt, SEO Frankfurt"
+          breadcrumbs={breadcrumbs}
+        />
         <FrankfurtWerbeagenturHero />
         <FrankfurtWerbeagenturAboutSection />
         <FrankfurtWerbeagenturTeamSection />
