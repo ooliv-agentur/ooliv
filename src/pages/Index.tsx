@@ -102,21 +102,23 @@ const GermanIndex = () => {
                 Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
                 Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
               </p>
-              <Button 
-                variant="outline" 
-                className="text-medico-turquoise border-medico-turquoise hover:bg-medico-turquoise/10 mr-4"
-                asChild
-              >
-                <Link to="/automatisierte-content-marketing">
-                  Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button 
-                onClick={handleStartProject}
-                className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90"
-              >
-                Demo anfragen
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  variant="outline" 
+                  className="text-medico-turquoise border-medico-turquoise hover:bg-medico-turquoise/10 w-full sm:w-auto"
+                  asChild
+                >
+                  <Link to="/automatisierte-content-marketing">
+                    Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button 
+                  onClick={handleStartProject}
+                  className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90 w-full sm:w-auto"
+                >
+                  Demo anfragen
+                </Button>
+              </div>
             </div>
           </div>
         </section>
