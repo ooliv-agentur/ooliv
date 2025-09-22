@@ -27,10 +27,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
     console.log('🔧 LeadGenerationOverlay: Setting up event listener');
     
     const handleOpenLeadForm = (event: any) => {
-      if (showBanner) {
-        console.log('⏳ LeadGenerationOverlay: Cookie banner visible, ignoring open-lead-form');
-        return;
-      }
+      // Note: Removed cookie banner check to allow form to open regardless of banner state
+      console.log('🎯 LeadGenerationOverlay: Received open-lead-form event');
+      
       const mode = event?.detail?.mode as 'prototype' | 'project' | undefined;
       const variant = event?.detail?.variant as 'prototype' | 'project' | undefined;
       const source = event?.detail?.source as string | undefined;
@@ -50,7 +49,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
       console.log('🧹 LeadGenerationOverlay: Removing event listener');
       window.removeEventListener('open-lead-form', handleOpenLeadForm);
     };
-  }, [open, onOpenChange, showBanner]);
+  }, [open, onOpenChange]); // Removed showBanner dependency
   
   const internalOnOpenChange = (next: boolean) => {
     if (!next) {
