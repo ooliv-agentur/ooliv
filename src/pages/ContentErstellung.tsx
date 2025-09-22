@@ -43,8 +43,9 @@ const GermanContentCreation = () => {
       className="overflow-x-hidden"
     >
       <Helmet>
-        <title>Content Agentur Mainz – Texte, die wirken</title>
+        <title>Content Agentur Mainz – Texte, die wirken | ooliv</title>
         <meta name="description" content="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken." />
+        <link rel="canonical" href="https://ooliv.de/content-erstellung" />
       </Helmet>
 
       {/* 1. Hero Section - White background */}

@@ -53,26 +53,28 @@ export async function generateDynamicSitemap(): Promise<void> {
   console.log('🚀 Generating complete sitemap with dynamic content...');
   
   try {
-    // Static routes
+    // Static routes - match exactly with App.tsx routes
     const staticRoutes: SitemapRoute[] = [
       { url: '/', changefreq: 'daily', priority: 1.0 },
-      { url: '/ueber-uns', changefreq: 'monthly', priority: 0.8 },
-      { url: '/kontakt', changefreq: 'monthly', priority: 0.9 },
-      { url: '/referenzen', changefreq: 'weekly', priority: 0.8 },
       { url: '/webdesign', changefreq: 'monthly', priority: 0.7 },
       { url: '/webentwicklung', changefreq: 'monthly', priority: 0.7 },
-      { url: '/seo-optimierung', changefreq: 'monthly', priority: 0.7 },
-      { url: '/google-ads', changefreq: 'monthly', priority: 0.7 },
       { url: '/ki-technologien', changefreq: 'monthly', priority: 0.7 },
-      { url: '/content-erstellung', changefreq: 'monthly', priority: 0.7 },
+      { url: '/kontakt', changefreq: 'monthly', priority: 0.9 },
       { url: '/strategie', changefreq: 'monthly', priority: 0.7 },
+      { url: '/seo-optimierung', changefreq: 'monthly', priority: 0.7 },
+      { url: '/content-erstellung', changefreq: 'monthly', priority: 0.7 },
+      { url: '/automatisierte-content-marketing', changefreq: 'monthly', priority: 0.6 },
+      { url: '/google-ads', changefreq: 'monthly', priority: 0.7 },
       { url: '/klickbetrug', changefreq: 'monthly', priority: 0.6 },
-      { url: '/werbeagentur-frankfurt', changefreq: 'monthly', priority: 0.6 },
+      { url: '/referenzen', changefreq: 'weekly', priority: 0.8 },
+      { url: '/ueber-uns', changefreq: 'monthly', priority: 0.8 },
       { url: '/werbeagentur-wiesbaden', changefreq: 'monthly', priority: 0.6 },
+      { url: '/werbeagentur-frankfurt', changefreq: 'monthly', priority: 0.6 },
       { url: '/artikel', changefreq: 'daily', priority: 0.8 },
-      { url: '/danke', changefreq: 'yearly', priority: 0.3 },
-      { url: '/en/thank-you', changefreq: 'yearly', priority: 0.3 },
-      { url: '/impressum', changefreq: 'yearly', priority: 0.3 }
+      { url: '/impressum', changefreq: 'yearly', priority: 0.3 },
+      { url: '/datenschutz', changefreq: 'yearly', priority: 0.3 },
+      { url: '/cookie-richtlinie', changefreq: 'yearly', priority: 0.3 },
+      { url: '/danke', changefreq: 'yearly', priority: 0.3 }
     ];
 
     // Get dynamic routes

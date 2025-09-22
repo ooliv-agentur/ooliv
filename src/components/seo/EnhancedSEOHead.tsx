@@ -49,7 +49,13 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
     "@type": "Organization",
     "name": "ooliv Werbeagentur",
     "url": "https://ooliv.de",
-    "logo": "https://ooliv.de/ooliv_logo_2025.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ooliv.de/ooliv_logo_2025.svg",
+      "width": "200",
+      "height": "50"
+    },
+    "image": "https://ooliv.de/ooliv_logo_2025.svg",
     "sameAs": [
       "https://www.instagram.com/ooliv.de/",
       "https://www.linkedin.com/company/ooliv-werbeagentur/"
@@ -64,8 +70,8 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 49.9928617,
-      "longitude": 8.2472526
+      "latitude": "49.9928617",
+      "longitude": "8.2472526"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -73,7 +79,14 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
       "contactType": "customer service",
       "areaServed": "DE",
       "availableLanguage": ["German", "English"]
-    }
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Paul Jerchel", 
+      "jobTitle": "CEO & Founder"
+    },
+    "foundingDate": "2008",
+    "description": "ooliv ist eine etablierte Werbeagentur in Mainz, spezialisiert auf strategisches Webdesign, SEO-Optimierung und digitales Marketing für B2B-Unternehmen."
   };
 
   // Generate website schema
@@ -81,12 +94,18 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "ooliv Werbeagentur",
+    "alternateName": "ooliv Digitalagentur Mainz",
     "url": "https://ooliv.de",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://ooliv.de/suche?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "description": "Professionelle Werbeagentur in Mainz für Webdesign, SEO und digitales Marketing",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ooliv Werbeagentur",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ooliv.de/ooliv_logo_2025.svg"
+      }
+    },
+    "inLanguage": "de-DE"
   };
 
   // Combine all schemas
