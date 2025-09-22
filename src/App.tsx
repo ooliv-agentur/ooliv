@@ -38,7 +38,7 @@ import CookieRichtlinie from './pages/CookieRichtlinie';
 import Artikel from './pages/Artikel';
 import LatestContent from './pages/LatestContent';
 import SingleArticle from './pages/SingleArticle';
-import LinkedInAutomation from './pages/LinkedInAutomation';
+import LinkedInSetup from './pages/LinkedInSetup';
 import NotFound from './pages/NotFound';
 
 const queryClient = new QueryClient();
@@ -93,10 +93,10 @@ function App() {
                   <Route path="/ueber-uns" element={<GermanAboutUs />} />
                   <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                   <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
-                  <Route path="/linkedin-automatisierung" element={<LinkedInAutomation />} />
                    <Route path="/artikel" element={<Artikel />} />
                    <Route path="/neuester-artikel" element={<LatestContent />} />
                    <Route path="/artikel/:slug" element={<SingleArticle />} />
+                   <Route path="/linkedin-setup" element={<LinkedInSetup />} />
                    <Route path="/impressum" element={<GermanLegalNotice />} />
                   <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                   <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />

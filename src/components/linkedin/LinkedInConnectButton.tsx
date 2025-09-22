@@ -20,22 +20,14 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
     try {
       setLoading(true);
       
-      // Get current user
-      const { data: { user }, error: userError } = await supabase.auth.getUser();
-      if (userError || !user) {
-        toast({
-          title: "Fehler",
-          description: "Sie müssen angemeldet sein, um LinkedIn zu verbinden.",
-          variant: "destructive"
-        });
-        return;
-      }
+      // For admin setup, use a fixed admin user ID
+      const adminUserId = 'ooliv-admin-2025';
 
       // Get LinkedIn auth URL
       const { data, error } = await supabase.functions.invoke('linkedinAuth', {
         body: { 
           action: 'getAuthUrl',
-          userId: user.id 
+          userId: adminUserId 
         }
       });
 
@@ -67,7 +59,7 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
             const { data: accounts } = await supabase
               .from('linkedin_accounts')
               .select('*')
-              .eq('user_id', user.id)
+              .eq('user_id', adminUserId)
               .eq('is_active', true);
 
             if (accounts && accounts.length > 0) {
