@@ -47,6 +47,25 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
 
   const saveConsent = async (newConsent: CookieConsent) => {
     try {
+      // Rate limiting: Check if user has submitted recently
+      const lastSubmission = localStorage.getItem('cookie-consent-last-submit');
+      const now = Date.now();
+      
+      if (lastSubmission) {
+        const timeDiff = now - parseInt(lastSubmission);
+        const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
+        
+        if (timeDiff < fiveMinutes) {
+          console.log('Rate limit: Cookie consent submission too frequent');
+          // Still save locally but skip database insert
+          localStorage.setItem('cookie-consent', JSON.stringify(newConsent));
+          localStorage.setItem('cookie-consent-timestamp', Date.now().toString());
+          setConsent(newConsent);
+          setShowBanner(false);
+          return;
+        }
+      }
+      
       const sessionId = getSessionId();
       
       console.log('Saving cookie consent:', newConsent);
@@ -61,6 +80,9 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
         ip_address: null, // Could be populated server-side
         user_agent: navigator.userAgent
       });
+
+      // Update rate limiting timestamp
+      localStorage.setItem('cookie-consent-last-submit', now.toString());
 
       // Store locally for future reference (primary source of truth for frontend)
       localStorage.setItem('cookie-consent', JSON.stringify(newConsent));

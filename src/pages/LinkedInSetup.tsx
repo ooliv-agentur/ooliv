@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -18,7 +19,17 @@ interface LinkedInAccount {
 const LinkedInSetup = () => {
   const [accounts, setAccounts] = useState<LinkedInAccount[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const { toast } = useToast();
+
+  // Check authentication on component mount
+  useEffect(() => {
+    const isAuthenticated = sessionStorage.getItem('linkedin-admin-auth');
+    if (!isAuthenticated) {
+      navigate('/linkedin-setup-auth');
+      return;
+    }
+  }, [navigate]);
 
   useEffect(() => {
     loadAccounts();

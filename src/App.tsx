@@ -39,6 +39,7 @@ import Artikel from './pages/Artikel';
 import LatestContent from './pages/LatestContent';
 import SingleArticle from './pages/SingleArticle';
 import LinkedInSetup from './pages/LinkedInSetup';
+import LinkedInSetupAuth from './pages/LinkedInSetupAuth';
 import NotFound from './pages/NotFound';
 
 const queryClient = new QueryClient();
@@ -96,7 +97,8 @@ function App() {
                    <Route path="/artikel" element={<Artikel />} />
                    <Route path="/neuester-artikel" element={<LatestContent />} />
                    <Route path="/artikel/:slug" element={<SingleArticle />} />
-                   <Route path="/linkedin-setup" element={<LinkedInSetup />} />
+          <Route path="/linkedin-setup" element={<LinkedInSetup />} />
+          <Route path="/linkedin-setup-auth" element={<LinkedInSetupAuth />} />
                    <Route path="/impressum" element={<GermanLegalNotice />} />
                   <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                   <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />

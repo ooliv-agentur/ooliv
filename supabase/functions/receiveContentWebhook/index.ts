@@ -24,9 +24,10 @@ serve(async (req) => {
   try {
     // Check for Bearer token authentication
     const authHeader = req.headers.get('Authorization');
-    const expectedToken = 'Bearer lovable_secret_123';
+    const webhookSecret = Deno.env.get('WEBHOOK_SECRET');
+    const expectedToken = `Bearer ${webhookSecret}`;
     
-    if (!authHeader || authHeader !== expectedToken) {
+    if (!authHeader || !webhookSecret || authHeader !== expectedToken) {
       console.log('Authentication failed. Expected token not provided.');
       return new Response('Unauthorized', { 
         status: 401,

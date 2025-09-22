@@ -11,10 +11,10 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.linkedinAuth]
-verify_jwt = false
+verify_jwt = true
 
 [functions.linkedinAutomation]
-verify_jwt = false
+verify_jwt = true
 
 [functions.linkedinCompanyPost]
-verify_jwt = false
+verify_jwt = true
