@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import { decryptToken } from '../_shared/tokenEncryption.ts';
+import { decryptTokens } from '../_shared/tokenEncryption.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,7 +16,6 @@ serve(async (req) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const encryptionKey = Deno.env.get('TOKEN_ENCRYPTION_KEY')!;
 
     console.log('🔐 LinkedIn Company Post: Using encrypted token storage');
     
@@ -25,7 +24,7 @@ serve(async (req) => {
     const { action, accountId, companyId, postContent, imageUrl } = await req.json();
 
     if (action === 'createCompanyPost') {
-      // Get LinkedIn account
+      // Get LinkedIn account and decrypt tokens
       const { data: account, error: accountError } = await supabase
         .from('linkedin_accounts')
         .select('*')
@@ -39,8 +38,10 @@ serve(async (req) => {
         });
       }
 
-      // Decrypt the access token securely
-      const accessToken = await decryptToken(account.access_token_encrypted, encryptionKey);
+      // Decrypt tokens securely
+      const tokens = await decryptTokens(account);
+      const accessToken = tokens.access_token;
+
       console.log('🔐 Token decrypted successfully for company posting');
 
       // Create company post
@@ -105,7 +106,7 @@ serve(async (req) => {
     }
 
     if (action === 'getCompanies') {
-      // Get LinkedIn account
+      // Get LinkedIn account and decrypt tokens
       const { data: account, error: accountError } = await supabase
         .from('linkedin_accounts')
         .select('*')
@@ -119,8 +120,9 @@ serve(async (req) => {
         });
       }
 
-      // Decrypt the access token securely
-      const accessToken = await decryptToken(account.access_token_encrypted, encryptionKey);
+      // Decrypt tokens securely
+      const tokens = await decryptTokens(account);
+      const accessToken = tokens.access_token;
       
       // Get companies the user can post for
       const response = await fetch('https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee', {

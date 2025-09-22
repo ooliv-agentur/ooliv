@@ -1,46 +1,58 @@
-// Token encryption utilities for secure LinkedIn token storage
-import { encodeBase64, decodeBase64 } from "https://deno.land/std@0.168.0/encoding/base64.ts";
+// Token encryption utilities for secure storage
+import { crypto } from "https://deno.land/std@0.168.0/crypto/mod.ts";
+
+const ALGORITHM = "AES-GCM";
+const IV_LENGTH = 12; // 96 bits for AES-GCM
 
 /**
- * Encrypts a token using AES-GCM encryption
- * @param token - The plaintext token to encrypt
- * @param encryptionKey - The base64 encoded encryption key
- * @returns Promise<string> - Base64 encoded encrypted token with IV prepended
+ * Get encryption key from environment
  */
-export async function encryptToken(token: string, encryptionKey: string): Promise<string> {
-  try {
-    // Decode the encryption key from base64
-    const keyData = decodeBase64(encryptionKey);
-    
-    // Import the key for AES-GCM
-    const cryptoKey = await crypto.subtle.importKey(
-      'raw',
-      keyData,
-      { name: 'AES-GCM' },
-      false,
-      ['encrypt']
-    );
+function getEncryptionKey(): string {
+  const key = Deno.env.get('TOKEN_ENCRYPTION_KEY');
+  if (!key) {
+    throw new Error('TOKEN_ENCRYPTION_KEY not found in environment');
+  }
+  return key;
+}
 
-    // Generate a random IV (12 bytes for GCM)
-    const iv = crypto.getRandomValues(new Uint8Array(12));
-    
-    // Encrypt the token
+/**
+ * Convert string to CryptoKey for AES-GCM
+ */
+async function getKey(): Promise<CryptoKey> {
+  const keyString = getEncryptionKey();
+  const keyData = new TextEncoder().encode(keyString.padEnd(32, '0').slice(0, 32));
+  
+  return await crypto.subtle.importKey(
+    "raw",
+    keyData,
+    { name: ALGORITHM, length: 256 },
+    false,
+    ["encrypt", "decrypt"]
+  );
+}
+
+/**
+ * Encrypt a token string
+ */
+export async function encryptToken(token: string): Promise<string> {
+  try {
+    const key = await getKey();
+    const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH));
     const encodedToken = new TextEncoder().encode(token);
-    const encryptedData = await crypto.subtle.encrypt(
-      {
-        name: 'AES-GCM',
-        iv: iv,
-      },
-      cryptoKey,
+
+    const encrypted = await crypto.subtle.encrypt(
+      { name: ALGORITHM, iv },
+      key,
       encodedToken
     );
 
-    // Combine IV + encrypted data and encode as base64
-    const combined = new Uint8Array(iv.length + encryptedData.byteLength);
+    // Combine IV and encrypted data
+    const combined = new Uint8Array(iv.length + encrypted.byteLength);
     combined.set(iv);
-    combined.set(new Uint8Array(encryptedData), iv.length);
-    
-    return encodeBase64(combined);
+    combined.set(new Uint8Array(encrypted), iv.length);
+
+    // Convert to base64 for storage
+    return btoa(String.fromCharCode(...combined));
   } catch (error) {
     console.error('Token encryption failed:', error);
     throw new Error('Failed to encrypt token');
@@ -48,44 +60,26 @@ export async function encryptToken(token: string, encryptionKey: string): Promis
 }
 
 /**
- * Decrypts a token using AES-GCM decryption
- * @param encryptedToken - The base64 encoded encrypted token (with IV prepended)
- * @param encryptionKey - The base64 encoded encryption key
- * @returns Promise<string> - The decrypted plaintext token
+ * Decrypt a token string
  */
-export async function decryptToken(encryptedToken: string, encryptionKey: string): Promise<string> {
+export async function decryptToken(encryptedToken: string): Promise<string> {
   try {
-    // Decode the encryption key from base64
-    const keyData = decodeBase64(encryptionKey);
+    const key = await getKey();
     
-    // Import the key for AES-GCM
-    const cryptoKey = await crypto.subtle.importKey(
-      'raw',
-      keyData,
-      { name: 'AES-GCM' },
-      false,
-      ['decrypt']
+    // Convert from base64
+    const combined = Uint8Array.from(atob(encryptedToken), c => c.charCodeAt(0));
+    
+    // Extract IV and encrypted data
+    const iv = combined.slice(0, IV_LENGTH);
+    const encrypted = combined.slice(IV_LENGTH);
+
+    const decrypted = await crypto.subtle.decrypt(
+      { name: ALGORITHM, iv },
+      key,
+      encrypted
     );
 
-    // Decode the combined IV + encrypted data
-    const combined = decodeBase64(encryptedToken);
-    
-    // Extract IV (first 12 bytes) and encrypted data
-    const iv = combined.slice(0, 12);
-    const encryptedData = combined.slice(12);
-
-    // Decrypt the token
-    const decryptedData = await crypto.subtle.decrypt(
-      {
-        name: 'AES-GCM',
-        iv: iv,
-      },
-      cryptoKey,
-      encryptedData
-    );
-
-    // Convert back to string
-    return new TextDecoder().decode(decryptedData);
+    return new TextDecoder().decode(decrypted);
   } catch (error) {
     console.error('Token decryption failed:', error);
     throw new Error('Failed to decrypt token');
@@ -93,38 +87,38 @@ export async function decryptToken(encryptedToken: string, encryptionKey: string
 }
 
 /**
- * Generates a new encryption key for token storage
- * @returns Promise<string> - Base64 encoded encryption key
+ * Safely encrypt tokens for database storage
  */
-export async function generateEncryptionKey(): Promise<string> {
-  const key = await crypto.subtle.generateKey(
-    { name: 'AES-GCM', length: 256 },
-    true,
-    ['encrypt', 'decrypt']
-  );
-  
-  const keyData = await crypto.subtle.exportKey('raw', key);
-  return encodeBase64(new Uint8Array(keyData));
+export async function encryptTokens(accessToken: string, refreshToken?: string) {
+  return {
+    access_token_encrypted: await encryptToken(accessToken),
+    refresh_token_encrypted: refreshToken ? await encryptToken(refreshToken) : null,
+    // Keep plaintext fields null for security
+    access_token: null,
+    refresh_token: null
+  };
 }
 
 /**
- * Safely handles token encryption with error handling
- * @param token - Token to encrypt (can be null/undefined)
- * @param encryptionKey - Encryption key
- * @returns Promise<string | null> - Encrypted token or null if input was null
+ * Safely decrypt tokens from database
  */
-export async function safeEncryptToken(token: string | null | undefined, encryptionKey: string): Promise<string | null> {
-  if (!token) return null;
-  return await encryptToken(token, encryptionKey);
-}
+export async function decryptTokens(account: any) {
+  if (!account.access_token_encrypted) {
+    // Fallback to plaintext tokens (for migration)
+    if (account.access_token) {
+      console.warn('Using plaintext token - should be migrated to encrypted storage');
+      return {
+        access_token: account.access_token,
+        refresh_token: account.refresh_token
+      };
+    }
+    throw new Error('No tokens available');
+  }
 
-/**
- * Safely handles token decryption with error handling
- * @param encryptedToken - Encrypted token to decrypt (can be null/undefined)
- * @param encryptionKey - Encryption key
- * @returns Promise<string | null> - Decrypted token or null if input was null
- */
-export async function safeDecryptToken(encryptedToken: string | null | undefined, encryptionKey: string): Promise<string | null> {
-  if (!encryptedToken) return null;
-  return await decryptToken(encryptedToken, encryptionKey);
+  return {
+    access_token: await decryptToken(account.access_token_encrypted),
+    refresh_token: account.refresh_token_encrypted 
+      ? await decryptToken(account.refresh_token_encrypted) 
+      : null
+  };
 }

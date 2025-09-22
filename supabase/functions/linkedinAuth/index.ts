@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import { encryptToken, safeEncryptToken } from '../_shared/tokenEncryption.ts';
+import { encryptTokens } from '../_shared/tokenEncryption.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -18,7 +18,6 @@ serve(async (req) => {
     const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
     const linkedinClientId = Deno.env.get('LINKEDIN_CLIENT_ID')!;
     const linkedinClientSecret = Deno.env.get('LINKEDIN_CLIENT_SECRET')!;
-    const encryptionKey = Deno.env.get('TOKEN_ENCRYPTION_KEY')!;
 
     console.log('🔐 LinkedIn Auth: Using encrypted token storage');
     
@@ -100,25 +99,20 @@ serve(async (req) => {
       // Store LinkedIn account in database with encrypted tokens
       console.log('🔐 Encrypting LinkedIn tokens before storage');
       
-      const encryptedAccessToken = await encryptToken(tokenData.access_token, encryptionKey);
-      const encryptedRefreshToken = await safeEncryptToken(tokenData.refresh_token, encryptionKey);
+      const encryptedTokens = await encryptTokens(tokenData.access_token, tokenData.refresh_token);
 
       const { data, error } = await supabase
         .from('linkedin_accounts')
         .upsert({
           user_id: state, // userId passed as state
           linkedin_user_id: profileData.id,
-          access_token_encrypted: encryptedAccessToken,
-          refresh_token_encrypted: encryptedRefreshToken,
+          ...encryptedTokens, // Encrypted tokens
           token_expires_at: new Date(Date.now() + tokenData.expires_in * 1000).toISOString(),
           profile_data: { 
             ...profileData, 
             companies: companiesData?.elements || [] 
           },
           is_active: true,
-          // Clear old plaintext tokens for security
-          access_token: null,
-          refresh_token: null,
         }, {
           onConflict: 'linkedin_user_id',
         });
@@ -130,6 +124,8 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+
+      console.log('✅ LinkedIn account stored with encrypted tokens');
 
       return new Response(JSON.stringify({ 
         success: true, 
