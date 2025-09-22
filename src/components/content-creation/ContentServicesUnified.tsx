@@ -148,7 +148,24 @@ const ContentServicesUnified = () => {
           </h3>
           <p className="text-brand-text mb-4">
             Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung auf alle Kanäle. 
-            Perfekt für Unternehmen, die kontinuierlich frischen Content benötigen.
+            Perfekt für Unternehmen, die kontinuierlich frischen Content benötigen. Mehr zu Content-Marketing-Strategien bei{' '}
+            <a 
+              href="https://contentmarketinginstitute.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-brand-primary hover:underline font-medium"
+            >
+              Content Marketing Institute
+            </a>{' '}
+            und{' '}
+            <a 
+              href="https://blog.hubspot.com/marketing/content-marketing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-brand-primary hover:underline font-medium"
+            >
+              HubSpot Content Marketing
+            </a>.
           </p>
           <Button 
             variant="outline" 

@@ -58,7 +58,8 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Content-Optimierung</h3>
             <p className="text-brand-text text-center">
-              Verbesserung bestehender Inhalte oder Erstellung neuer Seiten basierend auf Nutzerbedürfnissen und Suchintention.
+              Verbesserung bestehender Inhalte oder Erstellung neuer Seiten basierend auf Nutzerbedürfnissen und Suchintention. 
+              Verwandte Services: <a href="/content-erstellung" className="text-brand-primary hover:underline font-medium">Content-Erstellung</a> und <a href="/webdesign" className="text-brand-primary hover:underline font-medium">Webdesign</a>.
             </p>
           </div>
 
@@ -82,7 +83,8 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Lokale SEO</h3>
             <p className="text-brand-text text-center">
-              Steigern Sie Ihre Sichtbarkeit in Mainz und im Rhein-Main-Gebiet: Google Business, Brancheneinträge, Verzeichnisse.
+              Steigern Sie Ihre Sichtbarkeit in Mainz und im Rhein-Main-Gebiet: Google Business, Brancheneinträge, Verzeichnisse. 
+              Kombiniert mit unserer <a href="/google-ads" className="text-brand-primary hover:underline font-medium">Google Ads Betreuung</a> für maximale lokale Präsenz.
             </p>
           </div>
         </div>
@@ -91,12 +93,48 @@ const SEOServicesDE = () => {
         <div className="mt-24 bg-white p-10 rounded-lg shadow-md max-w-4xl mx-auto border-l-4 border-brand-primary">
           <h3 className="text-2xl font-bold mb-4 text-brand-heading">Tools als Unterstützung — nicht als Ersatz für Strategie</h3>
           <p className="text-brand-text mb-6">
-            Wir nutzen branchenführende Tools zur Unterstützung unserer SEO-Strategien, aber unsere Expertise ist es, die Ergebnisse liefert.
+            Wir nutzen branchenführende Tools zur Unterstützung unserer SEO-Strategien, aber unsere Expertise ist es, die Ergebnisse liefert. 
+            Mehr zu SEO-Best-Practices finden Sie in den{' '}
+            <a 
+              href="https://developers.google.com/search/docs" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-brand-primary hover:underline font-medium"
+            >
+              Google Search Guidelines
+            </a>{' '}
+            und bei{' '}
+            <a 
+              href="https://moz.com/learn/seo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-brand-primary hover:underline font-medium"
+            >
+              Moz SEO Learning Center
+            </a>.
           </p>
           
           <div className="flex flex-wrap gap-3 justify-center">
-            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Ahrefs</div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Google Search Console</div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">
+              <a 
+                href="https://ahrefs.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-brand-primary transition-colors"
+              >
+                Ahrefs
+              </a>
+            </div>
+            <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">
+              <a 
+                href="https://search.google.com/search-console" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-brand-primary transition-colors"
+              >
+                Google Search Console
+              </a>
+            </div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">ChatGPT (für Inhalte)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Midjourney (für Visuals)</div>
             <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Sora (für Video)</div>

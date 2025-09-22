@@ -16,7 +16,7 @@ const services = [
   {
     icon: Box,
     title: "WordPress Entwicklung",
-    description: "Sauber programmiert, redaktionell nutzbar, skalierbar"
+    description: "Sauber programmiert, redaktionell nutzbar, skalierbar. Optimiert für SEO und Performance."
   },
   {
     icon: ShoppingCart,
@@ -67,8 +67,31 @@ const WebDevServicesDE = () => {
         
         <Reveal delay={0.3}>
           <div className="text-center mt-12">
-            <p className="text-lg text-brand-text mb-6">
+            <p className="text-lg text-brand-text mb-4">
               <strong>Nicht sicher, was passt?</strong> ➝ Lassen Sie uns darüber sprechen.
+            </p>
+            <p className="text-sm text-brand-text mb-4">
+              Mehr zu modernen Web-Standards finden Sie bei{' '}
+              <a 
+                href="https://developer.mozilla.org/en-US/docs/Web/Guide" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-brand-primary hover:underline font-medium"
+              >
+                MDN Web Docs
+              </a>{' '}
+              und{' '}
+              <a 
+                href="https://wordpress.org/documentation/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-brand-primary hover:underline font-medium"
+              >
+                WordPress.org
+              </a>.
+            </p>
+            <p className="text-sm text-brand-text mb-6">
+              Ergänzende Services: <a href="/seo-optimierung" className="text-brand-primary hover:underline font-medium">SEO-Optimierung</a> und <a href="/content-erstellung" className="text-brand-primary hover:underline font-medium">Content-Erstellung</a> für Ihre Website.
             </p>
             <Button asChild>
               <Link to={contactPath}>Beratungsgespräch vereinbaren</Link>
