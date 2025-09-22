@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+import { decryptToken } from '../_shared/tokenEncryption.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,7 +16,10 @@ serve(async (req) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const encryptionKey = Deno.env.get('TOKEN_ENCRYPTION_KEY')!;
 
+    console.log('🔐 LinkedIn Company Post: Using encrypted token storage');
+    
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
     const { action, accountId, companyId, postContent, imageUrl } = await req.json();
@@ -34,6 +38,10 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+
+      // Decrypt the access token securely
+      const accessToken = await decryptToken(account.access_token_encrypted, encryptionKey);
+      console.log('🔐 Token decrypted successfully for company posting');
 
       // Create company post
       const postData = {
@@ -67,7 +75,7 @@ serve(async (req) => {
       const response = await fetch('https://api.linkedin.com/v2/ugcPosts', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${account.access_token}`,
+          'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
           'X-Restli-Protocol-Version': '2.0.0'
         },
@@ -111,10 +119,13 @@ serve(async (req) => {
         });
       }
 
+      // Decrypt the access token securely
+      const accessToken = await decryptToken(account.access_token_encrypted, encryptionKey);
+      
       // Get companies the user can post for
       const response = await fetch('https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee', {
         headers: {
-          'Authorization': `Bearer ${account.access_token}`,
+          'Authorization': `Bearer ${accessToken}`,
         },
       });
 
@@ -138,7 +149,7 @@ serve(async (req) => {
           try {
             const orgResponse = await fetch(`https://api.linkedin.com/v2/organizations/${acl.organizationalTarget.split(':')[3]}`, {
               headers: {
-                'Authorization': `Bearer ${account.access_token}`,
+                'Authorization': `Bearer ${accessToken}`,
               },
             });
             

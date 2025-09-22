@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
+import { decryptToken, safeDecryptToken } from '../_shared/tokenEncryption.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,7 +16,10 @@ serve(async (req) => {
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const supabaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const encryptionKey = Deno.env.get('TOKEN_ENCRYPTION_KEY')!;
 
+    console.log('🔐 LinkedIn Automation: Using encrypted token storage');
+    
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
     const { action, campaignId, actionType, targetProfile, message } = await req.json();
@@ -47,7 +51,16 @@ serve(async (req) => {
 
       for (const action of pendingActions || []) {
         try {
-          const accessToken = action.linkedin_campaigns.linkedin_accounts.access_token;
+          // Decrypt the access token securely
+          const encryptedAccessToken = action.linkedin_campaigns.linkedin_accounts.access_token_encrypted;
+          if (!encryptedAccessToken) {
+            console.error(`No encrypted access token for account ${action.linkedin_campaigns.linkedin_accounts.id}`);
+            continue;
+          }
+          
+          const accessToken = await decryptToken(encryptedAccessToken, encryptionKey);
+          console.log('🔐 Token decrypted successfully for automation');
+          
           let result = null;
 
           switch (action.action_type) {
