@@ -1,7 +1,7 @@
 
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import ContentHero from '@/components/content-creation/ContentHero';
 import ContentImportance from '@/components/content-creation/ContentImportance';
 import ContentBenefits from '@/components/content-creation/ContentBenefits';
@@ -42,11 +42,12 @@ const GermanContentCreation = () => {
     <PageLayout 
       className="overflow-x-hidden"
     >
-      <Helmet>
-        <title>Content Agentur Mainz – Texte, die wirken | ooliv</title>
-        <meta name="description" content="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken." />
-        <link rel="canonical" href="https://ooliv.de/content-erstellung" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Content Agentur Mainz – Texte, die wirken | ooliv"
+        description="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken."
+        canonicalUrl="https://ooliv.de/content-erstellung"
+        keywords="Content Agentur, Content Erstellung, Texterstellung, Copywriting, ooliv Mainz"
+      />
 
       {/* 1. Hero Section - White background */}
       <ContentHero />

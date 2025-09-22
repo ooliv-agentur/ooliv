@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { 
@@ -35,11 +35,13 @@ const GermanCookiePolicy = () => {
 
   return (
     <PageLayout className="overflow-x-hidden">
-      <Helmet>
-        <title>Cookie-Richtlinie | ooliv Werbeagentur Mainz</title>
-        <meta name="description" content="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, wie wir Cookies verwenden und Ihre Privatsphäre schützen." />
-        <meta name="robots" content="noindex, follow" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Cookie-Richtlinie | ooliv Werbeagentur Mainz"
+        description="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, wie wir Cookies verwenden und Ihre Privatsphäre schützen."
+        canonicalUrl="https://ooliv.de/cookie-richtlinie"
+        keywords="Cookie Richtlinie, Datenschutz, Cookies, ooliv Werbeagentur"
+      />
+      <meta name="robots" content="noindex, follow" />
 
       <LegalHero
         badge="Cookie-Richtlinie"

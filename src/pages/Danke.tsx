@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
-import { Helmet } from 'react-helmet-async';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CheckCircle } from 'lucide-react';
@@ -56,12 +56,13 @@ const Danke = () => {
 
   return (
     <PageLayout>
-      <Helmet prioritizeSeoTags>
-        <title>Danke für Ihre Anfrage | ooliv</title>
-        <meta name="description" content="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz." />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://ooliv.de/danke" />
-      </Helmet>
+      <EnhancedSEOHead
+        title="Danke für Ihre Anfrage | ooliv"
+        description="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz."
+        canonicalUrl="https://ooliv.de/danke"
+        keywords="Danke, Anfrage erhalten, ooliv Werbeagentur"
+      />
+      <meta name="robots" content="noindex, follow" />
       
       {/* Add the confetti animation */}
       <ConfettiCelebration />
