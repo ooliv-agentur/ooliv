@@ -58,7 +58,7 @@ const ContentServiceDE = () => {
                   Struktur & Content-Flow
                 </h3>
                 <p className="text-brand-text">
-                  Wir liefern nicht nur Texte, sondern eine strukturierte Inhaltsarchitektur – inklusive Storytelling-Elementen, Conversion-Optimierung und Multilingualität (sofern gewünscht).
+                  Wir liefern nicht nur Texte, sondern eine strukturierte Inhaltsarchitektur – inklusive Storytelling-Elementen, mehr Anfragen generieren und Multilingualität (sofern gewünscht).
                 </p>
               </div>
             </div>

@@ -11,8 +11,8 @@ const StrategieServices = () => {
       features: [
         "Zielgruppenanalyse und Personas",
         "Konkurrenzanalyse und Marktpositionierung", 
-        "Content-Strategie und Informationsarchitektur",
-        "Conversion-Optimierung und Nutzerführung"
+        "Inhaltsplanung und Seitenaufbau",
+        "Mehr Anfragen generieren und Nutzerführung"
       ]
     },
     {

@@ -36,7 +36,7 @@ const WebDesignServices = () => {
         "Strategisches UI/UX Design",
         "Mobile-responsive Layouts",
         "Markenkonformes Design",
-        "Conversion-Optimierung"
+        "Mehr Anfragen generieren"
       ] : [
         "Strategic UI/UX design",
         "Mobile-responsive layouts",

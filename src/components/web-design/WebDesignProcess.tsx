@@ -60,8 +60,8 @@ const WebDesignProcess = () => {
         {
           number: "01",
           title: "Übergabe des Konzepts",
-          description: "Wir übernehmen alle strategischen Grundlagen: Sitemap, Content-Strategie, Nutzerführung.",
-          deliverables: ["Sitemap-Analyse", "Content-Strategie-Review", "Nutzerführung-Konzept", "Zielgruppen-Definition"]
+          description: "Wir übernehmen alle strategischen Grundlagen: Sitemap, Inhaltsplanung, Nutzerführung.",
+          deliverables: ["Sitemap-Analyse", "Inhaltsplanung-Review", "Nutzerführung-Konzept", "Zielgruppen-Definition"]
         },
         {
           number: "02",

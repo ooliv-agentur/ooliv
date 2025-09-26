@@ -110,7 +110,7 @@ export const caseStudiesData = {
       websiteLink: "www.cobus-industries.de",
       impact: [
         "Konzeption und Content für internationale Produktkommunikation",
-        "UX-orientiertes Webdesign für Technik und Service",
+        "Nutzerfreundliches Webdesign für Technik und Service",
         "WordPress-Umsetzung mit maßgeschneiderter Struktur",
         "SEO & Video zur Sichtbarkeit als Marktführer"
       ],
@@ -140,7 +140,7 @@ export const caseStudiesData = {
       websiteLink: "www.iconpro.com",
       impact: [
         "Relaunch-Konzeption inkl. Struktur, Wireframes & Text",
-        "UX-orientiertes Design für KI-Software & Use Cases",
+        "Nutzerfreundliches Design für KI-Software & Use Cases",
         "Entwicklung illustrativer Assets & animierter Module",
         "WordPress-Umsetzung mit optimierter Performance"
       ],

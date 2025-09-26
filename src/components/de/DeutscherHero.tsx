@@ -27,8 +27,8 @@ const DeutscherHero = () => {
 
   const dynamicEndings = [
     "strategische Klarheit",
-    "durchdachte User Journey", 
-    "optimierte Conversion"
+    "optimale Nutzerführung", 
+    "mehr Anfragen"
   ];
   
   return (
@@ -36,7 +36,7 @@ const DeutscherHero = () => {
       <PageHero
         isHomepage={true}
         title="Kostenloses Website-Konzept in 48 Stunden"
-        subtitle="Strategische Wireframes nach AIDA-Prinzip mit durchdachter User Journey und Inhaltskonzept – alles unverbindlich und ohne Verpflichtungen. Danach entscheiden Sie, ob und wie es weitergeht."
+        subtitle="Ein klarer Plan für Ihre neue Website mit Seitenaufbau, Inhalten und Nutzerführung – komplett kostenfrei und ohne Verpflichtung. Sie entscheiden danach selbst, ob und wie es weitergeht."
         dynamicPrefix="Für"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{

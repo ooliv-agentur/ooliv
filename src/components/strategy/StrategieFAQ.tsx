@@ -6,7 +6,7 @@ const StrategieFAQ = () => {
   const strategieFaqs = [
     {
       question: "Was ist ein Webkonzept?",
-      answer: "Ein Webkonzept beschreibt die strategische Grundlage für Ihre Website. Es enthält die Zielgruppenanalyse, die Sitemap, die Content-Strategie und erste Wireframes – alles, was Ihre Website erfolgreich macht."
+      answer: "Ein Webkonzept beschreibt die strategische Grundlage für Ihre Website. Es enthält die Zielgruppenanalyse, die Sitemap, die Inhaltsplanung und erste Wireframes – alles, was Ihre Website erfolgreich macht."
     },
     {
       question: "Warum ist ein Webkonzept so wichtig?",
@@ -14,11 +14,11 @@ const StrategieFAQ = () => {
     },
     {
       question: "Wie entwickelt ooliv ein Webkonzept für mein Unternehmen?",
-      answer: "Wir starten mit einer Analyse Ihrer Zielgruppe und des Wettbewerbs. Daraus entwickeln wir eine Sitemap, Content-Strategien und Wireframes. So entsteht ein individuelles Webkonzept, das genau zu Ihrem Unternehmen passt."
+      answer: "Wir starten mit einer Analyse Ihrer Zielgruppe und des Wettbewerbs. Daraus entwickeln wir eine Sitemap, Inhaltsplanung und Wireframes. So entsteht ein individuelles Webkonzept, das genau zu Ihrem Unternehmen passt."
     },
     {
       question: "Was genau ist ein strategisches Webkonzept?",
-      answer: "Ein strategisches Webkonzept ist die durchdachte Planung Ihrer Website vor der Umsetzung. Es umfasst Zielgruppendefinition, Informationsarchitektur, Content-Strategie und Conversion-Optimierung. So entstehen Websites, die wirklich funktionieren und Ihre Geschäftsziele erreichen."
+      answer: "Ein strategisches Webkonzept ist die durchdachte Planung Ihrer Website vor der Umsetzung. Es umfasst Zielgruppendefinition, Seitenaufbau, Inhaltsplanung und wie Sie mehr Anfragen generieren. So entstehen Websites, die wirklich funktionieren und Ihre Geschäftsziele erreichen."
     },
     {
       question: "Warum brauche ich eine Strategieberatung für meine Website?",

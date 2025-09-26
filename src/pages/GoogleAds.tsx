@@ -154,7 +154,7 @@ const GermanGoogleAds = () => {
               {
                 icon: <Target className="h-10 w-10 mb-4 text-medico-turquoise" />,
                 title: "Google Ads (Search, Display & PMax)",
-                description: "Performance-orientierte Kampagnen mit Fokus auf B2B-Keywords und Conversion-Optimierung"
+                description: "Performance-orientierte Kampagnen mit Fokus auf B2B-Keywords und mehr Anfragen generieren"
               },
               {
                 icon: <Bot className="h-10 w-10 mb-4 text-medico-turquoise" />,

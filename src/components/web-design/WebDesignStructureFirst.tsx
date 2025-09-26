@@ -51,7 +51,7 @@ const WebDesignStructureFirst = () => {
         },
         {
           icon: FileText,
-          title: "Content-Strategie auf Basis von Keywords",
+          title: "Inhaltsplanung auf Basis von Keywords",
           description: "Recherchierte Inhalte, die direkt zu Ihrer Zielgruppe sprechen."
         },
         {
