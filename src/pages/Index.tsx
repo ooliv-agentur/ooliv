@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
-import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
+import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
 
 const germanFaqs = [
   {
@@ -58,33 +58,28 @@ const GermanIndex = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="ooliv Werbeagentur Mainz - Webdesign & Marketing für B2B"
-          description="ooliv - Ihre Werbeagentur in Mainz für professionelles Webdesign, SEO-Optimierung und digitale Strategien. Wir entwickeln Websites für B2B-Unternehmen, die messbar mehr Leads generieren. Seit 2008 in Mainz verwurzelt."
+          title="Webdesign & Marketing für B2B – Werbeagentur Mainz"
+          description="ooliv Werbeagentur entwickelt Websites für B2B-Unternehmen in Mainz messbar mehr Leads durch Webdesign, SEO, Google Ads und Content-Marketing. Jetzt kontaktieren"
           canonicalUrl="https://ooliv.de/"
           keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
         />
         
-        <LocalBusinessSchemaGenerator
-          businessName="ooliv Werbeagentur Mainz"
-          description="Etablierte Werbeagentur Mainz seit 2008. Spezialisiert auf Webdesign Mainz, SEO Optimierung, Online Marketing Mainz und digitale Strategien für Unternehmen in Rheinland-Pfalz."
+        <CompleteBusinessSchemaGenerator
+          businessName="ooliv Werbeagentur"
+          description="Werbeagentur aus Mainz für B2B-Unternehmen. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads."
           address={{
-            streetAddress: "Am Brand 8",
+            streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
-            postalCode: "55116",
+            postalCode: "55122",
             addressRegion: "Rheinland-Pfalz",
             addressCountry: "DE"
           }}
-          geo={{
-            latitude: 49.9928617,
-            longitude: 8.2472526
-          }}
-          telephone="+49-6131-9027640"
-          email="hallo@ooliv.de"
+          telephone="+49-6131-6367801"
+          email="info@ooliv.de"
           url="https://ooliv.de"
-          priceRange="€€€"
-          areaServed={["Mainz", "Wiesbaden", "Frankfurt", "Rheinland-Pfalz", "Hessen"]}
-          services={["Webdesign Mainz", "SEO Optimierung Mainz", "Google Ads Betreuung Mainz", "Online Marketing Mainz", "Digitale Strategieberatung"]}
+          areaServed={["Mainz", "Wiesbaden", "Frankfurt", "Rhein-Main-Gebiet"]}
+          services={["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]}
         />
         <DeutscherHero />
         
