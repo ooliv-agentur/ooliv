@@ -12,7 +12,7 @@ const WiesbadenLeistungen = () => {
       icon: <Users className="h-8 w-8" />,
       title: "Website-Strategie",
       description: "Datenbasierte Konzepte für Ihre Wiesbadener Zielgruppe mit klaren Conversion-Zielen.",
-      features: ["Zielgruppenanalyse", "Wettbewerbsanalyse", "User Journey Mapping", "KPI-Definition"]
+      features: ["Zielgruppenbestimmung", "Wettbewerbsanalyse", "User Journey Mapping", "KPI-Definition"]
     },
     {
       icon: <Target className="h-8 w-8" />,

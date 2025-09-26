@@ -29,7 +29,7 @@ const ContentServicesDE = () => {
     {
       icon: Edit3,
       title: "Content-Strategie",
-      description: "Durchdachte Content-Planung, die Ihre Geschäftsziele unterstützt und Kunden bindet."
+      description: "Klare Inhaltsplanung, die Ihre Geschäftsziele unterstützt und Kunden bindet."
     },
     {
       icon: Palette,

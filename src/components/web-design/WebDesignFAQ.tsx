@@ -22,7 +22,7 @@ const WebDesignFAQ = () => {
     },
     {
       question: "Wie sorgt ooliv für SEO-optimiertes Webdesign?",
-      answer: "SEO ist von Anfang an Teil unseres Webdesign-Prozesses. Wir beginnen mit Keyword-Recherche, optimieren Struktur und Inhalte, sorgen für schnelle Ladezeiten und mobile Optimierung. Jede Website wird technisch sauber und Google-freundlich aufgebaut."
+      answer: "SEO ist von Anfang an Teil unseres Webdesign-Prozesses. Wir beginnen mit Suchbegriff-Analyse, optimieren Struktur und Inhalte, sorgen für schnelle Ladezeiten und mobile Optimierung. Jede Website wird technisch sauber und Google-freundlich aufgebaut."
     },
     {
       question: "Arbeitet ihr mit WordPress oder ohne CMS?",

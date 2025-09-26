@@ -12,7 +12,7 @@ const ContentBenefits = () => {
       title: 'Strategie & Content-Erstellung',
       germanTitle: 'Strategie & Content-Erstellung',
       challenges: [
-        'Fehlende Strategie und Zielgruppenanalyse',
+        'Fehlende Strategie und Zielgruppenbestimmung',
         'Unklare Botschaften ohne Markenidentität',
         'Fehlende SEO-Optimierung (Keywords, Meta, Struktur)',
         'Unstrukturierte Inhalte ohne Storytelling',

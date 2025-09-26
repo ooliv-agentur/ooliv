@@ -9,7 +9,7 @@ const StrategieServices = () => {
     {
       title: "Website-Strategieberatung",
       features: [
-        "Zielgruppenanalyse und Personas",
+        "Zielgruppenbestimmung und Kundenprofile",
         "Konkurrenzanalyse und Marktpositionierung", 
         "Inhaltsplanung und Seitenaufbau",
         "Mehr Anfragen generieren und Nutzerführung"

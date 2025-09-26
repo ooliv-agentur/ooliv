@@ -24,13 +24,13 @@ const WebDesignProcess = () => {
           number: "01",
           title: "Strategy & Planning",
           description: "We define your goals, study your competitors, and create a clear roadmap.",
-          deliverables: ["Business Goals Analysis", "Competitor Research", "User Personas", "Project Roadmap"]
+          deliverables: ["Business Goals Analysis", "Competitor Research", "Customer Profiles", "Project Roadmap"]
         },
         {
           number: "02",
           title: "Structure & Content",
           description: "We plan your pages, write the content, and map out the wireframes.",
-          deliverables: ["Sitemap Creation", "Content Strategy", "Wireframes", "UX Planning"]
+          deliverables: ["Sitemap Creation", "Content Strategy", "Page Layouts", "UX Planning"]
         },
         {
           number: "03",

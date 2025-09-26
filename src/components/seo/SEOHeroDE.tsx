@@ -10,7 +10,7 @@ const SEOHeroDE = () => {
   return (
     <PageHero
       title="Mehr Anfragen über Ihre Website – garantiert messbar"
-      subtitle="Als SEO Agentur in Mainz steigern wir Ihre Sichtbarkeit mit fundierter Strategie, überzeugenden Inhalten und technischer Präzision – für nachhaltig mehr qualifizierte Anfragen."
+      subtitle="Als SEO Agentur in Mainz steigern wir Ihre Sichtbarkeit mit bewährter Strategie, überzeugenden Inhalten und technischem Know-how – für nachhaltig mehr qualifizierte Anfragen."
       primaryCta={{
         text: "Projekt starten",
         link: "#",

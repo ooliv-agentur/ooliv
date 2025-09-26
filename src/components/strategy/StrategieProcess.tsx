@@ -11,7 +11,7 @@ const StrategieProcess = () => {
       icon: Search,
       number: "01",
       title: "Analyse & Webkonzept",
-      description: "Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln ein individuelles Webkonzept mit Sitemap und ersten Wireframes."
+      description: "Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln ein individuelles Webkonzept mit Sitemap und ersten Seitenentwürfen."
     },
     {
       icon: Lightbulb,

@@ -21,11 +21,11 @@ const ContentProcessUnified = () => {
     {
       number: "01",
       title: 'Analyse & Strategie',
-      description: 'Zielgruppenanalyse, Keyword-Recherche, Content-Audit und strategische Planung.',
+      description: 'Zielgruppenbestimmung, Suchbegriff-Analyse, Content-Audit und Inhaltsplanung.',
       deliverables: [
         'Content-Strategie-Dokument',
         'Keyword-Map & SEO-Plan',
-        'Zielgruppen-Personas',
+        'Kundenprofile',
         'Content-Kalender'
       ],
       link: '/strategie',

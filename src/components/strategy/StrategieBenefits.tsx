@@ -10,7 +10,7 @@ const StrategieBenefits = () => {
   const benefits = [
     {
       IconComponent: Target,
-      title: "Zielgruppenanalyse & Marktverständnis",
+      title: "Zielgruppenbestimmung & Marktverständnis",
       description: "Wir analysieren, wer Ihre Kunden sind, wie sie online suchen und wie Sie sie mit einem klaren Webkonzept optimal erreichen."
     },
     {

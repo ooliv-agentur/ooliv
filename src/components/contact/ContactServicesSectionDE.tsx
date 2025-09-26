@@ -20,7 +20,7 @@ const ContactServicesSectionDE = () => {
         </div>
         
         <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
-          Wir setzen auf klare Kommunikation, durchdachte Prozesse und messbare Ergebnisse – individuell auf Ihr Unternehmen zugeschnitten.
+          Wir setzen auf klare Kommunikation, klare Abläufe und messbare Ergebnisse – individuell auf Ihr Unternehmen zugeschnitten.
         </p>
       </div>
     </section>

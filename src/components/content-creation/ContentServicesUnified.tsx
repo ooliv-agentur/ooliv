@@ -91,7 +91,7 @@ const ContentServicesUnified = () => {
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-medico-turquoise flex-shrink-0" />
-                      <span className="text-brand-text">Zielgruppenanalyse</span>
+                      <span className="text-brand-text">Zielgruppenbestimmung</span>
                     </div>
                   </div>
                 </div>
