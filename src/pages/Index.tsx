@@ -9,6 +9,8 @@ import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import CanonicalUrlHelper from "@/components/seo/CanonicalUrlHelper";
+import H1Validator from "@/components/seo/H1Validator";
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
@@ -56,6 +58,8 @@ const GermanIndex = () => {
   
   return (
     <>
+      <CanonicalUrlHelper />
+      <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
           title="Webdesign & Marketing für B2B – Werbeagentur Mainz"

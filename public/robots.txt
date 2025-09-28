@@ -1,11 +1,42 @@
 
 User-agent: *
+Allow: /
+
+# Important pages to crawl
+Allow: /webdesign
+Allow: /webentwicklung  
+Allow: /seo-optimierung
+Allow: /google-ads
+Allow: /content-erstellung
+Allow: /ki-technologien
+Allow: /strategie
+Allow: /referenzen
+Allow: /ueber-uns
+Allow: /kontakt
+Allow: /artikel/
+Allow: /werbeagentur-frankfurt
+Allow: /werbeagentur-wiesbaden
+
+# Block admin and internal paths
 Disallow: /api/
 Disallow: /preview/
 Disallow: /*.php$
+Disallow: /admin/
+Disallow: /_internal/
 
-Allow: /danke
-Allow: /en/thank-you
-Allow: /
+# Allow all static assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.svg
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.webp
+Allow: /*.woff2
 
+# Sitemap location
 Sitemap: https://ooliv.de/sitemap.xml

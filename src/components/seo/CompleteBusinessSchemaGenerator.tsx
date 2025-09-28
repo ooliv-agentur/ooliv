@@ -44,7 +44,13 @@ const CompleteBusinessSchemaGenerator: React.FC<CompleteBusinessSchemaProps> = (
       "streetAddress": address.streetAddress,
       "addressLocality": address.addressLocality,
       "postalCode": address.postalCode,
+      "addressRegion": address.addressRegion,
       "addressCountry": address.addressCountry
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9928617,
+      "longitude": 8.2472526
     },
     "sameAs": [
       "https://www.sortlist.de/agency/uli-werbeagentur"
@@ -90,7 +96,20 @@ const CompleteBusinessSchemaGenerator: React.FC<CompleteBusinessSchemaProps> = (
       "streetAddress": address.streetAddress,
       "addressLocality": address.addressLocality,
       "postalCode": address.postalCode,
+      "addressRegion": address.addressRegion,
       "addressCountry": address.addressCountry
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9928617,
+      "longitude": 8.2472526
+    },
+    "priceRange": "€1500-€25000",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
     },
     "sameAs": [
       "https://www.sortlist.de/agency/uli-werbeagentur"

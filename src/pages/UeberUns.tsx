@@ -54,6 +54,10 @@ const GermanAboutUs = () => {
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
         keywords="über ooliv, Marketing Agentur Mainz, Werbeagentur Team, Digitale Transformation"
+        breadcrumbs={[
+          { name: "Home", url: "https://ooliv.de/" },
+          { name: "Über uns", url: "https://ooliv.de/ueber-uns" }
+        ]}
       />
 
       <AboutUsHero />
