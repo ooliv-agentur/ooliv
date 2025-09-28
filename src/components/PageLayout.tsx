@@ -60,20 +60,7 @@ const PageLayout = ({ children, className = '', showBreadcrumbs = false }: PageL
   // Removed .php path redirect - handled by .htaccess
   // Removed trailing slash redirect - handled by .htaccess
 
-  // Keep only essential client-side redirects as backup safety measures
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Only handle edge cases that might not be caught by server redirects
-      const hostname = window.location.hostname;
-      const pathname = window.location.pathname;
-      
-      // Emergency fallback for www redirect (should rarely trigger)
-      if (hostname.startsWith('www.') && !window.location.search.includes('debug')) {
-        console.log('Emergency client-side www redirect');
-        window.location.replace(window.location.href.replace(/^https?:\/\/www\./, 'https://'));
-      }
-    }
-  }, []);
+  // Removed client-side redirects - handled by server-level redirects in vercel.json
 
   // Intelligent resource preloading based on current page
   useEffect(() => {
