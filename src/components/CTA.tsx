@@ -156,7 +156,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 asChild
               >
                 <Link to={contactPath}>
@@ -168,7 +168,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
@@ -180,7 +180,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
@@ -193,7 +193,7 @@ const CTA = ({
         {/* Trust elements with improved visual hierarchy */}
         {footerNote ? (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+            <div className="bg-accent-primary/5 rounded-2xl p-6 border border-accent-primary/20">
               <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
                 {footerNote}
               </p>
@@ -205,7 +205,7 @@ const CTA = ({
           </div>
         ) : (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-medico-turquoise/5 rounded-2xl p-6 border border-medico-turquoise/20">
+            <div className="bg-accent-primary/5 rounded-2xl p-6 border border-accent-primary/20">
               <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
                 {defaultFooterNote}
               </p>

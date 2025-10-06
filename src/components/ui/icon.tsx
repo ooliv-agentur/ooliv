@@ -26,10 +26,10 @@ const iconVariants = cva(
       },
       background: {
         none: "",
-        light: "bg-medico-mint/20 p-2",
-        medium: "bg-medico-mint/40 p-2",
-        strong: "bg-medico-turquoise/20 p-2",
-        accent: "bg-medico-turquoise p-2 text-white",
+        light: "bg-accent-primary/10 p-2",
+        medium: "bg-accent-primary/20 p-2",
+        strong: "bg-accent-primary/30 p-2",
+        accent: "bg-accent-primary p-2 text-white",
       }
     },
     defaultVariants: {

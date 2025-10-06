@@ -248,7 +248,7 @@ const CaseStudiesSection = ({
                     {study.headline}
                   </h4>
                   
-                  <blockquote className="italic text-medico-darkGreen/80 text-sm md:text-base border-l-4 border-medico-turquoise pl-4 my-6" style={{ lineHeight: '1.6' }}>
+                  <blockquote className="italic text-medico-darkGreen/80 text-sm md:text-base border-l-4 border-accent-primary pl-4 my-6" style={{ lineHeight: '1.6' }}>
                     "{study.quote}"
                   </blockquote>
                   
@@ -258,7 +258,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-medico-turquoise hover:underline inline-flex items-center text-sm md:text-base font-medium"
+                        className="text-accent-primary hover:underline inline-flex items-center text-sm md:text-base font-medium"
                       >
                         {t.exploreWebsite} {study.websiteLink}
                       </a>
@@ -268,7 +268,7 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-medico-turquoise">
+                        <div className="mr-3 mt-1 text-accent-primary">
                           <Check className="h-4 w-4 md:h-5 md:w-5" />
                         </div>
                         <p className="text-sm md:text-base text-medico-darkGreen/80" style={{ lineHeight: '1.5' }}>{point}</p>

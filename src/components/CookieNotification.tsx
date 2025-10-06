@@ -60,7 +60,7 @@ const CookieNotification = () => {
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <Cookie className="w-4 h-4 text-medico-turquoise flex-shrink-0" />
+                  <Cookie className="w-4 h-4 text-accent-primary flex-shrink-0" />
                   <span className="text-sm font-medium text-medico-darkGreen">
                     {language === 'de' ? 'Cookies' : 'Cookies'}
                   </span>
@@ -72,7 +72,7 @@ const CookieNotification = () => {
                   }
                   <Link 
                     to="/datenschutz" 
-                    className="ml-1 text-medico-turquoise hover:underline"
+                    className="ml-1 text-accent-primary hover:underline"
                   >
                     {t.privacy}
                   </Link>
@@ -84,7 +84,7 @@ const CookieNotification = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setShowSettings(true)}
-                  className="text-xs h-7 px-2 text-muted-foreground hover:text-medico-turquoise"
+                  className="text-xs h-7 px-2 text-muted-foreground hover:text-accent-primary"
                 >
                   <Settings className="w-3 h-3 mr-1" />
                   <span className="hidden sm:inline">{t.settings}</span>
@@ -102,7 +102,7 @@ const CookieNotification = () => {
                 <Button
                   size="sm"
                   onClick={acceptAll}
-                  className="text-xs h-7 px-3 bg-medico-turquoise hover:bg-medico-darkGreen text-white"
+                  className="text-xs h-7 px-3 bg-accent-primary hover:bg-medico-darkGreen text-white"
                 >
                   {language === 'de' ? 'Alle' : 'Accept'}
                 </Button>

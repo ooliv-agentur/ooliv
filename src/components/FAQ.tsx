@@ -132,7 +132,7 @@ const FAQ = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
               {title}
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
               {subtitle}
             </p>
@@ -144,7 +144,7 @@ const FAQ = ({
           <div className="space-y-12">
             {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
               categoryFaqs.length > 0 && (
-                <div key={category} className="bg-medico-mint/20 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+                <div key={category} className="bg-medico-mint/20 rounded-2xl p-6 md:p-8 border border-accent-primary/20">
                   <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen mb-6 text-center">
                     {categoryTitles[category as keyof typeof categoryTitles]}
                   </h3>
@@ -154,9 +154,9 @@ const FAQ = ({
                         <AccordionItem 
                           key={`${category}-${index}`} 
                           value={`${category}-item-${index}`}
-                          className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                          className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                         >
-                          <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                          <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-accent-primary transition-colors duration-200">
                             {faq.question}
                           </AccordionTrigger>
                           <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
@@ -172,16 +172,16 @@ const FAQ = ({
           </div>
         ) : (
           // Regular FAQ display for English or custom FAQs
-          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-accent-primary/20">
             <Accordion type="single" collapsible className="w-full">
               <StaggerReveal className="space-y-4" stagger={0.08}>
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                   >
-                    <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                    <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-accent-primary transition-colors duration-200">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
@@ -197,14 +197,14 @@ const FAQ = ({
         {!hideCTA && (
           <Reveal delay={0.3}>
             <div className="mt-16 text-center">
-              <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20">
+              <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20">
                 <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
                   {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
                 </h3>
                 {useLeadForm ? (
                   <button 
                     onClick={handleOpenLeadForm}
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-turquoise hover:text-white hover:border-medico-turquoise font-medium px-8 py-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300"
                   >
                     <ArrowRight className="h-4 w-4" />
                     {ctaText}
