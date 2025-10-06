@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MONTHLY_COLORS, getCurrentMonthColor, setCustomColor, resetToMonthlyColor } from '@/styles/colorSystem';
@@ -15,6 +15,19 @@ import { Palette } from 'lucide-react';
 const ColorSystemPreview = () => {
   const currentColor = getCurrentMonthColor();
   const currentMonth = new Date().getMonth() + 1;
+  const [activeColor, setActiveColor] = useState<string>(currentColor.primary);
+  
+  useEffect(() => {
+    // Update active color when CSS variable changes
+    const updateActiveColor = () => {
+      const primary = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim();
+      if (primary) setActiveColor(primary);
+    };
+    
+    updateActiveColor();
+    const interval = setInterval(updateActiveColor, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const applyMonthColor = (month: number) => {
     const color = MONTHLY_COLORS[month as keyof typeof MONTHLY_COLORS];
@@ -23,6 +36,20 @@ const ColorSystemPreview = () => {
 
   return (
     <Card className="p-6 max-w-4xl mx-auto my-8">
+      {/* Live Color Indicator - Fixed Position */}
+      <div className="fixed top-4 right-4 z-50 bg-white shadow-lg rounded-lg p-4 border-2" style={{ borderColor: `hsl(${activeColor})` }}>
+        <div className="flex items-center gap-3">
+          <div 
+            className="w-8 h-8 rounded-full shadow-md" 
+            style={{ background: `hsl(${activeColor})` }}
+          />
+          <div>
+            <p className="font-bold text-sm">{currentColor.name}</p>
+            <p className="text-xs text-gray-500">{new Date().toLocaleString('de-DE', { month: 'long', year: 'numeric' })}</p>
+          </div>
+        </div>
+      </div>
+      
       <div className="flex items-center gap-3 mb-6">
         <Palette className="w-6 h-6 text-accent-primary" />
         <h2 className="text-2xl font-bold">Seasonal Color System</h2>

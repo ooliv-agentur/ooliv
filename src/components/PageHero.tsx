@@ -143,7 +143,7 @@ const PageHero = ({
             <div className="text-left">
               <div
                 className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
-                style={{ color: '#32b1ab' }}
+                style={{ color: 'hsl(var(--accent-primary))' }}
               >
                 <span className="inline">{dynamicPrefix} </span>
                 <DynamicSubheadlines 
@@ -322,11 +322,11 @@ const PageHero = ({
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 rounded-full animate-pulse" style={{ background: `linear-gradient(to bottom, hsl(var(--accent-primary) / 0.5), hsl(var(--accent-primary) / 0.8))` }}></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)' }}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)', animationDelay: '0.5s' }}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)', animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>

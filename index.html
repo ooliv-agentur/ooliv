@@ -108,6 +108,53 @@
       }
     </style>
     
+    <!-- Initialize Seasonal Color System Early -->
+    <script>
+      // Early color initialization to prevent FOUC (Flash of Unstyled Content)
+      (function() {
+        const MONTHLY_COLORS = {
+          1: { primary: '210 85% 60%', gradient: 'linear-gradient(135deg, hsl(210 85% 60%), hsl(195 85% 55%))' },
+          2: { primary: '15 85% 65%', gradient: 'linear-gradient(135deg, hsl(15 85% 65%), hsl(350 75% 70%))' },
+          3: { primary: '145 35% 55%', gradient: 'linear-gradient(135deg, hsl(145 35% 55%), hsl(160 40% 60%))' },
+          4: { primary: '340 75% 75%', gradient: 'linear-gradient(135deg, hsl(340 75% 75%), hsl(320 65% 70%))' },
+          5: { primary: '80 70% 55%', gradient: 'linear-gradient(135deg, hsl(80 70% 55%), hsl(90 65% 60%))' },
+          6: { primary: '30 85% 60%', gradient: 'linear-gradient(135deg, hsl(30 85% 60%), hsl(40 90% 65%))' },
+          7: { primary: '200 80% 50%', gradient: 'linear-gradient(135deg, hsl(200 80% 50%), hsl(190 75% 55%))' },
+          8: { primary: '45 90% 60%', gradient: 'linear-gradient(135deg, hsl(45 90% 60%), hsl(35 85% 65%))' },
+          9: { primary: '35 75% 55%', gradient: 'linear-gradient(135deg, hsl(35 75% 55%), hsl(25 70% 60%))' },
+          10: { primary: '30 60% 50%', gradient: 'linear-gradient(135deg, hsl(30 60% 50%), hsl(20 65% 55%))' },
+          11: { primary: '280 45% 45%', gradient: 'linear-gradient(135deg, hsl(280 45% 45%), hsl(270 50% 50%))' },
+          12: { primary: '195 70% 65%', gradient: 'linear-gradient(135deg, hsl(195 70% 65%), hsl(210 65% 70%))' }
+        };
+        
+        const SEASONAL_COLORS = {
+          spring: { secondary: '160 50% 60%', tertiary: '140 45% 65%' },
+          summer: { secondary: '15 80% 65%', tertiary: '195 75% 60%' },
+          autumn: { secondary: '15 65% 50%', tertiary: '35 70% 55%' },
+          winter: { secondary: '200 60% 40%', tertiary: '210 70% 50%' }
+        };
+        
+        const month = new Date().getMonth() + 1;
+        const monthColor = MONTHLY_COLORS[month];
+        
+        let season = 'winter';
+        if (month >= 3 && month <= 5) season = 'spring';
+        else if (month >= 6 && month <= 8) season = 'summer';
+        else if (month >= 9 && month <= 11) season = 'autumn';
+        
+        const seasonColor = SEASONAL_COLORS[season];
+        
+        const root = document.documentElement;
+        root.style.setProperty('--accent-primary', monthColor.primary);
+        root.style.setProperty('--accent-gradient', monthColor.gradient);
+        root.style.setProperty('--accent-secondary', seasonColor.secondary);
+        root.style.setProperty('--accent-tertiary', seasonColor.tertiary);
+        
+        const [h, s, l] = monthColor.primary.split(' ');
+        root.style.setProperty('--accent-glow', `hsl(${h} ${s} ${l} / 0.4)`);
+      })();
+    </script>
+    
     <!-- Optimized Resource Preloads for better LCP -->
     <link rel="preload" href="/fonts/Satoshi-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin>

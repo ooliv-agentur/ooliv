@@ -143,6 +143,7 @@ export const setCustomColor = (primary: string, gradient: string) => {
 export const resetToMonthlyColor = () => {
   const monthColor = getCurrentMonthColor();
   const seasonColor = getCurrentSeasonalColor();
+  const month = new Date().toLocaleString('default', { month: 'long' });
   
   if (typeof document !== 'undefined') {
     document.documentElement.style.setProperty('--accent-primary', monthColor.primary);
@@ -153,5 +154,16 @@ export const resetToMonthlyColor = () => {
     // Update glow color for floating circles
     const [h, s, l] = monthColor.primary.split(' ');
     document.documentElement.style.setProperty('--accent-glow', `hsl(${h} ${s} ${l} / 0.4)`);
+    
+    console.log(`🎨 Color System Active: ${month} - ${monthColor.name}`, {
+      primary: monthColor.primary,
+      psychology: monthColor.psychology,
+      season: getCurrentSeason()
+    });
   }
 };
+
+// Initialize colors immediately when the module loads
+if (typeof document !== 'undefined') {
+  resetToMonthlyColor();
+}
