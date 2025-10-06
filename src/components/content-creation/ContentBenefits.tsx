@@ -60,15 +60,15 @@ const ContentBenefits = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-brand-heading">
             {isGerman 
-              ? "Typische Content-Herausforderungen — und wie wir sie lösen"
-              : "Typical Content Challenges — And How We Solve Them"
+              ? "Content-Probleme, die Sie kennen – und wie Sie sie lösen"
+              : "Content Problems You Know — And How to Solve Them"
             }
           </h2>
           
           <p className="text-lg text-center max-w-3xl mx-auto mb-12 text-brand-text">
             {isGerman 
-              ? "Viele Unternehmen investieren viel Zeit und Budget in Content, aber die Ergebnisse bleiben oft hinter den Erwartungen zurück. Hier zeigen wir, wie wir als Content Agentur Mainz gemeinsam mit Ihnen diese Herausforderungen meistern."
-              : "As a Content Agency, we know the biggest stumbling blocks in digital growth."
+              ? "Content kostet Zeit, Budget und Nerven – vor allem, wenn die Ergebnisse ausbleiben. Hier zeigen wir, was schief läuft und wie wir es besser machen."
+              : "Content takes time, budget and nerves – especially when results don't show. Here's what goes wrong and how we fix it."
             }
           </p>
         </div>

@@ -18,15 +18,14 @@ const ContactPersonalSection = () => {
             
             <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
               <h2 className="text-2xl md:text-3xl font-bold text-brand-heading mb-4">
-                Uli – Ihr Ansprechpartner für digitale Projekte
+                Uli – Ihr direkter Draht (ohne Umwege)
               </h2>
               <p className="text-base md:text-lg text-brand-text mb-6">
-                Uli ist der Gründer von ooliv – und die erste Person, mit der Sie sprechen. Er begleitet jede Anfrage persönlich, 
-                sorgt für klare Abläufe und entwickelt gemeinsam mit Ihnen eine Strategie, die wirklich zu Ihrem Unternehmen passt.
+                Uli ist der Gründer von ooliv – und die Person, mit der Sie von Anfang an sprechen. Keine Junior-Berater, keine Zwischenstellen. Er begleitet jedes Projekt persönlich und sorgt dafür, dass Sie bekommen, was Sie brauchen – ohne Verkaufsmasche.
               </p>
               <blockquote className="border-l-4 border-brand-primary pl-5 py-3 italic bg-gray-50 rounded-r-lg">
-                "Kein Verkaufsdruck, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt."
-                <footer className="text-sm mt-2 font-medium">– Uli, Gründer & CEO</footer>
+                "Ich hasse selbst diese typischen Agentur-Verkaufsgespräche. Deshalb gibt's bei uns keine."
+                <footer className="text-sm mt-2 font-medium">– Uli, Gründer</footer>
               </blockquote>
             </div>
           </div>

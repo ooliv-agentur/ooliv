@@ -20,17 +20,17 @@ const WiesbadenHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Wiesbaden"
-      subtitle="Als spezialisierte Werbeagentur in Wiesbaden entwickeln wir digitale Strategien, die Ihr Unternehmen messbar voranbringen. Professionell, zielgerichtet und mit nachweisbaren Resultaten – für nachhaltigen Geschäftserfolg."
-      dynamicPrefix="Wir unterstützen Wiesbadener Unternehmen dabei,"
+      title="Werbeagentur Wiesbaden – ohne Agentur-Theater"
+      subtitle="Ihre Wiesbadener Digitalagentur für Websites, SEO und Marketing. Wir arbeiten direkt mit Ihnen, ohne Zwischenstellen – ehrlich, transparent, messbar."
+      dynamicPrefix="Wiesbadener Unternehmen vertrauen uns bei"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{
-        text: "Digitales Projekt starten",
+        text: "Projekt besprechen",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Unsere Arbeiten",
+        text: "Wiesbadener Erfolge",
         link: "/referenzen"
       }}
     />

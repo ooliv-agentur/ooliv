@@ -39,8 +39,8 @@ const CaseStudiesHero = () => {
               }}
             >
               {isGerman 
-                ? "Marketing aus Mainz mit echten Ergebnissen." 
-                : "Marketing from Mainz with Real Results."
+                ? "Große Versprechen, null Beweise? Nicht bei uns." 
+                : "Big Promises, Zero Proof? Not Here."
               }
             </h1>
             
@@ -50,8 +50,8 @@ const CaseStudiesHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Sehen Sie, wie wir B2B-Unternehmen durch Strategie, Design und Performance-Marketing in Mainz nachweislich beim Wachstum unterstützen." 
-                : "See how we demonstrably help B2B companies grow through strategy, design and performance marketing in Mainz."
+                ? "Hier sehen Sie echte Projekte aus Mainz mit echten Ergebnissen – keine aufgehübschten Case Studies, sondern ehrliche Einblicke in unsere Arbeit." 
+                : "See real projects from Mainz with real results – not polished case studies, but honest insights into our work."
               }
             </p>
             
@@ -63,7 +63,7 @@ const CaseStudiesHero = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
-                {isGerman ? "Projekt starten" : "Start Project"}
+                {isGerman ? "Mein Projekt besprechen" : "Discuss My Project"}
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -74,7 +74,7 @@ const CaseStudiesHero = () => {
                 asChild
               >
                 <Link to={isGerman ? "/kontakt" : "/en/contact"}>
-                  {isGerman ? "Strategiegespräch buchen" : "Book Strategy Call"}
+                  {isGerman ? "Über die Agentur" : "About the Agency"}
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

@@ -9,16 +9,16 @@ const GoogleAdsHero = () => {
 
   return (
     <PageHero
-      title="Budget rein, Anfragen raus – ohne Streuverluste"
-      subtitle="Als Google Ads Agentur in Mainz entwickeln und optimieren wir Kampagnen, die qualifizierte Anfragen generieren. KI-gestützt, datenbasiert, auf Conversion ausgelegt."
+      title="Google Ads Budget verbrannt? Wir holen es zurück."
+      subtitle="Google Ads Agentur Mainz: Wir stoppen die Geldverschwendung und optimieren Ihre Kampagnen auf echte Anfragen. KI-gestützt, transparent, ohne Agentur-Blabla."
       primaryCta={{
-        text: "Projekt starten",
+        text: "Ads-Kampagne retten",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
+        text: "Erfolge ansehen",
+        link: "/referenzen"
       }}
     />
   );

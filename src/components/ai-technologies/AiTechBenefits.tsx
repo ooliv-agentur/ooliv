@@ -31,23 +31,23 @@ const AiTechBenefits = () => {
       ]
     },
     de: {
-      title: "So setzen wir KI bei ooliv strategisch ein",
-      subtitle: "Unsere KI-Tools steigern Tempo, Präzision und Skalierbarkeit – ohne Kreativität oder Kontrolle aus der Hand zu geben. Wir nutzen KI dort, wo sie messbare Vorteile schafft – und vertrauen auf Menschen, wenn es zählt.",
+      title: "So nutzen wir KI (ohne den Hype)",
+      subtitle: "KI macht uns schneller und präziser – aber wir behalten die Kontrolle. Wir nutzen KI dort, wo es Sinn macht – und verlassen uns auf Menschen, wenn Kreativität und Strategie gefragt sind.",
       cards: [
         {
           icon: <LineChart className="h-8 w-8 text-medico-turquoise" />,
-          title: "Strategisch integriert – nicht automatisiert",
-          description: "KI unterstützt unsere Workflows – aber Entscheidungen treffen wir."
+          title: "KI unterstützt, Menschen entscheiden",
+          description: "Sie bekommen keine AI-generierten Massentexte. KI hilft bei Recherche und Entwürfen – die Strategie kommt von uns."
         },
         {
           icon: <Clock className="h-8 w-8 text-medico-turquoise" />,
           title: "Schneller zum Ergebnis",
-          description: "KI hilft uns, Recherche, Varianten und erste Entwürfe deutlich schneller zu liefern – ohne Kompromisse bei der Qualität."
+          description: "Sie bekommen Entwürfe, Varianten und Drafts in Rekordzeit – ohne Qualitätsverlust. KI macht uns effizienter, nicht schlechter."
         },
         {
           icon: <Lightbulb className="h-8 w-8 text-medico-turquoise" />,
           title: "Kreativität bleibt menschlich",
-          description: "Ideen, Konzepte und Storytelling kommen immer aus echten Köpfen."
+          description: "Sie bekommen echte Ideen, nicht AI-Durchschnitt. Konzepte und Storytelling kommen aus Köpfen, nicht aus Prompts."
         }
       ]
     }

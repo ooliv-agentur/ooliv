@@ -12,25 +12,25 @@ const ContentHero = () => {
   };
 
   const title = isGerman 
-    ? "Content, der konvertiert – statt nur zu informieren" 
-    : "Content That Converts – Not Just Informs";
+    ? "Content schreiben kostet Zeit? Wir machen das." 
+    : "Content Writing Takes Time? We'll Handle It.";
 
   const subtitle = isGerman 
-    ? "Als Content Agentur in Mainz entwickeln wir strategische Inhalte für B2B-Erfolg: Websites, Blogs, SEO und Visuals – durchdacht, effizient, konversionsstark und KI-unterstützt." 
-    : "As content agency in Mainz, we create strategic B2B content for success: website copy, blog articles, SEO content, images, videos and infographics – clear, thoughtful, powerful.";
+    ? "Content Agentur Mainz: Website-Texte, SEO-Artikel, Visuals – strategisch durchdacht und KI-optimiert. Sie kümmern sich um Ihr Business, wir um Ihren Content." 
+    : "Content agency Mainz: Website copy, SEO articles, visuals – strategically planned and AI-optimized. You focus on your business, we handle your content.";
 
   return (
     <PageHero
       title={title}
       subtitle={subtitle}
       primaryCta={{
-        text: "Projekt starten",
+        text: isGerman ? "Content auslagern" : "Outsource Content",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
+        text: isGerman ? "Content-Beispiele" : "Content Examples",
+        link: "/referenzen"
       }}
     />
   );

@@ -9,16 +9,16 @@ const WebDevHeroDE = () => {
   
   return (
     <PageHero
-      title="Schnelle Websites, die Google liebt – und Ihre Kunden auch"
-      subtitle="Als WordPress Agentur in Mainz entwickeln wir maßgeschneiderte Websites – schnell, sicher, suchmaschinenfreundlich. Von WordPress bis individueller Programmierung für wachsende Unternehmen."
+      title="Ihre Website ist langsam? Ihre Konkurrenz freut sich."
+      subtitle="WordPress Agentur Mainz: Wir entwickeln Websites, die schnell laden, gut ranken und Anfragen generieren. Von WordPress bis Custom Code – technisch solide, nicht überladen."
       primaryCta={{
-        text: "Projekt starten",
+        text: "Meine Website schneller machen",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
+        text: "Entwicklungs-Beispiele",
+        link: "/referenzen"
       }}
     />
   );

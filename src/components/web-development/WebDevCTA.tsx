@@ -7,15 +7,15 @@ const WebDevCTA = () => {
   const { language } = useLanguage();
   
   const title = language === 'de' 
-    ? "Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
-    : "Let's discuss your web development project";
+    ? "Bereit für eine Website, die wirklich performt?"
+    : "Ready for a website that actually performs?";
     
   const subtitle = language === 'de'
-    ? "Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
-    : "We develop a scalable, secure website that perfectly matches your business goals.";
+    ? "Wir entwickeln Websites, die schnell laden, gut ranken und Anfragen generieren – technisch solide, ohne Schnickschnack."
+    : "We develop websites that load fast, rank well and generate inquiries – technically solid, no frills.";
     
-  const primaryCta = language === 'de' ? "Projekt starten" : "Start Project";
-  const secondaryCta = language === 'de' ? "Strategiegespräch vereinbaren" : "Schedule Strategy Call";
+  const primaryCta = language === 'de' ? "Website-Projekt starten" : "Start Website Project";
+  const secondaryCta = language === 'de' ? "Erstgespräch buchen" : "Book Initial Call";
   const secondaryCtaLink = language === 'de' ? "/kontakt" : "/en/contact";
 
   return (

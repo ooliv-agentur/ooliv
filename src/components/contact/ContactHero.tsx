@@ -34,7 +34,7 @@ const ContactHero = () => {
                 color: '#003343' 
               }}
             >
-              Reden wir über Ihr Projekt – direkt und unverbindlich
+              Keine Lust auf Agentur-Bla-Bla? Wir auch nicht.
             </h1>
             
             {/* Subtitle */}
@@ -42,7 +42,7 @@ const ContactHero = () => {
               className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
-              Als Digitalagentur in Mainz betreuen wir Unternehmen in ganz Europa – mit persönlicher Betreuung und klarer Kommunikation.
+              Digitalagentur Mainz: Sie reden direkt mit dem Gründer. Kein Verkaufsgespräch, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt.
             </p>
             
             {/* CTA buttons - now using design system */}
@@ -53,7 +53,7 @@ const ContactHero = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleStartProject}
               >
-                Projekt starten
+                Jetzt unverbindlich anfragen
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -63,8 +63,8 @@ const ContactHero = () => {
                 className="group w-full sm:w-auto" 
                 asChild
               >
-                <Link to="/referenzen">
-                  Arbeiten ansehen
+                <Link to="tel:+4961319572430">
+                  Oder direkt anrufen
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

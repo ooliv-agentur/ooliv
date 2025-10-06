@@ -36,27 +36,27 @@ const WebDesignBenefits = () => {
       ]
     },
     de: {
-      title: "Warum ooliv die richtige Wahl für Webdesign in Mainz ist",
+      title: "Das bekommen Sie von uns (nicht was andere versprechen)",
       features: [
         {
           icon: Target,
-          title: "Strategie statt Standard",
-          description: "Wir entwickeln Websites, die auf Ihre Ziele einzahlen: Sichtbarkeit, Anfragen und Wachstum. Keine vorgefertigten Lösungen – alles individuell und auf Ihr Unternehmen zugeschnitten."
+          title: "Klare Strategie, kein Bauchgefühl",
+          description: "Sie bekommen eine Website mit klarem Ziel: Mehr Sichtbarkeit, mehr Anfragen, mehr Wachstum. Individuell entwickelt, nicht aus der Schublade."
         },
         {
           icon: ArrowRight,
-          title: "Conversion im Fokus",
-          description: "Eine Website ist nur dann gut, wenn sie Besucher überzeugt. Wir legen Wert auf eine klare Struktur, gute Lesbarkeit und eine Benutzerführung, die Anfragen generiert."
+          title: "Besucher werden zu Kunden",
+          description: "Sie bekommen eine Nutzerführung, die funktioniert – klare Struktur, gute Lesbarkeit, überzeugende Calls-to-Action. Conversion statt Dekoration."
         },
         {
           icon: Zap,
-          title: "SEO-ready & mobil optimiert",
-          description: "Ihre Website funktioniert auf allen Geräten – vom Smartphone bis zum Desktop – und ist technisch sauber umgesetzt, damit sie bei Google gut gefunden wird."
+          title: "SEO-ready & superschnell",
+          description: "Sie bekommen eine Website, die auf allen Geräten perfekt läuft – und von Google geliebt wird. Weil sie technisch sauber gebaut ist."
         },
         {
           icon: PhoneCall,
-          title: "Langfristiger Support",
-          description: "Nach dem Livegang lassen wir Sie nicht allein. Wir begleiten Sie auch danach weiter – mit Analysen, Updates und allem, was Ihre Website braucht, um erfolgreich zu bleiben."
+          title: "Langfristige Betreuung",
+          description: "Sie bekommen keine 'Fire and Forget'-Lösung. Wir bleiben an Ihrer Seite – mit Analysen, Updates und allem, was Ihre Website erfolgreich hält."
         }
       ]
     }

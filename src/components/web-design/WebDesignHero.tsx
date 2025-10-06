@@ -13,12 +13,12 @@ const WebDesignHero = () => {
 
   const translations = {
     en: {
-      title: "Websites That Sell – Not Just Look Good",
-      subtitle: "Our webdesign services in Mainz help B2B companies improve Google visibility, drive qualified leads, and align with business goals. Strategy-driven design – not templates."
+      title: "Pretty Website, No Leads? Time for Real Web Design.",
+      subtitle: "Web design Mainz: We create websites that actually generate inquiries – strategically planned, mobile-optimized, and conversion-focused. Not just beautiful, but effective."
     },
     de: {
-      title: "Websites, die verkaufen – nicht nur gut aussehen",
-      subtitle: "Unser Webdesign in Mainz macht Ihr Unternehmen digital sichtbar, generiert Leads und stärkt Ihre Marke nachhaltig – mobiloptimiert, strategisch und individuell vom Onepager bis zur SEO-optimierten Unternehmenswebsite."
+      title: "Schöne Website, keine Anfragen? Zeit für echtes Webdesign.",
+      subtitle: "Webdesign Mainz: Wir gestalten Websites, die tatsächlich Anfragen generieren – strategisch geplant, mobiloptimiert, conversion-fokussiert. Nicht nur schön, sondern wirksam."
     }
   };
   
@@ -29,13 +29,13 @@ const WebDesignHero = () => {
       title={t.title}
       subtitle={t.subtitle}
       primaryCta={{
-        text: 'Projekt starten',
+        text: isGerman ? 'Zeigt mir wirksames Design' : 'Show me effective design',
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: 'Über ooliv',
-        link: "/ueber-uns"
+        text: isGerman ? 'Design-Beispiele' : 'Design Examples',
+        link: "/referenzen"
       }}
     />
   );

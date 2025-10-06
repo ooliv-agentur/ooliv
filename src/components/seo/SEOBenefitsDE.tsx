@@ -10,9 +10,9 @@ const SEOBenefitsDE = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-brand-heading mb-6">SEO-Probleme erkennen und lösen – damit Ihr Umsatz wächst</h2>
+            <h2 className="text-3xl font-bold text-brand-heading mb-6">Was Sie von uns bekommen (statt leerer Versprechen)</h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto">
-              Unsere SEO-Dienstleistungen aus Mainz lösen die größten Stolpersteine für Ihr Wachstum – individuell, strategisch und messbar.
+              SEO ist kein Sprint. Aber mit der richtigen Strategie sehen Sie erste Verbesserungen schon nach 3 Monaten – und langfristig stabile Rankings.
             </p>
           </div>
         </Reveal>
@@ -24,9 +24,9 @@ const SEOBenefitsDE = () => {
                 <BarChart2 className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Traffic, aber keine Leads</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Qualifizierte Anfragen, nicht nur Traffic</h3>
             <p className="text-brand-text mb-4">
-              Wir optimieren Inhalte und Struktur für Suchintention & Conversion – für Besucher, die handeln.
+              Ihre Website zieht die richtigen Besucher an – Menschen, die tatsächlich kaufen wollen. Durch Suchintentions-Optimierung und conversion-fokussierte Inhalte.
             </p>
           </div>
 
@@ -36,9 +36,9 @@ const SEOBenefitsDE = () => {
                 <Clock className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">SEO dauert zu lange</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Transparente Timelines</h3>
             <p className="text-brand-text mb-4">
-              Wir kombinieren schnelle Ergebnisse mit langfristiger Wirkung – für sichtbaren ROI.
+              Quick Wins nach 1-2 Monaten, erste Rankings nach 3 Monaten, stabiler ROI nach 6-12 Monaten. Ehrlich und planbar.
             </p>
           </div>
 
@@ -48,9 +48,9 @@ const SEOBenefitsDE = () => {
                 <FileText className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Veraltete Inhalte & schlechte Struktur</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Saubere Inhaltsstruktur</h3>
             <p className="text-brand-text mb-4">
-              Wir restrukturieren Seiten und Inhalte suchmaschinenfreundlich und nutzerzentriert.
+              Ihre Seiten werden logisch aufgebaut, nutzerfreundlich strukturiert und für Suchmaschinen optimiert – keine keyword-stuffing, sondern echte Mehrwerte.
             </p>
           </div>
 
@@ -60,9 +60,9 @@ const SEOBenefitsDE = () => {
                 <ShieldAlert className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technische Fehler bremsen Rankings</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Technische Perfektion</h3>
             <p className="text-brand-text mb-4">
-              Wir analysieren Ladezeit, Indexierung und Core Web Vitals – und sorgen für sauberen Code.
+              Schnelle Ladezeiten, saubere Indexierung, optimale Core Web Vitals – damit Google Ihre Website liebt (und Ihre Besucher auch).
             </p>
           </div>
         </StaggerReveal>

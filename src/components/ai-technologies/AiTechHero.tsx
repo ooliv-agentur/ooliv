@@ -14,21 +14,21 @@ const AiTechHero = () => {
   return (
     <PageHero
       title={isGerman 
-        ? "Weniger Aufwand, bessere Ergebnisse – mit KI-Power" 
-        : "Less Effort, Better Results – With AI Power"
+        ? "KI klingt kompliziert? Ist es nicht. Wir zeigen's." 
+        : "AI Sounds Complicated? It's Not. We'll Show You."
       }
       subtitle={isGerman 
-        ? "Als KI Agentur in Mainz integrieren wir intelligente Technologien strategisch in Ihre Workflows – für schnelleren Content, bessere Prozesse und messbaren Mehrwert durch Effizienz." 
-        : "As AI agency in Mainz, we strategically integrate intelligent technologies into your workflows – for faster content, better processes, and measurable value through efficiency."
+        ? "KI Agentur Mainz: Wir integrieren KI-Tools in Ihre Prozesse – für schnelleren Content, effizientere Abläufe und weniger manuelle Arbeit. Pragmatisch, nicht futuristisch." 
+        : "AI agency Mainz: We integrate AI tools into your processes – for faster content, efficient workflows, and less manual work. Pragmatic, not futuristic."
       }
       primaryCta={{
-        text: "Projekt starten",
+        text: isGerman ? "KI-Potenzial prüfen" : "Check AI Potential",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
+        text: isGerman ? "KI-Projekte ansehen" : "View AI Projects",
+        link: "/referenzen"
       }}
     />
   );

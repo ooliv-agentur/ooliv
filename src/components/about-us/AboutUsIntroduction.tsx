@@ -8,7 +8,7 @@ const AboutUsIntroduction = () => {
     <section className={getSectionClasses('large', 'white')}>
       <div className={getContainerClasses('narrow')}>
         <LargeParagraph alignment="center" className="font-satoshi">
-          Wir sind Ihr Partner für individuelle Websites, SEO und digitales Marketing. Bei ooliv steht persönliche Beratung an erster Stelle — ohne Zwischenstellen und ohne Warteschleifen. Unser Team begleitet Sie von der ersten Idee bis zum erfolgreichen Launch. Lassen Sie uns gemeinsam Ihr nächstes Projekt erfolgreich umsetzen.
+          Keine riesigen Teams. Keine Zwischenstellen. Stattdessen arbeiten Sie direkt mit dem Gründer – vom ersten Gespräch bis zum Launch. Wir sind ehrlich, wenn etwas nicht funktioniert, und pragmatisch, wenn es um Lösungen geht. Ohne Agentur-Theater.
         </LargeParagraph>
       </div>
     </section>

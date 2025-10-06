@@ -9,16 +9,16 @@ const StrategieHero = () => {
 
   return (
     <PageHero
-      title="Klare Strategie, messbare Ergebnisse – ohne Ratespiele"
-      subtitle="Wir entwickeln in Mainz individuelle Digitalstrategien mit einem klaren Webkonzept, das messbare Ergebnisse liefert – für mehr Sichtbarkeit, mehr Anfragen und eine nachhaltige digitale Präsenz."
+      title="Digitale Strategie? Klingt teuer. Ist aber notwendig."
+      subtitle="Digitalagentur Mainz: Wir entwickeln klare Digitalstrategien, die zu Ihrem Budget passen – mit messbaren Zielen, realistischen Timelines und ohne Marketing-Geschwätz."
       primaryCta={{
-        text: "Projekt starten",
+        text: "Strategie entwickeln lassen",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Über ooliv",
-        link: "/ueber-uns"
+        text: "Strategie-Beispiele",
+        link: "/referenzen"
       }}
     />
   );

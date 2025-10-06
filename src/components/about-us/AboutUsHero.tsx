@@ -30,12 +30,12 @@ const AboutUsHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
-              Die Agentur, die Ihr Business versteht
+              Die meisten Agenturen versprechen zu viel. Wir nicht.
             </H1>
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Als Marketing Agentur in Mainz verbinden wir Kreativität, Strategie und Technologie, um Websites zu erstellen, die Unternehmenswachstum fördern. Sie arbeiten immer direkt mit unserem Gründer zusammen.
+              Marketing Agentur Mainz: Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Ein Gründer, der Ihr Projekt persönlich betreut. Ehrliche Beratung statt Verkaufsgespräche.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}
@@ -46,7 +46,7 @@ const AboutUsHero = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleStartProject}
               >
-                Projekt starten
+                Lernen wir uns kennen
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
@@ -57,7 +57,7 @@ const AboutUsHero = () => {
                 asChild
               >
                 <Link to="/referenzen">
-                  Referenzen ansehen
+                  Wie wir arbeiten
                   <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

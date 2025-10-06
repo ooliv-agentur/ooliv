@@ -35,12 +35,12 @@ const DeutscherHero = () => {
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Kostenloses Website-Konzept in 48 Stunden"
-        subtitle="Ein klarer Plan für Ihre neue Website mit Seitenaufbau, Inhalten und Nutzerführung – komplett kostenfrei und ohne Verpflichtung. Sie entscheiden danach selbst, ob und wie es weitergeht."
+        title="Ihre Website bringt keine Anfragen? Das ändern wir."
+        subtitle="Kostenloses Website-Konzept in 48h: Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung. Sie entscheiden danach, ob Sie mit uns weitermachen wollen."
         dynamicPrefix="Für"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Kostenloses Konzept",
+          text: "Jetzt kostenloses Konzept holen",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}

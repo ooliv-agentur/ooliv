@@ -5,10 +5,10 @@ import CTA from '@/components/CTA';
 const SEOCtaDE = () => {
   return (
     <CTA 
-      title="SEO, das wirkt — lokal & skalierbar"
-      subtitle="SEO ist kein Projekt — sondern ein wichtiger Baustein für nachhaltiges Wachstum. Lassen Sie uns gemeinsam das volle Potenzial Ihrer Website entfalten."
-      primaryCta="SEO-Strategie starten"
-      secondaryCta="Beratungsgespräch anfordern"
+      title="SEO braucht Zeit – aber es lohnt sich"
+      subtitle="Wer Ihnen Top-Rankings in 4 Wochen verspricht, lügt. Wir sagen Ihnen ehrlich, was möglich ist – und setzen es dann um. Nachhaltig, messbar, transparent."
+      primaryCta="SEO-Strategie besprechen"
+      secondaryCta="Erstgespräch vereinbaren"
     />
   );
 };
