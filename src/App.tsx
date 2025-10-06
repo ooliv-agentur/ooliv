@@ -14,6 +14,7 @@ import EmailCaptureController from './components/email-capture/EmailCaptureContr
 import ErrorBoundary from './components/ErrorBoundary';
 import RouterErrorBoundary from './components/RouterErrorBoundary';
 import ContextErrorBoundary from './components/ContextErrorBoundary';
+import { useSeasonalColors } from './hooks/useSeasonalColors';
 
 // Lazy load pages for better performance
 const GermanIndex = lazy(() => import('./pages/Index'));
@@ -52,6 +53,9 @@ const LoadingSpinner = () => (
 
 function App() {
   const [showLeadForm, setShowLeadForm] = React.useState(false);
+  
+  // Initialize seasonal color system
+  const { monthColor } = useSeasonalColors();
 
   const handleLeadOpenChange = React.useCallback((next: boolean) => {
     setShowLeadForm(next);

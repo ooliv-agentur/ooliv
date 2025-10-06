@@ -114,6 +114,15 @@ export default {
           accent: "#38B593",
           white: "#FFFFFF",
           warning: "#FFE500"
+        },
+        // Seasonal accent colors (auto-updated via CSS variables)
+        accent: {
+          primary: 'hsl(var(--accent-primary) / <alpha-value>)',
+          secondary: 'hsl(var(--accent-secondary) / <alpha-value>)',
+          tertiary: 'hsl(var(--accent-tertiary) / <alpha-value>)',
+          light: 'hsl(var(--accent-light) / <alpha-value>)',
+          dark: 'hsl(var(--accent-dark) / <alpha-value>)',
+          glow: 'hsl(var(--accent-glow) / <alpha-value>)',
         }
       },
       // Icon-specific design tokens

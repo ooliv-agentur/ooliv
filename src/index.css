@@ -46,10 +46,10 @@
   }
 }
 
-/* Enhanced floating circles animation with improved performance */
+/* Enhanced floating circles animation with seasonal colors */
 .floating-circle {
   position: absolute;
-  background: radial-gradient(circle, rgba(56, 181, 147, 0.4) 0%, rgba(56, 181, 147, 0.2) 70%, transparent 100%);
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
   will-change: transform, opacity;
@@ -74,10 +74,11 @@
   animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Updated hero gradient */
+/* Updated hero gradient with seasonal accent integration */
 .hero-gradient-bg {
-  background: linear-gradient(135deg, #def3e4, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf);
+  background: var(--accent-gradient), linear-gradient(135deg, #def3e4, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf);
   background-size: 600% 600%;
+  background-blend-mode: soft-light;
   animation: gentle-gradient 45s ease-in-out infinite;
   will-change: background-position;
   backface-visibility: hidden;
@@ -154,6 +155,23 @@
   .hero-gradient-bg {
     animation: none !important;
   }
+}
+
+/* Seasonal Color System - Auto-rotating monthly accents */
+:root {
+  /* Core Brand Colors (never change) */
+  --brand-turquoise: 166 50% 47%; /* #38B593 */
+  --brand-dark-green: 193 100% 10%; /* #003347 */
+  --brand-white: 0 0% 100%; /* #FFFFFF */
+
+  /* Rotating Accent Colors (auto-updated monthly) */
+  --accent-primary: 210 85% 60%; /* Default: Fresh Start Blue */
+  --accent-secondary: 200 60% 40%; /* Default: Deep Forest */
+  --accent-tertiary: 210 70% 50%;
+  --accent-gradient: linear-gradient(135deg, hsl(210 85% 60%), hsl(195 85% 55%));
+  
+  /* Accent glow for floating circles */
+  --accent-glow: hsl(210 85% 60% / 0.4);
 }
 
 /* Service-specific color utilities */
