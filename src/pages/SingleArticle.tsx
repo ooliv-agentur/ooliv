@@ -1,9 +1,10 @@
 
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
 import SingleArticleDisplay from '@/components/content/SingleArticleDisplay';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import { shouldRedirect, getCorrectSlug } from '@/utils/articleRedirects';
 
 interface ContentPost {
   id: number;
@@ -19,7 +20,17 @@ interface ContentPost {
 
 const SingleArticle = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   const [article, setArticle] = useState<ContentPost | null>(null);
+
+  // Handle 301 redirects for broken slugs
+  useEffect(() => {
+    if (slug && shouldRedirect(slug)) {
+      const correctSlug = getCorrectSlug(slug);
+      console.log(`Redirecting from broken slug "${slug}" to correct slug "${correctSlug}"`);
+      navigate(`/artikel/${correctSlug}`, { replace: true });
+    }
+  }, [slug, navigate]);
 
   const handleArticleLoad = (loadedArticle: ContentPost) => {
     setArticle(loadedArticle);

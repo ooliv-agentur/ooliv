@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
+import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Linkedin, AlertCircle, Info } from 'lucide-react';
@@ -67,6 +68,13 @@ const LinkedInSetup = () => {
 
   return (
     <PageLayout>
+      <EnhancedSEOHead
+        title="LinkedIn Integration Setup | ooliv"
+        description="LinkedIn Integration für automatisches Content-Posting konfigurieren."
+        canonicalUrl="https://ooliv.de/linkedin-setup"
+      />
+      <meta name="robots" content="noindex, follow" />
+      
       <div className="container mx-auto px-4 py-8 max-w-2xl">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-4">LinkedIn Integration für Artikel-Posting</h1>
