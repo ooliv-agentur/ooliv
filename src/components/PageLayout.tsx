@@ -94,15 +94,12 @@ const PageLayout = ({ children, className = '', showBreadcrumbs = false }: PageL
   return (
     <>
       <Helmet>
-        {/* Self-referencing canonical URL - always the non-www version */}
-        <link rel="canonical" href={canonicalUrl} />
+        {/* Canonical URL is set by EnhancedSEOHead in each page - removed from here to avoid conflicts */}
         
         {/* CRITICAL: Only index,follow - no noindex anywhere */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         
-        {/* Hreflang tags - DE only */}
-        <link rel="alternate" hrefLang="de" href={canonicalUrl} />
-        <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+        {/* Hreflang tags - set dynamically by EnhancedSEOHead */}
         
         {/* Add meta tag to indicate preferred domain variant */}
         <meta name="google" content="notranslate" />

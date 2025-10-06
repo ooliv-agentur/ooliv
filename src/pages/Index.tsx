@@ -58,7 +58,6 @@ const GermanIndex = () => {
   
   return (
     <>
-      <CanonicalUrlHelper />
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead

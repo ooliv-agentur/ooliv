@@ -126,8 +126,12 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       
-      {/* Canonical */}
+      {/* Canonical - CRITICAL: This is the ONLY place canonical should be set */}
       <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Hreflang for German content */}
+      <link rel="alternate" hrefLang="de" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
       
       {/* Open Graph */}
       <meta property="og:title" content={title} />
