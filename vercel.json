@@ -26,7 +26,37 @@
       "status": 301,
       "dest": "https://ooliv.de/$1"
     },
-    { "src": "/:path(.*)/", "status": 301, "dest": "/:path*" }
+    { "src": "/:path(.*)/", "status": 301, "dest": "/:path*" },
+    {
+      "src": "/artikel/7-eispiele-fuer-ebsite-ptimierung-die-wirken",
+      "status": 301,
+      "dest": "/artikel/7-beispiele-fuer-website-optimierung-die-wirken"
+    },
+    {
+      "src": "/artikel/7-raktische-ome-ffice-ipps-fuer-mehr-roduktivitaet",
+      "status": 301,
+      "dest": "/artikel/7-praktische-home-office-tipps-fuer-mehr-produktivitaet"
+    },
+    {
+      "src": "/artikel/404-ehler-beheben-o-verbessern-ie-hre-ebsite",
+      "status": 301,
+      "dest": "/artikel/404-fehler-beheben-so-verbessern-sie-ihre-website"
+    },
+    {
+      "src": "/artikel/7-igitale-rends-2025-die-hr-nternehmen-beachten-sollte",
+      "status": 301,
+      "dest": "/artikel/7-digitale-trends-2025-die-ihr-unternehmen-beachten-sollte"
+    },
+    {
+      "src": "/artikel/2-ebsite-randing-2025-trategien-fuer-nachhaltigen-rfolg",
+      "status": 301,
+      "dest": "/artikel/b2b-website-branding-2025-strategien-fuer-nachhaltigen-erfolg"
+    },
+    {
+      "src": "/artikel/2-ebsites-im-esundheitswesen-er-raxis-uide-fuer-ellness-arken-2025",
+      "status": 301,
+      "dest": "/artikel/b2b-websites-im-gesundheitswesen-der-praxis-guide-fuer-wellness-marken-2025"
+    }
   ],
   "headers": [
     {

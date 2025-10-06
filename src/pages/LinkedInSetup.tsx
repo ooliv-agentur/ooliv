@@ -57,6 +57,12 @@ const LinkedInSetup = () => {
   if (loading) {
     return (
       <PageLayout>
+        <EnhancedSEOHead
+          title="LinkedIn Integration Setup | ooliv"
+          description="LinkedIn-Integration für automatisches Artikel-Posting einrichten."
+          canonicalUrl="https://ooliv.de/linkedin-setup"
+        />
+        <meta name="robots" content="noindex, follow" />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">Lädt...</div>
         </div>
@@ -70,7 +76,7 @@ const LinkedInSetup = () => {
     <PageLayout>
       <EnhancedSEOHead
         title="LinkedIn Integration Setup | ooliv"
-        description="LinkedIn Integration für automatisches Content-Posting konfigurieren."
+        description="LinkedIn-Integration für automatisches Artikel-Posting einrichten."
         canonicalUrl="https://ooliv.de/linkedin-setup"
       />
       <meta name="robots" content="noindex, follow" />
