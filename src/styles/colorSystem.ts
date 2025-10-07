@@ -11,30 +11,35 @@ export const MONTHLY_COLORS = {
   1: { // Januar - Fresh Start Blue
     name: 'Fresh Start Blue',
     primary: '210 85% 60%',
+    complementary: '40 90% 60%', // Warm orange complement
     gradient: 'linear-gradient(135deg, hsl(210 85% 60%), hsl(195 85% 55%))',
     psychology: 'Klarheit, Neuanfang, Fokus'
   },
   2: { // Februar - Cozy Coral
     name: 'Cozy Coral',
     primary: '15 85% 65%',
+    complementary: '195 85% 65%', // Teal complement
     gradient: 'linear-gradient(135deg, hsl(15 85% 65%), hsl(350 75% 70%))',
     psychology: 'Wärme, Verbindung, Nähe'
   },
   3: { // März - Spring Sage
     name: 'Spring Sage',
     primary: '145 35% 55%',
+    complementary: '325 45% 65%', // Rose complement
     gradient: 'linear-gradient(135deg, hsl(145 35% 55%), hsl(160 40% 60%))',
     psychology: 'Wachstum, Erneuerung, Balance'
   },
   4: { // April - Cherry Blossom
     name: 'Cherry Blossom',
     primary: '340 75% 75%',
+    complementary: '160 65% 65%', // Mint complement
     gradient: 'linear-gradient(135deg, hsl(340 75% 75%), hsl(320 65% 70%))',
     psychology: 'Leichtigkeit, Neubeginn, Optimismus'
   },
   5: { // Mai - Vibrant Lime
     name: 'Vibrant Lime',
     primary: '80 70% 55%',
+    complementary: '260 70% 65%', // Purple complement
     gradient: 'linear-gradient(135deg, hsl(80 70% 55%), hsl(90 65% 60%))',
     psychology: 'Energie, Frische, Aktivität'
   },
