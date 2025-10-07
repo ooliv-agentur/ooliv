@@ -89,7 +89,7 @@ const GermanIndex = () => {
         <DeutscherAboutSection />
         
         {/* Automated Content Marketing Highlight */}
-        <section className="py-12 bg-gradient-to-r from-medico-yellow/10 to-accent-primary/10">
+        <section className="py-12 bg-gradient-to-r from-accent-complementary/10 to-accent-primary/10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
               <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">

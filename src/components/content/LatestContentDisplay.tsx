@@ -128,7 +128,7 @@ const LatestContentDisplay = () => {
         </div>
 
         {showDebug && (
-          <Card className="mb-8 border-medico-yellow/40 bg-medico-yellow/10">
+          <Card className="mb-8 border-accent-complementary/40 bg-accent-complementary/10">
             <CardContent className="p-6">
               <H2 className="text-lg mb-4 text-medico-darkGreen">Debug Information</H2>
               <div className="space-y-4 text-sm">

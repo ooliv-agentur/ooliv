@@ -101,16 +101,16 @@ const ContentServicesUnified = () => {
 
           {/* Right: Automated Content Distribution */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-medico-yellow/20 to-accent-primary/20 backdrop-blur-sm p-8 rounded-2xl border border-medico-yellow/30 shadow-lg h-full">
+            <div className="bg-gradient-to-br from-accent-complementary/20 to-accent-primary/20 backdrop-blur-sm p-8 rounded-2xl border border-accent-complementary/30 shadow-lg h-full">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 rounded-full bg-medico-yellow/30 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-accent-complementary/30 flex items-center justify-center flex-shrink-0">
                   <ArrowRight className="h-6 w-6 text-medico-darkGreen" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-brand-heading mb-2">
                     Automatisierte Content-Verteilung
                   </h3>
-                  <div className="bg-medico-yellow/20 px-2 py-1 rounded text-xs font-semibold text-medico-darkGreen mb-3 inline-block">
+                  <div className="bg-accent-complementary/20 px-2 py-1 rounded text-xs font-semibold text-medico-darkGreen mb-3 inline-block">
                     NEU: AI-Powered
                   </div>
                   <p className="text-brand-text mb-4 leading-relaxed">
@@ -141,7 +141,7 @@ const ContentServicesUnified = () => {
         </div>
 
         {/* Integrative mention on homepage */}
-        <div className="bg-gradient-to-r from-medico-yellow/10 to-accent-primary/10 p-6 rounded-xl mb-8">
+        <div className="bg-gradient-to-r from-accent-complementary/10 to-accent-primary/10 p-6 rounded-xl mb-8">
           <h3 className="text-lg font-bold text-brand-heading mb-3 flex items-center">
             <Sparkles className="w-5 h-5 text-accent-primary mr-2" />
             NEU: Automatisierte Content-Marketing Lösung
@@ -183,7 +183,7 @@ const ContentServicesUnified = () => {
         <div className="text-center">
           <Button 
             onClick={handleStartProject}
-            className="bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Content-Strategie entwickeln
             <ArrowRight className="ml-2 h-4 w-4" />

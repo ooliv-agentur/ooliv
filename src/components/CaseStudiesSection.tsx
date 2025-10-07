@@ -299,7 +299,7 @@ const CaseStudiesSection = ({
             
             <Button 
               size="lg" 
-              className="group bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              className="group bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
               onClick={() => {
                 window.dispatchEvent(new Event('open-lead-form'));
               }}

@@ -28,7 +28,7 @@ export const typographyStyles = {
     muted: "text-gray-600",
     light: "text-gray-500",
     accent: "text-accent-primary",
-    warning: "text-medico-yellow",
+    warning: "text-accent-complementary",
     white: "text-white"
   },
   

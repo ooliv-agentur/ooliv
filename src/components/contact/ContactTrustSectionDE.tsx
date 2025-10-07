@@ -55,7 +55,7 @@ const ContactTrustSectionDE = () => {
               >
                 <div className="flex justify-center items-center mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-medico-yellow text-medico-yellow" />
+                    <Star key={i} className="h-5 w-5 fill-accent-complementary text-accent-complementary" />
                   ))}
                 </div>
                 <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>
@@ -70,7 +70,7 @@ const ContactTrustSectionDE = () => {
               >
                 <div className="flex justify-center items-center mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-medico-yellow text-medico-yellow" />
+                    <Star key={i} className="h-5 w-5 fill-accent-complementary text-accent-complementary" />
                   ))}
                 </div>
                 <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>

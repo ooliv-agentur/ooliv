@@ -118,6 +118,7 @@ export default {
         // Seasonal accent colors (auto-updated via CSS variables)
         accent: {
           primary: 'hsl(var(--accent-primary) / <alpha-value>)',
+          complementary: 'hsl(var(--accent-complementary) / <alpha-value>)',
           secondary: 'hsl(var(--accent-secondary) / <alpha-value>)',
           tertiary: 'hsl(var(--accent-tertiary) / <alpha-value>)',
           light: 'hsl(var(--accent-light) / <alpha-value>)',

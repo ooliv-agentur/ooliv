@@ -9,11 +9,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primary yellow variant - main CTA button
-        default: "bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 hover:shadow-lg font-bold border-2 border-transparent hover:border-medico-darkGreen/20",
+        // Primary complementary variant - main CTA button
+        default: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-lg font-bold border-2 border-transparent hover:border-medico-darkGreen/20",
         
-        // Primary yellow with enhanced styling for major CTAs
-        primary: "bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 hover:shadow-xl font-bold border-2 border-transparent hover:border-medico-darkGreen/20 transform hover:scale-105",
+        // Primary complementary with enhanced styling for major CTAs
+        primary: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-xl font-bold border-2 border-transparent hover:border-medico-darkGreen/20 transform hover:scale-105",
         
         // Secondary turquoise variant
         secondary: "bg-accent-primary text-white hover:bg-accent-primary/90 hover:shadow-lg border-2 border-transparent hover:border-medico-darkGreen/20 font-semibold",
@@ -40,7 +40,7 @@ const buttonVariants = cva(
         light: "bg-white text-medico-darkGreen hover:bg-accent-primary/10 hover:shadow-lg border-2 border-transparent hover:border-accent-primary font-semibold",
         
         // Special variant for floating action buttons
-        floating: "bg-medico-yellow text-medico-darkGreen hover:bg-yellow-400 hover:shadow-lg border-none font-semibold transform hover:scale-105 shadow-md",
+        floating: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-lg border-none font-semibold transform hover:scale-105 shadow-md",
         
         // Minimal variant for navigation back buttons
         minimal: "bg-white text-medico-darkGreen border-2 border-medico-darkGreen hover:bg-accent-primary/10 hover:border-accent-primary hover:text-medico-darkGreen font-semibold"

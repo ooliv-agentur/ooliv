@@ -121,7 +121,7 @@ const ArticleOverview = () => {
                     <div className="flex items-center gap-3 mt-auto">
                       <Button 
                         asChild 
-                        className="flex-1 bg-medico-yellow hover:bg-yellow-400 text-medico-darkGreen font-satoshi font-bold group/btn"
+                        className="flex-1 bg-accent-complementary hover:bg-accent-complementary/80 text-medico-darkGreen font-satoshi font-bold group/btn"
                       >
                         <Link to={`/artikel/${article.slug}`}>
                           Artikel lesen

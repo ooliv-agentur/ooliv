@@ -46,42 +46,49 @@ export const MONTHLY_COLORS = {
   6: { // Juni - Sunset Orange
     name: 'Sunset Orange',
     primary: '30 85% 60%',
+    complementary: '210 85% 60%', // Cool blue complement
     gradient: 'linear-gradient(135deg, hsl(30 85% 60%), hsl(40 90% 65%))',
     psychology: 'Lebensfreude, Kreativität, Wärme'
   },
   7: { // Juli - Ocean Blue
     name: 'Ocean Blue',
     primary: '200 80% 50%',
+    complementary: '20 90% 60%', // Coral complement
     gradient: 'linear-gradient(135deg, hsl(200 80% 50%), hsl(190 75% 55%))',
     psychology: 'Erfrischung, Klarheit, Freiheit'
   },
   8: { // August - Golden Hour
     name: 'Golden Hour',
     primary: '45 90% 60%',
+    complementary: '225 80% 60%', // Deep blue complement
     gradient: 'linear-gradient(135deg, hsl(45 90% 60%), hsl(35 85% 65%))',
     psychology: 'Erfolg, Optimismus, Fülle'
   },
   9: { // September - Harvest Amber
     name: 'Harvest Amber',
     primary: '35 75% 55%',
+    complementary: '215 75% 60%', // Sky blue complement
     gradient: 'linear-gradient(135deg, hsl(35 75% 55%), hsl(25 70% 60%))',
     psychology: 'Erdung, Reife, Beständigkeit'
   },
   10: { // Oktober - Cozy Caramel
     name: 'Cozy Caramel',
     primary: '30 60% 50%',
+    complementary: '210 70% 55%', // Azure complement
     gradient: 'linear-gradient(135deg, hsl(30 60% 50%), hsl(20 65% 55%))',
     psychology: 'Gemütlichkeit, Stabilität, Wärme'
   },
   11: { // November - Deep Plum
     name: 'Deep Plum',
     primary: '280 45% 45%',
+    complementary: '100 55% 55%', // Yellow-green complement
     gradient: 'linear-gradient(135deg, hsl(280 45% 45%), hsl(270 50% 50%))',
     psychology: 'Tiefe, Reflexion, Eleganz'
   },
   12: { // Dezember - Ice Crystal
     name: 'Ice Crystal',
     primary: '195 70% 65%',
+    complementary: '15 80% 65%', // Warm coral complement
     gradient: 'linear-gradient(135deg, hsl(195 70% 65%), hsl(210 65% 70%))',
     psychology: 'Klarheit, Reinheit, Neubeginn'
   }
@@ -133,14 +140,27 @@ export const getCurrentSeasonalColor = () => {
 };
 
 // Manual override for campaigns (optional)
-export const setCustomColor = (primary: string, gradient: string) => {
+export const setCustomColor = (primary: string, gradient: string, complementary?: string) => {
   if (typeof document !== 'undefined') {
     document.documentElement.style.setProperty('--accent-primary', primary);
     document.documentElement.style.setProperty('--accent-gradient', gradient);
     
+    // Set complementary color if provided
+    if (complementary) {
+      document.documentElement.style.setProperty('--accent-complementary', complementary);
+    }
+    
     // Update glow color for floating circles
     const [h, s, l] = primary.split(' ');
     document.documentElement.style.setProperty('--accent-glow', `hsl(${h} ${s} ${l} / 0.4)`);
+  }
+};
+
+// Manual override for complementary color only
+export const setCustomComplementaryColor = (complementary: string) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.style.setProperty('--accent-complementary', complementary);
+    console.log(`🎨 Complementary Color Updated: ${complementary}`);
   }
 };
 
@@ -152,6 +172,7 @@ export const resetToMonthlyColor = () => {
   
   if (typeof document !== 'undefined') {
     document.documentElement.style.setProperty('--accent-primary', monthColor.primary);
+    document.documentElement.style.setProperty('--accent-complementary', monthColor.complementary);
     document.documentElement.style.setProperty('--accent-gradient', monthColor.gradient);
     document.documentElement.style.setProperty('--accent-secondary', seasonColor.secondary);
     document.documentElement.style.setProperty('--accent-tertiary', seasonColor.tertiary);
@@ -162,6 +183,7 @@ export const resetToMonthlyColor = () => {
     
     console.log(`🎨 Color System Active: ${month} - ${monthColor.name}`, {
       primary: monthColor.primary,
+      complementary: monthColor.complementary,
       psychology: monthColor.psychology,
       season: getCurrentSeason()
     });
