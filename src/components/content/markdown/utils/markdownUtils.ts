@@ -86,8 +86,8 @@ export const fallbackParseText = (text: string) => {
   // Manually parse markdown links in text
   return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, linkText, href) => {
     if (href.startsWith('#')) {
-      return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
+      return `<a href="${href}" class="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${href.substring(1)}')?.scrollIntoView({behavior: 'smooth'}); return false;">${linkText}</a>`;
     }
-    return `<a href="${href}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
+    return `<a href="${href}" class="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi">${linkText}</a>`;
   });
 };

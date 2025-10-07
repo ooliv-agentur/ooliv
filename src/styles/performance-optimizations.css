@@ -133,7 +133,7 @@ video {
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #38B593;
+    background-color: hsl(var(--accent-primary));
     border-radius: 10px;
     transition: background-color 0.3s ease;
   }
@@ -144,7 +144,7 @@ video {
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #38B593 transparent;
+    scrollbar-color: hsl(var(--accent-primary)) transparent;
   }
 }
 

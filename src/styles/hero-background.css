@@ -21,7 +21,7 @@
 /* Floating Circles Animations */
 .floating-circle {
   position: absolute;
-  background: linear-gradient(135deg, #38B593, #FFE500);
+  background: linear-gradient(135deg, hsl(var(--accent-primary)), hsl(var(--accent-secondary)));
   border-radius: 50%;
   opacity: 0.6;
   animation: float 6s ease-in-out infinite;
