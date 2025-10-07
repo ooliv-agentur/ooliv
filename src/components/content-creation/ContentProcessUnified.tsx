@@ -193,8 +193,8 @@ const ContentProcessUnified = () => {
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <Card className="h-full border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <CardContent className="p-8 h-full flex flex-col">
-                      <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-6">
-                        <Icon className="w-8 h-8 text-medico-turquoise" />
+                      <div className="w-16 h-16 bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-accent-primary" />
                       </div>
                       
                       <h3 className="text-xl font-bold mb-4 text-brand-heading">
@@ -209,7 +209,7 @@ const ContentProcessUnified = () => {
                         <div className="space-y-2">
                           {step.deliverables.map((item, itemIndex) => (
                             <div key={itemIndex} className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-medico-turquoise mr-3 flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="h-4 w-4 text-accent-primary mr-3 flex-shrink-0 mt-0.5" />
                               <span className="text-brand-text text-sm">{item}</span>
                             </div>
                           ))}
@@ -219,7 +219,7 @@ const ContentProcessUnified = () => {
                       <div className="mt-auto">
                         <Button 
                           variant="link" 
-                          className="text-medico-turquoise hover:text-medico-turquoise/80 p-0 h-auto font-medium group" 
+                          className="text-accent-primary hover:text-accent-primary/80 p-0 h-auto font-medium group" 
                           asChild
                         >
                           <Link to={step.link} className="flex items-center">
@@ -244,7 +244,7 @@ const ContentProcessUnified = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg" 
-            className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90 px-8 py-3 rounded-full font-medium"
+            className="bg-accent-primary text-white hover:bg-accent-primary/90 px-8 py-3 rounded-full font-medium"
             onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
           >
             {isGerman ? "Content-Strategie besprechen" : "Discuss Content Strategy"}

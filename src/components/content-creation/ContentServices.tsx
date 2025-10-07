@@ -132,8 +132,8 @@ const ContentServices = () => {
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                   <Card className="h-full bg-medico-mint/10 border-none">
                     <CardContent className="p-8 h-full flex flex-col">
-                      <div className="w-16 h-16 bg-medico-turquoise/20 rounded-xl flex items-center justify-center mb-6">
-                        <Icon className="w-8 h-8 text-medico-turquoise" />
+                      <div className="w-16 h-16 bg-accent-primary/20 rounded-xl flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-accent-primary" />
                       </div>
                       
                       <h3 className="text-xl font-bold mb-4 text-medico-darkGreen">
@@ -147,7 +147,7 @@ const ContentServices = () => {
                       <ul className="space-y-2 flex-grow">
                         {(isGerman ? service.featuresDE : service.featuresEN).map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-medico-turquoise rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span className="w-1.5 h-1.5 bg-accent-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <span className="text-sm text-medico-darkGreen/70">{feature}</span>
                           </li>
                         ))}
@@ -166,7 +166,7 @@ const ContentServices = () => {
         </Carousel>
 
         <div className="text-center mt-12">
-          <p className="text-medico-turquoise font-medium mb-4">
+          <p className="text-accent-primary font-medium mb-4">
             {isGerman ? "Content definieren? Jetzt Strategiegespräch starten" : "Define content? Start strategy discussion now"}
             <ArrowRight className="inline-block ml-2 h-4 w-4" />
           </p>

@@ -17,7 +17,7 @@ const ContentServiceDE = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
             <div className="flex flex-col items-center text-center">
               <div className="p-3 rounded-full bg-medico-mint/20 mb-4">
-                <FileText className="h-8 w-8 text-medico-turquoise" />
+                <FileText className="h-8 w-8 text-accent-primary" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">
@@ -34,7 +34,7 @@ const ContentServiceDE = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
             <div className="flex flex-col items-center text-center">
               <div className="p-3 rounded-full bg-medico-mint/20 mb-4">
-                <Image className="h-8 w-8 text-medico-turquoise" />
+                <Image className="h-8 w-8 text-accent-primary" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">
@@ -51,7 +51,7 @@ const ContentServiceDE = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
             <div className="flex flex-col items-center text-center">
               <div className="p-3 rounded-full bg-medico-mint/20 mb-4">
-                <LayoutList className="h-8 w-8 text-medico-turquoise" />
+                <LayoutList className="h-8 w-8 text-accent-primary" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-brand-heading">

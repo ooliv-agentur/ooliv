@@ -10,17 +10,17 @@ const GoogleAdsLeadGeneration = () => {
   
   const features = [
     {
-      icon: <Search className="h-10 w-10 mb-4 text-medico-turquoise" />,
+      icon: <Search className="h-10 w-10 mb-4 text-accent-primary" />,
       title: "Suchkampagnen",
       description: "Ihre Zielgruppe sucht — wir liefern passende Anzeigen: mit Keyword-Targeting, Anzeigenerweiterungen & Conversion-Tracking."
     },
     {
-      icon: <Layout className="h-10 w-10 mb-4 text-medico-turquoise" />,
+      icon: <Layout className="h-10 w-10 mb-4 text-accent-primary" />,
       title: "Landingpages",
       description: "Performance beginnt nach dem Klick: Wir erstellen schnelle, mobileoptimierte Zielseiten mit klarer Botschaft und UX-Fokus."
     },
     {
-      icon: <LineChart className="h-10 w-10 mb-4 text-medico-turquoise" />,
+      icon: <LineChart className="h-10 w-10 mb-4 text-accent-primary" />,
       title: "Laufende Optimierung",
       description: "Wir testen, analysieren und verbessern kontinuierlich — für niedrigere Kosten pro Lead und steigende Conversion Rates."
     }
