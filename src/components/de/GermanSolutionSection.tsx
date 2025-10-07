@@ -51,15 +51,15 @@ const GermanSolutionSection = () => {
             </h3>
             
             <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-              Von der <Link to="/webdesign" className="text-medico-turquoise hover:underline font-medium">Website-Entwicklung</Link> über 
-              <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline font-medium"> SEO-Optimierung</Link> bis hin zu 
-              <Link to="/content-erstellung" className="text-medico-turquoise hover:underline font-medium"> Content-Marketing</Link> – 
+              Von der <Link to="/webdesign" className="text-accent-primary hover:underline font-medium">Website-Entwicklung</Link> über 
+              <Link to="/seo-optimierung" className="text-accent-primary hover:underline font-medium"> SEO-Optimierung</Link> bis hin zu 
+              <Link to="/content-erstellung" className="text-accent-primary hover:underline font-medium"> Content-Marketing</Link> – 
               alles koordiniert aus einer Hand.
             </p>
             <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-              Modernste <Link to="/ki-technologien" className="text-medico-turquoise hover:underline font-medium">KI-Integration</Link>, 
-              strategische <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads Betreuung</Link> und 
-              <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-medium"> professionelle Entwicklung</Link> 
+              Modernste <Link to="/ki-technologien" className="text-accent-primary hover:underline font-medium">KI-Integration</Link>, 
+              strategische <Link to="/google-ads" className="text-accent-primary hover:underline font-medium">Google Ads Betreuung</Link> und 
+              <Link to="/webentwicklung" className="text-accent-primary hover:underline font-medium"> professionelle Entwicklung</Link> 
               runden unser Angebot ab.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

@@ -57,7 +57,7 @@ const Challenge = ({ title, description, challenges, solutions }: ChallengeProps
                   {solutions.map((solution, index) => (
                     <li key={index} className="flex">
                       <div className="w-5 h-5 rounded-full bg-medico-mint flex items-center justify-center mr-3 flex-shrink-0 mt-1">
-                        <CheckCircle className="h-3 w-3 text-medico-turquoise" />
+                        <CheckCircle className="h-3 w-3 text-accent-primary" />
                       </div>
                       <span>{solution}</span>
                     </li>

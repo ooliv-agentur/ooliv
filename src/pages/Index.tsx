@@ -89,11 +89,11 @@ const GermanIndex = () => {
         <DeutscherAboutSection />
         
         {/* Automated Content Marketing Highlight */}
-        <section className="py-12 bg-gradient-to-r from-medico-yellow/10 to-medico-turquoise/10">
+        <section className="py-12 bg-gradient-to-r from-medico-yellow/10 to-accent-primary/10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
               <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-medico-turquoise mr-3" />
+                <Sparkles className="w-6 h-6 text-accent-primary mr-3" />
                 NEU: Automatisierte Content-Marketing Lösung
               </h2>
               <p className="text-lg text-medico-darkGreen mb-6 max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ const GermanIndex = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   variant="outline" 
-                  className="text-medico-turquoise border-medico-turquoise hover:bg-medico-turquoise/10 w-full sm:w-auto"
+                  className="text-accent-primary border-accent-primary hover:bg-accent-primary/10 w-full sm:w-auto"
                   asChild
                 >
                   <Link to="/automatisierte-content-marketing">
@@ -112,7 +112,7 @@ const GermanIndex = () => {
                 </Button>
                 <Button 
                   onClick={handleStartProject}
-                  className="bg-medico-turquoise text-white hover:bg-medico-turquoise/90 w-full sm:w-auto"
+                  className="bg-accent-primary text-white hover:bg-accent-primary/90 w-full sm:w-auto"
                 >
                   Demo anfragen
                 </Button>
@@ -131,7 +131,7 @@ const GermanIndex = () => {
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
               <p className="text-medico-darkGreen mb-6">
-                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-medico-turquoise hover:underline">info@ooliv.de</a>
+                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-accent-primary hover:underline">info@ooliv.de</a>
               </p>
               <Button 
                 variant="primary"
@@ -191,7 +191,7 @@ const GermanIndex = () => {
                       href="https://www.rheinhessen.ihk24.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       IHK Rheinhessen
@@ -200,7 +200,7 @@ const GermanIndex = () => {
                       href="https://isb.rlp.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       Wirtschaftsförderung RLP
@@ -209,7 +209,7 @@ const GermanIndex = () => {
                       href="https://www.mainz.de/wirtschaft/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-medico-turquoise hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       Wirtschaftsförderung Mainz
@@ -249,13 +249,13 @@ const GermanIndex = () => {
                 
                 {/* Internal linking */}
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
-                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
                     ➤ Webdesign Mainz Services
                   </Link>
-                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
                     ➤ SEO Agentur Mainz
                   </Link>
-                  <Link to="/kontakt" className="inline-flex items-center text-medico-darkGreen hover:text-medico-turquoise font-medium transition-colors text-sm">
+                  <Link to="/kontakt" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
                     ➤ Beratung in Mainz
                   </Link>
                 </div>

@@ -146,8 +146,8 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-medico-turquoise/10 rounded-full flex items-center justify-center">
-                <Cookie className="w-4 h-4 text-medico-turquoise" />
+              <div className="w-8 h-8 bg-accent-primary/10 rounded-full flex items-center justify-center">
+                <Cookie className="w-4 h-4 text-accent-primary" />
               </div>
               <h2 className="text-xl font-semibold text-medico-darkGreen">
                 {t.title}
@@ -171,16 +171,16 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
               const isChecked = settings[category.key];
               
               return (
-                <div key={category.key} className="border border-gray-200 rounded-lg p-4 hover:border-medico-turquoise/30 transition-colors">
+                <div key={category.key} className="border border-gray-200 rounded-lg p-4 hover:border-accent-primary/30 transition-colors">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <Icon className="w-5 h-5 text-medico-turquoise" />
+                        <Icon className="w-5 h-5 text-accent-primary" />
                         <h3 className="font-medium text-medico-darkGreen">
                           {category.title}
                         </h3>
                         {category.required && (
-                          <span className="text-xs bg-medico-turquoise/10 text-medico-turquoise px-2 py-1 rounded-full font-medium">
+                          <span className="text-xs bg-accent-primary/10 text-accent-primary px-2 py-1 rounded-full font-medium">
                             Erforderlich
                           </span>
                         )}
@@ -204,20 +204,20 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
                         disabled={category.required}
                         className={`
                           ${isChecked 
-                            ? 'data-[state=checked]:bg-medico-turquoise' 
+                            ? 'data-[state=checked]:bg-accent-primary' 
                             : 'data-[state=unchecked]:bg-gray-300'
                           }
                           ${category.required 
                             ? 'opacity-75 cursor-not-allowed' 
                             : 'hover:shadow-sm transition-all'
                           }
-                          data-[state=checked]:border-medico-turquoise
+                          data-[state=checked]:border-accent-primary
                           data-[state=unchecked]:border-gray-300
                           border-2
                         `}
                       />
                       <div className="text-xs text-center mt-1 font-medium">
-                        <span className={isChecked ? 'text-medico-turquoise' : 'text-gray-500'}>
+                        <span className={isChecked ? 'text-accent-primary' : 'text-gray-500'}>
                           {isChecked ? 'AN' : 'AUS'}
                         </span>
                       </div>
@@ -231,14 +231,14 @@ const CookieSettings = ({ onClose }: CookieSettingsProps) => {
           <div className="flex flex-col sm:flex-row gap-3">
             <Button
               onClick={handleSave}
-              className="flex-1 bg-medico-turquoise hover:bg-medico-darkGreen text-white w-full sm:w-auto"
+              className="flex-1 bg-accent-primary hover:bg-medico-darkGreen text-white w-full sm:w-auto"
             >
               {t.save}
             </Button>
             <Button
               onClick={handleAcceptAll}
               variant="outline"
-              className="border-medico-turquoise text-medico-turquoise hover:bg-medico-turquoise hover:text-white w-full sm:w-auto"
+              className="border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-white w-full sm:w-auto"
             >
               {t.acceptAll}
             </Button>

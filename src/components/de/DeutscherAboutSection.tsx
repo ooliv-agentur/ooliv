@@ -42,7 +42,7 @@ const DeutscherAboutSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Was haben Sie davon, mit ooliv zu arbeiten?
             </h2>
-            <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
+            <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
               Statt nur über Features zu sprechen, zeigen wir Ihnen konkret, welchen Nutzen Sie haben.
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
@@ -54,7 +54,7 @@ const DeutscherAboutSection = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {benefits.map((benefit, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-all duration-300" style={{ backgroundColor: '#32b1ab' }}>
+              <div className="w-12 h-12 rounded-full bg-accent-primary flex items-center justify-center mb-6 transition-all duration-300">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4 text-gray-900">{benefit.title}</h3>
@@ -64,7 +64,7 @@ const DeutscherAboutSection = () => {
               <div>
                 <Link 
                   to={benefit.link}
-                  className="text-medico-turquoise hover:text-medico-darkGreen underline transition-colors duration-300 font-bold text-lg"
+                  className="text-accent-primary hover:text-medico-darkGreen underline transition-colors duration-300 font-bold text-lg"
                 >
                   Beispiele ansehen
                 </Link>

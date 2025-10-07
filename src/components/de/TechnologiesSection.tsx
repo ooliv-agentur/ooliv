@@ -48,7 +48,7 @@ const TechnologiesSection = () => {
           
           <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {technologies.map((tech, index) => (
-              <div key={index} className="bg-medico-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-medico-turquoise group h-full flex flex-col">
+              <div key={index} className="bg-medico-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-accent-primary group h-full flex flex-col">
                 <div className="flex justify-center mb-6 group-hover:scale-105 transition-all duration-300">
                   <div className="filter group-hover:brightness-110 transition-all duration-300">
                     {tech.icon}
@@ -61,7 +61,7 @@ const TechnologiesSection = () => {
           </StaggerReveal>
         </div>
 
-        <div className="mt-16 text-center border-t-2 border-medico-turquoise/20 pt-12">
+        <div className="mt-16 text-center border-t-2 border-accent-primary/20 pt-12">
           <p className="text-medico-darkGreen italic max-w-3xl mx-auto text-base md:text-lg" style={{ lineHeight: '1.6' }}>
             KI ist ein Werkzeug. Die Verantwortung bleibt bei uns.
           </p>

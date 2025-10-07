@@ -32,8 +32,8 @@ const AboutUsDigitalPartner = () => {
                 'Wir bleiben neugierig, präzise und brutal ehrlich'
               ].map((point, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="h-6 w-6 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-3 flex-shrink-0 mt-0.5">
-                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
+                  <div className="h-6 w-6 flex items-center justify-center bg-accent-primary/10 rounded-full mr-3 flex-shrink-0 mt-0.5">
+                    <CheckCircle className="h-4 w-4 text-accent-primary" />
                   </div>
                   <Body size="base">{point}</Body>
                 </li>
