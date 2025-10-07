@@ -76,8 +76,8 @@ const Danke = () => {
             animate="visible"
           >
             <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-              <div className="h-16 w-16 rounded-full bg-medico-turquoise/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-medico-turquoise" aria-hidden="true" />
+              <div className="h-16 w-16 rounded-full bg-accent-primary/10 flex items-center justify-center">
+                <CheckCircle className="h-8 w-8 text-accent-primary" aria-hidden="true" />
               </div>
             </motion.div>
             
@@ -90,7 +90,7 @@ const Danke = () => {
               Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
                 href="mailto:info@ooliv.de" 
-                className="text-medico-turquoise hover:text-medico-turquoise/80 underline"
+                className="text-accent-primary hover:text-accent-primary/80 underline"
                 aria-label="E-Mail an info@ooliv.de senden"
               >
                 info@ooliv.de

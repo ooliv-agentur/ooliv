@@ -11,7 +11,7 @@ const ContactProjectSectionDE = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Send className="h-12 w-12 mx-auto mb-6 text-medico-turquoise" />
+        <Send className="h-12 w-12 mx-auto mb-6 text-accent-primary" />
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-medico-darkGreen">
           Projekt-Details über unser Formular teilen
         </h2>

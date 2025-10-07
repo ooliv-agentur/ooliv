@@ -76,11 +76,11 @@ const ContactHero = () => {
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-accent-primary/50 to-accent-primary/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>

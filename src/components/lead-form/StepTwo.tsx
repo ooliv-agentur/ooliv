@@ -44,7 +44,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
                     ? "Name Ihres Unternehmens" 
                     : "Your company name"
                   }
-                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise"
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary"
                 />
               </FormControl>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -66,7 +66,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
                 value={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="h-12 bg-white/10 border-medico-mint/30 text-white text-base hover:bg-white/15 focus:border-medico-turquoise">
+                  <SelectTrigger className="h-12 bg-white/10 border-medico-mint/30 text-white text-base hover:bg-white/15 focus:border-accent-primary">
                     <SelectValue 
                       placeholder={language === 'de' 
                         ? "Branche auswählen" 
@@ -78,31 +78,31 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
                 <SelectContent className="bg-medico-darkGreen text-white border-medico-mint/30 max-h-60">
                   {language === 'de' ? (
                     <>
-                      <SelectItem value="technology" className="text-base py-3 hover:bg-medico-turquoise/20">Technologie / Software</SelectItem>
-                      <SelectItem value="retail" className="text-base py-3 hover:bg-medico-turquoise/20">Einzelhandel / E-Commerce</SelectItem>
-                      <SelectItem value="finance" className="text-base py-3 hover:bg-medico-turquoise/20">Finanzen / Banking</SelectItem>
-                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-medico-turquoise/20">Gesundheit / Medizin</SelectItem>
-                      <SelectItem value="education" className="text-base py-3 hover:bg-medico-turquoise/20">Bildung / Training</SelectItem>
-                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-medico-turquoise/20">Produktion / Industrie</SelectItem>
-                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-medico-turquoise/20">Gastronomie / Tourismus</SelectItem>
-                      <SelectItem value="construction" className="text-base py-3 hover:bg-medico-turquoise/20">Bau / Immobilien</SelectItem>
-                      <SelectItem value="food" className="text-base py-3 hover:bg-medico-turquoise/20">Lebensmittel / Restaurant</SelectItem>
-                      <SelectItem value="professional" className="text-base py-3 hover:bg-medico-turquoise/20">Beratung / Dienstleistungen</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20">Andere Branche</SelectItem>
+                      <SelectItem value="technology" className="text-base py-3 hover:bg-accent-primary/20">Technologie / Software</SelectItem>
+                      <SelectItem value="retail" className="text-base py-3 hover:bg-accent-primary/20">Einzelhandel / E-Commerce</SelectItem>
+                      <SelectItem value="finance" className="text-base py-3 hover:bg-accent-primary/20">Finanzen / Banking</SelectItem>
+                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-accent-primary/20">Gesundheit / Medizin</SelectItem>
+                      <SelectItem value="education" className="text-base py-3 hover:bg-accent-primary/20">Bildung / Training</SelectItem>
+                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-accent-primary/20">Produktion / Industrie</SelectItem>
+                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-accent-primary/20">Gastronomie / Tourismus</SelectItem>
+                      <SelectItem value="construction" className="text-base py-3 hover:bg-accent-primary/20">Bau / Immobilien</SelectItem>
+                      <SelectItem value="food" className="text-base py-3 hover:bg-accent-primary/20">Lebensmittel / Restaurant</SelectItem>
+                      <SelectItem value="professional" className="text-base py-3 hover:bg-accent-primary/20">Beratung / Dienstleistungen</SelectItem>
+                      <SelectItem value="other" className="text-base py-3 hover:bg-accent-primary/20">Andere Branche</SelectItem>
                     </>
                   ) : (
                     <>
-                      <SelectItem value="technology" className="text-base py-3 hover:bg-medico-turquoise/20">Technology / Software</SelectItem>
-                      <SelectItem value="retail" className="text-base py-3 hover:bg-medico-turquoise/20">Retail / E-commerce</SelectItem>
-                      <SelectItem value="finance" className="text-base py-3 hover:bg-medico-turquoise/20">Finance / Banking</SelectItem>
-                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-medico-turquoise/20">Healthcare / Medical</SelectItem>
-                      <SelectItem value="education" className="text-base py-3 hover:bg-medico-turquoise/20">Education / Training</SelectItem>
-                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-medico-turquoise/20">Manufacturing / Industrial</SelectItem>
-                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-medico-turquoise/20">Hospitality / Tourism</SelectItem>
-                      <SelectItem value="construction" className="text-base py-3 hover:bg-medico-turquoise/20">Construction / Real Estate</SelectItem>
-                      <SelectItem value="food" className="text-base py-3 hover:bg-medico-turquoise/20">Food / Restaurant</SelectItem>
-                      <SelectItem value="professional" className="text-base py-3 hover:bg-medico-turquoise/20">Professional Services</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-medico-turquoise/20">Other</SelectItem>
+                      <SelectItem value="technology" className="text-base py-3 hover:bg-accent-primary/20">Technology / Software</SelectItem>
+                      <SelectItem value="retail" className="text-base py-3 hover:bg-accent-primary/20">Retail / E-commerce</SelectItem>
+                      <SelectItem value="finance" className="text-base py-3 hover:bg-accent-primary/20">Finance / Banking</SelectItem>
+                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-accent-primary/20">Healthcare / Medical</SelectItem>
+                      <SelectItem value="education" className="text-base py-3 hover:bg-accent-primary/20">Education / Training</SelectItem>
+                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-accent-primary/20">Manufacturing / Industrial</SelectItem>
+                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-accent-primary/20">Hospitality / Tourism</SelectItem>
+                      <SelectItem value="construction" className="text-base py-3 hover:bg-accent-primary/20">Construction / Real Estate</SelectItem>
+                      <SelectItem value="food" className="text-base py-3 hover:bg-accent-primary/20">Food / Restaurant</SelectItem>
+                      <SelectItem value="professional" className="text-base py-3 hover:bg-accent-primary/20">Professional Services</SelectItem>
+                      <SelectItem value="other" className="text-base py-3 hover:bg-accent-primary/20">Other</SelectItem>
                     </>
                   )}
                 </SelectContent>

@@ -22,7 +22,7 @@ const ContactTrustSectionDE = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
             Warum ooliv?
           </h2>
-          <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+          <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
             Erfahren Sie, was uns zu Ihrem idealen Partner für digitales Marketing macht
           </p>
@@ -34,10 +34,10 @@ const ContactTrustSectionDE = () => {
             {trustPoints.map((point, index) => (
               <div 
                 key={index} 
-                className="flex items-start bg-medico-mint/30 rounded-xl p-6 border border-medico-turquoise/20 hover:shadow-md transition-all duration-300"
+                className="flex items-start bg-medico-mint/30 rounded-xl p-6 border border-accent-primary/20 hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-medico-turquoise/20 rounded-full p-2 mr-4 flex-shrink-0">
-                  <CheckCircle className="h-6 w-6 text-medico-turquoise" />
+                <div className="bg-accent-primary/20 rounded-full p-2 mr-4 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-accent-primary" />
                 </div>
                 <p className="text-medico-darkGreen font-medium text-lg leading-relaxed">{point}</p>
               </div>
@@ -45,7 +45,7 @@ const ContactTrustSectionDE = () => {
           </div>
 
           {/* Trust Box with Ratings */}
-          <div className="bg-medico-turquoise/5 rounded-2xl p-8 border border-medico-turquoise/20 mb-12">
+          <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20 mb-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <a 
                 href="https://g.co/kgs/WY5xKY6" 

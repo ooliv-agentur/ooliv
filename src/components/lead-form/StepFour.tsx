@@ -39,7 +39,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                 <Input 
                   {...field} 
                   placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
-                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary"
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -64,7 +64,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                   {...field} 
                   placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
                   type="email" 
-                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary"
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -89,7 +89,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                   {...field} 
                   placeholder={language === 'de' ? "z. B. +49 123 456 789" : "+49 123 456 789"} 
                   type="tel" 
-                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
+                  className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary" 
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -116,7 +116,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
                     ? "Gibt es etwas, das wir vorab wissen sollten?" 
                     : "Any additional information about your project"
                   }
-                  className="min-h-[120px] bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise resize-none"
+                  className="min-h-[120px] bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary resize-none"
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);

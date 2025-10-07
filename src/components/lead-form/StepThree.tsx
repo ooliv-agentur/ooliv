@@ -89,7 +89,7 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
                                       )
                                     )
                               }}
-                              className="border-medico-mint/50 data-[state=checked]:bg-medico-turquoise data-[state=checked]:border-medico-turquoise"
+                              className="border-medico-mint/50 data-[state=checked]:bg-accent-primary data-[state=checked]:border-accent-primary"
                             />
                           </FormControl>
                           <div className="flex items-center leading-none">
@@ -122,7 +122,7 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
                       ? "Erzählen Sie uns Ihr Ziel" 
                       : "Tell us your goal"
                     }
-                    className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-medico-turquoise" 
+                    className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary" 
                   />
                 </FormControl>
                 <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />

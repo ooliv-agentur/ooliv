@@ -24,7 +24,7 @@ const LeadFormStepIndicator: React.FC<LeadFormStepIndicatorProps> = ({
               <div 
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
                   stepNumber === currentStep 
-                    ? 'bg-medico-turquoise text-white' 
+                    ? 'bg-accent-primary text-white' 
                     : stepNumber < currentStep 
                       ? 'bg-medico-mint text-medico-darkGreen' 
                       : 'bg-white/20 text-white/70'

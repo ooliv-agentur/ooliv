@@ -15,7 +15,7 @@ const ContactServicesSectionDE = () => {
             Unser Leistungsspektrum:
           </h3>
           <p className="text-lg md:text-xl text-medico-darkGreen max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
-            <Link to="/strategie" className="text-medico-turquoise hover:underline font-medium">Strategische Beratung</Link>, UX, <Link to="/webdesign" className="text-medico-turquoise hover:underline font-medium">Webdesign</Link>, <Link to="/webentwicklung" className="text-medico-turquoise hover:underline font-medium">Webentwicklung</Link>, <Link to="/seo-optimierung" className="text-medico-turquoise hover:underline font-medium">Suchmaschinenoptimierung</Link>, <Link to="/google-ads" className="text-medico-turquoise hover:underline font-medium">Google Ads</Link> und <Link to="/ki-technologien" className="text-medico-turquoise hover:underline font-medium">KI-Technologien</Link>.
+            <Link to="/strategie" className="text-accent-primary hover:underline font-medium">Strategische Beratung</Link>, UX, <Link to="/webdesign" className="text-accent-primary hover:underline font-medium">Webdesign</Link>, <Link to="/webentwicklung" className="text-accent-primary hover:underline font-medium">Webentwicklung</Link>, <Link to="/seo-optimierung" className="text-accent-primary hover:underline font-medium">Suchmaschinenoptimierung</Link>, <Link to="/google-ads" className="text-accent-primary hover:underline font-medium">Google Ads</Link> und <Link to="/ki-technologien" className="text-accent-primary hover:underline font-medium">KI-Technologien</Link>.
           </p>
         </div>
         

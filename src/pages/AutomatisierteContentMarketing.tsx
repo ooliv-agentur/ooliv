@@ -147,8 +147,8 @@ const AutomatisierteContentMarketing = () => {
                 return (
                   <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                     <CardContent className="p-8">
-                      <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center mb-6">
-                        <Icon className="w-8 h-8 text-medico-turquoise" />
+                      <div className="w-16 h-16 bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-accent-primary" />
                       </div>
                       <h3 className="text-xl font-bold text-brand-heading mb-4">
                         {benefit.title}
@@ -165,7 +165,7 @@ const AutomatisierteContentMarketing = () => {
         </section>
 
         {/* Mini-CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-medico-turquoise to-medico-turquoise-dark text-white">
+        <section className="py-16 bg-gradient-to-r from-accent-primary to-accent-primary/90 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Reveal>
               <h3 className="text-2xl font-bold mb-4">
@@ -177,7 +177,7 @@ const AutomatisierteContentMarketing = () => {
           <Button 
             onClick={handleStartProject}
             size="lg"
-            className="bg-white text-medico-turquoise hover:bg-gray-50 font-semibold px-8 py-3"
+            className="bg-white text-accent-primary hover:bg-gray-50 font-semibold px-8 py-3"
           >
             Kostenlose Beratung vereinbaren
           </Button>
@@ -204,7 +204,7 @@ const AutomatisierteContentMarketing = () => {
                 <Reveal key={index} delay={index * 0.1}>
                   <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow h-full">
                     <CardContent className="p-8">
-                      <div className="w-12 h-12 bg-medico-turquoise text-white rounded-full flex items-center justify-center mb-6 font-bold text-lg">
+                      <div className="w-12 h-12 bg-accent-primary text-white rounded-full flex items-center justify-center mb-6 font-bold text-lg">
                         {item.step}
                       </div>
                       <h3 className="text-xl font-bold text-brand-heading mb-4">
@@ -236,7 +236,7 @@ const AutomatisierteContentMarketing = () => {
               <div>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-6 w-6 text-accent-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-brand-heading mb-2">
                         Bewährte Enterprise-Technologie aus dem Silicon Valley
@@ -248,7 +248,7 @@ const AutomatisierteContentMarketing = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-6 w-6 text-accent-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-brand-heading mb-2">
                         Ranking bei Google UND ChatGPT
@@ -260,7 +260,7 @@ const AutomatisierteContentMarketing = () => {
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-medico-turquoise flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-6 w-6 text-accent-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-brand-heading mb-2">
                         Echtzeitdaten als Grundlage
@@ -280,19 +280,19 @@ const AutomatisierteContentMarketing = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-brand-text">Organischer Traffic</span>
-                    <span className="text-medico-turquoise font-bold">+340%</span>
+                    <span className="text-accent-primary font-bold">+340%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-brand-text">Domain Rating (DR)</span>
-                    <span className="text-medico-turquoise font-bold">+8 Punkte</span>
+                    <span className="text-accent-primary font-bold">+8 Punkte</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-brand-text">Neue Keywords</span>
-                    <span className="text-medico-turquoise font-bold">+700</span>
+                    <span className="text-accent-primary font-bold">+700</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-brand-text">Qualitative Backlinks</span>
-                    <span className="text-medico-turquoise font-bold">+210</span>
+                    <span className="text-accent-primary font-bold">+210</span>
                   </div>
                 </div>
               </div>

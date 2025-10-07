@@ -76,7 +76,7 @@ export default function LeadCaptureFab() {
             }}
             exit={{ opacity: 0, scale: 0.7 }}
             transition={{ duration: bubbleDuration, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed z-[215] w-12 h-12 rounded-full bg-medico-turquoise shadow-lg"
+            className="fixed z-[215] w-12 h-12 rounded-full bg-accent-primary shadow-lg"
           />
         )}
       </AnimatePresence>
@@ -94,7 +94,7 @@ export default function LeadCaptureFab() {
             onClick={openLead}
             className={cn(
               "fixed z-[216] flex items-center gap-2 rounded-full px-4 h-12",
-              "bg-medico-turquoise text-white shadow-xl hover:shadow-2xl",
+              "bg-accent-primary text-white shadow-xl hover:shadow-2xl",
               "transition-transform duration-200 hover:scale-105 active:scale-95"
             )}
             style={{
