@@ -80,7 +80,7 @@ const SingleArticleDisplay = ({ slug, onArticleLoad }: SingleArticleDisplayProps
       <section className="py-16 md:py-24 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-primary mx-auto mb-6"></div>
             <p className="text-medico-darkGreen font-satoshi text-lg">Lade Artikel...</p>
           </div>
         </div>

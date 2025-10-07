@@ -52,8 +52,8 @@ const KlickbetrugFeatures = () => {
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 text-left group hover:transform hover:scale-105">
               <div className="mb-6">
-                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-medico-turquoise/10 transition-colors duration-300">
-                  <feature.icon className="w-8 h-8 text-gray-600 group-hover:text-medico-turquoise transition-colors duration-300" />
+                <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-accent-primary/10 transition-colors duration-300">
+                  <feature.icon className="w-8 h-8 text-gray-600 group-hover:text-accent-primary transition-colors duration-300" />
                 </div>
               </div>
               <h3 className={`${getHeadingClasses('h4', 'primary', 'left')} mb-3`}>

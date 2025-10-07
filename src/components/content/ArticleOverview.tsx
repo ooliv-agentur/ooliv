@@ -36,9 +36,9 @@ const ArticleOverview = () => {
     return (
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-medico-turquoise/20 shadow-lg">
+          <Card className="border-accent-primary/20 shadow-lg">
             <CardContent className="p-16 text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medico-turquoise mx-auto mb-6"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent-primary mx-auto mb-6"></div>
               <Paragraph color="muted" className="font-satoshi text-lg">Lade Artikel...</Paragraph>
             </CardContent>
           </Card>
@@ -73,7 +73,7 @@ const ArticleOverview = () => {
         </div>
 
         {articles.length === 0 ? (
-          <Card className="border-medico-turquoise/20 bg-medico-mint/30 shadow-lg">
+          <Card className="border-accent-primary/20 bg-medico-mint/30 shadow-lg">
             <CardContent className="text-center p-16">
               <H2 className="mb-8 text-medico-darkGreen font-satoshi">Noch keine Artikel verfügbar</H2>
               <Paragraph color="secondary" className="mb-8 text-lg font-satoshi">
@@ -88,11 +88,11 @@ const ArticleOverview = () => {
                 <Card 
                   key={article.id} 
                   ref={index === articles.length - 1 ? lastElementRef : null}
-                  className="border-medico-turquoise/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden"
+                  className="border-accent-primary/20 bg-white shadow-lg hover:shadow-xl transition-all duration-300 group rounded-2xl overflow-hidden"
                 >
                   <CardContent className="p-8 h-full flex flex-col">
                     <div className="flex-1">
-                      <H3 className="mb-6 font-satoshi text-medico-darkGreen group-hover:text-medico-turquoise transition-colors leading-tight">
+                      <H3 className="mb-6 font-satoshi text-medico-darkGreen group-hover:text-accent-primary transition-colors leading-tight">
                         {article.title}
                       </H3>
                       
@@ -109,7 +109,7 @@ const ArticleOverview = () => {
                       )}
                       
                       <div className="flex items-center text-sm text-gray-500 mb-8 font-satoshi">
-                        <Calendar className="w-4 h-4 mr-2 text-medico-turquoise" />
+                        <Calendar className="w-4 h-4 mr-2 text-accent-primary" />
                         {new Date(article.created_at).toLocaleDateString('de-DE', {
                           year: 'numeric',
                           month: 'long',
@@ -142,7 +142,7 @@ const ArticleOverview = () => {
                             rel="noopener noreferrer"
                             title="Originalartikel öffnen"
                           >
-                            <ExternalLink className="w-4 h-4 text-medico-turquoise" />
+                            <ExternalLink className="w-4 h-4 text-accent-primary" />
                           </a>
                         </Button>
                       )}
@@ -155,9 +155,9 @@ const ArticleOverview = () => {
             {/* Loading indicator for infinite scroll */}
             {isLoadingMore && (
               <div className="flex justify-center items-center py-12">
-                <Card className="border-medico-turquoise/20 shadow-lg">
+                <Card className="border-accent-primary/20 shadow-lg">
                   <CardContent className="p-8 text-center">
-                    <Loader2 className="h-8 w-8 animate-spin text-medico-turquoise mx-auto mb-4" />
+                    <Loader2 className="h-8 w-8 animate-spin text-accent-primary mx-auto mb-4" />
                     <Paragraph color="muted" className="font-satoshi">Lade weitere Artikel...</Paragraph>
                   </CardContent>
                 </Card>
@@ -167,7 +167,7 @@ const ArticleOverview = () => {
             {/* End of articles indicator */}
             {!hasMore && articles.length > 0 && (
               <div className="text-center py-12">
-                <Card className="border-medico-turquoise/20 bg-medico-mint/30 shadow-lg">
+                <Card className="border-accent-primary/20 bg-medico-mint/30 shadow-lg">
                   <CardContent className="p-8">
                     <Paragraph color="secondary" className="font-satoshi text-lg">
                       Sie haben alle verfügbaren Artikel gesehen. 📚

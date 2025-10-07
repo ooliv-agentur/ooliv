@@ -55,8 +55,8 @@ const KlickbetrugCTA = () => {
           <StaggerReveal className={getGridClasses(3, 'large')}>
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 text-center group">
-                <div className="w-12 h-12 rounded-full bg-medico-turquoise/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-medico-turquoise/20 transition-colors duration-300">
-                  <benefit.icon className="w-6 h-6 text-medico-turquoise" />
+                <div className="w-12 h-12 rounded-full bg-accent-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-primary/20 transition-colors duration-300">
+                  <benefit.icon className="w-6 h-6 text-accent-primary" />
                 </div>
                 <h3 className={`${getHeadingClasses('h5', 'primary', 'center')} mb-3`}>
                   {benefit.title}

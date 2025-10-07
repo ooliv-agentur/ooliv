@@ -96,7 +96,7 @@ const TOCBlock = ({ items }: TOCBlockProps) => {
         <li key={`toc-${index}`} className={itemClasses}>
           <a 
             href={`#${anchor}`} 
-            className="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
+            className="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"
             onClick={(e) => {
               e.preventDefault();
               console.log(`🎯 Attempting to scroll to anchor: ${anchor}`);

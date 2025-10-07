@@ -22,7 +22,7 @@ export const createCustomRenderer = () => {
       case 2:
         return `<h2 id="${id}" class="${baseClasses} text-3xl md:text-4xl mt-20 mb-12">${text}</h2>`;
       case 3:
-        return `<h3 id="${id}" class="${baseClasses} text-2xl md:text-3xl mt-16 mb-10 border-l-4 border-medico-turquoise pl-8">${text}</h3>`;
+        return `<h3 id="${id}" class="${baseClasses} text-2xl md:text-3xl mt-16 mb-10 border-l-4 border-accent-primary pl-8">${text}</h3>`;
       case 4:
         return `<h4 id="${id}" class="${baseClasses} text-xl md:text-2xl mt-12 mb-8">${text}</h4>`;
       case 5:
@@ -85,7 +85,7 @@ export const createCustomRenderer = () => {
     
     if (task) {
       const checkedAttr = checked ? 'checked' : '';
-      return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-medico-turquoise"> ${parsedText}</li>`;
+      return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light"><input type="checkbox" ${checkedAttr} disabled class="absolute left-0 top-2 accent-accent-primary"> ${parsedText}</li>`;
     }
     
     // Check if this list item contains anchor links (TOC items) after parsing
@@ -94,7 +94,7 @@ export const createCustomRenderer = () => {
       return '';
     }
     
-    return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-medico-turquoise before:font-bold before:text-xl">${parsedText}</li>`;
+    return `<li class="mb-4 text-medico-darkGreen leading-relaxed relative pl-8 font-satoshi text-lg font-light before:content-['•'] before:absolute before:left-0 before:text-accent-primary before:font-bold before:text-xl">${parsedText}</li>`;
   };
   
   // Enhanced list styling with proper TOC detection and nesting
@@ -126,18 +126,18 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
   renderer.table = function({ header, rows }) {
     const headerCells = header.map(cell => {
       const text = this.parser.parseInline(cell.tokens);
-      return `<th class="px-6 py-4 text-left text-medico-darkGreen font-bold font-satoshi bg-medico-mint/20 border-b-2 border-medico-turquoise">${text}</th>`;
+      return `<th class="px-6 py-4 text-left text-medico-darkGreen font-bold font-satoshi bg-medico-mint/20 border-b-2 border-accent-primary">${text}</th>`;
     }).join('');
     
     const bodyRows = rows.map(row => {
       const cells = row.map(cell => {
         const text = this.parser.parseInline(cell.tokens);
-        return `<td class="px-6 py-4 text-medico-darkGreen font-satoshi font-light border-b border-medico-turquoise/20">${text}</td>`;
+        return `<td class="px-6 py-4 text-medico-darkGreen font-satoshi font-light border-b border-accent-primary/20">${text}</td>`;
       }).join('');
       return `<tr class="hover:bg-medico-mint/10 transition-colors duration-200">${cells}</tr>`;
     }).join('');
     
-    return `<div class="my-12 rounded-xl border border-medico-turquoise/20 shadow-lg">
+    return `<div class="my-12 rounded-xl border border-accent-primary/20 shadow-lg">
       <table class="w-full table-fixed bg-white">
         <thead>
           <tr>${headerCells}</tr>
@@ -152,13 +152,13 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
   // Custom blockquote renderer
   renderer.blockquote = function({ tokens }) {
     const text = this.parser.parseInline(tokens);
-    return `<blockquote class="border-l-4 border-medico-turquoise pl-8 my-12 italic text-medico-darkGreen bg-medico-mint/10 rounded-r-xl py-6 text-xl font-satoshi font-light leading-relaxed">${text}</blockquote>`;
+    return `<blockquote class="border-l-4 border-accent-primary pl-8 my-12 italic text-medico-darkGreen bg-medico-mint/10 rounded-r-xl py-6 text-xl font-satoshi font-light leading-relaxed">${text}</blockquote>`;
   };
   
   // Custom code block renderer
   renderer.code = function({ text, lang }) {
     const language = lang ? ` language-${lang}` : '';
-    return `<div class="my-12 rounded-xl overflow-hidden border border-medico-turquoise/20 shadow-lg">
+    return `<div class="my-12 rounded-xl overflow-hidden border border-accent-primary/20 shadow-lg">
       <pre class="bg-medico-darkGreen text-medico-mint p-6 overflow-x-auto font-mono text-sm leading-relaxed"><code class="${language}">${text}</code></pre>
     </div>`;
   };
@@ -175,7 +175,7 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
     // Handle anchor links with smooth scrolling
     if (href && href.startsWith('#')) {
       const anchor = href.substring(1);
-      return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
+      return `<a href="#${anchor}" class="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi toc-link" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
     }
     
     // Handle anchor links - convert full URLs with anchors to relative anchors
@@ -183,14 +183,14 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
       const anchorMatch = href.match(/#(.+)$/);
       if (anchorMatch && (href.includes('/artikel/') || href.startsWith('#'))) {
         const anchor = anchorMatch[1];
-        return `<a href="#${anchor}" class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
+        return `<a href="#${anchor}" class="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi" onclick="document.getElementById('${anchor}')?.scrollIntoView({behavior: 'smooth'}); return false;">${text}</a>`;
       }
     }
     
     // External links
     const target = href?.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : '';
     const titleAttr = title ? ` title="${title}"` : '';
-    return `<a href="${href}"${titleAttr} class="text-medico-turquoise hover:text-medico-darkGreen underline decoration-medico-turquoise/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"${target}>${text}</a>`;
+    return `<a href="${href}"${titleAttr} class="text-accent-primary hover:text-medico-darkGreen underline decoration-accent-primary/40 hover:decoration-medico-darkGreen transition-colors font-semibold font-satoshi"${target}>${text}</a>`;
   };
   
   // Custom image renderer - NO CAPTIONS for German articles
@@ -213,7 +213,7 @@ export const createStyledRenderers = (renderer: InstanceType<typeof marked.Rende
   
   // Custom horizontal rule renderer
   renderer.hr = function() {
-    return `<hr class="my-16 border-0 h-px bg-gradient-to-r from-transparent via-medico-turquoise to-transparent" />`;
+    return `<hr class="my-16 border-0 h-px bg-gradient-to-r from-transparent via-accent-primary to-transparent" />`;
   };
   
   return renderer;

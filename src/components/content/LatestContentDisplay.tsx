@@ -85,9 +85,9 @@ const LatestContentDisplay = () => {
     return (
       <section className={getSectionClasses('medium')}>
         <div className={getContainerClasses('narrow')}>
-          <Card className="border-medico-turquoise/20">
+          <Card className="border-accent-primary/20">
             <CardContent className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-medico-turquoise mx-auto mb-4"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-primary mx-auto mb-4"></div>
               <p className="text-medico-darkGreen">Lade neuesten Artikel...</p>
             </CardContent>
           </Card>
@@ -102,7 +102,7 @@ const LatestContentDisplay = () => {
         <div className="mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <H1 className="mb-2">Neuester Artikel</H1>
-            <Button asChild variant="link" className="p-0 h-auto text-medico-turquoise hover:text-medico-darkGreen">
+            <Button asChild variant="link" className="p-0 h-auto text-accent-primary hover:text-medico-darkGreen">
               <Link to="/artikel">Alle Artikel anzeigen →</Link>
             </Button>
           </div>
@@ -166,7 +166,7 @@ const LatestContentDisplay = () => {
         )}
 
         {!latestPost ? (
-          <Card className="border-medico-turquoise/20 bg-medico-mint/30">
+          <Card className="border-accent-primary/20 bg-medico-mint/30">
             <CardContent className="text-center p-12">
               <H2 className="mb-6">
                 Noch keine Artikel verfügbar
@@ -188,7 +188,7 @@ const LatestContentDisplay = () => {
             </CardContent>
           </Card>
         ) : (
-          <Card className="border-medico-turquoise/20 bg-white shadow-lg">
+          <Card className="border-accent-primary/20 bg-white shadow-lg">
             <CardContent className="p-8 lg:p-12">
               <ArticleHeader article={latestPost} />
               <ArticleContent article={latestPost} />

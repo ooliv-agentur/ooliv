@@ -10,7 +10,7 @@ const ArticleNavigation = () => {
       <Button 
         variant="outline" 
         asChild 
-        className="border-medico-turquoise/30 hover:bg-medico-turquoise/10 font-satoshi font-semibold"
+        className="border-accent-primary/30 hover:bg-accent-primary/10 font-satoshi font-semibold"
       >
         <Link to="/artikel">
           <ArrowLeft className="w-5 h-5 mr-3" />

@@ -43,8 +43,8 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
         {article.title}
       </H1>
       
-      <div className="flex items-center text-lg text-medico-turquoise mb-12">
-        <Calendar className="w-6 h-6 mr-4 text-medico-turquoise" />
+      <div className="flex items-center text-lg text-accent-primary mb-12">
+        <Calendar className="w-6 h-6 mr-4 text-accent-primary" />
         <span className="font-satoshi font-medium">
           Veröffentlicht am {new Date(article.created_at).toLocaleDateString('de-DE', {
             year: 'numeric',
@@ -70,7 +70,7 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
                 className="font-satoshi font-semibold"
               >
                 {urlCopied ? (
-                  <Check className="w-5 h-5 text-medico-turquoise" />
+                  <Check className="w-5 h-5 text-accent-primary" />
                 ) : (
                   <Copy className="w-5 h-5" />
                 )}

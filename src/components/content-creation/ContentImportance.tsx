@@ -68,7 +68,7 @@ const ContentImportance = () => {
                 className="bg-white p-8 rounded-lg shadow-card hover:shadow-cardHover transition-shadow duration-300 border border-gray-100 text-center"
               >
                 <div className="w-12 h-12 rounded-full bg-medico-mint flex items-center justify-center mx-auto mb-6">
-                  <Icon className="h-6 w-6 text-medico-turquoise" />
+                  <Icon className="h-6 w-6 text-accent-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-brand-heading">
                   {benefit.title}
