@@ -21,7 +21,7 @@ const AboutUsIndividual = () => {
           <div className="bg-medico-mint rounded-2xl p-6 shadow-sm border border-gray-100">
             <blockquote className="text-xl font-medium text-center text-medico-darkGreen italic">
               "Wir liefern nicht nur Websites. Wir bauen digitale Assets, die performen."
-              <footer className="mt-4 font-bold text-medico-turquoise text-base">– Uli, Gründer</footer>
+              <footer className="mt-4 font-bold text-accent-primary text-base">– Uli, Gründer</footer>
             </blockquote>
           </div>
         </div>

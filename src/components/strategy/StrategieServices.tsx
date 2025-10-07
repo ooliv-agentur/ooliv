@@ -43,7 +43,7 @@ const StrategieServices = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
               Unsere Strategie-Leistungen
             </h2>
-            <p className="text-lg md:text-xl text-medico-turquoise max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
               Umfassende Beratung und Konzeption für Ihren digitalen Erfolg
             </p>
           </div>
@@ -59,7 +59,7 @@ const StrategieServices = () => {
               <ul className="space-y-4">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-medico-turquoise mt-0.5 mr-3 flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-accent-primary mt-0.5 mr-3 flex-shrink-0" />
                     <span className="text-medico-darkGreen/90 leading-relaxed">{feature}</span>
                   </li>
                 ))}

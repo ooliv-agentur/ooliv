@@ -13,7 +13,7 @@ const AboutUsStory = () => {
             Wo Leidenschaft auf Leistung trifft
           </H2>
           <div className="flex justify-center mb-8">
-            <div className="h-12 w-12 flex items-center justify-center bg-medico-turquoise rounded-full">
+            <div className="h-12 w-12 flex items-center justify-center bg-accent-primary rounded-full">
               <Globe className="h-6 w-6 text-white" />
             </div>
           </div>
@@ -22,7 +22,7 @@ const AboutUsStory = () => {
               Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
             </Paragraph>
             <div className="bg-white rounded-2xl p-6 shadow-sm mb-8 border border-gray-100">
-              <blockquote className="text-xl md:text-2xl font-bold text-medico-turquoise italic leading-tight">
+              <blockquote className="text-xl md:text-2xl font-bold text-accent-primary italic leading-tight">
                 "Können Sie mit uns weitermachen?"
               </blockquote>
             </div>

@@ -14,17 +14,17 @@ const AiTechBenefits = () => {
       subtitle: "Our AI tools increase speed, precision, and scalability—without giving up creativity or control. We use AI where it creates measurable benefits—and rely on humans when it matters.",
       cards: [
         {
-          icon: <LineChart className="h-8 w-8 text-medico-turquoise" />,
+          icon: <LineChart className="h-8 w-8 text-accent-primary" />,
           title: "Strategically Integrated—Not Automated",
           description: "AI supports our workflows—but we make the decisions."
         },
         {
-          icon: <Clock className="h-8 w-8 text-medico-turquoise" />,
+          icon: <Clock className="h-8 w-8 text-accent-primary" />,
           title: "Faster Results",
           description: "AI helps us deliver research, variations, and initial drafts much faster—without compromising quality."
         },
         {
-          icon: <Lightbulb className="h-8 w-8 text-medico-turquoise" />,
+          icon: <Lightbulb className="h-8 w-8 text-accent-primary" />,
           title: "Creativity Remains Human",
           description: "Ideas, concepts, and storytelling always come from real minds."
         }
@@ -35,17 +35,17 @@ const AiTechBenefits = () => {
       subtitle: "KI macht uns schneller und präziser – aber wir behalten die Kontrolle. Wir nutzen KI dort, wo es Sinn macht – und verlassen uns auf Menschen, wenn Kreativität und Strategie gefragt sind.",
       cards: [
         {
-          icon: <LineChart className="h-8 w-8 text-medico-turquoise" />,
+          icon: <LineChart className="h-8 w-8 text-accent-primary" />,
           title: "KI unterstützt, Menschen entscheiden",
           description: "Sie bekommen keine AI-generierten Massentexte. KI hilft bei Recherche und Entwürfen – die Strategie kommt von uns."
         },
         {
-          icon: <Clock className="h-8 w-8 text-medico-turquoise" />,
+          icon: <Clock className="h-8 w-8 text-accent-primary" />,
           title: "Schneller zum Ergebnis",
           description: "Sie bekommen Entwürfe, Varianten und Drafts in Rekordzeit – ohne Qualitätsverlust. KI macht uns effizienter, nicht schlechter."
         },
         {
-          icon: <Lightbulb className="h-8 w-8 text-medico-turquoise" />,
+          icon: <Lightbulb className="h-8 w-8 text-accent-primary" />,
           title: "Kreativität bleibt menschlich",
           description: "Sie bekommen echte Ideen, nicht AI-Durchschnitt. Konzepte und Storytelling kommen aus Köpfen, nicht aus Prompts."
         }

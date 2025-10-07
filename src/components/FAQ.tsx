@@ -210,7 +210,7 @@ const FAQ = ({
                     {ctaText}
                   </button>
                 ) : (
-                  <Button asChild variant="outline" className="rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-turquoise hover:text-white hover:border-medico-turquoise font-medium px-8 py-3 transition-all duration-300">
+                  <Button asChild variant="outline" className="rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300">
                     <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
                       <ArrowRight className="h-4 w-4" />
                       {ctaText}

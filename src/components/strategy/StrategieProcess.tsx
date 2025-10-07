@@ -41,7 +41,7 @@ const StrategieProcess = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
               Unser strategischer Ansatz – von der Analyse bis zum Webkonzept und zur Umsetzung
             </h2>
-            <p className="text-lg md:text-xl text-medico-turquoise max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
               Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer aktuellen Website über das Webkonzept bis zur erfolgreichen Umsetzung.
             </p>
           </div>
@@ -58,9 +58,9 @@ const StrategieProcess = () => {
                       variant="round"
                       size="lg"
                       background="strong"
-                      className="text-medico-turquoise"
+                      className="text-accent-primary"
                     />
-                    <div className="absolute -top-2 -right-2 bg-medico-turquoise text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 bg-accent-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
                       {step.number}
                     </div>
                   </div>
@@ -71,7 +71,7 @@ const StrategieProcess = () => {
               
               {/* Connector line for desktop */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-medico-turquoise/30 transform -translate-y-1/2"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-accent-primary/30 transform -translate-y-1/2"></div>
               )}
             </div>
           ))}

@@ -46,7 +46,7 @@ const BaseBenefits = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
               {title}
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             {subtitle && (
               <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
                 {subtitle}
@@ -61,17 +61,17 @@ const BaseBenefits = ({
               key={index}
               className="text-center group hover:transform hover:scale-105 transition-all duration-300"
             >
-              <div className="mb-6 group-hover:bg-medico-turquoise/20 transition-colors duration-300">
+              <div className="mb-6 group-hover:bg-accent-primary/20 transition-colors duration-300">
                 {typeof benefit.icon === 'string' ? (
                   <RegisteredIcon 
                     name={benefit.icon as IconName}
                     variant="round"
                     size="xl"
                     background="light"
-                    className="mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300"
+                    className="mx-auto text-accent-primary group-hover:scale-110 transition-transform duration-300"
                   />
                 ) : (
-                  <div className="inline-flex items-center justify-center transition-colors rounded-full h-10 w-10 bg-medico-mint/20 p-2 mx-auto text-medico-turquoise group-hover:scale-110 transition-transform duration-300">
+                  <div className="inline-flex items-center justify-center transition-colors rounded-full h-10 w-10 bg-medico-mint/20 p-2 mx-auto text-accent-primary group-hover:scale-110 transition-transform duration-300">
                     <benefit.icon className="h-5 w-5" />
                   </div>
                 )}

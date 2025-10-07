@@ -10,33 +10,33 @@ const AiTechServices = () => {
   
   const services = language === 'de' ? [
     {
-      icon: <MessageSquare className="h-10 w-10 text-medico-turquoise" />,
+      icon: <MessageSquare className="h-10 w-10 text-accent-primary" />,
       title: "Text & Struktur mit ChatGPT",
       description: "Multilinguale Outlines, Messaging-Frameworks & Texte – redaktionell geprüft, SEO-orientiert."
     },
     {
-      icon: <ImageIcon className="h-10 w-10 text-medico-turquoise" />,
+      icon: <ImageIcon className="h-10 w-10 text-accent-primary" />,
       title: "Visuals & Motion mit Midjourney + Sora",
       description: "Individuelle Illustrationen & Video-Loops – markenspezifisch, skalierbar, visuell stark."
     },
     {
-      icon: <Code className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Code className="h-10 w-10 text-accent-primary" />,
       title: "Entwicklung mit KI-Tools",
       description: "Schnellere Prototypen, optimierter Code – unter Kontrolle unserer Entwickler:innen."
     }
   ] : [
     {
-      icon: <MessageSquare className="h-10 w-10 text-medico-turquoise" />,
+      icon: <MessageSquare className="h-10 w-10 text-accent-primary" />,
       title: "Text & Structure with ChatGPT",
       description: "Multilingual outlines, messaging frameworks & content – editorially reviewed, SEO-focused."
     },
     {
-      icon: <ImageIcon className="h-10 w-10 text-medico-turquoise" />,
+      icon: <ImageIcon className="h-10 w-10 text-accent-primary" />,
       title: "Visuals & Motion with Midjourney + Sora",
       description: "Custom illustrations & video loops – brand-specific, scalable, visually compelling."
     },
     {
-      icon: <Code className="h-10 w-10 text-medico-turquoise" />,
+      icon: <Code className="h-10 w-10 text-accent-primary" />,
       title: "Development with AI Tools",
       description: "Faster prototyping, optimized code – under our developers' control."
     }

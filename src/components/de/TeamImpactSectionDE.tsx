@@ -17,7 +17,7 @@ const TeamImpactSectionDE = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
             <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-              <Grid2X2 className="h-10 w-10 text-medico-turquoise" />
+              <Grid2X2 className="h-10 w-10 text-accent-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Strategie & UX</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -26,7 +26,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-accent-primary hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/strategie">
@@ -38,7 +38,7 @@ const TeamImpactSectionDE = () => {
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
             <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-              <Sparkles className="h-10 w-10 text-medico-turquoise" />
+              <Sparkles className="h-10 w-10 text-accent-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Content & SEO</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -47,7 +47,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-accent-primary hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/content-erstellung">
@@ -59,7 +59,7 @@ const TeamImpactSectionDE = () => {
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
             <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-              <Code2 className="h-10 w-10 text-medico-turquoise" />
+              <Code2 className="h-10 w-10 text-accent-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Design & Development</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -68,7 +68,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-accent-primary hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/webentwicklung">
@@ -80,7 +80,7 @@ const TeamImpactSectionDE = () => {
           
           <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
             <div className="w-16 h-16 bg-medico-mint rounded-full flex items-center justify-center mb-6">
-              <Phone className="h-10 w-10 text-medico-turquoise" />
+              <Phone className="h-10 w-10 text-accent-primary" />
             </div>
             <h3 className="text-xl font-semibold mb-3 text-gray-900">Kommunikation</h3>
             <p className="text-gray-600 mb-6 text-base leading-relaxed">
@@ -89,7 +89,7 @@ const TeamImpactSectionDE = () => {
             <div>
               <Button 
                 variant="link" 
-                className="text-medico-turquoise hover:text-green-700 p-0 h-auto font-medium" 
+                className="text-accent-primary hover:text-green-700 p-0 h-auto font-medium" 
                 asChild
               >
                 <Link to="/kontakt">

@@ -8,7 +8,7 @@ const ContactInfoSectionDE = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-            <MapPin className="h-8 w-8 mx-auto mb-4 text-medico-turquoise" />
+            <MapPin className="h-8 w-8 mx-auto mb-4 text-accent-primary" />
             <h3 className="font-bold text-lg mb-2 text-medico-darkGreen">Adresse</h3>
             <p className="text-medico-darkGreen">
               Mombacher Str. 25<br />
@@ -17,32 +17,32 @@ const ContactInfoSectionDE = () => {
           </div>
           
           <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-            <Phone className="h-8 w-8 mx-auto mb-4 text-medico-turquoise" />
+            <Phone className="h-8 w-8 mx-auto mb-4 text-accent-primary" />
             <h3 className="font-bold text-lg mb-2 text-medico-darkGreen">Telefon & WhatsApp</h3>
             <p className="text-medico-darkGreen mb-2">06131 – 63 67 801</p>
             <a 
               href="https://wa.me/+4917680167641" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-medico-turquoise hover:underline text-sm"
+              className="text-accent-primary hover:underline text-sm"
             >
               WhatsApp-Chat starten
             </a>
           </div>
           
           <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-            <Mail className="h-8 w-8 mx-auto mb-4 text-medico-turquoise" />
+            <Mail className="h-8 w-8 mx-auto mb-4 text-accent-primary" />
             <h3 className="font-bold text-lg mb-2 text-medico-darkGreen">E-Mail</h3>
             <a 
               href="mailto:info@ooliv.de"
-              className="text-medico-darkGreen hover:text-medico-turquoise"
+              className="text-medico-darkGreen hover:text-accent-primary"
             >
               info@ooliv.de
             </a>
           </div>
           
           <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-            <Clock className="h-8 w-8 mx-auto mb-4 text-medico-turquoise" />
+            <Clock className="h-8 w-8 mx-auto mb-4 text-accent-primary" />
             <h3 className="font-bold text-lg mb-2 text-medico-darkGreen">Bürozeiten</h3>
             <p className="text-medico-darkGreen">Mo-Fr: 9:00 – 17:00 Uhr</p>
           </div>

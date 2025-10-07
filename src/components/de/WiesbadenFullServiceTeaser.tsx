@@ -16,11 +16,11 @@ const WiesbadenFullServiceTeaser = () => {
         </h2>
         
         <p className="text-lg md:text-xl text-medico-darkGreen/80 mb-8 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-          Ob <span className="text-medico-turquoise font-medium">Website-Relaunch</span>, <span className="text-medico-turquoise font-medium">Google Ads</span> oder <span className="text-medico-turquoise font-medium">Content-Erstellung</span>: Als Werbeagentur in Wiesbaden begleiten wir Sie von der Strategie bis zur Umsetzung. Unsere Projekte basieren auf klaren Prozessen, erprobten Methoden — und echtem Interesse an Ihrem Erfolg.
+          Ob <span className="text-accent-primary font-medium">Website-Relaunch</span>, <span className="text-accent-primary font-medium">Google Ads</span> oder <span className="text-accent-primary font-medium">Content-Erstellung</span>: Als Werbeagentur in Wiesbaden begleiten wir Sie von der Strategie bis zur Umsetzung. Unsere Projekte basieren auf klaren Prozessen, erprobten Methoden — und echtem Interesse an Ihrem Erfolg.
         </p>
         
         <p className="text-lg md:text-xl text-medico-darkGreen/80 mb-12 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-          Unser Angebot umfasst <span className="text-medico-turquoise font-medium">Strategie & UX</span>, <span className="text-medico-turquoise font-medium">Webdesign</span>, <span className="text-medico-turquoise font-medium">Webentwicklung</span>, <span className="text-medico-turquoise font-medium">Content-Erstellung</span>, <span className="text-medico-turquoise font-medium">SEO-Optimierung</span>, <span className="text-medico-turquoise font-medium">Google Ads</span> und <span className="text-medico-turquoise font-medium">KI-Technologien</span>.
+          Unser Angebot umfasst <span className="text-accent-primary font-medium">Strategie & UX</span>, <span className="text-accent-primary font-medium">Webdesign</span>, <span className="text-accent-primary font-medium">Webentwicklung</span>, <span className="text-accent-primary font-medium">Content-Erstellung</span>, <span className="text-accent-primary font-medium">SEO-Optimierung</span>, <span className="text-accent-primary font-medium">Google Ads</span> und <span className="text-accent-primary font-medium">KI-Technologien</span>.
         </p>
         
         <Button 

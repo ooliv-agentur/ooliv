@@ -19,7 +19,7 @@ const AboutUsWhySmall = () => {
               Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.
             </Paragraph>
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <blockquote className="text-xl md:text-2xl font-bold text-medico-turquoise italic leading-tight">
+              <blockquote className="text-xl md:text-2xl font-bold text-accent-primary italic leading-tight">
                 "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
               </blockquote>
             </div>

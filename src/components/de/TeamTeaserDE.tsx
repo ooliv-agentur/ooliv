@@ -23,7 +23,7 @@ const TeamTeaserDE = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">Das Team hinter ooliv</h2>
-          <p className="text-xl text-medico-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.6' }}>
+          <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.6' }}>
             Jedes Projekt wird direkt von der Geschäftsführung begleitet.
           </p>
           <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
@@ -37,7 +37,7 @@ const TeamTeaserDE = () => {
               key={index} 
               className="flex flex-col items-center group"
             >
-              <div className="relative mb-8 w-[200px] h-[200px] rounded-full overflow-hidden bg-medico-white border-4 border-medico-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:border-medico-turquoise">
+              <div className="relative mb-8 w-[200px] h-[200px] rounded-full overflow-hidden bg-medico-white border-4 border-medico-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:border-accent-primary">
                 <img 
                   src={member.image} 
                   alt={member.name}

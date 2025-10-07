@@ -42,7 +42,7 @@ const WiesbadenLeistungen = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6">
               Unsere Leistungen für Wiesbadener Unternehmen
             </h2>
-            <p className="text-xl text-medico-turquoise max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <p className="text-xl text-accent-primary max-w-4xl mx-auto" style={{ lineHeight: '1.6' }}>
               Digitale Lösungen, die Ihr Unternehmen in Wiesbaden messbar voranbringen
             </p>
           </div>
@@ -52,7 +52,7 @@ const WiesbadenLeistungen = () => {
           {solutions.map((solution, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4" style={{ backgroundColor: '#32b1ab' }}>
+                <div className="w-16 h-16 rounded-full bg-accent-primary flex items-center justify-center mr-4">
                   <div style={{ color: 'white' }}>
                     {solution.icon}
                   </div>
@@ -65,7 +65,7 @@ const WiesbadenLeistungen = () => {
               <ul className="space-y-3">
                 {solution.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-gray-700">
-                    <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#32b1ab' }}></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-primary mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -79,7 +79,7 @@ const WiesbadenLeistungen = () => {
             <h3 className="text-3xl font-bold text-medico-darkGreen mb-6">
               Bereit für Ihren digitalen Erfolg in Wiesbaden?
             </h3>
-            <p className="text-xl text-medico-turquoise mb-8 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <p className="text-xl text-accent-primary mb-8 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
               Lassen Sie uns in einem unverbindlichen Gespräch klären, wie wir Ihr Unternehmen digital voranbringen können.
             </p>
             <Button variant="primary" size="lg" className="group" asChild>

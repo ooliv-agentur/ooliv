@@ -34,8 +34,8 @@ const AboutUsTargetBusinesses = () => {
                 'Lokalen Dienstleistern, die den nächsten Schritt gehen wollen'
               ].map((item, index) => (
                 <li key={index} className="flex items-center">
-                  <span className="h-8 w-8 flex items-center justify-center bg-medico-turquoise/10 rounded-full mr-3 flex-shrink-0">
-                    <CheckCircle className="h-4 w-4 text-medico-turquoise" />
+                  <span className="h-8 w-8 flex items-center justify-center bg-accent-primary/10 rounded-full mr-3 flex-shrink-0">
+                    <CheckCircle className="h-4 w-4 text-accent-primary" />
                   </span>
                   <span className="text-medico-darkGreen text-base">{item}</span>
                 </li>

@@ -24,8 +24,8 @@ const AboutUsTeamCapabilities = () => {
             { title: 'Branding & Visuelle Identität', icon: Award }
           ].map((role, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 shadow-sm transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-gray-100">
-              <div className="mb-4 h-12 w-12 flex items-center justify-center bg-medico-turquoise/10 rounded-full">
-                <role.icon className="h-6 w-6 text-medico-turquoise" />
+              <div className="mb-4 h-12 w-12 flex items-center justify-center bg-accent-primary/10 rounded-full">
+                <role.icon className="h-6 w-6 text-accent-primary" />
               </div>
               <H3 className="mb-2">{role.title}</H3>
             </div>

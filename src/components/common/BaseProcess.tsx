@@ -39,7 +39,7 @@ const BaseProcess = ({
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
               {title}
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             {subtitle && (
               <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
                 {subtitle}
@@ -59,9 +59,9 @@ const BaseProcess = ({
                       variant="round"
                       size="lg"
                       background="strong"
-                      className="text-medico-turquoise"
+                      className="text-accent-primary"
                     />
-                    <div className="absolute -top-2 -right-2 bg-medico-turquoise text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 bg-accent-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
                       {step.number}
                     </div>
                   </div>
@@ -72,7 +72,7 @@ const BaseProcess = ({
               
               {/* Connector line for desktop */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-medico-turquoise/30 transform -translate-y-1/2"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-accent-primary/30 transform -translate-y-1/2"></div>
               )}
             </div>
           ))}

@@ -54,7 +54,7 @@ const StrategieBenefits = () => {
               >
                 <div className="mb-6 flex justify-center">
                   <div className="h-20 w-20 bg-medico-mint/20 rounded-full flex items-center justify-center p-4">
-                    <IconComponent className="h-10 w-10 text-medico-turquoise" />
+                    <IconComponent className="h-10 w-10 text-accent-primary" />
                   </div>
                 </div>
                 <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
