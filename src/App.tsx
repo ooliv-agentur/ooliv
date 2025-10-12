@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { CookieConsentProvider } from './contexts/CookieConsentContext';
+import { AuthProvider } from './contexts/AuthContext';
 import CustomCursor from './components/CustomCursor';
 import ScrollIndicator from './components/ScrollIndicator';
 import FloatingActionButtons from './components/FloatingActionButtons';
@@ -40,6 +41,7 @@ const Artikel = lazy(() => import('./pages/Artikel'));
 const LatestContent = lazy(() => import('./pages/LatestContent'));
 const SingleArticle = lazy(() => import('./pages/SingleArticle'));
 const LinkedInSetup = lazy(() => import('./pages/LinkedInSetup'));
+const Auth = lazy(() => import('./pages/Auth'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -70,9 +72,10 @@ function App() {
       <ContextErrorBoundary>
         <LanguageProvider>
         <CookieConsentProvider>
-          <HelmetProvider>
-            <QueryClientProvider client={queryClient}>
-              <Router>
+          <AuthProvider>
+            <HelmetProvider>
+              <QueryClientProvider client={queryClient}>
+                <Router>
                 <CustomCursor />
                 <ScrollIndicator />
                 <FloatingActionButtons />
@@ -108,6 +111,7 @@ function App() {
                     <Route path="/artikel" element={<Artikel />} />
                     <Route path="/neuester-artikel" element={<LatestContent />} />
                     <Route path="/artikel/:slug" element={<SingleArticle />} />
+                    <Route path="/auth" element={<Auth />} />
                     <Route path="/linkedin-setup" element={<LinkedInSetup />} />
                     <Route path="/impressum" element={<GermanLegalNotice />} />
                     <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
@@ -123,6 +127,7 @@ function App() {
               </Router>
             </QueryClientProvider>
           </HelmetProvider>
+          </AuthProvider>
         </CookieConsentProvider>
         </LanguageProvider>
       </ContextErrorBoundary>

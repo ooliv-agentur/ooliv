@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface LinkedInConnectButtonProps {
   onConnected?: (profile: any) => void;
@@ -15,19 +16,26 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
 }) => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const { user } = useAuth();
 
   const handleConnect = async () => {
+    if (!user) {
+      toast({
+        title: "Fehler",
+        description: "Sie müssen angemeldet sein, um LinkedIn zu verbinden.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     try {
       setLoading(true);
-      
-      // For admin setup, use a fixed admin user ID
-      const adminUserId = 'ooliv-admin-2025';
 
-      // Get LinkedIn auth URL
+      // Get LinkedIn auth URL using authenticated user
       const { data, error } = await supabase.functions.invoke('linkedinAuth', {
         body: { 
           action: 'getAuthUrl',
-          userId: adminUserId 
+          userId: user.id
         }
       });
 
@@ -59,7 +67,7 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
             const { data: accounts } = await supabase
               .from('linkedin_accounts')
               .select('*')
-              .eq('user_id', adminUserId)
+              .eq('user_id', user.id)
               .eq('is_active', true);
 
             if (accounts && accounts.length > 0) {

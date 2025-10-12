@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,6 +8,7 @@ import { CheckCircle, Linkedin, AlertCircle, Info } from 'lucide-react';
 import { LinkedInConnectButton } from '@/components/linkedin/LinkedInConnectButton';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface LinkedInAccount {
   id: string;
@@ -20,18 +22,30 @@ const LinkedInSetup = () => {
   const [accounts, setAccounts] = useState<LinkedInAccount[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const { user, loading: authLoading, isAdmin } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    loadAccounts();
-  }, []);
+    if (!authLoading && !user) {
+      navigate('/auth');
+    }
+  }, [user, authLoading, navigate]);
+
+  useEffect(() => {
+    if (user) {
+      loadAccounts();
+    }
+  }, [user]);
 
   const loadAccounts = async () => {
+    if (!user) return;
+    
     try {
-      // Check for accounts with admin user ID
+      // Query using authenticated user ID
       const { data, error } = await supabase
         .from('linkedin_accounts')
         .select('*')
-        .eq('user_id', 'ooliv-admin-2025')
+        .eq('user_id', user.id)
         .eq('is_active', true);
 
       if (error) {
