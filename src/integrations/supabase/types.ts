@@ -329,10 +329,6 @@ export type Database = {
         }
         Returns: boolean
       }
-      migrate_linkedin_tokens: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
       secure_migrate_existing_tokens: {
         Args: Record<PropertyKey, never>
         Returns: undefined
