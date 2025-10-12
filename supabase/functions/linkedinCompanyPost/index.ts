@@ -95,12 +95,19 @@ serve(async (req) => {
       const result = await response.json();
 
       if (!response.ok) {
-        console.error('LinkedIn company post failed:', result);
-        return new Response(JSON.stringify({ 
-          error: 'Company post failed', 
-          details: result 
-        }), {
+        // Log detailed error server-side
+        console.error('LinkedIn company post failed:', {
           status: response.status,
+          result: result,
+          accountId: accountId,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Return generic error to client
+        return new Response(JSON.stringify({ 
+          error: 'Unable to create company post' 
+        }), {
+          status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
@@ -142,11 +149,19 @@ serve(async (req) => {
 
       if (!response.ok) {
         const error = await response.text();
-        return new Response(JSON.stringify({ 
-          error: 'Failed to fetch companies', 
-          details: error 
-        }), {
+        // Log detailed error server-side
+        console.error('Failed to fetch LinkedIn companies:', {
           status: response.status,
+          error: error,
+          accountId: accountId,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Return generic error to client
+        return new Response(JSON.stringify({ 
+          error: 'Unable to fetch companies' 
+        }), {
+          status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
@@ -191,8 +206,17 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('LinkedIn company post error:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    // Log detailed error server-side
+    console.error('LinkedIn company post error:', {
+      error: error?.message,
+      stack: error?.stack,
+      timestamp: new Date().toISOString()
+    });
+    
+    // Return generic error to client
+    return new Response(JSON.stringify({ 
+      error: 'Unable to complete operation' 
+    }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
