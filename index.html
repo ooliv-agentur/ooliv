@@ -232,9 +232,6 @@
     var target = 'https://www.clickcease.com/monitor/stat.js';
     script.src = target;var elem = document.head;elem.appendChild(script);
     </script>
-    <noscript>
-    <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com' alt='ClickCease'/></a>
-    </noscript>
     <!--  ClickCease.com tracking-->
     
     <!-- Resource hints for performance -->
@@ -246,6 +243,11 @@
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4JBH6JZ"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <!-- ClickCease.com noscript fallback -->
+    <noscript>
+      <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com' alt='ClickCease'/></a>
     </noscript>
     
     <div id="root"></div>
