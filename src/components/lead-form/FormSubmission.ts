@@ -4,6 +4,22 @@ import { useToast } from "@/hooks/use-toast";
 import { useCallback, useRef } from "react";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getSupabaseHeaders, SEND_PROJECT_FORM_URL } from '@/utils/apiUtils';
+import { z } from 'zod';
+
+// Server-side validation schema to prevent malicious input
+const serverValidationSchema = z.object({
+  name: z.string().min(2).max(200),
+  email: z.string().email().max(255),
+  phone: z.string().max(50).optional(),
+  companyName: z.string().max(200).optional(),
+  industry: z.string().max(100),
+  websiteUrl: z.string().url().max(500).optional().or(z.literal('')),
+  location: z.string().max(200).optional(),
+  projectType: z.string().max(500),
+  goal: z.string().max(500),
+  message: z.string().max(2000).optional(),
+  language: z.enum(['de', 'en']),
+});
 
 // Helper function to sanitize text input to avoid MIME encoding issues
 const sanitizeInput = (text: string | undefined): string => {
@@ -65,6 +81,22 @@ export const useFormSubmission = (
       message: sanitizeInput(data.message || ''),
       language: language // Add the current language to the form data
     };
+    
+    // Perform server-side validation
+    const validationResult = serverValidationSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      console.error('Server-side validation failed:', validationResult.error);
+      setIsSubmitting(false);
+      toast({
+        title: language === 'de' ? "Validierungsfehler" : "Validation Error",
+        description: language === 'de' 
+          ? "Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut."
+          : "Please check your inputs and try again.",
+        variant: "destructive",
+      });
+      return;
+    }
     
     try {
       const headers = getSupabaseHeaders();

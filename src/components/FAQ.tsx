@@ -1,5 +1,6 @@
 
 import React from 'react';
+import DOMPurify from 'dompurify';
 import { 
   Accordion,
   AccordionContent,
@@ -95,12 +96,22 @@ const FAQ = ({
   
   const faqs = customFaqs || defaultFaqs;
   
+  // Sanitize FAQ answers to prevent XSS
+  const sanitizedFaqs = faqs.map(faq => ({
+    ...faq,
+    answer: DOMPurify.sanitize(faq.answer, {
+      ALLOWED_TAGS: ['br', 'strong', 'em', 'a', 'p'],
+      ALLOWED_ATTR: ['href', 'class'],
+      ALLOWED_URI_REGEXP: /^(?:\/|https?:\/\/)/i
+    })
+  }));
+  
   // Group FAQs by category if requested and not using custom FAQs
   const groupedFaqs = groupByCategory && !customFaqs ? {
-    process: faqs.filter(faq => faq.category === 'process'),
-    pricing: faqs.filter(faq => faq.category === 'pricing'),
-    support: faqs.filter(faq => faq.category === 'support'),
-    about: faqs.filter(faq => faq.category === 'about')
+    process: sanitizedFaqs.filter(faq => faq.category === 'process'),
+    pricing: sanitizedFaqs.filter(faq => faq.category === 'pricing'),
+    support: sanitizedFaqs.filter(faq => faq.category === 'support'),
+    about: sanitizedFaqs.filter(faq => faq.category === 'about')
   } : null;
 
   const categoryTitles = {
@@ -118,7 +129,7 @@ const FAQ = ({
     window.dispatchEvent(new Event('open-lead-form'));
   };
   
-  const faqSchema = generateFAQSchema(faqs);
+  const faqSchema = generateFAQSchema(sanitizedFaqs);
   
   return (
     <section className="py-24 bg-white">

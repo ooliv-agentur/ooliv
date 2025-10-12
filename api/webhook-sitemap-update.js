@@ -1,6 +1,7 @@
 // Supabase Database Webhook Handler - Regenerate Sitemap on Content Changes
 const { createClient } = require('@supabase/supabase-js');
 const crypto = require('crypto');
+const { checkRateLimit } = require('./rate-limiter');
 
 module.exports = async function handler(req, res) {
   console.log('🔔 Webhook Sitemap Update: Received request');
@@ -12,6 +13,29 @@ module.exports = async function handler(req, res) {
     console.log('❌ Method not allowed:', req.method);
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Rate limiting by IP address
+  const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || 
+                   req.headers['x-real-ip'] || 
+                   req.socket.remoteAddress || 
+                   'unknown';
+  
+  const rateLimitResult = checkRateLimit(clientIp);
+  
+  if (!rateLimitResult.allowed) {
+    console.log(`⚠️ Rate limit exceeded for IP: ${clientIp}`);
+    return res.status(429).json({ 
+      error: 'Too many requests',
+      retryAfter: Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000)
+    });
+  }
+  
+  console.log(`✅ Rate limit check passed. Remaining: ${rateLimitResult.remaining}`);
+  
+  // Set rate limit headers
+  res.setHeader('X-RateLimit-Limit', '10');
+  res.setHeader('X-RateLimit-Remaining', rateLimitResult.remaining.toString());
+  res.setHeader('X-RateLimit-Reset', Math.ceil(rateLimitResult.resetAt / 1000).toString());
 
   try {
     // Webhook signature verification for security

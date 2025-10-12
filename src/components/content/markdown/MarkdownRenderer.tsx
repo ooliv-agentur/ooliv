@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 import TOCBlock from './TOCBlock';
 import { processMarkdownContent, extractTOCItems } from './utils/markdownUtils';
 import { createCustomRenderer, createStyledRenderers } from './config/rendererConfig';
@@ -26,7 +27,14 @@ const MarkdownRenderer = ({ content }: MarkdownRendererProps) => {
   });
   
   // Convert markdown to HTML string - ensure we get a string, not a promise
-  const htmlContent = marked.parse(processedMarkdown) as string;
+  const rawHtmlContent = marked.parse(processedMarkdown) as string;
+  
+  // Sanitize HTML to prevent XSS attacks
+  const htmlContent = DOMPurify.sanitize(rawHtmlContent, {
+    ADD_TAGS: ['iframe'],
+    ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'],
+    ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|sms|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i
+  });
   
   // Debug: Log all heading IDs that will be rendered
   React.useEffect(() => {

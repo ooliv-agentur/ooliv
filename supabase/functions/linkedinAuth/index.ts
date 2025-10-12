@@ -32,9 +32,11 @@ serve(async (req) => {
 
       console.log('🔗 LinkedIn OAuth redirect received:', { code: !!code, state, error });
 
-      // Validate state parameter format (should be a UUID)
-      if (state && !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(state)) {
-        console.error('Invalid state parameter format:', state);
+      // Validate state parameter format (should be a UUID) and exists
+      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      
+      if (!state || !uuidRegex.test(state)) {
+        console.error('Invalid or missing state parameter - potential CSRF attack');
         return new Response(`
           <html>
             <body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
