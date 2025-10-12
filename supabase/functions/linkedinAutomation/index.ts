@@ -145,8 +145,8 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('LinkedIn automation error:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    console.error('LinkedIn automation error:', error instanceof Error ? error.message : 'Unknown error');
+    return new Response(JSON.stringify({ error: 'Automation failed' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

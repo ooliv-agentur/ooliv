@@ -50,6 +50,27 @@ export type Database = {
         }
         Relationships: []
       }
+      cookie_consent_rate_limit: {
+        Row: {
+          consent_count: number | null
+          first_consent_at: string | null
+          last_consent_at: string | null
+          session_id: string
+        }
+        Insert: {
+          consent_count?: number | null
+          first_consent_at?: string | null
+          last_consent_at?: string | null
+          session_id: string
+        }
+        Update: {
+          consent_count?: number | null
+          first_consent_at?: string | null
+          last_consent_at?: string | null
+          session_id?: string
+        }
+        Relationships: []
+      }
       cookie_consents: {
         Row: {
           analytics: boolean

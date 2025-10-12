@@ -32,6 +32,27 @@ serve(async (req) => {
 
       console.log('🔗 LinkedIn OAuth redirect received:', { code: !!code, state, error });
 
+      // Validate state parameter format (should be a UUID)
+      if (state && !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(state)) {
+        console.error('Invalid state parameter format:', state);
+        return new Response(`
+          <html>
+            <body style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
+              <h2 style="color: #d32f2f;">❌ Security Error</h2>
+              <p>Invalid state parameter - possible CSRF attack</p>
+              <p style="color: #666;">This window will close automatically...</p>
+              <script>
+                setTimeout(() => {
+                  window.close();
+                }, 3000);
+              </script>
+            </body>
+          </html>
+        `, {
+          headers: { ...corsHeaders, 'Content-Type': 'text/html' },
+        });
+      }
+
       if (error) {
         console.error('LinkedIn OAuth error:', error);
         return new Response(`
@@ -351,8 +372,8 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('LinkedIn auth error:', error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    console.error('LinkedIn auth error:', error instanceof Error ? error.message : 'Unknown error');
+    return new Response(JSON.stringify({ error: 'Authentication failed' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });

@@ -13,7 +13,67 @@ serve(async (req) => {
   }
 
   try {
-    const formData = await req.json();
+    let formData;
+    try {
+      formData = await req.json();
+    } catch (e) {
+      return new Response(JSON.stringify({
+        success: false,
+        message: "Invalid JSON payload"
+      }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders }
+      });
+    }
+
+    // Validate required fields
+    if (!formData.email || !formData.name || !formData.projectType) {
+      return new Response(JSON.stringify({
+        success: false,
+        message: "Missing required fields: email, name, projectType"
+      }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders }
+      });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      return new Response(JSON.stringify({
+        success: false,
+        message: "Invalid email format"
+      }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders }
+      });
+    }
+
+    // Validate field lengths
+    const maxLengths = {
+      name: 100,
+      email: 255,
+      companyName: 200,
+      industry: 100,
+      websiteUrl: 500,
+      location: 200,
+      goal: 500,
+      phone: 50,
+      message: 2000
+    };
+
+    for (const [field, maxLength] of Object.entries(maxLengths)) {
+      if (formData[field] && formData[field].length > maxLength) {
+        return new Response(JSON.stringify({
+          success: false,
+          message: `Field ${field} exceeds maximum length of ${maxLength}`
+        }), {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders }
+        });
+      }
+    }
+
     const smtpUsername = Deno.env.get("SMTP_USERNAME");
     const smtpPassword = Deno.env.get("SMTP_PASSWORD");
 
@@ -50,10 +110,10 @@ serve(async (req) => {
       }
     });
   } catch (error) {
-    console.error("Error sending emails:", error);
+    console.error("Error sending emails:", error instanceof Error ? error.message : "Unknown error");
     return new Response(JSON.stringify({
       success: false,
-      message: error.message || "Unknown error"
+      message: "Failed to send emails"
     }), {
       status: 500,
       headers: {

@@ -35,9 +35,40 @@ serve(async (req) => {
       });
     }
 
-    // Parse the JSON payload
-    const payload = await req.json();
-    console.log('Received webhook payload:', payload);
+    // Parse and validate the JSON payload
+    let payload;
+    try {
+      payload = await req.json();
+    } catch (e) {
+      console.error('Invalid JSON payload');
+      return new Response('Invalid JSON', { 
+        status: 400,
+        headers: corsHeaders 
+      });
+    }
+
+    // Validate required fields
+    if (!payload.id || !payload.title || typeof payload.id !== 'string' || typeof payload.title !== 'string') {
+      console.error('Missing or invalid required fields');
+      return new Response('Missing required fields: id, title', { 
+        status: 400,
+        headers: corsHeaders 
+      });
+    }
+
+    // Validate field lengths to prevent abuse
+    if (payload.title.length > 500 || 
+        (payload.metaDescription && payload.metaDescription.length > 1000) ||
+        (payload.content_html && payload.content_html.length > 500000) ||
+        (payload.content_markdown && payload.content_markdown.length > 500000)) {
+      console.error('Field length exceeds limits');
+      return new Response('Field length exceeds limits', { 
+        status: 400,
+        headers: corsHeaders 
+      });
+    }
+
+    console.log('Validated webhook payload:', { id: payload.id, title: payload.title });
 
     // Initialize Supabase client with service role key for bypassing RLS
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -104,10 +135,10 @@ serve(async (req) => {
       });
 
     if (error) {
-      console.error('Error inserting content post:', error);
-      return new Response('Internal server error', { 
+      console.error('Error inserting content post:', error.message);
+      return new Response(JSON.stringify({ error: 'Failed to store content' }), { 
         status: 500,
-        headers: corsHeaders 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
 
@@ -127,10 +158,10 @@ serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('Error processing webhook:', error);
-    return new Response('Internal server error', { 
+    console.error('Error processing webhook:', error instanceof Error ? error.message : 'Unknown error');
+    return new Response(JSON.stringify({ error: 'Failed to process webhook' }), { 
       status: 500,
-      headers: corsHeaders 
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 });
