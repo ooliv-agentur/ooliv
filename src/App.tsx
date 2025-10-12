@@ -41,7 +41,7 @@ const Artikel = lazy(() => import('./pages/Artikel'));
 const LatestContent = lazy(() => import('./pages/LatestContent'));
 const SingleArticle = lazy(() => import('./pages/SingleArticle'));
 const LinkedInSetup = lazy(() => import('./pages/LinkedInSetup'));
-const Auth = lazy(() => import('./pages/Auth'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -70,66 +70,66 @@ function App() {
   return (
     <ErrorBoundary>
       <ContextErrorBoundary>
-        <LanguageProvider>
-        <CookieConsentProvider>
-          <AuthProvider>
+        <AuthProvider>
+          <LanguageProvider>
+          <CookieConsentProvider>
             <HelmetProvider>
               <QueryClientProvider client={queryClient}>
                 <Router>
-                <CustomCursor />
-                <ScrollIndicator />
-                <FloatingActionButtons />
-                <CookieNotification />
-                <RouterErrorBoundary>
-                  <EmailCaptureController />
-                </RouterErrorBoundary>
-                
-                {/* Single LeadGenerationOverlay instance for the entire app */}
-                <LeadGenerationOverlay 
-                  open={showLeadForm} 
-                  onOpenChange={handleLeadOpenChange}
-                />
-                
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Routes>
-                    {/* German Routes - All pages lazy loaded */}
-                    <Route path="/" element={<GermanIndex />} />
-                    <Route path="/webdesign" element={<GermanWebDesign />} />
-                    <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-                    <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
-                    <Route path="/kontakt" element={<GermanContact />} />
-                    <Route path="/strategie" element={<Strategie />} />
-                    <Route path="/seo-optimierung" element={<GermanSEO />} />
-                    <Route path="/content-erstellung" element={<GermanContentCreation />} />
-                    <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />
-                    <Route path="/google-ads" element={<GermanGoogleAds />} />
-                    <Route path="/klickbetrug" element={<Klickbetrug />} />
-                    <Route path="/referenzen" element={<GermanCaseStudies />} />
-                    <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                    <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-                    <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
-                    <Route path="/artikel" element={<Artikel />} />
-                    <Route path="/neuester-artikel" element={<LatestContent />} />
-                    <Route path="/artikel/:slug" element={<SingleArticle />} />
-                    <Route path="/auth" element={<Auth />} />
-                    <Route path="/linkedin-setup" element={<LinkedInSetup />} />
-                    <Route path="/impressum" element={<GermanLegalNotice />} />
-                    <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
-                    <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
-                    <Route path="/danke" element={<GermanThankYou />} />
+                  <CustomCursor />
+                  <ScrollIndicator />
+                  <FloatingActionButtons />
+                  <CookieNotification />
+                  <RouterErrorBoundary>
+                    <EmailCaptureController />
+                  </RouterErrorBoundary>
+                  
+                  {/* Single LeadGenerationOverlay instance for the entire app */}
+                  <LeadGenerationOverlay 
+                    open={showLeadForm} 
+                    onOpenChange={handleLeadOpenChange}
+                  />
+                  
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                      {/* German Routes - All pages lazy loaded */}
+                      <Route path="/" element={<GermanIndex />} />
+                      <Route path="/webdesign" element={<GermanWebDesign />} />
+                      <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
+                      <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                      <Route path="/kontakt" element={<GermanContact />} />
+                      <Route path="/strategie" element={<Strategie />} />
+                      <Route path="/seo-optimierung" element={<GermanSEO />} />
+                      <Route path="/content-erstellung" element={<GermanContentCreation />} />
+                      <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />
+                      <Route path="/google-ads" element={<GermanGoogleAds />} />
+                      <Route path="/klickbetrug" element={<Klickbetrug />} />
+                      <Route path="/referenzen" element={<GermanCaseStudies />} />
+                      <Route path="/ueber-uns" element={<GermanAboutUs />} />
+                      <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
+                      <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
+                      <Route path="/artikel" element={<Artikel />} />
+                      <Route path="/neuester-artikel" element={<LatestContent />} />
+                      <Route path="/artikel/:slug" element={<SingleArticle />} />
+                      <Route path="/admin-login" element={<AdminLogin />} />
+                      <Route path="/linkedin-setup" element={<LinkedInSetup />} />
+                      <Route path="/impressum" element={<GermanLegalNotice />} />
+                      <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
+                      <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
+                      <Route path="/danke" element={<GermanThankYou />} />
 
-                    {/* 404 Route */}
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Suspense>
-                
-                <Toaster />
-              </Router>
-            </QueryClientProvider>
-          </HelmetProvider>
-          </AuthProvider>
-        </CookieConsentProvider>
-        </LanguageProvider>
+                      {/* 404 Route */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Suspense>
+                  
+                  <Toaster />
+                </Router>
+              </QueryClientProvider>
+            </HelmetProvider>
+          </CookieConsentProvider>
+          </LanguageProvider>
+        </AuthProvider>
       </ContextErrorBoundary>
     </ErrorBoundary>
   );

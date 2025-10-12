@@ -4,7 +4,8 @@ import PageLayout from '@/components/PageLayout';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Linkedin, AlertCircle, Info } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, Linkedin, AlertCircle, Info, LogOut } from 'lucide-react';
 import { LinkedInConnectButton } from '@/components/linkedin/LinkedInConnectButton';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -22,14 +23,15 @@ const LinkedInSetup = () => {
   const [accounts, setAccounts] = useState<LinkedInAccount[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
-  const { user, loading: authLoading, isAdmin } = useAuth();
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!authLoading && !user) {
-      navigate('/auth');
+    // Redirect to login if not authenticated
+    if (!user && !loading) {
+      navigate('/admin-login');
     }
-  }, [user, authLoading, navigate]);
+  }, [user, loading, navigate]);
 
   useEffect(() => {
     if (user) {
@@ -41,7 +43,7 @@ const LinkedInSetup = () => {
     if (!user) return;
     
     try {
-      // Query using authenticated user ID
+      // Query using authenticated user's ID
       const { data, error } = await supabase
         .from('linkedin_accounts')
         .select('*')
@@ -50,6 +52,11 @@ const LinkedInSetup = () => {
 
       if (error) {
         console.error('Error loading accounts:', error);
+        toast({
+          title: "Fehler",
+          description: "LinkedIn-Konten konnten nicht geladen werden.",
+          variant: "destructive"
+        });
       } else {
         setAccounts(data || []);
       }
@@ -66,6 +73,11 @@ const LinkedInSetup = () => {
       description: "Neue Artikel werden nun automatisch auf LinkedIn geteilt.",
     });
     loadAccounts();
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/admin-login');
   };
 
   if (loading) {
@@ -96,19 +108,29 @@ const LinkedInSetup = () => {
       <meta name="robots" content="noindex, follow" />
       
       <div className="container mx-auto px-4 py-8 max-w-2xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4">LinkedIn Integration für Artikel-Posting</h1>
-          <div className="bg-blue-50 p-4 rounded-lg mb-4">
-            <p className="text-blue-700">
-              <strong>Warum LinkedIn OAuth?</strong><br/>
-              • Sie empfangen bereits Artikel über Webhook ✅<br/>
-              • Um diese automatisch auf LinkedIn zu posten, brauchen Sie LinkedIn's API<br/>
-              • Dafür sind LinkedIn OAuth-Tokens erforderlich (separate von Supabase)
+        <div className="flex justify-between items-start mb-8">
+          <div>
+            <h1 className="text-3xl font-bold mb-4">LinkedIn Integration für Artikel-Posting</h1>
+            <div className="bg-blue-50 p-4 rounded-lg mb-4">
+              <p className="text-blue-700">
+                <strong>Warum LinkedIn OAuth?</strong><br/>
+                • Sie empfangen bereits Artikel über Webhook ✅<br/>
+                • Um diese automatisch auf LinkedIn zu posten, brauchen Sie LinkedIn's API<br/>
+                • Dafür sind LinkedIn OAuth-Tokens erforderlich (separate von Supabase)
+              </p>
+            </div>
+            <p className="text-muted-foreground">
+              Verbinden Sie Ihr LinkedIn-Unternehmenskonto für automatische Artikel-Posts
             </p>
           </div>
-          <p className="text-muted-foreground">
-            Verbinden Sie Ihr LinkedIn-Unternehmenskonto für automatische Artikel-Posts
-          </p>
+          <Button
+            onClick={handleSignOut}
+            variant="outline"
+            size="sm"
+          >
+            <LogOut className="h-4 w-4 mr-2" />
+            Abmelden
+          </Button>
         </div>
 
         <Card className="mb-6">

@@ -21,8 +21,8 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
   const handleConnect = async () => {
     if (!user) {
       toast({
-        title: "Fehler",
-        description: "Sie müssen angemeldet sein, um LinkedIn zu verbinden.",
+        title: "Nicht angemeldet",
+        description: "Bitte melden Sie sich an, um LinkedIn zu verbinden.",
         variant: "destructive"
       });
       return;
@@ -31,7 +31,7 @@ export const LinkedInConnectButton: React.FC<LinkedInConnectButtonProps> = ({
     try {
       setLoading(true);
 
-      // Get LinkedIn auth URL using authenticated user
+      // Get LinkedIn auth URL using authenticated user's ID
       const { data, error } = await supabase.functions.invoke('linkedinAuth', {
         body: { 
           action: 'getAuthUrl',
