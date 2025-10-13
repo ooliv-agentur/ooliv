@@ -42,6 +42,7 @@ const LatestContent = lazy(() => import('./pages/LatestContent'));
 const SingleArticle = lazy(() => import('./pages/SingleArticle'));
 const LinkedInSetup = lazy(() => import('./pages/LinkedInSetup'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const KostenlosesWebsiteKonzept = lazy(() => import('./pages/KostenlosesWebsiteKonzept'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -117,6 +118,7 @@ function App() {
                       <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                       <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
                       <Route path="/danke" element={<GermanThankYou />} />
+                      <Route path="/kostenloses-website-konzept" element={<KostenlosesWebsiteKonzept />} />
 
                       {/* 404 Route */}
                       <Route path="*" element={<NotFound />} />
