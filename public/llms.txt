@@ -1,0 +1,69 @@
+# ooliv.de
+
+> Diese Seite bietet fundierte, zeitlose Inhalte zu Webdesign, SEO, digitalem Marketing, Content-Automatisierung und maßgeschneiderten B2B-Lösungen. Sie enthält detaillierte Fallstudien, Servicebeschreibungen, strategische Einblicke und technisches Fachwissen.
+
+## Kern-Inhalte
+
+### Webdesign & User Experience
+- Strategien zur Erstellung von Websites, die Leads generieren und Vertrauen aufbauen
+- Webdesign-Fallstudien mit visuellen und funktionalen Verbesserungen
+- Prinzipien für responsives, benutzerfreundliches Design und Usability Best Practices
+
+### SEO & Digitale Sichtbarkeit
+- SEO-Grundlagen: On-Page-, technische Optimierung und Content-Strategien
+- Google Ads Management für Lead-Generierung
+- Lokale SEO-Einblicke für regionale Märkte wie Mainz, Frankfurt und Wiesbaden
+
+### Content Marketing & Automatisierung
+- KI-gestützte Content-Erstellungsprozesse
+- Strategien für Social Media Automatisierung und Backlink-Aufbau
+- Fallbeispiele zur Content-Automatisierung für mehr Online-Präsenz
+
+### Strategische Website-Entwicklung
+- Prozess von Strategiedefinition, Wireframing und Content-Entwicklung
+- Maßgeschneiderte Webentwicklung mit WordPress und HTML
+- Conversion Rate Optimierung durch UX und digitales Branding
+
+### Conversion & Lead-Generierung
+- Ansätze zur Umwandlung von Website-Traffic in konkrete Anfragen
+- Integration von Analytics zur Performance-Messung
+- Beispiele erfolgreicher Kunden-Conversion-Strategien
+
+## Ressourcen
+
+### Fallstudien
+- KLAIBER - Website Relaunch für mehr Sichtbarkeit
+- COBUS Industries - Internationale Produktkommunikation
+- SPEZ AG - Markteintritt und Markenlaunch
+- IconPro - Technische Markenpräsentation
+- Quartier Am Kliff - Immobilien-Branding
+
+### Service-Angebot
+- Individuelle Website-Entwicklung
+- SEO und Google Ads Management
+- Content Marketing Automatisierung
+- Digitales Branding und Positionierung
+
+### Tools & Technologien
+- KI-Tools: ChatGPT, Midjourney, Ahrefs
+- Projektmanagement: Basecamp
+- Web-Plattformen: WordPress, HTML, SEO-Tools
+
+## Wichtige Seiten
+
+- [Über ooliv](/ueber-uns) - Team und Arbeitsweise
+- [Referenzen](/referenzen) - Erfolgreiche Kundenprojekte
+- [Webdesign](/webdesign) - Website-Entwicklung und UX
+- [SEO-Optimierung](/seo-optimierung) - Suchmaschinenoptimierung
+- [Content-Erstellung](/content-erstellung) - Content Marketing
+- [KI-Technologien](/ki-technologien) - KI-Integration
+- [Google Ads](/google-ads) - Performance Marketing
+- [Werbeagentur Frankfurt](/werbeagentur-frankfurt) - Lokale Agentur Frankfurt
+- [Werbeagentur Wiesbaden](/werbeagentur-wiesbaden) - Lokale Agentur Wiesbaden
+- [Kontakt](/kontakt) - Kontaktaufnahme
+
+## Standorte & Zielgruppen
+
+- Hauptsitz: Mainz
+- Regionale Schwerpunkte: Frankfurt, Wiesbaden, Rhein-Main-Gebiet
+- Zielgruppe: B2B-Unternehmen, mittelständische Betriebe, Industriekunden
