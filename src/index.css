@@ -342,4 +342,11 @@ body.minimal-theme {
     background-color: #1A1A1A !important;
     color: white !important;
   }
+  
+  /* Force typewriter/dynamic subheadline text to black */
+  [style*="--accent-primary"],
+  .text-accent-primary,
+  span[style*="color"] {
+    color: #1A1A1A !important;
+  }
 }

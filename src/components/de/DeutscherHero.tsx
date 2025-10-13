@@ -26,9 +26,9 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "strategische Klarheit",
-    "optimale Nutzerführung", 
-    "mehr Anfragen"
+    "Websites, die Anfragen generieren.",
+    "Nutzerführung, die konvertiert.", 
+    "Strategien mit messbaren Ergebnissen."
   ];
   
   return (
@@ -37,7 +37,7 @@ const DeutscherHero = () => {
         isHomepage={true}
         title="Ihre Website bringt keine Anfragen? Das ändern wir."
         subtitle="Kostenloses Website-Konzept in 48h: Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung. Sie entscheiden danach, ob Sie mit uns weitermachen wollen."
-        dynamicPrefix="Für"
+        dynamicPrefix=""
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
           text: "Jetzt kostenloses Konzept holen",
