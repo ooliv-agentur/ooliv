@@ -28,6 +28,9 @@ const WebsiteRelaunchTiming = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Wann ist der richtige Zeitpunkt für Ihren Website-Relaunch?
           </h2>
+          <p className="text-lg text-muted-foreground mt-4">
+            Ein Relaunch lohnt sich immer dann, wenn Ihr bestehender Webauftritt nicht mehr zu Ihren Zielen passt.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

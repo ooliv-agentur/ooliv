@@ -13,7 +13,7 @@ const WebsiteRelaunchSEO = () => {
     <AnimatedSection className="py-20 bg-[#0B1C2A] text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          Website Relaunch Agentur – professionelle Neugestaltung mit Strategie.
+          Website-Relaunch mit Strategie, Design und technischer Exzellenz.
         </h2>
         
         <div className="prose prose-lg prose-invert max-w-none mb-8">
@@ -24,7 +24,11 @@ const WebsiteRelaunchSEO = () => {
             Bei ooliv entwickeln wir ganzheitliche Relaunch-Konzepte, die Strategie, User Experience und technische Exzellenz verbinden. Von der initialen Analyse über die Strukturplanung bis zur visuellen Gestaltung – wir begleiten Sie durch jeden Schritt. Das Ergebnis: eine moderne, conversion-optimierte Website, die Ihre Marke authentisch repräsentiert und messbare Geschäftsergebnisse liefert.
           </p>
           <p className="leading-relaxed">
-            Unser kostenloses Relaunch-Konzept gibt Ihnen einen klaren Überblick über Potenziale und Optimierungsansätze. Sie erhalten eine fundierte Analyse Ihrer aktuellen Website sowie konkrete Empfehlungen für Struktur, Design und Technologie – ohne Risiko und vollständig unverbindlich.
+            Unser kostenloses Relaunch-Konzept gibt Ihnen einen klaren Überblick über Potenziale und Optimierungsansätze. Sie erhalten eine fundierte Analyse Ihrer aktuellen Website sowie konkrete Empfehlungen für Struktur, Design und Technologie – ohne Risiko und vollständig unverbindlich. Erfahren Sie mehr über unser{" "}
+            <a href="/kostenloses-website-konzept" className="text-accent hover:underline font-semibold">
+              kostenloses Website-Konzept
+            </a>
+            .
           </p>
         </div>
 

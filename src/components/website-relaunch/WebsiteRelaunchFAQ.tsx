@@ -11,15 +11,15 @@ const WebsiteRelaunchFAQ = () => {
   const faqs = [
     {
       question: "Was kostet ein Website-Relaunch?",
-      answer: "Ausschließlich nach Konzeptphase – das Erstkonzept ist kostenlos."
+      answer: "Die Erstberatung und das Konzept sind kostenlos. Für die Umsetzung erstellen wir anschließend ein individuelles Angebot, abhängig von Umfang und Funktionalität."
     },
     {
       question: "Wie lange dauert ein Relaunch?",
-      answer: "Je nach Umfang 6–10 Wochen vom Konzept bis zum Go-Live."
+      answer: "Je nach Komplexität in der Regel 6 bis 10 Wochen – vom Konzept bis zum Go-Live."
     },
     {
       question: "Kann ich Teile meiner alten Website übernehmen?",
-      answer: "Ja – wir integrieren vorhandene Inhalte, wo sinnvoll."
+      answer: "Ja. Bestehende Inhalte, Strukturen oder Medien werden, wenn sinnvoll, integriert und technisch modernisiert."
     }
   ];
 
