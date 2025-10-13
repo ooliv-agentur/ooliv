@@ -139,13 +139,13 @@ const PageHero = ({
           </h1>
           
           {/* Dynamic subheadlines section for homepage */}
-          {dynamicSubheadlines && dynamicPrefix && (
+          {dynamicSubheadlines && (
             <div className="text-left">
               <div
                 className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
                 style={{ color: 'hsl(var(--accent-primary))' }}
               >
-                <span className="inline">{dynamicPrefix} </span>
+                {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
                 <DynamicSubheadlines 
                   subheadlines={dynamicSubheadlines}
                   interval={4000}
