@@ -11,11 +11,11 @@ const KostenlosesKonzeptFAQ = () => {
   const faqs = [
     {
       question: "Ist das Konzept wirklich kostenlos?",
-      answer: "Ja. Sie erhalten eine individuelle Analyse ohne Verpflichtung. Erst wenn Sie danach mit uns weiterarbeiten möchten, entstehen Kosten."
+      answer: "Ja. Sie erhalten eine individuelle Analyse ohne Verpflichtung."
     },
     {
       question: "Wie schnell erhalte ich mein Konzept?",
-      answer: "Innerhalb von 48 Stunden nach Ihrer Anfrage."
+      answer: "In der Regel innerhalb von 48 Stunden nach Ihrer Anfrage."
     },
     {
       question: "Was beinhaltet das Konzept genau?",

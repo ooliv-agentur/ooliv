@@ -13,9 +13,15 @@ const KostenlosesKonzeptWhy = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Als Agentur für strategisches Webdesign entwickeln wir Websites, die nicht nur schön aussehen, sondern messbar funktionieren. Unser Fokus liegt auf Struktur, Klarheit und Nutzererlebnis.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Mit unserem kostenlosen Website-Konzept erhalten Sie einen klaren Überblick über Optimierungspotenziale – von der Content-Struktur bis zur technischen Performance.
             </p>
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
+              className="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent/90 text-foreground font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-md"
+            >
+              Jetzt Analyse starten →
+            </button>
           </div>
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">

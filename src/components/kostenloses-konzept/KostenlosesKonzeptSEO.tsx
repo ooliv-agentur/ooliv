@@ -13,7 +13,7 @@ const KostenlosesKonzeptSEO = () => {
     <AnimatedSection className="py-20 bg-[#0B1C2A] text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          Website optimieren lassen – für mehr Anfragen und bessere Ergebnisse.
+          Website optimieren lassen – so gewinnen Sie mehr Anfragen und Umsatz.
         </h2>
         
         <div className="prose prose-lg prose-invert max-w-none mb-8">
@@ -24,7 +24,11 @@ const KostenlosesKonzeptSEO = () => {
             Mit einer gezielten Website-Optimierung können Sie Ihre Online-Präsenz auf das nächste Level heben. Wir analysieren Ihre Website ganzheitlich – von der technischen Performance über die Content-Struktur bis zur User Experience. Das Ergebnis: eine klare Roadmap für mehr Sichtbarkeit, bessere Conversion-Raten und messbare Geschäftsergebnisse.
           </p>
           <p className="leading-relaxed">
-            Unser kostenloses Website-Konzept bietet Ihnen den perfekten Einstieg: Sie erhalten eine individuelle Analyse Ihrer Website mit konkreten Handlungsempfehlungen – ohne Risiko und unverbindlich. So können Sie fundiert entscheiden, welche Optimierungen den größten Impact für Ihr Unternehmen haben.
+            Unser kostenloses Website-Konzept bietet Ihnen den perfekten Einstieg: Sie erhalten eine individuelle Analyse Ihrer Website mit konkreten Handlungsempfehlungen – ohne Risiko und unverbindlich. So können Sie fundiert entscheiden, welche Optimierungen den größten Impact für Ihr Unternehmen haben. Mehr zu unserem{" "}
+            <a href="/website-relaunch" className="text-accent hover:underline font-semibold">
+              Website-Relaunch
+            </a>
+            .
           </p>
         </div>
 

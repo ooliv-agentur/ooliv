@@ -25,6 +25,16 @@ const KostenlosesKonzeptProof = () => {
     <AnimatedSection className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <p className="text-sm text-muted-foreground mb-4">
+            Vertrauen Sie auf mehrfach ausgezeichnete Projekte.
+          </p>
+          <div className="flex justify-center items-center mb-6">
+            <img 
+              src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" 
+              alt="Sortlist Badge"
+              className="h-16 opacity-70 hover:opacity-100 transition-opacity"
+            />
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Ergebnisse, die überzeugen.
           </h2>
@@ -71,13 +81,6 @@ const KostenlosesKonzeptProof = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center gap-8 flex-wrap">
-          <img 
-            src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" 
-            alt="Sortlist Badge"
-            className="h-16 opacity-70 hover:opacity-100 transition-opacity"
-          />
-        </div>
       </div>
     </AnimatedSection>
   );

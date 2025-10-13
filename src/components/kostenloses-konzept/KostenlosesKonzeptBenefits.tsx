@@ -32,6 +32,9 @@ const KostenlosesKonzeptBenefits = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Was Sie mit dem kostenlosen Website-Konzept erhalten
           </h2>
+          <p className="text-lg text-muted-foreground mt-4">
+            Jede Analyse basiert auf klaren Conversion-Prinzipien und über 100 erfolgreichen Projekten.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
