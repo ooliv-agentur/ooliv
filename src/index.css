@@ -349,4 +349,18 @@ body.minimal-theme {
   span[style*="color"] {
     color: #1A1A1A !important;
   }
+
+  /* Force floating action button icons to white */
+  button[aria-label*="Projekt"] svg,
+  button[aria-label*="project"] svg,
+  button[aria-label*="Email"] svg,
+  button[aria-label*="E-Mail"] svg,
+  button[aria-label*="anrufen"] svg,
+  button[aria-label*="Call"] svg,
+  button[aria-label*="Prototyp"] svg,
+  button[aria-label*="prototype"] svg,
+  button[aria-label*="Menü"] svg,
+  button[aria-label*="menu"] svg {
+    color: white !important;
+  }
 }
