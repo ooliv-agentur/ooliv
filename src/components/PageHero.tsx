@@ -311,7 +311,12 @@ const PageHero = ({
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">            
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+            {badge && (
+              <p className="text-sm font-semibold mb-4 uppercase tracking-wide" style={{ color: '#00B8A9' }}>
+                {badge}
+              </p>
+            )}
             {renderTitle()}
             {renderSubtitle()}
             {renderCtas()}
