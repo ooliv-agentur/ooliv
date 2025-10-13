@@ -11,7 +11,7 @@ const KostenlosesKonzeptFAQ = () => {
   const faqs = [
     {
       question: "Ist das Konzept wirklich kostenlos?",
-      answer: "Ja. Sie erhalten eine individuelle Analyse ohne Verpflichtung."
+      answer: "Ja. Sie erhalten eine individuelle Analyse Ihrer Website – komplett kostenlos und ohne Verpflichtung."
     },
     {
       question: "Wie schnell erhalte ich mein Konzept?",
@@ -19,7 +19,7 @@ const KostenlosesKonzeptFAQ = () => {
     },
     {
       question: "Was beinhaltet das Konzept genau?",
-      answer: "Eine Struktur- und Inhaltsanalyse, Empfehlungen zur Conversion-Optimierung sowie visuelle und technische Verbesserungsvorschläge."
+      answer: "Eine detaillierte Analyse von Struktur, Inhalten, Nutzerführung und Technik – inklusive Handlungsempfehlungen für mehr Anfragen."
     }
   ];
 
