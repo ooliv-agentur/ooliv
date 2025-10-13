@@ -4,6 +4,9 @@ import { CORE_COLORS, resetToMonthlyColor } from './colorSystem';
 // Pure black & white minimal theme (logo stays turquoise)
 export const setHybridMinimalTheme = () => {
   if (typeof document !== 'undefined') {
+    // Add minimal theme class to body
+    document.body.classList.add('minimal-theme');
+    
     // Pure white backgrounds
     document.documentElement.style.setProperty('--accent-primary', '0 0% 20%'); // Dark gray for text/buttons
     document.documentElement.style.setProperty('--accent-secondary', '0 0% 100%'); // Pure white
@@ -22,6 +25,9 @@ export const setHybridMinimalTheme = () => {
     document.documentElement.style.setProperty('--brand-mint', '0 0% 100%'); // White
     document.documentElement.style.setProperty('--brand-background', '0 0% 100%'); // Pure white
     document.documentElement.style.setProperty('--brand-background-alt', '0 0% 98%'); // Very subtle gray
+    
+    // Override medico colors
+    document.documentElement.style.setProperty('--medico-mint', '0 0% 100%'); // White
     
     // Hide floating circles
     const circles = document.querySelectorAll('.floating-circle');
@@ -47,8 +53,11 @@ export const setFullMinimalTheme = () => {
 
 // Reset to colorful theme
 export const resetToColorfulTheme = () => {
-  // Show floating circles again
+  // Remove minimal theme class from body
   if (typeof document !== 'undefined') {
+    document.body.classList.remove('minimal-theme');
+    
+    // Show floating circles again
     const circles = document.querySelectorAll('.floating-circle');
     circles.forEach(circle => {
       (circle as HTMLElement).style.display = '';

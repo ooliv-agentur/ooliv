@@ -242,3 +242,104 @@ img {
 img[width][height] {
   height: auto;
 }
+
+/* Minimal Theme Overrides - Force all backgrounds to white/gray */
+body.minimal-theme {
+  /* Override all mint/turquoise backgrounds - be VERY aggressive */
+  .bg-medico-mint,
+  section.bg-medico-mint,
+  div.bg-medico-mint,
+  .bg-brand-background,
+  .bg-brand-backgroundAlt {
+    background-color: #FFFFFF !important;
+  }
+  
+  /* Override any opacity variants */
+  .bg-medico-mint\/20,
+  .bg-medico-mint\/10,
+  .bg-medico-mint\/5 {
+    background-color: #FAFAFA !important;
+  }
+  
+  /* Override accent backgrounds */
+  .bg-accent-primary,
+  div.bg-accent-primary {
+    background-color: #F5F5F5 !important;
+  }
+  
+  /* Override accent with opacity */
+  .bg-accent-primary\/5,
+  .bg-accent-primary\/10,
+  .bg-accent-primary\/20 {
+    background-color: #FAFAFA !important;
+  }
+  
+  .bg-accent-complementary {
+    background-color: #1A1A1A !important;
+  }
+  
+  /* Override borders */
+  .border-accent-primary,
+  .border-accent-primary\/20,
+  .border-accent-primary\/30 {
+    border-color: #E5E5E5 !important;
+  }
+  
+  .border-medico-darkGreen {
+    border-color: #333333 !important;
+  }
+  
+  /* Override text colors */
+  .text-accent-primary {
+    color: #1A1A1A !important;
+  }
+  
+  .text-medico-darkGreen {
+    color: #1A1A1A !important;
+  }
+  
+  /* Override hover states */
+  .hover\:bg-accent-primary:hover,
+  .hover\:bg-medico-darkGreen:hover {
+    background-color: #E5E5E5 !important;
+  }
+  
+  .hover\:bg-accent-complementary:hover {
+    background-color: #1A1A1A !important;
+  }
+  
+  /* Keep buttons readable but minimal */
+  button,
+  a[class*="bg-accent"],
+  .bg-white {
+    background-color: #FFFFFF !important;
+  }
+  
+  button.bg-accent-primary,
+  button[class*="border-accent"],
+  button[class*="border-medico"] {
+    background-color: #1A1A1A !important;
+    color: white !important;
+    border-color: #1A1A1A !important;
+  }
+  
+  button.bg-accent-primary:hover {
+    background-color: #000000 !important;
+  }
+  
+  /* Override gradient backgrounds to solid white */
+  .hero-gradient-bg,
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  [class*="gradient"] {
+    background: #FFFFFF !important;
+    background-image: none !important;
+  }
+  
+  /* Override yellow/gold buttons */
+  button[class*="bg-medico-yellow"],
+  .bg-medico-yellow {
+    background-color: #1A1A1A !important;
+    color: white !important;
+  }
+}
