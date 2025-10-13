@@ -4,6 +4,9 @@ import { CORE_COLORS, resetToMonthlyColor } from './colorSystem';
 // Pure black & white minimal theme (logo stays turquoise)
 export const setHybridMinimalTheme = () => {
   if (typeof document !== 'undefined') {
+    // Clean up any stored theme preferences (theme is now permanent)
+    localStorage.removeItem('use-hybrid-theme');
+    
     // Add minimal theme class to body
     document.body.classList.add('minimal-theme');
     

@@ -12,8 +12,8 @@ export const useSeasonalColors = () => {
   const [seasonColor, setSeasonalColor] = useState(getCurrentSeasonalColor());
 
   useEffect(() => {
-    // Apply colors immediately on mount
-    resetToMonthlyColor();
+    // Minimal theme is now permanent - don't apply monthly colors
+    // resetToMonthlyColor(); // Disabled for permanent minimal theme
 
     // Check for month change every hour
     const interval = setInterval(() => {
