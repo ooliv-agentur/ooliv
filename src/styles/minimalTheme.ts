@@ -1,5 +1,5 @@
 // Minimal White + Turquoise Hybrid Theme
-import { CORE_COLORS } from './colorSystem';
+import { CORE_COLORS, resetToMonthlyColor } from './colorSystem';
 
 // Hybrid theme: 90% white, 10% strategic turquoise
 export const setHybridMinimalTheme = () => {
@@ -41,6 +41,5 @@ export const setFullMinimalTheme = () => {
 
 // Reset to colorful theme
 export const resetToColorfulTheme = () => {
-  const { resetToMonthlyColor } = require('./colorSystem');
   resetToMonthlyColor();
 };
