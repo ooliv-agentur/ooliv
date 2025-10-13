@@ -11,15 +11,15 @@ const LandingpageOptimierungFAQ = () => {
   const faqs = [
     {
       question: "Was kostet die Analyse?",
-      answer: "Die Analyse und das Konzept sind kostenlos. Erst die Umsetzung wird separat kalkuliert."
+      answer: "Die Analyse und das Konzept sind kostenlos. Erst die Umsetzung wird individuell kalkuliert."
     },
     {
       question: "Wie schnell erhalte ich Ergebnisse?",
-      answer: "Ihr Konzept wird innerhalb von 48 Stunden erstellt."
+      answer: "Ihr persönliches Optimierungskonzept erhalten Sie innerhalb von 48 Stunden."
     },
     {
       question: "Für welche Branchen funktioniert das?",
-      answer: "Für alle – von B2B bis E-Commerce. Wir passen das Konzept an Ihre Zielgruppe an."
+      answer: "Unsere Methode funktioniert branchenübergreifend – von B2B über SaaS bis E-Commerce."
     }
   ];
 

@@ -8,7 +8,7 @@ const LandingpageOptimierungHero = () => {
 
   return (
     <PageHero
-      badge="Für Unternehmen mit Traffic, aber zu wenigen Anfragen."
+      badge="Für Marketing-Teams und Unternehmen mit bestehendem Website-Traffic."
       title="Ihre Landingpage bringt keine Leads? Das ändern wir."
       subtitle="Kostenloses Conversion-Konzept in 48 h – mit klaren Empfehlungen zur Optimierung und Nutzerführung."
       description="Wir analysieren Ihre Landingpage oder Website, identifizieren Schwachstellen im Conversion-Flow und zeigen, wie Sie mehr Anfragen und Verkäufe erzielen."

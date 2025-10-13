@@ -13,8 +13,11 @@ const LandingpageOptimierungWhy = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Wir kombinieren datengetriebene Analyse mit klarem Design-System. Jede Optimierung basiert auf echten Nutzererkenntnissen, nicht auf Bauchgefühl.
             </p>
-            <p className="text-sm text-primary font-semibold">
+            <p className="text-sm text-primary font-semibold mb-3">
               Mehr als 100 optimierte Seiten – von B2B bis E-Commerce.
+            </p>
+            <p className="text-base text-muted-foreground">
+              Wir messen, testen und optimieren jede Landingpage auf Basis realer Nutzerdaten.
             </p>
           </div>
           

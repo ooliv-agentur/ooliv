@@ -28,6 +28,9 @@ const LandingpageOptimierungProblem = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Die häufigsten Conversion-Bremsen.
           </h2>
+          <p className="text-lg text-muted-foreground mt-4">
+            Diese typischen Fehler verhindern, dass Ihre Besucher zu Kunden werden.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
