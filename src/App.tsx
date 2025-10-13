@@ -16,6 +16,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import RouterErrorBoundary from './components/RouterErrorBoundary';
 import ContextErrorBoundary from './components/ContextErrorBoundary';
 import { useSeasonalColors } from './hooks/useSeasonalColors';
+import ThemeToggle from './components/admin/ThemeToggle';
 
 // Lazy load pages for better performance
 const GermanIndex = lazy(() => import('./pages/Index'));
@@ -83,6 +84,7 @@ function App() {
                   <ScrollIndicator />
                   <FloatingActionButtons />
                   <CookieNotification />
+                  <ThemeToggle />
                   <RouterErrorBoundary>
                     <EmailCaptureController />
                   </RouterErrorBoundary>

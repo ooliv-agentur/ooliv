@@ -192,5 +192,15 @@ export const resetToMonthlyColor = () => {
 
 // Initialize colors immediately when the module loads
 if (typeof document !== 'undefined') {
-  resetToMonthlyColor();
+  // Check if hybrid minimal theme should be used
+  const useHybridTheme = localStorage.getItem('use-hybrid-theme') === 'true';
+  
+  if (useHybridTheme) {
+    // Import and apply hybrid theme
+    import('./minimalTheme').then(({ setHybridMinimalTheme }) => {
+      setHybridMinimalTheme();
+    });
+  } else {
+    resetToMonthlyColor();
+  }
 }

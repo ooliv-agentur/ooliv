@@ -164,15 +164,18 @@
   --brand-dark-green: 193 100% 10%; /* #003347 */
   --brand-white: 0 0% 100%; /* #FFFFFF */
 
-  /* Rotating Accent Colors (auto-updated monthly) */
-  --accent-primary: 210 85% 60%; /* Default: Fresh Start Blue */
-  --accent-complementary: 40 90% 60%; /* Default: Warm orange complement */
-  --accent-secondary: 200 60% 40%; /* Default: Deep Forest */
-  --accent-tertiary: 210 70% 50%;
-  --accent-gradient: linear-gradient(135deg, hsl(210 85% 60%), hsl(195 85% 55%));
+  /* Rotating Accent Colors (auto-updated monthly or overridden by minimal theme) */
+  --accent-primary: 168 60% 50%; /* Turquoise (default) */
+  --accent-complementary: 340 75% 65%; /* Complementary color */
+  --accent-secondary: 168 45% 65%; /* Lighter mint */
+  --accent-tertiary: 160 50% 60%; /* Fresh mint */
+  --accent-gradient: linear-gradient(135deg, hsl(168 60% 50%), hsl(160 55% 55%));
   
   /* Accent glow for floating circles */
-  --accent-glow: hsl(210 85% 60% / 0.4);
+  --accent-glow: hsla(168, 60%, 50%, 0.4);
+  
+  /* Minimal theme overrides (set via JavaScript) */
+  --brand-background-alt: hsl(0 0% 98%); /* Very light gray for subtle sections */
 }
 
 /* Service-specific color utilities */
