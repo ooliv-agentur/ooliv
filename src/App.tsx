@@ -44,6 +44,7 @@ const LinkedInSetup = lazy(() => import('./pages/LinkedInSetup'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const KostenlosesWebsiteKonzept = lazy(() => import('./pages/KostenlosesWebsiteKonzept'));
 const WebsiteRelaunch = lazy(() => import('./pages/WebsiteRelaunch'));
+const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -121,6 +122,7 @@ function App() {
                       <Route path="/danke" element={<GermanThankYou />} />
                       <Route path="/kostenloses-website-konzept" element={<KostenlosesWebsiteKonzept />} />
                       <Route path="/website-relaunch" element={<WebsiteRelaunch />} />
+                      <Route path="/landingpage-optimierung" element={<LandingpageOptimierung />} />
 
                       {/* 404 Route */}
                       <Route path="*" element={<NotFound />} />
