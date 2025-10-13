@@ -60,10 +60,10 @@ const Footer = () => {
                <li><Link to={getUrl('ai-technologies')} className={footerStyles.linkText}>{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
                {language === 'de' && (
                  <>
-                   <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
                    <li><Link to="/werbeagentur-mainz" className={footerStyles.linkText}>Werbeagentur Mainz</Link></li>
                    <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
                    <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
+                   <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
                  </>
                )}
             </ul>
