@@ -8,7 +8,7 @@ const WebsiteRelaunchHero = () => {
 
   return (
     <PageHero
-      badge="Für Unternehmen, die ihren Webauftritt neu aufbauen oder modernisieren."
+      badge="Für Unternehmen mit bestehender Website und Modernisierungsbedarf."
       title="Ihr Website-Relaunch beginnt mit einem klaren Konzept."
       subtitle="Professionelle Website-Neugestaltung – mit Strategie, Design und Technik aus einer Hand. Wir entwickeln ganzheitliche Relaunch-Konzepte für Unternehmen, die ihren digitalen Auftritt neu denken – inklusive Analyse, Strukturplanung und visueller Umsetzungsempfehlung."
       primaryCta={{
