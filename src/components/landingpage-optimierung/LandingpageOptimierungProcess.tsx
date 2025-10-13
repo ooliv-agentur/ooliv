@@ -3,7 +3,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 
 const LandingpageOptimierungProcess = () => {
   const handleGetConcept = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { mode: 'prototype' } }));
   };
 
   const steps = [

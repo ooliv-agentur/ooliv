@@ -62,7 +62,7 @@ const CTA = ({
   
   const handleOpenLeadForm = () => {
     console.log('🚀 CTA: Lead form trigger button clicked, text:', primaryCta);
-    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { mode: 'prototype' } }));
     console.log('📡 CTA: open-lead-form event dispatched');
   };
 

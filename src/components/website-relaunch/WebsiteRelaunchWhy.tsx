@@ -17,7 +17,7 @@ const WebsiteRelaunchWhy = () => {
               Jedes Projekt beginnt bei uns mit Strategie – nicht mit Design.
             </p>
             <button
-              onClick={() => window.dispatchEvent(new Event('open-lead-form'))}
+              onClick={() => window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { mode: 'prototype' } }))}
               className="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent/90 text-foreground font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-md"
             >
               Jetzt Analyse starten →

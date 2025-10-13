@@ -3,7 +3,7 @@ import PageHero from '@/components/PageHero';
 
 const WebsiteRelaunchHero = () => {
   const handleStartProject = () => {
-    window.dispatchEvent(new Event('open-lead-form'));
+    window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { mode: 'prototype' } }));
   };
 
   return (
