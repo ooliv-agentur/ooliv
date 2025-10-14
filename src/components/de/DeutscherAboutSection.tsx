@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Grid2X2, Sparkles, Code2, Phone, ArrowRight } from 'lucide-react';
+import { TrendingUp, Zap, Handshake, BarChart3, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Reveal from '@/components/animations/Reveal';
@@ -11,28 +11,28 @@ const DeutscherAboutSection = () => {
     {
       title: "Mehr qualifizierte Anfragen",
       description: "Ihre Website wird zum stärksten Verkäufer – 24/7 aktiv für neue Kunden.",
-      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
+      icon: <TrendingUp className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/referenzen",
       linkText: "Referenzen ansehen"
     },
     {
       title: "Weniger Zeitaufwand",
       description: "Alles aus einer Hand – von der Strategie bis zur Umsetzung ohne Umwege.",
-      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
+      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/strategie",
       linkText: "Zur Strategie"
     },
     {
       title: "Echte Partnerschaft",
       description: "Direkter Draht zum CEO, transparente Kommunikation und langfristige Zusammenarbeit.",
-      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
+      icon: <Handshake className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/ueber-uns",
       linkText: "Mehr über uns"
     },
     {
       title: "Messbare Ergebnisse",
       description: "Keine leeren Versprechen – wir zeigen Ihnen konkrete Zahlen und Erfolge.",
-      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
+      icon: <BarChart3 className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/kontakt",
       linkText: "Kontakt aufnehmen"
     }
