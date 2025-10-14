@@ -74,7 +74,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
             <button 
               className="flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
               style={{ 
-                backgroundColor: '#32b1ab'
+                backgroundColor: '#1A1A1A'
               }}
               onClick={onClose}
               aria-label={language === 'de' ? "Menü schließen" : "Close menu"}

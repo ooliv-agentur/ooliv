@@ -11,7 +11,7 @@ export const setHybridMinimalTheme = () => {
     document.body.classList.add('minimal-theme');
     
     // Pure white backgrounds
-    document.documentElement.style.setProperty('--accent-primary', '0 0% 20%'); // Dark gray for text/buttons
+    document.documentElement.style.setProperty('--accent-primary', '0 0% 10%'); // Pure black for text/buttons
     document.documentElement.style.setProperty('--accent-secondary', '0 0% 100%'); // Pure white
     document.documentElement.style.setProperty('--accent-tertiary', '0 0% 96%'); // Very light gray
     
@@ -24,7 +24,8 @@ export const setHybridMinimalTheme = () => {
     
     // Override brand colors to black/white (except logo)
     document.documentElement.style.setProperty('--brand-turquoise', '168 60% 50%'); // Keep for logo only
-    document.documentElement.style.setProperty('--brand-dark-green', '0 0% 15%'); // Black instead of dark green
+    document.documentElement.style.setProperty('--brand-dark-green', '0 0% 10%'); // Pure black instead of dark green
+    document.documentElement.style.setProperty('--medico-darkGreen', '0 0% 10%'); // Pure black for all dark green references
     document.documentElement.style.setProperty('--brand-mint', '0 0% 100%'); // White
     document.documentElement.style.setProperty('--brand-background', '0 0% 100%'); // Pure white
     document.documentElement.style.setProperty('--brand-background-alt', '0 0% 98%'); // Very subtle gray

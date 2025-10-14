@@ -73,8 +73,8 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
                 ? "text-2xl py-1.5 leading-tight" // Reduced padding from py-3 to py-1.5 and tighter line height for desktop
                 : "text-3xl py-3", // Keep original mobile sizing
               isActive(link.path) 
-                ? "text-accent-primary" // Active state: highlighted in accent primary
-                : "text-medico-darkGreen hover:text-accent-primary" // Default state: dark green with accent primary hover
+                ? "text-black font-extrabold" // Active state: bold black
+                : "text-gray-800 hover:text-black" // Default state: gray with black hover
             )}
             onClick={handleClick}
           >

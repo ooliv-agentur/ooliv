@@ -133,7 +133,7 @@ const PageHero = ({
         <div className="mb-6 sm:mb-8">
           <h1 
             className="font-medium leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-4"
-            style={{ color: '#003343' }}
+            style={{ color: '#1A1A1A' }}
           >
             {title || defaultHomepageTitle}
           </h1>
@@ -143,7 +143,7 @@ const PageHero = ({
             <div className="text-left">
               <div
                 className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
-                style={{ color: 'hsl(var(--accent-primary))' }}
+                style={{ color: '#333333' }}
               >
                 {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
                 <DynamicSubheadlines 
@@ -160,7 +160,7 @@ const PageHero = ({
       return (
         <h1 
           className="font-medium leading-tight text-left mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-          style={{ color: '#003343' }}
+          style={{ color: '#1A1A1A' }}
         >
           {title}
         </h1>

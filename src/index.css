@@ -363,4 +363,36 @@ body.minimal-theme {
   button[aria-label*="menu"] svg {
     color: white !important;
   }
+  
+  /* Force all navigation link colors to black/gray */
+  nav a,
+  nav button,
+  .text-medico-darkGreen {
+    color: #333333 !important;
+  }
+  
+  nav a:hover,
+  nav a.active,
+  .hover\:text-accent-primary:hover,
+  a.text-accent-primary {
+    color: #000000 !important;
+  }
+  
+  /* Override all remaining colored borders */
+  .border-accent-primary,
+  .hover\:border-accent-primary:hover,
+  .border-medico-darkGreen {
+    border-color: #E5E5E5 !important;
+  }
+  
+  /* Force headlines to black */
+  h1, h2, h3, h4, h5, h6 {
+    color: #1A1A1A !important;
+  }
+  
+  /* Override scroll indicator colors */
+  [style*="background: linear-gradient"],
+  [style*="hsl(var(--accent-primary)"] {
+    background: #333333 !important;
+  }
 }

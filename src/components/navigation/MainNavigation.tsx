@@ -82,7 +82,7 @@ const MainNavigation = () => {
               )}
               style={{ 
                 cursor: 'none',
-                backgroundColor: '#32b1ab'
+                backgroundColor: '#1A1A1A'
               }}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
