@@ -11,25 +11,25 @@ const DeutscherAboutSection = () => {
     {
       title: "Mehr qualifizierte Anfragen",
       description: "Ihre Website wird zum stärksten Verkäufer – 24/7 aktiv für neue Kunden.",
-      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'white' }} />,
+      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/referenzen"
     },
     {
       title: "Weniger Zeitaufwand",
       description: "Alles aus einer Hand – von der Strategie bis zur Umsetzung ohne Umwege.",
-      icon: <Sparkles className="h-6 w-6" style={{ color: 'white' }} />,
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/strategie"
     },
     {
       title: "Echte Partnerschaft",
       description: "Direkter Draht zum CEO, transparente Kommunikation und langfristige Zusammenarbeit.",
-      icon: <Code2 className="h-6 w-6" style={{ color: 'white' }} />,
+      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/ueber-uns"
     },
     {
       title: "Messbare Ergebnisse",
       description: "Keine leeren Versprechen – wir zeigen Ihnen konkrete Zahlen und Erfolge.",
-      icon: <Phone className="h-6 w-6" style={{ color: 'white' }} />,
+      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/kontakt"
     }
   ];
