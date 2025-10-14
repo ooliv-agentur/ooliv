@@ -52,11 +52,6 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
     mode: "onChange",
   });
 
-  // Debug: Log initial form values
-  React.useEffect(() => {
-    console.log('🎯 Form initialized with values:', form.getValues());
-  }, []);
-
   const watchProjectType = form.watch("projectType");
   const watchGoal = form.watch("goal");
 

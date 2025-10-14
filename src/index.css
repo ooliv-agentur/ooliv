@@ -464,10 +464,18 @@ body.minimal-theme {
 
 /* MAXIMUM SPECIFICITY: medicosearch.ch checkbox colors with custom data attribute */
 /* This targets our custom checkboxes specifically */
+
+/* ULTRA-AGGRESSIVE: Target by class name */
+.medico-checkbox,
+.medico-checkbox:not([data-state="checked"]),
+button.medico-checkbox,
+button.medico-checkbox:not([data-state="checked"]),
 [data-medicosearch-checkbox="true"],
 [data-medicosearch-checkbox="true"]:not([data-state="checked"]),
 button[data-medicosearch-checkbox="true"],
-button[data-medicosearch-checkbox="true"]:not([data-state="checked"]) {
+button[data-medicosearch-checkbox="true"]:not([data-state="checked"]),
+[data-checked="false"],
+button[data-checked="false"] {
   background-color: white !important;
   background: white !important;
   border: 2px solid #003347 !important;
@@ -477,8 +485,17 @@ button[data-medicosearch-checkbox="true"]:not([data-state="checked"]) {
   box-shadow: none !important;
 }
 
+/* CHECKED STATE - All possible selectors */
+.medico-checkbox[data-state="checked"],
+.medico-checkbox[data-checked="true"],
+button.medico-checkbox[data-state="checked"],
+button.medico-checkbox[data-checked="true"],
 [data-medicosearch-checkbox="true"][data-state="checked"],
-button[data-medicosearch-checkbox="true"][data-state="checked"] {
+[data-medicosearch-checkbox="true"][data-checked="true"],
+button[data-medicosearch-checkbox="true"][data-state="checked"],
+button[data-medicosearch-checkbox="true"][data-checked="true"],
+[data-checked="true"],
+button[data-checked="true"] {
   background-color: #003347 !important;
   background: #003347 !important;
   border-color: #003347 !important;
@@ -486,14 +503,21 @@ button[data-medicosearch-checkbox="true"][data-state="checked"] {
   color: white !important;
 }
 
+/* HOVER STATE */
+.medico-checkbox:not([data-state="checked"]):hover,
+.medico-checkbox:not([data-checked="true"]):hover,
 [data-medicosearch-checkbox="true"]:not([data-state="checked"]):hover,
-button[data-medicosearch-checkbox="true"]:not([data-state="checked"]):hover {
+[data-medicosearch-checkbox="true"]:not([data-checked="true"]):hover,
+button[data-medicosearch-checkbox="true"]:not([data-state="checked"]):hover,
+button[data-medicosearch-checkbox="true"]:not([data-checked="true"]):hover {
   border-color: #38B593 !important;
   border: 2px solid #38B593 !important;
   background-color: white !important;
   background: white !important;
 }
 
+/* FOCUS STATE */
+.medico-checkbox:focus-visible,
 [data-medicosearch-checkbox="true"]:focus-visible,
 button[data-medicosearch-checkbox="true"]:focus-visible {
   outline: none !important;
@@ -501,13 +525,38 @@ button[data-medicosearch-checkbox="true"]:focus-visible {
   border-color: #003347 !important;
 }
 
-/* Force check icon color */
+/* Force check icon color - NUCLEAR OPTION */
+.medico-checkbox[data-state="checked"] svg,
+.medico-checkbox[data-state="checked"] path,
+.medico-checkbox[data-state="checked"] line,
+.medico-checkbox[data-state="checked"] polyline,
+.medico-checkbox[data-state="checked"] *,
+.medico-checkbox[data-checked="true"] svg,
+.medico-checkbox[data-checked="true"] path,
+.medico-checkbox[data-checked="true"] line,
+.medico-checkbox[data-checked="true"] polyline,
+.medico-checkbox[data-checked="true"] *,
+.medico-checkbox-indicator svg,
+.medico-checkbox-indicator path,
+.medico-checkbox-indicator line,
+.medico-checkbox-indicator polyline,
+.medico-checkbox-icon,
+.medico-checkbox-icon path,
+.medico-checkbox-icon line,
+.medico-checkbox-icon polyline,
 [data-medicosearch-checkbox="true"][data-state="checked"] svg,
 [data-medicosearch-checkbox="true"][data-state="checked"] path,
-[data-medicosearch-checkbox="true"][data-state="checked"] * {
+[data-medicosearch-checkbox="true"][data-state="checked"] line,
+[data-medicosearch-checkbox="true"][data-state="checked"] polyline,
+[data-medicosearch-checkbox="true"][data-state="checked"] *,
+[data-medicosearch-checkbox="true"][data-checked="true"] svg,
+[data-medicosearch-checkbox="true"][data-checked="true"] path,
+[data-medicosearch-checkbox="true"][data-checked="true"] line,
+[data-medicosearch-checkbox="true"][data-checked="true"] polyline,
+[data-medicosearch-checkbox="true"][data-checked="true"] * {
   color: white !important;
   stroke: white !important;
-  fill: white !important;
+  fill: none !important;
 }
 
 /* FALLBACK: All checkboxes in case data attribute fails */
@@ -529,8 +578,10 @@ button[role="checkbox"][data-state="checked"],
 }
 
 button[role="checkbox"][data-state="checked"] svg,
-button[role="checkbox"][data-state="checked"] path {
+button[role="checkbox"][data-state="checked"] path,
+button[role="checkbox"][data-state="checked"] line,
+button[role="checkbox"][data-state="checked"] polyline {
   color: white !important;
   stroke: white !important;
-  fill: white !important;
+  fill: none !important;
 }

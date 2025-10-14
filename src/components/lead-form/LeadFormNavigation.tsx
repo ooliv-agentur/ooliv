@@ -22,7 +22,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
   const { language } = useLanguage();
 
   return (
-    <div className="flex sm:justify-between gap-3 pt-6 border-t border-accent-primary/20">
+    <div className="flex sm:justify-between gap-3 pt-6">
       {currentStep > 1 && (
         <Button 
           type="button"

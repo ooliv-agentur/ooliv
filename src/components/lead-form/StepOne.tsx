@@ -71,16 +71,8 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                     control={form.control}
                     name="projectType"
                     render={({ field }) => {
-                      // Ensure field.value is always an array (null safety)
                       const currentValue = Array.isArray(field.value) ? field.value : [];
                       const isChecked = currentValue.includes(option.value);
-                      
-                      console.log('📝 StepOne field render:', { 
-                        option: option.value, 
-                        fieldValue: field.value, 
-                        currentValue, 
-                        isChecked 
-                      });
 
                       return (
                         <FormItem
@@ -91,13 +83,9 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                             <Checkbox
                               checked={isChecked}
                               onCheckedChange={(checked) => {
-                                console.log('✅ Checkbox change:', { option: option.value, checked, currentValue });
-                                
                                 const newValue = checked
                                   ? [...currentValue, option.value]
                                   : currentValue.filter((value: string) => value !== option.value);
-                                
-                                console.log('🔄 Updating to:', newValue);
                                 field.onChange(newValue);
                               }}
                             />
