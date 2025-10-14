@@ -462,16 +462,12 @@ body.minimal-theme {
   }
 }
 
-/* NUCLEAR OPTION: Force all checkboxes to use medicosearch.ch colors */
-/* Override ALL Radix UI checkbox styles with maximum specificity */
-button[role="checkbox"],
-button[role="checkbox"]:not([data-state="checked"]),
-[role="checkbox"],
-.peer[role="checkbox"],
-[data-radix-collection-item] button[role="checkbox"],
-span > button[role="checkbox"],
-div > button[role="checkbox"],
-form button[role="checkbox"] {
+/* MAXIMUM SPECIFICITY: medicosearch.ch checkbox colors with custom data attribute */
+/* This targets our custom checkboxes specifically */
+[data-medicosearch-checkbox="true"],
+[data-medicosearch-checkbox="true"]:not([data-state="checked"]),
+button[data-medicosearch-checkbox="true"],
+button[data-medicosearch-checkbox="true"]:not([data-state="checked"]) {
   background-color: white !important;
   background: white !important;
   border: 2px solid #003347 !important;
@@ -481,11 +477,8 @@ form button[role="checkbox"] {
   box-shadow: none !important;
 }
 
-button[role="checkbox"][data-state="checked"],
-button[role="checkbox"][data-state="checked"]:hover,
-[role="checkbox"][data-state="checked"],
-.peer[role="checkbox"][data-state="checked"],
-form button[role="checkbox"][data-state="checked"] {
+[data-medicosearch-checkbox="true"][data-state="checked"],
+button[data-medicosearch-checkbox="true"][data-state="checked"] {
   background-color: #003347 !important;
   background: #003347 !important;
   border-color: #003347 !important;
@@ -493,28 +486,50 @@ form button[role="checkbox"][data-state="checked"] {
   color: white !important;
 }
 
-button[role="checkbox"]:not([data-state="checked"]):hover,
-[role="checkbox"]:not([data-state="checked"]):hover {
+[data-medicosearch-checkbox="true"]:not([data-state="checked"]):hover,
+button[data-medicosearch-checkbox="true"]:not([data-state="checked"]):hover {
   border-color: #38B593 !important;
   border: 2px solid #38B593 !important;
   background-color: white !important;
+  background: white !important;
 }
 
-button[role="checkbox"]:focus-visible,
-[role="checkbox"]:focus-visible,
-button[role="checkbox"]:focus,
-[role="checkbox"]:focus {
+[data-medicosearch-checkbox="true"]:focus-visible,
+button[data-medicosearch-checkbox="true"]:focus-visible {
   outline: none !important;
   box-shadow: 0 0 0 2px white, 0 0 0 4px #003347 !important;
   border-color: #003347 !important;
 }
 
-/* Force the check icon to be white in checked state */
+/* Force check icon color */
+[data-medicosearch-checkbox="true"][data-state="checked"] svg,
+[data-medicosearch-checkbox="true"][data-state="checked"] path,
+[data-medicosearch-checkbox="true"][data-state="checked"] * {
+  color: white !important;
+  stroke: white !important;
+  fill: white !important;
+}
+
+/* FALLBACK: All checkboxes in case data attribute fails */
+button[role="checkbox"],
+[role="checkbox"] {
+  background-color: white !important;
+  background: white !important;
+  border: 2px solid #003347 !important;
+  border-color: #003347 !important;
+  color: #003347 !important;
+}
+
+button[role="checkbox"][data-state="checked"],
+[role="checkbox"][data-state="checked"] {
+  background-color: #003347 !important;
+  background: #003347 !important;
+  border: 2px solid #003347 !important;
+  color: white !important;
+}
+
 button[role="checkbox"][data-state="checked"] svg,
-[role="checkbox"][data-state="checked"] svg,
-button[role="checkbox"][data-state="checked"] path,
-button[role="checkbox"][data-state="checked"] > span,
-button[role="checkbox"][data-state="checked"] * {
+button[role="checkbox"][data-state="checked"] path {
   color: white !important;
   stroke: white !important;
   fill: white !important;

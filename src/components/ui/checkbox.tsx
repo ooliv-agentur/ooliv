@@ -12,13 +12,20 @@ const Checkbox = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CheckboxPrimitive.Root
     ref={ref}
+    data-medicosearch-checkbox="true"
+    style={{
+      backgroundColor: 'white',
+      borderColor: '#003347',
+      borderWidth: '2px',
+      borderStyle: 'solid',
+    }}
     className={cn(
       "peer h-5 w-5 shrink-0 rounded-sm transition-colors",
-      "!bg-white !border-2 !border-[#003347]",
-      "hover:!border-[#38B593]",
-      "focus-visible:!outline-none focus-visible:!ring-2 focus-visible:!ring-[#003347] focus-visible:!ring-offset-2",
+      "bg-white border-2 border-[#003347]",
+      "hover:border-[#38B593]",
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003347] focus-visible:ring-offset-2",
       "disabled:cursor-not-allowed disabled:opacity-50",
-      "data-[state=checked]:!bg-[#003347] data-[state=checked]:!border-[#003347] data-[state=checked]:!text-white",
+      "data-[state=checked]:bg-[#003347] data-[state=checked]:border-[#003347] data-[state=checked]:text-white",
       className
     )}
     {...props}
