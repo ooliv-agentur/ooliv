@@ -461,3 +461,24 @@ body.minimal-theme {
     background: #333333 !important;
   }
 }
+
+/* Force Radix UI checkbox to use custom colors (override blue defaults) */
+[data-radix-collection-item] button[role="checkbox"],
+button[role="checkbox"] {
+  background-color: white !important;
+  border-color: #003347 !important;
+}
+
+button[role="checkbox"][data-state="checked"] {
+  background-color: #003347 !important;
+  border-color: #003347 !important;
+}
+
+button[role="checkbox"]:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #003347 !important;
+}
+
+button[role="checkbox"]:hover {
+  border-color: #38B593 !important;
+}
