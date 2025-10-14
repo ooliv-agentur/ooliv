@@ -426,6 +426,13 @@ body.minimal-theme {
   button[aria-label*="prototype"] svg {
     color: white !important;
   }
+
+  /* Force navigation close button icons to white */
+  button[aria-label*="schließen"] svg,
+  button[aria-label*="Close"] svg,
+  nav button[aria-label*="Menü"] svg {
+    color: white !important;
+  }
   
   /* Force navigation text links to black/gray - but NOT icon buttons */
   nav a:not([aria-label]),
