@@ -10,14 +10,19 @@ const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 >(({ className, checked, ...props }, ref) => {
-  // Dynamic inline styles based on checked state - highest specificity
-  const inlineStyles = React.useMemo(() => ({
-    backgroundColor: checked ? '#003347' : 'white',
+  // Determine if checkbox is checked (handle undefined, false, and "indeterminate")
+  const isChecked = checked === true || checked === "indeterminate";
+  
+  // Simple inline styles - highest specificity, no useMemo issues
+  const inlineStyles = {
+    backgroundColor: isChecked ? '#003347' : 'white',
     borderColor: '#003347',
     borderWidth: '2px',
     borderStyle: 'solid',
-    color: checked ? 'white' : '#003347',
-  }), [checked]);
+    color: isChecked ? 'white' : '#003347',
+  };
+
+  console.log('🎨 Checkbox render:', { checked, isChecked, props });
 
   return (
     <CheckboxPrimitive.Root

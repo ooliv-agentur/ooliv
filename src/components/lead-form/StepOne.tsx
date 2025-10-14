@@ -71,6 +71,17 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                     control={form.control}
                     name="projectType"
                     render={({ field }) => {
+                      // Ensure field.value is always an array (null safety)
+                      const currentValue = Array.isArray(field.value) ? field.value : [];
+                      const isChecked = currentValue.includes(option.value);
+                      
+                      console.log('📝 StepOne field render:', { 
+                        option: option.value, 
+                        fieldValue: field.value, 
+                        currentValue, 
+                        isChecked 
+                      });
+
                       return (
                         <FormItem
                           key={option.value}
@@ -78,15 +89,16 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                         >
                           <FormControl>
                             <Checkbox
-                              checked={field.value?.includes(option.value)}
+                              checked={isChecked}
                               onCheckedChange={(checked) => {
-                                return checked
-                                  ? field.onChange([...field.value, option.value])
-                                  : field.onChange(
-                                      field.value?.filter(
-                                        (value: string) => value !== option.value
-                                      )
-                                    )
+                                console.log('✅ Checkbox change:', { option: option.value, checked, currentValue });
+                                
+                                const newValue = checked
+                                  ? [...currentValue, option.value]
+                                  : currentValue.filter((value: string) => value !== option.value);
+                                
+                                console.log('🔄 Updating to:', newValue);
+                                field.onChange(newValue);
                               }}
                             />
                           </FormControl>

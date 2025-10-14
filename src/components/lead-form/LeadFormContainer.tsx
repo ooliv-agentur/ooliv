@@ -32,7 +32,11 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      projectType: initialData?.projectType ? [initialData.projectType] : [],
+      projectType: Array.isArray(initialData?.projectType) 
+        ? initialData.projectType 
+        : initialData?.projectType 
+          ? [initialData.projectType] 
+          : [],
       companyName: "",
       industry: "",
       website: "",
@@ -45,8 +49,13 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
       projectTypeOther: "",
       goalOther: "",
     },
-    mode: "onTouched",
+    mode: "onChange",
   });
+
+  // Debug: Log initial form values
+  React.useEffect(() => {
+    console.log('🎯 Form initialized with values:', form.getValues());
+  }, []);
 
   const watchProjectType = form.watch("projectType");
   const watchGoal = form.watch("goal");
