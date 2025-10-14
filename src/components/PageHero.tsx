@@ -140,7 +140,7 @@ const PageHero = ({
           
           {/* Dynamic subheadlines section for homepage */}
           {dynamicSubheadlines && (
-            <div className="text-left">
+            <div className="text-left mb-8 sm:mb-10">
               <div
                 className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
                 style={{ color: '#333333' }}
