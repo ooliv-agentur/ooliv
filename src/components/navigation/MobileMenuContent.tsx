@@ -45,7 +45,7 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               onClick={onClose}
               aria-label={language === 'de' ? "Menü schließen" : "Close menu"}
             >
-              <X className="w-6 h-6" aria-hidden="true" />
+              <X className="w-6 h-6 text-white" aria-hidden="true" />
             </button>
           </div>
 
