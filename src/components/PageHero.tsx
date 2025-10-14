@@ -132,7 +132,7 @@ const PageHero = ({
       return (
         <div className="mb-6 sm:mb-8">
           <h1 
-            className="font-medium leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-4"
+            className="font-medium leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-6 sm:mb-8"
             style={{ color: '#1A1A1A' }}
           >
             {title || defaultHomepageTitle}
@@ -140,7 +140,7 @@ const PageHero = ({
           
           {/* Dynamic subheadlines section for homepage */}
           {dynamicSubheadlines && (
-            <div className="text-left mb-8 sm:mb-10">
+            <div className="text-left mb-6 sm:mb-8">
               <div
                 className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
                 style={{ color: '#333333' }}
