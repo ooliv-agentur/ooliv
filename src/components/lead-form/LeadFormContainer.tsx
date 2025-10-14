@@ -161,7 +161,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
           </AnimatePresence>
         </div>
         
-        <div className="sticky bottom-0 bg-[#1a2630] pt-4 border-t border-white/10 mt-6">
+        <div className="sticky bottom-0 bg-black pt-4 border-t border-white/10 mt-6">
           <LeadFormNavigation 
             currentStep={step}
             totalSteps={totalSteps}

@@ -19,8 +19,8 @@ const Checkbox = React.forwardRef<
       data-medicosearch-checkbox="true"
       data-checked={isChecked ? "true" : "false"}
       style={{
-        backgroundColor: isChecked ? '#003347' : 'white',
-        borderColor: '#003347',
+        backgroundColor: isChecked ? '#000000' : 'white',
+        borderColor: '#000000',
         borderWidth: '2px',
         borderStyle: 'solid',
       }}

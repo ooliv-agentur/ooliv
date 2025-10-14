@@ -24,9 +24,9 @@ const LeadFormStepIndicator: React.FC<LeadFormStepIndicatorProps> = ({
               <div 
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
                   stepNumber === currentStep 
-                    ? 'bg-accent-primary text-white' 
+                    ? 'bg-white text-black' 
                     : stepNumber < currentStep 
-                      ? 'bg-medico-mint text-medico-darkGreen' 
+                      ? 'bg-gray-600 text-white' 
                       : 'bg-white/20 text-white/70'
                 }`}
               >
@@ -35,7 +35,7 @@ const LeadFormStepIndicator: React.FC<LeadFormStepIndicatorProps> = ({
               {stepNumber < totalSteps && (
                 <div 
                   className={`w-8 h-0.5 ${
-                    stepNumber < currentStep ? 'bg-medico-mint' : 'bg-white/20'
+                    stepNumber < currentStep ? 'bg-gray-600' : 'bg-white/20'
                   }`}
                 />
               )}
@@ -45,7 +45,7 @@ const LeadFormStepIndicator: React.FC<LeadFormStepIndicatorProps> = ({
       </div>
 
       <div className="text-center mb-6">
-        <p className="text-medico-mint text-sm font-medium">
+        <p className="text-gray-400 text-sm font-medium">
           {stepTitle} {currentStep} {language === 'de' ? 'von' : 'of'} {totalSteps}
         </p>
       </div>

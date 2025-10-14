@@ -81,13 +81,13 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
   return (
     <Sheet open={open} onOpenChange={internalOnOpenChange}>
       <SheetContent 
-        className="w-full max-w-full sm:max-w-md overflow-y-auto bg-[#1a2630] text-white border-l border-white/10 z-[200]" 
+        className="w-full max-w-full sm:max-w-md overflow-y-auto bg-black text-white border-l border-white/10 z-[200]" 
         side="right"
       >
         {/* Close button with proper cursor and increased z-index */}
         <button 
           className={cn(
-            "fixed top-4 right-4 z-[220] flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90 transition-all duration-300 shadow-lg",
+            "fixed top-4 right-4 z-[220] flex items-center justify-center rounded-full bg-white text-black hover:bg-white/90 transition-all duration-300 shadow-lg",
             "w-10 h-10 min-w-10 min-h-10 sm:top-7"
           )}
           onClick={handleClose}

@@ -77,7 +77,7 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                       return (
                         <FormItem
                           key={option.value}
-                          className="flex flex-row items-center space-x-3 space-y-0 rounded-md border border-medico-mint/30 p-4 hover:bg-white/5 transition-colors"
+                          className="flex flex-row items-center space-x-3 space-y-0 rounded-md border border-white/20 p-4 hover:bg-white/5 transition-colors"
                         >
                           <FormControl>
                             <Checkbox
