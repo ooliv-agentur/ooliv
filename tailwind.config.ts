@@ -3,6 +3,13 @@ import { type Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    'border-[#003347]',
+    'bg-[#003347]',
+    'hover:border-[#38B593]',
+    'ring-[#003347]',
+    'data-[state=checked]:bg-[#003347]',
+  ],
   theme: {
     extend: {
       fontFamily: {

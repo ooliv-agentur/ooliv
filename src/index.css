@@ -462,23 +462,45 @@ body.minimal-theme {
   }
 }
 
-/* Force Radix UI checkbox to use custom colors (override blue defaults) */
+/* ULTRA-AGGRESSIVE Radix UI checkbox color overrides - targeting all possible selectors */
+/* These styles force the lead form checkboxes to use medicosearch.ch brand colors */
+button[role="checkbox"],
+[role="checkbox"],
+.peer[role="checkbox"],
 [data-radix-collection-item] button[role="checkbox"],
-button[role="checkbox"] {
+span > button[role="checkbox"],
+div > button[role="checkbox"] {
   background-color: white !important;
+  border: 2px solid #003347 !important;
   border-color: #003347 !important;
+  color: #003347 !important;
+  accent-color: #003347 !important;
 }
 
-button[role="checkbox"][data-state="checked"] {
+button[role="checkbox"][data-state="checked"],
+[role="checkbox"][data-state="checked"],
+.peer[role="checkbox"][data-state="checked"] {
   background-color: #003347 !important;
   border-color: #003347 !important;
+  color: white !important;
 }
 
-button[role="checkbox"]:focus-visible {
+button[role="checkbox"]:hover,
+[role="checkbox"]:hover {
+  border-color: #38B593 !important;
+}
+
+button[role="checkbox"]:focus-visible,
+[role="checkbox"]:focus-visible {
   outline: none !important;
   box-shadow: 0 0 0 2px white, 0 0 0 4px #003347 !important;
+  border-color: #003347 !important;
 }
 
-button[role="checkbox"]:hover {
-  border-color: #38B593 !important;
+/* Force the check icon to be white in checked state */
+button[role="checkbox"][data-state="checked"] svg,
+[role="checkbox"][data-state="checked"] svg,
+button[role="checkbox"][data-state="checked"] path {
+  color: white !important;
+  stroke: white !important;
 }
