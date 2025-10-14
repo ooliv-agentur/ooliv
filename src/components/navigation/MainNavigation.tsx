@@ -50,7 +50,7 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-40 fixed top-0 left-0 right-0" style={{ cursor: 'none' }}>
+      <nav className="w-full z-40 fixed top-0 left-0 right-0">
         <div className="relative w-full h-24">
           {/* Logo - responsive positioning: desktop viewport edge, mobile content aligned */}
           <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-40">
@@ -59,7 +59,6 @@ const MainNavigation = () => {
               className="flex items-center" 
               onClick={handleLogoClick}
               aria-label="ooliv Homepage"
-              style={{ cursor: 'none' }}
             >
               <img 
                 src="/ooliv_logo_2025.svg?v=2" 
@@ -82,7 +81,6 @@ const MainNavigation = () => {
                 "w-10 h-10 min-w-10 min-h-10"
               )}
               style={{ 
-                cursor: 'none',
                 backgroundColor: '#FFFFFF'
               }}
               onClick={() => setIsOpen(!isOpen)}
