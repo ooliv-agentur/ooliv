@@ -96,7 +96,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
     >
       <div className="text-left space-y-6">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 bg-medico-darkGreen rounded-full flex items-center justify-center flex-shrink-0">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
@@ -112,15 +112,15 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           </p>
           <ul className="space-y-3 text-sm text-white/85 pl-1">
             <li className="flex items-start">
-              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="text-accent-primary mr-3 mt-0.5 text-lg leading-none">•</span>
               <span className="flex-1">Strategische Seitenstruktur nach bewährten Verkaufsprinzipien</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="text-accent-primary mr-3 mt-0.5 text-lg leading-none">•</span>
               <span className="flex-1">Optimierte Benutzerführung für maximale Conversion</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-3 mt-0.5 text-lg leading-none">•</span>
+              <span className="text-accent-primary mr-3 mt-0.5 text-lg leading-none">•</span>
               <span className="flex-1">Konkrete Inhaltsempfehlungen für Ihre Branche</span>
             </li>
           </ul>
@@ -140,7 +140,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="ihre.email@beispiel.de"
             required
-            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary focus:ring-primary"
+            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-accent-primary focus:ring-accent-primary"
           />
         </div>
 

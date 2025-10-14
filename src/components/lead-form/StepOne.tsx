@@ -88,7 +88,6 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                                       )
                                     )
                               }}
-                              className="border-medico-mint/50 data-[state=checked]:bg-accent-primary data-[state=checked]:border-accent-primary"
                             />
                           </FormControl>
                           <div className="flex items-center leading-none">
