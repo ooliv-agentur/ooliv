@@ -423,9 +423,7 @@ body.minimal-theme {
   button[aria-label*="anrufen"] svg,
   button[aria-label*="Call"] svg,
   button[aria-label*="Prototyp"] svg,
-  button[aria-label*="prototype"] svg,
-  button[aria-label*="Menü"] svg,
-  button[aria-label*="menu"] svg {
+  button[aria-label*="prototype"] svg {
     color: white !important;
   }
   
