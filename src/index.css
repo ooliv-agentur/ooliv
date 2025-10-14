@@ -427,9 +427,9 @@ body.minimal-theme {
     color: white !important;
   }
   
-  /* Force all navigation link colors to black/gray */
-  nav a,
-  nav button,
+  /* Force navigation text links to black/gray - but NOT icon buttons */
+  nav a:not([aria-label]),
+  nav button:not([aria-label]),
   .text-medico-darkGreen {
     color: #333333 !important;
   }
