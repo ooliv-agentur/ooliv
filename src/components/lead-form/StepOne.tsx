@@ -117,7 +117,7 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
                   <Input 
                     {...field} 
                     placeholder={tellUsWhat} 
-                    className="h-12 bg-white/10 border-medico-mint/30 text-white placeholder:text-white/70 text-base focus:border-accent-primary" 
+                    className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40" 
                   />
                 </FormControl>
                 <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
