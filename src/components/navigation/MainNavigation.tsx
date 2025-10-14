@@ -77,12 +77,12 @@ const MainNavigation = () => {
             {/* Menu toggle button */}
             <button 
               className={cn(
-                "flex items-center justify-center rounded-full text-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
+                "flex items-center justify-center rounded-full text-black hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
                 "w-10 h-10 min-w-10 min-h-10"
               )}
               style={{ 
                 cursor: 'none',
-                backgroundColor: '#1A1A1A'
+                backgroundColor: '#FFFFFF'
               }}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
@@ -90,9 +90,9 @@ const MainNavigation = () => {
               aria-controls="mobile-menu"
             >
               {isOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
+                <X className="w-6 h-6 text-black" aria-hidden="true" />
               ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
+                <Menu className="w-6 h-6 text-black" aria-hidden="true" />
               )}
             </button>
           </div>
