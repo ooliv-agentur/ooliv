@@ -585,3 +585,18 @@ button[role="checkbox"][data-state="checked"] polyline {
   stroke: white !important;
   fill: none !important;
 }
+
+/* Lead form headings - ensure they're always white on black background */
+form h3,
+form h2,
+form h1 {
+  color: white !important;
+}
+
+/* Remove ugly focus rings and use subtle white outline instead */
+input:focus,
+textarea:focus,
+button[role="combobox"]:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) !important;
+}

@@ -76,21 +76,21 @@ const Danke = () => {
             animate="visible"
           >
             <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-              <div className="h-16 w-16 rounded-full bg-accent-primary/10 flex items-center justify-center">
-                <CheckCircle className="h-8 w-8 text-accent-primary" aria-hidden="true" />
+              <div className="h-16 w-16 rounded-full bg-black/10 flex items-center justify-center">
+                <CheckCircle className="h-8 w-8 text-black" aria-hidden="true" />
               </div>
             </motion.div>
             
-            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-medico-darkGreen" variants={itemVariants}>
+            <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-black" variants={itemVariants}>
               Vielen Dank für Ihre Anfrage!
             </motion.h1>
             
-            <motion.p className="text-lg mb-8 text-medico-darkGreen/80" variants={itemVariants}>
+            <motion.p className="text-lg mb-8 text-black/80" variants={itemVariants}>
               Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
               Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
                 href="mailto:info@ooliv.de" 
-                className="text-accent-primary hover:text-accent-primary/80 underline"
+                className="text-black hover:text-black/70 underline font-semibold"
                 aria-label="E-Mail an info@ooliv.de senden"
               >
                 info@ooliv.de
@@ -100,8 +100,8 @@ const Danke = () => {
             <motion.div variants={itemVariants}>
               <Button 
                 asChild
-                variant="primary"
                 size="lg"
+                className="bg-black text-white hover:bg-black/90"
               >
                 <Link to="/" aria-label="Zurück zur Startseite">
                   Zurück zur Startseite
