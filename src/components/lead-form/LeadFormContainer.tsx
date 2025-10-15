@@ -76,24 +76,36 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
     
     if (step === 1) {
       isValid = await form.trigger('projectType');
+      if (!isValid) {
+        // Mark field as touched so error shows
+        form.setFocus('projectType');
+      }
       if (watchProjectType?.includes('other') && !form.getValues('projectTypeOther')) {
         form.setError('projectTypeOther', { 
           message: language === 'de' 
             ? "Bitte geben Sie Ihren Projekttyp an" 
             : "Please specify your project type" 
         });
+        form.setFocus('projectTypeOther');
         return;
       }
     } else if (step === 2) {
       isValid = await form.trigger('industry');
+      if (!isValid) {
+        form.setFocus('industry');
+      }
     } else if (step === 3) {
       isValid = await form.trigger('goal');
+      if (!isValid) {
+        form.setFocus('goal');
+      }
       if (watchGoal?.includes('other') && !form.getValues('goalOther')) {
         form.setError('goalOther', { 
           message: language === 'de' 
             ? "Bitte geben Sie Ihr Ziel an" 
             : "Please specify your goal"
         });
+        form.setFocus('goalOther');
         return;
       }
     }

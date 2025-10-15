@@ -153,10 +153,11 @@ const FormMessage = React.memo(React.forwardRef<
   
   // Use useMemo to prevent re-renders on every form change
   const shouldShowError = React.useMemo(() => {
-    // Only show error message if the field has been touched or the form has been submitted
+    // Show error if field has been touched, form submitted, OR there's a validation error
     const fieldTouched = Object.keys(touchedFields).includes(name as string);
     const formSubmitted = formState.isSubmitted;
-    return error && (fieldTouched || formSubmitted);
+    const hasValidationError = !!error;
+    return hasValidationError && (fieldTouched || formSubmitted || hasValidationError);
   }, [error, touchedFields, formState.isSubmitted, name]);
   
   const body = shouldShowError ? String(error?.message) : children;
