@@ -426,9 +426,17 @@ body.minimal-theme {
     color: #000000 !important;
   }
 
-  /* Close button icons - must be white */
-  button[aria-label*="schließen"] svg,
-  button[aria-label*="Close menu"] svg {
+  /* Menu close button icons - must be BLACK (on light menu background) */
+  nav ~ div button[aria-label*="schließen"] svg,
+  nav ~ div button[aria-label*="Close menu"] svg,
+  .bg-medico-mint button[aria-label*="schließen"] svg,
+  .bg-medico-mint button[aria-label*="Close menu"] svg {
+    color: #000000 !important;
+  }
+  
+  /* Floating action button close icon - must be WHITE */
+  .fixed.right-4 button[aria-label*="schließen"] svg,
+  .fixed.right-4 button[aria-label*="Close menu"] svg {
     color: #ffffff !important;
   }
 
