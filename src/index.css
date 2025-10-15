@@ -638,10 +638,16 @@ button[role="checkbox"][data-state="checked"] polyline {
 .lead-form-content h1,
 .lead-form-content h2,
 .lead-form-content h3,
+.lead-form-title,
 form h1,
 form h2,
 form h3 {
-  color: white !important;
+  color: #ffffff !important;
+}
+
+/* Maximum specificity for lead form title */
+.lead-form-content .lead-form-title {
+  color: #ffffff !important;
 }
 
 /* Remove ugly focus rings and use subtle white outline instead */
