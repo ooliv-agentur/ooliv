@@ -629,11 +629,27 @@ button[role="checkbox"][data-state="checked"] polyline {
   fill: none !important;
 }
 
-/* Lead form headings - ensure they're always white on black background */
+/* Lead form headings and titles - ensure they're always white on black background */
 form h3,
 form h2,
-form h1 {
+form h1,
+[data-radix-dialog-content] h2,
+[data-radix-dialog-content] [role="heading"] {
   color: white !important;
+}
+
+/* Force white buttons in lead form to stay pure white with black text */
+form button.bg-white,
+form button[class*="bg-white"] {
+  background-color: white !important;
+  color: black !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+form button.bg-white svg,
+form button[class*="bg-white"] svg {
+  color: black !important;
 }
 
 /* Remove ugly focus rings and use subtle white outline instead */

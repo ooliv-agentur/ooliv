@@ -40,7 +40,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           type="button"
           size="lg"
           onClick={onNextStep}
-          className="bg-white text-black hover:bg-white/90 border-0 shadow-none"
+          className="!bg-white !text-black hover:!bg-white/90 !border-0 !shadow-none ring-0 focus-visible:ring-0"
         >
           {language === 'de' ? "Weiter" : "Next"}
           <ArrowRight className="ml-2 h-5 w-5" style={{ color: '#000000' }} />
@@ -50,7 +50,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           type="submit"
           size="lg"
           disabled={isSubmitting}
-          className="bg-white text-black hover:bg-white/90 disabled:opacity-50 border-0 shadow-none"
+          className="!bg-white !text-black hover:!bg-white/90 disabled:opacity-50 !border-0 !shadow-none ring-0 focus-visible:ring-0"
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
