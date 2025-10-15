@@ -7,11 +7,11 @@ interface LeadFormHeaderProps {
 
 const LeadFormHeader: React.FC<LeadFormHeaderProps> = ({ title, description }) => {
   return (
-    <div className="text-left pb-4 pr-12">
-      <h2 className="text-xl font-bold text-white mb-2">
+    <div className="text-left pb-6 pr-12">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: '#ffffff' }}>
         {title}
       </h2>
-      <p className="text-white/70 text-sm">
+      <p className="text-sm sm:text-base" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
         {description}
       </p>
     </div>
