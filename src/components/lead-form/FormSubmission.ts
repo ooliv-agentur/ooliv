@@ -123,22 +123,8 @@ export const useFormSubmission = (
       
       setIsSubmitting(false);
       
-      // Call onSuccess callback first (for any necessary state cleanup)
+      // Call onSuccess callback to show thank you screen
       onSuccess();
-      
-      // Display toast notification
-      toast({
-        title: language === 'de' ? "Anfrage erhalten!" : "Inquiry received!",
-        description: language === 'de' ? "Wir melden uns innerhalb von 24 Stunden bei Ihnen." : "We'll get back to you within 24 hours.",
-        duration: 3000, // Reduced duration to make redirect more seamless
-        className: "bg-[#004d51] text-white border-[#006064]",
-      });
-
-      // Add a small delay to ensure the toast is visible before redirecting
-      setTimeout(() => {
-        // Redirect to appropriate thank you page based on language
-        window.location.href = language === 'de' ? "/danke" : "/en/thank-you";
-      }, 1000);
       
     } catch (error: any) {
       if (error.name === 'AbortError') {

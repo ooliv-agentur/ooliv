@@ -15,6 +15,7 @@ import StepFour from './StepFour';
 import LeadFormStepIndicator from './LeadFormStepIndicator';
 import LeadFormNavigation from './LeadFormNavigation';
 import PrototypeForm from './PrototypeForm';
+import ThankYouScreen from './ThankYouScreen';
 
 interface LeadFormContainerProps {
   onClose: () => void;
@@ -25,6 +26,7 @@ interface LeadFormContainerProps {
 const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, initialData }) => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const { language } = useLanguage();
   const { formSchema } = useFormSchema();
   const totalSteps = 4;
@@ -56,6 +58,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
   const watchGoal = form.watch("goal");
 
   const onSuccessfulSubmission = useCallback(() => {
+    setShowThankYou(true);
     form.reset();
   }, [form]);
 
@@ -68,8 +71,16 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
 
   const closeForm = useCallback(() => {
     resetForm();
+    setShowThankYou(false);
     onClose();
   }, [resetForm, onClose]);
+
+  const handleThankYouClose = useCallback(() => {
+    setShowThankYou(false);
+    setTimeout(() => {
+      closeForm();
+    }, 300);
+  }, [closeForm]);
 
   const nextStep = useCallback(async () => {
     let isValid = false;
@@ -139,6 +150,11 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
   // Render prototype form if in prototype mode
   if (mode === 'prototype') {
     return <PrototypeForm onClose={onClose} />;
+  }
+
+  // Show thank you screen after successful submission
+  if (showThankYou) {
+    return <ThankYouScreen onRedirectToHome={handleThankYouClose} />;
   }
 
   // Render project form (4 steps) if in project mode
