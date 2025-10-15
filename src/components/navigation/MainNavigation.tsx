@@ -53,7 +53,7 @@ const MainNavigation = () => {
       <nav className="w-full z-40 fixed top-0 left-0 right-0">
         <div className="relative w-full h-24">
           {/* Logo - responsive positioning: desktop viewport edge, mobile content aligned */}
-          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-40">
+          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-[100]">
             <Link 
               to='/' 
               className="flex items-center" 
@@ -70,7 +70,7 @@ const MainNavigation = () => {
           </div>
           
           {/* Right side controls - Language switcher and burger menu */}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 flex items-center gap-3">
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-[100] flex items-center gap-3">
             
             
             {/* Menu toggle button - hide when menu is open since menu content has its own close button */}
