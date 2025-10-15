@@ -30,7 +30,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           size="lg"
           onClick={onPrevStep}
         >
-          <ArrowLeft className="mr-2 h-5 w-5" />
+          <ArrowLeft className="mr-2 h-5 w-5" style={{ color: 'currentColor' }} />
           {language === 'de' ? "Zurück" : "Back"}
         </Button>
       )}
@@ -43,7 +43,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           className="bg-white text-black hover:bg-white/90"
         >
           {language === 'de' ? "Weiter" : "Next"}
-          <ArrowRight className="ml-2 h-5 w-5" />
+          <ArrowRight className="ml-2 h-5 w-5" style={{ color: '#000000' }} />
         </Button>
       ) : (
         <Button 

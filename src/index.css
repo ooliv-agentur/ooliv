@@ -460,6 +460,12 @@ body.minimal-theme {
   .fixed.right-4 button svg {
     color: #ffffff !important;
   }
+  
+  /* Sidebar form buttons with white backgrounds must have black icons */
+  button.bg-white svg,
+  button.bg-white.text-black svg {
+    color: #000000 !important;
+  }
 
   /* Navigation text links only (not buttons) */
   nav a:not([aria-label]) {
