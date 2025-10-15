@@ -95,9 +95,11 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           <X className="w-6 h-6" aria-hidden="true" />
         </button>
 
-        <LeadFormHeader title={title} description={description} />
-        
-        <LeadFormContainer onClose={handleClose} mode={mode} initialData={initialData} />
+        <div className="lead-form-content">
+          <LeadFormHeader title={title} description={description} />
+          
+          <LeadFormContainer onClose={handleClose} mode={mode} initialData={initialData} />
+        </div>
       </SheetContent>
     </Sheet>
   );

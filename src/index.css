@@ -493,8 +493,13 @@ body.minimal-theme {
     border-color: #E5E5E5 !important;
   }
   
-  /* Force headlines to black */
-  h1, h2, h3, h4, h5, h6 {
+  /* Force headlines to black, EXCEPT in lead overlay */
+  h1:not(.lead-form-content *), 
+  h2:not(.lead-form-content *), 
+  h3:not(.lead-form-content *), 
+  h4:not(.lead-form-content *), 
+  h5:not(.lead-form-content *), 
+  h6:not(.lead-form-content *) {
     color: #1A1A1A !important;
   }
   
@@ -630,9 +635,12 @@ button[role="checkbox"][data-state="checked"] polyline {
 }
 
 /* Lead form headings - ensure they're always white on black background */
-form h3,
+.lead-form-content h1,
+.lead-form-content h2,
+.lead-form-content h3,
+form h1,
 form h2,
-form h1 {
+form h3 {
   color: white !important;
 }
 
