@@ -150,6 +150,7 @@ const FloatingActionButtons = () => {
                     name={button.icon as any}
                     variant="default"
                     size="default"
+                    style={{ color: '#FFFFFF' }}
                   />
                 </Button>
               </TooltipTrigger>
@@ -176,6 +177,7 @@ const FloatingActionButtons = () => {
               name={isExpanded ? "close" : "plus"}
               variant="default"
               size="default"
+              style={{ color: '#FFFFFF' }}
             />
           </Button>
         )}

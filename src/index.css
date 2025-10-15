@@ -440,7 +440,16 @@ body.minimal-theme {
   button[aria-label*="anrufen"] svg,
   button[aria-label*="Call"] svg,
   button[aria-label*="Prototyp"] svg,
-  button[aria-label*="prototype"] svg {
+  button[aria-label*="prototype"] svg,
+  button[aria-label*="öffnen"] svg,
+  button[aria-label*="Open menu"] svg {
+    color: #ffffff !important;
+  }
+  
+  /* Ensure all RegisteredIcon SVGs inside floating buttons are white */
+  button[variant="floating"] svg,
+  button[size="floating"] svg,
+  .fixed.right-4 button svg {
     color: #ffffff !important;
   }
 
