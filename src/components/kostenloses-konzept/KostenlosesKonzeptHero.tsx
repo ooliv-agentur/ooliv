@@ -12,7 +12,7 @@ const KostenlosesKonzeptHero = () => {
       title="Ihre Website bringt keine Anfragen? Das ändern wir."
       subtitle="Kostenloses Website-Konzept in 48 h – mit klaren Empfehlungen zur Optimierung und Nutzerführung. Wir analysieren Ihre bestehende Website, identifizieren Schwachstellen und erstellen einen strukturierten Plan für mehr Anfragen und bessere Conversion – 100 % kostenlos und unverbindlich."
       primaryCta={{
-        text: "Jetzt kostenloses Konzept anfordern →",
+        text: "Kostenloses Konzept sichern",
         link: "#",
         onClick: handleStartProject
       }}
