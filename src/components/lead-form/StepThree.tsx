@@ -102,7 +102,9 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
                   />
                 ))}
               </div>
-              <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
+              <div className="min-h-[40px]">
+                <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
+              </div>
             </FormItem>
           )}
         />
@@ -124,7 +126,9 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40" 
                   />
                 </FormControl>
-                <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
+                <div className="min-h-[40px]">
+                  <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
+                </div>
               </FormItem>
             )}
           />
