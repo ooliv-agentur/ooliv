@@ -415,7 +415,24 @@ body.minimal-theme {
     color: #1A1A1A !important;
   }
 
-  /* Force floating action button icons to white */
+  /* Navigation icon buttons - ensure proper color inheritance */
+  nav button[aria-label] svg {
+    color: currentColor !important;
+  }
+
+  /* Burger menu icon - must be black */
+  nav button[aria-label*="öffnen"] svg,
+  nav button[aria-label*="Open menu"] svg {
+    color: #000000 !important;
+  }
+
+  /* Close button icons - must be white */
+  button[aria-label*="schließen"] svg,
+  button[aria-label*="Close menu"] svg {
+    color: #ffffff !important;
+  }
+
+  /* Floating action button icons - white */
   button[aria-label*="Projekt"] svg,
   button[aria-label*="project"] svg,
   button[aria-label*="Email"] svg,
@@ -424,25 +441,23 @@ body.minimal-theme {
   button[aria-label*="Call"] svg,
   button[aria-label*="Prototyp"] svg,
   button[aria-label*="prototype"] svg {
-    color: white !important;
+    color: #ffffff !important;
   }
 
-  /* Force navigation close button icons to white */
-  button[aria-label*="schließen"] svg,
-  button[aria-label*="Close"] svg,
-  nav button[aria-label*="Menü"] svg {
-    color: white !important;
+  /* Navigation text links only (not buttons) */
+  nav a:not([aria-label]) {
+    color: #333333 !important;
+  }
+
+  nav a:not([aria-label]):hover,
+  nav a:not([aria-label]).active {
+    color: #000000 !important;
   }
   
-  /* Force navigation text links to black/gray - but NOT icon buttons */
-  nav a:not([aria-label]),
-  nav button:not([aria-label]),
   .text-medico-darkGreen {
     color: #333333 !important;
   }
   
-  nav a:hover,
-  nav a.active,
   .hover\:text-accent-primary:hover,
   a.text-accent-primary {
     color: #000000 !important;

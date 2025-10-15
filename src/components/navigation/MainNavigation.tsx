@@ -50,10 +50,10 @@ const MainNavigation = () => {
 
   return (
     <>
-      <nav className="w-full z-40 fixed top-0 left-0 right-0">
+      <nav className="w-full z-50 fixed top-0 left-0 right-0">
         <div className="relative w-full h-24">
           {/* Logo - responsive positioning: desktop viewport edge, mobile content aligned */}
-          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-[100]">
+          <div className="absolute left-4 sm:left-6 lg:left-12 top-1/2 transform -translate-y-1/2 z-[60]">
             <Link 
               to='/' 
               className="flex items-center" 
@@ -69,27 +69,19 @@ const MainNavigation = () => {
             </Link>
           </div>
           
-          {/* Right side controls - Language switcher and burger menu */}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-[100] flex items-center gap-3">
-            
-            
+          {/* Right side controls - Burger menu */}
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-[70] flex items-center gap-3">
             {/* Menu toggle button - hide when menu is open since menu content has its own close button */}
             {!isOpen && (
               <button
-              className={cn(
-                "flex items-center justify-center rounded-full text-black hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg",
-                "w-10 h-10 min-w-10 min-h-10"
-              )}
-              style={{ 
-                backgroundColor: '#FFFFFF'
-              }}
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? (language === 'de' ? "Menü schließen" : "Close menu") : (language === 'de' ? "Menü öffnen" : "Open menu")}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-            >
-              <Menu className="w-6 h-6 text-black" aria-hidden="true" />
-            </button>
+                className="flex items-center justify-center rounded-full bg-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              >
+                <Menu className="w-6 h-6" style={{ color: '#000000' }} aria-hidden="true" />
+              </button>
             )}
           </div>
         </div>
