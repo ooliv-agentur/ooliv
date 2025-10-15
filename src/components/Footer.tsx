@@ -7,31 +7,6 @@ import { footerStyles } from '@/styles/footer-styles';
 
 const Footer = () => {
   const { t, language } = useLanguage();
-  
-  const pathMap: Record<string, string> = {
-    'about-ooliv': language === 'de' ? 'ueber-uns' : 'about-us',
-    'strategy': language === 'de' ? 'strategie' : 'strategy',
-    'web-design': language === 'de' ? 'webdesign' : 'webdesign',
-    'web-development': language === 'de' ? 'webentwicklung' : 'webdevelopment',
-    'content-creation': language === 'de' ? 'content-erstellung' : 'content-creation',
-    'seo-optimization': language === 'de' ? 'seo-optimierung' : 'seo',
-    'google-ads': 'google-ads',
-    'ai-technologies': language === 'de' ? 'ki-technologien' : 'ai-technologies',
-    'case-studies': 'case-studies',
-    'contact': language === 'de' ? 'kontakt' : 'contact',
-    'privacy-policy': language === 'de' ? 'datenschutz' : 'privacy-policy',
-    'legal-notice': language === 'de' ? 'impressum' : 'legal-notice',
-  };
-  
-  const langPrefix = language === 'de' ? '' : '/en';
-  
-  const getUrl = (path: string) => {
-    if (path === '/') return language === 'de' ? '/' : '/en';
-    
-    const basePath = path.replace(/^\//,'');
-    const translatedPath = pathMap[basePath] || basePath;
-    return `${langPrefix}/${translatedPath}`;
-  };
 
   const phoneNumber = '06131 – 63 67 801';
   
@@ -42,53 +17,43 @@ const Footer = () => {
           <div className={footerStyles.sectionSpacing}>
             <h3 className={footerStyles.sectionHeading}>{t('footer.about')}</h3>
             <p className={footerStyles.bodyText}>
-              {language === 'de' 
-                ? 'Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.'
-                : t('footer.aboutText')}
+              Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.
             </p>
           </div>
 
           <div>
             <h3 className={footerStyles.sectionHeading}>{t('footer.services')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
-              <li><Link to={getUrl('strategy')} className={footerStyles.linkText}>Strategie</Link></li>
-              <li><Link to={getUrl('web-design')} className={footerStyles.linkText}>{t('footer.webDesign')}</Link></li>
-              <li><Link to={getUrl('web-development')} className={footerStyles.linkText}>{language === 'de' ? t('footer.webDevelopment') : 'Web Development'}</Link></li>
-              <li><Link to={getUrl('content-creation')} className={footerStyles.linkText}>{language === 'de' ? t('footer.contentCreation') : 'Content Creation'}</Link></li>
-              <li><Link to={getUrl('seo-optimization')} className={footerStyles.linkText}>{t('footer.seo')}</Link></li>
-              <li><Link to={getUrl('google-ads')} className={footerStyles.linkText}>{t('footer.ads')}</Link></li>
-              <li><Link to={getUrl('ai-technologies')} className={footerStyles.linkText}>{language === 'de' ? t('footer.aiTechnologies') : 'AI-Powered Solutions'}</Link></li>
-              {language === 'de' && (
-                <>
-                  <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
-                  <li><Link to="/werbeagentur-mainz" className={footerStyles.linkText}>Werbeagentur Mainz</Link></li>
-                  <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
-                  <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
-                </>
-              )}
+              <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
+              <li><Link to="/webdesign" className={footerStyles.linkText}>{t('footer.webDesign')}</Link></li>
+              <li><Link to="/webentwicklung" className={footerStyles.linkText}>{t('footer.webDevelopment')}</Link></li>
+              <li><Link to="/content-erstellung" className={footerStyles.linkText}>{t('footer.contentCreation')}</Link></li>
+              <li><Link to="/seo-optimierung" className={footerStyles.linkText}>{t('footer.seo')}</Link></li>
+              <li><Link to="/google-ads" className={footerStyles.linkText}>{t('footer.ads')}</Link></li>
+              <li><Link to="/ki-technologien" className={footerStyles.linkText}>{t('footer.aiTechnologies')}</Link></li>
+              <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
+              <li><Link to="/werbeagentur-mainz" className={footerStyles.linkText}>Werbeagentur Mainz</Link></li>
+              <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
+              <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className={footerStyles.sectionHeading}>{t('footer.company')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
-              <li><Link to={getUrl('about-ooliv')} className={footerStyles.linkText}>{t('footer.aboutUs')}</Link></li>
-              <li><Link to={getUrl('case-studies')} className={footerStyles.linkText}>Referenzen</Link></li>
-              <li><Link to={getUrl('contact')} className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
-              {language === 'de' && (
-                <>
-                  <li><Link to="/artikel" className={footerStyles.linkText}>Blog</Link></li>
-                  <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
-                </>
-              )}
+              <li><Link to="/ueber-uns" className={footerStyles.linkText}>{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/referenzen" className={footerStyles.linkText}>Referenzen</Link></li>
+              <li><Link to="/kontakt" className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
+              <li><Link to="/artikel" className={footerStyles.linkText}>Blog</Link></li>
+              <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className={footerStyles.sectionHeading}>{language === 'de' ? "Rechtliches" : "Legal"}</h3>
+            <h3 className={footerStyles.sectionHeading}>Rechtliches</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
-              <li><Link to={getUrl('privacy-policy')} className={footerStyles.linkText}>{t('footer.legal.privacy')}</Link></li>
-              <li><Link to={getUrl('legal-notice')} className={footerStyles.linkText}>{t('footer.legal.imprint')}</Link></li>
+              <li><Link to="/datenschutz" className={footerStyles.linkText}>{t('footer.legal.privacy')}</Link></li>
+              <li><Link to="/impressum" className={footerStyles.linkText}>{t('footer.legal.imprint')}</Link></li>
             </ul>
           </div>
 
@@ -130,8 +95,8 @@ const Footer = () => {
             </div>
 
             <div className={footerStyles.bottomContent}>
-              <div className={footerStyles.copyright}>
-                © 2025 ooliv. {language === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+            <div className={footerStyles.copyright}>
+                © 2025 ooliv. Alle Rechte vorbehalten.
               </div>
               
               <div className={footerStyles.ratingContainer}>
@@ -144,7 +109,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className={footerStyles.ratingLink}
                 >
-                  {language === 'de' ? '4,9 / 5 bei 25 Google-Rezensionen' : '4.9 / 5 from 25 Google reviews'}
+                  4,9 / 5 bei 25 Google-Rezensionen
                 </a>
               </div>
             </div>

@@ -13,38 +13,36 @@ interface StepOneProps {
 }
 
 const StepOne: React.FC<StepOneProps> = ({ form }) => {
-  const { language } = useLanguage();
   const watchProjectType = form.watch("projectType");
-  
-  const whatArePlanning = language === 'de' ? "Was planen Sie mit uns?" : "What are you planning with us?";
-  const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
-  const tellUsWhat = language === 'de' ? "Erzählen Sie uns, was Sie benötigen" : "Tell us what you need";
-  const selectMultiple = language === 'de' ? "Wählen Sie alle zutreffenden Optionen aus:" : "Select all that apply:";
 
   const projectOptions = [
     {
-      value: "website-relaunch",
-      label: language === 'de' ? "Relaunch einer bestehenden Website" : "Relaunch of an existing website"
-    },
-    {
-      value: "new-website", 
-      label: language === 'de' ? "Neue Website erstellen" : "Create a new website"
+      value: "website-project",
+      label: "Website erstellen/relaunchen"
     },
     {
       value: "seo-optimization",
-      label: language === 'de' ? "SEO-Optimierung" : "SEO Optimization"
+      label: "SEO-Optimierung"
     },
     {
-      value: "lead-generation",
-      label: language === 'de' ? "Lead-Generierung mit Google Ads" : "Lead Generation with Google Ads"
+      value: "ai-content-automation",
+      label: "Automatisierte Content-Marketing Lösung"
     },
     {
-      value: "ai-content",
-      label: language === 'de' ? "KI-Inhalte & ChatGPT-Integration" : "AI Content & ChatGPT Integration"
+      value: "ai-integration",
+      label: "KI-Integration (ChatGPT, Midjourney, Sora)"
+    },
+    {
+      value: "google-ads",
+      label: "Google Ads Betreuung"
+    },
+    {
+      value: "web-development",
+      label: "Webentwicklung & technische Betreuung"
     },
     {
       value: "other",
-      label: language === 'de' ? "Sonstiges / individuelles Anliegen" : "Other / Custom Request"
+      label: "Sonstiges / individuelles Anliegen"
     }
   ];
 
@@ -61,9 +59,9 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
           control={form.control}
           name="projectType"
           render={() => (
-            <FormItem>
-              <FormLabel className="text-xl font-semibold text-white mb-3 block">{whatArePlanning}</FormLabel>
-              <p className="text-white/80 text-sm mb-4">{selectMultiple}</p>
+          <FormItem>
+            <FormLabel className="text-xl font-semibold text-white mb-3 block">Was planen Sie mit uns?</FormLabel>
+            <p className="text-white/80 text-sm mb-4">Wählen Sie alle zutreffenden Optionen aus:</p>
               <div className="space-y-3">
                 {projectOptions.map((option) => (
                   <FormField
@@ -114,11 +112,11 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
             name="projectTypeOther"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-base font-medium">{pleaseSpecify}</FormLabel>
+                <FormLabel className="text-white text-base font-medium">Bitte spezifizieren:</FormLabel>
                 <FormControl>
                   <Input 
                     {...field} 
-                    placeholder={tellUsWhat} 
+                    placeholder="Erzählen Sie uns, was Sie benötigen" 
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40" 
                   />
                 </FormControl>

@@ -93,9 +93,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
       }
       if (watchProjectType?.includes('other') && !form.getValues('projectTypeOther')) {
         form.setError('projectTypeOther', { 
-          message: language === 'de' 
-            ? "Bitte geben Sie Ihren Projekttyp an" 
-            : "Please specify your project type" 
+          message: "Bitte geben Sie Ihren Projekttyp an"
         });
         form.setFocus('projectTypeOther');
         return;
@@ -112,9 +110,7 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
       }
       if (watchGoal?.includes('other') && !form.getValues('goalOther')) {
         form.setError('goalOther', { 
-          message: language === 'de' 
-            ? "Bitte geben Sie Ihr Ziel an" 
-            : "Please specify your goal"
+          message: "Bitte geben Sie Ihr Ziel an"
         });
         form.setFocus('goalOther');
         return;

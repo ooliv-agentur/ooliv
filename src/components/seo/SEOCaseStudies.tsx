@@ -11,10 +11,8 @@ const SEOCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Use all 5 case studies instead of just selected ones
-  const relevantCases = isGerman 
-    ? caseStudiesData.de
-    : caseStudiesData.en;
+  // Use all 5 case studies
+  const relevantCases = caseStudiesData.de;
   
   const translations = {
     en: {
@@ -31,8 +29,8 @@ const SEOCaseStudies = () => {
     }
   };
   
-  const t = isGerman ? translations.de : translations.en;
-  const caseStudiesPath = isGerman ? "/referenzen" : "/en/case-studies";
+  const t = translations.de;
+  const caseStudiesPath = "/referenzen";
 
   return (
     <section className="py-24 bg-gradient-to-br from-brand-background via-white to-brand-backgroundAlt">

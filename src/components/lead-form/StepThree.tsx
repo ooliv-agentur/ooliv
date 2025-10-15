@@ -13,35 +13,36 @@ interface StepThreeProps {
 }
 
 const StepThree: React.FC<StepThreeProps> = ({ form }) => {
-  const { language } = useLanguage();
   const watchGoal = form.watch("goal");
-  const pleaseSpecify = language === 'de' ? "Bitte spezifizieren:" : "Please specify:";
-  const selectMultiple = language === 'de' ? "Wählen Sie alle zutreffenden Ziele aus:" : "Select all goals that apply:";
 
   const goalOptions = [
     {
       value: "generate-leads",
-      label: language === 'de' ? "Leads generieren" : "Generate Leads"
-    },
-    {
-      value: "improve-design", 
-      label: language === 'de' ? "Design verbessern" : "Improve Design"
+      label: "Mehr qualifizierte Anfragen generieren"
     },
     {
       value: "improve-rankings",
-      label: language === 'de' ? "Google-Rankings steigern" : "Improve Google Rankings"
+      label: "Bei Google auf Seite 1 kommen"
     },
     {
-      value: "launch-brand",
-      label: language === 'de' ? "Neue Marke einführen" : "Launch a New Brand"
+      value: "improve-performance",
+      label: "Website schneller & mobilfreundlicher machen"
     },
     {
-      value: "mobile-ready",
-      label: language === 'de' ? "Schneller machen / Mobil optimieren" : "Make It Faster / Mobile-Ready"
+      value: "automate-content",
+      label: "Content-Produktion automatisieren"
+    },
+    {
+      value: "brand-development",
+      label: "Markenentwicklung & Positionierung"
+    },
+    {
+      value: "leverage-ai",
+      label: "KI-Potenzial im Unternehmen nutzen"
     },
     {
       value: "other",
-      label: language === 'de' ? "Anderes Ziel" : "Other"
+      label: "Anderes Ziel"
     }
   ];
 
@@ -58,13 +59,11 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
           control={form.control}
           name="goal"
           render={() => (
-            <FormItem>
-              <FormLabel className="text-xl font-semibold text-white mb-3 block">
-                {language === 'de' 
-                  ? "Was ist das Hauptziel Ihres Projekts?" 
-                  : "What's your main goal with this project?"}
-              </FormLabel>
-              <p className="text-white/80 text-sm mb-4">{selectMultiple}</p>
+          <FormItem>
+            <FormLabel className="text-xl font-semibold text-white mb-3 block">
+              Was ist das Hauptziel Ihres Projekts?
+            </FormLabel>
+            <p className="text-white/80 text-sm mb-4">Wählen Sie alle zutreffenden Ziele aus:</p>
               <div className="space-y-3">
                 {goalOptions.map((option) => (
                   <FormField
@@ -115,14 +114,11 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
             name="goalOther"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white text-base font-medium">{pleaseSpecify}</FormLabel>
+                <FormLabel className="text-white text-base font-medium">Bitte spezifizieren:</FormLabel>
                 <FormControl>
                   <Input 
                     {...field} 
-                    placeholder={language === 'de' 
-                      ? "Erzählen Sie uns Ihr Ziel" 
-                      : "Tell us your goal"
-                    }
+                    placeholder="Erzählen Sie uns Ihr Ziel"
                     className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40" 
                   />
                 </FormControl>

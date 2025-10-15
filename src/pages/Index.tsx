@@ -114,7 +114,7 @@ const GermanIndex = () => {
                   onClick={handleStartProject}
                   className="bg-accent-primary text-white hover:bg-accent-primary/90 w-full sm:w-auto"
                 >
-                  Demo anfragen
+                  Projekt starten
                 </Button>
               </div>
             </div>

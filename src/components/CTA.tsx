@@ -30,7 +30,7 @@ const CTA = ({
 }: CTAProps) => {
   const { language } = useLanguage();
   
-  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
+  const contactPath = "/kontakt";
   
   const isStrategyCallCta = (text: string) => {
     return text.includes('Strategiegespräch vereinbaren') || 
@@ -66,9 +66,7 @@ const CTA = ({
     console.log('📡 CTA: open-lead-form event dispatched');
   };
 
-  const defaultFooterNote = language === 'de' 
-    ? "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz"
-    : "100+ successful projects • Trusted by leading companies • AI-powered strategies for maximum impact";
+  const defaultFooterNote = "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
   
   return (
     <section className="py-24 bg-medico-mint font-satoshi">

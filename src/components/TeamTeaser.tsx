@@ -21,15 +21,14 @@ interface TeamMember {
 
 const TeamTeaser = () => {
   const { language } = useLanguage();
-  const aboutPath = language === 'de' ? "/ueber-uns" : "/en/about-us";
   
   const featuredTeamMembers: TeamMember[] = [
     {
       name: "Uli Schönleber",
-      role: language === 'de' ? "Geschäftsführer" : "CEO – Your direct point of contact",
+      role: "Geschäftsführer",
       image: "/lovable-uploads/Uli.jpg",
       initials: "US",
-      tooltip: language === 'de' ? "Leitet jedes Kundenprojekt persönlich" : "Leads every client project personally"
+      tooltip: "Leitet jedes Kundenprojekt persönlich"
     },
     {
       name: "Lisa Schönleber",
@@ -39,14 +38,14 @@ const TeamTeaser = () => {
     },
     {
       name: "Parveen Thakur",
-      role: language === 'de' ? "Webentwicklung" : "Web Development",
+      role: "Webentwicklung",
       image: "/lovable-uploads/Parveen.jpg",
       initials: "PT",
-      tooltip: language === 'de' ? "Seit über 20 Jahren im Team" : "On the team for over 20 years"
+      tooltip: "Seit über 20 Jahren im Team"
     },
     {
       name: "Dorinel Nedelcu",
-      role: language === 'de' ? "Kreation" : "Creation",
+      role: "Kreation",
       image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN",
     }
@@ -57,14 +56,10 @@ const TeamTeaser = () => {
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title">
-            {language === 'de' 
-              ? "Das Team hinter den Ergebnissen" 
-              : "Meet the Team Behind ooliv"}
+            Das Team hinter den Ergebnissen
           </h2>
           <p className="section-subtitle max-w-3xl mx-auto">
-            {language === 'de'
-              ? "Jedes Projekt wird direkt vom Geschäftsführer geführt. Im Hintergrund sorgt unser eingespieltes Team für die Umsetzung – mit Präzision in Content, Design und Development."
-              : "Led by the CEO who handles all client communication, our team of designers, developers, and strategists works behind the scenes to deliver websites that drive measurable business value."}
+            Jedes Projekt wird direkt vom Geschäftsführer geführt. Im Hintergrund sorgt unser eingespieltes Team für die Umsetzung – mit Präzision in Content, Design und Development.
           </p>
         </div>
 
@@ -110,8 +105,8 @@ const TeamTeaser = () => {
 
         <div className="flex justify-center">
           <Button variant="outline" size="lg" className="group" asChild>
-            <Link to={aboutPath}>
-              {language === 'de' ? "Das gesamte Team kennenlernen" : "Meet the full team"}
+            <Link to="/ueber-uns">
+              Das gesamte Team kennenlernen
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

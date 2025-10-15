@@ -13,8 +13,6 @@ interface StepTwoProps {
 }
 
 const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
-  const { language } = useLanguage();
-
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -25,9 +23,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
     >
       <div className="space-y-4">
         <h3 className="text-xl font-semibold text-white mb-4">
-          {language === 'de' 
-            ? "Erzählen Sie uns etwas über Ihr Unternehmen" 
-            : "Tell us a bit about your business"}
+          Erzählen Sie uns etwas über Ihr Unternehmen
         </h3>
         <FormField
           control={form.control}
@@ -35,15 +31,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Unternehmensname" : "Company Name"}
+                Unternehmensname
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
-                  placeholder={language === 'de' 
-                    ? "Name Ihres Unternehmens" 
-                    : "Your company name"
-                  }
+                  placeholder="Name Ihres Unternehmens"
                   className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40"
                 />
               </FormControl>
@@ -58,7 +51,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Branche" : "Industry"} <span className="text-red-400">*</span>
+                Branche <span className="text-red-400">*</span>
               </FormLabel>
               <Select 
                 onValueChange={field.onChange} 
@@ -67,44 +60,21 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
               >
                 <FormControl>
                   <SelectTrigger className="h-12 bg-white/10 border-white/20 text-white text-base hover:bg-white/15 focus:border-white/40">
-                    <SelectValue 
-                      placeholder={language === 'de' 
-                        ? "Branche auswählen" 
-                        : "Select your industry"
-                      } 
-                    />
+                    <SelectValue placeholder="Branche auswählen" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-black text-white border-white/20 max-h-60 z-[350]">
-                  {language === 'de' ? (
-                    <>
-                      <SelectItem value="technology" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Technologie / Software</SelectItem>
-                      <SelectItem value="retail" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Einzelhandel / E-Commerce</SelectItem>
-                      <SelectItem value="finance" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Finanzen / Banking</SelectItem>
-                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Gesundheit / Medizin</SelectItem>
-                      <SelectItem value="education" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Bildung / Training</SelectItem>
-                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Produktion / Industrie</SelectItem>
-                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Gastronomie / Tourismus</SelectItem>
-                      <SelectItem value="construction" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Bau / Immobilien</SelectItem>
-                      <SelectItem value="food" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Lebensmittel / Restaurant</SelectItem>
-                      <SelectItem value="professional" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Beratung / Dienstleistungen</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Andere Branche</SelectItem>
-                    </>
-                  ) : (
-                    <>
-                      <SelectItem value="technology" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Technology / Software</SelectItem>
-                      <SelectItem value="retail" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Retail / E-commerce</SelectItem>
-                      <SelectItem value="finance" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Finance / Banking</SelectItem>
-                      <SelectItem value="healthcare" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Healthcare / Medical</SelectItem>
-                      <SelectItem value="education" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Education / Training</SelectItem>
-                      <SelectItem value="manufacturing" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Manufacturing / Industrial</SelectItem>
-                      <SelectItem value="hospitality" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Hospitality / Tourism</SelectItem>
-                      <SelectItem value="construction" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Construction / Real Estate</SelectItem>
-                      <SelectItem value="food" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Food / Restaurant</SelectItem>
-                      <SelectItem value="professional" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Professional Services</SelectItem>
-                      <SelectItem value="other" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Other</SelectItem>
-                    </>
-                  )}
+                  <SelectItem value="technology" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Technologie / Software</SelectItem>
+                  <SelectItem value="retail" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Einzelhandel / E-Commerce</SelectItem>
+                  <SelectItem value="finance" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Finanzen / Banking</SelectItem>
+                  <SelectItem value="healthcare" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Gesundheit / Medizin</SelectItem>
+                  <SelectItem value="education" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Bildung / Training</SelectItem>
+                  <SelectItem value="manufacturing" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Produktion / Industrie</SelectItem>
+                  <SelectItem value="hospitality" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Gastronomie / Tourismus</SelectItem>
+                  <SelectItem value="construction" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Bau / Immobilien</SelectItem>
+                  <SelectItem value="food" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Lebensmittel / Restaurant</SelectItem>
+                  <SelectItem value="professional" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Beratung / Dienstleistungen</SelectItem>
+                  <SelectItem value="other" className="text-base py-3 hover:bg-white/10 focus:bg-white/20">Andere Branche</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage className="text-[#ff6b6b] bg-red-900/20 p-2 rounded mt-1" />
@@ -118,7 +88,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Website URL" : "Website URL"}
+                Website URL
               </FormLabel>
               <FormControl>
                 <Input 
@@ -139,15 +109,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Standort" : "Location"}
+                Standort
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
-                  placeholder={language === 'de' 
-                    ? "Stadt, Land" 
-                    : "City, Country"
-                  }
+                  placeholder="Stadt, Land"
                   className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40"
                 />
               </FormControl>

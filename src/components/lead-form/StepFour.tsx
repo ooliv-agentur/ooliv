@@ -13,8 +13,6 @@ interface StepFourProps {
 }
 
 const StepFour: React.FC<StepFourProps> = ({ form }) => {
-  const { language } = useLanguage();
-
   return (
     <motion.div
       initial={{ opacity: 0, x: 20 }}
@@ -25,7 +23,7 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
     >
       <div className="space-y-4">
         <h3 className="text-xl font-semibold text-white mb-4">
-          {language === 'de' ? "Wie können wir Sie erreichen?" : "Where can we reach you?"}
+          Wie können wir Sie erreichen?
         </h3>
         <FormField
           control={form.control}
@@ -33,12 +31,12 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Name" : "Name"} <span className="text-red-400">*</span>
+                Name <span className="text-red-400">*</span>
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
-                  placeholder={language === 'de' ? "Ihr Name" : "Your name"} 
+                  placeholder="Ihr Name"
                   className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40"
                   value={field.value || ''}
                   onChange={(e) => {
@@ -57,12 +55,12 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "E-Mail-Adresse" : "Email"} <span className="text-red-400">*</span>
+                E-Mail-Adresse <span className="text-red-400">*</span>
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
-                  placeholder={language === 'de' ? "ihre@emailadresse.de" : "your.email@example.com"} 
+                  placeholder="ihre@emailadresse.de"
                   type="email" 
                   className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40"
                   value={field.value || ''}
@@ -82,14 +80,14 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Telefonnummer" : "Phone"}
+                Telefonnummer
               </FormLabel>
               <FormControl>
                 <Input 
                   {...field} 
-                  placeholder={language === 'de' ? "z. B. +49 123 456 789" : "+49 123 456 789"} 
+                  placeholder="z. B. +49 123 456 789"
                   type="tel" 
-                  className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40" 
+                  className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40"
                   value={field.value || ''}
                   onChange={(e) => {
                     field.onChange(e);
@@ -107,15 +105,12 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-white text-base font-medium">
-                {language === 'de' ? "Nachricht oder Hinweise" : "Message / Notes"}
+                Nachricht oder Hinweise
               </FormLabel>
               <FormControl>
                 <Textarea 
                   {...field} 
-                  placeholder={language === 'de' 
-                    ? "Gibt es etwas, das wir vorab wissen sollten?" 
-                    : "Any additional information about your project"
-                  }
+                  placeholder="Gibt es etwas, das wir vorab wissen sollten?"
                   className="min-h-[120px] bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40 resize-none"
                   value={field.value || ''}
                   onChange={(e) => {

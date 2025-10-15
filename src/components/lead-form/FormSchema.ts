@@ -7,28 +7,14 @@ export const useFormSchema = () => {
   const { language } = useLanguage();
   
   const validationMessages = useMemo(() => ({
-    projectType: language === 'de' 
-      ? "Bitte wählen Sie einen Projekttyp aus" 
-      : "Please select a project type",
-    name: language === 'de'
-      ? "Bitte geben Sie Ihren Namen ein"
-      : "Please enter your name",
-    email: language === 'de'
-      ? "Bitte geben Sie eine gültige E-Mail-Adresse ein"
-      : "Please enter a valid email address",
-    goal: language === 'de'
-      ? "Bitte wählen Sie ein Ziel aus"
-      : "Please select your main goal",
-    otherProjectType: language === 'de'
-      ? "Bitte geben Sie Ihren Projekttyp an"
-      : "Please specify your project type",
-    otherGoal: language === 'de'
-      ? "Bitte geben Sie Ihr Ziel an"
-      : "Please specify your goal",
-    industry: language === 'de'
-      ? "Bitte wählen Sie eine Branche aus"
-      : "Please select an industry"
-  }), [language]);
+    projectType: "Bitte wählen Sie einen Projekttyp aus",
+    name: "Bitte geben Sie Ihren Namen ein",
+    email: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    goal: "Bitte wählen Sie ein Ziel aus",
+    otherProjectType: "Bitte geben Sie Ihren Projekttyp an",
+    otherGoal: "Bitte geben Sie Ihr Ziel an",
+    industry: "Bitte wählen Sie eine Branche aus"
+  }), []);
   
   const formSchema = useMemo(() => z.object({
     projectType: z.array(z.string()).min(1, { message: validationMessages.projectType }),

@@ -79,8 +79,8 @@ const PageHero = ({
     setVideoError(true);
   };
   
-  const contactPath = language === 'de' ? "/kontakt" : "/en/contact";
-  const caseStudiesPath = language === 'de' ? "/referenzen" : "/en/case-studies";
+  const contactPath = "/kontakt";
+  const caseStudiesPath = "/referenzen";
   
   const isStrategyCallCta = (text?: string) => {
     if (!text) return false;
@@ -119,13 +119,9 @@ const PageHero = ({
   };
   
   // Default content based on language
-  const defaultHomepageTitle = language === 'de' ? "ooliv Digitalagentur Mainz" : "Web Design Agency Mainz";
+  const defaultHomepageTitle = "ooliv Digitalagentur Mainz";
   
-  const defaultHomepageDescription = language === 'de' ? (
-    "Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege."
-  ) : (
-    "We build websites that outperform – with clear strategy, custom design and measurable results from day one."
-  );
+  const defaultHomepageDescription = "Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.";
   
   const renderTitle = () => {
     if (isHomepage) {
@@ -178,13 +174,13 @@ const PageHero = ({
   
   const renderCtas = () => {
     const defaultPrimaryCta = {
-      text: startProjectText || (language === 'de' ? "Projekt starten" : "Start Your Website Project"),
+      text: startProjectText || "Projekt starten",
       link: "#",
       onClick: handleOpenLeadForm
     };
     
     const defaultSecondaryCta = {
-      text: seeWorkText || (language === 'de' ? "Arbeiten ansehen" : "See Our Work"),
+      text: seeWorkText || "Arbeiten ansehen",
       link: caseStudiesPath,
       onClick: undefined
     };

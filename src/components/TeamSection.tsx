@@ -4,106 +4,72 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 interface TeamMember {
   name: string;
-  role: {
-    en: string;
-    de: string;
-  };
+  role: string;
   image: string;
   initials: string;
 }
 
 const TeamSection = () => {
   const { language } = useLanguage();
-  const isGerman = language === 'de';
   
   const teamMembers: TeamMember[] = [
     { 
       name: "Uli Schönleber", 
-      role: {
-        en: "CEO · Consulting, Concept, AI",
-        de: "CEO · Beratung, Konzept, KI"
-      }, 
+      role: "CEO · Beratung, Konzept, KI",
       image: "/lovable-uploads/Uli.jpg",
       initials: "US" 
     },
     { 
       name: "Lisa Schönleber", 
-      role: {
-        en: "CEO · Content",
-        de: "CEO · Content"
-      }, 
+      role: "CEO · Content",
       image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
     },
     { 
       name: "Dorinel Nedelcu", 
-      role: {
-        en: "Creation",
-        de: "Kreation"
-      }, 
+      role: "Kreation",
       image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN" 
     },
     { 
       name: "Parveen Thakur", 
-      role: {
-        en: "Web Development",
-        de: "Webentwicklung"
-      }, 
+      role: "Webentwicklung",
       image: "/lovable-uploads/Parveen.jpg",
       initials: "PT" 
     },
     { 
       name: "Kamil Lisiewicz", 
-      role: {
-        en: "Web Development",
-        de: "Webentwicklung"
-      }, 
+      role: "Webentwicklung",
       image: "/lovable-uploads/Kamil.jpg",
       initials: "KL" 
     },
     { 
       name: "Neeraj Kumar", 
-      role: {
-        en: "App Development",
-        de: "App-Entwicklung"
-      }, 
+      role: "App-Entwicklung",
       image: "/lovable-uploads/Neeraj.jpg",
       initials: "NK" 
     },
     { 
       name: "Paul Becker", 
-      role: {
-        en: "SEO Optimization",
-        de: "SEO-Optimierung"
-      }, 
+      role: "SEO-Optimierung",
       image: "/lovable-uploads/Paul.jpg",
       initials: "PB" 
     },
     { 
       name: "Giovanni Costa", 
-      role: {
-        en: "Corporate Design",
-        de: "Corporate Design"
-      }, 
+      role: "Corporate Design",
       image: "/lovable-uploads/Giovanni.jpg",
       initials: "GC" 
     },
     { 
       name: "Beatriz Morales", 
-      role: {
-        en: "Illustrator",
-        de: "Illustratorin"
-      }, 
+      role: "Illustratorin",
       image: "/lovable-uploads/Beatriz.jpg",
       initials: "BM" 
     },
     { 
       name: "Sanja Micro", 
-      role: {
-        en: "Print Design",
-        de: "Print-Design"
-      }, 
+      role: "Print-Design",
       image: "/lovable-uploads/Sanja.jpg",
       initials: "SM" 
     }
@@ -117,12 +83,10 @@ const TeamSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            {isGerman ? "Das ooliv Team" : "The ooliv Team"}
+            Das ooliv Team
           </h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            {isGerman 
-              ? "Gute Leute sind schwer zu finden – wir haben gleich ein ganzes Team davon. Unsere Experten vereinen Strategie, Kreativität und Technologie, um Projekte mit Herzblut umzusetzen."
-              : "Good people are hard to find – we have a whole team of them. Our experts combine strategy, creativity, and technology to implement projects with passion."}
+            Gute Leute sind schwer zu finden – wir haben gleich ein ganzes Team davon. Unsere Experten vereinen Strategie, Kreativität und Technologie, um Projekte mit Herzblut umzusetzen.
           </p>
         </div>
         
@@ -147,7 +111,7 @@ const TeamSection = () => {
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-1 text-brand-heading">{member.name}</h3>
-              <p className="text-brand-text">{isGerman ? member.role.de : member.role.en}</p>
+              <p className="text-brand-text">{member.role}</p>
             </div>
           ))}
         </div>
