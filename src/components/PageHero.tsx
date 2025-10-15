@@ -174,7 +174,7 @@ const PageHero = ({
   
   const renderCtas = () => {
     const defaultPrimaryCta = {
-      text: startProjectText || "Kostenloses Erstgespräch sichern",
+      text: startProjectText || "Kostenloses Konzept sichern",
       link: "#",
       onClick: handleOpenLeadForm
     };
