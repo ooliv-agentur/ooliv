@@ -96,10 +96,10 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
       exit={{ opacity: 0, y: -20 }}
       className="space-y-6"
     >
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="prototype-company" className="text-white text-base font-medium">
-            Firmenname <span className="text-white/50 text-sm font-normal">(optional)</span>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-3">
+          <Label htmlFor="prototype-company" className="text-white text-lg font-medium">
+            Firmenname <span className="text-white/60 text-base font-normal">(optional)</span>
           </Label>
           <Input
             id="prototype-company"
@@ -108,12 +108,12 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
             placeholder="Ihr Unternehmen"
-            className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40 focus-visible:ring-white/40"
+            className="h-14 bg-white/10 border-white/30 text-white placeholder:text-white/60 text-lg focus:border-white/50 focus-visible:ring-white/50 rounded-xl transition-all"
           />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="prototype-email" className="text-white text-base font-medium">
+        <div className="space-y-3">
+          <Label htmlFor="prototype-email" className="text-white text-lg font-medium">
             E-Mail-Adresse *
           </Label>
           <Input
@@ -124,62 +124,62 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="ihre.email@beispiel.de"
             required
-            className="h-12 bg-white/10 border-white/20 text-white placeholder:text-white/70 text-base focus:border-white/40 focus-visible:ring-white/40"
+            className="h-14 bg-white/10 border-white/30 text-white placeholder:text-white/60 text-lg focus:border-white/50 focus-visible:ring-white/50 rounded-xl transition-all"
           />
         </div>
 
         <Button
           type="submit"
           disabled={isSubmitting || !email}
-          className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50"
+          className="w-full h-16 bg-white text-black hover:bg-white/95 hover:scale-[1.02] font-bold text-lg rounded-xl transition-all duration-200 shadow-xl shadow-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50"
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
-              <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+              <div className="h-6 w-6 animate-spin rounded-full border-3 border-current border-t-transparent" />
               Wird gesendet...
             </span>
           ) : (
             <>
               Kostenloses Konzept anfordern
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-6 w-6" />
             </>
           )}
         </Button>
       </form>
 
-      <div className="text-left space-y-4 pt-2">
+      <div className="text-left space-y-5 pt-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white/10 border border-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 bg-white/15 border border-white/30 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h2 className="text-lg font-semibold text-white">
+          <h2 className="text-xl font-bold text-white">
             Was Sie erhalten
           </h2>
         </div>
         
-        <p className="text-sm text-white/80 leading-relaxed">
+        <p className="text-base text-white/90 leading-relaxed">
           Wir analysieren Ihre Website und zeigen Ihnen, wie Sie mehr Anfragen generieren.
         </p>
         
-        <ul className="space-y-2 text-sm text-white/70 pl-1">
+        <ul className="space-y-3 text-base text-white/80 pl-1">
           <li className="flex items-start">
-            <span className="text-white/20 mr-3 mt-0.5 text-lg leading-none">•</span>
+            <span className="text-white/30 mr-3 mt-1 text-xl leading-none">•</span>
             <span className="flex-1">Strategische Seitenstruktur</span>
           </li>
           <li className="flex items-start">
-            <span className="text-white/20 mr-3 mt-0.5 text-lg leading-none">•</span>
+            <span className="text-white/30 mr-3 mt-1 text-xl leading-none">•</span>
             <span className="flex-1">Optimierte Benutzerführung</span>
           </li>
           <li className="flex items-start">
-            <span className="text-white/20 mr-3 mt-0.5 text-lg leading-none">•</span>
+            <span className="text-white/30 mr-3 mt-1 text-xl leading-none">•</span>
             <span className="flex-1">Konkrete Inhaltsempfehlungen</span>
           </li>
         </ul>
       </div>
 
-      <div className="text-xs text-white/50 text-center pt-2">
+      <div className="text-sm text-white/60 text-center pt-4 font-medium">
         100% kostenlos • Keine Verpflichtungen • Antwort in 48h
       </div>
     </motion.div>
