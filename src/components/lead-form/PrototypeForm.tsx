@@ -163,10 +163,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
 
         <Button
           type="submit"
-          variant="primary"
-          size="lg"
           disabled={isSubmitting || !email}
-          className="w-full"
+          className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50"
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
