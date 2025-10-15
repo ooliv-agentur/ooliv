@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Button } from "@/components/ui/button";
+import LeadFormButton from './LeadFormButton';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -24,33 +23,30 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
   return (
     <div className="flex sm:justify-between gap-3 pt-6">
       {currentStep > 1 && (
-        <Button 
+        <LeadFormButton 
           type="button"
-          variant="minimal"
-          size="lg"
+          variant="secondary"
           onClick={onPrevStep}
         >
-          <ArrowLeft className="mr-2 h-5 w-5" style={{ color: 'currentColor' }} />
+          <ArrowLeft className="mr-2 h-5 w-5" />
           {language === 'de' ? "Zurück" : "Back"}
-        </Button>
+        </LeadFormButton>
       )}
       
       {currentStep < totalSteps ? (
-        <Button 
+        <LeadFormButton 
           type="button"
-          size="lg"
+          variant="primary"
           onClick={onNextStep}
-          className="!bg-white !text-black hover:!bg-white/90 !border-0 !shadow-none ring-0 focus-visible:ring-0"
         >
           {language === 'de' ? "Weiter" : "Next"}
-          <ArrowRight className="ml-2 h-5 w-5" style={{ color: '#000000' }} />
-        </Button>
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </LeadFormButton>
       ) : (
-        <Button 
+        <LeadFormButton 
           type="submit"
-          size="lg"
+          variant="primary"
           disabled={isSubmitting}
-          className="!bg-white !text-black hover:!bg-white/90 disabled:opacity-50 !border-0 !shadow-none ring-0 focus-visible:ring-0"
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
@@ -60,7 +56,7 @@ const LeadFormNavigation: React.FC<LeadFormNavigationProps> = ({
           ) : (
             language === 'de' ? 'Abschließen & Senden' : 'Finish & Send'
           )}
-        </Button>
+        </LeadFormButton>
       )}
     </div>
   );

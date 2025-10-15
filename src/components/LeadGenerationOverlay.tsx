@@ -2,13 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { 
   Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription
+  SheetContent
 } from "@/components/ui/sheet";
 import { X } from 'lucide-react';
-import LeadFormContent from './lead-form/LeadFormContent';
+import LeadFormContainer from './lead-form/LeadFormContainer';
+import LeadFormHeader from './lead-form/LeadFormHeader';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
@@ -97,16 +95,9 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
           <X className="w-6 h-6" aria-hidden="true" />
         </button>
 
-        <SheetHeader className="text-left pb-4 pr-12">
-          <SheetTitle className="text-xl font-bold text-white">
-            {title}
-          </SheetTitle>
-          <SheetDescription className="text-white/70">
-            {description}
-          </SheetDescription>
-        </SheetHeader>
+        <LeadFormHeader title={title} description={description} />
         
-        <LeadFormContent onClose={handleClose} mode={mode} initialData={initialData} />
+        <LeadFormContainer onClose={handleClose} mode={mode} initialData={initialData} />
       </SheetContent>
     </Sheet>
   );
