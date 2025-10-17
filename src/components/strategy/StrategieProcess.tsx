@@ -34,7 +34,7 @@ const StrategieProcess = () => {
   ];
 
   return (
-    <section className="py-24 bg-medico-mint/30">
+    <section className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
@@ -58,9 +58,9 @@ const StrategieProcess = () => {
                       variant="round"
                       size="lg"
                       background="strong"
-                      className="text-accent-primary"
+                      className="text-primary"
                     />
-                    <div className="absolute -top-2 -right-2 bg-accent-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
                       {step.number}
                     </div>
                   </div>
