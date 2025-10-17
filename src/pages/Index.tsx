@@ -61,8 +61,8 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Webdesign & Marketing für B2B – Werbeagentur Mainz"
-          description="ooliv Werbeagentur entwickelt Websites für B2B-Unternehmen in Mainz messbar mehr Leads durch Webdesign, SEO, Google Ads und Content-Marketing. Jetzt kontaktieren"
+          title="Werbeagentur Mainz – Websites, die Leads generieren | ooliv"
+          description="B2B-Werbeagentur Mainz – Webdesign, SEO & Google Ads für messbar mehr Leads. Seit 2008. ✓ Persönliche Betreuung ✓ Direkt mit CEO sprechen. Jetzt kontaktieren!"
           canonicalUrl="https://ooliv.de/"
           keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"

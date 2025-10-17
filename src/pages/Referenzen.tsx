@@ -82,10 +82,10 @@ const GermanCaseStudies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="Marketing Mainz – Erfolgreiche Projekte"
-        description="Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern."
+        title="Referenzen & Case Studies | ooliv Werbeagentur Mainz"
+        description="Erfolgreiche Webdesign & Marketing-Projekte – Echte Ergebnisse für B2B-Unternehmen aus Mainz. Von SEO bis Google Ads. Projekte ansehen!"
         canonicalUrl="https://ooliv.de/referenzen"
-        keywords="Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies"
+        keywords="Referenzen, Case Studies, Erfolgsgeschichten, Marketing Mainz, ooliv Projekte"
         breadcrumbs={breadcrumbs}
       />
       

@@ -38,8 +38,8 @@ const WerbeagenturWiesbaden = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg"
-          description="Werbeagentur Wiesbaden – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
+          title="Werbeagentur Wiesbaden | ooliv aus Mainz"
+          description="Werbeagentur Wiesbaden – Digitale Strategien für nachhaltigen Erfolg. Webdesign, SEO & Google Ads aus Mainz für Wiesbaden. Jetzt starten!"
           canonicalUrl="https://ooliv.de/werbeagentur-wiesbaden"
           keywords="Werbeagentur Wiesbaden, Webdesign Wiesbaden, Online Marketing Wiesbaden, SEO Wiesbaden"
           breadcrumbs={breadcrumbs}

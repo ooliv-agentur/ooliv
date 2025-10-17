@@ -11,6 +11,7 @@ interface EnhancedSEOHeadProps {
   keywords?: string;
   breadcrumbs?: Array<{name: string; url: string}>;
   author?: string;
+  robotsContent?: string; // NEW: Allow custom robots directive (e.g., "noindex, follow")
   articleData?: {
     datePublished?: string;
     dateModified?: string;
@@ -28,6 +29,7 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
   keywords,
   breadcrumbs,
   author,
+  robotsContent, // NEW: Custom robots directive
   articleData
 }) => {
   
@@ -152,7 +154,7 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
       <meta name="twitter:site" content="@ooliv_de" />
       
       {/* Enhanced robots */}
-      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="robots" content={robotsContent || "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
       
       {/* Structured Data */}
       {allSchemas.length > 0 && (

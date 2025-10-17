@@ -61,6 +61,7 @@ const GermanPrivacyPolicy = () => {
         title="Datenschutz | ooliv Werbeagentur Mainz"
         description="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben."
         canonicalUrl="https://ooliv.de/datenschutz"
+        robotsContent="noindex, follow"
         structuredData={structuredData}
         keywords="Datenschutz, DSGVO, Datenschutzerklärung, ooliv, Werbeagentur Mainz"
       />

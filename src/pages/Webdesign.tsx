@@ -25,8 +25,8 @@ const GermanWebDesign = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Webdesign Mainz – Individuell & Erfolgreich"
-          description="Professionelles Webdesign Mainz – individuell auf Ihre Ziele abgestimmt. Wir gestalten Websites, die begeistern und messbare Ergebnisse liefern."
+          title="Webdesign Mainz – Websites, die konvertieren | ooliv"
+          description="Webdesign Mainz – Professionelle Websites für B2B. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
           canonicalUrl="https://ooliv.de/webdesign"
           keywords="Webdesign Mainz, Website erstellen, Responsive Design, UX Design, UI Design"
           breadcrumbs={breadcrumbs}

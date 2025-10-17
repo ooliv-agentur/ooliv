@@ -36,8 +36,8 @@ const WerbeagenturFrankfurt = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg"
-          description="Werbeagentur Frankfurt – ooliv bietet digitale Strategien, professionelle Websites und messbare Online-Erfolge. Regional verwurzelt, digital führend."
+          title="Werbeagentur Frankfurt | ooliv aus Mainz"
+          description="Werbeagentur Frankfurt – B2B-Marketing, Webdesign & SEO aus Mainz für Frankfurt. ✓ Lokale Präsenz ✓ Persönlicher Service. Jetzt Projekt starten!"
           canonicalUrl="https://ooliv.de/werbeagentur-frankfurt"
           keywords="Werbeagentur Frankfurt, Webdesign Frankfurt, Online Marketing Frankfurt, SEO Frankfurt"
           breadcrumbs={breadcrumbs}

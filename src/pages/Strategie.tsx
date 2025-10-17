@@ -28,8 +28,8 @@ const GermanStrategy = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Webkonzept & Strategie für Ihren Erfolg – ooliv Mainz"
-        description="Webkonzept & Strategie für messbare Erfolge – ooliv entwickelt individuelle Digitalstrategien für mehr Sichtbarkeit, mehr Leads und eine starke Marke."
+        title="Digitalstrategie Mainz – Webkonzept & Planung | ooliv"
+        description="Digitalstrategie Mainz – Ganzheitliche Webkonzepte für B2B. Von Analyse bis Umsetzung. ✓ Messbare Ziele ✓ ROI-fokussiert. Strategiegespräch!"
         canonicalUrl="https://ooliv.de/strategie"
         keywords="Webkonzept, Digitalstrategie, SEO Strategie, Marketing Konzept, ooliv Mainz"
         breadcrumbs={breadcrumbs}

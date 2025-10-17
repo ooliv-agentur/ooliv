@@ -39,9 +39,9 @@ const GermanCookiePolicy = () => {
         title="Cookie-Richtlinie | ooliv Werbeagentur Mainz"
         description="Cookie-Richtlinie der ooliv Werbeagentur Mainz. Erfahren Sie, wie wir Cookies verwenden und Ihre Privatsphäre schützen."
         canonicalUrl="https://ooliv.de/cookie-richtlinie"
+        robotsContent="noindex, follow"
         keywords="Cookie Richtlinie, Datenschutz, Cookies, ooliv Werbeagentur"
       />
-      <meta name="robots" content="noindex, follow" />
 
       <LegalHero
         badge="Cookie-Richtlinie"

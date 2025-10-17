@@ -44,6 +44,7 @@ const GermanLegalNotice = () => {
         title="Impressum | ooliv Werbeagentur Mainz"
         description="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG. Vollständige Unternehmensdaten und Kontaktinformationen."
         canonicalUrl="https://ooliv.de/impressum"
+        robotsContent="noindex, follow"
         structuredData={structuredData}
         keywords="Impressum, ooliv, Werbeagentur Mainz, Anbieterkennzeichnung, TMG"
       />

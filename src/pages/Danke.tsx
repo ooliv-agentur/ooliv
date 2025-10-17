@@ -60,9 +60,9 @@ const Danke = () => {
         title="Danke für Ihre Anfrage | ooliv"
         description="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz."
         canonicalUrl="https://ooliv.de/danke"
+        robotsContent="noindex, follow"
         keywords="Danke, Anfrage erhalten, ooliv Werbeagentur"
       />
-      <meta name="robots" content="noindex, follow" />
       
       {/* Add the confetti animation */}
       <ConfettiCelebration />

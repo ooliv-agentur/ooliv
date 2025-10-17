@@ -49,11 +49,11 @@ const GermanAboutUs = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Über ooliv – Ihre Marketing Agentur Mainz"
-        description="Über ooliv – Ihre Marketing Agentur Mainz. Persönlich, erfahren und individuell gestalten wir gemeinsam Ihre digitale Zukunft. Lernen Sie unser Team kennen."
+        title="Über uns | ooliv Werbeagentur Mainz"
+        description="Werbeagentur Mainz seit 2008 – Inhabergeführt, persönlich, ehrlich. Team kennenlernen & erfahren, wie wir B2B-Unternehmen zum Erfolg verhelfen."
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
-        keywords="über ooliv, Marketing Agentur Mainz, Werbeagentur Team, Digitale Transformation"
+        keywords="Über ooliv, Werbeagentur Mainz, Team, Unternehmen, Digital Marketing"
         breadcrumbs={[
           { name: "Home", url: "https://ooliv.de/" },
           { name: "Über uns", url: "https://ooliv.de/ueber-uns" }

@@ -110,8 +110,8 @@ const AutomatisierteContentMarketing = () => {
     <>
       <PageLayout>
         <EnhancedSEOHead
-          title="Automatisierte Content Marketing Lösung | ooliv Mainz"
-          description="Revolutionieren Sie Ihr Content Marketing mit KI-gestützter automatischer Content-Erstellung und -Verteilung. Täglich frische, SEO-optimierte Artikel ohne Aufwand. ooliv Mainz macht's möglich."
+          title="KI-Content-Marketing Mainz – Automatisierte Artikel | ooliv"
+          description="KI-Content-Marketing Mainz – Täglich frische SEO-Artikel im Autopilot. Social Media Distribution & Backlinks automatisch. Demo vereinbaren!"
           canonicalUrl="https://ooliv.de/automatisierte-content-marketing"
           keywords="Automatisierte Content Marketing, KI Content, SEO Automation, Content Erstellung, ooliv Mainz"
           breadcrumbs={breadcrumbs}

@@ -22,8 +22,8 @@ const Klickbetrug = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Klickbetrug bei Google Ads stoppen – Automatischer Schutz vor Fake-Klicks"
-        description="Klickbetrug bei Google Ads stoppen – vermeiden Sie Fake-Klicks, Bots und unnützen Traffic. Unsere Lösung erkennt Klickbetrug in Echtzeit und schützt Ihr Budget automatisch."
+        title="Klickbetrug-Schutz für Google Ads | ooliv Mainz"
+        description="Klickbetrug bei Google Ads stoppen – Echtzeit-Schutz vor Fake-Klicks & Bots. Budget automatisch schützen. ✓ Kostenlose Analyse. Jetzt starten!"
         canonicalUrl="https://ooliv.de/klickbetrug"
         keywords="Klickbetrug, Click Fraud, Google Ads Schutz, Fake Klicks, Bot Erkennung, Werbebudget schützen"
         breadcrumbs={breadcrumbs}

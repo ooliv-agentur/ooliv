@@ -43,8 +43,8 @@ const GermanContentCreation = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Content Agentur Mainz – Texte, die wirken | ooliv"
-        description="ooliv – Ihre Content Agentur in Mainz. Wir erstellen überzeugende Texte, die Ihre Zielgruppe erreichen und Ihre Marke stärken."
+        title="Content-Erstellung Mainz – SEO-Texte & Copywriting | ooliv"
+        description="Professionelle Content-Erstellung Mainz – SEO-Texte, die ranken & verkaufen. Von Keyword-Recherche bis Backlink-Strategie. Jetzt Beratung!"
         canonicalUrl="https://ooliv.de/content-erstellung"
         keywords="Content Agentur, Content Erstellung, Texterstellung, Copywriting, ooliv Mainz"
       />
