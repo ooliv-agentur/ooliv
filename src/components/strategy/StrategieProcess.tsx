@@ -60,7 +60,7 @@ const StrategieProcess = () => {
                       background="strong"
                       className="text-primary"
                     />
-                    <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 bg-medico-darkGreen text-white text-sm font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
                       {step.number}
                     </div>
                   </div>
