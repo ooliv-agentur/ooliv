@@ -29,7 +29,7 @@ const GermanSolutionSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background font-satoshi">
+    <section className="py-24 bg-secondary font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
