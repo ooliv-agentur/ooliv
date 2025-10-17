@@ -73,7 +73,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
                 ? "text-2xl py-1.5 leading-tight" // Reduced padding from py-3 to py-1.5 and tighter line height for desktop
                 : "text-3xl py-3", // Keep original mobile sizing
               isActive(link.path) 
-                ? "text-medico-turquoise font-extrabold" // Active state: turquoise
+                ? "text-medico-turquoise font-extrabold nav-link-active" // Active state: turquoise with custom class
                 : "text-medico-darkGreen hover:text-medico-turquoise" // Default state: dark green with turquoise hover
             )}
             onClick={handleClick}

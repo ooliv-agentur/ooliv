@@ -476,6 +476,12 @@ body.minimal-theme {
   nav a:not([aria-label]).active {
     color: #000000 !important;
   }
+
+  /* Navigation active link override - must be turquoise */
+  nav .nav-link-active,
+  .nav-link-active {
+    color: #38B593 !important; /* medico-turquoise */
+  }
   
   .text-medico-darkGreen {
     color: #333333 !important;
