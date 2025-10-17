@@ -88,39 +88,6 @@ const GermanIndex = () => {
         
         <DeutscherAboutSection />
         
-        {/* Automated Content Marketing Highlight */}
-        <section className="py-12 bg-gradient-to-r from-accent-complementary/10 to-accent-primary/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
-              <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-accent-primary mr-3" />
-                NEU: Automatisierte Content-Marketing Lösung
-              </h2>
-              <p className="text-lg text-medico-darkGreen mb-6 max-w-3xl mx-auto">
-                Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
-                Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  variant="outline" 
-                  className="text-accent-primary border-accent-primary hover:bg-accent-primary/10 w-full sm:w-auto"
-                  asChild
-                >
-                  <Link to="/automatisierte-content-marketing">
-                    Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button 
-                  onClick={handleStartProject}
-                  className="bg-accent-primary text-white hover:bg-accent-primary/90 w-full sm:w-auto"
-                >
-                  Projekt starten
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,11 +103,12 @@ const GermanIndex = () => {
               <Button 
                 variant="primary"
                 size="lg" 
-                className="group"
+                className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 onClick={handleStartProject}
+                aria-label="Starten Sie Ihr Webdesign-Projekt"
               >
                 Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -148,6 +116,40 @@ const GermanIndex = () => {
         
         {/* Case Studies früher für sofortiges Vertrauen */}
         <CaseStudiesSection />
+        
+        {/* Automated Content Marketing Highlight - repositioned for better flow */}
+        <section className="py-12 bg-gradient-to-r from-accent-complementary/10 to-accent-primary/10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+              <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-accent-primary mr-3" />
+                NEU: Automatisierte Content-Marketing Lösung
+              </h2>
+              <p className="text-lg text-medico-darkGreen mb-6 max-w-3xl mx-auto">
+                Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
+                Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  variant="outline" 
+                  className="text-accent-primary border-accent-primary hover:bg-accent-primary/10 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2"
+                  asChild
+                >
+                  <Link to="/automatisierte-content-marketing">
+                    Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button 
+                  onClick={handleStartProject}
+                  className="bg-accent-primary text-white hover:bg-accent-primary/90 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2"
+                  aria-label="Starten Sie Ihr Content-Marketing Projekt"
+                >
+                  Projekt starten
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
         
         <GermanSolutionSection />
         <TeamTeaserDE />
@@ -249,16 +251,28 @@ const GermanIndex = () => {
                 
                 {/* Internal linking */}
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
-                  <Link to="/webdesign" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <Link 
+                    to="/webdesign" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Erfahren Sie mehr über unsere Webdesign Services in Mainz"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     Webdesign Mainz Services
                   </Link>
-                  <Link to="/seo-optimierung" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <Link 
+                    to="/seo-optimierung" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Entdecken Sie unsere SEO-Optimierungsservices"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     SEO Agentur Mainz
                   </Link>
-                  <Link to="/kontakt" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <Link 
+                    to="/kontakt" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Kontaktieren Sie uns für eine Beratung in Mainz"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     Beratung in Mainz
                   </Link>
                 </div>

@@ -41,15 +41,15 @@ const GermanSolutionSection = () => {
               {problems.map((problem, index) => (
                 <div 
                   key={index}
-                  className="bg-card p-8 rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg"
+                  className="bg-card p-6 sm:p-8 rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:scale-105"
                 >
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
-                    <problem.icon className="w-8 h-8 text-primary" />
+                    <problem.icon className="w-8 h-8 text-primary" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
                     {problem.title}
                   </h3>
-                  <p className="text-muted-foreground text-base leading-relaxed">
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                     {problem.description}
                   </p>
                 </div>
@@ -73,11 +73,12 @@ const GermanSolutionSection = () => {
               <Button 
                 variant="primary"
                 size="lg" 
-                className="group"
+                className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 min-h-[44px] min-w-[44px]"
                 onClick={handleStartProject}
+                aria-label="Kostenloses Website-Konzept anfordern"
               >
                 Kostenloses Konzept sichern
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
             </div>
           </div>

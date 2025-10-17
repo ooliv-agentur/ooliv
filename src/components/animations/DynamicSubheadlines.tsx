@@ -15,7 +15,7 @@ const DynamicSubheadlines = ({
   className = "",
   typingSpeed = 80,
   deletingSpeed = 40,
-  pauseTime = 2000
+  pauseTime = 2500
 }: DynamicSubheadlinesProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -93,11 +93,11 @@ const DynamicSubheadlines = ({
     current.length > longest.length ? current : longest, '');
 
   return (
-    <span className={`${className} inline-flex items-center relative`} style={{ minWidth: `${longestText.length * 0.6}em` }}>
+    <span className={`${className} inline-flex items-center relative`} style={{ minWidth: `${longestText.length * 0.65}ch` }}>
       {/* Invisible placeholder to maintain space */}
-      <span className="invisible absolute">{longestText}</span>
+      <span className="invisible absolute" aria-hidden="true">{longestText}</span>
       {/* Visible text */}
-      <span className="relative">{displayText || '\u00A0'}</span>
+      <span className="relative" role="status" aria-live="polite" aria-atomic="true">{displayText || '\u00A0'}</span>
       <span 
         className="ml-0.5 w-0.5 h-[1em] bg-current flex-shrink-0"
         style={{
