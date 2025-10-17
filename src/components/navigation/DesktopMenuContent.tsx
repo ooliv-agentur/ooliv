@@ -67,7 +67,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate="visible"
           exit="exit"
           variants={menuVariants}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint text-medico-darkGreen z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
         >
           {/* Close button */}
           <div className="absolute top-6 right-4 z-[100]">
