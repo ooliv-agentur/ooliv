@@ -249,14 +249,17 @@ const GermanIndex = () => {
                 
                 {/* Internal linking */}
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
-                  <Link to="/webdesign" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
-                    ➤ Webdesign Mainz Services
+                  <Link to="/webdesign" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Webdesign Mainz Services
                   </Link>
-                  <Link to="/seo-optimierung" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
-                    ➤ SEO Agentur Mainz
+                  <Link to="/seo-optimierung" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    SEO Agentur Mainz
                   </Link>
-                  <Link to="/kontakt" className="inline-flex items-center text-medico-darkGreen hover:text-accent-primary font-medium transition-colors text-sm">
-                    ➤ Beratung in Mainz
+                  <Link to="/kontakt" className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Beratung in Mainz
                   </Link>
                 </div>
               </div>
