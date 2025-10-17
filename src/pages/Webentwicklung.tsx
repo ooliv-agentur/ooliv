@@ -47,7 +47,7 @@ const GermanWebDevelopment = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Webentwicklung Mainz – Full Stack Development | ooliv"
+        title="Webentwicklung & WordPress – Performance trifft Strategie | ooliv"
         description="Webentwicklung Mainz – Technisch exzellente Websites & Webshops. React, Node.js, APIs. ✓ Performance ✓ Security ✓ Skalierbar. Jetzt Projekt starten!"
         canonicalUrl="https://ooliv.de/webentwicklung"
         keywords="Webentwicklung Mainz, Website Entwicklung, Full Stack Development, ooliv"
@@ -61,7 +61,7 @@ const GermanWebDevelopment = () => {
        <WebDevServices />
 
        <p className="text-center text-sm text-medico-darkGreen mt-4">
-         Mehr über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+         Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
        </p>
       
       {/* Global Case Studies Section */}
@@ -73,7 +73,7 @@ const GermanWebDevelopment = () => {
       
       <FAQ customFaqs={webDevFaqs} />
       <CTA 
-        title="Lassen Sie uns Ihr Webentwicklungs-Projekt besprechen"
+        title="Lassen Sie uns über Ihr Website-Projekt sprechen"
         subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"

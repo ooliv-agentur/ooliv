@@ -69,7 +69,7 @@ const WebDevProcessNewDE = () => {
                 </div>
                 <h3 className="text-xl font-bold text-brand-heading mb-2">3. CMS oder Backend (wenn nötig)</h3>
                 <p className="text-brand-text">
-                  Als WordPress Agentur in Mainz setzen wir Ihr CMS so auf, dass Sie Inhalte flexibel pflegen können – oder wir entwickeln eine backendfreie Lösung mit klarem Code und maximaler Performance.
+                  Wir setzen Ihr CMS so auf, dass Sie Inhalte flexibel pflegen können – oder wir entwickeln eine backendfreie Lösung mit klarem Code und maximaler Performance.
                 </p>
               </div>
               
