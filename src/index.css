@@ -478,8 +478,8 @@ body.minimal-theme {
   }
 
   /* Navigation active link override - must be turquoise */
-  nav .nav-link-active,
-  .nav-link-active {
+  nav a.nav-link-active,
+  a.nav-link-active {
     color: #38B593 !important; /* medico-turquoise */
   }
   
