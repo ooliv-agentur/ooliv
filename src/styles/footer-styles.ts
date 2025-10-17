@@ -21,21 +21,6 @@ export const footerStyles = {
   listSpacing: "space-y-2",
   contactListSpacing: "space-y-3",
   
-  // Divider and bottom section
-  divider: "mt-12 pt-8 border-t border-gray-300",
-  bottomSection: "flex flex-col items-center space-y-6",
-  logoContainer: "flex justify-center w-full",
-  logoImage: "h-12",
-  
-  // Bottom content layout
-  bottomContent: "flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0",
-  copyright: "text-sm text-medico-darkGreen font-sans",
-  
-  // Rating section
-  ratingContainer: "flex items-center",
-  starIcon: "h-3.5 w-3.5 fill-[#facc15] text-[#facc15]",
-  ratingLink: "text-gray-600 hover:text-brand-primary transition-colors text-sm ml-2",
-  
   // Icon styles
   contactIcon: "h-4 w-4 mr-2 shrink-0",
   contactIconWithMargin: "h-4 w-4 mr-2 mt-1 shrink-0",

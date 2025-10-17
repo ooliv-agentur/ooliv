@@ -1,6 +1,5 @@
 
-import React from 'react';
-import { Phone, MapPin, Mail, Star } from 'lucide-react';
+import { Phone, MapPin, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import { footerStyles } from '@/styles/footer-styles';
@@ -74,45 +73,6 @@ const Footer = () => {
                 <a href="mailto:info@ooliv.de" className={footerStyles.linkText}>info@ooliv.de</a>
               </li>
             </ul>
-          </div>
-        </div>
-
-        <div className={footerStyles.divider}>
-          <div className={footerStyles.bottomSection}>
-            <div className={footerStyles.logoContainer}>
-              <a 
-                href="https://www.sortlist.de/agency/uli-werbeagentur?disableCache=true&_gl=1*ry4v5e*_gcl_au*MzA5OTA3ODYxLjE3NDEwMDk3MTI.*_ga*NzY3NTI4Nzk0LjE3MzI4MDI5MTE.*_ga_1R6BD4KZ09*MTc0NDA4OTMzNS4xOC4xLjE3NDQwODk3MDkuNTkuMC4w" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <img 
-                  src="/lovable-uploads/19dd8ee6-65ca-4be8-a7b8-93ae2d687d64.png" 
-                  alt="Sortlist" 
-                  className={footerStyles.logoImage}
-                />
-              </a>
-            </div>
-
-            <div className={footerStyles.bottomContent}>
-            <div className={footerStyles.copyright}>
-                © 2025 ooliv. Alle Rechte vorbehalten.
-              </div>
-              
-              <div className={footerStyles.ratingContainer}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={footerStyles.starIcon} />
-                ))}
-                <a 
-                  href="https://g.co/kgs/sgZX29W" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={footerStyles.ratingLink}
-                >
-                  4,9 / 5 bei 25 Google-Rezensionen
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
