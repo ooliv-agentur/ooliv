@@ -4,16 +4,16 @@
 
 export const footerStyles = {
   // Container styles
-  container: "bg-medico-darkGreen border-t border-medico-turquoise/20 text-white pt-20 pb-8",
+  container: "bg-secondary border-t border-gray-200 text-medico-darkGreen pt-20 pb-8",
   innerContainer: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
   
   // Grid layout
   gridLayout: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8",
   
   // Typography
-  sectionHeading: "text-lg font-semibold font-sans text-white mb-4",
-  bodyText: "text-white/90 text-sm font-sans",
-  linkText: "text-white/90 hover:text-medico-turquoise transition-colors",
+  sectionHeading: "text-lg font-semibold font-sans text-medico-darkGreen mb-4",
+  bodyText: "text-medico-darkGreen text-sm font-sans",
+  linkText: "text-medico-darkGreen hover:text-brand-primary transition-colors",
   companyName: "font-medium",
   
   // Spacing and layout
@@ -22,19 +22,19 @@ export const footerStyles = {
   contactListSpacing: "space-y-3",
   
   // Divider and bottom section
-  divider: "mt-12 pt-8 border-t border-white/20",
+  divider: "mt-12 pt-8 border-t border-gray-300",
   bottomSection: "flex flex-col items-center space-y-6",
   logoContainer: "flex justify-center w-full",
   logoImage: "h-12",
   
   // Bottom content layout
   bottomContent: "flex flex-col md:flex-row w-full justify-between items-center space-y-4 md:space-y-0",
-  copyright: "text-sm text-white/80 font-sans",
+  copyright: "text-sm text-medico-darkGreen font-sans",
   
   // Rating section
   ratingContainer: "flex items-center",
   starIcon: "h-3.5 w-3.5 fill-[#facc15] text-[#facc15]",
-  ratingLink: "text-white/80 hover:text-medico-turquoise transition-colors text-sm ml-2",
+  ratingLink: "text-gray-600 hover:text-brand-primary transition-colors text-sm ml-2",
   
   // Icon styles
   contactIcon: "h-4 w-4 mr-2 shrink-0",
