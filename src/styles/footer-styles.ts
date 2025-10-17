@@ -4,7 +4,7 @@
 
 export const footerStyles = {
   // Container styles
-  container: "bg-secondary border-t border-gray-200 text-medico-darkGreen pt-20 pb-8",
+  container: "bg-white border-t border-gray-200 text-medico-darkGreen pt-20 pb-8",
   innerContainer: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
   
   // Grid layout
