@@ -6,8 +6,6 @@ const FooterBottom = () => {
   return (
     <div className={footerBottomStyles.container}>
       <div className={footerBottomStyles.innerContainer}>
-        <div className={footerBottomStyles.divider} />
-        
         <div className={footerBottomStyles.bottomSection}>
           <div className={footerBottomStyles.logoContainer}>
             <a 

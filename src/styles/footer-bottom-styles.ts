@@ -7,9 +7,6 @@ export const footerBottomStyles = {
   container: "bg-black text-white py-8",
   innerContainer: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
   
-  // Divider
-  divider: "border-t border-white/20 mb-8",
-  
   // Layout sections
   bottomSection: "flex flex-col items-center space-y-6",
   logoContainer: "flex justify-center w-full",
