@@ -9,9 +9,9 @@ const FrankfurtWerbeagenturHero = () => {
 
   // Dynamic subheadlines specifically for Frankfurt businesses
   const dynamicEndings = [
-    "regional sichtbar zu werden.",
-    "digitale Marktführer zu werden.", 
-    "nachhaltiges Wachstum zu erzielen."
+    "online gefunden zu werden.",
+    "mehr Kunden aus der Region.",
+    "Websites, die verkaufen."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";

@@ -26,9 +26,9 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "Websites, die Anfragen generieren.",
-    "Nutzerführung, die konvertiert.", 
-    "Strategien mit messbaren Ergebnissen."
+    "Websites, die Kunden bringen.",
+    "Klare Angebote statt Rätselraten.",
+    "Mehr Anfragen ohne Werbebudget."
   ];
   
   return (

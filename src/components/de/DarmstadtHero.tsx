@@ -9,9 +9,9 @@ const DarmstadtHero = () => {
 
   // Dynamic subheadlines specifically for Darmstadt businesses
   const dynamicEndings = [
-    "Tech-Unternehmen digital zu positionieren.",
-    "B2B-Marketing messbar zu machen.", 
-    "wissenschaftsnahe Branchen zu erreichen."
+    "Websites, die Tech-Kunden ansprechen.",
+    "mehr Sichtbarkeit in der TU-Region.",
+    "weniger Werbekosten, mehr Anfragen."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";

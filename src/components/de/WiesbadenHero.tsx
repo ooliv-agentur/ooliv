@@ -9,9 +9,9 @@ const WiesbadenHero = () => {
 
   // Dynamic subheadlines specifically for Wiesbaden businesses
   const dynamicEndings = [
-    "regional sichtbar zu werden.",
-    "digitale Marktführer zu werden.", 
-    "nachhaltiges Wachstum zu erzielen."
+    "online gefunden zu werden.",
+    "professionelle Websites zum fairen Preis.",
+    "mehr Anfragen über Google."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";

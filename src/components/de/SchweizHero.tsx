@@ -9,9 +9,9 @@ const SchweizHero = () => {
 
   // Dynamic subheadlines specifically for Swiss businesses
   const dynamicEndings = [
-    "mehrsprachige Websites zu entwickeln.",
-    "Schweizer Qualitätsansprüche zu erfüllen.", 
-    "grenzüberschreitende Projekte umzusetzen."
+    "mehrsprachige Websites (DE/FR/IT).",
+    "deutsche Preise, Schweizer Qualität.",
+    "über die Grenze zusammenarbeiten."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
