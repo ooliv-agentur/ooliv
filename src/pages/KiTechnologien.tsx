@@ -63,8 +63,8 @@ const GermanAiTechnologies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="KI Agentur Mainz – Zukunftstechnologien"
-        description="Als KI Agentur in Mainz nutzen wir modernste Technologien für individuelle Lösungen. Wir steigern Ihre Effizienz und Wettbewerbsfähigkeit."
+        title="KI-Agentur Mainz: KI-Tools, Strategien & Prozessoptimierung"
+        description="ooliv Werbeagentur entwickelt B2B-Websites, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads & Content-Marketing aus Mainz. Jetzt Kontakt aufnehmen."
         canonicalUrl="https://ooliv.de/ki-technologien"
         keywords="KI Agentur Mainz, Artificial Intelligence, ChatGPT, Midjourney, Automatisierung"
         breadcrumbs={breadcrumbs}
