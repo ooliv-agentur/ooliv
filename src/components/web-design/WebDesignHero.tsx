@@ -18,7 +18,7 @@ const WebDesignHero = () => {
     },
     de: {
       title: "Schöne Website, keine Anfragen? Zeit für echtes Webdesign.",
-      subtitle: "Webdesign Mainz: Wir gestalten Websites, die tatsächlich Anfragen generieren – strategisch geplant, mobiloptimiert, conversion-fokussiert. Nicht nur schön, sondern wirksam."
+      subtitle: "Wir gestalten Websites, die tatsächlich Anfragen generieren – strategisch geplant, mobiloptimiert, conversion-fokussiert. Nicht nur schön, sondern wirksam."
     }
   };
   

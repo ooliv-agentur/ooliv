@@ -40,13 +40,13 @@ const WiesbadenAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Ihre Werbeagentur Wiesbaden für messbare Erfolge
+              ooliv in Wiesbaden – für messbare Erfolge
             </h2>
             <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
               Digitale Lösungen, die Ihr Unternehmen nachhaltig voranbringen
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Als spezialisierte Werbeagentur in Wiesbaden entwickeln wir strategische Online-Auftritte, die Ihre Zielgruppe erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
+              Wir entwickeln strategische Online-Auftritte, die Ihre Zielgruppe in Wiesbaden und dem Rhein-Main-Gebiet erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
             </p>
             
             {/* Single CTA Button */}

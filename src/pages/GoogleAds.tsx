@@ -234,7 +234,7 @@ const GermanGoogleAds = () => {
       </section>
 
       <p className="text-center text-sm text-medico-darkGreen mt-4">
-        Lernen Sie unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link> kennen.
+        Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
       </p>
 
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />

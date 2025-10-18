@@ -42,7 +42,7 @@ const ContactHero = () => {
               className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
-              Digitalagentur Mainz: Sie reden direkt mit dem Gründer. Kein Verkaufsgespräch, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt.
+              Sie reden direkt mit dem Gründer. Kein Verkaufsgespräch, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt.
             </p>
             
             {/* CTA buttons - now using design system */}

@@ -18,7 +18,7 @@ const ContentServicesUnified = () => {
             Content, der wirkt — von Text bis Visuals
           </h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            ooliv als Content Agentur Mainz entwickelt Content-Formate, die Ihre Marke stark machen und für SEO, Conversion und Wiedererkennung sorgen.
+            ooliv entwickelt Content-Formate, die Ihre Marke stark machen und für SEO, Conversion und Wiedererkennung sorgen.
           </p>
         </div>
         

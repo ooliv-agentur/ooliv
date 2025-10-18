@@ -16,8 +16,8 @@ const ContentHero = () => {
     : "Content Writing Takes Time? We'll Handle It.";
 
   const subtitle = isGerman 
-    ? "Content Agentur Mainz: Website-Texte, SEO-Artikel, Visuals – strategisch durchdacht und KI-optimiert. Sie kümmern sich um Ihr Business, wir um Ihren Content." 
-    : "Content agency Mainz: Website copy, SEO articles, visuals – strategically planned and AI-optimized. You focus on your business, we handle your content.";
+    ? "Website-Texte, SEO-Artikel, Visuals – strategisch durchdacht und KI-optimiert. Sie kümmern sich um Ihr Business, wir um Ihren Content." 
+    : "Website copy, SEO articles, visuals – strategically planned and AI-optimized. You focus on your business, we handle your content.";
 
   return (
     <PageHero

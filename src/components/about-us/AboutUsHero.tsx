@@ -35,7 +35,7 @@ const AboutUsHero = () => {
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Marketing Agentur Mainz: Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Ein Gründer, der Ihr Projekt persönlich betreut. Ehrliche Beratung statt Verkaufsgespräche.
+              Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Ein Gründer, der Ihr Projekt persönlich betreut. Ehrliche Beratung statt Verkaufsgespräche.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}

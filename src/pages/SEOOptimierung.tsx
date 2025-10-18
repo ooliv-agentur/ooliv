@@ -102,7 +102,7 @@ const GermanSEO = () => {
       <SEOProcessDE />
 
       <p className="text-center text-sm text-medico-darkGreen mt-4">
-        Informieren Sie sich über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+        Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
       </p>
       
       <section className="py-24 bg-white">
@@ -113,7 +113,7 @@ const GermanSEO = () => {
       
       <FAQ 
         customFaqs={seoFaqs} 
-        customTitle="Häufige Fragen zur SEO Agentur Mainz"
+        customTitle="Häufig gestellte Fragen zu SEO & Rankings"
       />
       
       <SEOCtaDE />

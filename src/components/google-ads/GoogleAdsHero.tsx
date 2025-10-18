@@ -10,7 +10,7 @@ const GoogleAdsHero = () => {
   return (
     <PageHero
       title="Google Ads Budget verbrannt? Wir holen es zurück."
-      subtitle="Google Ads Agentur Mainz: Wir stoppen die Geldverschwendung und optimieren Ihre Kampagnen auf echte Anfragen. KI-gestützt, transparent, ohne Agentur-Blabla."
+      subtitle="Wir stoppen die Geldverschwendung und optimieren Ihre Kampagnen auf echte Anfragen. KI-gestützt, transparent, ohne Agentur-Blabla."
       primaryCta={{
         text: "Ads-Kampagne retten",
         link: "#",

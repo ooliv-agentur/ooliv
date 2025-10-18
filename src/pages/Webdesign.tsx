@@ -63,7 +63,7 @@ const GermanWebDesign = () => {
         <WebDesignProcess />
 
         <p className="text-center text-sm text-medico-darkGreen mt-4">
-          Mehr über unsere <Link to="/" className="underline hover:no-underline">Werbeagentur Mainz</Link>.
+          Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
         </p>
         
         {/* Full Case Studies Section with global titles */}

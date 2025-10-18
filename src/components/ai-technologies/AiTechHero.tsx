@@ -18,8 +18,8 @@ const AiTechHero = () => {
         : "AI Sounds Complicated? It's Not. We'll Show You."
       }
       subtitle={isGerman 
-        ? "KI Agentur Mainz: Wir integrieren KI-Tools in Ihre Prozesse – für schnelleren Content, effizientere Abläufe und weniger manuelle Arbeit. Pragmatisch, nicht futuristisch." 
-        : "AI agency Mainz: We integrate AI tools into your processes – for faster content, efficient workflows, and less manual work. Pragmatic, not futuristic."
+        ? "Wir integrieren KI-Tools in Ihre Prozesse – für schnelleren Content, effizientere Abläufe und weniger manuelle Arbeit. Pragmatisch, nicht futuristisch." 
+        : "We integrate AI tools into your processes – for faster content, efficient workflows, and less manual work. Pragmatic, not futuristic."
       }
       primaryCta={{
         text: isGerman ? "KI-Potenzial prüfen" : "Check AI Potential",
