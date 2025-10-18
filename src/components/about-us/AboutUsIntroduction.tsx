@@ -8,7 +8,7 @@ const AboutUsIntroduction = () => {
     <section className={getSectionClasses('large', 'white')}>
       <div className={getContainerClasses('narrow')}>
         <LargeParagraph alignment="center" className="font-satoshi">
-          Keine riesigen Teams. Keine Zwischenstellen. Stattdessen arbeiten Sie direkt mit dem Gründer – vom ersten Gespräch bis zum Launch. Wir sind ehrlich, wenn etwas nicht funktioniert, und pragmatisch, wenn es um Lösungen geht. Ohne Agentur-Theater.
+          Kein Agentur-Theater. Keine Zwischenstellen. Sie arbeiten direkt mit dem Gründer und einem eingespielten Team von Spezialisten – vom ersten Gespräch bis zum Launch. Ehrlich, wenn etwas nicht funktioniert. Pragmatisch, wenn es um Lösungen geht.
         </LargeParagraph>
       </div>
     </section>

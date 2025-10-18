@@ -30,7 +30,7 @@ const AboutUsStory = () => {
               Das war der Anfang von ooliv.
             </Paragraph>
             <Paragraph className="mb-6">
-              Seitdem haben wir uns zu einer Remote-First-Agentur mit einem hochqualifizierten, überregional verteilten Team entwickelt – vereint durch eine Denkweise:
+              Seitdem haben wir uns zu einer etablierten Digitalagentur mit festem Standort in Mainz und einem hochqualifizierten, eingespielten Team entwickelt – vereint durch eine Denkweise:
             </Paragraph>
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <LargeParagraph className="font-bold">
