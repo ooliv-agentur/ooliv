@@ -24,23 +24,23 @@ const successPillars = [
   }
 ];
 
-// FAQ items with focus on "marketing mainz"
+// FAQ items with balanced national/regional positioning
 const faqItems = [
   {
     question: "Mit welchen Unternehmen arbeitet ooliv als Marketing Agentur in Mainz?",
-    answer: "Wir arbeiten mit B2B-Unternehmen aller Größen – von Software bis Industrie, Bildung oder Beratung. Als Marketing Agentur in Mainz verstehen wir regionale und internationale Anforderungen."
+    answer: "Wir arbeiten mit B2B-Unternehmen aller Größen bundesweit – von Software bis Industrie, Bildung oder Beratung. Mit Sitz in Mainz verstehen wir regionale UND überregionale Anforderungen."
   },
   {
     question: "Gibt es mehr Details zu den Case Studies?",
-    answer: "Jede Fallstudie zeigt KPIs, Projektziele und echte Ergebnisse. Unsere Marketing-Projekte aus Mainz und darüber hinaus werden dokumentiert – für volle Transparenz."
+    answer: "Jede Fallstudie zeigt KPIs, Projektziele und echte Ergebnisse. Unsere Marketing-Projekte werden dokumentiert – für volle Transparenz, egal wo in Deutschland."
   },
   {
-    question: "Sind solche Ergebnisse im Marketing Mainz realistisch?",
+    question: "Sind solche Ergebnisse realistisch?",
     answer: "Ja – wenn Strategie und Umsetzung stimmen. Unsere Ergebnisse basieren auf klarer Positionierung, starkem Content und technischer Exzellenz."
   },
   {
     question: "Kann ich frühere Kunden kontaktieren?",
-    answer: "Auf Anfrage stellen wir gerne Kontakt her. Unsere Kundenbeziehungen sind langfristig – wir sind stolz auf das Vertrauen, das wir als Marketing Agentur aus Mainz genießen."
+    answer: "Auf Anfrage stellen wir gerne Kontakt her. Unsere Kundenbeziehungen sind langfristig – bundesweit vertrauen uns Unternehmen seit über 15 Jahren."
   }
 ];
 
@@ -53,7 +53,7 @@ const GermanCaseStudies = () => {
   
   // Force document title update to ensure it works across all domains
   useEffect(() => {
-    document.title = "Marketing Mainz – Erfolgreiche Projekte";
+    document.title = "Referenzen & Case Studies | ooliv Digitalagentur";
     
     // Create and update meta description if it doesn't exist
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -62,7 +62,7 @@ const GermanCaseStudies = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Entdecken Sie unsere erfolgreichen Marketingprojekte in Mainz. Fallstudien von ooliv zeigen Strategien, die wirken und begeistern.');
+    metaDescription.setAttribute('content', 'Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen.');
     
     // Create and update meta keywords if it doesn't exist
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -71,7 +71,7 @@ const GermanCaseStudies = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'Marketing Mainz, B2B Marketing, Webdesign, SEO, Case Studies');
+    metaKeywords.setAttribute('content', 'Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland');
   }, []);
 
   const breadcrumbs = [
@@ -82,10 +82,10 @@ const GermanCaseStudies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="Referenzen & Case Studies | ooliv Werbeagentur Mainz"
-        description="Erfolgreiche Webdesign & Marketing-Projekte – Echte Ergebnisse für B2B-Unternehmen aus Mainz. Von SEO bis Google Ads. Projekte ansehen!"
+        title="Referenzen & Case Studies | ooliv Digitalagentur"
+        description="Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen."
         canonicalUrl="https://ooliv.de/referenzen"
-        keywords="Referenzen, Case Studies, Erfolgsgeschichten, Marketing Mainz, ooliv Projekte"
+        keywords="Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland"
         breadcrumbs={breadcrumbs}
       />
       

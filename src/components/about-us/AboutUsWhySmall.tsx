@@ -13,7 +13,7 @@ const AboutUsWhySmall = () => {
           </H2>
           <div className="bg-medico-mint rounded-2xl p-6 shadow-sm mb-6 border border-gray-100">
             <Paragraph className="mb-6">
-              Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Im Hintergrund deckt unser kompaktes Team alle Bereiche von Strategie, Design, Content und Entwicklung ab.
+              Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Unterstützt von einem festen Team aus Designern, Entwicklern und Strategen – alle Bereiche unter einem Dach in Mainz.
             </Paragraph>
             <Paragraph className="mb-6">
               Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.

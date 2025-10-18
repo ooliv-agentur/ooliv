@@ -27,7 +27,7 @@ const TeamTeaserDE = () => {
             Jedes Projekt wird direkt von der Geschäftsführung begleitet.
           </p>
           <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.6' }}>
-            Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz – damit Sie jederzeit wissen, wo Ihr Projekt steht. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
+            Wir setzen auf kurze Wege, schnelle Reaktionszeiten und maximale Transparenz. Unser Team sitzt in Mainz – Sie erreichen uns direkt, ohne Umwege. Mit Fairness, Handschlagqualität und einem persönlichen Ansprechpartner an Ihrer Seite.
           </p>
         </div>
 

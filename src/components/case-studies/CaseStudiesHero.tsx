@@ -50,8 +50,8 @@ const CaseStudiesHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Hier sehen Sie echte Projekte aus Mainz mit echten Ergebnissen – keine aufgehübschten Case Studies, sondern ehrliche Einblicke in unsere Arbeit." 
-                : "See real projects from Mainz with real results – not polished case studies, but honest insights into our work."
+                ? "Hier sehen Sie echte Projekte mit echten Ergebnissen – bundesweit umgesetzt. Keine aufgehübschten Case Studies, sondern ehrliche Einblicke in unsere Arbeit." 
+                : "See real projects with real results – delivered nationwide. Not polished case studies, but honest insights into our work."
               }
             </p>
             

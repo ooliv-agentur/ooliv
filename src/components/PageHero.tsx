@@ -119,7 +119,7 @@ const PageHero = ({
   };
   
   // Default content based on language
-  const defaultHomepageTitle = "ooliv Digitalagentur Mainz";
+  const defaultHomepageTitle = "ooliv Digitalagentur – Websites, die konvertieren";
   
   const defaultHomepageDescription = "Wir entwickeln Websites, die besser ranken, mehr konvertieren und gezielt neue Kunden gewinnen – ohne Templates, ohne Umwege.";
   
