@@ -91,7 +91,7 @@ const GermanContentCreation = () => {
           subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
           primaryCta="Content-Projekt besprechen"
           secondaryCta="Showcase ansehen"
-          secondaryCtaLink="/case-studies"
+          secondaryCtaLink="/referenzen"
         />
       </div>
     </PageLayout>

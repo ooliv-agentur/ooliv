@@ -82,7 +82,7 @@ const WebDesignCaseStudies = () => {
   };
   
   const t = translations[language as 'en' | 'de'] || translations.en;
-  const caseStudiesPath = language === 'de' ? "/case-studies" : "/en/case-studies";
+  const caseStudiesPath = language === 'de' ? "/referenzen" : "/en/case-studies";
 
   return (
     <section className="py-24 bg-white">
