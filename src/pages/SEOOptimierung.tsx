@@ -14,6 +14,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { setHybridMinimalTheme, resetToColorfulTheme } from '@/styles/minimalTheme';
 
 import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
+import GEOOptimizationSEO from '@/components/seo/GEOOptimizationSEO';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
@@ -97,6 +98,7 @@ const GermanSEO = () => {
       <SEOBenefitsDE />
       
       <GooglePartnerBadgeSEO />
+      <GEOOptimizationSEO />
       
       <SEOServicesDE />
       <SEOApproachDE />

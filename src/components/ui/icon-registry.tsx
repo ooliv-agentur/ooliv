@@ -24,6 +24,10 @@ import {
   AlertCircle,
   Info,
   ExternalLink,
+  BrainCircuit,
+  Brain,
+  Bot,
+  Sparkles,
 } from 'lucide-react';
 
 // Central registry of all icons used in the application
@@ -63,6 +67,12 @@ export const iconRegistry = {
   // Status & Alerts
   alertCircle: AlertCircle,
   info: Info,
+  
+  // AI & LLM Icons
+  brainCircuit: BrainCircuit,
+  brain: Brain,
+  bot: Bot,
+  sparkles: Sparkles,
 } as const;
 
 export type IconName = keyof typeof iconRegistry;
