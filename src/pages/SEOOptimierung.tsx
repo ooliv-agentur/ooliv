@@ -102,6 +102,23 @@ const GermanSEO = () => {
       
       <SEOServicesDE />
       <SEOApproachDE />
+      
+      {/* Budget-Signal SEO */}
+      <section className="py-12 bg-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4 text-medico-darkGreen">
+            Was kostet professionelle SEO-Betreuung?
+          </h3>
+          <p className="text-lg text-medico-darkGreen mb-4">
+            Unsere SEO-Pakete starten bei <strong>€1.500/Monat</strong> für laufende Optimierung. 
+            Initial-Audits und technische SEO-Setups beginnen bei <strong>€2.500</strong>.
+          </p>
+          <p className="text-sm text-medico-darkGreen/70">
+            Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote.
+          </p>
+        </div>
+      </section>
+      
       <SEOProcessDE />
 
       <p className="text-center text-sm text-medico-darkGreen mt-4">

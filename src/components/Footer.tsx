@@ -34,6 +34,8 @@ const Footer = () => {
               <li><Link to="/werbeagentur-mainz" className={footerStyles.linkText}>Werbeagentur Mainz</Link></li>
               <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
               <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
+              <li><Link to="/werbeagentur-darmstadt" className={footerStyles.linkText}>Werbeagentur Darmstadt</Link></li>
+              <li><Link to="/digitalagentur-schweiz" className={footerStyles.linkText}>Digitalagentur Schweiz</Link></li>
             </ul>
           </div>
 

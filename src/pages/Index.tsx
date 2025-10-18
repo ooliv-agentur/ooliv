@@ -88,6 +88,30 @@ const GermanIndex = () => {
         
         <DeutscherAboutSection />
         
+        {/* Budget-Transparenz Signal */}
+        <section className="py-12 bg-medico-mint/30">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-medico-darkGreen/10">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-medico-darkGreen text-center">
+                Transparente Investition in Ihre digitale Zukunft
+              </h3>
+              <p className="text-base md:text-lg text-medico-darkGreen text-center leading-relaxed mb-4">
+                <strong>Unsere B2B-Websites starten bei €6.000</strong> für einen strategischen Onepager. 
+                Komplexe Projekte mit SEO-Integration, Content-Marketing und automatisierter Lead-Generierung 
+                beginnen bei <strong>€10.000</strong>.
+              </p>
+              <p className="text-sm text-medico-darkGreen/80 text-center">
+                Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, 
+                Frankfurt, Wiesbaden, Darmstadt und ganz Deutschland.
+                {' '}
+                <Link to="/webdesign#preise" className="text-accent-primary hover:underline font-medium">
+                  Mehr zu unseren Leistungen →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +201,9 @@ const GermanIndex = () => {
               </h2>
               <div className="max-w-4xl mx-auto space-y-4">
                 <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, der Schweiz und Österreich. Seit 2008 entwickeln wir digitale Strategien, die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
+                  Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, 
+                  <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir digitale Strategien, 
+                  die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
                 </p>
                 <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
                   Unser Webdesign- und Marketing-Service verbindet persönliche Betreuung mit modernster Technologie. Als Digitalagentur bieten wir Ihnen den kompletten Service aus einer Hand – für lokale und überregionale Projekte.

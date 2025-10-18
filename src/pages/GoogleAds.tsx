@@ -189,6 +189,23 @@ const GermanGoogleAds = () => {
 
       <GoogleAdsProcess />
 
+      {/* Budget-Signal Google Ads */}
+      <section className="py-12 bg-medico-mint/20">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4 text-medico-darkGreen">
+            Was kostet eine professionelle Google Ads Kampagne?
+          </h3>
+          <p className="text-lg text-medico-darkGreen mb-4">
+            Setup & Strategie: <strong>ab €2.000</strong> (einmalig)<br/>
+            Laufende Betreuung: <strong>ab €800/Monat</strong> + Ihr Werbebudget<br/>
+            Empfohlenes monatliches Werbebudget: <strong>mindestens €2.000</strong>
+          </p>
+          <p className="text-sm text-medico-darkGreen/70">
+            Für B2B-Kampagnen mit hohem Ticket-Wert empfehlen wir €5.000+ Werbebudget/Monat.
+          </p>
+        </div>
+      </section>
+
       {/* Performance Metrics Section */}
       <section className="py-16 md:py-24 bg-medico-mint">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">

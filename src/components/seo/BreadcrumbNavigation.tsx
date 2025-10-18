@@ -29,6 +29,8 @@ const breadcrumbConfig: BreadcrumbConfig[] = [
   { path: '/kontakt', label: 'Kontakt', parent: '/' },
   { path: '/werbeagentur-wiesbaden', label: 'Werbeagentur Wiesbaden', parent: '/' },
   { path: '/werbeagentur-frankfurt', label: 'Werbeagentur Frankfurt', parent: '/' },
+  { path: '/werbeagentur-darmstadt', label: 'Werbeagentur Darmstadt', parent: '/' },
+  { path: '/digitalagentur-schweiz', label: 'Digitalagentur Schweiz', parent: '/' },
   { path: '/klickbetrug', label: 'Klickbetrug-Schutz', parent: '/' },
   { path: '/datenschutz', label: 'Datenschutz', parent: '/' },
   { path: '/impressum', label: 'Impressum', parent: '/' },
