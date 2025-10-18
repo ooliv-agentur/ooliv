@@ -22,7 +22,7 @@ const WiesbadenHero = () => {
       backgroundVideo={videoPath}
       title="Werbeagentur Wiesbaden – ohne Agentur-Theater"
       subtitle="Ihre Wiesbadener Digitalagentur für Websites, SEO und Marketing. Wir arbeiten direkt mit Ihnen, ohne Zwischenstellen – ehrlich, transparent, messbar."
-      dynamicPrefix="Wiesbadener Unternehmen vertrauen uns bei"
+      dynamicPrefix="Wiesbadener Unternehmen brauchen"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{
         text: "Projekt besprechen",

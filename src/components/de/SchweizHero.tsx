@@ -9,9 +9,9 @@ const SchweizHero = () => {
 
   // Dynamic subheadlines specifically for Swiss businesses
   const dynamicEndings = [
-    "mehrsprachige Websites (DE/FR/IT).",
-    "deutsche Preise, Schweizer Qualität.",
-    "über die Grenze zusammenarbeiten."
+    "mehrsprachige Websites.",
+    "SEO für .ch-Domains.",
+    "Marketing ohne Agentur-Overhead."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -22,7 +22,7 @@ const SchweizHero = () => {
       backgroundVideo={videoPath}
       title="Digitalagentur für Schweizer B2B-Unternehmen"
       subtitle="Webdesign, SEO und Marketing aus Deutschland – optimiert für den Schweizer Markt. Transparente Preise in CHF, persönliche Betreuung auf Augenhöhe."
-      dynamicPrefix="Schweizer Unternehmen vertrauen uns bei"
+      dynamicPrefix="Schweizer KMUs brauchen"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{
         text: "Schweizer Projekt starten",
