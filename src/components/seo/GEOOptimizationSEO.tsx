@@ -46,7 +46,7 @@ const GEOOptimizationSEO = () => {
     },
     {
       question: "Bietet ooliv auch SEO und Google Ads nach dem Website-Launch?",
-      answer: "Ja. Nach dem Launch betreuen wir Sie langfristig mit SEO (ab €1.500/Monat), Google Ads (ab €800/Monat + Werbebudget) und Content-Marketing. Viele unserer Kunden nutzen Website, SEO und Ads als Gesamtpaket."
+      answer: "Ja. Nach dem Launch betreuen wir Sie langfristig mit SEO & GEO (ab €800/Monat für Backlinkaufbau, Blog, Presseartikel), Google Ads (Setup ab €500 einmalig, Pflege ab €250/Monat + Werbebudget) und Content-Marketing. Viele unserer Kunden nutzen Website, SEO und Ads als Gesamtpaket."
     }
   ];
 

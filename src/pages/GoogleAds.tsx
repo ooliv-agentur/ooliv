@@ -196,8 +196,8 @@ const GermanGoogleAds = () => {
             Was kostet eine professionelle Google Ads Kampagne?
           </h3>
           <p className="text-lg text-medico-darkGreen mb-4">
-            Setup & Strategie: <strong>ab €2.000</strong> (einmalig)<br/>
-            Laufende Betreuung: <strong>ab €800/Monat</strong> + Ihr Werbebudget<br/>
+            Setup & Strategie: <strong>ab €500</strong> (einmalig)<br/>
+            Laufende Betreuung & Optimierung: <strong>ab €250/Monat</strong> + Ihr Werbebudget<br/>
             Empfohlenes monatliches Werbebudget: <strong>mindestens €2.000</strong>
           </p>
           <p className="text-sm text-medico-darkGreen/70">

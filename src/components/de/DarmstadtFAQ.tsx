@@ -28,7 +28,7 @@ const DarmstadtFAQ = () => {
     },
     {
       question: "Übernimmt ooliv auch SEO und Google Ads?",
-      answer: "Ja. Wir planen SEO von Anfang an mit und betreuen auf Wunsch auch Google Ads Kampagnen, speziell für die Region Darmstadt und das Rhein-Main-Gebiet."
+      answer: "Ja. Wir planen SEO von Anfang an mit und betreuen auf Wunsch auch Google Ads Kampagnen (Setup ab €500, Pflege ab €250/Monat + Werbebudget), speziell für die Region Darmstadt und das Rhein-Main-Gebiet."
     },
     {
       question: "Ist ooliv die richtige Werbeagentur für Unternehmen aus Darmstadt?",

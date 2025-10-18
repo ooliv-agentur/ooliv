@@ -28,7 +28,7 @@ const SchweizFAQ = () => {
     },
     {
       question: "Was kostet eine Website für ein Schweizer Unternehmen?",
-      answer: "Unsere B2B-Websites starten bei CHF 7.000. Komplexe Projekte mit mehrsprachigen Inhalten und SEO beginnen bei CHF 12.000. Wir erstellen individuelle Angebote basierend auf Ihren Anforderungen."
+      answer: "Unsere B2B-Websites starten bei CHF 7.000. Komplexe Projekte mit mehrsprachigen Inhalten und SEO beginnen bei CHF 12.000. Laufende SEO-Betreuung ab CHF 950/Monat, Google Ads Setup ab CHF 600, Pflege ab CHF 300/Monat + Werbebudget."
     },
     {
       question: "Bietet ihr auch mehrsprachige Websites an?",
