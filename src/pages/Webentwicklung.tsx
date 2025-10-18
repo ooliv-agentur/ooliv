@@ -47,8 +47,8 @@ const GermanWebDevelopment = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Webentwicklung & WordPress – Performance trifft Strategie | ooliv"
-        description="Webentwicklung Mainz – Technisch exzellente Websites & Webshops. React, Node.js, APIs. ✓ Performance ✓ Security ✓ Skalierbar. Jetzt Projekt starten!"
+        title="WordPress Agentur Mainz – Schnelle, SEO-optimierte Websites"
+        description="ooliv Werbeagentur aus Mainz: WordPress-Agentur für B2B-Unternehmen. Mehr Leads durch Webdesign, SEO, Google Ads & Content-Marketing. Jetzt informieren."
         canonicalUrl="https://ooliv.de/webentwicklung"
         keywords="Webentwicklung Mainz, Website Entwicklung, Full Stack Development, ooliv"
         breadcrumbs={breadcrumbs}
