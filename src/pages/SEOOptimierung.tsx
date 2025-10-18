@@ -23,11 +23,6 @@ const GermanSEO = () => {
   
   useEffect(() => {
     setLanguage('de');
-    setHybridMinimalTheme();
-    
-    return () => {
-      resetToColorfulTheme();
-    };
   }, [setLanguage]);
   
   const breadcrumbs = [
