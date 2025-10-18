@@ -25,16 +25,16 @@ const GermanWebDesign = () => {
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Webdesign Mainz – Websites, die konvertieren | ooliv"
-          description="Webdesign Mainz – Professionelle Websites für B2B. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
+          title="Professionelles Webdesign – Websites, die konvertieren | ooliv"
+          description="Professionelles Webdesign für B2B-Unternehmen. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
           canonicalUrl="https://ooliv.de/webdesign"
-          keywords="Webdesign Mainz, Website erstellen, Responsive Design, UX Design, UI Design"
+          keywords="Webdesign, Website erstellen, Responsive Design, UX Design, B2B Websites, Conversion-Optimierung"
           breadcrumbs={breadcrumbs}
         />
         
         <ServiceSchemaGenerator
-          serviceName="Webdesign Mainz"
-          description="Professionelles Webdesign und Website-Entwicklung in Mainz. Individuelle, responsive Websites die konvertieren."
+          serviceName="Webdesign & Website-Entwicklung"
+          description="Professionelles Webdesign und Website-Entwicklung für B2B-Unternehmen. Individuelle, responsive Websites die konvertieren."
           serviceType="WebDesign"
           priceRange="€4000-€15000"
           offers={[

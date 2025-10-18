@@ -37,12 +37,12 @@ const GermanSEO = () => {
       answer: "Erste Effekte in wenigen Wochen, nachhaltige Ergebnisse meist ab 3 Monaten."
     },
     {
-      question: "Was macht euren SEO-Ansatz in Mainz besonders?",
-      answer: "Strategie, Tech-Knowhow und Content – kombiniert in einem skalierbaren Prozess."
+      question: "Was macht euren SEO-Ansatz besonders?",
+      answer: "Strategie, Tech-Knowhow und Content – kombiniert in einem skalierbaren Prozess für messbare Ergebnisse."
     },
     {
       question: "Bietet ihr auch lokale SEO-Dienste an?",
-      answer: "Ja – inkl. Google Business, Branchenverzeichnisse und gezielter Sichtbarkeit in Mainz & Region."
+      answer: "Ja – inkl. Google Business, Branchenverzeichnisse und gezielter lokaler Sichtbarkeit in Ihrer Region."
     },
     {
       question: "Ist Linkaufbau Teil eurer SEO-Leistungen?",
@@ -53,8 +53,8 @@ const GermanSEO = () => {
       answer: "Durch strukturierte Audits, Core Web Vitals Checks und technische Umsetzung durch unser Team."
     },
     {
-      question: "Warum sollte ich mit einer lokalen SEO Agentur in Mainz arbeiten?",
-      answer: "Weil regionale Marktkenntnis, Sprache und SEO-Taktik einen entscheidenden Unterschied machen."
+      question: "Warum sollte ich mit einer spezialisierten SEO Agentur arbeiten?",
+      answer: "Weil fundierte Marktkenntnis, technisches Know-how und strategische SEO-Taktik einen entscheidenden Unterschied machen."
     }
   ];
 
@@ -63,16 +63,16 @@ const GermanSEO = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="SEO Agentur Mainz – Strategische SEO und Lokale Sichtbarkeit"
-        description="ooliv Werbeagentur entwickelt Websites für B2B-Unternehmen in Mainz – messbare Lead-Generierung durch Webdesign, SEO, Google Ads und Content-Marketing."
+        title="SEO Agentur – Strategische Suchmaschinenoptimierung | ooliv"
+        description="ooliv Digitalagentur entwickelt SEO-Strategien für B2B-Unternehmen – messbare Lead-Generierung durch technisches SEO, Content und Rankings."
         canonicalUrl="https://ooliv.de/seo-optimierung"
-        keywords="SEO Agentur Mainz, Suchmaschinenoptimierung, Google Rankings, Online Marketing"
+        keywords="SEO Agentur, Suchmaschinenoptimierung, Google Rankings, B2B SEO, Technisches SEO"
         breadcrumbs={breadcrumbs}
       />
       
       <ServiceSchemaGenerator
-        serviceName="Suchmaschinenoptimierung Mainz"
-        description="Professionelle SEO-Dienstleistungen für bessere Google-Rankings und mehr organische Sichtbarkeit."
+        serviceName="Suchmaschinenoptimierung (SEO)"
+        description="Professionelle SEO-Dienstleistungen für B2B-Unternehmen. Bessere Google-Rankings und mehr organische Sichtbarkeit."
         serviceType="SearchEngineOptimization"
         priceRange="€1500-€5000"
         offers={[

@@ -50,7 +50,7 @@ const DeutscherAboutSection = () => {
               Statt nur über Features zu sprechen, zeigen wir Ihnen konkret, welchen Nutzen Sie haben.
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Seit 2008 entwickeln wir in Mainz digitale Lösungen, die messbar funktionieren: Mehr qualifizierte Anfragen, weniger Aufwand bei der Kundengewinnung und eine digitale Präsenz, die Vertrauen schafft.
+              Seit 2008 entwickeln wir digitale Lösungen, die messbar funktionieren: Mehr qualifizierte Anfragen, weniger Aufwand bei der Kundengewinnung und eine digitale Präsenz, die Vertrauen schafft.
             </p>
           </div>
         </Reveal>

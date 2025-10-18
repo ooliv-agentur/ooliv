@@ -25,10 +25,10 @@ const GermanContact = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Kontakt | ooliv Werbeagentur Mainz"
-        description="Kontakt ooliv Mainz – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-9027640. Termin buchen!"
+        title="Kontakt | ooliv Digitalagentur"
+        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-9027640. Termin buchen!"
         canonicalUrl="https://ooliv.de/kontakt"
-        keywords="Kontakt, ooliv Mainz, Werbeagentur Mainz, Beratung, Digitales Marketing"
+        keywords="Kontakt, ooliv, Digitalagentur, Beratung, Webdesign, SEO"
       />
 
       <ContactHeroDE />

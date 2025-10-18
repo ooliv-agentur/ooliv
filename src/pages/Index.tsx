@@ -61,16 +61,16 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Werbeagentur Mainz – Websites, die Leads generieren | ooliv"
-          description="ooliv Werbeagentur aus Mainz entwickelt B2B-Websites, die Leads generieren – Webdesign, SEO, Google Ads & Content-Marketing. Kostenloses Website-Konzept in 48h."
+          title="ooliv Digitalagentur – Websites, die Leads generieren"
+          description="ooliv Digitalagentur entwickelt B2B-Websites bundesweit, die Leads generieren – Webdesign, SEO, Google Ads & Content-Marketing. Kostenloses Website-Konzept in 48h."
           canonicalUrl="https://ooliv.de/"
-          keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
+          keywords="Digitalagentur, B2B Webdesign, SEO Agentur, Online Marketing, Website Entwicklung, Lead-Generierung"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
         />
         
         <CompleteBusinessSchemaGenerator
-          businessName="ooliv Werbeagentur"
-          description="Werbeagentur aus Mainz für B2B-Unternehmen. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads."
+          businessName="ooliv Digitalagentur"
+          description="Digitalagentur für B2B-Unternehmen in Deutschland. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -81,7 +81,7 @@ const GermanIndex = () => {
           telephone="+49-6131-6367801"
           email="info@ooliv.de"
           url="https://ooliv.de"
-          areaServed={["Mainz", "Wiesbaden", "Frankfurt", "Rhein-Main-Gebiet"]}
+          areaServed={["Deutschland", "Schweiz", "Österreich", "DACH-Region"]}
           services={["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]}
         />
         <DeutscherHero />
@@ -168,25 +168,25 @@ const GermanIndex = () => {
           primaryCta="Projekt starten"
         />
 
-        {/* Moved Mainz-specific positioning section to just before footer for better UX */}
+        {/* Standort Mainz, bundesweit aktiv */}
         <div className="py-12 bg-medico-mint">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-medico-darkGreen">
-                Ihre Werbeagentur in Mainz für digitalen Erfolg
+                Standort Mainz – Bundesweit für Sie da
               </h2>
               <div className="max-w-4xl mx-auto space-y-4">
                 <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Als etablierte <strong>Werbeagentur in Mainz</strong> verstehen wir die Besonderheiten des rheinland-pfälzischen Marktes. Seit 2008 entwickeln wir für Unternehmen in Mainz und Umgebung digitale Strategien, die messbare Ergebnisse liefern.
+                  Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, der Schweiz und Österreich. Seit 2008 entwickeln wir digitale Strategien, die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
                 </p>
                 <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
-                  Unser <strong>Webdesign Mainz</strong> Service verbindet lokale Marktkenntnis mit modernster Technologie. Als <strong>Digitalagentur Mainz</strong> bieten wir Ihnen den kompletten Service aus einer Hand.
+                  Unser Webdesign- und Marketing-Service verbindet persönliche Betreuung mit modernster Technologie. Als Digitalagentur bieten wir Ihnen den kompletten Service aus einer Hand – für lokale und überregionale Projekte.
                 </p>
                 
                 {/* Strategic outgoing links */}
                 <div className="bg-white p-4 rounded-lg shadow-sm mt-6">
                   <h3 className="text-lg font-semibold mb-3 text-medico-darkGreen">
-                    Nützliche Ressourcen für Unternehmen in Mainz
+                    Nützliche Ressourcen für Unternehmen
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a 
@@ -223,19 +223,19 @@ const GermanIndex = () => {
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-white p-4 rounded-lg shadow-sm">
                     <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
-                      Lokale Marktkenntnis
+                      Persönliche Betreuung
                     </h4>
                     <p className="text-sm text-medico-darkGreen">
-                      Als <strong>SEO Agentur Mainz</strong> kennen wir die lokalen Suchtrends und Zielgruppen.
+                      Direkter Draht zum CEO – kurze Wege, schnelle Entscheidungen, egal wo Sie sind.
                     </p>
                   </div>
                   
                   <div className="bg-white p-4 rounded-lg shadow-sm">
                     <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
-                      Persönliche Betreuung
+                      Bundesweite Projekte
                     </h4>
                     <p className="text-sm text-medico-darkGreen">
-                      Kurze Wege, direkte Kommunikation – als <strong>Webdesign Agentur Mainz</strong> sind wir vor Ort erreichbar.
+                      Von Mainz bis München – wir arbeiten mit Unternehmen im gesamten DACH-Raum zusammen.
                     </p>
                   </div>
                   
@@ -244,7 +244,7 @@ const GermanIndex = () => {
                       Messbare Erfolge
                     </h4>
                     <p className="text-sm text-medico-darkGreen">
-                      Unsere <strong>digitalen Strategien für Mainz</strong> basieren auf Daten und liefern messbare Ergebnisse.
+                      Unsere digitalen Strategien basieren auf Daten und liefern nachweisbare Ergebnisse.
                     </p>
                   </div>
                 </div>
@@ -254,10 +254,10 @@ const GermanIndex = () => {
                   <Link 
                     to="/webdesign" 
                     className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
-                    aria-label="Erfahren Sie mehr über unsere Webdesign Services in Mainz"
+                    aria-label="Erfahren Sie mehr über unsere Webdesign Services"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    Webdesign Mainz Services
+                    Webdesign Services
                   </Link>
                   <Link 
                     to="/seo-optimierung" 
@@ -265,15 +265,15 @@ const GermanIndex = () => {
                     aria-label="Entdecken Sie unsere SEO-Optimierungsservices"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    SEO Agentur Mainz
+                    SEO Services
                   </Link>
                   <Link 
                     to="/kontakt" 
                     className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
-                    aria-label="Kontaktieren Sie uns für eine Beratung in Mainz"
+                    aria-label="Kontaktieren Sie uns für eine Beratung"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    Beratung in Mainz
+                    Beratung anfragen
                   </Link>
                 </div>
               </div>

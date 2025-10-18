@@ -110,10 +110,10 @@ const AutomatisierteContentMarketing = () => {
     <>
       <PageLayout>
         <EnhancedSEOHead
-          title="KI-Content-Marketing Mainz – Automatisierte Artikel | ooliv"
-          description="KI-Content-Marketing Mainz – Täglich frische SEO-Artikel im Autopilot. Social Media Distribution & Backlinks automatisch. Demo vereinbaren!"
+          title="KI-Content-Marketing – Automatisierte Artikel im Autopilot | ooliv"
+          description="KI-Content-Marketing – Täglich frische SEO-Artikel im Autopilot. Social Media Distribution & Backlinks automatisch. Demo vereinbaren!"
           canonicalUrl="https://ooliv.de/automatisierte-content-marketing"
-          keywords="Automatisierte Content Marketing, KI Content, SEO Automation, Content Erstellung, ooliv Mainz"
+          keywords="Automatisierte Content Marketing, KI Content, SEO Automation, Content Erstellung, AI Marketing"
           breadcrumbs={breadcrumbs}
         />
         <PageHero
@@ -306,10 +306,10 @@ const AutomatisierteContentMarketing = () => {
             <Reveal>
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold mb-6">
-                  Automatisiertes Content Marketing in Mainz und Rhein-Main-Gebiet
+                  Automatisiertes Content Marketing für Ihr Unternehmen
                 </h2>
                 <p className="text-lg text-white/90 max-w-3xl mx-auto">
-                  Als spezialisierte Agentur für SEO Automation in Mainz revolutionieren wir die Art, wie Unternehmen Content erstellen und verteilen.
+                  Als spezialisierte Agentur für SEO Automation revolutionieren wir die Art, wie Unternehmen Content erstellen und verteilen.
                 </p>
               </div>
             </Reveal>

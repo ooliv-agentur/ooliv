@@ -59,16 +59,16 @@ const GermanGoogleAds = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Google Ads Agentur Mainz – KI-Kampagnen für mehr Leads"
-        description="ooliv Werbeagentur: B2B-Lead-Generierung durch Webdesign, SEO, Google Ads & Content-Marketing aus Mainz. KI-gestützt, messbar – Jetzt Kontakt aufnehmen."
+        title="Google Ads Agentur – KI-gestützte Kampagnen für B2B | ooliv"
+        description="ooliv Digitalagentur: B2B-Lead-Generierung durch Google Ads, SEO & Content-Marketing. KI-gestützt, messbar, conversion-fokussiert – Jetzt starten."
         canonicalUrl="https://ooliv.de/google-ads"
-        keywords="Google Ads Agentur Mainz, Google Werbung, PPC Marketing, Online Werbung"
+        keywords="Google Ads Agentur, B2B Google Ads, PPC Marketing, Online Werbung, Lead-Generierung"
         breadcrumbs={breadcrumbs}
       />
       
       <ServiceSchemaGenerator
-        serviceName="Google Ads Betreuung Mainz"
-        description="Professionelle Google Ads Kampagnen-Betreuung für maximale Conversion und ROI."
+        serviceName="Google Ads Betreuung"
+        description="Professionelle Google Ads Kampagnen-Betreuung für B2B-Unternehmen. Maximale Conversion und ROI."
         serviceType="AdvertisingService"
         priceRange="€1000-€5000"
         offers={[

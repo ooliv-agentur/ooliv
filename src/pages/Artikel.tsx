@@ -8,10 +8,10 @@ const Artikel = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Blog & Artikel | ooliv Werbeagentur Mainz"
-        description="Marketing-Insights, SEO-Tipps & Webdesign-Trends – Expertenwissen von ooliv Mainz. Praktische Anleitungen für erfolgreiches B2B-Marketing."
+        title="Blog & Artikel | ooliv Digitalagentur"
+        description="Marketing-Insights, SEO-Tipps & Webdesign-Trends – Expertenwissen von ooliv. Praktische Anleitungen für erfolgreiches B2B-Marketing."
         canonicalUrl="https://ooliv.de/artikel"
-        keywords="Artikel, Blog, Digitales Marketing, SEO, Webdesign, ooliv Werbeagentur"
+        keywords="Artikel, Blog, Digitales Marketing, SEO, Webdesign, B2B Content"
       />
       
       <ArticleOverview />

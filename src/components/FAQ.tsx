@@ -88,7 +88,7 @@ const FAQ = ({
     {
       question: isGerman ? "Warum sollte ich mich für ooliv entscheiden?" : "What sets your agency apart from others?",
       answer: isGerman ? 
-        "Das macht uns besonders:<br/><br/><strong>Direkter Kontakt zum Chef</strong><br/>Sie sprechen immer mit dem CEO – keine Umwege<br/><br/><strong>Alles aus einer Hand</strong><br/>Strategie, Design, Technik und Content von einem Team<br/><br/><strong>Messbare Erfolge</strong><br/>Websites, die bei Google ranken und Kunden gewinnen<br/><br/><strong>Lokale Nähe</strong><br/>In Mainz verwurzelt, aber deutschlandweit tätig<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lernen Sie uns persönlich kennen</a>" 
+        "Das macht uns besonders:<br/><br/><strong>Direkter Kontakt zum Chef</strong><br/>Sie sprechen immer mit dem CEO – keine Umwege<br/><br/><strong>Alles aus einer Hand</strong><br/>Strategie, Design, Technik und Content von einem Team<br/><br/><strong>Messbare Erfolge</strong><br/>Websites, die bei Google ranken und Kunden gewinnen<br/><br/><strong>Standort Mainz, bundesweit aktiv</strong><br/>Persönliche Betreuung mit nationaler Reichweite<br/><br/>→ <a href='/kontakt' class='text-brand-primary hover:underline'>Lernen Sie uns persönlich kennen</a>" 
         : "We combine strategic thinking, creative design, and technical expertise to deliver websites that not only look great but also drive measurable business results.",
       category: "about"
     }

@@ -13,24 +13,24 @@ import { Link } from 'react-router-dom';
 const AboutUsFAQ = () => {
   const faqItems = [
     {
-      question: "Was unterscheidet ooliv von anderen Marketing Agenturen in Mainz?",
-      answer: "Als spezialisierte Marketing Agentur in Mainz verbinden wir strategisches Denken mit praktischer Umsetzung. Bei uns arbeiten Sie direkt mit dem Gründer zusammen, was kurze Entscheidungswege und ein tiefes Verständnis für Ihre Ziele garantiert."
+      question: "Was unterscheidet ooliv von anderen Digitalagenturen?",
+      answer: "Als spezialisierte Digitalagentur verbinden wir strategisches Denken mit praktischer Umsetzung. Bei uns arbeiten Sie direkt mit dem Gründer zusammen, was kurze Entscheidungswege und ein tiefes Verständnis für Ihre Ziele garantiert."
     },
     {
-      question: "Welche Leistungen bietet ooliv als Marketing Agentur an?",
-      answer: "Wir bieten ein Komplettpaket digitaler Marketingdienstleistungen – von Webdesign und -entwicklung über SEO und Content-Erstellung bis hin zu Google Ads und KI-Technologien. Als Marketing Agentur in Mainz konzentrieren wir uns auf messbare Ergebnisse und langfristigen Geschäftserfolg."
+      question: "Welche Leistungen bietet ooliv als Digitalagentur an?",
+      answer: "Wir bieten ein Komplettpaket digitaler Marketingdienstleistungen – von Webdesign und -entwicklung über SEO und Content-Erstellung bis hin zu Google Ads und KI-Technologien. Wir konzentrieren uns auf messbare Ergebnisse und langfristigen Geschäftserfolg."
     },
     {
-      question: "Für welche Branchen arbeitet eure Marketing Agentur in Mainz?",
-      answer: "Wir haben besondere Expertise in B2B-Bereichen wie SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Als Marketing Agentur mit Sitz in Mainz unterstützen wir sowohl lokale Unternehmen als auch Kunden im gesamten DACH-Raum."
+      question: "Für welche Branchen arbeitet eure Digitalagentur?",
+      answer: "Wir haben besondere Expertise in B2B-Bereichen wie SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Von unserem Standort in Mainz aus unterstützen wir Unternehmen im gesamten DACH-Raum."
     },
     {
-      question: "Wie ist der typische Projektablauf mit eurer Marketing Agentur?",
-      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team in Mainz entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Marketing Agentur begleiten Sie von der ersten Idee bis zur langfristigen Betreuung."
+      question: "Wie ist der typische Projektablauf mit eurer Agentur?",
+      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Digitalagentur begleiten wir Sie von der ersten Idee bis zur langfristigen Betreuung."
     },
     {
-      question: "Arbeitet ihr als Marketing Agentur auch mit KI-Tools?",
-      answer: "Ja, wir nutzen modernste KI-Tools zur Effizienzsteigerung. Als zukunftsorientierte Marketing Agentur in Mainz setzen wir auf eine sinnvolle Balance zwischen technologischer Innovation und menschlicher Kreativität."
+      question: "Arbeitet ihr auch mit KI-Tools?",
+      answer: "Ja, wir nutzen modernste KI-Tools zur Effizienzsteigerung. Als zukunftsorientierte Digitalagentur setzen wir auf eine sinnvolle Balance zwischen technologischer Innovation und menschlicher Kreativität."
     }
   ];
 
@@ -43,7 +43,7 @@ const AboutUsFAQ = () => {
           </h2>
           <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Antworten auf die wichtigsten Fragen über unsere Leistungen als Marketing Agentur in Mainz
+            Antworten auf die wichtigsten Fragen über unsere Leistungen als Digitalagentur
           </p>
         </div>
         
