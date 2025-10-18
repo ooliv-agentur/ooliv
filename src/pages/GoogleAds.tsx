@@ -59,8 +59,8 @@ const GermanGoogleAds = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Google Ads Agentur Mainz – Performance Marketing | ooliv"
-        description="Google Ads Mainz – Kampagnen, die konvertieren. ✓ Zertifizierter Google Partner ✓ Klickbetrug-Schutz ✓ ROI-fokussiert. Budget optimal nutzen!"
+        title="Google Ads Agentur Mainz – KI-Kampagnen für mehr Leads"
+        description="ooliv Werbeagentur: B2B-Lead-Generierung durch Webdesign, SEO, Google Ads & Content-Marketing aus Mainz. KI-gestützt, messbar – Jetzt Kontakt aufnehmen."
         canonicalUrl="https://ooliv.de/google-ads"
         keywords="Google Ads Agentur Mainz, Google Werbung, PPC Marketing, Online Werbung"
         breadcrumbs={breadcrumbs}
