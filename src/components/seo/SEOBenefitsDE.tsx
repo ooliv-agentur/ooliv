@@ -18,7 +18,7 @@ const SEOBenefitsDE = () => {
         </Reveal>
 
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
             <div className="mb-4 text-brand-primary">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <BarChart2 className="h-6 w-6 text-white" />
@@ -30,7 +30,7 @@ const SEOBenefitsDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
             <div className="mb-4 text-brand-primary">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <Clock className="h-6 w-6 text-white" />
@@ -42,7 +42,7 @@ const SEOBenefitsDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
             <div className="mb-4 text-brand-primary">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <FileText className="h-6 w-6 text-white" />
@@ -54,7 +54,7 @@ const SEOBenefitsDE = () => {
             </p>
           </div>
 
-          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow" style={{ backgroundColor: '#EAF8F4' }}>
+          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
             <div className="mb-4 text-brand-primary">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <ShieldAlert className="h-6 w-6 text-white" />

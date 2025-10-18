@@ -398,6 +398,39 @@ body.minimal-theme {
   .bg-gradient-to-br,
   [class*="gradient"] {
     background: #FFFFFF !important;
+  }
+  
+  /* Override brand-primary backgrounds (icon circles, buttons) */
+  .bg-brand-primary,
+  div.bg-brand-primary {
+    background-color: #1A1A1A !important;
+  }
+
+  /* Override brand-accent backgrounds (section backgrounds) */
+  .bg-brand-accent,
+  section.bg-brand-accent,
+  div.bg-brand-accent {
+    background-color: #FAFAFA !important;
+  }
+
+  /* Override brand-primary text (links) */
+  .text-brand-primary,
+  a.text-brand-primary {
+    color: #1A1A1A !important;
+  }
+
+  /* Override hover states */
+  .hover\:text-brand-primary:hover {
+    color: #000000 !important;
+  }
+
+  .hover\:underline:hover {
+    text-decoration-color: #000000 !important;
+  }
+
+  /* Override inline styles on cards */
+  [style*="backgroundColor"] {
+    background-color: #FFFFFF !important;
     background-image: none !important;
   }
   
