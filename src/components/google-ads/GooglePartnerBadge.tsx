@@ -22,7 +22,7 @@ const GooglePartnerBadge = () => {
               <img 
                 src="/lovable-uploads/e3b55cd1-2d14-4763-ac56-c1f282c0c16f.png"
                 alt="Google Partner Badge"
-                className="w-48 h-auto mx-auto"
+                className="w-48 h-auto mx-auto grayscale"
               />
             </div>
           </div>

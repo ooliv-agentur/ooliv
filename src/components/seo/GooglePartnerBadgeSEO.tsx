@@ -22,7 +22,7 @@ const GooglePartnerBadgeSEO = () => {
               <img 
                 src="/lovable-uploads/c2a103d0-80b5-42ab-befa-8f7044c3ef2f.png"
                 alt="Google Partner Badge"
-                className="w-48 h-auto mx-auto"
+                className="w-48 h-auto mx-auto grayscale"
               />
             </div>
           </div>
