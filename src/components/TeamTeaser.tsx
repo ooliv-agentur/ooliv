@@ -26,7 +26,7 @@ const TeamTeaser = () => {
     {
       name: "Uli Schönleber",
       role: "Geschäftsführer",
-      image: "/lovable-uploads/Uli.jpg",
+      image: "/lovable-uploads/Uli.webp",
       initials: "US",
       tooltip: "Leitet jedes Kundenprojekt persönlich"
     },

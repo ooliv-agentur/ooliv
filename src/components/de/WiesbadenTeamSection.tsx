@@ -8,7 +8,7 @@ const WiesbadenTeamSection = () => {
     {
       name: "Uli Schönleber",
       position: "Geschäftsführer",
-      image: "/lovable-uploads/Uli.jpg"
+      image: "/lovable-uploads/Uli.webp"
     },
     {
       name: "Lisa Schönleber",

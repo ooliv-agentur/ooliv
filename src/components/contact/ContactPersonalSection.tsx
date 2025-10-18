@@ -9,7 +9,7 @@ const ContactPersonalSection = () => {
           <div className="grid md:grid-cols-5 gap-0">
             <div className="md:col-span-2 relative h-full overflow-hidden bg-gradient-to-br from-brand-background to-brand-backgroundAlt">
               <img 
-                src="/lovable-uploads/Uli.jpg" 
+                src="/lovable-uploads/Uli.webp"
                 alt="Uli, Gründer & CEO bei ooliv" 
                 className="w-full h-full object-cover object-center"
               />

@@ -16,7 +16,7 @@ const TeamSection = () => {
     { 
       name: "Uli Schönleber", 
       role: "CEO · Beratung, Konzept, KI",
-      image: "/lovable-uploads/Uli.jpg",
+      image: "/lovable-uploads/Uli.webp",
       initials: "US" 
     },
     { 

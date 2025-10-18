@@ -62,7 +62,7 @@ const GermanIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
           title="Werbeagentur Mainz – Websites, die Leads generieren | ooliv"
-          description="B2B-Werbeagentur Mainz – Webdesign, SEO & Google Ads für messbar mehr Leads. Seit 2008. ✓ Persönliche Betreuung ✓ Direkt mit CEO sprechen. Jetzt kontaktieren!"
+          description="ooliv Werbeagentur aus Mainz entwickelt B2B-Websites, die Leads generieren – Webdesign, SEO, Google Ads & Content-Marketing. Kostenloses Website-Konzept in 48h."
           canonicalUrl="https://ooliv.de/"
           keywords="Werbeagentur Mainz, Webdesign Mainz, SEO Agentur Mainz, Online Marketing Mainz, Digitalagentur Mainz"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"

@@ -22,7 +22,7 @@ export const caseStudiesData = {
         "Individuelles Webdesign mit klarer Bildsprache",
         "WordPress-Umsetzung mit SEO-Basics"
       ],
-      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.png",
+      image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.webp",
     },
     {
       client: "COBUS Industries",
@@ -52,7 +52,7 @@ export const caseStudiesData = {
         "WordPress-Launch mit lokalem SEO & SEM",
         "Schnell Top-Ranking für Hauptkeyword in Zürich"
       ],
-      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.png",
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.webp",
     },
     {
       client: "IconPro GmbH",
@@ -67,7 +67,7 @@ export const caseStudiesData = {
         "Entwicklung illustrativer Assets & animierter Module",
         "WordPress-Umsetzung mit optimierter Performance"
       ],
-      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.png",
+      image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.webp",
     },
     {
       client: "Quartier Am Kliff",
