@@ -63,8 +63,8 @@ const GermanSEO = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="SEO Mainz – Google Rankings verbessern | ooliv"
-        description="SEO Mainz – Top Rankings bei Google. Technisches SEO, Content-Strategie & Backlinks. ✓ Messbar mehr Traffic ✓ Mehr Leads. Jetzt SEO-Analyse!"
+        title="SEO Agentur Mainz – Strategische SEO und Lokale Sichtbarkeit"
+        description="ooliv Werbeagentur entwickelt Websites für B2B-Unternehmen in Mainz – messbare Lead-Generierung durch Webdesign, SEO, Google Ads und Content-Marketing."
         canonicalUrl="https://ooliv.de/seo-optimierung"
         keywords="SEO Agentur Mainz, Suchmaschinenoptimierung, Google Rankings, Online Marketing"
         breadcrumbs={breadcrumbs}
