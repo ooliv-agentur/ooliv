@@ -113,6 +113,42 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          calculation_data: Json | null
+          created_at: string
+          email: string
+          id: string
+          industry: string
+          message: string | null
+          name: string
+          source: string | null
+          status: string | null
+        }
+        Insert: {
+          calculation_data?: Json | null
+          created_at?: string
+          email: string
+          id?: string
+          industry: string
+          message?: string | null
+          name: string
+          source?: string | null
+          status?: string | null
+        }
+        Update: {
+          calculation_data?: Json | null
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string
+          message?: string | null
+          name?: string
+          source?: string | null
+          status?: string | null
+        }
+        Relationships: []
+      }
       linkedin_accounts: {
         Row: {
           access_token_encrypted: string | null
