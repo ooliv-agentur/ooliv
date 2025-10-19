@@ -48,39 +48,8 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
         )}
       />
 
-      {/* Sprachen & Leistungsumfang in 2 columns on desktop */}
+      {/* Leistungsumfang & Laufende Services in 2 columns on desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Multilingual */}
-        <FormField
-          control={form.control}
-          name="multilingual"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold leading-none mb-3 block">Sprachen</FormLabel>
-              <div className="space-y-2">
-                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                  <Checkbox checked={true} disabled />
-                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                    Einsprachig (Deutsch)
-                  </FormLabel>
-                </FormItem>
-                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
-                  <FormControl>
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                  </FormControl>
-                  <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                    Mehrsprachig
-                  </FormLabel>
-                </FormItem>
-              </div>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         {/* Modules - One-time Services */}
         <div>
           <FormLabel className="text-base font-semibold leading-none mb-3 block">Leistungsumfang</FormLabel>
@@ -153,12 +122,11 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             />
           </div>
         </div>
-      </div>
 
-      {/* Ongoing Services */}
-      <div>
-        <FormLabel className="text-base font-semibold leading-none mb-3 block">Laufende Services (monatlich)</FormLabel>
-        <div className="space-y-2">
+        {/* Ongoing Services */}
+        <div>
+          <FormLabel className="text-base font-semibold leading-none mb-3 block">Laufende Services (monatlich)</FormLabel>
+          <div className="space-y-2">
           <FormField
             control={form.control}
             name="modules.ongoingSeo"
@@ -203,6 +171,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
               </FormItem>
             )}
           />
+          </div>
         </div>
       </div>
     </div>
