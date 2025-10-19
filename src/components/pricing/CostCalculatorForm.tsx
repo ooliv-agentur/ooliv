@@ -120,6 +120,21 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
                 </FormItem>
               )}
             />
+
+            <FormField
+              control={form.control}
+              name="modules.branding"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
+                  <FormControl>
+                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                  </FormControl>
+                  <FormLabel className="text-base font-medium cursor-pointer leading-none">
+                    Branding & Logo Design
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
           </div>
         </div>
 

@@ -6,6 +6,7 @@ export interface CostBreakdown {
   implementation: number;
   seo: number;
   adsSetup: number;
+  branding: number;
   multilingual: number;
   ongoingSeo: number;
   ongoingAds: number;
@@ -33,6 +34,7 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
   let implementationCost = data.modules.implementation ? basePrices.implementation * sizeMultiplier : 0;
   let seoCost = data.modules.seo ? basePrices.seo : 0;
   let adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
+  let brandingCost = data.modules.branding ? basePrices.branding : 0;
 
   // Multilingual adds 50% to base costs
   let multilingualCost = 0;
@@ -40,7 +42,7 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
     multilingualCost = (conceptCost + designCost + implementationCost) * basePrices.multilingualMultiplier;
   }
 
-  const oneTimeTotal = conceptCost + designCost + implementationCost + seoCost + adsSetupCost + multilingualCost;
+  const oneTimeTotal = conceptCost + designCost + implementationCost + seoCost + adsSetupCost + brandingCost + multilingualCost;
 
   // Calculate monthly costs
   const ongoingSeoCost = data.modules.ongoingSeo ? basePrices.ongoingSeo : 0;
@@ -63,6 +65,7 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
       implementation: Math.round(implementationCost),
       seo: Math.round(seoCost),
       adsSetup: Math.round(adsSetupCost),
+      branding: Math.round(brandingCost),
       multilingual: Math.round(multilingualCost),
       ongoingSeo: Math.round(ongoingSeoCost),
       ongoingAds: Math.round(ongoingAdsCost),
