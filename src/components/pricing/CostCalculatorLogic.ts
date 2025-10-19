@@ -20,23 +20,17 @@ export interface CalculationResult {
   breakdown: CostBreakdown;
   assumptions: {
     companySize: string;
-    cmsType: string;
     multilingual: boolean;
   };
 }
 
 export const calculateCost = (data: CalculatorFormValues): CalculationResult => {
   const sizeMultiplier = companySizeMultipliers[data.companySize];
-  
-  // Base implementation cost depends on CMS choice
-  const baseImplementation = data.cmsType === 'with-cms' 
-    ? basePrices.implementationWithCms 
-    : basePrices.implementationNoCms;
 
   // Calculate one-time costs
   let conceptCost = data.modules.concept ? basePrices.concept * sizeMultiplier : 0;
   let designCost = data.modules.design ? basePrices.design * sizeMultiplier : 0;
-  let implementationCost = data.modules.implementation ? baseImplementation * sizeMultiplier : 0;
+  let implementationCost = data.modules.implementation ? basePrices.implementation * sizeMultiplier : 0;
   let seoCost = data.modules.seo ? basePrices.seo : 0;
   let adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
 
@@ -76,7 +70,6 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
     },
     assumptions: {
       companySize: data.companySize,
-      cmsType: data.cmsType,
       multilingual: data.multilingual,
     },
   };

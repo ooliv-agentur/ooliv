@@ -1,8 +1,7 @@
 import { z } from 'zod';
 
 export const calculatorSchema = z.object({
-  companySize: z.enum(['small', 'medium', 'large']),
-  cmsType: z.enum(['no-cms', 'with-cms']),
+  companySize: z.enum(['xs', 'small', 'medium', 'large']),
   multilingual: z.boolean().default(false),
   
   modules: z.object({
@@ -20,31 +19,27 @@ export const calculatorSchema = z.object({
 export type CalculatorFormValues = z.infer<typeof calculatorSchema>;
 
 export const companySizeMultipliers = {
-  small: 1.0,
-  medium: 1.15,
-  large: 1.3,
+  xs: 1.0,
+  small: 1.15,
+  medium: 1.3,
+  large: 1.5,
 } as const;
 
 export const basePrices = {
   concept: 1500,
   design: 3000,
-  implementationNoCms: 3500,
-  implementationWithCms: 4200,
+  implementation: 3800,
   seo: 500,
   adsSetup: 500,
   ongoingSeo: 400,
   ongoingAds: 200,
   maintenance: 150,
-  multilingualMultiplier: 0.5, // 50% Aufpreis für mehrsprachig
+  multilingualMultiplier: 0.5,
 } as const;
 
 export const companySizeLabels: Record<keyof typeof companySizeMultipliers, string> = {
-  small: '2–50 Mitarbeiter',
-  medium: '51–200 Mitarbeiter',
-  large: '200+ Mitarbeiter',
+  xs: '2–10 Mitarbeiter',
+  small: '10–50 Mitarbeiter',
+  medium: '50–100 Mitarbeiter',
+  large: '100+ Mitarbeiter',
 };
-
-export const cmsTypeLabels = {
-  'no-cms': 'Ohne CMS',
-  'with-cms': 'Mit CMS',
-} as const;

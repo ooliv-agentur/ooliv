@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
-import { CalculatorFormValues, companySizeLabels, cmsTypeLabels } from './CostCalculatorSchema';
+import { CalculatorFormValues, companySizeLabels } from './CostCalculatorSchema';
 import {
   FormControl,
   FormField,
@@ -32,36 +32,6 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
                 className="space-y-2"
               >
                 {Object.entries(companySizeLabels).map(([value, label]) => (
-                  <FormItem key={value} className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                    <FormControl>
-                      <RadioGroupItem value={value} />
-                    </FormControl>
-                    <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                      {label}
-                    </FormLabel>
-                  </FormItem>
-                ))}
-              </RadioGroup>
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      {/* CMS Type */}
-      <FormField
-        control={form.control}
-        name="cmsType"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel className="text-base font-semibold leading-none mb-3 block">CMS-System</FormLabel>
-            <FormControl>
-              <RadioGroup
-                onValueChange={field.onChange}
-                value={field.value}
-                className="space-y-2"
-              >
-                {Object.entries(cmsTypeLabels).map(([value, label]) => (
                   <FormItem key={value} className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
                     <FormControl>
                       <RadioGroupItem value={value} />

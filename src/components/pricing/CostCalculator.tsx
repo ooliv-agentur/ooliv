@@ -13,8 +13,7 @@ const CostCalculator: React.FC = () => {
   const form = useForm<CalculatorFormValues>({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
-      companySize: 'small',
-      cmsType: 'with-cms',
+      companySize: 'xs',
       multilingual: false,
       modules: {
         concept: false,
@@ -33,8 +32,7 @@ const CostCalculator: React.FC = () => {
   useEffect(() => {
     const subscription = form.watch((value) => {
       const data = value as CalculatorFormValues;
-      // Only calculate if required fields are present
-      if (data.companySize && data.cmsType !== undefined && data.modules) {
+      if (data.companySize && data.modules) {
         const calculationResult = calculateCost(data);
         setResult(calculationResult);
       }

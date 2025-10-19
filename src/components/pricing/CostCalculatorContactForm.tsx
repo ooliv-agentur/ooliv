@@ -23,13 +23,12 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { CalculationResult } from "./CostCalculatorLogic";
-import { CalculatorFormValues, cmsTypeLabels } from "./CostCalculatorSchema";
+import { CalculatorFormValues } from "./CostCalculatorSchema";
 import { useState } from "react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name erforderlich"),
   email: z.string().email("Gültige E-Mail erforderlich"),
-  industry: z.string().min(1, "Branche erforderlich"),
   message: z.string().min(10, "Nachricht zu kurz"),
   acceptPrivacy: z.boolean().refine((val) => val === true, {
     message: "Datenschutz muss akzeptiert werden",
@@ -65,11 +64,10 @@ export const CostCalculatorContactForm: React.FC<CostCalculatorContactFormProps>
 
   const generateMessage = () => {
     const { rangeMin, rangeMax, monthlyTotal } = calculationResult;
-    const { cmsType, multilingual } = formData;
+    const { multilingual } = formData;
 
     return `Geschätzte Investition: ${rangeMin.toLocaleString('de-DE')} € - ${rangeMax.toLocaleString('de-DE')} € (netto)
-${monthlyTotal > 0 ? `Monatlich: ${monthlyTotal.toLocaleString('de-DE')} €\n` : ''}CMS: ${cmsTypeLabels[cmsType]}
-Sprachen: ${multilingual ? 'Mehrsprachig' : 'Einsprachig'}
+${monthlyTotal > 0 ? `Monatlich: ${monthlyTotal.toLocaleString('de-DE')} €\n` : ''}Sprachen: ${multilingual ? 'Mehrsprachig' : 'Einsprachig'}
 
 Ich interessiere mich für ein detailliertes Angebot.`;
   };
@@ -79,7 +77,6 @@ Ich interessiere mich für ein detailliertes Angebot.`;
     defaultValues: {
       name: "",
       email: "",
-      industry: "",
       message: generateMessage(),
       acceptPrivacy: false,
     },
@@ -94,7 +91,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
         .insert({
           name: data.name,
           email: data.email,
-          industry: data.industry,
+          industry: null,
           message: data.message,
           calculation_data: {
             result: calculationResult,
@@ -149,31 +146,6 @@ Ich interessiere mich für ein detailliertes Angebot.`;
               )}
             />
           </div>
-
-          <FormField
-            control={form.control}
-            name="industry"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-sm">Branche *</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="h-10">
-                      <SelectValue placeholder="Branche wählen" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {industries.map((industry) => (
-                      <SelectItem key={industry.value} value={industry.value}>
-                        {industry.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           <FormField
             control={form.control}
