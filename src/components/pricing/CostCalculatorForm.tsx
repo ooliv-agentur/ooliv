@@ -1,6 +1,6 @@
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
-import { CalculatorFormValues, companySizeLabels, projectTypeLabels, cmsTypeLabels, languageLabels } from './CostCalculatorSchema';
+import { CalculatorFormValues, companySizeLabels, cmsTypeLabels } from './CostCalculatorSchema';
 import {
   FormControl,
   FormField,
@@ -48,43 +48,13 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
         )}
       />
 
-      {/* Project Type */}
-      <FormField
-        control={form.control}
-        name="projectType"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel className="text-base font-semibold leading-none mb-3 block">Projektart</FormLabel>
-            <FormControl>
-              <RadioGroup
-                onValueChange={field.onChange}
-                value={field.value}
-                className="space-y-2"
-              >
-                {Object.entries(projectTypeLabels).map(([value, label]) => (
-                  <FormItem key={value} className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                    <FormControl>
-                      <RadioGroupItem value={value} />
-                    </FormControl>
-                    <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                      {label}
-                    </FormLabel>
-                  </FormItem>
-                ))}
-              </RadioGroup>
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
       {/* CMS Type */}
       <FormField
         control={form.control}
         name="cmsType"
         render={({ field }) => (
           <FormItem>
-            <FormLabel className="text-base font-semibold leading-none mb-3 block">Technische Umsetzung</FormLabel>
+            <FormLabel className="text-base font-semibold leading-none mb-3 block">CMS-System</FormLabel>
             <FormControl>
               <RadioGroup
                 onValueChange={field.onChange}
@@ -108,36 +78,31 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
         )}
       />
 
-      {/* Languages */}
+      {/* Multilingual */}
       <FormField
         control={form.control}
-        name="selectedLanguages"
-        render={() => (
+        name="multilingual"
+        render={({ field }) => (
           <FormItem>
             <FormLabel className="text-base font-semibold leading-none mb-3 block">Sprachen</FormLabel>
             <div className="space-y-2">
-              {Object.entries(languageLabels).map(([langKey, label]) => (
-                <FormField
-                  key={langKey}
-                  control={form.control}
-                  name={`selectedLanguages.${langKey}` as any}
-                  render={({ field }) => (
-                    <FormItem className={`flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 transition-colors ${langKey === 'de' ? 'bg-muted/30' : 'hover:bg-muted/5'}`}>
-                      <FormControl>
-                        <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                          disabled={langKey === 'de'}
-                        />
-                      </FormControl>
-                      <FormLabel className={`text-base font-medium leading-none ${langKey === 'de' ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
-                        {label}
-                        {langKey === 'de' && <span className="text-muted-foreground ml-2">(Standard)</span>}
-                      </FormLabel>
-                    </FormItem>
-                  )}
-                />
-              ))}
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-muted/30">
+                <Checkbox checked={true} disabled />
+                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                  Einsprachig (Deutsch)
+                </FormLabel>
+              </FormItem>
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <FormLabel className="text-base font-medium cursor-pointer leading-none">
+                  Mehrsprachig
+                </FormLabel>
+              </FormItem>
             </div>
             <FormMessage />
           </FormItem>
@@ -202,22 +167,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  SEO-Optimierung
-                </FormLabel>
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="modules.golive"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  GoLive & Deployment
+                  Onpage SEO, Redirects & Go-Live
                 </FormLabel>
               </FormItem>
             )}
@@ -232,7 +182,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  Ads-Setup (Google/Meta)
+                  Google Ads Setup
                 </FormLabel>
               </FormItem>
             )}
@@ -268,7 +218,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  Ads-Betreuung
+                  Google Ads Betreuung
                 </FormLabel>
               </FormItem>
             )}

@@ -14,22 +14,15 @@ const CostCalculator: React.FC = () => {
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
       companySize: 'small',
-      projectType: 'new',
       cmsType: 'with-cms',
-      selectedLanguages: {
-        de: true,
-        en: false,
-        fr: false,
-        es: false,
-      },
+      multilingual: false,
       modules: {
         concept: false,
         design: true,
         implementation: true,
         seo: false,
-        golive: false,
-        ongoingSeo: false,
         adsSetup: false,
+        ongoingSeo: false,
         ongoingAds: false,
         maintenance: false,
       },
@@ -41,7 +34,7 @@ const CostCalculator: React.FC = () => {
     const subscription = form.watch((value) => {
       const data = value as CalculatorFormValues;
       // Only calculate if required fields are present
-      if (data.companySize && data.projectType && data.cmsType && data.selectedLanguages && data.modules) {
+      if (data.companySize && data.cmsType !== undefined && data.modules) {
         const calculationResult = calculateCost(data);
         setResult(calculationResult);
       }
@@ -56,22 +49,19 @@ const CostCalculator: React.FC = () => {
   }, [form]);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-left mb-12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
-            Transparenter Kosten-Kalkulator
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl">
-            In wenigen Schritten zu Ihrer realistischen Budget-Spanne – ohne Theater.
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            Richtwerte. Finale Angebote nach kurzem Gespräch (15 Min).
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
+            Kosten-Kalkulator
+          </h2>
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            Transparente Richtwerte. Finales Angebot nach 15-Min-Gespräch.
           </p>
         </div>
 
         <Form {...form}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>
               <CostCalculatorForm form={form} />
             </div>

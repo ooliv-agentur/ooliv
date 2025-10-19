@@ -1,98 +1,83 @@
-import { CalculatorFormValues, companySizeMultipliers, projectTypeMultipliers, basePrices } from './CostCalculatorSchema';
+import { CalculatorFormValues, companySizeMultipliers, basePrices } from './CostCalculatorSchema';
+
+export interface CostBreakdown {
+  concept: number;
+  design: number;
+  implementation: number;
+  seo: number;
+  adsSetup: number;
+  multilingual: number;
+  ongoingSeo: number;
+  ongoingAds: number;
+  maintenance: number;
+}
 
 export interface CalculationResult {
-  subtotal: number;
-  total: number;
   rangeMin: number;
   rangeMax: number;
+  oneTimeTotal: number;
   monthlyTotal: number;
-  breakdown: {
-    concept: number;
-    design: number;
-    implementation: number;
-    languages: number;
-    seo: number;
-    golive: number;
-    adsSetup: number;
-    ongoingSeo: number;
-    ongoingAds: number;
-    maintenance: number;
-  };
+  breakdown: CostBreakdown;
   assumptions: {
-    projectType: string;
-    cmsType: string;
-    languages: string[];
     companySize: string;
+    cmsType: string;
+    multilingual: boolean;
   };
 }
 
 export const calculateCost = (data: CalculatorFormValues): CalculationResult => {
-  // Count selected languages
-  const selectedLanguagesArray = Object.entries(data.selectedLanguages)
-    .filter(([_, isSelected]) => isSelected)
-    .map(([lang, _]) => lang);
+  const sizeMultiplier = companySizeMultipliers[data.companySize];
   
-  const languageCount = selectedLanguagesArray.length;
-  
-  // Base costs
-  const conceptCost = data.modules.concept ? basePrices.concept : 0;
-  
-  const designCost = data.modules.design ? basePrices.design : 0;
-  
-  const implementationCost = data.modules.implementation 
-    ? (data.cmsType === 'with-cms' ? basePrices.implementationWithCms : basePrices.implementationNoCms)
-    : 0;
-  
-  // Language cost: +25% per additional language (excluding German base)
-  const languageCost = languageCount > 1 && (data.modules.design || data.modules.implementation)
-    ? (designCost + implementationCost) * basePrices.languageMultiplier * (languageCount - 1)
-    : 0;
-  
-  const seoCost = data.modules.seo ? basePrices.seo : 0;
-  const goliveCost = data.modules.golive ? basePrices.golive : 0;
-  const adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
-  
-  // Monthly costs
+  // Base implementation cost depends on CMS choice
+  const baseImplementation = data.cmsType === 'with-cms' 
+    ? basePrices.implementationWithCms 
+    : basePrices.implementationNoCms;
+
+  // Calculate one-time costs
+  let conceptCost = data.modules.concept ? basePrices.concept * sizeMultiplier : 0;
+  let designCost = data.modules.design ? basePrices.design * sizeMultiplier : 0;
+  let implementationCost = data.modules.implementation ? baseImplementation * sizeMultiplier : 0;
+  let seoCost = data.modules.seo ? basePrices.seo : 0;
+  let adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
+
+  // Multilingual adds 50% to base costs
+  let multilingualCost = 0;
+  if (data.multilingual) {
+    multilingualCost = (conceptCost + designCost + implementationCost) * basePrices.multilingualMultiplier;
+  }
+
+  const oneTimeTotal = conceptCost + designCost + implementationCost + seoCost + adsSetupCost + multilingualCost;
+
+  // Calculate monthly costs
   const ongoingSeoCost = data.modules.ongoingSeo ? basePrices.ongoingSeo : 0;
   const ongoingAdsCost = data.modules.ongoingAds ? basePrices.ongoingAds : 0;
   const maintenanceCost = data.modules.maintenance ? basePrices.maintenance : 0;
-  
   const monthlyTotal = ongoingSeoCost + ongoingAdsCost + maintenanceCost;
-  
-  // Subtotal before multipliers
-  const subtotal = conceptCost + designCost + implementationCost + languageCost + 
-                   seoCost + goliveCost + adsSetupCost;
-  
-  // Apply multipliers: project type (relaunch discount) and company size
-  const total = subtotal * projectTypeMultipliers[data.projectType] * companySizeMultipliers[data.companySize];
-  
-  // Range: ±10%
-  const rangeMin = Math.round((total * 0.9) / 100) * 100;
-  const rangeMax = Math.round((total * 1.1) / 100) * 100;
-  
+
+  // Calculate price range (±10%)
+  const rangeMin = Math.round(oneTimeTotal * 0.9);
+  const rangeMax = Math.round(oneTimeTotal * 1.1);
+
   return {
-    subtotal: Math.round(subtotal),
-    total: Math.round(total),
     rangeMin,
     rangeMax,
+    oneTimeTotal: Math.round(oneTimeTotal),
     monthlyTotal: Math.round(monthlyTotal),
     breakdown: {
       concept: Math.round(conceptCost),
       design: Math.round(designCost),
       implementation: Math.round(implementationCost),
-      languages: Math.round(languageCost),
-      seo: seoCost,
-      golive: goliveCost,
-      adsSetup: adsSetupCost,
-      ongoingSeo: ongoingSeoCost,
-      ongoingAds: ongoingAdsCost,
-      maintenance: maintenanceCost,
+      seo: Math.round(seoCost),
+      adsSetup: Math.round(adsSetupCost),
+      multilingual: Math.round(multilingualCost),
+      ongoingSeo: Math.round(ongoingSeoCost),
+      ongoingAds: Math.round(ongoingAdsCost),
+      maintenance: Math.round(maintenanceCost),
     },
     assumptions: {
-      projectType: data.projectType,
-      cmsType: data.cmsType,
-      languages: selectedLanguagesArray,
       companySize: data.companySize,
+      cmsType: data.cmsType,
+      multilingual: data.multilingual,
     },
   };
 };

@@ -2,23 +2,16 @@ import { z } from 'zod';
 
 export const calculatorSchema = z.object({
   companySize: z.enum(['small', 'medium', 'large']),
-  projectType: z.enum(['new', 'relaunch']),
   cmsType: z.enum(['no-cms', 'with-cms']),
-  selectedLanguages: z.object({
-    de: z.boolean().default(true),
-    en: z.boolean().default(false),
-    fr: z.boolean().default(false),
-    es: z.boolean().default(false),
-  }),
+  multilingual: z.boolean().default(false),
   
   modules: z.object({
-    concept: z.boolean().default(true),
+    concept: z.boolean().default(false),
     design: z.boolean().default(true),
     implementation: z.boolean().default(true),
     seo: z.boolean().default(false),
-    golive: z.boolean().default(false),
-    ongoingSeo: z.boolean().default(false),
     adsSetup: z.boolean().default(false),
+    ongoingSeo: z.boolean().default(false),
     ongoingAds: z.boolean().default(false),
     maintenance: z.boolean().default(false),
   }),
@@ -32,23 +25,17 @@ export const companySizeMultipliers = {
   large: 1.3,
 } as const;
 
-export const projectTypeMultipliers = {
-  new: 1.0,
-  relaunch: 0.85,
-} as const;
-
 export const basePrices = {
   concept: 1500,
   design: 3000,
   implementationNoCms: 3500,
   implementationWithCms: 4200,
   seo: 500,
-  golive: 500,
   adsSetup: 500,
   ongoingSeo: 400,
   ongoingAds: 200,
   maintenance: 150,
-  languageMultiplier: 0.25,
+  multilingualMultiplier: 0.5, // 50% Aufpreis für mehrsprachig
 } as const;
 
 export const companySizeLabels: Record<keyof typeof companySizeMultipliers, string> = {
@@ -57,19 +44,7 @@ export const companySizeLabels: Record<keyof typeof companySizeMultipliers, stri
   large: '200+ Mitarbeiter',
 };
 
-export const projectTypeLabels: Record<keyof typeof projectTypeMultipliers, string> = {
-  new: 'Neue Website',
-  relaunch: 'Relaunch / Überarbeitung',
-};
-
 export const cmsTypeLabels = {
-  'no-cms': 'Ohne CMS (statisch / Custom)',
-  'with-cms': 'Mit CMS (WordPress, Webflow, etc.)',
-} as const;
-
-export const languageLabels = {
-  de: 'Deutsch',
-  en: 'Englisch',
-  fr: 'Französisch',
-  es: 'Spanisch',
+  'no-cms': 'Ohne CMS',
+  'with-cms': 'Mit CMS',
 } as const;

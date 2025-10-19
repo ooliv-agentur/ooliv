@@ -23,7 +23,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { CalculationResult } from "./CostCalculatorLogic";
-import { CalculatorFormValues, projectTypeLabels, cmsTypeLabels, languageLabels } from "./CostCalculatorSchema";
+import { CalculatorFormValues, cmsTypeLabels } from "./CostCalculatorSchema";
 import { useState } from "react";
 
 const contactFormSchema = z.object({
@@ -65,16 +65,11 @@ export const CostCalculatorContactForm: React.FC<CostCalculatorContactFormProps>
 
   const generateMessage = () => {
     const { rangeMin, rangeMax, monthlyTotal } = calculationResult;
-    const { projectType, cmsType, selectedLanguages } = formData;
-    
-    const selectedLangs = Object.entries(selectedLanguages)
-      .filter(([_, selected]) => selected)
-      .map(([lang]) => languageLabels[lang as keyof typeof languageLabels])
-      .join(", ");
+    const { cmsType, multilingual } = formData;
 
     return `Geschätzte Investition: ${rangeMin.toLocaleString('de-DE')} € - ${rangeMax.toLocaleString('de-DE')} € (netto)
-${monthlyTotal > 0 ? `Monatlich: ${monthlyTotal.toLocaleString('de-DE')} €\n` : ''}Projektart: ${projectTypeLabels[projectType]}, ${cmsTypeLabels[cmsType]}
-Sprachen: ${selectedLangs}
+${monthlyTotal > 0 ? `Monatlich: ${monthlyTotal.toLocaleString('de-DE')} €\n` : ''}CMS: ${cmsTypeLabels[cmsType]}
+Sprachen: ${multilingual ? 'Mehrsprachig' : 'Einsprachig'}
 
 Ich interessiere mich für ein detailliertes Angebot.`;
   };
@@ -121,8 +116,8 @@ Ich interessiere mich für ein detailliertes Angebot.`;
   };
 
   return (
-    <div className="bg-background border-2 border-primary/20 rounded-xl p-6 mt-6">
-      <h3 className="text-xl font-bold mb-4">Beratung anfragen</h3>
+    <div className="bg-background border rounded-xl p-6">
+      <h3 className="text-lg font-bold mb-4">Angebot anfragen</h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,7 +128,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
                 <FormItem>
                   <FormLabel className="text-sm">Name *</FormLabel>
                   <FormControl>
-                    <Input className="h-11" placeholder="Ihr Name" {...field} />
+                    <Input className="h-10" placeholder="Ihr Name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -147,7 +142,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
                 <FormItem>
                   <FormLabel className="text-sm">E-Mail *</FormLabel>
                   <FormControl>
-                    <Input className="h-11" type="email" placeholder="ihre@email.de" {...field} />
+                    <Input className="h-10" type="email" placeholder="ihre@email.de" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -163,7 +158,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
                 <FormLabel className="text-sm">Branche *</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="h-11">
+                    <SelectTrigger className="h-10">
                       <SelectValue placeholder="Branche wählen" />
                     </SelectTrigger>
                   </FormControl>
@@ -189,7 +184,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
                 <FormControl>
                   <Textarea 
                     placeholder="Beschreiben Sie Ihr Projekt..." 
-                    className="min-h-[120px] text-sm"
+                    className="min-h-[100px] text-sm"
                     {...field} 
                   />
                 </FormControl>
@@ -230,7 +225,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
 
           <Button 
             type="submit" 
-            size="lg" 
+            size="default"
             className="w-full"
             disabled={isSubmitting}
           >
