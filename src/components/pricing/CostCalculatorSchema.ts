@@ -5,7 +5,6 @@ export const calculatorSchema = z.object({
   pages: z.number().min(1, "Mindestens 1 Seite erforderlich").max(100, "Maximal 100 Seiten möglich"),
   complexity: z.enum(['low', 'mid', 'high']),
   languages: z.number().min(1, "Mindestens 1 Sprache erforderlich").max(10, "Maximal 10 Sprachen möglich"),
-  instances: z.enum(['1', '2']),
   timeline: z.enum(['asap', '4-8weeks', '8plus']).optional(),
   
   modules: z.object({
@@ -56,7 +55,6 @@ export const basePrices = {
   ongoingSeo: 400,
   ongoingAds: 200,
   maintenance: 150,
-  secondInstance: 8000,
   languageMultiplier: 0.25,
   vatRate: 0.19,
 } as const;

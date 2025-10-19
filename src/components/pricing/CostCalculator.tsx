@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
@@ -20,7 +20,6 @@ const CostCalculator: React.FC = () => {
       pages: 8,
       complexity: 'mid',
       languages: 1,
-      instances: '1',
       timeline: undefined,
       modules: {
         concept: true,
@@ -36,14 +35,24 @@ const CostCalculator: React.FC = () => {
     },
   });
 
-  const handleCalculate = () => {
-    const isValid = form.trigger();
-    if (!isValid) return;
+  // Live calculation - recalculate whenever form values change
+  useEffect(() => {
+    const subscription = form.watch((value) => {
+      const data = value as CalculatorFormValues;
+      // Only calculate if required fields are present
+      if (data.companySize && data.pages && data.complexity && data.languages && data.modules) {
+        const calculationResult = calculateCost(data);
+        setResult(calculationResult);
+      }
+    });
     
+    // Initial calculation
     const data = form.getValues();
     const calculationResult = calculateCost(data);
     setResult(calculationResult);
-  };
+    
+    return () => subscription.unsubscribe();
+  }, [form]);
 
   const handleRequestConsultation = () => {
     const data = form.getValues();
@@ -92,7 +101,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
         <Form {...form}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
-              <CostCalculatorForm form={form} onCalculate={handleCalculate} />
+              <CostCalculatorForm form={form} />
             </div>
 
             <div>

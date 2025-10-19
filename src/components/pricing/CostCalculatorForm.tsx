@@ -11,10 +11,9 @@ import { parseClampedInt, formatEUR } from './utils';
 
 interface CostCalculatorFormProps {
   form: UseFormReturn<CalculatorFormValues>;
-  onCalculate: () => void;
 }
 
-const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form, onCalculate }) => {
+const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
   return (
     <div className="space-y-6">
       <FormField
@@ -128,35 +127,6 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form, onCalcula
             <FormDescription id="languages-description" className="text-xs text-muted-foreground">
               1 bis 10 Sprachen
             </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      <FormField
-        control={form.control}
-        name="instances"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel htmlFor="instances">Separate Marken/Instanzen</FormLabel>
-            <FormControl>
-              <RadioGroup
-                id="instances"
-                onValueChange={field.onChange}
-                value={field.value}
-                className="flex space-x-4"
-                aria-label="Anzahl separater Websites"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="1" id="instances-1" />
-                  <label htmlFor="instances-1" className="text-sm cursor-pointer">1 Website</label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="2" id="instances-2" />
-                  <label htmlFor="instances-2" className="text-sm cursor-pointer">2 Websites</label>
-                </div>
-              </RadioGroup>
-            </FormControl>
             <FormMessage />
           </FormItem>
         )}
@@ -368,15 +338,6 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form, onCalcula
           </FormItem>
         )}
       />
-
-      <Button 
-        type="button"
-        onClick={onCalculate}
-        size="lg"
-        className="w-full"
-      >
-        Kalkulation berechnen
-      </Button>
     </div>
   );
 };

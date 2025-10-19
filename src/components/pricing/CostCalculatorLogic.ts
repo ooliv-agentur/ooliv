@@ -15,7 +15,6 @@ export interface CalculationResult {
     design: number;
     implementation: number;
     languages: number;
-    secondInstance: number;
     seo: number;
     golive: number;
     adsSetup: number;
@@ -49,8 +48,6 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
     ? (designCost + implementationCost) * basePrices.languageMultiplier * (data.languages - 1) 
     : 0;
   
-  const secondInstanceCost = data.instances === '2' ? basePrices.secondInstance : 0;
-  
   const seoCost = data.modules.seo ? basePrices.seo : 0;
   const goliveCost = data.modules.golive ? basePrices.golive : 0;
   const adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
@@ -62,7 +59,7 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
   const monthlyTotal = ongoingSeoCost + ongoingAdsCost + maintenanceCost;
   
   const subtotal = conceptCost + designCost + implementationCost + languageCost + 
-                   secondInstanceCost + seoCost + goliveCost + adsSetupCost;
+                   seoCost + goliveCost + adsSetupCost;
   
   const total = subtotal * companySizeMultipliers[data.companySize];
   
@@ -89,7 +86,6 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
       design: Math.round(designCost),
       implementation: Math.round(implementationCost),
       languages: Math.round(languageCost),
-      secondInstance: secondInstanceCost,
       seo: seoCost,
       golive: goliveCost,
       adsSetup: adsSetupCost,

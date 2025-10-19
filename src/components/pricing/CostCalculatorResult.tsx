@@ -92,13 +92,6 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
           </div>
         )}
         
-        {result.breakdown.secondInstance > 0 && (
-          <div className="flex justify-between text-sm border-b border-border pb-2">
-            <span>Zweite Website/Instanz</span>
-            <span className="font-medium">{formatEUR(includeVAT ? result.breakdown.secondInstance * 1.19 : result.breakdown.secondInstance)}</span>
-          </div>
-        )}
-        
         {result.breakdown.seo > 0 && (
           <div className="flex justify-between text-sm border-b border-border pb-2">
             <span>Basis-SEO & 301-Redirects</span>
