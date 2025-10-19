@@ -23,7 +23,7 @@ const CostCalculator: React.FC = () => {
         es: false,
       },
       modules: {
-        concept: true,
+        concept: false,
         design: true,
         implementation: true,
         seo: false,
