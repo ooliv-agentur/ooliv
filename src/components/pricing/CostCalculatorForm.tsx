@@ -29,7 +29,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
               <RadioGroup
                 onValueChange={field.onChange}
                 value={field.value}
-                className="space-y-2"
+                className="grid grid-cols-1 md:grid-cols-2 gap-2"
               >
                 {Object.entries(companySizeLabels).map(([value, label]) => (
                   <FormItem key={value} className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
@@ -48,107 +48,110 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
         )}
       />
 
-      {/* Multilingual */}
-      <FormField
-        control={form.control}
-        name="multilingual"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel className="text-base font-semibold leading-none mb-3 block">Sprachen</FormLabel>
-            <div className="space-y-2">
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                <Checkbox checked={true} disabled />
-                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                  Einsprachig (Deutsch)
-                </FormLabel>
-              </FormItem>
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  Mehrsprachig
-                </FormLabel>
-              </FormItem>
-            </div>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
+      {/* Sprachen & Leistungsumfang in 2 columns on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Multilingual */}
+        <FormField
+          control={form.control}
+          name="multilingual"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-base font-semibold leading-none mb-3 block">Sprachen</FormLabel>
+              <div className="space-y-2">
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                  <Checkbox checked={true} disabled />
+                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                    Einsprachig (Deutsch)
+                  </FormLabel>
+                </FormItem>
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormLabel className="text-base font-medium cursor-pointer leading-none">
+                    Mehrsprachig
+                  </FormLabel>
+                </FormItem>
+              </div>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-      {/* Modules - One-time Services */}
-      <div>
-        <FormLabel className="text-base font-semibold leading-none mb-3 block">Leistungsumfang</FormLabel>
-        <div className="space-y-2">
-          <FormField
-            control={form.control}
-            name="modules.concept"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                <Checkbox checked={field.value} disabled />
-                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                  Konzeption & Strategie
-                </FormLabel>
-              </FormItem>
-            )}
-          />
+        {/* Modules - One-time Services */}
+        <div>
+          <FormLabel className="text-base font-semibold leading-none mb-3 block">Leistungsumfang</FormLabel>
+          <div className="space-y-2">
+            <FormField
+              control={form.control}
+              name="modules.concept"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                  <Checkbox checked={field.value} disabled />
+                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                    Konzeption & Strategie
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="modules.design"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                <Checkbox checked={field.value} disabled />
-                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                  UX/UI Design
-                </FormLabel>
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="modules.design"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                  <Checkbox checked={field.value} disabled />
+                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                    UX/UI Design
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="modules.implementation"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                <Checkbox checked={field.value} disabled />
-                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                  Technische Umsetzung
-                </FormLabel>
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="modules.implementation"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                  <Checkbox checked={field.value} disabled />
+                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                    Technische Umsetzung
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="modules.seo"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
-                <Checkbox checked={field.value} disabled />
-                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
-                  Onpage SEO, Redirects & Go-Live
-                </FormLabel>
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="modules.seo"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                  <Checkbox checked={field.value} disabled />
+                  <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
+                    Onpage SEO, Redirects & Go-Live
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="modules.adsSetup"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
-                  Google Ads Setup
-                </FormLabel>
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="modules.adsSetup"
+              render={({ field }) => (
+                <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
+                  <FormControl>
+                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                  </FormControl>
+                  <FormLabel className="text-base font-medium cursor-pointer leading-none">
+                    Google Ads Setup
+                  </FormLabel>
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
       </div>
 
