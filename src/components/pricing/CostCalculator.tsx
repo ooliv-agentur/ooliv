@@ -90,7 +90,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
         </div>
 
         <Form {...form}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
               <CostCalculatorForm form={form} onCalculate={handleCalculate} />
             </div>

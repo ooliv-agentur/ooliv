@@ -9,7 +9,7 @@ const CostCalculatorFAQ: React.FC = () => {
       
       <div className="space-y-6">
         <div>
-          <h4 className="font-bold text-lg mb-2">Wie verlässlich sind die Werte?</h4>
+          <h4 className="font-bold text-lg mb-2 text-foreground">Wie verlässlich sind die Werte?</h4>
           <p className="text-muted-foreground">
             Die Kalkulation basiert auf unseren realen Projektpreisen der letzten 2 Jahre. 
             Die Spanne deckt 90% unserer vergleichbaren Projekte ab. Finale Angebote erstellen 
@@ -19,7 +19,7 @@ const CostCalculatorFAQ: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold text-lg mb-2">Welche Faktoren beeinflussen den Preis?</h4>
+          <h4 className="font-bold text-lg mb-2 text-foreground">Welche Faktoren beeinflussen den Preis?</h4>
           <p className="text-muted-foreground">
             Hauptfaktoren sind: Anzahl der Seiten, Design-Komplexität (Custom vs. Template), 
             Mehrsprachigkeit, Anzahl separater Websites/Marken, technische Anforderungen 
@@ -29,7 +29,7 @@ const CostCalculatorFAQ: React.FC = () => {
         </div>
 
         <div>
-          <h4 className="font-bold text-lg mb-2">Wie schnell können Sie starten?</h4>
+          <h4 className="font-bold text-lg mb-2 text-foreground">Wie schnell können Sie starten?</h4>
           <p className="text-muted-foreground">
             Für kompakte Projekte (5–10 Seiten) können wir oft innerhalb von 2 Wochen starten. 
             Bei größeren Projekten planen wir gemeinsam einen realistischen Zeitplan. Wenn Sie 

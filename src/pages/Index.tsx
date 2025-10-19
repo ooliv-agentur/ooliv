@@ -126,10 +126,10 @@ const GermanIndex = () => {
         
         <DeutscherAboutSection />
         
-        {/* Budget-Transparenz mit interaktivem Kalkulator */}
-        <section className="py-16 bg-medico-mint/30">
-          <CostCalculator />
-        </section>
+      {/* Budget-Transparenz mit interaktivem Kalkulator */}
+      <section className="py-16 bg-background">
+        <CostCalculator />
+      </section>
 
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">

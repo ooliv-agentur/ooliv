@@ -20,7 +20,7 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
 }) => {
   if (!result) {
     return (
-      <div className="bg-muted/50 p-8 rounded-xl border border-border">
+      <div className="bg-background p-8 rounded-xl border border-border">
         <p className="text-muted-foreground text-center text-sm">
           Wählen Sie Ihre Anforderungen links aus und klicken Sie auf "Kalkulation berechnen"
         </p>
@@ -34,10 +34,10 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
   const displayMonthly = includeVAT ? result.monthlyTotalWithVAT : result.monthlyTotal;
 
   return (
-    <div className="bg-card p-8 rounded-xl shadow-lg border border-border">
+    <div className="bg-background p-8 rounded-xl border-2 border-border">
       <h3 className="text-2xl font-bold text-foreground mb-6">Ihre geschätzte Investition</h3>
       
-      <div className="flex items-center justify-between mb-6 p-4 bg-muted/50 rounded-lg">
+      <div className="flex items-center justify-between mb-6 p-4 border border-border rounded-lg">
         <label htmlFor="vat-toggle" className="text-sm font-medium cursor-pointer">
           Preise inklusive 19% USt. anzeigen
         </label>
@@ -49,8 +49,8 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
         />
       </div>
       
-      <div className="text-center mb-8 p-6 bg-primary/10 rounded-lg">
-        <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+      <div className="text-center mb-8 p-6 border-2 border-foreground rounded-lg">
+        <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
           {formatEUR(displayRangeMin)} – {formatEUR(displayRangeMax)}
         </div>
         <p className="text-sm text-muted-foreground mt-2">
@@ -122,14 +122,14 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
         
         <div className="border-t-2 border-border pt-3 flex justify-between font-bold text-base">
           <span>Gesamt (Projektkosten)</span>
-          <span className="text-primary">{formatEUR(displayTotal)}</span>
+          <span className="text-foreground">{formatEUR(displayTotal)}</span>
         </div>
       </div>
 
       {result.monthlyTotal > 0 && (
-        <div className="space-y-3 mb-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 rounded-lg">
+        <div className="space-y-3 mb-6 p-4 border-2 border-border rounded-lg">
           <div className="flex items-start gap-2 mb-3">
-            <span className="text-xs font-bold text-amber-800 dark:text-amber-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-foreground uppercase tracking-wider">
               Laufende Kosten (monatlich):
             </span>
           </div>
@@ -158,14 +158,14 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({
             </div>
           )}
           
-          <div className="border-t border-amber-200 dark:border-amber-900 pt-2 flex justify-between font-bold text-sm">
+          <div className="border-t-2 border-border pt-2 flex justify-between font-bold text-sm">
             <span>Gesamt (monatlich)</span>
-            <span className="text-primary">{formatEUR(displayMonthly)}/Monat</span>
+            <span className="text-foreground">{formatEUR(displayMonthly)}/Monat</span>
           </div>
         </div>
       )}
 
-      <div className="bg-muted/50 p-4 rounded text-xs text-muted-foreground mb-6">
+      <div className="border border-border p-4 rounded text-xs text-muted-foreground mb-6">
         <p className="font-bold mb-2">Annahmen:</p>
         <ul className="space-y-1">
           <li>• {result.assumptions.pages} Seiten</li>
