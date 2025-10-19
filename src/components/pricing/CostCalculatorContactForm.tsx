@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { CalculationResult } from "./CostCalculatorLogic";
 import { CalculatorFormValues } from "./CostCalculatorSchema";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name erforderlich"),
@@ -38,6 +38,7 @@ export const CostCalculatorContactForm: React.FC<CostCalculatorContactFormProps>
   formData,
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const generateMessage = () => {
     const { rangeMin, rangeMax, monthlyTotal, breakdown } = calculationResult;
@@ -68,24 +69,28 @@ Ich interessiere mich für ein detailliertes Angebot.`;
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase
-        .from("leads")
-        .insert({
-          name: data.name,
-          email: data.email,
-          industry: null,
-          message: generateMessage(),
-          calculation_data: {
-            result: calculationResult,
-            formData: formData,
-          },
-          source: 'calculator',
-        } as any);
+      const formData = new FormData();
+      formData.append('name', data.name);
+      formData.append('email', data.email);
+      formData.append('message', generateMessage());
 
-      if (error) throw error;
+      const response = await fetch('https://formspree.io/f/xblzbyje', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) throw new Error('Fehler beim Senden');
 
       toast.success("Anfrage erfolgreich gesendet!");
       form.reset();
+      
+      // Redirect to thank you page after short delay
+      setTimeout(() => {
+        navigate('/danke');
+      }, 1000);
     } catch (error) {
       console.error("Error:", error);
       toast.error("Fehler beim Senden. Bitte erneut versuchen.");
