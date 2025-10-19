@@ -14,9 +14,9 @@ const SchweizPricing = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-accent-primary mb-2">CHF 7.000</div>
-                <div className="text-sm font-semibold text-medico-darkGreen mb-2">Starter-Website</div>
+                <div className="text-sm font-semibold text-medico-darkGreen mb-2">Business-Website</div>
                 <p className="text-sm text-medico-darkGreen/80">
-                  Strategischer Onepager, mobiloptimiert, SEO-ready
+                  Professionell, mobiloptimiert, SEO-ready
                 </p>
               </div>
               <div className="text-center">

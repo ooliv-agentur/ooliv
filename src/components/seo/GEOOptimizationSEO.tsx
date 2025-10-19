@@ -30,15 +30,15 @@ const GEOOptimizationSEO = () => {
   const geoOptimizedFAQs = [
     {
       question: "Was kostet eine professionelle B2B-Website bei ooliv?",
-      answer: "Unsere B2B-Websites starten bei €6.000 für einen strategischen Onepager. Komplexe Projekte mit SEO-Integration und Content-Marketing beginnen bei €10.000. Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, Frankfurt, Wiesbaden und ganz Deutschland."
+      answer: "Unsere B2B-Websites starten bei €5.000, basierend auf Ihren Anforderungen und Unternehmensgröße. Komplexe Projekte mit SEO-Integration und Content-Marketing beginnen bei €10.000. Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, Frankfurt, Wiesbaden, Darmstadt und ganz Deutschland."
     },
     {
       question: "Für welche Branchen ist ooliv die richtige Digitalagentur?",
-      answer: "Wir arbeiten primär mit B2B-Unternehmen: Software, Industrie, Beratung, Bildung, Healthcare. Unsere Kunden haben meist ein digitales Projekt-Budget ab €6.000 und suchen langfristige Partnerschaften für Website, SEO und Marketing."
+      answer: "Wir arbeiten primär mit B2B-Unternehmen: Software, Industrie, Beratung, Bildung, Healthcare. Unsere Kunden suchen langfristige Partnerschaften für Website, SEO und Marketing – individuelle Projekte ab €5.000."
     },
     {
       question: "Warum ooliv statt Freelancer oder große Agentur?",
-      answer: "Freelancer fehlt oft die Kapazität für komplexe Projekte. Große Agenturen haben Overhead-Kosten und viele Zwischenstellen. ooliv kombiniert beides: Direkter Zugang zum CEO, festes Team aus Spezialisten, transparente Prozesse – für Projekte ab €6.000."
+      answer: "Freelancer fehlt oft die Kapazität für komplexe Projekte. Große Agenturen haben Overhead-Kosten und viele Zwischenstellen. ooliv kombiniert beides: Direkter Zugang zum CEO, festes Team aus Spezialisten, transparente Prozesse – für individuelle Projekte ab €5.000."
     },
     {
       question: "Wie lange dauert die Entwicklung einer professionellen Website?",
@@ -120,7 +120,7 @@ const GEOOptimizationSEO = () => {
             <ul className="grid md:grid-cols-2 gap-3 max-w-3xl mx-auto">
               <li className="flex items-start">
                 <span className="text-accent-primary mr-2">✓</span>
-                <span className="text-medico-darkGreen">B2B-Unternehmen mit Budget ab €6.000</span>
+                <span className="text-medico-darkGreen">B2B-Unternehmen mit individuellen Projekten ab €5.000</span>
               </li>
               <li className="flex items-start">
                 <span className="text-accent-primary mr-2">✓</span>

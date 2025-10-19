@@ -20,7 +20,7 @@ const DarmstadtFAQ = () => {
     },
     {
       question: "Was kostet eine Website bei ooliv?",
-      answer: "Unsere B2B-Websites für Darmstädter Unternehmen starten bei €6.000 für einen strategischen Onepager. Komplexe Projekte mit SEO-Integration beginnen bei €10.000. Sie erhalten ein transparentes, modulares Angebot."
+      answer: "Unsere B2B-Websites für Darmstädter Unternehmen starten bei €5.000, basierend auf Ihren Anforderungen und Unternehmensgröße. Komplexe Projekte mit SEO-Integration beginnen bei €10.000. Sie erhalten ein transparentes, modulares Angebot."
     },
     {
       question: "Wie lange dauert ein Website-Projekt?",

@@ -67,14 +67,14 @@ const FAQ = ({
     {
       question: isGerman ? "Was kostet eine professionelle Website?" : "How much does a WordPress website cost?",
       answer: isGerman ? 
-        "Die Kosten richten sich nach Ihren Anforderungen:<br/><br/><strong>Einfache Websites:</strong> ab 4.000 €<br/>Ideal für kleine Unternehmen und Starter<br/><br/><strong>Professionelle Business-Websites:</strong> 6.000 – 12.000 €<br/>Mit SEO-Optimierung und umfangreichem Content<br/><br/><strong>Komplexe Projekte:</strong> ab 15.000 €<br/>Shops, mehrsprachige Websites, spezielle Funktionen<br/><br/>Sie erhalten von uns immer ein transparentes Angebot ohne versteckte Kosten." 
+        "Die Kosten richten sich nach Ihren Anforderungen und Unternehmensgröße:<br/><br/><strong>Professionelle Business-Websites:</strong> ab 5.000 €<br/>Ideal für KMUs mit klarem Ziel<br/><br/><strong>Erweiterte Projekte:</strong> 8.000 – 12.000 €<br/>Mit SEO-Optimierung und umfangreichem Content<br/><br/><strong>Komplexe Projekte:</strong> ab 15.000 €<br/>Shops, mehrsprachige Websites, spezielle Funktionen<br/><br/>Sie erhalten von uns immer ein transparentes Angebot ohne versteckte Kosten." 
         : "Pricing depends on scope and complexity. Projects typically start at $5,000 for small business sites and vary based on functionality needs, SEO optimization, and content strategy.",
       category: "pricing"
     },
     {
       question: isGerman ? "Wie lange dauert die Website-Erstellung?" : "How long does it take to build a website?",
       answer: isGerman ? 
-        "Die Projektdauer hängt vom Umfang ab:<br/><br/><strong>Kompakte Websites:</strong> 3–4 Wochen<br/>Onepager und kleinere Projekte<br/><br/><strong>Standard Business-Websites:</strong> 5–8 Wochen<br/>Mittlere Projekte mit Content-Erstellung<br/><br/><strong>Umfangreiche Projekte:</strong> 10+ Wochen<br/>Shops, komplexe Funktionen, mehrsprachige Seiten<br/><br/>Wir arbeiten immer mit klaren Zeitplänen und halten Sie über den Fortschritt auf dem Laufenden." 
+        "Die Projektdauer hängt vom Umfang ab:<br/><br/><strong>Kompakte Websites:</strong> 3–4 Wochen<br/>Kleinere Business-Websites<br/><br/><strong>Standard Business-Websites:</strong> 5–8 Wochen<br/>Mittlere Projekte mit Content-Erstellung<br/><br/><strong>Umfangreiche Projekte:</strong> 10+ Wochen<br/>Shops, komplexe Funktionen, mehrsprachige Seiten<br/><br/>Wir arbeiten immer mit klaren Zeitplänen und halten Sie über den Fortschritt auf dem Laufenden." 
         : "Timeframes vary by project scope. Small websites may be completed within 4-6 weeks, while more complex projects might require 2-3 months.",
       category: "process"
     },

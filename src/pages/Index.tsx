@@ -27,7 +27,7 @@ const germanFaqs = [
   },
   {
     question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
-    answer: "Die Preise richten sich nach Umfang, Design und Funktionen. Einfache Onepager starten bei etwa 3.000 €, mittelgroße Websites mit SEO bei 5.000 bis 10.000 €. Für größere Projekte wie Shops oder Multilingual-Seiten starten die Kosten bei etwa 10.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
+    answer: "Die Preise richten sich nach Ihren Anforderungen und Unternehmensgröße. Professionelle Business-Websites starten bei 5.000 €, mittlere Projekte mit SEO bei 8.000–12.000 €. Für größere Projekte wie Shops oder mehrsprachige Websites starten die Kosten bei etwa 15.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
   },
   {
     question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
@@ -97,7 +97,7 @@ const GermanIndex = () => {
                   "name": "Was kostet eine professionelle B2B-Website bei ooliv?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Unsere B2B-Websites starten bei €6.000 für einen strategischen Onepager. Komplexe Projekte mit SEO-Integration und Content-Marketing beginnen bei €10.000. Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, Frankfurt, Wiesbaden und ganz Deutschland."
+                    "text": "Unsere B2B-Websites starten bei €5.000, basierend auf Ihren Anforderungen und Unternehmensgröße. Komplexe Projekte mit SEO-Integration und Content-Marketing beginnen bei €10.000. Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, Frankfurt, Wiesbaden, Darmstadt und ganz Deutschland."
                   }
                 },
                 {
@@ -105,7 +105,7 @@ const GermanIndex = () => {
                   "name": "Für welche Branchen ist ooliv die richtige Digitalagentur?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Wir arbeiten primär mit B2B-Unternehmen: Software, Industrie, Beratung, Bildung, Healthcare. Unsere Kunden haben meist ein digitales Projekt-Budget ab €6.000 und suchen langfristige Partnerschaften für Website, SEO und Marketing."
+                    "text": "Wir arbeiten primär mit B2B-Unternehmen: Software, Industrie, Beratung, Bildung, Healthcare. Unsere Kunden suchen langfristige Partnerschaften für Website, SEO und Marketing – individuelle Projekte ab €5.000."
                   }
                 },
                 {
@@ -113,7 +113,7 @@ const GermanIndex = () => {
                   "name": "Warum ooliv statt Freelancer oder große Agentur?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Freelancer fehlt oft die Kapazität für komplexe Projekte. Große Agenturen haben Overhead-Kosten und viele Zwischenstellen. ooliv kombiniert beides: Direkter Zugang zum CEO, festes Team aus Spezialisten, transparente Prozesse – für Projekte ab €6.000."
+                    "text": "Freelancer fehlt oft die Kapazität für komplexe Projekte. Große Agenturen haben Overhead-Kosten und viele Zwischenstellen. ooliv kombiniert beides: Direkter Zugang zum CEO, festes Team aus Spezialisten, transparente Prozesse – für individuelle Projekte ab €5.000."
                   }
                 }
               ]
@@ -133,7 +133,7 @@ const GermanIndex = () => {
                 Transparente Investition in Ihre digitale Zukunft
               </h3>
               <p className="text-base md:text-lg text-medico-darkGreen text-center leading-relaxed mb-4">
-                <strong>Unsere B2B-Websites starten bei €6.000</strong> für einen strategischen Onepager. 
+                <strong>Professionelle Websites ab €5.000</strong> – basierend auf Ihren Anforderungen und Unternehmensgröße. 
                 Komplexe Projekte mit SEO-Integration, Content-Marketing und automatisierter Lead-Generierung 
                 beginnen bei <strong>€10.000</strong>.
               </p>

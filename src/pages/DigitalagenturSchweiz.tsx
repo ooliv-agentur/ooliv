@@ -61,7 +61,7 @@ const DigitalagenturSchweiz = () => {
             {
               name: "SEO Schweiz",
               description: "Suchmaschinenoptimierung für .ch-Domains und den Schweizer Markt",
-              priceRange: "CHF 1800-CHF 6000"
+              priceRange: "CHF 7000-CHF 12000"
             },
             {
               name: "Google Ads Schweiz",

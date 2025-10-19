@@ -41,12 +41,12 @@ const GermanWebDesign = () => {
             {
               name: "Einfache Website",
               description: "Professionelle Website für kleine Unternehmen",
-              priceRange: "€4000-€6000"
+              priceRange: "€5000-€8000"
             },
             {
               name: "Business Website",
               description: "Umfangreiche Website mit SEO-Optimierung",
-              priceRange: "€6000-€12000"
+              priceRange: "€8000-€15000"
             },
             {
               name: "E-Commerce Website",
