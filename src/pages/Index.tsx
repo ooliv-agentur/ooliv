@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
+import CostCalculator from '@/components/pricing/CostCalculator';
 
 const germanFaqs = [
   {
@@ -125,28 +126,9 @@ const GermanIndex = () => {
         
         <DeutscherAboutSection />
         
-        {/* Budget-Transparenz Signal */}
-        <section className="py-12 bg-medico-mint/30">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-medico-darkGreen/10">
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-medico-darkGreen text-center">
-                Transparente Investition in Ihre digitale Zukunft
-              </h3>
-              <p className="text-base md:text-lg text-medico-darkGreen text-center leading-relaxed mb-4">
-                <strong>Professionelle Websites ab €5.000</strong> – basierend auf Ihren Anforderungen und Unternehmensgröße. 
-                Komplexe Projekte mit SEO-Integration, Content-Marketing und automatisierter Lead-Generierung 
-                beginnen bei <strong>€10.000</strong>.
-              </p>
-              <p className="text-sm text-medico-darkGreen/80 text-center">
-                Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, 
-                Frankfurt, Wiesbaden, Darmstadt und ganz Deutschland.
-                {' '}
-                <Link to="/webdesign#preise" className="text-accent-primary hover:underline font-medium">
-                  Mehr zu unseren Leistungen →
-                </Link>
-              </p>
-            </div>
-          </div>
+        {/* Budget-Transparenz mit interaktivem Kalkulator */}
+        <section className="py-16 bg-medico-mint/30">
+          <CostCalculator />
         </section>
 
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
