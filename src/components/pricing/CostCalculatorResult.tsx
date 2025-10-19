@@ -10,7 +10,7 @@ interface CostCalculatorResultProps {
 }
 
 const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({ result, formData }) => {
-  if (!result) {
+  if (!result || isNaN(result.rangeMin) || isNaN(result.rangeMax)) {
     return (
       <div className="bg-background rounded-xl border p-8 shadow-sm flex items-center justify-center min-h-[400px]">
         <p className="text-muted-foreground text-center text-sm">

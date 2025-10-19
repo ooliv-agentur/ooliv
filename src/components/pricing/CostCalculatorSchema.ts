@@ -26,9 +26,9 @@ export const companySizeMultipliers = {
 } as const;
 
 export const basePrices = {
-  concept: 1500,
-  design: 3000,
-  implementation: 3800,
+  concept: 1000,
+  design: 2000,
+  implementation: 2500,
   seo: 500,
   adsSetup: 500,
   ongoingSeo: 400,

@@ -16,10 +16,10 @@ const CostCalculator: React.FC = () => {
       companySize: 'xs',
       multilingual: false,
       modules: {
-        concept: false,
+        concept: true,
         design: true,
         implementation: true,
-        seo: false,
+        seo: true,
         adsSetup: false,
         ongoingSeo: false,
         ongoingAds: false,

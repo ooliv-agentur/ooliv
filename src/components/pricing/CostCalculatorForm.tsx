@@ -56,13 +56,13 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
           <FormItem>
             <FormLabel className="text-base font-semibold leading-none mb-3 block">Sprachen</FormLabel>
             <div className="space-y-2">
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-muted/30">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
                 <Checkbox checked={true} disabled />
                 <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
                   Einsprachig (Deutsch)
                 </FormLabel>
               </FormItem>
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
                 <FormControl>
                   <Checkbox
                     checked={field.value}
@@ -87,11 +87,9 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.concept"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                <Checkbox checked={field.value} disabled />
+                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
                   Konzeption & Strategie
                 </FormLabel>
               </FormItem>
@@ -102,11 +100,9 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.design"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                <Checkbox checked={field.value} disabled />
+                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
                   UX/UI Design
                 </FormLabel>
               </FormItem>
@@ -117,11 +113,9 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.implementation"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                <Checkbox checked={field.value} disabled />
+                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
                   Technische Umsetzung
                 </FormLabel>
               </FormItem>
@@ -132,11 +126,9 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.seo"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <FormLabel className="text-base font-medium cursor-pointer leading-none">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background">
+                <Checkbox checked={field.value} disabled />
+                <FormLabel className="text-base font-medium cursor-not-allowed leading-none">
                   Onpage SEO, Redirects & Go-Live
                 </FormLabel>
               </FormItem>
@@ -147,7 +139,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.adsSetup"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
@@ -168,7 +160,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.ongoingSeo"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
@@ -183,7 +175,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.ongoingAds"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
@@ -198,7 +190,7 @@ const CostCalculatorForm: React.FC<CostCalculatorFormProps> = ({ form }) => {
             control={form.control}
             name="modules.maintenance"
             render={({ field }) => (
-              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 hover:bg-muted/5 transition-colors">
+              <FormItem className="flex items-center space-x-3 space-y-0 rounded-md border border-border p-3 bg-background hover:bg-muted/5 transition-colors">
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>

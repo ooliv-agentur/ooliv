@@ -11,14 +11,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -29,7 +21,6 @@ import { useState } from "react";
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name erforderlich"),
   email: z.string().email("Gültige E-Mail erforderlich"),
-  message: z.string().min(10, "Nachricht zu kurz"),
   acceptPrivacy: z.boolean().refine((val) => val === true, {
     message: "Datenschutz muss akzeptiert werden",
   }),
@@ -42,20 +33,6 @@ interface CostCalculatorContactFormProps {
   formData: CalculatorFormValues;
 }
 
-const industries = [
-  { value: "technology", label: "Technologie / Software" },
-  { value: "retail", label: "Einzelhandel / E-Commerce" },
-  { value: "finance", label: "Finanzen / Banking" },
-  { value: "healthcare", label: "Gesundheit / Medizin" },
-  { value: "education", label: "Bildung / Training" },
-  { value: "manufacturing", label: "Produktion / Industrie" },
-  { value: "hospitality", label: "Gastronomie / Tourismus" },
-  { value: "construction", label: "Bau / Immobilien" },
-  { value: "food", label: "Lebensmittel / Restaurant" },
-  { value: "professional", label: "Beratung / Dienstleistungen" },
-  { value: "other", label: "Andere Branche" },
-];
-
 export const CostCalculatorContactForm: React.FC<CostCalculatorContactFormProps> = ({
   calculationResult,
   formData,
@@ -63,12 +40,18 @@ export const CostCalculatorContactForm: React.FC<CostCalculatorContactFormProps>
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const generateMessage = () => {
-    const { rangeMin, rangeMax, monthlyTotal } = calculationResult;
-    const { multilingual } = formData;
+    const { rangeMin, rangeMax, monthlyTotal, breakdown } = calculationResult;
+    const { multilingual, modules } = formData;
+
+    let selectedServices = [];
+    if (modules.adsSetup) selectedServices.push('Google Ads Setup');
+    if (modules.ongoingSeo) selectedServices.push('SEO-Betreuung');
+    if (modules.ongoingAds) selectedServices.push('Google Ads Betreuung');
+    if (modules.maintenance) selectedServices.push('Wartung & Support');
 
     return `Geschätzte Investition: ${rangeMin.toLocaleString('de-DE')} € - ${rangeMax.toLocaleString('de-DE')} € (netto)
 ${monthlyTotal > 0 ? `Monatlich: ${monthlyTotal.toLocaleString('de-DE')} €\n` : ''}Sprachen: ${multilingual ? 'Mehrsprachig' : 'Einsprachig'}
-
+${selectedServices.length > 0 ? `Zusätzliche Services: ${selectedServices.join(', ')}\n` : ''}
 Ich interessiere mich für ein detailliertes Angebot.`;
   };
 
@@ -77,7 +60,6 @@ Ich interessiere mich für ein detailliertes Angebot.`;
     defaultValues: {
       name: "",
       email: "",
-      message: generateMessage(),
       acceptPrivacy: false,
     },
   });
@@ -92,7 +74,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
           name: data.name,
           email: data.email,
           industry: null,
-          message: data.message,
+          message: generateMessage(),
           calculation_data: {
             result: calculationResult,
             formData: formData,
@@ -146,24 +128,6 @@ Ich interessiere mich für ein detailliertes Angebot.`;
               )}
             />
           </div>
-
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-sm">Nachricht *</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Beschreiben Sie Ihr Projekt..." 
-                    className="min-h-[100px] text-sm"
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           <FormField
             control={form.control}
