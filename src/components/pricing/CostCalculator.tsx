@@ -21,6 +21,7 @@ const CostCalculator: React.FC = () => {
         implementation: true,
         seo: true,
         adsSetup: false,
+        branding: false,
         ongoingSeo: false,
         ongoingAds: false,
         maintenance: false,
