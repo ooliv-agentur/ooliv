@@ -4,23 +4,24 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
 import CostCalculatorForm from './CostCalculatorForm';
 import CostCalculatorResult from './CostCalculatorResult';
-import CostCalculatorFAQ from './CostCalculatorFAQ';
-import { calculatorSchema, CalculatorFormValues, companySizeLabels, complexityLabels, timelineLabels } from './CostCalculatorSchema';
+import { calculatorSchema, CalculatorFormValues } from './CostCalculatorSchema';
 import { calculateCost, CalculationResult } from './CostCalculatorLogic';
-import { formatEUR } from './utils';
 
 const CostCalculator: React.FC = () => {
   const [result, setResult] = useState<CalculationResult | null>(null);
-  const [includeVAT, setIncludeVAT] = useState(true);
 
   const form = useForm<CalculatorFormValues>({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
       companySize: 'small',
-      pages: 8,
-      complexity: 'mid',
-      languages: 1,
-      timeline: undefined,
+      projectType: 'new',
+      cmsType: 'with-cms',
+      selectedLanguages: {
+        de: true,
+        en: false,
+        fr: false,
+        es: false,
+      },
       modules: {
         concept: true,
         design: true,
@@ -40,7 +41,7 @@ const CostCalculator: React.FC = () => {
     const subscription = form.watch((value) => {
       const data = value as CalculatorFormValues;
       // Only calculate if required fields are present
-      if (data.companySize && data.pages && data.complexity && data.languages && data.modules) {
+      if (data.companySize && data.projectType && data.cmsType && data.selectedLanguages && data.modules) {
         const calculationResult = calculateCost(data);
         setResult(calculationResult);
       }
@@ -53,35 +54,6 @@ const CostCalculator: React.FC = () => {
     
     return () => subscription.unsubscribe();
   }, [form]);
-
-  const handleRequestConsultation = () => {
-    const data = form.getValues();
-    const calculationResult = result || calculateCost(data);
-    
-    const timelineText = data.timeline ? timelineLabels[data.timeline as keyof typeof timelineLabels] : 'Nicht angegeben';
-    
-    const prefillMessage = `Hallo, ich habe den Kosten-Kalkulator genutzt:
-
-• ${data.pages} Seiten
-• ${data.languages} Sprache(n)
-• Design-Komplexität: ${complexityLabels[data.complexity]}
-• Unternehmensgröße: ${companySizeLabels[data.companySize]}
-• Zeitplan: ${timelineText}
-• Geschätzte Investition: ${formatEUR(calculationResult.rangeMin)} – ${formatEUR(calculationResult.rangeMax)} (${includeVAT ? 'inkl. USt.' : 'netto'})
-
-Ich interessiere mich für ein detailliertes Angebot.`;
-
-    if (typeof window !== 'undefined') {
-      window.dispatchEvent(new CustomEvent('open-lead-form', { 
-        detail: { 
-          mode: 'project',
-          initialData: {
-            message: prefillMessage,
-          }
-        } 
-      }));
-    }
-  };
 
   return (
     <section className="py-16 md:py-24">
@@ -99,7 +71,7 @@ Ich interessiere mich für ein detailliertes Angebot.`;
         </div>
 
         <Form {...form}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             <div>
               <CostCalculatorForm form={form} />
             </div>
@@ -107,15 +79,11 @@ Ich interessiere mich für ein detailliertes Angebot.`;
             <div>
               <CostCalculatorResult 
                 result={result} 
-                includeVAT={includeVAT}
-                onVATToggle={setIncludeVAT}
-                onRequestConsultation={handleRequestConsultation} 
+                formData={form.getValues()}
               />
             </div>
           </div>
         </Form>
-
-        <CostCalculatorFAQ />
       </div>
     </section>
   );
