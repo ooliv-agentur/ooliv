@@ -29,7 +29,7 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({ result, for
         <div className="mb-6 pb-6 border-b">
           <h3 className="text-sm font-medium text-muted-foreground mb-2">Geschätzter Preis</h3>
           <div className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
-            ab {formatEUR(rangeMin)}
+            {formatEUR(rangeMin)} - {formatEUR(rangeMax)}
           </div>
           <p className="text-xs text-muted-foreground">
             Alle Preise netto, zzgl. 19% USt.
@@ -41,7 +41,7 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({ result, for
           <div className="mb-6 pb-6 border-b">
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Monatlich</h4>
             <div className="text-2xl font-bold text-foreground">
-              ab {formatEUR(monthlyTotal)}
+              {formatEUR(monthlyTotal)}
             </div>
             <p className="text-xs text-muted-foreground mt-1">netto, zzgl. 19% USt.</p>
           </div>
