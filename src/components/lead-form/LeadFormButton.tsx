@@ -12,7 +12,7 @@ const LeadFormButton = React.forwardRef<HTMLButtonElement, LeadFormButtonProps>(
     
     const variantStyles = {
       primary: "bg-white text-black hover:bg-white/90 h-11 px-8",
-      secondary: "bg-transparent text-white border border-white/30 hover:bg-white/10 h-11 px-8"
+      secondary: "bg-white/10 text-white border-2 border-white/40 hover:bg-white/20 hover:border-white/60 h-11 px-8"
     };
 
     return (
