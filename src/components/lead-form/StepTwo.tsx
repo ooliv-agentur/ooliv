@@ -64,8 +64,8 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
                 value={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="h-12 bg-white/10 border-white/20 hover:bg-white/15 focus:border-white/40 [&>span]:text-white [&_span]:text-white text-white text-base">
-                    <SelectValue placeholder="Branche auswählen" className="text-white [&>span]:text-white" />
+                  <SelectTrigger className="h-12 bg-white/10 border-white/20 hover:bg-white/15 focus:border-white/40 text-white text-base [&>span]:!text-white [&_span]:!text-white">
+                    <SelectValue placeholder="Branche auswählen" className="!text-white" style={{ color: 'white' }} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-black/95 backdrop-blur-sm text-white border-white/20 max-h-60 z-[350]">
