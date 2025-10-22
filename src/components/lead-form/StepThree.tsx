@@ -63,7 +63,10 @@ const StepThree: React.FC<StepThreeProps> = ({ form }) => {
             <FormLabel className="text-xl font-semibold text-white mb-3 block">
               Was ist das Hauptziel Ihres Projekts?
             </FormLabel>
-            <p className="text-white/80 text-sm mb-4">Wählen Sie alle zutreffenden Ziele aus:</p>
+            <p className="text-white/80 text-sm mb-2">Wählen Sie alle zutreffenden Ziele aus:</p>
+            <p className="text-white/60 text-xs mb-4 italic">
+              Damit wir Ihnen die effektivsten Lösungen vorschlagen können
+            </p>
               <div className="space-y-3">
                 {goalOptions.map((option) => (
                   <FormField

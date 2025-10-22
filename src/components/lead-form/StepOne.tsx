@@ -61,7 +61,10 @@ const StepOne: React.FC<StepOneProps> = ({ form }) => {
           render={() => (
           <FormItem>
             <FormLabel className="text-xl font-semibold text-white mb-3 block">Was planen Sie mit uns?</FormLabel>
-            <p className="text-white/80 text-sm mb-4">Wählen Sie alle zutreffenden Optionen aus:</p>
+            <p className="text-white/80 text-sm mb-2">Wählen Sie alle zutreffenden Optionen aus:</p>
+            <p className="text-white/60 text-xs mb-4 italic">
+              Damit wir Ihnen die passende Lösung empfehlen können
+            </p>
               <div className="space-y-3">
                 {projectOptions.map((option) => (
                   <FormField

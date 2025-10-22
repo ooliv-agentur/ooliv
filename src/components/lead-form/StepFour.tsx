@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { UseFormReturn } from "react-hook-form";
 import { FormValues } from './FormSchema';
+import { Shield, Clock, CheckCircle } from "lucide-react";
 
 interface StepFourProps {
   form: UseFormReturn<FormValues>;
@@ -22,9 +23,14 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
       className="space-y-6"
     >
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-white mb-4">
-          Wie können wir Sie erreichen?
-        </h3>
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            Wie können wir Sie erreichen?
+          </h3>
+          <p className="text-white/60 text-xs italic">
+            Wir melden uns innerhalb von 24 Stunden bei Ihnen
+          </p>
+        </div>
         <FormField
           control={form.control}
           name="name"
@@ -122,6 +128,23 @@ const StepFour: React.FC<StepFourProps> = ({ form }) => {
             </FormItem>
           )}
         />
+
+        <div className="mt-6 pt-6 border-t border-white/10">
+          <div className="flex items-center justify-center gap-6 text-xs text-white/70">
+            <span className="flex items-center gap-2">
+              <Shield className="h-4 w-4" />
+              SSL-verschlüsselt
+            </span>
+            <span className="flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              24h Antwort
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle className="h-4 w-4" />
+              Unverbindlich
+            </span>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

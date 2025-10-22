@@ -22,9 +22,14 @@ const StepTwo: React.FC<StepTwoProps> = ({ form }) => {
       className="space-y-6"
     >
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-white mb-4">
-          Erzählen Sie uns etwas über Ihr Unternehmen
-        </h3>
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            Erzählen Sie uns etwas über Ihr Unternehmen
+          </h3>
+          <p className="text-white/60 text-xs italic">
+            So können wir branchenspezifische Empfehlungen geben
+          </p>
+        </div>
         <FormField
           control={form.control}
           name="companyName"

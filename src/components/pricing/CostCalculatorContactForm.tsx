@@ -164,14 +164,32 @@ Ich interessiere mich für ein detailliertes Angebot.`;
             )}
           />
 
-          <Button 
-            type="submit" 
-            size="default"
-            className="w-full"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Wird gesendet..." : "Anfrage senden"}
-          </Button>
+          <div className="space-y-3">
+            <p className="text-sm text-center text-muted-foreground">
+              Sie erhalten Ihr individuelles Angebot innerhalb von 24 Stunden
+            </p>
+            
+            <Button 
+              type="submit" 
+              size="default"
+              className="w-full"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Wird gesendet..." : "Anfrage senden"}
+            </Button>
+
+            <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1">
+                ✓ SSL-verschlüsselt
+              </span>
+              <span className="flex items-center gap-1">
+                ✓ Unverbindlich
+              </span>
+              <span className="flex items-center gap-1">
+                ✓ Kostenlose Beratung
+              </span>
+            </div>
+          </div>
         </form>
       </Form>
     </div>
