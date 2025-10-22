@@ -179,13 +179,13 @@ const LeadFormContainer: React.FC<LeadFormContainerProps> = ({ onClose, mode, in
           `
         }} />
         
-        <div className="flex-1 overflow-y-auto min-h-0">
+        <div className="flex-1 overflow-y-auto min-h-0 pb-4">
           <AnimatePresence mode="wait">
             {renderStepContent()}
           </AnimatePresence>
         </div>
         
-        <div className="sticky bottom-0 bg-black pt-4 border-t border-white/10 mt-6">
+        <div className="sticky bottom-0 bg-black pt-4 border-t border-white/10">
           <LeadFormNavigation 
             currentStep={step}
             totalSteps={totalSteps}
