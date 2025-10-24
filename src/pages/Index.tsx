@@ -86,42 +86,6 @@ const GermanIndex = () => {
           services={["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]}
         />
         
-        {/* FAQ Schema für Homepage */}
-        <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Was kostet eine professionelle B2B-Website bei ooliv?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Unsere B2B-Websites starten bei €5.000, basierend auf Ihren Anforderungen und Unternehmensgröße. Komplexe Projekte mit SEO-Integration und Content-Marketing beginnen bei €10.000. Wir erstellen transparente Angebote ohne versteckte Kosten – für Unternehmen in Mainz, Frankfurt, Wiesbaden, Darmstadt und ganz Deutschland."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Für welche Branchen ist ooliv die richtige Digitalagentur?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Wir arbeiten primär mit B2B-Unternehmen: Software, Industrie, Beratung, Bildung, Healthcare. Unsere Kunden suchen langfristige Partnerschaften für Website, SEO und Marketing – individuelle Projekte ab €5.000."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Warum ooliv statt Freelancer oder große Agentur?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Freelancer fehlt oft die Kapazität für komplexe Projekte. Große Agenturen haben Overhead-Kosten und viele Zwischenstellen. ooliv kombiniert beides: Direkter Zugang zum CEO, festes Team aus Spezialisten, transparente Prozesse – für individuelle Projekte ab €5.000."
-                  }
-                }
-              ]
-            })}
-          </script>
-        </Helmet>
-        
         <DeutscherHero />
         
         <DeutscherAboutSection />
