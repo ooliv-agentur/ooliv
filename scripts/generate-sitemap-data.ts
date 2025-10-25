@@ -110,12 +110,12 @@ export async function generateDynamicSitemap(): Promise<void> {
     sitemapXML += `
 </urlset>`;
 
-    // Write to public folder for static serving
-    const publicPath = resolve(process.cwd(), 'public', 'sitemap.xml');
-    writeFileSync(publicPath, sitemapXML, 'utf-8');
+    // Write to dist folder
+    const distPath = resolve(process.cwd(), 'dist', 'sitemap.xml');
+    writeFileSync(distPath, sitemapXML, 'utf-8');
     
     console.log(`✅ Generated complete sitemap with ${allRoutes.length} URLs`);
-    console.log(`📁 Sitemap saved to: ${publicPath}`);
+    console.log(`📁 Sitemap saved to: ${distPath}`);
 
   } catch (error) {
     console.error('❌ Failed to generate dynamic sitemap:', error);
