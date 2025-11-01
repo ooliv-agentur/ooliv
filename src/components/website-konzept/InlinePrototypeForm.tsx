@@ -149,22 +149,27 @@ const InlinePrototypeForm = () => {
           />
         </div>
 
-        <div className="flex items-start gap-3">
-          <input
-            id="privacy"
-            type="checkbox"
-            checked={privacy}
-            onChange={(e) => setPrivacy(e.target.checked)}
-            required
-            className="mt-1 w-5 h-5 border-2 border-gray-200 rounded focus:ring-accent accent-accent"
-          />
-          <label htmlFor="privacy" className="text-sm text-muted-foreground">
-            Ich akzepiere die{' '}
-            <a href="/datenschutz" target="_blank" className="text-accent underline hover:text-accent/80">
-              Datenschutzbestimmungen
-            </a>
-            .
-          </label>
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <input
+              id="privacy"
+              type="checkbox"
+              checked={privacy}
+              onChange={(e) => setPrivacy(e.target.checked)}
+              required
+              className="mt-1 w-5 h-5 border-2 border-gray-200 rounded focus:ring-accent accent-accent"
+            />
+            <label htmlFor="privacy" className="text-sm text-muted-foreground">
+              Ich akzeptiere die{' '}
+              <a href="/datenschutz" target="_blank" className="text-accent underline hover:text-accent/80">
+                Datenschutzbestimmungen
+              </a>
+              .
+            </label>
+          </div>
+          <p className="text-sm text-muted-foreground pl-8">
+            Sie erhalten keine Werbemails – nur Ihr persönliches Konzept.
+          </p>
         </div>
 
         <Button 
@@ -174,7 +179,7 @@ const InlinePrototypeForm = () => {
           size="lg"
           className="w-full"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Kostenloses Konzept anfordern'}
+          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept sichern'}
         </Button>
       </div>
     </form>

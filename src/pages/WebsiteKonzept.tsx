@@ -37,8 +37,11 @@ const WebsiteKonzept = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Kostenloses Website-Konzept in 48 h
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-8">
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-4">
                 Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Sie erhalten innerhalb von 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos und individuell.
               </p>
               
               <div className="space-y-4 mb-10">
@@ -61,7 +64,7 @@ const WebsiteKonzept = () => {
                 variant="primary"
                 size="xl"
               >
-                Jetzt kostenloses Konzept anfordern
+                Jetzt kostenloses Konzept sichern
               </Button>
             </div>
 
@@ -95,7 +98,7 @@ const WebsiteKonzept = () => {
             </div>
           </div>
           <p className="text-center text-lg text-muted-foreground mt-12">
-            Über 200 Unternehmen vertrauen bereits auf unsere Website-Konzepte.
+            Mehr als 200 Unternehmen haben bereits von unserem kostenlosen Website-Konzept profitiert.
           </p>
         </div>
       </section>
@@ -117,16 +120,25 @@ const WebsiteKonzept = () => {
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Strategische Seitenstruktur
               </h3>
+              <p className="text-muted-foreground">
+                Klar aufgebaut für Ihre Zielgruppe
+              </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Optimierte Benutzerführung
               </h3>
+              <p className="text-muted-foreground">
+                Mehr Anfragen durch klare Nutzerwege
+              </p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Konkrete Inhaltsempfehlungen
               </h3>
+              <p className="text-muted-foreground">
+                Texte, die Ihre Stärken sichtbar machen
+              </p>
             </div>
           </div>
 
@@ -140,7 +152,7 @@ const WebsiteKonzept = () => {
               variant="primary"
               size="lg"
             >
-              Kostenloses Konzept anfordern
+              Jetzt kostenloses Konzept sichern
             </Button>
           </div>
         </div>
@@ -164,6 +176,9 @@ const WebsiteKonzept = () => {
           <p className="text-center text-lg text-muted-foreground mb-4">
             Klickbarer Website-Prototyp mit echten Texten, responsiv und strukturiert.
           </p>
+          <p className="text-center text-lg text-muted-foreground mb-4">
+            Ihr Konzept zeigt Ihnen genau, wie Ihre neue Website wirken und strukturiert sein sollte.
+          </p>
           <p className="text-center text-sm text-muted-foreground">
             Bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
           </p>
@@ -175,7 +190,7 @@ const WebsiteKonzept = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Jetzt kostenloses Konzept anfordern
+              Fordern Sie jetzt Ihr kostenloses Website-Konzept an
             </h2>
             <p className="text-xl text-muted-foreground">
               In 30 Sekunden ausgefüllt – Antwort in 48 h.
@@ -208,7 +223,7 @@ const WebsiteKonzept = () => {
                 Ist das wirklich kostenlos?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Ja, 100 %. Keine versteckten Gebühren.
+                Ja, Sie zahlen nichts – das Konzept ist unverbindlich und kostenfrei.
               </AccordionContent>
             </AccordionItem>
 
@@ -220,7 +235,7 @@ const WebsiteKonzept = () => {
                 Muss ich danach etwas kaufen?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Nein, Sie entscheiden völlig frei.
+                Nein, Sie entscheiden erst nach dem Konzept, ob Sie weitermachen möchten.
               </AccordionContent>
             </AccordionItem>
 
@@ -232,7 +247,7 @@ const WebsiteKonzept = () => {
                 Wie lange dauert es?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Sie erhalten Ihr Konzept in max. 48 h.
+                Ihr individuelles Konzept erhalten Sie innerhalb von 48 Stunden.
               </AccordionContent>
             </AccordionItem>
 
@@ -244,7 +259,7 @@ const WebsiteKonzept = () => {
                 Was, wenn mir der Prototyp nicht gefällt?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Sie behalten ihn trotzdem kostenlos.
+                Kein Problem – Sie können ihn kostenlos behalten.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -255,7 +270,7 @@ const WebsiteKonzept = () => {
       <section className="py-20 bg-primary/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10">
-            Bereit, Ihr kostenloses Konzept zu erhalten?
+            Bereit, Ihre Website-Idee in ein konkretes Konzept zu verwandeln?
           </h2>
           
           <Button 
@@ -263,7 +278,7 @@ const WebsiteKonzept = () => {
             variant="primary"
             size="xl"
           >
-            Jetzt kostenloses Konzept anfordern
+            Jetzt kostenloses Konzept sichern
           </Button>
 
           <p className="text-lg text-muted-foreground mt-8">
