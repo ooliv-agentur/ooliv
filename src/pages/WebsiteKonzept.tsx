@@ -38,14 +38,11 @@ const WebsiteKonzept = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Kostenloses Website-Konzept in 48 h
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-4">
-                Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                Sie erhalten innerhalb von 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos und individuell.
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-8">
+                In nur 48 Stunden erhalten Sie ein vollständiges, strategisches Website-Konzept – kostenlos, individuell und auf Ihr Unternehmen zugeschnitten.
               </p>
               
-              <div className="space-y-4 mb-10">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full" />
                   <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
@@ -59,6 +56,10 @@ const WebsiteKonzept = () => {
                   <span className="text-lg font-semibold text-foreground">Keine Verpflichtung</span>
                 </div>
               </div>
+
+              <p className="text-base text-muted-foreground mb-10">
+                Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse.
+              </p>
 
               <Button 
                 onClick={scrollToForm}
@@ -97,7 +98,7 @@ const WebsiteKonzept = () => {
             </div>
           </div>
           <p className="text-center text-lg text-muted-foreground mt-12">
-            Mehr als 200 Unternehmen haben bereits von unserem kostenlosen Website-Konzept profitiert.
+            Mehr als 200 Unternehmen haben bereits mit unserem kostenlosen Website-Konzept den Grundstein für ihren Online-Erfolg gelegt.
           </p>
         </div>
       </section>
@@ -106,12 +107,9 @@ const WebsiteKonzept = () => {
       <section className="py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Was Sie erhalten
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-12">
+              Was Sie erhalten: Ein individuelles Website-Konzept mit klarer Struktur und konkreten Empfehlungen.
             </h2>
-            <p className="text-xl text-muted-foreground mb-12">
-              Ihr individuelles Website-Konzept umfasst:
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -141,7 +139,11 @@ const WebsiteKonzept = () => {
             </div>
           </div>
 
-          <p className="text-center text-lg text-muted-foreground mb-8">
+          <p className="text-center text-lg text-muted-foreground mb-4">
+            Damit wissen Sie genau, wie Ihre neue Website inhaltlich, strategisch und visuell aufgebaut sein sollte.
+          </p>
+
+          <p className="text-center text-base text-muted-foreground mb-8">
             Optional inklusive: SEO-Analyse Ihrer bestehenden Website.
           </p>
 
@@ -172,11 +174,8 @@ const WebsiteKonzept = () => {
             </div>
           </div>
 
-          <p className="text-center text-lg text-muted-foreground mb-4">
-            Klickbarer Website-Prototyp mit echten Texten, responsiv und strukturiert.
-          </p>
-          <p className="text-center text-lg text-muted-foreground mb-4">
-            Ihr Konzept zeigt Ihnen genau, wie Ihre neue Website wirken und strukturiert sein sollte.
+          <p className="text-center text-lg text-muted-foreground mb-6">
+            Ihr Konzept zeigt Ihnen genau, wie Ihre neue Website wirken und strukturiert sein sollte – inklusive echter Texte und realistischem Layout.
           </p>
           <p className="text-center text-sm text-muted-foreground">
             Bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
@@ -187,12 +186,12 @@ const WebsiteKonzept = () => {
       {/* Lead Form Section */}
       <section id="lead-form-section" className="py-20 bg-primary/5">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Fordern Sie jetzt Ihr kostenloses Website-Konzept an
+              Fordern Sie jetzt Ihr kostenloses Website-Konzept an – unverbindlich und in 48 Stunden fertig.
             </h2>
-            <p className="text-xl text-muted-foreground">
-              In 30 Sekunden ausgefüllt – Antwort in 48 h.
+            <p className="text-lg text-muted-foreground">
+              Keine langen Gespräche – wir starten direkt mit der Analyse Ihrer Website oder Ihrer Idee.
             </p>
           </div>
 
@@ -222,7 +221,7 @@ const WebsiteKonzept = () => {
                 Ist das wirklich kostenlos?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Ja, Sie zahlen nichts – das Konzept ist unverbindlich und kostenfrei.
+                Ja, völlig kostenlos – Sie zahlen nichts und gehen keine Verpflichtung ein.
               </AccordionContent>
             </AccordionItem>
 
@@ -234,7 +233,7 @@ const WebsiteKonzept = () => {
                 Muss ich danach etwas kaufen?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Nein, Sie entscheiden erst nach dem Konzept, ob Sie weitermachen möchten.
+                Nein, Sie entscheiden frei, ob Sie nach dem Konzept weitermachen möchten.
               </AccordionContent>
             </AccordionItem>
 
@@ -258,7 +257,7 @@ const WebsiteKonzept = () => {
                 Was, wenn mir der Prototyp nicht gefällt?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                Kein Problem – Sie können ihn kostenlos behalten.
+                Kein Problem – Sie können ihn kostenlos behalten und als Inspiration nutzen.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -277,11 +276,11 @@ const WebsiteKonzept = () => {
             variant="primary"
             size="xl"
           >
-            Jetzt kostenloses Konzept sichern
+            Jetzt kostenloses Konzept erhalten
           </Button>
 
           <p className="text-lg text-muted-foreground mt-8">
-            100 % kostenlos • Antwort in 48 h • Keine Verpflichtung
+            Sie erhalten Ihr persönliches Konzept innerhalb von 48 Stunden – ohne Risiko und ohne Kosten.
           </p>
         </div>
       </section>
