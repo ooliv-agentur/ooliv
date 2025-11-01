@@ -305,27 +305,6 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* Lead Form Section */}
-      <section id="lead-form-section" className="py-20 bg-primary/5">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
-            </p>
-          </div>
-
-          <InlinePrototypeForm />
-
-          <p className="text-center text-xs text-muted-foreground mt-6">
-            Sie erhalten keine Werbemails – nur Ihr persönliches Konzept.<br />
-            Ihre Daten werden ausschließlich zur Erstellung Ihres Website-Konzepts verwendet und nach 90 Tagen gelöscht.
-          </p>
-        </div>
-      </section>
-
       {/* 3-Step Process Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,6 +345,27 @@ const WebsiteKonzept = () => {
               </p>
             </div>
           </StaggerReveal>
+        </div>
+      </section>
+
+      {/* Lead Form Section */}
+      <section id="lead-form-section" className="py-20 bg-primary/5">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
+            </p>
+          </div>
+
+          <InlinePrototypeForm />
+
+          <p className="text-center text-xs text-muted-foreground mt-6">
+            Sie erhalten keine Werbemails – nur Ihr persönliches Konzept.<br />
+            Ihre Daten werden ausschließlich zur Erstellung Ihres Website-Konzepts verwendet und nach 90 Tagen gelöscht.
+          </p>
         </div>
       </section>
 
