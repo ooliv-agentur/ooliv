@@ -177,7 +177,7 @@ const InlinePrototypeForm = () => {
           disabled={isSubmitting}
           variant="primary"
           size="lg"
-          className="w-full"
+          className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold shadow-lg hover:shadow-xl transition-all"
         >
           {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept starten'}
         </Button>

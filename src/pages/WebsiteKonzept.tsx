@@ -80,23 +80,23 @@ const WebsiteKonzept = () => {
             Unser Ansatz: Schnell, klar und ohne Verpflichtung.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 100 % kostenlos – kein Abo, keine versteckten Kosten
               </h3>
             </div>
-            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Kein Risiko – Sie entscheiden erst nach dem Konzept
               </h3>
             </div>
-            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Antwort in 48 Stunden – kein Gespräch nötig
               </h3>
             </div>
           </div>
-          <p className="text-center text-lg text-muted-foreground mt-12">
+          <p className="text-center text-lg text-muted-foreground mt-16">
             Über 200 Unternehmen haben mit unserem kostenlosen Website-Konzept bereits den Grundstein für ihren Online-Erfolg gelegt.
           </p>
         </div>
@@ -123,7 +123,7 @@ const WebsiteKonzept = () => {
                 Klar aufgebaut für Ihre Zielgruppe
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-md border-2 border-primary/20 ring-2 ring-primary/10">
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Optimierte Benutzerführung
               </h3>
@@ -154,6 +154,7 @@ const WebsiteKonzept = () => {
               onClick={scrollToForm}
               variant="primary"
               size="lg"
+              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all"
             >
               Jetzt kostenloses Konzept starten
             </Button>
@@ -170,7 +171,7 @@ const WebsiteKonzept = () => {
             </h2>
           </div>
 
-          <div className="max-w-5xl mx-auto mb-8">
+          <div className="max-w-5xl mx-auto mb-10">
             <AnimatedPrototypePreview />
           </div>
 
@@ -186,25 +187,25 @@ const WebsiteKonzept = () => {
       {/* Lead Form Section */}
       <section id="lead-form-section" className="py-20 bg-primary/5">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich.
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground mb-8">
               Keine langen Abstimmungen – wir starten direkt mit der Analyse Ihrer aktuellen Website oder Idee.
             </p>
           </div>
 
           <InlinePrototypeForm />
 
-          <p className="text-center text-sm text-muted-foreground mt-6">
+          <p className="text-center text-xs text-muted-foreground mt-6">
             Ihre Daten werden sicher übertragen und nach 90 Tagen gelöscht.
           </p>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -278,12 +279,13 @@ const WebsiteKonzept = () => {
             onClick={scrollToForm}
             variant="primary"
             size="xl"
+            className="h-16 px-12 text-lg"
           >
             Jetzt kostenloses Konzept starten
           </Button>
 
           <p className="text-lg text-muted-foreground mt-8">
-            Sie erhalten Ihr persönliches Konzept innerhalb von 48 Stunden – kostenlos, unverbindlich und ohne Risiko.
+            Ihr persönliches Konzept in 48 Stunden – kostenlos und ohne Risiko.
           </p>
         </div>
       </section>
