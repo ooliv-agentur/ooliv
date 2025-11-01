@@ -42,10 +42,10 @@ const AnimatedPrototypePreview = () => {
       </div>
 
       {/* Mobile View - Mockup with Live Demo Button */}
-      <div className="block md:hidden max-w-[375px] mx-auto">
-        <div className="relative">
+      <div className="block md:hidden w-full max-w-[375px] mx-auto px-4 overflow-x-hidden">
+        <div className="relative w-full">
           {/* Browser Frame */}
-          <div className="relative bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-800">
+          <div className="relative w-full bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-800">
             {/* Minimal Browser Bar */}
             <div className="bg-gray-800 h-8 flex items-center px-3 gap-2">
               <div className="flex gap-1.5">
@@ -73,7 +73,7 @@ const AnimatedPrototypePreview = () => {
             href="https://hillwig.projekte-ooliv.de/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
+            className="mt-4 w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
           >
             <ExternalLink className="w-5 h-5" />
             <span className="font-semibold">Live-Demo öffnen</span>

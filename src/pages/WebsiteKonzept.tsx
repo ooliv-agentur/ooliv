@@ -31,7 +31,7 @@ const WebsiteKonzept = () => {
       </Helmet>
 
       {/* Static Logo */}
-      <div className="fixed top-6 left-6 z-50">
+      <div className="fixed top-6 left-4 md:left-6 z-50">
         <img 
           src="/ooliv_logo_2025.svg?v=2" 
           alt="ooliv logo" 
@@ -47,7 +47,7 @@ const WebsiteKonzept = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Kostenloses Website-Konzept<br />in nur 48 Stunden
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[65%] mx-auto">
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[90%] sm:max-w-[75%] md:max-w-[65%] mx-auto">
                 Erhalten Sie in 48 Stunden ein strategisches Website-Konzept – kostenlos, individuell und auf Ihr Unternehmen zugeschnitten.
               </p>
               
@@ -114,17 +114,17 @@ const WebsiteKonzept = () => {
             <p className="text-sm font-semibold text-muted-foreground mb-6">
               Unternehmen, die unser Konzept genutzt haben
             </p>
-            <div className="flex items-center justify-center gap-8 flex-wrap">
-              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
+              <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                 <img src="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" alt="KLAIBER" className="w-full h-full object-contain" />
               </div>
-              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+              <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                 <img src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" alt="COBUS Industries" className="w-full h-full object-contain" />
               </div>
-              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+              <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                 <img src="/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png" alt="SPEZ AG" className="w-full h-full object-contain" />
               </div>
-              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+              <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                 <img src="/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png" alt="IconPro GmbH" className="w-full h-full object-contain" />
               </div>
             </div>
