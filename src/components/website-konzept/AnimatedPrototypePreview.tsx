@@ -64,14 +64,14 @@ const AnimatedPrototypePreview = () => {
             {/* Scrollable Iframe Container with CSS Transform Scaling */}
             <div className="relative h-[600px] overflow-y-auto overflow-x-hidden bg-white scrollable-iframe">
               <div style={{ 
-                width: '768px', 
+                width: '390px', 
                 height: '3000px',
-                transform: 'scale(0.488)',
+                transform: 'scale(0.962)',
                 transformOrigin: 'top left'
               }}>
                 <iframe
                   src="https://hillwig.projekte-ooliv.de/"
-                  style={{ width: '768px', height: '3000px' }}
+                  style={{ width: '390px', height: '3000px' }}
                   className="border-0"
                   title="Website Prototype Preview Mobile"
                   loading="lazy"
