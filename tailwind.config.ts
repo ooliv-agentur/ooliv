@@ -159,6 +159,7 @@ export default {
         'float-delayed': 'float 6s ease-in-out infinite 2s',
         'float-slow': 'float 8s ease-in-out infinite',
         'float-fast': 'float 4s ease-in-out infinite',
+        'float-reverse': 'float-reverse 7s ease-in-out infinite',
         'gradient': 'gradient 15s ease infinite',
         'gradient-slow': 'gradient 20s ease infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -175,6 +176,14 @@ export default {
           },
           '50%': {
             transform: 'translateY(-20px) rotate(5deg)',
+          },
+        },
+        'float-reverse': {
+          '0%, 100%': {
+            transform: 'translateY(0px) rotate(0deg)',
+          },
+          '50%': {
+            transform: 'translateY(20px) rotate(-5deg)',
           },
         },
         gradient: {

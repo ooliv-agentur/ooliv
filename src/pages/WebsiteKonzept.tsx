@@ -6,6 +6,9 @@ import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedProto
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import AnimatedCounter from '@/components/animations/AnimatedCounter';
+import JourneyLine from '@/components/journey/JourneyLine';
+import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
+import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -25,13 +28,19 @@ const WebsiteKonzept = () => {
   };
 
   return (
-    <div className="overflow-x-hidden w-full">
+    <div className="overflow-x-hidden w-full relative">
       <Helmet>
         <title>Kostenloses Website-Konzept in 48 h | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Erhalten Sie Ihr individuelles Website-Konzept innerhalb von 48 Stunden – kostenlos, unverbindlich und strategisch durchdacht." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://ooliv.de/website-konzept" />
       </Helmet>
+      
+      {/* Scroll Progress Bar */}
+      <ScrollProgressBar />
+      
+      {/* Journey Line */}
+      <JourneyLine />
 
       {/* Static Logo */}
       <Reveal delay={0} direction="left" distance={20}>
@@ -45,8 +54,15 @@ const WebsiteKonzept = () => {
       </Reveal>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
+        {/* Subtle animated background orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute w-64 h-64 bg-primary/10 rounded-full blur-3xl top-20 left-10 animate-float-slow opacity-30"></div>
+          <div className="absolute w-96 h-96 bg-primary/8 rounded-full blur-3xl top-40 right-20 animate-float-delayed opacity-20"></div>
+          <div className="absolute w-48 h-48 bg-primary/12 rounded-full blur-3xl bottom-40 left-1/4 animate-float-reverse opacity-25"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="max-w-4xl mx-auto text-center w-full">
             <div>
               <Reveal delay={0.1} direction="up" distance={20}>
@@ -69,15 +85,18 @@ const WebsiteKonzept = () => {
               
               <StaggerReveal stagger={0.1} delay={0.6}>
                 <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-6 px-2">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-primary" />
                     <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
                   </div>
                   <span className="text-lg text-muted-foreground">•</span>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-primary" />
                     <span className="text-lg font-semibold text-foreground">Antwort in 48 h</span>
                   </div>
                   <span className="text-lg text-muted-foreground">•</span>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-primary" />
                     <span className="text-lg font-semibold text-foreground">Keine Verpflichtung</span>
                   </div>
                 </div>
@@ -203,6 +222,7 @@ const WebsiteKonzept = () => {
 
           <StaggerReveal stagger={0.2} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-primary/5 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <Layout className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-lg font-bold text-foreground mb-2">
                 Strategische Seitenstruktur
               </h3>
@@ -211,6 +231,7 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-primary/5 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <Users className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-lg font-bold text-foreground mb-2">
                 Optimierte Benutzerführung
               </h3>
@@ -219,6 +240,7 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-primary/5 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <FileText className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-lg font-bold text-foreground mb-2">
                 Konkrete Inhaltsempfehlungen
               </h3>
@@ -227,6 +249,7 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-primary/5 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <Zap className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-lg font-bold text-foreground mb-2">
                 SEO- und Performance-Analyse
               </h3>
@@ -318,6 +341,7 @@ const WebsiteKonzept = () => {
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <FileText className="w-12 h-12 text-primary mb-4" />
               <div className="text-4xl font-bold text-primary mb-4">1</div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Formular ausfüllen
@@ -327,6 +351,7 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <Mail className="w-12 h-12 text-primary mb-4" />
               <div className="text-4xl font-bold text-primary mb-4">2</div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Konzept erhalten
@@ -336,6 +361,7 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
               <div className="text-4xl font-bold text-primary mb-4">3</div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 Sie entscheiden
@@ -491,19 +517,19 @@ const WebsiteKonzept = () => {
               </h3>
               <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Website-Audit & SEO-Analyse</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Website-Konzept & Relaunch-Planung</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Conversion-Optimierung & UX-Design</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-primary mt-0.5">•</span>
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Technische Performance-Analyse</span>
                 </li>
               </ul>
