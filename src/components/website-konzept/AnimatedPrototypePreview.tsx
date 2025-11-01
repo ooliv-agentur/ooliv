@@ -64,20 +64,17 @@ const AnimatedPrototypePreview = () => {
             </div>
 
             {/* Mockup Content Area with Screenshot */}
-            <div className="relative h-[500px] bg-white overflow-hidden">
+            <div className="relative bg-white overflow-hidden">
               <img 
                 src={hillwigMockup} 
                 alt="Hillwig Website Mockup" 
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto"
               />
               
-              {/* Gradient overlay for fade effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none"></div>
-              
-              {/* Preview hint */}
+              {/* Preview hint at bottom */}
               <div className="absolute bottom-4 left-0 right-0 flex items-end justify-center">
                 <div className="text-center">
-                  <p className="text-sm text-muted-foreground font-medium bg-white/90 px-3 py-1.5 rounded-full">
+                  <p className="text-sm text-muted-foreground font-medium bg-white/90 px-3 py-1.5 rounded-full shadow-sm">
                     Vorschau-Mockup
                   </p>
                 </div>
