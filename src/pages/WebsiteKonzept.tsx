@@ -54,12 +54,12 @@ const WebsiteKonzept = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
         {/* Animated Grid Pattern (technischer Look) */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 z-[5]">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40 z-[5]">
           <div className="absolute inset-0 
-                          bg-[linear-gradient(to_right,#38B593_1px,transparent_1px),
-                              linear-gradient(to_bottom,#38B593_1px,transparent_1px)]
+                          bg-[linear-gradient(to_right,#2D9174_1.5px,transparent_1.5px),
+                              linear-gradient(to_bottom,#2D9174_1.5px,transparent_1.5px)]
                           bg-[size:4rem_4rem]
-                          [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]
+                          [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_75%,transparent_100%)]
                           animate-fade-in">
           </div>
         </div>
