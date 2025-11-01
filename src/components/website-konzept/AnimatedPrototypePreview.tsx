@@ -1,5 +1,6 @@
 import React from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { ExternalLink } from 'lucide-react';
 
 const AnimatedPrototypePreview = () => {
   return (
@@ -44,10 +45,10 @@ const AnimatedPrototypePreview = () => {
         </div>
       </div>
 
-      {/* Mobile View - Scaled iframe for responsive rendering */}
+      {/* Mobile View - Mockup with Live Demo Button */}
       <div className="block md:hidden max-w-[375px] mx-auto">
-        <div className="relative overflow-hidden">
-          {/* Simplified Browser Frame */}
+        <div className="relative">
+          {/* Browser Frame */}
           <div className="relative bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-800">
             {/* Minimal Browser Bar */}
             <div className="bg-gray-800 h-8 flex items-center px-3 gap-2">
@@ -61,21 +62,35 @@ const AnimatedPrototypePreview = () => {
               </div>
             </div>
 
-            {/* Scrollable Iframe Container with CSS Transform Scaling */}
-            <div className="relative h-[600px] overflow-y-auto overflow-x-hidden bg-white scrollable-iframe">
-              <div style={{ 
-                width: '390px', 
-                height: '3000px',
-                transform: 'scale(0.962)',
-                transformOrigin: 'top left'
-              }}>
-                <iframe
-                  src="https://hillwig.projekte-ooliv.de/"
-                  style={{ width: '390px', height: '3000px' }}
-                  className="border-0"
-                  title="Website Prototype Preview Mobile"
-                  loading="lazy"
-                />
+            {/* Mockup Content Area */}
+            <div className="relative h-[500px] bg-gradient-to-b from-gray-50 to-white p-6">
+              {/* Header Mockup */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="h-8 w-24 bg-gray-300 rounded animate-pulse" />
+                <div className="h-8 w-8 bg-gray-300 rounded animate-pulse" />
+              </div>
+              
+              {/* Hero Section Mockup */}
+              <div className="space-y-3 mb-8">
+                <div className="h-6 bg-gray-300 rounded w-3/4 animate-pulse" />
+                <div className="h-6 bg-gray-300 rounded w-full animate-pulse" />
+                <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse" />
+                <div className="h-10 bg-primary/30 rounded w-32 mt-4 animate-pulse" />
+              </div>
+              
+              {/* Content Blocks Mockup */}
+              <div className="space-y-4">
+                <div className="h-32 bg-gray-200 rounded animate-pulse" />
+                <div className="h-32 bg-gray-200 rounded animate-pulse" />
+              </div>
+              
+              {/* Overlay with preview hint */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent flex items-end justify-center pb-8">
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Vorschau-Mockup
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -85,10 +100,20 @@ const AnimatedPrototypePreview = () => {
             Beispiel
           </div>
           
-          {/* Scroll Hint - Mobile */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white px-2 py-1 rounded-full text-[10px] backdrop-blur-sm z-10 pointer-events-none">
-            ↓ Scrollen
-          </div>
+          {/* Call-to-Action Button */}
+          <a
+            href="https://hillwig.projekte-ooliv.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
+          >
+            <ExternalLink className="w-5 h-5" />
+            <span className="font-semibold">Live-Demo öffnen</span>
+          </a>
+          
+          <p className="text-center text-xs text-muted-foreground mt-2">
+            Interaktive Demo im neuen Tab ansehen
+          </p>
         </div>
       </div>
     </div>
