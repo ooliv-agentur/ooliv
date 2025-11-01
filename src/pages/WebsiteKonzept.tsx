@@ -106,9 +106,22 @@ const WebsiteKonzept = () => {
               </h3>
             </div>
           </div>
-          <p className="text-center text-lg text-muted-foreground mt-16">
+          <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
             Über 200 Unternehmen haben mit unserem kostenlosen Website-Konzept bereits den Grundstein für ihren Online-Erfolg gelegt.
           </p>
+          
+          {/* Trust Logos */}
+          <div className="text-center">
+            <p className="text-sm font-semibold text-muted-foreground mb-6">
+              Unternehmen, die unser Konzept genutzt haben
+            </p>
+            <div className="flex items-center justify-center gap-8 flex-wrap">
+              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
+              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
+              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
+              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
+            </div>
+          </div>
         </div>
       </section>
 

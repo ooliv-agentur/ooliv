@@ -78,12 +78,19 @@ const InlinePrototypeForm = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-foreground mb-4">
-          Danke! Wir melden uns innerhalb von 48 Stunden.
+        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Danke! Ihr Website-Konzept wird erstellt.
         </h3>
-        <p className="text-muted-foreground">
-          Prüfen Sie Ihr E-Mail-Postfach für weitere Details.
+        <p className="text-lg text-muted-foreground mb-8">
+          Sie erhalten innerhalb von 48 Stunden Ihr persönliches Konzept per E-Mail.
         </p>
+        <div className="pt-6 border-t border-gray-200">
+          <p className="text-sm text-muted-foreground">
+            Bei Fragen: <a href="mailto:info@ooliv.de" className="text-accent hover:underline">info@ooliv.de</a>
+            <br />
+            oder <a href="tel:+4961316367801" className="text-accent hover:underline">06131 – 63 67 801</a>
+          </p>
+        </div>
       </div>
     );
   }
@@ -145,7 +152,7 @@ const InlinePrototypeForm = () => {
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
             className="w-full h-14 px-4 border-2 border-gray-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-foreground"
-            placeholder="https://ihre-website.de"
+            placeholder="Ihre aktuelle Website (falls vorhanden)"
           />
         </div>
 
