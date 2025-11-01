@@ -166,8 +166,8 @@ const FloatingActionButtons = () => {
           <Button
             ref={toggleRef}
             onClick={toggleExpanded}
-            variant="floating"
             size="floating"
+            className="bg-[#38B593] hover:bg-[#2D9378] text-white shadow-lg hover:shadow-xl transition-all"
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")
