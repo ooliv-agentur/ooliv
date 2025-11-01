@@ -1,6 +1,7 @@
 import React from 'react';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { ExternalLink } from 'lucide-react';
+import hillwigMockup from '@/assets/hillwig-mockup-mobile.png';
 
 const AnimatedPrototypePreview = () => {
   return (
@@ -62,32 +63,21 @@ const AnimatedPrototypePreview = () => {
               </div>
             </div>
 
-            {/* Mockup Content Area */}
-            <div className="relative h-[500px] bg-gradient-to-b from-gray-50 to-white p-6">
-              {/* Header Mockup */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="h-8 w-24 bg-gray-300 rounded animate-pulse" />
-                <div className="h-8 w-8 bg-gray-300 rounded animate-pulse" />
-              </div>
+            {/* Mockup Content Area with Screenshot */}
+            <div className="relative h-[500px] bg-white overflow-hidden">
+              <img 
+                src={hillwigMockup} 
+                alt="Hillwig Website Mockup" 
+                className="w-full h-full object-cover object-top"
+              />
               
-              {/* Hero Section Mockup */}
-              <div className="space-y-3 mb-8">
-                <div className="h-6 bg-gray-300 rounded w-3/4 animate-pulse" />
-                <div className="h-6 bg-gray-300 rounded w-full animate-pulse" />
-                <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse" />
-                <div className="h-10 bg-primary/30 rounded w-32 mt-4 animate-pulse" />
-              </div>
+              {/* Gradient overlay for fade effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent pointer-events-none"></div>
               
-              {/* Content Blocks Mockup */}
-              <div className="space-y-4">
-                <div className="h-32 bg-gray-200 rounded animate-pulse" />
-                <div className="h-32 bg-gray-200 rounded animate-pulse" />
-              </div>
-              
-              {/* Overlay with preview hint */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent flex items-end justify-center pb-8">
+              {/* Preview hint */}
+              <div className="absolute bottom-4 left-0 right-0 flex items-end justify-center">
                 <div className="text-center">
-                  <p className="text-sm text-muted-foreground mb-3">
+                  <p className="text-sm text-muted-foreground font-medium bg-white/90 px-3 py-1.5 rounded-full">
                     Vorschau-Mockup
                   </p>
                 </div>
