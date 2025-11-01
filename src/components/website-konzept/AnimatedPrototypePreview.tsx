@@ -34,11 +34,6 @@ const AnimatedPrototypePreview = () => {
             </div>
           </div>
         </AspectRatio>
-
-        {/* "Beispiel" Badge */}
-        <div className="absolute -top-3 -right-3 bg-accent text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg z-20">
-          Beispiel-Prototyp
-        </div>
         
         {/* Scroll Hint */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white px-3 py-1.5 rounded-full text-xs backdrop-blur-sm z-10 pointer-events-none">
@@ -71,11 +66,6 @@ const AnimatedPrototypePreview = () => {
                 className="w-full h-auto"
               />
             </div>
-          </div>
-
-          {/* "Beispiel" Badge - Mobile */}
-          <div className="absolute -top-2 -right-2 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-20">
-            Beispiel
           </div>
           
           {/* Call-to-Action Button */}

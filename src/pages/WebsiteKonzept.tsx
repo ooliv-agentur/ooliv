@@ -327,7 +327,7 @@ const WebsiteKonzept = () => {
             ooliv Werbeagentur Mainz • www.ooliv.de • 06131 – 63 67 801
           </p>
           <p className="text-sm text-muted-foreground">
-            200+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern
+            200+ erfolgreiche Projekte umgesetzt – jetzt kostenloses Konzept anfordern
           </p>
         </div>
       </footer>
