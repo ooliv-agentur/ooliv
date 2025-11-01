@@ -48,6 +48,7 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const KostenlosesWebsiteKonzept = lazy(() => import('./pages/KostenlosesWebsiteKonzept'));
 const WebsiteRelaunch = lazy(() => import('./pages/WebsiteRelaunch'));
 const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung'));
+const WebsiteKonzept = lazy(() => import('./pages/WebsiteKonzept'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -133,6 +134,7 @@ function App() {
                       <Route path="/kostenloses-website-konzept" element={<KostenlosesWebsiteKonzept />} />
                       <Route path="/website-relaunch" element={<WebsiteRelaunch />} />
                       <Route path="/landingpage-optimierung" element={<LandingpageOptimierung />} />
+                      <Route path="/website-konzept" element={<WebsiteKonzept />} />
 
                       {/* 404 Route */}
                       <Route path="*" element={<NotFound />} />
