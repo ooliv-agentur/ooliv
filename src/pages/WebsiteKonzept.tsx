@@ -54,7 +54,7 @@ const WebsiteKonzept = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
         {/* Animated Grid Pattern (technischer Look) */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 z-[5]">
           <div className="absolute inset-0 
                           bg-[linear-gradient(to_right,#38B593_1px,transparent_1px),
                               linear-gradient(to_bottom,#38B593_1px,transparent_1px)]
