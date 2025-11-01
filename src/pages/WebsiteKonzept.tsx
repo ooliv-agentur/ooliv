@@ -30,6 +30,15 @@ const WebsiteKonzept = () => {
         <link rel="canonical" href="https://ooliv.de/website-konzept" />
       </Helmet>
 
+      {/* Static Logo */}
+      <div className="fixed top-6 left-6 z-50">
+        <img 
+          src="/ooliv_logo_2025.svg?v=2" 
+          alt="ooliv logo" 
+          className="h-8 md:h-10"
+        />
+      </div>
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -290,6 +299,18 @@ const WebsiteKonzept = () => {
           </p>
         </div>
       </section>
+
+      {/* Minimal Footer */}
+      <footer className="py-12 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-base text-foreground mb-2">
+            ooliv Werbeagentur Mainz • www.ooliv.de • 06131 – 63 67 801
+          </p>
+          <p className="text-sm text-muted-foreground">
+            100+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern.
+          </p>
+        </div>
+      </footer>
     </>
   );
 };
