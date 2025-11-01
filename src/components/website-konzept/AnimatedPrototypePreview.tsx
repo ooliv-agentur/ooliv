@@ -70,15 +70,6 @@ const AnimatedPrototypePreview = () => {
                 alt="Hillwig Website Mockup" 
                 className="w-full h-auto"
               />
-              
-              {/* Preview hint at bottom */}
-              <div className="absolute bottom-4 left-0 right-0 flex items-end justify-center">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground font-medium bg-white/90 px-3 py-1.5 rounded-full shadow-sm">
-                    Vorschau-Mockup
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 

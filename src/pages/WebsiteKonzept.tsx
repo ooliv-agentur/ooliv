@@ -48,8 +48,7 @@ const WebsiteKonzept = () => {
                 Kostenloses Website-Konzept<br />in nur 48 Stunden
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[65%] mx-auto">
-                Erhalten Sie in nur 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos,<br />
-                individuell und perfekt auf Ihr Unternehmen abgestimmt.
+                Erhalten Sie in 48 Stunden ein strategisches Website-Konzept – kostenlos, individuell und auf Ihr Unternehmen zugeschnitten.
               </p>
               
               <div className="flex flex-wrap justify-center gap-6 mb-6">
@@ -173,7 +172,7 @@ const WebsiteKonzept = () => {
           </div>
 
           <p className="text-center text-lg text-muted-foreground mb-4">
-            So wissen Sie genau, wie Ihre neue Website aufgebaut und inhaltlich gestaltet sein sollte.
+            So wissen Sie genau, wie Ihre neue Website inhaltlich und strukturell aufgebaut sein sollte.
           </p>
 
           <p className="text-center text-base text-muted-foreground mb-8">
@@ -328,7 +327,7 @@ const WebsiteKonzept = () => {
             ooliv Werbeagentur Mainz • www.ooliv.de • 06131 – 63 67 801
           </p>
           <p className="text-sm text-muted-foreground">
-            200+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern.
+            200+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern
           </p>
         </div>
       </footer>

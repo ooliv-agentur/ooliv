@@ -179,7 +179,11 @@ const InlinePrototypeForm = () => {
           </p>
         </div>
 
-        <Button 
+        <p className="text-sm text-muted-foreground text-center mb-4">
+          Ihre Daten werden ausschließlich zur Erstellung Ihres Website-Konzepts verwendet.
+        </p>
+
+        <Button
           type="submit" 
           disabled={isSubmitting}
           variant="primary"
