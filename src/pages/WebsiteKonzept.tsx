@@ -49,6 +49,12 @@ const WebsiteKonzept = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-4xl mx-auto text-center w-full">
             <div>
+              <Reveal delay={0.1} direction="up" distance={20}>
+                <p className="text-base text-muted-foreground mb-4 px-2">
+                  Für Unternehmen mit bestehenden Websites.
+                </p>
+              </Reveal>
+              
               <Reveal delay={0.2} direction="up" distance={30}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
                   Kostenloses Website-Konzept<br />in nur 48 Stunden
@@ -166,6 +172,9 @@ const WebsiteKonzept = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Was Sie erhalten: Ein individuelles Website-Konzept mit klarer Struktur und konkreten Empfehlungen.
               </h2>
+              <p className="text-xl text-muted-foreground mb-4">
+                Strategisch denken, digital umsetzen.
+              </p>
               <p className="text-lg text-muted-foreground">
                 Wir zeigen Ihnen, welche Struktur, Inhalte und Nutzerwege Ihre Website wirklich braucht, um Anfragen zu steigern.
               </p>
@@ -271,6 +280,49 @@ const WebsiteKonzept = () => {
           <p className="text-center text-xs text-muted-foreground mt-6">
             Ihre Daten werden sicher übertragen und nach 90 Tagen gelöscht.
           </p>
+        </div>
+      </section>
+
+      {/* 3-Step Process Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal direction="up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+                In 3 Schritten zu Ihrem Website-Konzept
+              </h2>
+            </div>
+          </Reveal>
+
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <div className="text-4xl font-bold text-primary mb-4">1</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Formular ausfüllen
+              </h3>
+              <p className="text-muted-foreground">
+                Wir analysieren Ihre Website.
+              </p>
+            </div>
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <div className="text-4xl font-bold text-primary mb-4">2</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Konzept erhalten
+              </h3>
+              <p className="text-muted-foreground">
+                In 48 Stunden per E-Mail.
+              </p>
+            </div>
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <div className="text-4xl font-bold text-primary mb-4">3</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Sie entscheiden
+              </h3>
+              <p className="text-muted-foreground">
+                Ohne Verpflichtung.
+              </p>
+            </div>
+          </StaggerReveal>
         </div>
       </section>
 
