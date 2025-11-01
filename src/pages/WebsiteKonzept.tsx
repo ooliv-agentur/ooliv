@@ -22,7 +22,7 @@ const WebsiteKonzept = () => {
   };
 
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <Helmet>
         <title>Kostenloses Website-Konzept in 48 h | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Erhalten Sie Ihr individuelles Website-Konzept innerhalb von 48 Stunden – kostenlos, unverbindlich und strategisch durchdacht." />
@@ -40,18 +40,18 @@ const WebsiteKonzept = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center bg-primary/5 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-4xl mx-auto text-center w-full">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
                 Kostenloses Website-Konzept<br />in nur 48 Stunden
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[90%] sm:max-w-[75%] md:max-w-[65%] mx-auto">
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[95%] sm:max-w-[85%] md:max-w-[65%] mx-auto px-2">
                 Erhalten Sie in 48 Stunden ein strategisches Website-Konzept – kostenlos, individuell und auf Ihr Unternehmen zugeschnitten.
               </p>
               
-              <div className="flex flex-wrap justify-center gap-6 mb-6">
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-6 px-2">
                 <div className="flex items-center gap-3">
                   <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
                 </div>
@@ -65,18 +65,20 @@ const WebsiteKonzept = () => {
                 </div>
               </div>
 
-              <p className="text-base text-muted-foreground mb-10">
+              <p className="text-base text-muted-foreground mb-10 px-2">
                 Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse.
               </p>
 
-              <Button 
-                onClick={scrollToForm}
-                variant="primary"
-                size="xl"
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all"
-              >
-                Jetzt kostenloses Konzept erhalten
-              </Button>
+              <div className="px-4 w-full flex justify-center">
+                <Button 
+                  onClick={scrollToForm}
+                  variant="primary"
+                  size="xl"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto max-w-full"
+                >
+                  Jetzt kostenloses Konzept erhalten
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -331,7 +333,7 @@ const WebsiteKonzept = () => {
           </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 
