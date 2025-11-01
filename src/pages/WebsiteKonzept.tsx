@@ -35,24 +35,24 @@ const WebsiteKonzept = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Kostenloses Website-Konzept in 48 h
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                Kostenloses Website-Konzept<br />in nur 48 Stunden
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-12">
-                Erhalten Sie in nur 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos, individuell und perfekt auf Ihr Unternehmen abgestimmt.
+              <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[65%] mx-auto">
+                Erhalten Sie in nur 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos,<br />
+                individuell und perfekt auf Ihr Unternehmen abgestimmt.
               </p>
               
               <div className="flex flex-wrap justify-center gap-6 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
                   <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
                 </div>
+                <span className="text-lg text-muted-foreground">•</span>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
                   <span className="text-lg font-semibold text-foreground">Antwort in 48 h</span>
                 </div>
+                <span className="text-lg text-muted-foreground">•</span>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
                   <span className="text-lg font-semibold text-foreground">Keine Verpflichtung</span>
                 </div>
               </div>
@@ -65,6 +65,7 @@ const WebsiteKonzept = () => {
                 onClick={scrollToForm}
                 variant="primary"
                 size="xl"
+                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all"
               >
                 Jetzt kostenloses Konzept starten
               </Button>
