@@ -146,6 +146,24 @@ video {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--accent-primary)) transparent;
   }
+  
+  /* Custom scrollbar for iframe container */
+  .scrollable-iframe::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .scrollable-iframe::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .scrollable-iframe::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  .scrollable-iframe::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 /* Resource loading optimization */
