@@ -168,6 +168,7 @@ export default {
         'accordion-up': 'accordion-up 0.3s ease-out',
         'slide-in-bottom': 'slide-in-bottom 0.3s ease-out',
         'scroll-preview': 'scroll-preview 20s ease-in-out infinite',
+        'grid-move': 'grid-move 8s linear infinite',
       },
       keyframes: {
         float: {
@@ -237,6 +238,14 @@ export default {
           '100%': {
             transform: 'translateY(0)',
           },
+        },
+        'grid-move': {
+          '0%': {
+            backgroundPosition: '0 0'
+          },
+          '100%': {
+            backgroundPosition: '64px 64px'
+          }
         },
       },
       backgroundImage: {

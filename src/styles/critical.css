@@ -129,7 +129,7 @@ h1 {
   margin-bottom: 2rem;
 }
 
-/* Hide scrollbar initially to prevent layout shift */
+/* Scrollbar width set for visibility */
 ::-webkit-scrollbar {
-  width: 0;
+  width: 10px;
 }
