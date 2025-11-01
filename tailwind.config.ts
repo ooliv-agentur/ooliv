@@ -166,6 +166,7 @@ export default {
         'accordion-down': 'accordion-down 0.3s ease-out',
         'accordion-up': 'accordion-up 0.3s ease-out',
         'slide-in-bottom': 'slide-in-bottom 0.3s ease-out',
+        'scroll-preview': 'scroll-preview 20s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -212,6 +213,20 @@ export default {
           to: {
             transform: 'translateY(0)',
             opacity: '1'
+          },
+        },
+        'scroll-preview': {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '45%': {
+            transform: 'translateY(-60%)',
+          },
+          '55%': {
+            transform: 'translateY(-60%)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
           },
         },
       },

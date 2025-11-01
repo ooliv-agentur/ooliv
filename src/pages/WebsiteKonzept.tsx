@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import InlinePrototypeForm from '@/components/website-konzept/InlinePrototypeForm';
+import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedPrototypePreview';
 import {
   Accordion,
   AccordionContent,
@@ -68,10 +69,8 @@ const WebsiteKonzept = () => {
               </Button>
             </div>
 
-            <div className="relative">
-              <div className="aspect-square bg-gray-200 rounded-2xl flex items-center justify-center">
-                <p className="text-gray-400 text-sm">Placeholder für Mockup</p>
-              </div>
+            <div className="relative h-[600px]">
+              <AnimatedPrototypePreview />
             </div>
           </div>
         </div>
