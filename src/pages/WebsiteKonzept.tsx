@@ -6,7 +6,7 @@ import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedProto
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import AnimatedCounter from '@/components/animations/AnimatedCounter';
-import JourneyLine from '@/components/journey/JourneyLine';
+
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
 import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
 import {
@@ -39,8 +39,6 @@ const WebsiteKonzept = () => {
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
       
-      {/* Journey Line */}
-      <JourneyLine />
 
       {/* Static Logo */}
       <Reveal delay={0} direction="left" distance={20}>
