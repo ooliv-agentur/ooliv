@@ -179,7 +179,7 @@ const InlinePrototypeForm = () => {
           size="lg"
           className="w-full"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept erhalten'}
+          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept starten'}
         </Button>
       </div>
     </form>
