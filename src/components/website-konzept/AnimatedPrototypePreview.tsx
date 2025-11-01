@@ -44,7 +44,7 @@ const AnimatedPrototypePreview = () => {
         </div>
       </div>
 
-      {/* Mobile View - Fixed Width for Responsive Rendering */}
+      {/* Mobile View - Scaled iframe for responsive rendering */}
       <div className="block md:hidden max-w-[375px] mx-auto">
         <div className="relative overflow-hidden">
           {/* Simplified Browser Frame */}
@@ -61,15 +61,22 @@ const AnimatedPrototypePreview = () => {
               </div>
             </div>
 
-            {/* Scrollable Iframe Container - Mobile Optimized with Fixed Width */}
+            {/* Scrollable Iframe Container with CSS Transform Scaling */}
             <div className="relative h-[600px] overflow-y-auto overflow-x-hidden bg-white scrollable-iframe">
-              <iframe
-                src="https://hillwig.projekte-ooliv.de/"
-                style={{ width: '375px', height: '1400px' }}
-                className="border-0"
-                title="Website Prototype Preview Mobile"
-                loading="lazy"
-              />
+              <div style={{ 
+                width: '768px', 
+                height: '3000px',
+                transform: 'scale(0.488)',
+                transformOrigin: 'top left'
+              }}>
+                <iframe
+                  src="https://hillwig.projekte-ooliv.de/"
+                  style={{ width: '768px', height: '3000px' }}
+                  className="border-0"
+                  title="Website Prototype Preview Mobile"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
