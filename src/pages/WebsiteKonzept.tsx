@@ -53,11 +53,15 @@ const WebsiteKonzept = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
-        {/* Subtle animated background orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-64 h-64 bg-primary/10 rounded-full blur-3xl top-20 left-10 animate-float-slow opacity-30"></div>
-          <div className="absolute w-96 h-96 bg-primary/8 rounded-full blur-3xl top-40 right-20 animate-float-delayed opacity-20"></div>
-          <div className="absolute w-48 h-48 bg-primary/12 rounded-full blur-3xl bottom-40 left-1/4 animate-float-reverse opacity-25"></div>
+        {/* Animated Grid Pattern (technischer Look) */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+          <div className="absolute inset-0 
+                          bg-[linear-gradient(to_right,#38B59320_1px,transparent_1px),
+                              linear-gradient(to_bottom,#38B59320_1px,transparent_1px)]
+                          bg-[size:4rem_4rem]
+                          [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_60%,transparent_100%)]
+                          animate-fade-in">
+          </div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
