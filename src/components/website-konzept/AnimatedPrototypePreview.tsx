@@ -44,11 +44,11 @@ const AnimatedPrototypePreview = () => {
         </div>
       </div>
 
-      {/* Mobile View - Simplified */}
-      <div className="block md:hidden">
-        <AspectRatio ratio={9/16}>
+      {/* Mobile View - Fixed Width for Responsive Rendering */}
+      <div className="block md:hidden max-w-[375px] mx-auto">
+        <div className="relative overflow-hidden">
           {/* Simplified Browser Frame */}
-          <div className="relative w-full h-full bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-800">
+          <div className="relative bg-white rounded-xl shadow-xl overflow-hidden border-2 border-gray-800">
             {/* Minimal Browser Bar */}
             <div className="bg-gray-800 h-8 flex items-center px-3 gap-2">
               <div className="flex gap-1.5">
@@ -61,26 +61,27 @@ const AnimatedPrototypePreview = () => {
               </div>
             </div>
 
-            {/* Scrollable Iframe Container - Mobile Optimized */}
-            <div className="relative h-[calc(100%-2rem)] overflow-y-auto bg-white scrollable-iframe">
+            {/* Scrollable Iframe Container - Mobile Optimized with Fixed Width */}
+            <div className="relative h-[600px] overflow-y-auto overflow-x-hidden bg-white scrollable-iframe">
               <iframe
                 src="https://hillwig.projekte-ooliv.de/"
-                className="w-full min-h-[1200px] border-0"
+                style={{ width: '375px', height: '1400px' }}
+                className="border-0"
                 title="Website Prototype Preview Mobile"
                 loading="lazy"
               />
             </div>
           </div>
-        </AspectRatio>
 
-        {/* "Beispiel" Badge - Mobile */}
-        <div className="absolute -top-2 -right-2 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-20">
-          Beispiel
-        </div>
-        
-        {/* Scroll Hint - Mobile */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white px-2 py-1 rounded-full text-[10px] backdrop-blur-sm z-10 pointer-events-none">
-          ↓ Scrollen
+          {/* "Beispiel" Badge - Mobile */}
+          <div className="absolute -top-2 -right-2 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-20">
+            Beispiel
+          </div>
+          
+          {/* Scroll Hint - Mobile */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-900/80 text-white px-2 py-1 rounded-full text-[10px] backdrop-blur-sm z-10 pointer-events-none">
+            ↓ Scrollen
+          </div>
         </div>
       </div>
     </div>
