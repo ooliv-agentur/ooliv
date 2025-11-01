@@ -116,10 +116,18 @@ const WebsiteKonzept = () => {
               Unternehmen, die unser Konzept genutzt haben
             </p>
             <div className="flex items-center justify-center gap-8 flex-wrap">
-              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
-              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
-              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
-              <div className="w-24 h-16 bg-gray-300 rounded-lg opacity-60"></div>
+              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <img src="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" alt="KLAIBER" className="w-full h-full object-contain" />
+              </div>
+              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <img src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" alt="COBUS Industries" className="w-full h-full object-contain" />
+              </div>
+              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <img src="/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png" alt="SPEZ AG" className="w-full h-full object-contain" />
+              </div>
+              <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <img src="/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png" alt="IconPro GmbH" className="w-full h-full object-contain" />
+              </div>
             </div>
           </div>
         </div>
