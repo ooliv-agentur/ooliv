@@ -33,7 +33,7 @@ const WebsiteKonzept = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Kostenloses Website-Konzept in 48 h
@@ -42,7 +42,7 @@ const WebsiteKonzept = () => {
                 Erhalten Sie in nur 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos, individuell und perfekt auf Ihr Unternehmen abgestimmt.
               </p>
               
-              <div className="space-y-4 mb-6">
+              <div className="flex flex-wrap justify-center gap-6 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full" />
                   <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
@@ -68,10 +68,6 @@ const WebsiteKonzept = () => {
               >
                 Jetzt kostenloses Konzept starten
               </Button>
-            </div>
-
-            <div className="relative h-[600px]">
-              <AnimatedPrototypePreview />
             </div>
           </div>
         </div>
@@ -174,10 +170,8 @@ const WebsiteKonzept = () => {
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto mb-8">
-            <div className="aspect-video bg-gray-200 rounded-2xl flex items-center justify-center">
-              <p className="text-gray-400">Placeholder für Screenshot</p>
-            </div>
+          <div className="max-w-5xl mx-auto mb-8">
+            <AnimatedPrototypePreview />
           </div>
 
           <p className="text-center text-lg text-muted-foreground mb-6">
