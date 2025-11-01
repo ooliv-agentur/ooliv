@@ -18,8 +18,8 @@ const AnimatedPrototypePreview = () => {
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex-1 bg-gray-700 rounded-md px-3 py-1 ml-4">
-                <span className="text-xs text-gray-400">hillwig.projekte-ooliv.de</span>
+               <div className="flex-1 bg-gray-700 rounded-md px-3 py-1 ml-4">
+                <span className="text-xs text-gray-400">Beispiel-Prototyp (Demo-Ansicht)</span>
               </div>
             </div>
 
@@ -59,7 +59,7 @@ const AnimatedPrototypePreview = () => {
                 <div className="w-2 h-2 rounded-full bg-green-500"></div>
               </div>
               <div className="flex-1 bg-gray-700 rounded px-2 py-0.5 ml-2">
-                <span className="text-[10px] text-gray-400">hillwig.projekte-ooliv.de</span>
+                <span className="text-[10px] text-gray-400">Beispiel-Prototyp (Demo-Ansicht)</span>
               </div>
             </div>
 

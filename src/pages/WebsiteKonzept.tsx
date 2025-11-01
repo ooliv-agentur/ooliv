@@ -76,7 +76,7 @@ const WebsiteKonzept = () => {
                 size="xl"
                 className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all"
               >
-                Jetzt kostenloses Konzept starten
+                Jetzt kostenloses Konzept erhalten
               </Button>
             </div>
           </div>
@@ -107,7 +107,7 @@ const WebsiteKonzept = () => {
             </div>
           </div>
           <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
-            Über 200 Unternehmen haben mit unserem kostenlosen Website-Konzept bereits den Grundstein für ihren Online-Erfolg gelegt.
+            Über 200 Unternehmen haben mit ooliv bereits erfolgreiche Website-Projekte umgesetzt.
           </p>
           
           {/* Trust Logos */}
@@ -179,7 +179,7 @@ const WebsiteKonzept = () => {
               size="lg"
               className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all"
             >
-              Jetzt kostenloses Konzept starten
+              Jetzt kostenloses Konzept erhalten
             </Button>
           </div>
         </div>
@@ -215,7 +215,7 @@ const WebsiteKonzept = () => {
               Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Keine langen Abstimmungen – wir starten direkt mit der Analyse Ihrer aktuellen Website oder Idee.
+              Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
             </p>
           </div>
 
@@ -235,7 +235,7 @@ const WebsiteKonzept = () => {
               Häufige Fragen
             </h2>
             <p className="text-lg text-muted-foreground">
-              Noch Fragen? Hier finden Sie die wichtigsten Antworten auf einen Blick.
+              Noch Fragen? Hier sind die häufigsten Antworten auf einen Blick.
             </p>
           </div>
 
@@ -304,7 +304,7 @@ const WebsiteKonzept = () => {
             size="xl"
             className="h-16 px-12 text-lg"
           >
-            Jetzt kostenloses Konzept starten
+            Jetzt kostenloses Konzept erhalten
           </Button>
 
           <p className="text-lg text-muted-foreground mt-8">
@@ -320,7 +320,7 @@ const WebsiteKonzept = () => {
             ooliv Werbeagentur Mainz • www.ooliv.de • 06131 – 63 67 801
           </p>
           <p className="text-sm text-muted-foreground">
-            100+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern.
+            200+ erfolgreiche Projekte umgesetzt – kostenloses Konzept jetzt anfordern.
           </p>
         </div>
       </footer>

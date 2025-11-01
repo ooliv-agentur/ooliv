@@ -186,7 +186,7 @@ const InlinePrototypeForm = () => {
           size="lg"
           className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold shadow-lg hover:shadow-xl transition-all"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept starten'}
+          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept erhalten'}
         </Button>
       </div>
     </form>
