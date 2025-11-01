@@ -301,34 +301,36 @@ const WebsiteKonzept = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10">
+      <section className="py-20 bg-primary/5 w-full overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10 break-words px-2">
             Bereit, Ihre Website-Idee in ein konkretes Konzept zu verwandeln?
           </h2>
           
-          <Button 
-            onClick={scrollToForm}
-            variant="primary"
-            size="xl"
-            className="h-16 px-12 text-lg"
-          >
-            Jetzt kostenloses Konzept erhalten
-          </Button>
+          <div className="flex justify-center px-2 w-full">
+            <Button 
+              onClick={scrollToForm}
+              variant="primary"
+              size="xl"
+              className="h-16 px-8 sm:px-12 text-base sm:text-lg w-full sm:w-auto max-w-full"
+            >
+              Jetzt kostenloses Konzept erhalten
+            </Button>
+          </div>
 
-          <p className="text-lg text-muted-foreground mt-8">
+          <p className="text-base sm:text-lg text-muted-foreground mt-8 break-words px-2">
             Ihr persönliches Konzept in 48 Stunden – kostenlos und ohne Risiko.
           </p>
         </div>
       </section>
 
       {/* Minimal Footer */}
-      <footer className="py-12 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-base text-foreground mb-2">
-            ooliv Werbeagentur Mainz • www.ooliv.de • 06131 – 63 67 801
+      <footer className="py-12 bg-primary/5 w-full overflow-x-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+          <p className="text-sm sm:text-base text-foreground mb-2 break-words px-2">
+            ooliv Werbeagentur Mainz<br className="sm:hidden" /> • www.ooliv.de<br className="sm:hidden" /> • 06131 – 63 67 801
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground break-words px-2">
             200+ erfolgreiche Projekte umgesetzt – jetzt kostenloses Konzept anfordern
           </p>
         </div>
