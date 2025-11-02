@@ -30,20 +30,21 @@ const Danke = () => {
     
     // Fire Google Ads conversion event only when coming from form submission
     if (isConversion && typeof window !== 'undefined') {
-      // Initialize dataLayer if not present
-      window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
-        window.dataLayer.push(args);
-      }
+      // Wait for gtag.js to be fully loaded
+      const fireConversion = () => {
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-16783013359/eN08CKjNitkaEO_r4cI-'
+          });
+          console.log('✅ Google Ads Conversion Event fired:', 'AW-16783013359/eN08CKjNitkaEO_r4cI-');
+        } else {
+          // Retry if gtag is not ready yet
+          setTimeout(fireConversion, 100);
+        }
+      };
       
-      // Configure Google Ads
-      gtag('js', new Date());
-      gtag('config', 'AW-16783013359');
-      
-      // Fire conversion event
-      gtag('event', 'conversion', {
-        'send_to': 'AW-16783013359/eN08CKjNitkaEO_r4cI-'
-      });
+      // Start firing conversion with a small delay to ensure script is loaded
+      setTimeout(fireConversion, 500);
     }
     
     // Auto-redirect after 8 seconds
@@ -96,6 +97,14 @@ const Danke = () => {
       />
       <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16783013359"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16783013359');
+          `}
+        </script>
       </Helmet>
       
       {/* Add the confetti animation */}
