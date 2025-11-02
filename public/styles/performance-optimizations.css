@@ -15,30 +15,7 @@
   }
 }
 
-/* Optimize font loading with font-display: swap */
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Font declarations removed - now only in index.html inline CSS */
 
 /* Prevent layout shifts - critical for performance */
 img, picture {
@@ -122,49 +99,7 @@ video {
   aspect-ratio: 16 / 9;
 }
 
-/* Desktop-only scrollbar styling - deferred loading */
-@media (hover: hover) and (pointer: fine) {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #38B593;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #2a8a73;
-  }
-
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--accent-primary)) transparent;
-  }
-  
-  /* Custom scrollbar for iframe container */
-  .scrollable-iframe::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  .scrollable-iframe::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  .scrollable-iframe::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-  }
-  
-  .scrollable-iframe::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-}
+/* Scrollbar styles removed - now in src/index.css */
 
 /* Resource loading optimization */
 .lazy-load {

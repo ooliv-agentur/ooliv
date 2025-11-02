@@ -5,18 +5,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Enhanced preload for critical navigation paths -->
+    <!-- Enhanced preload for critical navigation paths (reduced to 3 most important) -->
     <link rel="preload" href="/webdesign" as="document" />
-    <link rel="preload" href="/webentwicklung" as="document" />
     <link rel="preload" href="/seo-optimierung" as="document" />
     <link rel="preload" href="/kontakt" as="document" />
-    <link rel="preload" href="/referenzen" as="document" />
-    <link rel="preload" href="/ueber-uns" as="document" />
-    <link rel="preload" href="/datenschutz" as="document" />
-    <link rel="preload" href="/impressum" as="document" />
-    <link rel="preload" href="/werbeagentur-frankfurt" as="document" />
-    <link rel="preload" href="/werbeagentur-wiesbaden" as="document" />
-    <link rel="preload" href="/klickbetrug" as="document" />
     <link rel="canonical" href="https://ooliv.de/" />
     <title>ooliv Werbeagentur Mainz - Webdesign & Marketing für B2B</title>
     <meta name="description" content="ooliv Werbeagentur entwickelt Websites für B2B-Unternehunden, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads und Content-Marketing aus Mainz." />
@@ -160,8 +152,8 @@
     <link rel="preload" href="/fonts/Satoshi-Medium.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin>
     
-    <!-- Preload critical hero video for LCP optimization -->
-    <link rel="preload" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4">
+    <!-- Prefetch hero video (changed from preload to reduce blocking) -->
+    <link rel="prefetch" href="/lovable-uploads/Startpage-german-english.mp4" as="video" type="video/mp4">
     
     <!-- Preload hero images for immediate LCP -->
     <link rel="preload" href="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png" as="image" type="image/png">
@@ -278,16 +270,6 @@
         }
       });
       
-      // Lazy load non-critical resources after page load
-      window.addEventListener('load', function() {
-        // Load performance monitoring after main content
-        setTimeout(function() {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = '/styles/performance-optimizations.css';
-          document.head.appendChild(link);
-        }, 1000);
-      });
     </script>
   </body>
 </html>

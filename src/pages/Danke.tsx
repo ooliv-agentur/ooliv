@@ -30,16 +30,26 @@ const Danke = () => {
     
     // Fire Google Ads conversion event only when coming from form submission
     if (isConversion && typeof window !== 'undefined') {
-      // Wait for gtag.js to be fully loaded
+      let retryCount = 0;
+      const maxRetries = 10; // Max 10 attempts = 1 second total
+      
       const fireConversion = () => {
         if (window.gtag) {
           window.gtag('event', 'conversion', {
             'send_to': 'AW-16783013359/eN08CKjNitkaEO_r4cI-'
           });
           console.log('✅ Google Ads Conversion Event fired:', 'AW-16783013359/eN08CKjNitkaEO_r4cI-');
-        } else {
-          // Retry if gtag is not ready yet
+        } else if (retryCount < maxRetries) {
+          retryCount++;
           setTimeout(fireConversion, 100);
+        } else {
+          // Fallback to dataLayer if gtag not available
+          console.warn('⚠️ gtag not available, using dataLayer fallback');
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'conversion',
+            'send_to': 'AW-16783013359/eN08CKjNitkaEO_r4cI-'
+          });
         }
       };
       

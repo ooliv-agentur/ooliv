@@ -72,7 +72,12 @@ const InlinePrototypeForm = () => {
 
       if (response.ok) {
         // Redirect to thank you page with conversion parameter for Google Ads tracking
-        navigate('/danke?conversion=true');
+        try {
+          navigate('/danke?conversion=true');
+        } catch (error) {
+          console.error('Navigation error, using fallback:', error);
+          window.location.href = '/danke?conversion=true';
+        }
       } else {
         throw new Error('Form submission failed');
       }
