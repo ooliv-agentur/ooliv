@@ -77,13 +77,13 @@ const WebsiteKonzept = () => {
               
               <Reveal delay={0.2} direction="up" distance={30}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
-                  Kostenloses Website-Konzept<br />in nur 48 Stunden
+                  In 48 Stunden zu Ihrem kostenlosen Website-Konzept
                 </h1>
               </Reveal>
 
               <Reveal delay={0.4} direction="up" distance={30}>
                 <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[95%] sm:max-w-[85%] md:max-w-[65%] mx-auto px-2">
-                  Erhalten Sie in 48 Stunden ein vollständiges, strategisches Website-Konzept – kostenlos, individuell und auf Ihr Unternehmen zugeschnitten.
+                  Erhalten Sie in nur 48 Stunden ein individuelles, strategisches Website-Konzept – kostenlos, klar und perfekt auf Ihr Unternehmen abgestimmt.
                 </p>
               </Reveal>
               
@@ -108,7 +108,7 @@ const WebsiteKonzept = () => {
 
               <Reveal delay={0.9} direction="up" distance={20}>
                 <p className="text-base text-muted-foreground mb-10 px-2">
-                  Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse für Ihre Website-Optimierung.
+                  Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse für Ihre Website-Optimierung und Conversion-Optimierung.
                 </p>
               </Reveal>
 
@@ -134,13 +134,13 @@ const WebsiteKonzept = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal direction="up">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Ihre Website bringt keine Anfragen?
+              Ihre Website bringt zu wenig Anfragen oder Leads?
             </h2>
             <p className="text-lg text-muted-foreground mb-4">
-              Wir analysieren, wie Sie Ihre Website optimieren und mehr Anfragen generieren.
+              Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – und zeigen, wie Sie Ihre Website gezielt optimieren können.
             </p>
             <p className="text-base text-muted-foreground">
-              Mit unserem kostenlosen Website-Audit und einer individuellen Website-Analyse erhalten Sie klare Handlungsempfehlungen zur Optimierung Ihrer bestehenden Website – von der Struktur über Inhalte bis zur Conversion-Optimierung.
+              Mit unserem kostenlosen Website-Audit und einer detaillierten Website-Analyse erhalten Sie konkrete Handlungsempfehlungen zur Optimierung Ihrer bestehenden Website – von der Seitenstruktur über Inhalte bis zur Conversion-Optimierung.
             </p>
           </Reveal>
         </div>
@@ -175,7 +175,7 @@ const WebsiteKonzept = () => {
 
           <Reveal delay={0.3} direction="up">
             <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
-              Über <AnimatedCounter end={200} suffix="+" className="font-bold text-foreground" /> Unternehmen haben mit ooliv bereits erfolgreiche Website-Projekte und Relaunch-Konzepte umgesetzt.
+              Über <AnimatedCounter end={200} suffix="+" className="font-bold text-foreground" /> Unternehmen haben mit ooliv bereits erfolgreiche Website-Optimierungen, Relaunches und Website-Konzept-Projekte umgesetzt.
             </p>
           </Reveal>
           
@@ -216,10 +216,10 @@ const WebsiteKonzept = () => {
                 Strategisch denken, digital umsetzen.
               </p>
               <p className="text-lg text-muted-foreground mb-4">
-                Ein individuelles Website-Konzept mit klarer Struktur, technischer Analyse und konkreten Empfehlungen.
+                Ein individuelles Website-Konzept mit klarer Struktur, SEO-Analyse, technischer Bewertung und konkreten Empfehlungen.
               </p>
               <p className="text-base text-muted-foreground">
-                Wir zeigen Ihnen, welche Seitenstruktur, Inhalte und Nutzerwege Ihre Website wirklich braucht, um mehr Leads und bessere Conversion-Raten zu erzielen.
+                Wir zeigen, welche Seitenstruktur, Inhalte und Nutzerwege Ihre Website braucht, um mehr Anfragen, bessere Conversion-Raten und nachhaltige Sichtbarkeit bei Google zu erreichen.
               </p>
             </div>
           </Reveal>
@@ -275,10 +275,10 @@ const WebsiteKonzept = () => {
                 Optional inklusive
               </h3>
               <p className="text-base text-muted-foreground mb-2">
-                Kostenlose SEO-Analyse und Website-Performance-Check
+                Kostenlose SEO-Analyse, Website-Audit und Performance-Check
               </p>
               <p className="text-sm text-muted-foreground">
-                Erfahren Sie, welche Maßnahmen Ihre Website-Performance, Ladezeit und Sichtbarkeit bei Google verbessern.
+                Erfahren Sie, welche Maßnahmen Ihre Website-Performance, Ladezeit und Sichtbarkeit bei Google verbessern – inklusive SEO-, Content- und Conversion-Empfehlungen.
               </p>
             </div>
           </Reveal>
@@ -320,10 +320,10 @@ const WebsiteKonzept = () => {
 
           <Reveal delay={0.3} direction="up">
             <p className="text-center text-lg text-muted-foreground mb-4">
-              Ihr Website-Prototyp zeigt, wie Ihre neue Website wirkt, aufgebaut ist und welche Inhalte überzeugen –
+              Ihr Website-Prototyp zeigt, wie Ihre neue Website wirkt, aufgebaut ist und welche Inhalte überzeugen – inklusive klarer Seitenstruktur, Benutzerführung und Conversion-Pfade.
             </p>
             <p className="text-center text-base text-muted-foreground mb-6">
-              bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
+              Bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
             </p>
             <p className="text-center text-sm text-muted-foreground">
               Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
@@ -423,7 +423,7 @@ const WebsiteKonzept = () => {
                   Ist das wirklich kostenlos?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                  Ja – das Website-Konzept und die Website-Analyse sind 100 % kostenlos und unverbindlich.
+                  Ja – unser Website-Konzept und die Website-Analyse sind 100 % kostenlos und unverbindlich.
                 </AccordionContent>
               </AccordionItem>
 
@@ -432,10 +432,10 @@ const WebsiteKonzept = () => {
                 className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
               >
                 <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
-                  Muss ich danach etwas kaufen?
+                  Bieten Sie auch eine kostenlose Website-Analyse an?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                  Nein. Sie entscheiden erst, wenn Sie das Konzept gesehen haben.
+                  Ja – sie ist Teil des Konzepts und umfasst SEO-, Performance- und Conversion-Aspekte.
                 </AccordionContent>
               </AccordionItem>
 
@@ -444,10 +444,10 @@ const WebsiteKonzept = () => {
                 className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
               >
                 <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
-                  Wie lange dauert es?
+                  Wie schnell erhalte ich mein Konzept?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                  Innerhalb von 48 Stunden erhalten Sie Ihr persönliches Konzept per E-Mail.
+                  Innerhalb von 48 Stunden per E-Mail.
                 </AccordionContent>
               </AccordionItem>
 
@@ -509,7 +509,7 @@ const WebsiteKonzept = () => {
                 Mit ooliv erhalten Sie eine ganzheitliche Lösung für Website-Optimierung, Conversion-Optimierung und Website-Analyse.
               </p>
               <p className="text-sm text-muted-foreground mb-8">
-                Wir entwickeln klare Relaunch-Konzepte, verbessern die Benutzerführung und steigern die Performance Ihrer Website.
+                Wir entwickeln datenbasierte Relaunch-Konzepte, verbessern die Benutzerführung, führen technische Website-Audits durch und steigern Ihre Performance.
               </p>
             </div>
           </Reveal>
