@@ -136,9 +136,9 @@ const WebsiteKonzept = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Ihre Website bringt zu wenig Anfragen oder Leads?
             </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – und zeigen, wie Sie Ihre Website gezielt optimieren können.
-            </p>
+          <p className="text-lg text-muted-foreground mb-4">
+            Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – inklusive SEO-Analyse, Performance-Bewertung und Conversion-Check – und zeigen, wie Sie Ihre Website gezielt optimieren können.
+          </p>
             <p className="text-base text-muted-foreground">
               Mit unserem kostenlosen Website-Audit und einer detaillierten Website-Analyse erhalten Sie konkrete Handlungsempfehlungen zur Optimierung Ihrer bestehenden Website – von der Seitenstruktur über Inhalte bis zur Conversion-Optimierung.
             </p>
@@ -399,8 +399,19 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
+      {/* Transition Before FAQ */}
+      <section className="py-12 bg-gradient-to-b from-white to-primary/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Reveal direction="up">
+            <p className="text-lg md:text-xl text-muted-foreground italic">
+              Erleben Sie, wie klar und umsetzbar ein modernes Website-Konzept sein kann – kostenlos, datenbasiert und individuell.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-primary/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal direction="up">
             <div className="text-center mb-12">
@@ -532,10 +543,10 @@ const WebsiteKonzept = () => {
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Conversion-Optimierung & UX-Design</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Technische Performance-Analyse</span>
-                </li>
+              <li className="flex items-start gap-2">
+                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span>Technische Website-Performance-Analyse</span>
+              </li>
               </ul>
             </div>
           </Reveal>
