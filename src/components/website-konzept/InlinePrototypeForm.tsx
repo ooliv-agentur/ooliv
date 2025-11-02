@@ -121,11 +121,11 @@ const InlinePrototypeForm = () => {
           </label>
           <input
             id="website"
-            type="url"
+            type="text"
             value={website}
             onChange={(e) => setWebsite(e.target.value)}
             className="w-full h-14 px-4 border-2 border-gray-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-foreground"
-            placeholder="Ihre aktuelle Website (falls vorhanden)"
+            placeholder="z.B. example.com, www.example.com oder https://example.com"
           />
         </div>
 
