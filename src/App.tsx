@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -45,7 +45,6 @@ const LatestContent = lazy(() => import('./pages/LatestContent'));
 const SingleArticle = lazy(() => import('./pages/SingleArticle'));
 const LinkedInSetup = lazy(() => import('./pages/LinkedInSetup'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
-const KostenlosesWebsiteKonzept = lazy(() => import('./pages/KostenlosesWebsiteKonzept'));
 const WebsiteRelaunch = lazy(() => import('./pages/WebsiteRelaunch'));
 const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung'));
 const WebsiteKonzept = lazy(() => import('./pages/WebsiteKonzept'));
@@ -131,7 +130,7 @@ function App() {
                       <Route path="/datenschutz" element={<GermanPrivacyPolicy />} />
                       <Route path="/cookie-richtlinie" element={<CookieRichtlinie />} />
                       <Route path="/danke" element={<GermanThankYou />} />
-                      <Route path="/kostenloses-website-konzept" element={<KostenlosesWebsiteKonzept />} />
+                      <Route path="/kostenloses-website-konzept" element={<Navigate to="/website-konzept" replace />} />
                       <Route path="/website-relaunch" element={<WebsiteRelaunch />} />
                       <Route path="/landingpage-optimierung" element={<LandingpageOptimierung />} />
                       <Route path="/website-konzept" element={<WebsiteKonzept />} />
