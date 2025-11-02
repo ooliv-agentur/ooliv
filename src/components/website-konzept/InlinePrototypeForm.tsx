@@ -136,7 +136,6 @@ const InlinePrototypeForm = () => {
               type="checkbox"
               checked={privacy}
               onChange={(e) => setPrivacy(e.target.checked)}
-              required
               className="mt-1 w-5 h-5 border-2 border-gray-200 rounded focus:ring-accent accent-accent"
             />
             <label htmlFor="privacy" className="text-sm text-muted-foreground">
