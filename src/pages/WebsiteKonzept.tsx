@@ -77,7 +77,7 @@ const WebsiteKonzept = () => {
               
               <Reveal delay={0.2} direction="up" distance={30}>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
-                  In 48 Stunden zu Ihrem kostenlosen Website-Konzept
+                  Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich
                 </h1>
               </Reveal>
 
@@ -175,7 +175,7 @@ const WebsiteKonzept = () => {
 
           <Reveal delay={0.3} direction="up">
             <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
-              Über <AnimatedCounter end={200} suffix="+" className="font-bold text-foreground" /> Unternehmen haben mit ooliv bereits erfolgreiche Website-Optimierungen, Relaunches und Website-Konzept-Projekte umgesetzt.
+              Über <AnimatedCounter end={200} suffix="" className="font-bold text-foreground" /> Unternehmen haben mit ooliv bereits erfolgreiche Website-Optimierungen, Relaunches und Website-Konzept-Projekte umgesetzt.
             </p>
           </Reveal>
           
@@ -291,7 +291,7 @@ const WebsiteKonzept = () => {
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
               >
-                Jetzt kostenloses Konzept anfordern
+                Kostenlose Website-Analyse starten
               </Button>
             </div>
           </Reveal>
@@ -471,6 +471,18 @@ const WebsiteKonzept = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
                   Kein Problem – Sie gehen keine Verpflichtung ein.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem 
+                value="item-4"
+                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+              >
+                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                  Kann ich mein Konzept später weiterverwenden?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                  Ja – das Konzept bleibt 30 Tage online und kann frei verwendet oder an Ihr Team weitergegeben werden.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
