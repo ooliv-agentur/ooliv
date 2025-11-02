@@ -10,27 +10,46 @@ const InlinePrototypeForm = () => {
   const [name, setName] = useState('');
   const [privacy, setPrivacy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({ name: false, email: false, privacy: false });
   const { toast } = useToast();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !name) {
-      toast({
-        variant: "destructive",
-        title: "Fehler",
-        description: "Bitte füllen Sie alle Pflichtfelder aus.",
-      });
-      return;
+    // Reset errors
+    const newErrors = { name: false, email: false, privacy: false };
+
+    // Validate fields
+    if (!name.trim()) {
+      newErrors.name = true;
+    }
+    
+    if (!email.trim()) {
+      newErrors.email = true;
+    }
+    
+    if (!privacy) {
+      newErrors.privacy = true;
     }
 
-    if (!privacy) {
-      toast({
-        variant: "destructive",
-        title: "Fehler",
-        description: "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
-      });
+    setErrors(newErrors);
+
+    // If there are any errors, show toast and stop
+    if (newErrors.name || newErrors.email || newErrors.privacy) {
+      if (!privacy) {
+        toast({
+          variant: "destructive",
+          title: "Fehler",
+          description: "Bitte akzeptieren Sie die Datenschutzbestimmungen.",
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Fehler",
+          description: "Bitte füllen Sie alle Pflichtfelder aus.",
+        });
+      }
       return;
     }
 
@@ -79,10 +98,16 @@ const InlinePrototypeForm = () => {
             id="name"
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="w-full h-14 px-4 border-2 border-gray-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-foreground"
+            onChange={(e) => {
+              setName(e.target.value);
+              if (errors.name) setErrors({ ...errors, name: false });
+            }}
+            className={`w-full h-14 px-4 border-2 rounded-lg focus:outline-none transition-colors text-foreground ${
+              errors.name ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-accent'
+            }`}
             placeholder="Ihr Name"
+            aria-invalid={errors.name}
+            aria-required="true"
           />
         </div>
 
@@ -94,10 +119,16 @@ const InlinePrototypeForm = () => {
             id="email"
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full h-14 px-4 border-2 border-gray-200 rounded-lg focus:border-accent focus:outline-none transition-colors text-foreground"
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (errors.email) setErrors({ ...errors, email: false });
+            }}
+            className={`w-full h-14 px-4 border-2 rounded-lg focus:outline-none transition-colors text-foreground ${
+              errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-accent'
+            }`}
             placeholder="ihre@email.de"
+            aria-invalid={errors.email}
+            aria-required="true"
           />
         </div>
 
@@ -130,15 +161,24 @@ const InlinePrototypeForm = () => {
         </div>
 
         <div className="space-y-3">
-          <div className="flex items-start gap-3">
+          <div className={`flex items-start gap-3 p-3 rounded-lg transition-colors ${
+            errors.privacy ? 'bg-red-50 border-2 border-red-500' : ''
+          }`}>
             <input
               id="privacy"
               type="checkbox"
               checked={privacy}
-              onChange={(e) => setPrivacy(e.target.checked)}
-              className="mt-1 w-5 h-5 border-2 border-gray-200 rounded focus:ring-accent accent-accent"
+              onChange={(e) => {
+                setPrivacy(e.target.checked);
+                if (errors.privacy) setErrors({ ...errors, privacy: false });
+              }}
+              className={`mt-1 w-5 h-5 border-2 rounded focus:ring-accent ${
+                errors.privacy ? 'border-red-500 accent-red-500' : 'border-gray-200 accent-accent'
+              }`}
+              aria-invalid={errors.privacy}
+              aria-required="true"
             />
-            <label htmlFor="privacy" className="text-sm text-muted-foreground">
+            <label htmlFor="privacy" className={`text-sm ${errors.privacy ? 'text-red-700 font-semibold' : 'text-muted-foreground'}`}>
               Ich akzeptiere die{' '}
               <a href="/datenschutz" target="_blank" className="text-accent underline hover:text-accent/80">
                 Datenschutzbestimmungen
