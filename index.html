@@ -239,17 +239,6 @@
     <link rel="modulepreload" href="/src/App.tsx">
   </head>
   <body>
-    <!--  ClickCease.com tracking-->
-    <script type='text/javascript'>var script = document.createElement('script');
-    script.async = true; script.type = 'text/javascript';
-    var target = 'https://www.clickcease.com/monitor/stat.js';
-    script.src = target;var elem = document.head;elem.appendChild(script);
-    </script>
-    <noscript>
-    <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com' alt='ClickCease'/></a>
-    </noscript>
-    <!--  ClickCease.com tracking-->
-    
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4JBH6JZ"
@@ -260,7 +249,7 @@
     <noscript>
       <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com' alt='ClickCease'/></a>
     </noscript>
-    
+
     <div id="root"></div>
     
     <!-- Load main script with optimized priority -->
@@ -295,7 +284,7 @@
         setTimeout(function() {
           const link = document.createElement('link');
           link.rel = 'stylesheet';
-          link.href = '/src/styles/performance-optimizations.css';
+          link.href = '/styles/performance-optimizations.css';
           document.head.appendChild(link);
         }, 1000);
       });
