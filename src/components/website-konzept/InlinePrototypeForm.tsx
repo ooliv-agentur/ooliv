@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
@@ -9,8 +10,8 @@ const InlinePrototypeForm = () => {
   const [name, setName] = useState('');
   const [privacy, setPrivacy] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,11 +52,8 @@ const InlinePrototypeForm = () => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
-        toast({
-          title: "Erfolgreich gesendet!",
-          description: "Wir melden uns innerhalb von 48 Stunden bei Ihnen.",
-        });
+        // Redirect to thank you page with conversion parameter for Google Ads tracking
+        navigate('/danke?conversion=true');
       } else {
         throw new Error('Form submission failed');
       }
@@ -69,31 +67,6 @@ const InlinePrototypeForm = () => {
       setIsSubmitting(false);
     }
   };
-
-  if (isSubmitted) {
-    return (
-      <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg text-center">
-        <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          Danke! Ihr Website-Konzept wird erstellt.
-        </h3>
-        <p className="text-lg text-muted-foreground mb-8">
-          Sie erhalten innerhalb von 48 Stunden Ihr persönliches Konzept per E-Mail.
-        </p>
-        <div className="pt-6 border-t border-gray-200">
-          <p className="text-sm text-muted-foreground">
-            Bei Fragen: <a href="mailto:info@ooliv.de" className="text-accent hover:underline">info@ooliv.de</a>
-            <br />
-            oder <a href="tel:+4961316367801" className="text-accent hover:underline">06131 – 63 67 801</a>
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">

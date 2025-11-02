@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import PageLayout from '@/components/PageLayout';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Button } from "@/components/ui/button";
@@ -9,11 +10,41 @@ import ConfettiCelebration from '@/components/ConfettiCelebration';
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 
+// TypeScript declaration for gtag
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const Danke = () => {
   const { setLanguage } = useLanguage();
   
   useEffect(() => {
     setLanguage('de');
+    
+    // Check if conversion parameter is present
+    const urlParams = new URLSearchParams(window.location.search);
+    const isConversion = urlParams.get('conversion') === 'true';
+    
+    // Fire Google Ads conversion event only when coming from form submission
+    if (isConversion && typeof window !== 'undefined') {
+      // Initialize dataLayer if not present
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      
+      // Configure Google Ads
+      gtag('js', new Date());
+      gtag('config', 'AW-16783013359');
+      
+      // Fire conversion event
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16783013359/eN08CKjNitkaEO_r4cI-'
+      });
+    }
     
     // Auto-redirect after 8 seconds
     const redirectTimeout = setTimeout(() => {
@@ -63,6 +94,9 @@ const Danke = () => {
         robotsContent="noindex, follow"
         keywords="Danke, Anfrage erhalten, ooliv Werbeagentur"
       />
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16783013359"></script>
+      </Helmet>
       
       {/* Add the confetti animation */}
       <ConfettiCelebration />
