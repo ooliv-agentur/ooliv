@@ -6,6 +6,25 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+// Simple rate limiter for sitemap generation
+const rateLimitStore = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const MAX_REQUESTS = 5; // Lower limit for expensive operations
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const requests = rateLimitStore.get(ip) || [];
+  const validRequests = requests.filter(timestamp => now - timestamp < RATE_LIMIT_WINDOW);
+  
+  if (validRequests.length >= MAX_REQUESTS) {
+    return false;
+  }
+  
+  validRequests.push(now);
+  rateLimitStore.set(ip, validRequests);
+  return true;
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -13,6 +32,26 @@ serve(async (req) => {
   }
 
   try {
+    // Rate limiting by IP
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 
+               req.headers.get('x-real-ip') || 
+               'unknown';
+    
+    if (!checkRateLimit(ip)) {
+      console.log(`Rate limit exceeded for sitemap generation from IP: ${ip}`);
+      return new Response(
+        `<?xml version="1.0" encoding="UTF-8"?><error>Rate limit exceeded</error>`,
+        {
+          status: 429,
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'application/xml; charset=UTF-8',
+            'Retry-After': '60'
+          }
+        }
+      );
+    }
+    
     const url = new URL(req.url);
     const forceRegenerate = url.searchParams.get('revalidate') === 'true';
     const timestamp = Date.now();

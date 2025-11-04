@@ -39,7 +39,8 @@ export const CookieConsentProvider = ({ children }: CookieConsentProviderProps) 
   const getSessionId = () => {
     let sessionId = localStorage.getItem('cookie-session-id');
     if (!sessionId) {
-      sessionId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      // Use cryptographically secure random UUID instead of Math.random()
+      sessionId = crypto.randomUUID();
       localStorage.setItem('cookie-session-id', sessionId);
     }
     return sessionId;

@@ -8,6 +8,37 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
+// In-memory rate limiter (10 requests per minute per IP)
+const rateLimitStore = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+const MAX_REQUESTS = 10;
+
+function checkRateLimit(ip: string): { allowed: boolean; remaining: number; resetAt: number } {
+  const now = Date.now();
+  const requests = rateLimitStore.get(ip) || [];
+  
+  // Remove old requests outside the window
+  const validRequests = requests.filter(timestamp => now - timestamp < RATE_LIMIT_WINDOW);
+  
+  if (validRequests.length >= MAX_REQUESTS) {
+    const oldestRequest = Math.min(...validRequests);
+    return {
+      allowed: false,
+      remaining: 0,
+      resetAt: oldestRequest + RATE_LIMIT_WINDOW
+    };
+  }
+  
+  validRequests.push(now);
+  rateLimitStore.set(ip, validRequests);
+  
+  return {
+    allowed: true,
+    remaining: MAX_REQUESTS - validRequests.length,
+    resetAt: now + RATE_LIMIT_WINDOW
+  };
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -22,6 +53,27 @@ serve(async (req) => {
   }
 
   try {
+    // Rate limiting by IP
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 
+               req.headers.get('x-real-ip') || 
+               'unknown';
+    
+    const rateLimit = checkRateLimit(ip);
+    
+    if (!rateLimit.allowed) {
+      console.log(`Rate limit exceeded for IP: ${ip}`);
+      return new Response('Rate limit exceeded', {
+        status: 429,
+        headers: {
+          ...corsHeaders,
+          'Retry-After': Math.ceil((rateLimit.resetAt - Date.now()) / 1000).toString(),
+          'X-RateLimit-Limit': MAX_REQUESTS.toString(),
+          'X-RateLimit-Remaining': '0',
+          'X-RateLimit-Reset': new Date(rateLimit.resetAt).toISOString()
+        }
+      });
+    }
+    
     // Check for Bearer token authentication
     const authHeader = req.headers.get('Authorization');
     const webhookSecret = Deno.env.get('WEBHOOK_SECRET');
