@@ -82,9 +82,23 @@ const WebsiteKonzept = () => {
               </Reveal>
 
               <Reveal delay={0.4} direction="up" distance={30}>
-                <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-[95%] sm:max-w-[85%] md:max-w-[65%] mx-auto px-2">
-                  Erhalten Sie in nur 48 Stunden ein individuelles, strategisches Website-Konzept – kostenlos, klar und perfekt auf Ihr Unternehmen abgestimmt.
+                <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-[95%] sm:max-w-[85%] md:max-w-[65%] mx-auto px-2">
+                  Professionelles Website-Konzept im Wert von 1.500 € – komplett kostenlos in 48 Stunden. Wir gehen in Vorleistung und beweisen, was wir können.
                 </p>
+              </Reveal>
+              
+              <Reveal delay={0.5} direction="up" distance={20}>
+                <div className="flex flex-wrap items-center justify-center gap-4 mb-8 px-2">
+                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <span className="text-yellow-500 font-bold">★★★★★</span>
+                    <span className="text-sm font-semibold text-foreground">4.9/5 Google</span>
+                    <span className="text-xs text-muted-foreground">(47 Bewertungen)</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <span className="text-sm font-semibold text-foreground">🏆 Top 3 Digitalagentur</span>
+                    <span className="text-xs text-muted-foreground">Rhein-Main (Sortlist)</span>
+                  </div>
+                </div>
               </Reveal>
               
               <StaggerReveal stagger={0.1} delay={0.6}>
@@ -112,6 +126,16 @@ const WebsiteKonzept = () => {
                 </p>
               </Reveal>
 
+              <Reveal delay={1.0} direction="up" distance={20}>
+                <div className="bg-yellow-50 border-2 border-yellow-400 rounded-xl px-6 py-4 mb-6 max-w-2xl mx-auto">
+                  <p className="text-sm font-bold text-yellow-900 flex items-center justify-center gap-2 flex-wrap">
+                    <span className="text-lg">⚠️</span>
+                    Wir erstellen nur 1-2 Konzepte pro Woche – 
+                    <span className="underline">aktuell noch 1 Slot in KW 45 verfügbar</span>
+                  </p>
+                </div>
+              </Reveal>
+
               <Reveal delay={1.1} direction="up" distance={20}>
                 <div className="px-4 w-full flex justify-center">
                   <Button 
@@ -120,12 +144,138 @@ const WebsiteKonzept = () => {
                     size="xl"
                     className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto max-w-full"
                   >
-                    Jetzt kostenloses Konzept erhalten
+                    Jetzt 1.500 € Vorleistung sichern →
                   </Button>
                 </div>
               </Reveal>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Vorleistungs-Section */}
+      <section className="py-20 bg-white border-y-2 border-primary/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <Reveal direction="up">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-yellow-100 text-yellow-900 px-8 py-3 rounded-full mb-6 shadow-md">
+                <span className="font-bold text-3xl">1.500 €</span>
+                <span className="mx-4 text-2xl">→</span>
+                <span className="font-bold text-3xl">0 € für Sie</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                Wir gehen in Vorleistung – Sie gehen kein Risiko ein
+              </h2>
+              
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Kein Verkaufsgespräch, keine versteckten Kosten. 
+                Wir beweisen erst durch echte Arbeit, was wir können. 
+                Dann entscheiden Sie.
+              </p>
+            </div>
+          </Reveal>
+
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+              <div className="text-6xl font-bold text-primary mb-4">1.500 €</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Echter Wert</h3>
+              <ul className="text-sm text-muted-foreground space-y-2 text-left">
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Vollständige Website-Analyse</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Strategisches Konzept</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>Klickbarer Prototyp</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span>SEO & Performance-Check</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+              <div className="text-6xl font-bold text-primary mb-4">0 €</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Ihre Investition</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Komplett kostenlos. Keine Agenturpflicht, 
+                kein Kleingedrucktes, keine Verpflichtung. 
+                Sie entscheiden nach dem Ergebnis.
+              </p>
+            </div>
+
+            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+              <div className="text-6xl font-bold text-primary mb-4">48 h</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Lieferzeit</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Schnell, professionell, konkret. 
+                Wir starten sofort nach Ihrer Anfrage – 
+                ohne langes Vorgespräch.
+              </p>
+            </div>
+          </StaggerReveal>
+
+          <Reveal delay={0.3} direction="up">
+            <div className="text-center p-6 bg-yellow-50 rounded-xl max-w-3xl mx-auto border-2 border-yellow-200">
+              <p className="text-lg font-semibold text-foreground">
+                💡 Warum wir das tun? Wir sind überzeugt, dass unser Konzept Sie überzeugt. 
+                Wir gehen in Vorleistung – Sie profitieren ohne Risiko.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3-Step Process Section */}
+      <section className="py-20 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal direction="up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+                In 3 Schritten zu Ihrem Website-Konzept
+              </h2>
+            </div>
+          </Reveal>
+
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <FileText className="w-12 h-12 text-primary mb-4" />
+              <div className="text-4xl font-bold text-primary mb-4">1</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Formular ausfüllen
+              </h3>
+              <p className="text-muted-foreground">
+                Wir analysieren Ihre Website.
+              </p>
+            </div>
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <Mail className="w-12 h-12 text-primary mb-4" />
+              <div className="text-4xl font-bold text-primary mb-4">2</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Konzept erhalten
+              </h3>
+              <p className="text-muted-foreground">
+                In 48 Stunden per E-Mail.
+              </p>
+            </div>
+            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+              <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
+              <div className="text-4xl font-bold text-primary mb-4">3</div>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                Sie entscheiden
+              </h3>
+              <p className="text-muted-foreground">
+                Ohne Verpflichtung.
+              </p>
+            </div>
+          </StaggerReveal>
         </div>
       </section>
 
@@ -151,7 +301,7 @@ const WebsiteKonzept = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal direction="up">
             <h2 className="text-center text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Unser Ansatz – Schnell, klar, strategisch
+              Qualität statt Masse – Deshalb nur 1-2 Konzepte pro Woche
             </h2>
           </Reveal>
 
@@ -175,7 +325,9 @@ const WebsiteKonzept = () => {
 
           <Reveal delay={0.3} direction="up">
             <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
-              Über <AnimatedCounter end={200} suffix="" className="font-bold text-foreground" /> Unternehmen haben mit ooliv bereits erfolgreiche Website-Optimierungen, Relaunches und Website-Konzept-Projekte umgesetzt.
+              Wir erstellen nur 1-2 Konzepte pro Woche, um höchste Qualität zu garantieren. 
+              <span className="font-bold text-foreground"> Über 200 Unternehmen</span> haben bereits 
+              mit ooliv erfolgreich ihre Website optimiert.
             </p>
           </Reveal>
           
@@ -332,51 +484,6 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* 3-Step Process Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                In 3 Schritten zu Ihrem Website-Konzept
-              </h2>
-            </div>
-          </Reveal>
-
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <FileText className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">1</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Formular ausfüllen
-              </h3>
-              <p className="text-muted-foreground">
-                Wir analysieren Ihre Website.
-              </p>
-            </div>
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <Mail className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">2</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Konzept erhalten
-              </h3>
-              <p className="text-muted-foreground">
-                In 48 Stunden per E-Mail.
-              </p>
-            </div>
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">3</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Sie entscheiden
-              </h3>
-              <p className="text-muted-foreground">
-                Ohne Verpflichtung.
-              </p>
-            </div>
-          </StaggerReveal>
-        </div>
-      </section>
 
       {/* Lead Form Section */}
       <section id="lead-form-section" className="py-20 bg-primary/5">
@@ -483,6 +590,20 @@ const WebsiteKonzept = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
                   Ja – das Konzept bleibt 30 Tage online und kann frei verwendet oder an Ihr Team weitergegeben werden.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem 
+                value="item-5"
+                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+              >
+                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                  Warum erstellt ihr nur 1-2 Konzepte pro Woche?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                  Weil wir jedes Konzept individuell und mit höchster Sorgfalt erstellen. 
+                  Keine Vorlagen, keine Massenabfertigung. Dafür braucht es Zeit, Analyse und strategisches Denken. 
+                  Das unterscheidet uns von Agenturen, die 10 Konzepte pro Woche versprechen – aber keines wirklich durchdacht ist.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
