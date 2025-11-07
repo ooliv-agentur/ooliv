@@ -8,7 +8,6 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 import AnimatedCounter from '@/components/animations/AnimatedCounter';
 
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
-import DynamicSubheadlines from '@/components/animations/DynamicSubheadlines';
 import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
 import {
   Accordion,
@@ -77,23 +76,9 @@ const WebsiteKonzept = () => {
               </Reveal>
               
               <Reveal delay={0.2} direction="up" distance={30}>
-                <div className="min-h-[180px] sm:min-h-[200px] lg:min-h-[240px] flex items-center justify-center w-full">
-                  <h1 className="w-full">
-                    <DynamicSubheadlines
-                      subheadlines={[
-                        "Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich",
-                        "Ihre Website bringt keine Anfragen? Das ändern wir in 48 Stunden.",
-                        "Website vorhanden, aber keine Leads? Kostenlose Analyse + Konzept in 48 h",
-                        "1.500 € Website-Konzept geschenkt – in 48 Stunden bei Ihnen",
-                        "Mehr Anfragen durch bessere Website-Strategie – kostenloses Konzept in 48 h"
-                      ]}
-                      typingSpeed={50}
-                      deletingSpeed={30}
-                      pauseTime={3000}
-                      className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
-                    />
-                  </h1>
-                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
+                  Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich
+                </h1>
               </Reveal>
 
               <Reveal delay={0.4} direction="up" distance={30}>
