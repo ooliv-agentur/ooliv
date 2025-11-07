@@ -6,6 +6,9 @@ import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedProto
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import AnimatedCounter from '@/components/animations/AnimatedCounter';
+import { ParallaxSection } from '@/components/animations/ParallaxSection';
+import { FloatingElement } from '@/components/animations/FloatingElement';
+import { ScaleOnScroll } from '@/components/animations/ScaleOnScroll';
 
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
 import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
@@ -53,8 +56,8 @@ const WebsiteKonzept = () => {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
-        {/* Animated Grid Pattern (technischer Look) */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-15 z-[5]">
+        {/* Animated Grid Pattern with Parallax */}
+        <ParallaxSection offset={100} speed={0.3} className="absolute inset-0 overflow-hidden pointer-events-none opacity-15 z-[5]">
           <div 
             className="absolute inset-0 animate-grid-move"
             style={{
@@ -64,7 +67,7 @@ const WebsiteKonzept = () => {
               WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, #000 75%, transparent 100%)'
             }}
           />
-        </div>
+        </ParallaxSection>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="max-w-4xl mx-auto text-center w-full">
@@ -89,15 +92,19 @@ const WebsiteKonzept = () => {
               
               <Reveal delay={0.5} direction="up" distance={20}>
                 <div className="flex flex-wrap items-center justify-center gap-4 mb-8 px-2">
-                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <span className="text-yellow-500 font-bold">★★★★★</span>
-                    <span className="text-sm font-semibold text-foreground">4.9/5 Google</span>
-                    <span className="text-xs text-muted-foreground">(47 Bewertungen)</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <span className="text-sm font-semibold text-foreground">🏆 Top 3 Digitalagentur</span>
-                    <span className="text-xs text-muted-foreground">Rhein-Main (Sortlist)</span>
-                  </div>
+                  <FloatingElement duration={3} delay={0} intensity={4}>
+                    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                      <span className="text-yellow-500 font-bold">★★★★★</span>
+                      <span className="text-sm font-semibold text-foreground">4.9/5 Google</span>
+                      <span className="text-xs text-muted-foreground">(47 Bewertungen)</span>
+                    </div>
+                  </FloatingElement>
+                  <FloatingElement duration={3.5} delay={0.5} intensity={4}>
+                    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                      <span className="text-sm font-semibold text-foreground">🏆 Top 3 Digitalagentur</span>
+                      <span className="text-xs text-muted-foreground">Rhein-Main (Sortlist)</span>
+                    </div>
+                  </FloatingElement>
                 </div>
               </Reveal>
               
@@ -127,26 +134,30 @@ const WebsiteKonzept = () => {
               </Reveal>
 
               <Reveal delay={1.0} direction="up" distance={20}>
-                <div className="bg-yellow-50 border-2 border-yellow-400 rounded-xl px-6 py-4 mb-6 max-w-2xl mx-auto">
-                  <p className="text-sm font-bold text-yellow-900 flex items-center justify-center gap-2 flex-wrap">
-                    <span className="text-lg">⚠️</span>
-                    Wir erstellen nur 1-2 Konzepte pro Woche – 
-                    <span className="underline">aktuell noch 1 Slot in KW 45 verfügbar</span>
-                  </p>
-                </div>
+                <FloatingElement duration={2} intensity={3}>
+                  <div className="bg-yellow-50 border-2 border-yellow-400 rounded-xl px-6 py-4 mb-6 max-w-2xl mx-auto">
+                    <p className="text-sm font-bold text-yellow-900 flex items-center justify-center gap-2 flex-wrap">
+                      <span className="text-lg">⚠️</span>
+                      Wir erstellen nur 1-2 Konzepte pro Woche – 
+                      <span className="underline">aktuell noch 1 Slot in KW 45 verfügbar</span>
+                    </p>
+                  </div>
+                </FloatingElement>
               </Reveal>
 
               <Reveal delay={1.1} direction="up" distance={20}>
-                <div className="px-4 w-full flex justify-center">
-                  <Button 
-                    onClick={scrollToForm}
-                    variant="primary"
-                    size="xl"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto max-w-full"
-                  >
-                    Jetzt 1.500 € Vorleistung sichern →
-                  </Button>
-                </div>
+                <FloatingElement duration={2.5} intensity={6}>
+                  <div className="px-4 w-full flex justify-center">
+                    <Button 
+                      onClick={scrollToForm}
+                      variant="primary"
+                      size="xl"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto max-w-full"
+                    >
+                      Jetzt 1.500 € Vorleistung sichern →
+                    </Button>
+                  </div>
+                </FloatingElement>
               </Reveal>
             </div>
           </div>
@@ -159,11 +170,13 @@ const WebsiteKonzept = () => {
           
           <Reveal direction="up">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center bg-yellow-100 text-yellow-900 px-8 py-3 rounded-full mb-6 shadow-md">
-                <span className="font-bold text-3xl">1.500 €</span>
-                <span className="mx-4 text-2xl">→</span>
-                <span className="font-bold text-3xl">0 € für Sie</span>
-              </div>
+              <ScaleOnScroll scaleRange={[0.8, 1]}>
+                <div className="inline-flex items-center bg-yellow-100 text-yellow-900 px-8 py-3 rounded-full mb-6 shadow-md">
+                  <span className="font-bold text-3xl">1.500 €</span>
+                  <span className="mx-4 text-2xl">→</span>
+                  <span className="font-bold text-3xl">0 € für Sie</span>
+                </div>
+              </ScaleOnScroll>
               
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Wir gehen in Vorleistung – Sie gehen kein Risiko ein
@@ -178,8 +191,9 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="text-6xl font-bold text-primary mb-4">1.500 €</div>
+            <ScaleOnScroll scaleRange={[0.85, 1]}>
+              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-6xl font-bold text-primary mb-4">1.500 €</div>
               <h3 className="text-xl font-bold text-foreground mb-3">Echter Wert</h3>
               <ul className="text-sm text-muted-foreground space-y-2 text-left">
                 <li className="flex items-start gap-2">
@@ -199,27 +213,32 @@ const WebsiteKonzept = () => {
                   <span>SEO & Performance-Check</span>
                 </li>
               </ul>
-            </div>
+              </div>
+            </ScaleOnScroll>
 
-            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="text-6xl font-bold text-primary mb-4">0 €</div>
+            <ScaleOnScroll scaleRange={[0.85, 1]}>
+              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-6xl font-bold text-primary mb-4">0 €</div>
               <h3 className="text-xl font-bold text-foreground mb-3">Ihre Investition</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Komplett kostenlos. Keine Agenturpflicht, 
                 kein Kleingedrucktes, keine Verpflichtung. 
                 Sie entscheiden nach dem Ergebnis.
               </p>
-            </div>
+              </div>
+            </ScaleOnScroll>
 
-            <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="text-6xl font-bold text-primary mb-4">48 h</div>
+            <ScaleOnScroll scaleRange={[0.85, 1]}>
+              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+                <div className="text-6xl font-bold text-primary mb-4">48 h</div>
               <h3 className="text-xl font-bold text-foreground mb-3">Lieferzeit</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Schnell, professionell, konkret. 
                 Wir starten sofort nach Ihrer Anfrage – 
                 ohne langes Vorgespräch.
               </p>
-            </div>
+              </div>
+            </ScaleOnScroll>
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
