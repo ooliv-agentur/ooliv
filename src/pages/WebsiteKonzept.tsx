@@ -74,8 +74,8 @@ const WebsiteKonzept = () => {
             
             <Reveal delay={0.4} direction="up" distance={20}>
               <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
-                <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
-                  <span style={{color: 'hsl(var(--turquoise))'}} className="font-bold">★★★★★</span>
+              <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
+                  <span className="font-bold text-turquoise">★★★★★</span>
                   <span className="text-sm font-semibold text-gray-900">4.9/5 Google</span>
                   <span className="text-xs text-gray-500">(47 Bewertungen)</span>
                 </div>
@@ -89,17 +89,17 @@ const WebsiteKonzept = () => {
             <StaggerReveal stagger={0.1} delay={0.5}>
               <div className="flex flex-wrap justify-center gap-6 mb-8">
                 <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-5 h-5 text-turquoise" />
                   <span className="text-lg font-semibold text-gray-900">100 % kostenlos</span>
                 </div>
                 <span className="text-lg text-gray-400">•</span>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Clock className="w-5 h-5 text-turquoise" />
                   <span className="text-lg font-semibold text-gray-900">Antwort in 48 h</span>
                 </div>
                 <span className="text-lg text-gray-400">•</span>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <ShieldCheck className="w-5 h-5 text-turquoise" />
                   <span className="text-lg font-semibold text-gray-900">Keine Verpflichtung</span>
                 </div>
               </div>
@@ -116,13 +116,7 @@ const WebsiteKonzept = () => {
                 <Button 
                   onClick={scrollToForm}
                   size="xl"
-                  style={{
-                    backgroundColor: 'hsl(var(--turquoise))',
-                    color: 'white'
-                  }}
-                  className="font-semibold px-10 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise-dark))'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise))'}
+                  className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-10 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
                 >
                   Jetzt kostenlos sichern →
                 </Button>
@@ -143,7 +137,7 @@ const WebsiteKonzept = () => {
         <div className="max-w-6xl mx-auto px-8">
           <Reveal direction="up">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-8 py-4 rounded-2xl mb-8" style={{backgroundColor: 'hsla(var(--turquoise), 0.1)', color: 'hsl(var(--turquoise-dark))'}}>
+              <div className="inline-flex items-center px-8 py-4 rounded-2xl mb-8 bg-turquoise/10 text-turquoise-800">
                 <span className="text-3xl font-bold">1.500 €</span>
                 <span className="mx-4">→</span>
                 <span className="text-3xl font-bold">0 €</span>
@@ -163,30 +157,30 @@ const WebsiteKonzept = () => {
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12 mb-12">
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>1.500 €</div>
+              <div className="text-5xl font-bold mb-4 text-turquoise">1.500 €</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Echter Wert</h3>
               <ul className="text-sm text-gray-600 space-y-3">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Vollständige Website-Analyse</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Strategisches Konzept</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Klickbarer Prototyp</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>SEO & Performance-Check</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>0 €</div>
+              <div className="text-5xl font-bold mb-4 text-turquoise">0 €</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Ihre Investition</h3>
               <p className="text-gray-600 leading-relaxed">
                 Komplett kostenlos. Keine Agenturpflicht, 
@@ -196,7 +190,7 @@ const WebsiteKonzept = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>48 h</div>
+              <div className="text-5xl font-bold mb-4 text-turquoise">48 h</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Lieferzeit</h3>
               <p className="text-gray-600 leading-relaxed">
                 Schnell, professionell, konkret. 
@@ -207,7 +201,7 @@ const WebsiteKonzept = () => {
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
-            <div className="text-center p-6 rounded-xl max-w-3xl mx-auto" style={{backgroundColor: 'hsla(var(--turquoise), 0.05)', border: '1px solid hsla(var(--turquoise), 0.2)'}}>
+            <div className="text-center p-6 rounded-xl max-w-3xl mx-auto bg-turquoise/5 border border-turquoise/20">
               <p className="text-lg font-semibold text-gray-900">
                 💡 Warum wir das tun? Wir sind überzeugt, dass unser Konzept Sie überzeugt. 
                 Wir gehen in Vorleistung – Sie profitieren ohne Risiko.
@@ -230,8 +224,8 @@ const WebsiteKonzept = () => {
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <FileText className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
-              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>1</div>
+              <FileText className="w-12 h-12 mb-4 text-turquoise" />
+              <div className="text-4xl font-bold mb-4 text-turquoise">1</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Formular ausfüllen
               </h3>
@@ -240,8 +234,8 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <Mail className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
-              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>2</div>
+              <Mail className="w-12 h-12 mb-4 text-turquoise" />
+              <div className="text-4xl font-bold mb-4 text-turquoise">2</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Konzept erhalten
               </h3>
@@ -250,8 +244,8 @@ const WebsiteKonzept = () => {
               </p>
             </div>
             <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <CheckCircle2 className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
-              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>3</div>
+              <CheckCircle2 className="w-12 h-12 mb-4 text-turquoise" />
+              <div className="text-4xl font-bold mb-4 text-turquoise">3</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Sie entscheiden
               </h3>
@@ -519,10 +513,9 @@ const WebsiteKonzept = () => {
             <Accordion type="single" collapsible className="w-full space-y-4">
               <AccordionItem 
                 value="item-0"
-                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
-                style={{'--hover-border': 'hsl(var(--turquoise))' } as React.CSSProperties}
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg hover:border-turquoise transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900" style={{color: 'inherit'}}>
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Ist das wirklich kostenlos?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed pt-2">
@@ -610,13 +603,7 @@ const WebsiteKonzept = () => {
               <Button 
                 onClick={scrollToForm}
                 size="xl"
-                style={{
-                  backgroundColor: 'hsl(var(--turquoise))',
-                  color: 'white'
-                }}
-                className="font-semibold px-12 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise-dark))'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise))'}
+                className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-12 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
                 Jetzt kostenloses Konzept erhalten
               </Button>
@@ -655,19 +642,19 @@ const WebsiteKonzept = () => {
               </h3>
               <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Website-Audit & SEO-Analyse</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Website-Konzept & Relaunch-Planung</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Conversion-Optimierung & UX-Design</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0 text-turquoise" />
                   <span>Technische Website-Performance-Analyse</span>
                 </li>
               </ul>
