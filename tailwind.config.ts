@@ -112,6 +112,22 @@ export default {
           800: "#92400e",
           900: "#78350f"
         },
+        // Turquoise color scale (from index.css variables)
+        turquoise: {
+          50: "#f0fdf9",
+          100: "#ccf5eb",
+          200: "#99ead7",
+          300: "#66d9c3",
+          400: "#4dcbb3",
+          500: "#38B593", // Default turquoise
+          600: "#2a8a73", // Hover state
+          700: "#236b5c",
+          800: "#1c5447",
+          900: "#154033",
+          light: "#e6f9f4", // turquoise-light from CSS
+          DEFAULT: "#38B593",
+          hover: "#2a8a73"
+        },
         // Enhanced text color tokens
         text: {
           primary: "#003347",
