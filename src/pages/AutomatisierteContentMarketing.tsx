@@ -9,6 +9,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Clock, Zap, Globe, TrendingUp, Users, Target, ArrowRight } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 const AutomatisierteContentMarketing = () => {
   const handleStartProject = () => {
@@ -142,24 +144,16 @@ const AutomatisierteContentMarketing = () => {
             </Reveal>
             
             <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <Card key={index} className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <CardContent className="p-8">
-                      <div className="w-16 h-16 bg-accent-primary/10 rounded-full flex items-center justify-center mb-6">
-                        <Icon className="w-8 h-8 text-accent-primary" />
-                      </div>
-                      <h3 className="text-xl font-bold text-brand-heading mb-4">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-brand-text leading-relaxed">
-                        {benefit.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+              {benefits.map((benefit, index) => (
+                <TurquoiseCard key={index} icon={benefit.icon} hoverLift>
+                  <h3 className="text-xl font-bold text-foreground mb-4">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </TurquoiseCard>
+              ))}
             </StaggerReveal>
           </div>
         </section>
@@ -202,19 +196,17 @@ const AutomatisierteContentMarketing = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((item, index) => (
                 <Reveal key={index} delay={index * 0.1}>
-                  <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow h-full">
-                    <CardContent className="p-8">
-                      <div className="w-12 h-12 bg-accent-primary text-white rounded-full flex items-center justify-center mb-6 font-bold text-lg">
-                        {item.step}
-                      </div>
-                      <h3 className="text-xl font-bold text-brand-heading mb-4">
-                        {item.title}
-                      </h3>
-                      <p className="text-brand-text leading-relaxed">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <TurquoiseCard variant="default" hoverLift>
+                    <TurquoiseBadge variant="solid" size="lg" className="mb-6">
+                      {item.step}
+                    </TurquoiseBadge>
+                    <h3 className="text-xl font-bold text-foreground mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </TurquoiseCard>
                 </Reveal>
               ))}
             </div>
@@ -273,29 +265,29 @@ const AutomatisierteContentMarketing = () => {
                 </div>
               </div>
               
-              <div className="bg-medico-mint/30 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-brand-heading mb-6">
+              <TurquoiseCard variant="soft" className="p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-6">
                   Typische Ergebnisse nach 3 Monaten:
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-brand-text">Organischer Traffic</span>
-                    <span className="text-accent-primary font-bold">+340%</span>
+                    <span className="text-muted-foreground">Organischer Traffic</span>
+                    <span className="text-turquoise font-bold">+340%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-brand-text">Domain Rating (DR)</span>
-                    <span className="text-accent-primary font-bold">+8 Punkte</span>
+                    <span className="text-muted-foreground">Domain Rating (DR)</span>
+                    <span className="text-turquoise font-bold">+8 Punkte</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-brand-text">Neue Keywords</span>
-                    <span className="text-accent-primary font-bold">+700</span>
+                    <span className="text-muted-foreground">Neue Keywords</span>
+                    <span className="text-turquoise font-bold">+700</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-brand-text">Qualitative Backlinks</span>
-                    <span className="text-accent-primary font-bold">+210</span>
+                    <span className="text-muted-foreground">Qualitative Backlinks</span>
+                    <span className="text-turquoise font-bold">+210</span>
                   </div>
                 </div>
-              </div>
+              </TurquoiseCard>
             </div>
           </div>
         </section>

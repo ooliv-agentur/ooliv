@@ -10,6 +10,8 @@ import { LinkedInConnectButton } from '@/components/linkedin/LinkedInConnectButt
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/contexts/AuthContext';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 interface LinkedInAccount {
   id: string;

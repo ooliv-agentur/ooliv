@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
 
 const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
