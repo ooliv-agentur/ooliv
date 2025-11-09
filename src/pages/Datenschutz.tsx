@@ -85,35 +85,35 @@ const GermanPrivacyPolicy = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-medico-turquoise/10 rounded-2xl mb-6">
-              <Lock className="h-8 w-8 text-medico-turquoise" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-turquoise/10 rounded-2xl mb-6">
+              <Lock className="h-8 w-8 text-turquoise" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen font-satoshi" style={{ lineHeight: '1.3' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-satoshi" style={{ lineHeight: '1.3' }}>
               Datenschutzerklärung
             </h2>
-            <div className="w-20 h-1 bg-medico-turquoise mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
               Bei ooliv nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
             </p>
           </div>
 
           {/* Accordion Section */}
-          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-medico-turquoise/20">
+          <div className="bg-gray-50/50 rounded-2xl p-6 md:p-8 border border-turquoise/20">
             <Accordion type="single" collapsible className="w-full">
               <div className="space-y-4">
                 <AccordionItem 
                   value="item-1" 
-                  className="bg-white border border-medico-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-white border border-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
-                  <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-medico-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-medico-turquoise transition-colors duration-200">
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
-                      <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
-                        <Database className="h-6 w-6 text-medico-turquoise" />
+                      <div className="flex-shrink-0 w-12 h-12 bg-turquoise/10 rounded-xl flex items-center justify-center">
+                        <Database className="h-6 w-6 text-turquoise" />
                       </div>
                       <span>Allgemeine Datenerfassung</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                  <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed mt-4 pb-4">
                     <div className="ml-16">
                       <p>
                         Wir speichern anonymisierte Protokolldaten (IP-Adresse, Zugriffszeit, Browser-Informationen) für Sicherheit und Systemstabilität. Diese Daten helfen uns, technische Probleme zu identifizieren und zu beheben, unsere Website zu optimieren und vor unbefugtem Zugriff zu schützen. Keine persönlichen Daten werden ohne Ihre ausdrückliche Zustimmung an Dritte weitergegeben, außer wenn dies gesetzlich vorgeschrieben ist.

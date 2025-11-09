@@ -9,7 +9,7 @@ const ContactHeroDE = () => {
   };
 
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+    <section className="relative bg-gray-50 overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Floating circles animation - same as other subpages */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -38,7 +38,7 @@ const ContactHeroDE = () => {
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+              className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
               Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege.

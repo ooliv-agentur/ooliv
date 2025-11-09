@@ -61,8 +61,8 @@ const GermanCookiePolicy = () => {
       <section className="section-standard">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center p-3 bg-accent-primary/10 rounded-full mb-4">
-              <Cookie className="h-8 w-8 text-accent-primary" />
+            <div className="inline-flex items-center justify-center p-3 bg-turquoise/10 rounded-full mb-4">
+              <Cookie className="h-8 w-8 text-turquoise" />
             </div>
             <h2 className="text-3xl font-bold mb-4">Cookie-Richtlinie</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ const GermanCookiePolicy = () => {
             <AccordionItem value="item-1" className="border rounded-lg overflow-hidden bg-white shadow-sm">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
                 <div className="flex items-center space-x-3">
-                  <Cookie className="h-5 w-5 text-accent-primary" />
+                  <Cookie className="h-5 w-5 text-turquoise" />
                   <span className="text-xl font-medium">Was sind Cookies?</span>
                 </div>
               </AccordionTrigger>

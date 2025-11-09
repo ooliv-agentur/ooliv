@@ -53,7 +53,7 @@ const GermanContentCreation = () => {
       <ContentHero />
       
       {/* 2. New Section: Warum Content entscheidend ist - Light mint background */}
-      <div className="bg-medico-mint/20">
+      <div className="bg-gray-50">
         <ContentImportance />
       </div>
       
@@ -85,7 +85,7 @@ const GermanContentCreation = () => {
       </div>
       
       {/* 9. CTA - Mint background */}
-      <div className="bg-medico-mint/30">
+      <div className="bg-gray-100">
         <CTA 
           title="Lassen Sie uns Content erstellen, der konvertiert"
           subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."

@@ -134,10 +134,10 @@ const AutomatisierteContentMarketing = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-brand-heading mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                   Warum automatisiertes Content Marketing die Zukunft ist
                 </h2>
-                <p className="text-lg text-brand-text max-w-3xl mx-auto">
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Während Sie schlafen, arbeitet Ihr Content-System. Täglich neue Artikel, automatische Verteilung und kontinuierlicher Traffic-Aufbau.
                 </p>
               </div>
@@ -171,7 +171,7 @@ const AutomatisierteContentMarketing = () => {
           <Button 
             onClick={handleStartProject}
             size="lg"
-            className="bg-white text-accent-primary hover:bg-gray-50 font-semibold px-8 py-3"
+            className="bg-white text-turquoise hover:bg-gray-50 font-semibold px-8 py-3"
           >
             Kostenlose Beratung vereinbaren
           </Button>
@@ -180,14 +180,14 @@ const AutomatisierteContentMarketing = () => {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-medico-mint">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-brand-heading mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                   So funktioniert automatisiertes Content Marketing
                 </h2>
-                <p className="text-lg text-brand-text max-w-3xl mx-auto">
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                   Von der Einrichtung bis zum laufenden Betrieb – ein transparenter Prozess für maximale Effizienz.
                 </p>
               </div>
@@ -218,7 +218,7 @@ const AutomatisierteContentMarketing = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-brand-heading mb-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">
                   Was Sie mit automatisiertem Content Marketing erreichen
                 </h2>
               </div>
@@ -228,12 +228,12 @@ const AutomatisierteContentMarketing = () => {
               <div>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <CheckCircle className="h-6 w-6 text-accent-primary flex-shrink-0 mt-1" />
+                    <CheckCircle className="h-6 w-6 text-turquoise flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-bold text-brand-heading mb-2">
+                      <h3 className="text-lg font-bold text-foreground mb-2">
                         Bewährte Enterprise-Technologie aus dem Silicon Valley
                       </h3>
-                      <p className="text-brand-text">
+                      <p className="text-muted-foreground">
                         Als zertifizierte Partner bringen wir diese erprobte KI-Technologie mit lokaler Betreuung und deutschsprachigem Support zu Ihnen.
                       </p>
                     </div>
@@ -293,7 +293,7 @@ const AutomatisierteContentMarketing = () => {
         </section>
 
         {/* SEO Content Section */}
-        <section className="py-20 bg-brand-heading text-white">
+        <section className="py-20 bg-foreground text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
               <div className="text-center mb-16">

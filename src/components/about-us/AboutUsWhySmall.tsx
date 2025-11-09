@@ -11,7 +11,7 @@ const AboutUsWhySmall = () => {
           <H2 alignment="center" className="mb-6">
             Warum wir bewusst klein bleiben
           </H2>
-          <div className="bg-medico-mint rounded-2xl p-6 shadow-sm mb-6 border border-gray-100">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-sm mb-6 border border-gray-100">
             <Paragraph className="mb-6">
               Bei ooliv arbeitet jeder Kunde direkt mit dem Gründer und CEO zusammen. Unterstützt von einem festen Team aus Designern, Entwicklern und Strategen – alle Bereiche unter einem Dach in Mainz.
             </Paragraph>
@@ -19,7 +19,7 @@ const AboutUsWhySmall = () => {
               Diese Struktur bedeutet weniger Reibungsverluste, schnelleren Fortschritt und bessere Ergebnisse – geliefert von Menschen, die Ihre Website tatsächlich bauen.
             </Paragraph>
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <blockquote className="text-xl md:text-2xl font-bold text-accent-primary italic leading-tight">
+              <blockquote className="text-xl md:text-2xl font-bold text-turquoise italic leading-tight">
                 "Ein Ansprechpartner. Ein fokussiertes Team. Ein gemeinsames Ziel."
               </blockquote>
             </div>

@@ -18,10 +18,10 @@ const AboutUsIndividual = () => {
           <Paragraph className="mb-8">
             Vom ersten Konzept bis zur Betreuung nach dem Launch arbeiten wir mit Transparenz, strategischem Weitblick und hohen Designstandards.
           </Paragraph>
-          <div className="bg-medico-mint rounded-2xl p-6 shadow-sm border border-gray-100">
-            <blockquote className="text-xl font-medium text-center text-medico-darkGreen italic">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100">
+            <blockquote className="text-xl font-medium text-center text-foreground italic">
               "Wir liefern nicht nur Websites. Wir bauen digitale Assets, die performen."
-              <footer className="mt-4 font-bold text-accent-primary text-base">– Uli, Gründer</footer>
+              <footer className="mt-4 font-bold text-turquoise text-base">– Uli, Gründer</footer>
             </blockquote>
           </div>
         </div>

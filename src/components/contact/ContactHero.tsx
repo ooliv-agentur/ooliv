@@ -10,7 +10,7 @@ const ContactHero = () => {
   };
   
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+    <section className="relative bg-gray-50 overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation - same as startpage */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -39,7 +39,7 @@ const ContactHero = () => {
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+              className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
               Sie reden direkt mit dem Gründer. Kein Verkaufsgespräch, keine Zwischenstellen – nur ein ehrliches Gespräch über Ihr Projekt.
@@ -76,11 +76,11 @@ const ContactHero = () => {
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-accent-primary/50 to-accent-primary/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-turquoise/50 to-turquoise/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-accent-primary/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>

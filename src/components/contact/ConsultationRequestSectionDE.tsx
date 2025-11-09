@@ -87,7 +87,7 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-brand-backgroundAlt p-8 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-8 rounded-lg shadow-sm">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
@@ -191,7 +191,7 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Lieber per E-Mail?</h3>
                   <div className="flex items-center gap-3 text-lg">
-                    <Mail className="h-5 w-5 text-brand-primary" />
+                    <Mail className="h-5 w-5 text-turquoise" />
                     <span>Schreiben Sie direkt an <strong>info@ooliv.de</strong></span>
                   </div>
                   <p className="mt-3 text-gray-600">
@@ -203,19 +203,19 @@ const ConsultationRequestSectionDE = ({ requestAudit }: ConsultationRequestSecti
                   <h3 className="text-2xl font-bold mb-4">Warum mit uns arbeiten?</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-primary font-bold">✓</span>
+                      <span className="text-turquoise font-bold">✓</span>
                       <span>Direkte Kommunikation mit dem Gründer</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-primary font-bold">✓</span>
+                      <span className="text-turquoise font-bold">✓</span>
                       <span>Schnelle Reaktionszeiten und entschlossenes Handeln</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-primary font-bold">✓</span>
+                      <span className="text-turquoise font-bold">✓</span>
                       <span>Strategisches Denken, nicht nur Umsetzung</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-brand-primary font-bold">✓</span>
+                      <span className="text-turquoise font-bold">✓</span>
                       <span>Fokus auf Geschäftsergebnisse, nicht nur Design</span>
                     </li>
                   </ul>
