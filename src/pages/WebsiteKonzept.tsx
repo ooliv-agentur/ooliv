@@ -5,6 +5,7 @@ import InlinePrototypeForm from '@/components/website-konzept/InlinePrototypeFor
 import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedPrototypePreview';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
 
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
 import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
@@ -156,8 +157,7 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12 mb-12">
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4 text-turquoise">1.500 €</div>
+            <TurquoiseCard variant="large" number="1.500 €">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Echter Wert</h3>
               <ul className="text-sm text-gray-600 space-y-3">
                 <li className="flex items-start gap-2">
@@ -177,27 +177,25 @@ const WebsiteKonzept = () => {
                   <span>SEO & Performance-Check</span>
                 </li>
               </ul>
-            </div>
+            </TurquoiseCard>
 
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4 text-turquoise">0 €</div>
+            <TurquoiseCard variant="large" number="0 €">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Ihre Investition</h3>
               <p className="text-gray-600 leading-relaxed">
                 Komplett kostenlos. Keine Agenturpflicht, 
                 kein Kleingedrucktes, keine Verpflichtung. 
                 Sie entscheiden nach dem Ergebnis.
               </p>
-            </div>
+            </TurquoiseCard>
 
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
-              <div className="text-5xl font-bold mb-4 text-turquoise">48 h</div>
+            <TurquoiseCard variant="large" number="48 h">
               <h3 className="text-xl font-bold text-gray-900 mb-3">Lieferzeit</h3>
               <p className="text-gray-600 leading-relaxed">
                 Schnell, professionell, konkret. 
                 Wir starten sofort nach Ihrer Anfrage – 
                 ohne langes Vorgespräch.
               </p>
-            </div>
+            </TurquoiseCard>
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
@@ -223,36 +221,32 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <FileText className="w-12 h-12 mb-4 text-turquoise" />
-              <div className="text-4xl font-bold mb-4 text-turquoise">1</div>
+            <TurquoiseCard variant="large" icon={FileText} number={1} numberClassName="text-4xl" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Formular ausfüllen
               </h3>
               <p className="text-gray-600">
                 Wir analysieren Ihre Website.
               </p>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <Mail className="w-12 h-12 mb-4 text-turquoise" />
-              <div className="text-4xl font-bold mb-4 text-turquoise">2</div>
+            </TurquoiseCard>
+            
+            <TurquoiseCard variant="large" icon={Mail} number={2} numberClassName="text-4xl" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Konzept erhalten
               </h3>
               <p className="text-gray-600">
                 In 48 Stunden per E-Mail.
               </p>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
-              <CheckCircle2 className="w-12 h-12 mb-4 text-turquoise" />
-              <div className="text-4xl font-bold mb-4 text-turquoise">3</div>
+            </TurquoiseCard>
+            
+            <TurquoiseCard variant="large" icon={CheckCircle2} number={3} numberClassName="text-4xl" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Sie entscheiden
               </h3>
               <p className="text-gray-600">
                 Ohne Verpflichtung.
               </p>
-            </div>
+            </TurquoiseCard>
           </StaggerReveal>
         </div>
       </section>
@@ -284,21 +278,23 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+            <TurquoiseCard variant="large" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 100 % kostenlos – kein Abo, keine versteckten Kosten
               </h3>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+            </TurquoiseCard>
+            
+            <TurquoiseCard variant="large" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Kein Risiko – Sie entscheiden erst nach dem Konzept
               </h3>
-            </div>
-            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+            </TurquoiseCard>
+            
+            <TurquoiseCard variant="large" hoverLift>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Antwort in 48 Stunden – kein Gespräch nötig
               </h3>
-            </div>
+            </TurquoiseCard>
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
