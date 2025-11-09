@@ -5,10 +5,6 @@ import InlinePrototypeForm from '@/components/website-konzept/InlinePrototypeFor
 import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedPrototypePreview';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
-import AnimatedCounter from '@/components/animations/AnimatedCounter';
-import { ParallaxSection } from '@/components/animations/ParallaxSection';
-import { FloatingElement } from '@/components/animations/FloatingElement';
-import { ScaleOnScroll } from '@/components/animations/ScaleOnScroll';
 
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
 import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
@@ -54,135 +50,110 @@ const WebsiteKonzept = () => {
         </div>
       </Reveal>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center bg-primary/5 py-20 overflow-x-hidden relative">
-        {/* Animated Grid Pattern with Parallax */}
-        <ParallaxSection offset={100} speed={0.3} className="absolute inset-0 overflow-hidden pointer-events-none opacity-15 z-[5]">
-          <div 
-            className="absolute inset-0 animate-grid-move"
-            style={{
-              backgroundImage: `linear-gradient(to right, #2D9174 1.5px, transparent 1.5px), linear-gradient(to bottom, #2D9174 1.5px, transparent 1.5px)`,
-              backgroundSize: '4rem 4rem',
-              maskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, #000 75%, transparent 100%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, #000 75%, transparent 100%)'
-            }}
-          />
-        </ParallaxSection>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="max-w-4xl mx-auto text-center w-full">
-            <div>
-              <Reveal delay={0.1} direction="up" distance={20}>
-                <p className="text-base text-muted-foreground mb-4 px-2">
-                  Für Unternehmen mit bestehenden Websites.
-                </p>
-              </Reveal>
-              
-              <Reveal delay={0.2} direction="up" distance={30}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight px-2">
-                  Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich
-                </h1>
-              </Reveal>
+      {/* Hero Section - Clean Minimal Style */}
+      <section className="min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 py-32 overflow-x-hidden relative">
+        <div className="max-w-5xl mx-auto px-8 w-full relative z-10">
+          <div className="text-center w-full">
+            <Reveal delay={0.1} direction="up" distance={20}>
+              <p className="text-base text-gray-600 mb-6">
+                Für Unternehmen mit bestehenden Websites.
+              </p>
+            </Reveal>
+            
+            <Reveal delay={0.2} direction="up" distance={30}>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich
+              </h1>
+            </Reveal>
 
-              <Reveal delay={0.4} direction="up" distance={30}>
-                <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-[95%] sm:max-w-[85%] md:max-w-[65%] mx-auto px-2">
-                  Professionelles Website-Konzept im Wert von 1.500 € – komplett kostenlos in 48 Stunden. Wir gehen in Vorleistung und beweisen, was wir können.
-                </p>
-              </Reveal>
-              
-              <Reveal delay={0.5} direction="up" distance={20}>
-                <div className="flex flex-wrap items-center justify-center gap-4 mb-8 px-2">
-                  <FloatingElement duration={3} delay={0} intensity={4}>
-                    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                      <span className="text-yellow-500 font-bold">★★★★★</span>
-                      <span className="text-sm font-semibold text-foreground">4.9/5 Google</span>
-                      <span className="text-xs text-muted-foreground">(47 Bewertungen)</span>
-                    </div>
-                  </FloatingElement>
-                  <FloatingElement duration={3.5} delay={0.5} intensity={4}>
-                    <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                      <span className="text-sm font-semibold text-foreground">🏆 Top 3 Digitalagentur</span>
-                      <span className="text-xs text-muted-foreground">Rhein-Main (Sortlist)</span>
-                    </div>
-                  </FloatingElement>
+            <Reveal delay={0.3} direction="up" distance={30}>
+              <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Professionelles Website-Konzept im Wert von 1.500 € – komplett kostenlos in 48 Stunden. Wir gehen in Vorleistung und beweisen, was wir können.
+              </p>
+            </Reveal>
+            
+            <Reveal delay={0.4} direction="up" distance={20}>
+              <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
+                <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
+                  <span style={{color: 'hsl(var(--turquoise))'}} className="font-bold">★★★★★</span>
+                  <span className="text-sm font-semibold text-gray-900">4.9/5 Google</span>
+                  <span className="text-xs text-gray-500">(47 Bewertungen)</span>
                 </div>
-              </Reveal>
-              
-              <StaggerReveal stagger={0.1} delay={0.6}>
-                <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-6 px-2">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-primary" />
-                    <span className="text-lg font-semibold text-foreground">100 % kostenlos</span>
-                  </div>
-                  <span className="text-lg text-muted-foreground">•</span>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-lg font-semibold text-foreground">Antwort in 48 h</span>
-                  </div>
-                  <span className="text-lg text-muted-foreground">•</span>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-primary" />
-                    <span className="text-lg font-semibold text-foreground">Keine Verpflichtung</span>
-                  </div>
+                <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
+                  <span className="text-sm font-semibold text-gray-900">🏆 Top 3 Digitalagentur</span>
+                  <span className="text-xs text-gray-500">Rhein-Main (Sortlist)</span>
                 </div>
-              </StaggerReveal>
+              </div>
+            </Reveal>
+            
+            <StaggerReveal stagger={0.1} delay={0.5}>
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <span className="text-lg font-semibold text-gray-900">100 % kostenlos</span>
+                </div>
+                <span className="text-lg text-gray-400">•</span>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <span className="text-lg font-semibold text-gray-900">Antwort in 48 h</span>
+                </div>
+                <span className="text-lg text-gray-400">•</span>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5" style={{color: 'hsl(var(--turquoise))'}} />
+                  <span className="text-lg font-semibold text-gray-900">Keine Verpflichtung</span>
+                </div>
+              </div>
+            </StaggerReveal>
 
-              <Reveal delay={0.9} direction="up" distance={20}>
-                <p className="text-base text-muted-foreground mb-10 px-2">
-                  Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse für Ihre Website-Optimierung und Conversion-Optimierung.
-                </p>
-              </Reveal>
+            <Reveal delay={0.6} direction="up" distance={20}>
+              <p className="text-base text-gray-600 mb-12 leading-relaxed">
+                Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse für Ihre Website-Optimierung und Conversion-Optimierung.
+              </p>
+            </Reveal>
 
-              <Reveal delay={1.0} direction="up" distance={20}>
-                <FloatingElement duration={2} intensity={3}>
-                  <div className="bg-yellow-50 border-2 border-yellow-400 rounded-xl px-6 py-4 mb-6 max-w-2xl mx-auto">
-                    <p className="text-sm font-bold text-yellow-900 flex items-center justify-center gap-2 flex-wrap">
-                      <span className="text-lg">⚠️</span>
-                      Wir erstellen nur 1-2 Konzepte pro Woche – 
-                      <span className="underline">aktuell noch 1 Slot in KW 45 verfügbar</span>
-                    </p>
-                  </div>
-                </FloatingElement>
-              </Reveal>
-
-              <Reveal delay={1.1} direction="up" distance={20}>
-                <FloatingElement duration={2.5} intensity={6}>
-                  <div className="px-4 w-full flex justify-center">
-                    <Button 
-                      onClick={scrollToForm}
-                      variant="primary"
-                      size="xl"
-                      className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto max-w-full"
-                    >
-                      Jetzt 1.500 € Vorleistung sichern →
-                    </Button>
-                  </div>
-                </FloatingElement>
-              </Reveal>
-            </div>
+            <Reveal delay={0.7} direction="up" distance={20}>
+              <div className="mb-8">
+                <Button 
+                  onClick={scrollToForm}
+                  size="xl"
+                  style={{
+                    backgroundColor: 'hsl(var(--turquoise))',
+                    color: 'white'
+                  }}
+                  className="font-semibold px-10 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise-dark))'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise))'}
+                >
+                  Jetzt kostenlos sichern →
+                </Button>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={0.8} direction="up" distance={20}>
+              <p className="text-sm text-gray-500">
+                ⚠️ Nur 1 Slot in KW 45 verfügbar
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Vorleistungs-Section */}
-      <section className="py-20 bg-white border-y-2 border-primary/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+      {/* Vorleistungs-Section - Clean Minimal Style */}
+      <section className="py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
           <Reveal direction="up">
             <div className="text-center mb-16">
-              <ScaleOnScroll scaleRange={[0.8, 1]}>
-                <div className="inline-flex items-center bg-yellow-100 text-yellow-900 px-8 py-3 rounded-full mb-6 shadow-md">
-                  <span className="font-bold text-3xl">1.500 €</span>
-                  <span className="mx-4 text-2xl">→</span>
-                  <span className="font-bold text-3xl">0 € für Sie</span>
-                </div>
-              </ScaleOnScroll>
+              <div className="inline-flex items-center px-8 py-4 rounded-2xl mb-8" style={{backgroundColor: 'hsla(var(--turquoise), 0.1)', color: 'hsl(var(--turquoise-dark))'}}>
+                <span className="text-3xl font-bold">1.500 €</span>
+                <span className="mx-4">→</span>
+                <span className="text-3xl font-bold">0 €</span>
+              </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
                 Wir gehen in Vorleistung – Sie gehen kein Risiko ein
               </h2>
               
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Kein Verkaufsgespräch, keine versteckten Kosten. 
                 Wir beweisen erst durch echte Arbeit, was wir können. 
                 Dann entscheiden Sie.
@@ -190,60 +161,54 @@ const WebsiteKonzept = () => {
             </div>
           </Reveal>
 
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8 mb-12">
-            <ScaleOnScroll scaleRange={[0.85, 1]}>
-              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div className="text-6xl font-bold text-primary mb-4">1.500 €</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Echter Wert</h3>
-              <ul className="text-sm text-muted-foreground space-y-2 text-left">
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12 mb-12">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
+              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>1.500 €</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Echter Wert</h3>
+              <ul className="text-sm text-gray-600 space-y-3">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Vollständige Website-Analyse</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Strategisches Konzept</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Klickbarer Prototyp</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>SEO & Performance-Check</span>
                 </li>
               </ul>
-              </div>
-            </ScaleOnScroll>
+            </div>
 
-            <ScaleOnScroll scaleRange={[0.85, 1]}>
-              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div className="text-6xl font-bold text-primary mb-4">0 €</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Ihre Investition</h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
+              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>0 €</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Ihre Investition</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Komplett kostenlos. Keine Agenturpflicht, 
                 kein Kleingedrucktes, keine Verpflichtung. 
                 Sie entscheiden nach dem Ergebnis.
               </p>
-              </div>
-            </ScaleOnScroll>
+            </div>
 
-            <ScaleOnScroll scaleRange={[0.85, 1]}>
-              <div className="text-center p-8 bg-primary/5 border-2 border-primary/20 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div className="text-6xl font-bold text-primary mb-4">48 h</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">Lieferzeit</h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg transition-all">
+              <div className="text-5xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>48 h</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Lieferzeit</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Schnell, professionell, konkret. 
                 Wir starten sofort nach Ihrer Anfrage – 
                 ohne langes Vorgespräch.
               </p>
-              </div>
-            </ScaleOnScroll>
+            </div>
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
-            <div className="text-center p-6 bg-yellow-50 rounded-xl max-w-3xl mx-auto border-2 border-yellow-200">
-              <p className="text-lg font-semibold text-foreground">
+            <div className="text-center p-6 rounded-xl max-w-3xl mx-auto" style={{backgroundColor: 'hsla(var(--turquoise), 0.05)', border: '1px solid hsla(var(--turquoise), 0.2)'}}>
+              <p className="text-lg font-semibold text-gray-900">
                 💡 Warum wir das tun? Wir sind überzeugt, dass unser Konzept Sie überzeugt. 
                 Wir gehen in Vorleistung – Sie profitieren ohne Risiko.
               </p>
@@ -252,45 +217,45 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* 3-Step Process Section */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3-Step Process Section - Clean Minimal Style */}
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-gray-900 mb-4">
                 In 3 Schritten zu Ihrem Website-Konzept
               </h2>
             </div>
           </Reveal>
 
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <FileText className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">1</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <FileText className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
+              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>1</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Formular ausfüllen
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600">
                 Wir analysieren Ihre Website.
               </p>
             </div>
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <Mail className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">2</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <Mail className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
+              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>2</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Konzept erhalten
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600">
                 In 48 Stunden per E-Mail.
               </p>
             </div>
-            <div className="bg-white border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <CheckCircle2 className="w-12 h-12 text-primary mb-4" />
-              <div className="text-4xl font-bold text-primary mb-4">3</div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <CheckCircle2 className="w-12 h-12 mb-4" style={{color: 'hsl(var(--turquoise))'}} />
+              <div className="text-4xl font-bold mb-4" style={{color: 'hsl(var(--turquoise))'}}>3</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Sie entscheiden
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600">
                 Ohne Verpflichtung.
               </p>
             </div>
@@ -298,54 +263,54 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* Intro Block */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Intro Block - Clean Minimal Style */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <Reveal direction="up">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
               Ihre Website bringt zu wenig Anfragen oder Leads?
             </h2>
-          <p className="text-lg text-muted-foreground mb-4">
-            Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – inklusive SEO-Analyse, Performance-Bewertung und Conversion-Check – und zeigen, wie Sie Ihre Website gezielt optimieren können.
-          </p>
-            <p className="text-base text-muted-foreground">
+            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+              Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – inklusive SEO-Analyse, Performance-Bewertung und Conversion-Check – und zeigen, wie Sie Ihre Website gezielt optimieren können.
+            </p>
+            <p className="text-base text-gray-600 leading-relaxed">
               Mit unserem kostenlosen Website-Audit und einer detaillierten Website-Analyse erhalten Sie konkrete Handlungsempfehlungen zur Optimierung Ihrer bestehenden Website – von der Seitenstruktur über Inhalte bis zur Conversion-Optimierung.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Trust Block */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Trust Block - Clean Minimal Style */}
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
           <Reveal direction="up">
-            <h2 className="text-center text-2xl md:text-3xl font-bold text-foreground mb-8">
+            <h2 className="text-center text-3xl font-bold text-gray-900 mb-12">
               Qualität statt Masse – Deshalb nur 1-2 Konzepte pro Woche
             </h2>
           </Reveal>
 
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8">
-            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold text-foreground mb-3">
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 100 % kostenlos – kein Abo, keine versteckten Kosten
               </h3>
             </div>
-            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold text-foreground mb-3">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Kein Risiko – Sie entscheiden erst nach dem Konzept
               </h3>
             </div>
-            <div className="bg-primary/5 border-2 border-primary/10 rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold text-foreground mb-3">
+            <div className="bg-white rounded-2xl p-10 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
                 Antwort in 48 Stunden – kein Gespräch nötig
               </h3>
             </div>
           </StaggerReveal>
 
           <Reveal delay={0.3} direction="up">
-            <p className="text-center text-lg text-muted-foreground mt-16 mb-8">
+            <p className="text-center text-lg text-gray-600 mt-16 mb-8 leading-relaxed">
               Wir erstellen nur 1-2 Konzepte pro Woche, um höchste Qualität zu garantieren. 
-              <span className="font-bold text-foreground"> Über 200 Unternehmen</span> haben bereits 
+              <span className="font-bold text-gray-900"> Über 200 Unternehmen</span> haben bereits 
               mit ooliv erfolgreich ihre Website optimiert.
             </p>
           </Reveal>
@@ -353,20 +318,20 @@ const WebsiteKonzept = () => {
           {/* Trust Logos */}
           <Reveal delay={0.5} direction="up">
             <div className="text-center">
-              <h3 className="text-base font-bold text-foreground mb-6">
+              <h3 className="text-base font-bold text-gray-900 mb-6">
                 Unternehmen, die unser Konzept genutzt haben:
               </h3>
-              <StaggerReveal stagger={0.1} className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
-                <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+              <StaggerReveal stagger={0.1} className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
+                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                   <img src="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" alt="KLAIBER" className="w-full h-full object-contain" />
                 </div>
-                <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                   <img src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" alt="COBUS Industries" className="w-full h-full object-contain" />
                 </div>
-                <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                   <img src="/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png" alt="SPEZ AG" className="w-full h-full object-contain" />
                 </div>
-                <div className="w-20 h-14 sm:w-24 sm:h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
+                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
                   <img src="/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png" alt="IconPro GmbH" className="w-full h-full object-contain" />
                 </div>
               </StaggerReveal>
@@ -469,15 +434,15 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* Example Prototype */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Example Prototype - Clean Minimal Style */}
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-8">
           <Reveal direction="up">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
                 So sieht Ihr kostenloser Prototyp aus
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Einblick in Ihr persönliches Konzept
               </p>
             </div>
@@ -490,13 +455,13 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <Reveal delay={0.3} direction="up">
-            <p className="text-center text-lg text-muted-foreground mb-4">
+            <p className="text-center text-lg text-gray-600 mb-4 leading-relaxed">
               Ihr Website-Prototyp zeigt, wie Ihre neue Website wirkt, aufgebaut ist und welche Inhalte überzeugen – inklusive klarer Seitenstruktur, Benutzerführung und Conversion-Pfade.
             </p>
-            <p className="text-center text-base text-muted-foreground mb-6">
+            <p className="text-center text-base text-gray-600 mb-6 leading-relaxed">
               Bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
             </p>
-            <p className="text-center text-sm text-muted-foreground">
+            <p className="text-center text-sm text-gray-600 leading-relaxed">
               Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
             </p>
           </Reveal>
@@ -504,21 +469,21 @@ const WebsiteKonzept = () => {
       </section>
 
 
-      {/* Lead Form Section */}
-      <section id="lead-form-section" className="py-20 bg-primary/5">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+      {/* Lead Form Section - Clean Minimal Style */}
+      <section id="lead-form-section" className="py-32 bg-white">
+        <div className="max-w-3xl mx-auto px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
             </p>
           </div>
 
           <InlinePrototypeForm />
 
-          <p className="text-center text-xs text-muted-foreground mt-6">
+          <p className="text-center text-xs text-gray-500 mt-6">
             Sie erhalten keine Werbemails – nur Ihr persönliches Konzept.<br />
             Ihre Daten werden ausschließlich zur Erstellung Ihres Website-Konzepts verwendet und nach 90 Tagen gelöscht.
           </p>
@@ -526,25 +491,25 @@ const WebsiteKonzept = () => {
       </section>
 
       {/* Transition Before FAQ */}
-      <section className="py-12 bg-gradient-to-b from-white to-primary/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-4xl mx-auto px-8 text-center">
           <Reveal direction="up">
-            <p className="text-lg md:text-xl text-muted-foreground italic">
+            <p className="text-lg text-gray-600 italic leading-relaxed">
               Erleben Sie, wie klar und umsetzbar ein modernes Website-Konzept sein kann – kostenlos, datenbasiert und individuell.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-primary/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* FAQ Section - Clean Minimal Style */}
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-gray-900 mb-4">
                 Häufige Fragen
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Noch Fragen? Hier sind die häufigsten Antworten auf einen Blick.
               </p>
             </div>
@@ -554,72 +519,73 @@ const WebsiteKonzept = () => {
             <Accordion type="single" collapsible className="w-full space-y-4">
               <AccordionItem 
                 value="item-0"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
+                style={{'--hover-border': 'hsl(var(--turquoise))' } as React.CSSProperties}
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900" style={{color: 'inherit'}}>
                   Ist das wirklich kostenlos?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Ja – unser Website-Konzept und die Website-Analyse sind 100 % kostenlos und unverbindlich.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem 
                 value="item-1"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Bieten Sie auch eine kostenlose Website-Analyse an?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Ja – sie ist Teil des Konzepts und umfasst SEO-, Performance- und Conversion-Aspekte.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem 
                 value="item-2"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Wie schnell erhalte ich mein Konzept?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Innerhalb von 48 Stunden per E-Mail.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem 
                 value="item-3"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Was, wenn mir der Prototyp nicht gefällt?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Kein Problem – Sie gehen keine Verpflichtung ein.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem 
                 value="item-4"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Kann ich mein Konzept später weiterverwenden?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Ja – das Konzept bleibt 30 Tage online und kann frei verwendet oder an Ihr Team weitergegeben werden.
                 </AccordionContent>
               </AccordionItem>
               
               <AccordionItem 
                 value="item-5"
-                className="bg-primary/5 border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+                className="bg-white border border-gray-200 rounded-xl px-6 shadow-soft hover:shadow-soft-lg transition-all"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900">
                   Warum erstellt ihr nur 1-2 Konzepte pro Woche?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                <AccordionContent className="text-gray-600 leading-relaxed pt-2">
                   Weil wir jedes Konzept individuell und mit höchster Sorgfalt erstellen. 
                   Keine Vorlagen, keine Massenabfertigung. Dafür braucht es Zeit, Analyse und strategisches Denken. 
                   Das unterscheidet uns von Agenturen, die 10 Konzepte pro Woche versprechen – aber keines wirklich durchdacht ist.
@@ -630,22 +596,27 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 bg-primary/5 w-full overflow-x-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      {/* Final CTA Section - Clean Minimal Style */}
+      <section className="py-32 bg-white w-full overflow-x-hidden">
+        <div className="max-w-4xl mx-auto px-8 text-center w-full">
           <Reveal direction="up">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-10 break-words px-2">
+            <h2 className="text-5xl font-bold text-gray-900 mb-12 break-words leading-tight">
               Bereit, Ihre Website-Idee in ein konkretes Konzept zu verwandeln?
             </h2>
           </Reveal>
           
           <Reveal delay={0.2} direction="up">
-            <div className="flex justify-center px-2 w-full">
+            <div className="flex justify-center w-full">
               <Button 
                 onClick={scrollToForm}
-                variant="primary"
                 size="xl"
-                className="h-16 px-8 sm:px-12 text-base sm:text-lg w-full sm:w-auto max-w-full hover:scale-105 active:scale-95 transition-all animate-pulse"
+                style={{
+                  backgroundColor: 'hsl(var(--turquoise))',
+                  color: 'white'
+                }}
+                className="font-semibold px-12 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise-dark))'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--turquoise))'}
               >
                 Jetzt kostenloses Konzept erhalten
               </Button>
@@ -653,52 +624,52 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <Reveal delay={0.3} direction="up">
-            <p className="text-base sm:text-lg text-muted-foreground mt-8 break-words px-2">
+            <p className="text-lg text-gray-600 mt-8 break-words leading-relaxed">
               Ihr persönliches Konzept in 48 Stunden – kostenlos und ohne Risiko.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* SEO Footer */}
-      <footer className="py-16 bg-white w-full overflow-x-hidden border-t border-gray-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* SEO Footer - Clean Minimal Style */}
+      <footer className="py-24 bg-gray-50 w-full overflow-x-hidden border-t border-gray-200">
+        <div className="max-w-5xl mx-auto px-8 w-full">
           <Reveal direction="up">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Website-Analyse, Konzept und Optimierung – alles aus einer Hand
               </h2>
-              <p className="text-base text-muted-foreground mb-6">
+              <p className="text-base text-gray-600 mb-6 leading-relaxed">
                 Mit ooliv erhalten Sie eine ganzheitliche Lösung für Website-Optimierung, Conversion-Optimierung und Website-Analyse.
               </p>
-              <p className="text-sm text-muted-foreground mb-8">
+              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
                 Wir entwickeln datenbasierte Relaunch-Konzepte, verbessern die Benutzerführung, führen technische Website-Audits durch und steigern Ihre Performance.
               </p>
             </div>
           </Reveal>
 
           <Reveal delay={0.2} direction="up">
-            <div className="bg-primary/5 rounded-xl p-6 mb-8">
-              <h3 className="text-lg font-bold text-foreground mb-4 text-center">
+            <div className="bg-white rounded-xl p-8 mb-8 shadow-soft">
+              <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">
                 Unsere Leistungen umfassen:
               </h3>
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-muted-foreground">
+              <ul className="grid md:grid-cols-2 gap-3 text-sm text-gray-600">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Website-Audit & SEO-Analyse</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Website-Konzept & Relaunch-Planung</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
                   <span>Conversion-Optimierung & UX-Design</span>
                 </li>
-              <li className="flex items-start gap-2">
-                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>Technische Website-Performance-Analyse</span>
-              </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{color: 'hsl(var(--turquoise))'}} />
+                  <span>Technische Website-Performance-Analyse</span>
+                </li>
               </ul>
             </div>
           </Reveal>
