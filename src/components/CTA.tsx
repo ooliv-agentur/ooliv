@@ -69,12 +69,12 @@ const CTA = ({
   const defaultFooterNote = "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
   
   return (
-    <section className="py-24 bg-medico-mint font-satoshi">
+    <section className="py-24 bg-background font-satoshi">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-medico-darkGreen leading-tight" style={{ lineHeight: '1.2' }}>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight" style={{ lineHeight: '1.2' }}>
           {title}
         </h2>
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-medico-darkGreen/90 leading-relaxed" style={{ lineHeight: '1.5' }}>
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground leading-relaxed" style={{ lineHeight: '1.5' }}>
           {subtitle}
         </p>
         
@@ -154,7 +154,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 asChild
               >
                 <Link to={contactPath}>
@@ -166,7 +166,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
@@ -178,7 +178,7 @@ const CTA = ({
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
@@ -191,8 +191,8 @@ const CTA = ({
         {/* Trust elements with improved visual hierarchy */}
         {footerNote ? (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-accent-primary/5 rounded-2xl p-6 border border-accent-primary/20">
-              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+            <div className="bg-turquoise/5 rounded-2xl p-6 border border-turquoise/20">
+              <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
                 {footerNote}
               </p>
             </div>
@@ -203,8 +203,8 @@ const CTA = ({
           </div>
         ) : (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-accent-primary/5 rounded-2xl p-6 border border-accent-primary/20">
-              <p className="text-base md:text-lg text-medico-darkGreen/80 font-medium leading-relaxed">
+            <div className="bg-turquoise/5 rounded-2xl p-6 border border-turquoise/20">
+              <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
                 {defaultFooterNote}
               </p>
             </div>

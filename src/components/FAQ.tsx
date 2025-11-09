@@ -155,8 +155,8 @@ const FAQ = ({
           <div className="space-y-12">
             {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
               categoryFaqs.length > 0 && (
-                <div key={category} className="bg-medico-mint/20 rounded-2xl p-6 md:p-8 border border-accent-primary/20">
-                  <h3 className="text-xl md:text-2xl font-bold text-medico-darkGreen mb-6 text-center">
+              <div key={category} className="bg-secondary rounded-2xl p-6 md:p-8 border border-border">
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
                     {categoryTitles[category as keyof typeof categoryTitles]}
                   </h3>
                   <Accordion type="single" collapsible className="w-full">
@@ -167,10 +167,10 @@ const FAQ = ({
                           value={`${category}-item-${index}`}
                           className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                         >
-                          <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-accent-primary transition-colors duration-200">
-                            {faq.question}
-                          </AccordionTrigger>
-                          <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                        <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed mt-4 pb-4">
                             <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                           </AccordionContent>
                         </AccordionItem>
@@ -192,7 +192,7 @@ const FAQ = ({
                     value={`item-${index}`}
                     className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                   >
-                    <AccordionTrigger className="text-base md:text-lg font-medium text-medico-darkGreen hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-accent-primary transition-colors duration-200">
+                    <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
@@ -215,13 +215,13 @@ const FAQ = ({
                 {useLeadForm ? (
                   <button 
                     onClick={handleOpenLeadForm}
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-foreground text-foreground hover:bg-turquoise hover:text-white hover:border-turquoise font-medium px-8 py-3 transition-all duration-300"
                   >
                     <ArrowRight className="h-4 w-4" />
                     {ctaText}
                   </button>
                 ) : (
-                  <Button asChild variant="outline" className="rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300">
+                  <Button asChild variant="outline" className="rounded-full border-2 border-foreground text-foreground hover:bg-turquoise hover:text-white hover:border-turquoise font-medium px-8 py-3 transition-all duration-300">
                     <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
                       <ArrowRight className="h-4 w-4" />
                       {ctaText}
