@@ -8,25 +8,26 @@
 
 @layer base {
   :root {
-    /* Shadcn color system - Black & White theme */
+    /* Shadcn color system - Turquoise Minimal Theme */
     --background: 0 0% 100%;
-    --foreground: 193 100% 10%;
+    --foreground: 0 0% 10%;
     
     --card: 0 0% 100%;
-    --card-foreground: 193 100% 10%;
+    --card-foreground: 0 0% 10%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 193 100% 10%;
+    --popover-foreground: 0 0% 10%;
     
-    --primary: 193 100% 10%;
+    --primary: 0 0% 10%;
     --primary-foreground: 0 0% 100%;
     
     --secondary: 0 0% 96%;
-    --secondary-foreground: 193 100% 10%;
+    --secondary-foreground: 0 0% 10%;
     
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
     
+    /* Turquoise accent throughout */
     --accent: 168 60% 50%;
     --accent-foreground: 0 0% 100%;
     
@@ -35,23 +36,28 @@
     
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 193 100% 10%;
+    --ring: 168 60% 50%;
     
     --radius: 0.5rem;
+    
+    /* Turquoise color scale for utility classes */
+    --turquoise: 168 60% 50%;
+    --turquoise-hover: 168 50% 40%;
+    --turquoise-light: 168 50% 60%;
   }
   
   .dark {
-    --background: 193 100% 10%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 100%;
     
-    --card: 193 100% 10%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 100%;
     
-    --popover: 193 100% 10%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
     
     --primary: 0 0% 100%;
-    --primary-foreground: 193 100% 10%;
+    --primary-foreground: 0 0% 10%;
     
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
@@ -59,6 +65,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
     
+    /* Turquoise accent in dark mode */
     --accent: 168 60% 50%;
     --accent-foreground: 0 0% 100%;
     
@@ -67,7 +74,12 @@
     
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --ring: 168 60% 50%;
+    
+    /* Turquoise for dark mode */
+    --turquoise: 168 60% 50%;
+    --turquoise-hover: 168 50% 60%;
+    --turquoise-light: 168 50% 70%;
   }
 }
 
@@ -221,30 +233,32 @@
   }
 }
 
-/* Seasonal Color System - Auto-rotating monthly accents */
+/* Global Turquoise Theme - Applied Everywhere */
 :root {
   /* Core Brand Colors (never change) */
-  --brand-turquoise: 166 50% 47%; /* #38B593 */
-  --brand-dark-green: 193 100% 10%; /* #003347 */
+  --brand-turquoise: 168 60% 50%; /* #38B593 - PRIMARY ACCENT */
+  --brand-dark-green: 0 0% 10%; /* Pure Black for minimal theme */
   --brand-white: 0 0% 100%; /* #FFFFFF */
 
-  /* Rotating Accent Colors (auto-updated monthly or overridden by minimal theme) */
-  --accent-primary: 168 60% 50%; /* Turquoise (default) */
-  --accent-complementary: 340 75% 65%; /* Complementary color */
-  --accent-secondary: 168 45% 65%; /* Lighter mint */
-  --accent-tertiary: 160 50% 60%; /* Fresh mint */
-  --accent-gradient: linear-gradient(135deg, hsl(168 60% 50%), hsl(160 55% 55%));
+  /* Turquoise as Primary Accent Everywhere */
+  --accent-primary: 168 60% 50%; /* Turquoise - PRIMARY */
+  --accent-complementary: 0 0% 20%; /* Dark gray instead of pink */
+  --accent-secondary: 168 45% 65%; /* Lighter turquoise */
+  --accent-tertiary: 168 50% 60%; /* Mid turquoise */
+  --accent-gradient: linear-gradient(135deg, hsl(168 60% 50%), hsl(168 50% 60%));
   
-  /* Accent glow for floating circles */
-  --accent-glow: hsla(168, 60%, 50%, 0.4);
+  /* Turquoise glow (hidden in minimal mode) */
+  --accent-glow: hsla(0, 0%, 0%, 0);
   
-  /* Minimal theme overrides (set via JavaScript) */
-  --brand-background-alt: hsl(0 0% 98%); /* Very light gray for subtle sections */
+  /* Minimal theme backgrounds */
+  --brand-background: 0 0% 100%; /* Pure white */
+  --brand-background-alt: 0 0% 98%; /* Very light gray for subtle sections */
   
-  /* Turquoise brand colors */
+  /* Turquoise utility classes */
   --turquoise: 168 60% 50%; /* #38B593 */
   --turquoise-dark: 168 50% 40%; /* #2D9174 */
   --turquoise-light: 168 50% 60%; /* Lighter turquoise */
+  --turquoise-hover: 168 50% 40%; /* Hover state */
 }
 
 /* Custom Shadow Utilities for WP All Import Clean Style */

@@ -16,7 +16,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import RouterErrorBoundary from './components/RouterErrorBoundary';
 import ContextErrorBoundary from './components/ContextErrorBoundary';
 import { useSeasonalColors } from './hooks/useSeasonalColors';
-import { setHybridMinimalTheme } from './styles/minimalTheme';
+import { applyGlobalTurquoiseTheme } from './styles/globalTheme';
 
 // Lazy load pages for better performance
 const GermanIndex = lazy(() => import('./pages/Index'));
@@ -65,9 +65,9 @@ function App() {
   // Initialize seasonal color system
   const { monthColor } = useSeasonalColors();
 
-  // Apply minimal theme globally to all pages
+  // Apply global turquoise theme to all pages
   React.useEffect(() => {
-    setHybridMinimalTheme();
+    applyGlobalTurquoiseTheme();
   }, []);
 
   const handleLeadOpenChange = React.useCallback((next: boolean) => {
