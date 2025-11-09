@@ -65,10 +65,10 @@ function App() {
   // Initialize seasonal color system
   const { monthColor } = useSeasonalColors();
 
-  // Apply global turquoise theme to all pages
-  React.useEffect(() => {
-    applyGlobalTurquoiseTheme();
-  }, []);
+  // Global theme disabled - using Tailwind classes directly
+  // React.useEffect(() => {
+  //   applyGlobalTurquoiseTheme();
+  // }, []);
 
   const handleLeadOpenChange = React.useCallback((next: boolean) => {
     setShowLeadForm(next);
