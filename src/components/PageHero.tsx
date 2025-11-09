@@ -128,8 +128,7 @@ const PageHero = ({
       return (
         <div className="mb-6 sm:mb-8">
           <h1 
-            className="font-medium leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-6 sm:mb-8"
-            style={{ color: '#1A1A1A' }}
+            className="font-medium leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-6 sm:mb-8 text-foreground"
           >
             {title || defaultHomepageTitle}
           </h1>
@@ -138,8 +137,7 @@ const PageHero = ({
           {dynamicSubheadlines && (
             <div className="text-left mb-6 sm:mb-8">
               <div
-                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px]"
-                style={{ color: '#333333' }}
+                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px] text-muted-foreground"
               >
                 {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
                 <DynamicSubheadlines 
@@ -155,8 +153,7 @@ const PageHero = ({
     } else {
       return (
         <h1 
-          className="font-medium leading-tight text-left mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-          style={{ color: '#1A1A1A' }}
+          className="font-medium leading-tight text-left mb-6 sm:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-foreground"
         >
           {title}
         </h1>
@@ -166,7 +163,7 @@ const PageHero = ({
   
   const renderSubtitle = () => {
     return (
-      <p className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left" style={{ lineHeight: '1.7' }}>
+      <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 text-left" style={{ lineHeight: '1.7' }}>
         {subtitle || description || (isHomepage ? defaultHomepageDescription : '')}
       </p>
     );
@@ -199,19 +196,9 @@ const PageHero = ({
       <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
         {openLeadForm ? (
           <Button 
+            variant="primary"
             size="lg" 
             className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-            style={{ 
-              backgroundColor: '#FFD700', 
-              color: '#003347',
-              border: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }}
             onClick={handleOpenLeadForm}
           >
             {primary.text}
@@ -219,19 +206,9 @@ const PageHero = ({
           </Button>
         ) : primary.onClick ? (
           <Button 
+            variant="primary"
             size="lg" 
             className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-            style={{ 
-              backgroundColor: '#FFD700', 
-              color: '#003347',
-              border: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }}
             onClick={primary.onClick}
           >
             {primary.text}
@@ -239,19 +216,9 @@ const PageHero = ({
           </Button>
         ) : (
           <Button 
+            variant="primary"
             size="lg" 
             className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-            style={{ 
-              backgroundColor: '#FFD700', 
-              color: '#003347',
-              border: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFC700';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFD700';
-            }}
             asChild
           >
             <Link to={primary.link}>
@@ -266,7 +233,7 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+              className="bg-white text-foreground hover:bg-gray-50 border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
               onClick={secondary.onClick}
             >
               {secondary.text}
@@ -276,7 +243,7 @@ const PageHero = ({
             <Button 
               variant="outline" 
               size="lg" 
-              className="bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-accent-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+              className="bg-white text-foreground hover:bg-gray-50 border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
               asChild
             >
               <Link to={secondary.link}>
@@ -291,7 +258,7 @@ const PageHero = ({
   };
   
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+    <section className="relative bg-gray-50 overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -309,7 +276,7 @@ const PageHero = ({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {badge && (
-              <p className="text-sm font-semibold mb-4 uppercase tracking-wide" style={{ color: '#00B8A9' }}>
+              <p className="text-sm font-semibold mb-4 uppercase tracking-wide text-turquoise">
                 {badge}
               </p>
             )}
@@ -323,11 +290,11 @@ const PageHero = ({
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 rounded-full animate-pulse" style={{ background: `linear-gradient(to bottom, hsl(var(--accent-primary) / 0.5), hsl(var(--accent-primary) / 0.8))` }}></div>
+          <div className="w-1 h-6 sm:h-8 rounded-full bg-turquoise/50 animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)' }}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)', animationDelay: '0.5s' }}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full animate-pulse" style={{ background: 'hsl(var(--accent-primary) / 0.8)', animationDelay: '1s' }}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-turquoise animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-turquoise animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-turquoise animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
         </div>
       </div>
