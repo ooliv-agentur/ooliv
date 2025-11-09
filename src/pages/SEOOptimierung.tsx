@@ -18,6 +18,8 @@ import GEOOptimizationSEO from '@/components/seo/GEOOptimizationSEO';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -104,18 +106,20 @@ const GermanSEO = () => {
       <SEOApproachDE />
       
       {/* Budget-Signal SEO */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-background">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-medico-darkGreen">
-            Was kostet professionelle SEO & GEO-Betreuung?
-          </h3>
-          <p className="text-lg text-medico-darkGreen mb-4">
-            Unsere SEO & GEO-Pakete starten bei <strong>€800/Monat</strong> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
-            Initial-Audits und technische SEO-Setups beginnen bei <strong>€2.500</strong>.
-          </p>
-          <p className="text-sm text-medico-darkGreen/70">
-            Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote.
-          </p>
+          <TurquoiseCard variant="soft">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">
+              Was kostet professionelle SEO & GEO-Betreuung?
+            </h3>
+            <p className="text-lg text-muted-foreground mb-4">
+              Unsere SEO & GEO-Pakete starten bei <span className="text-turquoise font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
+              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-turquoise font-bold">€2.500</span>.
+            </p>
+            <TurquoiseBadge variant="outline" size="sm">
+              Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote
+            </TurquoiseBadge>
+          </TurquoiseCard>
         </div>
       </section>
       

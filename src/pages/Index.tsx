@@ -17,6 +17,8 @@ import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
 import CostCalculator from '@/components/pricing/CostCalculator';
@@ -230,32 +232,32 @@ const GermanIndex = () => {
                 
                 {/* Condensed benefits section */}
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
                       Persönliche Betreuung
                     </h4>
-                    <p className="text-sm text-medico-darkGreen">
+                    <p className="text-sm text-muted-foreground">
                       Direkter Draht zum CEO – kurze Wege, schnelle Entscheidungen, egal wo Sie sind.
                     </p>
-                  </div>
+                  </TurquoiseCard>
                   
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
                       Bundesweite Projekte
                     </h4>
-                    <p className="text-sm text-medico-darkGreen">
+                    <p className="text-sm text-muted-foreground">
                       Von Mainz bis München – wir arbeiten mit Unternehmen im gesamten DACH-Raum zusammen.
                     </p>
-                  </div>
+                  </TurquoiseCard>
                   
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <h4 className="text-base font-semibold mb-2 text-medico-darkGreen">
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
                       Messbare Erfolge
                     </h4>
-                    <p className="text-sm text-medico-darkGreen">
+                    <p className="text-sm text-muted-foreground">
                       Unsere digitalen Strategien basieren auf Daten und liefern nachweisbare Ergebnisse.
                     </p>
-                  </div>
+                  </TurquoiseCard>
                 </div>
                 
                 {/* Internal linking */}

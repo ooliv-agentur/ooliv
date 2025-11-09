@@ -14,6 +14,8 @@ import { ArrowRight, Target, LineChart, MousePointerClick, Bot, Shield, Layout }
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -124,13 +126,13 @@ const GermanGoogleAds = () => {
                 solution: "Wir verbinden Kampagnen, Content und Daten zu einem performanten System mit klarem Ziel"
               }
             ].map((item, i) => (
-              <div key={i} className="bg-medico-mint rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-medico-turquoise font-bold mb-3">PROBLEM:</div>
-                <h3 className="text-lg font-bold mb-2 text-medico-darkGreen">{item.problem}</h3>
-                <p className="text-sm text-gray-600 mb-4">{item.context}</p>
-                <div className="text-medico-turquoise font-bold mb-2">LÖSUNG:</div>
-                <p className="text-medico-darkGreen">{item.solution}</p>
-              </div>
+              <TurquoiseCard key={i} variant="default" hoverLift>
+                <TurquoiseBadge variant="solid" size="sm" className="mb-3">PROBLEM</TurquoiseBadge>
+                <h3 className="text-lg font-bold mb-2 text-foreground">{item.problem}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{item.context}</p>
+                <TurquoiseBadge variant="soft" size="sm" className="mb-2">LÖSUNG</TurquoiseBadge>
+                <p className="text-foreground">{item.solution}</p>
+              </TurquoiseCard>
             ))}
           </div>
         </div>
@@ -152,36 +154,35 @@ const GermanGoogleAds = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: <Target className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: Target,
                 title: "Google Ads (Search, Display & PMax)",
                 description: "Performance-orientierte Kampagnen mit Fokus auf B2B-Keywords und mehr Anfragen generieren"
               },
               {
-                icon: <Bot className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: Bot,
                 title: "KI-gestützte Kampagnensteuerung",
                 description: "Wir nutzen KI-Tools zur Verbesserung von Anzeigenqualität, Keyword-Performance und Targeting"
               },
               {
-                icon: <Layout className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: Layout,
                 title: "Landingpage Design & Entwicklung",
                 description: "Wir erstellen Zielseiten, die schnell laden, klar kommunizieren und zu Leads konvertieren"
               },
               {
-                icon: <MousePointerClick className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: MousePointerClick,
                 title: "Conversion Rate Optimierung (CRO)",
                 description: "Wir testen jedes Element – von Headlines bis CTAs – um Ihre Conversion-Raten schrittweise zu verbessern"
               },
               {
-                icon: <Shield className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: Shield,
                 title: "Analytics, Tracking & Click-Fraud-Schutz",
                 description: "Wir tracken jede Aktion, überwachen Performance und schützen Ihr Budget vor ungültigen Klicks"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-medico-mint p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                {service.icon}
-                <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">{service.title}</h3>
-                <p className="text-medico-darkGreen">{service.description}</p>
-              </div>
+              <TurquoiseCard key={index} icon={service.icon} hoverLift>
+                <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
+              </TurquoiseCard>
             ))}
           </div>
         </div>
@@ -190,19 +191,21 @@ const GermanGoogleAds = () => {
       <GoogleAdsProcess />
 
       {/* Budget-Signal Google Ads */}
-      <section className="py-12 bg-medico-mint/20">
+      <section className="py-12 bg-background">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-medico-darkGreen">
-            Was kostet eine professionelle Google Ads Kampagne?
-          </h3>
-          <p className="text-lg text-medico-darkGreen mb-4">
-            Setup & Strategie: <strong>ab €500</strong> (einmalig)<br/>
-            Laufende Betreuung & Optimierung: <strong>ab €250/Monat</strong> + Ihr Werbebudget<br/>
-            Empfohlenes monatliches Werbebudget: <strong>mindestens €2.000</strong>
-          </p>
-          <p className="text-sm text-medico-darkGreen/70">
-            Für B2B-Kampagnen mit hohem Ticket-Wert empfehlen wir €5.000+ Werbebudget/Monat.
-          </p>
+          <TurquoiseCard variant="soft">
+            <h3 className="text-2xl font-bold mb-4 text-foreground">
+              Was kostet eine professionelle Google Ads Kampagne?
+            </h3>
+            <p className="text-lg text-muted-foreground mb-4">
+              Setup & Strategie: <span className="text-turquoise font-bold">ab €500</span> (einmalig)<br/>
+              Laufende Betreuung & Optimierung: <span className="text-turquoise font-bold">ab €250/Monat</span> + Ihr Werbebudget<br/>
+              Empfohlenes monatliches Werbebudget: <span className="text-turquoise font-bold">mindestens €2.000</span>
+            </p>
+            <TurquoiseBadge variant="outline" size="sm">
+              Für B2B-Kampagnen mit hohem Ticket-Wert empfehlen wir €5.000+ Werbebudget/Monat
+            </TurquoiseBadge>
+          </TurquoiseCard>
         </div>
       </section>
 

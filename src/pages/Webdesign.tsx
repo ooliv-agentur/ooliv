@@ -14,6 +14,8 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 const GermanWebDesign = () => {
   const breadcrumbs = [
@@ -91,39 +93,39 @@ const GermanWebDesign = () => {
         <WebDesignProcess />
 
         {/* Budget & Preis-Transparenz Section */}
-        <section className="py-16 bg-medico-mint/20">
+        <section className="py-16 bg-background">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-6 text-medico-darkGreen text-center">
+            <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
               Was kostet professionelles Webdesign?
             </h2>
-            <div className="bg-white p-8 rounded-xl shadow-sm">
+            <TurquoiseCard variant="soft" className="p-8">
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-primary mb-2">€6.000</div>
-                  <div className="text-sm font-semibold text-medico-darkGreen mb-2">Starter-Website</div>
-                  <p className="text-sm text-medico-darkGreen/80">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€6.000</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Starter-Website</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
                     Strategischer Onepager mit modernem Design, mobiloptimiert
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-primary mb-2">€10.000</div>
-                  <div className="text-sm font-semibold text-medico-darkGreen mb-2">Business-Website</div>
-                  <p className="text-sm text-medico-darkGreen/80">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€10.000</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Business-Website</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
                     Mehrere Seiten, SEO-optimiert, Content-Strategie inklusive
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-primary mb-2">€15.000+</div>
-                  <div className="text-sm font-semibold text-medico-darkGreen mb-2">Enterprise</div>
-                  <p className="text-sm text-medico-darkGreen/80">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€15.000+</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Enterprise</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
                     Multilingual, Shop-Integration, komplexe Funktionen
                   </p>
                 </div>
               </div>
-              <p className="text-center text-sm text-medico-darkGreen/70 mt-6">
+              <p className="text-center text-sm text-muted-foreground mt-6">
                 Alle Preise verstehen sich als Startpunkt. Wir erstellen individuelle Angebote basierend auf Ihren Anforderungen.
               </p>
-            </div>
+            </TurquoiseCard>
           </div>
         </section>
 
