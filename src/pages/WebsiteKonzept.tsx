@@ -6,9 +6,10 @@ import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedProto
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 import ScrollProgressBar from '@/components/journey/ScrollProgressBar';
-import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap } from 'lucide-react';
+import { Check, Clock, ShieldCheck, FileText, Mail, CheckCircle2, Layout, Users, Zap, Star, Award } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -56,9 +57,14 @@ const WebsiteKonzept = () => {
         <div className="max-w-5xl mx-auto px-8 w-full relative z-10">
           <div className="text-center w-full">
             <Reveal delay={0.1} direction="up" distance={20}>
-              <p className="text-base text-gray-600 mb-6">
-                Für Unternehmen mit bestehenden Websites.
-              </p>
+              <div className="flex flex-wrap justify-center gap-3 mb-6">
+                <TurquoiseBadge variant="soft" icon={Award} size="md">
+                  Für Unternehmen
+                </TurquoiseBadge>
+                <TurquoiseBadge variant="outline" icon={Star} size="md">
+                  Kostenlos
+                </TurquoiseBadge>
+              </div>
             </Reveal>
             
             <Reveal delay={0.2} direction="up" distance={30}>
@@ -125,9 +131,9 @@ const WebsiteKonzept = () => {
             </Reveal>
             
             <Reveal delay={0.8} direction="up" distance={20}>
-              <p className="text-sm text-gray-500">
-                ⚠️ Begrenzte Verfügbarkeit – wir erstellen nur 1-2 Konzepte pro Woche
-              </p>
+              <TurquoiseBadge variant="ghost" size="sm">
+                ⚠️ Begrenzte Verfügbarkeit – nur 1-2 Konzepte pro Woche
+              </TurquoiseBadge>
             </Reveal>
           </div>
         </div>
@@ -397,9 +403,11 @@ const WebsiteKonzept = () => {
 
           <Reveal delay={0.4} direction="up">
             <div className="text-center mb-8">
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Optional inklusive
-              </h3>
+              <div className="flex justify-center mb-4">
+                <TurquoiseBadge variant="soft" icon={CheckCircle2} size="lg">
+                  Optional inklusive
+                </TurquoiseBadge>
+              </div>
               <p className="text-base text-muted-foreground mb-2">
                 Kostenlose SEO-Analyse, Website-Audit und Performance-Check
               </p>
