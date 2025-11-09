@@ -100,14 +100,14 @@ const GermanIndex = () => {
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-medico-darkGreen">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-medico-darkGreen">
+            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-muted-foreground">
               Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google sichtbar werden.
             </p>
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
-              <p className="text-medico-darkGreen mb-6">
-                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-accent-primary hover:underline">info@ooliv.de</a>
+              <p className="text-muted-foreground mb-6">
+                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-turquoise hover:underline">info@ooliv.de</a>
               </p>
               <Button 
                 variant="primary"
@@ -127,21 +127,21 @@ const GermanIndex = () => {
         <CaseStudiesSection />
         
         {/* Automated Content Marketing Highlight - repositioned for better flow */}
-        <section className="py-12 bg-gradient-to-r from-accent-complementary/10 to-accent-primary/10">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
-              <h2 className="text-2xl font-bold text-medico-darkGreen mb-4 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-accent-primary mr-3" />
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-turquoise mr-3" />
                 NEU: Automatisierte Content-Marketing Lösung
               </h2>
-              <p className="text-lg text-medico-darkGreen mb-6 max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
                 Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
                 Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   variant="outline" 
-                  className="text-accent-primary border-accent-primary hover:bg-accent-primary/10 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2"
+                  className="text-turquoise border-turquoise hover:bg-turquoise/10 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2"
                   asChild
                 >
                   <Link to="/automatisierte-content-marketing">
@@ -150,7 +150,8 @@ const GermanIndex = () => {
                 </Button>
                 <Button 
                   onClick={handleStartProject}
-                  className="bg-accent-primary text-white hover:bg-accent-primary/90 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2"
+                  variant="primary"
+                  className="w-full sm:w-auto"
                   aria-label="Starten Sie Ihr Content-Marketing Projekt"
                 >
                   Projekt starten
@@ -178,25 +179,25 @@ const GermanIndex = () => {
         />
 
         {/* Standort Mainz, bundesweit aktiv */}
-        <div className="py-12 bg-medico-mint">
+        <div className="py-12 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-medico-darkGreen">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
                 Standort Mainz – Bundesweit für Sie da
               </h2>
               <div className="max-w-4xl mx-auto space-y-4">
-                <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
                   Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, 
                   <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir digitale Strategien, 
                   die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
                 </p>
-                <p className="text-base text-medico-darkGreen" style={{ lineHeight: '1.6' }}>
+                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
                   Unser Webdesign- und Marketing-Service verbindet persönliche Betreuung mit modernster Technologie. Als Digitalagentur bieten wir Ihnen den kompletten Service aus einer Hand – für lokale und überregionale Projekte.
                 </p>
                 
                 {/* Strategic outgoing links */}
                 <div className="bg-white p-4 rounded-lg shadow-sm mt-6">
-                  <h3 className="text-lg font-semibold mb-3 text-medico-darkGreen">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
                     Nützliche Ressourcen für Unternehmen
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -204,7 +205,7 @@ const GermanIndex = () => {
                       href="https://www.rheinhessen.ihk24.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       IHK Rheinhessen
@@ -213,7 +214,7 @@ const GermanIndex = () => {
                       href="https://isb.rlp.de/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       Wirtschaftsförderung RLP
@@ -222,7 +223,7 @@ const GermanIndex = () => {
                       href="https://www.mainz.de/wirtschaft/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent-primary hover:text-medico-darkGreen font-medium transition-colors text-sm"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
                     >
                       <ExternalLink className="w-3 h-3 mr-2" />
                       Wirtschaftsförderung Mainz
@@ -264,7 +265,7 @@ const GermanIndex = () => {
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
                   <Link 
                     to="/webdesign" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
                     aria-label="Erfahren Sie mehr über unsere Webdesign Services"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -272,7 +273,7 @@ const GermanIndex = () => {
                   </Link>
                   <Link 
                     to="/seo-optimierung" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
                     aria-label="Entdecken Sie unsere SEO-Optimierungsservices"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -280,7 +281,7 @@ const GermanIndex = () => {
                   </Link>
                   <Link 
                     to="/kontakt" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-medico-darkGreen hover:text-brand-primary font-medium transition-all text-sm rounded-md hover:bg-brand-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 min-h-[44px]"
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
                     aria-label="Kontaktieren Sie uns für eine Beratung"
                   >
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
