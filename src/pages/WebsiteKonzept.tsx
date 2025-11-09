@@ -131,7 +131,7 @@ const WebsiteKonzept = () => {
             
             <Reveal delay={0.8} direction="up" distance={20}>
               <p className="text-sm text-gray-500">
-                ⚠️ Nur 1 Slot in KW 45 verfügbar
+                ⚠️ Begrenzte Verfügbarkeit – wir erstellen nur 1-2 Konzepte pro Woche
               </p>
             </Reveal>
           </div>
