@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 import ArticleNavigation from './ArticleNavigation';
 import ArticleHeader from './ArticleHeader';
 import ArticleContent from './ArticleContent';
+import RelatedArticles from './RelatedArticles';
 
 interface ContentPost {
   id: number;
@@ -115,6 +116,7 @@ const SingleArticleDisplay = ({ slug, onArticleLoad }: SingleArticleDisplayProps
         <div className="mt-12">
           <ArticleHeader article={article} />
           <ArticleContent article={article} />
+          <RelatedArticles currentArticleId={article.id} maxArticles={3} />
         </div>
       </div>
     </section>
