@@ -125,10 +125,24 @@ serve(async (req) => {
       });
     }
 
-    // Validate required fields
-    if (!payload.id || !payload.title || typeof payload.id !== 'string' || typeof payload.title !== 'string') {
-      console.error('Missing or invalid required fields');
-      return new Response('Missing required fields: id, title', { 
+    // 🧪 TEST MODE: Handle test/health-check requests
+    if (!payload || Object.keys(payload).length === 0 || payload.test === true) {
+      console.log('🧪 Test webhook request detected - authentication verified');
+      return new Response(JSON.stringify({ 
+        status: 'success',
+        message: 'Webhook endpoint is healthy and authentication successful',
+        endpoint: 'receiveContentWebhook',
+        timestamp: new Date().toISOString()
+      }), { 
+        status: 200,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Validate required fields - only title is required (id is auto-generated in DB)
+    if (!payload.title || typeof payload.title !== 'string') {
+      console.error('Missing or invalid required field: title');
+      return new Response('Missing required field: title', { 
         status: 400,
         headers: corsHeaders 
       });
@@ -146,7 +160,11 @@ serve(async (req) => {
       });
     }
 
-    console.log('Validated webhook payload:', { id: payload.id, title: payload.title });
+    console.log('✅ Validated webhook payload:', { 
+      title: payload.title,
+      hasContent: !!(payload.content_html || payload.content_markdown),
+      languageCode: payload.languageCode || 'not provided'
+    });
 
     // Initialize Supabase client with service role key for bypassing RLS
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
