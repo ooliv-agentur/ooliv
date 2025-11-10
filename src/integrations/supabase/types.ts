@@ -30,7 +30,7 @@ export type Database = {
           content_html?: string | null
           content_md?: string | null
           created_at?: string
-          id: number
+          id?: number
           language_code?: string | null
           meta_description?: string | null
           public_url?: string | null
@@ -78,7 +78,7 @@ export type Database = {
           created_at: string
           essential: boolean
           id: string
-          ip_address: unknown | null
+          ip_address: unknown
           marketing: boolean
           preferences: boolean
           session_id: string
@@ -91,7 +91,7 @@ export type Database = {
           created_at?: string
           essential?: boolean
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           marketing?: boolean
           preferences?: boolean
           session_id: string
@@ -104,7 +104,7 @@ export type Database = {
           created_at?: string
           essential?: boolean
           id?: string
-          ip_address?: unknown | null
+          ip_address?: unknown
           marketing?: boolean
           preferences?: boolean
           session_id?: string
@@ -350,14 +350,8 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      cleanup_old_sitemap_cache: {
-        Args: Record<PropertyKey, never>
-        Returns: number
-      }
-      generate_slug: {
-        Args: { title_text: string }
-        Returns: string
-      }
+      cleanup_old_sitemap_cache: { Args: never; Returns: number }
+      generate_slug: { Args: { title_text: string }; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -365,14 +359,8 @@ export type Database = {
         }
         Returns: boolean
       }
-      secure_migrate_existing_tokens: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      trigger_sitemap_regeneration: {
-        Args: Record<PropertyKey, never>
-        Returns: Json
-      }
+      secure_migrate_existing_tokens: { Args: never; Returns: undefined }
+      trigger_sitemap_regeneration: { Args: never; Returns: Json }
     }
     Enums: {
       app_role: "admin" | "user"
