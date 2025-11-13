@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import InlinePrototypeForm from '@/components/website-konzept/InlinePrototypeForm';
@@ -18,6 +18,19 @@ import {
 } from "@/components/ui/accordion";
 
 const WebsiteKonzept = () => {
+  const [showStickyCTA, setShowStickyCTA] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky CTA after scrolling past hero (approximately 80vh)
+      const heroHeight = window.innerHeight * 0.8;
+      setShowStickyCTA(window.scrollY > heroHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToForm = () => {
     const formElement = document.getElementById('lead-form-section');
     if (formElement) {
@@ -39,6 +52,23 @@ const WebsiteKonzept = () => {
       
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
+      
+      {/* Sticky Mobile CTA */}
+      <div 
+        className={`fixed bottom-0 left-0 right-0 z-50 lg:hidden transition-transform duration-300 ${
+          showStickyCTA ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <div className="bg-white border-t border-gray-200 shadow-lg px-4 py-3">
+          <Button 
+            onClick={scrollToForm}
+            size="lg"
+            className="w-full bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-md"
+          >
+            Kostenloses Konzept sichern →
+          </Button>
+        </div>
+      </div>
       
 
       {/* Static Logo */}
