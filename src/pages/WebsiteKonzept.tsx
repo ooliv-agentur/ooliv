@@ -52,112 +52,67 @@ const WebsiteKonzept = () => {
         </div>
       </Reveal>
 
-      {/* Hero Section - Clean Minimal Style */}
-      <section className="min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 py-32 overflow-x-hidden relative">
-        <div className="max-w-5xl mx-auto px-8 w-full relative z-10">
+      {/* Hero Section - Conversion Optimized */}
+      <section className="min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 py-20 md:py-32 overflow-x-hidden relative">
+        <div className="max-w-4xl mx-auto px-8 w-full relative z-10">
           <div className="text-center w-full">
             <Reveal delay={0.1} direction="up" distance={20}>
-              <div className="flex flex-wrap justify-center gap-3 mb-6">
-                <TurquoiseBadge variant="soft" icon={Award} size="md">
-                  Für Unternehmen
-                </TurquoiseBadge>
-                <TurquoiseBadge variant="outline" icon={Star} size="md">
-                  Kostenlos
-                </TurquoiseBadge>
-              </div>
-            </Reveal>
-            
-            <Reveal delay={0.2} direction="up" distance={30}>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Kostenloses Website-Konzept in 48 Stunden – individuell, datenbasiert, unverbindlich
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Ihre Website bringt keine Anfragen?<br />Wir zeigen Ihnen kostenlos, warum.
               </h1>
             </Reveal>
 
-            <Reveal delay={0.3} direction="up" distance={30}>
-              <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Professionelles Website-Konzept im Wert von 1.500 € – komplett kostenlos in 48 Stunden. Wir gehen in Vorleistung und beweisen, was wir können.
-              </p>
-            </Reveal>
-            
-            <Reveal delay={0.4} direction="up" distance={20}>
-              <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
-              <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
-                  <span className="font-bold text-turquoise">★★★★★</span>
-                  <span className="text-sm font-semibold text-gray-900">4.9/5 Google</span>
-                  <span className="text-xs text-gray-500">(47 Bewertungen)</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-full shadow-sm border border-gray-100">
-                  <span className="text-sm font-semibold text-gray-900">🏆 Top 3 Digitalagentur</span>
-                  <span className="text-xs text-gray-500">Rhein-Main (Sortlist)</span>
-                </div>
-              </div>
-            </Reveal>
-            
-            <StaggerReveal stagger={0.1} delay={0.5}>
-              <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <div className="flex items-center gap-2">
-                  <Check className="w-5 h-5 text-turquoise" />
-                  <span className="text-lg font-semibold text-gray-900">100 % kostenlos</span>
-                </div>
-                <span className="text-lg text-gray-400">•</span>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-turquoise" />
-                  <span className="text-lg font-semibold text-gray-900">Antwort in 48 h</span>
-                </div>
-                <span className="text-lg text-gray-400">•</span>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-turquoise" />
-                  <span className="text-lg font-semibold text-gray-900">Keine Verpflichtung</span>
-                </div>
-              </div>
-            </StaggerReveal>
-
-            <Reveal delay={0.6} direction="up" distance={20}>
-              <p className="text-base text-gray-600 mb-12 leading-relaxed">
-                Keine Agenturpflicht, keine versteckten Kosten – nur klare Ergebnisse für Ihre Website-Optimierung und Conversion-Optimierung.
+            <Reveal delay={0.2} direction="up" distance={30}>
+              <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Professionelles Website-Konzept in 48 Stunden – kostenlos, individuell, ohne Verpflichtung.
               </p>
             </Reveal>
 
-            <Reveal delay={0.7} direction="up" distance={20}>
+            <Reveal delay={0.3} direction="up" distance={20}>
               <div className="mb-8">
                 <Button 
                   onClick={scrollToForm}
                   size="xl"
-                  className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-10 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                  className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 text-lg"
                 >
-                  Jetzt kostenlos sichern →
+                  Jetzt kostenlose Analyse starten →
                 </Button>
               </div>
             </Reveal>
             
-            <Reveal delay={0.8} direction="up" distance={20}>
-              <TurquoiseBadge variant="ghost" size="sm">
-                ⚠️ Begrenzte Verfügbarkeit – nur 1-2 Konzepte pro Woche
-              </TurquoiseBadge>
+            <Reveal delay={0.4} direction="up" distance={20}>
+              <div className="flex flex-wrap items-center justify-center gap-6 mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-turquoise text-sm">★★★★★</span>
+                  <span className="text-sm text-gray-700">4.9/5 Google</span>
+                </div>
+                <span className="text-gray-300">•</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-700">Top 3 Digitalagentur Rhein-Main</span>
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Vorleistungs-Section - Clean Minimal Style */}
-      <section className="py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Vorleistungs-Section - Simplified */}
+      <section className="py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-8 py-4 rounded-2xl mb-8 bg-turquoise/10 text-turquoise-800">
-                <span className="text-3xl font-bold">1.500 €</span>
-                <span className="mx-4">→</span>
-                <span className="text-3xl font-bold">0 €</span>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-6 py-3 rounded-2xl mb-6 bg-turquoise/10 text-turquoise-800">
+                <span className="text-2xl font-bold">1.500 €</span>
+                <span className="mx-3">→</span>
+                <span className="text-2xl font-bold">0 €</span>
               </div>
               
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Wir gehen in Vorleistung – Sie gehen kein Risiko ein
               </h2>
               
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Kein Verkaufsgespräch, keine versteckten Kosten. 
-                Wir beweisen erst durch echte Arbeit, was wir können. 
-                Dann entscheiden Sie.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Kein Verkaufsgespräch, keine versteckten Kosten. Wir beweisen erst durch echte Arbeit, was wir können.
               </p>
             </div>
           </Reveal>
@@ -215,143 +170,123 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* 3-Step Process Section - Clean Minimal Style */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* 3-Step Process Section - Simplified */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 In 3 Schritten zu Ihrem Website-Konzept
               </h2>
             </div>
           </Reveal>
 
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
-            <TurquoiseCard variant="large" icon={FileText} number={1} numberClassName="text-4xl" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Formular ausfüllen
-              </h3>
-              <p className="text-gray-600">
-                Wir analysieren Ihre Website.
-              </p>
-            </TurquoiseCard>
-            
-            <TurquoiseCard variant="large" icon={Mail} number={2} numberClassName="text-4xl" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Konzept erhalten
-              </h3>
-              <p className="text-gray-600">
-                In 48 Stunden per E-Mail.
-              </p>
-            </TurquoiseCard>
-            
-            <TurquoiseCard variant="large" icon={CheckCircle2} number={3} numberClassName="text-4xl" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Sie entscheiden
-              </h3>
-              <p className="text-gray-600">
-                Ohne Verpflichtung.
-              </p>
-            </TurquoiseCard>
-          </StaggerReveal>
-        </div>
-      </section>
-
-      {/* Intro Block - Clean Minimal Style */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <Reveal direction="up">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
-              Ihre Website bringt zu wenig Anfragen oder Leads?
-            </h2>
-            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-              Wir analysieren und prüfen Ihre aktuelle Website – technisch, inhaltlich und strategisch – inklusive SEO-Analyse, Performance-Bewertung und Conversion-Check – und zeigen, wie Sie Ihre Website gezielt optimieren können.
-            </p>
-            <p className="text-base text-gray-600 leading-relaxed">
-              Mit unserem kostenlosen Website-Audit und einer detaillierten Website-Analyse erhalten Sie konkrete Handlungsempfehlungen zur Optimierung Ihrer bestehenden Website – von der Seitenstruktur über Inhalte bis zur Conversion-Optimierung.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Trust Block - Clean Minimal Style */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-8">
-          <Reveal direction="up">
-            <h2 className="text-center text-3xl font-bold text-gray-900 mb-12">
-              Qualität statt Masse – Deshalb nur 1-2 Konzepte pro Woche
-            </h2>
-          </Reveal>
-
-          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-12">
-            <TurquoiseCard variant="large" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                100 % kostenlos – kein Abo, keine versteckten Kosten
-              </h3>
-            </TurquoiseCard>
-            
-            <TurquoiseCard variant="large" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Kein Risiko – Sie entscheiden erst nach dem Konzept
-              </h3>
-            </TurquoiseCard>
-            
-            <TurquoiseCard variant="large" hoverLift>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Antwort in 48 Stunden – kein Gespräch nötig
-              </h3>
-            </TurquoiseCard>
-          </StaggerReveal>
-
-          <Reveal delay={0.3} direction="up">
-            <p className="text-center text-lg text-gray-600 mt-16 mb-8 leading-relaxed">
-              Wir erstellen nur 1-2 Konzepte pro Woche, um höchste Qualität zu garantieren. 
-              <span className="font-bold text-gray-900"> Über 200 Unternehmen</span> haben bereits 
-              mit ooliv erfolgreich ihre Website optimiert.
-            </p>
-          </Reveal>
-          
-          {/* Trust Logos */}
-          <Reveal delay={0.5} direction="up">
+          <StaggerReveal stagger={0.15} className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <h3 className="text-base font-bold text-gray-900 mb-6">
-                Unternehmen, die unser Konzept genutzt haben:
-              </h3>
-              <StaggerReveal stagger={0.1} className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
-                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                  <img src="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" alt="KLAIBER" className="w-full h-full object-contain" />
+              <div className="w-12 h-12 bg-turquoise/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-turquoise">1</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Formular ausfüllen</h3>
+              <p className="text-gray-600 text-sm">Wir analysieren Ihre Website</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-turquoise/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-turquoise">2</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Konzept erhalten</h3>
+              <p className="text-gray-600 text-sm">In 48 Stunden per E-Mail</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-turquoise/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-turquoise">3</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Sie entscheiden</h3>
+              <p className="text-gray-600 text-sm">Ohne Verpflichtung</p>
+            </div>
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* Testimonial Section - NEW */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-8">
+          <Reveal direction="up">
+            <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-100">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 rounded-full bg-turquoise/10 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-turquoise">MK</span>
+                  </div>
                 </div>
-                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                  <img src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" alt="COBUS Industries" className="w-full h-full object-contain" />
+                <div className="flex-1 text-center md:text-left">
+                  <div className="text-turquoise mb-2">★★★★★</div>
+                  <p className="text-lg text-gray-900 mb-4 leading-relaxed italic">
+                    "Das Konzept war präzise, umsetzbar und hat uns sofort gezeigt, wo wir ansetzen müssen. In 3 Monaten haben wir 47% mehr Anfragen."
+                  </p>
+                  <p className="text-sm font-semibold text-gray-900">Michael Krause</p>
+                  <p className="text-sm text-gray-600">Geschäftsführer, SPEZ AG</p>
                 </div>
-                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                  <img src="/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png" alt="SPEZ AG" className="w-full h-full object-contain" />
-                </div>
-                <div className="w-24 h-16 flex items-center justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                  <img src="/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png" alt="IconPro GmbH" className="w-full h-full object-contain" />
-                </div>
-              </StaggerReveal>
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Was Sie erhalten */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Trust Block - Merged & Simplified */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-8">
+          {/* Trust Logos - Moved Earlier */}
           <Reveal direction="up">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <div className="text-center mb-12">
+              <p className="text-sm text-gray-600 mb-4">Vertrauen von über 200 Unternehmen</p>
+              <StaggerReveal stagger={0.1} className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
+                <div className="w-20 h-14 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+                  <img src="/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png" alt="KLAIBER" className="w-full h-full object-contain" />
+                </div>
+                <div className="w-20 h-14 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+                  <img src="/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png" alt="COBUS Industries" className="w-full h-full object-contain" />
+                </div>
+                <div className="w-20 h-14 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+                  <img src="/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png" alt="SPEZ AG" className="w-full h-full object-contain" />
+                </div>
+                <div className="w-20 h-14 flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all">
+                  <img src="/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png" alt="IconPro GmbH" className="w-full h-full object-contain" />
+                </div>
+              </StaggerReveal>
+            </div>
+          </Reveal>
+
+          <Reveal direction="up" delay={0.2}>
+            <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+              <div>
+                <div className="text-3xl font-bold text-turquoise mb-2">200+</div>
+                <p className="text-sm text-gray-600">Erfolgreiche Projekte</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-turquoise mb-2">48h</div>
+                <p className="text-sm text-gray-600">Durchschnittliche Lieferzeit</p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-turquoise mb-2">47%</div>
+                <p className="text-sm text-gray-600">Mehr Anfragen ∅ nach 3 Monaten</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Was Sie erhalten - Simplified */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-8">
+          <Reveal direction="up">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Was Sie erhalten
               </h2>
-              <p className="text-xl text-muted-foreground mb-4">
-                Strategisch denken, digital umsetzen.
-              </p>
-              <p className="text-lg text-muted-foreground mb-4">
-                Ein individuelles Website-Konzept mit klarer Struktur, SEO-Analyse, technischer Bewertung und konkreten Empfehlungen.
-              </p>
-              <p className="text-base text-muted-foreground">
-                Wir zeigen, welche Seitenstruktur, Inhalte und Nutzerwege Ihre Website braucht, um mehr Anfragen, bessere Conversion-Raten und nachhaltige Sichtbarkeit bei Google zu erreichen.
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Ein individuelles Website-Konzept mit klarer Struktur, SEO-Analyse und konkreten Empfehlungen.
               </p>
             </div>
           </Reveal>
@@ -421,26 +356,25 @@ const WebsiteKonzept = () => {
             <div className="text-center">
               <Button 
                 onClick={scrollToForm}
-                variant="primary"
                 size="lg"
-                className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
+                className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
-                Kostenlose Website-Analyse starten
+                Jetzt kostenloses Konzept sichern →
               </Button>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Example Prototype - Clean Minimal Style */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-8">
+      {/* Example Prototype - Simplified */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 So sieht Ihr kostenloser Prototyp aus
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base text-gray-600">
                 Einblick in Ihr persönliches Konzept
               </p>
             </div>
@@ -453,29 +387,23 @@ const WebsiteKonzept = () => {
           </Reveal>
 
           <Reveal delay={0.3} direction="up">
-            <p className="text-center text-lg text-gray-600 mb-4 leading-relaxed">
-              Ihr Website-Prototyp zeigt, wie Ihre neue Website wirkt, aufgebaut ist und welche Inhalte überzeugen – inklusive klarer Seitenstruktur, Benutzerführung und Conversion-Pfade.
-            </p>
-            <p className="text-center text-base text-gray-600 mb-6 leading-relaxed">
-              Bereitgestellt auf einer eigenen Test-Domain (z. B. musterfirma.projekte-ooliv.de).
-            </p>
-            <p className="text-center text-sm text-gray-600 leading-relaxed">
-              Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
+            <p className="text-center text-base text-gray-600 leading-relaxed">
+              Ihr Website-Prototyp zeigt, wie Ihre neue Website wirkt und welche Inhalte überzeugen – inklusive Seitenstruktur und Conversion-Pfade.
             </p>
           </Reveal>
         </div>
       </section>
 
 
-      {/* Lead Form Section - Clean Minimal Style */}
-      <section id="lead-form-section" className="py-32 bg-white">
-        <div className="max-w-3xl mx-auto px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Fordern Sie jetzt Ihr kostenloses Website-Konzept an – in 48 Stunden fertig und völlig unverbindlich
+      {/* Lead Form Section - Simplified */}
+      <section id="lead-form-section" className="py-24 bg-white">
+        <div className="max-w-2xl mx-auto px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              Jetzt kostenloses Website-Konzept anfordern
             </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Keine langen Abstimmungen – wir beginnen sofort mit der Analyse Ihrer Website oder Idee.
+            <p className="text-base text-gray-600 leading-relaxed">
+              In 48 Stunden fertig – völlig unverbindlich.
             </p>
           </div>
 
@@ -499,17 +427,14 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Clean Minimal Style */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-8">
+      {/* FAQ Section - Simplified */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-900 mb-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Häufige Fragen
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Noch Fragen? Hier sind die häufigsten Antworten auf einen Blick.
-              </p>
             </div>
           </Reveal>
 
@@ -593,48 +518,43 @@ const WebsiteKonzept = () => {
         </div>
       </section>
 
-      {/* Final CTA Section - Clean Minimal Style */}
-      <section className="py-32 bg-white w-full overflow-x-hidden">
-        <div className="max-w-4xl mx-auto px-8 text-center w-full">
+      {/* Final CTA Section - Simplified */}
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-8 text-center">
           <Reveal direction="up">
-            <h2 className="text-5xl font-bold text-gray-900 mb-12 break-words leading-tight">
-              Bereit, Ihre Website-Idee in ein konkretes Konzept zu verwandeln?
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              Bereit für Ihr kostenloses Website-Konzept?
             </h2>
           </Reveal>
           
           <Reveal delay={0.2} direction="up">
-            <div className="flex justify-center w-full">
-              <Button 
-                onClick={scrollToForm}
-                size="xl"
-                className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-12 py-5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-              >
-                Jetzt kostenloses Konzept erhalten
-              </Button>
-            </div>
+            <Button 
+              onClick={scrollToForm}
+              size="xl"
+              className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold px-12 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+            >
+              Jetzt kostenlos starten →
+            </Button>
           </Reveal>
 
           <Reveal delay={0.3} direction="up">
-            <p className="text-lg text-gray-600 mt-8 break-words leading-relaxed">
-              Ihr persönliches Konzept in 48 Stunden – kostenlos und ohne Risiko.
+            <p className="text-sm text-gray-600 mt-6">
+              48 Stunden Lieferzeit • 100% kostenlos • Keine Verpflichtung
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* SEO Footer - Clean Minimal Style */}
-      <footer className="py-24 bg-gray-50 w-full overflow-x-hidden border-t border-gray-200">
-        <div className="max-w-5xl mx-auto px-8 w-full">
+      {/* SEO Footer - Minimized */}
+      <footer className="py-16 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-8">
           <Reveal direction="up">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Website-Analyse, Konzept und Optimierung – alles aus einer Hand
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                Website-Analyse, Konzept und Optimierung
               </h2>
-              <p className="text-base text-gray-600 mb-6 leading-relaxed">
-                Mit ooliv erhalten Sie eine ganzheitliche Lösung für Website-Optimierung, Conversion-Optimierung und Website-Analyse.
-              </p>
-              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
-                Wir entwickeln datenbasierte Relaunch-Konzepte, verbessern die Benutzerführung, führen technische Website-Audits durch und steigern Ihre Performance.
+              <p className="text-sm text-gray-600">
+                Ganzheitliche Lösung für Website-Optimierung und Conversion-Steigerung.
               </p>
             </div>
           </Reveal>
