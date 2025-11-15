@@ -35,6 +35,7 @@ const GermanPrivacyPolicy = lazy(() => import('./pages/Datenschutz'));
 const GermanThankYou = lazy(() => import('./pages/Danke'));
 const GermanWiesbaden = lazy(() => import('./pages/WerbeagenturWiesbaden'));
 const GermanFrankfurt = lazy(() => import('./pages/WerbeagenturFrankfurt'));
+const GermanMainz = lazy(() => import('./pages/WerbeagenturMainz'));
 const GermanDarmstadt = lazy(() => import('./pages/WerbeagenturDarmstadt'));
 const DigitalagenturSchweiz = lazy(() => import('./pages/DigitalagenturSchweiz'));
 const Klickbetrug = lazy(() => import('./pages/Klickbetrug'));
@@ -119,6 +120,7 @@ function App() {
                       <Route path="/ueber-uns" element={<GermanAboutUs />} />
                       <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
                       <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
+                      <Route path="/werbeagentur-mainz" element={<GermanMainz />} />
                       <Route path="/werbeagentur-darmstadt" element={<GermanDarmstadt />} />
                       <Route path="/digitalagentur-schweiz" element={<DigitalagenturSchweiz />} />
                       <Route path="/artikel" element={<Artikel />} />
