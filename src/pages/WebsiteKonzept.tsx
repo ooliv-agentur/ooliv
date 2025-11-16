@@ -46,7 +46,6 @@ const WebsiteKonzept = () => {
       <Helmet>
         <title>Kostenloses Website-Konzept in 48 h | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Erhalten Sie Ihr individuelles Website-Konzept innerhalb von 48 Stunden – kostenlos, unverbindlich und strategisch durchdacht." />
-        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://ooliv.de/website-konzept" />
       </Helmet>
       
