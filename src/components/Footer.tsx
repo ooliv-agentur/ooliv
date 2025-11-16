@@ -47,7 +47,6 @@ const Footer = () => {
               <li><Link to="/referenzen" className={footerStyles.linkText}>Referenzen</Link></li>
               <li><Link to="/kontakt" className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
               <li><Link to="/artikel" className={footerStyles.linkText}>Blog</Link></li>
-              <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
             </ul>
           </div>
 
