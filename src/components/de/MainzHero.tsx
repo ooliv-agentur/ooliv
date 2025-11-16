@@ -12,7 +12,7 @@ const MainzHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Mainz – Digitale Lösungen für Unternehmen im Rhein-Main-Gebiet"
+      title="Werbeagentur Mainz – Websites & SEO seit 2008"
       subtitle="Strategische Websites, bessere Sichtbarkeit und klare digitale Prozesse. Seit 2008 direkt in Mainz."
       dynamicPrefix="Mainzer Unternehmen brauchen digitale Ergebnisse."
       primaryCta={{

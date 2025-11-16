@@ -20,7 +20,7 @@ const FrankfurtWerbeagenturHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Frankfurt – ohne Hochglanz-Versprechen"
+      title="Werbeagentur Frankfurt – für Banken, Konzerne & Startups"
       subtitle="Ihre Frankfurter Digitalagentur für Websites, SEO und Marketing. Keine Zwischenstellen, keine leeren Versprechen – nur messbare Resultate."
       dynamicPrefix="Frankfurter Unternehmen brauchen"
       dynamicSubheadlines={dynamicEndings}
