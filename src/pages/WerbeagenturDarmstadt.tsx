@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
+import ReviewSchemaGenerator from '@/components/seo/ReviewSchemaGenerator';
 
 // Import all dedicated Darmstadt components
 import DarmstadtHero from '@/components/de/DarmstadtHero';
@@ -116,6 +117,12 @@ const WerbeagenturDarmstadt = () => {
               answer: "Tech-Unternehmen, Wissenschaft, Engineering, Hightech-Startups und B2B-Dienstleister."
             }
           ]}
+        />
+        
+        <ReviewSchemaGenerator
+          businessName="ooliv Werbeagentur Darmstadt"
+          ratingValue={4.9}
+          reviewCount={25}
         />
         
         <DarmstadtHero />

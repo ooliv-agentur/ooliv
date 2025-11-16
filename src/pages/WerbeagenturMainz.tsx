@@ -16,6 +16,7 @@ import MainzTechStack from '@/components/de/MainzTechStack';
 import MainzSEOFooter from '@/components/de/MainzSEOFooter';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
+import ReviewSchemaGenerator from '@/components/seo/ReviewSchemaGenerator';
 
 const WerbeagenturMainz = () => {
   const { setLanguage } = useLanguage();
@@ -134,6 +135,12 @@ const WerbeagenturMainz = () => {
               answer: "Persönlich vor Ort oder digital – flexibel nach Bedarf."
             }
           ]}
+        />
+        
+        <ReviewSchemaGenerator
+          businessName="ooliv Werbeagentur Mainz"
+          ratingValue={4.9}
+          reviewCount={25}
         />
         
         <MainzHero />

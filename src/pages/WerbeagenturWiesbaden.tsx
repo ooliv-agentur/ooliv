@@ -7,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
+import ReviewSchemaGenerator from '@/components/seo/ReviewSchemaGenerator';
 
 // Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
@@ -116,6 +117,12 @@ const WerbeagenturWiesbaden = () => {
               answer: "B2B-Dienstleister, Beratung, Industrie, Handwerk und professionelle Services."
             }
           ]}
+        />
+        
+        <ReviewSchemaGenerator
+          businessName="ooliv Werbeagentur Wiesbaden"
+          ratingValue={4.9}
+          reviewCount={25}
         />
         
         <WiesbadenHero />
