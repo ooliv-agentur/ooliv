@@ -10,7 +10,6 @@ const MainzCaseStudies = () => {
       title: "B2B SaaS-Unternehmen",
       industry: "Software",
       challenge: "Geringe Sichtbarkeit bei relevanten Zielgruppen",
-      result: "Nachhaltig gesteigerte Online-Performance",
       metrics: [
         { icon: <TrendingUp className="h-5 w-5" />, label: "+180% Traffic" },
         { icon: <Users className="h-5 w-5" />, label: "+65% Leads" }
@@ -20,7 +19,6 @@ const MainzCaseStudies = () => {
       title: "Industrieunternehmen",
       industry: "Industrie",
       challenge: "Veraltete Website ohne klare Struktur",
-      result: "Moderner Auftritt mit klarer Nutzerführung",
       metrics: [
         { icon: <Target className="h-5 w-5" />, label: "+210% Conversions" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "4.2% Conv. Rate" }
@@ -30,7 +28,6 @@ const MainzCaseStudies = () => {
       title: "Beratungsunternehmen",
       industry: "Consulting",
       challenge: "Fehlende digitale Strategie und Lead-Prozesse",
-      result: "Erfolgreiche digitale Neuausrichtung",
       metrics: [
         { icon: <Users className="h-5 w-5" />, label: "+95% Anfragen" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "3x ROI" }
@@ -69,11 +66,6 @@ const MainzCaseStudies = () => {
                 <div className="mb-6">
                   <div className="text-sm text-gray-500 mb-2">Herausforderung:</div>
                   <p className="text-gray-700">{study.challenge}</p>
-                </div>
-
-                <div className="mb-6">
-                  <div className="text-sm text-gray-500 mb-2">Ergebnis:</div>
-                  <p className="text-medico-darkGreen font-semibold">{study.result}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
