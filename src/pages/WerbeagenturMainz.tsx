@@ -64,17 +64,17 @@ const WerbeagenturMainz = () => {
           businessName="ooliv Werbeagentur Mainz"
           description="Full-Service Werbeagentur in Mainz für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
           address={{
-            streetAddress: "Am Brand 8",
+            streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
-            postalCode: "55116",
+            postalCode: "55122",
             addressRegion: "Rheinland-Pfalz",
             addressCountry: "DE"
           }}
           geo={{
-            latitude: 49.9928617,
-            longitude: 8.2472526
+            latitude: 49.9969207,
+            longitude: 8.2590653
           }}
-          telephone="+49-6131-9027640"
+          telephone="+49-6131-6367801"
           email="hallo@ooliv.de"
           url="https://ooliv.de/werbeagentur-mainz"
           priceRange="€€€"

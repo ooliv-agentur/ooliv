@@ -26,7 +26,7 @@ const GermanContact = () => {
     >
       <EnhancedSEOHead
         title="Kontakt | ooliv Digitalagentur"
-        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-9027640. Termin buchen!"
+        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-6367801. Termin buchen!"
         canonicalUrl="https://ooliv.de/kontakt"
         keywords="Kontakt, ooliv, Digitalagentur, Beratung, Webdesign, SEO"
       />
