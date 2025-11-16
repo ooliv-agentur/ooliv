@@ -14,63 +14,65 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       mode === 'development' && componentTagger(),
+      // 🚫 TEMPORARILY DISABLED - Testing if prerendering causes build failure
       // Prerendering plugin for static HTML generation with correct canonical tags
-      mode === 'production' && prerender({
-        routes: [
-          '/',
-          '/webdesign',
-          '/webentwicklung',
-          '/seo-optimierung',
-          '/content-erstellung',
-          '/google-ads',
-          '/ki-technologien',
-          '/kontakt',
-          '/referenzen',
-          '/ueber-uns',
-          '/werbeagentur-mainz',
-          '/werbeagentur-wiesbaden',
-          '/werbeagentur-frankfurt',
-          '/werbeagentur-darmstadt',
-          '/digitalagentur-schweiz',
-          '/website-relaunch',
-          '/landingpage-optimierung',
-          '/website-konzept',
-          '/klickbetrug',
-          '/strategie',
-          '/automatisierte-content-marketing',
-          '/artikel',
-          '/impressum',
-          '/datenschutz',
-          '/cookie-richtlinie'
-        ],
-        renderer: '@prerenderer/renderer-puppeteer',
-        rendererOptions: {
-          // Wait for react-helmet-async to update tags
-          renderAfterTime: 1000,
-          headless: true,
-          // Ensure all meta tags are rendered
-          renderAfterDocumentEvent: 'render-event'
-        },
-        postProcess(renderedRoute) {
-          // Log prerendered routes for verification
-          console.log(`✅ Prerendered: ${renderedRoute.route}`);
-        }
-      }),
+      // mode === 'production' && prerender({
+      //   routes: [
+      //     '/',
+      //     '/webdesign',
+      //     '/webentwicklung',
+      //     '/seo-optimierung',
+      //     '/content-erstellung',
+      //     '/google-ads',
+      //     '/ki-technologien',
+      //     '/kontakt',
+      //     '/referenzen',
+      //     '/ueber-uns',
+      //     '/werbeagentur-mainz',
+      //     '/werbeagentur-wiesbaden',
+      //     '/werbeagentur-frankfurt',
+      //     '/werbeagentur-darmstadt',
+      //     '/digitalagentur-schweiz',
+      //     '/website-relaunch',
+      //     '/landingpage-optimierung',
+      //     '/website-konzept',
+      //     '/klickbetrug',
+      //     '/strategie',
+      //     '/automatisierte-content-marketing',
+      //     '/artikel',
+      //     '/impressum',
+      //     '/datenschutz',
+      //     '/cookie-richtlinie'
+      //   ],
+      //   renderer: '@prerenderer/renderer-puppeteer',
+      //   rendererOptions: {
+      //     // Wait for react-helmet-async to update tags
+      //     renderAfterTime: 1000,
+      //     headless: true,
+      //     // Ensure all meta tags are rendered
+      //     renderAfterDocumentEvent: 'render-event'
+      //   },
+      //   postProcess(renderedRoute) {
+      //     // Log prerendered routes for verification
+      //     console.log(`✅ Prerendered: ${renderedRoute.route}`);
+      //   }
+      // }),
+      // 🚫 TEMPORARILY DISABLED - Testing if sitemap generation causes build failure
       // Custom plugin to generate complete sitemap with dynamic content
-      {
-        name: 'generate-complete-sitemap',
-        closeBundle: async () => {
-          if (mode === 'production') {
-            try {
-              console.log('🚀 Generating sitemap during build...');
-              const { generateDynamicSitemap } = await import('./scripts/generate-sitemap-data.ts');
-              await generateDynamicSitemap();
-            } catch (error) {
-              console.error('❌ Failed to generate sitemap:', error);
-            }
-          }
-        }
-      }
+      // {
+      //   name: 'generate-complete-sitemap',
+      //   closeBundle: async () => {
+      //     if (mode === 'production') {
+      //       try {
+      //         console.log('🚀 Generating sitemap during build...');
+      //         const { generateDynamicSitemap } = await import('./scripts/generate-sitemap-data.ts');
+      //         await generateDynamicSitemap();
+      //       } catch (error) {
+      //         console.error('❌ Failed to generate sitemap:', error);
+      //       }
+      //     }
+      //   }
+      // }
     ].filter(Boolean),
     resolve: {
       alias: {
