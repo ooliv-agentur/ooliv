@@ -6,13 +6,6 @@ const MainzHero = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Dynamic subheadlines specifically for Mainz businesses
-  const dynamicEndings = [
-    "Websites, die Kunden gewinnen.",
-    "SEO, das in Mainz sichtbar macht.",
-    "Digitale Ergebnisse für Mainzer Unternehmen."
-  ];
-
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
   
   return (
@@ -21,8 +14,7 @@ const MainzHero = () => {
       backgroundVideo={videoPath}
       title="Werbeagentur Mainz – Digitale Lösungen für Unternehmen im Rhein-Main-Gebiet"
       subtitle="Strategische Websites, bessere Sichtbarkeit und klare digitale Prozesse. Seit 2008 direkt in Mainz."
-      dynamicPrefix="Mainzer Unternehmen brauchen"
-      dynamicSubheadlines={dynamicEndings}
+      dynamicPrefix="Mainzer Unternehmen brauchen digitale Ergebnisse."
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",
