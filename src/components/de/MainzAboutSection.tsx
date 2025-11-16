@@ -91,7 +91,7 @@ const MainzAboutSection = () => {
       <Reveal>
         <div className="mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12">
           <h3 className="text-3xl font-bold text-medico-darkGreen mb-8 text-center">
-            Warum eine lokale Werbeagentur in Mainz?
+            Warum eine lokale Werbeagentur?
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
