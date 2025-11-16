@@ -44,10 +44,6 @@ const MainzAboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-16 text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <MapPin className="h-6 w-6 text-accent-primary" />
-              <span className="text-accent-primary font-semibold text-lg">Seit 2008 in Mainz</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Ihre Digitalagentur in Mainz
             </h2>
@@ -143,21 +139,18 @@ const MainzAboutSection = () => {
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl mb-4">🤝</div>
                 <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Direkte Abstimmung</h4>
                 <p className="text-gray-600">
                   Kurze Wege und schnelle Entscheidungen – persönlich in Mainz oder per Videocall.
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-4">📍</div>
                 <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Kenntnis der Region</h4>
                 <p className="text-gray-600">
                   Wir kennen den Markt, die lokale Konkurrenz und die Besonderheiten des Rhein-Main-Gebiets.
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-4">🏢</div>
                 <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Erfahrung seit 2008</h4>
                 <p className="text-gray-600">
                   Langjährige Betreuung mittelständischer Unternehmen aus der Region.
