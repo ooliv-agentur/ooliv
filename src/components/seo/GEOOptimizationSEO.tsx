@@ -66,9 +66,10 @@ const GEOOptimizationSEO = () => {
   return (
     <>
       <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </Helmet>
 
       <section className="py-16 md:py-24 bg-white">

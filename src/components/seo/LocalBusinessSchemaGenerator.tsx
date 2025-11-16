@@ -78,10 +78,6 @@ const LocalBusinessSchemaGenerator: React.FC<LocalBusinessSchemaProps> = ({
       }
     })),
     ...(priceRange && { "priceRange": priceRange }),
-    "sameAs": [
-      "https://www.instagram.com/ooliv.de/",
-      "https://www.linkedin.com/company/ooliv-werbeagentur/"
-    ],
     "knowsAbout": [
       "Webdesign",
       "Suchmaschinenoptimierung",
@@ -99,9 +95,10 @@ const LocalBusinessSchemaGenerator: React.FC<LocalBusinessSchemaProps> = ({
   };
 
   return (
-    <script type="application/ld+json">
-      {JSON.stringify(localBusinessSchema)}
-    </script>
+    <script 
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+    />
   );
 };
 
