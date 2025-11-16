@@ -5,7 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
-import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
+import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 
 // Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
@@ -45,28 +45,49 @@ const WerbeagenturWiesbaden = () => {
           breadcrumbs={breadcrumbs}
         />
         
-        <ServiceSchemaGenerator
-          serviceName="Werbeagentur Wiesbaden"
-          description="Full-Service Werbeagentur in Wiesbaden für Webdesign, SEO, Google Ads und digitale Strategien."
-          serviceType="AdvertisingAgency"
-          areaServed={["Wiesbaden", "Mainz", "Frankfurt", "Rhein-Main-Gebiet", "Hessen"]}
-          priceRange="€3000-€25000"
-          offers={[
-            {
-              name: "Webdesign Wiesbaden",
-              description: "Professionelle Websites für Unternehmen in Wiesbaden",
-              priceRange: "€4000-€15000"
-            },
-            {
-              name: "SEO Wiesbaden",
-              description: "Suchmaschinenoptimierung für lokale Sichtbarkeit",
-              priceRange: "€1500-€5000"
-            },
-            {
-              name: "Online Marketing Wiesbaden",
-              description: "Ganzheitliche digitale Marketing-Strategien",
-              priceRange: "€2000-€8000"
-            }
+        <LocalBusinessSchemaGenerator
+          businessName="ooliv Werbeagentur Wiesbaden"
+          description="Full-Service Werbeagentur in Wiesbaden für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          address={{
+            streetAddress: "Mombacher Str. 25",
+            addressLocality: "Mainz",
+            postalCode: "55122",
+            addressRegion: "Rheinland-Pfalz",
+            addressCountry: "DE"
+          }}
+          geo={{
+            latitude: 49.9969207,
+            longitude: 8.2590653
+          }}
+          telephone="+49-6131-6367801"
+          email="info@ooliv.de"
+          url="https://ooliv.de/werbeagentur-wiesbaden"
+          priceRange="€€€"
+          openingHours={[
+            "Monday 09:00-18:00",
+            "Tuesday 09:00-18:00", 
+            "Wednesday 09:00-18:00",
+            "Thursday 09:00-18:00",
+            "Friday 09:00-18:00"
+          ]}
+          areaServed={[
+            "Wiesbaden",
+            "Rhein-Main-Gebiet",
+            "Mainz",
+            "Frankfurt am Main",
+            "Darmstadt",
+            "Hessen"
+          ]}
+          services={[
+            "Webdesign",
+            "Webentwicklung",
+            "SEO-Optimierung",
+            "Local SEO",
+            "Google Ads",
+            "Content Marketing",
+            "Marketing Automation",
+            "Digitale Strategieberatung",
+            "KI-Technologien"
           ]}
         />
         <WiesbadenHero />
