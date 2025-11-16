@@ -13,7 +13,7 @@ const MainzSEOFooter = () => {
   ];
 
   return (
-    <section className="py-12 bg-gradient-to-br from-gray-50 to-white font-satoshi">
+    <section className="py-12 bg-gray-50 font-satoshi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-8">
