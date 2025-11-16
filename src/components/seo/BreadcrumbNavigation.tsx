@@ -74,33 +74,34 @@ const BreadcrumbNavigation = () => {
   };
 
   return (
-    <div className="bg-background/80 backdrop-blur-sm border-b border-border/50">
-      {/* Breadcrumb Schema */}
+    <>
       <script 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <Breadcrumb>
-          <BreadcrumbList>
-            {breadcrumbs.map((breadcrumb, index) => (
-              <React.Fragment key={breadcrumb.path}>
-                <BreadcrumbItem>
-                  {index === breadcrumbs.length - 1 ? (
-                    <BreadcrumbPage>{breadcrumb.label}</BreadcrumbPage>
-                  ) : (
-                    <BreadcrumbLink asChild>
-                      <Link to={breadcrumb.path}>{breadcrumb.label}</Link>
-                    </BreadcrumbLink>
-                  )}
-                </BreadcrumbItem>
-                {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-              </React.Fragment>
-            ))}
-          </BreadcrumbList>
-        </Breadcrumb>
+      <div className="bg-background/80 backdrop-blur-sm border-b border-border/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <Breadcrumb>
+            <BreadcrumbList>
+              {breadcrumbs.map((breadcrumb, index) => (
+                <React.Fragment key={breadcrumb.path}>
+                  <BreadcrumbItem>
+                    {index === breadcrumbs.length - 1 ? (
+                      <BreadcrumbPage>{breadcrumb.label}</BreadcrumbPage>
+                    ) : (
+                      <BreadcrumbLink asChild>
+                        <Link to={breadcrumb.path}>{breadcrumb.label}</Link>
+                      </BreadcrumbLink>
+                    )}
+                  </BreadcrumbItem>
+                  {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+                </React.Fragment>
+              ))}
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
