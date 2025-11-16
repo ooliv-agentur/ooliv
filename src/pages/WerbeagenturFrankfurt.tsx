@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 
 // Import all dedicated Frankfurt components
 import FrankfurtWerbeagenturHero from '@/components/de/FrankfurtWerbeagenturHero';
@@ -42,6 +43,54 @@ const WerbeagenturFrankfurt = () => {
           keywords="Werbeagentur Frankfurt, Webdesign Frankfurt, Online Marketing Frankfurt, SEO Frankfurt"
           breadcrumbs={breadcrumbs}
         />
+        
+        <LocalBusinessSchemaGenerator
+          businessName="ooliv Werbeagentur Frankfurt"
+          description="Full-Service Werbeagentur in Frankfurt für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          address={{
+            streetAddress: "Mombacher Str. 25",
+            addressLocality: "Mainz",
+            postalCode: "55122",
+            addressRegion: "Rheinland-Pfalz",
+            addressCountry: "DE"
+          }}
+          geo={{
+            latitude: 49.9969207,
+            longitude: 8.2590653
+          }}
+          telephone="+49-6131-6367801"
+          email="info@ooliv.de"
+          url="https://ooliv.de/werbeagentur-frankfurt"
+          priceRange="€€€"
+          openingHours={[
+            "Monday 09:00-18:00",
+            "Tuesday 09:00-18:00", 
+            "Wednesday 09:00-18:00",
+            "Thursday 09:00-18:00",
+            "Friday 09:00-18:00"
+          ]}
+          areaServed={[
+            "Frankfurt am Main",
+            "Frankfurt",
+            "Rhein-Main-Gebiet",
+            "Mainz",
+            "Wiesbaden",
+            "Darmstadt",
+            "Hessen"
+          ]}
+          services={[
+            "Webdesign",
+            "Webentwicklung",
+            "SEO-Optimierung",
+            "Local SEO",
+            "Google Ads",
+            "Content Marketing",
+            "Marketing Automation",
+            "Digitale Strategieberatung",
+            "KI-Technologien"
+          ]}
+        />
+        
         <FrankfurtWerbeagenturHero />
         <FrankfurtWerbeagenturAboutSection />
         <FrankfurtWerbeagenturTeamSection />
