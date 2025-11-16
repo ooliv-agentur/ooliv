@@ -1,9 +1,7 @@
 import React from 'react';
-import { Grid2X2, Sparkles, Code2, Phone, ArrowRight, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
+import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
+import LocationServicesSection from '@/components/location/LocationServicesSection';
 import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
 
 const MainzAboutSection = () => {
   const services = [
@@ -40,127 +38,84 @@ const MainzAboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Ihre Digitalagentur vor Ort
-            </h2>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              In der Gutenberg-Stadt verbinden wir Mainzer Tradition mit moderner Technologie. Als lokale Digitalagentur entwickeln wir Websites und Online-Strategien für Dienstleister, Medienunternehmen und B2B-Firmen – direkt vor Ort, mit regionalem Know-how und messbaren Resultaten für die Landeshauptstadt und das Rhein-Main-Gebiet.
+    <LocationServicesSection
+      location="Mainz"
+      headline="Ihre Digitalagentur vor Ort"
+      description="In der Gutenberg-Stadt verbinden wir Mainzer Tradition mit moderner Technologie. Als lokale Digitalagentur entwickeln wir Websites und Online-Strategien für Dienstleister, Medienunternehmen und B2B-Firmen – direkt vor Ort, mit regionalem Know-how und messbaren Resultaten für die Landeshauptstadt und das Rhein-Main-Gebiet."
+      services={services}
+      ctaText="Mehr über unsere Arbeitsweise"
+      ctaLink="/strategie"
+      servicesHeadline="Leistungen für Mainzer Unternehmen"
+      gridCols={3}
+    >
+      {/* Target Audience Section */}
+      <Reveal>
+        <div className="mt-20 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-medico-darkGreen mb-6">
+            Für wen wir arbeiten
+          </h3>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Wir unterstützen Unternehmen aus Mainz und Rhein-Main in verschiedenen Bereichen
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <ul className="grid md:grid-cols-2 gap-4 text-left text-lg text-gray-700">
+              <li className="flex items-start gap-3">
+                <span className="text-accent-primary mt-1">•</span>
+                <span>Beratung und Professional Services</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-primary mt-1">•</span>
+                <span>Industrie und Produktion</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-primary mt-1">•</span>
+                <span>SaaS- und Software-Unternehmen</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-primary mt-1">•</span>
+                <span>Handwerk und regionale Dienstleister</span>
+              </li>
+              <li className="flex items-start gap-3 md:col-span-2 justify-center">
+                <span className="text-accent-primary mt-1">•</span>
+                <span>Immobilien, Bau und technische Gewerke</span>
+              </li>
+            </ul>
+            <p className="text-lg text-gray-600 mt-8 italic">
+              Jede Branche erhält eine individuell abgestimmte digitale Strategie.
             </p>
-            
-            {/* Single CTA Button */}
-            <div className="flex justify-center">
-              <Button 
-                variant="primary"
-                size="lg" 
-                className="group"
-                asChild
-              >
-                <Link to="/strategie">
-                  Mehr über unsere Arbeitsweise
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
           </div>
-        </Reveal>
-        
-        <h3 className="text-3xl md:text-4xl font-bold text-medico-darkGreen mb-12 text-center">Leistungen für Mainzer Unternehmen</h3>
-        
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-accent-primary flex items-center justify-center mb-6 transition-all duration-300">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
-              <p className="text-gray-600 mb-6 text-base" style={{ lineHeight: '1.5' }}>
-                {service.description}
-              </p>
-              <div>
-                <Link 
-                  to={service.link}
-                  className="text-accent-primary hover:text-medico-darkGreen underline transition-colors duration-300 font-bold text-lg"
-                >
-                  Mehr erfahren
-                </Link>
-              </div>
-            </div>
-          ))}
-        </StaggerReveal>
+        </div>
+      </Reveal>
 
-        {/* Für wen wir arbeiten Section */}
-        <Reveal>
-          <div className="mt-20 mb-16 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-medico-darkGreen mb-6">
-              Für wen wir arbeiten
-            </h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Wir unterstützen Unternehmen aus Mainz und Rhein-Main in verschiedenen Bereichen
-            </p>
-            <div className="max-w-3xl mx-auto">
-              <ul className="grid md:grid-cols-2 gap-4 text-left text-lg text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">•</span>
-                  <span>Beratung und Professional Services</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">•</span>
-                  <span>Industrie und Produktion</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">•</span>
-                  <span>SaaS- und Software-Unternehmen</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">•</span>
-                  <span>Handwerk und regionale Dienstleister</span>
-                </li>
-                <li className="flex items-start gap-3 md:col-span-2 justify-center">
-                  <span className="text-accent-primary mt-1">•</span>
-                  <span>Immobilien, Bau und technische Gewerke</span>
-                </li>
-              </ul>
-              <p className="text-lg text-gray-600 mt-8 italic">
-                Jede Branche erhält eine individuell abgestimmte digitale Strategie.
+      {/* Why Local Section */}
+      <Reveal>
+        <div className="mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12">
+          <h3 className="text-3xl font-bold text-medico-darkGreen mb-8 text-center">
+            Warum eine lokale Werbeagentur in Mainz?
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Direkte Abstimmung</h4>
+              <p className="text-gray-600">
+                Kurze Wege und schnelle Entscheidungen – persönlich in Mainz oder per Videocall.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Kenntnis der Region</h4>
+              <p className="text-gray-600">
+                Wir kennen den Markt, die lokale Konkurrenz und die Besonderheiten des Rhein-Main-Gebiets.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Erfahrung seit 2008</h4>
+              <p className="text-gray-600">
+                Langjährige Betreuung mittelständischer Unternehmen aus der Region.
               </p>
             </div>
           </div>
-        </Reveal>
-
-        {/* Why Local Section */}
-        <Reveal>
-          <div className="mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12">
-            <h3 className="text-3xl font-bold text-medico-darkGreen mb-8 text-center">
-              Warum eine lokale Werbeagentur in Mainz?
-            </h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Direkte Abstimmung</h4>
-                <p className="text-gray-600">
-                  Kurze Wege und schnelle Entscheidungen – persönlich in Mainz oder per Videocall.
-                </p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Kenntnis der Region</h4>
-                <p className="text-gray-600">
-                  Wir kennen den Markt, die lokale Konkurrenz und die Besonderheiten des Rhein-Main-Gebiets.
-                </p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Erfahrung seit 2008</h4>
-                <p className="text-gray-600">
-                  Langjährige Betreuung mittelständischer Unternehmen aus der Region.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
+        </div>
+      </Reveal>
+    </LocationServicesSection>
   );
 };
 
