@@ -64,10 +64,10 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="ooliv Digitalagentur – Websites, die Leads generieren"
-          description="ooliv Digitalagentur entwickelt B2B-Websites bundesweit, die Leads generieren – Webdesign, SEO, Google Ads & Content-Marketing. Kostenloses Website-Konzept in 48h."
+          title="B2B-Websites, die Leads generieren | ooliv Digitalagentur"
+          description="Strategische B2B-Websites bundesweit: Lead-Generierung, Webdesign, SEO & Google Ads. Inhabergeführt. Messbare KPIs. Kostenloses Website-Konzept in 48h."
           canonicalUrl="https://ooliv.de/"
-          keywords="Digitalagentur, B2B Webdesign, SEO Agentur, Online Marketing, Website Entwicklung, Lead-Generierung"
+          keywords="B2B Website Agentur, Lead-Generierung, strategisches Webdesign, SEO Beratung, Google Ads Agentur, Website-Konzept"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
         />
         
