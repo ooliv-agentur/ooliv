@@ -20,6 +20,7 @@ const MainzHero = () => {
         link: "#",
         onClick: handleStartProject
       }}
+      secondaryCta={undefined}
     />
   );
 };
