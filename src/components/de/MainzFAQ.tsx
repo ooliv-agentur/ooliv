@@ -41,7 +41,7 @@ const MainzFAQ = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Häufige Fragen zum Website-Projekt
+              Häufige Fragen zur Zusammenarbeit
             </h2>
             <p className="text-xl text-gray-600">
               Antworten auf die wichtigsten Fragen zur Zusammenarbeit

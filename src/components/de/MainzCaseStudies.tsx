@@ -9,8 +9,8 @@ const MainzCaseStudies = () => {
     {
       title: "B2B SaaS-Unternehmen",
       industry: "Software",
-      challenge: "Geringe Sichtbarkeit",
-      result: "+180 % organischer Traffic, +65 % qualifizierte Leads",
+      challenge: "Geringe Sichtbarkeit bei relevanten Zielgruppen",
+      result: "Deutlich mehr organischer Traffic und qualifizierte Leads",
       metrics: [
         { icon: <TrendingUp className="h-5 w-5" />, label: "+180% Traffic" },
         { icon: <Users className="h-5 w-5" />, label: "+65% Leads" }
@@ -19,8 +19,8 @@ const MainzCaseStudies = () => {
     {
       title: "Industrieunternehmen",
       industry: "Industrie",
-      challenge: "Veraltete Website",
-      result: "Moderner Auftritt, klar strukturierter Funnel, +210 % Conversions",
+      challenge: "Veraltete Website ohne klare Struktur",
+      result: "Moderner Auftritt mit strukturiertem Conversion-Funnel",
       metrics: [
         { icon: <Target className="h-5 w-5" />, label: "+210% Conversions" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "4.2% Conv. Rate" }
@@ -29,8 +29,8 @@ const MainzCaseStudies = () => {
     {
       title: "Beratungsunternehmen",
       industry: "Consulting",
-      challenge: "Fehlende digitale Strategie",
-      result: "Digitaler Neustart, +95 % qualifizierte Anfragen",
+      challenge: "Fehlende digitale Strategie und Lead-Prozesse",
+      result: "Klare Positionierung mit messbaren Ergebnissen",
       metrics: [
         { icon: <Users className="h-5 w-5" />, label: "+95% Anfragen" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "3x ROI" }
