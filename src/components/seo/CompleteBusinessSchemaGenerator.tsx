@@ -53,10 +53,7 @@ const CompleteBusinessSchemaGenerator: React.FC<CompleteBusinessSchemaProps> = (
       "longitude": 8.2472526
     },
     "sameAs": [
-      "https://www.sortlist.de/agency/uli-werbeagentur",
-      "https://www.linkedin.com/company/ooliv-werbeagentur",
-      "https://www.instagram.com/ooliv.werbeagentur",
-      "https://www.facebook.com/ooliv.werbeagentur"
+      "https://www.sortlist.de/agency/uli-werbeagentur"
     ],
     "services": services,
     "serviceArea": areaServed,
@@ -115,10 +112,7 @@ const CompleteBusinessSchemaGenerator: React.FC<CompleteBusinessSchemaProps> = (
       "closes": "18:00"
     },
     "sameAs": [
-      "https://www.sortlist.de/agency/uli-werbeagentur",
-      "https://www.linkedin.com/company/ooliv-werbeagentur",
-      "https://www.instagram.com/ooliv.werbeagentur",
-      "https://www.facebook.com/ooliv.werbeagentur"
+      "https://www.sortlist.de/agency/uli-werbeagentur"
     ],
     "serviceArea": areaServed,
     "aggregateRating": {
