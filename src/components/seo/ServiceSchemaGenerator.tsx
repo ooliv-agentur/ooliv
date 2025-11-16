@@ -53,7 +53,7 @@ const ServiceSchemaGenerator: React.FC<ServiceSchemaProps> = ({
         "longitude": 8.2590653
       },
       "telephone": "+49-6131-6367801",
-      "email": "hallo@ooliv.de"
+      "email": "info@ooliv.de"
     },
     "areaServed": areaServed.map(area => ({
       "@type": "Place",

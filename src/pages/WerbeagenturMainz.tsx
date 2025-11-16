@@ -73,7 +73,7 @@ const WerbeagenturMainz = () => {
             longitude: 8.2590653
           }}
           telephone="+49-6131-6367801"
-          email="hallo@ooliv.de"
+          email="info@ooliv.de"
           url="https://ooliv.de/werbeagentur-mainz"
           priceRange="€€€"
           openingHours={[
