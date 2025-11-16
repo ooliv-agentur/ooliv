@@ -42,6 +42,7 @@ const Footer = () => {
           <div>
             <h3 className={footerStyles.sectionHeading}>{t('footer.company')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
+              <li><Link to="/" className={footerStyles.linkText}>Home</Link></li>
               <li><Link to="/ueber-uns" className={footerStyles.linkText}>{t('footer.aboutUs')}</Link></li>
               <li><Link to="/referenzen" className={footerStyles.linkText}>Referenzen</Link></li>
               <li><Link to="/kontakt" className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
