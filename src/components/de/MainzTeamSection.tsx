@@ -33,7 +33,7 @@ const MainzTeamSection = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Was uns als Werbeagentur auszeichnet
+              Was uns als Agentur unterscheidet
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Inhabergeführt, transparent, erfolgreich – so arbeitet ooliv als Ihre Werbeagentur in Mainz
@@ -57,29 +57,6 @@ const MainzTeamSection = () => {
           ))}
         </StaggerReveal>
 
-        <Reveal>
-          <div className="mt-16 bg-white rounded-3xl p-12 shadow-sm border border-gray-100">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-3xl font-bold text-medico-darkGreen mb-6">
-                Ihre Werbeagentur in Mainz – persönlich und vor Ort
-              </h3>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Als Werbeagentur mit Sitz in Mainz sind wir für unsere Kunden direkt erreichbar. Ob persönliches Treffen in unserem Büro oder Video-Call – wir finden den besten Weg für Ihre Projekte.
-              </p>
-              <div className="bg-gradient-to-r from-accent-primary/10 to-medico-darkGreen/10 rounded-2xl p-8">
-                <p className="text-xl font-semibold text-medico-darkGreen mb-2">
-                  📍 ooliv Werbeagentur Mainz
-                </p>
-                <p className="text-lg text-gray-600">
-                  Mombacher Str. 25, 55122 Mainz
-                </p>
-                <p className="text-lg text-gray-600 mt-4">
-                  Vereinbaren Sie jetzt ein kostenloses Erstgespräch
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

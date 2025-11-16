@@ -12,8 +12,6 @@ import MainzWorkflow from '@/components/de/MainzWorkflow';
 import MainzCaseStudies from '@/components/de/MainzCaseStudies';
 import MainzFAQ from '@/components/de/MainzFAQ';
 import MainzTeamSection from '@/components/de/MainzTeamSection';
-import MainzBeforeAfterSection from '@/components/de/MainzBeforeAfterSection';
-import MainzFullServiceTeaser from '@/components/de/MainzFullServiceTeaser';
 import MainzTechStack from '@/components/de/MainzTechStack';
 import MainzSEOFooter from '@/components/de/MainzSEOFooter';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
@@ -112,8 +110,6 @@ const WerbeagenturMainz = () => {
         <MainzWorkflow />
         <MainzTeamSection />
         <MainzCaseStudies />
-        <MainzBeforeAfterSection />
-        <MainzFullServiceTeaser />
         <MainzTechStack />
         <MainzSEOFooter />
         <MainzFAQ />
