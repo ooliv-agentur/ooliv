@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
+import ReviewSchemaGenerator from '@/components/seo/ReviewSchemaGenerator';
 
 // Import all dedicated Frankfurt components
 import FrankfurtWerbeagenturHero from '@/components/de/FrankfurtWerbeagenturHero';
@@ -116,6 +117,12 @@ const WerbeagenturFrankfurt = () => {
               answer: "Finanzdienstleister, B2B-Unternehmen, Startups, Beratung und professionelle Dienstleister."
             }
           ]}
+        />
+        
+        <ReviewSchemaGenerator
+          businessName="ooliv Werbeagentur Frankfurt"
+          ratingValue={4.9}
+          reviewCount={25}
         />
         
         <FrankfurtWerbeagenturHero />
