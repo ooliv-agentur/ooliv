@@ -39,7 +39,7 @@ const WerbeagenturWiesbaden = () => {
       >
         <EnhancedSEOHead
           title="Werbeagentur Wiesbaden | ooliv aus Mainz"
-          description="Werbeagentur Wiesbaden – Digitale Strategien für nachhaltigen Erfolg. Webdesign, SEO & Google Ads aus Mainz für Wiesbaden. Jetzt starten!"
+          description="Werbeagentur Wiesbaden: Professionelle B2B-Websites, SEO & digitale Strategien. Messbar. Zielgerichtet. Ohne Schnickschnack. Jetzt Erstgespräch!"
           canonicalUrl="https://ooliv.de/werbeagentur-wiesbaden"
           keywords="Werbeagentur Wiesbaden, Webdesign Wiesbaden, Online Marketing Wiesbaden, SEO Wiesbaden"
           breadcrumbs={breadcrumbs}

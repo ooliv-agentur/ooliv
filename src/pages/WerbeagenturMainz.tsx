@@ -52,7 +52,7 @@ const WerbeagenturMainz = () => {
       >
         <EnhancedSEOHead
           title="Werbeagentur Mainz | ooliv – Full-Service Digitalagentur seit 2008"
-          description="Werbeagentur Mainz ✓ Webdesign ✓ SEO ✓ Google Ads ✓ Content Marketing. Inhabergeführt, messbar, erfolgreich. Jetzt Projekt starten!"
+          description="Werbeagentur Mainz: Websites & SEO für Medien-, B2B- und Dienstleister. Seit 2008 direkt vor Ort. Messbare Resultate statt Agentur-Buzzwords."
           canonicalUrl="https://ooliv.de/werbeagentur-mainz"
           keywords="Werbeagentur Mainz, Webagentur Mainz, Marketingagentur Mainz, Digitalagentur Mainz, Online Marketing Mainz, SEO Mainz"
           breadcrumbs={breadcrumbs}
