@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
+import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
 
 // Import all dedicated Darmstadt components
 import DarmstadtHero from '@/components/de/DarmstadtHero';
@@ -90,6 +91,33 @@ const WerbeagenturDarmstadt = () => {
             "KI-Technologien"
           ]}
         />
+        
+        <FAQSchemaGenerator
+          pageUrl="https://ooliv.de/werbeagentur-darmstadt"
+          faqs={[
+            {
+              question: "Arbeitet ooliv mit Darmstädter Unternehmen?",
+              answer: "Ja, Darmstadt gehört zu unserem Kerngebiet. Wir betreuen regelmäßig Tech-Unternehmen und wissenschaftliche Einrichtungen aus Darmstadt."
+            },
+            {
+              question: "Was kostet eine Website?",
+              answer: "Die Kosten hängen von Umfang und Komplexität ab. Websites bieten wir pauschal an, laufende Betreuung erfolgt monatlich."
+            },
+            {
+              question: "Bietet ihr SEO für Darmstadt an?",
+              answer: "Ja, wir bieten Local SEO, technische Optimierung und Content-Strategien für bessere Sichtbarkeit in Darmstadt."
+            },
+            {
+              question: "Wie lange dauert ein Website-Projekt?",
+              answer: "Typischerweise 4 bis 10 Wochen, abhängig von Projektgröße und Anforderungen."
+            },
+            {
+              question: "Welche Branchen betreut ihr?",
+              answer: "Tech-Unternehmen, Wissenschaft, Engineering, Hightech-Startups und B2B-Dienstleister."
+            }
+          ]}
+        />
+        
         <DarmstadtHero />
         <DarmstadtAboutSection />
         <DarmstadtTeamSection />

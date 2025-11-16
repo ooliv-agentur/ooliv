@@ -6,6 +6,7 @@ import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
+import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
 
 // Import all dedicated Wiesbaden components
 import WiesbadenHero from '@/components/de/WiesbadenHero';
@@ -90,6 +91,33 @@ const WerbeagenturWiesbaden = () => {
             "KI-Technologien"
           ]}
         />
+        
+        <FAQSchemaGenerator
+          pageUrl="https://ooliv.de/werbeagentur-wiesbaden"
+          faqs={[
+            {
+              question: "Betreut ooliv Unternehmen in Wiesbaden?",
+              answer: "Ja, Wiesbaden ist Teil unseres Fokusgebiets. Wir arbeiten mit vielen Wiesbadener B2B-Unternehmen zusammen."
+            },
+            {
+              question: "Was kostet eine Website?",
+              answer: "Die Kosten richten sich nach Umfang und Zielen. Websites werden pauschal angeboten, SEO und Ads monatlich betreut."
+            },
+            {
+              question: "Bietet ihr Local SEO für Wiesbaden an?",
+              answer: "Ja, Local SEO ist eine unserer Kernkompetenzen – inklusive Google Business Profile und lokale Keyword-Optimierung."
+            },
+            {
+              question: "Wie lange dauert ein Website-Projekt?",
+              answer: "In der Regel 4 bis 10 Wochen, abhängig von Struktur, Inhalt und Projektumfang."
+            },
+            {
+              question: "Welche Branchen betreut ihr in Wiesbaden?",
+              answer: "B2B-Dienstleister, Beratung, Industrie, Handwerk und professionelle Services."
+            }
+          ]}
+        />
+        
         <WiesbadenHero />
         <WiesbadenAboutSection />
         <WiesbadenTeamSection />

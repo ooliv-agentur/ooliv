@@ -5,6 +5,7 @@ import CTA from "@/components/CTA";
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
+import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
 
 // Import all dedicated Frankfurt components
 import FrankfurtWerbeagenturHero from '@/components/de/FrankfurtWerbeagenturHero';
@@ -88,6 +89,32 @@ const WerbeagenturFrankfurt = () => {
             "Marketing Automation",
             "Digitale Strategieberatung",
             "KI-Technologien"
+          ]}
+        />
+        
+        <FAQSchemaGenerator
+          pageUrl="https://ooliv.de/werbeagentur-frankfurt"
+          faqs={[
+            {
+              question: "Arbeitet ooliv auch mit Frankfurter Unternehmen?",
+              answer: "Ja, Frankfurt ist Teil unseres Fokusgebiets im Rhein-Main-Gebiet. Wir betreuen regelmäßig Frankfurter Kunden."
+            },
+            {
+              question: "Was kostet eine professionelle Website?",
+              answer: "Abhängig vom Umfang – Websites werden pauschal angeboten, laufende Betreuung erfolgt monatlich."
+            },
+            {
+              question: "Bietet ihr Local SEO für Frankfurt an?",
+              answer: "Ja, Local SEO gehört zu unseren Kernkompetenzen – inkl. Google Business Profile Optimierung."
+            },
+            {
+              question: "Wie lange dauert ein Website-Projekt?",
+              answer: "In der Regel 4 bis 10 Wochen, je nach Projektumfang und Anforderungen."
+            },
+            {
+              question: "Welche Branchen betreut ihr in Frankfurt?",
+              answer: "Finanzdienstleister, B2B-Unternehmen, Startups, Beratung und professionelle Dienstleister."
+            }
           ]}
         />
         
