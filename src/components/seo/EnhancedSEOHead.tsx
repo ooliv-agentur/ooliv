@@ -158,9 +158,10 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
       
       {/* Structured Data */}
       {allSchemas.length > 0 && (
-        <script type="application/ld+json">
-          {JSON.stringify(allSchemas)}
-        </script>
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(allSchemas) }}
+        />
       )}
       
       {/* Article specific meta tags */}
