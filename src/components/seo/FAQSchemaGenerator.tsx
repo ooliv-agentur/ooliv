@@ -29,9 +29,10 @@ const FAQSchemaGenerator: React.FC<FAQSchemaProps> = ({
   };
 
   return (
-    <script type="application/ld+json">
-      {JSON.stringify(faqSchema)}
-    </script>
+    <script 
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+    />
   );
 };
 
