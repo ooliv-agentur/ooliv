@@ -48,7 +48,7 @@ const MainzAboutSection = () => {
               Ihre Digitalagentur vor Ort
             </h2>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Wir entwickeln Websites und digitale Strategien für Unternehmen aus Mainz und dem Rhein-Main-Gebiet. Unser Fokus liegt auf klaren Strukturen, einer verständlichen Nutzerführung und messbaren Ergebnissen. Als inhabergeführte Agentur arbeiten wir persönlich, direkt und mit Verantwortung.
+              In der Gutenberg-Stadt verbinden wir Mainzer Tradition mit moderner Technologie. Als lokale Digitalagentur entwickeln wir Websites und Online-Strategien für Dienstleister, Medienunternehmen und B2B-Firmen – direkt vor Ort, mit regionalem Know-how und messbaren Resultaten für die Landeshauptstadt und das Rhein-Main-Gebiet.
             </p>
             
             {/* Single CTA Button */}

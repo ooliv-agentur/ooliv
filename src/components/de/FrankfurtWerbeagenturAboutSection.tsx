@@ -43,10 +43,10 @@ const FrankfurtWerbeagenturAboutSection = () => {
               ooliv in Frankfurt – für messbare Erfolge
             </h2>
             <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Digitale Lösungen, die Ihr Unternehmen nachhaltig voranbringen
+              Digitale Exzellenz für die Finanzmetropole und ihre innovativen Unternehmen
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Wir entwickeln strategische Online-Auftritte, die Ihre Zielgruppe in Frankfurt und dem Rhein-Main-Gebiet erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
+              Frankfurt ist Deutschlands Business-Hub – von Banken über internationale Konzerne bis zur wachsenden Startup-Szene. Wir entwickeln digitale Lösungen, die diesem Anspruch gerecht werden: skalierbar, professionell und mit klarem ROI-Focus für anspruchsvolle B2B-Zielgruppen.
             </p>
             
             {/* Single CTA Button */}

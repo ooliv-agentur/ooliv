@@ -43,10 +43,10 @@ const DarmstadtAboutSection = () => {
               ooliv in Darmstadt – für messbare Erfolge
             </h2>
             <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Digitale Lösungen für Tech-Unternehmen und wissenschaftsnahe Branchen
+              Digitale Lösungen für die Wissenschaftsstadt – technisch fundiert, strategisch präzise
             </p>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Wir entwickeln strategische Online-Auftritte, die Ihre Zielgruppe in Darmstadt und dem Rhein-Main-Gebiet erreichen und Geschäftsergebnisse verbessern. Technisch fundiert, zielgerichtet und mit nachweisbaren Resultaten.
+              Darmstadt ist Europas Tech-Hub mit TU, Forschungsinstituten und Innovation. Wir sprechen die Sprache technisch anspruchsvoller Unternehmen: wissenschaftsnahe B2B-Firmen, Hightech-Startups und Engineering-Dienstleister erhalten von uns Websites, die technische Kompetenz digital sichtbar machen.
             </p>
             
             {/* Single CTA Button */}
