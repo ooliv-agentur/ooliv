@@ -3,7 +3,7 @@ import Reveal from '@/components/animations/Reveal';
 
 const MainzSEOFooter = () => {
   const keywords = [
-    "Webdesign für Unternehmen in Mainz",
+    "Webdesign für Unternehmen im Rhein-Main-Gebiet",
     "SEO-Optimierung für das Rhein-Main-Gebiet",
     "Google Ads für regionale Zielgruppen",
     "Digitale Strategien für Mittelstand und B2B",
