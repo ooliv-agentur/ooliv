@@ -29,9 +29,10 @@ const ReviewSchemaGenerator: React.FC<ReviewSchemaProps> = ({
   };
 
   return (
-    <script type="application/ld+json">
-      {JSON.stringify(reviewSchema)}
-    </script>
+    <script 
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+    />
   );
 };
 
