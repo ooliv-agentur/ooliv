@@ -8,9 +8,9 @@ const MainzHero = () => {
 
   // Dynamic subheadlines specifically for Mainz businesses
   const dynamicEndings = [
-    "digital erfolgreich zu werden.",
-    "mehr Kunden aus der Region.",
-    "Websites, die wirklich verkaufen."
+    "Websites, die Kunden gewinnen.",
+    "SEO, das in Mainz sichtbar macht.",
+    "Digitale Ergebnisse für Mainzer Unternehmen."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -19,8 +19,8 @@ const MainzHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Mainz – Digital, persönlich, vor Ort"
-      subtitle="Ihre Mainzer Digitalagentur für Websites, SEO und Marketing. Seit 2008 inhabergeführt, transparent und messbar erfolgreich."
+      title="Werbeagentur Mainz – Digitale Lösungen für Unternehmen im Rhein-Main-Gebiet"
+      subtitle="Strategische Websites, bessere Sichtbarkeit und klare digitale Prozesse. Seit 2008 direkt in Mainz."
       dynamicPrefix="Mainzer Unternehmen brauchen"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{

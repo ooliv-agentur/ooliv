@@ -10,36 +10,28 @@ import Reveal from '@/components/animations/Reveal';
 const MainzFAQ = () => {
   const faqs = [
     {
-      question: "Was kostet eine Werbeagentur in Mainz?",
-      answer: "Die Kosten für eine Werbeagentur in Mainz hängen stark vom Projektumfang ab. Bei ooliv beginnen kleinere Website-Projekte ab ca. 4.000€. Für umfassende digitale Strategien mit Webdesign, SEO und Content Marketing sollten Sie mit 10.000-25.000€ rechnen. Wir erstellen Ihnen gerne ein transparentes Angebot basierend auf Ihren konkreten Anforderungen."
+      question: "Was kostet eine Zusammenarbeit?",
+      answer: "Die Kosten richten sich nach Umfang und Zielen. Websites werden pauschal angeboten, SEO und Ads monatlich betreut."
     },
     {
-      question: "Welche Leistungen bietet eure Werbeagentur in Mainz?",
-      answer: "Als Full-Service Werbeagentur in Mainz bieten wir: Webdesign & Entwicklung, SEO & Local SEO für Mainz, Google Ads & Performance Marketing, Content Marketing & Texterstellung, Marketing Automation, Digitale Strategieberatung und Branding. Alle Leistungen können einzeln oder als Gesamtpaket gebucht werden."
+      question: "Arbeitet ooliv nur mit Mainzer Unternehmen?",
+      answer: "Schwerpunkt Mainz und Rhein-Main, aber wir betreuen Kunden im gesamten DACH-Raum."
     },
     {
-      question: "Wie lange dauert ein typisches Projekt mit eurer Werbeagentur?",
-      answer: "Die Projektdauer variiert je nach Umfang: Eine neue Website dauert typischerweise 6-12 Wochen von Konzept bis Launch. SEO-Projekte zeigen erste Ergebnisse nach 3-6 Monaten. Laufende Betreuung (Retainer) bieten wir ab 3 Monaten Laufzeit an. Wir arbeiten agil und liefern regelmäßige Updates, sodass Sie den Fortschritt jederzeit nachvollziehen können."
+      question: "Wie lange dauert ein Website-Projekt?",
+      answer: "In der Regel 4 bis 10 Wochen – abhängig von Struktur und Inhalt."
     },
     {
-      question: "Warum sollte ich eine lokale Werbeagentur in Mainz wählen?",
-      answer: "Eine lokale Werbeagentur in Mainz bietet mehrere Vorteile: Persönlicher Service mit direktem Kontakt und kurzen Wegen. Kenntnis der regionalen Wirtschaft und Zielgruppe. Schnelle Reaktionszeiten ohne lange E-Mail-Ketten. Möglichkeit zu persönlichen Treffen in unserem Mainzer Büro. Bei ooliv profitieren Sie zusätzlich von unserer langjährigen Erfahrung seit 2008."
+      question: "Welche Branchen betreut ihr?",
+      answer: "Beratung, Industrie, SaaS, Handwerk und regionale Dienstleister."
     },
     {
-      question: "Arbeitet eure Werbeagentur nur mit Unternehmen aus Mainz?",
-      answer: "Nein, obwohl wir unseren Sitz in Mainz haben, arbeiten wir mit Unternehmen aus dem gesamten Rhein-Main-Gebiet und bundesweit. Viele unserer Kunden kommen aus Frankfurt, Wiesbaden, Darmstadt und anderen Städten. Durch unsere digitalen Prozesse können wir auch überregional effizient zusammenarbeiten, schätzen aber persönliche Treffen in Mainz."
+      question: "Bietet ihr SEO für Mainz an?",
+      answer: "Ja, einschließlich technischer Optimierung, Local SEO, Content und Monitoring."
     },
     {
-      question: "Was macht ooliv als Werbeagentur besonders?",
-      answer: "Was uns unterscheidet: Inhabergeführt seit 2008 – direkte Kommunikation ohne Zwischenstellen. B2B-Spezialisierung – wir verstehen komplexe Geschäftsmodelle. Messbare Erfolge – transparentes Reporting und klare KPIs. Langfristige Partnerschaften – viele Kunden arbeiten seit Jahren mit uns. Technische Expertise – moderne Technologien und bewährte Tools."
-    },
-    {
-      question: "Bietet eure Werbeagentur auch SEO für Mainz an?",
-      answer: "Ja, SEO ist eine unserer Kernkompetenzen! Wir bieten sowohl Local SEO speziell für Mainz als auch überregionale SEO-Strategien an. Unser Fokus liegt auf nachhaltiger Sichtbarkeit, qualitativem Content und technischer Optimierung. Gerne erstellen wir Ihnen eine individuelle SEO-Strategie für Ihr Unternehmen in Mainz."
-    },
-    {
-      question: "Wie kann ich mit eurer Werbeagentur in Mainz in Kontakt treten?",
-      answer: "Am einfachsten über unser Kontaktformular auf dieser Seite. Sie können uns auch direkt anrufen oder eine E-Mail schreiben. Gerne vereinbaren wir ein kostenloses Erstgespräch – entweder in unserem Büro in der Mombacher Straße in Mainz oder per Video-Call. Wir melden uns in der Regel innerhalb von 24 Stunden zurück."
+      question: "Wie erfolgt die Abstimmung?",
+      answer: "Persönlich vor Ort oder digital – flexibel nach Bedarf."
     }
   ];
 
@@ -49,10 +41,10 @@ const MainzFAQ = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Häufig gestellte Fragen zu unserer Werbeagentur in Mainz
+              Häufige Fragen zum Website-Projekt
             </h2>
             <p className="text-xl text-gray-600">
-              Alles, was Sie über die Zusammenarbeit mit ooliv wissen müssen
+              Antworten auf die wichtigsten Fragen zur Zusammenarbeit
             </p>
           </div>
         </Reveal>

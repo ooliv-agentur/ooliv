@@ -8,22 +8,22 @@ const MainzTeamSection = () => {
     {
       icon: <Users className="h-8 w-8" />,
       title: "Inhabergeführt",
-      description: "Direkte Kommunikation mit den Entscheidern. Keine Zwischenstellen, keine Umwege."
+      description: "Direkter Kontakt zu den Entscheidern – ohne Zwischenebenen."
     },
     {
       icon: <Award className="h-8 w-8" />,
-      title: "B2B-Experten",
-      description: "Spezialisiert auf B2B-Marketing und komplexe Geschäftsmodelle seit 2008."
+      title: "Fokus auf B2B & Mittelstand",
+      description: "Wir verstehen komplexe Geschäftsmodelle und übertragen sie in klare digitale Prozesse."
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
-      title: "Messbare Erfolge",
-      description: "Transparentes Reporting und klare KPIs für nachweisbare Resultate."
+      title: "Messbare Ergebnisse",
+      description: "Transparente KPIs, regelmäßiges Reporting und nachvollziehbare Entwicklungen."
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Langfristige Partnerschaften",
-      description: "Viele unserer Mainzer Kunden vertrauen uns seit Jahren."
+      title: "Ganzheitlicher Ansatz",
+      description: "Strategie, Inhalte, Technik, SEO und Ads aus einer Hand."
     }
   ];
 
@@ -33,7 +33,7 @@ const MainzTeamSection = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Was uns als Werbeagentur unterscheidet
+              Was uns als Werbeagentur auszeichnet
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Inhabergeführt, transparent, erfolgreich – so arbeitet ooliv als Ihre Werbeagentur in Mainz
@@ -64,14 +64,14 @@ const MainzTeamSection = () => {
                 Ihre Werbeagentur in Mainz – persönlich und vor Ort
               </h3>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Als Werbeagentur mit Sitz in Mainz sind wir für unsere Kunden direkt erreichbar. Ob persönliches Treffen in unserem Büro in der Mombacher Straße oder Video-Call – wir finden den besten Weg für Ihre Projekte. Seit 2008 helfen wir Mainzer Unternehmen und B2B-Firmen aus dem gesamten Rhein-Main-Gebiet, digital erfolgreich zu werden.
+                Als Werbeagentur mit Sitz in Mainz sind wir für unsere Kunden direkt erreichbar. Ob persönliches Treffen in unserem Büro oder Video-Call – wir finden den besten Weg für Ihre Projekte.
               </p>
               <div className="bg-gradient-to-r from-accent-primary/10 to-medico-darkGreen/10 rounded-2xl p-8">
                 <p className="text-xl font-semibold text-medico-darkGreen mb-2">
                   📍 ooliv Werbeagentur Mainz
                 </p>
                 <p className="text-lg text-gray-600">
-                  Mombacher Str. 25, 55122 Mainz
+                  Am Brand 8, 55116 Mainz
                 </p>
                 <p className="text-lg text-gray-600 mt-4">
                   Vereinbaren Sie jetzt ein kostenloses Erstgespräch

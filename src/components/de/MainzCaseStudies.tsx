@@ -9,18 +9,18 @@ const MainzCaseStudies = () => {
     {
       title: "B2B SaaS-Unternehmen",
       industry: "Software",
-      challenge: "Geringe organische Sichtbarkeit",
-      result: "+180% organischer Traffic in 6 Monaten",
+      challenge: "Geringe Sichtbarkeit",
+      result: "+180 % organischer Traffic, +65 % qualifizierte Leads",
       metrics: [
         { icon: <TrendingUp className="h-5 w-5" />, label: "+180% Traffic" },
         { icon: <Users className="h-5 w-5" />, label: "+65% Leads" }
       ]
     },
     {
-      title: "Mittelständisches Produktionsunternehmen",
+      title: "Industrieunternehmen",
       industry: "Industrie",
-      challenge: "Veraltete Website, keine Lead-Generierung",
-      result: "Moderne Website mit strukturiertem Funnel",
+      challenge: "Veraltete Website",
+      result: "Moderner Auftritt, klar strukturierter Funnel, +210 % Conversions",
       metrics: [
         { icon: <Target className="h-5 w-5" />, label: "+210% Conversions" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "4.2% Conv. Rate" }
@@ -29,8 +29,8 @@ const MainzCaseStudies = () => {
     {
       title: "Beratungsunternehmen",
       industry: "Consulting",
-      challenge: "Keine digitale Strategie",
-      result: "Vollständige digitale Transformation",
+      challenge: "Fehlende digitale Strategie",
+      result: "Digitaler Neustart, +95 % qualifizierte Anfragen",
       metrics: [
         { icon: <Users className="h-5 w-5" />, label: "+95% Anfragen" },
         { icon: <TrendingUp className="h-5 w-5" />, label: "3x ROI" }
@@ -44,10 +44,10 @@ const MainzCaseStudies = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Erfolgsgeschichten aus Mainz und Umgebung
+              Erfolgsgeschichten aus Mainz und Rhein-Main
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              So hilft unsere Werbeagentur Unternehmen in Mainz und dem Rhein-Main-Gebiet, digital erfolgreich zu werden
+              So helfen wir Unternehmen in Mainz und dem Rhein-Main-Gebiet, digital erfolgreich zu werden
             </p>
           </div>
         </Reveal>
