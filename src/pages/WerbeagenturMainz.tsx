@@ -8,12 +8,15 @@ import { Button } from '@/components/ui/button';
 // Import all dedicated Mainz components
 import MainzHero from '@/components/de/MainzHero';
 import MainzAboutSection from '@/components/de/MainzAboutSection';
+import MainzWorkflow from '@/components/de/MainzWorkflow';
 import MainzCaseStudies from '@/components/de/MainzCaseStudies';
 import MainzFAQ from '@/components/de/MainzFAQ';
 import MainzTeamSection from '@/components/de/MainzTeamSection';
 import MainzBeforeAfterSection from '@/components/de/MainzBeforeAfterSection';
 import MainzFullServiceTeaser from '@/components/de/MainzFullServiceTeaser';
 import MainzTechStack from '@/components/de/MainzTechStack';
+import MainzSEOFooter from '@/components/de/MainzSEOFooter';
+import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
 
 const WerbeagenturMainz = () => {
   const { setLanguage } = useLanguage();
@@ -56,20 +59,72 @@ const WerbeagenturMainz = () => {
           keywords="Werbeagentur Mainz, Webagentur Mainz, Marketingagentur Mainz, Digitalagentur Mainz, Online Marketing Mainz, SEO Mainz"
           breadcrumbs={breadcrumbs}
         />
+        
+        <LocalBusinessSchemaGenerator
+          businessName="ooliv Werbeagentur Mainz"
+          description="Full-Service Werbeagentur in Mainz für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          address={{
+            streetAddress: "Am Brand 8",
+            addressLocality: "Mainz",
+            postalCode: "55116",
+            addressRegion: "Rheinland-Pfalz",
+            addressCountry: "DE"
+          }}
+          geo={{
+            latitude: 49.9928617,
+            longitude: 8.2472526
+          }}
+          telephone="+49-6131-9027640"
+          email="hallo@ooliv.de"
+          url="https://ooliv.de/werbeagentur-mainz"
+          priceRange="€€€"
+          openingHours={[
+            "Monday 09:00-18:00",
+            "Tuesday 09:00-18:00", 
+            "Wednesday 09:00-18:00",
+            "Thursday 09:00-18:00",
+            "Friday 09:00-18:00"
+          ]}
+          areaServed={[
+            "Mainz",
+            "Wiesbaden", 
+            "Frankfurt am Main",
+            "Darmstadt",
+            "Rhein-Main-Gebiet",
+            "Rheinland-Pfalz",
+            "Hessen"
+          ]}
+          services={[
+            "Webdesign",
+            "Webentwicklung",
+            "SEO-Optimierung",
+            "Local SEO",
+            "Google Ads",
+            "Content Marketing",
+            "Marketing Automation",
+            "Digitale Strategieberatung",
+            "KI-Technologien"
+          ]}
+        />
+        
         <MainzHero />
         <MainzAboutSection />
+        <MainzWorkflow />
         <MainzTeamSection />
+        <MainzCaseStudies />
         <MainzBeforeAfterSection />
         <MainzFullServiceTeaser />
         <MainzTechStack />
-        <MainzCaseStudies />
+        <MainzSEOFooter />
         <MainzFAQ />
         
         <CTA
           lightBackground={true}
-          title="Bereit für eine Website, die wirklich funktioniert?"
-          subtitle="Lassen Sie uns in einem unverbindlichen Gespräch klären, wie wir Ihre digitale Präsenz zu einem echten Geschäftsinstrument machen – strategisch fundiert, technisch ausgereift und messbar erfolgreich."
-          primaryCta="Digitales Projekt starten"
+          title="Starten wir Ihr digitales Projekt"
+          subtitle="Eine Website, die klar strukturiert ist, Vertrauen schafft und messbare Ergebnisse liefert – das ist unser Anspruch. Lassen Sie uns gemeinsam klären, wie wir Ihre digitale Präsenz verbessern können."
+          primaryCta="Kostenloses Erstgespräch"
+          secondaryCta="Kontakt aufnehmen"
+          secondaryCtaLink="/kontakt"
         />
       </PageLayout>
 
