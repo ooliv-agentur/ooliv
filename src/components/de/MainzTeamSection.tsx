@@ -35,9 +35,6 @@ const MainzTeamSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               Was uns als Agentur unterscheidet
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Inhabergeführt, transparent, erfolgreich – so arbeitet ooliv als Ihre Werbeagentur in Mainz
-            </p>
           </div>
         </Reveal>
 

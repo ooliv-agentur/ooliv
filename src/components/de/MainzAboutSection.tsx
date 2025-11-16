@@ -51,6 +51,19 @@ const MainzAboutSection = () => {
               Wir entwickeln Websites und digitale Strategien für Unternehmen aus Mainz und dem Rhein-Main-Gebiet. Unser Fokus liegt auf klaren Strukturen, einer verständlichen Nutzerführung und messbaren Ergebnissen. Als inhabergeführte Agentur arbeiten wir persönlich, direkt und mit Verantwortung.
             </p>
             
+            {/* SEO-optimierte Typewriter-Sätze als statischer Text */}
+            <div className="mt-6 mb-8 space-y-3 text-center max-w-3xl mx-auto">
+              <p className="text-lg font-semibold text-accent-primary">
+                → Websites, die Kunden gewinnen.
+              </p>
+              <p className="text-lg font-semibold text-accent-primary">
+                → SEO, das in Mainz sichtbar macht.
+              </p>
+              <p className="text-lg font-semibold text-accent-primary">
+                → Digitale Ergebnisse für Mainzer Unternehmen.
+              </p>
+            </div>
+            
             {/* Single CTA Button */}
             <div className="flex justify-center">
               <Button 
@@ -60,7 +73,7 @@ const MainzAboutSection = () => {
                 asChild
               >
                 <Link to="/strategie">
-                  Unsere Leistungen
+                  Mehr über unsere Arbeitsweise
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

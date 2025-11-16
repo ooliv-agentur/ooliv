@@ -15,17 +15,6 @@ const MainzTechStack = () => {
             </p>
           </div>
         </Reveal>
-
-        <Reveal>
-          <div className="mt-12 bg-gradient-to-r from-accent-primary/10 to-medico-darkGreen/10 rounded-3xl p-12 text-center max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-medico-darkGreen mb-4">
-              Die richtige Lösung für Ihr Projekt
-            </h3>
-            <p className="text-lg text-gray-600">
-              Ob CMS-basierte Website, individuelle Webanwendung oder E-Commerce-Plattform – wir setzen auf bewährte und zukunftssichere Technologien, die zu Ihren Geschäftszielen passen.
-            </p>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
