@@ -45,24 +45,11 @@ const MainzAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Ihre Digitalagentur in Mainz
+              Ihre Digitalagentur vor Ort
             </h2>
             <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
               Wir entwickeln Websites und digitale Strategien für Unternehmen aus Mainz und dem Rhein-Main-Gebiet. Unser Fokus liegt auf klaren Strukturen, einer verständlichen Nutzerführung und messbaren Ergebnissen. Als inhabergeführte Agentur arbeiten wir persönlich, direkt und mit Verantwortung.
             </p>
-            
-            {/* SEO-optimierte Typewriter-Sätze als statischer Text */}
-            <div className="mt-6 mb-8 space-y-3 text-center max-w-3xl mx-auto">
-              <p className="text-lg font-semibold text-accent-primary">
-                → Websites, die Kunden gewinnen.
-              </p>
-              <p className="text-lg font-semibold text-accent-primary">
-                → SEO, das in Mainz sichtbar macht.
-              </p>
-              <p className="text-lg font-semibold text-accent-primary">
-                → Digitale Ergebnisse für Mainzer Unternehmen.
-              </p>
-            </div>
             
             {/* Single CTA Button */}
             <div className="flex justify-center">
