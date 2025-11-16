@@ -60,30 +60,33 @@ const GermanWebDesign = () => {
         
         {/* FAQ Schema für Webdesign */}
         <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Was kostet professionelles Webdesign?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Unsere Websites starten bei €6.000 für einen strategischen Onepager mit modernem Design und mobiloptimiert. Business-Websites mit mehreren Seiten, SEO-optimiert und Content-Strategie beginnen bei €10.000. Enterprise-Projekte mit multilingual, Shop-Integration und komplexen Funktionen starten bei €15.000+."
+          <script 
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ 
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Was kostet professionelles Webdesign?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Unsere Websites starten bei €6.000 für einen strategischen Onepager mit modernem Design und mobiloptimiert. Business-Websites mit mehreren Seiten, SEO-optimiert und Content-Strategie beginnen bei €10.000. Enterprise-Projekte mit multilingual, Shop-Integration und komplexen Funktionen starten bei €15.000+."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Wie lange dauert die Website-Entwicklung?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Einfache Websites sind in 3-4 Wochen umsetzbar. Komplexe B2B-Projekte mit Content-Strategie und SEO benötigen 6-10 Wochen. Wir arbeiten mit klaren Meilensteinen und halten Sie kontinuierlich auf dem Laufenden."
+                    }
                   }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Wie lange dauert die Website-Entwicklung?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Einfache Websites sind in 3-4 Wochen umsetzbar. Komplexe B2B-Projekte mit Content-Strategie und SEO benötigen 6-10 Wochen. Wir arbeiten mit klaren Meilensteinen und halten Sie kontinuierlich auf dem Laufenden."
-                  }
-                }
-              ]
-            })}
-          </script>
+                ]
+              }) 
+            }}
+          />
         </Helmet>
         
         <WebDesignHero />
