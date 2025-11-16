@@ -104,23 +104,23 @@ const MainzAboutSection = () => {
             <div className="max-w-3xl mx-auto">
               <ul className="grid md:grid-cols-2 gap-4 text-left text-lg text-gray-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">✓</span>
+                  <span className="text-accent-primary mt-1">•</span>
                   <span>Beratung und Professional Services</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">✓</span>
+                  <span className="text-accent-primary mt-1">•</span>
                   <span>Industrie und Produktion</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">✓</span>
+                  <span className="text-accent-primary mt-1">•</span>
                   <span>SaaS- und Software-Unternehmen</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-accent-primary mt-1">✓</span>
+                  <span className="text-accent-primary mt-1">•</span>
                   <span>Handwerk und regionale Dienstleister</span>
                 </li>
                 <li className="flex items-start gap-3 md:col-span-2 justify-center">
-                  <span className="text-accent-primary mt-1">✓</span>
+                  <span className="text-accent-primary mt-1">•</span>
                   <span>Immobilien, Bau und technische Gewerke</span>
                 </li>
               </ul>

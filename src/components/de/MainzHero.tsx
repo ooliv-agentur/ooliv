@@ -28,10 +28,6 @@ const MainzHero = () => {
         link: "#",
         onClick: handleStartProject
       }}
-      secondaryCta={{
-        text: "Unsere Referenzen",
-        link: "/referenzen"
-      }}
     />
   );
 };
