@@ -71,7 +71,7 @@ const MainzTeamSection = () => {
                   📍 ooliv Werbeagentur Mainz
                 </p>
                 <p className="text-lg text-gray-600">
-                  Am Brand 8, 55116 Mainz
+                  Mombacher Str. 25, 55122 Mainz
                 </p>
                 <p className="text-lg text-gray-600 mt-4">
                   Vereinbaren Sie jetzt ein kostenloses Erstgespräch

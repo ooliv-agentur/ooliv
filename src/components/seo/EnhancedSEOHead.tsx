@@ -64,20 +64,20 @@ const EnhancedSEOHead: React.FC<EnhancedSEOHeadProps> = ({
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Am Brand 8",
+      "streetAddress": "Mombacher Str. 25",
       "addressLocality": "Mainz",
-      "postalCode": "55116",
+      "postalCode": "55122",
       "addressCountry": "DE",
       "addressRegion": "Rheinland-Pfalz"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "49.9928617",
-      "longitude": "8.2472526"
+      "latitude": "49.9969207",
+      "longitude": "8.2590653"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+49-6131-9027640",
+      "telephone": "+49-6131-6367801",
       "contactType": "customer service",
       "areaServed": "DE",
       "availableLanguage": ["German", "English"]

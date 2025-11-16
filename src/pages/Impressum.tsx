@@ -84,9 +84,19 @@ const GermanLegalNotice = () => {
                 <div className="space-y-6">
                   <div>
                     <p className="text-xl font-semibold text-medico-darkGreen mb-2">ooliv</p>
+                    <p className="text-sm text-gray-500 mb-3">Meldeadresse (Einzelunternehmen)</p>
                     <div className="text-gray-600 leading-relaxed">
                       <p>Eduard von Heuss Str. 29</p>
                       <p>55294 Bodenheim</p>
+                      <p>Germany</p>
+                    </div>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-gray-200">
+                    <p className="text-sm text-gray-500 mb-3">Geschäftssitz</p>
+                    <div className="text-gray-600 leading-relaxed">
+                      <p>Mombacher Str. 25</p>
+                      <p>55122 Mainz</p>
                       <p>Germany</p>
                     </div>
                   </div>

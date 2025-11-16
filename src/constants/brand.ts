@@ -21,13 +21,13 @@ export const BRAND = {
   
   // Contact
   email: 'info@ooliv.de',
-  phone: '+49-6131-9027640',
+  phone: '+49-6131-6367801',
   
   // Address
   address: {
-    street: 'Am Brand 8',
+    street: 'Mombacher Str. 25',
     city: 'Mainz',
-    postalCode: '55116',
+    postalCode: '55122',
     country: 'DE',
     region: 'Rheinland-Pfalz'
   },
