@@ -39,7 +39,7 @@ const WerbeagenturDarmstadt = () => {
       >
         <EnhancedSEOHead
           title="Werbeagentur Darmstadt | ooliv aus Mainz"
-          description="Werbeagentur Darmstadt – B2B-Marketing, Webdesign & SEO aus Mainz für Darmstadt. ✓ TU Darmstadt-Umfeld ✓ Tech-Expertise. Jetzt Projekt starten!"
+          description="Werbeagentur Darmstadt: Websites für Tech & Wissenschaft. TU-Umfeld, Engineering, Hightech-Startups. Technisch präzise, strategisch fundiert."
           canonicalUrl="https://ooliv.de/werbeagentur-darmstadt"
           keywords="Werbeagentur Darmstadt, Webdesign Darmstadt, Online Marketing Darmstadt, SEO Darmstadt"
           breadcrumbs={breadcrumbs}
