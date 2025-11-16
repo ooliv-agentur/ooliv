@@ -71,6 +71,14 @@ function App() {
   //   applyGlobalTurquoiseTheme();
   // }, []);
 
+  // Signal prerenderer that React is fully hydrated and canonical tags are set
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const event = new Event('render-event');
+      document.dispatchEvent(event);
+    }
+  }, []);
+
   const handleLeadOpenChange = React.useCallback((next: boolean) => {
     setShowLeadForm(next);
     if (!next) {

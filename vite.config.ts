@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+import prerender from '@prerenderer/rollup-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -13,6 +14,48 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       mode === 'development' && componentTagger(),
+      // Prerendering plugin for static HTML generation with correct canonical tags
+      mode === 'production' && prerender({
+        routes: [
+          '/',
+          '/webdesign',
+          '/webentwicklung',
+          '/seo-optimierung',
+          '/content-erstellung',
+          '/google-ads',
+          '/ki-technologien',
+          '/kontakt',
+          '/referenzen',
+          '/ueber-uns',
+          '/werbeagentur-mainz',
+          '/werbeagentur-wiesbaden',
+          '/werbeagentur-frankfurt',
+          '/werbeagentur-darmstadt',
+          '/digitalagentur-schweiz',
+          '/website-relaunch',
+          '/landingpage-optimierung',
+          '/website-konzept',
+          '/klickbetrug',
+          '/strategie',
+          '/automatisierte-content-marketing',
+          '/artikel',
+          '/impressum',
+          '/datenschutz',
+          '/cookie-richtlinie'
+        ],
+        renderer: '@prerenderer/renderer-puppeteer',
+        rendererOptions: {
+          // Wait for react-helmet-async to update tags
+          renderAfterTime: 1000,
+          headless: true,
+          // Ensure all meta tags are rendered
+          renderAfterDocumentEvent: 'render-event'
+        },
+        postProcess(renderedRoute) {
+          // Log prerendered routes for verification
+          console.log(`✅ Prerendered: ${renderedRoute.route}`);
+        }
+      }),
       // Custom plugin to generate complete sitemap with dynamic content
       {
         name: 'generate-complete-sitemap',
