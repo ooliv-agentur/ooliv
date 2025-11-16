@@ -15,6 +15,7 @@ import MainzTeamSection from '@/components/de/MainzTeamSection';
 import MainzTechStack from '@/components/de/MainzTechStack';
 import MainzSEOFooter from '@/components/de/MainzSEOFooter';
 import LocalBusinessSchemaGenerator from '@/components/seo/LocalBusinessSchemaGenerator';
+import FAQSchemaGenerator from '@/components/seo/FAQSchemaGenerator';
 
 const WerbeagenturMainz = () => {
   const { setLanguage } = useLanguage();
@@ -102,6 +103,36 @@ const WerbeagenturMainz = () => {
             "Marketing Automation",
             "Digitale Strategieberatung",
             "KI-Technologien"
+          ]}
+        />
+        
+        <FAQSchemaGenerator
+          pageUrl="https://ooliv.de/werbeagentur-mainz"
+          faqs={[
+            {
+              question: "Was kostet eine Zusammenarbeit?",
+              answer: "Die Kosten richten sich nach Umfang und Zielen. Websites werden pauschal angeboten, SEO und Ads monatlich betreut."
+            },
+            {
+              question: "Arbeitet ooliv nur mit Mainzer Unternehmen?",
+              answer: "Schwerpunkt Mainz und Rhein-Main, aber wir betreuen Kunden im gesamten DACH-Raum."
+            },
+            {
+              question: "Wie lange dauert ein Website-Projekt?",
+              answer: "In der Regel 4 bis 10 Wochen – abhängig von Struktur und Inhalt."
+            },
+            {
+              question: "Welche Branchen betreut ihr?",
+              answer: "Beratung, Industrie, SaaS, Handwerk und regionale Dienstleister."
+            },
+            {
+              question: "Bietet ihr SEO für Mainz an?",
+              answer: "Ja, einschließlich technischer Optimierung, Local SEO, Content und Monitoring."
+            },
+            {
+              question: "Wie erfolgt die Abstimmung?",
+              answer: "Persönlich vor Ort oder digital – flexibel nach Bedarf."
+            }
           ]}
         />
         
