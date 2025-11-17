@@ -14,50 +14,26 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       mode === 'development' && componentTagger(),
-      // 🚫 TEMPORARILY DISABLED - Testing if prerendering causes build failure
-      // Prerendering plugin for static HTML generation with correct canonical tags
-      // mode === 'production' && prerender({
-      //   routes: [
-      //     '/',
-      //     '/webdesign',
-      //     '/webentwicklung',
-      //     '/seo-optimierung',
-      //     '/content-erstellung',
-      //     '/google-ads',
-      //     '/ki-technologien',
-      //     '/kontakt',
-      //     '/referenzen',
-      //     '/ueber-uns',
-      //     '/werbeagentur-mainz',
-      //     '/werbeagentur-wiesbaden',
-      //     '/werbeagentur-frankfurt',
-      //     '/werbeagentur-darmstadt',
-      //     '/digitalagentur-schweiz',
-      //     '/website-relaunch',
-      //     '/landingpage-optimierung',
-      //     '/website-konzept',
-      //     '/klickbetrug',
-      //     '/strategie',
-      //     '/automatisierte-content-marketing',
-      //     '/artikel',
-      //     '/impressum',
-      //     '/datenschutz',
-      //     '/cookie-richtlinie'
-      //   ],
-      //   renderer: '@prerenderer/renderer-puppeteer',
-      //   rendererOptions: {
-      //     // Wait for react-helmet-async to update tags
-      //     renderAfterTime: 1000,
-      //     headless: true,
-      //     // Ensure all meta tags are rendered
-      //     renderAfterDocumentEvent: 'render-event'
-      //   },
-      //   postProcess(renderedRoute) {
-      //     // Log prerendered routes for verification
-      //     console.log(`✅ Prerendered: ${renderedRoute.route}`);
-      //   }
-      // }),
-      // 🚫 TEMPORARILY DISABLED - Testing if sitemap generation causes build failure
+      // Smart selective prerendering - only 5 critical landing pages
+      mode === 'production' && prerender({
+        routes: [
+          '/',                      // Homepage
+          '/kontakt',              // Contact
+          '/werbeagentur-mainz',   // Key landing page
+          '/seo-optimierung',      // SEO service
+          '/webdesign'             // Web design service
+        ],
+        renderer: '@prerenderer/renderer-puppeteer',
+        rendererOptions: {
+          renderAfterTime: 500,    // Reduced from 1000ms
+          headless: true,
+          // Removed renderAfterDocumentEvent to prevent timeouts
+        },
+        postProcess(renderedRoute) {
+          console.log(`✅ Prerendered: ${renderedRoute.route}`);
+        }
+      }),
+      // Sitemap generation removed - now served dynamically via Edge Function
       // Custom plugin to generate complete sitemap with dynamic content
       // {
       //   name: 'generate-complete-sitemap',
