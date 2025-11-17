@@ -6,10 +6,14 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-// Simple rate limiter for sitemap generation
+// Cache configuration
+const CACHE_TTL = 15 * 60 * 1000; // 15 minutes
+const STALE_WHILE_REVALIDATE = 60 * 60 * 1000; // 1 hour
+
+// Rate limiter configuration
 const rateLimitStore = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW = 60000; // 1 minute
-const MAX_REQUESTS = 5; // Lower limit for expensive operations
+const MAX_REQUESTS = 10; // Increased since we have better caching
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -23,6 +27,40 @@ function checkRateLimit(ip: string): boolean {
   validRequests.push(now);
   rateLimitStore.set(ip, validRequests);
   return true;
+}
+
+// Static pages configuration - defined once outside request handler
+const STATIC_PAGES = [
+  { url: 'https://ooliv.de/', priority: '1.0', changefreq: 'daily' },
+  { url: 'https://ooliv.de/werbeagentur-frankfurt', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/werbeagentur-wiesbaden', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/webentwicklung', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/webdesign', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/seo-optimierung', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/google-ads', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/content-erstellung', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/ki-technologien', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/strategie', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/klickbetrug', priority: '0.9', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/referenzen', priority: '0.9', changefreq: 'weekly' },
+  { url: 'https://ooliv.de/ueber-uns', priority: '0.8', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/kontakt', priority: '0.8', changefreq: 'monthly' },
+  { url: 'https://ooliv.de/artikel', priority: '0.7', changefreq: 'daily' },
+  { url: 'https://ooliv.de/impressum', priority: '0.3', changefreq: 'yearly' },
+  { url: 'https://ooliv.de/datenschutz', priority: '0.3', changefreq: 'yearly' },
+  { url: 'https://ooliv.de/cookie-richtlinie', priority: '0.3', changefreq: 'yearly' }
+] as const;
+
+// Generate ETag from content
+function generateETag(content: string): string {
+  // Simple hash function for ETag generation
+  let hash = 0;
+  for (let i = 0; i < content.length; i++) {
+    const char = content.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return `"${Math.abs(hash).toString(36)}"`;
 }
 
 serve(async (req) => {
@@ -65,18 +103,13 @@ serve(async (req) => {
     if (!supabaseUrl || !supabaseServiceKey) {
       console.error('Edge Function: Missing required environment variables');
       return new Response(
-        JSON.stringify({ error: 'Server configuration error' }),
+        `<?xml version="1.0" encoding="UTF-8"?><error>Server configuration error</error>`,
         { 
           status: 500,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/xml; charset=UTF-8' }
         }
       );
     }
-    
-    console.log('Edge Function: Environment check', { 
-      hasServiceKey: true,
-      supabaseUrl: supabaseUrl.substring(0, 30) + '...'
-    });
     
     const supabase = createClient(supabaseUrl, supabaseServiceKey, {
       auth: { persistSession: false }
@@ -94,21 +127,70 @@ serve(async (req) => {
 
       if (!cacheError && cachedSitemap) {
         const cacheAge = Date.now() - new Date(cachedSitemap.generated_at).getTime();
-        const maxCacheAge = 15 * 60 * 1000; // 15 minutes
         
-        if (cacheAge < maxCacheAge) {
-          console.log('Edge Function: Returning cached sitemap', { 
+        // Serve from cache if within TTL
+        if (cacheAge < CACHE_TTL) {
+          console.log('Edge Function: Returning fresh cached sitemap', { 
             urlCount: cachedSitemap.url_count, 
             cacheAgeMinutes: Math.round(cacheAge / 60000) 
           });
           
+          const etag = generateETag(cachedSitemap.sitemap_xml);
+          const ifNoneMatch = req.headers.get('if-none-match');
+          
+          // Return 304 if ETag matches
+          if (ifNoneMatch === etag) {
+            return new Response(null, {
+              status: 304,
+              headers: {
+                'ETag': etag,
+                'Cache-Control': 'public, max-age=900, s-maxage=900, stale-while-revalidate=3600',
+                ...corsHeaders
+              }
+            });
+          }
+          
+          const sitemapSize = new TextEncoder().encode(cachedSitemap.sitemap_xml).length;
+          
           return new Response(cachedSitemap.sitemap_xml, {
             headers: {
               'Content-Type': 'application/xml; charset=UTF-8',
-              'Cache-Control': 'public, max-age=900, s-maxage=900', // 15 minutes
+              'Cache-Control': 'public, max-age=900, s-maxage=900, stale-while-revalidate=3600',
               'X-Cache-Status': 'HIT',
+              'X-Cache-Age': Math.round(cacheAge / 1000).toString(),
               'X-Generated-At': cachedSitemap.generated_at,
               'X-URL-Count': cachedSitemap.url_count.toString(),
+              'Content-Length': sitemapSize.toString(),
+              'ETag': etag,
+              'Vary': 'Accept-Encoding',
+              ...corsHeaders
+            },
+          });
+        }
+        
+        // Serve stale cache while revalidating in background
+        if (cacheAge < CACHE_TTL + STALE_WHILE_REVALIDATE) {
+          console.log('Edge Function: Serving stale cache, revalidating in background');
+          
+          const etag = generateETag(cachedSitemap.sitemap_xml);
+          const sitemapSize = new TextEncoder().encode(cachedSitemap.sitemap_xml).length;
+          
+          // Trigger background regeneration (non-blocking)
+          EdgeRuntime.waitUntil(
+            regenerateSitemap(supabase)
+          );
+          
+          return new Response(cachedSitemap.sitemap_xml, {
+            headers: {
+              'Content-Type': 'application/xml; charset=UTF-8',
+              'Cache-Control': 'public, max-age=900, s-maxage=900, stale-while-revalidate=3600',
+              'X-Cache-Status': 'STALE',
+              'X-Cache-Age': Math.round(cacheAge / 1000).toString(),
+              'X-Generated-At': cachedSitemap.generated_at,
+              'X-URL-Count': cachedSitemap.url_count.toString(),
+              'Content-Length': sitemapSize.toString(),
+              'ETag': etag,
+              'Vary': 'Accept-Encoding',
               ...corsHeaders
             },
           });
@@ -117,149 +199,24 @@ serve(async (req) => {
     }
 
     console.log('Edge Function: Generating fresh sitemap');
+    const sitemap = await generateSitemapXML(supabase);
     
-    // Fetch all articles with detailed error handling
-    console.log('Edge Function: Starting database query to content_posts table');
-    
-    const { data: articles, error } = await supabase
-      .from('content_posts')
-      .select('slug, created_at, title')
-      .not('slug', 'is', null)
-      .neq('slug', '')
-      .order('created_at', { ascending: false });
-
-    console.log('Edge Function: Query completed');
-    console.log('Edge Function: Articles data sample:', articles?.slice(0, 3));
-    console.log('Edge Function: Articles count:', articles?.length || 0);
-    console.log('Edge Function: Query error:', error);
-
-    if (error) {
-      console.error('Edge Function: Database error details:', JSON.stringify(error));
-      throw new Error(`Database query failed: ${error.message} (Code: ${error.code})`);
-    }
-
-    if (!articles) {
-      console.log('Edge Function: No articles returned (null/undefined)');
-    }
-
-    // Log article details for debugging
-    if (articles && articles.length > 0) {
-      console.log('Edge Function: Sample articles:', articles.slice(0, 5).map(a => ({
-        slug: a.slug,
-        title: a.title?.substring(0, 50) + '...',
-        created_at: a.created_at
-      })));
-    }
-
-    console.log('Edge Function: Building sitemap with', articles?.length || 0, 'articles');
-
-    // Get current date in ISO format (YYYY-MM-DD)
-    const currentDate = new Date().toISOString().split('T')[0];
-    
-    // Static pages with correct priorities and change frequencies - canonical URLs only
-    const staticPages = [
-      { url: 'https://ooliv.de/', lastmod: currentDate, priority: '1.0', changefreq: 'daily', canonical: true },
-      { url: 'https://ooliv.de/werbeagentur-frankfurt', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/werbeagentur-wiesbaden', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/webentwicklung', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/webdesign', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/seo-optimierung', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/google-ads', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/content-erstellung', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/ki-technologien', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/strategie', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/klickbetrug', lastmod: currentDate, priority: '0.9', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/referenzen', lastmod: currentDate, priority: '0.9', changefreq: 'weekly', canonical: true },
-      { url: 'https://ooliv.de/ueber-uns', lastmod: currentDate, priority: '0.8', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/kontakt', lastmod: currentDate, priority: '0.8', changefreq: 'monthly', canonical: true },
-      { url: 'https://ooliv.de/artikel', lastmod: currentDate, priority: '0.7', changefreq: 'daily', canonical: true },
-      { url: 'https://ooliv.de/impressum', lastmod: currentDate, priority: '0.3', changefreq: 'yearly', canonical: true },
-      { url: 'https://ooliv.de/datenschutz', lastmod: currentDate, priority: '0.3', changefreq: 'yearly', canonical: true },
-      { url: 'https://ooliv.de/cookie-richtlinie', lastmod: currentDate, priority: '0.3', changefreq: 'yearly', canonical: true }
-    ];
-
-    // Generate URLs for static pages - only canonical URLs
-    let urlElements = staticPages
-      .filter(page => page.canonical)
-      .map(page => 
-        `<url><loc>${page.url}</loc><lastmod>${page.lastmod}</lastmod><priority>${page.priority}</priority><changefreq>${page.changefreq}</changefreq></url>`
-      );
-
-    // Add blog articles if available
-    if (articles && articles.length > 0) {
-      const articleUrls = articles.map(article => {
-        const articleDate = new Date(article.created_at).toISOString().split('T')[0];
-        return `<url><loc>https://ooliv.de/artikel/${article.slug}</loc><lastmod>${articleDate}</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>`;
-      });
-      urlElements = urlElements.concat(articleUrls);
-    }
-
-    // Build complete sitemap - no leading whitespace
-    const cleanSitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlElements.join('')}</urlset>`;
-    
-    // Validate XML structure
-    if (!cleanSitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || 
-        !cleanSitemap.includes('<urlset') || 
-        !cleanSitemap.includes('</urlset>')) {
-      throw new Error('XML structure validation failed');
-    }
-
-    const totalUrls = urlElements.length;
-    const sitemapSize = new TextEncoder().encode(cleanSitemap).length;
-    const generatedAt = new Date().toISOString();
-    
-    console.log('Edge Function: Sitemap generated successfully', { 
-      totalUrls, 
-      sitemapSize, 
-      staticPages: staticPages.length,
-      articlePages: articles?.length || 0
-    });
-
-    // Store in persistent cache
-    try {
-      const { error: cacheError } = await supabase
-        .from('sitemap_cache')
-        .insert({
-          sitemap_xml: cleanSitemap,
-          url_count: totalUrls,
-          cache_key: 'main_sitemap',
-          generated_at: generatedAt
-        });
-
-      if (cacheError) {
-        console.error('Edge Function: Failed to cache sitemap:', cacheError);
-      } else {
-        console.log('Edge Function: Sitemap cached successfully');
-        
-        // Clean up old cache entries (async, don't wait)
-        supabase.rpc('cleanup_old_sitemap_cache').then(({ data, error }) => {
-          if (error) {
-            console.error('Edge Function: Cache cleanup failed:', error);
-          } else {
-            console.log('Edge Function: Cleaned up', data, 'old cache entries');
-          }
-        });
-      }
-    } catch (cacheError) {
-      console.error('Edge Function: Cache operation failed:', cacheError);
-    }
-
-    // Return sitemap with appropriate cache headers
-    return new Response(cleanSitemap, {
+    return new Response(sitemap.xml, {
       headers: {
         'Content-Type': 'application/xml; charset=UTF-8',
-        'Cache-Control': 'public, max-age=900, s-maxage=900, stale-while-revalidate=3600', // 15min cache, 1hr stale
+        'Cache-Control': 'public, max-age=900, s-maxage=900, stale-while-revalidate=3600',
         'X-Cache-Status': 'MISS',
-        'X-Generated-At': generatedAt,
-        'X-URL-Count': totalUrls.toString(),
-        'X-Sitemap-Size': sitemapSize.toString(),
-        'Content-Length': sitemapSize.toString(),
+        'X-Generated-At': sitemap.generatedAt,
+        'X-URL-Count': sitemap.urlCount.toString(),
+        'X-Sitemap-Size': sitemap.size.toString(),
+        'Content-Length': sitemap.size.toString(),
+        'ETag': generateETag(sitemap.xml),
+        'Vary': 'Accept-Encoding',
         ...corsHeaders
       },
     });
 
   } catch (error) {
-    // Log detailed error server-side
     console.error('Edge Function: Critical error occurred:', {
       error: error?.message,
       stack: error?.stack,
@@ -267,7 +224,6 @@ serve(async (req) => {
       timestamp: new Date().toISOString()
     });
     
-    // Return generic error to client
     return new Response(
       `<?xml version="1.0" encoding="UTF-8"?><error>Sitemap generation failed</error>`, 
       { 
@@ -280,3 +236,111 @@ serve(async (req) => {
     );
   }
 });
+
+// Background regeneration function
+async function regenerateSitemap(supabase: any) {
+  try {
+    console.log('Background: Starting sitemap regeneration');
+    await generateSitemapXML(supabase);
+    console.log('Background: Sitemap regeneration completed');
+  } catch (error) {
+    console.error('Background: Regeneration failed:', error);
+  }
+}
+
+// Core sitemap generation logic
+async function generateSitemapXML(supabase: any) {
+  // Fetch only necessary fields for better performance
+  const { data: articles, error } = await supabase
+    .from('content_posts')
+    .select('slug, created_at')
+    .not('slug', 'is', null)
+    .neq('slug', '')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Database error:', JSON.stringify(error));
+    throw new Error(`Database query failed: ${error.message}`);
+  }
+
+  console.log('Fetched', articles?.length || 0, 'articles for sitemap');
+
+  // Optimized XML generation using array
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  // Pre-allocate array with estimated size for better performance
+  const urlElements: string[] = new Array(STATIC_PAGES.length + (articles?.length || 0));
+  let index = 0;
+  
+  // Generate static page URLs
+  for (const page of STATIC_PAGES) {
+    urlElements[index++] = `<url><loc>${page.url}</loc><lastmod>${currentDate}</lastmod><priority>${page.priority}</priority><changefreq>${page.changefreq}</changefreq></url>`;
+  }
+  
+  // Generate article URLs
+  if (articles && articles.length > 0) {
+    for (const article of articles) {
+      const articleDate = new Date(article.created_at).toISOString().split('T')[0];
+      urlElements[index++] = `<url><loc>https://ooliv.de/artikel/${article.slug}</loc><lastmod>${articleDate}</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>`;
+    }
+  }
+  
+  // Build complete sitemap with optimized string concatenation
+  const cleanSitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlElements.join('')}</urlset>`;
+  
+  // Validate XML structure
+  if (!cleanSitemap.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || 
+      !cleanSitemap.includes('<urlset') || 
+      !cleanSitemap.includes('</urlset>')) {
+    throw new Error('XML structure validation failed');
+  }
+
+  const totalUrls = index;
+  const sitemapSize = new TextEncoder().encode(cleanSitemap).length;
+  const generatedAt = new Date().toISOString();
+  
+  console.log('Sitemap generated:', { 
+    totalUrls, 
+    sitemapSize,
+    staticPages: STATIC_PAGES.length,
+    articlePages: articles?.length || 0
+  });
+
+  // Store in persistent cache with background cleanup
+  try {
+    const { error: cacheError } = await supabase
+      .from('sitemap_cache')
+      .insert({
+        sitemap_xml: cleanSitemap,
+        url_count: totalUrls,
+        cache_key: 'main_sitemap',
+        generated_at: generatedAt
+      });
+
+    if (cacheError) {
+      console.error('Failed to cache sitemap:', cacheError);
+    } else {
+      console.log('Sitemap cached successfully');
+      
+      // Clean up old cache entries using EdgeRuntime.waitUntil
+      EdgeRuntime.waitUntil(
+        supabase.rpc('cleanup_old_sitemap_cache').then(({ data, error }: any) => {
+          if (error) {
+            console.error('Cache cleanup failed:', error);
+          } else {
+            console.log('Cleaned up', data, 'old cache entries');
+          }
+        })
+      );
+    }
+  } catch (cacheError) {
+    console.error('Cache operation failed:', cacheError);
+  }
+
+  return {
+    xml: cleanSitemap,
+    urlCount: totalUrls,
+    size: sitemapSize,
+    generatedAt
+  };
+}
