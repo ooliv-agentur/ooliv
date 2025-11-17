@@ -175,9 +175,9 @@ serve(async (req) => {
           const etag = generateETag(cachedSitemap.sitemap_xml);
           const sitemapSize = new TextEncoder().encode(cachedSitemap.sitemap_xml).length;
           
-          // Trigger background regeneration (non-blocking)
-          EdgeRuntime.waitUntil(
-            regenerateSitemap(supabase)
+          // Trigger background regeneration (fire-and-forget)
+          regenerateSitemap(supabase).catch(err => 
+            console.error('Background regeneration failed:', err)
           );
           
           return new Response(cachedSitemap.sitemap_xml, {
@@ -322,16 +322,17 @@ async function generateSitemapXML(supabase: any) {
     } else {
       console.log('Sitemap cached successfully');
       
-      // Clean up old cache entries using EdgeRuntime.waitUntil
-      EdgeRuntime.waitUntil(
-        supabase.rpc('cleanup_old_sitemap_cache').then(({ data, error }: any) => {
-          if (error) {
-            console.error('Cache cleanup failed:', error);
-          } else {
-            console.log('Cleaned up', data, 'old cache entries');
-          }
-        })
-      );
+      // Clean up old cache entries synchronously (fast operation)
+      try {
+        const { data: cleanupCount, error: cleanupError } = await supabase.rpc('cleanup_old_sitemap_cache');
+        if (cleanupError) {
+          console.error('Cache cleanup failed:', cleanupError);
+        } else {
+          console.log('Cleaned up', cleanupCount, 'old cache entries');
+        }
+      } catch (cleanupErr) {
+        console.error('Cache cleanup exception:', cleanupErr);
+      }
     }
   } catch (cacheError) {
     console.error('Cache operation failed:', cacheError);
