@@ -39,5 +39,5 @@ Allow: /*.jpeg
 Allow: /*.webp
 Allow: /*.woff2
 
-# Sitemap location (dynamic via Edge Function)
-Sitemap: https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap
+# Sitemap location (static, generated at build time)
+Sitemap: https://ooliv.de/sitemap.xml
