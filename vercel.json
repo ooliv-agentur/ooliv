@@ -13,8 +13,6 @@
   },
   "rewrites": [
     { "source": "/debug-sitemap", "destination": "/api/debug-sitemap" },
-    // Temporarily disabled due to edge function deployment issues
-    // { "source": "/sitemap.xml", "destination": "https://ycloufmcjjfvjxhmslbm.supabase.co/functions/v1/generateSitemap" },
     { "source": "/webhook/sitemap-update", "destination": "/api/webhook-sitemap-update" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
