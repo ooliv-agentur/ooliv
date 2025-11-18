@@ -168,17 +168,12 @@ serve(async (req) => {
           });
         }
         
-        // Serve stale cache while revalidating in background
+        // Serve stale cache - regeneration moved to manual trigger
         if (cacheAge < CACHE_TTL + STALE_WHILE_REVALIDATE) {
-          console.log('Edge Function: Serving stale cache, revalidating in background');
+          console.log('Edge Function: Serving stale cache');
           
           const etag = generateETag(cachedSitemap.sitemap_xml);
           const sitemapSize = new TextEncoder().encode(cachedSitemap.sitemap_xml).length;
-          
-          // Trigger background regeneration (fire-and-forget)
-          regenerateSitemap(supabase).catch(err => 
-            console.error('Background regeneration failed:', err)
-          );
           
           return new Response(cachedSitemap.sitemap_xml, {
             headers: {
@@ -321,18 +316,7 @@ async function generateSitemapXML(supabase: any) {
       console.error('Failed to cache sitemap:', cacheError);
     } else {
       console.log('Sitemap cached successfully');
-      
-      // Clean up old cache entries synchronously (fast operation)
-      try {
-        const { data: cleanupCount, error: cleanupError } = await supabase.rpc('cleanup_old_sitemap_cache');
-        if (cleanupError) {
-          console.error('Cache cleanup failed:', cleanupError);
-        } else {
-          console.log('Cleaned up', cleanupCount, 'old cache entries');
-        }
-      } catch (cleanupErr) {
-        console.error('Cache cleanup exception:', cleanupErr);
-      }
+      // Note: Automatic cache cleanup removed due to deployment constraints
     }
   } catch (cacheError) {
     console.error('Cache operation failed:', cacheError);
