@@ -7,9 +7,6 @@ verify_jwt = true
 [functions.receiveContentWebhook]
 verify_jwt = false
 
-[functions.generateSitemap]
-verify_jwt = false
-
 [functions.linkedinAuth]
 verify_jwt = false
 
