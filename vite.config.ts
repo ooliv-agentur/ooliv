@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import prerender from '@prerenderer/rollup-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -14,42 +13,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       mode === 'development' && componentTagger(),
-      // Smart selective prerendering - only 5 critical landing pages
-      mode === 'production' && prerender({
-        routes: [
-          '/',                      // Homepage
-          '/kontakt',              // Contact
-          '/werbeagentur-mainz',   // Key landing page
-          '/seo-optimierung',      // SEO service
-          '/webdesign'             // Web design service
-        ],
-        renderer: '@prerenderer/renderer-puppeteer',
-        rendererOptions: {
-          renderAfterTime: 500,    // Reduced from 1000ms
-          headless: true,
-          // Removed renderAfterDocumentEvent to prevent timeouts
-        },
-        postProcess(renderedRoute) {
-          console.log(`✅ Prerendered: ${renderedRoute.route}`);
-        }
-      }),
-      // Sitemap generation removed - now served dynamically via Edge Function
-      // Custom plugin to generate complete sitemap with dynamic content
-      // {
-      //   name: 'generate-complete-sitemap',
-      //   closeBundle: async () => {
-      //     if (mode === 'production') {
-      //       try {
-      //         console.log('🚀 Generating sitemap during build...');
-      //         const { generateDynamicSitemap } = await import('./scripts/generate-sitemap-data.ts');
-      //         await generateDynamicSitemap();
-      //       } catch (error) {
-      //         console.error('❌ Failed to generate sitemap:', error);
-      //       }
-      //     }
-      //   }
-      // }
-    ].filter(Boolean),
+    ],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
