@@ -21,7 +21,6 @@ import { applyGlobalTurquoiseTheme } from './styles/globalTheme';
 // Lazy load pages for better performance
 const GermanIndex = lazy(() => import('./pages/Index'));
 const GermanWebDesign = lazy(() => import('./pages/Webdesign'));
-const Sitemap = lazy(() => import('./pages/Sitemap'));
 const GermanWebDevelopment = lazy(() => import('./pages/Webentwicklung'));
 const GermanAiTechnologies = lazy(() => import('./pages/KiTechnologien'));
 const GermanContact = lazy(() => import('./pages/Kontakt'));
@@ -147,7 +146,7 @@ function App() {
                       <Route path="/website-konzept" element={<WebsiteKonzept />} />
 
                       {/* 404 Route */}
-                      <Route path="/sitemap.xml" element={<Sitemap />} />
+                      
                       <Route path="*" element={<NotFound />} />
                     </Routes>
                   </Suspense>
