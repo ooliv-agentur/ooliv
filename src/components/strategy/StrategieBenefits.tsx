@@ -10,23 +10,23 @@ const StrategieBenefits = () => {
   const benefits = [
     {
       IconComponent: Target,
-      title: "Sie wissen genau, wen Sie ansprechen",
-      description: "Sie bekommen eine klare Zielgruppenanalyse – wer sind Ihre Kunden, wie suchen sie, was brauchen sie? So verschwenden Sie kein Budget an die Falschen."
+      title: "Strategische Klarheit auf C-Level",
+      description: "Sie erhalten validierte Strategic Discovery mit Opportunity Mapping, Value Hypotheses und klarem Business Case – keine Bauchentscheidungen, sondern datenbasierte Strategien."
     },
     {
       IconComponent: TrendingUp,
-      title: "Ihre Besucher werden zu Kunden",
-      description: "Sie bekommen eine durchdachte Nutzerführung mit klaren CTAs und conversion-optimierten Seiten. Aus Klicks werden Anfragen."
+      title: "Messbare Business Outcomes",
+      description: "Keine Vanity Metrics – Sie bekommen KPI-Frameworks mit echten Business Outcomes: Lead Quality +180%, Conversion +240%, Time-to-Market halbiert."
     },
     {
       IconComponent: Users,
-      title: "Sie haben einen klaren Plan",
-      description: "Sie bekommen eine Roadmap mit Meilensteinen, Timelines und Verantwortlichkeiten. Jeder weiß, was zu tun ist – kein Chaos, kein Rätselraten."
+      title: "End-to-End Implementation Leadership",
+      description: "Von Strategic Discovery über UX Strategy bis zur Umsetzung – Sie erhalten koordinierte Führung internationaler Teams mit klaren Milestones und Quality Gates."
     },
     {
       IconComponent: Zap,
-      title: "Sie haben einen festen Ansprechpartner",
-      description: "Sie bekommen direkten Draht zum Gründer – ohne Zwischenstellen, ohne Weiterleitungen. Von der ersten Idee bis zum Launch."
+      title: "Direkter C-Level Advisory",
+      description: "16+ Jahre Erfahrung in digitaler Transformation – Sie sprechen direkt mit dem Digital Strategy Lead, keine Junior-Berater, keine Agenturen-Ebenen."
     }
   ];
 
@@ -36,10 +36,10 @@ const StrategieBenefits = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className={`${getHeadingClasses('h2', 'primary', 'center')} mb-6`}>
-              Was Strategie Ihnen wirklich bringt
+              Digital Transformation mit strategischem Impact
             </h2>
             <p className={`${getBodyClasses('large', 'secondary', 'center')} max-w-3xl mx-auto`}>
-              Strategie klingt abstrakt? Ist es nicht. Es bedeutet: Klare Ziele, keine verschwendeten Budgets, planbare Ergebnisse.
+              Von Strategic Discovery bis zur messbaren Umsetzung – mit 16+ Jahren Erfahrung in der Führung digitaler Transformationen für B2B-Unternehmen im DACH-Raum.
             </p>
           </div>
         </Reveal>
