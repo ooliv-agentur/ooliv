@@ -16,7 +16,7 @@ const Footer = () => {
           <div className={footerStyles.sectionSpacing}>
             <h3 className={footerStyles.sectionHeading}>Über ooliv</h3>
             <p className={footerStyles.bodyText}>
-              Digital Strategy Lead mit 16+ Jahren Erfahrung in Digital Transformation, AI Integration und UX Strategy für B2B-Unternehmen.
+              ooliv unterstützt B2B-Unternehmen im DACH-Raum bei digitaler Transformation – mit strategischer Beratung, professionellem Design und messbaren Ergebnissen. 16+ Jahre Expertise, über 100 erfolgreiche Projekte.
             </p>
           </div>
 
