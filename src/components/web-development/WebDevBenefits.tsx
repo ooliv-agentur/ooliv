@@ -12,29 +12,29 @@ const WebDevBenefits = () => {
       icon: Settings,
       title: isGerman ? "Individuell mit System" : "Custom with System",
       description: isGerman 
-        ? "Keine Templates – jede Seite entsteht auf Basis Ihrer Inhalte und Ziele. Mit Elementor, WPBakery oder individuellem Code: Wir arbeiten flexibel, aber nie von der Stange."
-        : "No templates – each page is created based on your content and goals. With Elementor, WPBakery or custom code: We work flexibly, but never off-the-shelf."
+        ? "Keine Templates – individueller Code oder flexibles CMS."
+        : "No templates – custom code or flexible CMS."
     },
     {
       icon: Shield,
       title: isGerman ? "Schnell, sicher, skalierbar" : "Fast, secure, scalable",
       description: isGerman
-        ? "Ihre Website lädt blitzschnell, läuft stabil und wächst mit Ihrem Business – dank durchdachter Technik, Hosting-Optimierung und sauberem Code."
-        : "Your website loads lightning fast, runs stable and grows with your business – thanks to thoughtful technology, hosting optimization and clean code."
+        ? "Blitzschnell, stabil, wächst mit Ihrem Business."
+        : "Lightning fast, stable, grows with your business."
     },
     {
       icon: Edit3,
       title: isGerman ? "Einfach pflegbar" : "Easy to maintain",
       description: isGerman
-        ? "Mit oder ohne CMS: Wir entwickeln so, dass Sie Inhalte selbst bearbeiten können – ob mit Elementor, Gutenberg oder individuellem Backend."
-        : "With or without CMS: We develop so that you can edit content yourself – whether with Elementor, Gutenberg or a custom backend."
+        ? "Inhalte selbst bearbeiten – mit oder ohne CMS."
+        : "Edit content yourself – with or without CMS."
     },
     {
       icon: TrendingUp,
       title: isGerman ? "Für die Zukunft gebaut" : "Built for the future",
       description: isGerman
-        ? "Internationalisierung, Integrationen und Erweiterbarkeit: Ihre Website ist bereit für morgen – durch skalierbare Struktur und klare Schnittstellen."
-        : "Internationalization, integrations and extensibility: Your website is ready for tomorrow – through scalable structure and clear interfaces."
+        ? "Skalierbar, erweiterbar, zukunftssicher."
+        : "Scalable, extensible, future-proof."
     }
   ];
 
