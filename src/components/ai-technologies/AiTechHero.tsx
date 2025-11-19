@@ -14,20 +14,20 @@ const AiTechHero = () => {
   return (
     <PageHero
       title={isGerman 
-        ? "AI-Enabled Business Transformation" 
+        ? "KI, die Ihrem Business wirklich hilft" 
         : "AI-Enabled Business Transformation"
       }
       subtitle={isGerman 
-        ? "Strategische AI-Integration für echte Business-Ergebnisse. LLM Use Case Identification, AI Workflow Strategy und messbare Effizienzgewinne durch intelligente Automation." 
+        ? "Ich finde heraus, wo KI in Ihrem Unternehmen echten Mehrwert bringt – von smarten Chatbots über Content-Automation bis zu effizienten Workflows. Keine Buzzwords, sondern konkrete Use Cases mit messbaren Ergebnissen." 
         : "Strategic AI integration for real business results. LLM use case identification, AI workflow strategy, and measurable efficiency gains through intelligent automation."
       }
       primaryCta={{
-        text: isGerman ? "AI-Transformation starten" : "Start AI Transformation",
+        text: isGerman ? "KI-Potenzial erkunden" : "Start AI Transformation",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: isGerman ? "AI-Transformationen ansehen" : "View AI Transformations",
+        text: isGerman ? "KI-Projekte ansehen" : "View AI Transformations",
         link: "/referenzen"
       }}
     />

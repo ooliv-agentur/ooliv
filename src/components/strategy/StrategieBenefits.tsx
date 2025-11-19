@@ -10,23 +10,23 @@ const StrategieBenefits = () => {
   const benefits = [
     {
       IconComponent: Target,
-      title: "Strategische Klarheit auf C-Level",
-      description: "Sie erhalten validierte Strategic Discovery mit Opportunity Mapping, Value Hypotheses und klarem Business Case – keine Bauchentscheidungen, sondern datenbasierte Strategien."
+      title: "Sie wissen, was zu tun ist",
+      description: "Keine diffusen Ideen mehr. Sie bekommen eine klare Strategie mit priorisierten Maßnahmen – basierend auf Daten, nicht auf Bauchgefühl. Sie wissen nach der Analyse genau, welche Schritte jetzt Sinn machen."
     },
     {
       IconComponent: TrendingUp,
-      title: "Messbare Business Outcomes",
-      description: "Keine Vanity Metrics – Sie bekommen KPI-Frameworks mit echten Business Outcomes: Lead Quality +180%, Conversion +240%, Time-to-Market halbiert."
+      title: "Messbar bessere Ergebnisse",
+      description: "Keine leeren Versprechen. Meine Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Mit klaren KPIs, die Sie verfolgen können."
     },
     {
       IconComponent: Users,
-      title: "End-to-End Implementation Leadership",
-      description: "Von Strategic Discovery über UX Strategy bis zur Umsetzung – Sie erhalten koordinierte Führung internationaler Teams mit klaren Milestones und Quality Gates."
+      title: "Von der Strategie zur Umsetzung",
+      description: "Sie bekommen nicht nur einen Plan, sondern auch Unterstützung bei der Umsetzung. Ich koordiniere Ihr Team, definiere klare Meilensteine und sorge dafür, dass es wirklich passiert."
     },
     {
       IconComponent: Zap,
-      title: "Direkter C-Level Advisory",
-      description: "16+ Jahre Erfahrung in digitaler Transformation – Sie sprechen direkt mit dem Digital Strategy Lead, keine Junior-Berater, keine Agenturen-Ebenen."
+      title: "Direkter Draht zu 16+ Jahren Erfahrung",
+      description: "Sie arbeiten direkt mit mir – keine Junior-Berater, keine Agentur-Ebenen. Sie profitieren von 16+ Jahren Erfahrung in digitaler Transformation für B2B-Unternehmen."
     }
   ];
 
@@ -36,10 +36,10 @@ const StrategieBenefits = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className={`${getHeadingClasses('h2', 'primary', 'center')} mb-6`}>
-              Digital Transformation mit strategischem Impact
+              Was Sie von mir bekommen
             </h2>
             <p className={`${getBodyClasses('large', 'secondary', 'center')} max-w-3xl mx-auto`}>
-              Von Strategic Discovery bis zur messbaren Umsetzung – mit 16+ Jahren Erfahrung in der Führung digitaler Transformationen für B2B-Unternehmen im DACH-Raum.
+              Klare Strategien, messbare Ergebnisse und jemanden, der Sie von der Analyse bis zur Umsetzung begleitet.
             </p>
           </div>
         </Reveal>
