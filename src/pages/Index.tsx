@@ -7,8 +7,7 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import StrategicChallengesSection from "@/components/de/StrategicChallengesSection";
 import StrategicFrameworksSection from "@/components/de/StrategicFrameworksSection";
 import TrackRecordSection from "@/components/de/TrackRecordSection";
-import EngagementModelsTeaser from "@/components/de/EngagementModelsTeaser";
-import ROICalculatorTeaser from "@/components/de/ROICalculatorTeaser";
+import HowWeWorkSection from "@/components/de/HowWeWorkSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -19,9 +18,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
-import TurquoiseCard from '@/components/ui/TurquoiseCard';
-import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
+import { ArrowRight } from 'lucide-react';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
 
@@ -126,42 +123,8 @@ const GermanIndex = () => {
         <TrackRecordSection />
         <CaseStudiesSection />
         
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
-              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-turquoise mr-3" />
-                NEU: Automatisierte Content-Marketing Lösung
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-                Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
-                Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  variant="outline" 
-                  className="text-turquoise border-turquoise hover:bg-turquoise/10 w-full sm:w-auto"
-                  asChild
-                >
-                  <Link to="/automatisierte-content-marketing">
-                    Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button 
-                  onClick={handleStartProject}
-                  variant="primary"
-                  className="w-full sm:w-auto"
-                >
-                  Projekt starten
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         <StrategicChallengesSection />
-        <EngagementModelsTeaser />
-        <ROICalculatorTeaser />
+        <HowWeWorkSection />
         <TeamTeaserDE />
         <StrategicFrameworksSection />
         
@@ -177,112 +140,6 @@ const GermanIndex = () => {
           subtitle="In einem kostenlosen 30-Minuten-Gespräch schauen wir uns Ihre Situation an und ich zeige Ihnen konkrete Ansätze, wie Sie digital besser werden können."
           primaryCta="Kostenloses Erstgespräch vereinbaren"
         />
-
-        {/* Standort Mainz, bundesweit aktiv */}
-        <div className="py-12 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                Standort Mainz – bundesweit für Sie da
-              </h2>
-              <div className="max-w-4xl mx-auto space-y-4">
-                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Von meinem Standort in Mainz aus unterstütze ich B2B-Unternehmen in ganz Deutschland, 
-                  <strong> der Schweiz</strong> und Österreich. Seit 2008 helfe ich Unternehmen, digital besser zu werden – 
-                  mit messbaren Ergebnissen, egal wo Sie sind.
-                </p>
-                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Sie bekommen direkten Zugang zu 16+ Jahren Erfahrung – von der Strategie über UX-Optimierung bis zur KI-Integration. Alles aus einer Hand, ohne Umwege über Account Manager.
-                </p>
-                
-                {/* Strategic outgoing links */}
-                <div className="bg-white p-4 rounded-lg shadow-sm mt-6">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">
-                    Nützliche Ressourcen für Unternehmen
-                  </h3>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a 
-                      href="https://www.rheinhessen.ihk24.de/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
-                    >
-                      <ExternalLink className="w-3 h-3 mr-2" />
-                      IHK Rheinhessen
-                    </a>
-                    <a 
-                      href="https://isb.rlp.de/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
-                    >
-                      <ExternalLink className="w-3 h-3 mr-2" />
-                      Wirtschaftsförderung RLP
-                    </a>
-                    <a 
-                      href="https://www.mainz.de/wirtschaft/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
-                    >
-                      <ExternalLink className="w-3 h-3 mr-2" />
-                      Wirtschaftsförderung Mainz
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-4 mt-6">
-                  <TurquoiseCard variant="default" hoverLift>
-                    <div className="text-center p-4">
-                      <h3 className="font-semibold mb-2 text-foreground">16+ Jahre Erfahrung</h3>
-                      <p className="text-sm text-muted-foreground">Über 100 erfolgreiche Projekte</p>
-                    </div>
-                  </TurquoiseCard>
-                  <TurquoiseCard variant="default" hoverLift>
-                    <div className="text-center p-4">
-                      <h3 className="font-semibold mb-2 text-foreground">Messbare Ergebnisse</h3>
-                      <p className="text-sm text-muted-foreground">+60-240% mehr Conversions im Schnitt</p>
-                    </div>
-                  </TurquoiseCard>
-                  <TurquoiseCard variant="default" hoverLift>
-                    <div className="text-center p-4">
-                      <h3 className="font-semibold mb-2 text-foreground">Direkter Draht</h3>
-                      <p className="text-sm text-muted-foreground">Keine Junior-Berater, nur Expertise</p>
-                    </div>
-                  </TurquoiseCard>
-                </div>
-                
-                {/* Internal linking */}
-                <div className="flex flex-wrap justify-center gap-3 mt-6">
-                  <Link 
-                    to="/webdesign" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
-                    aria-label="Erfahren Sie mehr über unsere Webdesign Services"
-                  >
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    Webdesign Services
-                  </Link>
-                  <Link 
-                    to="/seo-optimierung" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
-                    aria-label="Entdecken Sie unsere SEO-Optimierungsservices"
-                  >
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    SEO Services
-                  </Link>
-                  <Link 
-                    to="/kontakt" 
-                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
-                    aria-label="Kontaktieren Sie uns für eine Beratung"
-                  >
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    Beratung anfragen
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </PageLayout>
     </>
   );
