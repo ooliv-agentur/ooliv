@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import StrategieBenefits from '@/components/strategy/StrategieBenefits';
-import StrategieTeamExpertise from '@/components/strategy/StrategieTeamExpertise';
+import StrategieWhyUs from '@/components/strategy/StrategieWhyUs';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
 import ServiceRecommendation from '@/components/strategy/ServiceRecommendation';
@@ -14,7 +14,6 @@ import RelatedServicesGrid from '@/components/strategy/RelatedServicesGrid';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 import StickyCTA from '@/components/conversion/StickyCTA';
-import ExitIntentPopup from '@/components/conversion/ExitIntentPopup';
 
 const GermanStrategy = () => {
   const { setLanguage } = useLanguage();
@@ -33,16 +32,16 @@ const GermanStrategy = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Digitale Transformation für B2B-Unternehmen | 16+ Jahre Expertise im DACH-Raum"
-        description="Strategie-Beratung für B2B: Von der Analyse über UX-Optimierung bis zur Umsetzung. Messbare Ergebnisse mit +180% Lead-Qualität. Direkter Zugang zu 16+ Jahren Erfahrung."
+        title="Digitale Strategie für B2B | Strategic Discovery, Roadmap & Umsetzung | ooliv"
+        description="Strategische Analyse, Digital-Roadmap und Umsetzungsbegleitung für B2B-Unternehmen im DACH-Raum. Von der Discovery bis zum Go-Live. 16+ Jahre Expertise, 100+ erfolgreiche Projekte."
         canonicalUrl="https://ooliv.de/strategie"
-        keywords="Digital Strategie, Digitale Transformation, Strategieberatung, UX Strategie, B2B Beratung, DACH, Digital Transformation, Strategic Consulting"
+        keywords="Digitale Strategie, Strategic Discovery, Strategieberatung B2B, Digital Roadmap, UX Strategie, Digitale Transformation, Umsetzungsbegleitung, DACH, ooliv"
         breadcrumbs={breadcrumbs}
       />
 
       <StrategieHero />
       <StrategieBenefits />
-      <StrategieTeamExpertise />
+      <StrategieWhyUs />
       <StrategieProcess />
       <StrategieServices />
       <ServiceRecommendation />
@@ -74,8 +73,7 @@ const GermanStrategy = () => {
         lightBackground={true}
       />
       
-      <StickyCTA />
-      <ExitIntentPopup />
+      <StickyCTA text="Kostenloses Erstgespräch" />
     </PageLayout>
   );
 };

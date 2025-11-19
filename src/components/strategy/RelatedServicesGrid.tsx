@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Palette, Code, Search } from 'lucide-react';
+import { ArrowRight, Palette, Code, Search, Rocket } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { Button } from '@/components/ui/button';
@@ -11,21 +11,28 @@ const RelatedServicesGrid = () => {
       icon: Palette,
       title: "Webdesign & UX",
       description: "Conversion-optimierte Designs, die Ihre Markenwerte transportieren und messbar mehr Anfragen generieren.",
-      link: "/lp/webdesign",
+      link: "/webdesign",
       image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
     },
     {
       icon: Code,
       title: "KI-Integration",
       description: "Intelligente Automatisierung Ihrer Geschäftsprozesse – von Content-Erstellung bis Kundenservice.",
-      link: "/lp/ki-integration",
+      link: "/ki-technologien",
       image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png"
     },
     {
       icon: Search,
       title: "SEO-Optimierung",
       description: "Technisches SEO, Content-Strategie und nachhaltige Rankings für mehr organische Sichtbarkeit.",
-      link: "/lp/seo-optimierung",
+      link: "/seo-optimierung",
+      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
+    },
+    {
+      icon: Rocket,
+      title: "Website Relaunch",
+      description: "Technische Migration, Content-Strategie und SEO-Optimierung für einen erfolgreichen Relaunch.",
+      link: "/website-relaunch",
       image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
     }
   ];
@@ -44,7 +51,7 @@ const RelatedServicesGrid = () => {
           </div>
         </Reveal>
 
-        <StaggerReveal className="grid md:grid-cols-3 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {relatedServices.map((service, index) => {
             const IconComponent = service.icon;
             return (

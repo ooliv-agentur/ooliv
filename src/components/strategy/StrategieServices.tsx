@@ -9,44 +9,44 @@ import { Button } from '@/components/ui/button';
 const StrategieServices = () => {
   const services = [
     {
-      title: "Strategic Discovery & Roadmap",
+      title: "Strategische Analyse & Roadmap",
       features: [
         "Wir analysieren Ihre aktuelle Situation (Website, Daten, Wettbewerb)",
         "Identifizieren die größten Potenziale für Verbesserungen",
-        "Entwickeln eine klare Strategie mit priorisierten Maßnahmen",
-        "Definieren realistische Meilensteine, KPIs und Timelines für 6-12 Monate"
+        "Ich entwickle gemeinsam mit Ihnen eine klare Strategie mit priorisierten Maßnahmen",
+        "Wir definieren realistische Meilensteine, KPIs und Timelines für 6-12 Monate"
       ],
-      link: "/lp/digitale-strategie"
+      link: "/kontakt"
     },
     {
       title: "UX-Optimierung & Customer Journeys",
       features: [
-        "Ich entwickle gemeinsam mit meinem Design-Team User Journeys, die konvertieren",
-        "Wir optimieren die Website-Struktur für messbar bessere Conversions",
-        "Verbessern Navigation und Nutzerführung datenbasiert",
-        "Fokus auf Conversion-Optimierung an allen kritischen Touchpoints"
+        "Wir entwickeln gemeinsam mit Ihnen User Journeys, die konvertieren",
+        "Optimieren die Website-Struktur für messbar bessere Conversions",
+        "Ich verbessere Navigation und Nutzerführung datenbasiert",
+        "Wir fokussieren uns auf Conversion-Optimierung an allen kritischen Touchpoints"
       ],
-      link: "/lp/webdesign"
+      link: "/webdesign"
     },
     {
       title: "KI-Integration für Ihr Business",
       features: [
-        "Wir finden konkrete KI-Anwendungsfälle für Ihr Unternehmen",
-        "Entwickeln Automatisierungs-Strategien für effizientere Workflows",
+        "Ich finde konkrete KI-Anwendungsfälle für Ihr Unternehmen",
+        "Wir entwickeln Automatisierungs-Strategien für effizientere Workflows",
         "Setzen AI-gestützte Content-Prozesse auf",
         "Ich schule Ihr Team im strategischen Umgang mit KI-Tools"
       ],
-      link: "/lp/ki-integration"
+      link: "/ki-technologien"
     },
     {
-      title: "Implementation Leadership",
+      title: "Umsetzungsbegleitung",
       features: [
         "Ich koordiniere Ihr Team und externe Partner als zentraler Ansprechpartner",
         "Wir stellen sicher, dass alle am gleichen Strang ziehen",
         "Definieren klare Qualitäts-Standards und Erfolgskriterien",
-        "Begleite Sie strategisch von der Planung bis zum erfolgreichen Go-Live"
+        "Ich begleite Sie strategisch von der Planung bis zum erfolgreichen Go-Live"
       ],
-      link: "/lp/website-relaunch"
+      link: "/website-relaunch"
     }
   ];
 
@@ -56,7 +56,7 @@ const StrategieServices = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Wie ich Ihnen helfe
+              Wie wir Ihnen helfen
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Von der Analyse Ihrer Situation bis zur erfolgreichen Umsetzung – mit klaren Schritten und messbaren Ergebnissen.

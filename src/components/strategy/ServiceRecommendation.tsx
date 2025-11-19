@@ -29,13 +29,13 @@ const ServiceRecommendation = () => {
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <MessageCircle className="h-12 w-12 text-primary mb-6" />
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                  Nicht sicher, welcher Service passt?
+                  Bereit für Ihre digitale Transformation?
                 </h3>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Lassen Sie uns 15 Minuten sprechen – ich sage Ihnen ehrlich, was Sie wirklich brauchen und wo Sie anfangen sollten.
+                  In einem 30-minütigen Strategiegespräch analysieren wir Ihre Situation und zeigen Ihnen konkrete nächste Schritte.
                 </p>
                 <p className="text-sm text-muted-foreground mb-8">
-                  Keine Verkaufsgespräche, keine vorgefertigten Lösungen. Nur eine ehrliche Einschätzung Ihrer Situation und konkrete erste Schritte.
+                  Keine Verkaufsgespräche, keine vorgefertigten Lösungen. Nur eine ehrliche Einschätzung und eine klare Roadmap für Ihren digitalen Erfolg.
                 </p>
                 <Button 
                   onClick={handleBookCall}
@@ -43,7 +43,7 @@ const ServiceRecommendation = () => {
                   className="w-full md:w-auto"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Kurz-Call vereinbaren
+                  Kostenloses Strategiegespräch
                 </Button>
               </div>
             </div>
