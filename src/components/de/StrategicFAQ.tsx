@@ -9,27 +9,31 @@ import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { ArrowRight } from 'lucide-react';
 
-const SchweizFAQ = () => {
+interface StrategicFAQProps {
+  location?: string;
+}
+
+const StrategicFAQ: React.FC<StrategicFAQProps> = ({ location }) => {
   const faqs = [
     {
-      question: "Wie funktioniert Strategic Advisory über die Grenze?",
-      answer: "Strategic Advisory ist per Definition remote-first. Wir arbeiten komplett remote per Videocall und modernen Tools. Viele Schweizer Kunden schätzen die Kosteneffizienz ohne Qualitätsverlust – transparente Preise in CHF (CHF 17k–90k für Transformations-Projekte)."
+      question: "Was ist Strategic Discovery und wann macht sie Sinn?",
+      answer: "Strategic Discovery ist eine intensive 4–6-wöchige Phase, in der wir Ihre Business Challenges systematisch analysieren, User Research durchführen und eine fundierte Digital Strategy entwickeln. Sie macht Sinn, wenn Sie vor einer Digital Transformation stehen, neue Produkte launchen oder bestehende Systeme strategisch optimieren wollen. Investment: €15k–25k."
     },
     {
-      question: "Welche Währung gilt für Schweizer Strategic Advisory Projekte?",
-      answer: "Alle Strategic Advisory Packages werden in CHF kalkuliert: Strategic Discovery CHF 17k–28k, End-to-End Transformation CHF 45k–90k, Strategic Retainer CHF 9k–17k/Monat. Abrechnung wahlweise CHF oder EUR."
+      question: "Wie unterscheidet sich dieses Engagement-Modell von einer klassischen Werbeagentur?",
+      answer: "Klassische Agenturen bieten operative Services (Webdesign, SEO, Ads). Wir bieten C-Level Strategic Advisory – von Strategic Discovery über Product & UX Strategy bis AI Integration. Kein Agentur-Theater, keine Junior-Mitarbeiter, sondern direkte Zusammenarbeit mit einem Digital Strategy Lead mit 16+ Jahren Track Record."
     },
     {
-      question: "Kennt ihr den Schweizer B2B-Markt?",
-      answer: "Wir arbeiten mit B2B-Unternehmen im gesamten DACH-Raum, einschließlich Schweizer KMUs. Für Schweizer Projekte beachten wir: .ch-Domains SEO, mehrsprachige Strategie (DE/FR/IT), DSGVO-konforme Umsetzung, Schweizer Qualitätsansprüche."
+      question: "Welche Business Outcomes kann ich erwarten?",
+      answer: `Basierend auf 16+ Jahren Track Record: durchschnittlich +240% Conversion Rate nach Strategic Discovery & UX Optimization, +180% Lead Quality durch Strategic Positioning. Jedes Projekt ist individuell${location ? ` – gerade für ${location} und die Region` : ''} nutzen Sie unseren ROI Calculator für Ihre Projektionen.`
     },
     {
-      question: "Was ist der Investment-Range für Schweizer Unternehmen?",
-      answer: "Strategic Discovery: CHF 17k–28k (4-6 Wochen intensive Phase). End-to-End Product & UX Transformation: CHF 45k–90k (3-6 Monate). Strategic Retainer: CHF 9k–17k/Monat (ongoing C-Level Advisory). Transparente Preise, keine versteckten Kosten."
+      question: "Wie funktioniert die Zusammenarbeit?",
+      answer: `Strategic Advisory ist keine klassische Agentur-Beziehung, sondern eine C-Level Partnership. Sie arbeiten direkt mit Uli Schönleber (Digital Strategy Lead, 16+ Jahre Erfahrung). ${location ? `Vor-Ort-Termine in ${location} möglich, ` : ''}Remote-Work als Standard – maximale Flexibilität.`
     },
     {
-      question: "Bietet ihr auch mehrsprachige Strategic Frameworks an?",
-      answer: "Ja – Strategic Discovery, Product Strategy und AI Integration Advisory erfolgen auf Deutsch, bei Bedarf mit mehrsprachigen Deliverables (DE/FR/IT) für den Schweizer Markt. UX Research und Testing kann mehrsprachig durchgeführt werden."
+      question: "Für welche Unternehmen ist dieses Modell geeignet?",
+      answer: "Unser Strategic Advisory richtet sich an B2B-Unternehmen im DACH-Raum, die digitale Transformation ernst nehmen. Typische Kunden: Tech-Startups mit Product-Market Fit Challenges, Mittelstand vor Digital Transformation, etablierte Unternehmen mit Innovation Gaps. Investment-Range: €15k–80k für Transformations-Projekte, €8k–15k/Monat für Strategic Retainer."
     }
   ];
 
@@ -43,11 +47,11 @@ const SchweizFAQ = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-              Strategic Advisory FAQs Schweiz
+              Strategic Advisory FAQs
             </h2>
             <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Antworten für Schweizer B2B-Unternehmen zu Strategic Discovery und Digital Transformation
+              Antworten auf die wichtigsten Fragen zu Strategic Discovery und Digital Transformation
             </p>
           </div>
         </Reveal>
@@ -84,7 +88,7 @@ const SchweizFAQ = () => {
                 className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300"
               >
                 <ArrowRight className="h-4 w-4" />
-                Schweizer Projekt starten
+                Strategiegespräch vereinbaren
               </button>
             </div>
           </div>
@@ -94,4 +98,4 @@ const SchweizFAQ = () => {
   );
 };
 
-export default SchweizFAQ;
+export default StrategicFAQ;
