@@ -1,64 +1,52 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import { Button } from '@/components/ui/button';
 
 const StrategieServices = () => {
   const services = [
     {
-      title: "Analyse & Strategie-Entwicklung",
+      title: "Strategic Discovery & Roadmap",
       features: [
-        "Ich schaue mir Ihre aktuelle Situation an (Website, Daten, Wettbewerb)",
-        "Identifiziere die größten Potenziale für Verbesserungen",
-        "Entwickle eine klare Strategie mit priorisierten Maßnahmen",
-        "Erstelle einen konkreten Umsetzungsplan für 6-12 Monate"
-      ]
-    },
-    {
-      title: "Roadmap & Prioritäten setzen",
-      features: [
-        "Wir legen fest, was als erstes angegangen wird",
-        "Definiere klare KPIs, damit Sie Erfolg messen können",
-        "Plane Budget und Ressourcen realistisch",
-        "Setze realistische Meilensteine und Timelines"
-      ]
+        "Wir analysieren Ihre aktuelle Situation (Website, Daten, Wettbewerb)",
+        "Identifizieren die größten Potenziale für Verbesserungen",
+        "Entwickeln eine klare Strategie mit priorisierten Maßnahmen",
+        "Definieren realistische Meilensteine, KPIs und Timelines für 6-12 Monate"
+      ],
+      link: "/lp/digitale-strategie"
     },
     {
       title: "UX-Optimierung & Customer Journeys",
       features: [
-        "Ich entwickle User Journeys, die aus Besuchern Kunden machen",
-        "Optimiere die Website-Struktur für bessere Conversions",
-        "Verbessere die Navigation und Nutzerführung",
-        "Fokus auf Conversion-Optimierung an allen wichtigen Punkten"
-      ]
+        "Ich entwickle gemeinsam mit meinem Design-Team User Journeys, die konvertieren",
+        "Wir optimieren die Website-Struktur für messbar bessere Conversions",
+        "Verbessern Navigation und Nutzerführung datenbasiert",
+        "Fokus auf Conversion-Optimierung an allen kritischen Touchpoints"
+      ],
+      link: "/lp/webdesign"
     },
     {
       title: "KI-Integration für Ihr Business",
       features: [
-        "Finde konkrete KI-Anwendungsfälle für Ihr Unternehmen",
-        "Entwickle Automatisierungs-Strategien für effizientere Workflows",
-        "Setze AI-gestützte Content-Prozesse auf",
-        "Schule Ihr Team im Umgang mit KI-Tools"
-      ]
+        "Wir finden konkrete KI-Anwendungsfälle für Ihr Unternehmen",
+        "Entwickeln Automatisierungs-Strategien für effizientere Workflows",
+        "Setzen AI-gestützte Content-Prozesse auf",
+        "Ich schule Ihr Team im strategischen Umgang mit KI-Tools"
+      ],
+      link: "/lp/ki-integration"
     },
     {
-      title: "Strategische Beratung & Begleitung",
+      title: "Implementation Leadership",
       features: [
-        "Sie haben mich als Sparringspartner für wichtige Entscheidungen",
-        "Ich helfe bei der Business-Case-Entwicklung",
-        "Minimiere Risiken durch strategische Beratung",
-        "Regelmäßige Reviews und Updates"
-      ]
-    },
-    {
-      title: "Umsetzungs-Begleitung",
-      features: [
-        "Ich koordiniere Ihr Team und externe Partner",
-        "Stelle sicher, dass alle am gleichen Strang ziehen",
-        "Definiere klare Qualitäts-Standards",
-        "Optimiere Performance und Geschwindigkeit"
-      ]
+        "Ich koordiniere Ihr Team und externe Partner als zentraler Ansprechpartner",
+        "Wir stellen sicher, dass alle am gleichen Strang ziehen",
+        "Definieren klare Qualitäts-Standards und Erfolgskriterien",
+        "Begleite Sie strategisch von der Planung bis zum erfolgreichen Go-Live"
+      ],
+      link: "/lp/website-relaunch"
     }
   ];
 
@@ -76,14 +64,14 @@ const StrategieServices = () => {
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-card p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-300"
+              className="bg-card p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 flex flex-col"
             >
               <h3 className="text-xl font-bold mb-6 text-foreground">{service.title}</h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex-1 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
@@ -91,6 +79,12 @@ const StrategieServices = () => {
                   </li>
                 ))}
               </ul>
+              <Link to={service.link}>
+                <Button variant="outline" className="w-full">
+                  Mehr erfahren
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           ))}
         </StaggerReveal>

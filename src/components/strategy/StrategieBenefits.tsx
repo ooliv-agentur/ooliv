@@ -2,7 +2,7 @@
 import React from 'react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
-import { Target, TrendingUp, Users, Zap } from 'lucide-react';
+import { Target, TrendingUp, Users, Zap, DollarSign, BarChart } from 'lucide-react';
 import { getSectionClasses, getContainerClasses, getGridClasses } from '@/styles/spacing';
 import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 
@@ -27,6 +27,16 @@ const StrategieBenefits = () => {
       IconComponent: Zap,
       title: "Direkter Draht zu 16+ Jahren Erfahrung",
       description: "Sie arbeiten direkt mit mir – keine Junior-Berater, keine Agentur-Ebenen. Sie profitieren von 16+ Jahren Erfahrung in digitaler Transformation für B2B-Unternehmen."
+    },
+    {
+      IconComponent: DollarSign,
+      title: "Transparente Preisgestaltung",
+      description: "Keine versteckten Kosten. Sie erhalten vorab ein klares Angebot mit transparenter Leistungsbeschreibung. Sie wissen genau, was Sie investieren und was Sie dafür bekommen."
+    },
+    {
+      IconComponent: BarChart,
+      title: "Messbare KPIs von Anfang an",
+      description: "Wir definieren gemeinsam klare Erfolgskriterien und tracken kontinuierlich den Fortschritt. Keine Vanity-Metriken – nur KPIs, die für Ihr Business wirklich zählen."
     }
   ];
 
@@ -44,7 +54,7 @@ const StrategieBenefits = () => {
           </div>
         </Reveal>
         
-        <StaggerReveal className={getGridClasses(4, 'large')}>
+        <StaggerReveal className={getGridClasses(3, 'large')}>
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.IconComponent;
             return (
@@ -53,8 +63,8 @@ const StrategieBenefits = () => {
                 className="text-center"
               >
                 <div className="mb-6 flex justify-center">
-                  <div className="h-20 w-20 bg-medico-mint/20 rounded-full flex items-center justify-center p-4">
-                    <IconComponent className="h-10 w-10 text-accent-primary" />
+                  <div className="h-20 w-20 bg-primary/10 rounded-full flex items-center justify-center p-4">
+                    <IconComponent className="h-10 w-10 text-primary" />
                   </div>
                 </div>
                 <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
