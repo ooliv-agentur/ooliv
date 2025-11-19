@@ -9,32 +9,32 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const DeutscherAboutSection = () => {
   const benefits = [
     {
-      title: "Mehr qualifizierte Anfragen",
-      description: "Ihre Website wird zum stärksten Verkäufer – 24/7 aktiv für neue Kunden.",
+      title: "C-Level Strategic Clarity",
+      description: "Von der Opportunity Map bis zur messbaren Roadmap – strategische Entscheidungsgrundlagen für Ihre digitale Transformation.",
       icon: <TrendingUp className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/referenzen",
-      linkText: "Referenzen ansehen"
-    },
-    {
-      title: "Weniger Zeitaufwand",
-      description: "Alles aus einer Hand – von der Strategie bis zur Umsetzung ohne Umwege.",
-      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/strategie",
-      linkText: "Zur Strategie"
-    },
-    {
-      title: "Echte Partnerschaft",
-      description: "Direkter Draht zum CEO, transparente Kommunikation und langfristige Zusammenarbeit.",
-      icon: <Handshake className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/ueber-uns",
-      linkText: "Mehr über uns"
+      linkText: "Mehr über unseren Ansatz"
     },
     {
-      title: "Messbare Ergebnisse",
-      description: "Keine leeren Versprechen – wir zeigen Ihnen konkrete Zahlen und Erfolge.",
-      icon: <BarChart3 className="h-6 w-6" style={{ color: 'black' }} />,
+      title: "AI-Enabled Workflows",
+      description: "Strategische Integration von LLMs, Automation und AI-Pipelines für messbare Effizienzgewinne und datengetriebene Entscheidungen.",
+      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/ueber-uns",
+      linkText: "AI-Expertise kennenlernen"
+    },
+    {
+      title: "16+ Jahre Digital Transformation",
+      description: "100+ Projekte geleitet, internationale Teams geführt, komplexe digitale Ökosysteme transformiert. Senior-Level Expertise für Ihr Business.",
+      icon: <Handshake className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/kontakt",
-      linkText: "Kontakt aufnehmen"
+      linkText: "Erfahrung kennenlernen"
+    },
+    {
+      title: "End-to-End Strategic Leadership",
+      description: "Von der Vision über UX-Strategie bis zur Technical Direction – strategische Führung durch den gesamten Transformationsprozess.",
+      icon: <BarChart3 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/ueber-uns",
+      linkText: "Unsere Methodik"
     }
   ];
 
@@ -43,14 +43,17 @@ const DeutscherAboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-16 text-center">
+            <div className="inline-block mb-6 px-4 py-2 bg-brand-primary/10 rounded-full">
+              <span className="text-sm font-semibold text-brand-primary">Strategic Digital Advisory · AI-Enabled Transformation · Product & UX Strategy</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Was haben Sie davon, mit ooliv zu arbeiten?
+              Senior Digital Strategy Lead
             </h2>
             <p className="text-xl text-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Statt nur über Features zu sprechen, zeigen wir Ihnen konkret, welchen Nutzen Sie haben.
+              Strategische Transformation für B2B-Unternehmen – von der C-Level Vision bis zur messbaren Umsetzung.
             </p>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Seit 2008 entwickeln wir digitale Lösungen, die messbar funktionieren: Mehr qualifizierte Anfragen, weniger Aufwand bei der Kundengewinnung und eine digitale Präsenz, die Vertrauen schafft.
+              16+ Jahre Erfahrung in der Führung digitaler Transformationen. 100+ Projekte geleitet, internationale Teams koordiniert, komplexe Ökosysteme transformiert. Keine Standard-Agentur-Lösungen, sondern maßgeschneiderte strategische Führung.
             </p>
           </div>
         </Reveal>

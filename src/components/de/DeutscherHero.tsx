@@ -26,26 +26,26 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "Websites, die Kunden bringen.",
-    "Klare Angebote statt Rätselraten.",
-    "Mehr Anfragen ohne Werbebudget."
+    "Strategische Klarheit für digitale Transformation.",
+    "Von der Vision zur messbaren Umsetzung.",
+    "C-Level Advisory mit 16+ Jahren Erfahrung."
   ];
   
   return (
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Ihre Website bringt keine Anfragen? Das ändern wir."
-        subtitle="Kostenloses Website-Konzept in 48h: Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung. Sie entscheiden danach, ob Sie mit uns weitermachen wollen."
+        title="Digitale Transformation mit Strategie, UX & AI"
+        subtitle="16+ Jahre Erfahrung in der Transformation digitaler Ökosysteme für B2B-Unternehmen im DACH-Raum. Strategische Beratung auf C-Level – von der Vision bis zur messbaren Umsetzung."
         dynamicPrefix=""
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Kostenloses Konzept sichern",
+          text: "Strategiegespräch vereinbaren",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}
         secondaryCta={{
-          text: "Über ooliv",
+          text: "Über Uli Schönleber",
           link: "/ueber-uns"
         }}
       />
