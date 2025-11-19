@@ -41,22 +41,22 @@ const WebDesignBenefits = () => {
         {
           icon: Target,
           title: "Klare Strategie, kein Bauchgefühl",
-          description: "Sie bekommen eine Website mit klarem Ziel: Mehr Sichtbarkeit, mehr Anfragen, mehr Wachstum. Individuell entwickelt, nicht aus der Schublade."
+          description: "Wir entwickeln eine Website mit klarem Ziel: Mehr Sichtbarkeit, mehr Anfragen, mehr Wachstum. Individuell auf Ihr Business zugeschnitten, nicht aus der Schublade."
         },
         {
           icon: ArrowRight,
           title: "Besucher werden zu Kunden",
-          description: "Sie bekommen eine Nutzerführung, die funktioniert – klare Struktur, gute Lesbarkeit, überzeugende Calls-to-Action. Conversion statt Dekoration."
+          description: "Unsere Nutzerführung funktioniert – klare Struktur, gute Lesbarkeit, überzeugende Calls-to-Action. Sie bekommen Conversion statt Dekoration."
         },
         {
           icon: Zap,
           title: "SEO-ready & superschnell",
-          description: "Sie bekommen eine Website, die auf allen Geräten perfekt läuft – und von Google geliebt wird. Weil sie technisch sauber gebaut ist."
+          description: "Ihre Website läuft auf allen Geräten perfekt – und wird von Google geliebt. Weil wir sie technisch sauber und performant bauen."
         },
         {
           icon: PhoneCall,
           title: "Langfristige Betreuung",
-          description: "Sie bekommen keine 'Fire and Forget'-Lösung. Wir bleiben an Ihrer Seite – mit Analysen, Updates und allem, was Ihre Website erfolgreich hält."
+          description: "Keine 'Fire and Forget'-Lösung. Wir bleiben an Ihrer Seite – mit Analysen, Updates und allem, was Ihre Website erfolgreich hält."
         }
       ]
     }

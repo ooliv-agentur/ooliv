@@ -48,7 +48,7 @@ const WebDesignWhyUs = () => {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Seit über 16 Jahren helfe ich B2B-Unternehmen, Websites zu gestalten, die nicht nur schön aussehen, sondern auch konvertieren. Als Ihr persönlicher Ansprechpartner begleite ich Sie von der ersten Idee bis zum erfolgreichen Launch.
+                Seit über 16 Jahren helfe ich B2B-Unternehmen, Websites zu gestalten, die nicht nur schön aussehen, sondern auch konvertieren. Dabei unterstützt mich ein Team von Spezialisten, die technisch auf höchstem Niveau arbeiten. Als Ihr persönlicher Ansprechpartner begleite ich Sie von der ersten Idee bis zum erfolgreichen Launch.
               </p>
             </div>
           </Reveal>
