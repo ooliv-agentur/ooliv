@@ -61,12 +61,11 @@ const GermanSolutionSection = () => {
             </h3>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-10 leading-relaxed">
-              Von <Link to="/webdesign" className="text-primary hover:underline font-medium">Website-Entwicklung</Link> über{' '}
-              <Link to="/seo-optimierung" className="text-primary hover:underline font-medium">SEO-Optimierung</Link> bis hin zu{' '}
-              <Link to="/content-erstellung" className="text-primary hover:underline font-medium">Content-Marketing</Link> – 
-              alles koordiniert aus einer Hand. Inklusive{' '}
-              <Link to="/ki-technologien" className="text-primary hover:underline font-medium">KI-Integration</Link> und{' '}
-              <Link to="/google-ads" className="text-primary hover:underline font-medium">Google Ads</Link>.
+              Von <Link to="/strategie" className="text-primary hover:underline font-medium">Digital Strategy & Transformation</Link> über{' '}
+              <Link to="/ki-technologien" className="text-primary hover:underline font-medium">AI Integration</Link> bis hin zu{' '}
+              <Link to="/produkt-ux-strategie" className="text-primary hover:underline font-medium">Product & UX Strategy</Link> – 
+              alles nach bewährter <Link to="/methodik" className="text-primary hover:underline font-medium">Methodik</Link> aus einer Hand. 
+              Strategic Discovery, Implementation Leadership und messbare Optimierung.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

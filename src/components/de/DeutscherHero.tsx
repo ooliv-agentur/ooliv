@@ -26,9 +26,9 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "Strategische Klarheit für digitale Transformation.",
+    "Strategic Discovery → Product Strategy → AI Integration",
     "Von der Vision zur messbaren Umsetzung.",
-    "C-Level Advisory mit 16+ Jahren Erfahrung."
+    "16+ Jahre C-Level Digital Advisory"
   ];
   
   return (
