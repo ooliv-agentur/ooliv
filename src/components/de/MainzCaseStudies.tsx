@@ -41,7 +41,7 @@ const MainzCaseStudies = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Erfolgsgeschichten aus Mainz und Rhein-Main
+              Erfolgsgeschichten aus der Zusammenarbeit mit ooliv
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               So helfen wir Unternehmen in Mainz und dem Rhein-Main-Gebiet, digital erfolgreich zu werden

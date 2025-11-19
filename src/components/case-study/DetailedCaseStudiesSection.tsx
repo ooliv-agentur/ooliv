@@ -18,7 +18,7 @@ const DetailedCaseStudiesSection = () => {
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Tiefgehende Case Studies mit messbaren Outcomes
+              Erfolgsgeschichten aus der Zusammenarbeit mit ooliv
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Von Initial Situation bis zu konkreten Business Outcomes – vollständige Dokumentation 

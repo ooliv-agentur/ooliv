@@ -30,7 +30,7 @@ const WebDevCaseStudies = () => {
       services: "SERVICES:"
     },
     de: {
-      title: "Entwicklung, die wirklich etwas bewirkt",
+      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
       subtitle: "Echte Ergebnisse aus maßgeschneiderten Entwicklungsprojekten.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen",
