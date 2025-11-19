@@ -18,8 +18,8 @@ const ProductUXHero = () => {
         : "Product & UX Strategy"
       }
       subtitle={isGerman 
-        ? "Von der Vision zur messbaren Umsetzung. Product Roadmaps, UX Strategy, Information Architecture und strategische Produktführung mit klaren Outcomes." 
-        : "From vision to measurable implementation. Product roadmaps, UX strategy, information architecture, and strategic product leadership with clear outcomes."
+        ? "Product Strategy Framework, evidenzbasierte User Research Methodology und UX-driven Business Transformation – von der Vision über Discovery bis zu messbaren Business Outcomes." 
+        : "Product strategy framework, evidence-based user research methodology, and UX-driven business transformation – from vision through discovery to measurable business outcomes."
       }
       primaryCta={{
         text: isGerman ? "Produktstrategie entwickeln" : "Develop Product Strategy",

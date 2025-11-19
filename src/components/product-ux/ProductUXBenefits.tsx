@@ -9,32 +9,32 @@ const ProductUXBenefits = () => {
 
   const benefits = [
     {
-      icon: <Target className="h-8 w-8" />,
-      title: isGerman ? "Strategische Klarheit" : "Strategic Clarity",
+      icon: <TrendingUp className="h-8 w-8" />,
+      title: isGerman ? "Product-Led Growth" : "Product-Led Growth",
       description: isGerman 
-        ? "Von der Product Vision bis zur priorisierten Roadmap – klare strategische Entscheidungsgrundlagen für Ihre Produktentwicklung."
-        : "From product vision to prioritized roadmap – clear strategic decision foundations for your product development."
+        ? "Produkte, die durch exzellente UX und strategische Produktführung organisch wachsen – weniger Marketing-Abhängigkeit, mehr Retention."
+        : "Products that grow organically through excellent UX and strategic product leadership – less marketing dependency, more retention."
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: isGerman ? "Nutzerzentriertes Design" : "User-Centered Design",
+      icon: <Target className="h-8 w-8" />,
+      title: isGerman ? "Evidence-Based Decisions" : "Evidence-Based Decisions",
       description: isGerman 
-        ? "UX Strategy und Information Architecture, die echte Nutzerbedürfnisse mit Business-Zielen verbindet."
-        : "UX strategy and information architecture that connects real user needs with business goals."
+        ? "Datenbasierte Produktentscheidungen durch User Research und Analytics statt Bauchgefühl – validierte Features, höhere Success Rate."
+        : "Data-based product decisions through user research and analytics instead of gut feeling – validated features, higher success rate."
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: isGerman ? "Validierte Konzepte" : "Validated Concepts",
+      title: isGerman ? "Reduced Development Risk" : "Reduced Development Risk",
       description: isGerman 
-        ? "Prototypen und Konzepte, die vor der teuren technischen Umsetzung validiert werden – weniger Risiko, schnellere Time-to-Market."
-        : "Prototypes and concepts validated before expensive technical implementation – less risk, faster time-to-market."
+        ? "Validierte Konzepte vor der technischen Umsetzung reduzieren kostspielige Fehlentwicklungen – weniger Rework, schnellere Time-to-Market."
+        : "Validated concepts before technical implementation reduce costly misdevelopment – less rework, faster time-to-market."
     },
     {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: isGerman ? "Messbare Outcomes" : "Measurable Outcomes",
+      icon: <Users className="h-8 w-8" />,
+      title: isGerman ? "Measurable ROI" : "Measurable ROI",
       description: isGerman 
-        ? "KPI-Frameworks und Performance-Strategien für datenbasierte Produktentscheidungen und kontinuierliche Optimierung."
-        : "KPI frameworks and performance strategies for data-based product decisions and continuous optimization."
+        ? "Klare KPIs und messbare Business Outcomes durch strategische UX-Investition – höhere Conversions, bessere Lead-Qualität, nachhaltige Skalierung."
+        : "Clear KPIs and measurable business outcomes through strategic UX investment – higher conversions, better lead quality, sustainable scaling."
     }
   ];
 
