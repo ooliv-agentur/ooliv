@@ -6,33 +6,33 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const benefits = [
   {
     icon: Shield,
-    title: 'Transparenz & Vorhersagbarkeit',
-    description: 'Fixe Preise, klare Deliverables, definierter Scope. Keine versteckten Kosten, keine Agentur-Overhead.',
+    title: 'Transparente Preise, keine Überraschungen',
+    description: 'Sie wissen vorher, was es kostet und was Sie bekommen. Keine versteckten Kosten, kein Agentur-Overhead, kein Kleingedrucktes.',
   },
   {
     icon: Target,
-    title: 'ROI-fokussiertes Engagement',
-    description: 'Jedes Investment ist an messbare Business Outcomes gekoppelt. Wir optimieren auf Impact, nicht auf Stunden.',
+    title: 'Fokus auf echte Ergebnisse',
+    description: 'Ich arbeite nicht nach Stunden, sondern auf Ergebnisse. Ziel: mehr Anfragen, mehr Verkäufe, bessere Zahlen.',
   },
   {
     icon: Zap,
-    title: 'Schneller Time-to-Impact',
-    description: '4-16 Wochen von Discovery zu messbaren Ergebnissen. Keine endlosen Projekte ohne Outcomes.',
+    title: 'Schnell erste Erfolge sehen',
+    description: '4-16 Wochen bis zu messbaren Ergebnissen. Keine endlosen Projekte, die sich jahrelang hinziehen.',
   },
   {
     icon: TrendingUp,
-    title: 'Bewährte Frameworks',
-    description: 'Erprobte Strategic Discovery, Product Strategy und UX Transformation Frameworks mit +240% avg. Conversion Lift.',
+    title: 'Bewährte Methoden, die funktionieren',
+    description: '16+ Jahre Erfahrung, hunderte erfolgreiche Projekte. Durchschnittlich +60-140% mehr Conversions bei meinen Kunden.',
   },
   {
     icon: Users,
-    title: 'Direct Access zu Strategy Lead',
-    description: 'Kein Account Manager Ping-Pong. Direkter Zugang zu 16+ Jahren Digital Strategy Expertise.',
+    title: 'Direkter Draht zu mir – keine Umwege',
+    description: 'Sie arbeiten direkt mit mir zusammen, nicht mit Junior-Beratern. Kein Account-Manager-Ping-Pong.',
   },
   {
     icon: CheckCircle,
-    title: 'Flexible Engagement-Modelle',
-    description: 'Von einmaligem Discovery Package bis zu langfristigem Strategic Retainer – passend zur aktuellen Phase.',
+    title: 'Flexibel passend zu Ihrer Situation',
+    description: 'Vom einmaligen Strategie-Paket bis zur langfristigen Beratung – je nachdem, was Sie gerade brauchen.',
   },
 ];
 
@@ -43,10 +43,10 @@ const InvestmentBenefits = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Warum diese Investment-Struktur?
+              Warum so arbeiten?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Transparenz, messbare Outcomes und strategische Excellence ohne Agentur-Overhead.
+              Weil Sie als Kunde wissen sollten, was Sie bekommen und was es kostet. Ohne Unklarheiten, ohne Agentur-Aufschläge.
             </p>
           </div>
         </Reveal>
@@ -75,17 +75,17 @@ const InvestmentBenefits = () => {
           <div className="mt-16 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 rounded-2xl border border-primary/20">
             <div className="max-w-3xl mx-auto text-center">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Berechnen Sie Ihren individuellen ROI
+                Lohnt sich eine Investition für Sie?
               </h3>
               <p className="text-muted-foreground mb-6">
-                Mit unserem interaktiven ROI Calculator können Sie den Return on Investment basierend auf Ihren aktuellen Metriken simulieren – inklusive personalisierter Investment-Empfehlung.
+                Berechnen Sie kostenlos, wie viel mehr Umsatz Sie mit einer optimierten Website machen könnten. Basierend auf Ihren aktuellen Besucherzahlen und durchschnittlichen Auftragswerten.
               </p>
               <a 
                 href="/roi-rechner"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
               >
                 <TrendingUp className="h-5 w-5" />
-                ROI Calculator starten
+                Jetzt ROI berechnen (kostenlos)
               </a>
             </div>
           </div>

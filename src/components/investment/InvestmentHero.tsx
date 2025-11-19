@@ -14,34 +14,34 @@ const InvestmentHero = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Transparente Investition
+              Klare Preise,
               <span className="block mt-2 bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-                in strategische Transformation
+                konkrete Ergebnisse
               </span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-              Drei klare Engagement-Modelle mit definierten Deliverables, strukturiertem Prozess und messbarem ROI. 
-              Keine versteckten Kosten, keine Agentur-Overhead – nur strategische Excellence.
+              Drei transparente Pakete mit festen Preisen und klaren Leistungen. Sie wissen vorher, was Sie bekommen und was es kostet. 
+              Basierend auf 16+ Jahren Erfahrung – kein Agentur-Overhead, nur echte Expertise.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-card p-6 rounded-xl border border-border">
                 <Target className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl font-bold text-foreground mb-1">+240%</div>
-                <div className="text-sm text-muted-foreground">Durchschnittliche Conversion-Steigerung</div>
+                <div className="text-3xl font-bold text-foreground mb-1">+60–140%</div>
+                <div className="text-sm text-muted-foreground">Mehr Anfragen & Conversions (Durchschnitt meiner Kunden)</div>
               </div>
               
               <div className="bg-card p-6 rounded-xl border border-border">
                 <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">4-16 Wochen</div>
-                <div className="text-sm text-muted-foreground">Time-to-Impact je nach Engagement</div>
+                <div className="text-sm text-muted-foreground">Bis zu ersten messbaren Ergebnissen</div>
               </div>
               
               <div className="bg-card p-6 rounded-xl border border-border">
                 <TrendingUp className="w-8 h-8 text-primary mx-auto mb-3" />
                 <div className="text-3xl font-bold text-foreground mb-1">€15k - €80k</div>
-                <div className="text-sm text-muted-foreground">Investment-Range für strategische Projekte</div>
+                <div className="text-sm text-muted-foreground">Investitions-Bereich je nach Paket</div>
               </div>
             </div>
           </div>
