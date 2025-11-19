@@ -18,7 +18,7 @@ const WebDesignFAQ = () => {
   const faqItems = isGerman ? [
     {
       question: "Was kostet eine professionelle Website?",
-      answer: "Eine strategisch geplante B2B-Website mit individuellem Design, Content und SEO startet bei 15.000–25.000€. Umfangreichere Projekte mit Custom-Features liegen bei 30.000–50.000€. Nach einem kostenlosen Erstgespräch erstelle ich Ihnen ein transparentes Festpreis-Angebot."
+      answer: "Die Kosten variieren je nach Umfang, Anforderungen und Komplexität Ihres Projekts. Nach einem kostenlosen Erstgespräch erstellen wir Ihnen ein transparentes Festpreis-Angebot, das exakt auf Ihre Bedürfnisse zugeschnitten ist – ohne versteckte Kosten."
     },
     {
       question: "Wie lange dauert es, bis meine neue Website online ist?",
