@@ -40,7 +40,7 @@ const WebDesignBuildOptions = () => {
     },
     de: {
       title: "Design für jede digitale Lösung",
-      subtitle: "Egal ob kompakte Business-Website, Unternehmenswebsite oder E-Commerce – wir entwickeln das passende Design für Ihre Anforderungen. Auf dieser Basis realisieren wir später Ihre Website mit WordPress, Shopify oder anderen Lösungen. Mehr zur technischen Umsetzung erfahren Sie auf unserer Seite ",
+      subtitle: "Egal ob kompakte Business-Website, Unternehmenswebsite oder E-Commerce – wir entwickeln das passende Design für Ihre Anforderungen. Auf dieser Basis realisieren wir später Ihre Website mit WordPress, Shopify oder Custom-Entwicklung. Mehr zur technischen Umsetzung erfahren Sie auf unserer Seite ",
       webdevLinkText: "Webentwicklung",
       options: [
         {

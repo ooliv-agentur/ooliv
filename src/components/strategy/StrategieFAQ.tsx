@@ -26,7 +26,7 @@ const StrategieFAQ = () => {
     },
     {
       question: "Arbeiten Sie nur remote oder auch vor Ort?",
-      answer: "Beides ist möglich. Die meisten Projekte laufen remote ab – das funktioniert hervorragend und spart allen Zeit. Für strategische Workshops oder wichtige Kickoffs komme ich aber auch gerne zu Ihnen ins Büro, besonders in der DACH-Region (Mainz, Frankfurt, deutschlandweit, Schweiz). Wir finden gemeinsam die beste Arbeitsweise."
+      answer: "Beides ist möglich. Die meisten Projekte laufen remote ab – das funktioniert hervorragend und spart allen Zeit. Für strategische Workshops oder wichtige Kickoffs komme ich aber auch gerne zu Ihnen ins Büro, besonders in der DACH-Region (Mainz, Frankfurt, deutschlandweit, Schweiz). Mehr über unsere Arbeitsweise erfahren Sie unter ooliv.de/ueber-uns. Wir finden gemeinsam die beste Arbeitsweise."
     },
     {
       question: "Was unterscheidet Sie von anderen Agenturen?",

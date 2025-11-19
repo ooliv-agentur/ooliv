@@ -92,7 +92,7 @@ const WebDesignWhyUs = () => {
                   So arbeitet ooliv
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  ooliv entwickelt Websites, die nicht nur schön aussehen, sondern auch messbar konvertieren. Wir kombinieren strategisches UX-Design mit modernster Technologie und conversion-optimierter Content-Architektur.
+                  ooliv entwickelt Websites, die nicht nur schön aussehen, sondern auch messbar konvertieren. Wir kombinieren strategisches UX-Design mit modernster Technologie und conversion-optimierter Content-Architektur. Dabei beginnen wir immer mit einer klaren <Link to="/strategie" className="text-primary hover:underline font-medium">Strategie-First-Beratung</Link>.
                 </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Unser Team aus UX/UI Designern, Frontend Developern und Content-Strategen arbeitet nach einem klaren Design-System-Ansatz: konsistent, skalierbar und fokussiert auf Ihre Business-Ziele statt einmaliger Pixel-Perfektion.
