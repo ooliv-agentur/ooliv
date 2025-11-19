@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Target, ArrowRight, Zap, PhoneCall } from 'lucide-react';
+import { Target, ArrowRight, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
@@ -12,51 +12,41 @@ const WebDesignBenefits = () => {
   const translations = {
     en: {
       title: "Why Companies Choose ooliv for Webdesign",
-      features: [
-        {
-          icon: Target,
-          title: "Strategy Before Design",
-          description: "Every project starts with your goals – leads, visibility, results that matter for growth."
-        },
-        {
-          icon: ArrowRight,
-          title: "Built to Convert",
-          description: "UX design that guides visitors toward action and transforms clicks into customers."
-        },
-        {
-          icon: Zap,
-          title: "Mobile-First & SEO-Ready",
-          description: "Fast loading, responsive design that's search engine friendly and user-focused."
-        },
-        {
-          icon: PhoneCall,
-          title: "Long-Term Support",
-          description: "We stay involved – optimizing, supporting, and scaling with you for continued success."
-        }
-      ]
+        features: [
+          {
+            icon: Target,
+            title: "Strategy Before Design",
+            description: "Every project starts with your goals – leads, visibility, results that matter for growth."
+          },
+          {
+            icon: ArrowRight,
+            title: "Built to Convert",
+            description: "UX design that guides visitors toward action and transforms clicks into customers."
+          },
+          {
+            icon: Zap,
+            title: "Mobile-First & SEO-Ready",
+            description: "Fast loading, responsive design that's search engine friendly and user-focused."
+          }
+        ]
     },
     de: {
       title: "Das bekommen Sie von uns (nicht was andere versprechen)",
       features: [
         {
           icon: Target,
-          title: "Klare Strategie, kein Bauchgefühl",
-          description: "Wir entwickeln eine Website mit klarem Ziel: Mehr Sichtbarkeit, mehr Anfragen, mehr Wachstum. Individuell auf Ihr Business zugeschnitten, nicht aus der Schublade."
+          title: "Strategie vor Design",
+          description: "Jede Website beginnt mit Ihren Zielen – nicht mit Templates."
         },
         {
           icon: ArrowRight,
           title: "Besucher werden zu Kunden",
-          description: "Unsere Nutzerführung funktioniert – klare Struktur, gute Lesbarkeit, überzeugende Calls-to-Action. Sie bekommen Conversion statt Dekoration."
+          description: "Nutzerführung, die funktioniert – klare Struktur und überzeugende Calls-to-Action."
         },
         {
           icon: Zap,
           title: "SEO-ready & superschnell",
-          description: "Ihre Website läuft auf allen Geräten perfekt – und wird von Google geliebt. Weil wir sie technisch sauber und performant bauen."
-        },
-        {
-          icon: PhoneCall,
-          title: "Langfristige Betreuung",
-          description: "Keine 'Fire and Forget'-Lösung. Wir bleiben an Ihrer Seite – mit Analysen, Updates und allem, was Ihre Website erfolgreich hält."
+          description: "Technisch sauber gebaut – für Google und Ihre Besucher."
         }
       ]
     }
@@ -73,7 +63,7 @@ const WebDesignBenefits = () => {
           </h2>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <StaggerReveal className="grid md:grid-cols-3 gap-8">
           {t.features.map((feature, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
               <div className="flex flex-col items-start text-left h-full">

@@ -9,37 +9,19 @@ const HowWeWorkSection = () => {
     {
       icon: <Compass className="w-8 h-8" />,
       title: "Strategische Beratung",
-      description: "Wir analysieren Ihre aktuelle Situation, identifizieren Potenziale und entwickeln gemeinsam mit Ihnen eine klare digitale Strategie – mit priorisierten Quick Wins und langfristiger Roadmap.",
-      deliverables: [
-        "Strategic Discovery Workshop (2-3 Stunden)",
-        "Competitive Analysis & Benchmarking",
-        "Digitale Roadmap mit priorisierten Maßnahmen",
-        "KPI-Framework für messbare Erfolge"
-      ],
+      description: "Klarheit über Ihre digitale Zukunft – im Workshop oder als laufender Sparringspartner.",
       link: "/strategie"
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Website & UX Transformation",
-      description: "Von der Konzeption bis zur Umsetzung – wir transformieren Ihre Website in ein strategisches Business-Tool, das Kunden überzeugt und konvertiert. Immer mit Fokus auf Ihre Geschäftsziele.",
-      deliverables: [
-        "UX Strategy & Wireframes",
-        "Modernes Design-System (Webflow / WordPress)",
-        "Responsive Development & Performance-Optimierung",
-        "Content-Strategie & SEO-Foundation"
-      ],
+      description: "Wir entwickeln Websites, die Besucher zu Kunden machen – strategisch durchdacht und messbar erfolgreich.",
       link: "/webdesign"
     },
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "Laufende Begleitung",
-      description: "Ihre digitale Transformation hört nicht beim Go-Live auf. Wir bleiben Ihr strategischer Partner – für kontinuierliche Optimierung, neue Features oder einfach als Sparringspartner bei digitalen Entscheidungen.",
-      deliverables: [
-        "Monatliches Retainer-Modell (flexibel skalierbar)",
-        "Kontinuierliche Performance-Optimierung",
-        "Strategic Advisory & Sparringspartner",
-        "Priority-Support für technische Fragen"
-      ],
+      description: "Wir bleiben Ihr Partner für Optimierung, neue Features und strategische Fragen nach dem Go-Live.",
       link: "/kontakt"
     }
   ];
@@ -79,19 +61,9 @@ const HowWeWorkSection = () => {
                 {approach.title}
               </h3>
               
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground">
                 {approach.description}
               </p>
-
-              <div className="space-y-3">
-                <div className="font-semibold text-foreground text-sm mb-2">Mögliche Leistungen:</div>
-                {approach.deliverables.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
 
               {approach.link && (
                 <div className="mt-6">
