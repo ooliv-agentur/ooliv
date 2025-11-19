@@ -3,6 +3,7 @@ import PageLayout from '@/components/PageLayout';
 import CaseStudiesHero from '@/components/case-studies/CaseStudiesHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import DetailedCaseStudiesSection from '@/components/case-study/DetailedCaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
@@ -91,8 +92,10 @@ const GermanCaseStudies = () => {
       
       <CaseStudiesHero />
       
+      <DetailedCaseStudiesSection />
+      
       <div className="section-container">
-        <CaseStudiesSection 
+        <CaseStudiesSection
           customTitle="Echte Ergebnisse von echten Kunden"
           customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
           customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
