@@ -17,13 +17,16 @@ interface BreadcrumbConfig {
 
 const breadcrumbConfig: BreadcrumbConfig[] = [
   { path: '/', label: 'Home' },
+  { path: '/strategie', label: 'Strategie', parent: '/' },
   { path: '/webdesign', label: 'Webdesign', parent: '/' },
   { path: '/webentwicklung', label: 'Webentwicklung', parent: '/' },
   { path: '/seo-optimierung', label: 'SEO Optimierung', parent: '/' },
   { path: '/google-ads', label: 'Google Ads', parent: '/' },
   { path: '/ki-technologien', label: 'KI-Technologien', parent: '/' },
   { path: '/content-erstellung', label: 'Content-Erstellung', parent: '/' },
-  { path: '/strategie', label: 'Strategie', parent: '/' },
+  { path: '/website-relaunch', label: 'Website-Relaunch', parent: '/strategie' },
+  { path: '/website-konzept', label: 'Website-Konzept', parent: '/strategie' },
+  { path: '/produkt-ux-strategie', label: 'Product & UX Strategy', parent: '/strategie' },
   { path: '/ueber-uns', label: 'Über uns', parent: '/' },
   { path: '/referenzen', label: 'Referenzen', parent: '/' },
   { path: '/kontakt', label: 'Kontakt', parent: '/' },
