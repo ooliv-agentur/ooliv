@@ -11,22 +11,22 @@ const StrategieBenefits = () => {
     {
       IconComponent: Target,
       title: "Sie wissen, was zu tun ist",
-      description: "Keine diffusen Ideen mehr. Sie bekommen eine klare Strategie mit priorisierten Maßnahmen – basierend auf Daten, nicht auf Bauchgefühl. Sie wissen nach der Analyse genau, welche Schritte jetzt Sinn machen."
+      description: "Keine diffusen Ideen mehr. Wir entwickeln eine klare Strategie mit priorisierten Maßnahmen – basierend auf Daten, nicht auf Bauchgefühl. Sie wissen nach der Analyse genau, welche Schritte jetzt Sinn machen."
     },
     {
       IconComponent: TrendingUp,
       title: "Messbar bessere Ergebnisse",
-      description: "Keine leeren Versprechen. Meine Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Mit klaren KPIs, die Sie verfolgen können."
+      description: "Keine leeren Versprechen. Unsere Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Mit klaren KPIs, die Sie verfolgen können."
     },
     {
       IconComponent: Users,
       title: "Von der Strategie zur Umsetzung",
-      description: "Sie bekommen nicht nur einen Plan, sondern auch Unterstützung bei der Umsetzung. Ich koordiniere Ihr Team, definiere klare Meilensteine und sorge dafür, dass es wirklich passiert."
+      description: "Nicht nur ein Plan, sondern auch Unterstützung bei der Umsetzung. Ich koordiniere Ihr Team persönlich, definiere klare Meilensteine und sorge dafür, dass es wirklich passiert."
     },
     {
       IconComponent: Zap,
       title: "Direkter Draht zu 16+ Jahren Erfahrung",
-      description: "Sie arbeiten direkt mit mir – keine Junior-Berater, keine Agentur-Ebenen. Sie profitieren von 16+ Jahren Erfahrung in digitaler Transformation für B2B-Unternehmen."
+      description: "Direkte Zusammenarbeit mit mir – keine Junior-Berater, keine Agentur-Ebenen. Dabei profitieren Sie von 16+ Jahren Erfahrung in digitaler Transformation für B2B-Unternehmen."
     },
     {
       IconComponent: DollarSign,

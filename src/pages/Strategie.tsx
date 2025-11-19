@@ -8,6 +8,7 @@ import StrategieBenefits from '@/components/strategy/StrategieBenefits';
 import StrategieWhyUs from '@/components/strategy/StrategieWhyUs';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import ServiceRecommendation from '@/components/strategy/ServiceRecommendation';
 import StrategieFAQ from '@/components/strategy/StrategieFAQ';
 import RelatedServicesGrid from '@/components/strategy/RelatedServicesGrid';
@@ -27,6 +28,30 @@ const GermanStrategy = () => {
     { name: "Strategie", url: "https://ooliv.de/strategie" }
   ];
 
+  const strategieTestimonials = [
+    {
+      quote: "Uli hat unsere digitale Strategie von Grund auf neu gedacht. Nach dem Strategy Workshop wussten wir endlich, wo wir ansetzen müssen. Lead-Qualität +180% in 6 Monaten.",
+      author: "Michael Klaiber",
+      role: "Geschäftsführer",
+      company: "KLAIBER Steuerberatung",
+      industry: "Steuerberatung"
+    },
+    {
+      quote: "Die Strategic Discovery war ein Gamechanger. Wir haben verstanden, warum unsere bisherige Strategie nicht funktioniert hat – und eine klare Roadmap bekommen, die wirklich umsetzbar ist.",
+      author: "Dr. Stefan Wagner",
+      role: "CEO",
+      company: "IconPro GmbH",
+      industry: "KI-Software"
+    },
+    {
+      quote: "Endlich jemand, der nicht nur berät, sondern auch Verantwortung für die Umsetzung übernimmt. Die Transformation hat funktioniert – messbar bessere Conversion-Rates und qualifiziertere Anfragen.",
+      author: "Thomas Müller",
+      role: "Geschäftsführer",
+      company: "COBUS GmbH",
+      industry: "Industrieservice"
+    }
+  ];
+
   return (
     <PageLayout 
       className="overflow-x-hidden"
@@ -44,6 +69,7 @@ const GermanStrategy = () => {
       <StrategieWhyUs />
       <StrategieProcess />
       <StrategieServices />
+      <TestimonialsSection testimonials={strategieTestimonials} />
       <ServiceRecommendation />
       
       {/* Case Studies nach dieser Strategie */}
