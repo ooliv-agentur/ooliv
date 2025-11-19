@@ -4,10 +4,10 @@ import CTA from '@/components/CTA';
 const InvestmentCTA = () => {
   return (
     <CTA 
-      title="Bereit für strategische Excellence?"
-      subtitle="Lass uns in einem unverbindlichen Call besprechen, welches Engagement-Modell am besten zu deiner aktuellen Situation passt – und wie wir messbare Business Outcomes erreichen."
-      primaryCta="Investment-Call buchen"
-      secondaryCta="Erstgespräch vereinbaren"
+      title="Welches Paket passt zu Ihnen?"
+      subtitle="Lassen Sie uns in einem kostenlosen 30-Minuten-Gespräch besprechen, wo Sie gerade stehen und welcher Weg für Ihre Situation am meisten Sinn macht. Unverbindlich, keine Verkaufsgespräche."
+      primaryCta="Kostenloses Erstgespräch vereinbaren"
+      secondaryCta="Oder direkt Kontakt aufnehmen"
       secondaryCtaLink="/kontakt"
     />
   );

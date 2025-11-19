@@ -7,89 +7,90 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const engagementModels = [
   {
     icon: Search,
-    badge: 'Strategic Discovery',
-    title: 'Strategic Discovery Package',
+    badge: 'Strategie-Paket',
+    title: 'Strategie-Paket: Klarheit & Roadmap',
     price: '€15.000 – €25.000',
     duration: '4–6 Wochen',
-    description: 'Fundierte strategische Basis für erfolgreiche Digital-Transformationen. Ideal für Unternehmen, die Klarheit über ihre digitale Strategie, Produktvision oder UX-Roadmap brauchen.',
+    description: 'Sie bekommen einen klaren Plan, was digital zu tun ist und in welcher Reihenfolge. Perfekt, wenn Sie wissen wollen, wo Sie stehen und welche konkreten Schritte jetzt Sinn machen.',
     process: [
-      { phase: 'Woche 1-2', title: 'Discovery & Research', items: ['Stakeholder Interviews', 'Market & Competitor Analysis', 'User Research & Data Analysis'] },
-      { phase: 'Woche 3-4', title: 'Strategy Definition', items: ['Strategic Framework Development', 'Opportunity Prioritization', 'Roadmap Planning'] },
-      { phase: 'Woche 5-6', title: 'Delivery & Handover', items: ['Strategy Presentation', 'Implementation Roadmap', 'Success Metrics Definition'] },
+      { phase: 'Woche 1-2', title: 'Analyse & Gespräche', items: ['Ich spreche mit Ihnen und Ihrem Team', 'Schaue mir Ihre Website & Wettbewerber an', 'Analysiere Ihre Daten & User-Verhalten'] },
+      { phase: 'Woche 3-4', title: 'Strategie entwickeln', items: ['Klare Prioritäten festlegen', 'Konkrete Maßnahmen definieren', 'Roadmap für 6-12 Monate erstellen'] },
+      { phase: 'Woche 5-6', title: 'Übergabe & Präsentation', items: ['Strategie-Präsentation (inkl. Begründung)', 'Detaillierter Umsetzungsplan', 'Messbare Erfolgskriterien definieren'] },
     ],
     deliverables: [
-      'Strategic Assessment Report (30-50 Seiten)',
-      'Product/UX Strategy Framework',
-      'Prioritized Opportunity Backlog',
-      'Implementation Roadmap (6-12 Monate)',
-      'Success Metrics & KPI Framework',
-      'Executive Presentation Deck',
+      'Strategie-Dokument (30-50 Seiten, verständlich geschrieben) – zeigt wo Sie stehen und was zu tun ist',
+      'Konkrete Maßnahmen-Roadmap für die nächsten 6-12 Monate – priorisiert nach Business-Impact',
+      'User-Journey & Conversion-Optimierung Plan – wo verlieren Sie aktuell Kunden?',
+      'Wettbewerbs-Analyse – was machen andere besser? Was können wir davon lernen?',
+      'KPI-Framework – welche Zahlen müssen Sie im Auge behalten?',
+      'Präsentation für Ihr Team – alle Ergebnisse verständlich aufbereitet',
     ],
     outcomes: [
-      'Klare strategische Richtung statt diffuser Ideen',
-      'Priorisierte Roadmap mit Business Impact',
-      'Reduziertes Risiko durch validierte Annahmen',
-      'Alignment zwischen Business & Tech',
+      'Sie wissen genau, was als nächstes zu tun ist (keine Unsicherheit mehr)',
+      'Klare Prioritäten statt zu vielen gleichzeitigen Projekten',
+      'Weniger Risiko durch fundierte Entscheidungsgrundlage',
+      'Ihr Team zieht an einem Strang (alle verstehen die Strategie)',
     ],
-    idealFor: 'C-Level, die vor wichtigen Digital-Entscheidungen stehen oder strategische Klarheit brauchen.',
+    idealFor: 'Geschäftsführer und Entscheider, die vor wichtigen digitalen Entscheidungen stehen oder einfach mal Klarheit brauchen, wo sie digital wirklich stehen.',
   },
   {
     icon: Rocket,
-    badge: 'End-to-End Transformation',
-    title: 'End-to-End Product & UX Transformation',
+    badge: 'Komplett-Transformation',
+    title: 'Komplett-Transformation: Von Strategie bis Go-Live',
     price: '€40.000 – €80.000',
     duration: '8–16 Wochen',
-    description: 'Vollständige strategische Transformation von Discovery bis Implementation. Für Unternehmen, die nicht nur wissen wollen WAS zu tun ist, sondern es auch umgesetzt haben wollen.',
+    description: 'Sie bekommen nicht nur einen Plan, sondern die fertige Lösung. Von der Strategie über das UX-Konzept bis zur technischen Umsetzung – alles aus einer Hand. Am Ende geht Ihre neue Website/Plattform live.',
     process: [
-      { phase: 'Phase 1', title: 'Strategic Discovery (2-3 Wochen)', items: ['Deep Dive Analysis', 'Strategy Framework', 'Roadmap Definition'] },
-      { phase: 'Phase 2', title: 'Concept & Design (3-5 Wochen)', items: ['UX Concept Development', 'Design System', 'Prototyping & Testing'] },
-      { phase: 'Phase 3', title: 'Implementation Leadership (3-8 Wochen)', items: ['Development Oversight', 'Quality Assurance', 'Launch Strategy'] },
+      { phase: 'Phase 1', title: 'Strategie (2-3 Wochen)', items: ['Wie im Strategie-Paket – Analyse, Gespräche, Plan', 'Klare Roadmap & Prioritäten', 'Abstimmung mit Ihrem Team'] },
+      { phase: 'Phase 2', title: 'UX-Konzept & Design (3-5 Wochen)', items: ['Ich entwickle das komplette UX-Konzept', 'Modernes Design-System erstellen', 'Prototyp zum Anschauen & Testen'] },
+      { phase: 'Phase 3', title: 'Umsetzung & Launch (3-8 Wochen)', items: ['Technische Entwicklung (mit meinem Team)', 'Qualitätssicherung & Testing', 'Go-Live & Optimierung'] },
     ],
     deliverables: [
-      'Strategic Discovery Package (komplett)',
-      'UX Concept & User Flows',
-      'Design System & Component Library',
-      'High-Fidelity Prototypes',
-      'Implementation Oversight & QA',
-      'Performance & Analytics Setup',
-      'Launch Strategy & Optimization Plan',
+      'Komplettes Strategie-Paket (siehe oben) – Analyse, Plan, Roadmap',
+      'Durchdachtes UX-Konzept – wie Besucher zu Kunden werden',
+      'Komplettes Design inkl. Design-System – modern, professionell, on-brand',
+      'Klickbarer Prototyp – Sie sehen vor der Umsetzung, wie es aussieht',
+      'Fertige Website/Plattform – entwickelt, getestet, live',
+      'Analytics & Tracking Setup – ab Tag 1 wissen Sie, was funktioniert',
+      'Performance-Optimierung – schnelle Ladezeiten, SEO-optimiert',
+      'Launch-Support & erste Optimierungen – ich begleite den Go-Live',
     ],
     outcomes: [
-      'Nicht nur Strategy, sondern live Implementation',
-      'Messbare Business Outcomes (Conversion, Retention, Revenue)',
-      'Skalierbare Design & Tech Foundation',
-      'Reduzierte Time-to-Market durch klaren Prozess',
+      'Fertige Lösung statt nur Theorie – am Ende läuft alles',
+      'Messbar bessere Ergebnisse: mehr Anfragen, mehr Verkäufe (+140% Conversion im Schnitt)',
+      'Zukunftssichere Basis – skalierbar und professionell aufgebaut',
+      'Schneller Go-Live durch strukturierten Prozess (keine Verzögerungen)',
     ],
-    idealFor: 'Unternehmen, die eine strategische Transformation wirklich durchziehen wollen – nicht nur planen.',
+    idealFor: 'Unternehmen, die nicht nur wissen wollen, was zu tun ist, sondern die Transformation wirklich durchziehen wollen – mit einem Partner, der den kompletten Prozess begleitet.',
   },
   {
     icon: RefreshCw,
-    badge: 'Ongoing Advisory',
-    title: 'Strategic Retainer',
+    badge: 'Laufende Beratung',
+    title: 'Laufende Beratung: Ihr strategischer Partner',
     price: '€8.000 – €15.000/Monat',
-    duration: 'Ongoing (min. 6 Monate)',
-    description: 'Kontinuierliche strategische Begleitung für Unternehmen, die langfristig auf strategischer Excellence setzen. Perfekt für scale-ups und etablierte Firmen mit laufenden Transformationen.',
+    duration: 'Laufend (mind. 6 Monate)',
+    description: 'Ich bleibe an Ihrer Seite – als Ihr strategischer Sparringspartner für alle digitalen Themen. Perfekt, wenn Sie kontinuierlich jemanden brauchen, der mitdenkt, berät und hilft, die richtigen Entscheidungen zu treffen.',
     process: [
-      { phase: 'Weekly', title: 'Strategic Touchpoints', items: ['Weekly Strategy Calls', 'Roadmap Reviews', 'Quick Decision Support'] },
-      { phase: 'Monthly', title: 'Deep Dives', items: ['Strategic Workshops', 'Quarterly Planning', 'Performance Reviews'] },
-      { phase: 'Ongoing', title: 'Continuous Support', items: ['Slack/Teams Access', 'Ad-hoc Consulting', 'Thought Leadership'] },
+      { phase: 'Wöchentlich', title: 'Regelmäßiger Austausch', items: ['Wöchentlicher Strategy Call (30-60 Min)', 'Roadmap-Updates besprechen', 'Schnelle Entscheidungs-Unterstützung'] },
+      { phase: 'Monatlich', title: 'Strategische Sessions', items: ['Monatliches Strategic Deep Dive', 'Quartalsplanung & Priorisierung', 'Performance-Review (was läuft, was nicht?)'] },
+      { phase: 'Jederzeit', title: 'Direkter Zugang', items: ['Slack/Teams-Zugang für schnelle Fragen', 'Ad-hoc Beratung bei wichtigen Themen', 'Input zu neuen Ideen & Innovationen'] },
     ],
     deliverables: [
-      '8-15h strategische Beratung pro Monat',
-      'Wöchentliche Strategy Calls',
-      'Quartalsweise Strategic Reviews',
-      'Ad-hoc Decision Support',
-      'Kontinuierliche Roadmap Optimization',
-      'Team Coaching & Upskilling',
-      'Priority Support via Slack/Teams',
+      '8-15 Stunden strategische Beratung pro Monat – flexibel nach Bedarf',
+      'Wöchentliche Strategy Calls – wir bleiben im engen Austausch',
+      'Quartalsweise strategische Reviews – schauen gemeinsam, wo wir stehen',
+      'Ad-hoc Support bei wichtigen Entscheidungen – Sie haben mich bei Bedarf',
+      'Laufende Optimierung Ihrer Roadmap – Prioritäten passen sich an',
+      'Team-Coaching wenn gewünscht – ich helfe Ihrem Team, besser zu werden',
+      'Priority Support via Slack/Teams – schnelle Antworten auf Ihre Fragen',
     ],
     outcomes: [
-      'Continuous strategic guidance statt einmalige Projekte',
-      'Schnellere Entscheidungen durch direkten Zugang',
-      'Vermeidung strategischer Fehler in Echtzeit',
-      'Langfristige Partnerschaft mit strategischem Sparringspartner',
+      'Sie haben immer jemanden für strategische Fragen (kein "alleine durchwursteln")',
+      'Schnellere, bessere Entscheidungen durch direkten Zugang zu Expertise',
+      'Weniger Fehler durch frühzeitige Beratung (bevor es teuer wird)',
+      'Langfristige Partnerschaft – ich lerne Ihr Business wirklich kennen',
     ],
-    idealFor: 'C-Level und Product Leaders, die einen strategischen Sparringspartner auf Abruf wollen.',
+    idealFor: 'Geschäftsführer und Führungskräfte, die einen strategischen Partner auf Abruf wollen – jemanden, der mitdenkt und bei allen digitalen Themen zur Seite steht.',
   },
 ];
 
@@ -104,10 +105,10 @@ const EngagementModels = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Drei Engagement-Modelle für strategische Excellence
+              So können wir zusammenarbeiten
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Wähle das Investment-Modell, das zu deiner aktuellen Phase passt – oder kombiniere sie für maximalen Impact.
+              Drei Möglichkeiten – je nachdem, was Sie gerade brauchen. Mit klaren Preisen, konkreten Ergebnissen und bewährter Expertise aus 16+ Jahren.
             </p>
           </div>
         </Reveal>
@@ -143,7 +144,7 @@ const EngagementModels = () => {
 
                 {/* Process */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Prozess</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-4">Wie läuft's ab?</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {model.process.map((step, stepIndex) => (
                       <div key={stepIndex} className="bg-secondary/20 p-4 rounded-xl">
@@ -164,7 +165,7 @@ const EngagementModels = () => {
 
                 {/* Deliverables */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Deliverables</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-4">Was Sie konkret bekommen</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {model.deliverables.map((deliverable, delIndex) => (
                       <div key={delIndex} className="flex items-start gap-2">
@@ -177,7 +178,7 @@ const EngagementModels = () => {
 
                 {/* Outcomes */}
                 <div className="mb-8">
-                  <h4 className="text-lg font-semibold text-foreground mb-4">Expected Outcomes</h4>
+                  <h4 className="text-lg font-semibold text-foreground mb-4">Was es Ihnen bringt</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {model.outcomes.map((outcome, outIndex) => (
                       <div key={outIndex} className="flex items-start gap-2">
@@ -200,9 +201,12 @@ const EngagementModels = () => {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  Investment besprechen
+                  Kostenloses Erstgespräch vereinbaren
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
+                <p className="text-xs text-muted-foreground mt-2">
+                  30 Min. unverbindlich – ich berate Sie, ob dieses Paket zu Ihrer Situation passt
+                </p>
               </div>
             </div>
           ))}
@@ -211,11 +215,14 @@ const EngagementModels = () => {
         {/* Kombination Hinweis */}
         <Reveal>
           <div className="mt-12 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/20">
-            <h3 className="text-xl font-bold text-foreground mb-3">Kombination möglich</h3>
+            <h3 className="text-xl font-bold text-foreground mb-3">Pakete können kombiniert werden</h3>
+            <p className="text-muted-foreground mb-4">
+              Viele meiner Kunden starten mit dem <strong>Strategie-Paket</strong> (um Klarheit zu bekommen), 
+              gehen dann in die <strong>Komplett-Transformation</strong> über (um es umzusetzen) und nutzen anschließend die 
+              <strong> Laufende Beratung</strong> (um am Ball zu bleiben).
+            </p>
             <p className="text-muted-foreground">
-              Die meisten erfolgreichen Transformationen starten mit dem <strong>Strategic Discovery Package</strong>, 
-              gehen dann in die <strong>End-to-End Transformation</strong> über und werden langfristig durch einen 
-              <strong> Strategic Retainer</strong> begleitet. Lass uns besprechen, welcher Weg für dich am sinnvollsten ist.
+              Im kostenlosen Erstgespräch schauen wir gemeinsam, welcher Weg für Ihre Situation am meisten Sinn macht.
             </p>
           </div>
         </Reveal>
