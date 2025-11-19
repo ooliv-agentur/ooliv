@@ -9,32 +9,32 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const DeutscherAboutSection = () => {
   const benefits = [
     {
-      title: "C-Level Strategic Clarity",
-      description: "Von der Opportunity Map bis zur messbaren Roadmap – strategische Entscheidungsgrundlagen für Ihre digitale Transformation.",
+      title: "Klare Strategien, die funktionieren",
+      description: "Sie bekommen keine abstrakten Konzepte, sondern konkrete Maßnahmen mit priorisierten Schritten – damit Sie wissen, was als nächstes zu tun ist.",
       icon: <TrendingUp className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/ueber-uns",
-      linkText: "Mehr über unseren Ansatz"
+      linkText: "Mehr über meine Arbeitsweise"
     },
     {
-      title: "AI-Enabled Workflows",
-      description: "Strategische Integration von LLMs, Automation und AI-Pipelines für messbare Effizienzgewinne und datengetriebene Entscheidungen.",
+      title: "KI, wo es wirklich Sinn macht",
+      description: "Ich finde konkrete KI-Anwendungsfälle für Ihr Business – von Chatbots über Content-Automation bis zu effizienten Workflows. Keine Buzzwords, sondern echte Lösungen.",
       icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/ueber-uns",
-      linkText: "AI-Expertise kennenlernen"
+      link: "/ki-technologien",
+      linkText: "KI-Integration erkunden"
     },
     {
-      title: "16+ Jahre Digital Transformation",
-      description: "100+ Projekte geleitet, internationale Teams geführt, komplexe digitale Ökosysteme transformiert. Senior-Level Expertise für Ihr Business.",
+      title: "16+ Jahre Erfahrung für Sie",
+      description: "Über 100 erfolgreiche Projekte, messbare Ergebnisse (+60-240% Conversions im Schnitt) und echte Expertise statt Junior-Berater.",
       icon: <Handshake className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/kontakt",
-      linkText: "Erfahrung kennenlernen"
+      link: "/ueber-uns",
+      linkText: "Track Record ansehen"
     },
     {
-      title: "End-to-End Strategic Leadership",
-      description: "Von der Vision über UX-Strategie bis zur Technical Direction – strategische Führung durch den gesamten Transformationsprozess.",
+      title: "Von der Analyse bis zur Umsetzung",
+      description: "Sie bekommen nicht nur einen Plan, sondern auch Begleitung bei der Umsetzung – damit es wirklich passiert, nicht nur in der Schublade landet.",
       icon: <BarChart3 className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/ueber-uns",
-      linkText: "Unsere Methodik"
+      link: "/methodik",
+      linkText: "Methodik kennenlernen"
     }
   ];
 
@@ -44,16 +44,16 @@ const DeutscherAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <div className="inline-block mb-6 px-4 py-2 bg-brand-primary/10 rounded-full">
-              <span className="text-sm font-semibold text-brand-primary">Strategic Digital Advisory · AI-Enabled Transformation · Product & UX Strategy</span>
+              <span className="text-sm font-semibold text-brand-primary">Digital-Strategie · Website & UX · KI-Integration</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Senior Digital Strategy Lead
+              Ihr Digital-Berater für messbare Ergebnisse
             </h2>
             <p className="text-xl text-turquoise max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Strategische Transformation für B2B-Unternehmen – von der C-Level Vision bis zur messbaren Umsetzung.
+              Ich helfe B2B-Unternehmen, digital besser zu werden – mit klaren Strategien, durchdachter UX und KI-Lösungen, die wirklich funktionieren.
             </p>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              16+ Jahre Erfahrung in der Führung digitaler Transformationen. 100+ Projekte geleitet, internationale Teams koordiniert, komplexe Ökosysteme transformiert. Keine Standard-Agentur-Lösungen, sondern maßgeschneiderte strategische Führung.
+              16+ Jahre Erfahrung, über 100 erfolgreiche Projekte, messbare Ergebnisse. Sie bekommen keine Standard-Agentur-Lösungen, sondern maßgeschneiderte Strategien für Ihr Business.
             </p>
           </div>
         </Reveal>

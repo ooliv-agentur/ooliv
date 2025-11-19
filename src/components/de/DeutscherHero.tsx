@@ -26,21 +26,21 @@ const DeutscherHero = () => {
   };
 
   const dynamicEndings = [
-    "Strategic Discovery → Product Strategy → AI Integration",
-    "Von der Vision zur messbaren Umsetzung.",
-    "16+ Jahre C-Level Digital Advisory"
+    "Mehr Anfragen durch bessere Website-Strategie",
+    "Klare Roadmaps statt digitaler Unsicherheit",
+    "KI-Integration, die Ihr Business wirklich voranbringt"
   ];
   
   return (
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Digitale Transformation mit Strategie, UX & AI"
-        subtitle="16+ Jahre Erfahrung in der Transformation digitaler Ökosysteme für B2B-Unternehmen im DACH-Raum. Strategische Beratung auf C-Level – von der Vision bis zur messbaren Umsetzung."
+        title="Digital-Berater, der Ihr Business wirklich voranbringt"
+        subtitle="Ich helfe Ihnen, digital besser zu werden – mit klaren Strategien, durchdachter UX und sinnvollen KI-Lösungen. Sie bekommen keine 300-seitigen Konzepte, sondern konkrete Maßnahmen. Basierend auf 16+ Jahren Erfahrung."
         dynamicPrefix=""
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Strategiegespräch vereinbaren",
+          text: "Kostenloses Erstgespräch",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}

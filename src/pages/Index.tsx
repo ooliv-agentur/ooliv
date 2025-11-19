@@ -173,9 +173,9 @@ const GermanIndex = () => {
         
         <CTA
           lightBackground={true}
-          title="Bereit für Strategic Digital Transformation?"
-          subtitle="Vereinbaren Sie ein unverbindliches Strategiegespräch mit Uli Schönleber – Digital Strategy Lead mit 16+ Jahren Track Record."
-          primaryCta="Strategiegespräch vereinbaren"
+          title="Lassen Sie uns über Ihr Projekt sprechen"
+          subtitle="In einem kostenlosen 30-Minuten-Gespräch schauen wir uns Ihre Situation an und ich zeige Ihnen konkrete Ansätze, wie Sie digital besser werden können."
+          primaryCta="Kostenloses Erstgespräch vereinbaren"
         />
 
         {/* Standort Mainz, bundesweit aktiv */}
@@ -183,16 +183,16 @@ const GermanIndex = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                Standort Mainz – Strategic Advisory im gesamten DACH-Raum
+                Standort Mainz – bundesweit für Sie da
               </h2>
               <div className="max-w-4xl mx-auto space-y-4">
                 <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Von unserem Standort in Mainz aus führen wir Digital Transformationen für B2B-Unternehmen in ganz Deutschland, 
-                  <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir Strategic Frameworks, 
-                  die messbare Business Outcomes liefern – unabhängig vom Standort unserer Kunden.
+                  Von meinem Standort in Mainz aus unterstütze ich B2B-Unternehmen in ganz Deutschland, 
+                  <strong> der Schweiz</strong> und Österreich. Seit 2008 helfe ich Unternehmen, digital besser zu werden – 
+                  mit messbaren Ergebnissen, egal wo Sie sind.
                 </p>
                 <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Unser Strategic Advisory verbindet C-Level Expertise mit hands-on Implementation Leadership. Als Digital Strategy Lead biete ich Ihnen End-to-End Begleitung – von Strategic Discovery über AI Integration bis zur messbaren Transformation.
+                  Sie bekommen direkten Zugang zu 16+ Jahren Erfahrung – von der Strategie über UX-Optimierung bis zur KI-Integration. Alles aus einer Hand, ohne Umwege über Account Manager.
                 </p>
                 
                 {/* Strategic outgoing links */}
@@ -234,20 +234,20 @@ const GermanIndex = () => {
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
                   <TurquoiseCard variant="default" hoverLift>
                     <div className="text-center p-4">
-                      <h3 className="font-semibold mb-2 text-foreground">Strategic Excellence</h3>
-                      <p className="text-sm text-muted-foreground">16+ Jahre Digital Strategy Leadership</p>
+                      <h3 className="font-semibold mb-2 text-foreground">16+ Jahre Erfahrung</h3>
+                      <p className="text-sm text-muted-foreground">Über 100 erfolgreiche Projekte</p>
                     </div>
                   </TurquoiseCard>
                   <TurquoiseCard variant="default" hoverLift>
                     <div className="text-center p-4">
                       <h3 className="font-semibold mb-2 text-foreground">Messbare Ergebnisse</h3>
-                      <p className="text-sm text-muted-foreground">+240% avg. Conversion Rate Steigerung</p>
+                      <p className="text-sm text-muted-foreground">+60-240% mehr Conversions im Schnitt</p>
                     </div>
                   </TurquoiseCard>
                   <TurquoiseCard variant="default" hoverLift>
                     <div className="text-center p-4">
-                      <h3 className="font-semibold mb-2 text-foreground">C-Level Expertise</h3>
-                      <p className="text-sm text-muted-foreground">100+ erfolgreiche Transformationen</p>
+                      <h3 className="font-semibold mb-2 text-foreground">Direkter Draht</h3>
+                      <p className="text-sm text-muted-foreground">Keine Junior-Berater, nur Expertise</p>
                     </div>
                   </TurquoiseCard>
                 </div>
