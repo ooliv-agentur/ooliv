@@ -22,6 +22,14 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
     onClose();
   };
   
+  // Handle CTA click - open lead form
+  const handleCtaClick = () => {
+    onClose(); // Close menu first
+    setTimeout(() => {
+      window.dispatchEvent(new Event('open-lead-form'));
+    }, 300); // Wait for menu animation to finish
+  };
+  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -53,8 +61,24 @@ const MobileMenuContent = ({ isOpen, onClose }: MobileMenuContentProps) => {
               paddingTop: 'max(1rem, env(safe-area-inset-top))' // Respect notch on iOS
             }}
           >
-            <nav className="space-y-4 text-center w-full flex-1 flex flex-col justify-center">
+            <nav className="space-y-6 text-center w-full flex-1 flex flex-col justify-center">
               <NavigationLinks layout="mobile" onLinkClick={handleLinkClick} />
+              
+              {/* Prominent CTA Button */}
+              <div className="pt-6 pb-4">
+                <Button
+                  onClick={handleCtaClick}
+                  size="lg"
+                  className="w-full max-w-xs mx-auto bg-black text-white hover:bg-black/90 font-bold py-4 text-lg shadow-lg"
+                >
+                  {language === 'de' ? 'Mit ooliv durchstarten' : 'Get Started with ooliv'}
+                </Button>
+                <p className="text-xs text-medico-darkGreen/60 mt-3">
+                  {language === 'de' 
+                    ? 'Uli und das Team melden sich innerhalb von 24h' 
+                    : 'Uli and the team will respond within 24h'}
+                </p>
+              </div>
             </nav>
           </div>
         </motion.div>
