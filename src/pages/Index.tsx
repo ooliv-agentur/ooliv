@@ -2,9 +2,6 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import WhyChooseUs from "@/components/de/WhyChooseUs";
-import TeamSection from "@/components/de/TeamSection";
-import StrategicChallengesSection from "@/components/de/StrategicChallengesSection";
-import HowWeWorkSection from "@/components/de/HowWeWorkSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
 import ServicesOverview from "@/components/services/ServicesOverview";
@@ -97,9 +94,6 @@ const GermanIndex = () => {
         
         <CaseStudiesSection />
         
-        <StrategicChallengesSection />
-        <HowWeWorkSection />
-        <TeamSection />
         
         <FAQ 
           customFaqs={strategicFaqs}
