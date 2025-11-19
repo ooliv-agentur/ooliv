@@ -28,10 +28,10 @@ const GermanStrategy = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Digitalstrategie Mainz – Webkonzept & Planung | ooliv"
-        description="Digitalstrategie Mainz – Ganzheitliche Webkonzepte für B2B. Von Analyse bis Umsetzung. ✓ Messbare Ziele ✓ ROI-fokussiert. Strategiegespräch!"
+        title="Digital Strategy & Transformation | C-Level Advisory | ooliv"
+        description="End-to-End Digital Strategy für B2B-Unternehmen: Strategic Discovery, UX Strategy, AI Integration und C-Level Advisory mit 16+ Jahren Erfahrung."
         canonicalUrl="https://ooliv.de/strategie"
-        keywords="Webkonzept, Digitalstrategie, SEO Strategie, Marketing Konzept, ooliv Mainz"
+        keywords="Digital Strategy, Digital Transformation, C-Level Advisory, Strategic Consulting, UX Strategy"
         breadcrumbs={breadcrumbs}
       />
 
@@ -42,9 +42,11 @@ const GermanStrategy = () => {
       <StrategieFAQ />
       
       <CTA 
-        title="Bereit für eine strategische Website?"
-        subtitle="Lassen Sie uns gemeinsam eine digitale Strategie entwickeln, die Ihre Geschäftsziele erreicht."
+        title="Digitale Transformation für Ihr Unternehmen"
+        subtitle="Lassen Sie uns gemeinsam eine End-to-End Digital Strategy entwickeln – von der Discovery bis zur messbaren Umsetzung."
         primaryCta="Strategiegespräch vereinbaren"
+        secondaryCta="Mehr erfahren"
+        secondaryCtaLink="/kontakt"
         lightBackground={true}
       />
     </PageLayout>
