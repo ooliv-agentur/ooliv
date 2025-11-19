@@ -21,6 +21,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'Product & UX Strategy', path: '/produkt-ux-strategie' },
     { title: 'Methodik', path: '/methodik' },
     { title: 'Investment & Pricing', path: '/investition' },
+    { title: 'ROI Calculator', path: '/roi-rechner' },
     { title: 'Transformationen', path: '/referenzen' },
     { title: 'Über Uli', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }

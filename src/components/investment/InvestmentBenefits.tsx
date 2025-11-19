@@ -75,27 +75,18 @@ const InvestmentBenefits = () => {
           <div className="mt-16 bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 rounded-2xl border border-primary/20">
             <div className="max-w-3xl mx-auto text-center">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                ROI-Beispiel: Strategic Discovery Package
+                Berechnen Sie Ihren individuellen ROI
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">€20k</div>
-                  <div className="text-sm text-muted-foreground">Investment</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">€250k+</div>
-                  <div className="text-sm text-muted-foreground">Vermiedene Fehlentwicklung</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">12.5x</div>
-                  <div className="text-sm text-muted-foreground">ROI nur durch Risk Reduction</div>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Ein Strategic Discovery Package verhindert durchschnittlich 6-8 Monate Fehlentwicklung. 
-                Bei einem Development Team von €15k/Monat entspricht das €90k-120k vermiedenen Kosten – 
-                zusätzlich zum Value durch richtige Priorisierung und schnelleren Time-to-Market.
+              <p className="text-muted-foreground mb-6">
+                Mit unserem interaktiven ROI Calculator können Sie den Return on Investment basierend auf Ihren aktuellen Metriken simulieren – inklusive personalisierter Investment-Empfehlung.
               </p>
+              <a 
+                href="/roi-rechner"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+              >
+                <TrendingUp className="h-5 w-5" />
+                ROI Calculator starten
+              </a>
             </div>
           </div>
         </Reveal>
