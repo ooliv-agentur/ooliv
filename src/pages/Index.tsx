@@ -4,8 +4,11 @@ import PageLayout from "@/components/PageLayout";
 import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
 import TeamTeaserDE from "@/components/de/TeamTeaserDE";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import GermanSolutionSection from "@/components/de/GermanSolutionSection";
-import TechnologiesSection from "@/components/de/TechnologiesSection";
+import StrategicChallengesSection from "@/components/de/StrategicChallengesSection";
+import StrategicFrameworksSection from "@/components/de/StrategicFrameworksSection";
+import TrackRecordSection from "@/components/de/TrackRecordSection";
+import EngagementModelsTeaser from "@/components/de/EngagementModelsTeaser";
+import ROICalculatorTeaser from "@/components/de/ROICalculatorTeaser";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -21,29 +24,27 @@ import TurquoiseCard from '@/components/ui/TurquoiseCard';
 import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
-// CostCalculator removed - no longer fits Strategic Advisory positioning
-// import CostCalculator from '@/components/pricing/CostCalculator';
 
-const germanFaqs = [
+const strategicFaqs = [
   {
-    question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
-    answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
+    question: "Was ist Strategic Discovery und wann macht sie Sinn?",
+    answer: "Strategic Discovery ist eine intensive 4–6-wöchige Phase, in der wir Ihre Business Challenges systematisch analysieren, User Research durchführen und eine fundierte Digital Strategy entwickeln. Sie macht Sinn, wenn Sie vor einer Digital Transformation stehen, neue Produkte launchen oder bestehende Systeme strategisch optimieren wollen. Investment: €15k–25k."
   },
   {
-    question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
-    answer: "Die Preise richten sich nach Ihren Anforderungen und Unternehmensgröße. Professionelle Business-Websites starten bei 5.000 €, mittlere Projekte mit SEO bei 8.000–12.000 €. Für größere Projekte wie Shops oder mehrsprachige Websites starten die Kosten bei etwa 15.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
+    question: "Wie unterscheidet sich Product & UX Strategy von klassischem Webdesign?",
+    answer: "Klassisches Webdesign fokussiert auf visuelle Gestaltung. Product & UX Strategy beginnt mit Strategic Discovery, User Journey Mapping, Business Model Validation und resultiert in einem datengetriebenen, conversion-optimierten Digital Product. Wir arbeiten nicht nach Templates, sondern entwickeln maßgeschneiderte Strategic Frameworks für Ihr Business."
   },
   {
-    question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
-    answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Websites sind in wenigen Wochen umsetzbar, größere Seiten benötigen in der Regel 6 bis 10 Wochen. Wir stimmen den Zeitplan individuell mit Ihnen ab und arbeiten effizient auf gemeinsame Deadlines hin."
+    question: "Welche Business Outcomes kann ich erwarten?",
+    answer: "Basierend auf 16+ Jahren Track Record: durchschnittlich +240% Conversion Rate nach Strategic Discovery & UX Optimization, +180% Lead Quality durch Strategic Positioning, und -45% Time-to-Decision bei C-Level Stakeholders durch klare Strategic Roadmaps. Jedes Projekt ist individuell – nutzen Sie unseren ROI Calculator für Ihre Projektionen."
   },
   {
-    question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
-    answer: "Nach dem Go-Live lassen Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
+    question: "Wie funktioniert die Zusammenarbeit bei einem Strategic Retainer?",
+    answer: "Strategic Retainer (€8k–15k/Monat) ist eine langfristige C-Level Advisory Partnership. Sie erhalten kontinuierlichen Zugang zu Strategic Consulting, Ongoing Optimization, AI Integration Support und Innovation Leadership. Ideal für Unternehmen, die Digital Transformation als continuous Journey verstehen, nicht als One-time Project."
   },
   {
-    question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
-    answer: "Wir arbeiten direkt, effizient und auf Augenhöhe. Bei uns sprechen Sie immer mit dem CEO. Strategie, Design und Technik kommen aus einer Hand. Unsere Websites sind SEO-stark, klar strukturiert und messbar erfolgreich – und wir sind in Mainz verwurzelt, mit Kunden weit darüber hinaus."
+    question: "Für welche Unternehmen ist dieses Engagement-Modell geeignet?",
+    answer: "Unser Strategic Advisory richtet sich an B2B-Unternehmen im DACH-Raum, die digitale Transformation ernst nehmen. Typische Kunden: Tech-Startups mit Product-Market Fit Challenges, Mittelstand vor Digital Transformation, etablierte Unternehmen mit Innovation Gaps. Investment-Range: €15k–80k für Transformations-Projekte, €8k–15k/Monat für Strategic Retainer."
   }
 ];
 
@@ -73,8 +74,8 @@ const GermanIndex = () => {
         />
         
         <CompleteBusinessSchemaGenerator
-          businessName="ooliv Digitalagentur"
-          description="Digitalagentur für B2B-Unternehmen in Deutschland. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads."
+          businessName="ooliv Digital Consultancy"
+          description="Digital Strategy Lead für B2B-Transformationen im DACH-Raum. Strategic Discovery, AI Integration, Product & UX Strategy. 16+ Jahre C-Level Advisory mit messbaren Business Outcomes."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -86,7 +87,7 @@ const GermanIndex = () => {
           email="info@ooliv.de"
           url="https://ooliv.de"
           areaServed={["Deutschland", "Schweiz", "Österreich", "DACH-Region"]}
-          services={["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]}
+          services={["Digital Strategy", "AI Integration", "Product & UX Strategy", "Strategic Discovery", "C-Level Advisory", "Digital Transformation"]}
         />
         
         <DeutscherHero />
@@ -113,19 +114,18 @@ const GermanIndex = () => {
                 size="lg" 
                 className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 onClick={handleStartProject}
-                aria-label="Starten Sie Ihr Webdesign-Projekt"
+                aria-label="Strategic Discovery vereinbaren"
               >
-                Projekt starten
+                Strategic Discovery vereinbaren
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
             </div>
           </div>
         </div>
         
-        {/* Case Studies früher für sofortiges Vertrauen */}
+        <TrackRecordSection />
         <CaseStudiesSection />
         
-        {/* Automated Content Marketing Highlight - repositioned for better flow */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
@@ -140,7 +140,7 @@ const GermanIndex = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button 
                   variant="outline" 
-                  className="text-turquoise border-turquoise hover:bg-turquoise/10 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2"
+                  className="text-turquoise border-turquoise hover:bg-turquoise/10 w-full sm:w-auto"
                   asChild
                 >
                   <Link to="/automatisierte-content-marketing">
@@ -151,7 +151,6 @@ const GermanIndex = () => {
                   onClick={handleStartProject}
                   variant="primary"
                   className="w-full sm:w-auto"
-                  aria-label="Starten Sie Ihr Content-Marketing Projekt"
                 >
                   Projekt starten
                 </Button>
@@ -160,21 +159,23 @@ const GermanIndex = () => {
           </div>
         </section>
         
-        <GermanSolutionSection />
+        <StrategicChallengesSection />
+        <EngagementModelsTeaser />
+        <ROICalculatorTeaser />
         <TeamTeaserDE />
-        <TechnologiesSection />
+        <StrategicFrameworksSection />
         
         <FAQ 
-          customFaqs={germanFaqs}
-          customTitle="Häufig gestellte Fragen"
+          customFaqs={strategicFaqs}
+          customTitle="Strategic Advisory FAQs"
           customCtaText="Weitere Fragen? Sprechen Sie mit uns"
         />
         
         <CTA
           lightBackground={true}
-          title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
-          subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
-          primaryCta="Projekt starten"
+          title="Bereit für Strategic Digital Transformation?"
+          subtitle="Vereinbaren Sie ein unverbindliches Strategiegespräch mit Uli Schönleber – Digital Strategy Lead mit 16+ Jahren Track Record."
+          primaryCta="Strategiegespräch vereinbaren"
         />
 
         {/* Standort Mainz, bundesweit aktiv */}
@@ -182,16 +183,16 @@ const GermanIndex = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                Standort Mainz – Bundesweit für Sie da
+                Standort Mainz – Strategic Advisory im gesamten DACH-Raum
               </h2>
               <div className="max-w-4xl mx-auto space-y-4">
                 <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, 
-                  <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir digitale Strategien, 
-                  die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
+                  Von unserem Standort in Mainz aus führen wir Digital Transformationen für B2B-Unternehmen in ganz Deutschland, 
+                  <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir Strategic Frameworks, 
+                  die messbare Business Outcomes liefern – unabhängig vom Standort unserer Kunden.
                 </p>
                 <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
-                  Unser Webdesign- und Marketing-Service verbindet persönliche Betreuung mit modernster Technologie. Als Digitalagentur bieten wir Ihnen den kompletten Service aus einer Hand – für lokale und überregionale Projekte.
+                  Unser Strategic Advisory verbindet C-Level Expertise mit hands-on Implementation Leadership. Als Digital Strategy Lead biete ich Ihnen End-to-End Begleitung – von Strategic Discovery über AI Integration bis zur messbaren Transformation.
                 </p>
                 
                 {/* Strategic outgoing links */}
