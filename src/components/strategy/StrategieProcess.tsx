@@ -11,7 +11,7 @@ const StrategieProcess = () => {
       icon: Search,
       number: "01",
       title: "Analyse & Strategie",
-      description: "Workshops mit Ihrem Team, Wettbewerbsanalyse, Marktpositionierung und klare Handlungsempfehlungen – wir schaffen strategische Klarheit für Ihre digitale Transformation."
+      description: "Wir führen Workshops mit Ihrem Team durch, analysieren den Wettbewerb und Ihre Marktpositionierung – gemeinsam schaffen wir strategische Klarheit für Ihre digitale Transformation."
     },
     {
       icon: Lightbulb,
@@ -29,7 +29,7 @@ const StrategieProcess = () => {
       icon: Rocket,
       number: "04",
       title: "Umsetzung & Führung",
-      description: "Koordination Ihres Teams, klare Anforderungen definieren, Qualitätssicherung und Performance-Optimierung – von der Strategie zur messbaren Umsetzung."
+      description: "Ich führe Ihr Team und koordiniere alle Beteiligten, wir definieren klare Anforderungen und stellen Qualität sicher – von der Strategie zur messbaren Umsetzung."
     }
   ];
 
@@ -38,10 +38,10 @@ const StrategieProcess = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
               Analyse → UX-Optimierung → KI-Integration → Umsetzung
             </h2>
-            <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               Der bewährte 4-Phasen-Prozess für digitale Transformation: Von der strategischen Grundlage über UX & KI-Integration bis zur erfolgreichen Umsetzung mit messbaren Geschäftsergebnissen.
             </p>
           </div>
@@ -50,7 +50,7 @@ const StrategieProcess = () => {
         <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-sm h-full">
+              <div className="bg-card rounded-2xl p-8 border border-border h-full">
                 <div className="flex items-center justify-center mb-6">
                   <div className="relative">
                     <Icon 
@@ -60,18 +60,18 @@ const StrategieProcess = () => {
                       background="strong"
                       className="text-primary"
                     />
-                    <div className="absolute -top-2 -right-2 bg-medico-darkGreen text-white text-sm font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+                    <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-sm font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-background">
                       {step.number}
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-medico-darkGreen text-center">{step.title}</h3>
-                <p className="text-medico-darkGreen/80 leading-relaxed text-center">{step.description}</p>
+                <h3 className="text-xl font-bold mb-4 text-foreground text-center">{step.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-center">{step.description}</p>
               </div>
               
               {/* Connector line for desktop */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-accent-primary/30 transform -translate-y-1/2"></div>
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-border transform -translate-y-1/2"></div>
               )}
             </div>
           ))}
