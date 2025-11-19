@@ -21,13 +21,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className={footerStyles.sectionHeading}>Strategische Services</h3>
+            <h3 className={footerStyles.sectionHeading}>Unsere Leistungen</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
-              <li><Link to="/strategie" className={footerStyles.linkText}>Digital Strategy & Transformation</Link></li>
-              <li><Link to="/ki-technologien" className={footerStyles.linkText}>AI-Enabled Business Transformation</Link></li>
-              <li><Link to="/produkt-ux-strategie" className={footerStyles.linkText}>Product & UX Strategy</Link></li>
-              <li><Link to="/methodik" className={footerStyles.linkText}>Methodik & Prozess</Link></li>
-              <li><Link to="/seo-optimierung" className={footerStyles.linkText}>SEO & Performance Strategy</Link></li>
+              <li><Link to="/strategie" className={footerStyles.linkText}>Digitale Strategie</Link></li>
+              <li><Link to="/webdesign" className={footerStyles.linkText}>Webdesign</Link></li>
+              <li><Link to="/ki-technologien" className={footerStyles.linkText}>KI-Integration</Link></li>
+              <li><Link to="/website-relaunch" className={footerStyles.linkText}>Website Relaunch</Link></li>
+              <li><Link to="/webentwicklung" className={footerStyles.linkText}>Webentwicklung</Link></li>
+              <li><Link to="/automatisierte-content-marketing" className={footerStyles.linkText}>Content Automation</Link></li>
+              <li><Link to="/seo-optimierung" className={footerStyles.linkText}>SEO-Optimierung</Link></li>
+              <li><Link to="/google-ads" className={footerStyles.linkText}>Google Ads</Link></li>
             </ul>
           </div>
 
