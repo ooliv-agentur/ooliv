@@ -58,7 +58,7 @@ const GermanStrategy = () => {
     >
       <EnhancedSEOHead
         title="Digitale Strategie für B2B | Strategic Discovery, Roadmap & Umsetzung | ooliv"
-        description="Strategische Analyse, Digital-Roadmap und Umsetzungsbegleitung für B2B-Unternehmen im DACH-Raum. Von der Discovery bis zum Go-Live. 16+ Jahre Expertise, 100+ erfolgreiche Projekte."
+        description="Strategische Beratung durch Uli und das ooliv-Team: Digital-Roadmap und Umsetzungsbegleitung für B2B-Unternehmen. Von der Discovery bis zum Go-Live. 16+ Jahre Expertise, persönlich & messbar."
         canonicalUrl="https://ooliv.de/strategie"
         keywords="Digitale Strategie, Strategic Discovery, Strategieberatung B2B, Digital Roadmap, UX Strategie, Digitale Transformation, Umsetzungsbegleitung, DACH, ooliv"
         breadcrumbs={breadcrumbs}

@@ -64,7 +64,7 @@ const GermanIndex = () => {
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
           title="Digitale Strategie & Transformation | Uli Schönleber + Team – B2B Digital-Beratung DACH"
-          description="Ihr Digital-Berater für messbare Ergebnisse im DACH-Raum. 16+ Jahre Expertise in digitaler Strategie, Webdesign, KI-Integration & Website-Relaunch. Persönliche Beratung mit professionellem Umsetzungsteam."
+          description="Uli Schönleber und das ooliv-Team: Digitale Strategie, Webdesign & KI-Integration für B2B im DACH-Raum. 16+ Jahre Expertise – persönliche Beratung mit messbaren Ergebnissen. Jetzt durchstarten!"
           keywords="Digitale Strategie, Digital Transformation, Website Relaunch, KI-Integration, Webdesign, B2B Digital-Beratung, DACH, Uli Schönleber, Digitale Beratung"
           ogImage="/og-home-de.jpg"
           canonicalUrl="https://ooliv.de/"

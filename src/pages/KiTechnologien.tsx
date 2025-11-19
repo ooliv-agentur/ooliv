@@ -93,7 +93,7 @@ const GermanAiTechnologies = () => {
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
         title="KI-Integration für B2B | Workflow-Automation & AI-Strategie | ooliv Mainz"
-        description="Strategische KI-Integration für B2B-Unternehmen im DACH-Raum. ✓ KI-Workflow-Automation ✓ LLM-Integration ✓ Messbare Effizienzgewinne. Von der Analyse bis zur Umsetzung."
+        description="KI-Integration durch Uli und das ooliv-Team: Workflow-Automation & AI-Strategie für B2B. Von der Use-Case-Analyse bis zur Production – messbare Effizienzgewinne, persönliche Beratung."
         canonicalUrl="https://ooliv.de/ki-technologien"
         keywords="KI-Integration, KI-Technologien, AI Integration, Workflow-Automation, LLM Integration, KI-Strategie, Business AI, KI Beratung, Mainz, DACH"
         breadcrumbs={breadcrumbs}

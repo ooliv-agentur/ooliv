@@ -84,7 +84,7 @@ const GermanCaseStudies = () => {
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
         title="Referenzen & Case Studies | ooliv Digitalagentur"
-        description="Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen."
+        description="Erfolgsgeschichten aus der Zusammenarbeit mit ooliv: B2B-Projekte von Uli und dem Team. Webdesign, SEO & Strategie mit messbaren Ergebnissen – echte Erfolge statt leerer Versprechen."
         canonicalUrl="https://ooliv.de/referenzen"
         keywords="Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland"
         breadcrumbs={breadcrumbs}

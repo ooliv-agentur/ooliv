@@ -63,7 +63,7 @@ const GermanAboutUs = () => {
     >
       <EnhancedSEOHead
         title="Über uns - Team & Expertise | ooliv Digital Consultancy"
-        description="Lernen Sie das Team hinter ooliv kennen. Digitale Strategie-Expertise mit 16+ Jahren Track Record. Persönliche Beratung, professionelle Umsetzung, messbare Ergebnisse (+240% Conversion Rates)."
+        description="Lernen Sie Uli Schönleber und das ooliv-Team kennen: 16+ Jahre Expertise in digitaler Strategie, Webdesign & KI-Integration. Persönliche Beratung mit messbaren Ergebnissen (+240% Conversion Rates)."
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
         keywords="ooliv Team, Digital Strategy, Uli Schönleber, Product & UX Strategy, Strategic Discovery, AI Integration, C-Level Advisory, Digitalagentur Mainz"
