@@ -16,16 +16,12 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   // Navigation links for German language
   const germanLinks = [
     { title: 'Home', path: '/' },
-    { title: 'Strategie', path: '/strategie' },
-    { title: 'Webdesign', path: '/webdesign' },
-    { title: 'Webentwicklung', path: '/webentwicklung' },
-    { title: 'Content-Erstellung', path: '/content-erstellung' },
-    { title: 'Content Automation', path: '/automatisierte-content-marketing' },
-    { title: 'SEO-Optimierung', path: '/seo-optimierung' },
-    { title: 'Google Ads', path: '/google-ads' },
-    { title: 'KI-Technologien', path: '/ki-technologien' },
-    { title: 'Case Studies', path: '/referenzen' },
-    { title: 'Über ooliv', path: '/ueber-uns' },
+    { title: 'Strategy & Transformation', path: '/strategie' },
+    { title: 'AI Integration', path: '/ki-technologien' },
+    { title: 'Product & UX Strategy', path: '/produkt-ux-strategie' },
+    { title: 'Methodik', path: '/methodik' },
+    { title: 'Transformationen', path: '/referenzen' },
+    { title: 'Über Uli', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
   ];
 

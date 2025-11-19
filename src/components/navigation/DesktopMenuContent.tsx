@@ -97,9 +97,9 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           >
             {/* Company name */}
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-medico-darkGreen mb-2">ooliv</h3>
+              <h3 className="text-2xl font-bold text-medico-darkGreen mb-2">Uli Schönleber</h3>
               <p className="text-lg text-medico-darkGreen/80">
-                {language === 'de' ? 'Digitalagentur aus Mainz' : 'Digital Agency from Mainz'}
+                {language === 'de' ? 'Digital Strategy Lead · AI-Driven Consultant' : 'Digital Strategy Lead · AI-Driven Consultant'}
               </p>
             </div>
             
