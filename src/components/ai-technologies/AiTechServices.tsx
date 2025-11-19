@@ -14,42 +14,42 @@ const AiTechServices = () => {
       icon: <Zap className="h-10 w-10" />,
       title: isGerman ? "KI-Potenzial für Ihr Business finden" : "LLM Use Case Identification",
       description: isGerman 
-        ? "Ich analysiere Ihre Prozesse und finde heraus, wo KI wirklich Sinn macht: Kundenservice-Chatbots, Content-Automation, smarte Workflows."
+        ? "Wir analysieren Ihre Prozesse und zeigen Ihnen, wo KI echten Mehrwert bringt. Ich begleite Sie persönlich bei der Auswahl der richtigen Use Cases – von Kundenservice bis Content-Automation."
         : "Strategic identification of high-impact LLM use cases for content, research, customer support, and business intelligence."
     },
     {
       icon: <Target className="h-10 w-10" />,
       title: isGerman ? "KI-Workflows entwickeln & implementieren" : "AI Workflow Strategy & Design",
       description: isGerman 
-        ? "Ich entwickle konkrete KI-Lösungen für Ihre Prozesse – von automatisierten Antwort-Systemen bis zu intelligenten Content-Pipelines."
+        ? "Wir entwickeln maßgeschneiderte KI-Lösungen für Ihre Prozesse. Ich koordiniere die Implementierung und stelle sicher, dass alles reibungslos läuft – von Antwort-Systemen bis zu Content-Pipelines."
         : "End-to-end AI workflow design: from RAG pipelines to multi-agent systems and custom AI applications."
     },
     {
       icon: <TrendingUp className="h-10 w-10" />,
       title: isGerman ? "Prozesse automatisieren & Zeit sparen" : "Automation & Efficiency Optimization",
       description: isGerman 
-        ? "Ich identifiziere repetitive Aufgaben und automatisiere sie mit KI – damit Ihr Team sich auf wichtigere Dinge konzentrieren kann."
+        ? "Wir identifizieren und automatisieren repetitive Aufgaben. Ihr Team gewinnt Zeit für strategische Arbeit – ich begleite den Change-Prozess persönlich und sorge für nachhaltige Integration."
         : "Strategic automation of repetitive processes: content production, data enrichment, quality control."
     },
     {
       icon: <Brain className="h-10 w-10" />,
       title: isGerman ? "Intelligente KI-Systeme aufbauen" : "RAG & Multi-Agent Strategy",
       description: isGerman 
-        ? "Ich entwickle smarte KI-Systeme, die auf Ihre Daten zugreifen und komplexe Aufgaben lösen können – z.B. intelligente FAQs oder Research-Assistenten."
+        ? "Wir entwickeln intelligente KI-Systeme, die auf Ihre Daten zugreifen. Ich stelle sicher, dass die Systeme Ihren Anforderungen entsprechen und sicher sind – z.B. FAQs oder Research-Assistenten."
         : "Design of intelligent RAG systems and multi-agent workflows for complex business requirements."
     },
     {
       icon: <FileText className="h-10 w-10" />,
       title: isGerman ? "Content-Produktion beschleunigen" : "AI-Driven Content & Research Pipelines",
       description: isGerman 
-        ? "Ich setze KI-gestützte Content-Prozesse auf – von der Recherche über Entwürfe bis zur Verbreitung. Schneller, aber ohne Qualitätsverlust."
+        ? "Wir setzen KI-gestützte Content-Workflows auf – von Recherche bis Distribution. Ich garantiere Qualität und Markenkonsistenz bei höherer Geschwindigkeit."
         : "Building strategic content pipelines: from AI-supported research to multi-channel content distribution."
     },
     {
       icon: <Users className="h-10 w-10" />,
       title: isGerman ? "Ihr Team für KI befähigen" : "Team Enablement & AI Training",
       description: isGerman 
-        ? "Ich zeige Ihrem Team, wie sie KI effektiv nutzen: praktische Schulungen, Best Practices und konkrete Tool-Empfehlungen."
+        ? "Wir schulen Ihr Team in effektiver KI-Nutzung. Ich leite die Trainings persönlich und stehe für Fragen zur Verfügung – praktische Schulungen, Best Practices und konkrete Tool-Empfehlungen."
         : "Training and enablement of your teams for effective AI usage: prompt engineering, tool selection, best practices."
     }
   ];
@@ -59,7 +59,7 @@ const AiTechServices = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            {isGerman ? "Wie ich KI für Sie nutzbar mache" : "Strategic AI Integration"}
+            {isGerman ? "Wie wir KI für Sie nutzbar machen" : "Strategic AI Integration"}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {isGerman 
