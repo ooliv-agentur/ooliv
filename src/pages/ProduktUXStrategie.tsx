@@ -27,24 +27,24 @@ const ProductUXStrategy = () => {
 
   const faq = [
     {
-      question: "Was ist der Unterschied zwischen Product Strategy und Product Management?",
-      answer: "Product Strategy definiert die langfristige Vision, Positionierung und strategische Roadmap – das 'Warum' und 'Was'. Product Management fokussiert auf die operative Umsetzung und Koordination – das 'Wie'. Als Digital Strategy Lead fokussiere ich auf die strategische Ebene: Vision, Discovery, Prioritization und Frameworks."
+      question: "Was bringt mir eine bessere Nutzerführung konkret?",
+      answer: "Mehr Anfragen über Ihre Website, weniger Absprünge, schnellere Kaufentscheidungen. Typische Ergebnisse meiner Kunden: +150–300% mehr Conversions, +80–200% bessere Lead-Qualität, -30–50% kürzere Entscheidungszeiten. Ihre Website wird vom Informations-Friedhof zum Lead-Generator."
     },
     {
-      question: "Wie misst ihr den ROI von UX-Investitionen?",
-      answer: "Durch klare KPI-Frameworks: Conversion Rate Improvements, Lead Quality Metrics, Time-to-Decision Reduction, Feature Adoption Rates und User Satisfaction Scores. Beispiel: Eine strukturierte UX-Transformation führte zu +240% Conversion Rate und +180% Lead Quality bei einem B2B-Client."
+      question: "Wie finden Sie heraus, was meine Nutzer wirklich wollen?",
+      answer: "Durch echte Gespräche mit Ihren Kunden und Zielgruppen – keine Bauchgefühl-Entscheidungen. Wir führen strukturierte Interviews, analysieren das Nutzerverhalten auf Ihrer Website und testen konkrete Lösungen. Sie bekommen klare Erkenntnisse, keine Vermutungen."
     },
     {
-      question: "Welche User Research Methoden nutzt ihr?",
-      answer: "Kombinierte Methodology: Qualitative Research (User Interviews, Jobs-to-be-Done), quantitative Validation (Surveys, Analytics), Usability Testing und evidenzbasierte Persona Development. Die Methode wird projekt-spezifisch gewählt – basierend auf Research Questions und Validation Goals."
+      question: "Brauche ich wirklich einen Strategie-Workshop?",
+      answer: "Wenn Ihre Website nicht die gewünschten Ergebnisse bringt oder Sie unsicher sind, was als nächstes kommt – ja. In 4–8 Wochen entwickeln wir ein fundiertes Konzept mit klarer Roadmap. Das spart Ihnen später Zeit, Geld und Nerven – und führt zu besseren Ergebnissen."
     },
     {
-      question: "Wie lange dauert ein typisches Product Strategy Projekt?",
-      answer: "Product Discovery & Strategy: 4-8 Wochen für Vision, Opportunity Mapping und initiale Roadmap. End-to-End Product & UX Strategy: 8-16 Wochen für vollständige Strategic Discovery, User Research, IA-Entwicklung und Validation. Abhängig von Scope und Komplexität."
+      question: "Was kostet so eine Produkt- und UX-Strategie?",
+      answer: "Ein fokussierter Workshop mit Konzept startet bei €15.000–25.000. Umfassende Strategieprojekte mit User Research und detaillierter Roadmap liegen bei €30.000–50.000. Sie erhalten vorab ein transparentes Angebot – und wissen genau, was Sie bekommen."
     },
     {
-      question: "Was sind typische Outcomes einer UX-Transformation?",
-      answer: "Messbare Business Impacts: Höhere Conversion Rates (+150-300%), verbesserte Lead Quality (+80-200%), reduzierte Time-to-Decision (-30-50%), höhere Feature Adoption (+100-250%). Plus: Skalierbare Design Systems, evidenzbasierte Product Decisions und strukturierte UX-Prozesse."
+      question: "Wie lange dauert die Entwicklung eines neuen Konzepts?",
+      answer: "Die Strategie-Phase dauert 4–8 Wochen: Analyse, User Research, Konzeptentwicklung. Die komplette Umsetzung mit Design und Entwicklung dauert dann 8–16 Wochen – abhängig vom Umfang. Sie erhalten einen klaren Zeitplan vor Projektstart."
     }
   ];
 

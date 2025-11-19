@@ -27,24 +27,24 @@ import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSc
 
 const strategicFaqs = [
   {
-    question: "Was ist Strategic Discovery und wann macht sie Sinn?",
-    answer: "Strategic Discovery ist eine intensive 4–6-wöchige Phase, in der wir Ihre Business Challenges systematisch analysieren, User Research durchführen und eine fundierte Digital Strategy entwickeln. Sie macht Sinn, wenn Sie vor einer Digital Transformation stehen, neue Produkte launchen oder bestehende Systeme strategisch optimieren wollen. Investment: €15k–25k."
+    question: "Was kostet eine professionelle Website?",
+    answer: "Eine strategisch entwickelte B2B-Website startet bei €15.000–25.000 für Strategie-Workshop, Konzept und Design. Komplexe Projekte mit individuellen Funktionen liegen bei €30.000–80.000. Wir arbeiten transparent mit Festpreis – Sie wissen vorher, was Sie bekommen und was es kostet."
   },
   {
-    question: "Wie unterscheidet sich Product & UX Strategy von klassischem Webdesign?",
-    answer: "Klassisches Webdesign fokussiert auf visuelle Gestaltung. Product & UX Strategy beginnt mit Strategic Discovery, User Journey Mapping, Business Model Validation und resultiert in einem datengetriebenen, conversion-optimierten Digital Product. Wir arbeiten nicht nach Templates, sondern entwickeln maßgeschneiderte Strategic Frameworks für Ihr Business."
+    question: "Wie lange dauert ein Website-Projekt?",
+    answer: "Ein typisches Projekt dauert 8–12 Wochen: 2 Wochen Strategie & Konzept, 3–4 Wochen Design & Entwicklung, 2 Wochen Testing & Optimierung, 1 Woche Launch-Vorbereitung. Bei komplexeren Projekten planen wir 3–4 Monate ein. Sie erhalten einen klaren Zeitplan vor Projektstart."
   },
   {
-    question: "Welche Business Outcomes kann ich erwarten?",
-    answer: "Basierend auf 16+ Jahren Track Record: durchschnittlich +240% Conversion Rate nach Strategic Discovery & UX Optimization, +180% Lead Quality durch Strategic Positioning, und -45% Time-to-Decision bei C-Level Stakeholders durch klare Strategic Roadmaps. Jedes Projekt ist individuell – nutzen Sie unseren ROI Calculator für Ihre Projektionen."
+    question: "Kann ich die Website später selbst pflegen?",
+    answer: "Ja! Wir setzen auf benutzerfreundliche Content-Management-Systeme. Nach dem Launch schulen wir Sie persönlich – Sie können dann selbstständig Texte, Bilder und News aktualisieren. Für komplexere Änderungen unterstützen wir Sie gerne im Rahmen eines Wartungsvertrags."
   },
   {
-    question: "Wie funktioniert die Zusammenarbeit bei einem Strategic Retainer?",
-    answer: "Strategic Retainer (€8k–15k/Monat) ist eine langfristige C-Level Advisory Partnership. Sie erhalten kontinuierlichen Zugang zu Strategic Consulting, Ongoing Optimization, AI Integration Support und Innovation Leadership. Ideal für Unternehmen, die Digital Transformation als continuous Journey verstehen, nicht als One-time Project."
+    question: "Bekomme ich auch Unterstützung nach dem Launch?",
+    answer: "Definitiv! Wir bieten verschiedene Betreuungspakete: Von monatlicher Wartung (ab €500/Monat) über kontinuierliche Optimierung (€2.000–5.000/Monat) bis zu strategischer Begleitung (€8.000–15.000/Monat). Sie entscheiden, wie viel Unterstützung Sie brauchen."
   },
   {
-    question: "Für welche Unternehmen ist dieses Engagement-Modell geeignet?",
-    answer: "Unser Strategic Advisory richtet sich an B2B-Unternehmen im DACH-Raum, die digitale Transformation ernst nehmen. Typische Kunden: Tech-Startups mit Product-Market Fit Challenges, Mittelstand vor Digital Transformation, etablierte Unternehmen mit Innovation Gaps. Investment-Range: €15k–80k für Transformations-Projekte, €8k–15k/Monat für Strategic Retainer."
+    question: "Was unterscheidet Sie von anderen Agenturen?",
+    answer: "Sie arbeiten direkt mit einem erfahrenen Digital-Berater – keine Junior-Mitarbeiter, keine ewigen Abstimmungsschleifen. 16+ Jahre Erfahrung, messbare Ergebnisse statt schöner Worte, und ehrliche Beratung: Wenn etwas keinen Sinn macht, sage ich das offen."
   }
 ];
 

@@ -5,44 +5,44 @@ import FAQ from '@/components/FAQ';
 const StrategieFAQ = () => {
   const strategieFaqs = [
     {
-      question: "Was bedeutet Strategic Discovery konkret?",
-      answer: "Strategic Discovery ist der strukturierte Prozess zur Identifikation strategischer Opportunities. Durch Stakeholder Interviews, Competitive Analysis und Value Hypothesis Development schaffen wir strategische Klarheit – mit validiertem Business Case und klarer Roadmap."
+      question: "Was kostet eine strategische Digitalberatung?",
+      answer: "Ein Strategie-Workshop mit Konzept startet bei €15.000–25.000. Umfassende Transformationsprojekte mit Umsetzung liegen bei €30.000–80.000. Für kontinuierliche Begleitung bieten wir monatliche Retainer ab €8.000/Monat. Sie erhalten vorab ein transparentes Angebot mit klaren Leistungen."
     },
     {
-      question: "Wie unterscheidet sich UX Strategy von normalem Design?",
-      answer: "UX Strategy ist mehr als Design – es ist die strategische Übersetzung von User Needs in Business Value. Durch User Research, Journey Mapping und Conversion-fokussierte Konzepte schaffen wir messbare Business Outcomes: +180% Lead Quality, +240% Conversion."
+      question: "Wie lange dauert so eine strategische Begleitung?",
+      answer: "Die erste Strategie-Phase dauert 3–6 Wochen: Wir analysieren Ihre Situation, entwickeln ein Konzept und definieren konkrete nächste Schritte. Bei kompletten Projekten planen wir 3–5 Monate ein. Sie erhalten einen detaillierten Zeitplan vor Projektstart."
     },
     {
-      question: "Was beinhaltet Implementation Leadership?",
-      answer: "Als Implementation Leader koordiniere ich internationale Teams (Design, Development, Content), sichere Qualität durch Requirements Engineering und QA, und garantiere messbare Outcomes. Von Sprint Planning bis Performance Optimization – on-time, on-budget."
+      question: "Was genau bekomme ich am Ende?",
+      answer: "Keine abstrakten PowerPoint-Präsentationen, sondern: Klare Handlungsempfehlungen, eine priorisierte Roadmap, konkrete Maßnahmen mit Zeitplan und Budget, plus direkter Austausch mit mir. Optional übernehme ich auch die komplette Umsetzung mit meinem Team."
     },
     {
-      question: "Für welche Unternehmen ist diese Strategic Advisory relevant?",
-      answer: "Für B2B-Unternehmen im DACH-Raum, die digitale Transformation strategisch angehen wollen – mit C-Level Involvement, Budget €50k+, und dem Anspruch auf messbare Business Outcomes statt nur 'schöne Websites'."
+      question: "Lohnt sich das für mein Unternehmen?",
+      answer: "Wenn Ihre Website keine Anfragen bringt, Sie vor einer digitalen Neuausrichtung stehen, oder ein wichtiges Projekt sichern wollen – dann ja. Meine Kunden berichten von durchschnittlich +180% mehr qualifizierten Anfragen nach der Umsetzung unserer Empfehlungen."
     },
     {
-      question: "Wie lange dauert eine Strategic Discovery Phase?",
-      answer: "Je nach Scope 3-6 Wochen. Einfache Discovery-Workshops benötigen 3-4 Wochen, komplexere Transformationsprojekte mit mehreren Stakeholdern 5-6 Wochen. Sie erhalten einen klaren Zeitplan als Teil des Proposals."
+      question: "Arbeiten Sie nur beratend oder setzen Sie auch um?",
+      answer: "Beides! Ich kann rein strategisch beraten – oder die komplette Umsetzung mit koordinieren: Von Design über Entwicklung bis zum Launch. Sie entscheiden, wie viel Unterstützung Sie brauchen."
     },
     {
-      question: "Was kostet Strategic Discovery und Advisory?",
-      answer: "Strategic Discovery startet bei €15.000-25.000 für umfassende Stakeholder Interviews, Competitive Analysis und Strategic Roadmap. End-to-End Transformation Projekte werden individuell kalkuliert. Strategic Retainer €8.000-15.000/Monat für kontinuierliche Advisory."
+      question: "Was unterscheidet Sie von klassischen Agenturen?",
+      answer: "Sie arbeiten direkt mit mir – einem erfahrenen Digital-Berater mit 16+ Jahren Erfahrung. Keine Junior-Berater, keine Agentur-Hierarchien, keine Bullshit-Bingo. Dafür ehrliche Beratung, klare Ansagen und messbare Ergebnisse."
     },
     {
-      question: "Arbeiten Sie nur strategisch oder auch in der Umsetzung?",
-      answer: "Beides! Als Implementation Leader übernehme ich nicht nur Strategic Discovery und UX Strategy, sondern koordiniere auch die komplette Umsetzung mit internationalen Teams – von der ersten User Story bis zum Launch."
+      question: "Können Sie auch laufende Projekte retten?",
+      answer: "Ja! Ich helfe regelmäßig bei Projekten, die feststecken oder in die falsche Richtung laufen. Nach einem Quick-Check (1–2 Wochen) gebe ich Ihnen klare Empfehlungen – und unterstütze bei Bedarf bei der Korrektur."
     },
     {
-      question: "Wie messen Sie den Erfolg der Digital Transformation?",
-      answer: "Mit klaren KPI-Frameworks: Lead Quality, Conversion Rates, Time-to-Market, Performance Metrics. Keine Vanity Metrics – wir definieren Business Outcomes und tracken sie kontinuierlich. Beispiel: +180% Lead Quality, +240% Traffic für reale Kunden."
+      question: "Wie messen wir den Erfolg?",
+      answer: "Mit klaren, nachvollziehbaren Kennzahlen: Mehr Anfragen über die Website, bessere Qualität der Leads, höhere Conversion-Raten, schnellere Entscheidungsprozesse. Keine Vanity-Metriken – wir tracken, was für Ihr Business wirklich zählt."
     },
     {
-      question: "Was unterscheidet Ihre Strategic Advisory von klassischen Agenturen?",
-      answer: "Kein Agentur-Overhead, keine Junior-Berater. Sie sprechen direkt mit dem Digital Strategy Lead mit 16+ Jahren Erfahrung. Fokus auf messbare Business Outcomes statt nur Deliverables. Strategic Thinking + Hands-on Implementation."
+      question: "Brauchen wir regelmäßige Meetings?",
+      answer: "In der Strategie-Phase: Ja, wir sprechen wöchentlich. Bei laufender Betreuung reichen oft 2–4 Meetings pro Monat. Ich bin aber jederzeit per E-Mail oder Slack erreichbar – kurze Abstimmungen gehen schnell und unkompliziert."
     },
     {
-      question: "Können Sie auch bei laufenden Projekten als Strategic Advisor einsteigen?",
-      answer: "Ja! Ich unterstütze als Strategic Advisor bei Rescue-Projekten, optimiere bestehende Roadmaps, oder übernehme Implementation Leadership für Teams, die strategische Führung brauchen. Quick Assessment + Strategic Recommendations innerhalb 2 Wochen."
+      question: "Was passiert nach dem Projekt?",
+      answer: "Das entscheiden Sie: Entweder übergebe ich alles vollständig an Ihr Team – oder wir vereinbaren eine kontinuierliche Begleitung. Viele Kunden nutzen einen monatlichen Retainer für laufende Optimierung und strategische Beratung."
     }
   ];
 
