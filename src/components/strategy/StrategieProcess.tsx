@@ -10,26 +10,26 @@ const StrategieProcess = () => {
     {
       icon: Search,
       number: "01",
-      title: "Strategic Discovery",
-      description: "Stakeholder Interviews, Opportunity Mapping, Competitive Analysis und Value Hypothesis Development – wir schaffen strategische Klarheit für Ihre digitale Transformation."
+      title: "Analyse & Strategie",
+      description: "Workshops mit Ihrem Team, Wettbewerbsanalyse, Marktpositionierung und klare Handlungsempfehlungen – wir schaffen strategische Klarheit für Ihre digitale Transformation."
     },
     {
       icon: Lightbulb,
       number: "02", 
-      title: "UX & Product Strategy",
-      description: "Customer Journey Design, Information Architecture und Conversion Strategy – von der User Research bis zur Decision-Making UX für messbare Business Outcomes."
+      title: "UX & Nutzerführung",
+      description: "Customer Journey Design, Informationsarchitektur und Conversion-Optimierung – vom Nutzerverhalten bis zur strategischen Umsetzung für messbare Geschäftsergebnisse."
     },
     {
       icon: PenTool,
       number: "03",
-      title: "AI Integration & Automation",
-      description: "LLM Use Case Identification, Workflow Optimization und AI-Driven Content Pipelines – strategische AI-Enablement für Effizienzgewinne und Skalierung."
+      title: "KI-Integration & Automation",
+      description: "KI-Anwendungsfälle identifizieren, Prozesse optimieren und intelligente Content-Workflows aufbauen – strategischer KI-Einsatz für Effizienzgewinne und Skalierung."
     },
     {
       icon: Rocket,
       number: "04",
-      title: "Implementation Leadership",
-      description: "Koordination internationaler Teams, Requirements Engineering, Quality Assurance und Performance Optimization – von der Strategie zur messbaren Umsetzung."
+      title: "Umsetzung & Führung",
+      description: "Koordination Ihres Teams, klare Anforderungen definieren, Qualitätssicherung und Performance-Optimierung – von der Strategie zur messbaren Umsetzung."
     }
   ];
 
@@ -39,10 +39,10 @@ const StrategieProcess = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
-              Strategic Discovery → UX Strategy → AI Integration → Implementation
+              Analyse → UX-Optimierung → KI-Integration → Umsetzung
             </h2>
             <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
-              Unser bewährter 4-Phasen-Prozess für digitale Transformation: Von der strategischen Grundlage über UX & AI-Integration bis zur erfolgreichen Umsetzung mit messbaren Business Outcomes.
+              Der bewährte 4-Phasen-Prozess für digitale Transformation: Von der strategischen Grundlage über UX & KI-Integration bis zur erfolgreichen Umsetzung mit messbaren Geschäftsergebnissen.
             </p>
           </div>
         </Reveal>
