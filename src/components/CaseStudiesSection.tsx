@@ -100,7 +100,7 @@ interface CaseStudiesSectionProps {
 }
 
 const defaultTranslations = {
-  title: "Transformationen, die wir geleitet haben",
+  title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
   subtitle: "Strategische Digital-Projekte mit messbaren Business-Outcomes",
   bodyText: "Von der Strategic Challenge über strukturierte Umsetzung bis zu messbaren Ergebnissen – End-to-End Digital Transformation für B2B-Unternehmen.",
   ctaText: "Welche Transformation dürfen wir für Ihr Unternehmen leiten?",

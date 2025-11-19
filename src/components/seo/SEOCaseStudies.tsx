@@ -22,7 +22,7 @@ const SEOCaseStudies = () => {
       viewAll: "View All Case Studies"
     },
     de: {
-      title: "Echte SEO-Ergebnisse für echte Unternehmen",
+      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
       subtitle: "Sehen Sie, wie unsere SEO-Strategien aus Mainz messbare Geschäftsergebnisse erzielen.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen"
