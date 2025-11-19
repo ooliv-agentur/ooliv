@@ -27,9 +27,9 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
     { title: 'KI-Integration', path: '/ki-technologien' },
-    { title: 'Referenzen', path: '/referenzen' },
-    { title: 'Über Uli', path: '/ueber-uns' },
-    { title: 'Kontakt', path: '/kontakt' }
+    { title: 'Transformationen', path: '/referenzen' },
+    { title: 'Über uns', path: '/ueber-uns' },
+    { title: 'Strategiegespräch', path: '/kontakt' }
   ];
 
   // Navigation links for English language
