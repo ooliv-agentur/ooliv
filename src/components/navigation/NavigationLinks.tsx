@@ -23,21 +23,10 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   // Navigation links for German language
   const germanLinks: NavLink[] = [
     { title: 'Home', path: '/' },
-    { title: 'Digitale Transformation', path: '/strategie' },
-    { 
-      title: 'Leistungen', 
-      path: '#',
-      subItems: [
-        { title: 'Digitale Strategie', path: '/strategie' },
-        { title: 'Website Relaunch', path: '/website-relaunch' },
-        { title: 'Webdesign', path: '/webdesign' },
-        { title: 'Webentwicklung', path: '/webentwicklung' },
-        { title: 'KI-Integration', path: '/ki-technologien' },
-        { title: 'Content Automation', path: '/automatisierte-content-marketing' },
-        { title: 'SEO-Optimierung', path: '/seo-optimierung' },
-        { title: 'Google Ads', path: '/google-ads' },
-      ]
-    },
+    { title: 'Digitale Strategie', path: '/strategie' },
+    { title: 'Webdesign', path: '/webdesign' },
+    { title: 'KI-Integration', path: '/ki-technologien' },
+    { title: 'Website Relaunch', path: '/website-relaunch' },
     { title: 'Referenzen', path: '/referenzen' },
     { title: 'Über Uli', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
