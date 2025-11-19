@@ -30,7 +30,7 @@ const WebDesignFAQ = () => {
     },
     {
       question: "Schreiben Sie auch die Texte für meine Website?",
-      answer: "Ja, professionelle Content-Erstellung gehört zum Service. Wir entwickeln gemeinsam mit Ihnen SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen. Ich koordiniere den Content-Prozess persönlich und stelle sicher, dass Ihre Botschaft klar rüberkommt."
+      answer: "Ja, professionelle Content-Erstellung gehört zum Service. Wir entwickeln gemeinsam mit Ihnen SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen. Ich koordiniere den Content-Prozess persönlich mit unserem Content-Team und stelle sicher, dass Ihre Botschaft klar rüberkommt."
     },
     {
       question: "Wird meine Website auch bei Google gefunden?",
@@ -46,7 +46,7 @@ const WebDesignFAQ = () => {
     },
     {
       question: "Was passiert nach dem Launch der Website?",
-      answer: "Das entscheiden Sie: Vollständige Übergabe an Ihr Team – oder laufende Betreuung durch mich. Viele Kunden nutzen monatliche Wartungsverträge (ab 500€/Monat) für technische Updates, Performance-Optimierung und Content-Erweiterungen."
+      answer: "Das entscheiden Sie: Vollständige Übergabe an Ihr Team – oder laufende Betreuung durch unser Team. Ich bleibe Ihr persönlicher Ansprechpartner, während unser Team technische Updates, Performance-Optimierung und Content-Erweiterungen übernimmt. Viele Kunden nutzen monatliche Wartungsverträge für kontinuierliche Optimierung."
     }
   ] : [
     {
