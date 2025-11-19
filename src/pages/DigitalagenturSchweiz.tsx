@@ -10,7 +10,6 @@ import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 // Import all dedicated Schweiz components
 import SchweizHero from '@/components/de/SchweizHero';
 import SchweizAboutSection from '@/components/de/SchweizAboutSection';
-import SchweizPricing from '@/components/de/SchweizPricing';
 import SchweizCaseStudies from '@/components/de/SchweizCaseStudies';
 import SchweizFAQ from '@/components/de/SchweizFAQ';
 
@@ -51,28 +50,9 @@ const DigitalagenturSchweiz = () => {
           description="Digital Strategy Lead für Schweizer B2B-Unternehmen. Strategic Discovery, AI Integration, Product & UX Strategy aus Deutschland für die Schweiz."
           serviceType="ProfessionalService"
           areaServed={["Schweiz", "Zürich", "Bern", "Basel", "DACH-Region"]}
-          priceRange="CHF 17000-CHF 90000"
-          offers={[
-            {
-              name: "Strategic Discovery Schweiz",
-              description: "4-6 Wochen Strategic Discovery Phase für Schweizer B2B-Unternehmen",
-              priceRange: "CHF 17000-CHF 28000"
-            },
-            {
-              name: "Product & UX Strategy Schweiz",
-              description: "End-to-End Product & UX Transformation für den Schweizer Markt",
-              priceRange: "CHF 45000-CHF 90000"
-            },
-            {
-              name: "AI Integration Schweiz",
-              description: "Strategic AI Integration Advisory für Schweizer KMUs",
-              priceRange: "CHF 20000-CHF 50000"
-            }
-          ]}
         />
         <SchweizHero />
         <SchweizAboutSection />
-        <SchweizPricing />
         <SchweizTeamSection />
         <SchweizBeforeAfterSection />
         <SchweizFullServiceTeaser />

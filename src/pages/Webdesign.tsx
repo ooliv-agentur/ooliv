@@ -38,24 +38,6 @@ const GermanWebDesign = () => {
           serviceName="Webdesign & Website-Entwicklung"
           description="Professionelles Webdesign und Website-Entwicklung für B2B-Unternehmen. Individuelle, responsive Websites die konvertieren."
           serviceType="WebDesign"
-          priceRange="€4000-€15000"
-          offers={[
-            {
-              name: "Einfache Website",
-              description: "Professionelle Website für kleine Unternehmen",
-              priceRange: "€5000-€8000"
-            },
-            {
-              name: "Business Website",
-              description: "Umfangreiche Website mit SEO-Optimierung",
-              priceRange: "€8000-€15000"
-            },
-            {
-              name: "E-Commerce Website",
-              description: "Online-Shop mit erweiterten Funktionen",
-              priceRange: "€12000-€25000"
-            }
-          ]}
         />
         
         {/* FAQ Schema für Webdesign */}
@@ -72,7 +54,7 @@ const GermanWebDesign = () => {
                     "name": "Was kostet professionelles Webdesign?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Unsere Websites starten bei €6.000 für einen strategischen Onepager mit modernem Design und mobiloptimiert. Business-Websites mit mehreren Seiten, SEO-optimiert und Content-Strategie beginnen bei €10.000. Enterprise-Projekte mit multilingual, Shop-Integration und komplexen Funktionen starten bei €15.000+."
+                      "text": "Die Kosten für professionelles Webdesign variieren je nach Umfang, Anforderungen und Komplexität des Projekts. Nach einem kostenlosen Erstgespräch erstellen wir Ihnen ein transparentes, individuelles Angebot, das exakt auf Ihre Bedürfnisse zugeschnitten ist."
                     }
                   },
                   {
@@ -95,42 +77,6 @@ const GermanWebDesign = () => {
         <WebDesignBuildOptions />
         <WebDesignProcess />
 
-        {/* Budget & Preis-Transparenz Section */}
-        <section className="py-16 bg-background">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
-              Was kostet professionelles Webdesign?
-            </h2>
-            <TurquoiseCard variant="soft" className="p-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-turquoise mb-2">€6.000</div>
-                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Starter-Website</TurquoiseBadge>
-                  <p className="text-sm text-muted-foreground">
-                    Strategischer Onepager mit modernem Design, mobiloptimiert
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-turquoise mb-2">€10.000</div>
-                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Business-Website</TurquoiseBadge>
-                  <p className="text-sm text-muted-foreground">
-                    Mehrere Seiten, SEO-optimiert, Content-Strategie inklusive
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-turquoise mb-2">€15.000+</div>
-                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Enterprise</TurquoiseBadge>
-                  <p className="text-sm text-muted-foreground">
-                    Multilingual, Shop-Integration, komplexe Funktionen
-                  </p>
-                </div>
-              </div>
-              <p className="text-center text-sm text-muted-foreground mt-6">
-                Alle Preise verstehen sich als Startpunkt. Wir erstellen individuelle Angebote basierend auf Ihren Anforderungen.
-              </p>
-            </TurquoiseCard>
-          </div>
-        </section>
 
         <p className="text-center text-sm text-medico-darkGreen mt-4">
           Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
