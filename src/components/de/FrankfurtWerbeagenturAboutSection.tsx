@@ -36,7 +36,7 @@ const FrankfurtWerbeagenturAboutSection = () => {
       headline="Strategic Digital Advisory Frankfurt"
       description="Frankfurt ist Deutschlands Business-Hub – von Banken über internationale Konzerne bis zur wachsenden Startup-Szene. Wir entwickeln Strategic Frameworks, die diesem Anspruch gerecht werden: skalierbar, professionell und mit klarem ROI-Focus. 16+ Jahre Track Record in Digital Strategy Leadership."
       services={services}
-      ctaText="Strategiegespräch vereinbaren"
+      ctaText="Mit ooliv durchstarten"
       ctaLink="/kontakt"
       gridCols={4}
     />

@@ -37,7 +37,7 @@ const MainzAboutSection = () => {
       headline="Strategic Digital Advisory in Mainz"
       description="Von unserem Standort in Mainz aus führen wir Digital Transformationen für B2B-Unternehmen im gesamten DACH-Raum. 16+ Jahre Track Record in Strategic Discovery, AI Integration und Product & UX Strategy – kein klassisches Agentur-Modell, sondern C-Level Strategic Leadership."
       services={services}
-      ctaText="Strategiegespräch vereinbaren"
+      ctaText="Mit ooliv durchstarten"
       ctaLink="/kontakt"
       servicesHeadline="Strategic Advisory Services"
       gridCols={4}

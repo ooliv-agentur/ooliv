@@ -8,7 +8,7 @@ interface StickyCTAProps {
 }
 
 const StickyCTA: React.FC<StickyCTAProps> = ({ 
-  text = "Kostenloses Strategiegespräch",
+  text = "Mit ooliv durchstarten",
   onClick
 }) => {
   const [isVisible, setIsVisible] = useState(false);

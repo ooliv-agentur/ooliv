@@ -64,7 +64,7 @@ const StrategicChallengesSection = () => {
             size="lg"
             className="text-lg px-8"
           >
-            Kostenloses Strategiegespräch vereinbaren
+            Mit ooliv durchstarten
           </Button>
           <p className="text-sm text-muted-foreground mt-3">
             30 Min. unverbindlich – wir besprechen Ihre Situation und ich zeige Ihnen konkrete Ansätze

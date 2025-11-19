@@ -84,7 +84,7 @@ const WiesbadenLeistungen = () => {
             </p>
             <Button variant="primary" size="lg" className="group" asChild>
               <Link to="/kontakt">
-                Strategiegespräch vereinbaren
+                Mit ooliv durchstarten
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

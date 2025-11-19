@@ -121,7 +121,7 @@ const InvestmentRecommendation: React.FC<InvestmentRecommendationProps> = ({ res
           onClick={handleStartProject}
           className="group"
         >
-          Kostenloses Strategiegespräch vereinbaren
+          Mit ooliv durchstarten
           <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
         </Button>
         <Button

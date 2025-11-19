@@ -26,7 +26,7 @@ const WebDevHero = () => {
         : "Web development in Mainz: Scalable, secure, and search-optimized websites – from custom WordPress to pure code that drives real business results."
       }
       primaryCta={{
-        text: "Projekt starten",
+        text: "Mit ooliv durchstarten",
         link: "#",
         onClick: handleStartProject
       }}

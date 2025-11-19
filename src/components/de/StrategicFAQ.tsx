@@ -92,7 +92,7 @@ const StrategicFAQ: React.FC<StrategicFAQProps> = ({ location }) => {
                 className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300"
               >
                 <ArrowRight className="h-4 w-4" />
-                Strategiegespräch vereinbaren
+                Mit ooliv durchstarten
               </button>
             </div>
           </div>

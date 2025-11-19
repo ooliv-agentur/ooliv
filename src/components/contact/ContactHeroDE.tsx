@@ -52,7 +52,7 @@ const ContactHeroDE = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleStartProject}
               >
-                Projekt starten
+                Mit ooliv durchstarten
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               
