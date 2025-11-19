@@ -33,7 +33,7 @@ const ContactHeroDE = () => {
                 color: '#003343' 
               }}
             >
-              Kontaktieren Sie ooliv direkt
+              Sprechen Sie direkt mit Uli und dem ooliv-Team
             </h1>
             
             {/* Subtitle */}

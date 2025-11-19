@@ -16,19 +16,9 @@ const ContactProjectSectionDE = () => {
           Projekt-Details über unser Formular teilen
         </h2>
         <Button 
+          variant="primary"
           size="lg" 
-          className="font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-          style={{ 
-            backgroundColor: '#FFD700', 
-            color: '#003347',
-            border: 'none'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#FFC700';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#FFD700';
-          }}
+          className="group"
           onClick={handleStartProject}
         >
           Projektanfrage stellen
