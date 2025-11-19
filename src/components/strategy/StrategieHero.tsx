@@ -9,15 +9,15 @@ const StrategieHero = () => {
 
   return (
     <PageHero
-      title="Digitale Strategie? Klingt teuer. Ist aber notwendig."
-      subtitle="Digitalagentur Mainz: Wir entwickeln klare Digitalstrategien, die zu Ihrem Budget passen – mit messbaren Zielen, realistischen Timelines und ohne Marketing-Geschwätz."
+      title="Digital Strategy & Transformation"
+      subtitle="End-to-End Digital Strategy für B2B-Unternehmen. Von der Strategic Discovery über UX-Strategie bis zur messbaren Umsetzung – C-Level Advisory mit 16+ Jahren Erfahrung."
       primaryCta={{
-        text: "Strategie entwickeln lassen",
+        text: "Strategiegespräch vereinbaren",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Strategie-Beispiele",
+        text: "Transformationen ansehen",
         link: "/referenzen"
       }}
     />

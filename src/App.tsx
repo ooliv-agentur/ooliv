@@ -40,6 +40,7 @@ const GermanDarmstadt = lazy(() => import('./pages/WerbeagenturDarmstadt'));
 const DigitalagenturSchweiz = lazy(() => import('./pages/DigitalagenturSchweiz'));
 const Klickbetrug = lazy(() => import('./pages/Klickbetrug'));
 const Strategie = lazy(() => import('./pages/Strategie'));
+const ProductUXStrategy = lazy(() => import('./pages/ProduktUXStrategie'));
 const CookieRichtlinie = lazy(() => import('./pages/CookieRichtlinie'));
 const Artikel = lazy(() => import('./pages/Artikel'));
 const LatestContent = lazy(() => import('./pages/LatestContent'));
@@ -119,6 +120,7 @@ function App() {
                       <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
                       <Route path="/kontakt" element={<GermanContact />} />
                       <Route path="/strategie" element={<Strategie />} />
+                      <Route path="/produkt-ux-strategie" element={<ProductUXStrategy />} />
                       <Route path="/seo-optimierung" element={<GermanSEO />} />
                       <Route path="/content-erstellung" element={<GermanContentCreation />} />
                       <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />

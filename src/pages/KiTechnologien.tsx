@@ -63,10 +63,10 @@ const GermanAiTechnologies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="KI-Agentur Mainz: KI-Tools, Strategien & Prozessoptimierung"
-        description="ooliv Werbeagentur entwickelt B2B-Websites, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads & Content-Marketing aus Mainz. Jetzt Kontakt aufnehmen."
+        title="AI-Enabled Business Transformation | LLM Integration | ooliv"
+        description="Strategische AI-Integration für B2B: LLM Use Cases, AI Workflow Strategy, Automation und messbare Effizienzgewinne durch intelligente AI-Transformation."
         canonicalUrl="https://ooliv.de/ki-technologien"
-        keywords="KI Agentur Mainz, Artificial Intelligence, ChatGPT, Midjourney, Automatisierung"
+        keywords="AI Transformation, LLM Integration, AI Workflow Strategy, AI Automation, Business AI"
         breadcrumbs={breadcrumbs}
       />
 
@@ -84,10 +84,11 @@ const GermanAiTechnologies = () => {
       
       <FAQ customFaqs={aiFaqs} />
       <CTA 
-        title="KI-basierte Marketinglösungen für Ihr Unternehmen"
-        subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
-        primaryCta="KI-Potenzialanalyse anfordern"
+        title="AI-Transformation für Ihr Unternehmen"
+        subtitle="Lassen Sie uns gemeinsam strategische AI-Integration entwickeln – LLM Use Cases, Workflow Automation und messbare Effizienzgewinne."
+        primaryCta="AI-Transformation starten"
         secondaryCta="Strategiegespräch vereinbaren"
+        secondaryCtaLink="/kontakt"
       />
     </PageLayout>
   );
