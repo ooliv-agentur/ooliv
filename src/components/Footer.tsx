@@ -38,7 +38,7 @@ const Footer = () => {
             <h3 className={footerStyles.sectionHeading}>Unternehmen</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
               <li><Link to="/" className={footerStyles.linkText}>Home</Link></li>
-              <li><Link to="/ueber-uns" className={footerStyles.linkText}>Über Uli Schönleber</Link></li>
+              <li><Link to="/ueber-uns" className={footerStyles.linkText}>Über uns</Link></li>
               <li><Link to="/referenzen" className={footerStyles.linkText}>Transformationen</Link></li>
               <li><Link to="/kontakt" className={footerStyles.linkText}>Strategiegespräch vereinbaren</Link></li>
               <li><Link to="/artikel" className={footerStyles.linkText}>Strategic Insights</Link></li>
