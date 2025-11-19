@@ -15,24 +15,28 @@ import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 const KlickbetrugFAQ = () => {
   const faqItems = [
     {
-      question: "Was ist Klickbetrug genau?",
-      answer: "Klickbetrug meint ungültige oder absichtlich ausgelöste Klicks auf Anzeigen – häufig durch Bots, Wettbewerber oder sogenannte Klickfarmen."
+      question: "Wie viel kostet mich Klickbetrug wirklich?",
+      answer: "Je nach Budget und Branche können 10–30% Ihres Werbebudgets durch betrügerische Klicks verloren gehen. Bei 5.000€ monatlichem Budget sind das bis zu 1.500€ – Monat für Monat, die keine echten Kunden bringen."
     },
     {
-      question: "Wie erkenne ich, ob ich betroffen bin?",
-      answer: "Anzeichen sind hohe Klickzahlen ohne Anfragen, ungewöhnliche Peaks im Tagesverlauf oder auffällig viele Absprünge über mobile Geräte."
+      question: "Merke ich überhaupt, wenn ich betroffen bin?",
+      answer: "Oft nicht sofort. Typische Anzeichen: Viele Klicks, aber kaum Anfragen. Ungewöhnliche Aktivitäts-Peaks zu seltsamen Uhrzeiten. Auffällig hohe Absprungraten. Oder immer wieder dieselben IPs in Ihren Daten. Wir analysieren das kostenlos für Sie."
     },
     {
-      question: "Reicht Googles Schutzmechanismus nicht aus?",
-      answer: "Google filtert nur einen Teil der Angriffe heraus. Viele Klicks – etwa über VPNs oder durch wiederkehrende IPs – bleiben unerkannt."
+      question: "Was genau macht Ihr Schutz?",
+      answer: "Wir überwachen jeden Klick in Echtzeit, erkennen verdächtige Muster (Bots, VPNs, Wiederholungs-Klicks) und blockieren betrügerische Zugriffe automatisch – bevor Google dafür abrechnet. Sie zahlen nur für echte Interessenten."
     },
     {
-      question: "Wie funktioniert euer Schutz?",
-      answer: "Wir analysieren jeden Klick in Echtzeit, erkennen Muster und blockieren betrügerische Zugriffe automatisch – bevor Kosten entstehen."
+      question: "Reicht Googles eigener Schutz nicht aus?",
+      answer: "Google filtert nur einen Teil heraus – meist die offensichtlichsten Bot-Klicks. Professioneller Klickbetrug über VPNs, wechselnde IPs oder Klick-Farmen bleibt oft unentdeckt. Unser System erkennt auch diese raffinierten Angriffe."
     },
     {
-      question: "Ist das Ganze DSGVO-konform?",
-      answer: "Ja. Wir erfassen keine personenbezogenen Daten, sondern nur technische Zugriffsmuster zur Erkennung von Missbrauch."
+      question: "Wie schnell kann ich mit Ihrem Schutz starten?",
+      answer: "Sehr schnell. Nach einem kurzen Setup (ca. 30 Min.) ist der Schutz aktiv und überwacht Ihre Kampagnen rund um die Uhr. Sie sehen sofort in einem Dashboard, wie viele betrügerische Klicks wir für Sie blockieren."
+    },
+    {
+      question: "Ist das alles datenschutzkonform?",
+      answer: "Ja, vollständig DSGVO-konform. Wir erfassen nur technische Zugriffsmuster (IP, Gerät, Klickverhalten) – keine personenbezogenen Daten. Alles läuft auf deutschen Servern mit höchsten Sicherheitsstandards."
     }
   ];
 

@@ -35,28 +35,28 @@ const GermanSEO = () => {
   
   const seoFaqs = [
     {
-      question: "Wie lange dauert es, bis SEO-Maßnahmen Ergebnisse zeigen?",
-      answer: "Erste Effekte in wenigen Wochen, nachhaltige Ergebnisse meist ab 3 Monaten."
+      question: "Wie lange dauert es, bis SEO Ergebnisse bringt?",
+      answer: "Erste Verbesserungen sehen Sie oft nach 4–8 Wochen. Wirklich nachhaltige Rankings und spürbar mehr Traffic brauchen meist 3–6 Monate. SEO ist ein Marathon, kein Sprint – aber die Ergebnisse halten langfristig."
     },
     {
-      question: "Was macht euren SEO-Ansatz besonders?",
-      answer: "Strategie, Tech-Knowhow und Content – kombiniert in einem skalierbaren Prozess für messbare Ergebnisse."
+      question: "Was kostet professionelle SEO-Beratung?",
+      answer: "Eine einmalige SEO-Analyse mit Handlungsempfehlungen startet bei 2.500–5.000€. Laufende SEO-Betreuung liegt bei 1.500–4.000€/Monat – je nach Umfang und Wettbewerb. Sie erhalten transparente Preise vor Projektstart."
     },
     {
-      question: "Bietet ihr auch lokale SEO-Dienste an?",
-      answer: "Ja – inkl. Google Business, Branchenverzeichnisse und gezielter lokaler Sichtbarkeit in Ihrer Region."
+      question: "Was genau machen Sie bei SEO?",
+      answer: "Drei Bereiche: 1) Technisches SEO (schnelle Website, sauberer Code). 2) Content-Optimierung (die richtigen Keywords, gute Texte). 3) Linkaufbau (Autorität durch Backlinks). Alles abgestimmt auf Ihre Ziele und Ihre Zielgruppe."
     },
     {
-      question: "Ist Linkaufbau Teil eurer SEO-Leistungen?",
-      answer: "Ja – wir koordinieren nachhaltige Backlink-Kampagnen inkl. Autoritätsaufbau."
+      question: "Brauche ich SEO, wenn ich bereits Google Ads schalte?",
+      answer: "Ja – aus zwei Gründen: 1) SEO bringt langfristig kostenlosen Traffic, Google Ads kostet jeden Monat. 2) Gute Rankings sorgen für Vertrauen bei Ihrer Zielgruppe. Beide Kanäle ergänzen sich perfekt."
     },
     {
-      question: "Wie stellt ihr sicher, dass die technische SEO aktuell ist?",
-      answer: "Durch strukturierte Audits, Core Web Vitals Checks und technische Umsetzung durch unser Team."
+      question: "Können Sie auch lokales SEO für meine Region machen?",
+      answer: "Ja, lokales SEO ist eine meiner Spezialitäten. Inklusive Google Business Profil-Optimierung, Eintragung in relevante Verzeichnisse und lokale Content-Strategie. So werden Sie in Ihrer Region besser gefunden."
     },
     {
-      question: "Warum sollte ich mit einer spezialisierten SEO Agentur arbeiten?",
-      answer: "Weil fundierte Marktkenntnis, technisches Know-how und strategische SEO-Taktik einen entscheidenden Unterschied machen."
+      question: "Wie messen wir den Erfolg von SEO?",
+      answer: "Mit klaren Kennzahlen: Rankings für wichtige Keywords, organischer Traffic-Anstieg, Anfragen über die Website. Sie bekommen regelmäßige Reports und sehen schwarz auf weiß, was SEO für Ihr Business bringt."
     }
   ];
 

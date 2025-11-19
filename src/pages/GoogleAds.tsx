@@ -31,24 +31,28 @@ const GermanGoogleAds = () => {
 
   const googleAdsFaqs = [
     {
-      question: "Wie unterscheidet sich ooliv von anderen Google Ads Agenturen?",
-      answer: "Wir kombinieren technisches Know-how mit strategischem B2B-Verständnis – statt generischer Kampagnen liefern wir Business Impact."
+      question: "Lohnen sich Google Ads für mein B2B-Unternehmen?",
+      answer: "Wenn Sie schnell sichtbar werden und gezielt Leads generieren wollen – ja. Google Ads bringt sofortigen, qualifizierten Traffic, während SEO Monate braucht. Gerade im B2B mit längeren Verkaufszyklen ein wichtiger Kanal."
     },
     {
-      question: "Brauchen wir Google Ads, wenn wir bei SEO gut ranken?",
-      answer: "Ja – Google Ads erhöht die Sichtbarkeit und sorgt für sofortigen Traffic mit gezieltem Conversion-Fokus."
+      question: "Was kostet eine Google Ads Kampagne realistisch?",
+      answer: "Rechnen Sie mit 1.000–3.000€ monatlichem Werbebudget für den Start – abhängig von Ihrer Branche und Konkurrenz. Dazu kommen meine Betreuungskosten. Wir fangen klein an, testen, und skalieren dann, was funktioniert."
     },
     {
-      question: "Was sind typische Budgets für erfolgreiche Google Ads Kampagnen?",
-      answer: "Die meisten unserer Kunden starten mit 1.000–3.000 € monatlich – angepasst an Branche, Wettbewerb und Ziele."
+      question: "Wie schnell sehe ich erste Ergebnisse?",
+      answer: "Erste Klicks und Anfragen meist nach wenigen Tagen. Die volle Performance entwickelt sich über 4–6 Wochen durch kontinuierliche Optimierung. Google Ads ist kein Set-and-Forget – sondern braucht laufende Betreuung."
     },
     {
-      question: "Wie lange dauert es, bis eine Google Ads Kampagne Ergebnisse liefert?",
-      answer: "Erste Ergebnisse sind meist nach wenigen Tagen sichtbar – die volle Performance entwickelt sich über 4–6 Wochen."
+      question: "Was unterscheidet Ihre Betreuung von anderen Agenturen?",
+      answer: "Sie arbeiten direkt mit mir – einem erfahrenen Berater, nicht mit Junior-Mitarbeitern. Ich kombiniere technisches Know-how mit B2B-Verständnis: Keine generischen Kampagnen, sondern Strategie für messbare Business-Ergebnisse."
     },
     {
-      question: "Hilft ihr auch bei der Erstellung von Zielseiten und Conversion-Tracking?",
-      answer: "Ja – wir liefern alles aus einer Hand: Landingpages, Tracking, Kampagnenstruktur und Optimierung."
+      question: "Brauche ich eigentlich Google Ads, wenn ich schon gut bei SEO ranke?",
+      answer: "Ja – aus zwei Gründen: 1) Sie besetzen mehr Platz auf der Suchergebnisseite. 2) Sie können gezielt auf Conversion-Keywords bieten, die Ihre Konkurrenz auch belegt. Google Ads und SEO ergänzen sich perfekt."
+    },
+    {
+      question: "Helfen Sie auch bei Landingpages und Tracking?",
+      answer: "Ja, alles aus einer Hand: Ich entwickle conversion-optimierte Landingpages, richte sauberes Tracking ein und optimiere dann die Kampagnen basierend auf echten Daten. So wissen Sie genau, was funktioniert und was nicht."
     }
   ];
 
