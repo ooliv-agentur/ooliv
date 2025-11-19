@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BarChart2, Clock, FileText, ShieldAlert } from 'lucide-react';
+import { BarChart2, Clock, FileText } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
@@ -17,16 +17,16 @@ const SEOBenefitsDE = () => {
           </div>
         </Reveal>
 
-        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
             <div className="mb-4 text-brand-primary">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
                 <BarChart2 className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Qualifizierte Anfragen, nicht nur Traffic</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Qualifizierte Anfragen statt nur Traffic</h3>
             <p className="text-brand-text mb-4">
-              Ihre Website zieht die richtigen Besucher an – Menschen, die tatsächlich kaufen wollen. Durch Suchintentions-Optimierung und conversion-fokussierte Inhalte.
+              Die richtigen Besucher zur richtigen Zeit.
             </p>
           </div>
 
@@ -36,9 +36,9 @@ const SEOBenefitsDE = () => {
                 <Clock className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Transparente Timelines</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Messbare Ergebnisse in 3-6 Monaten</h3>
             <p className="text-brand-text mb-4">
-              Quick Wins nach 1-2 Monaten, erste Rankings nach 3 Monaten, stabiler ROI nach 6-12 Monaten. Ehrlich und planbar.
+              Strukturiert aufgebaut, kontinuierlich verbessert.
             </p>
           </div>
 
@@ -48,21 +48,9 @@ const SEOBenefitsDE = () => {
                 <FileText className="h-6 w-6 text-white" />
               </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Saubere Inhaltsstruktur</h3>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading">Technisch sauber & zukunftssicher</h3>
             <p className="text-brand-text mb-4">
-              Ihre Seiten werden logisch aufgebaut, nutzerfreundlich strukturiert und für Suchmaschinen optimiert – keine keyword-stuffing, sondern echte Mehrwerte.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow bg-brand-accent">
-            <div className="mb-4 text-brand-primary">
-              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
-                <ShieldAlert className="h-6 w-6 text-white" />
-              </div>
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-brand-heading">Sie bekommen: Technische Perfektion</h3>
-            <p className="text-brand-text mb-4">
-              Schnelle Ladezeiten, saubere Indexierung, optimale Core Web Vitals – damit Google Ihre Website liebt (und Ihre Besucher auch).
+              Solide Basis für nachhaltiges Wachstum.
             </p>
           </div>
         </StaggerReveal>
