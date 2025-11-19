@@ -183,7 +183,7 @@ const PageHero = ({
   
   const renderCtas = () => {
     const defaultPrimaryCta = {
-      text: startProjectText || "Kostenloses Konzept sichern",
+      text: startProjectText || "Mit ooliv durchstarten",
       link: "#",
       onClick: handleOpenLeadForm
     };
