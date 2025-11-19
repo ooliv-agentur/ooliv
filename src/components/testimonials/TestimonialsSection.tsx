@@ -3,8 +3,20 @@ import { Quote } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
-const TestimonialsSection = () => {
-  const testimonials = [
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  industry?: string;
+}
+
+interface TestimonialsSectionProps {
+  testimonials?: Testimonial[];
+}
+
+const TestimonialsSection = ({ testimonials: customTestimonials }: TestimonialsSectionProps = {}) => {
+  const defaultTestimonials = [
     {
       quote: "Die strategische Transformation hat unsere digitale Präsenz komplett verändert. ooliv hat nicht nur eine Website gebaut, sondern unsere Positionierung neu definiert.",
       author: "Michael Klaiber",
@@ -27,6 +39,8 @@ const TestimonialsSection = () => {
       industry: "B2B Software"
     }
   ];
+
+  const testimonials = customTestimonials || defaultTestimonials;
 
   return (
     <section className="py-20 bg-muted/30">
