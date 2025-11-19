@@ -10,25 +10,29 @@ const RelatedServicesGrid = () => {
       icon: Target,
       title: "Digitale Strategie",
       description: "Von der Strategic Discovery über die Roadmap bis zur Umsetzung.",
-      link: "/strategie"
+      link: "/strategie",
+      cta: "Strategieberatung starten"
     },
     {
       icon: Code,
       title: "Webentwicklung",
       description: "Technische Umsetzung Ihrer KI-Lösungen mit modernen Frameworks.",
-      link: "/webentwicklung"
+      link: "/webentwicklung",
+      cta: "Webentwicklung anfragen"
     },
     {
       icon: FileText,
       title: "Content-Erstellung",
       description: "KI-gestützte Content-Workflows für effiziente Content-Produktion.",
-      link: "/content-erstellung"
+      link: "/content-erstellung",
+      cta: "Content-Strategie besprechen"
     },
     {
       icon: Search,
       title: "SEO-Optimierung",
       description: "Technisches SEO und Performance-Optimierung für bessere Rankings.",
-      link: "/seo-optimierung"
+      link: "/seo-optimierung",
+      cta: "SEO-Analyse anfordern"
     }
   ];
 
@@ -67,7 +71,7 @@ const RelatedServicesGrid = () => {
                       className="group/btn p-0 h-auto hover:bg-transparent"
                     >
                       <span className="flex items-center gap-2 text-accent-primary group-hover/btn:gap-3 transition-all">
-                        Mehr erfahren
+                        {service.cta}
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </Button>

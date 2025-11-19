@@ -10,25 +10,29 @@ const RelatedServicesGrid = () => {
       icon: Code,
       title: "Webentwicklung",
       description: "Von WordPress bis Custom Code – technische Umsetzung auf höchstem Niveau.",
-      link: "/webentwicklung"
+      link: "/webentwicklung",
+      cta: "Webentwicklung anfragen"
     },
     {
       icon: FileText,
       title: "Content-Erstellung",
       description: "SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen.",
-      link: "/content-erstellung"
+      link: "/content-erstellung",
+      cta: "Content-Strategie besprechen"
     },
     {
       icon: Search,
       title: "SEO-Optimierung",
       description: "Technisches SEO, Performance-Optimierung und Ranking-Strategien.",
-      link: "/seo-optimierung"
+      link: "/seo-optimierung",
+      cta: "SEO-Beratung vereinbaren"
     },
     {
       icon: Target,
       title: "Digitale Strategie",
       description: "Von der Analyse über die Roadmap bis zur Umsetzungsbegleitung.",
-      link: "/strategie"
+      link: "/strategie",
+      cta: "Strategieberatung starten"
     }
   ];
 
@@ -67,7 +71,7 @@ const RelatedServicesGrid = () => {
                       className="group/btn p-0 h-auto hover:bg-transparent"
                     >
                       <span className="flex items-center gap-2 text-accent-primary group-hover/btn:gap-3 transition-all">
-                        Mehr erfahren
+                        {service.cta}
                         <ArrowRight className="w-4 h-4" />
                       </span>
                     </Button>
