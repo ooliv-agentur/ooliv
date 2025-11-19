@@ -17,16 +17,32 @@ const ContactPersonalSection = () => {
             </div>
             
             <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+              <div className="inline-block mb-3 px-3 py-1 bg-brand-primary/10 rounded-full w-fit">
+                <span className="text-xs font-semibold text-brand-primary">Strategic Advisory</span>
+              </div>
               <h2 className="text-2xl md:text-3xl font-bold text-brand-heading mb-4">
-                Uli – Ihr direkter Draht (ohne Umwege)
+                Strategische Beratung auf C-Level
               </h2>
-              <p className="text-base md:text-lg text-brand-text mb-6">
-                Uli ist der Gründer von ooliv – und die Person, mit der Sie von Anfang an sprechen. Keine Junior-Berater, keine Zwischenstellen. Er begleitet jedes Projekt persönlich und sorgt dafür, dass Sie bekommen, was Sie brauchen – ohne Verkaufsmasche.
+              <p className="text-base md:text-lg text-brand-text mb-4">
+                Bei ooliv arbeiten Sie direkt mit einem Senior Digital Strategy Lead mit 16+ Jahren Erfahrung in der Transformation digitaler Ökosysteme. Keine Junior-Berater, keine Zwischenstellen – strategische Führung von Anfang bis Ende.
               </p>
-              <blockquote className="border-l-4 border-brand-primary pl-5 py-3 italic bg-gray-50 rounded-r-lg">
-                "Ich hasse selbst diese typischen Agentur-Verkaufsgespräche. Deshalb gibt's bei uns keine."
-                <footer className="text-sm mt-2 font-medium">– Uli, Gründer</footer>
-              </blockquote>
+              <div className="space-y-3 mb-6 bg-gray-50 rounded-lg p-4">
+                <div>
+                  <p className="font-semibold text-brand-heading text-sm mb-1">Digital Strategy & Advisory</p>
+                  <p className="text-sm text-brand-text">End-to-end Consulting für C-Level Stakeholder</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-heading text-sm mb-1">AI-Enabled Transformation</p>
+                  <p className="text-sm text-brand-text">Strategische Integration von LLMs & Automation</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-heading text-sm mb-1">Product & UX Leadership</p>
+                  <p className="text-sm text-brand-text">Multidisziplinäre Team-Führung bei komplexen Projekten</p>
+                </div>
+              </div>
+              <p className="text-sm text-brand-text italic border-l-3 border-brand-primary pl-4">
+                Sie arbeiten von Tag 1 mit einem erfahrenen strategischen Berater, der Ihre digitale Transformation führt – nicht mit wechselnden Projektmanagern oder Junior-Teams.
+              </p>
             </div>
           </div>
         </div>
