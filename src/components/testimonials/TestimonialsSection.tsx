@@ -48,7 +48,7 @@ const TestimonialsSection = ({ testimonials: customTestimonials }: TestimonialsS
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Was unsere Kunden sagen
+              Was unsere Kunden über die Zusammenarbeit mit ooliv sagen
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Messbare Ergebnisse und zufriedene Partner im DACH-Raum
