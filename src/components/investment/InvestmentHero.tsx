@@ -1,0 +1,54 @@
+import React from 'react';
+import { TrendingUp, Target, Zap } from 'lucide-react';
+import Reveal from '@/components/animations/Reveal';
+
+const InvestmentHero = () => {
+  return (
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <Reveal>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Strategic Investment Models</span>
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Transparente Investition
+              <span className="block mt-2 bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
+                in strategische Transformation
+              </span>
+            </h1>
+            
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+              Drei klare Engagement-Modelle mit definierten Deliverables, strukturiertem Prozess und messbarem ROI. 
+              Keine versteckten Kosten, keine Agentur-Overhead – nur strategische Excellence.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="bg-card p-6 rounded-xl border border-border">
+                <Target className="w-8 h-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl font-bold text-foreground mb-1">+240%</div>
+                <div className="text-sm text-muted-foreground">Durchschnittliche Conversion-Steigerung</div>
+              </div>
+              
+              <div className="bg-card p-6 rounded-xl border border-border">
+                <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl font-bold text-foreground mb-1">4-16 Wochen</div>
+                <div className="text-sm text-muted-foreground">Time-to-Impact je nach Engagement</div>
+              </div>
+              
+              <div className="bg-card p-6 rounded-xl border border-border">
+                <TrendingUp className="w-8 h-8 text-primary mx-auto mb-3" />
+                <div className="text-3xl font-bold text-foreground mb-1">€15k - €80k</div>
+                <div className="text-sm text-muted-foreground">Investment-Range für strategische Projekte</div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+export default InvestmentHero;
