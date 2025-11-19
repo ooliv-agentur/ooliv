@@ -21,6 +21,14 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     onClose();
   };
+  
+  // Handle CTA click - open lead form
+  const handleCtaClick = () => {
+    onClose(); // Close menu first
+    setTimeout(() => {
+      window.dispatchEvent(new Event('open-lead-form'));
+    }, 300); // Wait for menu animation to finish
+  };
 
   const menuVariants = {
     hidden: { 
@@ -81,13 +89,32 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           </div>
 
           {/* Main content area - fills full height */}
-          <div className="flex-1 flex flex-col justify-center py-6 px-8">
+          <div className="flex-1 flex flex-col justify-center py-6 px-8 space-y-8">
             <motion.nav 
               className="space-y-3 text-center w-full"
               variants={itemVariants}
             >
               <NavigationLinks layout="desktop" onLinkClick={handleLinkClick} />
             </motion.nav>
+            
+            {/* Prominent CTA Button */}
+            <motion.div 
+              className="flex flex-col items-center space-y-3"
+              variants={itemVariants}
+            >
+              <Button
+                onClick={handleCtaClick}
+                size="lg"
+                className="bg-black text-white hover:bg-black/90 font-bold py-6 px-10 text-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
+                {language === 'de' ? 'Mit ooliv durchstarten' : 'Get Started with ooliv'}
+              </Button>
+              <p className="text-sm text-medico-darkGreen/60 max-w-xs">
+                {language === 'de' 
+                  ? 'Persönliche Beratung durch Uli und das Team – Antwort innerhalb von 24h' 
+                  : 'Personal consultation by Uli and the team – Response within 24h'}
+              </p>
+            </motion.div>
           </div>
           
           {/* Company details section at bottom */}
