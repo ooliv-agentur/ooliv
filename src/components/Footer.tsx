@@ -88,6 +88,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+        {/* Team Signatur */}
+        <div className="mt-12 pt-8 border-t border-border text-center">
+          <p className="text-sm text-muted-foreground mb-2">
+            Ihr ooliv-Team: <span className="font-semibold text-foreground">Uli & Kollegen</span>
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Digitale Strategie • Webdesign • KI-Integration – Persönlich. Messbar. Erfolgreich.
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            © {new Date().getFullYear()} ooliv · Alle Rechte vorbehalten
+          </p>
+        </div>
       </div>
     </footer>
   );
