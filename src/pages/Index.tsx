@@ -24,24 +24,24 @@ import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSc
 
 const strategicFaqs = [
   {
-    question: "Was kostet eine professionelle Website?",
-    answer: "Eine strategisch entwickelte B2B-Website startet bei €15.000–25.000 für Strategie-Workshop, Konzept und Design. Komplexe Projekte mit individuellen Funktionen liegen bei €30.000–80.000. Wir arbeiten transparent mit Festpreis – Sie wissen vorher, was Sie bekommen und was es kostet."
+    question: "Für wen sind Ihre Leistungen geeignet?",
+    answer: "Ich arbeite hauptsächlich mit B2B-Unternehmen aus dem DACH-Raum, die digital besser werden wollen. Typischerweise Geschäftsführer oder Marketing-Verantwortliche, die merken, dass ihre Website oder digitale Strategie nicht die gewünschten Ergebnisse bringt. Egal ob Mittelstand, Tech-Startup oder Dienstleister – wenn Sie bereit sind, strategisch zu denken statt nur schnelle Lösungen zu suchen, passen wir gut zusammen."
   },
   {
-    question: "Wie lange dauert ein Website-Projekt?",
-    answer: "Ein typisches Projekt dauert 8–12 Wochen: 2 Wochen Strategie & Konzept, 3–4 Wochen Design & Entwicklung, 2 Wochen Testing & Optimierung, 1 Woche Launch-Vorbereitung. Bei komplexeren Projekten planen wir 3–4 Monate ein. Sie erhalten einen klaren Zeitplan vor Projektstart."
+    question: "Wie läuft eine Zusammenarbeit ab?",
+    answer: "Wir starten immer mit einem kostenlosen Erstgespräch (30 Minuten), in dem wir Ihre Situation analysieren. Danach bekommen Sie von mir eine ehrliche Einschätzung und einen konkreten Vorschlag, wie wir vorgehen können. Je nach Projekt arbeiten wir entweder in einem Workshop-Format, als längerfristiger Sparringspartner oder mit konkreter Umsetzung. Sie entscheiden, was für Sie passt."
   },
   {
-    question: "Kann ich die Website später selbst pflegen?",
-    answer: "Ja! Wir setzen auf benutzerfreundliche Content-Management-Systeme. Nach dem Launch schulen wir Sie persönlich – Sie können dann selbstständig Texte, Bilder und News aktualisieren. Für komplexere Änderungen unterstützen wir Sie gerne im Rahmen eines Wartungsvertrags."
+    question: "Was brauchen Sie von mir für den Start?",
+    answer: "Vor allem Ihre Zeit und Offenheit. Für ein effektives Erstgespräch hilft es, wenn Sie Ihre aktuellen Herausforderungen schon grob umreißen können: Was funktioniert nicht? Wo sehen Sie Potenzial? Was haben Sie schon versucht? Konkrete Zahlen (Website-Besucher, Anfragen, etc.) sind hilfreich, aber kein Muss. Wichtiger ist, dass Sie bereit sind, ehrlich über Ihre Situation zu sprechen."
   },
   {
-    question: "Bekomme ich auch Unterstützung nach dem Launch?",
-    answer: "Definitiv! Wir bieten verschiedene Betreuungspakete: Von monatlicher Wartung (ab €500/Monat) über kontinuierliche Optimierung (€2.000–5.000/Monat) bis zu strategischer Begleitung (€8.000–15.000/Monat). Sie entscheiden, wie viel Unterstützung Sie brauchen."
+    question: "Arbeiten Sie nur remote oder auch vor Ort?",
+    answer: "Beides ist möglich. Die meisten Projekte laufen remote ab – das funktioniert hervorragend und spart allen Zeit. Für strategische Workshops oder wichtige Kickoffs komme ich aber auch gerne zu Ihnen ins Büro, besonders in der DACH-Region (Mainz, Frankfurt, Wiesbaden, aber auch deutschlandweit und in der Schweiz). Wir finden gemeinsam die beste Arbeitsweise für Ihr Projekt."
   },
   {
     question: "Was unterscheidet Sie von anderen Agenturen?",
-    answer: "Sie arbeiten direkt mit einem erfahrenen Digital-Berater – keine Junior-Mitarbeiter, keine ewigen Abstimmungsschleifen. 16+ Jahre Erfahrung, messbare Ergebnisse statt schöner Worte, und ehrliche Beratung: Wenn etwas keinen Sinn macht, sage ich das offen."
+    answer: "Sie arbeiten direkt mit mir – einem erfahrenen Digital-Berater mit 16+ Jahren Praxis, nicht mit Junior-Mitarbeitern. Ich sage Ihnen offen, wenn etwas keinen Sinn macht, statt einfach nur zu verkaufen. Sie bekommen messbare Strategien statt schöner PowerPoints. Und Sie bekommen keine Standard-Agentur-Lösungen, sondern maßgeschneiderte Ansätze für Ihr spezifisches Business."
   }
 ];
 
