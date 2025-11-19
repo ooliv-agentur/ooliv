@@ -10,8 +10,8 @@ const WebDevHeroDE = () => {
   
   return (
     <PageHero
-      title="Ihre Website ist langsam? Ihre Konkurrenz freut sich."
-      subtitle="Wir entwickeln Websites, die schnell laden, gut ranken und Anfragen generieren. Von WordPress bis Custom Code – technisch solide, nicht überladen."
+      title="Langsame Website? Das ooliv-Team macht sie schnell"
+      subtitle="Uli Schönleber und das ooliv-Team entwickeln Websites, die schnell laden, gut ranken und Anfragen generieren. Von WordPress bis Custom Code – technisch solide, nicht überladen."
       primaryCta={{
         text: "Meine Website schneller machen",
         link: "#",
