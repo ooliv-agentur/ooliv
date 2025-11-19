@@ -64,8 +64,8 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="B2B-Websites, die Leads generieren | ooliv Digitalagentur"
-          description="Strategische B2B-Websites bundesweit: Lead-Generierung, Webdesign, SEO & Google Ads. Inhabergeführt. Messbare KPIs. Kostenloses Website-Konzept in 48h."
+          title="Digital Strategy Lead | Uli Schönleber - AI-Driven Transformation für B2B"
+          description="16+ Jahre Digital Strategy & Transformation für B2B-Unternehmen im DACH-Raum. Strategic Discovery, AI Integration, Product & UX Strategy. C-Level Advisory mit messbaren Ergebnissen."
           canonicalUrl="https://ooliv.de/"
           keywords="B2B Website Agentur, Lead-Generierung, strategisches Webdesign, SEO Beratung, Google Ads Agentur, Website-Konzept"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
@@ -100,9 +100,9 @@ const GermanIndex = () => {
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Von der Strategic Discovery zur messbaren Transformation</h2>
             <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-muted-foreground">
-              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google sichtbar werden.
+              Digitale Transformation braucht mehr als nur Technik – sie braucht strategische Klarheit, durchdachte UX und AI-Integration. Mit bewährter <Link to="/methodik" className="text-primary hover:underline font-medium">Methodik</Link> zur erfolgreichen Umsetzung.
             </p>
             <BeforeAfterSlider />
             <div className="mt-8 text-center">
