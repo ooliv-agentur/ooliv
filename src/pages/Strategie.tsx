@@ -6,6 +6,7 @@ import StrategieHero from '@/components/strategy/StrategieHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import StrategieBenefits from '@/components/strategy/StrategieBenefits';
 import StrategieWhyUs from '@/components/strategy/StrategieWhyUs';
+import StrategicChallengesSection from '@/components/de/StrategicChallengesSection';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
 import StrategieServices from '@/components/strategy/StrategieServices';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
@@ -67,6 +68,7 @@ const GermanStrategy = () => {
       <StrategieHero />
       <StrategieBenefits />
       <StrategieWhyUs />
+      <StrategicChallengesSection />
       <StrategieProcess />
       <StrategieServices />
       <TestimonialsSection testimonials={strategieTestimonials} />
