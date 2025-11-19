@@ -104,7 +104,7 @@ const defaultTranslations = {
   subtitle: "Strategische Digital-Projekte mit messbaren Business-Outcomes",
   bodyText: "Von der Strategic Challenge über strukturierte Umsetzung bis zu messbaren Ergebnissen – End-to-End Digital Transformation für B2B-Unternehmen.",
   ctaText: "Welche Transformation dürfen wir für Ihr Unternehmen leiten?",
-  startProject: "Strategiegespräch vereinbaren",
+  startProject: "Mit ooliv durchstarten",
   challenge: "Strategic Challenge",
   approach: "Strategic Approach",
   outcomes: "Measurable Outcomes",

@@ -97,7 +97,7 @@ const ContactTrustSectionDE = () => {
               }}
               onClick={handleOpenLeadForm}
             >
-              Projekt starten
+              Mit ooliv durchstarten
             </Button>
           </div>
         </div>
