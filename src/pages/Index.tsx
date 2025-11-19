@@ -21,7 +21,8 @@ import TurquoiseCard from '@/components/ui/TurquoiseCard';
 import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
-import CostCalculator from '@/components/pricing/CostCalculator';
+// CostCalculator removed - no longer fits Strategic Advisory positioning
+// import CostCalculator from '@/components/pricing/CostCalculator';
 
 const germanFaqs = [
   {
@@ -92,10 +93,8 @@ const GermanIndex = () => {
         
         <DeutscherAboutSection />
         
-      {/* Budget-Transparenz mit interaktivem Kalkulator */}
-      <section className="py-16 bg-background">
-        <CostCalculator />
-      </section>
+        {/* CostCalculator removed - no longer fits Strategic Advisory positioning */}
+        {/* For investment models, see /investition page instead */}
 
         {/* Before/After früher positioniert für sofortige Ergebnisse */}
         <div className="py-16 bg-white">
