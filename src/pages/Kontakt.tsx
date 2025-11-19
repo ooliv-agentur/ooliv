@@ -26,7 +26,7 @@ const GermanContact = () => {
     >
       <EnhancedSEOHead
         title="Kontakt | ooliv Digitalagentur"
-        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-6367801. Termin buchen!"
+        description="Kontakt zu Uli Schönleber und dem ooliv-Team: Persönliche Beratung für Webdesign, Strategie & KI-Integration. ☎ 06131-6367801. Mit ooliv durchstarten – Antwort innerhalb von 24h!"
         canonicalUrl="https://ooliv.de/kontakt"
         keywords="Kontakt, ooliv, Digitalagentur, Beratung, Webdesign, SEO"
       />

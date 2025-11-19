@@ -78,7 +78,7 @@ const GermanWebDevelopment = () => {
     >
       <EnhancedSEOHead
         title="Webentwicklung für B2B | WordPress, Custom Code & APIs | ooliv Mainz"
-        description="Professionelle Webentwicklung für B2B-Unternehmen. ✓ WordPress ✓ Custom Code ✓ API-Integration ✓ Performance-Optimierung. Von Strategie bis Launch."
+        description="Webentwicklung durch Uli und das ooliv-Team: WordPress, Custom Code & API-Integration für B2B. Performance-optimiert, skalierbar – persönliche Betreuung vom ersten Code bis zum Launch."
         canonicalUrl="https://ooliv.de/webentwicklung"
         keywords="Webentwicklung, Webentwicklung Mainz, WordPress Entwicklung, Custom Code, Full Stack Development, API Integration, Progressive Web Apps, React Development, Performance-Optimierung"
         breadcrumbs={breadcrumbs}

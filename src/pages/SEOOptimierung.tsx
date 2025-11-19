@@ -66,7 +66,7 @@ const GermanSEO = () => {
     >
       <EnhancedSEOHead
         title="SEO Agentur – Strategische Suchmaschinenoptimierung | ooliv"
-        description="ooliv Digitalagentur entwickelt SEO-Strategien für B2B-Unternehmen – messbare Lead-Generierung durch technisches SEO, Content und Rankings."
+        description="SEO-Optimierung durch Uli und das ooliv-Team: Strategische Suchmaschinenoptimierung für B2B. Technisches SEO, Content-Strategie & messbare Lead-Generierung – persönliche Betreuung mit Erfahrung."
         canonicalUrl="https://ooliv.de/seo-optimierung"
         keywords="SEO Agentur, Suchmaschinenoptimierung, Google Rankings, B2B SEO, Technisches SEO"
         breadcrumbs={breadcrumbs}

@@ -56,7 +56,7 @@ const GermanWebDesign = () => {
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
           title="Professionelles Webdesign für B2B | UI/UX, Conversion & SEO | ooliv Mainz"
-          description="Professionelles Webdesign für B2B-Unternehmen. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
+          description="Webdesign durch Uli und das ooliv-Team: Conversion-optimiert, SEO-ready & mobile first für B2B. Von der Strategie bis zum Launch – persönliche Betreuung, messbare Ergebnisse."
           canonicalUrl="https://ooliv.de/webdesign"
           keywords="Webdesign, Webdesign Mainz, Website Design, UI/UX Design, Responsive Design, B2B Websites, Conversion-Optimierung, Website erstellen, Professionelles Webdesign"
           breadcrumbs={breadcrumbs}
