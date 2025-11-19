@@ -34,24 +34,24 @@ const GermanAiTechnologies = () => {
   // Custom FAQ items for AI page
   const aiFaqs = [
     {
-      question: "Wie integrieren wir KI in bestehende Marketingprozesse?",
-      answer: "Wir analysieren Ihre aktuellen Prozesse, identifizieren die größten Effizienzpotenziale und integrieren die passenden KI-Tools nahtlos in Ihren Workflow."
+      question: "Was bringt mir KI konkret für mein Business?",
+      answer: "Echte Zeitersparnis und Kostenreduktion: 70–80% weniger Aufwand bei Content-Erstellung, 30–50% niedrigere Kosten pro Lead, schnellere Reaktionszeiten. KI übernimmt Routine-Aufgaben – Sie konzentrieren sich auf Strategie und Kundenkontakt."
     },
     {
-      question: "Bleiben wir bei KI-erstellten Inhalten im rechtlichen Rahmen?",
-      answer: "Absolut. Wir achten auf rechtliche und ethische Compliance, vom Urheberrecht bis zum Datenschutz, und behalten die menschliche Kontrolle über alle Outputs."
+      question: "Kann KI wirklich gute Texte für meine Website schreiben?",
+      answer: "Ja – wenn man es richtig macht. KI erstellt solide Rohtexte, die ein Experte dann verfeinert und auf Ihre Marke anpasst. Das Ergebnis: Professionelle Texte in Bruchteil der Zeit, mit Ihrer Tonalität und Ihrem Fachwissen."
     },
     {
-      question: "Welche konkreten ROI-Vorteile bringt KI im Marketing?",
-      answer: "Typische Vorteile: 70-80% Zeitersparnis bei Content-Erstellung, 30-50% geringere Kosten pro Lead und deutlich schnellere Reaktionszeiten auf Marktveränderungen."
+      question: "Ist das mit KI nicht rechtlich problematisch?",
+      answer: "Nicht, wenn man es richtig angeht. Wir achten auf Urheberrecht, Datenschutz und Transparenz. Alle KI-generierten Inhalte werden von Menschen geprüft und angepasst – Sie behalten die volle Kontrolle und Verantwortung."
     },
     {
-      question: "Ist die Qualität von KI-generiertem Content wirklich gut?",
-      answer: "Mit dem richtigen Prompt-Engineering und menschlicher Nachbearbeitung ist die Qualität hervorragend. KI erstellt den Rohtext, Experten verfeinern ihn für optimale Ergebnisse."
+      question: "Welche KI-Tools nutzen Sie für meine Projekte?",
+      answer: "Je nach Bedarf: ChatGPT für Texte und FAQs, Midjourney für individuelle Bilder, Claude für komplexe Analysen, spezialisierte Tools für SEO. Wir wählen die Tools aus, die für Ihr Projekt am besten funktionieren – keine Experimente."
     },
     {
-      question: "Welche KI-Tools setzen wir in unseren Projekten ein?",
-      answer: "Wir nutzen ein breites Spektrum: ChatGPT für Texterstellung, DALL-E und Midjourney für Bildgenerierung, Claude für komplexe Aufgaben und spezialisierte Tools für SEO und Datenanalyse."
+      question: "Wie integrieren Sie KI in meine bestehenden Prozesse?",
+      answer: "Schritt für Schritt: Wir analysieren, wo KI wirklich Sinn macht, wählen die passenden Tools aus, schulen Ihr Team und begleiten die Einführung. Kein Big Bang, sondern pragmatische Integration mit messbaren Verbesserungen."
     }
   ];
   
