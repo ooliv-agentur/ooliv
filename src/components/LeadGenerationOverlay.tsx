@@ -72,7 +72,7 @@ const LeadGenerationOverlay = ({ open, onOpenChange }: LeadGenerationOverlayProp
 
   // Dynamic header text based on mode and language
   const isPrototype = mode === 'prototype';
-  const title = language === 'de' ? (isPrototype ? 'Kostenloses Website-Konzept' : 'Starten Sie Ihr Projekt') : (isPrototype ? 'Free Website Concept' : 'Start your project');
+  const title = language === 'de' ? (isPrototype ? 'Starten Sie jetzt mit ooliv' : 'Starten Sie jetzt mit ooliv') : (isPrototype ? 'Get Started with ooliv' : 'Get Started with ooliv');
   const description = language === 'de'
     ? (isPrototype ? 'Professionelle Beratung und strategische Planung für Ihren Online-Erfolg' : 'Füllen Sie das Formular aus, um loszulegen')
     : (isPrototype ? 'Professional consultation and strategic planning for your online success' : 'Fill out the form to get started');
