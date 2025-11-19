@@ -11,6 +11,7 @@ import UliCredentials from '@/components/about-us/UliCredentials';
 import UliExperience from '@/components/about-us/UliExperience';
 import UliEducationSkills from '@/components/about-us/UliEducationSkills';
 import UliApproach from '@/components/about-us/UliApproach';
+import HowWeWorkSection from '@/components/de/HowWeWorkSection';
 import ThoughtLeadership from '@/components/about-us/ThoughtLeadership';
 import TrackRecordSection from '@/components/de/TrackRecordSection';
 import TeamSection from '@/components/TeamSection';
@@ -78,6 +79,7 @@ const GermanAboutUs = () => {
       <UliExperience />
       <UliEducationSkills />
       <UliApproach />
+      <HowWeWorkSection />
       <ThoughtLeadership />
       <TrackRecordSection />
       
