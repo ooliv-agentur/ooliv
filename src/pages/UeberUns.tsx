@@ -28,20 +28,21 @@ const GermanAboutUs = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "Über Uli Schönleber & ooliv",
-    "description": "Uli Schönleber - Digital Strategy Lead mit 16+ Jahren Track Record in Product & UX Strategy, AI Integration und Digital Transformation. Strategic Advisory mit messbaren Business Outcomes für B2B-Unternehmen.",
+    "name": "Über uns - Team & Expertise | ooliv",
+    "description": "Lernen Sie das Team hinter ooliv kennen. Digitale Strategie-Expertise mit 16+ Jahren Track Record. Persönliche Beratung, professionelle Umsetzung, messbare Ergebnisse.",
     "url": "https://ooliv.de/ueber-uns",
     "mainEntity": {
-      "@type": "Person",
-      "name": "Uli Schönleber",
-      "jobTitle": "Digital Strategy Lead · AI-Driven Consultant · UX & Product Advisor",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "ooliv Digital Consultancy"
-      },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Kölner Design Akademie (KDA)"
+      "@type": "Organization",
+      "name": "ooliv Digital Consultancy",
+      "url": "https://ooliv.de",
+      "founder": {
+        "@type": "Person",
+        "name": "Uli Schönleber",
+        "jobTitle": "Digital Strategy Lead · AI-Driven Consultant · UX & Product Advisor",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Kölner Design Akademie (KDA)"
+        }
       },
       "knowsAbout": [
         "Digital Strategy",
@@ -61,14 +62,14 @@ const GermanAboutUs = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Uli Schönleber - Digital Strategy Lead | 16+ Jahre Track Record | ooliv"
-        description="Digital Strategy Lead mit 16+ Jahren Track Record in Product & UX Strategy, AI Integration und Digital Transformation. Strategic Advisory mit messbaren Business Outcomes (+240% Conversion Rates)."
+        title="Über uns - Team & Expertise | ooliv Digital Consultancy"
+        description="Lernen Sie das Team hinter ooliv kennen. Digitale Strategie-Expertise mit 16+ Jahren Track Record. Persönliche Beratung, professionelle Umsetzung, messbare Ergebnisse (+240% Conversion Rates)."
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
-        keywords="Uli Schönleber, Digital Strategy Lead, Product & UX Strategy, Strategic Discovery, AI Integration, C-Level Advisory, Thought Leadership"
+        keywords="ooliv Team, Digital Strategy, Uli Schönleber, Product & UX Strategy, Strategic Discovery, AI Integration, C-Level Advisory, Digitalagentur Mainz"
         breadcrumbs={[
           { name: "Home", url: "https://ooliv.de/" },
-          { name: "Über Uli Schönleber", url: "https://ooliv.de/ueber-uns" }
+          { name: "Über uns", url: "https://ooliv.de/ueber-uns" }
         ]}
       />
 
