@@ -10,26 +10,26 @@ const StrategieProcess = () => {
     {
       icon: Search,
       number: "01",
-      title: "Analyse & Webkonzept",
-      description: "Wir prüfen Ist-Zustand, Zielgruppen, Wettbewerb und entwickeln ein individuelles Webkonzept mit Sitemap und ersten Seitenentwürfen."
+      title: "Strategic Discovery",
+      description: "Stakeholder Interviews, Opportunity Mapping, Competitive Analysis und Value Hypothesis Development – wir schaffen strategische Klarheit für Ihre digitale Transformation."
     },
     {
       icon: Lightbulb,
       number: "02", 
-      title: "Strategie & Planung",
-      description: "Wir definieren messbare Ziele, planen Maßnahmen und erstellen einen Projektplan auf Basis Ihres Webkonzepts."
+      title: "UX & Product Strategy",
+      description: "Customer Journey Design, Information Architecture und Conversion Strategy – von der User Research bis zur Decision-Making UX für messbare Business Outcomes."
     },
     {
       icon: PenTool,
       number: "03",
-      title: "Design-Übergabe & Umsetzung",
-      description: "Nach der Designfreigabe startet die Webentwicklung – sauber, performant und individuell."
+      title: "AI Integration & Automation",
+      description: "LLM Use Case Identification, Workflow Optimization und AI-Driven Content Pipelines – strategische AI-Enablement für Effizienzgewinne und Skalierung."
     },
     {
       icon: Rocket,
       number: "04",
-      title: "Optimierung & Reporting",
-      description: "Nach dem Go-Live definieren wir KPIs, messen den Erfolg und optimieren kontinuierlich."
+      title: "Implementation Leadership",
+      description: "Koordination internationaler Teams, Requirements Engineering, Quality Assurance und Performance Optimization – von der Strategie zur messbaren Umsetzung."
     }
   ];
 
@@ -39,10 +39,10 @@ const StrategieProcess = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
-              Unser strategischer Ansatz – von der Analyse bis zum Webkonzept und zur Umsetzung
+              Strategic Discovery → UX Strategy → AI Integration → Implementation
             </h2>
             <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
-              Wir begleiten Sie Schritt für Schritt: von der Analyse Ihrer aktuellen Website über das Webkonzept bis zur erfolgreichen Umsetzung.
+              Unser bewährter 4-Phasen-Prozess für digitale Transformation: Von der strategischen Grundlage über UX & AI-Integration bis zur erfolgreichen Umsetzung mit messbaren Business Outcomes.
             </p>
           </div>
         </Reveal>

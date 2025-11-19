@@ -5,56 +5,52 @@ import FAQ from '@/components/FAQ';
 const StrategieFAQ = () => {
   const strategieFaqs = [
     {
-      question: "Was ist ein Webkonzept?",
-      answer: "Ein Webkonzept beschreibt den Plan für Ihre Website. Es enthält die Zielgruppenbestimmung, die Sitemap, die Inhaltsplanung und erste Seitenentwürfe – alles, was Ihre Website erfolgreich macht."
+      question: "Was bedeutet Strategic Discovery konkret?",
+      answer: "Strategic Discovery ist der strukturierte Prozess zur Identifikation strategischer Opportunities. Durch Stakeholder Interviews, Competitive Analysis und Value Hypothesis Development schaffen wir strategische Klarheit – mit validiertem Business Case und klarer Roadmap."
     },
     {
-      question: "Warum ist ein Webkonzept so wichtig?",
-      answer: "Ohne Webkonzept fehlt Ihrer Website die Basis. Nur mit einer durchdachten Struktur und Strategie kann Ihre Website später erfolgreich Leads generieren und Ihre Marke stärken."
+      question: "Wie unterscheidet sich UX Strategy von normalem Design?",
+      answer: "UX Strategy ist mehr als Design – es ist die strategische Übersetzung von User Needs in Business Value. Durch User Research, Journey Mapping und Conversion-fokussierte Konzepte schaffen wir messbare Business Outcomes: +180% Lead Quality, +240% Conversion."
     },
     {
-      question: "Wie entwickelt ooliv ein Webkonzept für mein Unternehmen?",
-      answer: "Wir starten mit einer Analyse Ihrer Zielgruppe und des Wettbewerbs. Daraus entwickeln wir eine Sitemap, Inhaltsplanung und Seitenentwürfe. So entsteht ein individuelles Webkonzept, das genau zu Ihrem Unternehmen passt."
+      question: "Was beinhaltet Implementation Leadership?",
+      answer: "Als Implementation Leader koordiniere ich internationale Teams (Design, Development, Content), sichere Qualität durch Requirements Engineering und QA, und garantiere messbare Outcomes. Von Sprint Planning bis Performance Optimization – on-time, on-budget."
     },
     {
-      question: "Was genau ist ein strategisches Webkonzept?",
-      answer: "Ein strategisches Webkonzept ist die durchdachte Planung Ihrer Website vor der Umsetzung. Es umfasst Zielgruppendefinition, Seitenaufbau, Inhaltsplanung und wie Sie mehr Anfragen generieren. So entstehen Websites, die wirklich funktionieren und Ihre Geschäftsziele erreichen."
+      question: "Für welche Unternehmen ist diese Strategic Advisory relevant?",
+      answer: "Für B2B-Unternehmen im DACH-Raum, die digitale Transformation strategisch angehen wollen – mit C-Level Involvement, Budget €50k+, und dem Anspruch auf messbare Business Outcomes statt nur 'schöne Websites'."
     },
     {
-      question: "Warum brauche ich eine Strategieberatung für meine Website?",
-      answer: "Ohne Strategie entstehen Websites, die zwar schön aussehen, aber nicht konvertieren. Eine professionelle Strategieberatung sorgt für klare Zielgruppendefinition, optimierte Nutzerführung und messbare Erfolge. Das spart langfristig Zeit und Geld."
+      question: "Wie lange dauert eine Strategic Discovery Phase?",
+      answer: "Je nach Scope 3-6 Wochen. Einfache Discovery-Workshops benötigen 3-4 Wochen, komplexere Transformationsprojekte mit mehreren Stakeholdern 5-6 Wochen. Sie erhalten einen klaren Zeitplan als Teil des Proposals."
     },
     {
-      question: "Wie läuft die Strategieentwicklung bei ooliv ab?",
-      answer: "Wir arbeiten in strukturierten Workshops: Analyse Ihrer Ziele und Zielgruppe, Entwicklung der Informationsarchitektur, Content-Planung und UX-Konzeption. Sie sind aktiv eingebunden und erhalten am Ende ein detailliertes Strategiedokument."
+      question: "Was kostet Strategic Discovery und Advisory?",
+      answer: "Strategic Discovery startet bei €15.000-25.000 für umfassende Stakeholder Interviews, Competitive Analysis und Strategic Roadmap. End-to-End Transformation Projekte werden individuell kalkuliert. Strategic Retainer €8.000-15.000/Monat für kontinuierliche Advisory."
     },
     {
-      question: "Was kostet eine professionelle Strategieberatung?",
-      answer: "Die Kosten hängen vom Projektumfang ab. Eine Basis-Strategieberatung für kleinere Websites beginnt bei etwa 2.500€. Für umfangreichere B2B-Projekte oder E-Commerce-Strategien kalkulieren wir individuell. Sie erhalten immer ein transparentes Angebot."
+      question: "Arbeiten Sie nur strategisch oder auch in der Umsetzung?",
+      answer: "Beides! Als Implementation Leader übernehme ich nicht nur Strategic Discovery und UX Strategy, sondern koordiniere auch die komplette Umsetzung mit internationalen Teams – von der ersten User Story bis zum Launch."
     },
     {
-      question: "Wie lange dauert die Strategieentwicklung?",
-      answer: "Je nach Komplexität 2-6 Wochen. Einfache Unternehmenswebsites benötigen meist 2-3 Wochen, komplexere Projekte mit mehreren Stakeholdern entsprechend länger. Wir erstellen einen klaren Zeitplan als Teil unseres Angebots."
+      question: "Wie messen Sie den Erfolg der Digital Transformation?",
+      answer: "Mit klaren KPI-Frameworks: Lead Quality, Conversion Rates, Time-to-Market, Performance Metrics. Keine Vanity Metrics – wir definieren Business Outcomes und tracken sie kontinuierlich. Beispiel: +180% Lead Quality, +240% Traffic für reale Kunden."
     },
     {
-      question: "Können Sie auch bestehende Websites strategisch optimieren?",
-      answer: "Absolut! Wir analysieren Ihre aktuelle Website, identifizieren Schwachstellen und entwickeln eine Optimierungsstrategie. Oft lassen sich mit gezielten strategischen Änderungen deutliche Verbesserungen bei Conversion und Nutzererfahrung erreichen."
+      question: "Was unterscheidet Ihre Strategic Advisory von klassischen Agenturen?",
+      answer: "Kein Agentur-Overhead, keine Junior-Berater. Sie sprechen direkt mit dem Digital Strategy Lead mit 16+ Jahren Erfahrung. Fokus auf messbare Business Outcomes statt nur Deliverables. Strategic Thinking + Hands-on Implementation."
     },
     {
-      question: "Welche Branchen betreuen Sie in der Strategieberatung?",
-      answer: "Wir entwickeln Strategien für alle Branchen: B2B-Unternehmen, E-Commerce, Dienstleister, Gesundheitswesen, Start-ups und mehr. Jede Branche hat ihre Besonderheiten – unsere Strategien berücksichtigen das von Anfang an."
-    },
-    {
-      question: "Übernehmen Sie auch die Umsetzung der Strategie?",
-      answer: "Ja, das ist unser Vorteil! Wir entwickeln nicht nur die Strategie, sondern setzen sie auch um: Webdesign, Entwicklung, Content-Erstellung und SEO-Optimierung. So können Sie sicher sein, dass die Strategie auch wirklich umgesetzt wird."
+      question: "Können Sie auch bei laufenden Projekten als Strategic Advisor einsteigen?",
+      answer: "Ja! Ich unterstütze als Strategic Advisor bei Rescue-Projekten, optimiere bestehende Roadmaps, oder übernehme Implementation Leadership für Teams, die strategische Führung brauchen. Quick Assessment + Strategic Recommendations innerhalb 2 Wochen."
     }
   ];
 
   return (
     <FAQ 
       customFaqs={strategieFaqs}
-      customTitle="Häufig gestellte Fragen"
-      customSubtitle="Hier finden Sie Antworten auf die wichtigsten Fragen rund um strategische Webkonzepte."
+      customTitle="Häufig gestellte Fragen zu Digital Strategy & Transformation"
+      customSubtitle="Hier finden Sie Antworten auf die wichtigsten Fragen rund um Strategic Discovery, UX Strategy und Implementation Leadership."
       customCtaText="Weitere Fragen? Sprechen Sie mit uns"
       useLeadForm={true}
     />
