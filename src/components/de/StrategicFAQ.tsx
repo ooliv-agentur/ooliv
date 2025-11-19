@@ -16,24 +16,28 @@ interface StrategicFAQProps {
 const StrategicFAQ: React.FC<StrategicFAQProps> = ({ location }) => {
   const faqs = [
     {
-      question: "Was ist Strategic Discovery und wann macht sie Sinn?",
-      answer: "Strategic Discovery ist eine intensive 4–6-wöchige Phase, in der wir Ihre Business Challenges systematisch analysieren, User Research durchführen und eine fundierte Digital Strategy entwickeln. Sie macht Sinn, wenn Sie vor einer Digital Transformation stehen, neue Produkte launchen oder bestehende Systeme strategisch optimieren wollen. Investment: €15k–25k."
+      question: `Kommen Sie auch zu uns ins Büro${location ? ` nach ${location}` : ''}?`,
+      answer: `Ja, gerne! ${location ? `Für Erstgespräche und Strategie-Workshops komme ich persönlich nach ${location}. ` : 'Für Erstgespräche und Strategie-Workshops komme ich persönlich vorbei. '}Die laufende Zusammenarbeit läuft dann meist remote – das ist effizienter und spart Ihnen Kosten. Wichtige Meilensteine besprechen wir gerne wieder persönlich vor Ort.`
     },
     {
-      question: "Wie unterscheidet sich dieses Engagement-Modell von einer klassischen Werbeagentur?",
-      answer: "Klassische Agenturen bieten operative Services (Webdesign, SEO, Ads). Wir bieten C-Level Strategic Advisory – von Strategic Discovery über Product & UX Strategy bis AI Integration. Kein Agentur-Theater, keine Junior-Mitarbeiter, sondern direkte Zusammenarbeit mit einem Digital Strategy Lead mit 16+ Jahren Track Record."
+      question: `Arbeiten Sie nur in ${location || 'der Region'} oder auch deutschlandweit?`,
+      answer: `${location ? `Mein Büro ist in Mainz, aber ich arbeite im gesamten DACH-Raum. Kunden aus ${location} schätzen die persönliche Nähe – gleichzeitig betreue ich erfolgreich Projekte in ganz Deutschland, Österreich und der Schweiz. ` : 'Ich arbeite im gesamten DACH-Raum. '}Standort ist zweitrangig, entscheidend ist die Chemie und Ihr Projekterfolg.`
     },
     {
-      question: "Welche Business Outcomes kann ich erwarten?",
-      answer: `Basierend auf 16+ Jahren Track Record: durchschnittlich +240% Conversion Rate nach Strategic Discovery & UX Optimization, +180% Lead Quality durch Strategic Positioning. Jedes Projekt ist individuell${location ? ` – gerade für ${location} und die Region` : ''} nutzen Sie unseren ROI Calculator für Ihre Projektionen.`
+      question: `Was kostet eine Beratung${location ? ` in ${location}` : ''}?`,
+      answer: "Ein ausführliches Erstgespräch ist kostenlos (30–60 Min.). Ein fokussierter Strategie-Workshop mit Konzept startet bei €15.000–25.000. Umfassende Projekte mit Umsetzung liegen bei €30.000–80.000. Laufende Begleitung gibt's ab €8.000/Monat. Sie erhalten vorab ein transparentes Festpreis-Angebot."
     },
     {
-      question: "Wie funktioniert die Zusammenarbeit?",
-      answer: `Strategic Advisory ist keine klassische Agentur-Beziehung, sondern eine C-Level Partnership. Sie arbeiten direkt mit Uli Schönleber (Digital Strategy Lead, 16+ Jahre Erfahrung). ${location ? `Vor-Ort-Termine in ${location} möglich, ` : ''}Remote-Work als Standard – maximale Flexibilität.`
+      question: "Wie schnell können wir starten?",
+      answer: `Nach unserem Erstgespräch erstelle ich innerhalb von 3–5 Werktagen ein konkretes Angebot. Nach Ihrer Freigabe können wir meist innerhalb von 1–2 Wochen starten${location ? ` – auch mit einem persönlichen Kickoff in ${location}` : ''}. Bei dringenden Projekten geht's auch schneller.`
     },
     {
-      question: "Für welche Unternehmen ist dieses Modell geeignet?",
-      answer: "Unser Strategic Advisory richtet sich an B2B-Unternehmen im DACH-Raum, die digitale Transformation ernst nehmen. Typische Kunden: Tech-Startups mit Product-Market Fit Challenges, Mittelstand vor Digital Transformation, etablierte Unternehmen mit Innovation Gaps. Investment-Range: €15k–80k für Transformations-Projekte, €8k–15k/Monat für Strategic Retainer."
+      question: "Für welche Unternehmen arbeiten Sie?",
+      answer: `Hauptsächlich für B2B-Unternehmen: SaaS-Firmen, produzierende Unternehmen, Beratungen, Kanzleien, Gesundheitsdienstleister. ${location ? `Viele meiner Kunden kommen aus ${location} und der Region – ` : ''}aber ich arbeite im gesamten DACH-Raum. Entscheidend ist, dass Sie digitales Marketing strategisch angehen wollen.`
+    },
+    {
+      question: "Was passiert nach dem Erstgespräch?",
+      answer: `Nach unserem kostenlosen Gespräch erhalten Sie von mir ein maßgeschneidertes Konzept mit klarem Zeitplan und Festpreis. Keine Überraschungen, keine versteckten Kosten. Sie entscheiden in Ruhe, ob Sie das Angebot annehmen${location ? ` – und ob wir Ihr nächstes Treffen in ${location} oder remote machen` : ''}.`
     }
   ];
 
@@ -47,11 +51,11 @@ const StrategicFAQ: React.FC<StrategicFAQProps> = ({ location }) => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-              Strategic Advisory FAQs
+              Häufig gestellte Fragen
             </h2>
             <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Antworten auf die wichtigsten Fragen zu Strategic Discovery und Digital Transformation
+              {location ? `Antworten auf wichtige Fragen zur Zusammenarbeit in ${location}` : 'Antworten auf wichtige Fragen zur Zusammenarbeit'}
             </p>
           </div>
         </Reveal>
@@ -81,7 +85,7 @@ const StrategicFAQ: React.FC<StrategicFAQProps> = ({ location }) => {
           <div className="mt-16 text-center">
             <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20">
               <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
-                Weitere Fragen zu Strategic Advisory?
+                {location ? `Weitere Fragen zur Zusammenarbeit in ${location}?` : 'Weitere Fragen zur Zusammenarbeit?'}
               </h3>
               <button 
                 onClick={handleStartProject}
