@@ -51,8 +51,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
 
       setIsSubmitted(true);
       toast({
-        title: "Vielen Dank!",
-        description: "Wir melden uns innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen",
+        title: "Willkommen bei ooliv!",
+        description: "Uli und das Team melden sich innerhalb von 48 Stunden mit Ihrem Konzept bei Ihnen",
       });
 
     } catch (error) {
@@ -80,10 +80,10 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
           </svg>
         </div>
         <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
-          Anfrage gesendet!
+          Willkommen bei ooliv!
         </h3>
         <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-sm">
-          Wir erstellen Ihr kostenloses Website-Konzept und melden uns binnen 48 Stunden.
+          Uli und das ooliv-Team erstellen Ihr kostenloses Website-Konzept und melden sich binnen 48 Stunden.
         </p>
       </motion.div>
     );
