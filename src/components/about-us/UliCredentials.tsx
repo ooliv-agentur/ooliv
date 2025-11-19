@@ -6,33 +6,33 @@ const UliCredentials = () => {
   const credentials = [
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Digital Strategy & Advisory",
-      description: "End-to-end Strategic Consulting für C-Level Stakeholder – von Opportunity Mapping bis zur messbaren Umsetzung."
-    },
-    {
-      icon: <Brain className="h-8 w-8" />,
-      title: "AI-Enabled Transformation",
-      description: "Strategische Integration von LLMs, RAG-Systemen und AI-Workflows für messbare Effizienzgewinne."
+      title: "Strategic Discovery & Advisory",
+      description: "Strategic Discovery Frameworks für C-Level: Opportunity Mapping, Stakeholder Alignment, Value Hypothesis Validation und strategische Roadmap-Entwicklung."
     },
     {
       icon: <Layers className="h-8 w-8" />,
-      title: "Product & UX Leadership",
-      description: "Product Vision, Roadmap Creation, UX Strategy und multidisziplinäre Team-Führung bei komplexen Projekten."
+      title: "Product & UX Strategy Framework",
+      description: "Product Vision & Discovery, Outcome-based Roadmaps, UX Strategy, Information Architecture und Conversion-optimierte Customer Journeys."
+    },
+    {
+      icon: <Brain className="h-8 w-8" />,
+      title: "AI-Driven Business Transformation",
+      description: "AI Strategy Consulting: LLM Integration, RAG-Systeme, AI-Workflows und ML Pipeline Design für messbare Business-Effizienzgewinne."
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "International Team Leadership",
-      description: "16+ Jahre Erfahrung in der Führung internationaler multidisziplinärer Teams bei digitalen Transformationsprojekten."
+      title: "Implementation Leadership",
+      description: "End-to-End Projektverantwortung: Multidisziplinäre Team-Koordination, Requirements Engineering und Quality Assurance bei komplexen Digitalprojekten."
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
-      title: "Data-Driven Decision Making",
-      description: "KPI Frameworks, Performance Analytics und datenbasierte Strategien für messbare Business-Outcomes."
+      title: "Measurable Business Outcomes",
+      description: "Track Record: +240% Conversion Rates, +180% Lead Quality, -45% Time-to-Decision durch datengetriebene KPI-Frameworks und Performance-Strategien."
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Requirements Engineering",
-      description: "Strukturierte Anforderungsanalyse, Stakeholder-Alignment und klare Spezifikationen für komplexe Systeme."
+      title: "Thought Leadership & Methodologie",
+      description: "16+ Jahre Methodologie-Entwicklung, Strategic Frameworks und Best Practices für Digital Strategy, UX Excellence und AI Integration."
     }
   ];
 
@@ -41,10 +41,10 @@ const UliCredentials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Kernkompetenzen
+            Strategic Advisory Credentials
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            16+ Jahre strategische Digitalberatung an der Schnittstelle von Business-Strategie, UX-Denken und AI-Integration
+            16+ Jahre Track Record in Digital Strategy, Product & UX Leadership und AI-Transformation – mit nachweisbaren Business Outcomes
           </p>
         </div>
 

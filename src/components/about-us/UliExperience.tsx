@@ -7,14 +7,14 @@ const UliExperience = () => {
     {
       icon: <Building2 className="h-6 w-6" />,
       period: "2008 – heute",
-      role: "Founder & Digital Strategy Consultant",
+      role: "Founder & Digital Strategy Lead",
       company: "ooliv Digital Consultancy",
-      description: "Senior-level digital strategy, UX architecture, customer journeys und Roadmaps. Management internationaler Dev & Design Teams. AI-enabled Workflows für Clients. SEO/SEM Auditing & Analytics.",
+      description: "Strategic Advisory für B2B-Unternehmen: Strategic Discovery, Product & UX Strategy, AI Integration und Implementation Leadership. Direkte Zusammenarbeit mit C-Level bei digitalen Transformationen mit messbaren Business Outcomes.",
       achievements: [
-        "100+ Projekte strategisch geleitet",
-        "Internationale multidisziplinäre Teams geführt",
-        "End-to-End Digital Transformation",
-        "C-Level Advisory für B2B-Unternehmen"
+        "100+ Digital Transformationen geleitet (+240% Avg. Conversion Rate)",
+        "Product Strategy Frameworks für B2B Scale-ups entwickelt",
+        "AI-enabled Workflows strategisch integriert",
+        "Multidisziplinäre internationale Teams koordiniert"
       ]
     },
     {
@@ -22,12 +22,12 @@ const UliExperience = () => {
       period: "2020 – 2024",
       role: "Founder & Product Strategy Lead",
       company: "Mallorca.ai / Property Guys",
-      description: "Strategische Führung einer AI/NLP Real-Estate Data Platform. Product Vision, Multi-Team Orchestration, R&D Funding und Compliance (BSFZ). NLP Enrichment, Data Quality Scoring, AI/ML Pipeline Vision.",
+      description: "End-to-End Product Leadership für AI/NLP Real-Estate Data Platform: Product Vision & Roadmap, Multi-Team Orchestration, R&D Strategy und ML Pipeline Design. Strategische Führung von Discovery bis Scale.",
       achievements: [
-        "AI/NLP Platform Strategie entwickelt",
-        "Crawling Infrastructure konzipiert",
-        "Multi-Team Product Leadership",
-        "R&D Funding strukturiert (BSFZ)"
+        "AI/NLP Platform Strategy: Von 0 zu Production-Scale",
+        "Product Discovery Framework & Opportunity Validation",
+        "Cross-functional Team Leadership (Dev, ML, Data)",
+        "R&D Funding Strategy & Compliance (BSFZ)"
       ]
     }
   ];
@@ -37,10 +37,10 @@ const UliExperience = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            Berufserfahrung
+            Track Record & Erfahrung
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            16+ Jahre strategische Führung bei digitalen Transformations- und AI-Projekten
+            16+ Jahre Digital Strategy Leadership mit nachweisbaren Business Outcomes – von Strategic Discovery bis Implementation
           </p>
         </div>
 
