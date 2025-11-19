@@ -12,7 +12,7 @@ const AboutUsTeamCapabilities = () => {
           Kleines Team. Volle Kompetenz.
         </H2>
         <Paragraph alignment="center" className={`mb-12 ${getContainerClasses('narrow')}`}>
-          Sie arbeiten mit dem CEO – aber Ihr Projekt wird von einem dedizierten Team aus Spezialisten geprägt, die synchron in diesen Bereichen arbeiten:
+          Sie arbeiten mit dem CEO – geprägt von Spezialisten in diesen Bereichen:
         </Paragraph>
         <div className={getGridClasses(3, 'medium')}>
           {[

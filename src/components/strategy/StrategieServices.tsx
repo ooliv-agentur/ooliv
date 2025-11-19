@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
@@ -10,42 +10,22 @@ const StrategieServices = () => {
   const services = [
     {
       title: "Strategische Analyse & Roadmap",
-      features: [
-        "Wir analysieren Ihre aktuelle Situation (Website, Daten, Wettbewerb)",
-        "Identifizieren die größten Potenziale für Verbesserungen",
-        "Ich entwickle gemeinsam mit Ihnen eine klare Strategie mit priorisierten Maßnahmen",
-        "Wir definieren realistische Meilensteine, KPIs und Timelines für 6-12 Monate"
-      ],
+      description: "Von der Bestandsaufnahme zur klaren Roadmap – damit Sie wissen, was als nächstes zu tun ist.",
       link: "/kontakt"
     },
     {
       title: "UX-Optimierung & Customer Journeys",
-      features: [
-        "Wir entwickeln gemeinsam mit Ihnen User Journeys, die konvertieren",
-        "Optimieren die Website-Struktur für messbar bessere Conversions",
-        "Ich verbessere Navigation und Nutzerführung datenbasiert",
-        "Wir fokussieren uns auf Conversion-Optimierung an allen kritischen Touchpoints"
-      ],
+      description: "Wir entwickeln Nutzerführungen, die konvertieren – datenbasiert und auf Ihre Ziele zugeschnitten.",
       link: "/webdesign"
     },
     {
       title: "KI-Integration für Ihr Business",
-      features: [
-        "Ich finde konkrete KI-Anwendungsfälle für Ihr Unternehmen",
-        "Wir entwickeln Automatisierungs-Strategien für effizientere Workflows",
-        "Setzen AI-gestützte Content-Prozesse auf",
-        "Ich schule Ihr Team im strategischen Umgang mit KI-Tools"
-      ],
+      description: "Konkrete KI-Anwendungsfälle für effizientere Workflows und intelligentere Prozesse.",
       link: "/ki-technologien"
     },
     {
-      title: "Umsetzungsbegleitung mit Webdesign & Webentwicklung",
-      features: [
-        "Ich koordiniere Ihr Team und externe Partner als zentraler Ansprechpartner",
-        "Wir stellen sicher, dass alle am gleichen Strang ziehen – von Design bis zur technischen Entwicklung",
-        "Definieren klare Qualitäts-Standards und Erfolgskriterien",
-        "Ich begleite Sie strategisch von der Planung bis zum erfolgreichen Go-Live"
-      ],
+      title: "Umsetzungsbegleitung",
+      description: "Wir koordinieren alle Beteiligten und begleiten Sie von der Planung bis zum erfolgreichen Go-Live.",
       link: "/website-relaunch"
     }
   ];
@@ -70,18 +50,13 @@ const StrategieServices = () => {
               key={index}
               className="bg-card p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 flex flex-col"
             >
-              <h3 className="text-xl font-bold mb-6 text-foreground">{service.title}</h3>
-              <ul className="space-y-3 flex-1 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-muted-foreground leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
+              <p className="text-muted-foreground leading-relaxed flex-1 mb-6">
+                {service.description}
+              </p>
               <Link to={service.link}>
                 <Button variant="outline" className="w-full">
-                  Mehr erfahren
+                  Im Gespräch mehr erfahren
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

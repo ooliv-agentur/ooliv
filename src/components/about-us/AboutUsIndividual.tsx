@@ -12,11 +12,11 @@ const AboutUsIndividual = () => {
             Individuell. Durchdacht. Messbar.
           </H2>
           <Paragraph className="mb-6">
-            Keine Templates. Kein Schnickschnack. Wir entwickeln maßgeschneiderte Websites basierend auf Ihren spezifischen Zielen, Ihrer Zielgruppe und Ihrer Wachstumsphase.
-            Ob B2B-SaaS-Anbieter, Fertigungsunternehmen oder regionaler Dienstleister – <strong>wir erstellen digitale Erlebnisse, die konvertieren</strong>.
+            Wir entwickeln maßgeschneiderte Websites basierend auf Ihren Zielen, Ihrer Zielgruppe und Ihrer Wachstumsphase. 
+            Keine Templates – <strong>digitale Erlebnisse, die konvertieren</strong>.
           </Paragraph>
           <Paragraph className="mb-8">
-            Vom ersten Konzept bis zur Betreuung nach dem Launch arbeiten wir mit Transparenz, strategischem Weitblick und hohen Designstandards.
+            Von der Konzeption bis zum Launch arbeiten wir mit Transparenz und strategischem Weitblick.
           </Paragraph>
           <div className="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100">
             <blockquote className="text-xl font-medium text-center text-foreground italic">

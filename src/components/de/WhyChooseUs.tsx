@@ -7,42 +7,19 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const WhyChooseUs = () => {
   const benefits = [
     {
-      title: "Strategische Expertise trifft praktische Umsetzung",
-      description: (
-        <>
-          Wir kombinieren 16+ Jahre Digital-Expertise mit einem eingespielten Umsetzungsteam – für{' '}
-          <Link to="/strategie" className="text-primary hover:underline font-medium">Strategien</Link>, die wirklich funktionieren. Von{' '}
-          <Link to="/webdesign" className="text-primary hover:underline font-medium">Design</Link> bis{' '}
-          <Link to="/webentwicklung" className="text-primary hover:underline font-medium">Entwicklung</Link>.
-        </>
-      ),
+      title: "Vom Konzept bis zum Launch",
+      description: "Strategie, Design & Entwicklung aus einer Hand – für digitale Produkte, die wirklich funktionieren.",
       icon: <Target className="h-6 w-6" />
     },
     {
-      title: "Messbare Ergebnisse, keine leeren Versprechen",
-      description: (
-        <>
-          Unsere Projekte erzielen im Schnitt +60-240% Conversion-Steigerungen. Wir arbeiten mit klaren KPIs und messbaren Zielen – von{' '}
-          <Link to="/seo-optimierung" className="text-primary hover:underline font-medium">SEO-Optimierung</Link> bis zu{' '}
-          <Link to="/website-relaunch" className="text-primary hover:underline font-medium">Website-Relaunches</Link>.
-        </>
-      ),
+      title: "Messbare Ergebnisse",
+      description: "Deutlich mehr qualifizierte Anfragen. Wir arbeiten mit klaren KPIs, nicht mit Vermutungen.",
       icon: <TrendingUp className="h-6 w-6" />
     },
     {
-      title: "Persönlicher Service auf Augenhöhe",
-      description: "Sie arbeiten direkt mit einem erfahrenen Digital-Strategen zusammen, nicht mit Junior-Teams. Ehrliche Beratung statt Verkaufsshow.",
+      title: "Persönlich & auf Augenhöhe",
+      description: "Direkte Zusammenarbeit mit erfahrenen Strategen. Ehrliche Beratung statt Verkaufsshow.",
       icon: <Users className="h-6 w-6" />
-    },
-    {
-      title: "Von der Strategie bis zur Umsetzung",
-      description: (
-        <>
-          Wir begleiten Sie vom ersten Workshop bis zum Go-Live – damit Ihre Strategie nicht in der Schublade landet, sondern umgesetzt wird. Mit{' '}
-          <Link to="/ki-technologien" className="text-primary hover:underline font-medium">KI-Integration</Link> und modernster Technologie.
-        </>
-      ),
-      icon: <Zap className="h-6 w-6" />
     }
   ];
 
@@ -60,12 +37,7 @@ const WhyChooseUs = () => {
     {
       value: "95%",
       label: "Weiterempfehlung",
-      description: "Zufriedene Kunden im DACH-Raum"
-    },
-    {
-      value: "+180%",
-      label: "Ø Conversion-Steigerung",
-      description: "Messbare Ergebnisse für Ihr Business"
+      description: "Zufriedene Kunden"
     }
   ];
 

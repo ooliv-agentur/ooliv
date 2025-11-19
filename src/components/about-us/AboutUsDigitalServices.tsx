@@ -10,8 +10,7 @@ const AboutUsDigitalServices = () => {
             Digital. Aber nicht nur.
           </h2>
           <p className="text-lg mb-12 text-muted-foreground leading-relaxed">
-            Unsere Kernkompetenz ist digitale Strategie und Webentwicklung – aber unsere Arbeit hört nicht am Bildschirm auf.
-            Wir unterstützen Kunden auch bei visuellem Branding, Offline-Materialien und Content in verschiedenen Formaten.
+            Unsere Kernkompetenz ist digitale Strategie und Webentwicklung. Bei Bedarf unterstützen wir auch bei Branding und Offline-Materialien.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
@@ -29,7 +28,7 @@ const AboutUsDigitalServices = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 rounded-2xl p-6 shadow-sm text-center border border-gray-100">
             <p className="text-lg text-foreground leading-relaxed">
-              Wir beherrschen KI-Tools wie <strong>ChatGPT</strong>, <strong>Midjourney</strong> und <strong>Sora</strong>, um unsere menschliche Kreativität zu erweitern – nicht zu ersetzen.
+              Wir nutzen KI-Tools wie <strong>ChatGPT</strong> und <strong>Midjourney</strong>, um unsere Arbeit zu erweitern – nicht zu ersetzen.
             </p>
           </div>
         </div>
