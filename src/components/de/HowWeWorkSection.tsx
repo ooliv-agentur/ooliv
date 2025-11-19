@@ -9,34 +9,38 @@ const HowWeWorkSection = () => {
     {
       icon: <Compass className="w-8 h-8" />,
       title: "Strategische Beratung",
-      description: "Wir analysieren Ihre aktuelle Situation, identifizieren Potenziale und entwickeln eine maßgeschneiderte Digital-Strategie.",
+      description: "Wir analysieren Ihre aktuelle Situation, identifizieren Potenziale und entwickeln gemeinsam mit Ihnen eine klare digitale Strategie – mit priorisierten Quick Wins und langfristiger Roadmap.",
       deliverables: [
-        "Strategische Analyse & Potenzial-Assessment",
-        "Priorisierte Maßnahmen-Roadmap",
-        "Konkrete Handlungsempfehlungen"
-      ]
+        "Strategic Discovery Workshop (2-3 Stunden)",
+        "Competitive Analysis & Benchmarking",
+        "Digitale Roadmap mit priorisierten Maßnahmen",
+        "KPI-Framework für messbare Erfolge"
+      ],
+      link: "/strategie"
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Website & UX Transformation",
-      description: "Von der Konzeption bis zur Umsetzung – wir transformieren Ihre Website zu einem effektiven Verkaufsinstrument.",
+      description: "Von der Konzeption bis zur Umsetzung – wir transformieren Ihre Website in ein strategisches Business-Tool, das Kunden überzeugt und konvertiert. Immer mit Fokus auf Ihre Geschäftsziele.",
       deliverables: [
-        "UX/UI Design & Konzeption",
-        "Technische Umsetzung",
-        "Conversion-Optimierung",
-        "Performance & SEO"
-      ]
+        "UX Strategy & Wireframes",
+        "Modernes Design-System (Webflow / WordPress)",
+        "Responsive Development & Performance-Optimierung",
+        "Content-Strategie & SEO-Foundation"
+      ],
+      link: "/webdesign"
     },
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "Laufende Begleitung",
-      description: "Kontinuierliche Optimierung, KI-Integration und strategische Weiterentwicklung Ihrer digitalen Präsenz.",
+      description: "Ihre digitale Transformation hört nicht beim Go-Live auf. Wir bleiben Ihr strategischer Partner – für kontinuierliche Optimierung, neue Features oder einfach als Sparringspartner bei digitalen Entscheidungen.",
       deliverables: [
-        "Monatliche Optimierung & Testing",
-        "KI-Automatisierung & Integration",
-        "Performance-Monitoring",
-        "Strategische Weiterentwicklung"
-      ]
+        "Monatliches Retainer-Modell (flexibel skalierbar)",
+        "Kontinuierliche Performance-Optimierung",
+        "Strategic Advisory & Sparringspartner",
+        "Priority-Support für technische Fragen"
+      ],
+      link: "/kontakt"
     }
   ];
 
@@ -88,6 +92,17 @@ const HowWeWorkSection = () => {
                   </div>
                 ))}
               </div>
+
+              {approach.link && (
+                <div className="mt-6">
+                  <a 
+                    href={approach.link}
+                    className="inline-flex items-center text-primary hover:underline font-medium text-sm"
+                  >
+                    Mehr erfahren →
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </StaggerReveal>

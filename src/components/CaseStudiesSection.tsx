@@ -117,19 +117,42 @@ const CaseStudiesSection = ({
   customBodyText,
   hideHeaderText = false
 }: CaseStudiesSectionProps) => {
-  const cases = transformationsData.de;
+  const [activeFilter, setActiveFilter] = React.useState<string>('alle');
+  const allCases = transformationsData.de;
   const t = defaultTranslations;
 
   const handleStartProject = () => {
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
+  // Filter cases based on active filter
+  const filteredCases = React.useMemo(() => {
+    if (activeFilter === 'alle') return allCases;
+    
+    const filterMap: Record<string, string[]> = {
+      'strategie': ['KLAIBER', 'COBUS Industries', 'IconPro GmbH'],
+      'webdesign': ['KLAIBER', 'COBUS Industries', 'IconPro GmbH', 'SPEZ AG'],
+      'ki': ['IconPro GmbH']
+    };
+    
+    return allCases.filter(caseStudy => 
+      filterMap[activeFilter]?.includes(caseStudy.client)
+    );
+  }, [activeFilter, allCases]);
+
+  const filters = [
+    { id: 'alle', label: 'Alle Projekte' },
+    { id: 'strategie', label: 'Strategie' },
+    { id: 'webdesign', label: 'Webdesign' },
+    { id: 'ki', label: 'KI-Integration' }
+  ];
+
   return (
     <section className="py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6" style={{ lineHeight: '1.3' }}>
                 {customTitle || t.title}
               </h2>
@@ -142,9 +165,28 @@ const CaseStudiesSection = ({
             </div>
           </Reveal>
         )}
+
+        {/* Filter Buttons */}
+        <Reveal delay={0.2}>
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                  activeFilter === filter.id
+                    ? 'bg-primary text-white shadow-lg'
+                    : 'bg-card text-foreground border border-border hover:border-primary/40'
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+        </Reveal>
         
         <StaggerReveal className="space-y-20" stagger={0.15}>
-          {cases.map((study, index) => (
+          {filteredCases.map((study, index) => (
             <div 
               key={index}
               className="bg-card rounded-2xl border border-border p-8 md:p-12 hover:shadow-2xl transition-all duration-300"
