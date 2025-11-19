@@ -27,7 +27,6 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'Webdesign', path: '/webdesign' },
     { title: 'Webentwicklung', path: '/webentwicklung' },
     { title: 'KI-Integration', path: '/ki-technologien' },
-    { title: 'Website Relaunch', path: '/website-relaunch' },
     { title: 'Referenzen', path: '/referenzen' },
     { title: 'Über Uli', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
