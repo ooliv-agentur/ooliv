@@ -40,7 +40,7 @@ const DeutscherHero = () => {
         dynamicPrefix=""
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
-          text: "Kostenloses Erstgespräch",
+          text: "Mit ooliv durchstarten",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}
