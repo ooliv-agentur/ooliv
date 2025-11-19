@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ChevronDown } from 'lucide-react';
+import ServicesMegaMenu from './ServicesMegaMenu';
 
 interface NavigationLinksProps {
   layout: 'mobile' | 'desktop';
@@ -20,13 +21,23 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   
-  // Navigation links for German language
+  // Navigation links for German language with mega-menu structure
   const germanLinks: NavLink[] = [
     { title: 'Home', path: '/' },
-    { title: 'Digitale Strategie', path: '/strategie' },
-    { title: 'Webdesign', path: '/webdesign' },
-    { title: 'Webentwicklung', path: '/webentwicklung' },
-    { title: 'KI-Integration', path: '/ki-technologien' },
+    { 
+      title: 'Leistungen', 
+      path: '/strategie',
+      subItems: [
+        { title: 'Digitale Strategie', path: '/strategie' },
+        { title: 'Product & UX Strategy', path: '/produkt-ux-strategie' },
+        { title: 'Website-Relaunch', path: '/website-relaunch' },
+        { title: 'Webdesign', path: '/webdesign' },
+        { title: 'Webentwicklung', path: '/webentwicklung' },
+        { title: 'SEO-Optimierung', path: '/seo-optimierung' },
+        { title: 'KI-Integration', path: '/ki-technologien' },
+        { title: 'Content-Erstellung', path: '/content-erstellung' },
+      ]
+    },
     { title: 'Transformationen', path: '/referenzen' },
     { title: 'Über uns', path: '/ueber-uns' },
     { title: 'Strategiegespräch', path: '/kontakt' }
@@ -50,7 +61,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     setOpenDropdown(openDropdown === title ? null : title);
   };
 
-  // Desktop layout with hover dropdown
+  // Desktop layout with hover dropdown and mega-menu for services
   if (layout === 'desktop') {
     return (
       <>
@@ -71,32 +82,42 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
                   <ChevronDown className="w-5 h-5" />
                 </button>
                 
-                {/* Dropdown menu */}
-                <div
-                  className={cn(
-                    "absolute left-0 top-full mt-2 min-w-[240px] bg-white rounded-lg shadow-lg border border-border z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200",
-                    openDropdown === link.title && "opacity-100 visible"
-                  )}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <div className="py-2">
-                    {link.subItems.map((subItem, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        to={subItem.path}
-                        className={cn(
-                          "block px-4 py-2.5 text-lg font-semibold transition-colors hover:bg-medico-turquoise/10",
-                          isActive(subItem.path)
-                            ? "text-medico-turquoise bg-medico-turquoise/5"
-                            : "text-medico-darkGreen hover:text-medico-turquoise"
-                        )}
-                        onClick={handleClick}
-                      >
-                        {subItem.title}
-                      </Link>
-                    ))}
+                {/* Mega Menu for Services/Leistungen */}
+                {link.title === 'Leistungen' ? (
+                  <ServicesMegaMenu
+                    isOpen={openDropdown === link.title}
+                    onClose={() => setOpenDropdown(null)}
+                    onMouseEnter={() => setOpenDropdown(link.title)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  />
+                ) : (
+                  /* Regular dropdown menu for other items */
+                  <div
+                    className={cn(
+                      "absolute left-0 top-full mt-2 min-w-[240px] bg-white rounded-lg shadow-lg border border-border z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200",
+                      openDropdown === link.title && "opacity-100 visible"
+                    )}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <div className="py-2">
+                      {link.subItems.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          to={subItem.path}
+                          className={cn(
+                            "block px-4 py-2.5 text-lg font-semibold transition-colors hover:bg-medico-turquoise/10",
+                            isActive(subItem.path)
+                              ? "text-medico-turquoise bg-medico-turquoise/5"
+                              : "text-medico-darkGreen hover:text-medico-turquoise"
+                          )}
+                          onClick={handleClick}
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </>
             ) : (
               <Link 

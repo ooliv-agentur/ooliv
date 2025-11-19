@@ -13,7 +13,7 @@ import WebsiteRelaunchSEO from '@/components/website-relaunch/WebsiteRelaunchSEO
 
 const WebsiteRelaunch = () => {
   return (
-    <PageLayout>
+    <PageLayout showBreadcrumbs={true}>
       <Helmet>
         <title>Website Relaunch Agentur | Professionelle Website erstellen lassen | ooliv</title>
         <meta 
