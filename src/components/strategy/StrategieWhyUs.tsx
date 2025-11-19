@@ -78,7 +78,7 @@ const StrategieWhyUs = () => {
                     Ihr Digital Strategy Lead
                   </p>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Seit über 16 Jahren helfe ich B2B-Unternehmen im DACH-Raum dabei, digital besser zu werden. Sie arbeiten direkt mit mir – keine Junior-Teams, keine Agentur-Hierarchie.
+                    Seit über 16 Jahren helfe ich B2B-Unternehmen im DACH-Raum dabei, digital besser zu werden. Dabei unterstützt mich ein spezialisiertes Team für Design, Entwicklung und Content. Sie arbeiten direkt mit mir als Ihrem Strategy Lead – keine Junior-Teams, keine Agentur-Hierarchie.
                   </p>
                   <div className="space-y-3">
                     {uliCredentials.map((credential, index) => {

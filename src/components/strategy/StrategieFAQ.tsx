@@ -6,7 +6,7 @@ const StrategieFAQ = () => {
   const strategieFaqs = [
     {
       question: "Für welche Unternehmen ist das geeignet?",
-      answer: "Ich arbeite hauptsächlich mit B2B-Unternehmen aus dem DACH-Raum, die ihre digitale Präsenz strategisch weiterentwickeln wollen. Typischerweise Geschäftsführer oder Marketing-Verantwortliche von Mittelständlern, Tech-Startups oder Dienstleistern, die merken, dass ihre aktuelle digitale Strategie nicht die gewünschten Ergebnisse bringt."
+      answer: "Wir arbeiten hauptsächlich mit B2B-Unternehmen aus dem DACH-Raum, die ihre digitale Präsenz strategisch weiterentwickeln wollen. Als Ihr persönlicher Ansprechpartner begleite ich Sie durch den gesamten Prozess. Typischerweise Geschäftsführer oder Marketing-Verantwortliche von Mittelständlern, Tech-Startups oder Dienstleistern, die merken, dass ihre aktuelle digitale Strategie nicht die gewünschten Ergebnisse bringt."
     },
     {
       question: "Wie läuft eine Zusammenarbeit ab?",
@@ -18,7 +18,7 @@ const StrategieFAQ = () => {
     },
     {
       question: "Arbeiten Sie nur beratend oder setzen Sie auch um?",
-      answer: "Beides! Ich kann rein strategisch beraten und Ihnen klare Handlungsempfehlungen geben – oder die komplette Umsetzung koordinieren: Von Design über Entwicklung bis zum Launch. Sie entscheiden, wie viel Unterstützung Sie brauchen."
+      answer: "Beides! Wir können rein strategisch beraten und Ihnen klare Handlungsempfehlungen geben – oder die komplette Umsetzung koordinieren: Von Design über Entwicklung bis zum Launch. Ich leite dabei die Strategie persönlich, während unser Umsetzungsteam für technische Exzellenz sorgt. Sie entscheiden, wie viel Unterstützung Sie brauchen."
     },
     {
       question: "Wie messen wir den Erfolg?",
@@ -30,7 +30,7 @@ const StrategieFAQ = () => {
     },
     {
       question: "Was unterscheidet Sie von anderen Agenturen?",
-      answer: "Sie arbeiten direkt mit mir – einem erfahrenen Digital-Berater mit 16+ Jahren Praxis, nicht mit Junior-Mitarbeitern. Ich sage Ihnen offen, wenn etwas keinen Sinn macht, statt einfach nur zu verkaufen. Sie bekommen messbare Strategien statt schöner PowerPoints und maßgeschneiderte Ansätze statt Standard-Agentur-Lösungen."
+      answer: "Sie arbeiten direkt mit mir – einem erfahrenen Digital-Berater mit 16+ Jahren Praxis, nicht mit Junior-Mitarbeitern. Unterstützt von einem spezialisierten Team für Design, Entwicklung und Content. Ich sage Ihnen offen, wenn etwas keinen Sinn macht, statt einfach nur zu verkaufen. Sie bekommen messbare Strategien statt schöner PowerPoints und maßgeschneiderte Ansätze statt Standard-Agentur-Lösungen."
     },
     {
       question: "Was kostet eine Zusammenarbeit?",
