@@ -51,6 +51,7 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const WebsiteRelaunch = lazy(() => import('./pages/WebsiteRelaunch'));
 const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung'));
 const WebsiteKonzept = lazy(() => import('./pages/WebsiteKonzept'));
+const StrategicInvestment = lazy(() => import('./pages/StrategicInvestment'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient();
@@ -148,6 +149,7 @@ function App() {
                       <Route path="/website-relaunch" element={<WebsiteRelaunch />} />
                       <Route path="/landingpage-optimierung" element={<LandingpageOptimierung />} />
                       <Route path="/website-konzept" element={<WebsiteKonzept />} />
+                      <Route path="/investition" element={<StrategicInvestment />} />
 
                       {/* 404 Route */}
                       

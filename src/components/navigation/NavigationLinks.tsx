@@ -20,6 +20,7 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     { title: 'AI Integration', path: '/ki-technologien' },
     { title: 'Product & UX Strategy', path: '/produkt-ux-strategie' },
     { title: 'Methodik', path: '/methodik' },
+    { title: 'Investment & Pricing', path: '/investition' },
     { title: 'Transformationen', path: '/referenzen' },
     { title: 'Über Uli', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
