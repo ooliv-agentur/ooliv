@@ -9,9 +9,9 @@ const DarmstadtHero = () => {
 
   // Dynamic subheadlines specifically for Darmstadt businesses
   const dynamicEndings = [
-    "Websites, die Tech-Kunden ansprechen.",
-    "mehr Sichtbarkeit in der TU-Region.",
-    "weniger Werbekosten, mehr Anfragen."
+    "Websites für Tech-Unternehmen",
+    "Mehr Sichtbarkeit in der TU-Region",
+    "Digital-Strategie mit technischer Tiefe"
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -20,17 +20,17 @@ const DarmstadtHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Darmstadt – strategisch statt oberflächlich"
-      subtitle="Ihre Darmstädter Digitalagentur für Websites, SEO und Marketing. Technisch fundiert, auf den Punkt gebracht – keine leeren Versprechen."
-      dynamicPrefix="Darmstädter Unternehmen profitieren von"
+      title="Website-Strategie & Digitale Beratung in Darmstadt"
+      subtitle="Darmstadts Tech-Unternehmen brauchen mehr als Standard-Marketing. Ich entwickle digitale Strategien, die technisch präzise und strategisch fundiert sind – für Hightech-Startups und wissenschaftsnahe B2B-Firmen."
+      dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={dynamicEndings}
       primaryCta={{
-        text: "Projekt besprechen",
+        text: "Kostenloses Erstgespräch",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Darmstädter Erfolge",
+        text: "Erfolgsbeispiele ansehen",
         link: "/referenzen"
       }}
     />

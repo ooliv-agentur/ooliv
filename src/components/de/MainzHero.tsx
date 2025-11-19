@@ -12,15 +12,19 @@ const MainzHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Werbeagentur Mainz – Websites & SEO seit 2008"
-      subtitle="Strategische Websites, bessere Sichtbarkeit und klare digitale Prozesse. Seit 2008 direkt in Mainz."
-      dynamicPrefix="Mainzer Unternehmen brauchen digitale Ergebnisse."
+      title="Website-Strategie & Digitale Beratung in Mainz"
+      subtitle="Ihre Website bringt keine Anfragen? Lassen Sie uns das ändern. Ich helfe Mainzer Unternehmen, digital besser zu werden – mit klaren Strategien, durchdachter UX und messbaren Ergebnissen."
+      dynamicPrefix="Sie bekommen:"
+      dynamicSubheadlines={["Mehr Website-Anfragen", "Bessere Google-Sichtbarkeit", "Klare digitale Strategie"]}
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",
         onClick: handleStartProject
       }}
-      secondaryCta={undefined}
+      secondaryCta={{
+        text: "Erfolgsbeispiele ansehen",
+        link: "/referenzen"
+      }}
     />
   );
 };
