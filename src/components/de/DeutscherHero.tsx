@@ -46,7 +46,7 @@ const DeutscherHero = () => {
             Sie bekommen keine 300-seitigen Konzepte, sondern konkrete Maßnahmen. Basierend auf 16+ Jahren Erfahrung.
           </>
         }
-        dynamicPrefix=""
+        dynamicPrefix="Sie bekommen:"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
           text: "Mit ooliv durchstarten",
