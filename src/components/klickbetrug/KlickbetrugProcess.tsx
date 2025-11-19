@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MousePointer, Eye, Brain, Shield, CheckCircle } from 'lucide-react';
+import { Eye, Brain, CheckCircle } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
@@ -9,28 +9,16 @@ import { getHeadingClasses, getBodyClasses } from '@/styles/typography';
 const KlickbetrugProcess = () => {
   const steps = [
     {
-      icon: MousePointer,
-      title: 'Anzeige wird geklickt',
-      subtitle: 'Der erste Kontakt',
-      description: 'Ein Nutzer klickt auf Ihre Google Ads Anzeige – aber ist das ein echter Interessent?'
-    },
-    {
       icon: Eye,
-      title: 'IP & Sessiondaten geprüft',
-      subtitle: 'Sofortige Analyse',
-      description: 'Wir erfassen IP-Adresse, Geolocation, Browser und Gerätedaten in Echtzeit.'
+      title: 'Klick-Analyse in Echtzeit',
+      subtitle: 'Sofortige Prüfung',
+      description: 'IP-Adresse, Geolocation, Browser und Gerätedaten werden beim Klick erfasst und analysiert.'
     },
     {
       icon: Brain,
-      title: 'Musterabgleich mit KI',
+      title: 'KI erkennt Betrug',
       subtitle: 'Künstliche Intelligenz',
-      description: 'Unsere KI vergleicht das Verhalten mit bekannten Betrugsmustern und Bot-Signaturen.'
-    },
-    {
-      icon: Shield,
-      title: 'Klick wird blockiert',
-      subtitle: 'Automatischer Schutz',
-      description: 'Verdächtige Klicks werden sofort blockiert, bevor sie Ihr Budget belasten.'
+      description: 'Unsere KI vergleicht das Verhalten mit Betrugsmustern und blockiert verdächtige Klicks automatisch.'
     },
     {
       icon: CheckCircle,
@@ -49,12 +37,12 @@ const KlickbetrugProcess = () => {
               Wie läuft der Schutz konkret ab?
             </h2>
             <p className={`${getBodyClasses('large', 'secondary', 'left')} max-w-3xl`}>
-              Unser Klickbetrug-Schutz arbeitet vollautomatisch im Hintergrund – in nur 5 Schritten zu mehr Sicherheit.
+              Unser Klickbetrug-Schutz arbeitet vollautomatisch im Hintergrund – in nur 3 Schritten zu mehr Sicherheit.
             </p>
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="text-left group relative">
               {/* Connection line for desktop */}
