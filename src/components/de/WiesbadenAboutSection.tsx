@@ -1,43 +1,43 @@
 import React from 'react';
-import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
+import { Target, Lightbulb, Rocket, Zap } from 'lucide-react';
 import LocationServicesSection from '@/components/location/LocationServicesSection';
 
 const WiesbadenAboutSection = () => {
   const services = [
     {
-      title: "Webdesign",
-      description: "Professionelle Websites, die Ihre Wiesbadener Zielgruppe überzeugen und Vertrauen schaffen.",
-      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/webdesign"
-    },
-    {
-      title: "Entwicklung",
-      description: "Technisch ausgereifte Lösungen für nachhaltiges Wachstum Ihres Unternehmens.",
-      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/webentwicklung"
-    },
-    {
-      title: "SEO",
-      description: "Bessere Sichtbarkeit in Wiesbaden und dem Rhein-Main-Gebiet für mehr qualifizierte Anfragen.",
-      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/seo-optimierung"
-    },
-    {
-      title: "Strategie",
-      description: "Datenbasierte Konzepte, die Ihre Marktposition stärken und Umsätze steigern.",
-      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
+      title: "Strategic Discovery",
+      description: "Intensive 4-6 Wochen Discovery Phase für strategische Klarheit vor großen Investments.",
+      icon: <Target className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/strategie"
+    },
+    {
+      title: "Product & UX Strategy",
+      description: "End-to-End Product Transformation mit messbaren Business Outcomes (+240% avg. Conversion Rate).",
+      icon: <Lightbulb className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/produkt-ux-strategie"
+    },
+    {
+      title: "AI Integration",
+      description: "Strategic AI Integration – keine Ad-hoc Implementierungen, sondern strategischer Framework mit Business Impact.",
+      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/ki-technologien"
+    },
+    {
+      title: "C-Level Advisory",
+      description: "Strategic Retainer für continuous Digital Transformation – kein Agentur-Theater, sondern echte Partnership.",
+      icon: <Rocket className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/investition"
     }
   ];
 
   return (
     <LocationServicesSection
       location="Wiesbaden"
-      headline="ooliv in Wiesbaden – für messbare Erfolge"
-      description="Wir entwickeln strategische Online-Auftritte, die Ihre Zielgruppe in Wiesbaden und dem Rhein-Main-Gebiet erreichen und Geschäftsergebnisse verbessern. Professionell, zielgerichtet und mit nachweisbaren Resultaten."
+      headline="Strategic Digital Advisory in Wiesbaden"
+      description="Wiesbadener Unternehmen brauchen keine klassische Werbeagentur, sondern Strategic Leadership für ihre Digital Transformation. 16+ Jahre C-Level Advisory – von Strategic Discovery über AI Integration bis zur messbaren Umsetzung. Kein Agentur-Theater, sondern messbare Business Outcomes."
       services={services}
-      ctaText="Mehr erfahren"
-      ctaLink="/strategie"
+      ctaText="Strategic Discovery starten"
+      ctaLink="/kontakt"
       gridCols={4}
     />
   );
