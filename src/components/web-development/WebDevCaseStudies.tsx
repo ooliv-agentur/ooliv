@@ -10,7 +10,7 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
-import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { transformationsData } from '@/components/CaseStudiesSection';
 import Reveal from '@/components/animations/Reveal';
 import OptimizedImage from '@/components/OptimizedImage';
 
@@ -18,8 +18,8 @@ const WebDevCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Use all 5 case studies
-  const relevantCases = caseStudiesData.de;
+  // Use all transformations with new structure
+  const relevantCases = transformationsData.de;
   
   const translations = {
     en: {
@@ -41,17 +41,13 @@ const WebDevCaseStudies = () => {
   const t = translations.de;
   const caseStudiesPath = "/referenzen";
   
-  // Adapt case studies data for web development display format
+  // Adapt transformations data for web development display format
   const cases = relevantCases.map(study => ({
     client: study.client,
     industry: study.industry,
-    summary: study.headline,
-    services: [
-      "WordPress-Entwicklung", 
-      "ERP Integration", 
-      "Performance-Optimierung"
-    ],
-    kpis: study.impact.map(impact => impact.split(' ')[0]),
+    summary: study.challenge,
+    services: study.approach.slice(0, 3),
+    kpis: study.outcomes.map(outcome => outcome.metric),
     image: study.image
   }));
 

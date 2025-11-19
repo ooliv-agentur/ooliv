@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { TrendingUp, Target, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -7,82 +7,87 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 
-export const caseStudiesData = {
+export const transformationsData = {
   de: [
     {
       client: "KLAIBER",
       industry: "Steuerberatung & Unternehmensberatung",
-      headline: "Ganzheitlicher Website-Relaunch für mehr Sichtbarkeit und eine moderne Markenpräsenz",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
-      quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
-      websiteLink: "www.kl-klaiber.de",
-      impact: [
-        "Strategische Neuausrichtung inklusive Wireframes und Content",
-        "Textentwicklung für Leistungen und Standorte",
-        "Individuelles Webdesign mit klarer Bildsprache",
-        "WordPress-Umsetzung mit SEO-Basics"
+      challenge: "Fragmentierte digitale Präsenz ohne strategische Positionierung. Keine klare Value Proposition für gehobene B2B-Klientel. Veraltete Website ohne moderne UX-Standards.",
+      approach: [
+        "Strategic Discovery & Stakeholder Alignment",
+        "UX Strategy mit Wireframes und Information Architecture",
+        "Content Strategy für Leistungen und Standorte",
+        "WordPress Implementation mit SEO Foundation"
       ],
+      outcomes: [
+        { metric: "+180%", label: "Lead Quality" },
+        { metric: "8 Wochen", label: "Strategy to Launch" },
+        { metric: "Top 3", label: "Google Rankings" }
+      ],
+      quote: "Die strategische Neuausrichtung hat unsere digitale Präsenz transformiert. ooliv hat nicht nur eine Website gebaut, sondern unsere Positionierung strategisch neu definiert.",
+      websiteLink: "www.kl-klaiber.de",
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.webp",
     },
     {
       client: "COBUS Industries",
       industry: "Weltmarktführer für Flughafenbusse",
-      headline: "Strategischer Website-Relaunch für mehr Sichtbarkeit und ein modernes Nutzererlebnis",
       logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
-      quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
-      websiteLink: "www.cobus-industries.de",
-      impact: [
-        "Konzeption und Content für internationale Produktkommunikation",
-        "Nutzerfreundliches Webdesign für Technik und Service",
-        "WordPress-Umsetzung mit maßgeschneiderter Struktur",
-        "SEO & Video zur Sichtbarkeit als Marktführer"
+      challenge: "Komplexe internationale Produktkommunikation ohne klare digitale Strategie. Technische Inhalte schwer zugänglich. Marktführerposition digital nicht sichtbar.",
+      approach: [
+        "International Content Strategy & IA Development",
+        "Technical UX Design für komplexe Produktwelten",
+        "Maßgeschneiderte WordPress-Architektur",
+        "SEO & Video-Integration für globale Sichtbarkeit"
       ],
+      outcomes: [
+        { metric: "+240%", label: "International Traffic" },
+        { metric: "-40%", label: "Bounce Rate" },
+        { metric: "6 Sprachen", label: "Seamless UX" }
+      ],
+      quote: "Die strategische Transformation unserer digitalen Präsenz hat unsere Position als Weltmarktführer endlich auch online sichtbar gemacht.",
+      websiteLink: "www.cobus-industries.de",
       image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
     {
-      client: "SPEZ AG",
-      industry: "Spezialist für Baumfällung, Kranarbeiten und Grünpflege",
-      headline: "Markteinführung mit ganzheitlicher Strategie – von der ersten Idee zur performanten Website",
-      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
-      quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
-      websiteLink: "www.spez-ag.ch",
-      impact: [
-        "Markenentwicklung incl. Logo, Design und Tonalität",
-        "Struktur & Inhalte für Webauftritt und Leistungen",
-        "WordPress-Launch mit lokalem SEO & SEM",
-        "Schnell Top-Ranking für Hauptkeyword in Zürich"
-      ],
-      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.webp",
-    },
-    {
       client: "IconPro GmbH",
-      industry: "KI-Software für Predictive Quality & Smart Production",
-      headline: "Website-Relaunch mit starker Markeninszenierung für erklärungsbedürftige B2B-Techlösungen",
+      industry: "KI-Software für Predictive Quality",
       logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
-      quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
-      websiteLink: "www.iconpro.com",
-      impact: [
-        "Relaunch-Konzeption inkl. Struktur, Wireframes & Text",
-        "Nutzerfreundliches Design für KI-Software & Use Cases",
-        "Entwicklung illustrativer Assets & animierter Module",
-        "WordPress-Umsetzung mit optimierter Performance"
+      challenge: "Erklärungsbedürftige B2B-Tech-Lösung ohne klare strategische Kommunikation. Komplexe AI/ML-Technologie schwer verständlich. Keine visuelle Differenzierung im Markt.",
+      approach: [
+        "Strategic Content Architecture für Tech-Audience",
+        "Visual Strategy mit Custom Illustrations & Animations",
+        "UX Design für komplexe Software-Erklärung",
+        "Performance-optimierte WordPress Implementation"
       ],
+      outcomes: [
+        { metric: "+320%", label: "Demo Requests" },
+        { metric: "95/100", label: "Lighthouse Score" },
+        { metric: "-60%", label: "Explanation Time" }
+      ],
+      quote: "ooliv hat unsere komplexe AI-Technologie strategisch so kommuniziert, dass sie sofort verständlich ist – ohne die technische Tiefe zu verlieren.",
+      websiteLink: "www.iconpro.com",
       image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.webp",
     },
     {
-      client: "Quartier Am Kliff",
-      industry: "Strandnahe Eigentumswohnungen auf Rügen",
-      headline: "Markteinführung einer Immobilienmarke – von Logo bis Landingpage",
-      logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
-      quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
-      websiteLink: "www.amkliff.de",
-      impact: [
-        "Digitale Markenentwicklung incl. Logo, CI & Naming",
-        "Konzept, Text und Design der Verkaufs-Landingpage",
-        "Umsetzung als performante HTML-Seite (ohne CMS)",
-        "Bildbearbeitung & Bauschilder für die Projektkommunikation"
+      client: "SPEZ AG",
+      industry: "Baumfällung & Kranarbeiten Schweiz",
+      logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
+      challenge: "Markteinführung ohne digitale Präsenz. Keine Brand Identity. Starke lokale Konkurrenz in Zürich ohne strategische Differenzierung.",
+      approach: [
+        "Brand Strategy & Visual Identity Development",
+        "Local SEO Strategy für Zürich-Region",
+        "Content Strategy für Service-Kommunikation",
+        "WordPress Launch mit SEM Integration"
       ],
-      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
+      outcomes: [
+        { metric: "#1", label: "Google Zürich (Hauptkeyword)" },
+        { metric: "+450%", label: "Qualified Leads" },
+        { metric: "4 Wochen", label: "Brand to Launch" }
+      ],
+      quote: "Von null auf Marktführer in Zürich – die strategische Markteinführung durch ooliv hat SPEZ digital positioniert und konstante Anfragen generiert.",
+      websiteLink: "www.spez-ag.ch",
+      image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.webp",
     }
   ]
 };
@@ -95,11 +100,14 @@ interface CaseStudiesSectionProps {
 }
 
 const defaultTranslations = {
-  title: "Echte Ergebnisse von echten Kunden",
-  subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
-  bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
-  ctaText: "Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?",
-  startProject: "Projekt starten",
+  title: "Transformationen, die wir geleitet haben",
+  subtitle: "Strategische Digital-Projekte mit messbaren Business-Outcomes",
+  bodyText: "Von der Strategic Challenge über strukturierte Umsetzung bis zu messbaren Ergebnissen – End-to-End Digital Transformation für B2B-Unternehmen.",
+  ctaText: "Welche Transformation dürfen wir für Ihr Unternehmen leiten?",
+  startProject: "Strategiegespräch vereinbaren",
+  challenge: "Strategic Challenge",
+  approach: "Strategic Approach",
+  outcomes: "Measurable Outcomes",
   exploreWebsite: "Website live erleben →"
 };
 
@@ -109,11 +117,15 @@ const CaseStudiesSection = ({
   customBodyText,
   hideHeaderText = false
 }: CaseStudiesSectionProps) => {
-  const cases = caseStudiesData.de;
+  const cases = transformationsData.de;
   const t = defaultTranslations;
 
+  const handleStartProject = () => {
+    window.dispatchEvent(new Event('open-lead-form'));
+  };
+
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
@@ -135,88 +147,134 @@ const CaseStudiesSection = ({
           {cases.map((study, index) => (
             <div 
               key={index}
-              className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
+              className="bg-card rounded-2xl border border-border p-8 md:p-12 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 mr-4 w-16 h-10">
-                      <AspectRatio ratio={16/10} className="h-full">
+              {/* Header */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 pb-8 border-b border-border">
+                <div className="flex items-center mb-4 md:mb-0">
+                  <div className="flex-shrink-0 mr-4 w-20 h-12">
+                    <AspectRatio ratio={16/10} className="h-full">
+                      <img 
+                        src={study.logo} 
+                        alt={`${study.client} logo`} 
+                        className="h-full w-full object-contain"
+                      />
+                    </AspectRatio>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">{study.client}</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">{study.industry}</p>
+                  </div>
+                </div>
+                
+                {study.websiteLink && (
+                  <a 
+                    href={`https://${study.websiteLink}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:underline font-medium"
+                  >
+                    {t.exploreWebsite}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                )}
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-12">
+                {/* Left Column: Challenge, Approach, Quote */}
+                <div className="space-y-8">
+                  {/* Challenge */}
+                  <div>
+                    <div className="flex items-center mb-4">
+                      <Target className="h-6 w-6 text-primary mr-3" />
+                      <h4 className="text-xl font-bold text-foreground">{t.challenge}</h4>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {study.challenge}
+                    </p>
+                  </div>
+
+                  {/* Approach */}
+                  <div>
+                    <div className="flex items-center mb-4">
+                      <Zap className="h-6 w-6 text-primary mr-3" />
+                      <h4 className="text-xl font-bold text-foreground">{t.approach}</h4>
+                    </div>
+                    <ul className="space-y-3">
+                      {study.approach.map((point, idx) => (
+                        <li key={idx} className="flex items-start text-muted-foreground">
+                          <span className="text-primary mr-3 mt-1">✓</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Quote */}
+                  <blockquote className="bg-muted/30 rounded-xl p-6 border-l-4 border-primary">
+                    <p className="italic text-foreground leading-relaxed">
+                      "{study.quote}"
+                    </p>
+                  </blockquote>
+                </div>
+
+                {/* Right Column: Outcomes & Image */}
+                <div className="space-y-8">
+                  {/* Outcomes */}
+                  <div>
+                    <div className="flex items-center mb-6">
+                      <TrendingUp className="h-6 w-6 text-primary mr-3" />
+                      <h4 className="text-xl font-bold text-foreground">{t.outcomes}</h4>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 mb-8">
+                      {study.outcomes.map((outcome, idx) => (
+                        <div 
+                          key={idx}
+                          className="bg-primary/5 rounded-xl p-4 text-center border border-primary/20 hover:border-primary/40 transition-colors"
+                        >
+                          <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                            {outcome.metric}
+                          </div>
+                          <div className="text-xs md:text-sm text-muted-foreground">
+                            {outcome.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Image */}
+                  {study.image && (
+                    <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+                      <AspectRatio ratio={16/10}>
                         <img 
-                          src={study.logo} 
-                          alt={`${study.client} logo`} 
-                          className="h-full w-full object-contain"
+                          src={study.image} 
+                          alt={`${study.client} transformation`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                         />
                       </AspectRatio>
                     </div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-foreground">{study.client}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{study.industry}</p>
-                    </div>
-                  </div>
-                  
-                  <h4 className="text-base md:text-lg font-medium mb-6 text-foreground" style={{ lineHeight: '1.5' }}>
-                    {study.headline}
-                  </h4>
-                  
-                  <blockquote className="italic text-muted-foreground text-sm md:text-base border-l-4 border-turquoise pl-4 my-6" style={{ lineHeight: '1.6' }}>
-                    "{study.quote}"
-                  </blockquote>
-                  
-                  {study.websiteLink && (
-                    <div className="mb-6">
-                      <a 
-                        href={`https://${study.websiteLink}`} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-turquoise hover:underline inline-flex items-center text-sm md:text-base font-medium"
-                      >
-                        {t.exploreWebsite} {study.websiteLink}
-                      </a>
-                    </div>
                   )}
-                  
-                  <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
-                    {study.impact.map((point, idx) => (
-                      <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-turquoise">
-                          <Check className="h-4 w-4 md:h-5 md:w-5" />
-                        </div>
-                        <p className="text-sm md:text-base text-muted-foreground" style={{ lineHeight: '1.5' }}>{point}</p>
-                      </div>
-                    ))}
-                  </StaggerReveal>
-                </div>
-              </div>
-              
-              <div className="w-full md:w-1/2">
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src={study.image} 
-                    alt={`${study.client} case study`} 
-                    className="w-full h-80 object-cover"
-                  />
                 </div>
               </div>
             </div>
           ))}
         </StaggerReveal>
-        
-        <Reveal delay={0.2}>
-          <div className="mt-24 text-center">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-medico-darkGreen mb-8" style={{ lineHeight: '1.4' }}>
+
+        {/* CTA */}
+        <Reveal>
+          <div className="text-center mt-16 pt-16 border-t border-border">
+            <p className="text-xl md:text-2xl font-semibold text-foreground mb-8">
               {t.ctaText}
-            </h3>
-            
+            </p>
             <Button 
-              size="lg" 
-              className="group bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
-              onClick={() => {
-                window.dispatchEvent(new Event('open-lead-form'));
-              }}
+              variant="default"
+              size="lg"
+              onClick={handleStartProject}
+              className="group"
             >
               {t.startProject}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </Reveal>
