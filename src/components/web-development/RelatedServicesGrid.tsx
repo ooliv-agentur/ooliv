@@ -8,25 +8,29 @@ const RelatedServicesGrid = () => {
       icon: Palette,
       title: "Webdesign",
       description: "UI/UX Design, das konvertiert – entwickelt von unseren Design-Experten.",
-      link: "/webdesign"
+      link: "/webdesign",
+      cta: "Webdesign-Beratung anfragen"
     },
     {
       icon: FileText,
       title: "Content-Erstellung",
       description: "SEO-optimierte Texte für Ihre neue Website – von Profis geschrieben.",
-      link: "/content-erstellung"
+      link: "/content-erstellung",
+      cta: "Content-Services entdecken"
     },
     {
       icon: Search,
       title: "SEO-Optimierung",
       description: "Technisches SEO, Performance und Ranking-Strategien für Ihre Website.",
-      link: "/seo-optimierung"
+      link: "/seo-optimierung",
+      cta: "SEO-Strategie entwickeln"
     },
     {
       icon: RefreshCw,
       title: "Website Relaunch",
       description: "Ihre alte Website neu entwickelt – mit moderner Technologie und besserer Performance.",
-      link: "/website-relaunch"
+      link: "/website-relaunch",
+      cta: "Relaunch planen"
     }
   ];
 
@@ -64,7 +68,7 @@ const RelatedServicesGrid = () => {
                 </p>
 
                 <div className="mt-4 text-medico-turquoise font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Mehr erfahren →
+                  {service.cta} →
                 </div>
               </Link>
             );

@@ -12,28 +12,32 @@ const RelatedServicesGrid = () => {
       title: "Webdesign & UX",
       description: "Conversion-optimierte Designs, die Ihre Markenwerte transportieren und messbar mehr Anfragen generieren.",
       link: "/webdesign",
-      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
+      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png",
+      cta: "Webdesign-Beratung starten"
     },
     {
       icon: Code,
       title: "KI-Integration",
       description: "Intelligente Automatisierung Ihrer Geschäftsprozesse – von Content-Erstellung bis Kundenservice.",
       link: "/ki-technologien",
-      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png"
+      image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
+      cta: "KI-Integration planen"
     },
     {
       icon: Search,
       title: "SEO-Optimierung",
       description: "Technisches SEO, Content-Strategie und nachhaltige Rankings für mehr organische Sichtbarkeit.",
       link: "/seo-optimierung",
-      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
+      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png",
+      cta: "SEO-Strategie entwickeln"
     },
     {
       icon: Rocket,
       title: "Website Relaunch",
       description: "Technische Migration, Content-Strategie und SEO-Optimierung für einen erfolgreichen Relaunch.",
       link: "/website-relaunch",
-      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png"
+      image: "/lovable-uploads/6e8f3f4b-5d3f-4be8-8fb7-7ae3bb59e55f.png",
+      cta: "Relaunch-Beratung anfragen"
     }
   ];
 
@@ -79,7 +83,7 @@ const RelatedServicesGrid = () => {
                       {service.description}
                     </p>
                     <Button variant="ghost" className="w-full group-hover:bg-primary/5">
-                      Mehr erfahren
+                      {service.cta}
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
