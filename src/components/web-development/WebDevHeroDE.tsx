@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageHero from '@/components/PageHero';
+import webdevHero from '@/assets/illustrations/webdev-hero.png';
 
 const WebDevHeroDE = () => {
   const handleStartProject = () => {
@@ -19,6 +20,11 @@ const WebDevHeroDE = () => {
       secondaryCta={{
         text: "Entwicklungs-Beispiele",
         link: "/referenzen"
+      }}
+      heroIllustration={{
+        src: webdevHero,
+        alt: "Moderne Webentwicklung - Isometrischer Workspace mit Code Editor, Browser und Performance Metriken",
+        animate: true
       }}
     />
   );
