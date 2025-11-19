@@ -35,8 +35,8 @@ const DeutscherHero = () => {
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Digital-Berater, der Ihr Business wirklich voranbringt"
-        subtitle="Ich helfe Ihnen, digital besser zu werden – mit klaren Strategien, durchdachter UX und sinnvollen KI-Lösungen. Sie bekommen keine 300-seitigen Konzepte, sondern konkrete Maßnahmen. Basierend auf 16+ Jahren Erfahrung."
+        title="ooliv – Digital-Beratung, die Ihr Business voranbringt"
+        subtitle="Uli Schönleber und das ooliv-Team helfen Ihnen, digital besser zu werden – mit klaren Strategien, durchdachter UX und sinnvollen KI-Lösungen. Sie bekommen keine 300-seitigen Konzepte, sondern konkrete Maßnahmen. Basierend auf 16+ Jahren Erfahrung."
         dynamicPrefix=""
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{

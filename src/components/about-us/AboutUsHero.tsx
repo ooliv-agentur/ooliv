@@ -30,12 +30,12 @@ const AboutUsHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
-              Die meisten Agenturen versprechen zu viel. Wir nicht.
+              ooliv – ehrliche Digital-Beratung ohne Agentur-Blabla
             </H1>
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Ein Gründer, der Ihr Projekt persönlich betreut. Ehrliche Beratung statt Verkaufsgespräche.
+              Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Uli Schönleber und das ooliv-Team betreuen Ihr Projekt persönlich. Ehrliche Beratung statt Verkaufsgespräche.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}

@@ -87,7 +87,7 @@ const WebsiteKonzept = () => {
           <div className="text-center w-full">
             <Reveal delay={0.1} direction="up" distance={20}>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Ihre Website bringt keine Anfragen?<br />Wir zeigen Ihnen kostenlos, warum.
+                Website bringt keine Anfragen? ooliv zeigt Ihnen kostenlos, warum.
               </h1>
             </Reveal>
 
