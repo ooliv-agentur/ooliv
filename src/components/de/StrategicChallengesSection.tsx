@@ -10,18 +10,18 @@ const StrategicChallengesSection = () => {
   const challenges = [
     {
       icon: <AlertCircle className="w-6 h-6" />,
-      title: "Digitale Transformation ohne klare Roadmap",
-      description: "Investitionen in digitale Initiativen ohne strategischen Framework führen zu Silos, ineffizienten Prozessen und verpassten Business Outcomes."
+      title: "Ihre Website sieht gut aus – aber bringt keine Anfragen",
+      description: "Schönes Design allein reicht nicht. Wenn Ihre Website nicht konvertiert, fehlt die strategische Grundlage: klare User Journeys, überzeugende Inhalte, messbare Conversion-Ziele. Mit 16+ Jahren Erfahrung entwickle ich die Strategie, die aus Besuchern Kunden macht."
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: "Silos zwischen Product, UX und Tech",
-      description: "Fehlende strategische Alignment zwischen Teams resultiert in suboptimalen User Experiences und verlängerten Time-to-Market Zyklen."
+      title: "Digitalisierung läuft – aber ohne erkennbare Richtung",
+      description: "Viele Projekte gleichzeitig, aber kein roter Faden? Wenn Teams aneinander vorbeiarbeiten und Budget verpufft, brauchen Sie eine klare Digital-Strategie. Ich helfe Ihnen, Prioritäten zu setzen und alle auf ein Ziel auszurichten."
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "AI-Integration ohne strategischen Framework",
-      description: "Ad-hoc AI-Implementierungen ohne strategische Discovery führen zu isolierten Use Cases ohne echten Business Impact."
+      title: "KI-Potenzial ist da – aber wie konkret umsetzen?",
+      description: "KI ist mehr als ChatGPT. Aber welche Use Cases machen für Ihr Business wirklich Sinn? Ich identifiziere die konkreten Anwendungsfälle, die Ihren Workflow verbessern und Ihren Kunden echten Mehrwert bringen – strategisch durchdacht, nicht blind dem Hype gefolgt."
     }
   ];
 
@@ -54,18 +54,21 @@ const StrategicChallengesSection = () => {
 
         <div className="text-center bg-white p-8 rounded-lg border border-border">
           <h3 className="text-2xl font-bold mb-4 text-foreground">
-            Die Lösung: Strategic Discovery & Transformation
+            Die Lösung: Strategie, die wirklich funktioniert
           </h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-            16+ Jahre C-Level Advisory in <a href="/strategie" className="text-primary hover:underline">Digital Strategy</a>, <a href="/produkt-ux-strategie" className="text-primary hover:underline">Product & UX Strategy</a> und <a href="/ki-technologien" className="text-primary hover:underline">AI Integration</a> – mit messbaren Business Outcomes (+240% Conversion Rates, +180% Lead Quality).
+            Sie bekommen keine 300-seitigen Konzepte, die in der Schublade verschwinden. Sondern klare, umsetzbare Strategien mit konkreten Maßnahmen. Basierend auf 16+ Jahren Erfahrung in <a href="/strategie" className="text-primary hover:underline">Digital Strategy</a>, <a href="/produkt-ux-strategie" className="text-primary hover:underline">Product & UX</a> und <a href="/ki-technologien" className="text-primary hover:underline">KI-Integration</a> – mit messbaren Ergebnissen (+240% Conversion Rates, +180% Lead Quality).
           </p>
           <Button 
             onClick={handleStartProject}
             size="lg"
             className="text-lg px-8"
           >
-            Strategic Discovery vereinbaren
+            Kostenloses Strategiegespräch vereinbaren
           </Button>
+          <p className="text-sm text-muted-foreground mt-3">
+            30 Min. unverbindlich – wir besprechen Ihre Situation und ich zeige Ihnen konkrete Ansätze
+          </p>
         </div>
       </div>
     </section>

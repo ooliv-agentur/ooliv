@@ -15,33 +15,36 @@ const ROICalculatorTeaser = () => {
                   <Calculator className="w-6 h-6" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                  Calculate Your Digital Transformation ROI
+                  Lohnt sich eine Investition für Sie?
                 </h2>
               </div>
               <p className="text-lg text-muted-foreground mb-8">
-                Interaktiver ROI Calculator – simulieren Sie Business Outcomes für Strategic Discovery oder End-to-End Transformation basierend auf Ihren aktuellen Metriken.
+                Berechnen Sie, wie viel mehr Umsatz Sie mit einer optimierten Website machen könnten. Basierend auf Ihren aktuellen Besucherzahlen und durchschnittlichen Auftragswerten.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
                   <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-foreground">Conversion Rate Projection</div>
-                    <div className="text-sm text-muted-foreground">+60% bis +140% durchschnittliche Steigerung</div>
+                    <div className="font-semibold text-foreground">Mehr Anfragen & Verkäufe</div>
+                    <div className="text-sm text-muted-foreground">Meine Kunden steigern ihre Conversion Rate im Schnitt um +60% bis +140%</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <DollarSign className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-foreground">Revenue Impact Calculation</div>
-                    <div className="text-sm text-muted-foreground">Basierend auf Ihrem Traffic & Average Order Value</div>
+                    <div className="font-semibold text-foreground">Konkrete Umsatz-Prognose</div>
+                    <div className="text-sm text-muted-foreground">Rechnen Sie aus, wie viel Mehrwert eine bessere Website für Sie bringt</div>
                   </div>
                 </div>
               </div>
               <Link to="/roi-rechner">
                 <Button size="lg" className="text-lg px-8">
-                  Run Your ROI Projection
+                  Jetzt ROI berechnen
                 </Button>
               </Link>
+              <p className="text-sm text-muted-foreground mt-3">
+                Kostenlos & unverbindlich – dauert nur 2 Minuten
+              </p>
             </div>
 
             <div className="bg-white rounded-lg p-8 border border-border">
