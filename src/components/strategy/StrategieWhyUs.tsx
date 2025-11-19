@@ -1,35 +1,34 @@
 import React from 'react';
-import { Award, Users, Target, TrendingUp, Code, Palette } from 'lucide-react';
+import { Award, Target, TrendingUp, Palette, Code, Users, ArrowRight } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const StrategieTeamExpertise = () => {
+const StrategieWhyUs = () => {
   const uliCredentials = [
     {
       icon: Award,
-      text: "16+ Jahre Digital-Erfahrung"
+      text: "16+ Jahre Digital-Expertise"
     },
     {
       icon: Target,
       text: "100+ erfolgreiche Projekte"
     },
     {
-      icon: TrendingUp,
-      text: "+180% Lead-Qualität im Schnitt"
+      icon: Users,
+      text: "Direkt mit mir – keine Junior-Teams"
     }
   ];
 
   const teamCapabilities = [
     {
       icon: Palette,
-      title: "UX/UI Design",
+      title: "UX/UI Designer",
       description: "Conversion-optimierte Interfaces"
     },
     {
       icon: Code,
-      title: "Full-Stack Development",
+      title: "Full-Stack Developer",
       description: "React, WordPress, Headless CMS"
     },
     {
@@ -39,13 +38,19 @@ const StrategieTeamExpertise = () => {
     }
   ];
 
+  const metrics = [
+    { value: "+180%", label: "Lead-Qualität im Schnitt" },
+    { value: "95%", label: "Weiterempfehlung" },
+    { value: "4.9/5", label: "Kundenzufriedenheit" }
+  ];
+
   return (
     <section className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Ihr strategischer Partner: Experte + eingespieltes Team
+              Ihr strategischer Partner für digitale Transformation
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Persönliche Beratung trifft auf spezialisierte Umsetzungskraft
@@ -53,19 +58,19 @@ const StrategieTeamExpertise = () => {
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-5 gap-8 items-start">
-          {/* Left: Uli's Credentials (60% width = 3 columns) */}
-          <Reveal className="md:col-span-3">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Left: Uli's Credentials (50%) */}
+          <Reveal>
             <div className="bg-card p-8 rounded-xl border border-border h-full">
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-48 flex-shrink-0">
+              <div className="flex flex-col gap-6">
+                <div className="w-full max-w-[280px] mx-auto md:mx-0">
                   <img
                     src="/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png"
                     alt="Uli Schönleber"
                     className="rounded-xl w-full aspect-square object-cover shadow-lg"
                   />
                 </div>
-                <div className="flex-1">
+                <div>
                   <h3 className="text-2xl font-bold mb-2 text-foreground">
                     Uli Schönleber
                   </h3>
@@ -93,27 +98,24 @@ const StrategieTeamExpertise = () => {
             </div>
           </Reveal>
 
-          {/* Right: Team Capabilities (40% width = 2 columns) */}
-          <div className="md:col-span-2">
+          {/* Right: Team Capabilities (50%) */}
+          <div className="flex flex-col gap-6">
             <Reveal>
-              <div className="bg-card p-6 rounded-xl border border-border mb-6">
+              <div className="bg-card p-6 rounded-xl border border-border">
                 <h3 className="text-xl font-bold mb-4 text-foreground">
                   Unterstützt von Spezialisten
                 </h3>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Ein festes Team aus Designern, Entwicklern und Strategen – alle unter einem Dach in Mainz.
-                </p>
                 <div className="space-y-4">
                   {teamCapabilities.map((capability, index) => {
                     const IconComponent = capability.icon;
                     return (
                       <div key={index} className="flex items-start gap-3">
-                        <div className="h-8 w-8 bg-muted rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <IconComponent className="h-4 w-4 text-primary" />
+                        <div className="h-10 w-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="font-semibold text-foreground text-sm">{capability.title}</p>
-                          <p className="text-xs text-muted-foreground">{capability.description}</p>
+                          <h4 className="font-semibold text-foreground mb-1">{capability.title}</h4>
+                          <p className="text-sm text-muted-foreground">{capability.description}</p>
                         </div>
                       </div>
                     );
@@ -122,14 +124,23 @@ const StrategieTeamExpertise = () => {
               </div>
             </Reveal>
 
-            <Reveal delay={0.1}>
-              <div className="bg-primary/5 p-6 rounded-xl border border-primary/20">
-                <p className="text-sm text-muted-foreground mb-4 text-center">
-                  Mehr über das Team und unsere Arbeitsweise erfahren?
-                </p>
-                <Link to="/ueber-uns">
+            <Reveal>
+              <div className="bg-card p-6 rounded-xl border border-border">
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  Messbare Erfolge
+                </h3>
+                <div className="space-y-4">
+                  {metrics.map((metric, index) => (
+                    <div key={index} className="flex items-center justify-between">
+                      <span className="text-2xl font-bold text-primary">{metric.value}</span>
+                      <span className="text-sm text-muted-foreground text-right">{metric.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link to="/ueber-uns" className="mt-6 block">
                   <Button variant="outline" className="w-full">
                     Das komplette Team kennenlernen
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -141,4 +152,4 @@ const StrategieTeamExpertise = () => {
   );
 };
 
-export default StrategieTeamExpertise;
+export default StrategieWhyUs;
