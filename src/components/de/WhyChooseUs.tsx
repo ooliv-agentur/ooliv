@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Zap, Target, Users, CheckCircle, Award } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
@@ -7,12 +8,25 @@ const WhyChooseUs = () => {
   const benefits = [
     {
       title: "Strategische Expertise trifft praktische Umsetzung",
-      description: "Wir kombinieren 16+ Jahre Digital-Expertise mit einem eingespielten Umsetzungsteam – für Strategien, die wirklich funktionieren.",
+      description: (
+        <>
+          Wir kombinieren 16+ Jahre Digital-Expertise mit einem eingespielten Umsetzungsteam – für{' '}
+          <Link to="/strategie" className="text-primary hover:underline font-medium">Strategien</Link>, die wirklich funktionieren. Von{' '}
+          <Link to="/webdesign" className="text-primary hover:underline font-medium">Design</Link> bis{' '}
+          <Link to="/webentwicklung" className="text-primary hover:underline font-medium">Entwicklung</Link>.
+        </>
+      ),
       icon: <Target className="h-6 w-6" />
     },
     {
       title: "Messbare Ergebnisse, keine leeren Versprechen",
-      description: "Unsere Projekte erzielen im Schnitt +60-240% Conversion-Steigerungen. Wir arbeiten mit klaren KPIs und messbaren Zielen.",
+      description: (
+        <>
+          Unsere Projekte erzielen im Schnitt +60-240% Conversion-Steigerungen. Wir arbeiten mit klaren KPIs und messbaren Zielen – von{' '}
+          <Link to="/seo-optimierung" className="text-primary hover:underline font-medium">SEO-Optimierung</Link> bis zu{' '}
+          <Link to="/website-relaunch" className="text-primary hover:underline font-medium">Website-Relaunches</Link>.
+        </>
+      ),
       icon: <TrendingUp className="h-6 w-6" />
     },
     {
@@ -22,7 +36,12 @@ const WhyChooseUs = () => {
     },
     {
       title: "Von der Strategie bis zur Umsetzung",
-      description: "Wir begleiten Sie vom ersten Workshop bis zum Go-Live – damit Ihre Strategie nicht in der Schublade landet, sondern umgesetzt wird.",
+      description: (
+        <>
+          Wir begleiten Sie vom ersten Workshop bis zum Go-Live – damit Ihre Strategie nicht in der Schublade landet, sondern umgesetzt wird. Mit{' '}
+          <Link to="/ki-technologien" className="text-primary hover:underline font-medium">KI-Integration</Link> und modernster Technologie.
+        </>
+      ),
       icon: <Zap className="h-6 w-6" />
     }
   ];
@@ -88,7 +107,7 @@ const WhyChooseUs = () => {
                       {benefit.title}
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      {benefit.description}
+                      {typeof benefit.description === 'string' ? benefit.description : benefit.description}
                     </p>
                   </div>
                 </div>
