@@ -5,10 +5,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import StrategieHero from '@/components/strategy/StrategieHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import StrategieBenefits from '@/components/strategy/StrategieBenefits';
+import WhyUli from '@/components/strategy/WhyUli';
 import StrategieProcess from '@/components/strategy/StrategieProcess';
-import StrategicDiscoveryDetail from '@/components/strategy/StrategicDiscoveryDetail';
-import UXStrategyDetail from '@/components/strategy/UXStrategyDetail';
-import ImplementationLeadershipDetail from '@/components/strategy/ImplementationLeadershipDetail';
 import StrategieServices from '@/components/strategy/StrategieServices';
 import StrategieFAQ from '@/components/strategy/StrategieFAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -31,19 +29,17 @@ const GermanStrategy = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Digital Strategy & Transformation | Uli Schönleber"
-        description="Strategic Discovery, UX & Product Strategy, AI Integration und Implementation Leadership – End-to-End Digital Strategy für B2B mit 16+ Jahren Erfahrung und messbaren Outcomes."
+        title="Digital-Strategie & Transformation | Uli Schönleber"
+        description="Strategie-Beratung für B2B: Von der Analyse über UX-Optimierung bis zur Umsetzung. 16+ Jahre Erfahrung für messbare digitale Ergebnisse im DACH-Raum."
         canonicalUrl="https://ooliv.de/strategie"
-        keywords="Digital Strategy, Digital Transformation, C-Level Advisory, Strategic Consulting, UX Strategy"
+        keywords="Digital Strategie, Digitale Transformation, Strategieberatung, UX Strategie, B2B Beratung, DACH"
         breadcrumbs={breadcrumbs}
       />
 
       <StrategieHero />
       <StrategieBenefits />
+      <WhyUli />
       <StrategieProcess />
-      <StrategicDiscoveryDetail />
-      <UXStrategyDetail />
-      <ImplementationLeadershipDetail />
       <StrategieServices />
       
       {/* Case Studies nach dieser Strategie */}
