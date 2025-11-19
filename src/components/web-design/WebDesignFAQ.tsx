@@ -26,11 +26,11 @@ const WebDesignFAQ = () => {
     },
     {
       question: "Kann ich die Website später selbst pflegen?",
-      answer: "Ja! Ich setze auf benutzerfreundliche Systeme wie WordPress. Nach dem Launch schule ich Sie persönlich – Sie können dann selbst Texte, Bilder und News aktualisieren. Für komplexere Änderungen unterstütze ich Sie gerne weiterhin."
+      answer: "Ja! Wir setzen auf benutzerfreundliche Systeme wie WordPress. Nach dem Launch schulen wir Sie persönlich – Sie können dann selbst Texte, Bilder und News aktualisieren. Für komplexere Änderungen unterstützen wir Sie gerne weiterhin."
     },
     {
       question: "Schreiben Sie auch die Texte für meine Website?",
-      answer: "Ja, professionelle Content-Erstellung gehört zum Service. Ich entwickle SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen. Sie müssen sich nicht selbst hinsetzen und Texte schreiben – das übernehme ich."
+      answer: "Ja, professionelle Content-Erstellung gehört zum Service. Wir entwickeln gemeinsam mit Ihnen SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen. Ich koordiniere den Content-Prozess persönlich und stelle sicher, dass Ihre Botschaft klar rüberkommt."
     },
     {
       question: "Wird meine Website auch bei Google gefunden?",
@@ -42,7 +42,7 @@ const WebDesignFAQ = () => {
     },
     {
       question: "Können Sie auch meine bestehende Website verbessern?",
-      answer: "Ja, ich übernehme auch Redesigns. Oft beginne ich mit einer ehrlichen Analyse: Was funktioniert gut, was muss weg? Manchmal reicht eine Optimierung, manchmal ist ein kompletter Neustart sinnvoller. Ich sage Ihnen offen, was ich empfehle."
+      answer: "Ja, wir übernehmen auch Redesigns. Oft beginnen wir mit einer ehrlichen Analyse: Was funktioniert gut, was muss weg? Manchmal reicht eine Optimierung, manchmal ist ein kompletter Neustart sinnvoller. Wir sagen Ihnen offen, was wir empfehlen – mit klarer Begründung."
     },
     {
       question: "Was passiert nach dem Launch der Website?",

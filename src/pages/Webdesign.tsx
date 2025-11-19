@@ -4,12 +4,16 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
+import WebDesignWhyUs from '@/components/web-design/WebDesignWhyUs';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
+import RelatedServicesGrid from '@/components/web-design/RelatedServicesGrid';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
+import StickyCTA from '@/components/conversion/StickyCTA';
 
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
@@ -23,14 +27,38 @@ const GermanWebDesign = () => {
     { name: "Webdesign", url: "https://ooliv.de/webdesign" }
   ];
 
+  const webdesignTestimonials = [
+    {
+      quote: "Das Design ist nicht nur schön, es funktioniert auch. Unsere Conversion-Rate ist um 180% gestiegen und wir bekommen endlich die richtigen Anfragen.",
+      author: "Michael Klaiber",
+      role: "Geschäftsführer",
+      company: "KLAIBER Steuerberatung",
+      industry: "Steuerberatung"
+    },
+    {
+      quote: "Uli hat unsere komplexe KI-Technologie so kommuniziert, dass sie sofort verständlich ist. Die Website ist jetzt unser bestes Sales-Tool.",
+      author: "Dr. Stefan Wagner",
+      role: "CEO",
+      company: "IconPro GmbH",
+      industry: "KI-Software"
+    },
+    {
+      quote: "Endlich eine Website, die zu unserem Qualitätsanspruch passt. Das Design ist modern, die Nutzerführung klar – und die Anfragen haben sich verdoppelt.",
+      author: "Thomas Müller",
+      role: "Geschäftsführer",
+      company: "COBUS GmbH",
+      industry: "Industrieservice"
+    }
+  ];
+
   return (
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Professionelles Webdesign – Websites, die konvertieren | ooliv"
+          title="Professionelles Webdesign für B2B | UI/UX, Conversion & SEO | ooliv Mainz"
           description="Professionelles Webdesign für B2B-Unternehmen. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
           canonicalUrl="https://ooliv.de/webdesign"
-          keywords="Webdesign, Website erstellen, Responsive Design, UX Design, B2B Websites, Conversion-Optimierung"
+          keywords="Webdesign, Webdesign Mainz, Website Design, UI/UX Design, Responsive Design, B2B Websites, Conversion-Optimierung, Website erstellen, Professionelles Webdesign"
           breadcrumbs={breadcrumbs}
         />
         
@@ -73,22 +101,21 @@ const GermanWebDesign = () => {
         
         <WebDesignHero />
         <WebDesignBenefits />
+        <WebDesignWhyUs />
         <WebDesignStructureFirst />
         <WebDesignBuildOptions />
         <WebDesignProcess />
-
-
-        <p className="text-center text-sm text-medico-darkGreen mt-4">
-          Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
-        </p>
+        
+        <TestimonialsSection testimonials={webdesignTestimonials} />
         
         {/* Full Case Studies Section with global titles */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <CaseStudiesSection />
           </div>
         </section>
         
+        <RelatedServicesGrid />
         <WebDesignFAQ />
         
         {/* CTA Section with German startpage styling */}
@@ -100,6 +127,8 @@ const GermanWebDesign = () => {
           secondaryCta="Strategiegespräch vereinbaren"
           secondaryCtaLink="/kontakt"
         />
+        
+        <StickyCTA text="Kostenloses Design-Beratungsgespräch" />
       </PageLayout>
     </>
   );
