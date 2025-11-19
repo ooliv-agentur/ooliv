@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import { Target, TrendingUp, Users, Zap, DollarSign, BarChart } from 'lucide-react';
@@ -16,7 +17,7 @@ const StrategieBenefits = () => {
     {
       IconComponent: TrendingUp,
       title: "Messbar bessere Ergebnisse",
-      description: "Keine leeren Versprechen. Unsere Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Mit klaren KPIs, die Sie verfolgen können."
+      description: "Keine leeren Versprechen. Unsere Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Sehen Sie sich unsere erfolgreichen Projekte in den Referenzen an."
     },
     {
       IconComponent: Users,
@@ -68,7 +69,15 @@ const StrategieBenefits = () => {
                   </div>
                 </div>
                 <h3 className={`${getHeadingClasses('h4', 'primary', 'center')} mb-4`}>{benefit.title}</h3>
-                <p className={getBodyClasses('base', 'secondary', 'center')}>{benefit.description}</p>
+                <p className={getBodyClasses('base', 'secondary', 'center')}>
+                  {benefit.title === "Messbar bessere Ergebnisse" ? (
+                    <>
+                      Keine leeren Versprechen. Unsere Kunden steigern ihre Lead-Qualität im Schnitt um +180% und ihre Conversion Rate um +240%. Sehen Sie sich unsere <Link to="/referenzen" className="text-primary hover:underline font-medium">erfolgreichen Projekte</Link> an.
+                    </>
+                  ) : (
+                    benefit.description
+                  )}
+                </p>
               </div>
             );
           })}

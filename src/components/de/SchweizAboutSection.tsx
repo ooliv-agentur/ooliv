@@ -44,9 +44,9 @@ const SchweizAboutSection = () => {
             <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
               Von Deutschland für die Schweiz – mit Verständnis für Schweizer Qualitätsansprüche
             </p>
-            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
-              Wir entwickeln Strategic Frameworks für Schweizer Unternehmen – mit lokalem Marktverständnis, transparenten Preisen in CHF und DSGVO-konformen Datenschutzstandards. Kein klassisches Agentur-Modell, sondern C-Level Strategic Leadership. 16+ Jahre Track Record, messbare Business Outcomes.
-            </p>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+            Wir entwickeln Strategic Frameworks für Schweizer Unternehmen – mit lokalem Marktverständnis, transparenten Preisen in CHF und DSGVO-konformen Datenschutzstandards. Kein klassisches Agentur-Modell, sondern C-Level Strategic Leadership mit 16+ Jahren Track Record und messbaren Business Outcomes. Spezialisiert auf Strategic Discovery, AI Integration und Product & UX Strategy.
+          </p>
             
             <div className="flex justify-center">
               <Button 

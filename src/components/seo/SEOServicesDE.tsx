@@ -46,7 +46,7 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Technische SEO</h3>
             <p className="text-brand-text text-center">
-              Website-Geschwindigkeit, Core Web Vitals, saubere Indizierung – das Fundament für SEO-Erfolg.
+              Website-Geschwindigkeit, Core Web Vitals, saubere Indizierung – das Fundament für SEO-Erfolg. Eng verzahnt mit unserer <a href="/webentwicklung" className="text-brand-primary hover:underline font-medium">technischen Webentwicklung</a>.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ const SEOServicesDE = () => {
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Content-Optimierung</h3>
             <p className="text-brand-text text-center">
               Verbesserung bestehender Inhalte oder Erstellung neuer Seiten basierend auf Nutzerbedürfnissen und Suchintention. 
-              Verwandte Services: <a href="/content-erstellung" className="text-brand-primary hover:underline font-medium">Content-Erstellung</a> und <a href="/webdesign" className="text-brand-primary hover:underline font-medium">Webdesign</a>.
+              Verwandte Services: <a href="/content-erstellung" className="text-brand-primary hover:underline font-medium">Content-Erstellung</a> und <a href="/ki-technologien" className="text-brand-primary hover:underline font-medium">KI-Integration</a>.
             </p>
           </div>
 

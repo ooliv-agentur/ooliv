@@ -39,10 +39,10 @@ const StrategieServices = () => {
       link: "/ki-technologien"
     },
     {
-      title: "Umsetzungsbegleitung",
+      title: "Umsetzungsbegleitung mit Webdesign & Webentwicklung",
       features: [
         "Ich koordiniere Ihr Team und externe Partner als zentraler Ansprechpartner",
-        "Wir stellen sicher, dass alle am gleichen Strang ziehen",
+        "Wir stellen sicher, dass alle am gleichen Strang ziehen – von Design bis zur technischen Entwicklung",
         "Definieren klare Qualitäts-Standards und Erfolgskriterien",
         "Ich begleite Sie strategisch von der Planung bis zum erfolgreichen Go-Live"
       ],
@@ -94,7 +94,7 @@ const StrategieServices = () => {
             Was Sie am Ende haben
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Eine klare Strategie mit konkreten nächsten Schritten, messbare KPIs zur Erfolgskontrolle und – wenn gewünscht – Begleitung bei der Umsetzung bis zum Go-Live.
+            Eine klare Strategie mit konkreten nächsten Schritten, messbare KPIs zur Erfolgskontrolle und – wenn gewünscht – Begleitung bei der Umsetzung mit <Link to="/webdesign" className="text-primary hover:underline font-medium">professionellem Webdesign</Link> und <Link to="/webentwicklung" className="text-primary hover:underline font-medium">technischer Webentwicklung</Link> bis zum Go-Live.
           </p>
         </div>
       </div>
