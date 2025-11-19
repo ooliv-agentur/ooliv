@@ -25,12 +25,12 @@ const DigitalagenturSchweiz = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('DigitalagenturSchweiz component mounted - setting language to German');
-    document.title = 'Digitalagentur Schweiz | ooliv aus Deutschland';
+    document.title = 'Strategic Digital Advisory Schweiz | Uli Schönleber | ooliv';
   }, []);
   
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Digitalagentur Schweiz", url: "https://ooliv.de/digitalagentur-schweiz" }
+    { name: "Strategic Digital Advisory Schweiz", url: "https://ooliv.de/digitalagentur-schweiz" }
   ];
   
   return (
@@ -39,34 +39,34 @@ const DigitalagenturSchweiz = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Digitalagentur Schweiz | ooliv aus Deutschland"
-          description="Digitalagentur für Schweizer B2B-Unternehmen. ✓ Webdesign ✓ SEO ✓ Google Ads. Von Deutschland aus, für die Schweiz optimiert. Beratung in CHF!"
+          title="Strategic Digital Advisory Schweiz | Uli Schönleber | ooliv"
+          description="Strategic Digital Advisory für Schweizer B2B-KMUs: Product & UX Strategy, AI Integration. Transparente Preise in CHF. 16+ Jahre Track Record."
           canonicalUrl="https://ooliv.de/digitalagentur-schweiz"
-          keywords="Digitalagentur Schweiz, Webdesign Schweiz, SEO Schweiz, Online Marketing Schweiz, B2B Marketing"
+          keywords="Strategic Digital Advisory Schweiz, Digital Strategy Lead Schweiz, Product Strategy Schweiz, B2B Transformation Schweiz"
           breadcrumbs={breadcrumbs}
         />
         
         <ServiceSchemaGenerator
-          serviceName="Digitalagentur Schweiz"
-          description="Digitalagentur für Schweizer B2B-Unternehmen. Webdesign, SEO, Google Ads aus Deutschland für die Schweiz."
-          serviceType="AdvertisingAgency"
+          serviceName="Strategic Digital Advisory Schweiz"
+          description="Digital Strategy Lead für Schweizer B2B-Unternehmen. Strategic Discovery, AI Integration, Product & UX Strategy aus Deutschland für die Schweiz."
+          serviceType="ProfessionalService"
           areaServed={["Schweiz", "Zürich", "Bern", "Basel", "DACH-Region"]}
-          priceRange="CHF 7000-CHF 25000"
+          priceRange="CHF 17000-CHF 90000"
           offers={[
             {
-              name: "Webdesign Schweiz",
-              description: "Professionelle B2B-Websites für Schweizer Unternehmen, mehrsprachig verfügbar",
-              priceRange: "CHF 7000-CHF 18000"
+              name: "Strategic Discovery Schweiz",
+              description: "4-6 Wochen Strategic Discovery Phase für Schweizer B2B-Unternehmen",
+              priceRange: "CHF 17000-CHF 28000"
             },
             {
-              name: "SEO Schweiz",
-              description: "Suchmaschinenoptimierung für .ch-Domains und den Schweizer Markt",
-              priceRange: "CHF 7000-CHF 12000"
+              name: "Product & UX Strategy Schweiz",
+              description: "End-to-End Product & UX Transformation für den Schweizer Markt",
+              priceRange: "CHF 45000-CHF 90000"
             },
             {
-              name: "Google Ads Schweiz",
-              description: "Performance-Marketing für Schweizer B2B-Unternehmen",
-              priceRange: "CHF 2500-CHF 10000"
+              name: "AI Integration Schweiz",
+              description: "Strategic AI Integration Advisory für Schweizer KMUs",
+              priceRange: "CHF 20000-CHF 50000"
             }
           ]}
         />

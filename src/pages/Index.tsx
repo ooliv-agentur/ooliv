@@ -231,33 +231,24 @@ const GermanIndex = () => {
                   </div>
                 </div>
                 
-                {/* Condensed benefits section */}
                 <div className="grid md:grid-cols-3 gap-4 mt-6">
                   <TurquoiseCard variant="default" hoverLift>
-                    <h4 className="text-base font-semibold mb-2 text-foreground">
-                      Persönliche Betreuung
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Direkter Draht zum CEO – kurze Wege, schnelle Entscheidungen, egal wo Sie sind.
-                    </p>
+                    <div className="text-center p-4">
+                      <h3 className="font-semibold mb-2 text-foreground">Strategic Excellence</h3>
+                      <p className="text-sm text-muted-foreground">16+ Jahre Digital Strategy Leadership</p>
+                    </div>
                   </TurquoiseCard>
-                  
                   <TurquoiseCard variant="default" hoverLift>
-                    <h4 className="text-base font-semibold mb-2 text-foreground">
-                      Bundesweite Projekte
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Von Mainz bis München – wir arbeiten mit Unternehmen im gesamten DACH-Raum zusammen.
-                    </p>
+                    <div className="text-center p-4">
+                      <h3 className="font-semibold mb-2 text-foreground">Messbare Ergebnisse</h3>
+                      <p className="text-sm text-muted-foreground">+240% avg. Conversion Rate Steigerung</p>
+                    </div>
                   </TurquoiseCard>
-                  
                   <TurquoiseCard variant="default" hoverLift>
-                    <h4 className="text-base font-semibold mb-2 text-foreground">
-                      Messbare Erfolge
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Unsere digitalen Strategien basieren auf Daten und liefern nachweisbare Ergebnisse.
-                    </p>
+                    <div className="text-center p-4">
+                      <h3 className="font-semibold mb-2 text-foreground">C-Level Expertise</h3>
+                      <p className="text-sm text-muted-foreground">100+ erfolgreiche Transformationen</p>
+                    </div>
                   </TurquoiseCard>
                 </div>
                 

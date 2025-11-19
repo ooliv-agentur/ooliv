@@ -25,7 +25,7 @@ const WerbeagenturMainz = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturMainz component mounted - setting language to German');
-    document.title = 'Werbeagentur Mainz | ooliv – Full-Service Digitalagentur seit 2008';
+    document.title = 'Digital Strategy Lead Mainz | Uli Schönleber | ooliv';
   }, []);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const WerbeagenturMainz = () => {
 
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Werbeagentur Mainz", url: "https://ooliv.de/werbeagentur-mainz" }
+    { name: "Digital Strategy Lead Mainz", url: "https://ooliv.de/werbeagentur-mainz" }
   ];
   
   return (
@@ -53,16 +53,16 @@ const WerbeagenturMainz = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Werbeagentur Mainz | ooliv – Full-Service Digitalagentur seit 2008"
-          description="Werbeagentur Mainz: Websites & SEO für Medien-, B2B- und Dienstleister. Seit 2008 direkt vor Ort. Messbare Resultate statt Agentur-Buzzwords."
+          title="Digital Strategy Lead Mainz | Uli Schönleber | ooliv"
+          description="Digital Strategy Lead in Mainz: Strategic Discovery, AI Integration & Product Strategy für B2B-Unternehmen. 16+ Jahre Track Record, vor Ort in Mainz."
           canonicalUrl="https://ooliv.de/werbeagentur-mainz"
-          keywords="Werbeagentur Mainz, Webagentur Mainz, Marketingagentur Mainz, Digitalagentur Mainz, Online Marketing Mainz, SEO Mainz"
+          keywords="Digital Strategy Lead Mainz, Strategic Advisory Mainz, Product Strategy Mainz, UX Strategy Mainz, AI Integration Mainz"
           breadcrumbs={breadcrumbs}
         />
         
         <LocalBusinessSchemaGenerator
-          businessName="ooliv Werbeagentur Mainz"
-          description="Full-Service Werbeagentur in Mainz für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          businessName="ooliv Digital Strategy Lead Mainz"
+          description="Digital Strategy Lead für B2B-Transformationen in Mainz. Strategic Discovery, AI Integration, Product & UX Strategy. 16+ Jahre C-Level Advisory."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -95,15 +95,13 @@ const WerbeagenturMainz = () => {
             "Hessen"
           ]}
           services={[
-            "Webdesign",
-            "Webentwicklung",
-            "SEO-Optimierung",
-            "Local SEO",
-            "Google Ads",
-            "Content Marketing",
-            "Marketing Automation",
-            "Digitale Strategieberatung",
-            "KI-Technologien"
+            "Digital Strategy",
+            "Strategic Discovery",
+            "AI Integration",
+            "Product & UX Strategy",
+            "C-Level Advisory",
+            "Digital Transformation",
+            "Strategic Retainer"
           ]}
         />
         

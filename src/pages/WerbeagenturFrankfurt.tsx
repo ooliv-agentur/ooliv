@@ -25,12 +25,12 @@ const WerbeagenturFrankfurt = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturFrankfurt component mounted - setting language to German');
-    document.title = 'Werbeagentur Frankfurt – Digitale Lösungen für nachhaltigen Erfolg';
+    document.title = 'Digital Strategy Lead Frankfurt | Uli Schönleber | ooliv';
   }, []);
 
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Werbeagentur Frankfurt", url: "https://ooliv.de/werbeagentur-frankfurt" }
+    { name: "Digital Strategy Lead Frankfurt", url: "https://ooliv.de/werbeagentur-frankfurt" }
   ];
   
   return (
@@ -39,16 +39,16 @@ const WerbeagenturFrankfurt = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Werbeagentur Frankfurt | ooliv aus Mainz"
-          description="Werbeagentur Frankfurt: Digitale Lösungen für Banken, Konzerne & Startups in der Finanzmetropole. ROI-fokussiert, professionell. Projekt starten →"
+          title="Digital Strategy Lead Frankfurt | Uli Schönleber | ooliv"
+          description="Strategic Digital Advisory Frankfurt: Product Strategy für Banken, Konzerne & Startups. AI Integration, UX Strategy. 16+ Jahre C-Level Advisory."
           canonicalUrl="https://ooliv.de/werbeagentur-frankfurt"
-          keywords="Werbeagentur Frankfurt, Webdesign Frankfurt, Online Marketing Frankfurt, SEO Frankfurt"
+          keywords="Digital Strategy Lead Frankfurt, Strategic Advisory Frankfurt, Product Strategy Frankfurt, AI Integration Frankfurt"
           breadcrumbs={breadcrumbs}
         />
         
         <LocalBusinessSchemaGenerator
-          businessName="ooliv Werbeagentur Frankfurt"
-          description="Full-Service Werbeagentur in Frankfurt für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          businessName="ooliv Digital Strategy Lead Frankfurt"
+          description="Digital Strategy Lead für B2B-Transformationen in Frankfurt. Strategic Discovery, AI Integration, Product & UX Strategy für Finanzmetropole."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -81,15 +81,12 @@ const WerbeagenturFrankfurt = () => {
             "Hessen"
           ]}
           services={[
-            "Webdesign",
-            "Webentwicklung",
-            "SEO-Optimierung",
-            "Local SEO",
-            "Google Ads",
-            "Content Marketing",
-            "Marketing Automation",
-            "Digitale Strategieberatung",
-            "KI-Technologien"
+            "Digital Strategy",
+            "Strategic Discovery",
+            "AI Integration",
+            "Product & UX Strategy",
+            "C-Level Advisory",
+            "Digital Transformation"
           ]}
         />
         

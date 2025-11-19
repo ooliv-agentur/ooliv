@@ -26,12 +26,12 @@ const WerbeagenturDarmstadt = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturDarmstadt component mounted - setting language to German');
-    document.title = 'Werbeagentur Darmstadt – Strategisch statt oberflächlich';
+    document.title = 'Digital Strategy Lead Darmstadt | Uli Schönleber | ooliv';
   }, []);
   
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Werbeagentur Darmstadt", url: "https://ooliv.de/werbeagentur-darmstadt" }
+    { name: "Digital Strategy Lead Darmstadt", url: "https://ooliv.de/werbeagentur-darmstadt" }
   ];
   
   return (
@@ -40,16 +40,16 @@ const WerbeagenturDarmstadt = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Werbeagentur Darmstadt | ooliv aus Mainz"
-          description="Werbeagentur Darmstadt: Websites für Tech & Wissenschaft. TU-Umfeld, Engineering, Hightech-Startups. Technisch präzise, strategisch fundiert."
+          title="Digital Strategy Lead Darmstadt | Uli Schönleber | ooliv"
+          description="Strategic Digital Advisory Darmstadt: Product & UX Strategy für Tech-Unternehmen. AI Integration, Strategic Discovery. TU-Region, technisch präzise."
           canonicalUrl="https://ooliv.de/werbeagentur-darmstadt"
-          keywords="Werbeagentur Darmstadt, Webdesign Darmstadt, Online Marketing Darmstadt, SEO Darmstadt"
+          keywords="Digital Strategy Lead Darmstadt, Strategic Advisory Darmstadt, Product Strategy Darmstadt, Tech Strategy Darmstadt"
           breadcrumbs={breadcrumbs}
         />
         
         <LocalBusinessSchemaGenerator
-          businessName="ooliv Werbeagentur Darmstadt"
-          description="Full-Service Werbeagentur in Darmstadt für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
+          businessName="ooliv Digital Strategy Lead Darmstadt"
+          description="Digital Strategy Lead für B2B-Tech-Transformationen in Darmstadt. Strategic Discovery, AI Integration für Tech & Wissenschaft im TU-Umfeld."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -81,15 +81,12 @@ const WerbeagenturDarmstadt = () => {
             "Hessen"
           ]}
           services={[
-            "Webdesign",
-            "Webentwicklung",
-            "SEO-Optimierung",
-            "Local SEO",
-            "Google Ads",
-            "Content Marketing",
-            "Marketing Automation",
-            "Digitale Strategieberatung",
-            "KI-Technologien"
+            "Digital Strategy",
+            "Strategic Discovery",
+            "AI Integration",
+            "Product & UX Strategy",
+            "C-Level Advisory",
+            "Digital Transformation"
           ]}
         />
         
