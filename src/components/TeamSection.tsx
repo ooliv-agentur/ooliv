@@ -86,7 +86,7 @@ const TeamSection = () => {
             Das erweiterte ooliv Team
           </h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            Hinter jedem erfolgreichen Projekt steht ein Team aus Spezialisten. Von Webentwicklung über Design bis SEO – unser erweitertes Netzwerk liefert die Expertise für Ihre Transformation.
+            Uli und sein spezialisiertes Team aus Experten bringen Ihre digitale Transformation zum Erfolg. Von Webentwicklung über Design bis SEO – jedes Projekt profitiert von gebündelter Fachexpertise.
           </p>
         </div>
         
