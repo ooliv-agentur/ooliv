@@ -12,24 +12,28 @@ import { ArrowRight } from 'lucide-react';
 const SchweizFAQ = () => {
   const faqs = [
     {
-      question: "Wie funktioniert Strategic Advisory über die Grenze?",
-      answer: "Strategic Advisory ist per Definition remote-first. Wir arbeiten komplett remote per Videocall und modernen Tools. Viele Schweizer Kunden schätzen die Kosteneffizienz ohne Qualitätsverlust – transparente Preise in CHF (CHF 17k–90k für Transformations-Projekte)."
+      question: "Arbeiten Sie auch mit Schweizer Unternehmen?",
+      answer: "Ja, sehr gerne! Ich arbeite erfolgreich mit B2B-Kunden aus der ganzen Schweiz zusammen – von Zürich über Bern bis Genf. Die Zusammenarbeit läuft komplett remote über Videocalls und moderne Tools, was Kosten spart ohne Qualitätsverlust."
     },
     {
-      question: "Welche Währung gilt für Schweizer Strategic Advisory Projekte?",
-      answer: "Alle Strategic Advisory Packages werden in CHF kalkuliert: Strategic Discovery CHF 17k–28k, End-to-End Transformation CHF 45k–90k, Strategic Retainer CHF 9k–17k/Monat. Abrechnung wahlweise CHF oder EUR."
+      question: "Wie funktioniert die Bezahlung – Euro oder Franken?",
+      answer: "Sie entscheiden: Rechnung wahlweise in CHF oder EUR. Für Schweizer Kunden rechne ich typischerweise in Franken ab. Ein Strategie-Workshop kostet CHF 17.000–28.000, komplette Projekte CHF 45.000–90.000, laufende Begleitung ab CHF 9.000/Monat."
     },
     {
-      question: "Kennt ihr den Schweizer B2B-Markt?",
-      answer: "Wir arbeiten mit B2B-Unternehmen im gesamten DACH-Raum, einschließlich Schweizer KMUs. Für Schweizer Projekte beachten wir: .ch-Domains SEO, mehrsprachige Strategie (DE/FR/IT), DSGVO-konforme Umsetzung, Schweizer Qualitätsansprüche."
+      question: "Kennen Sie den Schweizer Markt?",
+      answer: "Ja. Ich arbeite seit Jahren mit Schweizer B2B-Unternehmen und kenne die Besonderheiten: .ch-Domains, mehrsprachige Anforderungen (DE/FR/IT), hohe Qualitätsansprüche und die spezifischen Erwartungen Ihrer Zielgruppe. DSGVO-konforme Umsetzung ist selbstverständlich."
     },
     {
-      question: "Was ist der Investment-Range für Schweizer Unternehmen?",
-      answer: "Strategic Discovery: CHF 17k–28k (4-6 Wochen intensive Phase). End-to-End Product & UX Transformation: CHF 45k–90k (3-6 Monate). Strategic Retainer: CHF 9k–17k/Monat (ongoing C-Level Advisory). Transparente Preise, keine versteckten Kosten."
+      question: "Kommen Sie auch in die Schweiz für persönliche Meetings?",
+      answer: "Für wichtige Meilensteine wie Kickoff-Meetings oder Strategie-Workshops komme ich gerne persönlich vorbei. Die laufende Zusammenarbeit läuft remote – das ist effizienter und günstiger für Sie. Bei größeren Projekten plane ich regelmäßige Vor-Ort-Termine ein."
     },
     {
-      question: "Bietet ihr auch mehrsprachige Strategic Frameworks an?",
-      answer: "Ja – Strategic Discovery, Product Strategy und AI Integration Advisory erfolgen auf Deutsch, bei Bedarf mit mehrsprachigen Deliverables (DE/FR/IT) für den Schweizer Markt. UX Research und Testing kann mehrsprachig durchgeführt werden."
+      question: "Bieten Sie auch mehrsprachige Websites an?",
+      answer: "Ja, absolut. Viele Schweizer Projekte sind mehrsprachig (DE/FR/IT oder auch EN). Wir entwickeln die Website-Struktur von Anfang an mehrsprachig und können auch bei Content-Erstellung in verschiedenen Sprachen unterstützen – mit muttersprachlichen Redakteuren."
+    },
+    {
+      question: "Was unterscheidet Sie von Schweizer Agenturen?",
+      answer: "Sie sparen die typischen Schweizer Agentur-Aufschläge, erhalten aber dieselbe Qualität: Direkte Zusammenarbeit mit einem erfahrenen Digital-Berater, klare Prozesse, messbare Ergebnisse. Viele Schweizer Kunden schätzen das Preis-Leistungs-Verhältnis bei gleichbleibend hohem Standard."
     }
   ];
 
@@ -43,11 +47,11 @@ const SchweizFAQ = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
-              Strategic Advisory FAQs Schweiz
+              Häufig gestellte Fragen
             </h2>
             <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Antworten für Schweizer B2B-Unternehmen zu Strategic Discovery und Digital Transformation
+              Antworten für Schweizer Unternehmen zur Zusammenarbeit
             </p>
           </div>
         </Reveal>

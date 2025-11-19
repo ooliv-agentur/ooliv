@@ -16,24 +16,28 @@ import { Link } from 'react-router-dom';
 const GermanWebDevelopment = () => {
   const webDevFaqs = [
     {
-      question: "Mit welchen Plattformen arbeitet ihr?",
-      answer: "Wir entwickeln vollständig codierte Websites (ohne CMS) und maßgeschneiderte WordPress-Lösungen – je nachdem, was besser zu Ihrem Business passt."
+      question: "Was kostet eine professionell entwickelte Website?",
+      answer: "Eine maßgeschneiderte B2B-Website startet bei 15.000–25.000€ mit Strategie, Design und Entwicklung. Komplexe Projekte mit Custom-Features oder Shop-Integration liegen bei 30.000–80.000€. Sie erhalten vorab ein transparentes Festpreis-Angebot."
     },
     {
-      question: "Kann ooliv auch Shops entwickeln?",
-      answer: "Ja – WooCommerce innerhalb von WordPress oder Shopify für gezielte B2B-Cases."
+      question: "Arbeiten Sie mit WordPress oder programmieren Sie komplett neu?",
+      answer: "Beides möglich. Für Content-lastige B2B-Websites nutze ich oft WordPress – aber individuell entwickelt, keine fertigen Themes. Für maximale Performance oder spezielle Anforderungen entwickle ich auch komplett custom. Wir wählen die beste Lösung für Ihr Projekt."
     },
     {
-      question: "Ist Performance bei euch Standard?",
-      answer: "Absolut. Unsere Seiten sind schnell, SEO-optimiert und laufen zuverlässig auf allen Geräten."
+      question: "Wie lange dauert die Entwicklung einer neuen Website?",
+      answer: "Typischerweise 8–12 Wochen: 2 Wochen Strategie & Konzept, 3–4 Wochen Design, 3–4 Wochen Entwicklung, 2 Wochen Testing & Optimierung. Bei größeren Projekten entsprechend länger. Sie erhalten einen klaren Zeitplan vor Projektstart."
     },
     {
-      question: "Gibt es Betreuung nach dem Launch?",
-      answer: "Ja. Wir begleiten Sie weiter mit technischer Betreuung, Updates und Tracking."
+      question: "Können Sie auch Online-Shops entwickeln?",
+      answer: "Ja. Für WordPress nutze ich WooCommerce, für spezialisierte B2B-Shops auch Shopify oder Custom-Lösungen. Inklusive Payment-Integration, Produktverwaltung und Bestellprozess-Optimierung – alles aus einer Hand."
     },
     {
-      question: "Könnt ihr bestehende Websites verbessern?",
-      answer: "Ja. Wir analysieren, ob Optimierung sinnvoll ist – oder ein Relaunch effizienter wäre."
+      question: "Ist Performance und Geschwindigkeit bei Ihnen Standard?",
+      answer: "Absolut. Jede Website wird auf Geschwindigkeit optimiert: Schnelle Ladezeiten, SEO-optimierter Code, mobile-optimiert. Performance ist kein Nice-to-have, sondern Grundvoraussetzung – für Google-Rankings und Ihre Nutzer."
+    },
+    {
+      question: "Was passiert nach dem Launch?",
+      answer: "Das entscheiden Sie: Entweder vollständige Übergabe an Ihr Team – oder laufende Betreuung durch mich. Viele Kunden nutzen monatliche Wartungsverträge für technische Updates, Performance-Optimierung und Content-Erweiterungen."
     }
   ];
 

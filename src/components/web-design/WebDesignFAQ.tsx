@@ -17,36 +17,36 @@ const WebDesignFAQ = () => {
   
   const faqItems = isGerman ? [
     {
-      question: "Was kostet professionelles Webdesign in Mainz?",
-      answer: "Die Kosten für professionelles Webdesign hängen vom Umfang Ihres Projekts ab. Typische B2B-Websites mit strategischer Planung, Content-Erstellung und SEO beginnen bei etwa 5.000€. Wir erstellen Ihnen gerne ein individuelles Angebot nach einem ersten Gespräch."
+      question: "Was kostet eine professionelle Website?",
+      answer: "Eine strategisch geplante B2B-Website mit individuellem Design, Content und SEO startet bei 15.000–25.000€. Umfangreichere Projekte mit Custom-Features liegen bei 30.000–50.000€. Nach einem kostenlosen Erstgespräch erstelle ich Ihnen ein transparentes Festpreis-Angebot."
     },
     {
-      question: "Wie sorgt ooliv für SEO-optimiertes Webdesign?",
-      answer: "SEO ist von Anfang an Teil unseres Webdesign-Prozesses. Wir beginnen mit Suchbegriff-Analyse, optimieren Struktur und Inhalte, sorgen für schnelle Ladezeiten und mobile Optimierung. Jede Website wird technisch sauber und Google-freundlich aufgebaut."
+      question: "Wie lange dauert es, bis meine neue Website online ist?",
+      answer: "Rechnen Sie mit 8–12 Wochen: 2 Wochen Strategie & Konzept, 3–4 Wochen Design, 3–4 Wochen Entwicklung, 2 Wochen Testing & Launch-Vorbereitung. Sie erhalten einen klaren Zeitplan vor Projektstart – und können den Fortschritt jederzeit verfolgen."
     },
     {
-      question: "Arbeitet ihr mit WordPress oder ohne CMS?",
-      answer: "Beides ist möglich. Für die meisten B2B-Websites setzen wir auf ein individuell konfiguriertes WordPress ohne vorgefertigte Themes. Für spezielle Anforderungen entwickeln wir auch statische Websites ohne CMS, die besonders schnell und sicher sind."
+      question: "Kann ich die Website später selbst pflegen?",
+      answer: "Ja! Ich setze auf benutzerfreundliche Systeme wie WordPress. Nach dem Launch schule ich Sie persönlich – Sie können dann selbst Texte, Bilder und News aktualisieren. Für komplexere Änderungen unterstütze ich Sie gerne weiterhin."
     },
     {
-      question: "Wie lange dauert ein Webdesign-Projekt bei ooliv?",
-      answer: "Von der ersten Planung bis zum Launch dauert ein typisches Webdesign-Projekt 6-10 Wochen. Der genaue Zeitrahmen hängt vom Umfang der Website und Ihrer internen Freigabeprozesse ab. Wir erstellen einen klaren Zeitplan als Teil unseres Angebots."
+      question: "Schreiben Sie auch die Texte für meine Website?",
+      answer: "Ja, professionelle Content-Erstellung gehört zum Service. Ich entwickle SEO-optimierte Texte, die Ihre Zielgruppe ansprechen und Google gefallen. Sie müssen sich nicht selbst hinsetzen und Texte schreiben – das übernehme ich."
     },
     {
-      question: "Könnt ihr bestehende Seiten verbessern?",
-      answer: "Ja, wir übernehmen auch Redesigns und Optimierungsprojekte für bestehende Websites. Häufig beginnen wir mit einer Analyse der aktuellen Seite, um Schwachstellen und Optimierungspotenziale zu identifizieren."
+      question: "Wird meine Website auch bei Google gefunden?",
+      answer: "Ja. SEO ist von Anfang an Teil des Prozesses: Keyword-Recherche, optimierte Struktur, schnelle Ladezeiten, mobile Optimierung. Ihre Website ist technisch sauber und Google-freundlich aufgebaut – beste Basis für gute Rankings."
     },
     {
-      question: "Ist Responsive Design bei euch Standard?",
-      answer: "Absolut. Alle unsere Websites sind von Grund auf für alle Geräte optimiert – vom Smartphone bis zum Desktop. Mobile-First ist für uns nicht nur ein Schlagwort, sondern Grundlage jedes Designs."
+      question: "Funktioniert die Website auch auf Smartphones?",
+      answer: "Absolut. Jede Website ist von Grund auf für alle Geräte optimiert – vom Smartphone über Tablet bis Desktop. Mobile-First bedeutet: Die Website funktioniert perfekt auf kleinen Bildschirmen und sieht überall gut aus."
     },
     {
-      question: "Wer erstellt die Inhalte für unsere neue Website?",
-      answer: "Wir bieten professionelle Content-Erstellung als Teil unserer Webdesign-Projekte an. Unser Team entwickelt SEO-optimierte Texte, erstellt passende Bilder und organisiert bei Bedarf auch Fotoshootings oder Videoaufnahmen."
+      question: "Können Sie auch meine bestehende Website verbessern?",
+      answer: "Ja, ich übernehme auch Redesigns. Oft beginne ich mit einer ehrlichen Analyse: Was funktioniert gut, was muss weg? Manchmal reicht eine Optimierung, manchmal ist ein kompletter Neustart sinnvoller. Ich sage Ihnen offen, was ich empfehle."
     },
     {
-      question: "Gibt es langfristige Betreuung nach dem Launch?",
-      answer: "Ja, wir bleiben auch nach dem Launch als Partner an Ihrer Seite. Von technischen Updates über Performance-Optimierungen bis hin zu Content-Erweiterungen – wir bieten verschiedene Support-Modelle für die kontinuierliche Betreuung Ihrer Website."
+      question: "Was passiert nach dem Launch der Website?",
+      answer: "Das entscheiden Sie: Vollständige Übergabe an Ihr Team – oder laufende Betreuung durch mich. Viele Kunden nutzen monatliche Wartungsverträge (ab 500€/Monat) für technische Updates, Performance-Optimierung und Content-Erweiterungen."
     }
   ] : [
     {
