@@ -6,20 +6,14 @@ import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 
-import AboutUsHero from '@/components/about-us/AboutUsHero';
-import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
-import AboutUsStory from '@/components/about-us/AboutUsStory';
-import AboutUsWhySmall from '@/components/about-us/AboutUsWhySmall';
-import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
-import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
-import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
-import TeamSection from '@/components/TeamSection';
-import AboutCompactFAQ from '@/components/AboutCompactFAQ';
-import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
-import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
+import UliProfileHero from '@/components/about-us/UliProfileHero';
+import UliCredentials from '@/components/about-us/UliCredentials';
+import UliExperience from '@/components/about-us/UliExperience';
+import UliEducationSkills from '@/components/about-us/UliEducationSkills';
+import UliApproach from '@/components/about-us/UliApproach';
 import AboutUsLocation from '@/components/about-us/AboutUsLocation';
-import AboutUsFAQ from '@/components/about-us/AboutUsFAQ';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -31,16 +25,29 @@ const GermanAboutUs = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "Über ooliv",
-    "description": "Über ooliv - Ihre Marketing Agentur Mainz. Erfahren Sie mehr über unser Team, unsere Geschichte und unsere Mission.",
+    "name": "Über Uli Schönleber & ooliv",
+    "description": "Uli Schönleber - Digital Strategy Lead mit 16+ Jahren Erfahrung in Digital Transformation, AI Integration und UX Strategy für B2B-Unternehmen.",
     "url": "https://ooliv.de/ueber-uns",
     "mainEntity": {
-      "@type": "Organization",
-      "name": "ooliv Werbeagentur",
-      "foundingDate": "2009",
-      "description": "Marketing Agentur aus Mainz für individuelle, strategische und messbare digitale Lösungen",
-      "numberOfEmployees": "10",
-      "knowsAbout": ["Webdesign", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]
+      "@type": "Person",
+      "name": "Uli Schönleber",
+      "jobTitle": "Digital Strategy Lead · AI-Driven Consultant · UX & Product Advisor",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ooliv Digital Consultancy"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Kölner Design Akademie (KDA)"
+      },
+      "knowsAbout": [
+        "Digital Strategy",
+        "AI Integration",
+        "UX Strategy",
+        "Product Leadership",
+        "C-Level Advisory",
+        "International Team Leadership"
+      ]
     }
   };
 
@@ -49,34 +56,38 @@ const GermanAboutUs = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Über uns | ooliv Werbeagentur Mainz"
-        description="Werbeagentur Mainz seit 2008 – Inhabergeführt, persönlich, ehrlich. Team kennenlernen & erfahren, wie wir B2B-Unternehmen zum Erfolg verhelfen."
+        title="Uli Schönleber - Digital Strategy Lead | 16+ Jahre Erfahrung | ooliv"
+        description="Digital Strategy Lead mit 16+ Jahren Erfahrung in Digital Transformation, AI Integration und UX Strategy. C-Level Advisory für B2B-Unternehmen."
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
-        keywords="Über ooliv, Werbeagentur Mainz, Team, Unternehmen, Digital Marketing"
+        keywords="Uli Schönleber, Digital Strategy Lead, AI Consultant, UX Strategy, Product Leadership, C-Level Advisory"
         breadcrumbs={[
           { name: "Home", url: "https://ooliv.de/" },
-          { name: "Über uns", url: "https://ooliv.de/ueber-uns" }
+          { name: "Über Uli Schönleber", url: "https://ooliv.de/ueber-uns" }
         ]}
       />
 
-      <AboutUsHero />
-      <AboutUsIntroduction />
-      <AboutUsStory />
-      <AboutUsWhySmall />
-      <AboutUsDigitalPartner />
-      <AboutUsIndividual />
-      <AboutUsTeamCapabilities />
+      <UliProfileHero />
+      <UliCredentials />
+      <UliExperience />
+      <UliEducationSkills />
+      <UliApproach />
       
-      <div id="team">
-        <TeamSection />
-      </div>
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+              Transformationen, die ich geleitet habe
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Strategische Projekte mit messbaren Business-Outcomes
+            </p>
+          </div>
+          <CaseStudiesSection />
+        </div>
+      </section>
 
-      <AboutCompactFAQ />
-      <AboutUsDigitalServices />
-      <AboutUsTargetBusinesses />
       <AboutUsLocation />
-      <AboutUsFAQ />
       <AboutUsCTA />
     </PageLayout>
   );
