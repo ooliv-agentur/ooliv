@@ -12,6 +12,8 @@ import UliExperience from '@/components/about-us/UliExperience';
 import UliEducationSkills from '@/components/about-us/UliEducationSkills';
 import UliApproach from '@/components/about-us/UliApproach';
 import ThoughtLeadership from '@/components/about-us/ThoughtLeadership';
+import TrackRecordSection from '@/components/de/TrackRecordSection';
+import TeamSection from '@/components/TeamSection';
 import AboutUsLocation from '@/components/about-us/AboutUsLocation';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
@@ -76,6 +78,7 @@ const GermanAboutUs = () => {
       <UliEducationSkills />
       <UliApproach />
       <ThoughtLeadership />
+      <TrackRecordSection />
       
       <section className="py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,6 +94,7 @@ const GermanAboutUs = () => {
         </div>
       </section>
 
+      <TeamSection />
       <AboutUsLocation />
       <AboutUsCTA />
     </PageLayout>
