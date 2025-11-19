@@ -37,12 +37,12 @@ const AiTechBenefits = () => {
         {
           icon: <LineChart className="h-8 w-8 text-accent-primary" />,
           title: "KI unterstützt, Sie entscheiden",
-          description: "Ich nutze KI für Recherchen und erste Entwürfe – die Strategie und finale Qualität kommen von mir. Sie bekommen echte Expertise, keine AI-Massenware."
+          description: "Wir nutzen KI für Recherchen und erste Entwürfe – die Strategie und finale Qualität kommen von unserem Team. Sie bekommen echte Expertise, keine AI-Massenware."
         },
         {
           icon: <Clock className="h-8 w-8 text-accent-primary" />,
           title: "Schneller zu Ergebnissen",
-          description: "KI hilft mir, Entwürfe und Varianten schneller zu liefern – ohne Qualitätsverlust. Sie sparen Zeit, ohne Abstriche zu machen."
+          description: "KI hilft uns, Entwürfe und Varianten schneller zu liefern – ohne Qualitätsverlust. Sie sparen Zeit, ohne Abstriche zu machen."
         },
         {
           icon: <Lightbulb className="h-8 w-8 text-accent-primary" />,
