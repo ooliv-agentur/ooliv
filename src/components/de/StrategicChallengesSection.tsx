@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { AlertCircle, Target, Zap } from 'lucide-react';
 
@@ -11,17 +12,32 @@ const StrategicChallengesSection = () => {
     {
       icon: <AlertCircle className="w-6 h-6" />,
       title: "Ihre Website sieht gut aus – aber bringt keine Anfragen",
-      description: "Schönes Design allein reicht nicht. Wenn Ihre Website nicht konvertiert, fehlt die strategische Grundlage: klare User Journeys, überzeugende Inhalte, messbare Conversion-Ziele. Mit 16+ Jahren Erfahrung entwickle ich die Strategie, die aus Besuchern Kunden macht."
+      description: (
+        <>
+          Schönes <Link to="/webdesign" className="text-primary hover:underline font-medium">Design</Link> allein reicht nicht. Wenn Ihre Website nicht konvertiert, fehlt die strategische Grundlage: klare User Journeys, überzeugende Inhalte, messbare Conversion-Ziele. Mit 16+ Jahren Erfahrung entwickle ich die{' '}
+          <Link to="/strategie" className="text-primary hover:underline font-medium">Strategie</Link>, die aus Besuchern Kunden macht.
+        </>
+      )
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Digitalisierung läuft – aber ohne erkennbare Richtung",
-      description: "Viele Projekte gleichzeitig, aber kein roter Faden? Wenn Teams aneinander vorbeiarbeiten und Budget verpufft, brauchen Sie eine klare Digital-Strategie. Ich helfe Ihnen, Prioritäten zu setzen und alle auf ein Ziel auszurichten."
+      description: (
+        <>
+          Viele Projekte gleichzeitig, aber kein roter Faden? Wenn Teams aneinander vorbeiarbeiten und Budget verpufft, brauchen Sie eine klare{' '}
+          <Link to="/strategie" className="text-primary hover:underline font-medium">Digital-Strategie</Link>. Ich helfe Ihnen, Prioritäten zu setzen und alle auf ein Ziel auszurichten – mit{' '}
+          <Link to="/produkt-ux-strategie" className="text-primary hover:underline font-medium">Product & UX Strategy</Link>.
+        </>
+      )
     },
     {
       icon: <Zap className="w-6 h-6" />,
       title: "KI-Potenzial ist da – aber wie konkret umsetzen?",
-      description: "KI ist mehr als ChatGPT. Aber welche Use Cases machen für Ihr Business wirklich Sinn? Ich identifiziere die konkreten Anwendungsfälle, die Ihren Workflow verbessern und Ihren Kunden echten Mehrwert bringen – strategisch durchdacht, nicht blind dem Hype gefolgt."
+      description: (
+        <>
+          <Link to="/ki-technologien" className="text-primary hover:underline font-medium">KI</Link> ist mehr als ChatGPT. Aber welche Use Cases machen für Ihr Business wirklich Sinn? Ich identifiziere die konkreten Anwendungsfälle, die Ihren Workflow verbessern und Ihren Kunden echten Mehrwert bringen – strategisch durchdacht, nicht blind dem Hype gefolgt.
+        </>
+      )
     }
   ];
 
@@ -57,7 +73,7 @@ const StrategicChallengesSection = () => {
             Die Lösung: Strategie, die wirklich funktioniert
           </h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-            Sie bekommen keine 300-seitigen Konzepte, die in der Schublade verschwinden. Sondern klare, umsetzbare Strategien mit konkreten Maßnahmen. Basierend auf 16+ Jahren Erfahrung in <a href="/strategie" className="text-primary hover:underline">Digital Strategy</a>, <a href="/produkt-ux-strategie" className="text-primary hover:underline">Product & UX</a> und <a href="/ki-technologien" className="text-primary hover:underline">KI-Integration</a> – mit messbaren Ergebnissen (+240% Conversion Rates, +180% Lead Quality).
+            Sie bekommen keine 300-seitigen Konzepte, die in der Schublade verschwinden. Sondern klare, umsetzbare Strategien mit konkreten Maßnahmen. Basierend auf 16+ Jahren Erfahrung in <Link to="/strategie" className="text-primary hover:underline font-medium">Digital Strategy</Link>, <Link to="/produkt-ux-strategie" className="text-primary hover:underline font-medium">Product & UX</Link>, <Link to="/webdesign" className="text-primary hover:underline font-medium">Webdesign</Link> und <Link to="/ki-technologien" className="text-primary hover:underline font-medium">KI-Integration</Link> – mit messbaren Ergebnissen (+240% Conversion Rates, +180% Lead Quality).
           </p>
           <Button 
             onClick={handleStartProject}
