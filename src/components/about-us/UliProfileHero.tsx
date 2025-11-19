@@ -64,30 +64,30 @@ const UliProfileHero = () => {
 
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  Seit 2008 transformiere ich digitale Ökosysteme für B2B-Unternehmen und führe multidisziplinäre Teams bei der strategischen Umsetzung komplexer digitaler Projekte.
+                  Seit 2008 führe ich digitale Transformationen für B2B-Unternehmen – von Product & UX Strategy über AI Integration bis zur messbaren Umsetzung. Mit einem Track Record von 100+ Projekten und nachweisbaren Business Outcomes.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  Als strategischer Berater arbeite ich direkt mit C-Level Stakeholdern an der Schnittstelle von Business-Strategie, UX-Denken und AI-gestützten Workflows – von der Opportunity Map bis zur messbaren Umsetzung.
+                  Als Digital Strategy Lead arbeite ich direkt mit C-Level Stakeholdern: Strategic Discovery, Product Vision & Roadmaps, UX-driven Business Transformation und AI-enabled Workflows – von der Opportunity-Analyse bis zu messbaren KPIs.
                 </p>
               </div>
 
-              {/* Quick Stats */}
+              {/* Quick Stats - Measurable Outcomes */}
               <div className="grid grid-cols-3 gap-4 pt-6">
                 <div className="text-center p-4 bg-muted/50 rounded-xl">
                   <Briefcase className="h-6 w-6 text-primary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-foreground">100+</div>
-                  <div className="text-sm text-muted-foreground">Projekte geleitet</div>
+                  <div className="text-sm text-muted-foreground">Transformationen</div>
                 </div>
                 <div className="text-center p-4 bg-muted/50 rounded-xl">
                   <Award className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">16+</div>
-                  <div className="text-sm text-muted-foreground">Jahre Erfahrung</div>
+                  <div className="text-2xl font-bold text-foreground">+240%</div>
+                  <div className="text-sm text-muted-foreground">Avg. Conv. Rate</div>
                 </div>
                 <div className="text-center p-4 bg-muted/50 rounded-xl">
                   <GraduationCap className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-foreground">KDA</div>
-                  <div className="text-sm text-muted-foreground">Diploma Design</div>
+                  <div className="text-2xl font-bold text-foreground">16+</div>
+                  <div className="text-sm text-muted-foreground">Jahre Track Record</div>
                 </div>
               </div>
 
