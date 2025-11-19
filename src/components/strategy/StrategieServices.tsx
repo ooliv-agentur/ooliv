@@ -7,57 +7,57 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const StrategieServices = () => {
   const services = [
     {
-      title: "Strategic Discovery & Opportunity Mapping",
+      title: "Analyse & Strategie-Entwicklung",
       features: [
-        "Stakeholder Interviews & Alignment",
-        "Opportunity Map & Value Hypotheses",
-        "Competitive Analysis & Market Positioning",
-        "Strategic Roadmap Development"
+        "Ich schaue mir Ihre aktuelle Situation an (Website, Daten, Wettbewerb)",
+        "Identifiziere die größten Potenziale für Verbesserungen",
+        "Entwickle eine klare Strategie mit priorisierten Maßnahmen",
+        "Erstelle einen konkreten Umsetzungsplan für 6-12 Monate"
       ]
     },
     {
-      title: "Digital Roadmap & KPI Frameworks",
+      title: "Roadmap & Prioritäten setzen",
       features: [
-        "Priority-basierte Roadmaps",
-        "KPI Definition & Tracking Strategy",
-        "Budget & Resource Planning",
-        "Timeline & Milestone Definition"
+        "Wir legen fest, was als erstes angegangen wird",
+        "Definiere klare KPIs, damit Sie Erfolg messen können",
+        "Plane Budget und Ressourcen realistisch",
+        "Setze realistische Meilensteine und Timelines"
       ]
     },
     {
-      title: "UX Strategy & Customer Journey Design",
+      title: "UX-Optimierung & Customer Journeys",
       features: [
-        "Customer Journey Mapping",
-        "Information Architecture",
-        "Conversion Strategy & Funnel Optimization",
-        "Decision-Making UX Design"
+        "Ich entwickle User Journeys, die aus Besuchern Kunden machen",
+        "Optimiere die Website-Struktur für bessere Conversions",
+        "Verbessere die Navigation und Nutzerführung",
+        "Fokus auf Conversion-Optimierung an allen wichtigen Punkten"
       ]
     },
     {
-      title: "AI-Enabled Workflow Integration",
+      title: "KI-Integration für Ihr Business",
       features: [
-        "LLM Use Case Identification",
-        "Automation & Efficiency Strategy",
-        "AI-Driven Content Pipelines",
-        "Team Enablement & Training"
+        "Finde konkrete KI-Anwendungsfälle für Ihr Unternehmen",
+        "Entwickle Automatisierungs-Strategien für effizientere Workflows",
+        "Setze AI-gestützte Content-Prozesse auf",
+        "Schule Ihr Team im Umgang mit KI-Tools"
       ]
     },
     {
-      title: "C-Level Advisory & Decision Support",
+      title: "Strategische Beratung & Begleitung",
       features: [
-        "Strategic Consulting on C-Level",
-        "Business Case Development",
-        "Risk Assessment & Mitigation",
-        "Executive Reporting & Reviews"
+        "Sie haben mich als Sparringspartner für wichtige Entscheidungen",
+        "Ich helfe bei der Business-Case-Entwicklung",
+        "Minimiere Risiken durch strategische Beratung",
+        "Regelmäßige Reviews und Updates"
       ]
     },
     {
-      title: "Implementation Leadership",
+      title: "Umsetzungs-Begleitung",
       features: [
-        "Multidisciplinary Team Coordination",
-        "Requirements Engineering",
-        "Quality Assurance Strategy",
-        "Performance Optimization"
+        "Ich koordiniere Ihr Team und externe Partner",
+        "Stelle sicher, dass alle am gleichen Strang ziehen",
+        "Definiere klare Qualitäts-Standards",
+        "Optimiere Performance und Geschwindigkeit"
       ]
     }
   ];
@@ -68,10 +68,10 @@ const StrategieServices = () => {
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              End-to-End Digital Strategy
+              Wie ich Ihnen helfe
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Strategische Führung von der Discovery bis zur messbaren Umsetzung – mit 16+ Jahren Erfahrung in digitaler Transformation
+              Von der Analyse Ihrer Situation bis zur erfolgreichen Umsetzung – mit klaren Schritten und messbaren Ergebnissen.
             </p>
           </div>
         </Reveal>
@@ -97,10 +97,10 @@ const StrategieServices = () => {
 
         <div className="mt-16 bg-muted/30 p-8 rounded-xl border border-border text-center">
           <h3 className="text-2xl font-bold mb-4 text-foreground">
-            Ergebnis
+            Was Sie am Ende haben
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Klare strategische Roadmaps mit messbaren Outcomes, validierte Konzepte und strukturierte Umsetzung durch internationale Teams – von der Vision zum Business-Impact.
+            Eine klare Strategie mit konkreten nächsten Schritten, messbare KPIs zur Erfolgskontrolle und – wenn gewünscht – Begleitung bei der Umsetzung bis zum Go-Live.
           </p>
         </div>
       </div>

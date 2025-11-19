@@ -36,18 +36,18 @@ const AiTechBenefits = () => {
       cards: [
         {
           icon: <LineChart className="h-8 w-8 text-accent-primary" />,
-          title: "KI unterstützt, Menschen entscheiden",
-          description: "Sie bekommen keine AI-generierten Massentexte. KI hilft bei Recherche und Entwürfen – die Strategie kommt von uns."
+          title: "KI unterstützt, Sie entscheiden",
+          description: "Ich nutze KI für Recherchen und erste Entwürfe – die Strategie und finale Qualität kommen von mir. Sie bekommen echte Expertise, keine AI-Massenware."
         },
         {
           icon: <Clock className="h-8 w-8 text-accent-primary" />,
-          title: "Schneller zum Ergebnis",
-          description: "Sie bekommen Entwürfe, Varianten und Drafts in Rekordzeit – ohne Qualitätsverlust. KI macht uns effizienter, nicht schlechter."
+          title: "Schneller zu Ergebnissen",
+          description: "KI hilft mir, Entwürfe und Varianten schneller zu liefern – ohne Qualitätsverlust. Sie sparen Zeit, ohne Abstriche zu machen."
         },
         {
           icon: <Lightbulb className="h-8 w-8 text-accent-primary" />,
           title: "Kreativität bleibt menschlich",
-          description: "Sie bekommen echte Ideen, nicht AI-Durchschnitt. Konzepte und Storytelling kommen aus Köpfen, nicht aus Prompts."
+          description: "Die wirklich guten Ideen kommen aus Köpfen, nicht aus Prompts. Sie bekommen echte Kreativität und Strategie – KI ist nur das Werkzeug."
         }
       ]
     }

@@ -14,15 +14,15 @@ const ProductUXHero = () => {
   return (
     <PageHero
       title={isGerman 
-        ? "Product & UX Strategy" 
+        ? "Website & UX, die Kunden überzeugen" 
         : "Product & UX Strategy"
       }
       subtitle={isGerman 
-        ? "Product Strategy Framework, evidenzbasierte User Research Methodology und UX-driven Business Transformation – von der Vision über Discovery bis zu messbaren Business Outcomes." 
+        ? "Ich entwickle User Experiences, die aus Besuchern Kunden machen. Von der Analyse Ihrer Zielgruppe über durchdachte User Journeys bis zum fertigen Design – mit messbaren Ergebnissen (+60-140% mehr Conversions)." 
         : "Product strategy framework, evidence-based user research methodology, and UX-driven business transformation – from vision through discovery to measurable business outcomes."
       }
       primaryCta={{
-        text: isGerman ? "Produktstrategie entwickeln" : "Develop Product Strategy",
+        text: isGerman ? "UX-Strategie entwickeln" : "Develop Product Strategy",
         link: "#",
         onClick: handleStartProject
       }}

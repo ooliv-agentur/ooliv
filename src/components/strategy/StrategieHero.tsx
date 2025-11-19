@@ -9,15 +9,15 @@ const StrategieHero = () => {
 
   return (
     <PageHero
-      title="Digital Strategy & Transformation"
-      subtitle="End-to-End Digital Strategy für B2B-Unternehmen. Von der Strategic Discovery über UX-Strategie bis zur messbaren Umsetzung – C-Level Advisory mit 16+ Jahren Erfahrung."
+      title="Digital-Strategie, die wirklich funktioniert"
+      subtitle="Sie bekommen klare Strategien mit konkreten Maßnahmen – keine 300-seitigen Konzepte, die in der Schublade verstauben. Von der Analyse über die Strategie bis zur Umsetzung. Basierend auf 16+ Jahren Erfahrung."
       primaryCta={{
-        text: "Strategiegespräch vereinbaren",
+        text: "Kostenloses Strategiegespräch",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Transformationen ansehen",
+        text: "Erfolgreiche Projekte ansehen",
         link: "/referenzen"
       }}
     />
