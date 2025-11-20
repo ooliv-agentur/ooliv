@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import AnimatedCounter from '@/components/animations/AnimatedCounter';
 import { Icon } from '@/components/ui/icon';
 
 interface ProcessStep {
@@ -25,6 +27,11 @@ interface BaseProcessProps {
   gridColumns?: GridColumns;
   showConnectors?: boolean;
   alignment?: 'left' | 'center';
+  animationDelay?: number;
+  animationStagger?: number;
+  animationDirection?: 'up' | 'down' | 'left' | 'right';
+  animationDistance?: number;
+  disableAnimations?: boolean;
 }
 
 const BaseProcess = ({ 
@@ -35,8 +42,15 @@ const BaseProcess = ({
   layout = 'cards',
   gridColumns = 4,
   showConnectors = true,
-  alignment = 'center'
+  alignment = 'center',
+  animationDelay = 0,
+  animationStagger = 0.1,
+  animationDirection = 'up',
+  animationDistance = 30,
+  disableAnimations = false
 }: BaseProcessProps) => {
+  const prefersReducedMotion = useReducedMotion();
+  const shouldAnimate = !disableAnimations && !prefersReducedMotion;
   const bgClass = {
     white: 'bg-white',
     mint: 'bg-medico-mint/30',
@@ -45,6 +59,51 @@ const BaseProcess = ({
 
   const alignmentClass = alignment === 'left' ? 'text-left' : 'text-center';
   const alignmentMxClass = alignment === 'left' ? '' : 'mx-auto';
+
+  // Animation variants
+  const iconVariants = {
+    hidden: { scale: 0, rotate: -180, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      rotate: 0,
+      opacity: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 200, 
+        damping: 15 
+      }
+    }
+  };
+
+  const lineVariants = {
+    hidden: { scaleX: 0, opacity: 0 },
+    visible: { 
+      scaleX: 1, 
+      opacity: 1,
+      transition: { 
+        duration: 0.6, 
+        delay: 0.3,
+        ease: "easeOut" 
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: animationDistance,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
 
   // Grid layout - horizontal with icons and connection lines
   const renderGridLayout = () => {
@@ -56,21 +115,40 @@ const BaseProcess = ({
     }[gridColumns];
 
     return (
-      <StaggerReveal className={`grid grid-cols-1 ${gridColsClass} gap-8`}>
+      <StaggerReveal 
+        className={`grid grid-cols-1 ${gridColsClass} gap-8`}
+        stagger={animationStagger}
+        delay={animationDelay}
+        distance={animationDistance}
+      >
         {steps.map((step, index) => (
-          <div key={index} className={`${alignmentClass} group relative`}>
+          <motion.div 
+            key={index} 
+            className={`${alignmentClass} group relative`}
+            whileHover={shouldAnimate ? { y: -5 } : {}}
+            transition={{ duration: 0.2 }}
+          >
             {/* Connection line */}
             {showConnectors && index < steps.length - 1 && (
-              <div 
+              <motion.div 
                 className="hidden md:block absolute top-6 left-full w-full h-0.5 bg-gray-200 z-0" 
-                style={{ width: 'calc(100% - 2rem)' }} 
+                style={{ width: 'calc(100% - 2rem)' }}
+                initial="hidden"
+                animate="visible"
+                variants={shouldAnimate ? lineVariants : {}}
               />
             )}
             
             <div className="relative z-10 mb-6">
-              <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mb-4 group-hover:bg-medico-turquoise group-hover:text-white transition-all duration-300">
+              <motion.div 
+                className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mb-4 group-hover:bg-medico-turquoise group-hover:text-white transition-all duration-300"
+                initial="hidden"
+                animate="visible"
+                variants={shouldAnimate ? iconVariants : {}}
+                whileHover={shouldAnimate ? { scale: 1.1, rotate: 5 } : {}}
+              >
                 <step.icon className="h-6 w-6" />
-              </div>
+              </motion.div>
             </div>
             
             <h3 className="text-xl font-bold mb-2 text-medico-darkGreen">
@@ -86,7 +164,7 @@ const BaseProcess = ({
             <p className="text-medico-darkGreen/80 leading-relaxed">
               {step.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </StaggerReveal>
     );
@@ -98,14 +176,35 @@ const BaseProcess = ({
       {steps.map((step, index) => {
         const isEven = index % 2 === 0;
         return (
-          <Reveal key={index}>
-            <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
+          <Reveal 
+            key={index}
+            direction={isEven ? 'left' : 'right'}
+            distance={animationDistance}
+            delay={animationDelay + (index * animationStagger)}
+          >
+            <motion.div 
+              className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
+              whileHover={shouldAnimate ? { scale: 1.02 } : {}}
+              transition={{ duration: 0.3 }}
+            >
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0"
+                    initial="hidden"
+                    animate="visible"
+                    variants={shouldAnimate ? iconVariants : {}}
+                    whileHover={shouldAnimate ? { scale: 1.15, rotate: 360 } : {}}
+                    transition={{ duration: 0.5 }}
+                  >
                     <step.icon className="h-8 w-8 text-medico-turquoise" />
-                  </div>
-                  {step.number && (
+                  </motion.div>
+                  {step.number && shouldAnimate && (
+                    <span className="text-5xl font-bold text-medico-turquoise/20">
+                      <AnimatedCounter end={parseInt(step.number)} duration={1500} />
+                    </span>
+                  )}
+                  {step.number && !shouldAnimate && (
                     <span className="text-5xl font-bold text-medico-turquoise/20">{step.number}</span>
                   )}
                 </div>
@@ -121,9 +220,14 @@ const BaseProcess = ({
                   {step.description}
                 </p>
               </div>
-              <div className="hidden md:block w-px h-24 bg-gray-200"></div>
+              <motion.div 
+                className="hidden md:block w-px h-24 bg-gray-200"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 96, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
               <div className="flex-1"></div>
-            </div>
+            </motion.div>
           </Reveal>
         );
       })}
@@ -140,20 +244,55 @@ const BaseProcess = ({
     }[gridColumns];
 
     return (
-      <StaggerReveal className={`grid grid-cols-1 ${gridColsClass} gap-8`}>
+      <StaggerReveal 
+        className={`grid grid-cols-1 ${gridColsClass} gap-8`}
+        stagger={animationStagger}
+        delay={animationDelay}
+        distance={animationDistance}
+      >
         {steps.map((step, index) => (
           <div key={index} className="relative">
-            <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+            <motion.div 
+              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full"
+              whileHover={shouldAnimate ? { 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              } : {}}
+              transition={{ duration: 0.3 }}
+            >
               <div className="flex items-center justify-center mb-6">
                 <div className="relative">
-                  <Icon 
-                    icon={step.icon}
-                    variant="round"
-                    size="lg"
-                    background="strong"
-                    className="text-accent-primary"
-                  />
-                  {step.number && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={shouldAnimate ? iconVariants : {}}
+                    whileHover={shouldAnimate ? { scale: 1.1, rotate: 5 } : {}}
+                  >
+                    <Icon 
+                      icon={step.icon}
+                      variant="round"
+                      size="lg"
+                      background="strong"
+                      className="text-accent-primary"
+                    />
+                  </motion.div>
+                  {step.number && shouldAnimate && (
+                    <motion.div 
+                      className="absolute -top-2 -right-2 bg-accent-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center"
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.2 
+                      }}
+                    >
+                      <AnimatedCounter end={parseInt(step.number)} duration={1500} />
+                    </motion.div>
+                  )}
+                  {step.number && !shouldAnimate && (
                     <div className="absolute -top-2 -right-2 bg-accent-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center">
                       {step.number}
                     </div>
@@ -167,10 +306,15 @@ const BaseProcess = ({
                 </p>
               )}
               <p className="text-medico-darkGreen/80 leading-relaxed text-center">{step.description}</p>
-            </div>
+            </motion.div>
             
             {showConnectors && index < steps.length - 1 && (
-              <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-accent-primary/30 transform -translate-y-1/2"></div>
+              <motion.div 
+                className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-accent-primary/30 transform -translate-y-1/2"
+                initial="hidden"
+                animate="visible"
+                variants={shouldAnimate ? lineVariants : {}}
+              />
             )}
           </div>
         ))}
