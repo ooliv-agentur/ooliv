@@ -24,6 +24,7 @@ const WiesbadenHero = () => {
       subtitle="Ihre Website sieht gut aus, aber bringt keine Anfragen? Ich helfe Wiesbadener Unternehmen, aus Besuchern Kunden zu machen – mit durchdachter UX und klarer Strategie."
       dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={dynamicEndings}
+      benefitsVariant="solid"
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",

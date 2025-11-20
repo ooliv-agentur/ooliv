@@ -24,6 +24,7 @@ const DarmstadtHero = () => {
       subtitle="Darmstadts Tech-Unternehmen brauchen mehr als Standard-Marketing. Ich entwickle digitale Strategien, die technisch präzise und strategisch fundiert sind – für Hightech-Startups und wissenschaftsnahe B2B-Firmen."
       dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={dynamicEndings}
+      benefitsVariant="solid"
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",

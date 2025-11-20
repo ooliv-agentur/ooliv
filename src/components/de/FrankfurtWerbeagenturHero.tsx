@@ -24,6 +24,7 @@ const FrankfurtWerbeagenturHero = () => {
       subtitle="Frankfurt verdient mehr als Standard-Websites. Ich helfe Banken, Konzernen und Startups, digital auf dem nächsten Level zu sein – mit strategischer Expertise und messbaren Ergebnissen."
       dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={dynamicEndings}
+      benefitsVariant="solid"
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",

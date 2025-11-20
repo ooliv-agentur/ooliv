@@ -24,6 +24,7 @@ const SchweizHero = () => {
       subtitle="Ihre Website bringt keine Anfragen? Ich helfe Schweizer B2B-Unternehmen, digital besser zu werden – mit Verständnis für den Schweizer Markt, mehrsprachigen Lösungen und transparenten Preisen."
       dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={dynamicEndings}
+      benefitsVariant="solid"
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",

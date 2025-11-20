@@ -40,6 +40,7 @@ const DeutscherHero = () => {
         subtitle="Digital-Beratung, die wirklich umsetzt. Klare Strategien, durchdachte Lösungen, messbare Ergebnisse – ohne Buzzwords und Konzepte, die in der Schublade landen."
         dynamicPrefix="Sie bekommen:"
         dynamicSubheadlines={dynamicEndings}
+        benefitsVariant="pattern"
         primaryCta={{
           text: "Mit ooliv durchstarten",
           link: "#",

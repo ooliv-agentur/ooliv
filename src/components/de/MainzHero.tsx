@@ -16,6 +16,7 @@ const MainzHero = () => {
       subtitle="Ihre Website bringt keine Anfragen? Lassen Sie uns das ändern. Ich helfe Mainzer Unternehmen, digital besser zu werden – mit klaren Strategien, durchdachter UX und messbaren Ergebnissen."
       dynamicPrefix="Sie bekommen:"
       dynamicSubheadlines={["Mehr Website-Anfragen", "Bessere Google-Sichtbarkeit", "Klare digitale Strategie"]}
+      benefitsVariant="solid"
       primaryCta={{
         text: "Kostenloses Erstgespräch",
         link: "#",
