@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { LucideIcon } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
 import AnimatedCounter from '@/components/animations/AnimatedCounter';
@@ -51,6 +52,31 @@ const BaseProcess = ({
 }: BaseProcessProps) => {
   const prefersReducedMotion = useReducedMotion();
   const shouldAnimate = !disableAnimations && !prefersReducedMotion;
+  
+  // Timeline progress tracking
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [timelineProgress, setTimelineProgress] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
+  
+  // Smooth spring animation for progress
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  useEffect(() => {
+    if (layout !== 'timeline') return;
+    
+    const unsubscribe = smoothProgress.on('change', (latest) => {
+      setTimelineProgress(latest);
+    });
+    
+    return () => unsubscribe();
+  }, [smoothProgress, layout]);
   const bgClass = {
     white: 'bg-white',
     mint: 'bg-medico-mint/30',
@@ -170,67 +196,98 @@ const BaseProcess = ({
     );
   };
 
-  // Timeline layout - alternating left/right
+  // Timeline layout - alternating left/right with progress indicator
   const renderTimelineLayout = () => (
-    <div className="space-y-16">
-      {steps.map((step, index) => {
-        const isEven = index % 2 === 0;
-        return (
-          <Reveal 
-            key={index}
-            direction={isEven ? 'left' : 'right'}
-            distance={animationDistance}
-            delay={animationDelay + (index * animationStagger)}
-          >
-            <motion.div 
-              className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
-              whileHover={shouldAnimate ? { scale: 1.02 } : {}}
-              transition={{ duration: 0.3 }}
+    <div className="relative" ref={timelineRef}>
+      {/* Progress indicator line */}
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 pointer-events-none">
+        {/* Background line */}
+        <div className="absolute inset-0 bg-gray-200 rounded-full" />
+        {/* Progress line */}
+        <motion.div 
+          className="absolute top-0 left-0 right-0 bg-gradient-to-b from-medico-turquoise to-accent-primary rounded-full origin-top"
+          style={{ 
+            scaleY: timelineProgress,
+            transformOrigin: 'top'
+          }}
+        />
+        {/* Animated dot at progress end */}
+        <motion.div
+          className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-accent-primary rounded-full shadow-lg"
+          style={{
+            top: `${timelineProgress * 100}%`,
+            opacity: timelineProgress > 0 ? 1 : 0
+          }}
+        >
+          <motion.div
+            className="absolute inset-0 bg-accent-primary rounded-full"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.8, 0.3, 0.8]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>
+      </div>
+
+      <div className="space-y-16">
+        {steps.map((step, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <Reveal 
+              key={index}
+              direction={isEven ? 'left' : 'right'}
+              distance={animationDistance}
+              delay={animationDelay + (index * animationStagger)}
             >
-              <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <motion.div 
-                    className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0"
-                    initial="hidden"
-                    animate="visible"
-                    variants={shouldAnimate ? iconVariants : {}}
-                    whileHover={shouldAnimate ? { scale: 1.15, rotate: 360 } : {}}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <step.icon className="h-8 w-8 text-medico-turquoise" />
-                  </motion.div>
-                  {step.number && shouldAnimate && (
-                    <span className="text-5xl font-bold text-medico-turquoise/20">
-                      <AnimatedCounter end={parseInt(step.number)} duration={1500} />
-                    </span>
-                  )}
-                  {step.number && !shouldAnimate && (
-                    <span className="text-5xl font-bold text-medico-turquoise/20">{step.number}</span>
-                  )}
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-medico-darkGreen">
-                  {step.title}
-                </h3>
-                {step.subtitle && (
-                  <p className="text-lg text-medico-turquoise mb-3 font-semibold">
-                    {step.subtitle}
-                  </p>
-                )}
-                <p className="text-medico-darkGreen/80 leading-relaxed text-lg">
-                  {step.description}
-                </p>
-              </div>
               <motion.div 
-                className="hidden md:block w-px h-24 bg-gray-200"
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 96, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              />
-              <div className="flex-1"></div>
-            </motion.div>
-          </Reveal>
-        );
-      })}
+                className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center relative z-10`}
+                whileHover={shouldAnimate ? { scale: 1.02 } : {}}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-4">
+                    <motion.div 
+                      className="w-16 h-16 bg-medico-turquoise/10 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-white shadow-md relative z-20"
+                      initial="hidden"
+                      animate="visible"
+                      variants={shouldAnimate ? iconVariants : {}}
+                      whileHover={shouldAnimate ? { scale: 1.15, rotate: 360 } : {}}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <step.icon className="h-8 w-8 text-medico-turquoise" />
+                    </motion.div>
+                    {step.number && shouldAnimate && (
+                      <span className="text-5xl font-bold text-medico-turquoise/20">
+                        <AnimatedCounter end={parseInt(step.number)} duration={1500} />
+                      </span>
+                    )}
+                    {step.number && !shouldAnimate && (
+                      <span className="text-5xl font-bold text-medico-turquoise/20">{step.number}</span>
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-medico-darkGreen">
+                    {step.title}
+                  </h3>
+                  {step.subtitle && (
+                    <p className="text-lg text-medico-turquoise mb-3 font-semibold">
+                      {step.subtitle}
+                    </p>
+                  )}
+                  <p className="text-medico-darkGreen/80 leading-relaxed text-lg">
+                    {step.description}
+                  </p>
+                </div>
+                <div className="flex-1"></div>
+              </motion.div>
+            </Reveal>
+          );
+        })}
+      </div>
     </div>
   );
 
