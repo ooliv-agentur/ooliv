@@ -55,6 +55,8 @@ const BaseProcess = ({
   
   // Timeline progress tracking
   const timelineRef = useRef<HTMLDivElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [timelineProgress, setTimelineProgress] = useState(0);
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -77,6 +79,42 @@ const BaseProcess = ({
     
     return () => unsubscribe();
   }, [smoothProgress, layout]);
+
+  // Track which step is currently in view
+  useEffect(() => {
+    if (layout !== 'timeline' || stepRefs.current.length === 0) return;
+
+    const observers = stepRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveStepIndex(index);
+          }
+        },
+        { threshold: 0.5, rootMargin: '-100px 0px' }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, [layout, steps.length]);
+
+  // Scroll to specific step
+  const scrollToStep = (index: number) => {
+    const targetRef = stepRefs.current[index];
+    if (targetRef) {
+      targetRef.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }
+  };
   const bgClass = {
     white: 'bg-white',
     mint: 'bg-medico-mint/30',
@@ -234,6 +272,73 @@ const BaseProcess = ({
         </motion.div>
       </div>
 
+      {/* Interactive step indicators */}
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 pointer-events-none">
+        {steps.map((step, index) => {
+          const position = ((index + 0.5) / steps.length) * 100;
+          const isActive = activeStepIndex === index;
+          const isPassed = timelineProgress * 100 >= position;
+          
+          return (
+            <motion.button
+              key={index}
+              className="absolute left-1/2 -translate-x-1/2 pointer-events-auto cursor-pointer group"
+              style={{ top: `${position}%` }}
+              onClick={() => scrollToStep(index)}
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label={`Jump to step ${index + 1}: ${step.title}`}
+            >
+              {/* Outer ring for active step */}
+              {isActive && (
+                <motion.div
+                  className="absolute inset-0 -m-2 border-2 border-accent-primary rounded-full"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                />
+              )}
+              
+              {/* Step dot */}
+              <motion.div
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  isPassed 
+                    ? 'bg-accent-primary shadow-md' 
+                    : 'bg-gray-300 group-hover:bg-gray-400'
+                }`}
+                animate={{
+                  scale: isActive ? 1.3 : 1
+                }}
+              >
+                {/* Step number tooltip */}
+                <motion.div
+                  className="absolute left-6 top-1/2 -translate-y-1/2 bg-medico-darkGreen text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  initial={false}
+                >
+                  {step.number || (index + 1)}. {step.title}
+                </motion.div>
+              </motion.div>
+              
+              {/* Pulse animation for active step */}
+              {isActive && (
+                <motion.div
+                  className="absolute inset-0 bg-accent-primary rounded-full"
+                  animate={{
+                    scale: [1, 2, 1],
+                    opacity: [0.5, 0, 0.5]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeOut"
+                  }}
+                />
+              )}
+            </motion.button>
+          );
+        })}
+      </div>
+
       <div className="space-y-16">
         {steps.map((step, index) => {
           const isEven = index % 2 === 0;
@@ -245,6 +350,7 @@ const BaseProcess = ({
               delay={animationDelay + (index * animationStagger)}
             >
               <motion.div 
+                ref={(el) => (stepRefs.current[index] = el)}
                 className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center relative z-10`}
                 whileHover={shouldAnimate ? { scale: 1.02 } : {}}
                 transition={{ duration: 0.3 }}
