@@ -11,6 +11,7 @@ const StrategieHero = () => {
     <PageHero
       title="Digital-Strategie mit ooliv – keine Konzepte, die verstauben"
       subtitle="Digital-Strategien, die Sie wirklich umsetzen können. Von der Analyse bis zur konkreten Maßnahme – ohne Berater-Blabla. Messbare Ergebnisse statt 300-seitiger PDFs."
+      benefitsVariant="none"
       primaryCta={{
         text: "Kostenloses Strategiegespräch",
         link: "#",
