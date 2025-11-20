@@ -10,7 +10,7 @@ const StrategieHero = () => {
   return (
     <PageHero
       title="Digital-Strategie mit ooliv – keine Konzepte, die verstauben"
-      subtitle="Uli Schönleber und das ooliv-Team entwickeln klare Strategien mit konkreten Maßnahmen – keine 300-seitigen Konzepte, die in der Schublade landen. Von der Analyse über die Strategie bis zur Umsetzung. Basierend auf 16+ Jahren Erfahrung."
+      subtitle="Digital-Strategien, die Sie wirklich umsetzen können. Von der Analyse bis zur konkreten Maßnahme – ohne Berater-Blabla. Messbare Ergebnisse statt 300-seitiger PDFs."
       primaryCta={{
         text: "Kostenloses Strategiegespräch",
         link: "#",
