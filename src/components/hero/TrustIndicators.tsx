@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Users, TrendingUp, Award } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useInView } from 'react-intersection-observer';
+import { useCountUp } from '@/hooks/useCountUp';
+import AnimatedCounter from './AnimatedCounter';
 
 interface TrustMetric {
   icon?: 'star' | 'users' | 'trending' | 'award';
@@ -70,8 +73,15 @@ const TrustIndicators = ({
     className
   );
 
+  // Intersection observer to trigger animation when in view
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
     <motion.div
+      ref={ref}
       className={containerClasses}
       variants={containerVariants}
       initial="hidden"
@@ -93,7 +103,7 @@ const TrustIndicators = ({
                     <IconComponent className="w-6 h-6 text-accent-primary" strokeWidth={2} />
                   </div>
                   <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1">
-                    {metric.value}
+                    <AnimatedCounter value={metric.value} isInView={inView} />
                   </div>
                   <div className="text-sm sm:text-base text-muted-foreground font-medium">
                     {metric.label}
