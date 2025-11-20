@@ -31,6 +31,7 @@ interface PageHeroProps {
   // New props for homepage dynamic subheadlines
   dynamicSubheadlines?: string[];
   dynamicPrefix?: string;
+  benefitsVariant?: "gradient" | "solid" | "pattern" | "none";
   // Hero illustration
   heroIllustration?: {
     src: string;
@@ -52,6 +53,7 @@ const PageHero = ({
   backgroundVideo,
   dynamicSubheadlines,
   dynamicPrefix,
+  benefitsVariant = "gradient",
   heroIllustration
 }: PageHeroProps) => {
   const { language } = useLanguage();
@@ -151,6 +153,7 @@ const PageHero = ({
               <BenefitsList 
                 benefits={dynamicSubheadlines}
                 prefix={dynamicPrefix}
+                variant={benefitsVariant}
               />
             </div>
           )}
