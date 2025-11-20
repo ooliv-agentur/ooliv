@@ -1,14 +1,34 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
 
-interface BenefitsListProps {
+// Background style variants
+const benefitsContainerVariants = cva(
+  "relative rounded-2xl p-6 sm:p-8",
+  {
+    variants: {
+      variant: {
+        gradient: "bg-gradient-to-br from-accent-primary/5 via-background/50 to-medico-turquoise/5 border border-border/50 backdrop-blur-sm shadow-sm",
+        solid: "bg-accent/5 border border-border shadow-sm",
+        pattern: "bg-gradient-to-br from-accent-primary/5 via-background/50 to-medico-turquoise/5 border border-border/50 backdrop-blur-sm shadow-sm",
+        none: "",
+      },
+    },
+    defaultVariants: {
+      variant: "gradient",
+    },
+  }
+);
+
+interface BenefitsListProps extends VariantProps<typeof benefitsContainerVariants> {
   benefits: string[];
   prefix?: string;
   className?: string;
 }
 
-const BenefitsList = ({ benefits, prefix, className = "" }: BenefitsListProps) => {
+const BenefitsList = ({ benefits, prefix, variant, className = "" }: BenefitsListProps) => {
   // Animation variants for staggered fade-in
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,16 +56,21 @@ const BenefitsList = ({ benefits, prefix, className = "" }: BenefitsListProps) =
     }
   };
 
+  // Show pattern overlay only for "pattern" variant
+  const showPattern = variant === "pattern";
+
   return (
-    <div className={`text-left ${className}`}>
-      <div className="relative rounded-2xl bg-gradient-to-br from-accent-primary/5 via-background/50 to-medico-turquoise/5 border border-border/50 p-6 sm:p-8 backdrop-blur-sm shadow-sm">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-2xl" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-          backgroundSize: '24px 24px'
-        }} />
+    <div className={cn("text-left", className)}>
+      <div className={cn(benefitsContainerVariants({ variant }))}>
+        {/* Subtle pattern overlay - only for "pattern" variant */}
+        {showPattern && (
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none rounded-2xl" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+            backgroundSize: '24px 24px'
+          }} />
+        )}
         
-        <div className="relative z-10">
+        <div className={cn("relative", variant !== "none" && "z-10")}>
           {prefix && (
             <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6">
               {prefix}
