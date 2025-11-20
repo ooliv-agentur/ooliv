@@ -37,15 +37,7 @@ const DeutscherHero = () => {
       <PageHero
         isHomepage={true}
         title="ooliv – Digital-Beratung, die Ihr Business voranbringt"
-        subtitle={
-          <>
-            Uli Schönleber und das ooliv-Team helfen Ihnen, digital besser zu werden – mit{' '}
-            <Link to="/strategie" className="text-primary hover:underline font-medium">klaren Strategien</Link>,{' '}
-            durchdachter <Link to="/webdesign" className="text-primary hover:underline font-medium">UX</Link> und{' '}
-            <Link to="/ki-technologien" className="text-primary hover:underline font-medium">sinnvollen KI-Lösungen</Link>.{' '}
-            Sie bekommen keine 300-seitigen Konzepte, sondern konkrete Maßnahmen. Basierend auf 16+ Jahren Erfahrung.
-          </>
-        }
+        subtitle="Digital-Beratung, die wirklich umsetzt. Klare Strategien, durchdachte Lösungen, messbare Ergebnisse – ohne Buzzwords und Konzepte, die in der Schublade landen."
         dynamicPrefix="Sie bekommen:"
         dynamicSubheadlines={dynamicEndings}
         primaryCta={{
