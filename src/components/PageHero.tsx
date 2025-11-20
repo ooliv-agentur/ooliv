@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
 import { useIsMobile } from '@/hooks/use-mobile';
-import DynamicSubheadlines from './animations/DynamicSubheadlines';
+import BenefitsList from './hero/BenefitsList';
 import { FloatingElement } from './animations/FloatingElement';
 import { motion } from 'framer-motion';
 
@@ -145,19 +145,13 @@ const PageHero = ({
             {title || defaultHomepageTitle}
           </h1>
           
-          {/* Dynamic subheadlines section for homepage */}
+          {/* Benefits list section for homepage */}
           {dynamicSubheadlines && (
-            <div className="text-left mb-6 sm:mb-8">
-              <div
-                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px] text-muted-foreground"
-              >
-                {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
-                <DynamicSubheadlines 
-                  subheadlines={dynamicSubheadlines}
-                  interval={4000}
-                  className="inline"
-                />
-              </div>
+            <div className="mb-8 sm:mb-10">
+              <BenefitsList 
+                benefits={dynamicSubheadlines}
+                prefix={dynamicPrefix}
+              />
             </div>
           )}
         </div>
