@@ -48,15 +48,15 @@ const UliSection = () => {
             <div className="space-y-3 mb-8">
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">15+ Jahre Erfahrung (Strategie, UX, AI-gestützte Workflows)</span>
+                <span className="text-primary-text font-normal">15+ Jahre Erfahrung</span>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">200+ Projekte für Mittelstand & Marktführer</span>
+                <span className="text-primary-text font-normal">200+ Projekte</span>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">Direkte Zusammenarbeit auf Geschäftsführungsniveau</span>
+                <span className="text-primary-text font-normal">Zusammenarbeit auf Geschäftsführungsniveau</span>
               </div>
             </div>
 
