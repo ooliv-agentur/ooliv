@@ -8,42 +8,42 @@
 
 @layer base {
   :root {
-    /* Shadcn color system - Turquoise Minimal Theme */
+    /* ooliv design system - Teal minimal theme */
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 5%;
     
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 5%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 5%;
     
-    --primary: 0 0% 10%;
+    --primary: 178 60% 42%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 180 11% 96%;
+    --secondary-foreground: 0 0% 5%;
     
-    --muted: 0 0% 96%;
+    --muted: 180 11% 96%;
     --muted-foreground: 0 0% 45%;
     
-    /* Turquoise accent throughout */
-    --accent: 168 60% 50%;
+    /* Teal accent throughout */
+    --accent: 178 60% 42%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 168 60% 50%;
+    --border: 180 11% 90%;
+    --input: 180 11% 90%;
+    --ring: 178 60% 42%;
     
-    --radius: 0.5rem;
+    --radius: 0.625rem;
     
-    /* Turquoise color scale for utility classes */
-    --turquoise: 168 60% 50%;
-    --turquoise-hover: 168 50% 40%;
-    --turquoise-light: 168 50% 60%;
+    /* Teal color scale for utility classes */
+    --teal: 178 60% 42%;
+    --teal-hover: 178 55% 35%;
+    --teal-light: 178 50% 85%;
   }
   
   .dark {
@@ -233,32 +233,33 @@
   }
 }
 
-/* Global Turquoise Theme - Applied Everywhere */
+/* ooliv Design System - Teal Brand */
 :root {
-  /* Core Brand Colors (never change) */
-  --brand-turquoise: 168 60% 50%; /* #38B593 - PRIMARY ACCENT */
-  --brand-dark-green: 0 0% 10%; /* Pure Black for minimal theme */
+  /* Core Brand Colors */
+  --brand-teal: 178 60% 42%; /* #2DAEAA - PRIMARY BRAND */
+  --brand-black: 0 0% 5%; /* #0D0D0D - Primary text */
   --brand-white: 0 0% 100%; /* #FFFFFF */
+  --brand-light-grey: 180 11% 96%; /* #F4F7F7 */
 
-  /* Turquoise as Primary Accent Everywhere */
-  --accent-primary: 168 60% 50%; /* Turquoise - PRIMARY */
-  --accent-complementary: 0 0% 20%; /* Dark gray instead of pink */
-  --accent-secondary: 168 45% 65%; /* Lighter turquoise */
-  --accent-tertiary: 168 50% 60%; /* Mid turquoise */
-  --accent-gradient: linear-gradient(135deg, hsl(168 60% 50%), hsl(168 50% 60%));
+  /* Teal as Primary Accent */
+  --accent-primary: 178 60% 42%; /* Teal - PRIMARY */
+  --accent-complementary: 178 55% 35%; /* Darker teal */
+  --accent-secondary: 178 50% 50%; /* Mid teal */
+  --accent-tertiary: 178 50% 85%; /* Light teal */
+  --accent-gradient: none; /* No gradients */
   
-  /* Turquoise glow (hidden in minimal mode) */
+  /* No glow effects */
   --accent-glow: hsla(0, 0%, 0%, 0);
   
-  /* Minimal theme backgrounds */
+  /* Clean backgrounds */
   --brand-background: 0 0% 100%; /* Pure white */
-  --brand-background-alt: 0 0% 98%; /* Very light gray for subtle sections */
+  --brand-background-alt: 180 11% 96%; /* Light grey */
   
-  /* Turquoise utility classes */
-  --turquoise: 168 60% 50%; /* #38B593 */
-  --turquoise-dark: 168 50% 40%; /* #2D9174 */
-  --turquoise-light: 168 50% 60%; /* Lighter turquoise */
-  --turquoise-hover: 168 50% 40%; /* Hover state */
+  /* Teal utility classes */
+  --teal: 178 60% 42%; /* #2DAEAA */
+  --teal-dark: 178 55% 35%; /* Darker hover */
+  --teal-light: 178 50% 85%; /* Light teal */
+  --teal-hover: 178 55% 35%; /* Hover state */
 }
 
 /* Custom Shadow Utilities for WP All Import Clean Style */
