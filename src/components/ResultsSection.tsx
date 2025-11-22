@@ -46,7 +46,7 @@ const ResultsSection = () => {
                 className={`
                   inline-flex items-center px-4 py-2 rounded-full text-sm font-medium
                   ${metric.highlight 
-                    ? 'bg-[#2DAEAA] text-white' 
+                    ? 'bg-[#0BC3C3] text-white' 
                     : 'bg-[#F7F8FC] text-[#666666] border border-[#E5E5E5]'
                   }
                 `}
@@ -77,7 +77,7 @@ const ResultsSection = () => {
           className="text-center space-y-6"
         >
           <p className="text-[#666666] text-base sm:text-lg">
-            Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-[#2DAEAA] hover:underline font-medium">info@ooliv.de</a>
+            Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-[#0BC3C3] hover:underline font-medium">info@ooliv.de</a>
           </p>
           
           <Button 

@@ -98,13 +98,13 @@ const CoreServicesSection = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={cardVariants}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E5E5E5] hover:border-[#2DAEAA] group h-full flex flex-col"
+                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E5E5E5] hover:border-[#0BC3C3] group h-full flex flex-col"
               >
                 {/* Icon */}
                 <div className="mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#2DAEAA] bg-opacity-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-[#0BC3C3] bg-opacity-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <IconComponent 
-                      className="w-7 h-7 text-[#2DAEAA]" 
+                      className="w-7 h-7 text-[#0BC3C3]"
                       strokeWidth={2}
                       aria-hidden="true"
                     />
@@ -123,7 +123,7 @@ const CoreServicesSection = () => {
                       key={itemIndex}
                       className="flex items-start text-[15px] text-[#666666] leading-relaxed"
                     >
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#2DAEAA] mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#0BC3C3] mt-2 mr-3 flex-shrink-0"></span>
                       <span>{item}</span>
                     </li>
                   ))}

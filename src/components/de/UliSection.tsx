@@ -6,7 +6,7 @@ import Reveal from '@/components/animations/Reveal';
 
 const UliSection = () => {
   return (
-    <section className="py-24 bg-[#F4F7F7]">
+    <section className="py-24 bg-white">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
@@ -21,11 +21,11 @@ const UliSection = () => {
 
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           <div className="flex justify-center">
-            <div className="relative w-[300px] h-[300px] rounded-[20px] overflow-hidden bg-white border-2 border-teal">
+            <div className="relative w-[300px] h-[300px] rounded-[20px] overflow-hidden bg-white shadow-xl">
               <img 
                 src="/lovable-uploads/Uli.webp" 
-                alt="Uli Schönleber"
-                className="w-full h-full object-cover object-center"
+                alt="Uli Schönleber - Digital Strategy Lead"
+                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
@@ -47,15 +47,15 @@ const UliSection = () => {
 
             <div className="space-y-3 mb-8">
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
                 <span className="text-primary-text font-normal">15+ Jahre Erfahrung</span>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
                 <span className="text-primary-text font-normal">200+ Projekte</span>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-teal mr-3 mt-1 flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
                 <span className="text-primary-text font-normal">Zusammenarbeit auf Geschäftsführungsniveau</span>
               </div>
             </div>
