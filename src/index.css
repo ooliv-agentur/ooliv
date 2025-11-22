@@ -405,11 +405,18 @@ body.minimal-theme {
     background-color: #1A1A1A !important;
   }
   
-  /* Keep buttons readable but minimal */
-  button,
-  a[class*="bg-accent"],
-  .bg-white {
+  /* Keep buttons readable but minimal - EXCEPT floating action buttons */
+  button:not(.fixed button):not([size="floating"]):not(.bg-\[#2DAEAA\]):not([variant="floating"]):not([variant="light"]),
+  a[class*="bg-accent"]:not(.fixed a),
+  .bg-white:not(button) {
     background-color: #FFFFFF !important;
+  }
+  
+  /* Floating action buttons MUST keep their design system colors */
+  .fixed button,
+  button[size="floating"],
+  button.bg-\[#2DAEAA\] {
+    background-color: revert !important;
   }
   
   button.bg-accent-primary,
