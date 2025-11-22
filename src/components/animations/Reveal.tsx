@@ -15,13 +15,13 @@ const Reveal = ({
   children,
   className = '',
   delay = 0,
-  distance = 30,
+  distance = 15,
   direction = 'up'
 }: RevealProps) => {
   const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.3,
   });
 
   // Return immediately without animations if reduced motion is preferred
@@ -50,8 +50,8 @@ const Reveal = ({
       x: 0,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: [0.215, 0.61, 0.355, 1], // ease-out-cubic
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1],
         delay: delay
       }
     }

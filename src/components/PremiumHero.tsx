@@ -21,14 +21,14 @@ const PremiumHero = () => {
 
   // Fade-up animation variants
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 12 },
     visible: (delay: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        delay: delay * 0.1,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.4,
+        delay: delay * 0.05,
+        ease: [0.4, 0, 0.2, 1]
       }
     })
   };
@@ -74,10 +74,11 @@ const PremiumHero = () => {
                 onClick={handlePrimaryCTA}
                 variant="default"
                 size="lg"
-                className="group text-base sm:text-lg px-8 py-6 h-auto"
+                className="group text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6 h-auto"
                 aria-label="Kostenloses Konzept sichern"
               >
-                Kostenloses Konzept sichern
+                <span className="hidden sm:inline">Kostenloses Konzept sichern</span>
+                <span className="sm:hidden">Konzept sichern</span>
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
               
@@ -85,11 +86,12 @@ const PremiumHero = () => {
                 onClick={handleSecondaryCTA}
                 variant="outline"
                 size="lg"
-                className="text-base sm:text-lg px-8 py-6 h-auto group"
+                className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6 h-auto group"
                 aria-label="Arbeitsweise ansehen"
               >
                 <Play className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" aria-hidden="true" />
-                Arbeitsweise ansehen
+                <span className="hidden sm:inline">Arbeitsweise ansehen</span>
+                <span className="sm:hidden">Arbeitsweise</span>
               </Button>
             </motion.div>
 

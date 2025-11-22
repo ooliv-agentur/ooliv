@@ -21,7 +21,7 @@ const AnimatedSection = ({
   const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({
     triggerOnce: once,
-    threshold: threshold,
+    threshold: threshold || 0.3,
   });
 
   // Return immediately without animations if reduced motion is preferred
@@ -30,13 +30,13 @@ const AnimatedSection = ({
   }
 
   const variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1],
         delay: delay
       }
     }

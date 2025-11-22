@@ -62,9 +62,10 @@ const WebsiteKonzept = () => {
           <Button 
             onClick={scrollToForm}
             size="lg"
-            className="w-full bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-md"
+            className="w-full bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-md text-sm sm:text-base"
           >
-            Kostenloses Konzept sichern →
+            <span className="hidden sm:inline">Kostenloses Konzept sichern →</span>
+            <span className="sm:hidden">Konzept sichern</span>
           </Button>
         </div>
       </div>
@@ -386,9 +387,10 @@ const WebsiteKonzept = () => {
               <Button 
                 onClick={scrollToForm}
                 size="lg"
-                className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                className="bg-turquoise hover:bg-turquoise-hover text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 text-sm sm:text-base"
               >
-                Jetzt kostenloses Konzept sichern →
+                <span className="hidden sm:inline">Jetzt kostenloses Konzept sichern →</span>
+                <span className="sm:hidden">Jetzt sichern</span>
               </Button>
             </div>
           </Reveal>
