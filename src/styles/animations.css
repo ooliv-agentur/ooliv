@@ -1,0 +1,111 @@
+/* Floating Circle Animations */
+
+.floating-circle {
+  position: absolute;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  contain: layout style paint;
+}
+
+.floating-circle.delayed {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+.floating-circle.slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-circle.fast {
+  animation: float 4s ease-in-out infinite 1s;
+}
+
+.floating-circle.pulse {
+  animation: float 6s ease-in-out infinite, pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.floating-circle.reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.floating-circle.diagonal {
+  animation: float-diagonal 9s ease-in-out infinite;
+}
+
+/* Hero gradient background */
+.hero-gradient-bg {
+  background: var(--accent-gradient), linear-gradient(135deg, #def3e4, #d1f4de, #c8f0e0, #c1edd4, #b8e9c9, #afe5bf);
+  background-size: 600% 600%;
+  background-blend-mode: soft-light;
+  animation: gentle-gradient 45s ease-in-out infinite;
+  will-change: background-position;
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+.hero-gradient-bg.slow {
+  animation: gentle-gradient 60s ease-in-out infinite;
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg) scale(1.02) translateZ(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg) scale(1.05) translateZ(0);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-10px) rotate(3deg) scale(1.02) translateZ(0);
+    opacity: 0.8;
+  }
+}
+
+@keyframes gentle-gradient {
+  0% { background-position: 0% 20%; }
+  15% { background-position: 20% 40%; }
+  30% { background-position: 60% 10%; }
+  45% { background-position: 80% 70%; }
+  60% { background-position: 40% 90%; }
+  75% { background-position: 10% 60%; }
+  90% { background-position: 30% 30%; }
+  100% { background-position: 0% 20%; }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1) translateZ(0);
+  }
+  50% {
+    transform: translateY(15px) rotate(-3deg) scale(1.05) translateZ(0);
+  }
+}
+
+@keyframes float-diagonal {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg) translateZ(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-15px) rotate(2deg) translateZ(0);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-10px) rotate(-2deg) translateZ(0);
+  }
+}
+
+/* Reduce animations on devices that prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-circle,
+  .hero-gradient-bg {
+    animation: none !important;
+  }
+}
