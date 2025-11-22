@@ -6,7 +6,6 @@ import CoreServicesSection from "@/components/CoreServicesSection";
 import ResultsSection from "@/components/ResultsSection";
 import UliSection from "@/components/de/UliSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import LeistungenSection from "@/components/de/LeistungenSection";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import FAQ from "@/components/FAQ";
@@ -99,9 +98,6 @@ const GermanIndex = () => {
         
         {/* 3. CORE SERVICES */}
         <CoreServicesSection />
-        
-        {/* 4. LEISTUNGEN */}
-        <LeistungenSection />
         
         {/* 4. BUDGET-TRANSPARENZ */}
         <CostCalculator />
