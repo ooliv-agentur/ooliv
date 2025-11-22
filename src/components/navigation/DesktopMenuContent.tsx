@@ -116,7 +116,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-accent-primary/30 text-medico-darkGreen bg-white/90 hover:bg-accent-primary hover:text-white transition-all duration-200"
+                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-[#2DAEAA] hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="mailto:info@ooliv.de" aria-label={language === 'de' ? "E-Mail senden" : "Send email"}>
@@ -128,10 +128,10 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-accent-primary/30 text-medico-darkGreen bg-white/90 hover:bg-accent-primary hover:text-white transition-all duration-200"
+                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-[#2DAEAA] hover:text-white transition-all duration-200"
                   asChild
                 >
-                  <a href="tel:+4961316367801" aria-label={language === 'de' ? "Anrufen" : "Call us"}>
+                  <a href="tel:+4061316367801" aria-label={language === 'de' ? "Anrufen" : "Call us"}>
                     <Phone className="h-4 w-4 mr-2" />
                     <span className="text-sm">{language === 'de' ? 'Anrufen' : 'Call'}</span>
                   </a>
@@ -140,7 +140,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-accent-primary/30 text-medico-darkGreen bg-white/90 hover:bg-green-500 hover:text-white transition-all duration-200"
+                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-green-500 hover:text-white transition-all duration-200"
                   asChild
                 >
                   <a href="https://wa.me/+4917680167641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

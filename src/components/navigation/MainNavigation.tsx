@@ -73,14 +73,14 @@ const MainNavigation = () => {
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-[70] flex items-center gap-3">
             {/* Menu toggle button - hide when menu is open since menu content has its own close button */}
             {!isOpen && (
-              <button
-                className="flex items-center justify-center rounded-full bg-white hover:opacity-80 transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+            <button
+                className="flex items-center justify-center rounded-full bg-[#2DAEAA] hover:bg-[#258A87] transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="w-6 h-6" style={{ color: '#000000' }} aria-hidden="true" />
+                <Menu className="w-6 h-6 text-white" aria-hidden="true" />
               </button>
             )}
           </div>
