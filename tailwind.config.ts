@@ -13,8 +13,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Satoshi', 'sans-serif'],
-        satoshi: ['Satoshi', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       
       // Enhanced typography scale
@@ -43,28 +43,28 @@ export default {
       },
       
       colors: {
-        border: "#e2e8f0",
+        border: "hsl(180 11% 90%)",
         brand: {
-          primary: "#38B593", // Updated to medico-turquoise
-          primaryHover: "#2a8a73",
-          secondary: "#FFE500", // Updated to medico-yellow
-          secondaryHover: "#e6ce00",
-          heading: "#003347", // Updated to medico-darkGreen
-          text: "#003347", // Updated to medico-darkGreen
-          background: "#D8F4E3", // Updated to medico-mint
-          backgroundAlt: "#D8F4E3", // Updated to medico-mint
-          footer: "#003347", // Updated to medico-darkGreen
-          success: "#38B593", // Updated to medico-turquoise
+          primary: "#2DAEAA", // Teal brand color
+          primaryHover: "#258A87",
+          secondary: "#0D0D0D", // Primary text
+          secondaryHover: "#000000",
+          heading: "#0D0D0D", // Primary text
+          text: "#0D0D0D", // Primary text
+          background: "#FFFFFF", // White background
+          backgroundAlt: "#F4F7F7", // Light grey background
+          footer: "#0D0D0D",
+          success: "#2DAEAA",
           error: "#C62828",
-          warning: "#FFE500" // Updated to medico-yellow
+          warning: "#2DAEAA"
         },
-        // Primary medicosearch.ch color palette
-        medico: {
-          mint: "#D8F4E3",
-          yellow: "#FFE500",
-          turquoise: "#38B593",
-          darkGreen: "#003347",
-          white: "#FFFFFF"
+        // ooliv brand palette
+        ooliv: {
+          teal: "#2DAEAA",
+          tealHover: "#258A87",
+          black: "#0D0D0D",
+          white: "#FFFFFF",
+          lightGrey: "#F4F7F7"
         },
         // Service-specific color variants (subtle professional differentiation)
         service: {
@@ -112,41 +112,41 @@ export default {
           800: "#92400e",
           900: "#78350f"
         },
-        // Turquoise color scale (from index.css variables)
-        turquoise: {
-          50: "#f0fdf9",
-          100: "#ccf5eb",
-          200: "#99ead7",
-          300: "#66d9c3",
-          400: "#4dcbb3",
-          500: "#38B593", // Default turquoise
-          600: "#2a8a73", // Hover state
-          700: "#236b5c",
-          800: "#1c5447",
-          900: "#154033",
-          light: "#e6f9f4", // turquoise-light from CSS
-          DEFAULT: "#38B593",
-          hover: "#2a8a73"
+        // Teal color scale
+        teal: {
+          50: "#f0fdfb",
+          100: "#ccf8f3",
+          200: "#99f1e7",
+          300: "#5de5d9",
+          400: "#2DAEAA", // Brand teal
+          500: "#2DAEAA", // Default teal
+          600: "#258A87", // Hover state
+          700: "#1e6f6d",
+          800: "#185856",
+          900: "#134645",
+          light: "#e6f9f8",
+          DEFAULT: "#2DAEAA",
+          hover: "#258A87"
         },
-        // Enhanced text color tokens
+        // Text color tokens
         text: {
-          primary: "#003347",
-          secondary: "#374151",
-          muted: "#6B7280",
-          light: "#9CA3AF",
-          accent: "#38B593",
+          primary: "#0D0D0D",
+          secondary: "#525252",
+          muted: "#737373",
+          light: "#A3A3A3",
+          accent: "#2DAEAA",
           white: "#FFFFFF",
-          warning: "#FFE500"
+          warning: "#2DAEAA"
         },
-        // Seasonal accent colors (auto-updated via CSS variables)
+        // Accent colors mapped to teal
         accent: {
-          primary: 'hsl(var(--accent-primary) / <alpha-value>)',
-          complementary: 'hsl(var(--accent-complementary) / <alpha-value>)',
-          secondary: 'hsl(var(--accent-secondary) / <alpha-value>)',
-          tertiary: 'hsl(var(--accent-tertiary) / <alpha-value>)',
-          light: 'hsl(var(--accent-light) / <alpha-value>)',
-          dark: 'hsl(var(--accent-dark) / <alpha-value>)',
-          glow: 'hsl(var(--accent-glow) / <alpha-value>)',
+          primary: '#2DAEAA',
+          complementary: '#258A87',
+          secondary: '#2DAEAA',
+          tertiary: '#5de5d9',
+          light: '#e6f9f8',
+          dark: '#185856',
+          glow: 'rgba(45, 174, 170, 0.2)',
         }
       },
       // Icon-specific design tokens

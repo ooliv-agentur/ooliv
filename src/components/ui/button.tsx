@@ -5,51 +5,48 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-satoshi",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        // Primary complementary variant - main CTA button
-        default: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-lg font-bold border-2 border-transparent hover:border-medico-darkGreen/20",
+        // Primary CTA - Teal background
+        default: "bg-[#2DAEAA] text-white hover:bg-[#258A87] hover:scale-[1.02] rounded-[10px] font-medium shadow-sm",
         
-        // Primary complementary with enhanced styling for major CTAs
-        primary: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-xl font-bold border-2 border-transparent hover:border-medico-darkGreen/20 transform hover:scale-105",
+        // Primary with enhanced styling
+        primary: "bg-[#2DAEAA] text-white hover:bg-[#258A87] hover:scale-[1.02] rounded-[10px] font-medium shadow-sm",
         
-        // Secondary turquoise variant
-        secondary: "bg-accent-primary text-white hover:bg-accent-primary/90 hover:shadow-lg border-2 border-transparent hover:border-medico-darkGreen/20 font-semibold",
+        // Secondary CTA - Outline teal
+        secondary: "bg-transparent border border-[#2DAEAA] text-[#2DAEAA] hover:bg-[#2DAEAA]/5 hover:scale-[1.02] rounded-[10px] font-medium",
         
-        // Outline variant for secondary actions
-        outline: "border-2 border-medico-darkGreen bg-white text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise hover:text-medico-darkGreen font-semibold",
+        // Outline variant
+        outline: "border border-[#2DAEAA] bg-transparent text-[#2DAEAA] hover:bg-[#2DAEAA]/5 hover:scale-[1.02] rounded-[10px] font-medium",
         
-        // Outline with turquoise border
-        outlineTurquoise: "border-2 border-accent-primary bg-white text-medico-darkGreen hover:bg-accent-primary/10 hover:border-accent-primary hover:text-medico-darkGreen font-semibold",
-        
-        // Ghost variant for subtle actions
-        ghost: "hover:bg-medico-mint hover:text-medico-darkGreen border-2 border-transparent hover:border-medico-mint text-medico-darkGreen font-medium",
+        // Ghost variant
+        ghost: "hover:bg-[#F4F7F7] text-[#0D0D0D] rounded-[10px] font-medium",
         
         // Destructive variant
-        destructive: "bg-red-500 text-white hover:bg-red-600 border-2 border-transparent font-semibold",
+        destructive: "bg-red-500 text-white hover:bg-red-600 rounded-[10px] font-medium",
         
         // Link variant
-        link: "text-medico-darkGreen underline-offset-4 hover:underline hover:text-accent-primary font-medium",
+        link: "text-[#2DAEAA] underline-offset-4 hover:underline font-medium",
         
-        // Dark variant for use on light backgrounds
-        dark: "bg-medico-darkGreen text-white hover:bg-medico-darkGreen/90 hover:shadow-lg border-2 border-transparent font-semibold",
+        // Dark variant
+        dark: "bg-[#0D0D0D] text-white hover:bg-[#0D0D0D]/90 hover:scale-[1.02] rounded-[10px] font-medium",
         
-        // Light variant for use on dark backgrounds  
-        light: "bg-white text-medico-darkGreen hover:bg-accent-primary/10 hover:shadow-lg border-2 border-transparent hover:border-accent-primary font-semibold",
+        // Light variant
+        light: "bg-white text-[#0D0D0D] hover:bg-[#F4F7F7] rounded-[10px] font-medium border border-[#e5e5e5]",
         
-        // Special variant for floating action buttons
-        floating: "bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 hover:shadow-lg border-none font-semibold transform hover:scale-105 shadow-md",
+        // Floating action button variant
+        floating: "bg-[#2DAEAA] text-white hover:bg-[#258A87] hover:scale-[1.02] rounded-full font-medium shadow-md",
         
-        // Minimal variant for navigation back buttons
-        minimal: "bg-white text-medico-darkGreen border-2 border-medico-darkGreen hover:bg-accent-primary/10 hover:border-accent-primary hover:text-medico-darkGreen font-semibold"
+        // Outline with teal border
+        outlineTurquoise: "border border-[#2DAEAA] bg-white text-[#2DAEAA] hover:bg-[#2DAEAA]/5 hover:scale-[1.02] rounded-[10px] font-medium"
       },
       size: {
         sm: "h-9 px-4 text-sm",
-        default: "h-11 px-6 py-2",
-        lg: "h-12 px-8 text-base font-bold",
-        xl: "h-14 px-10 text-lg font-bold",
+        default: "px-7 py-[14px]",
+        lg: "h-12 px-8 text-base",
+        xl: "h-14 px-10 text-lg",
         icon: "h-11 w-11",
         iconSm: "h-9 w-9",
         iconLg: "h-12 w-12",
