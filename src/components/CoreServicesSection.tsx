@@ -8,11 +8,11 @@ const CoreServicesSection = () => {
   const services = [
     {
       icon: Target,
-      title: "Strategie & Positionierung",
+      title: "Digitale Transformation & Strategie",
       items: [
         "Value Proposition & Differenzierung",
         "Customer Journey Mapping",
-        "KPI-Definition & Erfolgssysteme",
+        "KPI-Systeme & Priorisierung",
         "Wettbewerbsanalyse"
       ]
     },
@@ -21,29 +21,28 @@ const CoreServicesSection = () => {
       title: "UX-Konzept & Struktur",
       items: [
         "Informationsarchitektur",
-        "Wireframes & Prototyping",
+        "Wireframes & Prototypen",
         "Funnel-Design",
-        "User Testing & Conversion-Optimierung"
+        "Conversion-Optimierung"
       ]
     },
     {
       icon: Palette,
       title: "Design & Umsetzung",
       items: [
-        "Interface Design",
+        "Interface-Design (mobil & desktop)",
         "WordPress-Entwicklung",
-        "Performance Launch",
-        "Markenintegration"
+        "Performance-optimierter Launch",
+        "Markeneinbindung"
       ]
     },
     {
       icon: Search,
-      title: "SEO & Performance + AI",
+      title: "SEO, Performance & AI-Workflows",
       items: [
-        "Technisches SEO",
-        "Onpage",
-        "AI-gestützte Recherche & Workflows",
-        "Monitoring & Verbesserung"
+        "Technisches SEO + Onpage",
+        "AI-gestützte Recherche & Content",
+        "Monitoring & Optimierung"
       ]
     }
   ];
@@ -81,6 +80,9 @@ const CoreServicesSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-4">
             Unsere Kernleistungen
           </h2>
+          <p className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto">
+            Klar definiert. Auf digitale Transformation ausgerichtet.
+          </p>
         </motion.div>
 
         {/* Service Cards Grid */}
@@ -96,7 +98,7 @@ const CoreServicesSection = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={cardVariants}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#E5E5E5] hover:border-[#2DAEAA] group"
+                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E5E5E5] hover:border-[#2DAEAA] group h-full flex flex-col"
               >
                 {/* Icon */}
                 <div className="mb-6">
@@ -115,11 +117,11 @@ const CoreServicesSection = () => {
                 </h3>
 
                 {/* Service Items */}
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-grow">
                   {service.items.map((item, itemIndex) => (
                     <li 
                       key={itemIndex}
-                      className="flex items-start text-sm text-[#666666] leading-relaxed"
+                      className="flex items-start text-[15px] text-[#666666] leading-relaxed"
                     >
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#2DAEAA] mt-2 mr-3 flex-shrink-0"></span>
                       <span>{item}</span>
