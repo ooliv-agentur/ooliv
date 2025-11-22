@@ -8,6 +8,7 @@ import UliSection from "@/components/de/UliSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
+import PremiumCaseStudyGrid from "@/components/PremiumCaseStudyGrid";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import CanonicalUrlHelper from "@/components/seo/CanonicalUrlHelper";
@@ -105,8 +106,8 @@ const GermanIndex = () => {
         {/* 5. RESULTS - VORHER/NACHHER */}
         <ResultsSection />
         
-        {/* 6. CASE STUDIES */}
-        <CaseStudiesSection />
+        {/* 6. PREMIUM CASE STUDY GRID */}
+        <PremiumCaseStudyGrid />
         
         {/* 7. ULI SECTION */}
         <UliSection />
