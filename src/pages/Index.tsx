@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import WhyDifferentSection from "@/components/WhyDifferentSection";
 import CoreServicesSection from "@/components/CoreServicesSection";
+import ResultsSection from "@/components/ResultsSection";
 import UliSection from "@/components/de/UliSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import LeistungenSection from "@/components/de/LeistungenSection";
@@ -105,31 +106,8 @@ const GermanIndex = () => {
         {/* 4. BUDGET-TRANSPARENZ */}
         <CostCalculator />
 
-        {/* 5. VORHER/NACHHER */}
-        <div className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-4 text-foreground">Ergebnisse sprechen für sich.</h2>
-            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-muted-foreground">
-              Klarere Struktur. Bessere UX. Mehr Sichtbarkeit. Mehr Anfragen.
-            </p>
-            <BeforeAfterSlider />
-            <div className="mt-8 text-center">
-              <p className="text-muted-foreground mb-6">
-                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-turquoise hover:underline">info@ooliv.de</a>
-              </p>
-              <Button 
-                variant="primary"
-                size="lg" 
-                className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                onClick={handleStartProject}
-                aria-label="Starten Sie Ihr Webdesign-Projekt"
-              >
-                Projekt starten
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
-            </div>
-          </div>
-        </div>
+        {/* 5. RESULTS - VORHER/NACHHER */}
+        <ResultsSection />
         
         {/* 6. CASE STUDIES */}
         <CaseStudiesSection />
