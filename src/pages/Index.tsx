@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
 import WhyDifferentSection from "@/components/WhyDifferentSection";
+import CoreServicesSection from "@/components/CoreServicesSection";
 import UliSection from "@/components/de/UliSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import LeistungenSection from "@/components/de/LeistungenSection";
@@ -95,7 +96,10 @@ const GermanIndex = () => {
         {/* 2. WHY DIFFERENT */}
         <WhyDifferentSection />
         
-        {/* 3. LEISTUNGEN */}
+        {/* 3. CORE SERVICES */}
+        <CoreServicesSection />
+        
+        {/* 4. LEISTUNGEN */}
         <LeistungenSection />
         
         {/* 4. BUDGET-TRANSPARENZ */}
