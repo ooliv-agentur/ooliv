@@ -48,31 +48,35 @@ const CostCalculator: React.FC = () => {
   }, [form]);
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-20 sm:py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#0D0D0D]">
             Kosten-Kalkulator
           </h2>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto leading-relaxed">
             Transparente Richtwerte. Finales Angebot nach 15-Min-Gespräch.
           </p>
         </div>
 
-        <Form {...form}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            <div>
-              <CostCalculatorForm form={form} />
-            </div>
+        {/* Calculator Container with grey background */}
+        <div className="bg-[#F7F8FC] rounded-3xl p-6 sm:p-8 lg:p-12 shadow-sm border border-[#E5E5E5]">
+          <Form {...form}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              <div>
+                <CostCalculatorForm form={form} />
+              </div>
 
-            <div>
-              <CostCalculatorResult 
-                result={result} 
-                formData={form.getValues()}
-              />
+              <div>
+                <CostCalculatorResult 
+                  result={result} 
+                  formData={form.getValues()}
+                />
+              </div>
             </div>
-          </div>
-        </Form>
+          </Form>
+        </div>
       </div>
     </section>
   );

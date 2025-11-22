@@ -12,8 +12,8 @@ interface CostCalculatorResultProps {
 const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({ result, formData }) => {
   if (!result || isNaN(result.rangeMin) || isNaN(result.rangeMax)) {
     return (
-      <div className="bg-background rounded-xl border p-8 shadow-sm flex items-center justify-center min-h-[400px]">
-        <p className="text-muted-foreground text-center text-sm">
+      <div className="bg-white rounded-2xl border-2 border-[#E5E5E5] p-8 lg:p-10 shadow-sm flex items-center justify-center min-h-[400px]">
+        <p className="text-[#666666] text-center text-base">
           Wählen Sie Optionen für Ihre Kostenschätzung.
         </p>
       </div>
@@ -24,31 +24,31 @@ const CostCalculatorResult: React.FC<CostCalculatorResultProps> = ({ result, for
 
   return (
     <div className="space-y-6">
-      <div className="bg-background rounded-xl border p-6 lg:p-8 shadow-sm">
+      <div className="bg-white rounded-2xl border-2 border-[#E5E5E5] p-6 lg:p-10 shadow-sm">
         {/* Price Range */}
-        <div className="mb-6 pb-6 border-b">
-          <h3 className="text-sm font-medium text-muted-foreground mb-2">Geschätzter Preis</h3>
-          <div className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+        <div className="mb-8 pb-8 border-b-2 border-[#E5E5E5]">
+          <h3 className="text-sm font-semibold text-[#666666] mb-3 uppercase tracking-wide">Geschätzter Preis</h3>
+          <div className="text-4xl md:text-5xl font-bold mb-3 text-[#0D0D0D]">
             ab {formatEUR(rangeMin)}
           </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-sm text-[#666666]">
             Alle Preise netto, zzgl. 19% USt.
           </p>
         </div>
 
         {/* Monthly Costs */}
         {monthlyTotal > 0 && (
-          <div className="mb-6 pb-6 border-b">
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Monatlich</h4>
-            <div className="text-2xl font-bold text-foreground">
+          <div className="mb-8 pb-8 border-b-2 border-[#E5E5E5]">
+            <h4 className="text-sm font-semibold text-[#666666] mb-3 uppercase tracking-wide">Monatlich</h4>
+            <div className="text-3xl font-bold text-[#0D0D0D]">
               ab {formatEUR(monthlyTotal)}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">netto, zzgl. 19% USt.</p>
+            <p className="text-sm text-[#666666] mt-2">netto, zzgl. 19% USt.</p>
           </div>
         )}
 
         {/* Disclaimer */}
-        <div className="bg-muted/30 rounded-lg p-3 text-xs text-muted-foreground">
+        <div className="bg-[#F7F8FC] rounded-xl p-4 text-sm text-[#666666] leading-relaxed">
           Schätzung. Detailliertes Angebot nach Gespräch.
         </div>
       </div>
