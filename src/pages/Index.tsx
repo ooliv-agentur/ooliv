@@ -103,9 +103,7 @@ const GermanIndex = () => {
         <LeistungenSection />
         
         {/* 4. BUDGET-TRANSPARENZ */}
-        <section className="py-16 bg-background">
-          <CostCalculator />
-        </section>
+        <CostCalculator />
 
         {/* 5. VORHER/NACHHER */}
         <div className="py-16 bg-white">
