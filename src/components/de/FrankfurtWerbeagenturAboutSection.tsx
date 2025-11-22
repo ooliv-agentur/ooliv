@@ -1,43 +1,43 @@
 import React from 'react';
-import { Target, Lightbulb, Rocket, Zap } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import LocationServicesSection from '@/components/location/LocationServicesSection';
 
 const FrankfurtWerbeagenturAboutSection = () => {
   const services = [
     {
-      title: "Strategic Discovery",
-      description: "Comprehensive Discovery Phase für Banken, Konzerne & Startups in Deutschlands Business-Hub.",
-      icon: <Target className="h-6 w-6" style={{ color: 'black' }} />,
+      title: "Webdesign",
+      description: "Professionelle Websites, die Ihre Frankfurter Zielgruppe überzeugen und Vertrauen schaffen.",
+      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/webdesign"
+    },
+    {
+      title: "Entwicklung",
+      description: "Technisch ausgereifte Lösungen für nachhaltiges Wachstum Ihres Unternehmens.",
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/webentwicklung"
+    },
+    {
+      title: "SEO",
+      description: "Bessere Sichtbarkeit in Frankfurt und dem Rhein-Main-Gebiet für mehr qualifizierte Anfragen.",
+      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/seo-optimierung"
+    },
+    {
+      title: "Strategie",
+      description: "Datenbasierte Konzepte, die Ihre Marktposition stärken und Umsätze steigern.",
+      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/strategie"
-    },
-    {
-      title: "Product & UX Strategy",
-      description: "Skalierbare Product Strategies für Frankfurts anspruchsvolle B2B-Zielgruppen mit klarem ROI-Focus.",
-      icon: <Lightbulb className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/produkt-ux-strategie"
-    },
-    {
-      title: "AI Integration",
-      description: "Strategic AI Integration Advisory – von Use Case Identification bis Production-Ready Implementation.",
-      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/ki-technologien"
-    },
-    {
-      title: "Strategic Partnership",
-      description: "Langfristige C-Level Advisory für Frankfurts führende B2B-Unternehmen.",
-      icon: <Rocket className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/investition"
     }
   ];
 
   return (
     <LocationServicesSection
       location="Frankfurt"
-      headline="Strategic Digital Advisory Frankfurt"
-      description="Frankfurt ist Deutschlands Business-Hub – von Banken über internationale Konzerne bis zur wachsenden Startup-Szene. Wir entwickeln Strategic Frameworks, die diesem Anspruch gerecht werden: skalierbar, professionell und mit klarem ROI-Focus. 16+ Jahre Track Record in Digital Strategy Leadership."
+      headline="ooliv in Frankfurt – für messbare Erfolge"
+      description="Frankfurt ist Deutschlands Business-Hub – von Banken über internationale Konzerne bis zur wachsenden Startup-Szene. Wir entwickeln digitale Lösungen, die diesem Anspruch gerecht werden: skalierbar, professionell und mit klarem ROI-Focus für anspruchsvolle B2B-Zielgruppen."
       services={services}
-      ctaText="Mit ooliv durchstarten"
-      ctaLink="/kontakt"
+      ctaText="Mehr erfahren"
+      ctaLink="/strategie"
       gridCols={4}
     />
   );

@@ -9,9 +9,9 @@ const WiesbadenHero = () => {
 
   // Dynamic subheadlines specifically for Wiesbaden businesses
   const dynamicEndings = [
-    "Mehr Kunden durch bessere Website",
-    "Bei Google gefunden werden",
-    "Digitale Strategie, die funktioniert"
+    "online gefunden zu werden.",
+    "professionelle Websites zum fairen Preis.",
+    "mehr Anfragen über Google."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -20,18 +20,17 @@ const WiesbadenHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Website-Strategie & Digitale Beratung in Wiesbaden"
-      subtitle="Ihre Website sieht gut aus, aber bringt keine Anfragen? Ich helfe Wiesbadener Unternehmen, aus Besuchern Kunden zu machen – mit durchdachter UX und klarer Strategie."
-      dynamicPrefix="Sie bekommen:"
+      title="Werbeagentur Wiesbaden – ohne Agentur-Theater"
+      subtitle="Ihre Wiesbadener Digitalagentur für Websites, SEO und Marketing. Wir arbeiten direkt mit Ihnen, ohne Zwischenstellen – ehrlich, transparent, messbar."
+      dynamicPrefix="Wiesbadener Unternehmen brauchen"
       dynamicSubheadlines={dynamicEndings}
-      benefitsVariant="solid"
       primaryCta={{
-        text: "Kostenloses Erstgespräch",
+        text: "Projekt besprechen",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Erfolgsbeispiele ansehen",
+        text: "Wiesbadener Erfolge",
         link: "/referenzen"
       }}
     />

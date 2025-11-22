@@ -40,8 +40,6 @@ const GermanDarmstadt = lazy(() => import('./pages/WerbeagenturDarmstadt'));
 const DigitalagenturSchweiz = lazy(() => import('./pages/DigitalagenturSchweiz'));
 const Klickbetrug = lazy(() => import('./pages/Klickbetrug'));
 const Strategie = lazy(() => import('./pages/Strategie'));
-const ProductUXStrategy = lazy(() => import('./pages/ProduktUXStrategie'));
-const Methodology = lazy(() => import('./pages/Methodik'));
 const CookieRichtlinie = lazy(() => import('./pages/CookieRichtlinie'));
 const Artikel = lazy(() => import('./pages/Artikel'));
 const LatestContent = lazy(() => import('./pages/LatestContent'));
@@ -51,20 +49,7 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const WebsiteRelaunch = lazy(() => import('./pages/WebsiteRelaunch'));
 const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung'));
 const WebsiteKonzept = lazy(() => import('./pages/WebsiteKonzept'));
-const StrategicInvestment = lazy(() => import('./pages/StrategicInvestment'));
-const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'));
-const ROICalculator = lazy(() => import('./pages/ROICalculator'));
 const NotFound = lazy(() => import('./pages/NotFound'));
-
-// Landing Pages for Google Ads
-const DigitaleStrategieLanding = lazy(() => import('./pages/lp/DigitaleStrategieLanding'));
-const WebsiteRelaunchLanding = lazy(() => import('./pages/lp/WebsiteRelaunchLanding'));
-const WebdesignLanding = lazy(() => import('./pages/lp/WebdesignLanding'));
-const WebentwicklungLanding = lazy(() => import('./pages/lp/WebentwicklungLanding'));
-const KIIntegrationLanding = lazy(() => import('./pages/lp/KIIntegrationLanding'));
-const ContentAutomationLanding = lazy(() => import('./pages/lp/ContentAutomationLanding'));
-const SEOOptimierungLanding = lazy(() => import('./pages/lp/SEOOptimierungLanding'));
-const GoogleAdsLanding = lazy(() => import('./pages/lp/GoogleAdsLanding'));
 
 const queryClient = new QueryClient();
 
@@ -134,8 +119,6 @@ function App() {
                       <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
                       <Route path="/kontakt" element={<GermanContact />} />
                       <Route path="/strategie" element={<Strategie />} />
-                      <Route path="/produkt-ux-strategie" element={<ProductUXStrategy />} />
-                      <Route path="/methodik" element={<Methodology />} />
                       <Route path="/seo-optimierung" element={<GermanSEO />} />
                       <Route path="/content-erstellung" element={<GermanContentCreation />} />
                       <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />
@@ -161,19 +144,6 @@ function App() {
                       <Route path="/website-relaunch" element={<WebsiteRelaunch />} />
                       <Route path="/landingpage-optimierung" element={<LandingpageOptimierung />} />
                       <Route path="/website-konzept" element={<WebsiteKonzept />} />
-                      <Route path="/investition" element={<StrategicInvestment />} />
-                      <Route path="/roi-rechner" element={<ROICalculator />} />
-                      <Route path="/referenzen/:slug" element={<CaseStudyDetail />} />
-                      
-                      {/* Landing Pages for Google Ads (no main navigation) */}
-                      <Route path="/lp/digitale-strategie" element={<DigitaleStrategieLanding />} />
-                      <Route path="/lp/website-relaunch" element={<WebsiteRelaunchLanding />} />
-                      <Route path="/lp/webdesign" element={<WebdesignLanding />} />
-                      <Route path="/lp/webentwicklung" element={<WebentwicklungLanding />} />
-                      <Route path="/lp/ki-integration" element={<KIIntegrationLanding />} />
-                      <Route path="/lp/content-automation" element={<ContentAutomationLanding />} />
-                      <Route path="/lp/seo-optimierung" element={<SEOOptimierungLanding />} />
-                      <Route path="/lp/google-ads" element={<GoogleAdsLanding />} />
 
                       {/* 404 Route */}
                       

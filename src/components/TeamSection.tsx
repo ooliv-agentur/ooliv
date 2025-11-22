@@ -21,7 +21,7 @@ const TeamSection = () => {
     },
     { 
       name: "Lisa Schönleber", 
-      role: "Content",
+      role: "CEO · Content",
       image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
     },
@@ -83,10 +83,10 @@ const TeamSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            Das erweiterte ooliv Team
+            Das ooliv Team
           </h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            Uli und sein spezialisiertes Team aus Experten bringen Ihre digitale Transformation zum Erfolg. Von Webentwicklung über Design bis SEO – jedes Projekt profitiert von gebündelter Fachexpertise.
+            Gute Leute sind schwer zu finden – wir haben gleich ein ganzes Team davon. Unsere Experten vereinen Strategie, Kreativität und Technologie, um Projekte mit Herzblut umzusetzen.
           </p>
         </div>
         

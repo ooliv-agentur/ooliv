@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Target, Lightbulb, Rocket, Zap, ArrowRight } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Reveal from '@/components/animations/Reveal';
@@ -8,28 +9,28 @@ import StaggerReveal from '@/components/animations/StaggerReveal';
 const SchweizAboutSection = () => {
   const services = [
     {
-      title: "Strategic Discovery",
-      description: "4-6 Wochen intensive Discovery Phase für Schweizer B2B-KMUs – transparente Preise in CHF (CHF 17k–28k).",
-      icon: <Target className="h-6 w-6" style={{ color: 'black' }} />,
+      title: "Webdesign",
+      description: "Professionelle, mehrsprachige Websites für Schweizer B2B-Unternehmen (DE/FR/IT).",
+      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/webdesign"
+    },
+    {
+      title: "Entwicklung",
+      description: "Technisch ausgereifte Lösungen für Schweizer Qualitätsansprüche.",
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/webentwicklung"
+    },
+    {
+      title: "SEO",
+      description: "Suchmaschinenoptimierung für .ch-Domains und den Schweizer Markt.",
+      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/seo-optimierung"
+    },
+    {
+      title: "Strategie",
+      description: "Datenbasierte Konzepte für den Schweizer B2B-Markt.",
+      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/strategie"
-    },
-    {
-      title: "Product & UX Strategy",
-      description: "End-to-End Product Transformation für den Schweizer Markt – mehrsprachig (DE/FR/IT) und DSGVO-konform.",
-      icon: <Lightbulb className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/produkt-ux-strategie"
-    },
-    {
-      title: "AI Integration",
-      description: "Strategic AI Integration für Schweizer KMUs – von Use Case Discovery bis Production Deployment.",
-      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/ki-technologien"
-    },
-    {
-      title: "Strategic Advisory",
-      description: "Langfristige C-Level Partnership für Schweizer B2B-Unternehmen – ohne Agentur-Overhead.",
-      icon: <Rocket className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/investition"
     }
   ];
 
@@ -39,15 +40,16 @@ const SchweizAboutSection = () => {
         <Reveal>
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
-              Strategic Digital Advisory für Schweizer B2B-Unternehmen
+              Von Deutschland für die Schweiz – mit lokalem Verständnis
             </h2>
             <p className="text-xl text-accent-primary max-w-4xl mx-auto mb-6" style={{ lineHeight: '1.5' }}>
-              Von Deutschland für die Schweiz – mit Verständnis für Schweizer Qualitätsansprüche
+              Digitale Lösungen für Schweizer B2B-Unternehmen
             </p>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
-            Wir entwickeln Strategic Frameworks für Schweizer Unternehmen – mit lokalem Marktverständnis, transparenten Preisen in CHF und DSGVO-konformen Datenschutzstandards. Kein klassisches Agentur-Modell, sondern C-Level Strategic Leadership mit 16+ Jahren Track Record und messbaren Business Outcomes. Spezialisiert auf Strategic Discovery, AI Integration und Product & UX Strategy.
-          </p>
+            <p className="text-xl text-medico-darkGreen max-w-4xl mx-auto mb-8" style={{ lineHeight: '1.5' }}>
+              Wir entwickeln digitale Strategien für Schweizer Unternehmen – mit Verständnis für den lokalen Markt, Schweizer Qualitätsansprüche und DSGVO-konforme Datenschutzstandards. Professionell, zielgerichtet und mit nachweisbaren Resultaten.
+            </p>
             
+            {/* Single CTA Button */}
             <div className="flex justify-center">
               <Button 
                 variant="primary"
@@ -55,8 +57,8 @@ const SchweizAboutSection = () => {
                 className="group"
                 asChild
               >
-                <Link to="/kontakt">
-                  Mit ooliv durchstarten
+                <Link to="/strategie">
+                  Mehr erfahren
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

@@ -72,7 +72,7 @@ const ContentCaseStudies = () => {
       whatWeDid: "WHAT WE DID:"
     },
     de: {
-      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
+      title: "Content-Erstellung Erfolgsgeschichten",
       subtitle: "Sehen Sie, wie unsere strategischen Inhalte echte Geschäftsergebnisse erzielt haben.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen",

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, FileEdit, Code, FileText } from 'lucide-react';
+import { Search, FileEdit, Code, FileText, Link2, MapPin } from 'lucide-react';
 
 const SEOServicesDE = () => {
   return (
@@ -13,7 +13,7 @@ const SEOServicesDE = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <div className="mb-6 flex justify-center">
               <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
@@ -22,7 +22,7 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Keyword-Strategie</h3>
             <p className="text-brand-text text-center">
-              Wir finden die richtigen Suchbegriffe für Ihr Business.
+              Tiefgreifende Recherche nach relevanten, branchenspezifischen und lokalen Suchbegriffen.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">On-Page-Optimierung</h3>
             <p className="text-brand-text text-center">
-              Titel, Struktur und Content – optimiert für User und Google.
+              Metadaten, URLs, Überschriften und strukturierter Content für bessere Rankings und UX.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Technische SEO</h3>
             <p className="text-brand-text text-center">
-              Schnell, indexierbar, zukunftssicher.
+              Website-Geschwindigkeit, Core Web Vitals, saubere Indizierung – das Fundament für SEO-Erfolg.
             </p>
           </div>
 
@@ -58,12 +58,38 @@ const SEOServicesDE = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Content-Optimierung</h3>
             <p className="text-brand-text text-center">
-              Inhalte, die gefunden werden und überzeugen.
+              Verbesserung bestehender Inhalte oder Erstellung neuer Seiten basierend auf Nutzerbedürfnissen und Suchintention. 
+              Verwandte Services: <a href="/content-erstellung" className="text-brand-primary hover:underline font-medium">Content-Erstellung</a> und <a href="/webdesign" className="text-brand-primary hover:underline font-medium">Webdesign</a>.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <Link2 className="h-6 w-6 text-white" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Link-Strategie</h3>
+            <p className="text-brand-text text-center">
+              Strategische interne Verlinkung und nachhaltige Backlink-Kampagnen zum Aufbau von Autorität.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="mb-6 flex justify-center">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-white" />
+              </div>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-brand-heading text-center">Lokale SEO</h3>
+            <p className="text-brand-text text-center">
+              Steigern Sie Ihre Sichtbarkeit in Mainz und im Rhein-Main-Gebiet: Google Business, Brancheneinträge, Verzeichnisse. 
+              Kombiniert mit unserer <a href="/google-ads" className="text-brand-primary hover:underline font-medium">Google Ads Betreuung</a> für maximale lokale Präsenz.
             </p>
           </div>
         </div>
 
-        {/* AI-powered tools section */}
+        {/* AI-powered tools section - Better separated with more whitespace */}
         <div className="mt-24 bg-white p-10 rounded-lg shadow-md max-w-4xl mx-auto border-l-4 border-brand-primary">
           <h3 className="text-2xl font-bold mb-4 text-brand-heading">Tools als Unterstützung — nicht als Ersatz für Strategie</h3>
           <p className="text-brand-text mb-6">

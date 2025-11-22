@@ -4,66 +4,36 @@ import PageLayout from '@/components/PageLayout';
 import WebDevHero from '@/components/web-development/WebDevHeroDE';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import WebDevBenefits from '@/components/web-development/WebDevBenefitsDE';
-import WebDevWhyUs from '@/components/web-development/WebDevWhyUs';
 import WebDevServices from '@/components/web-development/WebDevServicesDE';
 import WebDevProcessNewDE from '@/components/web-development/WebDevProcessNewDE';
 import WebDevCmsVsStaticDE from '@/components/web-development/WebDevCmsVsStaticDE';
-import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import RelatedServicesGrid from '@/components/web-development/RelatedServicesGrid';
 import FAQ from '@/components/FAQ';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
-import StickyCTA from '@/components/conversion/StickyCTA';
+
+import { Link } from 'react-router-dom';
 
 const GermanWebDevelopment = () => {
   const webDevFaqs = [
     {
-      question: "Was kostet eine professionell entwickelte Website?",
-      answer: "Die Kosten variieren je nach Umfang, Technologie-Stack und Anforderungen Ihres Projekts. Nach einem kostenlosen Erstgespräch erstellen wir Ihnen ein transparentes Festpreis-Angebot, das exakt auf Ihre Bedürfnisse zugeschnitten ist – ohne versteckte Kosten."
+      question: "Mit welchen Plattformen arbeitet ihr?",
+      answer: "Wir entwickeln vollständig codierte Websites (ohne CMS) und maßgeschneiderte WordPress-Lösungen – je nachdem, was besser zu Ihrem Business passt."
     },
     {
-      question: "Arbeiten Sie mit WordPress oder programmieren Sie komplett neu?",
-      answer: "Beides möglich. Für Content-lastige B2B-Websites nutzen wir oft WordPress – aber individuell entwickelt, keine fertigen Themes. Ich koordiniere die Technologie-Auswahl persönlich mit Ihnen. Für maximale Performance oder spezielle Anforderungen entwickeln wir auch komplett custom. Wir wählen die beste Lösung für Ihr Projekt."
+      question: "Kann ooliv auch Shops entwickeln?",
+      answer: "Ja – WooCommerce innerhalb von WordPress oder Shopify für gezielte B2B-Cases."
     },
     {
-      question: "Wie lange dauert die Entwicklung einer neuen Website?",
-      answer: "Typischerweise 8–12 Wochen: 2 Wochen Strategie & Konzept, 3–4 Wochen Design, 3–4 Wochen Entwicklung, 2 Wochen Testing & Optimierung. Bei größeren Projekten entsprechend länger. Sie erhalten einen klaren Zeitplan vor Projektstart."
+      question: "Ist Performance bei euch Standard?",
+      answer: "Absolut. Unsere Seiten sind schnell, SEO-optimiert und laufen zuverlässig auf allen Geräten."
     },
     {
-      question: "Können Sie auch Online-Shops entwickeln?",
-      answer: "Ja. Für WordPress nutzen wir WooCommerce, für spezialisierte B2B-Shops auch Shopify oder Custom-Lösungen. Inklusive Payment-Integration, Produktverwaltung und Bestellprozess-Optimierung – alles aus einer Hand."
+      question: "Gibt es Betreuung nach dem Launch?",
+      answer: "Ja. Wir begleiten Sie weiter mit technischer Betreuung, Updates und Tracking."
     },
     {
-      question: "Ist Performance und Geschwindigkeit bei Ihnen Standard?",
-      answer: "Absolut. Jede Website wird auf Geschwindigkeit optimiert: Schnelle Ladezeiten, SEO-optimierter Code, mobile-optimiert. Performance ist kein Nice-to-have, sondern Grundvoraussetzung – für Google-Rankings und Ihre Nutzer."
-    },
-    {
-      question: "Was passiert nach dem Launch?",
-      answer: "Das entscheiden Sie: Entweder vollständige Übergabe an Ihr Team – oder laufende Betreuung durch unser Team. Ich bleibe Ihr persönlicher Ansprechpartner, während unser Entwicklungsteam technische Updates und Performance-Optimierungen übernimmt. Viele Kunden nutzen monatliche Wartungsverträge für Content-Erweiterungen."
-    }
-  ];
-
-  const webdevTestimonials = [
-    {
-      quote: "Die Website ist nicht nur schön, sie ist auch blitzschnell. Unsere Ladezeiten haben sich halbiert und Google-Rankings sind um 40% gestiegen.",
-      author: "Michael Klaiber",
-      role: "Geschäftsführer",
-      company: "KLAIBER Steuerberatung",
-      industry: "Steuerberatung"
-    },
-    {
-      quote: "Technisch auf höchstem Niveau. Die API-Integration mit unserem CRM läuft perfekt und hat unsere Prozesse enorm beschleunigt.",
-      author: "Dr. Stefan Wagner",
-      role: "CEO",
-      company: "IconPro GmbH",
-      industry: "KI-Software"
-    },
-    {
-      quote: "Endlich eine Website, die auch unter Last stabil läuft. Die Performance-Optimierung hat sich sofort in besseren Conversion-Rates gezeigt.",
-      author: "Thomas Müller",
-      role: "Geschäftsführer",
-      company: "COBUS GmbH",
-      industry: "Industrieservice"
+      question: "Könnt ihr bestehende Websites verbessern?",
+      answer: "Ja. Wir analysieren, ob Optimierung sinnvoll ist – oder ein Relaunch effizienter wäre."
     }
   ];
 
@@ -77,20 +47,22 @@ const GermanWebDevelopment = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Webentwicklung für B2B | WordPress, Custom Code & APIs | ooliv Mainz"
-        description="Webentwicklung durch Uli und das ooliv-Team: WordPress, Custom Code & API-Integration für B2B. Performance-optimiert, skalierbar – persönliche Betreuung vom ersten Code bis zum Launch."
+        title="WordPress Agentur Mainz – Schnelle, SEO-optimierte Websites"
+        description="ooliv Werbeagentur aus Mainz: WordPress-Agentur für B2B-Unternehmen. Mehr Leads durch Webdesign, SEO, Google Ads & Content-Marketing. Jetzt informieren."
         canonicalUrl="https://ooliv.de/webentwicklung"
-        keywords="Webentwicklung, Webentwicklung Mainz, WordPress Entwicklung, Custom Code, Full Stack Development, API Integration, Progressive Web Apps, React Development, Performance-Optimierung"
+        keywords="Webentwicklung Mainz, Website Entwicklung, Full Stack Development, ooliv"
         breadcrumbs={breadcrumbs}
       />
 
       <WebDevHero />
       <WebDevBenefits />
-      <WebDevWhyUs />
       <WebDevCmsVsStaticDE />
       <WebDevProcessNewDE />
-      <WebDevServices />
-      <TestimonialsSection testimonials={webdevTestimonials} />
+       <WebDevServices />
+
+       <p className="text-center text-sm text-medico-darkGreen mt-4">
+         Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
+       </p>
       
       {/* Global Case Studies Section */}
       <section className="py-24 bg-white">
@@ -98,21 +70,14 @@ const GermanWebDevelopment = () => {
           <CaseStudiesSection />
         </div>
       </section>
-
-      <RelatedServicesGrid />
       
       <FAQ customFaqs={webDevFaqs} />
-      
       <CTA 
         title="Lassen Sie uns über Ihr Website-Projekt sprechen"
         subtitle="Wir entwickeln eine skalierbare, sichere Website, die perfekt zu Ihren Geschäftszielen passt."
         primaryCta="Projekt starten"
         secondaryCta="Strategiegespräch vereinbaren"
         lightBackground={true}
-      />
-
-      <StickyCTA 
-        text="Kostenloses Entwicklungs-Beratungsgespräch"
       />
     </PageLayout>
   );

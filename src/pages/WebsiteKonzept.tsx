@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
-import PageLayout from '@/components/PageLayout';
 import InlinePrototypeForm from '@/components/website-konzept/InlinePrototypeForm';
 import AnimatedPrototypePreview from '@/components/website-konzept/AnimatedPrototypePreview';
 import Reveal from '@/components/animations/Reveal';
@@ -43,9 +42,8 @@ const WebsiteKonzept = () => {
   };
 
   return (
-    <PageLayout showBreadcrumbs={true}>
-      <div className="overflow-x-hidden w-full relative">
-        <Helmet>
+    <div className="overflow-x-hidden w-full relative">
+      <Helmet>
         <title>Kostenloses Website-Konzept in 48 h | ooliv Werbeagentur Mainz</title>
         <meta name="description" content="Erhalten Sie Ihr individuelles Website-Konzept innerhalb von 48 Stunden – kostenlos, unverbindlich und strategisch durchdacht." />
         <link rel="canonical" href="https://ooliv.de/website-konzept" />
@@ -89,7 +87,7 @@ const WebsiteKonzept = () => {
           <div className="text-center w-full">
             <Reveal delay={0.1} direction="up" distance={20}>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Website bringt keine Anfragen? ooliv zeigt Ihnen kostenlos, warum.
+                Ihre Website bringt keine Anfragen?<br />Wir zeigen Ihnen kostenlos, warum.
               </h1>
             </Reveal>
 
@@ -629,7 +627,6 @@ const WebsiteKonzept = () => {
         </div>
       </footer>
     </div>
-    </PageLayout>
   );
 };
 

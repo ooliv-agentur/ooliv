@@ -4,43 +4,14 @@ import PageLayout from '@/components/PageLayout';
 import AiTechHero from '@/components/ai-technologies/AiTechHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import AiTechBenefits from '@/components/ai-technologies/AiTechBenefits';
-import AiTechWhyUs from '@/components/ai-technologies/AiTechWhyUs';
 import AiTechServices from '@/components/ai-technologies/AiTechServices';
 import AiToolsSection from '@/components/ai-technologies/AiToolsSection';
-import RelatedServicesGrid from '@/components/ai-technologies/RelatedServicesGrid';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import StickyCTA from '@/components/conversion/StickyCTA';
 
 
 const GermanAiTechnologies = () => {
-  // KI-specific testimonials
-  const aiTestimonials = [
-    {
-      quote: "Die KI-Integration hat unsere Content-Produktion revolutioniert. 60% Zeitersparnis bei gleichbleibender Qualität – und Uli hat uns Schritt für Schritt begleitet.",
-      author: "Dr. Stefan Wagner",
-      role: "CEO",
-      company: "IconPro GmbH",
-      industry: "KI-Software"
-    },
-    {
-      quote: "Endlich KI, die wirklich funktioniert. Keine Spielereien, sondern echte Workflow-Automation. Unser Kundenservice ist jetzt 24/7 verfügbar.",
-      author: "Sarah Meyer",
-      role: "Head of Operations",
-      company: "Enterprise SaaS",
-      industry: "B2B Software"
-    },
-    {
-      quote: "Von der Skepsis zur Begeisterung in 3 Monaten. ooliv hat uns gezeigt, wie KI unsere Prozesse verbessert – ohne Jobabbau, mit echtem Mehrwert.",
-      author: "Thomas Müller",
-      role: "Geschäftsführer",
-      company: "COBUS GmbH",
-      industry: "Industrieservice"
-    }
-  ];
-
   // AI tools data for German page
   const aiTools = [
     {
@@ -63,24 +34,24 @@ const GermanAiTechnologies = () => {
   // Custom FAQ items for AI page
   const aiFaqs = [
     {
-      question: "Was bringt mir KI konkret für mein Business?",
-      answer: "Echte Zeitersparnis und Kostenreduktion: 70–80% weniger Aufwand bei Content-Erstellung, 30–50% niedrigere Kosten pro Lead, schnellere Reaktionszeiten. KI übernimmt Routine-Aufgaben – Sie konzentrieren sich auf Strategie und Kundenkontakt."
+      question: "Wie integrieren wir KI in bestehende Marketingprozesse?",
+      answer: "Wir analysieren Ihre aktuellen Prozesse, identifizieren die größten Effizienzpotenziale und integrieren die passenden KI-Tools nahtlos in Ihren Workflow."
     },
     {
-      question: "Kann KI wirklich gute Texte für meine Website schreiben?",
-      answer: "Ja – wenn man es richtig macht. KI erstellt solide Rohtexte, die ein Experte dann verfeinert und auf Ihre Marke anpasst. Das Ergebnis: Professionelle Texte in Bruchteil der Zeit, mit Ihrer Tonalität und Ihrem Fachwissen."
+      question: "Bleiben wir bei KI-erstellten Inhalten im rechtlichen Rahmen?",
+      answer: "Absolut. Wir achten auf rechtliche und ethische Compliance, vom Urheberrecht bis zum Datenschutz, und behalten die menschliche Kontrolle über alle Outputs."
     },
     {
-      question: "Ist das mit KI nicht rechtlich problematisch?",
-      answer: "Nicht, wenn man es richtig angeht. Wir achten auf Urheberrecht, Datenschutz und Transparenz. Alle KI-generierten Inhalte werden von Menschen geprüft und angepasst – Sie behalten die volle Kontrolle und Verantwortung."
+      question: "Welche konkreten ROI-Vorteile bringt KI im Marketing?",
+      answer: "Typische Vorteile: 70-80% Zeitersparnis bei Content-Erstellung, 30-50% geringere Kosten pro Lead und deutlich schnellere Reaktionszeiten auf Marktveränderungen."
     },
     {
-      question: "Welche KI-Tools nutzen Sie für meine Projekte?",
-      answer: "Je nach Bedarf: ChatGPT für Texte und FAQs, Midjourney für individuelle Bilder, Claude für komplexe Analysen, spezialisierte Tools für SEO. Wir wählen die Tools aus, die für Ihr Projekt am besten funktionieren – keine Experimente."
+      question: "Ist die Qualität von KI-generiertem Content wirklich gut?",
+      answer: "Mit dem richtigen Prompt-Engineering und menschlicher Nachbearbeitung ist die Qualität hervorragend. KI erstellt den Rohtext, Experten verfeinern ihn für optimale Ergebnisse."
     },
     {
-      question: "Wie integrieren Sie KI in meine bestehenden Prozesse?",
-      answer: "Schritt für Schritt: Wir analysieren, wo KI wirklich Sinn macht, wählen die passenden Tools aus, schulen Ihr Team und begleiten die Einführung. Kein Big Bang, sondern pragmatische Integration mit messbaren Verbesserungen."
+      question: "Welche KI-Tools setzen wir in unseren Projekten ein?",
+      answer: "Wir nutzen ein breites Spektrum: ChatGPT für Texterstellung, DALL-E und Midjourney für Bildgenerierung, Claude für komplexe Aufgaben und spezialisierte Tools für SEO und Datenanalyse."
     }
   ];
   
@@ -92,16 +63,15 @@ const GermanAiTechnologies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="KI-Integration für B2B | Workflow-Automation & AI-Strategie | ooliv Mainz"
-        description="KI-Integration durch Uli und das ooliv-Team: Workflow-Automation & AI-Strategie für B2B. Von der Use-Case-Analyse bis zur Production – messbare Effizienzgewinne, persönliche Beratung."
+        title="KI-Agentur Mainz: KI-Tools, Strategien & Prozessoptimierung"
+        description="ooliv Werbeagentur entwickelt B2B-Websites, die messbar mehr Leads generieren. Webdesign, SEO, Google Ads & Content-Marketing aus Mainz. Jetzt Kontakt aufnehmen."
         canonicalUrl="https://ooliv.de/ki-technologien"
-        keywords="KI-Integration, KI-Technologien, AI Integration, Workflow-Automation, LLM Integration, KI-Strategie, Business AI, KI Beratung, Mainz, DACH"
+        keywords="KI Agentur Mainz, Artificial Intelligence, ChatGPT, Midjourney, Automatisierung"
         breadcrumbs={breadcrumbs}
       />
 
       <AiTechHero />
       <AiTechBenefits />
-      <AiTechWhyUs />
       <AiTechServices />
       <AiToolsSection 
         title="KI-gesteuert – menschlich geführt"
@@ -110,20 +80,15 @@ const GermanAiTechnologies = () => {
         note="Wir setzen KI als kreativen Beschleuniger ein – nie als Abkürzung. Qualität und Strategie kommen immer von Menschen."
       />
       
-      <TestimonialsSection testimonials={aiTestimonials} />
       <CaseStudiesSection />
-      <RelatedServicesGrid />
+      
       <FAQ customFaqs={aiFaqs} />
       <CTA 
-        title="KI-Transformation für Ihr Unternehmen"
-        subtitle="Lassen Sie uns gemeinsam strategische KI-Integration entwickeln – von der Use Case-Analyse über Workflow-Automation bis zu messbaren Effizienzgewinnen."
-        primaryCta="KI-Transformation starten"
+        title="KI-basierte Marketinglösungen für Ihr Unternehmen"
+        subtitle="Entdecken Sie, wie wir mit KI-gestützten Strategien und Tools Ihr Marketing auf die nächste Stufe heben können."
+        primaryCta="KI-Potenzialanalyse anfordern"
         secondaryCta="Strategiegespräch vereinbaren"
-        secondaryCtaLink="/kontakt"
-        lightBackground={true}
       />
-      
-      <StickyCTA text="Kostenloses KI-Beratungsgespräch" />
     </PageLayout>
   );
 };

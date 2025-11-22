@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import WhyChooseUs from "@/components/de/WhyChooseUs";
+import DeutscherAboutSection from "@/components/de/DeutscherAboutSection";
+import TeamTeaserDE from "@/components/de/TeamTeaserDE";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import GermanSolutionSection from "@/components/de/GermanSolutionSection";
+import TechnologiesSection from "@/components/de/TechnologiesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
-import TestimonialsSection from "@/components/testimonials/TestimonialsSection";
-import ServicesOverview from "@/components/services/ServicesOverview";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import StickyCTA from "@/components/conversion/StickyCTA";
 import CanonicalUrlHelper from "@/components/seo/CanonicalUrlHelper";
 import H1Validator from "@/components/seo/H1Validator";
 
@@ -15,30 +16,33 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import DeutscherHero from '@/components/de/DeutscherHero';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
+import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
+import CostCalculator from '@/components/pricing/CostCalculator';
 
-const strategicFaqs = [
+const germanFaqs = [
   {
-    question: "Für wen sind Ihre Leistungen geeignet?",
-    answer: "Wir arbeiten hauptsächlich mit B2B-Unternehmen aus dem DACH-Raum, die digital besser werden wollen. Typischerweise Geschäftsführer oder Marketing-Verantwortliche, die merken, dass ihre Website oder digitale Strategie nicht die gewünschten Ergebnisse bringt. Egal ob Mittelstand, Tech-Startup oder Dienstleister – wenn Sie bereit sind, strategisch zu denken statt nur schnelle Lösungen zu suchen, passen wir gut zusammen. Mehr über unsere Leistungen finden Sie unter <a href='/strategie' class='text-primary hover:underline'>Digitale Strategie</a>, <a href='/webdesign' class='text-primary hover:underline'>Webdesign</a> und <a href='/ki-technologien' class='text-primary hover:underline'>KI-Integration</a>."
+    question: "Wie läuft der Website-Erstellungsprozess bei ooliv ab?",
+    answer: "Unsere Webprojekte folgen einem klaren Ablauf: Zunächst analysieren wir gemeinsam Ihre Ziele, Zielgruppen und Mitbewerber. Danach erstellen wir Inhalte und Struktur. Anschließend gestalten wir ein modernes, benutzerfreundliches Design und setzen Ihre Website technisch sauber um. Nach dem Go-Live betreuen Sie weiter – mit Support und Updates."
   },
   {
-    question: "Wie läuft eine Zusammenarbeit ab?",
-    answer: "Wir starten immer mit einem kostenlosen Erstgespräch (30 Minuten), in dem wir Ihre Situation analysieren. Danach bekommen Sie von uns eine ehrliche Einschätzung und einen konkreten Vorschlag, wie wir vorgehen können. Je nach Projekt arbeiten wir entweder in einem Workshop-Format, als längerfristiger Sparringspartner oder mit konkreter Umsetzung. Sie entscheiden, was für Sie passt."
+    question: "Was kostet eine individuell entwickelte WordPress-Website bei ooliv?",
+    answer: "Die Preise richten sich nach Ihren Anforderungen und Unternehmensgröße. Professionelle Business-Websites starten bei 5.000 €, mittlere Projekte mit SEO bei 8.000–12.000 €. Für größere Projekte wie Shops oder mehrsprachige Websites starten die Kosten bei etwa 15.000 €. Wir erstellen immer transparente Angebote ohne versteckte Gebühren."
   },
   {
-    question: "Was brauchen Sie von mir für den Start?",
-    answer: "Vor allem Ihre Zeit und Offenheit. Für ein effektives Erstgespräch hilft es, wenn Sie Ihre aktuellen Herausforderungen schon grob umreißen können: Was funktioniert nicht? Wo sehen Sie Potenzial? Was haben Sie schon versucht? Konkrete Zahlen (Website-Besucher, Anfragen, etc.) sind hilfreich, aber kein Muss. Wichtiger ist, dass Sie bereit sind, ehrlich über Ihre Situation zu sprechen."
+    question: "Wie lange dauert die Erstellung einer maßgeschneiderten Website?",
+    answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Websites sind in wenigen Wochen umsetzbar, größere Seiten benötigen in der Regel 6 bis 10 Wochen. Wir stimmen den Zeitplan individuell mit Ihnen ab und arbeiten effizient auf gemeinsame Deadlines hin."
   },
   {
-    question: "Arbeiten Sie nur remote oder auch vor Ort?",
-    answer: "Beides ist möglich. Die meisten Projekte laufen remote ab – das funktioniert hervorragend und spart allen Zeit. Für strategische Workshops oder wichtige Kickoffs kommen wir aber auch gerne zu Ihnen ins Büro, besonders in der DACH-Region (Mainz, Frankfurt, Wiesbaden, aber auch deutschlandweit und in der Schweiz). Wir finden gemeinsam die beste Arbeitsweise für Ihr Projekt."
+    question: "Was beinhaltet die laufende Betreuung nach dem Launch meiner Website?",
+    answer: "Nach dem Go-Live lassen Sie nicht allein: Wir übernehmen technische Updates, kleine Änderungen und beraten bei der Weiterentwicklung Ihrer Website. Falls gewünscht, begleiten wir Sie auch langfristig bei SEO, Content oder Google Ads."
   },
   {
-    question: "Was unterscheidet Sie von anderen Agenturen?",
-    answer: "Sie arbeiten direkt mit einem erfahrenen Digital-Berater zusammen – mit 16+ Jahren Praxis, nicht mit Junior-Mitarbeitern. Wir sagen Ihnen offen, wenn etwas keinen Sinn macht, statt einfach nur zu verkaufen. Sie bekommen messbare Strategien statt schöner PowerPoints. Und Sie bekommen keine Standard-Agentur-Lösungen, sondern maßgeschneiderte Ansätze für Ihr spezifisches Business."
+    question: "Warum ist ooliv die richtige Werbeagentur in Mainz für mein Projekt?",
+    answer: "Wir arbeiten direkt, effizient und auf Augenhöhe. Bei uns sprechen Sie immer mit dem CEO. Strategie, Design und Technik kommen aus einer Hand. Unsere Websites sind SEO-stark, klar strukturiert und messbar erfolgreich – und wir sind in Mainz verwurzelt, mit Kunden weit darüber hinaus."
   }
 ];
 
@@ -60,15 +64,16 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Digitale Strategie & Transformation | Uli Schönleber + Team – B2B Digital-Beratung DACH"
-          description="Uli Schönleber und das ooliv-Team: Digitale Strategie, Webdesign & KI-Integration für B2B im DACH-Raum. 16+ Jahre Expertise – persönliche Beratung mit messbaren Ergebnissen. Jetzt durchstarten!"
-          keywords="Digitale Strategie, Digital Transformation, Website Relaunch, KI-Integration, Webdesign, B2B Digital-Beratung, DACH, Uli Schönleber, Digitale Beratung"
-          ogImage="/og-home-de.jpg"
+          title="B2B-Websites, die Leads generieren | ooliv Digitalagentur"
+          description="Strategische B2B-Websites bundesweit: Lead-Generierung, Webdesign, SEO & Google Ads. Inhabergeführt. Messbare KPIs. Kostenloses Website-Konzept in 48h."
           canonicalUrl="https://ooliv.de/"
+          keywords="B2B Website Agentur, Lead-Generierung, strategisches Webdesign, SEO Beratung, Google Ads Agentur, Website-Konzept"
+          ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
         />
-        <CompleteBusinessSchemaGenerator 
-          businessName="ooliv Digital Consultancy"
-          description="Digitale Strategie & Transformation für B2B-Unternehmen im DACH-Raum. 16+ Jahre Expertise in Webdesign, KI-Integration & Website-Relaunch."
+        
+        <CompleteBusinessSchemaGenerator
+          businessName="ooliv Digitalagentur"
+          description="Digitalagentur für B2B-Unternehmen in Deutschland. Webdesign, SEO, Google Ads und Content-Marketing für messbar mehr Leads."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -80,35 +85,213 @@ const GermanIndex = () => {
           email="info@ooliv.de"
           url="https://ooliv.de"
           areaServed={["Deutschland", "Schweiz", "Österreich", "DACH-Region"]}
-          services={["Digitale Strategie", "Webdesign", "KI-Integration", "Website Relaunch", "Digital Transformation"]}
+          services={["Webdesign", "Webentwicklung", "SEO", "Google Ads", "Content Marketing", "KI-Technologien"]}
         />
-        <CanonicalUrlHelper />
         
         <DeutscherHero />
-
-        <TestimonialsSection />
         
-        <WhyChooseUs />
-
-        <ServicesOverview />
+        <DeutscherAboutSection />
         
+      {/* Budget-Transparenz mit interaktivem Kalkulator */}
+      <section className="py-16 bg-background">
+        <CostCalculator />
+      </section>
+
+        {/* Before/After früher positioniert für sofortige Ergebnisse */}
+        <div className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-8 text-foreground">Ihre Website sollte für Sie arbeiten – nicht gegen Sie.</h2>
+            <p className="text-center text-lg mb-12 max-w-3xl mx-auto text-muted-foreground">
+              Viele Unternehmen kämpfen mit Websites, die nicht performant sind. Wir entwickeln Websites, die Leads generieren, Vertrauen aufbauen und bei Google sichtbar werden.
+            </p>
+            <BeforeAfterSlider />
+            <div className="mt-8 text-center">
+              <p className="text-muted-foreground mb-6">
+                Weitere Beispiele gerne auf Anfrage – <a href="mailto:info@ooliv.de" className="text-turquoise hover:underline">info@ooliv.de</a>
+              </p>
+              <Button 
+                variant="primary"
+                size="lg" 
+                className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                onClick={handleStartProject}
+                aria-label="Starten Sie Ihr Webdesign-Projekt"
+              >
+                Projekt starten
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Case Studies früher für sofortiges Vertrauen */}
         <CaseStudiesSection />
         
+        {/* Automated Content Marketing Highlight - repositioned for better flow */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+              <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-turquoise mr-3" />
+                NEU: Automatisierte Content-Marketing Lösung
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+                Ihr Content-Team, das niemals schläft – AI-gestützte tägliche Content-Erstellung und automatische Verteilung. 
+                Täglich frische SEO-Artikel, Social Media Automation und Backlink-Aufbau im Autopilot.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button 
+                  variant="outline" 
+                  className="text-turquoise border-turquoise hover:bg-turquoise/10 w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2"
+                  asChild
+                >
+                  <Link to="/automatisierte-content-marketing">
+                    Mehr zur Automation <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button 
+                  onClick={handleStartProject}
+                  variant="primary"
+                  className="w-full sm:w-auto"
+                  aria-label="Starten Sie Ihr Content-Marketing Projekt"
+                >
+                  Projekt starten
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <GermanSolutionSection />
+        <TeamTeaserDE />
+        <TechnologiesSection />
         
         <FAQ 
-          customFaqs={strategicFaqs}
+          customFaqs={germanFaqs}
           customTitle="Häufig gestellte Fragen"
           customCtaText="Weitere Fragen? Sprechen Sie mit uns"
         />
         
         <CTA
           lightBackground={true}
-          title="Bereit für messbare digitale Transformation?"
-          subtitle="Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden, wie wir Ihr Business digital voranbringen können – mit klarer Strategie, durchdachter UX und praktischen KI-Lösungen."
-          primaryCta="Kostenloses Erstgespräch vereinbaren"
+          title="Bereit für eine Website, die Ihr Unternehmen voranbringt?"
+          subtitle="Lassen Sie uns besprechen, wie unser Team Ihnen helfen kann, Ihre Ziele zu erreichen."
+          primaryCta="Projekt starten"
         />
 
-        <StickyCTA text="Kostenloses Erstgespräch" />
+        {/* Standort Mainz, bundesweit aktiv */}
+        <div className="py-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
+                Standort Mainz – Bundesweit für Sie da
+              </h2>
+              <div className="max-w-4xl mx-auto space-y-4">
+                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
+                  Von unserem Standort in Mainz aus betreuen wir Unternehmen in ganz Deutschland, 
+                  <strong> der Schweiz</strong> und Österreich. Seit 2008 entwickeln wir digitale Strategien, 
+                  die messbare Ergebnisse liefern – unabhängig vom Standort unserer Kunden.
+                </p>
+                <p className="text-base text-muted-foreground" style={{ lineHeight: '1.6' }}>
+                  Unser Webdesign- und Marketing-Service verbindet persönliche Betreuung mit modernster Technologie. Als Digitalagentur bieten wir Ihnen den kompletten Service aus einer Hand – für lokale und überregionale Projekte.
+                </p>
+                
+                {/* Strategic outgoing links */}
+                <div className="bg-white p-4 rounded-lg shadow-sm mt-6">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground">
+                    Nützliche Ressourcen für Unternehmen
+                  </h3>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <a 
+                      href="https://www.rheinhessen.ihk24.de/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      IHK Rheinhessen
+                    </a>
+                    <a 
+                      href="https://isb.rlp.de/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      Wirtschaftsförderung RLP
+                    </a>
+                    <a 
+                      href="https://www.mainz.de/wirtschaft/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-turquoise hover:text-foreground font-medium transition-colors text-sm"
+                    >
+                      <ExternalLink className="w-3 h-3 mr-2" />
+                      Wirtschaftsförderung Mainz
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Condensed benefits section */}
+                <div className="grid md:grid-cols-3 gap-4 mt-6">
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
+                      Persönliche Betreuung
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Direkter Draht zum CEO – kurze Wege, schnelle Entscheidungen, egal wo Sie sind.
+                    </p>
+                  </TurquoiseCard>
+                  
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
+                      Bundesweite Projekte
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Von Mainz bis München – wir arbeiten mit Unternehmen im gesamten DACH-Raum zusammen.
+                    </p>
+                  </TurquoiseCard>
+                  
+                  <TurquoiseCard variant="default" hoverLift>
+                    <h4 className="text-base font-semibold mb-2 text-foreground">
+                      Messbare Erfolge
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      Unsere digitalen Strategien basieren auf Daten und liefern nachweisbare Ergebnisse.
+                    </p>
+                  </TurquoiseCard>
+                </div>
+                
+                {/* Internal linking */}
+                <div className="flex flex-wrap justify-center gap-3 mt-6">
+                  <Link 
+                    to="/webdesign" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Erfahren Sie mehr über unsere Webdesign Services"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    Webdesign Services
+                  </Link>
+                  <Link 
+                    to="/seo-optimierung" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Entdecken Sie unsere SEO-Optimierungsservices"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    SEO Services
+                  </Link>
+                  <Link 
+                    to="/kontakt" 
+                    className="group inline-flex items-center gap-2 px-4 py-2 text-foreground hover:text-turquoise font-medium transition-all text-sm rounded-md hover:bg-turquoise/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-offset-2 min-h-[44px]"
+                    aria-label="Kontaktieren Sie uns für eine Beratung"
+                  >
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    Beratung anfragen
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </PageLayout>
     </>
   );

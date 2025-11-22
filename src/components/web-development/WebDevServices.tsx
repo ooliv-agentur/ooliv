@@ -59,19 +59,7 @@ const WebDevServices = () => {
                 <service.icon className="h-10 w-10" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-brand-heading">{service.title}</h3>
-              <p className="text-brand-text">
-                {service.title === (isGerman ? "WordPress Entwicklung" : "WordPress Development") ? (
-                  <>
-                    {isGerman ? "Sauber programmiert, redaktionell nutzbar, skalierbar – perfekt integriert mit unserem " : "Clean-coded, editorially usable, scalable – perfectly integrated with our "}
-                    <Link to={isGerman ? "/webdesign" : "/en/web-design"} className="text-brand-primary hover:underline font-medium">
-                      {isGerman ? "Webdesign" : "Web Design"}
-                    </Link>
-                    {isGerman ? "." : "."}
-                  </>
-                ) : (
-                  service.description
-                )}
-              </p>
+              <p className="text-brand-text">{service.description}</p>
             </div>
           ))}
         </div>

@@ -8,23 +8,23 @@ const AboutSection = () => {
   // Define the 4 pillars of service
   const services = [
     {
-      title: "Strategie & UX",
-      description: "Klare Struktur, datengetriebene Entscheidungen, B2B-ready.",
+      title: "Strategy & UX",
+      description: "Clear structure, data-driven decisions, B2B-ready.",
       icon: <LayoutGrid className="h-6 w-6 text-brand-primary" />
     },
     {
       title: "Content & SEO",
-      description: "Keyword-getrieben, mehrsprachig, KI-unterstützt.",
+      description: "Keyword-driven, multilingual, AI-supported.",
       icon: <Sparkles className="h-6 w-6 text-brand-primary" />
     },
     {
-      title: "Design & Entwicklung",
-      description: "Individuell programmiert, conversion-optimiert, skalierbar.",
+      title: "Design & Development",
+      description: "Custom-coded, conversion-optimized, scalable.",
       icon: <Code className="h-6 w-6 text-brand-primary" />
     },
     {
-      title: "Direkte Kommunikation",
-      description: "Sie sprechen immer direkt mit dem Geschäftsführer – ohne Umwege.",
+      title: "Direct Communication",
+      description: "You always speak directly with the CEO – no detours.",
       icon: <PhoneCall className="h-6 w-6 text-brand-primary" />
     }
   ];
@@ -35,10 +35,10 @@ const AboutSection = () => {
         <Reveal>
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-brand-heading mb-4 text-center">
-              Strategie trifft Umsetzung – Direkt in Mainz
+              Strategy Meets Implementation – Directly in Mainz
             </h2>
             <p className="text-xl text-brand-text max-w-3xl mx-auto text-center">
-              Wir sind eine spezialisierte Digitalagentur mit Sitz in Mainz. Seit 2008 entwickeln wir Websites, die das Wesen Ihres Unternehmens erfassen – strategisch konzipiert, inhaltsstark und technologisch messbar.
+              We are a specialized digital agency based in Mainz. Since 2008, we have been developing websites that capture the essence of your business – strategically designed, content-rich, and technologically measurable.
             </p>
           </div>
         </Reveal>

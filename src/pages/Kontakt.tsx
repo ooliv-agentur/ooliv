@@ -26,7 +26,7 @@ const GermanContact = () => {
     >
       <EnhancedSEOHead
         title="Kontakt | ooliv Digitalagentur"
-        description="Kontakt zu Uli Schönleber und dem ooliv-Team: Persönliche Beratung für Webdesign, Strategie & KI-Integration. ☎ 06131-6367801. Mit ooliv durchstarten – Antwort innerhalb von 24h!"
+        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-6367801. Termin buchen!"
         canonicalUrl="https://ooliv.de/kontakt"
         keywords="Kontakt, ooliv, Digitalagentur, Beratung, Webdesign, SEO"
       />
@@ -41,9 +41,9 @@ const GermanContact = () => {
 
       {/* Footer CTA Section - consistent with site CTA styling */}
       <CTA 
-        title="Mit ooliv durchstarten"
+        title="Starten Sie jetzt Ihr digitales Projekt mit ooliv."
         subtitle=""
-        primaryCta="Mit ooliv durchstarten"
+        primaryCta="Jetzt Projekt starten"
         lightBackground={true}
       />
     </PageLayout>

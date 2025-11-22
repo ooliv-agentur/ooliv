@@ -99,8 +99,8 @@ const Danke = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Willkommen bei ooliv | Danke für Ihre Anfrage"
-        description="Uli Schönleber und das ooliv-Team melden sich innerhalb von 24 Stunden bei Ihnen. Ihre Digitalagentur aus Mainz für Strategie, Webdesign und KI-Integration."
+        title="Danke für Ihre Anfrage | ooliv"
+        description="Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen – Ihre Werbeagentur ooliv aus Mainz."
         canonicalUrl="https://ooliv.de/danke"
         robotsContent="noindex, follow"
         keywords="Danke, Anfrage erhalten, ooliv Werbeagentur"
@@ -135,24 +135,12 @@ const Danke = () => {
             </motion.div>
             
             <motion.h1 className="text-3xl md:text-4xl font-bold mb-6 text-black" variants={itemVariants}>
-              Willkommen bei ooliv!
+              Vielen Dank für Ihre Anfrage!
             </motion.h1>
             
-            <motion.p className="text-lg mb-4 text-black/80" variants={itemVariants}>
-              <strong>Uli Schönleber und das ooliv-Team</strong> haben Ihre Anfrage erhalten und melden sich innerhalb von 24 Stunden bei Ihnen.
-            </motion.p>
-            
             <motion.p className="text-lg mb-8 text-black/80" variants={itemVariants}>
-              Sie arbeiten mit <strong>16+ Jahren Erfahrung</strong> in digitaler Strategie, Webdesign und KI-Integration direkt zusammen.
-              Für dringende Anfragen erreichen Sie uns unter{' '}
-              <a 
-                href="tel:+4961316367801" 
-                className="text-black hover:text-black/70 underline font-semibold"
-                aria-label="Telefonnummer anrufen"
-              >
-                06131 – 63 67 801
-              </a>
-              {' '}oder per E-Mail an{' '}
+              Wir haben Ihre Angaben erhalten und melden uns schnellstmöglich bei Ihnen. 
+              Wenn Sie in der Zwischenzeit Fragen haben, schreiben Sie uns gerne an{' '}
               <a 
                 href="mailto:info@ooliv.de" 
                 className="text-black hover:text-black/70 underline font-semibold"

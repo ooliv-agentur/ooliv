@@ -26,12 +26,12 @@ const WerbeagenturWiesbaden = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturWiesbaden component mounted - setting language to German');
-    document.title = 'Digital Strategy Lead Wiesbaden | Uli Schönleber | ooliv';
+    document.title = 'Werbeagentur Wiesbaden – Digitale Lösungen für nachhaltigen Erfolg';
   }, []);
   
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Digital Strategy Lead Wiesbaden", url: "https://ooliv.de/werbeagentur-wiesbaden" }
+    { name: "Werbeagentur Wiesbaden", url: "https://ooliv.de/werbeagentur-wiesbaden" }
   ];
   
   return (
@@ -40,16 +40,16 @@ const WerbeagenturWiesbaden = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Digital Strategy Lead Wiesbaden | Uli Schönleber | ooliv"
-          description="Strategic Digital Advisory in Wiesbaden: Product & UX Strategy, AI Integration für B2B-Unternehmen. 16+ Jahre Track Record. Kein Agentur-Theater."
+          title="Werbeagentur Wiesbaden | ooliv aus Mainz"
+          description="Werbeagentur Wiesbaden: Professionelle B2B-Websites, SEO & digitale Strategien. Messbar. Zielgerichtet. Ohne Schnickschnack. Jetzt Erstgespräch!"
           canonicalUrl="https://ooliv.de/werbeagentur-wiesbaden"
-          keywords="Digital Strategy Lead Wiesbaden, Strategic Advisory Wiesbaden, Product Strategy Wiesbaden, UX Strategy Wiesbaden"
+          keywords="Werbeagentur Wiesbaden, Webdesign Wiesbaden, Online Marketing Wiesbaden, SEO Wiesbaden"
           breadcrumbs={breadcrumbs}
         />
         
         <LocalBusinessSchemaGenerator
-          businessName="ooliv Digital Strategy Lead Wiesbaden"
-          description="Digital Strategy Lead für B2B-Transformationen in Wiesbaden. Strategic Discovery, AI Integration, Product & UX Strategy mit messbaren Outcomes."
+          businessName="ooliv Werbeagentur Wiesbaden"
+          description="Full-Service Werbeagentur in Wiesbaden für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -81,12 +81,15 @@ const WerbeagenturWiesbaden = () => {
             "Hessen"
           ]}
           services={[
-            "Digital Strategy",
-            "Strategic Discovery",
-            "AI Integration",
-            "Product & UX Strategy",
-            "C-Level Advisory",
-            "Digital Transformation"
+            "Webdesign",
+            "Webentwicklung",
+            "SEO-Optimierung",
+            "Local SEO",
+            "Google Ads",
+            "Content Marketing",
+            "Marketing Automation",
+            "Digitale Strategieberatung",
+            "KI-Technologien"
           ]}
         />
         

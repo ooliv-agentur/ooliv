@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { Check } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Carousel,
@@ -129,7 +129,23 @@ const WebDesignProcess = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-brand-heading mb-2">{step.title}</h3>
-                        <p className="text-brand-text text-sm">{step.description}</p>
+                        <p className="text-brand-text text-sm mb-5">{step.description}</p>
+                        
+                        <div className="border-t border-brand-backgroundAlt pt-4 mt-auto">
+                          <h4 className="text-brand-primary font-bold mb-3 text-sm tracking-wider">
+                            {t.deliverableTitle}
+                          </h4>
+                          <div className="space-y-2.5">
+                            {step.deliverables.map((deliverable, idx) => (
+                              <div key={idx} className="flex items-center">
+                                <div className="flex-shrink-0 h-5 w-5 rounded-full bg-brand-backgroundAlt flex items-center justify-center mr-3">
+                                  <Check className="h-3 w-3 text-brand-primary" />
+                                </div>
+                                <p className="text-sm font-medium text-brand-text">{deliverable}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CardContent>

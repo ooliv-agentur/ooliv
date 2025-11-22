@@ -6,17 +6,27 @@ const steps = [
   {
     number: '01',
     title: 'Strategy & Setup',
-    description: 'Goals, platform, architecture – planned for your business'
+    description: 'Technical goals, platform selection, feature planning – all based on your business model.'
   },
   {
     number: '02',
-    title: 'Development & Testing',
-    description: 'Clean code, performance optimization, thorough testing'
+    title: 'Development',
+    description: 'Structured, scalable, SEO-ready code.'
   },
   {
     number: '03',
+    title: 'CMS or Backend (if needed)',
+    description: 'As a WordPress development agency, we offer flexible CMS setups – or we go backend-free for maximum performance.'
+  },
+  {
+    number: '04',
+    title: 'Testing & QA',
+    description: 'Speed, stability, SEO – across all devices.'
+  },
+  {
+    number: '05',
     title: 'Launch & Support',
-    description: 'Go live, track results, ongoing optimization'
+    description: 'Go-live with tracking setup, technical support, and ongoing optimization.'
   }
 ];
 

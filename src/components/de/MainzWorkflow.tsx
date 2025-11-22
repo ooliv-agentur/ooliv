@@ -12,8 +12,8 @@ const MainzWorkflow = () => {
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: "2. Strategie & Implementation",
-      description: "Ziele, Maßnahmen und Prioritäten für Website, SEO und digitale Strategie definieren und umsetzen."
+      title: "2. Strategie",
+      description: "Ziele, Maßnahmen und Prioritäten für Website, SEO und Marketing."
     },
     {
       icon: <Code className="h-8 w-8" />,
@@ -35,9 +35,9 @@ const MainzWorkflow = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-medico-darkGreen mb-6 leading-tight">
               So arbeiten wir im Projekt
             </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Strukturiert, transparent und mit klarem Fokus auf Ihre Ziele. Von Strategic Discovery über Implementation bis zum Go-Live begleiten wir Sie durch alle Phasen Ihrer digitalen Transformation.
-          </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Strukturiert, transparent und mit klarem Fokus auf Ihre Ziele
+            </p>
           </div>
         </Reveal>
 

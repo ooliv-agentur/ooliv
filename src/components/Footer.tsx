@@ -14,34 +14,39 @@ const Footer = () => {
       <div className={footerStyles.innerContainer}>
         <div className={footerStyles.gridLayout}>
           <div className={footerStyles.sectionSpacing}>
-            <h3 className={footerStyles.sectionHeading}>Über ooliv</h3>
+            <h3 className={footerStyles.sectionHeading}>{t('footer.about')}</h3>
             <p className={footerStyles.bodyText}>
-              ooliv unterstützt B2B-Unternehmen im DACH-Raum bei digitaler Transformation – mit strategischer Beratung, professionellem Design und messbaren Ergebnissen. 16+ Jahre Expertise, über 100 erfolgreiche Projekte.
+              Wir entwickeln Websites, die Ihr Geschäft digital voranbringen. KI-gestützt, strategisch durchdacht und individuell umgesetzt.
             </p>
           </div>
 
           <div>
-            <h3 className={footerStyles.sectionHeading}>Unsere Leistungen</h3>
+            <h3 className={footerStyles.sectionHeading}>{t('footer.services')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
-              <li><Link to="/strategie" className={footerStyles.linkText}>Digitale Strategie</Link></li>
-              <li><Link to="/webdesign" className={footerStyles.linkText}>Webdesign</Link></li>
-              <li><Link to="/ki-technologien" className={footerStyles.linkText}>KI-Integration</Link></li>
-              <li><Link to="/website-relaunch" className={footerStyles.linkText}>Website Relaunch</Link></li>
-              <li><Link to="/webentwicklung" className={footerStyles.linkText}>Webentwicklung</Link></li>
-              <li><Link to="/automatisierte-content-marketing" className={footerStyles.linkText}>Content Automation</Link></li>
-              <li><Link to="/seo-optimierung" className={footerStyles.linkText}>SEO-Optimierung</Link></li>
-              <li><Link to="/google-ads" className={footerStyles.linkText}>Google Ads</Link></li>
+              <li><Link to="/strategie" className={footerStyles.linkText}>Strategie</Link></li>
+              <li><Link to="/webdesign" className={footerStyles.linkText}>{t('footer.webDesign')}</Link></li>
+              <li><Link to="/webentwicklung" className={footerStyles.linkText}>{t('footer.webDevelopment')}</Link></li>
+              <li><Link to="/content-erstellung" className={footerStyles.linkText}>{t('footer.contentCreation')}</Link></li>
+              <li><Link to="/seo-optimierung" className={footerStyles.linkText}>{t('footer.seo')}</Link></li>
+              <li><Link to="/google-ads" className={footerStyles.linkText}>{t('footer.ads')}</Link></li>
+              <li><Link to="/ki-technologien" className={footerStyles.linkText}>{t('footer.aiTechnologies')}</Link></li>
+              <li><Link to="/klickbetrug" className={footerStyles.linkText}>Klickbetrug-Schutz</Link></li>
+              <li><Link to="/werbeagentur-mainz" className={footerStyles.linkText}>Werbeagentur Mainz</Link></li>
+              <li><Link to="/werbeagentur-wiesbaden" className={footerStyles.linkText}>Werbeagentur Wiesbaden</Link></li>
+              <li><Link to="/werbeagentur-frankfurt" className={footerStyles.linkText}>Werbeagentur Frankfurt</Link></li>
+              <li><Link to="/werbeagentur-darmstadt" className={footerStyles.linkText}>Werbeagentur Darmstadt</Link></li>
+              <li><Link to="/digitalagentur-schweiz" className={footerStyles.linkText}>Digitalagentur Schweiz</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className={footerStyles.sectionHeading}>Unternehmen</h3>
+            <h3 className={footerStyles.sectionHeading}>{t('footer.company')}</h3>
             <ul className={`${footerStyles.listSpacing} ${footerStyles.bodyText}`}>
               <li><Link to="/" className={footerStyles.linkText}>Home</Link></li>
-              <li><Link to="/ueber-uns" className={footerStyles.linkText}>Über uns</Link></li>
-              <li><Link to="/referenzen" className={footerStyles.linkText}>Transformationen</Link></li>
-              <li><Link to="/kontakt" className={footerStyles.linkText}>Mit ooliv durchstarten</Link></li>
-              <li><Link to="/artikel" className={footerStyles.linkText}>Strategic Insights</Link></li>
+              <li><Link to="/ueber-uns" className={footerStyles.linkText}>{t('footer.aboutUs')}</Link></li>
+              <li><Link to="/referenzen" className={footerStyles.linkText}>Referenzen</Link></li>
+              <li><Link to="/kontakt" className={footerStyles.linkText}>{t('footer.contact')}</Link></li>
+              <li><Link to="/artikel" className={footerStyles.linkText}>Blog</Link></li>
             </ul>
           </div>
 
@@ -54,10 +59,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className={footerStyles.sectionHeading}>Kontakt</h3>
+            <h3 className={footerStyles.sectionHeading}>{t('footer.contactInfo')}</h3>
             <ul className={`${footerStyles.contactListSpacing} ${footerStyles.bodyText}`}>
-              <li className={footerStyles.companyName}>Uli Schönleber</li>
-              <li className="text-sm text-muted-foreground mb-2">Digital Strategy Lead · ooliv</li>
+              <li className={footerStyles.companyName}>ooliv</li>
               <li className={footerStyles.addressText}>
                 <MapPin className={footerStyles.contactIconWithMargin} />
                 <span>Mombacher Str. 25<br />55122 Mainz</span>
@@ -71,35 +75,7 @@ const Footer = () => {
                 <a href="mailto:info@ooliv.de" className={footerStyles.linkText}>info@ooliv.de</a>
               </li>
             </ul>
-            
-            <div className="mt-4 pt-4 border-t border-border">
-              <a 
-                href="https://www.linkedin.com/in/uli-schoenleber/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Uli Schönleber auf LinkedIn"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                <span>LinkedIn Profil</span>
-              </a>
-            </div>
           </div>
-        </div>
-        
-        {/* Team Signatur */}
-        <div className="mt-12 pt-8 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground mb-2">
-            Ihr ooliv-Team: <span className="font-semibold text-foreground">Uli & Kollegen</span>
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Digitale Strategie • Webdesign • KI-Integration – Persönlich. Messbar. Erfolgreich.
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            © {new Date().getFullYear()} ooliv · Alle Rechte vorbehalten
-          </p>
         </div>
       </div>
     </footer>

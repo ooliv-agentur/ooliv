@@ -1,95 +1,118 @@
 import React from 'react';
-import { Target, Lightbulb, Rocket, Zap } from 'lucide-react';
+import { Grid2X2, Sparkles, Code2, Phone } from 'lucide-react';
 import LocationServicesSection from '@/components/location/LocationServicesSection';
 import Reveal from '@/components/animations/Reveal';
 
 const MainzAboutSection = () => {
   const services = [
     {
-      title: "Strategic Discovery",
-      description: "4-6 Wochen intensive Discovery Phase – User Research, Business Model Validation, Strategic Roadmap.",
-      icon: <Target className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/strategie"
+      title: "Webdesign & Entwicklung",
+      description: "Moderne, schnelle Websites mit klarer Positionierung und überzeugenden Inhalten.",
+      icon: <Grid2X2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/webdesign"
     },
     {
-      title: "Product & UX Strategy",
-      description: "End-to-End Product Strategy – von User Journey Mapping bis Conversion Optimization mit messbaren KPIs.",
-      icon: <Lightbulb className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/produkt-ux-strategie"
+      title: "SEO & Local SEO Mainz",
+      description: "Mehr Sichtbarkeit für regionale Suchanfragen, technische Optimierung und nachhaltige Rankings.",
+      icon: <Code2 className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/seo-optimierung"
     },
     {
-      title: "AI Integration",
-      description: "Strategic AI Integration Advisory – von Use Case Identification bis Production Deployment.",
-      icon: <Zap className="h-6 w-6" style={{ color: 'black' }} />,
+      title: "Google Ads",
+      description: "Gezielte Kampagnen für qualifizierte Anfragen aus Mainz und Umgebung.",
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/google-ads"
+    },
+    {
+      title: "Content-Erstellung",
+      description: "Strukturierte, fachlich präzise Inhalte, die Interessenten in Kunden verwandeln.",
+      icon: <Phone className="h-6 w-6" style={{ color: 'black' }} />,
+      link: "/content-erstellung"
+    },
+    {
+      title: "Marketing Automation & KI",
+      description: "Automatisierte Lead-Prozesse, Reporting und digitale Workflows für effizientes Wachstum.",
+      icon: <Sparkles className="h-6 w-6" style={{ color: 'black' }} />,
       link: "/ki-technologien"
-    },
-    {
-      title: "Strategic Retainer",
-      description: "Langfristige C-Level Advisory Partnership für kontinuierliche Digital Transformation.",
-      icon: <Rocket className="h-6 w-6" style={{ color: 'black' }} />,
-      link: "/investition"
     }
   ];
 
   return (
     <LocationServicesSection
       location="Mainz"
-      headline="Strategic Digital Advisory in Mainz"
-      description="Von unserem Standort in Mainz aus führen wir Digital Transformationen für B2B-Unternehmen im gesamten DACH-Raum. 16+ Jahre Track Record in Strategic Discovery, AI Integration und Product & UX Strategy – kein klassisches Agentur-Modell, sondern C-Level Strategic Leadership."
+      headline="Ihre Digitalagentur vor Ort"
+      description="In der Gutenberg-Stadt verbinden wir Mainzer Tradition mit moderner Technologie. Als lokale Digitalagentur entwickeln wir Websites und Online-Strategien für Dienstleister, Medienunternehmen und B2B-Firmen – direkt vor Ort, mit regionalem Know-how und messbaren Resultaten für die Landeshauptstadt und das Rhein-Main-Gebiet."
       services={services}
-      ctaText="Mit ooliv durchstarten"
-      ctaLink="/kontakt"
-      servicesHeadline="Strategic Advisory Services"
-      gridCols={4}
+      ctaText="Mehr über unsere Arbeitsweise"
+      ctaLink="/strategie"
+      servicesHeadline="Leistungen für Mainzer Unternehmen"
+      gridCols={3}
     >
       {/* Target Audience Section */}
       <Reveal>
         <div className="mt-20 text-center">
           <h3 className="text-3xl md:text-4xl font-bold text-medico-darkGreen mb-6">
-            Für wen wir transformieren
+            Für wen wir arbeiten
           </h3>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            B2B-Unternehmen im DACH-Raum, die digitale Transformation ernst nehmen
+            Wir unterstützen Unternehmen aus Mainz und Rhein-Main in verschiedenen Bereichen
           </p>
           <div className="max-w-3xl mx-auto">
             <ul className="grid md:grid-cols-2 gap-4 text-left text-lg text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="text-accent-primary mt-1">•</span>
-                <span>Tech-Startups mit Product-Market Fit Challenges</span>
+                <span>Beratung und Professional Services</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-accent-primary mt-1">•</span>
-                <span>Mittelstand vor Digital Transformation</span>
+                <span>Industrie und Produktion</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-accent-primary mt-1">•</span>
-                <span>SaaS-Unternehmen mit UX Optimization Needs</span>
+                <span>SaaS- und Software-Unternehmen</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-accent-primary mt-1">•</span>
-                <span>Etablierte Unternehmen mit Innovation Gaps</span>
+                <span>Handwerk und regionale Dienstleister</span>
               </li>
               <li className="flex items-start gap-3 md:col-span-2 justify-center">
                 <span className="text-accent-primary mt-1">•</span>
-                <span>B2B-Firmen mit komplexen Strategic Challenges</span>
+                <span>Immobilien, Bau und technische Gewerke</span>
               </li>
             </ul>
             <p className="text-lg text-gray-600 mt-8 italic">
-              Investment-Range: €15k–80k für Transformations-Projekte, €8k–15k/Monat für Strategic Retainer.
+              Jede Branche erhält eine individuell abgestimmte digitale Strategie.
             </p>
           </div>
         </div>
       </Reveal>
 
-      {/* Why Mainz Section */}
+      {/* Why Local Section */}
       <Reveal>
-        <div className="mt-20 bg-gray-50 rounded-2xl p-12">
-          <h3 className="text-3xl md:text-4xl font-bold text-medico-darkGreen mb-6 text-center">
-            Warum Mainz als Standort?
+        <div className="mt-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-12">
+          <h3 className="text-3xl font-bold text-medico-darkGreen mb-8 text-center">
+            Warum eine lokale Werbeagentur?
           </h3>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed text-center">
-            Mainz bietet die perfekte Balance: Direkt an der Rhein-Main-Achse mit Nähe zu Frankfurt, Wiesbaden und Darmstadt, aber ohne Großstadt-Overhead. Seit 2008 entwickeln wir von hier aus Strategic Frameworks für B2B-Unternehmen im gesamten DACH-Raum. Persönliche Vor-Ort-Termine möglich, Remote-Work als Standard – maximale Flexibilität für C-Level Strategic Advisory.
-          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Direkte Abstimmung</h4>
+              <p className="text-gray-600">
+                Kurze Wege und schnelle Entscheidungen – persönlich in Mainz oder per Videocall.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Kenntnis der Region</h4>
+              <p className="text-gray-600">
+                Wir kennen den Markt, die lokale Konkurrenz und die Besonderheiten des Rhein-Main-Gebiets.
+              </p>
+            </div>
+            <div className="text-center">
+              <h4 className="text-xl font-semibold mb-3 text-medico-darkGreen">Erfahrung seit 2008</h4>
+              <p className="text-gray-600">
+                Langjährige Betreuung mittelständischer Unternehmen aus der Region.
+              </p>
+            </div>
+          </div>
         </div>
       </Reveal>
     </LocationServicesSection>

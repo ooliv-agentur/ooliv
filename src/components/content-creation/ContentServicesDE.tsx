@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Image, Video, Edit3 } from 'lucide-react';
+import { FileText, Image, Video, Edit3, Palette, Search, Zap } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const ContentServicesDE = () => {
@@ -14,22 +14,32 @@ const ContentServicesDE = () => {
     {
       icon: FileText,
       title: "SEO-Content & Texte",
-      description: "Blogbeiträge, Landingpages und Produkttexte – für Menschen und Suchmaschinen."
+      description: "Suchmaschinenoptimierte Texte, die Ihre Zielgruppe überzeugen und bei Google gefunden werden."
     },
     {
       icon: Image,
       title: "Visueller Content", 
-      description: "Infografiken und Graphics, die komplexe Themen einfach machen."
+      description: "Professionelle Bilder, Grafiken und visuelle Elemente für maximale Aufmerksamkeit."
     },
     {
       icon: Video,
       title: "Video & Multimedia",
-      description: "Erklärvideos, Testimonials, Social Media Clips – Content der haften bleibt."
+      description: "Bewegtbild-Content und interaktive Elemente, die Ihre Botschaft lebendig vermitteln."
     },
     {
       icon: Edit3,
       title: "Content-Strategie",
-      description: "Der strukturierte Plan: Welcher Content? Für welche Kanäle? Wann?"
+      description: "Klare Inhaltsplanung, die Ihre Geschäftsziele unterstützt und Kunden bindet."
+    },
+    {
+      icon: Palette,
+      title: "Brand Storytelling",
+      description: "Authentische Markengeschichten, die emotional bewegen und Vertrauen schaffen."
+    },
+    {
+      icon: Zap,
+      title: "Automatisierte Content-Verteilung",
+      description: "AI-gestützte tägliche Content-Erstellung und automatische Verteilung auf alle Kanäle für kontinuierliches Wachstum."
     }
   ];
 
@@ -45,7 +55,7 @@ const ContentServicesDE = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className={`shadow-sm ${getServiceClass(service.title)}`}>
               <CardHeader>

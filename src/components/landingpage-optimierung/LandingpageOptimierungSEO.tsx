@@ -17,8 +17,16 @@ const LandingpageOptimierungSEO = () => {
         </h2>
         
         <div className="prose prose-lg prose-invert mb-8">
+          <p className="text-gray-300 leading-relaxed mb-6">
+            Eine professionelle Landingpage-Optimierung steigert Ihre Conversion-Rate messbar. Durch gezielte UX-Tests, optimiertes Call-to-Action-Design und strategisch platzierte Vertrauenselemente verwandeln wir Ihre Besucher in Kunden. Wir analysieren den kompletten Conversion-Pfad – von der ersten Interaktion bis zum finalen Lead.
+          </p>
+          
+          <p className="text-gray-300 leading-relaxed mb-6">
+            Unsere datengetriebene Methode kombiniert Heatmap-Analysen, User-Journey-Optimierung und A/B-Testing, um Schwachstellen zu identifizieren. Dabei fokussieren wir uns auf messbare KPIs: Bounce-Rate-Reduktion, höhere Verweildauer und vor allem mehr qualifizierte Anfragen. Jede Optimierung basiert auf echten Nutzerdaten, nicht auf Annahmen.
+          </p>
+          
           <p className="text-gray-300 leading-relaxed">
-            Wir optimieren Ihre Landingpage für mehr Conversions – durch klare Struktur, überzeugende CTAs und datengetriebene Verbesserungen. Im Gespräch analysieren wir Ihre Seite und zeigen konkrete Maßnahmen.
+            Von der Optimierung der Informationsarchitektur über die Verbesserung der visuellen Hierarchie bis zur Implementierung psychologischer Trigger – wir entwickeln einen klaren Maßnahmenplan. Das Ergebnis: Eine Landingpage, die Vertrauen schafft, klar kommuniziert und systematisch mehr Leads generiert. Erfahren Sie mehr über unser <a href="/kostenloses-website-konzept" className="text-accent hover:underline">kostenloses Website-Konzept</a>.
           </p>
         </div>
 

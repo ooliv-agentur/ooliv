@@ -1,8 +1,11 @@
+
 import React from 'react';
-import StrategicFAQ from './StrategicFAQ';
+import WiesbadenFAQ from '@/components/de/WiesbadenFAQ';
 
 const FrankfurtWerbeagenturFAQ = () => {
-  return <StrategicFAQ location="Frankfurt" />;
+  return (
+    <WiesbadenFAQ />
+  );
 };
 
 export default FrankfurtWerbeagenturFAQ;

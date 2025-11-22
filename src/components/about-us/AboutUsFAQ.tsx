@@ -13,28 +13,24 @@ import { Link } from 'react-router-dom';
 const AboutUsFAQ = () => {
   const faqItems = [
     {
-      question: "Wie arbeiten Sie mit Ihren Kunden zusammen?",
-      answer: "Direkt und persönlich. Sie sprechen mit mir – dem Gründer und Digital-Berater – nicht mit wechselnden Projektmanagern. Wir starten mit einem ausführlichen Gespräch, entwickeln gemeinsam die Strategie und bleiben während des gesamten Projekts in engem Austausch. Kurze Wege, schnelle Entscheidungen."
+      question: "Was unterscheidet ooliv von anderen Digitalagenturen?",
+      answer: "Als spezialisierte Digitalagentur verbinden wir strategisches Denken mit praktischer Umsetzung. Bei uns arbeiten Sie direkt mit dem Gründer zusammen, was kurze Entscheidungswege und ein tiefes Verständnis für Ihre Ziele garantiert."
     },
     {
-      question: "Was macht Sie als Berater besonders?",
-      answer: "16+ Jahre Erfahrung in digitaler Strategie, ehrliche Ansagen statt Marketing-Blabla, und messbare Ergebnisse. Ich sage Ihnen, was wirklich funktioniert – auch wenn das manchmal bedeutet, von Ihren ursprünglichen Plänen abzuraten. Keine Junior-Berater, kein Agentur-Overhead."
+      question: "Welche Leistungen bietet ooliv als Digitalagentur an?",
+      answer: "Wir bieten ein Komplettpaket digitaler Marketingdienstleistungen – von Webdesign und -entwicklung über SEO und Content-Erstellung bis hin zu Google Ads und KI-Technologien. Wir konzentrieren uns auf messbare Ergebnisse und langfristigen Geschäftserfolg."
     },
     {
-      question: "Für welche Unternehmen arbeiten Sie?",
-      answer: "Hauptsächlich für B2B-Unternehmen im DACH-Raum: SaaS-Firmen, produzierende Unternehmen, Beratungen, Kanzleien, Gesundheitsdienstleister. Typischerweise mittelständische Unternehmen oder ambitionierte Start-ups, die digitales Marketing strategisch angehen wollen."
+      question: "Für welche Branchen arbeitet eure Digitalagentur?",
+      answer: "Wir haben besondere Expertise in B2B-Bereichen wie SaaS, Fertigung, Beratung, Recht und Gesundheitswesen. Von unserem Standort in Mainz aus unterstützen wir Unternehmen im gesamten DACH-Raum."
     },
     {
-      question: "Wie läuft ein typisches Projekt mit Ihnen ab?",
-      answer: "Wir starten mit einem kostenlosen Erstgespräch (30–60 Min.), entwickeln dann ein maßgeschneidertes Konzept mit klarem Zeitplan und Festpreis. Nach Ihrer Freigabe geht's los: Regelmäßige Updates, enger Austausch, transparente Fortschritte. Sie wissen immer, wo wir stehen."
+      question: "Wie ist der typische Projektablauf mit eurer Agentur?",
+      answer: "Jedes Projekt beginnt mit einem strategischen Gespräch, gefolgt von einer maßgeschneiderten Planung. Unser Team entwickelt dann Konzepte, setzt diese um und optimiert kontinuierlich. Als Full-Service Digitalagentur begleiten wir Sie von der ersten Idee bis zur langfristigen Betreuung."
     },
     {
-      question: "Können Sie auch einzelne Leistungen übernehmen?",
-      answer: "Ja, absolut. Sie brauchen nur SEO-Beratung? Nur einen Strategie-Workshop? Nur Google Ads Management? Kein Problem. Ich biete sowohl Full-Service als auch einzelne Module – je nachdem, was für Ihr Unternehmen am besten passt."
-    },
-    {
-      question: "Setzen Sie auch KI-Tools ein?",
-      answer: "Ja, wo es sinnvoll ist. KI hilft bei Content-Erstellung, Bild-Generierung und Prozess-Automatisierung – immer mit menschlicher Kontrolle und Veredelung. Keine Experimente, sondern bewährte Tools für bessere Effizienz bei gleichbleibender Qualität."
+      question: "Arbeitet ihr auch mit KI-Tools?",
+      answer: "Ja, wir nutzen modernste KI-Tools zur Effizienzsteigerung. Als zukunftsorientierte Digitalagentur setzen wir auf eine sinnvolle Balance zwischen technologischer Innovation und menschlicher Kreativität."
     }
   ];
 
@@ -47,7 +43,7 @@ const AboutUsFAQ = () => {
           </h2>
           <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Antworten auf die wichtigsten Fragen zur Zusammenarbeit
+            Antworten auf die wichtigsten Fragen über unsere Leistungen als Digitalagentur
           </p>
         </div>
         

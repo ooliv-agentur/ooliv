@@ -10,7 +10,7 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
-import { transformationsData } from '@/components/CaseStudiesSection';
+import { caseStudiesData } from '@/components/CaseStudiesSection';
 import Reveal from '@/components/animations/Reveal';
 import OptimizedImage from '@/components/OptimizedImage';
 
@@ -18,8 +18,8 @@ const WebDevCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Use all transformations with new structure
-  const relevantCases = transformationsData.de;
+  // Use all 5 case studies
+  const relevantCases = caseStudiesData.de;
   
   const translations = {
     en: {
@@ -30,7 +30,7 @@ const WebDevCaseStudies = () => {
       services: "SERVICES:"
     },
     de: {
-      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
+      title: "Entwicklung, die wirklich etwas bewirkt",
       subtitle: "Echte Ergebnisse aus maßgeschneiderten Entwicklungsprojekten.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen",
@@ -41,13 +41,17 @@ const WebDevCaseStudies = () => {
   const t = translations.de;
   const caseStudiesPath = "/referenzen";
   
-  // Adapt transformations data for web development display format
+  // Adapt case studies data for web development display format
   const cases = relevantCases.map(study => ({
     client: study.client,
     industry: study.industry,
-    summary: study.challenge,
-    services: study.approach.slice(0, 3),
-    kpis: study.outcomes.map(outcome => outcome.metric),
+    summary: study.headline,
+    services: [
+      "WordPress-Entwicklung", 
+      "ERP Integration", 
+      "Performance-Optimierung"
+    ],
+    kpis: study.impact.map(impact => impact.split(' ')[0]),
     image: study.image
   }));
 

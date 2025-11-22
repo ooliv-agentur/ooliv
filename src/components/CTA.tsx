@@ -48,9 +48,7 @@ const CTA = ({
       text === 'Start Your SEO Strategy' ||
       text === 'Content-Projekt starten' ||
       text === 'Launch Your Campaign' ||
-      text === 'Kampagne starten' ||
-      text === 'Mit ooliv durchstarten' ||
-      text === 'Get Started with ooliv'
+      text === 'Kampagne starten'
     ) {
       return true;
     }
@@ -59,8 +57,7 @@ const CTA = ({
            text.includes('Start Your') || 
            text.includes('Launch Your') ||
            text.includes('SEO-Strategie starten') ||
-           text.includes('Kampagne starten') ||
-           text.includes('Mit ooliv durchstarten');
+           text.includes('Kampagne starten');
   };
   
   const handleOpenLeadForm = () => {

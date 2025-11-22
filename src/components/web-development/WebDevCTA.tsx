@@ -14,7 +14,7 @@ const WebDevCTA = () => {
     ? "Wir entwickeln Websites, die schnell laden, gut ranken und Anfragen generieren – technisch solide, ohne Schnickschnack."
     : "We develop websites that load fast, rank well and generate inquiries – technically solid, no frills.";
     
-  const primaryCta = language === 'de' ? "Mit ooliv durchstarten" : "Get Started with ooliv";
+  const primaryCta = language === 'de' ? "Website-Projekt starten" : "Start Website Project";
   const secondaryCta = language === 'de' ? "Erstgespräch buchen" : "Book Initial Call";
   const secondaryCtaLink = language === 'de' ? "/kontakt" : "/en/contact";
 

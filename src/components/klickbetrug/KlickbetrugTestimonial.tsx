@@ -72,7 +72,7 @@ const KlickbetrugTestimonial = () => {
         <Reveal>
           <div className="text-center mb-12">
             <h2 className={`${getHeadingClasses('h2', 'primary', 'center')} mb-6`}>
-              Was unsere Kunden über die Zusammenarbeit mit ooliv sagen
+              Was unsere Kunden über den Klickbetrug-Schutz sagen
             </h2>
             <p className={`${getBodyClasses('large', 'secondary', 'center')} max-w-2xl mx-auto`}>
               Echte Erfahrungen von Unternehmen, die ihr Werbebudget erfolgreich geschützt haben.

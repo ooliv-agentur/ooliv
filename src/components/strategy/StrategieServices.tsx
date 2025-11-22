@@ -1,77 +1,72 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { CheckCircle } from 'lucide-react';
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
-import { Button } from '@/components/ui/button';
 
 const StrategieServices = () => {
   const services = [
     {
-      title: "Strategische Analyse & Roadmap",
-      description: "Von der Bestandsaufnahme zur klaren Roadmap – damit Sie wissen, was als nächstes zu tun ist.",
-      link: "/kontakt"
+      title: "Website-Strategieberatung",
+      features: [
+        "Zielgruppenbestimmung und Kundenprofile",
+        "Konkurrenzanalyse und Marktpositionierung", 
+        "Inhaltsplanung und Seitenaufbau",
+        "Mehr Anfragen generieren und Nutzerführung"
+      ]
     },
     {
-      title: "UX-Optimierung & Customer Journeys",
-      description: "Wir entwickeln Nutzerführungen, die konvertieren – datenbasiert und auf Ihre Ziele zugeschnitten.",
-      link: "/webdesign"
+      title: "UX/UI Konzeption",
+      features: [
+        "User Journey Mapping",
+        "Wireframing und Prototyping",
+        "Responsive Design Konzepte",
+        "Accessibility und Usability"
+      ]
     },
     {
-      title: "KI-Integration für Ihr Business",
-      description: "Konkrete KI-Anwendungsfälle für effizientere Workflows und intelligentere Prozesse.",
-      link: "/ki-technologien"
-    },
-    {
-      title: "Umsetzungsbegleitung",
-      description: "Wir koordinieren alle Beteiligten und begleiten Sie von der Planung bis zum erfolgreichen Go-Live.",
-      link: "/website-relaunch"
+      title: "SEO-Strategieentwicklung", 
+      features: [
+        "Keyword-Research und Content-Planung",
+        "Technische SEO-Optimierung",
+        "Local SEO für regionale Unternehmen",
+        "Performance-Monitoring und Reporting"
+      ]
     }
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              Wie wir Ihnen helfen
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen">
+              Unsere Strategie-Leistungen
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Von der Analyse Ihrer Situation bis zur erfolgreichen Umsetzung – mit klaren Schritten und messbaren Ergebnissen.
+            <p className="text-lg md:text-xl text-accent-primary max-w-3xl mx-auto">
+              Umfassende Beratung und Konzeption für Ihren digitalen Erfolg
             </p>
           </div>
         </Reveal>
         
-        <StaggerReveal className="grid md:grid-cols-2 gap-8">
+        <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-card p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 flex flex-col"
+              className="bg-medico-mint/20 rounded-2xl p-8 shadow-sm"
             >
-              <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1 mb-6">
-                {service.description}
-              </p>
-              <Link to={service.link}>
-                <Button variant="outline" className="w-full">
-                  Im Gespräch mehr erfahren
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <h3 className="text-2xl font-bold mb-6 text-medico-darkGreen">{service.title}</h3>
+              <ul className="space-y-4">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-accent-primary mt-0.5 mr-3 flex-shrink-0" />
+                    <span className="text-medico-darkGreen/90 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </StaggerReveal>
-
-        <div className="mt-16 bg-muted/30 p-8 rounded-xl border border-border text-center">
-          <h3 className="text-2xl font-bold mb-4 text-foreground">
-            Was Sie am Ende haben
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Eine klare Strategie mit konkreten nächsten Schritten, messbare KPIs zur Erfolgskontrolle und – wenn gewünscht – Begleitung bei der Umsetzung mit <Link to="/webdesign" className="text-primary hover:underline font-medium">professionellem Webdesign</Link> und <Link to="/webentwicklung" className="text-primary hover:underline font-medium">technischer Webentwicklung</Link> bis zum Go-Live.
-          </p>
-        </div>
       </div>
     </section>
   );

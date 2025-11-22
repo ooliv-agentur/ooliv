@@ -12,27 +12,23 @@ const ContactFAQSectionDE = () => {
   const contactFaqs = [
     {
       question: "Wie schnell erhalte ich eine Antwort auf meine Anfrage?",
-      answer: "In der Regel noch am selben Werktag – meist innerhalb weniger Stunden. Sie müssen nicht tagelang auf eine Rückmeldung warten."
+      answer: "Wir antworten in der Regel noch am selben Tag – ohne Warteschleifen."
     },
     {
-      question: "Ist das Erstgespräch wirklich kostenlos?",
-      answer: "Ja, absolut. Das erste Gespräch (30–60 Min.) ist unverbindlich und kostenlos. Wir besprechen Ihre Situation, Ihre Ziele und ob eine Zusammenarbeit Sinn macht – ohne versteckte Kosten oder Verpflichtungen."
+      question: "Habe ich einen festen Ansprechpartner für mein Projekt?",
+      answer: "Ja, bei ooliv haben Sie immer einen direkten Ansprechpartner aus unserer Geschäftsführung."
     },
     {
-      question: "Was muss ich zum Erstgespräch mitbringen?",
-      answer: "Eigentlich nur Ihre Herausforderungen und Ziele. Hilfreich ist es, wenn Sie Ihre aktuelle Website-URL parat haben und grob einschätzen können, was Sie erreichen möchten. Den Rest klären wir gemeinsam im Gespräch."
+      question: "Kann ich ein kostenloses Erstgespräch vereinbaren?",
+      answer: "Ja, selbstverständlich! Kontaktieren Sie uns telefonisch, per E-Mail oder über das Formular."
     },
     {
-      question: "Habe ich einen festen Ansprechpartner?",
-      answer: "Ja! Sie arbeiten direkt mit mir zusammen – keine wechselnden Projektmanager, keine Hierarchien. Kurze Wege, schnelle Entscheidungen, persönlicher Kontakt während des gesamten Projekts."
+      question: "Welche Leistungen bietet ooliv an?",
+      answer: "Strategie, Webdesign, Webentwicklung, Content-Erstellung, SEO-Optimierung, Google Ads und KI-Technologien."
     },
     {
-      question: "Wie läuft ein typisches Projekt ab?",
-      answer: "Nach dem Erstgespräch erstelle ich ein maßgeschneidertes Angebot mit Festpreis und Zeitplan. Nach Ihrer Freigabe starten wir: Regelmäßige Updates, enger Austausch, transparente Fortschritte. Sie wissen immer genau, wo wir stehen und was als nächstes kommt."
-    },
-    {
-      question: "Können wir auch kurzfristig starten?",
-      answer: "In vielen Fällen ja. Nach unserem Erstgespräch kann ich meist innerhalb von 3–5 Werktagen ein Angebot erstellen. Danach können wir oft innerhalb 1–2 Wochen starten. Bei dringenden Projekten geht's auch schneller."
+      question: "Wie läuft der Projektprozess bei ooliv ab?",
+      answer: "Klar strukturiert: Erstgespräch, Strategie, Umsetzung, Testing und Launch – alles transparent und ohne Zwischenstellen."
     }
   ];
 
@@ -45,7 +41,7 @@ const ContactFAQSectionDE = () => {
           </h2>
           <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-            Antworten auf wichtige Fragen zur ersten Kontaktaufnahme
+            Hier finden Sie Antworten auf die wichtigsten Fragen rund um unser Angebot.
           </p>
         </div>
         

@@ -1,39 +1,38 @@
+
 import React from 'react';
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Plus, Minus } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Reveal from '@/components/animations/Reveal';
+import StaggerReveal from '@/components/animations/StaggerReveal';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Reveal from '@/components/animations/Reveal';
-import StaggerReveal from '@/components/animations/StaggerReveal';
-import { ArrowRight } from 'lucide-react';
 
 const SchweizFAQ = () => {
   const faqs = [
     {
-      question: "Arbeiten Sie auch mit Schweizer Unternehmen?",
-      answer: "Ja, sehr gerne! Ich arbeite erfolgreich mit B2B-Kunden aus der ganzen Schweiz zusammen – von Zürich über Bern bis Genf. Die Zusammenarbeit läuft komplett remote über Videocalls und moderne Tools, was Kosten spart ohne Qualitätsverlust."
+      question: "Wie funktioniert die Zusammenarbeit über die Grenze?",
+      answer: "Wir arbeiten komplett remote – per Videocall, E-Mail und modernen Projektmanagement-Tools. Viele unserer Schweizer Kunden schätzen die Kosteneffizienz einer deutschen Agentur ohne Qualitätsverlust."
     },
     {
-      question: "Wie funktioniert die Bezahlung – Euro oder Franken?",
-      answer: "Sie entscheiden: Rechnung wahlweise in CHF oder EUR. Für Schweizer Kunden rechne ich typischerweise in Franken ab. Ein Strategie-Workshop kostet CHF 17.000–28.000, komplette Projekte CHF 45.000–90.000, laufende Begleitung ab CHF 9.000/Monat."
+      question: "Welche Währung gilt für Schweizer Projekte?",
+      answer: "Wir bieten Ihnen Preise in CHF an. Abrechnung erfolgt wahlweise in CHF oder EUR, je nach Ihrer Präferenz. Alle Preise sind transparent und ohne versteckte Kosten."
     },
     {
-      question: "Kennen Sie den Schweizer Markt?",
-      answer: "Ja. Ich arbeite seit Jahren mit Schweizer B2B-Unternehmen und kenne die Besonderheiten: .ch-Domains, mehrsprachige Anforderungen (DE/FR/IT), hohe Qualitätsansprüche und die spezifischen Erwartungen Ihrer Zielgruppe. DSGVO-konforme Umsetzung ist selbstverständlich."
+      question: "Kennt ihr den Schweizer Markt?",
+      answer: "Ja. Wir betreuen bereits Kunden auf Mallorca und haben Erfahrung mit internationalen Projekten. Für Schweizer Unternehmen beachten wir lokale Besonderheiten: .ch-Domains, mehrsprachige Websites (DE/FR/IT) und Schweizer Datenschutzstandards."
     },
     {
-      question: "Kommen Sie auch in die Schweiz für persönliche Meetings?",
-      answer: "Für wichtige Meilensteine wie Kickoff-Meetings oder Strategie-Workshops komme ich gerne persönlich vorbei. Die laufende Zusammenarbeit läuft remote – das ist effizienter und günstiger für Sie. Bei größeren Projekten plane ich regelmäßige Vor-Ort-Termine ein."
+      question: "Was kostet eine Website für ein Schweizer Unternehmen?",
+      answer: "Unsere B2B-Websites starten bei CHF 7.000. Komplexe Projekte mit mehrsprachigen Inhalten und SEO beginnen bei CHF 12.000. Laufende SEO-Betreuung ab CHF 950/Monat, Google Ads Setup ab CHF 600, Pflege ab CHF 300/Monat + Werbebudget."
     },
     {
-      question: "Bieten Sie auch mehrsprachige Websites an?",
-      answer: "Ja, absolut. Viele Schweizer Projekte sind mehrsprachig (DE/FR/IT oder auch EN). Wir entwickeln die Website-Struktur von Anfang an mehrsprachig und können auch bei Content-Erstellung in verschiedenen Sprachen unterstützen – mit muttersprachlichen Redakteuren."
-    },
-    {
-      question: "Was unterscheidet Sie von Schweizer Agenturen?",
-      answer: "Sie sparen die typischen Schweizer Agentur-Aufschläge, erhalten aber dieselbe Qualität: Direkte Zusammenarbeit mit einem erfahrenen Digital-Berater, klare Prozesse, messbare Ergebnisse. Viele Schweizer Kunden schätzen das Preis-Leistungs-Verhältnis bei gleichbleibend hohem Standard."
+      question: "Bietet ihr auch mehrsprachige Websites an?",
+      answer: "Ja – wir entwickeln Websites in Deutsch, Französisch und Italienisch, optimiert für den Schweizer Markt mit entsprechender SEO-Strategie für .ch-Domains."
     }
   ];
 
@@ -51,7 +50,7 @@ const SchweizFAQ = () => {
             </h2>
             <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Antworten für Schweizer Unternehmen zur Zusammenarbeit
+              Hier finden Sie Antworten auf die wichtigsten Fragen zur grenzüberschreitenden Zusammenarbeit.
             </p>
           </div>
         </Reveal>
@@ -81,14 +80,14 @@ const SchweizFAQ = () => {
           <div className="mt-16 text-center">
             <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20">
               <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
-                Weitere Fragen zu Strategic Advisory?
+                Haben Sie noch weitere Fragen?
               </h3>
               <button 
                 onClick={handleStartProject}
                 className="inline-flex items-center gap-2 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-accent-primary hover:text-white hover:border-accent-primary font-medium px-8 py-3 transition-all duration-300"
               >
                 <ArrowRight className="h-4 w-4" />
-                Mit ooliv durchstarten
+                Weitere Fragen? Sprechen Sie mit uns
               </button>
             </div>
           </div>

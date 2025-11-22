@@ -5,9 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import ScrollIndicator from './ScrollIndicator';
 import { useIsMobile } from '@/hooks/use-mobile';
-import BenefitsList from './hero/BenefitsList';
-import { FloatingElement } from './animations/FloatingElement';
-import { motion } from 'framer-motion';
+import DynamicSubheadlines from './animations/DynamicSubheadlines';
 
 interface PageHeroProps {
   badge?: string;
@@ -31,13 +29,6 @@ interface PageHeroProps {
   // New props for homepage dynamic subheadlines
   dynamicSubheadlines?: string[];
   dynamicPrefix?: string;
-  benefitsVariant?: "gradient" | "solid" | "pattern" | "none";
-  // Hero illustration
-  heroIllustration?: {
-    src: string;
-    alt: string;
-    animate?: boolean;
-  };
 }
 
 const PageHero = ({
@@ -52,9 +43,7 @@ const PageHero = ({
   isHomepage = false,
   backgroundVideo,
   dynamicSubheadlines,
-  dynamicPrefix,
-  benefitsVariant = "gradient",
-  heroIllustration
+  dynamicPrefix
 }: PageHeroProps) => {
   const { language } = useLanguage();
   const isMobile = useIsMobile();
@@ -117,9 +106,7 @@ const PageHero = ({
       text === 'Start Your SEO Strategy' ||
       text === 'Content-Projekt starten' ||
       text === 'Launch Your Campaign' ||
-      text === 'Kampagne starten' ||
-      text === 'Mit ooliv durchstarten' ||
-      text === 'Get Started with ooliv'
+      text === 'Kampagne starten'
     ) {
       return true;
     }
@@ -128,8 +115,7 @@ const PageHero = ({
            text.includes('Start Your') || 
            text.includes('Launch Your') ||
            text.includes('SEO-Strategie starten') ||
-           text.includes('Kampagne starten') ||
-           text.includes('Mit ooliv durchstarten');
+           text.includes('Kampagne starten');
   };
   
   // Default content based on language
@@ -147,14 +133,19 @@ const PageHero = ({
             {title || defaultHomepageTitle}
           </h1>
           
-          {/* Benefits list section for homepage */}
+          {/* Dynamic subheadlines section for homepage */}
           {dynamicSubheadlines && (
-            <div className="mb-8 sm:mb-10">
-              <BenefitsList 
-                benefits={dynamicSubheadlines}
-                prefix={dynamicPrefix}
-                variant={benefitsVariant}
-              />
+            <div className="text-left mb-6 sm:mb-8">
+              <div
+                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px] text-muted-foreground"
+              >
+                {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
+                <DynamicSubheadlines 
+                  subheadlines={dynamicSubheadlines}
+                  interval={4000}
+                  className="inline"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -180,7 +171,7 @@ const PageHero = ({
   
   const renderCtas = () => {
     const defaultPrimaryCta = {
-      text: startProjectText || "Mit ooliv durchstarten",
+      text: startProjectText || "Kostenloses Konzept sichern",
       link: "#",
       onClick: handleOpenLeadForm
     };
@@ -283,46 +274,15 @@ const PageHero = ({
       
       <div className="relative z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className={`${heroIllustration ? 'grid lg:grid-cols-2 gap-8 lg:gap-12 items-center' : 'max-w-4xl mx-auto'} flex flex-col justify-center items-start min-h-[60vh]`}>
-            {/* Content Column */}
-            <div className="flex flex-col justify-center items-start">
-              {badge && (
-                <p className="text-sm font-semibold mb-4 uppercase tracking-wide text-turquoise">
-                  {badge}
-                </p>
-              )}
-              {renderTitle()}
-              {renderSubtitle()}
-              {renderCtas()}
-            </div>
-            
-            {/* Illustration Column */}
-            {heroIllustration && (
-              <motion.div
-                className="hidden lg:flex justify-center items-center"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {heroIllustration.animate ? (
-                  <FloatingElement duration={4} intensity={10}>
-                    <img
-                      src={heroIllustration.src}
-                      alt={heroIllustration.alt}
-                      className="w-full h-auto max-w-lg drop-shadow-2xl"
-                      loading="eager"
-                    />
-                  </FloatingElement>
-                ) : (
-                  <img
-                    src={heroIllustration.src}
-                    alt={heroIllustration.alt}
-                    className="w-full h-auto max-w-lg drop-shadow-2xl"
-                    loading="eager"
-                  />
-                )}
-              </motion.div>
+          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+            {badge && (
+              <p className="text-sm font-semibold mb-4 uppercase tracking-wide text-turquoise">
+                {badge}
+              </p>
             )}
+            {renderTitle()}
+            {renderSubtitle()}
+            {renderCtas()}
           </div>
         </div>
       </div>

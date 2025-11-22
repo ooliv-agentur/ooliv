@@ -71,7 +71,7 @@ const WebDesignCaseStudies = () => {
       whatWeDid: "WHAT WE DID:"
     },
     de: {
-      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
+      title: "Webdesign Erfolgsgeschichten",
       subtitle: "Echte Ergebnisse, die wir für Unternehmen durch strategisches Webdesign und Entwicklung erzielt haben.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen",

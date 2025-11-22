@@ -4,15 +4,15 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { transformationsData } from '@/components/CaseStudiesSection';
+import { caseStudiesData } from '@/components/CaseStudiesSection';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const SEOCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
   
-  // Use all case studies with new transformation structure
-  const relevantCases = transformationsData.de;
+  // Use all 5 case studies
+  const relevantCases = caseStudiesData.de;
   
   const translations = {
     en: {
@@ -22,7 +22,7 @@ const SEOCaseStudies = () => {
       viewAll: "View All Case Studies"
     },
     de: {
-      title: "Erfolgsgeschichten aus der Zusammenarbeit mit ooliv",
+      title: "Echte SEO-Ergebnisse für echte Unternehmen",
       subtitle: "Sehen Sie, wie unsere SEO-Strategien aus Mainz messbare Geschäftsergebnisse erzielen.",
       viewFull: "Vollständige Fallstudie ansehen",
       viewAll: "Alle Fallstudien ansehen"
@@ -66,17 +66,17 @@ const SEOCaseStudies = () => {
               </div>
               
               <div className="flex gap-6 mb-6">
-                {study.outcomes.slice(0, 2).map((outcome, idx) => (
+                {study.impact.slice(0, 2).map((result, idx) => (
                   <div key={idx} className="flex items-start gap-2">
                     <div>
-                      <p className="text-2xl font-bold text-brand-heading">{outcome.metric}</p>
-                      <p className="text-sm text-brand-text">{outcome.label}</p>
+                      <p className="text-2xl font-bold text-brand-heading">{result.split(' ')[0]}</p>
+                      <p className="text-sm text-brand-text">{result.split(' ').slice(1).join(' ')}</p>
                     </div>
                   </div>
                 ))}
               </div>
               
-              <p className="text-brand-text mb-6">{study.challenge}</p>
+              <p className="text-brand-text mb-6">{study.headline}</p>
               
               <Button variant="outline" size="sm" className="group" asChild>
                 <Link to={caseStudiesPath}>

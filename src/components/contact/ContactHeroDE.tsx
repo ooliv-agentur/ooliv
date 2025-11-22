@@ -33,7 +33,7 @@ const ContactHeroDE = () => {
                 color: '#003343' 
               }}
             >
-              Sprechen Sie direkt mit Uli und dem ooliv-Team
+              Kontaktieren Sie ooliv direkt
             </h1>
             
             {/* Subtitle */}
@@ -52,7 +52,7 @@ const ContactHeroDE = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleStartProject}
               >
-                Mit ooliv durchstarten
+                Projekt starten
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               

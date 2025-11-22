@@ -3,7 +3,6 @@ import PageLayout from '@/components/PageLayout';
 import CaseStudiesHero from '@/components/case-studies/CaseStudiesHero';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import DetailedCaseStudiesSection from '@/components/case-study/DetailedCaseStudiesSection';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
@@ -84,7 +83,7 @@ const GermanCaseStudies = () => {
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
         title="Referenzen & Case Studies | ooliv Digitalagentur"
-        description="Erfolgsgeschichten aus der Zusammenarbeit mit ooliv: B2B-Projekte von Uli und dem Team. Webdesign, SEO & Strategie mit messbaren Ergebnissen – echte Erfolge statt leerer Versprechen."
+        description="Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen."
         canonicalUrl="https://ooliv.de/referenzen"
         keywords="Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland"
         breadcrumbs={breadcrumbs}
@@ -92,10 +91,8 @@ const GermanCaseStudies = () => {
       
       <CaseStudiesHero />
       
-      <DetailedCaseStudiesSection />
-      
       <div className="section-container">
-        <CaseStudiesSection
+        <CaseStudiesSection 
           customTitle="Echte Ergebnisse von echten Kunden"
           customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
           customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."

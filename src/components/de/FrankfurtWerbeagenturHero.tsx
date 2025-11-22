@@ -9,9 +9,9 @@ const FrankfurtWerbeagenturHero = () => {
 
   // Dynamic subheadlines specifically for Frankfurt businesses
   const dynamicEndings = [
-    "Professionelle digitale Präsenz",
-    "Mehr Sichtbarkeit im Rhein-Main-Gebiet",
-    "Website-Strategie für Ihr Wachstum"
+    "online gefunden zu werden.",
+    "mehr Kunden aus der Region.",
+    "Websites, die verkaufen."
   ];
 
   const videoPath = "/lovable-uploads/Startpage-german-english.mp4";
@@ -20,18 +20,17 @@ const FrankfurtWerbeagenturHero = () => {
     <PageHero 
       isHomepage={true} 
       backgroundVideo={videoPath}
-      title="Website-Strategie & Digitale Beratung in Frankfurt"
-      subtitle="Frankfurt verdient mehr als Standard-Websites. Ich helfe Banken, Konzernen und Startups, digital auf dem nächsten Level zu sein – mit strategischer Expertise und messbaren Ergebnissen."
-      dynamicPrefix="Sie bekommen:"
+      title="Werbeagentur Frankfurt – für Banken, Konzerne & Startups"
+      subtitle="Ihre Frankfurter Digitalagentur für Websites, SEO und Marketing. Keine Zwischenstellen, keine leeren Versprechen – nur messbare Resultate."
+      dynamicPrefix="Frankfurter Unternehmen brauchen"
       dynamicSubheadlines={dynamicEndings}
-      benefitsVariant="solid"
       primaryCta={{
-        text: "Kostenloses Erstgespräch",
+        text: "Projekt besprechen",
         link: "#",
         onClick: handleStartProject
       }}
       secondaryCta={{
-        text: "Erfolgsbeispiele ansehen",
+        text: "Frankfurter Erfolge",
         link: "/referenzen"
       }}
     />

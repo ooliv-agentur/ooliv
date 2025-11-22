@@ -26,12 +26,12 @@ const WerbeagenturDarmstadt = () => {
   useEffect(() => {
     setLanguage('de');
     console.log('WerbeagenturDarmstadt component mounted - setting language to German');
-    document.title = 'Digital Strategy Lead Darmstadt | Uli Schönleber | ooliv';
+    document.title = 'Werbeagentur Darmstadt – Strategisch statt oberflächlich';
   }, []);
   
   const breadcrumbs = [
     { name: "Home", url: "https://ooliv.de/" },
-    { name: "Digital Strategy Lead Darmstadt", url: "https://ooliv.de/werbeagentur-darmstadt" }
+    { name: "Werbeagentur Darmstadt", url: "https://ooliv.de/werbeagentur-darmstadt" }
   ];
   
   return (
@@ -40,16 +40,16 @@ const WerbeagenturDarmstadt = () => {
         className="overflow-x-hidden"
       >
         <EnhancedSEOHead
-          title="Digital Strategy Lead Darmstadt | Uli Schönleber | ooliv"
-          description="Strategic Digital Advisory Darmstadt: Product & UX Strategy für Tech-Unternehmen. AI Integration, Strategic Discovery. TU-Region, technisch präzise."
+          title="Werbeagentur Darmstadt | ooliv aus Mainz"
+          description="Werbeagentur Darmstadt: Websites für Tech & Wissenschaft. TU-Umfeld, Engineering, Hightech-Startups. Technisch präzise, strategisch fundiert."
           canonicalUrl="https://ooliv.de/werbeagentur-darmstadt"
-          keywords="Digital Strategy Lead Darmstadt, Strategic Advisory Darmstadt, Product Strategy Darmstadt, Tech Strategy Darmstadt"
+          keywords="Werbeagentur Darmstadt, Webdesign Darmstadt, Online Marketing Darmstadt, SEO Darmstadt"
           breadcrumbs={breadcrumbs}
         />
         
         <LocalBusinessSchemaGenerator
-          businessName="ooliv Digital Strategy Lead Darmstadt"
-          description="Digital Strategy Lead für B2B-Tech-Transformationen in Darmstadt. Strategic Discovery, AI Integration für Tech & Wissenschaft im TU-Umfeld."
+          businessName="ooliv Werbeagentur Darmstadt"
+          description="Full-Service Werbeagentur in Darmstadt für Webdesign, SEO, Google Ads und digitales Marketing. Inhabergeführt seit 2008."
           address={{
             streetAddress: "Mombacher Str. 25",
             addressLocality: "Mainz",
@@ -81,12 +81,15 @@ const WerbeagenturDarmstadt = () => {
             "Hessen"
           ]}
           services={[
-            "Digital Strategy",
-            "Strategic Discovery",
-            "AI Integration",
-            "Product & UX Strategy",
-            "C-Level Advisory",
-            "Digital Transformation"
+            "Webdesign",
+            "Webentwicklung",
+            "SEO-Optimierung",
+            "Local SEO",
+            "Google Ads",
+            "Content Marketing",
+            "Marketing Automation",
+            "Digitale Strategieberatung",
+            "KI-Technologien"
           ]}
         />
         

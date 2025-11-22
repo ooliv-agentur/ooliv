@@ -4,16 +4,12 @@ import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import WebDesignHero from '@/components/web-design/WebDesignHero';
 import WebDesignBenefits from '@/components/web-design/WebDesignBenefits';
-import WebDesignWhyUs from '@/components/web-design/WebDesignWhyUs';
 import WebDesignStructureFirst from '@/components/web-design/WebDesignStructureFirst';
 import WebDesignBuildOptions from '@/components/web-design/WebDesignBuildOptions';
 import WebDesignProcess from '@/components/web-design/WebDesignProcess';
 import WebDesignFAQ from '@/components/web-design/WebDesignFAQ';
-import RelatedServicesGrid from '@/components/web-design/RelatedServicesGrid';
 import CTA from '@/components/CTA';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
-import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import StickyCTA from '@/components/conversion/StickyCTA';
 
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
@@ -27,38 +23,14 @@ const GermanWebDesign = () => {
     { name: "Webdesign", url: "https://ooliv.de/webdesign" }
   ];
 
-  const webdesignTestimonials = [
-    {
-      quote: "Das Design ist nicht nur schön, es funktioniert auch. Unsere Conversion-Rate ist um 180% gestiegen und wir bekommen endlich die richtigen Anfragen.",
-      author: "Michael Klaiber",
-      role: "Geschäftsführer",
-      company: "KLAIBER Steuerberatung",
-      industry: "Steuerberatung"
-    },
-    {
-      quote: "Uli hat unsere komplexe KI-Technologie so kommuniziert, dass sie sofort verständlich ist. Die Website ist jetzt unser bestes Sales-Tool.",
-      author: "Dr. Stefan Wagner",
-      role: "CEO",
-      company: "IconPro GmbH",
-      industry: "KI-Software"
-    },
-    {
-      quote: "Endlich eine Website, die zu unserem Qualitätsanspruch passt. Das Design ist modern, die Nutzerführung klar – und die Anfragen haben sich verdoppelt.",
-      author: "Thomas Müller",
-      role: "Geschäftsführer",
-      company: "COBUS GmbH",
-      industry: "Industrieservice"
-    }
-  ];
-
   return (
     <>
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="Professionelles Webdesign für B2B | UI/UX, Conversion & SEO | ooliv Mainz"
-          description="Webdesign durch Uli und das ooliv-Team: Conversion-optimiert, SEO-ready & mobile first für B2B. Von der Strategie bis zum Launch – persönliche Betreuung, messbare Ergebnisse."
+          title="Professionelles Webdesign – Websites, die konvertieren | ooliv"
+          description="Professionelles Webdesign für B2B-Unternehmen. ✓ Conversion-optimiert ✓ SEO-ready ✓ Mobile First. Von Strategie bis Launch. Jetzt Beratung!"
           canonicalUrl="https://ooliv.de/webdesign"
-          keywords="Webdesign, Webdesign Mainz, Website Design, UI/UX Design, Responsive Design, B2B Websites, Conversion-Optimierung, Website erstellen, Professionelles Webdesign"
+          keywords="Webdesign, Website erstellen, Responsive Design, UX Design, B2B Websites, Conversion-Optimierung"
           breadcrumbs={breadcrumbs}
         />
         
@@ -66,6 +38,24 @@ const GermanWebDesign = () => {
           serviceName="Webdesign & Website-Entwicklung"
           description="Professionelles Webdesign und Website-Entwicklung für B2B-Unternehmen. Individuelle, responsive Websites die konvertieren."
           serviceType="WebDesign"
+          priceRange="€4000-€15000"
+          offers={[
+            {
+              name: "Einfache Website",
+              description: "Professionelle Website für kleine Unternehmen",
+              priceRange: "€5000-€8000"
+            },
+            {
+              name: "Business Website",
+              description: "Umfangreiche Website mit SEO-Optimierung",
+              priceRange: "€8000-€15000"
+            },
+            {
+              name: "E-Commerce Website",
+              description: "Online-Shop mit erweiterten Funktionen",
+              priceRange: "€12000-€25000"
+            }
+          ]}
         />
         
         {/* FAQ Schema für Webdesign */}
@@ -82,7 +72,7 @@ const GermanWebDesign = () => {
                     "name": "Was kostet professionelles Webdesign?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Die Kosten für professionelles Webdesign variieren je nach Umfang, Anforderungen und Komplexität des Projekts. Nach einem kostenlosen Erstgespräch erstellen wir Ihnen ein transparentes, individuelles Angebot, das exakt auf Ihre Bedürfnisse zugeschnitten ist."
+                      "text": "Unsere Websites starten bei €6.000 für einen strategischen Onepager mit modernem Design und mobiloptimiert. Business-Websites mit mehreren Seiten, SEO-optimiert und Content-Strategie beginnen bei €10.000. Enterprise-Projekte mit multilingual, Shop-Integration und komplexen Funktionen starten bei €15.000+."
                     }
                   },
                   {
@@ -101,21 +91,58 @@ const GermanWebDesign = () => {
         
         <WebDesignHero />
         <WebDesignBenefits />
-        <WebDesignWhyUs />
         <WebDesignStructureFirst />
         <WebDesignBuildOptions />
         <WebDesignProcess />
-        
-        <TestimonialsSection testimonials={webdesignTestimonials} />
+
+        {/* Budget & Preis-Transparenz Section */}
+        <section className="py-16 bg-background">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
+              Was kostet professionelles Webdesign?
+            </h2>
+            <TurquoiseCard variant="soft" className="p-8">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€6.000</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Starter-Website</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
+                    Strategischer Onepager mit modernem Design, mobiloptimiert
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€10.000</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Business-Website</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
+                    Mehrere Seiten, SEO-optimiert, Content-Strategie inklusive
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-turquoise mb-2">€15.000+</div>
+                  <TurquoiseBadge variant="soft" size="sm" className="mb-2">Enterprise</TurquoiseBadge>
+                  <p className="text-sm text-muted-foreground">
+                    Multilingual, Shop-Integration, komplexe Funktionen
+                  </p>
+                </div>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-6">
+                Alle Preise verstehen sich als Startpunkt. Wir erstellen individuelle Angebote basierend auf Ihren Anforderungen.
+              </p>
+            </TurquoiseCard>
+          </div>
+        </section>
+
+        <p className="text-center text-sm text-medico-darkGreen mt-4">
+          Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
+        </p>
         
         {/* Full Case Studies Section with global titles */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <CaseStudiesSection />
           </div>
         </section>
         
-        <RelatedServicesGrid />
         <WebDesignFAQ />
         
         {/* CTA Section with German startpage styling */}
@@ -127,8 +154,6 @@ const GermanWebDesign = () => {
           secondaryCta="Strategiegespräch vereinbaren"
           secondaryCtaLink="/kontakt"
         />
-        
-        <StickyCTA text="Kostenloses Design-Beratungsgespräch" />
       </PageLayout>
     </>
   );
