@@ -13,9 +13,16 @@ import { useMediaQuery } from '@/hooks/use-media-query';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingActionButtons = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 1025px)');
+  // Start expanded on desktop to prevent flash on page load
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { language } = useLanguage();
+
+  // Prevent flash of hidden content on page load
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const toggleRef = useRef<HTMLButtonElement | null>(null);
@@ -72,6 +79,7 @@ const FloatingActionButtons = () => {
 
   // On desktop: always show all buttons, no toggle needed
   // On mobile/tablet: show toggle button and control visibility
+  // Show all buttons immediately on desktop to prevent flash
   const showAllButtons = isDesktop || isExpanded;
   const showToggleButton = !isDesktop;
 
@@ -128,7 +136,8 @@ const FloatingActionButtons = () => {
       )}>
         {/* Action buttons with smooth transition */}
         <div className={cn(
-          "flex flex-col gap-5 transition-all duration-500 ease-in-out",
+          "flex flex-col gap-5",
+          mounted && "transition-all duration-500 ease-in-out",
           showAllButtons 
             ? "opacity-100 transform translate-y-0 scale-100" 
             : "opacity-0 transform translate-y-4 scale-95 pointer-events-none"
