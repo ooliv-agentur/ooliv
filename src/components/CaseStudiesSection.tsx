@@ -16,6 +16,7 @@ export const caseStudiesData = {
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
       websiteLink: "www.kl-klaiber.de",
+      keyMetric: "+92 % mehr Sichtbarkeit",
       impact: [
         "Strategische Neuausrichtung",
         "Wireframes, Struktur, Inhalte",
@@ -31,6 +32,7 @@ export const caseStudiesData = {
       logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
       quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
       websiteLink: "www.cobus-industries.de",
+      keyMetric: "+160 % mehr Interaktionen",
       impact: [
         "Komplette Konzeptentwicklung",
         "UX für Technik, Produkt & Service",
@@ -46,6 +48,7 @@ export const caseStudiesData = {
       logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
       quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
       websiteLink: "www.spez-ag.ch",
+      keyMetric: "+300 % qualifizierte Anfragen",
       impact: [
         "Markenentwicklung inkl. Logo",
         "Struktur, Inhalte, Design",
@@ -61,6 +64,7 @@ export const caseStudiesData = {
       logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
       quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
       websiteLink: "www.iconpro.com",
+      keyMetric: "+45 % höheres Engagement",
       impact: [
         "Klar strukturierte Use-Cases",
         "Illustrationen & animierte Module",
@@ -76,6 +80,7 @@ export const caseStudiesData = {
       logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
       quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
       websiteLink: "www.amkliff.de",
+      keyMetric: "+40 % bessere Conversionrate",
       impact: [
         "Digitale Markenentwicklung incl. Logo, CI & Naming",
         "Konzept, Text und Design der Verkaufs-Landingpage",

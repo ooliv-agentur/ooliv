@@ -75,10 +75,17 @@ const PremiumCaseStudyGrid = ({
                 bg-white rounded-2xl p-8 border border-border
                 hover:border-primary/30 hover:shadow-xl
                 transition-all duration-300
-                flex flex-col
+                flex flex-col relative
                 ${index === 4 ? 'lg:col-start-2' : ''}
               `}
             >
+              {/* Key Metric Badge */}
+              {study.keyMetric && (
+                <div className="absolute top-4 right-4 bg-[#0BC3C3] text-white text-xs font-bold px-3 py-1 rounded-full">
+                  {study.keyMetric}
+                </div>
+              )}
+
               {/* Logo */}
               <div className="h-16 mb-6 flex items-center">
                 <img 

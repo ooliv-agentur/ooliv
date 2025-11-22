@@ -13,7 +13,9 @@ const CoreServicesSection = () => {
         "Value Proposition & Differenzierung",
         "Customer Journey Mapping",
         "KPI-Systeme & Priorisierung",
-        "Wettbewerbsanalyse"
+        "Wettbewerbsanalyse",
+        "Digitaler Reifegrad",
+        "Digitale Roadmaps"
       ]
     },
     {
@@ -23,7 +25,8 @@ const CoreServicesSection = () => {
         "Informationsarchitektur",
         "Wireframes & Prototypen",
         "Funnel-Design",
-        "Conversion-Optimierung"
+        "Conversion-Optimierung",
+        "Customer Experience Transformation"
       ]
     },
     {
@@ -33,7 +36,8 @@ const CoreServicesSection = () => {
         "Interface-Design (mobil & desktop)",
         "WordPress-Entwicklung",
         "Performance-optimierter Launch",
-        "Markeneinbindung"
+        "Markeneinbindung",
+        "Skalierbare Design-Systeme"
       ]
     },
     {
@@ -42,7 +46,9 @@ const CoreServicesSection = () => {
       items: [
         "Technisches SEO + Onpage",
         "AI-gestützte Recherche & Content",
-        "Monitoring & Optimierung"
+        "Monitoring & Optimierung",
+        "Prozessautomatisierung",
+        "AI Adoption & Tool-Evaluierung"
       ]
     }
   ];
