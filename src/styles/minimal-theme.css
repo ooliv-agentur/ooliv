@@ -180,29 +180,47 @@ body.minimal-theme {
     color: #ffffff !important;
   }
 
-  /* Floating action buttons - ensure proper contrast */
-  .fixed button[variant="light"],
-  .fixed button[aria-label*="E-Mail"],
-  .fixed button[aria-label*="Email"],
-  .fixed button[aria-label*="anrufen"],
-  .fixed button[aria-label*="Call"],
-  .fixed button[aria-label*="Prototyp"],
-  .fixed button[aria-label*="prototype"] {
-    background-color: #FFFFFF !important;
-    color: #0D0D0D !important;
-    border-color: #E5E5E5 !important;
+  /* Floating turquoise buttons - keep turquoise with white icons */
+  button[data-button-style="floating-primary"] {
+    background-color: #2DAEAA !important;
+    border-color: #2DAEAA !important;
+    color: white !important;
   }
 
-  /* White floating buttons → dark icons */
-  .fixed.right-4 button.bg-white svg,
-  .fixed button[variant="light"] svg,
-  button.bg-white svg,
-  button[aria-label*="E-Mail"] svg,
-  button[aria-label*="Email"] svg,
-  button[aria-label*="anrufen"] svg,
-  button[aria-label*="Call"] svg,
-  button[aria-label*="Prototyp"] svg,
-  button[aria-label*="prototype"] svg {
+  button[data-button-style="floating-primary"] svg {
+    color: white !important;
+  }
+
+  /* Floating light buttons - white background with dark icons */
+  button[data-button-style="floating-light"] {
+    background-color: #FFFFFF !important;
+    border-color: #E5E5E5 !important;
+    color: #0D0D0D !important;
+  }
+
+  button[data-button-style="floating-light"] svg {
+    color: #0D0D0D !important;
+  }
+
+  /* Hero primary CTA - keep turquoise */
+  button[data-button-style="primary"] {
+    background-color: #2DAEAA !important;
+    border-color: #2DAEAA !important;
+    color: white !important;
+  }
+
+  button[data-button-style="primary"] svg {
+    color: white !important;
+  }
+
+  /* Hero secondary CTA - outline style */
+  button[data-button-style="secondary"] {
+    background-color: transparent !important;
+    border-color: #E5E5E5 !important;
+    color: #0D0D0D !important;
+  }
+
+  button[data-button-style="secondary"] svg {
     color: #0D0D0D !important;
   }
 

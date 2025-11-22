@@ -75,6 +75,7 @@ const PremiumHero = () => {
                 onClick={handlePrimaryCTA}
                 variant="default"
                 size="lg"
+                data-button-style="primary"
                 className="group text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6 h-auto"
                 aria-label="Kostenloses Konzept sichern"
               >
@@ -87,6 +88,7 @@ const PremiumHero = () => {
                 onClick={handleSecondaryCTA}
                 variant="outline"
                 size="lg"
+                data-button-style="secondary"
                 className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-6 h-auto group"
                 aria-label="Arbeitsweise ansehen"
               >
