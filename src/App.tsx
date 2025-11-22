@@ -51,6 +51,13 @@ const LandingpageOptimierung = lazy(() => import('./pages/LandingpageOptimierung
 const WebsiteKonzept = lazy(() => import('./pages/WebsiteKonzept'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+// New Service Pages
+const DigitaleTransformationStrategie = lazy(() => import('./pages/DigitaleTransformationStrategie'));
+const UxKonzeption = lazy(() => import('./pages/UxKonzeption'));
+const WebdesignEntwicklung = lazy(() => import('./pages/WebdesignEntwicklung'));
+const SeoPerformance = lazy(() => import('./pages/SeoPerformance'));
+const AiWorkflows = lazy(() => import('./pages/AiWorkflows'));
+
 const queryClient = new QueryClient();
 
 // Loading component for Suspense fallback
@@ -114,6 +121,13 @@ function App() {
                     <Routes>
                       {/* German Routes - All pages lazy loaded */}
                       <Route path="/" element={<GermanIndex />} />
+                      
+                      {/* New Service Pages */}
+                      <Route path="/digitale-transformation-strategie" element={<DigitaleTransformationStrategie />} />
+                      <Route path="/ux-konzeption" element={<UxKonzeption />} />
+                      <Route path="/webdesign-entwicklung" element={<WebdesignEntwicklung />} />
+                      <Route path="/seo-performance" element={<SeoPerformance />} />
+                      <Route path="/ai-workflows" element={<AiWorkflows />} />
                       {/* 301 Redirects - Old URLs to New Structure */}
                       <Route path="/webdesign" element={<Navigate to="/webdesign-entwicklung" replace />} />
                       <Route path="/webentwicklung" element={<Navigate to="/webdesign-entwicklung" replace />} />
