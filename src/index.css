@@ -505,31 +505,28 @@ body.minimal-theme {
     color: #ffffff !important;
   }
 
-  /* Floating action button icons - white */
+  /* Teal floating buttons (floating variant) → white icons for contrast */
+  .fixed.right-4 button.bg-\[#2DAEAA\] svg,
+  button.bg-\[#2DAEAA\] svg,
   button[aria-label*="Projekt"] svg,
   button[aria-label*="project"] svg,
-  button[aria-label*="Email"] svg,
+  button[aria-label*="Menü öffnen"] svg,
+  button[aria-label*="Open menu"] svg,
+  button[aria-label*="Menü schließen"] svg,
+  button[aria-label*="Close menu"] svg {
+    color: #ffffff !important;
+  }
+
+  /* White/light floating buttons (light variant) → dark icons for contrast */
+  .fixed.right-4 button.bg-white svg,
+  button.bg-white svg,
   button[aria-label*="E-Mail"] svg,
+  button[aria-label*="Email"] svg,
   button[aria-label*="anrufen"] svg,
   button[aria-label*="Call"] svg,
   button[aria-label*="Prototyp"] svg,
-  button[aria-label*="prototype"] svg,
-  button[aria-label*="öffnen"] svg,
-  button[aria-label*="Open menu"] svg {
-    color: #ffffff !important;
-  }
-  
-  /* Ensure all RegisteredIcon SVGs inside floating buttons are white */
-  button[variant="floating"] svg,
-  button[size="floating"] svg,
-  .fixed.right-4 button svg {
-    color: #ffffff !important;
-  }
-  
-  /* Sidebar form buttons with white backgrounds must have black icons */
-  button.bg-white svg,
-  button.bg-white.text-black svg {
-    color: #000000 !important;
+  button[aria-label*="prototype"] svg {
+    color: #0D0D0D !important;
   }
 
   /* Navigation text links only (not buttons) */
