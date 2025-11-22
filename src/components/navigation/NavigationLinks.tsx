@@ -16,30 +16,26 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   // Navigation links for German language
   const germanLinks = [
     { title: 'Home', path: '/' },
-    { title: 'Strategie', path: '/strategie' },
-    { title: 'Webdesign', path: '/webdesign' },
-    { title: 'Webentwicklung', path: '/webentwicklung' },
-    { title: 'Content-Erstellung', path: '/content-erstellung' },
-    { title: 'Content Automation', path: '/automatisierte-content-marketing' },
-    { title: 'SEO-Optimierung', path: '/seo-optimierung' },
-    { title: 'Google Ads', path: '/google-ads' },
-    { title: 'KI-Technologien', path: '/ki-technologien' },
+    { title: 'Digitale Transformation & Strategie', path: '/digitale-transformation-strategie' },
+    { title: 'UX & Konzeption', path: '/ux-konzeption' },
+    { title: 'Webdesign & Entwicklung', path: '/webdesign-entwicklung' },
+    { title: 'SEO & Performance', path: '/seo-performance' },
+    { title: 'AI-Workflows', path: '/ai-workflows' },
     { title: 'Case Studies', path: '/referenzen' },
-    { title: 'Über ooliv', path: '/ueber-uns' },
+    { title: 'Über uns', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
   ];
 
   // Navigation links for English language
   const englishLinks = [
     { title: 'Home', path: '/en' },
-    { title: 'Web Design', path: '/en/webdesign' },
-    { title: 'Web Development', path: '/en/webdevelopment' },
-    { title: 'Content Creation', path: '/en/content-creation' },
-    { title: 'SEO', path: '/en/seo' },
-    { title: 'Google Ads', path: '/en/google-ads' },
-    { title: 'AI Technologies', path: '/en/ai-technologies' },
+    { title: 'Digital Transformation & Strategy', path: '/en/digital-transformation-strategy' },
+    { title: 'UX & Conception', path: '/en/ux-conception' },
+    { title: 'Web Design & Development', path: '/en/webdesign-development' },
+    { title: 'SEO & Performance', path: '/en/seo-performance' },
+    { title: 'AI Workflows', path: '/en/ai-workflows' },
     { title: 'Case Studies', path: '/en/case-studies' },
-    { title: 'About ooliv', path: '/en/about-us' },
+    { title: 'About us', path: '/en/about-us' },
     { title: 'Contact', path: '/en/contact' }
   ];
 
@@ -68,13 +64,13 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50 rounded-md hover:scale-105 transition-transform font-sans",
+              "block font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0BC3C3]/50 rounded-md hover:scale-105 transition-transform font-sans",
               layout === 'desktop' 
-                ? "text-2xl py-1.5 leading-tight" // Reduced padding from py-3 to py-1.5 and tighter line height for desktop
-                : "text-3xl py-3", // Keep original mobile sizing
+                ? "text-lg py-3.5 leading-tight px-4" // Desktop: smaller text, generous padding
+                : "text-3xl py-3", // Mobile: keep original sizing
               isActive(link.path) 
-                ? "text-medico-turquoise font-extrabold nav-link-active" // Active state: turquoise with custom class
-                : "text-medico-darkGreen hover:text-medico-turquoise" // Default state: dark green with turquoise hover
+                ? "text-[#0BC3C3] font-extrabold" // Active state: #0BC3C3
+                : "text-[#0D0D0D] hover:text-[#0BC3C3]" // Default state: dark text with #0BC3C3 hover
             )}
             onClick={handleClick}
           >
