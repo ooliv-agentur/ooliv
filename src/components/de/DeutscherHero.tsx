@@ -25,27 +25,19 @@ const DeutscherHero = () => {
     }, 0);
   };
 
-  const dynamicEndings = [
-    "Websites, die Kunden bringen.",
-    "Klare Angebote statt Rätselraten.",
-    "Mehr Anfragen ohne Werbebudget."
-  ];
-  
   return (
     <div className="relative">
       <PageHero
         isHomepage={true}
-        title="Ihre Website bringt keine Anfragen? Das ändern wir."
-        subtitle="Kostenloses Website-Konzept in 48h: Klarer Plan für Aufbau, Inhalte und Nutzerführung – ohne Verpflichtung. Sie entscheiden danach, ob Sie mit uns weitermachen wollen."
-        dynamicPrefix=""
-        dynamicSubheadlines={dynamicEndings}
+        title="Digitale Klarheit, die verkauft."
+        subtitle="Wir entwickeln Strategien, UX-Konzepte und Websites, die messbar mehr Leads generieren — ohne Agentur-Theater und ohne endlose Meetings."
         primaryCta={{
           text: "Kostenloses Konzept sichern",
           link: "#",
           onClick: handleOpenPrototypeForm
         }}
         secondaryCta={{
-          text: "Über ooliv",
+          text: "Arbeitsweise ansehen",
           link: "/ueber-uns"
         }}
       />

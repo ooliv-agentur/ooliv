@@ -1,10 +1,9 @@
-
 import React from 'react';
-import TeamTeaserDE from '@/components/de/TeamTeaserDE';
+import UliSection from '@/components/de/UliSection';
 
 const FrankfurtWerbeagenturTeamSection = () => {
   return (
-    <TeamTeaserDE />
+    <UliSection />
   );
 };
 
