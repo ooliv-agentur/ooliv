@@ -13,7 +13,7 @@ import CanonicalUrlHelper from "@/components/seo/CanonicalUrlHelper";
 import H1Validator from "@/components/seo/H1Validator";
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import DeutscherHero from '@/components/de/DeutscherHero';
+import PremiumHero from '@/components/PremiumHero';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
@@ -90,7 +90,7 @@ const GermanIndex = () => {
         />
         
         {/* 1. HERO */}
-        <DeutscherHero />
+        <PremiumHero />
         
         {/* 2. WARUM OOLIV */}
         <WarumOoliv />
