@@ -45,8 +45,8 @@ export default {
       colors: {
         border: "hsl(180 11% 90%)",
         brand: {
-          primary: "#2DAEAA", // Teal brand color
-          primaryHover: "#258A87",
+          primary: "#26CFCC", // Turquoise brand color
+          primaryHover: "#1da8a6",
           secondary: "#0D0D0D", // Primary text
           secondaryHover: "#000000",
           heading: "#0D0D0D", // Primary text
@@ -54,14 +54,14 @@ export default {
           background: "#FFFFFF", // White background
           backgroundAlt: "#F4F7F7", // Light grey background
           footer: "#0D0D0D",
-          success: "#2DAEAA",
+          success: "#26CFCC",
           error: "#C62828",
-          warning: "#2DAEAA"
+          warning: "#26CFCC"
         },
         // ooliv brand palette
         ooliv: {
-          teal: "#2DAEAA",
-          tealHover: "#258A87",
+          turquoise: "#26CFCC",
+          turquoiseHover: "#1da8a6",
           black: "#0D0D0D",
           white: "#FFFFFF",
           lightGrey: "#F4F7F7"
@@ -112,41 +112,41 @@ export default {
           800: "#92400e",
           900: "#78350f"
         },
-        // Teal color scale
-        teal: {
-          50: "#f0fdfb",
-          100: "#ccf8f3",
-          200: "#99f1e7",
-          300: "#5de5d9",
-          400: "#2DAEAA", // Brand teal
-          500: "#2DAEAA", // Default teal
-          600: "#258A87", // Hover state
-          700: "#1e6f6d",
-          800: "#185856",
-          900: "#134645",
-          light: "#e6f9f8",
-          DEFAULT: "#2DAEAA",
-          hover: "#258A87"
+        // Turquoise color scale
+        turquoise: {
+          50: "#f0fdfd",
+          100: "#ccfbf9",
+          200: "#99f6f3",
+          300: "#5deee9",
+          400: "#26CFCC", // Brand turquoise
+          500: "#26CFCC", // Default
+          600: "#1da8a6", // Hover state
+          700: "#178583",
+          800: "#136a68",
+          900: "#105554",
+          light: "#e6fcfc",
+          DEFAULT: "#26CFCC",
+          hover: "#1da8a6"
         },
         // Text color tokens
         text: {
           primary: "#0D0D0D",
           secondary: "#525252",
-          muted: "#737373",
+          muted: "#7A7A7A",
           light: "#A3A3A3",
-          accent: "#2DAEAA",
+          accent: "#26CFCC",
           white: "#FFFFFF",
-          warning: "#2DAEAA"
+          warning: "#26CFCC"
         },
-        // Accent colors mapped to teal
+        // Accent colors mapped to turquoise
         accent: {
-          primary: '#2DAEAA',
-          complementary: '#258A87',
-          secondary: '#2DAEAA',
-          tertiary: '#5de5d9',
-          light: '#e6f9f8',
-          dark: '#185856',
-          glow: 'rgba(45, 174, 170, 0.2)',
+          primary: '#26CFCC',
+          complementary: '#1da8a6',
+          secondary: '#26CFCC',
+          tertiary: '#5deee9',
+          light: '#e6fcfc',
+          dark: '#178583',
+          glow: 'rgba(38, 207, 204, 0.2)',
         }
       },
       // Icon-specific design tokens

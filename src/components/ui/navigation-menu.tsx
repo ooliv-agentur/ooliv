@@ -303,7 +303,7 @@ const ContactBar = ({
       {email && (
         <a 
           href={`mailto:${email}`}
-          className="bg-blue-600 text-white p-2 rounded-full mx-1 hover:bg-blue-700 transition-colors"
+          className="bg-turquoise text-white p-2 rounded-full mx-1 hover:bg-turquoise-hover transition-colors"
           aria-label="Contact via Email"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail">
@@ -316,7 +316,7 @@ const ContactBar = ({
       {phone && (
         <a 
           href={`tel:${phone}`}
-          className="bg-blue-600 text-white p-2 rounded-full mx-1 hover:bg-blue-700 transition-colors"
+          className="bg-turquoise text-white p-2 rounded-full mx-1 hover:bg-turquoise-hover transition-colors"
           aria-label="Contact via Phone"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone">

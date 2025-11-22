@@ -19,7 +19,7 @@ import { cn } from '@/lib/utils';
 
 interface ContactCardProps {
   icon: React.ReactNode;
-  color: 'blue' | 'green' | 'amber' | 'purple';
+  color: 'turquoise' | 'green' | 'amber' | 'neutral';
   title: string;
   description: string;
   buttonText: string;
@@ -37,10 +37,10 @@ const ContactCard: React.FC<ContactCardProps> = ({
   href
 }) => {
   const colorClasses = {
-    blue: 'bg-blue-50',
+    turquoise: 'bg-turquoise/5',
     green: 'bg-green-50',
     amber: 'bg-amber-50',
-    purple: 'bg-purple-50'
+    neutral: 'bg-gray-50'
   };
 
   const ButtonElement = () => (
@@ -100,8 +100,8 @@ const ContactMethodsSection = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             <ContactCard 
-              icon={<MessageCircle className="h-6 w-6 text-gray-600" />} 
-              color="blue"
+              icon={<MessageCircle className="h-6 w-6 text-[#7A7A7A]" />} 
+              color="turquoise"
               title="WhatsApp"
               description="Direkter WhatsApp-Chat"
               buttonText="WhatsApp öffnen"
@@ -109,7 +109,7 @@ const ContactMethodsSection = () => {
             />
             
             <ContactCard 
-              icon={<Send className="h-6 w-6 text-gray-600" />} 
+              icon={<Send className="h-6 w-6 text-[#7A7A7A]" />} 
               color="green"
               title="Anfrage senden"
               description="Projekt-Details über unser Formular teilen"
@@ -118,7 +118,7 @@ const ContactMethodsSection = () => {
             />
             
             <ContactCard 
-              icon={<Mail className="h-6 w-6 text-gray-600" />} 
+              icon={<Mail className="h-6 w-6 text-[#7A7A7A]" />} 
               color="amber"
               title="E-Mail schreiben"
               description="Direkt an unser Postfach schreiben"
@@ -127,12 +127,12 @@ const ContactMethodsSection = () => {
             />
             
             <ContactCard 
-              icon={<Phone className="h-6 w-6 text-gray-600" />} 
-              color="purple"
+              icon={<Phone className="h-6 w-6 text-[#7A7A7A]" />} 
+              color="neutral"
               title="Anrufen"
               description="Direktes Gespräch mit unserem Team"
               buttonText="06131 - 63 67 801"
-              href="tel:+4961316367801"
+              href="tel:+4061316367801"
             />
           </div>
           

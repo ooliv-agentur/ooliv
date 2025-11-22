@@ -23,7 +23,7 @@ export const setHybridMinimalTheme = () => {
     document.documentElement.style.setProperty('--accent-complementary', '0 0% 20%'); // Dark gray
     
     // Override brand colors to black/white (except logo)
-    document.documentElement.style.setProperty('--brand-turquoise', '168 60% 50%'); // Keep for logo only
+    document.documentElement.style.setProperty('--brand-turquoise', '179 69% 47%'); // Keep for logo only
     document.documentElement.style.setProperty('--brand-dark-green', '0 0% 10%'); // Pure black instead of dark green
     document.documentElement.style.setProperty('--medico-darkGreen', '0 0% 10%'); // Pure black for all dark green references
     document.documentElement.style.setProperty('--brand-mint', '0 0% 100%'); // White

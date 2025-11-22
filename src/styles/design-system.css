@@ -1,7 +1,7 @@
 /* ooliv Design System - Core Variables and Tokens */
 
 :root {
-  /* ooliv design system - Teal minimal theme */
+  /* ooliv design system - Turquoise minimal theme */
     --background: 0 0% 100%;
     --foreground: 0 0% 5%;
     
@@ -11,7 +11,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
     
-    --primary: 178 60% 42%;
+    --primary: 179 69% 47%;
     --primary-foreground: 0 0% 100%;
     
     --secondary: 180 11% 96%;
@@ -20,8 +20,8 @@
     --muted: 180 11% 96%;
     --muted-foreground: 0 0% 45%;
     
-    /* Teal accent throughout */
-    --accent: 178 60% 42%;
+    /* Turquoise accent throughout */
+    --accent: 179 69% 47%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
@@ -29,14 +29,14 @@
     
     --border: 180 11% 90%;
     --input: 180 11% 90%;
-    --ring: 178 60% 42%;
+    --ring: 179 69% 47%;
     
     --radius: 0.625rem;
     
-    /* Teal color scale for utility classes */
-    --teal: 178 60% 42%;
-    --teal-hover: 178 55% 35%;
-    --teal-light: 178 50% 85%;
+    /* Turquoise color scale for utility classes */
+    --turquoise: 179 69% 47%;
+    --turquoise-hover: 179 65% 40%;
+    --turquoise-light: 179 60% 85%;
   }
   
   .dark {
@@ -59,7 +59,7 @@
     --muted-foreground: 0 0% 65%;
     
     /* Turquoise accent in dark mode */
-    --accent: 168 60% 50%;
+    --accent: 179 69% 47%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 63% 31%;
@@ -67,28 +67,28 @@
     
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 168 60% 50%;
+    --ring: 179 69% 47%;
     
     /* Turquoise for dark mode */
-    --turquoise: 168 60% 50%;
-    --turquoise-hover: 168 50% 60%;
-    --turquoise-light: 168 50% 70%;
+    --turquoise: 179 69% 47%;
+    --turquoise-hover: 179 65% 40%;
+    --turquoise-light: 179 60% 85%;
   }
 
 
-/* ooliv Design System - Teal Brand */
+/* ooliv Design System - Turquoise Brand */
 :root {
   /* Core Brand Colors */
-  --brand-teal: 178 60% 42%; /* #2DAEAA - PRIMARY BRAND */
+  --brand-turquoise: 179 69% 47%; /* #26CFCC - PRIMARY BRAND */
   --brand-black: 0 0% 5%; /* #0D0D0D - Primary text */
   --brand-white: 0 0% 100%; /* #FFFFFF */
   --brand-light-grey: 180 11% 96%; /* #F4F7F7 */
 
-  /* Teal as Primary Accent */
-  --accent-primary: 178 60% 42%; /* Teal - PRIMARY */
-  --accent-complementary: 178 55% 35%; /* Darker teal */
-  --accent-secondary: 178 50% 50%; /* Mid teal */
-  --accent-tertiary: 178 50% 85%; /* Light teal */
+  /* Turquoise as Primary Accent */
+  --accent-primary: 179 69% 47%; /* Turquoise - PRIMARY */
+  --accent-complementary: 179 65% 40%; /* Darker turquoise */
+  --accent-secondary: 179 69% 47%; /* Mid turquoise */
+  --accent-tertiary: 179 60% 85%; /* Light turquoise */
   --accent-gradient: none; /* No gradients */
   
   /* No glow effects */
@@ -98,9 +98,9 @@
   --brand-background: 0 0% 100%; /* Pure white */
   --brand-background-alt: 180 11% 96%; /* Light grey */
   
-  /* Teal utility classes */
-  --teal: 178 60% 42%; /* #2DAEAA */
-  --teal-dark: 178 55% 35%; /* Darker hover */
-  --teal-light: 178 50% 85%; /* Light teal */
-  --teal-hover: 178 55% 35%; /* Hover state */
+  /* Turquoise utility classes */
+  --turquoise: 179 69% 47%; /* #26CFCC */
+  --turquoise-dark: 179 65% 40%; /* Darker hover */
+  --turquoise-light: 179 60% 85%; /* Light turquoise */
+  --turquoise-hover: 179 65% 40%; /* Hover state */
 }

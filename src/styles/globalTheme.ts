@@ -7,7 +7,7 @@ export const applyGlobalTurquoiseTheme = () => {
     document.body.classList.add('minimal-theme');
     
     // Set pure minimal color scheme
-    document.documentElement.style.setProperty('--accent-primary', '168 60% 50%'); // Turquoise
+    document.documentElement.style.setProperty('--accent-primary', '179 69% 47%'); // Turquoise
     document.documentElement.style.setProperty('--accent-secondary', '0 0% 100%'); // Pure white
     document.documentElement.style.setProperty('--accent-tertiary', '0 0% 96%'); // Very light gray
     
@@ -19,7 +19,7 @@ export const applyGlobalTurquoiseTheme = () => {
     document.documentElement.style.setProperty('--accent-complementary', '0 0% 20%'); // Dark gray
     
     // Override all brand colors to black/white except turquoise accents
-    document.documentElement.style.setProperty('--brand-turquoise', '168 60% 50%'); // Keep turquoise for accents
+    document.documentElement.style.setProperty('--brand-turquoise', '179 69% 47%'); // Keep turquoise for accents
     document.documentElement.style.setProperty('--brand-dark-green', '0 0% 10%'); // Pure black
     document.documentElement.style.setProperty('--medico-darkGreen', '0 0% 10%'); // Pure black
     document.documentElement.style.setProperty('--brand-mint', '0 0% 100%'); // White
