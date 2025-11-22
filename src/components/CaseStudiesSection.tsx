@@ -113,19 +113,19 @@ const CaseStudiesSection = ({
   const t = defaultTranslations;
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6" style={{ lineHeight: '1.3' }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text mb-6 leading-tight">
                 {customTitle || t.title}
               </h2>
-              <p className="text-lg md:text-xl text-turquoise max-w-3xl mx-auto mb-4" style={{ lineHeight: '1.6' }}>
+              <p className="text-lg md:text-xl text-teal max-w-3xl mx-auto mb-4 font-medium leading-relaxed">
                 {customSubtitle || t.subtitle}
               </p>
               {(customBodyText || t.bodyText) && (
-                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
+                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
                   {customBodyText || t.bodyText}
                 </p>
               )}
@@ -140,7 +140,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-white rounded-xl p-6 md:p-8 shadow-md border border-gray-100">
+                <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -152,16 +152,16 @@ const CaseStudiesSection = ({
                       </AspectRatio>
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-foreground">{study.client}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{study.industry}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary-text">{study.client}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground font-normal">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <h4 className="text-base md:text-lg font-medium mb-6 text-foreground" style={{ lineHeight: '1.5' }}>
+                  <h4 className="text-base md:text-lg font-medium mb-6 text-primary-text leading-relaxed">
                     {study.headline}
                   </h4>
                   
-                  <blockquote className="italic text-muted-foreground text-sm md:text-base border-l-4 border-turquoise pl-4 my-6" style={{ lineHeight: '1.6' }}>
+                  <blockquote className="italic text-muted-foreground text-sm md:text-base border-l-4 border-teal pl-4 my-6 font-normal leading-relaxed">
                     "{study.quote}"
                   </blockquote>
                   
@@ -171,7 +171,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-turquoise hover:underline inline-flex items-center text-sm md:text-base font-medium"
+                        className="text-teal hover:underline inline-flex items-center text-sm md:text-base font-medium"
                       >
                         {t.exploreWebsite} {study.websiteLink}
                       </a>
@@ -181,10 +181,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-turquoise">
-                          <Check className="h-4 w-4 md:h-5 md:w-5" />
+                        <div className="mr-3 mt-1 text-teal">
+                          <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-sm md:text-base text-muted-foreground" style={{ lineHeight: '1.5' }}>{point}</p>
+                        <p className="text-sm md:text-base text-muted-foreground font-normal leading-relaxed">{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -192,7 +192,7 @@ const CaseStudiesSection = ({
               </div>
               
               <div className="w-full md:w-1/2">
-                <div className="rounded-xl overflow-hidden shadow-lg">
+                <div className="rounded-[20px] overflow-hidden border border-gray-100">
                   <img 
                     src={study.image} 
                     alt={`${study.client} case study`} 
@@ -206,19 +206,20 @@ const CaseStudiesSection = ({
         
         <Reveal delay={0.2}>
           <div className="mt-24 text-center">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-medico-darkGreen mb-8" style={{ lineHeight: '1.4' }}>
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-primary-text mb-8 leading-tight">
               {t.ctaText}
             </h3>
             
             <Button 
+              variant="primary"
               size="lg" 
-              className="group bg-accent-complementary text-medico-darkGreen hover:bg-accent-complementary/80 font-bold py-4 px-8 rounded-full text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
+              className="group" 
               onClick={() => {
                 window.dispatchEvent(new Event('open-lead-form'));
               }}
             >
               {t.startProject}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </Reveal>

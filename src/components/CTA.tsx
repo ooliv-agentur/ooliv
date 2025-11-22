@@ -69,130 +69,99 @@ const CTA = ({
   const defaultFooterNote = "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
   
   return (
-    <section className="py-24 bg-background font-satoshi">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight" style={{ lineHeight: '1.2' }}>
+    <section className="py-24 bg-white">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-primary-text leading-tight">
           {title}
         </h2>
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground leading-relaxed" style={{ lineHeight: '1.5' }}>
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground font-normal leading-relaxed">
           {subtitle}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full sm:w-auto">
           {shouldOpenLeadForm(primaryCta) ? (
             <Button 
+              variant="primary"
               size="lg" 
-              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group w-full sm:w-auto"
               onClick={(e) => {
                 e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           ) : primaryCtaLink ? (
             <Button 
+              variant="primary"
               size="lg" 
-              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group w-full sm:w-auto"
               asChild
             >
               <Link to={primaryCtaLink}>
                 {primaryCta}
-                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           ) : (
             <Button 
+              variant="primary"
               size="lg" 
-              className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
+              className="group w-full sm:w-auto"
               onClick={(e) => {
                 e.stopPropagation();
                 handleOpenLeadForm();
               }}
             >
               {primaryCta}
-              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           )}
           
           {secondaryCta && (
             isStrategyCallCta(secondaryCta) ? (
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 size="lg" 
-              className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="group w-full sm:w-auto"
                 asChild
               >
                 <Link to={contactPath}>
                   {secondaryCta}
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : secondaryCtaLink ? (
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 size="lg" 
-              className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="group w-full sm:w-auto"
                 asChild
               >
                 <Link to={secondaryCtaLink}>
                   {secondaryCta}
-                  <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             ) : (
               <Button 
-                variant="outline" 
+                variant="secondary" 
                 size="lg" 
-                className="bg-white text-foreground hover:bg-secondary border-2 border-border hover:border-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                className="group w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
                 {secondaryCta}
-                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             )
           )}
         </div>
         
-        {/* Trust elements with improved visual hierarchy */}
         {footerNote ? (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-turquoise/5 rounded-2xl p-6 border border-turquoise/20">
-              <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+              <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed">
                 {footerNote}
               </p>
             </div>
@@ -203,8 +172,8 @@ const CTA = ({
           </div>
         ) : (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-turquoise/5 rounded-2xl p-6 border border-turquoise/20">
-              <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+              <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed">
                 {defaultFooterNote}
               </p>
             </div>
