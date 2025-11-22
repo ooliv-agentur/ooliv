@@ -8,48 +8,19 @@ const CoreServicesSection = () => {
   const services = [
     {
       icon: Target,
-      title: "Digitale Transformation & Strategie",
-      items: [
-        "Value Proposition & Differenzierung",
-        "Customer Journey Mapping",
-        "KPI-Systeme & Priorisierung",
-        "Wettbewerbsanalyse",
-        "Digitaler Reifegrad",
-        "Digitale Roadmaps"
-      ]
+      title: "Digitale Transformation & Strategie"
     },
     {
       icon: Layout,
-      title: "UX-Konzept & Struktur",
-      items: [
-        "Informationsarchitektur",
-        "Wireframes & Prototypen",
-        "Funnel-Design",
-        "Conversion-Optimierung",
-        "Customer Experience Transformation"
-      ]
+      title: "UX-Konzept & Struktur"
     },
     {
       icon: Palette,
-      title: "Design & Umsetzung",
-      items: [
-        "Interface-Design (mobil & desktop)",
-        "WordPress-Entwicklung",
-        "Performance-optimierter Launch",
-        "Markeneinbindung",
-        "Skalierbare Design-Systeme"
-      ]
+      title: "Design & Umsetzung"
     },
     {
       icon: Search,
-      title: "SEO, Performance & AI-Workflows",
-      items: [
-        "Technisches SEO + Onpage",
-        "AI-gestützte Recherche & Content",
-        "Monitoring & Optimierung",
-        "Prozessautomatisierung",
-        "AI Adoption & Tool-Evaluierung"
-      ]
+      title: "SEO, Performance & AI-Workflows"
     }
   ];
 
@@ -118,22 +89,9 @@ const CoreServicesSection = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[#0D0D0D] mb-6">
+                <h3 className="text-xl font-bold text-[#0D0D0D]">
                   {service.title}
                 </h3>
-
-                {/* Service Items */}
-                <ul className="space-y-3 flex-grow">
-                  {service.items.map((item, itemIndex) => (
-                    <li 
-                      key={itemIndex}
-                      className="flex items-start text-[15px] text-[#666666] leading-relaxed"
-                    >
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#0BC3C3] mt-2 mr-3 flex-shrink-0"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             );
           })}
