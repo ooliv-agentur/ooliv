@@ -67,7 +67,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           animate="visible"
           exit="exit"
           variants={menuVariants}
-          className="fixed top-0 right-0 bottom-0 w-[40%] bg-medico-mint z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
+          className="fixed top-0 right-0 bottom-0 w-[40%] bg-white z-[95] flex flex-col overflow-hidden h-screen shadow-2xl"
         >
           {/* Close button */}
           <div className="absolute top-6 right-4 z-[100]">
@@ -92,13 +92,13 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
           
           {/* Company details section at bottom */}
           <motion.div 
-            className="border-t border-accent-primary/20 p-8 bg-medico-mint"
+            className="border-t border-[#E5E5E5] p-8 bg-[#F8F9FA]"
             variants={itemVariants}
           >
             {/* Company name */}
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-medico-darkGreen mb-2">ooliv</h3>
-              <p className="text-lg text-medico-darkGreen/80">
+              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-2">ooliv</h3>
+              <p className="text-lg text-[#666666]">
                 {language === 'de' ? 'Digitalagentur aus Mainz' : 'Digital Agency from Mainz'}
               </p>
             </div>
@@ -106,7 +106,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
             {/* Contact details */}
             <div className="space-y-4 text-center">
               {/* Address */}
-              <div className="flex items-center justify-center text-medico-darkGreen/80">
+              <div className="flex items-center justify-center text-[#666666]">
                 <MapPin className="h-4 w-4 mr-2" />
                 <span className="text-sm">Mainz, Deutschland</span>
               </div>
@@ -116,7 +116,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-[#2DAEAA] hover:text-white transition-all duration-200"
+                  className="border-[#E5E5E5] text-[#0D0D0D] bg-white hover:bg-[#0BC3C3] hover:text-white hover:border-[#0BC3C3] transition-all duration-200"
                   asChild
                 >
                   <a href="mailto:info@ooliv.de" aria-label={language === 'de' ? "E-Mail senden" : "Send email"}>
@@ -128,7 +128,7 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-[#2DAEAA] hover:text-white transition-all duration-200"
+                  className="border-[#E5E5E5] text-[#0D0D0D] bg-white hover:bg-[#0BC3C3] hover:text-white hover:border-[#0BC3C3] transition-all duration-200"
                   asChild
                 >
                   <a href="tel:+4061316367801" aria-label={language === 'de' ? "Anrufen" : "Call us"}>
@@ -140,10 +140,10 @@ const DesktopMenuContent = ({ isOpen, onClose }: DesktopMenuContentProps) => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="border-[#2DAEAA]/30 text-medico-darkGreen bg-white/90 hover:bg-green-500 hover:text-white transition-all duration-200"
+                  className="border-[#E5E5E5] text-[#0D0D0D] bg-white hover:bg-green-500 hover:text-white hover:border-green-500 transition-all duration-200"
                   asChild
                 >
-                  <a href="https://wa.me/+4917680167641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <a href="https://wa.me/+4017680167641" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     <span className="text-sm">WhatsApp</span>
                   </a>
