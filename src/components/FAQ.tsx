@@ -138,14 +138,13 @@ const FAQ = ({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-primary-text leading-tight">
               {title}
             </h2>
-            <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <p className="text-lg md:text-xl text-teal max-w-2xl mx-auto font-medium leading-relaxed">
               {subtitle}
             </p>
           </div>
@@ -156,8 +155,8 @@ const FAQ = ({
           <div className="space-y-12">
             {Object.entries(groupedFaqs).map(([category, categoryFaqs]) => (
               categoryFaqs.length > 0 && (
-              <div key={category} className="bg-secondary rounded-2xl p-6 md:p-8 border border-border">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+              <div key={category} className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+                <h3 className="text-xl md:text-2xl font-bold text-primary-text mb-6 text-center">
                     {categoryTitles[category as keyof typeof categoryTitles]}
                   </h3>
                   <Accordion type="single" collapsible className="w-full">
@@ -166,12 +165,12 @@ const FAQ = ({
                         <AccordionItem 
                           key={`${category}-${index}`} 
                           value={`${category}-item-${index}`}
-                          className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                          className="bg-white border border-gray-100 rounded-[12px] px-6 py-2 transition-all duration-300 hover:scale-[1.01]"
                         >
-                        <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
+                        <AccordionTrigger className="text-base md:text-lg font-medium text-primary-text hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-opacity-50 [&[data-state=open]]:text-teal transition-colors duration-200">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed mt-4 pb-4">
+                        <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground font-normal leading-relaxed mt-4 pb-4">
                             <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                           </AccordionContent>
                         </AccordionItem>
@@ -184,19 +183,19 @@ const FAQ = ({
           </div>
         ) : (
           // Regular FAQ display for English or custom FAQs
-          <div className="bg-medico-mint/10 rounded-2xl p-6 md:p-8 border border-accent-primary/20">
+          <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
             <Accordion type="single" collapsible className="w-full">
               <StaggerReveal className="space-y-4" stagger={0.08}>
                 {faqs.map((faq, index) => (
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-white border border-accent-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="bg-white border border-gray-100 rounded-[12px] px-6 py-2 transition-all duration-300 hover:scale-[1.01]"
                   >
-                    <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
+                    <AccordionTrigger className="text-base md:text-lg font-medium text-primary-text hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-opacity-50 [&[data-state=open]]:text-teal transition-colors duration-200">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-[15px] md:text-[16px] text-medico-darkGreen/80 leading-relaxed mt-4 pb-4">
+                    <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground font-normal leading-relaxed mt-4 pb-4">
                       <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </AccordionContent>
                   </AccordionItem>
@@ -209,23 +208,24 @@ const FAQ = ({
         {!hideCTA && (
           <Reveal delay={0.3}>
             <div className="mt-16 text-center">
-              <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20">
-                <h3 className="text-lg md:text-xl font-medium text-medico-darkGreen mb-6">
+              <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+                <h3 className="text-lg md:text-xl font-medium text-primary-text mb-6">
                   {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
                 </h3>
                 {useLeadForm ? (
-                  <button 
+                  <Button 
+                    variant="secondary"
+                    size="lg"
                     onClick={handleOpenLeadForm}
-                    className="inline-flex items-center gap-2 rounded-full border-2 border-foreground text-foreground hover:bg-turquoise hover:text-white hover:border-turquoise font-medium px-8 py-3 transition-all duration-300"
                   >
-                    <ArrowRight className="h-4 w-4" />
                     {ctaText}
-                  </button>
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
                 ) : (
-                  <Button asChild variant="outline" className="rounded-full border-2 border-foreground text-foreground hover:bg-turquoise hover:text-white hover:border-turquoise font-medium px-8 py-3 transition-all duration-300">
-                    <Link to={isGerman ? "/kontakt" : "/contact"} className="flex items-center gap-2">
-                      <ArrowRight className="h-4 w-4" />
+                  <Button asChild variant="secondary" size="lg">
+                    <Link to={isGerman ? "/kontakt" : "/contact"}>
                       {ctaText}
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                 )}
