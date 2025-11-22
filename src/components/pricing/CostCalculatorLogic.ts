@@ -36,7 +36,7 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
   let adsSetupCost = data.modules.adsSetup ? basePrices.adsSetup : 0;
   let brandingCost = data.modules.branding ? basePrices.branding : 0;
 
-  // Multilingual adds 50% to base costs
+  // Multilingual adds 100% to base costs
   let multilingualCost = 0;
   if (data.multilingual) {
     multilingualCost = (conceptCost + designCost + implementationCost) * basePrices.multilingualMultiplier;
@@ -50,9 +50,9 @@ export const calculateCost = (data: CalculatorFormValues): CalculationResult => 
   const maintenanceCost = data.modules.maintenance ? basePrices.maintenance : 0;
   const monthlyTotal = ongoingSeoCost + ongoingAdsCost + maintenanceCost;
 
-  // Calculate price range (±10%)
-  const rangeMin = Math.round(oneTimeTotal * 0.9);
-  const rangeMax = Math.round(oneTimeTotal * 1.1);
+  // Calculate price range (±15%)
+  const rangeMin = Math.round(oneTimeTotal * 0.85);
+  const rangeMax = Math.round(oneTimeTotal * 1.15);
 
   return {
     rangeMin,
