@@ -21,22 +21,22 @@ export type CalculatorFormValues = z.infer<typeof calculatorSchema>;
 
 export const companySizeMultipliers = {
   xs: 1.0,
-  small: 1.15,
-  medium: 1.3,
-  large: 1.5,
+  small: 1.3,
+  medium: 1.5,
+  large: 1.9,
 } as const;
 
 export const basePrices = {
-  concept: 1000,
-  design: 2000,
-  implementation: 2500,
-  seo: 500,
-  adsSetup: 500,
-  branding: 1000,
-  ongoingSeo: 400,
-  ongoingAds: 200,
-  maintenance: 150,
-  multilingualMultiplier: 0.5,
+  concept: 3000,
+  design: 5000,
+  implementation: 6000,
+  seo: 800,
+  adsSetup: 900,
+  branding: 2000,
+  ongoingSeo: 900,
+  ongoingAds: 700,
+  maintenance: 250,
+  multilingualMultiplier: 1.0,
 } as const;
 
 export const companySizeLabels: Record<keyof typeof companySizeMultipliers, string> = {
