@@ -25,6 +25,11 @@ const TechnologiesSection = () => {
       name: "Ahrefs & Research Tools",
       description: "Suchverhalten verstehen, Wettbewerb analysieren, Chancen datenbasiert erkennen.",
       icon: <TrendingUp className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
+    },
+    {
+      name: "AI Adoption",
+      description: "Strategische Einführung von KI-Tools in bestehende Unternehmensprozesse.",
+      icon: <Zap className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     }
   ];
 
@@ -53,6 +58,16 @@ const TechnologiesSection = () => {
       name: "Team-Enablement & Schulung",
       description: "Wir machen Teams fit im Umgang mit modernen KI-Prozessen und Workflows.",
       icon: <GraduationCap className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
+    },
+    {
+      name: "Digitale Effizienz",
+      description: "Optimierung digitaler Workflows und Ressourcennutzung für nachhaltige Produktivität.",
+      icon: <TrendingUp className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
+    },
+    {
+      name: "KI-gestützte Produktionsprozesse",
+      description: "Automatisierung und Intelligenz in der Content- und Produkt-Erstellung.",
+      icon: <MessageSquare className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     }
   ];
 

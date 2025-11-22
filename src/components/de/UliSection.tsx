@@ -39,6 +39,9 @@ const UliSection = () => {
               Ich führe jedes Projekt persönlich — keine Junioren, keine Übergaben, keine Sales-Schleifen.
             </p>
             <p className="text-lg text-primary-text mb-6 font-normal leading-relaxed">
+              Ich strukturiere digitale Entscheidungen, nicht nur Projekte.
+            </p>
+            <p className="text-lg text-primary-text mb-6 font-normal leading-relaxed">
               Mein Fokus: präzise Analyse, ehrliche Empfehlungen und messbare Ergebnisse.
             </p>
             <p className="text-lg text-primary-text mb-8 font-normal leading-relaxed">

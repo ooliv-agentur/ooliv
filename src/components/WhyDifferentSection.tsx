@@ -15,6 +15,9 @@ const WhyDifferentSection = () => {
     },
     {
       text: "Digitale Transformation: Systeme, die skalieren statt verwalten"
+    },
+    {
+      text: "Wir optimieren digitale Customer Experience, Workflows und Entscheidungsprozesse – nicht nur IT-Strukturen."
     }
   ];
 
