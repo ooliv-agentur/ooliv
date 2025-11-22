@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from "@/components/PageLayout";
-import WarumOoliv from "@/components/de/WarumOoliv";
+import WhyDifferentSection from "@/components/WhyDifferentSection";
 import UliSection from "@/components/de/UliSection";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import LeistungenSection from "@/components/de/LeistungenSection";
@@ -92,8 +92,8 @@ const GermanIndex = () => {
         {/* 1. HERO */}
         <PremiumHero />
         
-        {/* 2. WARUM OOLIV */}
-        <WarumOoliv />
+        {/* 2. WHY DIFFERENT */}
+        <WhyDifferentSection />
         
         {/* 3. LEISTUNGEN */}
         <LeistungenSection />
