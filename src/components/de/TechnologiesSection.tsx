@@ -10,46 +10,49 @@ interface Technology {
 }
 
 const TechnologiesSection = () => {
-  const technologies: Technology[] = [
+  const aiResearchTools: Technology[] = [
     {
       name: "ChatGPT / LLMs",
       description: "Ideen strukturieren, komplexe Zusammenhänge analysieren, Inhalte vorbereiten — immer von Menschen finalisiert.",
-      icon: <MessageSquare className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <MessageSquare className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
       name: "Midjourney & Image-AI",
       description: "Visuelle Konzepte, Bildwelten und schnelle Prototypen ohne generische Stock-Optik.",
-      icon: <Image className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <Image className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
-      name: "Ahrefs & Daten-Tools",
+      name: "Ahrefs & Research Tools",
       description: "Suchverhalten verstehen, Wettbewerb analysieren, Chancen datenbasiert erkennen.",
-      icon: <TrendingUp className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
-    },
+      icon: <TrendingUp className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
+    }
+  ];
+
+  const processTools: Technology[] = [
     {
       name: "Basecamp, Notion & Prozess-Tools",
       description: "Klare Strukturen, transparente Kommunikation und effiziente Projektsteuerung.",
-      icon: <FolderKanban className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <FolderKanban className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
       name: "KI-gestützte Workflows",
       description: "Automatisierte Abläufe für Content, SEO und interne Prozesse — messbar effizienter.",
-      icon: <Zap className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <Zap className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
       name: "Tool-Evaluierung & Auswahl",
       description: "Wir testen, vergleichen und wählen Tools, die wirklich Ergebnisse liefern — nicht nur Hype.",
-      icon: <TestTube className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <TestTube className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
       name: "Implementierung in Unternehmen",
       description: "Neue Tools passgenau integrieren, ohne bestehende Strukturen zu stören.",
-      icon: <Puzzle className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <Puzzle className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     },
     {
       name: "Team-Enablement & Schulung",
       description: "Wir machen Teams fit im Umgang mit modernen KI-Prozessen und Workflows.",
-      icon: <GraduationCap className="h-12 w-12 text-muted-foreground/40" strokeWidth={1.5} />
+      icon: <GraduationCap className="h-12 w-12 text-[#7A7A7A]" strokeWidth={1.5} />
     }
   ];
 
@@ -66,17 +69,40 @@ const TechnologiesSection = () => {
             </p>
           </Reveal>
           
-          <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-border/50 transition-all duration-300 hover:border-border hover:shadow-sm h-full flex flex-col">
-                <div className="flex justify-center mb-6">
-                  {tech.icon}
-                </div>
-                <h3 className="text-lg font-bold text-center mb-4 text-foreground">{tech.name}</h3>
-                <p className="text-muted-foreground text-center text-sm leading-relaxed flex-grow font-normal">{tech.description}</p>
-              </div>
-            ))}
-          </StaggerReveal>
+          {/* Two-Column Layout for AI & Research vs Processes */}
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* AI & Research Section */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-[#0D0D0D]">AI & Research</h4>
+              <StaggerReveal className="grid gap-6">
+                {aiResearchTools.map((tech, index) => (
+                  <div key={index} className="bg-white p-6 rounded-2xl border border-border/50 transition-all duration-300 hover:border-border hover:shadow-sm flex flex-col">
+                    <div className="flex justify-center mb-4">
+                      {tech.icon}
+                    </div>
+                    <h5 className="text-base font-bold text-center mb-3 text-foreground">{tech.name}</h5>
+                    <p className="text-muted-foreground text-center text-sm leading-relaxed flex-grow font-normal">{tech.description}</p>
+                  </div>
+                ))}
+              </StaggerReveal>
+            </div>
+            
+            {/* Processes & Implementation Section */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-[#0D0D0D]">Prozesse & Implementierung</h4>
+              <StaggerReveal className="grid gap-6">
+                {processTools.map((tech, index) => (
+                  <div key={index} className="bg-white p-6 rounded-2xl border border-border/50 transition-all duration-300 hover:border-border hover:shadow-sm flex flex-col">
+                    <div className="flex justify-center mb-4">
+                      {tech.icon}
+                    </div>
+                    <h5 className="text-base font-bold text-center mb-3 text-foreground">{tech.name}</h5>
+                    <p className="text-muted-foreground text-center text-sm leading-relaxed flex-grow font-normal">{tech.description}</p>
+                  </div>
+                ))}
+              </StaggerReveal>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -53,7 +53,7 @@ const PremiumHero = () => {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#0D0D0D]"
             >
               Digitale Transformation,{' '}
-              <span className="text-[#2DAEAA]">die verkauft.</span>
+              <span className="text-[#0BC3C3]">die verkauft.</span>
             </motion.h1>
 
             {/* Subline */}
@@ -106,17 +106,17 @@ const PremiumHero = () => {
             >
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-[#666666]">
                 <div className="flex items-center gap-2">
-                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span className="text-[#0BC3C3] font-bold">✓</span>
                   <span>100+ erfolgreiche Projekte</span>
                 </div>
                 <span className="hidden sm:inline text-[#E5E5E5]">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span className="text-[#0BC3C3] font-bold">✓</span>
                   <span>Senior-Strategie statt Junioren</span>
                 </div>
                 <span className="hidden sm:inline text-[#E5E5E5]">•</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span className="text-[#0BC3C3] font-bold">✓</span>
                   <span>Klare KPIs & messbare Ergebnisse</span>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const PremiumHero = () => {
 
                   {/* CTA Buttons */}
                   <div className="flex gap-3">
-                    <div className="h-12 flex-1 bg-[#2DAEAA] bg-opacity-20 rounded-lg border-2 border-[#2DAEAA] border-opacity-30"></div>
+                    <div className="h-12 flex-1 bg-[#0BC3C3] bg-opacity-20 rounded-lg border-2 border-[#0BC3C3] border-opacity-30"></div>
                     <div className="h-12 w-12 bg-[#E5E5E5] rounded-lg"></div>
                   </div>
 
@@ -176,15 +176,15 @@ const PremiumHero = () => {
                   {/* Feature List */}
                   <div className="space-y-3 pt-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#2DAEAA] bg-opacity-20 flex-shrink-0"></div>
+                      <div className="w-5 h-5 rounded-full bg-[#0BC3C3] bg-opacity-20 flex-shrink-0"></div>
                       <div className="h-3 flex-1 bg-[#E5E5E5] rounded"></div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#2DAEAA] bg-opacity-20 flex-shrink-0"></div>
+                      <div className="w-5 h-5 rounded-full bg-[#0BC3C3] bg-opacity-20 flex-shrink-0"></div>
                       <div className="h-3 flex-1 bg-[#E5E5E5] rounded"></div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#2DAEAA] bg-opacity-20 flex-shrink-0"></div>
+                      <div className="w-5 h-5 rounded-full bg-[#0BC3C3] bg-opacity-20 flex-shrink-0"></div>
                       <div className="h-3 w-4/5 bg-[#E5E5E5] rounded"></div>
                     </div>
                   </div>
@@ -199,8 +199,8 @@ const PremiumHero = () => {
               </div>
 
               {/* Floating accent elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#2DAEAA] bg-opacity-10 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-[#2DAEAA] bg-opacity-10 rounded-full blur-3xl"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#0BC3C3] bg-opacity-10 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-[#0BC3C3] bg-opacity-10 rounded-full blur-3xl"></div>
             </div>
           </motion.div>
 

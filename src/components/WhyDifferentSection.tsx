@@ -68,12 +68,12 @@ const WhyDifferentSection = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUpVariants}
-                className="group relative bg-white border border-[#E5E5E5] rounded-xl p-6 lg:p-8 hover:border-[#2DAEAA] transition-all duration-300"
+                className="group relative bg-white border border-[#E5E5E5] rounded-xl p-6 lg:p-8 hover:border-[#0BC3C3] transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   {/* Checkmark */}
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-6 h-6 rounded-full bg-[#2DAEAA] flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-full bg-[#0BC3C3] flex items-center justify-center">
                       <Check 
                         className="w-4 h-4 text-white" 
                         strokeWidth={3}

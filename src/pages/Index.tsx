@@ -119,6 +119,7 @@ const GermanIndex = () => {
         <FAQ 
           customFaqs={germanFaqs}
           customTitle="Häufig gestellte Fragen"
+          customSubtitle="Keine Standard-Floskeln. Ehrliche Antworten."
           customCtaText="Weitere Fragen? Sprechen Sie mit uns"
         />
         
@@ -130,18 +131,48 @@ const GermanIndex = () => {
           primaryCta="Projekt starten"
         />
 
-        {/* Location in Footer */}
-        <footer className="py-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm text-muted-foreground mb-2">
-              <strong>ooliv GmbH</strong> · Mainz · Deutschlandweit tätig
-            </p>
-            <p className="text-sm text-muted-foreground mb-2">
-              Webdesign · UX · Strategie · SEO · KI-gestützte Workflows
-            </p>
-            <p className="text-sm text-muted-foreground">
-              <a href="mailto:info@ooliv.de" className="text-turquoise hover:underline">info@ooliv.de</a> · +49 6131 6367801
-            </p>
+        {/* Footer */}
+        <footer className="py-12 bg-[#F8F9FA] border-t border-[#E5E5E5]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+              
+              {/* Logo + Slogan */}
+              <div>
+                <img src="/lovable-uploads/ooliv-logo.svg" alt="ooliv Logo" className="h-8 mb-4 mx-auto md:mx-0" />
+                <p className="text-sm text-[#666666]">
+                  Digitale Transformation, die verkauft.
+                </p>
+              </div>
+              
+              {/* Kontakt */}
+              <div>
+                <h4 className="text-sm font-bold text-[#0D0D0D] mb-3">Kontakt</h4>
+                <p className="text-sm text-[#666666] mb-2">
+                  <a href="mailto:info@ooliv.de" className="text-[#0BC3C3] hover:underline">info@ooliv.de</a>
+                </p>
+                <p className="text-sm text-[#666666]">
+                  +49 6131 6367801
+                </p>
+              </div>
+              
+              {/* Standort */}
+              <div>
+                <h4 className="text-sm font-bold text-[#0D0D0D] mb-3">Zuhause in Mainz – bundesweit tätig</h4>
+                <p className="text-sm text-[#666666]">
+                  ooliv GmbH<br />
+                  Mombacher Str. 25<br />
+                  55122 Mainz
+                </p>
+              </div>
+              
+            </div>
+            
+            {/* Copyright */}
+            <div className="mt-8 pt-8 border-t border-[#E5E5E5] text-center">
+              <p className="text-xs text-[#666666]">
+                © 2025 ooliv GmbH. Alle Rechte vorbehalten.
+              </p>
+            </div>
           </div>
         </footer>
       </PageLayout>

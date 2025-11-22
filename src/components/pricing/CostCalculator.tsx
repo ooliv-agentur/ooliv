@@ -53,10 +53,10 @@ const CostCalculator: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#0D0D0D]">
-            Kosten-Kalkulator
+            Ihre Investition in digitale Klarheit
           </h2>
           <p className="text-lg sm:text-xl text-[#666666] max-w-3xl mx-auto leading-relaxed">
-            Transparente Richtwerte. Finales Angebot nach 15-Min-Gespräch.
+            Transparente Richtwerte für Ihr Projekt. Finales Angebot nach kostenlosem 15-Minuten-Gespräch.
           </p>
         </div>
 
