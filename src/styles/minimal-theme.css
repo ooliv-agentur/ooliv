@@ -180,8 +180,22 @@ body.minimal-theme {
     color: #ffffff !important;
   }
 
+  /* Floating action buttons - ensure proper contrast */
+  .fixed button[variant="light"],
+  .fixed button[aria-label*="E-Mail"],
+  .fixed button[aria-label*="Email"],
+  .fixed button[aria-label*="anrufen"],
+  .fixed button[aria-label*="Call"],
+  .fixed button[aria-label*="Prototyp"],
+  .fixed button[aria-label*="prototype"] {
+    background-color: #FFFFFF !important;
+    color: #0D0D0D !important;
+    border-color: #E5E5E5 !important;
+  }
+
   /* White floating buttons → dark icons */
   .fixed.right-4 button.bg-white svg,
+  .fixed button[variant="light"] svg,
   button.bg-white svg,
   button[aria-label*="E-Mail"] svg,
   button[aria-label*="Email"] svg,
