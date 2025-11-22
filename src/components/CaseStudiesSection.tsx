@@ -12,59 +12,59 @@ export const caseStudiesData = {
     {
       client: "KLAIBER",
       industry: "Steuerberatung & Unternehmensberatung",
-      headline: "Ganzheitlicher Website-Relaunch für mehr Sichtbarkeit und eine moderne Markenpräsenz",
+      headline: "Strategische Neuausrichtung für Vertrauen und Differenzierung",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
       websiteLink: "www.kl-klaiber.de",
       impact: [
-        "Strategische Neuausrichtung inklusive Wireframes und Content",
-        "Textentwicklung für Leistungen und Standorte",
-        "Individuelles Webdesign mit klarer Bildsprache",
-        "WordPress-Umsetzung mit SEO-Basics"
+        "Strategische Neuausrichtung",
+        "Wireframes, Struktur, Inhalte",
+        "Modernes Design & Vertrauen als Kernwert",
+        "WordPress + SEO-Basics"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.webp",
     },
     {
       client: "COBUS Industries",
       industry: "Weltmarktführer für Flughafenbusse",
-      headline: "Strategischer Website-Relaunch für mehr Sichtbarkeit und ein modernes Nutzererlebnis",
+      headline: "Komplette Konzeptentwicklung für internationales B2B-Publikum",
       logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
       quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
       websiteLink: "www.cobus-industries.de",
       impact: [
-        "Konzeption und Content für internationale Produktkommunikation",
-        "Nutzerfreundliches Webdesign für Technik und Service",
-        "WordPress-Umsetzung mit maßgeschneiderter Struktur",
-        "SEO & Video zur Sichtbarkeit als Marktführer"
+        "Komplette Konzeptentwicklung",
+        "UX für Technik, Produkt & Service",
+        "Maßgeschneiderte Struktur für internationales Publikum",
+        "SEO + Video zur Markenstärkung"
       ],
       image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
     {
       client: "SPEZ AG",
       industry: "Spezialist für Baumfällung, Kranarbeiten und Grünpflege",
-      headline: "Markteinführung mit ganzheitlicher Strategie – von der ersten Idee zur performanten Website",
+      headline: "Von der Markenentwicklung bis zur Lead-Generierung",
       logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
       quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
       websiteLink: "www.spez-ag.ch",
       impact: [
-        "Markenentwicklung incl. Logo, Design und Tonalität",
-        "Struktur & Inhalte für Webauftritt und Leistungen",
-        "WordPress-Launch mit lokalem SEO & SEM",
-        "Schnell Top-Ranking für Hauptkeyword in Zürich"
+        "Markenentwicklung inkl. Logo",
+        "Struktur, Inhalte, Design",
+        "SEO + SEM für lokalen Markt",
+        "Performance-orientierte WordPress-Seite"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.webp",
     },
     {
       client: "IconPro GmbH",
       industry: "KI-Software für Predictive Quality & Smart Production",
-      headline: "Website-Relaunch mit starker Markeninszenierung für erklärungsbedürftige B2B-Techlösungen",
+      headline: "Komplexe KI-Software einfach und visuell erklärt",
       logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
       quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
       websiteLink: "www.iconpro.com",
       impact: [
-        "Relaunch-Konzeption inkl. Struktur, Wireframes & Text",
-        "Nutzerfreundliches Design für KI-Software & Use Cases",
-        "Entwicklung illustrativer Assets & animierter Module",
+        "Klar strukturierte Use-Cases",
+        "Illustrationen & animierte Module",
+        "UX + technischer Fokus optimal kombiniert",
         "WordPress-Umsetzung mit optimierter Performance"
       ],
       image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.webp",
@@ -95,9 +95,9 @@ interface CaseStudiesSectionProps {
 }
 
 const defaultTranslations = {
-  title: "Echte Ergebnisse von echten Kunden",
-  subtitle: "Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht.",
-  bodyText: "Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben.",
+  title: "Projekte, die Wirkung zeigen.",
+  subtitle: "Starke Marken. Klare Struktur. Messbare Ergebnisse.",
+  bodyText: "",
   ctaText: "Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?",
   startProject: "Projekt starten",
   exploreWebsite: "Website live erleben →"
@@ -121,12 +121,14 @@ const CaseStudiesSection = ({
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6" style={{ lineHeight: '1.3' }}>
                 {customTitle || t.title}
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-4" style={{ lineHeight: '1.6' }}>
+              <p className="text-lg md:text-xl text-turquoise max-w-3xl mx-auto mb-4" style={{ lineHeight: '1.6' }}>
                 {customSubtitle || t.subtitle}
               </p>
-              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
-                {customBodyText || t.bodyText}
-              </p>
+              {(customBodyText || t.bodyText) && (
+                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
+                  {customBodyText || t.bodyText}
+                </p>
+              )}
             </div>
           </Reveal>
         )}
