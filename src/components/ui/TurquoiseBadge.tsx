@@ -19,7 +19,7 @@ const TurquoiseBadge = ({
   variant = 'soft',
   size = 'md'
 }: TurquoiseBadgeProps) => {
-  const baseClasses = "inline-flex items-center gap-1.5 font-medium rounded-full transition-all";
+  const baseClasses = "inline-flex items-center gap-1.5 font-medium rounded-lg transition-all";
   
   const variantClasses = {
     solid: "bg-turquoise text-white hover:bg-turquoise-hover",

@@ -113,8 +113,8 @@ const LinkedInSetup = () => {
         <div className="flex justify-between items-start mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-4">LinkedIn Integration für Artikel-Posting</h1>
-            <div className="bg-blue-50 p-4 rounded-lg mb-4">
-              <p className="text-blue-700">
+            <div className="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-200">
+              <p className="text-foreground">
                 <strong>Warum LinkedIn OAuth?</strong><br/>
                 • Sie empfangen bereits Artikel über Webhook ✅<br/>
                 • Um diese automatisch auf LinkedIn zu posten, brauchen Sie LinkedIn's API<br/>
@@ -179,14 +179,14 @@ const LinkedInSetup = () => {
                   </div>
                 ))}
 
-                <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="bg-turquoise/5 p-4 rounded-lg border border-turquoise/20">
                   <div className="flex items-start gap-2">
-                    <Info className="h-5 w-5 text-blue-500 mt-0.5" />
+                    <Info className="h-5 w-5 text-turquoise mt-0.5" />
                     <div className="text-sm">
-                      <p className="font-medium text-blue-900 mb-1">
+                      <p className="font-medium text-foreground mb-1">
                         ✅ Automatisierung läuft!
                       </p>
-                      <p className="text-blue-700">
+                      <p className="text-muted-foreground">
                         Neue Artikel von BabyLove Growth werden automatisch auf Ihrer 
                         LinkedIn-Unternehmensseite geteilt. Keine weitere Aktion erforderlich.
                       </p>
@@ -207,14 +207,14 @@ const LinkedInSetup = () => {
                 
                 <LinkedInConnectButton onConnected={handleAccountConnected} />
                 
-                <div className="bg-amber-50 p-4 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   <div className="flex items-start gap-2">
-                    <Info className="h-5 w-5 text-amber-500 mt-0.5" />
+                    <Info className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div className="text-sm">
-                      <p className="font-medium text-amber-900 mb-1">
+                      <p className="font-medium text-foreground mb-1">
                         Was passiert nach der Verbindung?
                       </p>
-                      <ul className="text-amber-700 space-y-1">
+                      <ul className="text-muted-foreground space-y-1">
                         <li>• Neue Artikel werden automatisch auf LinkedIn geteilt</li>
                         <li>• Posts erscheinen auf Ihrer Unternehmensseite</li>
                         <li>• Keine manuelle Aktion erforderlich</li>
