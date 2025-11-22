@@ -150,6 +150,7 @@ const FloatingActionButtons = () => {
                   onClick={button.onClick}
                   variant={button.variant}
                   size="floating"
+                  data-button-style={button.variant === 'floating' ? 'floating-primary' : 'floating-light'}
                   style={{
                     transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
                   }}
@@ -176,6 +177,7 @@ const FloatingActionButtons = () => {
             onClick={toggleExpanded}
             variant="floating"
             size="floating"
+            data-button-style="floating-primary"
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")
