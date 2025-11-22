@@ -19,16 +19,17 @@ const PremiumHero = () => {
     }
   };
 
-  // Fade-up animation variants
+  // Fade-up animation variants - very subtle
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 12 },
+    hidden: { opacity: 0, y: 6, willChange: 'transform, opacity' },
     visible: (delay: number) => ({
       opacity: 1,
       y: 0,
+      willChange: 'auto',
       transition: {
-        duration: 0.4,
-        delay: delay * 0.05,
-        ease: [0.4, 0, 0.2, 1]
+        duration: 0.35,
+        delay: delay * 0.04,
+        ease: [0.25, 0.1, 0.25, 1]
       }
     })
   };
