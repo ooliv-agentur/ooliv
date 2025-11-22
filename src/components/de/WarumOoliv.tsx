@@ -24,7 +24,7 @@ const WarumOoliv = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#F4F7F7]">
+    <section id="warum-ooliv" className="py-24 bg-[#F4F7F7]">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-16 text-center">
