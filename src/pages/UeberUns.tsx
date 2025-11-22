@@ -17,7 +17,6 @@ import TeamSection from '@/components/TeamSection';
 import AboutCompactFAQ from '@/components/AboutCompactFAQ';
 import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
 import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
-import AboutUsLocation from '@/components/about-us/AboutUsLocation';
 import AboutUsFAQ from '@/components/about-us/AboutUsFAQ';
 import AboutUsCTA from '@/components/about-us/AboutUsCTA';
 
@@ -75,7 +74,6 @@ const GermanAboutUs = () => {
       <AboutCompactFAQ />
       <AboutUsDigitalServices />
       <AboutUsTargetBusinesses />
-      <AboutUsLocation />
       <AboutUsFAQ />
       <AboutUsCTA />
     </PageLayout>
