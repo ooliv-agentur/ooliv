@@ -1,24 +1,20 @@
 import React from 'react';
-import { TrendingUp, User, Target, Zap } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhyDifferentSection = () => {
   const outcomes = [
     {
-      icon: TrendingUp,
       text: "+127 % mehr qualifizierte Leads (Ø nach 6 Monaten)"
     },
     {
-      icon: User,
       text: "Jedes Projekt persönlich geführt von Uli Schönleber"
     },
     {
-      icon: Target,
       text: "Klare KPIs, strukturierte Prozesse, messbare Ergebnisse"
     },
     {
-      icon: Zap,
-      text: "Digitale Systeme, die skalieren statt verwalten"
+      text: "Digitale Transformation: Systeme, die skalieren statt verwalten"
     }
   ];
 
@@ -57,15 +53,13 @@ const WhyDifferentSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg sm:text-xl text-[#666666] leading-relaxed"
           >
-            Geführt von einem Senior-Strategen — keine Junioren, kein Weiterreichen, kein Sales-Vorlauf.
+            Geführt von einem Senior-Strategen – kein Weiterreichen an Junioren, keine Sales-Schleifen, kein Overhead.
           </motion.p>
         </div>
 
         {/* Outcome Cards Grid */}
         <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {outcomes.map((outcome, index) => {
-            const IconComponent = outcome.icon;
-            
             return (
               <motion.div
                 key={index}
@@ -74,26 +68,25 @@ const WhyDifferentSection = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUpVariants}
-                className="group relative bg-white border-2 border-[#E5E5E5] rounded-2xl p-8 lg:p-10 hover:border-[#2DAEAA] transition-all duration-300 hover:shadow-lg"
+                className="group relative bg-white border border-[#E5E5E5] rounded-xl p-6 lg:p-8 hover:border-[#2DAEAA] transition-all duration-300"
               >
-                {/* Icon */}
-                <div className="mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-[#2DAEAA] bg-opacity-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent 
-                      className="w-7 h-7 text-[#2DAEAA]" 
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
+                <div className="flex items-start gap-4">
+                  {/* Checkmark */}
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-[#2DAEAA] flex items-center justify-center">
+                      <Check 
+                        className="w-4 h-4 text-white" 
+                        strokeWidth={3}
+                        aria-hidden="true"
+                      />
+                    </div>
                   </div>
+
+                  {/* Text */}
+                  <p className="text-base sm:text-lg font-medium text-[#0D0D0D] leading-relaxed">
+                    {outcome.text}
+                  </p>
                 </div>
-
-                {/* Text */}
-                <p className="text-base sm:text-lg font-medium text-[#0D0D0D] leading-relaxed">
-                  {outcome.text}
-                </p>
-
-                {/* Hover accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#2DAEAA] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl"></div>
               </motion.div>
             );
           })}
