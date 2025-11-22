@@ -52,7 +52,7 @@ const PremiumHero = () => {
               variants={fadeUpVariants}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-[#0D0D0D]"
             >
-              Digitale Klarheit,{' '}
+              Digitale Transformation,{' '}
               <span className="text-[#2DAEAA]">die verkauft.</span>
             </motion.h1>
 
@@ -62,7 +62,7 @@ const PremiumHero = () => {
               variants={fadeUpVariants}
               className="text-lg sm:text-xl lg:text-2xl text-[#333333] leading-relaxed max-w-2xl"
             >
-              Wir entwickeln Strategien, UX-Konzepte und Websites, die messbar mehr Leads generieren — ohne Agentur-Theater und ohne endlose Meetings.
+              Wir verbinden Strategie, UX und AI-gestützte Workflows zu digitalen Systemen, die messbar mehr Leads generieren – klar, strukturiert und ohne Agentur-Theater.
             </motion.p>
 
             {/* CTAs */}
@@ -98,26 +98,28 @@ const PremiumHero = () => {
               </Button>
             </motion.div>
 
-            {/* Trust Line */}
+            {/* Trust Indicators */}
             <motion.div 
               custom={3}
               variants={fadeUpVariants}
-              className="flex items-center gap-3 text-sm sm:text-base text-[#666666] pt-4"
+              className="pt-6 border-t border-[#E5E5E5]"
             >
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-[#2DAEAA] border-2 border-white flex items-center justify-center text-white text-xs font-semibold">
-                  ✓
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-[#666666]">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span>100+ erfolgreiche Projekte</span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-[#2DAEAA] border-2 border-white flex items-center justify-center text-white text-xs font-semibold">
-                  ✓
+                <span className="hidden sm:inline text-[#E5E5E5]">•</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span>Senior-Strategie statt Junioren</span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-[#2DAEAA] border-2 border-white flex items-center justify-center text-white text-xs font-semibold">
-                  ✓
+                <span className="hidden sm:inline text-[#E5E5E5]">•</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[#2DAEAA] font-bold">✓</span>
+                  <span>Klare KPIs & messbare Ergebnisse</span>
                 </div>
               </div>
-              <span>
-                <strong className="text-[#0D0D0D]">100+ erfolgreiche Projekte</strong> · Geführt von einem Senior-Strategen
-              </span>
             </motion.div>
           </motion.div>
 
