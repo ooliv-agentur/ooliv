@@ -10,8 +10,8 @@ interface PremiumCaseStudyGridProps {
 }
 
 const PremiumCaseStudyGrid = ({ 
-  title = "Ergebnisse sprechen für sich.",
-  subtitle = "Ausgewählte Projekte, die messbar mehr Leads generieren."
+  title = "Ausgewählte Projekte",
+  subtitle = "Referenzen, die messbar mehr Leads generieren."
 }: PremiumCaseStudyGridProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
