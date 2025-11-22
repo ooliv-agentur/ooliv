@@ -14,10 +14,7 @@ const WhyDifferentSection = () => {
       text: "Klare KPIs, strukturierte Prozesse, messbare Ergebnisse"
     },
     {
-      text: "Digitale Transformation: Systeme, die skalieren statt verwalten"
-    },
-    {
-      text: "Wir optimieren digitale Customer Experience, Workflows und Entscheidungsprozesse – nicht nur IT-Strukturen."
+      text: "Wir modernisieren Websites, Customer Journeys und AI-gestützte Prozesse – für messbar mehr Effizienz und Anfragen."
     }
   ];
 

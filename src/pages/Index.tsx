@@ -46,10 +46,6 @@ const germanFaqs = [
   {
     question: "Kann ich mit Ihnen langfristig zusammenarbeiten?",
     answer: "Ja – SEO, Performance, monatlicher Support."
-  },
-  {
-    question: "Unterstützen Sie auch digitale Transformation jenseits von Websites?",
-    answer: "Ja – jedoch ausschließlich kommerzielle digitale Transformation: Customer Experience, AI-Workflows, Prozessoptimierung und die Strukturierung digitaler Entscheidungswege."
   }
 ];
 
