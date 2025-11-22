@@ -33,13 +33,11 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">{t('footer.services')}</h3>
               <ul className="space-y-2 text-foreground text-sm">
-                <li><Link to="/strategie" className="text-foreground hover:text-primary transition-colors">Strategie</Link></li>
-                <li><Link to="/webdesign" className="text-foreground hover:text-primary transition-colors">{t('footer.webDesign')}</Link></li>
-                <li><Link to="/webentwicklung" className="text-foreground hover:text-primary transition-colors">{t('footer.webDevelopment')}</Link></li>
-                <li><Link to="/content-erstellung" className="text-foreground hover:text-primary transition-colors">{t('footer.contentCreation')}</Link></li>
-                <li><Link to="/seo-optimierung" className="text-foreground hover:text-primary transition-colors">{t('footer.seo')}</Link></li>
-                <li><Link to="/google-ads" className="text-foreground hover:text-primary transition-colors">{t('footer.ads')}</Link></li>
-                <li><Link to="/ki-technologien" className="text-foreground hover:text-primary transition-colors">{t('footer.aiTechnologies')}</Link></li>
+                <li><Link to="/digitale-transformation-strategie" className="text-foreground hover:text-primary transition-colors">Digitale Transformation & Strategie</Link></li>
+                <li><Link to="/ux-konzeption" className="text-foreground hover:text-primary transition-colors">UX & Konzeption</Link></li>
+                <li><Link to="/webdesign-entwicklung" className="text-foreground hover:text-primary transition-colors">Webdesign & Entwicklung</Link></li>
+                <li><Link to="/seo-performance" className="text-foreground hover:text-primary transition-colors">SEO & Performance</Link></li>
+                <li><Link to="/ai-workflows" className="text-foreground hover:text-primary transition-colors">AI-Workflows</Link></li>
                 <li><Link to="/klickbetrug" className="text-foreground hover:text-primary transition-colors">Klickbetrug-Schutz</Link></li>
                 <li><Link to="/werbeagentur-mainz" className="text-foreground hover:text-primary transition-colors">Werbeagentur Mainz</Link></li>
                 <li><Link to="/werbeagentur-wiesbaden" className="text-foreground hover:text-primary transition-colors">Werbeagentur Wiesbaden</Link></li>

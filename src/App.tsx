@@ -114,15 +114,19 @@ function App() {
                     <Routes>
                       {/* German Routes - All pages lazy loaded */}
                       <Route path="/" element={<GermanIndex />} />
-                      <Route path="/webdesign" element={<GermanWebDesign />} />
-                      <Route path="/webentwicklung" element={<GermanWebDevelopment />} />
-                      <Route path="/ki-technologien" element={<GermanAiTechnologies />} />
+                      {/* 301 Redirects - Old URLs to New Structure */}
+                      <Route path="/webdesign" element={<Navigate to="/webdesign-entwicklung" replace />} />
+                      <Route path="/webentwicklung" element={<Navigate to="/webdesign-entwicklung" replace />} />
+                      <Route path="/strategie" element={<Navigate to="/digitale-transformation-strategie" replace />} />
+                      <Route path="/seo-optimierung" element={<Navigate to="/seo-performance" replace />} />
+                      <Route path="/ki-technologien" element={<Navigate to="/ai-workflows" replace />} />
+                      
+                      {/* Archived pages - no redirect needed */}
+                      <Route path="/content-erstellung" element={<Navigate to="/" replace />} />
+                      <Route path="/automatisierte-content-marketing" element={<Navigate to="/" replace />} />
+                      <Route path="/google-ads" element={<Navigate to="/" replace />} />
+                      
                       <Route path="/kontakt" element={<GermanContact />} />
-                      <Route path="/strategie" element={<Strategie />} />
-                      <Route path="/seo-optimierung" element={<GermanSEO />} />
-                      <Route path="/content-erstellung" element={<GermanContentCreation />} />
-                      <Route path="/automatisierte-content-marketing" element={<AutomatisierteContentMarketing />} />
-                      <Route path="/google-ads" element={<GermanGoogleAds />} />
                       <Route path="/klickbetrug" element={<Klickbetrug />} />
                       <Route path="/referenzen" element={<GermanCaseStudies />} />
                       <Route path="/ueber-uns" element={<GermanAboutUs />} />
