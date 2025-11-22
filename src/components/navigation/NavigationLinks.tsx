@@ -15,20 +15,18 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
   
   // Navigation links for German language
   const germanLinks = [
-    { title: 'Home', path: '/' },
     { title: 'Digitale Transformation & Strategie', path: '/digitale-transformation-strategie' },
     { title: 'UX & Konzeption', path: '/ux-konzeption' },
     { title: 'Webdesign & Entwicklung', path: '/webdesign-entwicklung' },
     { title: 'SEO & Performance', path: '/seo-performance' },
     { title: 'AI-Workflows', path: '/ai-workflows' },
-    { title: 'Case Studies', path: '/referenzen' },
+    { title: 'Referenzen', path: '/referenzen' },
     { title: 'Über uns', path: '/ueber-uns' },
     { title: 'Kontakt', path: '/kontakt' }
   ];
 
   // Navigation links for English language
   const englishLinks = [
-    { title: 'Home', path: '/en' },
     { title: 'Digital Transformation & Strategy', path: '/en/digital-transformation-strategy' },
     { title: 'UX & Conception', path: '/en/ux-conception' },
     { title: 'Web Design & Development', path: '/en/webdesign-development' },
