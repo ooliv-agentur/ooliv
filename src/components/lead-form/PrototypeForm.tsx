@@ -131,7 +131,7 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
         <Button
           type="submit"
           disabled={isSubmitting || !email}
-          className="w-full h-16 bg-white text-black hover:bg-white/95 hover:scale-[1.02] font-bold text-lg rounded-xl transition-all duration-200 shadow-xl shadow-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50"
+          className="w-full h-16 bg-white text-black hover:bg-white/95 hover:scale-[1.02] font-bold text-sm sm:text-base md:text-lg rounded-xl transition-all duration-200 shadow-xl shadow-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:pointer-events-none disabled:opacity-50"
         >
           {isSubmitting ? (
             <span className="flex items-center gap-2">
@@ -140,7 +140,8 @@ const PrototypeForm: React.FC<PrototypeFormProps> = ({ onClose }) => {
             </span>
           ) : (
             <>
-              Kostenloses Konzept anfordern
+              <span className="hidden sm:inline">Kostenloses Konzept anfordern</span>
+              <span className="sm:hidden">Konzept anfordern</span>
               <ArrowRight className="ml-2 h-6 w-6" />
             </>
           )}

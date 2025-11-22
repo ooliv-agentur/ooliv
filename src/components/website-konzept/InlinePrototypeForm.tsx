@@ -205,9 +205,14 @@ const InlinePrototypeForm = () => {
           disabled={isSubmitting}
           variant="primary"
           size="lg"
-          className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold shadow-lg hover:shadow-xl transition-all"
+          className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
         >
-          {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenloses Konzept erhalten'}
+          {isSubmitting ? 'Wird gesendet...' : (
+            <>
+              <span className="hidden sm:inline">Jetzt kostenloses Konzept erhalten</span>
+              <span className="sm:hidden">Konzept erhalten</span>
+            </>
+          )}
         </Button>
       </div>
     </form>

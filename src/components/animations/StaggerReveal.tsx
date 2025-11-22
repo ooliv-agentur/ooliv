@@ -14,14 +14,14 @@ interface StaggerRevealProps {
 const StaggerReveal = ({
   children,
   className = '',
-  stagger = 0.1,
+  stagger = 0.05,
   delay = 0,
-  distance = 30
+  distance = 15
 }: StaggerRevealProps) => {
   const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.3,
   });
 
   // Return immediately without animations if reduced motion is preferred
@@ -49,8 +49,8 @@ const StaggerReveal = ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
-        ease: [0.215, 0.61, 0.355, 1] // ease-out-cubic
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   };
