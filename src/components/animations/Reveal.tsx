@@ -15,13 +15,14 @@ const Reveal = ({
   children,
   className = '',
   delay = 0,
-  distance = 15,
+  distance = 8,
   direction = 'up'
 }: RevealProps) => {
   const prefersReducedMotion = useReducedMotion();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px',
   });
 
   // Return immediately without animations if reduced motion is preferred
@@ -43,15 +44,17 @@ const Reveal = ({
   const variants = {
     hidden: {
       opacity: 0,
+      willChange: 'transform, opacity',
       ...getInitialPosition(),
     },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
+      willChange: 'auto',
       transition: {
-        duration: 0.4,
-        ease: [0.4, 0, 0.2, 1],
+        duration: 0.35,
+        ease: [0.25, 0.1, 0.25, 1],
         delay: delay
       }
     }
