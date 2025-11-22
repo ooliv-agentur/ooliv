@@ -53,14 +53,14 @@ const LeistungenSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-white">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-text mb-6 leading-tight">
               Unsere Kernleistungen
             </h2>
-            <p className="text-xl text-turquoise max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <p className="text-xl text-teal max-w-3xl mx-auto font-medium leading-relaxed">
               Klar definiert. Ohne Umwege. Auf Ergebnisse ausgerichtet.
             </p>
           </div>
@@ -70,16 +70,16 @@ const LeistungenSection = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group border border-gray-100"
+              className="bg-[#F4F7F7] p-8 rounded-[20px] border border-gray-100 transition-all duration-300 hover:scale-[1.02]"
             >
-              <div className="w-12 h-12 rounded-full bg-turquoise flex items-center justify-center mb-6 transition-all duration-300 text-white">
+              <div className="w-12 h-12 rounded-full bg-teal flex items-center justify-center mb-6 text-white">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4 text-foreground">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-4 text-primary-text">{service.title}</h3>
               <ul className="space-y-2">
                 {service.items.map((item, idx) => (
-                  <li key={idx} className="text-muted-foreground text-base flex items-start">
-                    <span className="text-turquoise mr-2">•</span>
+                  <li key={idx} className="text-muted-foreground text-base flex items-start font-normal">
+                    <span className="text-teal mr-2">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
