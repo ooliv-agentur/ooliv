@@ -52,7 +52,6 @@ const GermanLegalNotice = () => {
       />
 
       <LegalHero
-        badge="Impressum"
         title="Impressum"
         subtitle="Gesetzlich vorgeschriebene Informationen zu ooliv. Klar, transparent und vollständig."
       />

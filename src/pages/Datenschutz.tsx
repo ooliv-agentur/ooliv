@@ -67,7 +67,6 @@ const GermanPrivacyPolicy = () => {
       />
 
       <LegalHero
-        badge="Datenschutz"
         title="Datenschutzerklärung"
         subtitle="Wie wir Daten erheben, verwenden und schützen – transparent und DSGVO-konform."
       />
