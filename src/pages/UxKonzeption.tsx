@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
+import { H2, H3, Paragraph } from '@/components/ui/typography';
 
 const UxKonzeption = () => {
   const breadcrumbs = [
@@ -159,9 +160,9 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <H2 className="mb-6" alignment="center">
               Warum UX Konzeption entscheidend ist
-            </h2>
+            </H2>
           </motion.div>
 
           <motion.div
@@ -199,12 +200,12 @@ const UxKonzeption = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm"
               >
                 <item.icon className="w-8 h-8 text-primary mb-4" aria-label={item.title} />
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <H3 className="mb-2">
                   {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
+                </H3>
+                <Paragraph color="secondary" className="text-sm">
                   {item.description}
-                </p>
+                </Paragraph>
               </motion.div>
             ))}
           </motion.div>
@@ -222,9 +223,9 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <H2 className="mb-6" alignment="center">
               Unsere UX-Leistungen im Überblick
-            </h2>
+            </H2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -235,9 +236,9 @@ const UxKonzeption = () => {
               transition={{ duration: 0.6 }}
               className="bg-card rounded-lg p-8 border border-border shadow-sm"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <H3 className="mb-4">
                 UX Analyse & Research
-              </h3>
+              </H3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

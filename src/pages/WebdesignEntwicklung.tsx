@@ -21,6 +21,7 @@ import {
 import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 import { typographyStyles } from '@/styles/typography';
 import { motion } from 'framer-motion';
+import { H2, LargeParagraph } from '@/components/ui/typography';
 
 const WebdesignEntwicklung = () => {
   const breadcrumbs = [
@@ -178,9 +179,9 @@ const WebdesignEntwicklung = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Warum modernes Webdesign entscheidend ist
-            </h2>
+            </H2>
           </motion.div>
 
           <PainPointsGrid painPoints={painPoints} columns={4} />
@@ -197,9 +198,9 @@ const WebdesignEntwicklung = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Unsere Leistungen: Webdesign & Entwicklung für Unternehmen
-            </h2>
+            </H2>
           </motion.div>
 
           <FeatureGrid 
@@ -221,9 +222,9 @@ const WebdesignEntwicklung = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Professionelles Webdesign: Struktur, Performance & Conversion
-            </h2>
+            </H2>
           </motion.div>
 
           <BenefitsCards 
@@ -233,15 +234,17 @@ const WebdesignEntwicklung = () => {
             background="white"
           />
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-xl font-semibold text-[#0B0B0B] mt-12"
+            className="text-center mt-12"
           >
-            Wir entwickeln Websites, die funktionieren — vom Konzept bis zur Entwicklung.
-          </motion.p>
+            <LargeParagraph alignment="center" className="font-semibold">
+              Wir entwickeln Websites, die funktionieren — vom Konzept bis zur Entwicklung.
+            </LargeParagraph>
+          </motion.div>
         </Container>
       </Section>
 
@@ -262,9 +265,9 @@ const WebdesignEntwicklung = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Häufig gestellte Fragen
-            </h2>
+            </H2>
           </motion.div>
 
           <Accordion type="single" collapsible className="w-full">

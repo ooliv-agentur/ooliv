@@ -21,6 +21,7 @@ import {
 import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 import { typographyStyles } from '@/styles/typography';
 import { motion } from 'framer-motion';
+import { H2, LargeParagraph } from '@/components/ui/typography';
 
 const DigitaleTransformationStrategie = () => {
   const breadcrumbs = [
@@ -154,22 +155,24 @@ const DigitaleTransformationStrategie = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Die häufigsten Gründe, warum digitale Transformation scheitert
-            </h2>
+            </H2>
           </motion.div>
 
           <PainPointsGrid painPoints={painPoints} columns={4} />
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-xl font-semibold text-[#0B0B0B] mt-12"
+            className="text-center mt-12"
           >
-            Wir lösen nicht nur technische Aufgaben — wir strukturieren Ihr digitales Ökosystem strategisch, prozessorientiert und wertbasiert.
-          </motion.p>
+            <LargeParagraph alignment="center" className="font-semibold">
+              Wir lösen nicht nur technische Aufgaben — wir strukturieren Ihr digitales Ökosystem strategisch, prozessorientiert und wertbasiert.
+            </LargeParagraph>
+          </motion.div>
         </Container>
       </Section>
 
@@ -183,12 +186,12 @@ const DigitaleTransformationStrategie = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Unser strukturierter Ansatz für digitale Transformation
-            </h2>
-            <p className={`${typographyStyles.body.large} max-w-3xl mx-auto mt-6`}>
+            </H2>
+            <LargeParagraph className="max-w-3xl mx-auto" alignment="center" color="secondary">
               Unsere hybride Struktur aus Strategie, UX, Development und Content sorgt dafür, dass digitale Transformation ganzheitlich realisiert wird.
-            </p>
+            </LargeParagraph>
           </motion.div>
 
           <FeatureGrid 
@@ -217,9 +220,9 @@ const DigitaleTransformationStrategie = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Häufig gestellte Fragen
-            </h2>
+            </H2>
           </motion.div>
 
           <Accordion type="single" collapsible className="w-full">
