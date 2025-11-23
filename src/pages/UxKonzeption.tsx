@@ -48,8 +48,8 @@ const UxKonzeption = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="UX Agentur für Konzeption, Customer Journeys & Wireframes | ooliv"
-        description="UX Konzeption für Unternehmen: Informationsarchitektur, Customer Journey Mapping, Wireframes, Prototypen, Conversion-Funnel. 200+ Digitalprojekte. Senior UX Beratung."
+        title="UX Konzeption & Informationsarchitektur | ooliv Mainz"
+        description="UX-Strategie, Customer Journeys, Informationsarchitektur & Conversion. Senior-Level UX-Konzeption von Uli Schönleber."
         canonicalUrl="https://ooliv.de/ux-konzeption"
         keywords="ux agentur, ux konzeption, ux design agentur, ux optimierung, ux beratung, wireframes & prototypen, information architecture, customer journey mapping, usability optimierung, conversion optimierung, ux research, funnel design, ux strategie, user flows, nutzerführung verbessern, digitale touchpoints, digitale kundenerlebnisse, ux audits, ux für b2b, mobile first ux, ux workshop, ux analyse"
         breadcrumbs={breadcrumbs}
@@ -135,7 +135,7 @@ const UxKonzeption = () => {
       <section id="hero">
         <PageHero
           title="UX Agentur für klare Strukturen & bessere Nutzererlebnisse"
-          subtitle="Professionelle UX-Konzeption: Wireframes, Customer Journeys, Informationsarchitektur und Conversion-Optimierung — strategisch, datenbasiert und messbar."
+          subtitle="Strategische UX-Konzeption: Informationsarchitektur, Customer Journeys, Wireframes und Conversion-Optimierung — geführt von Uli Schönleber als Senior Digital Strategist, umgesetzt durch ein spezialisiertes Hybridteam."
           primaryCta={{
             text: "Projekt besprechen",
             link: "#",
@@ -175,22 +175,22 @@ const UxKonzeption = () => {
               {
                 icon: AlertTriangle,
                 title: "Kein klares UX-Konzept",
-                description: "Ohne Struktur verlieren Nutzer die Orientierung."
+                description: "Nutzer verlieren Orientierung, weil Entscheidungen nicht strategisch geführt werden."
               },
               {
                 icon: LayoutGrid,
                 title: "Fehlende Informationsarchitektur",
-                description: "Inhalte sind unstrukturiert und schwer findbar."
+                description: "Inhalte sind nicht priorisiert und verhindern schnelle Entscheidungen."
               },
               {
                 icon: Route,
                 title: "Unübersichtliche Nutzerführung",
-                description: "User Flows sind zu komplex oder unklar."
+                description: "User Flows folgen keiner Entscheidungslogik und erzeugen Reibung."
               },
               {
                 icon: Target,
                 title: "Ungenaue Customer Journeys",
-                description: "Touchpoints sind nicht aufeinander abgestimmt."
+                description: "Touchpoints sind nicht abgestimmt und bremsen Conversion."
               }
             ].map((item, index) => (
               <motion.div
@@ -252,6 +252,9 @@ const UxKonzeption = () => {
                   <span className="text-base text-muted-foreground">Customer Journey Mapping</span>
                 </li>
               </ul>
+              <p className="mt-4 text-base text-muted-foreground">
+                UX Audit, Customer Journey Mapping, Entscheidungslogik — datenbasiert.
+              </p>
               <p className="mt-4 text-sm text-primary font-semibold">
                 → Keyword: UX Optimierung
               </p>
@@ -277,6 +280,9 @@ const UxKonzeption = () => {
                   <span className="text-base text-muted-foreground">Content-Hierarchien</span>
                 </li>
               </ul>
+              <p className="mt-4 text-base text-muted-foreground">
+                Sitemaps, Content-Hierarchien, Priorisierung & Decision Architecture.
+              </p>
               <p className="mt-4 text-sm text-primary font-semibold">
                 → Keyword: Information Architecture
               </p>
@@ -302,6 +308,9 @@ const UxKonzeption = () => {
                   <span className="text-base text-muted-foreground">Bessere Entscheidungsgrundlage</span>
                 </li>
               </ul>
+              <p className="mt-4 text-base text-muted-foreground">
+                Iterative Wireframes & Klick-Prototypen für schnelle Entscheidungen.
+              </p>
               <p className="mt-4 text-sm text-primary font-semibold">
                 → Keyword: Wireframes & Prototypen
               </p>
@@ -327,6 +336,9 @@ const UxKonzeption = () => {
                   <span className="text-base text-muted-foreground">Nutzerpfade verkürzen</span>
                 </li>
               </ul>
+              <p className="mt-4 text-base text-muted-foreground">
+                Engpässe eliminieren, Nutzerwege verkürzen, Conversion steigern.
+              </p>
               <p className="mt-4 text-sm text-primary font-semibold">
                 → Keyword: Conversion Optimierung
               </p>
@@ -362,22 +374,22 @@ const UxKonzeption = () => {
               {
                 icon: Target,
                 title: "Struktur statt Bauchgefühl",
-                description: "UX beginnt mit Klarheit, nicht mit Design."
+                description: "UX basiert auf Klarheit, nicht auf visueller Intuition."
               },
               {
                 icon: Route,
                 title: "User Flows, die lenken",
-                description: "Wir gestalten Wege, die Nutzer leiten — nicht verlieren."
+                description: "Wir gestalten Nutzerwege entlang eines strukturierten Decision-Flows."
               },
               {
                 icon: Brain,
                 title: "Entscheidungsarchitektur",
-                description: "Strategie vor Schönheitsdesign."
+                description: "Jede Page folgt einer klaren Strategie — nicht dekorativem UI."
               },
               {
                 icon: TrendingUp,
                 title: "UX als Conversion-Treiber",
-                description: "Ideal für komplexe B2B-Angebote."
+                description: "Ideal für komplexe B2B-Angebote & erklärungsbedürftige Produkte."
               }
             ].map((item, index) => (
               <motion.div
@@ -413,7 +425,7 @@ const UxKonzeption = () => {
           >
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Customer Journey Mapping – Nutzer verstehen, Entscheidungen lenken
+                Customer Journey Mapping & Value Proposition – Nutzer verstehen, Entscheidungen strukturieren
               </h2>
               <div className="space-y-4">
                 {[
@@ -520,22 +532,22 @@ const UxKonzeption = () => {
               {
                 icon: Frame,
                 title: "Low-Fidelity bis High-Fidelity",
-                description: "Von schnellen Skizzen bis zu detaillierten Designs."
+                description: "Von schnellen Skizzen bis zu validierbaren Prototypen."
               },
               {
                 icon: Route,
                 title: "Nutzerführung optimieren",
-                description: "Jeder Klick ist strategisch durchdacht."
+                description: "Jede Interaktion folgt einer strukturierten Journey."
               },
               {
                 icon: Layers,
                 title: "Click-Dummies erstellen",
-                description: "Interaktive Prototypen zum Testen und Validieren."
+                description: "Interaktive Prototypen zum Testen & Entscheiden."
               },
               {
                 icon: TestTube2,
                 title: "Usability validieren",
-                description: "Feedback einholen, bevor entwickelt wird."
+                description: "Usability validieren, bevor Entwicklung beginnt."
               }
             ].map((item, index) => (
               <motion.div
@@ -822,9 +834,6 @@ const UxKonzeption = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Hybrides UX-Team aus: UX Strategie, UX Research, Wireframes, UI Design, Content & Development — für ganzheitliche UX-Konzepte.
             </p>
-            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
-              Unser Hybridteam für digitale Transformation kombiniert interdisziplinäre digitale Beratung mit praktischer Umsetzung. Das Ergebnis: vollständige UX-Konzepte aus einer Hand.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -884,7 +893,7 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center text-lg text-muted-foreground mt-12"
           >
-            Unser hybrider Ansatz: CEO + UX-Designer + Entwickler + Content = vollständige UX-Konzepte. Unsere hybride Struktur sorgt dafür, dass digitale Transformation nicht nur geplant, sondern vollständig realisiert wird. Weitere Services: {' '}
+            Unser hybrider Ansatz: Uli führt Strategie & UX-Architektur, das Team unterstützt in Design, Development, SEO und Content. Weitere Services: {' '}
             <Link to="/webdesign-entwicklung" className="text-primary hover:underline">Webdesign</Link>, {' '}
             <Link to="/seo-performance" className="text-primary hover:underline">SEO</Link>, {' '}
             <Link to="/ai-workflows" className="text-primary hover:underline">AI-Workflows</Link>.
@@ -898,8 +907,6 @@ const UxKonzeption = () => {
           title="Lassen Sie uns Ihr UX-Projekt starten"
           subtitle="Kostenlose Erstberatung & UX-Analyse in 48 Stunden"
           primaryCta="Projekt starten"
-          secondaryCta="Kostenlose 15-Minuten-Einschätzung"
-          secondaryCtaLink="#"
         />
       </section>
 
