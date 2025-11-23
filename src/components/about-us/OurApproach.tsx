@@ -40,8 +40,8 @@ const OurApproach = () => {
         <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {approaches.map((approach, index) => (
             <div key={index} className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg">
-              <div className="h-12 w-12 bg-[#0BC3C3]/10 rounded-full flex items-center justify-center mb-6">
-                <approach.icon className="w-6 h-6 text-[#0BC3C3]" />
+              <div className="h-12 w-12 bg-[#32b2ab]/10 rounded-full flex items-center justify-center mb-6">
+                <approach.icon className="w-6 h-6 text-[#32b2ab]" />
               </div>
               <H3 className="text-[#0A0A0A] mb-3">
                 {approach.title}

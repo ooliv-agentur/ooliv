@@ -27,42 +27,42 @@ const Footer = () => {
               <h3 className="text-base font-semibold text-[#0D0D0D] mb-4">Leistungen</h3>
               <ul className="space-y-2 text-sm text-[#666666]">
                 <li>
-                  <Link to="/digitale-transformation-strategie" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/digitale-transformation-strategie" className="hover:text-[#32b2ab] transition-colors">
                     Digitale Transformation & Strategie
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ux-konzeption" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/ux-konzeption" className="hover:text-[#32b2ab] transition-colors">
                     UX & Konzeption
                   </Link>
                 </li>
                 <li>
-                  <Link to="/webdesign-entwicklung" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/webdesign-entwicklung" className="hover:text-[#32b2ab] transition-colors">
                     Webdesign & Entwicklung
                   </Link>
                 </li>
                 <li>
-                  <Link to="/seo-performance" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/seo-performance" className="hover:text-[#32b2ab] transition-colors">
                     SEO & Performance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ai-workflows" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/ai-workflows" className="hover:text-[#32b2ab] transition-colors">
                     AI-Workflows
                   </Link>
                 </li>
                 <li>
-                  <Link to="/referenzen" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/referenzen" className="hover:text-[#32b2ab] transition-colors">
                     Referenzen
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ueber-uns" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/ueber-uns" className="hover:text-[#32b2ab] transition-colors">
                     Über uns
                   </Link>
                 </li>
                 <li>
-                  <Link to="/kontakt" className="hover:text-[#0BC3C3] transition-colors">
+                  <Link to="/kontakt" className="hover:text-[#32b2ab] transition-colors">
                     Kontakt
                   </Link>
                 </li>
@@ -80,13 +80,13 @@ const Footer = () => {
                 </p>
                 <a 
                   href="mailto:info@ooliv.de" 
-                  className="block hover:text-[#0BC3C3] transition-colors"
+                  className="block hover:text-[#32b2ab] transition-colors"
                 >
                   info@ooliv.de
                 </a>
                 <a 
                   href="tel:+4961316367801" 
-                  className="block hover:text-[#0BC3C3] transition-colors"
+                  className="block hover:text-[#32b2ab] transition-colors"
                 >
                   +49 6131 6367801
                 </a>
@@ -94,7 +94,7 @@ const Footer = () => {
                   href="https://wa.me/4961316367801" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#0BC3C3] hover:underline pt-1"
+                  className="inline-flex items-center gap-2 text-[#32b2ab] hover:underline pt-1"
                 >
                   <MessageCircle className="h-4 w-4" />
                   WhatsApp
@@ -117,14 +117,14 @@ const Footer = () => {
               <div className="flex flex-wrap items-center gap-4 text-sm text-[#666666]">
                 <Link 
                   to="/datenschutz" 
-                  className="hover:text-[#0BC3C3] transition-colors"
+                  className="hover:text-[#32b2ab] transition-colors"
                 >
                   Datenschutz
                 </Link>
                 <span className="text-gray-300">|</span>
                 <Link 
                   to="/impressum" 
-                  className="hover:text-[#0BC3C3] transition-colors"
+                  className="hover:text-[#32b2ab] transition-colors"
                 >
                   Impressum
                 </Link>

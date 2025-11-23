@@ -71,14 +71,14 @@ export default {
         },
         // Brand colors for direct use
         brand: {
-          turquoise: "#0BC3C3",
-          turquoiseDark: "#089EA0",
-          turquoiseLight: "#E0FBFA",
+          turquoise: "#32b2ab",
+          turquoiseDark: "#289690",
+          turquoiseLight: "#D8F3F1",
         },
         turquoise: {
-          DEFAULT: "#0BC3C3",
-          dark: "#089EA0",
-          light: "#E0FBFA",
+          DEFAULT: '#32b2ab',
+          dark: '#289690',
+          light: '#D8F3F1',
         },
       },
       

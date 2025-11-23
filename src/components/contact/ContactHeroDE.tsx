@@ -2,6 +2,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Phone } from 'lucide-react';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H1, LargeParagraph } from '@/components/ui/typography';
 
 const ContactHeroDE = () => {
   const handleStartProject = () => {
@@ -9,7 +12,7 @@ const ContactHeroDE = () => {
   };
 
   return (
-    <section className="relative bg-gray-50 overflow-hidden font-satoshi min-h-screen flex items-center">
+    <Section background="light" spacing="large" className="relative overflow-hidden min-h-screen flex items-center">
       {/* Floating circles animation - same as other subpages */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -23,26 +26,17 @@ const ContactHeroDE = () => {
         <div className="floating-circle diagonal w-10 h-10 top-80 left-20 opacity-55"></div>
       </div>
       
-      <div className="relative z-20 w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
-            {/* Main heading */}
-            <h1 
-              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-              style={{ 
-                color: '#003343' 
-              }}
-            >
-              Kontaktieren Sie ooliv direkt
-            </h1>
-            
-            {/* Subtitle */}
-            <p 
-              className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 text-left"
-              style={{ lineHeight: '1.6' }}
-            >
-              Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege.
-            </p>
+      <Container size="default" className="relative z-20">
+        <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
+          {/* Main heading */}
+          <H1 className="mb-6 sm:mb-8 text-left">
+            Kontaktieren Sie ooliv direkt
+          </H1>
+          
+          {/* Subtitle */}
+          <LargeParagraph className="mb-8 sm:mb-10 text-left" color="secondary">
+            Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege.
+          </LargeParagraph>
             
             {/* CTA buttons - now using design system */}
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -69,9 +63,8 @@ const ContactHeroDE = () => {
               </Button>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Container>
+      </Section>
   );
 };
 

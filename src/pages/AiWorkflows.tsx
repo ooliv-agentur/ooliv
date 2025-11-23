@@ -208,7 +208,7 @@ const AiWorkflows = () => {
                 </ul>
               </div>
 
-              <div className="bg-[#E0FBFA] p-8 rounded-lg border border-[#0BC3C3]/20">
+              <div className="bg-[#D8F3F1] p-8 rounded-lg border border-[#32b2ab]/20">
                 <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">Unsere Lösung</h3>
                 <p className="text-[#0A0A0A] leading-relaxed">
                   Wir entwickeln klare AI-Workflows, die nicht experimentieren, sondern liefern:

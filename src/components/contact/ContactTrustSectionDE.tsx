@@ -2,6 +2,9 @@
 import React from 'react';
 import { CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2, LargeParagraph } from '@/components/ui/typography';
 
 const ContactTrustSectionDE = () => {
   const trustPoints = [
@@ -16,16 +19,16 @@ const ContactTrustSectionDE = () => {
   };
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section spacing="large" background="white">
+      <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-medico-darkGreen" style={{ lineHeight: '1.3' }}>
+          <H2 className="mb-6" alignment="center">
             Warum ooliv?
-          </h2>
-          <div className="w-20 h-1 bg-accent-primary mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-medico-darkGreen/80 max-w-3xl mx-auto" style={{ lineHeight: '1.6' }}>
+          </H2>
+          <div className="w-20 h-1 bg-[#32b2ab] mx-auto mb-8"></div>
+          <LargeParagraph className="max-w-3xl mx-auto" alignment="center" color="secondary">
             Erfahren Sie, was uns zu Ihrem idealen Partner für digitales Marketing macht
-          </p>
+          </LargeParagraph>
         </div>
         
         <div className="max-w-4xl mx-auto">
@@ -34,18 +37,18 @@ const ContactTrustSectionDE = () => {
             {trustPoints.map((point, index) => (
               <div 
                 key={index} 
-                className="flex items-start bg-medico-mint/30 rounded-xl p-6 border border-accent-primary/20 hover:shadow-md transition-all duration-300"
+                className="flex items-start bg-[#D8F3F1] rounded-xl p-6 border border-[#32b2ab]/20 hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-accent-primary/20 rounded-full p-2 mr-4 flex-shrink-0">
-                  <CheckCircle className="h-6 w-6 text-accent-primary" />
+                <div className="bg-[#32b2ab]/20 rounded-full p-2 mr-4 flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-[#32b2ab]" />
                 </div>
-                <p className="text-medico-darkGreen font-medium text-lg leading-relaxed">{point}</p>
+                <p className="text-[#0A0A0A] font-medium text-lg leading-relaxed">{point}</p>
               </div>
             ))}
           </div>
 
           {/* Trust Box with Ratings */}
-          <div className="bg-accent-primary/5 rounded-2xl p-8 border border-accent-primary/20 mb-12">
+          <div className="bg-[#32b2ab]/5 rounded-2xl p-8 border border-[#32b2ab]/20 mb-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <a 
                 href="https://g.co/kgs/WY5xKY6" 
@@ -55,11 +58,11 @@ const ContactTrustSectionDE = () => {
               >
                 <div className="flex justify-center items-center mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-accent-complementary text-accent-complementary" />
+                    <Star key={i} className="h-5 w-5 fill-[#32b2ab] text-[#32b2ab]" />
                   ))}
                 </div>
-                <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>
-                <div className="text-medico-darkGreen/70 text-sm">Google Bewertungen</div>
+                <div className="text-2xl font-bold text-[#0A0A0A] mb-1">4,9/5</div>
+                <div className="text-[#555555] text-sm">Google Bewertungen</div>
               </a>
               
               <a 
@@ -70,11 +73,11 @@ const ContactTrustSectionDE = () => {
               >
                 <div className="flex justify-center items-center mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-accent-complementary text-accent-complementary" />
+                    <Star key={i} className="h-5 w-5 fill-[#32b2ab] text-[#32b2ab]" />
                   ))}
                 </div>
-                <div className="text-2xl font-bold text-medico-darkGreen mb-1">4,9/5</div>
-                <div className="text-medico-darkGreen/70 text-sm">Sortlist Bewertungen</div>
+                <div className="text-2xl font-bold text-[#0A0A0A] mb-1">4,9/5</div>
+                <div className="text-[#555555] text-sm">Sortlist Bewertungen</div>
               </a>
             </div>
           </div>
@@ -82,27 +85,16 @@ const ContactTrustSectionDE = () => {
           {/* CTA Button */}
           <div className="text-center">
             <Button 
+              variant="primary"
               size="lg" 
-              className="font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ 
-                backgroundColor: '#FFD700', 
-                color: '#003347',
-                border: 'none'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFC700';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFD700';
-              }}
               onClick={handleOpenLeadForm}
             >
               Projekt starten
             </Button>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

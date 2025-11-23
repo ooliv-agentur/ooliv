@@ -2,9 +2,9 @@
 
 :root {
   /* === CORE BRAND COLORS === */
-  --brand-turquoise: #0BC3C3;
-  --brand-turquoise-dark: #089EA0;
-  --brand-turquoise-light: #E0FBFA;
+  --brand-turquoise: #32b2ab;
+  --brand-turquoise-dark: #289690;
+  --brand-turquoise-light: #D8F3F1;
   
   /* === TEXT COLORS === */
   --text-primary: #0A0A0A;
@@ -29,7 +29,7 @@
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 5%;
   
-  --primary: 179 69% 47%; /* Turquoise #0BC3C3 */
+  --primary: 177 56% 45%; /* Turquoise #32b2ab */
   --primary-foreground: 0 0% 100%;
   
   --secondary: 180 11% 96%;
@@ -38,7 +38,7 @@
   --muted: 180 11% 96%;
   --muted-foreground: 0 0% 45%;
   
-  --accent: 179 69% 47%; /* Turquoise accent */
+  --accent: 177 56% 45%; /* Turquoise accent */
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84% 60%;
@@ -46,14 +46,14 @@
   
   --border: 180 11% 90%;
   --input: 180 11% 90%;
-  --ring: 179 69% 47%;
+  --ring: 177 56% 45%;
   
   --radius: 0.625rem;
   
   /* === UTILITY CLASSES === */
-  --turquoise: 179 69% 47%;
-  --turquoise-hover: 179 65% 40%;
-  --turquoise-light: 179 60% 85%;
+  --turquoise: 177 56% 45%;
+  --turquoise-hover: 177 56% 37%;
+  --turquoise-light: 177 56% 90%;
 }
 
 .dark {
@@ -75,7 +75,7 @@
   --muted: 0 0% 15%;
   --muted-foreground: 0 0% 65%;
   
-  --accent: 179 69% 47%;
+  --accent: 177 56% 45%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 63% 31%;
@@ -83,9 +83,9 @@
   
   --border: 0 0% 20%;
   --input: 0 0% 20%;
-  --ring: 179 69% 47%;
-  
-  --turquoise: 179 69% 47%;
-  --turquoise-hover: 179 65% 40%;
-  --turquoise-light: 179 60% 85%;
+  --ring: 177 56% 45%;
+
+  --turquoise: 177 56% 45%;
+  --turquoise-hover: 177 56% 37%;
+  --turquoise-light: 177 56% 90%;
 }
