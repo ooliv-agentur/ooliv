@@ -17,6 +17,7 @@ import GEOOptimizationSEO from '@/components/seo/GEOOptimizationSEO';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
+import BudgetSection from '@/components/shared/BudgetSection';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -97,22 +98,16 @@ const GermanSEO = () => {
       <SEOApproachDE />
       
       {/* Budget Section */}
-      <Section spacing="medium">
-        <Container size="narrow">
-          <div className="bg-primary/10 p-8 rounded-lg text-center">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">
-              Was kostet professionelle SEO & GEO-Betreuung?
-            </h3>
-            <p className="text-lg text-muted-foreground mb-4">
-              Unsere SEO & GEO-Pakete starten bei <span className="text-primary font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
-              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-primary font-bold">€2.500</span>.
-            </p>
-            <div className="inline-block bg-background px-4 py-2 rounded-full text-sm font-semibold text-primary border-2 border-primary">
-              Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <BudgetSection
+        title="Was kostet professionelle SEO & GEO-Betreuung?"
+        description={
+          <>
+            Unsere SEO & GEO-Pakete starten bei <span className="text-primary font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
+            Initial-Audits und technische SEO-Setups beginnen bei <span className="text-primary font-bold">€2.500</span>.
+          </>
+        }
+        badge="Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote"
+      />
       
       <SEOProcessDE />
 

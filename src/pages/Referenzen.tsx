@@ -8,10 +8,11 @@ import FAQ from '@/components/FAQ';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
-import { H2, H3, Paragraph, LargeParagraph } from '@/components/ui/typography';
+import { H2, LargeParagraph } from '@/components/ui/typography';
 import { CheckCircle2, Target, TrendingUp, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FeatureCard from '@/components/shared/FeatureCard';
 
 const GermanCaseStudies = () => {
   const { language } = useLanguage();
@@ -192,24 +193,13 @@ const GermanCaseStudies = () => {
                   : "Every case study has KPIs – from visibility to lead generation."
               }
             ].map((item, index) => (
-              <motion.div
+              <FeatureCard
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-secondary rounded-lg p-8 text-center border border-border"
-              >
-                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mx-auto mb-6">
-                  <item.icon className="w-6 h-6" />
-                </div>
-                <H3 className="mb-3">
-                  {item.title}
-                </H3>
-                <Paragraph color="secondary">
-                  {item.description}
-                </Paragraph>
-              </motion.div>
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                index={index}
+              />
             ))}
           </div>
         </Container>
@@ -233,28 +223,19 @@ const GermanCaseStudies = () => {
           </H2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {successPillars.map((pillar, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-secondary rounded-lg p-8 text-center border border-border"
-              >
-                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mx-auto mb-6">
-                  {index === 0 && <Target className="w-8 h-8 text-primary" />}
-                  {index === 1 && <Users className="w-8 h-8 text-primary" />}
-                  {index === 2 && <Zap className="w-8 h-8 text-primary" />}
-                </div>
-                <H3 className="mb-4">
-                  {pillar.title}
-                </H3>
-                <Paragraph color="secondary" className="leading-relaxed">
-                  {pillar.description}
-                </Paragraph>
-              </motion.div>
-            ))}
+            {successPillars.map((pillar, index) => {
+              const icons = [Target, Users, Zap];
+              return (
+                <FeatureCard
+                  key={index}
+                  icon={icons[index]}
+                  title={pillar.title}
+                  description={pillar.description}
+                  variant="large"
+                  index={index}
+                />
+              );
+            })}
           </div>
         </Container>
       </Section>
