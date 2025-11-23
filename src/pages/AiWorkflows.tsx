@@ -130,7 +130,7 @@ const AiWorkflows = () => {
     <PageLayout>
       <EnhancedSEOHead
       title="AI-Workflows & Prozessautomatisierung | ooliv Mainz"
-      description="AI-Workflows, Automatisierung & Prozessoptimierung. Senior-Level AI-Strategie von Uli Schönleber. Effizienz, Skalierbarkeit & klare Strukturen."
+      description="AI-Workflows, Automatisierung & Prozessoptimierung. Senior-Level AI-Strategie mit strategischer Führung. Effizienz, Skalierbarkeit & klare Strukturen."
         canonicalUrl="https://ooliv.de/ai-workflows"
         keywords="ai workflows, ki workflows, ai integration unternehmen, ai prozessautomatisierung"
         breadcrumbs={breadcrumbs}
@@ -141,7 +141,7 @@ const AiWorkflows = () => {
         <Container>
           <PageHero
             title="AI-Workflows & Automatisierung für Unternehmen – effizient, skalierbar, messbar"
-            subtitle="Wir entwickeln strukturierte AI-Workflows, automatisieren Prozesse und integrieren KI sinnvoll in bestehende Systeme — geführt von Uli Schönleber als Senior Digital Strategist, umgesetzt durch ein spezialisiertes Hybridteam."
+            subtitle="Wir entwickeln strukturierte AI-Workflows, automatisieren Prozesse und integrieren KI sinnvoll in bestehende Systeme — Senior-Level-Führung mit spezialisierter Umsetzung durch Experten für Automatisierung, Development und Systemintegration."
             primaryCta={{ text: "AI-Strategiegespräch vereinbaren", link: "/kontakt" }}
             secondaryCta={{ text: "Beispiel-Workflows ansehen", link: "#leistungen" }}
           />
@@ -310,7 +310,7 @@ const AiWorkflows = () => {
               Hybride AI-Strategie
             </h2>
             <p className="text-lg text-[#666666] leading-relaxed">
-              Uli führt AI-Strategie, Prozessmodellierung & Priorisierung; das Hybridteam unterstützt in Automatisierung, Development, Content & Systemintegration.
+              AI-Strategie, Prozessmodellierung & Priorisierung unter Senior-Level-Führung — Umsetzung durch spezialisiertes Hybridteam für Automatisierung, Development, Content & Systemintegration.
             </p>
           </motion.div>
         </Container>

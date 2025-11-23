@@ -49,7 +49,7 @@ const UxKonzeption = () => {
     <PageLayout>
       <EnhancedSEOHead
         title="UX Konzeption & Informationsarchitektur | ooliv Mainz"
-        description="UX-Strategie, Customer Journeys, Informationsarchitektur & Conversion. Senior-Level UX-Konzeption von Uli Schönleber."
+        description="UX-Strategie, Customer Journeys, Informationsarchitektur & Conversion. Senior-Level UX-Konzeption mit strategischer Führung & spezialisiertem Team."
         canonicalUrl="https://ooliv.de/ux-konzeption"
         keywords="ux agentur, ux konzeption, ux design agentur, ux optimierung, ux beratung, wireframes & prototypen, information architecture, customer journey mapping, usability optimierung, conversion optimierung, ux research, funnel design, ux strategie, user flows, nutzerführung verbessern, digitale touchpoints, digitale kundenerlebnisse, ux audits, ux für b2b, mobile first ux, ux workshop, ux analyse"
         breadcrumbs={breadcrumbs}
@@ -135,7 +135,7 @@ const UxKonzeption = () => {
       <section id="hero">
         <PageHero
           title="UX Agentur für klare Strukturen & bessere Nutzererlebnisse"
-          subtitle="Strategische UX-Konzeption: Informationsarchitektur, Customer Journeys, Wireframes und Conversion-Optimierung — geführt von Uli Schönleber als Senior Digital Strategist, umgesetzt durch ein spezialisiertes Hybridteam."
+          subtitle="Strategische UX-Konzeption: Informationsarchitektur, Customer Journeys, Wireframes und Conversion-Optimierung — Senior-Level-Führung mit spezialisierter Umsetzung durch Experten für Struktur, Design und Nutzererlebnis."
           primaryCta={{
             text: "Projekt besprechen",
             link: "#",
