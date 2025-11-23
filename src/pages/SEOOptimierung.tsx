@@ -7,7 +7,7 @@ import SEOServicesDE from '@/components/seo/SEOServicesDE';
 import SEOProcessDE from '@/components/seo/SEOProcessDE';
 import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import SEOCtaDE from '@/components/seo/SEOCtaDE';
-import CaseStudiesSection from '@/components/CaseStudiesSection';
+import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 import FAQ from '@/components/FAQ';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
@@ -120,11 +120,11 @@ const GermanSEO = () => {
         Mehr über <Link to="/" className="underline hover:no-underline text-[#0BC3C3]">ooliv und unsere Arbeitsweise</Link>.
       </p>
       
-      <Section background="light" spacing="large">
-        <Container>
-          <CaseStudiesSection />
-        </Container>
-      </Section>
+      <MicroCaseStudies 
+        cases={["spez", "enwas", "noxus"]}
+        title="Messbare SEO-Ergebnisse"
+        showTitle={true}
+      />
       
       <FAQ 
         customFaqs={seoFaqs} 

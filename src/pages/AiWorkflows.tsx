@@ -5,7 +5,7 @@ import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CTA from '@/components/CTA';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
-import { StatsBar, PainPointsGrid, FeatureGrid } from '@/components/shared';
+import { StatsBar, PainPointsGrid, FeatureGrid, MicroCaseStudies } from '@/components/shared';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { typographyStyles } from '@/styles/typography';
 import { motion } from 'framer-motion';
@@ -243,6 +243,13 @@ const AiWorkflows = () => {
           />
         </Container>
       </Section>
+
+      {/* Case Studies */}
+      <MicroCaseStudies 
+        cases={["iconpro", "medicloud", "cobus"]}
+        title="AI-lastige Kundenprojekte"
+        showTitle={true}
+      />
 
       {/* FAQ */}
       <Section id="faq" background="light" spacing="large">
