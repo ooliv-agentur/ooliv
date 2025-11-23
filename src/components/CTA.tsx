@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import { H2, LargeParagraph, Paragraph } from '@/components/ui/typography';
 
 interface CTAProps {
   title: string;
@@ -71,12 +72,12 @@ const CTA = ({
   return (
     <section className="py-24 bg-background">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight">
+        <H2 className="mb-8 max-w-4xl mx-auto" alignment="center">
           {title}
-        </h2>
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground font-normal leading-relaxed">
+        </H2>
+        <LargeParagraph className="mb-12 max-w-4xl mx-auto" alignment="center" color="secondary">
           {subtitle}
-        </p>
+        </LargeParagraph>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full sm:w-auto">
           {shouldOpenLeadForm(primaryCta) ? (
@@ -160,10 +161,10 @@ const CTA = ({
         
         {footerNote ? (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-[#F5F7F7] rounded-[20px] p-8 border border-[#E4E6E7]">
-              <p className="text-base md:text-lg text-[#444444] font-normal leading-relaxed">
+            <div className="bg-secondary rounded-[20px] p-8 border border-border">
+              <Paragraph color="secondary" className="text-base md:text-lg">
                 {footerNote}
-              </p>
+              </Paragraph>
             </div>
           </div>
         ) : children ? (
@@ -172,10 +173,10 @@ const CTA = ({
           </div>
         ) : (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-[#F5F7F7] rounded-[20px] p-8 border border-[#E4E6E7]">
-              <p className="text-base md:text-lg text-[#444444] font-normal leading-relaxed">
+            <div className="bg-secondary rounded-[20px] p-8 border border-border">
+              <Paragraph color="secondary" className="text-base md:text-lg">
                 {defaultFooterNote}
-              </p>
+              </Paragraph>
             </div>
           </div>
         )}

@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
-import { H3 } from '@/components/ui/typography';
+import { H3, H4, Paragraph, Caption } from '@/components/ui/typography';
 
 const projekte = [
   {
@@ -111,7 +111,7 @@ const WeitereProjekteTable = () => {
     <Section spacing="large" background="light">
       <Container size="default">
         <motion.div {...fadeInUp}>
-          <H3 className="text-[#0A0A0A] mb-12" alignment="center">
+          <H3 className="mb-12" alignment="center">
             {translations.title}
           </H3>
         </motion.div>
@@ -124,24 +124,24 @@ const WeitereProjekteTable = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-lg p-4 sm:p-6 flex items-center justify-between hover:shadow-md transition-shadow"
+              className="bg-background rounded-lg p-4 sm:p-6 flex items-center justify-between hover:shadow-md transition-shadow border border-border"
             >
               <div>
-                <h4 className="font-semibold text-[#0A0A0A] text-base mb-1">
+                <H4 className="mb-1">
                   {projekt.name}
-                </h4>
-                <p className="text-sm text-[#555555] mb-1">
+                </H4>
+                <Paragraph className="mb-1" color="secondary">
                   {isGerman ? projekt.branche : projekt.brancheEn}
-                </p>
-                <p className="text-xs text-[#555555]">
+                </Paragraph>
+                <Caption color="secondary">
                   {projekt.beschreibung}
-                </p>
+                </Caption>
               </div>
               <a
                 href={projekt.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-[#0BC3C3]/10 text-[#0BC3C3] hover:bg-[#0BC3C3]/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
+                className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary hover:bg-primary/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
               >
                 Zur Website
               </a>
