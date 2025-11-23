@@ -17,15 +17,16 @@ export const Section: React.FC<SectionProps> = ({
   children 
 }) => {
   const bgClass = {
-    white: 'bg-background',
-    light: 'bg-secondary/30 dark:bg-secondary/10',
-    dark: 'bg-foreground dark:bg-card'
+    white: 'bg-white',
+    light: 'bg-[#F5F7F7]',
+    dark: 'bg-[#0B0B0B]'
   }[background];
   
+  // Global spacing: 120px desktop, 64px mobile
   const spacingClass = {
-    small: 'py-12 md:py-16',
-    medium: 'py-16 md:py-24',
-    large: 'py-24 md:py-32'
+    small: 'py-16 md:py-20',
+    medium: 'py-20 md:py-24 lg:py-[120px]',
+    large: 'py-24 md:py-28 lg:py-[120px]'
   }[spacing];
   
   return (

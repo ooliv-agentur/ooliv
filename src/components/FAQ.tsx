@@ -150,10 +150,10 @@ const FAQ = ({
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-primary-text leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[#0B0B0B] leading-tight">
               {title}
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#444444] max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           </div>
@@ -176,10 +176,10 @@ const FAQ = ({
                           value={`${category}-item-${index}`}
                           className="bg-white border border-gray-100 rounded-[12px] px-6 py-2 transition-all duration-300 hover:scale-[1.01]"
                         >
-                        <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
+                        <AccordionTrigger className="text-base md:text-lg font-medium text-[#0B0B0B] hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-[#32B2AB] transition-colors duration-200">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground font-normal leading-relaxed mt-4 pb-4">
+                        <AccordionContent className="text-[15px] md:text-[16px] text-[#444444] font-normal leading-relaxed mt-4 pb-4">
                             <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                           </AccordionContent>
                         </AccordionItem>
@@ -201,10 +201,10 @@ const FAQ = ({
                     value={`item-${index}`}
                     className="bg-white border border-gray-100 rounded-[12px] px-6 py-2 transition-all duration-300 hover:scale-[1.01]"
                   >
-                    <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
+                    <AccordionTrigger className="text-base md:text-lg font-medium text-[#0B0B0B] hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-[#32B2AB] transition-colors duration-200">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-[15px] md:text-[16px] text-muted-foreground font-normal leading-relaxed mt-4 pb-4">
+                    <AccordionContent className="text-[15px] md:text-[16px] text-[#444444] font-normal leading-relaxed mt-4 pb-4">
                       <div className="prose prose-slate max-w-none" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     </AccordionContent>
                   </AccordionItem>
@@ -216,11 +216,11 @@ const FAQ = ({
         
         {!hideCTA && (
           <Reveal delay={0.3}>
-            <div className="mt-16 text-center">
-              <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
-                <h3 className="text-lg md:text-xl font-medium text-primary-text mb-6">
-                  {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
-                </h3>
+              <div className="mt-16 text-center">
+                <div className="bg-[#F5F7F7] rounded-[20px] p-8 border border-[#E4E6E7]">
+                  <h3 className="text-lg md:text-xl font-medium text-[#0B0B0B] mb-6">
+                    {isGerman ? "Haben Sie noch weitere Fragen?" : "Still have questions?"}
+                  </h3>
                 {useLeadForm ? (
                   <Button 
                     variant="secondary"

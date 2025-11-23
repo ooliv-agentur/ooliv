@@ -71,10 +71,10 @@ const CTA = ({
   return (
     <section className="py-24 bg-white">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-primary-text leading-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-[#0B0B0B] leading-tight">
           {title}
         </h2>
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground font-normal leading-relaxed">
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-[#444444] font-normal leading-relaxed">
           {subtitle}
         </p>
         
@@ -160,8 +160,8 @@ const CTA = ({
         
         {footerNote ? (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
-              <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed">
+            <div className="bg-[#F5F7F7] rounded-[20px] p-8 border border-[#E4E6E7]">
+              <p className="text-base md:text-lg text-[#444444] font-normal leading-relaxed">
                 {footerNote}
               </p>
             </div>
@@ -172,8 +172,8 @@ const CTA = ({
           </div>
         ) : (
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
-              <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed">
+            <div className="bg-[#F5F7F7] rounded-[20px] p-8 border border-[#E4E6E7]">
+              <p className="text-base md:text-lg text-[#444444] font-normal leading-relaxed">
                 {defaultFooterNote}
               </p>
             </div>

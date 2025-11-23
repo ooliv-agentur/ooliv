@@ -36,44 +36,37 @@ const FloatingActionButtons = () => {
     window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons', variant: 'project' } }));
   };
 
-  // Updated button definitions using design system variants
+  // Updated button definitions using global icon system
   const buttons = [
     { 
       id: 'project', 
       icon: 'send', 
       label: language === 'de' ? 'Starten Sie Ihr Projekt' : 'Start your project', 
-      onClick: handleOpenLeadForm,
-      variant: 'floating' as const
+      onClick: handleOpenLeadForm
     },
     { 
       id: 'email', 
       icon: 'mail', 
       label: language === 'de' ? 'E-Mail an ooliv' : 'Email us', 
       onClick: () => {
-        console.log('📧 Email button clicked - mobile test');
         window.location.href = 'mailto:info@ooliv.de';
-      },
-      variant: 'light' as const
+      }
     },
     { 
       id: 'phone', 
       icon: 'phone', 
       label: language === 'de' ? 'ooliv anrufen' : 'Call us', 
       onClick: () => {
-        console.log('📞 Phone button clicked - mobile test');
         window.location.href = 'tel:+4961316367801';
-      },
-      variant: 'light' as const
+      }
     },
     {
       id: 'prototype',
       icon: 'rocket',
       label: language === 'de' ? 'Kostenloser Prototyp' : 'Free prototype',
       onClick: () => {
-        console.log('🚀 Prototype button clicked - mobile test');
         window.dispatchEvent(new CustomEvent('open-lead-form', { detail: { source: 'FloatingActionButtons:prototype', variant: 'prototype' } }));
-      },
-      variant: 'light' as const
+      }
     }
   ];
 
@@ -148,9 +141,9 @@ const FloatingActionButtons = () => {
                 <Button
                   ref={(el) => { buttonRefs.current[button.id] = el; }}
                   onClick={button.onClick}
-                  variant={button.variant === 'floating' ? 'primary' : 'primary'}
+                  variant="primary"
                   size="icon"
-                  className="rounded-full shadow-md h-12 w-12"
+                  className="rounded-full shadow-md h-12 w-12 bg-white border border-[#E4E6E7] hover:bg-[#32B2AB] text-[#0B0B0B] hover:text-white transition-all"
                   style={{
                     transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
                   }}
@@ -160,6 +153,7 @@ const FloatingActionButtons = () => {
                     name={button.icon as any}
                     variant="default"
                     size="default"
+                    className="transition-colors"
                   />
                 </Button>
               </TooltipTrigger>
