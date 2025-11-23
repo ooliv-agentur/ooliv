@@ -55,6 +55,9 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
     return location.pathname === path;
   };
   
+  // Determine if link is a primary service (first 5) or secondary (last 3)
+  const isPrimaryService = (index: number) => index < 5;
+  
   return (
     <>
       {navigationLinks.map((link, index) => (
@@ -62,13 +65,19 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0BC3C3]/50 rounded-md hover:scale-105 transition-transform font-sans",
+              "block font-bold transition-colors duration-250 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#32b2ab]/50 rounded-md font-sans relative",
+              // Animated underline effect
+              "after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[3px] after:bottom-0 after:left-0 after:bg-[#32b2ab] after:origin-bottom-right after:transition-transform after:duration-[250ms] hover:after:scale-x-100 hover:after:origin-bottom-left",
               layout === 'desktop' 
-                ? "text-lg py-3.5 leading-tight px-4" // Desktop: smaller text, generous padding
-                : "text-3xl py-3", // Mobile: keep original sizing
+                ? isPrimaryService(index)
+                  ? "text-[46px] leading-[1.1] py-2" // Primary services: 46px
+                  : "text-[38px] leading-[1.2] py-2" // Secondary links: 38px
+                : isPrimaryService(index)
+                  ? "text-[40px] leading-[1.1] py-3" // Mobile primary: 40px
+                  : "text-[32px] leading-[1.2] py-3", // Mobile secondary: 32px
               isActive(link.path) 
-                ? "text-[#0BC3C3] font-extrabold" // Active state: #0BC3C3
-                : "text-[#0D0D0D] hover:text-[#0BC3C3]" // Default state: dark text with #0BC3C3 hover
+                ? "text-[#32b2ab] font-extrabold" // Active state
+                : "text-[#000000] hover:text-[#32b2ab]" // Default state
             )}
             onClick={handleClick}
           >
