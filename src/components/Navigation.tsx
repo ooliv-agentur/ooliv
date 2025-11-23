@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useMediaQuery } from '@/hooks/use-media-query';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -72,15 +71,14 @@ const linkItemVariants = {
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
   const { language } = useLanguage();
   const location = useLocation();
   
   const links = language === 'de' ? germanLinks : englishLinks;
   
-  // Body scroll lock when mobile menu is open
+  // Body scroll lock when menu is open (Desktop + Mobile)
   useEffect(() => {
-    if (isOpen && !isDesktop) {
+    if (isOpen) {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
@@ -102,14 +100,7 @@ export const Navigation = () => {
       document.body.style.height = '';
       document.body.style.paddingRight = '';
     };
-  }, [isOpen, isDesktop]);
-  
-  // Close menu when switching to desktop
-  useEffect(() => {
-    if (isDesktop && isOpen) {
-      setIsOpen(false);
-    }
-  }, [isDesktop, isOpen]);
+  }, [isOpen]);
   
   return (
     <>
@@ -126,25 +117,9 @@ export const Navigation = () => {
             />
           </Link>
           
-          {/* Desktop Navigation (ab lg sichtbar) */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {links.map((link, i) => (
-              <Link 
-                key={i}
-                to={link.path}
-                className={cn(
-                  "text-[#0B0B0B] hover:text-[#32B2AB] transition-colors text-base font-medium",
-                  location.pathname === link.path && "text-[#32B2AB] font-semibold"
-                )}
-              >
-                {link.title}
-              </Link>
-            ))}
-          </nav>
-          
-          {/* Burger (nur Mobile/Tablet) */}
+          {/* Menu Button (Desktop + Mobile) */}
           <button 
-            className="lg:hidden w-10 h-10 rounded-full bg-[#32B2AB] hover:bg-[#289690] flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full bg-[#32B2AB] hover:bg-[#289690] flex items-center justify-center transition-colors"
             onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
@@ -153,9 +128,9 @@ export const Navigation = () => {
         </div>
       </header>
       
-      {/* Mobile Fullscreen Overlay */}
+      {/* Fullscreen Mega Menu (Desktop + Mobile) */}
       <AnimatePresence>
-        {isOpen && !isDesktop && (
+        {isOpen && (
           <motion.div
             variants={overlayVariants}
             initial="hidden"
@@ -183,22 +158,22 @@ export const Navigation = () => {
             </div>
             
             {/* Content Grid */}
-            <div className="flex-1 overflow-y-auto px-6 py-16">
-              <div className="max-w-[1200px] mx-auto grid md:grid-cols-[60%_40%] gap-12 lg:gap-16">
+            <div className="flex-1 overflow-y-auto px-6 lg:px-12 py-12 lg:py-20">
+              <div className="max-w-[1400px] mx-auto grid lg:grid-cols-[70%_30%] gap-12 lg:gap-20">
                 
                 {/* Links: Große Menülinks */}
                 <motion.nav 
                   variants={linksContainerVariants}
                   initial="hidden"
                   animate="visible"
-                  className="flex flex-col gap-12 md:gap-16"
+                  className="flex flex-col gap-8 lg:gap-12"
                 >
                   {links.map((link, i) => (
                     <motion.div key={i} variants={linkItemVariants}>
                       <Link 
                         to={link.path}
                         onClick={() => setIsOpen(false)}
-                        className="text-white text-[40px] md:text-[48px] font-bold leading-tight hover:opacity-80 transition-opacity block"
+                        className="text-white text-[36px] lg:text-[56px] font-bold leading-tight hover:opacity-80 transition-opacity block"
                       >
                         {link.title}
                       </Link>
@@ -206,13 +181,13 @@ export const Navigation = () => {
                   ))}
                 </motion.nav>
                 
-                {/* Rechts: Info-Panel */}
-                <div className="text-white space-y-8 md:pl-8">
-                  <h3 className="text-xl md:text-2xl font-bold leading-tight">
+                {/* Rechts: Info-Panel (Desktop sichtbar, Mobile am Ende) */}
+                <div className="text-white space-y-6 lg:space-y-8 lg:pl-8 lg:sticky lg:top-12 lg:h-fit">
+                  <h3 className="text-xl lg:text-2xl font-bold leading-tight">
                     ooliv – Digitale Strategie, UX & AI-Workflows für Unternehmen
                   </h3>
                   
-                  <div className="space-y-2 text-base opacity-90">
+                  <div className="space-y-2 text-base lg:text-lg opacity-90">
                     <p className="font-semibold text-white">ooliv GmbH</p>
                     <p>Mombacher Str. 25</p>
                     <p>55122 Mainz, Deutschland</p>
@@ -236,7 +211,7 @@ export const Navigation = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="border-2 border-white text-white hover:bg-white hover:text-[#32B2AB] transition-all w-fit mt-6"
+                    className="border-2 border-white text-white hover:bg-white hover:text-[#32B2AB] transition-all w-full lg:w-fit mt-6"
                     asChild
                   >
                     <Link to={language === 'de' ? '/kontakt' : '/en/contact'} onClick={() => setIsOpen(false)}>
