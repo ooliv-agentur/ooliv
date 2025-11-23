@@ -41,18 +41,14 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading */}
             <h1 
-              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px]"
-              style={{ 
-                color: '#003343' 
-              }}
+              className="font-medium mb-6 sm:mb-8 leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-foreground"
             >
               {title}
             </h1>
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-2xl text-foreground mb-8 sm:mb-10 text-left"
-              style={{ lineHeight: '1.6' }}
+              className="text-lg sm:text-xl md:text-2xl text-foreground mb-8 sm:mb-10 text-left leading-relaxed"
             >
               {subtitle}
             </p>
@@ -63,18 +59,7 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
                 {primaryCta && (
                   <Button 
                     size="lg" 
-                    className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                    style={{ 
-                      backgroundColor: '#FFD700', 
-                      color: '#003347',
-                      border: 'none'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#FFC700';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#FFD700';
-                    }}
+                    className="group bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     onClick={primaryCta.onClick}
                     asChild={!primaryCta.onClick}
                   >
@@ -125,8 +110,8 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
           <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-primary/50 to-primary/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
             <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse [animation-delay:0.5s]"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse [animation-delay:1s]"></div>
           </div>
         </div>
       </div>
