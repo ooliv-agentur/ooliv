@@ -63,15 +63,15 @@ const GermanLegalNotice = () => {
             <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-4 mb-8">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
-                    <Building className="h-6 w-6 text-medico-turquoise" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <Building className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-medico-darkGreen">Unternehmensangaben</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Unternehmensangaben</h3>
                 </div>
                 
                 <div className="space-y-6">
                   <div>
-                    <p className="text-xl font-semibold text-medico-darkGreen mb-2">ooliv</p>
+                    <p className="text-xl font-semibold text-foreground mb-2">ooliv</p>
                     <p className="text-sm text-gray-500 mb-3">Meldeadresse (Einzelunternehmen)</p>
                     <div className="text-gray-600 leading-relaxed">
                       <p>Eduard von Heuss Str. 29</p>
@@ -90,22 +90,22 @@ const GermanLegalNotice = () => {
                   </div>
                   
                   <div className="flex items-center text-gray-600 space-x-3">
-                    <Phone className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="font-medium">+49 6131 6367801</span>
                   </div>
                   
                   <div className="flex items-center text-gray-600 space-x-3">
-                    <Mail className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
+                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="font-medium">info@ooliv.de</span>
                   </div>
                   
                   <div className="pt-4 border-t border-gray-100">
-                    <p className="font-bold text-medico-darkGreen mb-1">Inhaber:</p>
+                    <p className="font-bold text-foreground mb-1">Inhaber:</p>
                     <p className="text-gray-600">Uli Schönleber</p>
                   </div>
                   
                   <div>
-                    <p className="font-semibold text-medico-darkGreen mb-1">USt.-IdNr.:</p>
+                    <p className="font-semibold text-foreground mb-1">USt.-IdNr.:</p>
                     <p className="text-gray-600">DE265704357</p>
                   </div>
                 </div>
@@ -116,10 +116,10 @@ const GermanLegalNotice = () => {
             <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-4 mb-8">
-                  <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
-                    <FileText className="h-6 w-6 text-medico-turquoise" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <FileText className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-medico-darkGreen">Urheberrechtshinweis</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Urheberrechtshinweis</h3>
                 </div>
                 
                 <p className="text-gray-600 leading-relaxed mb-8">
@@ -130,7 +130,7 @@ const GermanLegalNotice = () => {
                   <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
                     <AlertTriangle className="h-5 w-5 text-yellow-600" />
                   </div>
-                  <h4 className="text-lg font-semibold text-medico-darkGreen">Einspruch gegen Werbe-E-Mails</h4>
+                  <h4 className="text-lg font-semibold text-foreground">Einspruch gegen Werbe-E-Mails</h4>
                 </div>
                 
                 <p className="text-gray-600 leading-relaxed">
@@ -145,7 +145,7 @@ const GermanLegalNotice = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="font-semibold py-3 px-8 rounded-full border-2 border-medico-darkGreen text-medico-darkGreen hover:bg-medico-mint hover:border-medico-turquoise transition-all duration-300"
+              className="font-semibold py-3 px-8 rounded-full border-2 border-foreground text-foreground hover:bg-secondary hover:border-primary transition-all duration-300"
               asChild
             >
               <Link to="/datenschutz">

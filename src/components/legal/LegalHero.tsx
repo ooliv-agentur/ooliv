@@ -22,7 +22,7 @@ interface LegalHeroProps {
 
 const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHeroProps) => {
   return (
-    <section className="relative bg-medico-mint overflow-hidden font-satoshi min-h-screen flex items-center">
+    <section className="relative bg-secondary overflow-hidden font-satoshi min-h-screen flex items-center">
       {/* Enhanced floating circles animation - same as other hero sections */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -51,7 +51,7 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
             
             {/* Subtitle */}
             <p 
-              className="text-lg sm:text-xl md:text-2xl text-medico-darkGreen mb-8 sm:mb-10 text-left"
+              className="text-lg sm:text-xl md:text-2xl text-foreground mb-8 sm:mb-10 text-left"
               style={{ lineHeight: '1.6' }}
             >
               {subtitle}
@@ -96,7 +96,7 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                    className="group bg-background text-foreground hover:bg-gray-50 border-2 border-foreground hover:border-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     onClick={secondaryCta.onClick}
                     asChild={!secondaryCta.onClick}
                   >
@@ -122,11 +122,11 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
       {/* Visual transition indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-medico-turquoise/50 to-medico-turquoise/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-primary/50 to-primary/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-medico-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>
