@@ -79,11 +79,11 @@ const GermanPrivacyPolicy = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-turquoise/10 rounded-2xl mb-6">
               <Lock className="h-8 w-8 text-turquoise" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-satoshi" style={{ lineHeight: '1.3' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-satoshi leading-tight">
               Datenschutzerklärung
             </h2>
             <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Wir verarbeiten personenbezogene Daten gemäß DSGVO und nur zweckgebunden. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.
             </p>
           </div>
