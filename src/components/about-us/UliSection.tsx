@@ -1,13 +1,15 @@
 import React from 'react';
 import { Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2, H3, Paragraph } from '@/components/ui/typography';
 
 const UliSection = () => {
   return (
-    <section className={getSectionClasses('large', 'white')}>
-      <div className={getContainerClasses('default')}>
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+    <Section spacing="large" background="white">
+      <Container size="default">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           <div>
             <div className="bg-gray-100 rounded-2xl aspect-square flex items-center justify-center">
               <img 
@@ -19,16 +21,16 @@ const UliSection = () => {
           </div>
           
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+            <H2 className="text-[#0A0A0A] mb-4">
               Uli Schönleber — Digital Strategy Lead
-            </h2>
-            <h3 className="text-xl text-turquoise font-semibold mb-6">
+            </H2>
+            <H3 className="text-[#0BC3C3] mb-6">
               Strategie, UX & AI aus einer Hand.
-            </h3>
+            </H3>
             
-            <p className="text-brand-text leading-relaxed mb-6">
+            <Paragraph className="text-[#555555] mb-6">
               Seit über 15 Jahren verbinde ich Strategie, UX, Content und AI-gestützte Arbeitsprozesse zu digitalen Systemen, die verkaufen. Ich begleite jedes Projekt persönlich — vom ersten Gespräch bis zum Launch — und treffe Entscheidungen, die auf Daten, Nutzerverhalten und klaren Geschäftsmodellen basieren.
-            </p>
+            </Paragraph>
             
             <div className="space-y-3 mb-8">
               {[
@@ -37,8 +39,8 @@ const UliSection = () => {
                 "Beratung auf Geschäftsführungsniveau"
               ].map((fact, index) => (
                 <div key={index} className="flex items-start">
-                  <Brain className="w-5 h-5 text-turquoise mr-3 flex-shrink-0 mt-0.5" />
-                  <span className="text-brand-text font-medium">{fact}</span>
+                  <Brain className="w-5 h-5 text-[#0BC3C3] mr-3 flex-shrink-0 mt-0.5" />
+                  <span className="text-[#555555] font-medium">{fact}</span>
                 </div>
               ))}
             </div>
@@ -55,8 +57,8 @@ const UliSection = () => {
             </Button>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

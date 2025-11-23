@@ -1,6 +1,9 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2, Paragraph, LargeParagraph } from '@/components/ui/typography';
 
 interface TeamMember {
   name: string;
@@ -90,22 +93,22 @@ const TeamSection = () => {
   const displayTeamMembers = teamMembers;
 
   return (
-    <section className="py-20 bg-white" id="team">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <Section id="team" spacing="large" background="white">
+      <Container size="default">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-heading mb-4">
+          <H2 className="text-[#0A0A0A] mb-4" alignment="center">
             Kleines Team. Volle Kompetenz.
-          </h2>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+          </H2>
+          <LargeParagraph className="text-[#555555] max-w-3xl mx-auto" alignment="center">
             Unser Kernteam arbeitet synchron in Strategie, UX, Entwicklung, Content, SEO, Design und AI-Workflows. Seniorität im Lead — Spezialisten in der Ausführung.
-          </p>
+          </LargeParagraph>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
           {displayTeamMembers.map((member, index) => (
             <div 
               key={index} 
-              className="flex items-start gap-6 bg-gray-50 p-6 rounded-lg"
+              className="flex items-start gap-6 bg-[#F5F7F7] p-4 sm:p-6 rounded-lg"
             >
               <div className="relative flex-shrink-0 w-[120px] h-[120px] rounded-full overflow-hidden bg-[#faf5eb] border-2 border-white">
                 <img 
@@ -117,20 +120,20 @@ const TeamSection = () => {
                     target.style.display = 'none';
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-brand-primary opacity-0">
+                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-[#0BC3C3] opacity-0">
                   {member.initials}
                 </div>
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-1 text-brand-heading">{member.name}</h3>
-                <p className="text-turquoise font-semibold mb-2">{member.role}</p>
-                <p className="text-brand-text text-sm leading-relaxed">{member.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 text-[#0A0A0A]">{member.name}</h3>
+                <p className="text-[#0BC3C3] font-semibold mb-2">{member.role}</p>
+                <p className="text-[#555555] text-sm leading-relaxed">{member.description}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
