@@ -60,14 +60,15 @@
   --background: 0 0% 10%;
   --foreground: 0 0% 100%;
   
-  --card: 0 0% 10%;
+  --card: 0 0% 12%;
   --card-foreground: 0 0% 100%;
   
-  --popover: 0 0% 10%;
+  --popover: 0 0% 12%;
   --popover-foreground: 0 0% 100%;
   
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 10%;
+  /* Primary = Turquoise #32b2ab auch im Dark Mode */
+  --primary: 177 56% 45%; /* Turquoise #32b2ab */
+  --primary-foreground: 0 0% 100%;
   
   --secondary: 0 0% 15%;
   --secondary-foreground: 0 0% 100%;
@@ -78,7 +79,7 @@
   --accent: 177 56% 45%;
   --accent-foreground: 0 0% 100%;
   
-  --destructive: 0 63% 31%;
+  --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
   
   --border: 0 0% 20%;
@@ -86,6 +87,6 @@
   --ring: 177 56% 45%;
 
   --turquoise: 177 56% 45%;
-  --turquoise-hover: 177 56% 37%;
-  --turquoise-light: 177 56% 90%;
+  --turquoise-hover: 177 56% 55%; /* Heller für Dark Mode */
+  --turquoise-light: 177 56% 20%; /* Dunkler für Dark Mode Background */
 }

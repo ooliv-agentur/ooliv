@@ -17,9 +17,9 @@ export const Section: React.FC<SectionProps> = ({
   children 
 }) => {
   const bgClass = {
-    white: 'bg-white',
-    light: 'bg-[#F5F7F7]',
-    dark: 'bg-[#0A0A0A]'
+    white: 'bg-background',
+    light: 'bg-secondary/30 dark:bg-secondary/10',
+    dark: 'bg-foreground dark:bg-card'
   }[background];
   
   const spacingClass = {
