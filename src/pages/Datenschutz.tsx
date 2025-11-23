@@ -45,11 +45,11 @@ const GermanPrivacyPolicy = () => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Datenschutzerklärung",
-    "description": "Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO",
+    "description": "Datenschutzerklärung von ooliv gemäß DSGVO. Transparente Informationen zur Datenverarbeitung.",
     "url": "https://ooliv.de/datenschutz",
     "mainEntity": {
       "@type": "Organization",
-      "name": "ooliv Werbeagentur",
+      "name": "ooliv",
       "url": "https://ooliv.de",
       "privacyPolicy": "https://ooliv.de/datenschutz"
     }
@@ -58,27 +58,18 @@ const GermanPrivacyPolicy = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="Datenschutz | ooliv Werbeagentur Mainz"
-        description="Datenschutzerklärung der ooliv Werbeagentur Mainz gemäß DSGVO. Hier erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben."
+        title="Datenschutzerklärung | ooliv – DSGVO & Datensicherheit"
+        description="Transparente Informationen zur Datenerhebung, Nutzung und Sicherheit bei ooliv. DSGVO-konform und klar strukturiert."
         canonicalUrl="https://ooliv.de/datenschutz"
         robotsContent="noindex, follow"
         structuredData={structuredData}
-        keywords="Datenschutz, DSGVO, Datenschutzerklärung, ooliv, Werbeagentur Mainz"
+        keywords="Datenschutz, DSGVO, Datenschutzerklärung, ooliv, Mainz"
       />
 
       <LegalHero
         badge="Datenschutz"
-        title="Ihre Daten, Ihre Rechte"
-        subtitle="Wie wir mit Ihren persönlichen Informationen umgehen, sie speichern und schützen. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und wie Sie Ihre Rechte gemäß der DSGVO ausüben können."
-        primaryCta={{
-          text: "Projekt starten",
-          link: "#",
-          onClick: handleOpenLeadForm
-        }}
-        secondaryCta={{
-          text: "Strategiegespräch vereinbaren",
-          link: "/kontakt"
-        }}
+        title="Datenschutzerklärung"
+        subtitle="Wie wir Daten erheben, verwenden und schützen – transparent und DSGVO-konform."
       />
 
       <section className="py-16 lg:py-24 bg-white" ref={policyRef} id="policy">
@@ -93,7 +84,7 @@ const GermanPrivacyPolicy = () => {
             </h2>
             <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto" style={{ lineHeight: '1.6' }}>
-              Bei ooliv nehmen wir Ihren Datenschutz ernst. Diese Richtlinie erläutert, wie wir Ihre Informationen sammeln, verwenden und schützen.
+              Wir verarbeiten personenbezogene Daten gemäß DSGVO und nur zweckgebunden. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.
             </p>
           </div>
 

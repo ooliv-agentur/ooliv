@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 interface LegalHeroProps {
   title: string;
   subtitle: string;
-  primaryCta: {
+  primaryCta?: {
     text: string;
     link: string;
     onClick?: (e: React.MouseEvent) => void;
@@ -58,59 +58,63 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
             </p>
             
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Button 
-                size="lg" 
-                className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                style={{ 
-                  backgroundColor: '#FFD700', 
-                  color: '#003347',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFC700';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFD700';
-                }}
-                onClick={primaryCta.onClick}
-                asChild={!primaryCta.onClick}
-              >
-                {primaryCta.onClick ? (
-                  <>
-                    {primaryCta.text}
-                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                  </>
-                ) : (
-                  <Link to={primaryCta.link}>
-                    {primaryCta.text}
-                    <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+            {(primaryCta || secondaryCta) && (
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                {primaryCta && (
+                  <Button 
+                    size="lg" 
+                    className="group font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                    style={{ 
+                      backgroundColor: '#FFD700', 
+                      color: '#003347',
+                      border: 'none'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#FFC700';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#FFD700';
+                    }}
+                    onClick={primaryCta.onClick}
+                    asChild={!primaryCta.onClick}
+                  >
+                    {primaryCta.onClick ? (
+                      <>
+                        {primaryCta.text}
+                        <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                      </>
+                    ) : (
+                      <Link to={primaryCta.link}>
+                        {primaryCta.text}
+                        <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    )}
+                  </Button>
                 )}
-              </Button>
-              
-              {secondaryCta && (
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
-                  onClick={secondaryCta.onClick}
-                  asChild={!secondaryCta.onClick}
-                >
-                  {secondaryCta.onClick ? (
-                    <>
-                      {secondaryCta.text}
-                      <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                    </>
-                  ) : (
-                    <Link to={secondaryCta.link}>
-                      {secondaryCta.text}
-                      <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  )}
-                </Button>
-              )}
-            </div>
+                
+                {secondaryCta && (
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="group bg-medico-white text-medico-darkGreen hover:bg-gray-50 border-2 border-medico-darkGreen hover:border-medico-turquoise font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" 
+                    onClick={secondaryCta.onClick}
+                    asChild={!secondaryCta.onClick}
+                  >
+                    {secondaryCta.onClick ? (
+                      <>
+                        {secondaryCta.text}
+                        <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                      </>
+                    ) : (
+                      <Link to={secondaryCta.link}>
+                        {secondaryCta.text}
+                        <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    )}
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
