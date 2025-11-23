@@ -5,10 +5,11 @@ import PageHero from '@/components/PageHero';
 import CTA from '@/components/CTA';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   LayoutGrid, Route, Frame, Layers, TrendingUp, TestTube2,
-  AlertTriangle, Search, PenTool,
-  Check, ChevronDown, ArrowRight
+  AlertTriangle, Search, PenTool, Check, ArrowRight, Users,
+  Target, Workflow, Brain, Monitor, Smartphone
 } from 'lucide-react';
 import {
   Accordion,
@@ -47,30 +48,95 @@ const UxKonzeption = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="UX-Konzeption & User Experience Optimierung – ooliv"
-        description="UX-Konzeption, die verkauft: Informationsarchitektur, Wireframes, Prototyping und Conversion-Optimierung. ooliv – UX Agentur für digitale Klarheit."
+        title="UX-Konzeption & Struktur | Agentur für Wireframes, IA & Prototyping"
+        description="Wir entwickeln UX-Konzepte, die Entscheidungen beschleunigen: Informationsarchitektur, Wireframes, Prototypen & strukturierte User Journeys. Ideal für B2B & Mittelstand."
         canonicalUrl="https://ooliv.de/ux-konzeption"
-        keywords="UX Konzeption, UX Agentur, User Experience Optimierung, Wireframes Prototyping, Customer Journey Optimierung, UX Struktur, UX Analyse, UX Consulting, UX Funnel"
+        keywords="UX Konzeption Agentur, Informationsarchitektur, UX für Websites, Wireframes erstellen lassen, Prototyping Agentur, UX Strategie, UX Audit, UX Optimierung, UX B2B, UX Customer Journey, UX Struktur, UX Funnel, UX Design Agentur, User Experience Beratung, UX Workshop, UX Analyse, Conversion Optimierung UX, digitale Nutzerführung"
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Hero Section */}
+      {/* SECTION 1 — HERO */}
       <PageHero
-        title="UX-Konzeption, die verkauft."
-        subtitle="Wir entwickeln klare Informationsarchitektur, strukturierte User Flows und Conversion-optimierte Prototypen — für Websites und digitale Systeme, die messbar besser funktionieren."
+        title="UX & Konzeption – klare Strukturen für digitale Systeme, die funktionieren"
+        subtitle="Wir entwickeln Informationsarchitektur, Wireframes und userzentrierte Abläufe, die Komplexität reduzieren und Entscheidungen beschleunigen — strategisch, datenbasiert und ohne Agentur-Overload."
         primaryCta={{
-          text: "Kostenloses Konzept sichern",
+          text: "Projekt besprechen",
           link: "#",
           onClick: handleOpenLeadForm
         }}
         secondaryCta={{
-          text: "Beispiele ansehen",
-          link: "#beispiele"
+          text: "Arbeitsweise ansehen",
+          link: "#prozess"
         }}
       />
 
-      {/* Section 2: Was ist UX-Konzeption bei ooliv? */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
+      {/* SECTION 2 — Was gute UX-Konzeption ausmacht */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Was gute UX-Konzeption ausmacht
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              {
+                icon: Target,
+                title: "Struktur statt Bauchgefühl",
+                description: "UX beginnt mit Klarheit, nicht mit Design."
+              },
+              {
+                icon: Route,
+                title: "User Flows, die lenken",
+                description: "Wir gestalten Wege, die Nutzer leiten — nicht verlieren."
+              },
+              {
+                icon: Brain,
+                title: "Entscheidungsarchitektur",
+                description: "Strategie vor Schönheitsdesign."
+              },
+              {
+                icon: TrendingUp,
+                title: "UX als Conversion-Treiber",
+                description: "Ideal für komplexe B2B-Angebote."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mb-4">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — Unser strategischer UX-Ansatz */}
+      <section className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -80,59 +146,96 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
-            {/* Left Column */}
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
-                Was ist UX-Konzeption bei ooliv?
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                UX beginnt bei der Strategie
               </h2>
-              <div className="space-y-4 text-lg text-[#666666]">
-                <p>UX-Konzept ≠ schönes Design</p>
-                <p className="font-semibold text-[#0D0D0D]">
-                  UX-Konzept = <span className="text-[#0BC3C3]">Struktur, Klarheit, Nutzerführung, Entscheidungslogik</span>
-                </p>
-                <p>
-                  Conversion beginnt nicht im Design, sondern in der <span className="font-semibold text-[#0D0D0D]">Architektur</span>
-                </p>
+              <div className="space-y-4">
+                {[
+                  "Customer Journeys analysieren & optimieren",
+                  "Value Proposition Mapping",
+                  "Nutzerbedürfnisse verstehen & priorisieren",
+                  "Entscheidungslogik entwickeln",
+                  "KPI-basiertes UX-Framework aufbauen"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-base text-muted-foreground">{item}</p>
+                  </div>
+                ))}
               </div>
-              <p className="mt-8 text-xl font-semibold text-[#0D0D0D]">
-                Gute UX ist unsichtbar — aber messbar.
+              <p className="mt-8 text-lg font-semibold text-foreground">
+                Strategie vor Technologie — UX vor Ästhetik.
               </p>
             </div>
 
-            {/* Right Column - Mini Bullets */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-            >
-              {[
-                { icon: LayoutGrid, text: "Informationsarchitektur" },
-                { icon: Route, text: "User Journeys" },
-                { icon: Frame, text: "Wireframes" },
-                { icon: Layers, text: "Prototyping" },
-                { icon: TrendingUp, text: "Funnel-Design" },
-                { icon: TestTube2, text: "Testing & Analyse" }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="flex items-center gap-4 p-4 bg-white rounded-lg border border-[#E5E5E5]"
-                >
-                  <div className="flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-[#0BC3C3]" />
-                  </div>
-                  <p className="text-base font-medium text-[#0D0D0D]">{item.text}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+            {/* Visual Placeholder */}
+            <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px]">
+              <div className="text-center">
+                <Route className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <p className="text-sm text-muted-foreground">Customer Journey Diagramm</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Section 3: Die größten UX-Probleme in Unternehmen */}
-      <section className="py-20 lg:py-32 bg-white">
+      {/* SECTION 4 — Informationsarchitektur & Struktur */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          >
+            {/* Visual Placeholder */}
+            <div className="bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px] order-2 lg:order-1">
+              <div className="text-center">
+                <LayoutGrid className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <p className="text-sm text-muted-foreground">Sitemap & Struktur-Visualisierung</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Informationsarchitektur, die Ordnung schafft
+              </h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Sitemap & Content-Hierarchie
+                  </h3>
+                  <p className="text-base text-muted-foreground">
+                    Wir strukturieren Inhalte logisch und nutzerorientiert.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Entscheidungslogik pro Page
+                  </h3>
+                  <p className="text-base text-muted-foreground">
+                    Jede Seite hat einen klaren Zweck und führt zu einer Aktion.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    Reduktion unnötiger Komplexität
+                  </h3>
+                  <p className="text-base text-muted-foreground">
+                    Weniger ist mehr — wir eliminieren Reibung und Ablenkung.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — Wireframes & Prototyping */}
+      <section className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -142,144 +245,150 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
-              Die größten UX-Probleme in Unternehmen
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-          >
-            {[
-              "Unklare Navigation, zu viele Klicks",
-              "Überladene Seitenstrukturen",
-              "Schlechte oder fehlende Priorisierung",
-              "Kaum Conversion-Fokus",
-              "Wichtige Inhalte werden nicht gefunden",
-              "Kein System: jeder Mitarbeiter denkt anders",
-              "Nutzer verlieren Vertrauen oder brechen ab"
-            ].map((problem, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="flex items-start gap-4 p-6 bg-[#F7F8FC] rounded-lg border border-[#E5E5E5] hover:shadow-md transition-shadow"
-              >
-                <AlertTriangle className="w-6 h-6 text-[#FF6B6B] flex-shrink-0 mt-1" />
-                <p className="text-base text-[#0D0D0D]">{problem}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center text-xl font-semibold text-[#0D0D0D]"
-          >
-            Wir verwandeln komplexe Inhalte in klare digitale Wege.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Section 4: Unser UX-Prozess */}
-      <section id="prozess" className="py-20 lg:py-32 bg-[#F7F8FC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
-              Unser UX-Prozess
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Wireframes & Prototypen, die Entscheidungen schneller machen
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {[
               {
-                number: "01",
-                icon: Search,
-                title: "Analyse & Nutzerverständnis",
-                description: "Engpässe, Reibungen, Prioritäten."
+                icon: Frame,
+                title: "Low-Fidelity bis High-Fidelity",
+                description: "Von schnellen Skizzen bis zu detaillierten Designs."
               },
               {
-                number: "02",
-                icon: LayoutGrid,
-                title: "Informationsarchitektur",
-                description: "Struktur, Sitemap, Logik, Priorisierung."
+                icon: Route,
+                title: "Nutzerführung optimieren",
+                description: "Jeder Klick ist strategisch durchdacht."
               },
               {
-                number: "03",
-                icon: PenTool,
-                title: "Wireframes & Prototypen",
-                description: "Low-Fidelity → High-Fidelity → Test"
+                icon: Layers,
+                title: "Click-Dummies erstellen",
+                description: "Interaktive Prototypen zum Testen und Validieren."
               },
               {
-                number: "04",
-                icon: TrendingUp,
-                title: "Conversion-Optimierung",
-                description: "Funnels, CTAs, Entscheidungspsychologie."
+                icon: TestTube2,
+                title: "Usability validieren",
+                description: "Feedback einholen, bevor entwickelt wird."
               }
-            ].map((step, index) => (
+            ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative"
+                className="bg-card rounded-lg p-6 border border-border shadow-sm"
               >
-                <div className="bg-white rounded-lg p-6 border border-[#E5E5E5] h-full">
-                  <div className="flex items-center justify-center w-16 h-16 bg-[#0BC3C3] text-white rounded-full text-2xl font-bold mb-6">
-                    {step.number}
-                  </div>
-                  <step.icon className="w-8 h-8 text-[#0BC3C3] mb-4" />
-                  <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-base text-[#666666]">
-                    {step.description}
-                  </p>
-                </div>
-                {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-[#0BC3C3]" />
-                  </div>
-                )}
+                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
 
+          {/* Wireframe Placeholders */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-muted/50 rounded-lg p-6 border border-border flex items-center justify-center min-h-[300px]">
+                <div className="text-center">
+                  <PenTool className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
+                  <p className="text-sm text-muted-foreground">Wireframe Beispiel {i}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6 — UX für Websites & digitale Produkte */}
+      <section className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              UX-Optimierung für Websites, Plattformen & digitale Produkte
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Spezialisiert auf B2B & Mittelstand
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Lead-fokussierte UX",
+                description: "Optimiert auf Conversion und Anfragen — jede Interaktion zählt."
+              },
+              {
+                icon: Brain,
+                title: "UX für erklärungsbedürftige Produkte",
+                description: "Komplexe Angebote einfach und überzeugend darstellen."
+              },
+              {
+                icon: Smartphone,
+                title: "Mobile-first UX",
+                description: "Perfekte Nutzererfahrung auf allen Geräten."
+              },
+              {
+                icon: Workflow,
+                title: "Performance UX",
+                description: "Schnelle Ladezeiten, flüssige Interaktionen, keine Reibung."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <item.icon className="w-10 h-10 text-primary mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-base text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Device Placeholder */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center"
+            className="mt-12 bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[300px]"
           >
-            <Button
-              onClick={handleOpenLeadForm}
-              size="lg"
-              className="bg-[#0BC3C3] hover:bg-[#0BC3C3]/90 text-white px-8 py-6 text-base"
-            >
-              Kostenlose Analyse sichern
-            </Button>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-6 mb-4">
+                <Monitor className="w-12 h-12 text-muted-foreground" />
+                <Smartphone className="w-8 h-8 text-muted-foreground" />
+              </div>
+              <p className="text-sm text-muted-foreground">Responsive Device Preview</p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Section 5: Beispiele aus der Praxis (UX-Fokus) */}
-      <section id="beispiele" className="py-20 lg:py-32 bg-white">
+      {/* SECTION 7 — Case Study Teaser */}
+      <section className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -289,208 +398,162 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
-              Beispiele aus der Praxis
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              UX-Projekte mit messbarem Erfolg
             </h2>
-            <p className="text-xl text-[#666666]">
-              UX-Konzeption mit messbarem Erfolg
-            </p>
           </motion.div>
 
-          <div className="space-y-8">
-            {/* KLAIBER */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="bg-[#F7F8FC] rounded-lg p-8 border border-[#E5E5E5] hover:scale-[1.02] transition-transform"
-            >
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="flex-shrink-0 bg-white p-6 rounded-lg">
-                  <img 
-                    src={caseStudiesData.de[0].logo} 
-                    alt="KLAIBER" 
-                    className="h-12 w-auto"
-                  />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                client: "KLAIBER",
+                industry: "Steuerberatung",
+                result: "+180% mehr Anfragen",
+                logo: caseStudiesData.de[0]?.logo
+              },
+              {
+                client: "COBUS",
+                industry: "Flughafenbusse",
+                result: "Klare Produktnavigation",
+                logo: caseStudiesData.de[1]?.logo
+              },
+              {
+                client: "SPEZ",
+                industry: "Automotive",
+                result: "+90% Conversion",
+                logo: caseStudiesData.de[2]?.logo
+              },
+              {
+                client: "IconPro",
+                industry: "KI-Software",
+                result: "Komplexität reduziert",
+                logo: caseStudiesData.de[3]?.logo
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="bg-background p-4 rounded-lg mb-4 flex items-center justify-center min-h-[80px]">
+                  {item.logo ? (
+                    <img src={item.logo} alt={item.client} className="h-10 w-auto" />
+                  ) : (
+                    <p className="font-bold text-lg text-foreground">{item.client}</p>
+                  )}
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">
-                    KLAIBER – Steuerberatung
-                  </h3>
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "Struktur, Wireframes, Argumentationslogik",
-                      "UX für Vertrauen & Differenzierung",
-                      "Messbar bessere Inhaltsarchitektur"
-                    ].map((bullet, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                        <p className="text-base text-[#666666]">{bullet}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="border-[#0BC3C3] text-[#0BC3C3] hover:bg-[#0BC3C3] hover:text-white"
-                  >
-                    <a href="/referenzen">
-                      Case ansehen
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+                <p className="text-sm text-muted-foreground mb-2">{item.industry}</p>
+                <p className="text-base font-semibold text-primary">{item.result}</p>
+              </motion.div>
+            ))}
+          </div>
 
-            {/* COBUS Industries */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-[#F7F8FC] rounded-lg p-8 border border-[#E5E5E5] hover:scale-[1.02] transition-transform"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="flex-shrink-0 bg-white p-6 rounded-lg">
-                  <img 
-                    src={caseStudiesData.de[1].logo} 
-                    alt="COBUS Industries" 
-                    className="h-12 w-auto"
-                  />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">
-                    COBUS Industries – Flughafenbusse
-                  </h3>
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "UX für technische Zielgruppen",
-                      "Komplexe Informationen klar strukturiert",
-                      "Produkt- & Service-Navigation komplett neu"
-                    ].map((bullet, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                        <p className="text-base text-[#666666]">{bullet}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="border-[#0BC3C3] text-[#0BC3C3] hover:bg-[#0BC3C3] hover:text-white"
-                  >
-                    <a href="/referenzen">
-                      Case ansehen
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+              <Link to="/referenzen">
+                Alle Referenzen ansehen
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* IconPro */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-[#F7F8FC] rounded-lg p-8 border border-[#E5E5E5] hover:scale-[1.02] transition-transform"
-            >
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="flex-shrink-0 bg-white p-6 rounded-lg">
-                  <img 
-                    src={caseStudiesData.de[3].logo} 
-                    alt="IconPro" 
-                    className="h-12 w-auto"
-                  />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">
-                    IconPro – KI-Software
-                  </h3>
-                  <div className="space-y-3 mb-6">
-                    {[
-                      "UX für Software & KI",
-                      "Komplexe Use Cases klar visualisiert",
-                      "Interaktive Module & Struktur"
-                    ].map((bullet, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                        <p className="text-base text-[#666666]">{bullet}</p>
+      {/* SECTION 8 — Wie wir arbeiten */}
+      <section id="prozess" className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              So entsteht Ihr UX-Konzept
+            </h2>
+          </motion.div>
+
+          <div className="relative">
+            {/* Timeline */}
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border"></div>
+
+            <div className="space-y-12">
+              {[
+                {
+                  number: "01",
+                  title: "Analyse",
+                  description: "Ziele definieren, Nutzer verstehen, Schwachstellen identifizieren."
+                },
+                {
+                  number: "02",
+                  title: "Informationsarchitektur",
+                  description: "Sitemap erstellen, Content strukturieren, Hierarchien festlegen."
+                },
+                {
+                  number: "03",
+                  title: "Wireframing",
+                  description: "Layouts skizzieren, User Flows visualisieren, Interaktionen planen."
+                },
+                {
+                  number: "04",
+                  title: "Prototyping",
+                  description: "Klickbare Prototypen erstellen, Feedback einholen, iterieren."
+                },
+                {
+                  number: "05",
+                  title: "Optimierung",
+                  description: "Usability testen, Conversion optimieren, kontinuierlich verbessern."
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`lg:grid lg:grid-cols-2 lg:gap-8 ${index % 2 === 0 ? '' : 'lg:grid-flow-dense'}`}
+                >
+                  <div className={`${index % 2 === 0 ? 'lg:text-right' : 'lg:col-start-2'}`}>
+                    <div className="bg-card rounded-lg p-8 border border-border shadow-sm inline-block w-full">
+                      <div className="flex items-center gap-4 mb-4 lg:justify-end">
+                        <div className="flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground rounded-full text-xl font-bold">
+                          {step.number}
+                        </div>
+                        <h3 className="text-2xl font-bold text-foreground">
+                          {step.title}
+                        </h3>
                       </div>
-                    ))}
+                      <p className="text-base text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="border-[#0BC3C3] text-[#0BC3C3] hover:bg-[#0BC3C3] hover:text-white"
-                  >
-                    <a href="/referenzen">
-                      Case ansehen
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 6: UX-Ergebnisse in Zahlen */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-4">
-              UX-Ergebnisse in Zahlen
-            </h2>
-            <p className="text-xl text-[#666666]">
-              UX wirkt — und zwar messbar.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              "+300 % mehr qualifizierte Anfragen",
-              "–45 % Bounce Rate",
-              "+40 % Conversionrate",
-              "+160 % mehr Interaktionen"
-            ].map((metric, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                className="bg-[#0BC3C3] text-white rounded-lg p-8 text-center"
-              >
-                <p className="text-2xl md:text-3xl font-bold">
-                  {metric}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Section 7: Warum ooliv für UX? */}
-      <section className="py-20 lg:py-32 bg-white">
+      {/* SECTION 9 — Team-Hybrid */}
+      <section className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -500,57 +563,87 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
-              Warum ooliv für UX?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Wer an Ihrem UX-Projekt arbeitet
             </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ein hybrides Team aus Strategie, Design, Entwicklung und Content — für ganzheitliche UX-Konzepte.
+            </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6 mb-12"
-          >
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "15+ Jahre Erfahrung in UX & Funnel-Konzeption",
-              "Starke Brücke zwischen Strategie und Design",
-              "UX, die auf Geschäftsziele einzahlt",
-              "Keine Junioren, keine Umwege",
-              "Strukturiert, schnell, klar"
-            ].map((feature, index) => (
+              {
+                name: "Uli",
+                role: "Strategy & Konzeption",
+                icon: Target
+              },
+              {
+                name: "Dorinel",
+                role: "UX/UI Design & Kreation",
+                icon: PenTool
+              },
+              {
+                name: "Parveen & Kamil",
+                role: "Development",
+                icon: Frame
+              },
+              {
+                name: "Paul",
+                role: "SEO & Performance",
+                icon: Search
+              },
+              {
+                name: "Lisa",
+                role: "Content & Copywriting",
+                icon: Layers
+              }
+            ].map((member, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
-                className="flex items-start gap-4 p-6 bg-[#F7F8FC] rounded-lg"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow text-center"
               >
-                <Check className="w-7 h-7 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                <p className="text-lg text-[#0D0D0D] font-medium">{feature}</p>
+                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mx-auto mb-4">
+                  <member.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {member.role}
+                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
+          <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center text-lg text-muted-foreground mt-12"
           >
-            <Button
-              onClick={handleOpenLeadForm}
-              size="lg"
-              className="bg-[#0BC3C3] hover:bg-[#0BC3C3]/90 text-white px-8 py-6 text-base"
-            >
-              Kostenloses Konzept sichern
-            </Button>
-          </motion.div>
+            Unser hybrider Ansatz: CEO + UX-Designer + Entwickler + Content = vollständige UX-Konzepte.
+          </motion.p>
         </div>
       </section>
 
-      {/* Section 8: FAQ */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
+      {/* SECTION 10 — CTA */}
+      <CTA 
+        title="Lassen Sie uns Ihr UX-Projekt starten"
+        subtitle="Kostenlose Erstberatung & UX-Analyse in 48 Stunden"
+        primaryCta="Projekt starten"
+        secondaryCta="Kostenlose 15-Minuten-Einschätzung"
+        secondaryCtaLink="#"
+      />
+
+      {/* SECTION 11 — FAQ */}
+      <section className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -558,77 +651,92 @@ const UxKonzeption = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Häufige Fragen zu UX-Konzeption
             </h2>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-white rounded-lg border border-[#E5E5E5] px-6">
-                <AccordionTrigger className="text-left font-bold text-[#0D0D0D] hover:no-underline">
-                  Was ist der Unterschied zwischen UX-Konzept und Design?
-                </AccordionTrigger>
-                <AccordionContent className="text-[#666666] text-base pt-4">
-                  Das UX-Konzept definiert die Struktur, Informationsarchitektur und Nutzerführung – also <strong>wie</strong> Inhalte organisiert werden. Das Design visualisiert diese Struktur dann ästhetisch. UX kommt immer vor Design, weil Form der Funktion folgen sollte.
-                </AccordionContent>
-              </AccordionItem>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Was kostet ein UX-Konzept?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                Die Kosten hängen vom Projektumfang ab. Ein UX-Audit für kleinere Websites beginnt ab 2.500 €. Komplette UX-Konzepte mit Informationsarchitektur, Wireframes und Prototyping starten ab 8.000 €. Wir bieten eine kostenlose Erstanalyse, um Ihren Bedarf zu verstehen und ein transparentes Angebot zu erstellen.
+              </AccordionContent>
+            </AccordionItem>
 
-              <AccordionItem value="item-2" className="bg-white rounded-lg border border-[#E5E5E5] px-6">
-                <AccordionTrigger className="text-left font-bold text-[#0D0D0D] hover:no-underline">
-                  Wie lange dauert eine UX-Konzeption?
-                </AccordionTrigger>
-                <AccordionContent className="text-[#666666] text-base pt-4">
-                  Je nach Umfang 2-6 Wochen. Eine Landingpage braucht 1-2 Wochen, eine komplexe Website mit mehreren User Journeys 4-6 Wochen. Wir arbeiten in Iterationen: Analyse → Wireframes → Feedback → Optimierung.
-                </AccordionContent>
-              </AccordionItem>
+            <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Wie lange dauert UX-Konzeption?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                Erste Ergebnisse sind oft nach 2-3 Wochen sichtbar. Ein vollständiges UX-Konzept dauert je nach Komplexität 4-8 Wochen. Wir arbeiten in iterativen Sprints, sodass Sie kontinuierlich Fortschritte sehen und Feedback geben können.
+              </AccordionContent>
+            </AccordionItem>
 
-              <AccordionItem value="item-3" className="bg-white rounded-lg border border-[#E5E5E5] px-6">
-                <AccordionTrigger className="text-left font-bold text-[#0D0D0D] hover:no-underline">
-                  Was wird im UX-Konzept konkret erstellt?
-                </AccordionTrigger>
-                <AccordionContent className="text-[#666666] text-base pt-4">
-                  Sitemap & Informationsarchitektur, User Journeys & Flows, Low- und High-Fidelity Wireframes, Prototypen (klickbar), Content-Struktur & Hierarchie, und Conversion-Strategie (CTAs, Funnels).
-                </AccordionContent>
-              </AccordionItem>
+            <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Was ist der Unterschied zu UI-Design?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                UX (User Experience) fokussiert auf Struktur, Nutzerführung und Funktionalität — das "Wie" einer Anwendung. UI (User Interface) ist die visuelle Gestaltung — das "Aussehen". Wir beginnen immer mit UX-Konzeption, bevor wir zum UI-Design übergehen. Gute UX ist die Basis für effektives Design.
+              </AccordionContent>
+            </AccordionItem>
 
-              <AccordionItem value="item-4" className="bg-white rounded-lg border border-[#E5E5E5] px-6">
-                <AccordionTrigger className="text-left font-bold text-[#0D0D0D] hover:no-underline">
-                  Brauche ich UX, wenn ich nur ein Redesign will?
-                </AccordionTrigger>
-                <AccordionContent className="text-[#666666] text-base pt-4">
-                  Ja, auf jeden Fall. Die meisten Redesigns scheitern, weil sie nur visuell sind, aber die strukturellen Probleme nicht lösen. Ein Redesign ohne UX-Konzept ist wie ein neuer Anstrich auf einem schiefen Haus.
-                </AccordionContent>
-              </AccordionItem>
+            <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Bietet ihr UX-Workshops an?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                Ja! Wir bieten UX-Workshops für Teams an, z.B. User Journey Mapping, Design Sprints oder UX-Audits. Perfekt, um Ihr Team zu involvieren und gemeinsam Lösungen zu entwickeln. Workshops dauern typischerweise 1-2 Tage und können remote oder vor Ort stattfinden.
+              </AccordionContent>
+            </AccordionItem>
 
-              <AccordionItem value="item-5" className="bg-white rounded-lg border border-[#E5E5E5] px-6">
-                <AccordionTrigger className="text-left font-bold text-[#0D0D0D] hover:no-underline">
-                  Wie funktioniert UX-Testing bei ooliv?
-                </AccordionTrigger>
-                <AccordionContent className="text-[#666666] text-base pt-4">
-                  Wir arbeiten mit Prototypen-Testing (Klickdummys), A/B-Testing nach Launch, und nutzen Daten aus Google Analytics, Hotjar oder ähnlichen Tools. Wichtig: Testing ist nicht nur am Ende, sondern während der gesamten Konzeptphase.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </motion.div>
+            <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Macht ihr UX für B2B?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                Absolut. B2B ist sogar unser Schwerpunkt. Wir verstehen die Besonderheiten von B2B-Kaufprozessen: längere Entscheidungswege, mehrere Stakeholder, erklärungsbedürftige Produkte. Unsere UX-Konzepte sind speziell darauf ausgelegt, komplexe B2B-Angebote klar und überzeugend zu präsentieren.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
-      {/* Section 9: Final CTA */}
-      <CTA
-        title="Bereit für bessere Nutzerführung?"
-        subtitle="Lassen Sie uns besprechen, wie wir Ihre Customer Journey und digitale Struktur optimieren können."
-        primaryCta="Projekt starten"
-        primaryCtaLink="/"
-      />
+      {/* Internal Links Section */}
+      <section className="py-16 bg-background border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
+            Weitere Services
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild variant="outline" size="sm">
+              <Link to="/digitale-transformation-strategie">
+                Digitale Transformation
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <Link to="/webdesign-entwicklung">
+                Webdesign & Entwicklung
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <Link to="/seo-performance">
+                SEO & Performance
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="sm">
+              <Link to="/ai-workflows">
+                AI Workflows
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
