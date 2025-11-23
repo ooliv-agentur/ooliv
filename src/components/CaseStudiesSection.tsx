@@ -11,81 +11,81 @@ export const caseStudiesData = {
   de: [
     {
       client: "KLAIBER",
-      industry: "Steuerberatung & Unternehmensberatung",
-      headline: "Strategische Neuausrichtung für Vertrauen und Differenzierung",
+      industry: "Steuerberatung",
+      headline: "Strategische Neupositionierung für mehr Sichtbarkeit und Vertrauen",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
       websiteLink: "www.kl-klaiber.de",
       keyMetric: "+92 % mehr Sichtbarkeit",
       impact: [
         "Strategische Neuausrichtung",
-        "Wireframes, Struktur, Inhalte",
-        "Modernes Design & Vertrauen als Kernwert",
-        "WordPress + SEO-Basics"
+        "Wireframes & Informationsarchitektur",
+        "Modernes Design mit Vertrauen als Kernwert",
+        "WordPress + SEO-Optimierung"
       ],
       image: "/lovable-uploads/8ef26bfc-1352-4dc8-ad43-46bdcc7f171f.webp",
     },
     {
       client: "COBUS Industries",
-      industry: "Weltmarktführer für Flughafenbusse",
-      headline: "Komplette Konzeptentwicklung für internationales B2B-Publikum",
+      industry: "Industrie",
+      headline: "Strukturierte UX für Technik, Service und internationales Publikum",
       logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
       quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
       websiteLink: "www.cobus-industries.de",
       keyMetric: "+160 % mehr Interaktionen",
       impact: [
-        "Komplette Konzeptentwicklung",
-        "UX für Technik, Produkt & Service",
-        "Maßgeschneiderte Struktur für internationales Publikum",
+        "Komplette UX-Konzeption",
+        "Struktur für Technik, Produkt & Service",
+        "Internationales B2B-Publikum",
         "SEO + Video zur Markenstärkung"
       ],
       image: "/lovable-uploads/f7ec3d1a-2f4b-400b-91d8-213e1c774935.png",
     },
     {
       client: "SPEZ AG",
-      industry: "Spezialist für Baumfällung, Kranarbeiten und Grünpflege",
-      headline: "Von der Markenentwicklung bis zur Lead-Generierung",
+      industry: "Handwerk",
+      headline: "Ganzheitliche Markenentwicklung, die konstant qualifizierte Anfragen generiert",
       logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
       quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
       websiteLink: "www.spez-ag.ch",
       keyMetric: "+300 % qualifizierte Anfragen",
       impact: [
-        "Markenentwicklung inkl. Logo",
+        "Markenentwicklung inkl. Logo & CI",
         "Struktur, Inhalte, Design",
         "SEO + SEM für lokalen Markt",
-        "Performance-orientierte WordPress-Seite"
+        "Performance-optimierte WordPress-Seite"
       ],
       image: "/lovable-uploads/aa4b94fd-917b-458f-bbad-7e593011a6a3.webp",
     },
     {
       client: "IconPro GmbH",
-      industry: "KI-Software für Predictive Quality & Smart Production",
-      headline: "Komplexe KI-Software einfach und visuell erklärt",
+      industry: "KI-Software",
+      headline: "Komplexe KI-Software klar und visuell verständlich dargestellt",
       logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
       quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
       websiteLink: "www.iconpro.com",
       keyMetric: "+45 % höheres Engagement",
       impact: [
-        "Klar strukturierte Use-Cases",
-        "Illustrationen & animierte Module",
-        "UX + technischer Fokus optimal kombiniert",
-        "WordPress-Umsetzung mit optimierter Performance"
+        "Strukturierte Use-Cases",
+        "Illustrationen & Animationen",
+        "UX für komplexe Software",
+        "WordPress mit optimierter Performance"
       ],
       image: "/lovable-uploads/5f09a7f9-6e7f-4a8e-b087-d2d250bc591e.webp",
     },
     {
       client: "Quartier Am Kliff",
-      industry: "Strandnahe Eigentumswohnungen auf Rügen",
-      headline: "Markteinführung einer Immobilienmarke – von Logo bis Landingpage",
+      industry: "Immobilien",
+      headline: "Digitale Markteinführung, die aktiv im Vertrieb unterstützt",
       logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
       quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
       websiteLink: "www.amkliff.de",
       keyMetric: "+40 % bessere Conversionrate",
       impact: [
-        "Digitale Markenentwicklung incl. Logo, CI & Naming",
-        "Konzept, Text und Design der Verkaufs-Landingpage",
-        "Umsetzung als performante HTML-Seite (ohne CMS)",
-        "Bildbearbeitung & Bauschilder für die Projektkommunikation"
+        "Markenentwicklung: Logo, CI & Naming",
+        "Konzept & Design der Verkaufs-Landingpage",
+        "Performante HTML-Umsetzung",
+        "Bildbearbeitung & Projektkommunikation"
       ],
       image: "/lovable-uploads/43cb7284-8e75-4a51-9784-67c81a6fe8c6.png",
     }
@@ -170,15 +170,15 @@ const CaseStudiesSection = ({
                     "{study.quote}"
                   </blockquote>
                   
-                  {study.websiteLink && (
+                   {study.websiteLink && (
                     <div className="mb-6">
                       <a 
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-teal hover:underline inline-flex items-center text-sm md:text-base font-medium"
+                        className="inline-flex items-center px-4 py-2 bg-teal/10 text-teal hover:bg-teal/20 rounded-lg font-medium text-sm transition-colors"
                       >
-                        {t.exploreWebsite} {study.websiteLink}
+                        Website ansehen
                       </a>
                     </div>
                   )}
