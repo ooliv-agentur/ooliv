@@ -25,10 +25,10 @@ const GermanContact = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Kontakt | ooliv Digitalagentur"
-        description="Kontakt ooliv – Direkt mit Inhaber sprechen. Persönliche Beratung für Webdesign, SEO & Online-Marketing. ☎ 06131-6367801. Termin buchen!"
+        title="Kontakt – Digitale Strategie & UX Beratung | ooliv Mainz"
+        description="Direkter Kontakt zu Uli Schönleber. Digitale Strategie, UX, Webentwicklung, SEO & AI-Workflows — persönlich geführt und klar strukturiert."
         canonicalUrl="https://ooliv.de/kontakt"
-        keywords="Kontakt, ooliv, Digitalagentur, Beratung, Webdesign, SEO"
+        keywords="Kontakt, ooliv, Mainz, Digitale Strategie, UX Beratung, Webentwicklung, SEO"
       />
 
       <ContactHeroDE />
@@ -43,7 +43,7 @@ const GermanContact = () => {
       <CTA 
         title="Starten Sie jetzt Ihr digitales Projekt mit ooliv."
         subtitle=""
-        primaryCta="Jetzt Projekt starten"
+        primaryCta="Projekt starten"
         lightBackground={true}
       />
     </PageLayout>

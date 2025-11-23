@@ -9,7 +9,7 @@ const ContactIntroductionDE = () => {
     <Section spacing="large" background="white">
       <Container size="narrow">
         <LargeParagraph alignment="center" color="primary">
-          Sie brauchen keine Agentur mit 50 Mitarbeitern – Sie brauchen einen Partner, der Ihr Projekt versteht und umsetzt. Bei ooliv arbeiten Sie direkt mit dem Gründer. Ohne Verkaufsdruck, ohne Warteschleifen. Nur ein ehrliches Gespräch über das, was wirklich funktioniert.
+          Sie benötigen keinen großen Agenturapparat — sondern jemanden, der strategisch denkt und klar führt. Bei ooliv arbeiten Sie direkt mit Uli Schönleber. Ohne Sales-Layer, ohne Wartezeiten, ohne Umwege.
         </LargeParagraph>
       </Container>
     </Section>

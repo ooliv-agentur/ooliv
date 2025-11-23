@@ -35,7 +35,7 @@ const ContactHeroDE = () => {
           
           {/* Subtitle */}
           <LargeParagraph className="mb-8 sm:mb-10 text-left" color="secondary">
-            Ihre Digitalagentur für individuelle Websites, SEO und Marketinglösungen – persönlich und ohne Umwege.
+            Ihr direkter Zugang zu digitaler Strategie, UX, Webentwicklung, SEO & AI-Workflows — persönlich geführt von Uli Schönleber.
           </LargeParagraph>
             
             {/* CTA buttons - now using design system */}
