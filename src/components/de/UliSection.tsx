@@ -14,7 +14,7 @@ const UliSection = () => {
               Ihr Ansprechpartner: Uli Schönleber
             </h2>
             <p className="text-xl text-teal font-medium">
-              Digital Strategy Lead seit 2008. 200+ Projekte. Klarheit statt Agentur-Theater.
+            Digital Strategy Lead seit 2008. 200+ realisierte Digitalprojekte. Klarheit statt Agentur-Theater.
             </p>
           </div>
         </Reveal>
@@ -52,7 +52,7 @@ const UliSection = () => {
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">200+ Projekte</span>
+                <span className="text-primary-text font-normal">200+ realisierte Digitalprojekte</span>
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />

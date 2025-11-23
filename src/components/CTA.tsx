@@ -66,7 +66,7 @@ const CTA = ({
     console.log('📡 CTA: open-lead-form event dispatched');
   };
 
-  const defaultFooterNote = "100+ erfolgreich umgesetzte Projekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
+  const defaultFooterNote = "200+ realisierte Digitalprojekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
   
   return (
     <section className="py-24 bg-white">

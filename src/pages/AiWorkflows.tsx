@@ -359,7 +359,7 @@ const AiWorkflows = () => {
                 </p>
                 <ul className="space-y-2 mb-6">
                   {[
-                    "200+ Projekte in Strategie, UX, AI",
+                    "200+ realisierte Digitalprojekte",
                     "Strukturierter Prozess statt 'Tool-Hopping'",
                     "Teams bis C-Level begleitet"
                   ].map((point, index) => (

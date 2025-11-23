@@ -8,7 +8,7 @@ const AboutUsCTA = () => {
       title="Lassen Sie uns reden – ohne Agentur-Geschwätz"
       subtitle="Sie brauchen eine Website, die funktioniert? Einen klaren Plan statt endloser Strategie-Slides? Reden wir drüber – ehrlich, direkt, ohne Verkaufsdruck."
       primaryCta="Unverbindlich anfragen"
-      footerNote="100+ umgesetzte Projekte • Direkte Kommunikation mit dem Gründer • Keine Zwischenstellen"
+      footerNote="200+ realisierte Digitalprojekte • Direkte Kommunikation mit dem Gründer • Keine Zwischenstellen"
     />
   );
 };

@@ -469,7 +469,7 @@ const SeoPerformance = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />
-                <span className="text-[#666666]">200+ Projekte, davon viele im B2B</span>
+                <span className="text-[#666666]">200+ realisierte Digitalprojekte</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />

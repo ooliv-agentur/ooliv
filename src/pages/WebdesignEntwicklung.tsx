@@ -71,7 +71,7 @@ const WebdesignEntwicklung = () => {
             {...staggerContainer}
           >
             {[
-              { icon: Award, text: "200+ Projekte seit 2008" },
+              { icon: Award, text: "200+ realisierte Digitalprojekte" },
               { icon: Target, text: "UX-geführt, KPI-optimiert" },
               { icon: Zap, text: "Schnelle Ladezeiten & technische Exzellenz" },
               { icon: User, text: "Persönlich geführt von Uli Schönleber" }
@@ -343,7 +343,7 @@ const WebdesignEntwicklung = () => {
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  "200+ Projekte für Mittelstand & Marktführer",
+                  "200+ realisierte Digitalprojekte",
                   "Tiefes Verständnis für Strategie, UX & AI",
                   "Direkte Zusammenarbeit auf Geschäftsführungsniveau"
                 ].map((point, index) => (
