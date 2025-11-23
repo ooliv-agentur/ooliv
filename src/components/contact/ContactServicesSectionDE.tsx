@@ -17,9 +17,9 @@ const ContactServicesSectionDE = () => {
           <H3 className="mb-4" alignment="center">
             Unser Leistungsspektrum:
           </H3>
-          <LargeParagraph className="max-w-4xl mx-auto" alignment="center" color="primary">
-            <Link to="/digitale-transformation-strategie" className="text-[#32b2ab] hover:underline font-medium">Strategische Beratung</Link>, UX, <Link to="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline font-medium">Webdesign</Link>, <Link to="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline font-medium">Webentwicklung</Link>, <Link to="/seo-performance" className="text-[#32b2ab] hover:underline font-medium">Suchmaschinenoptimierung</Link>, Google Ads und <Link to="/ai-workflows" className="text-[#32b2ab] hover:underline font-medium">KI-Technologien</Link>.
-          </LargeParagraph>
+        <LargeParagraph className="max-w-4xl mx-auto" alignment="center" color="primary">
+          <Link to="/digitale-transformation-strategie" className="text-[#32b2ab] hover:underline font-medium">Strategie</Link>, <Link to="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline font-medium">UX-Architektur</Link>, <Link to="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline font-medium">Webdesign & Entwicklung</Link>, <Link to="/seo-performance" className="text-[#32b2ab] hover:underline font-medium">technische SEO</Link> und <Link to="/ai-workflows" className="text-[#32b2ab] hover:underline font-medium">AI-Workflows</Link> — strukturiert, messbar und seniorgeführt.
+        </LargeParagraph>
         </div>
         
         <LargeParagraph className="max-w-4xl mx-auto" alignment="center" color="primary">

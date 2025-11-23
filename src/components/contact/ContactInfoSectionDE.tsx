@@ -22,7 +22,7 @@ const ContactInfoSectionDE = () => {
           <div className="bg-white rounded-xl p-6 shadow-sm text-center">
             <Phone className="h-8 w-8 mx-auto mb-4 text-[#32b2ab]" />
             <H3 className="mb-2">Telefon & WhatsApp</H3>
-            <Paragraph color="secondary" className="text-sm mb-2">06131 – 63 67 801</Paragraph>
+            <Paragraph color="secondary" className="text-sm mb-2">+49 6131 6367801</Paragraph>
             <a 
               href="https://wa.me/+4917680167641" 
               target="_blank" 
