@@ -6,9 +6,8 @@ export const spacingStyles = {
   // Section spacing - consistent vertical spacing between major page sections
   section: {
     small: "py-12 md:py-16",
-    medium: "py-16 md:py-20", 
-    large: "py-20 md:py-24",
-    extraLarge: "py-24 md:py-32"
+    medium: "py-16 md:py-24", 
+    large: "py-24 md:py-32",
   },
   
   // Container patterns - consistent max-widths and padding

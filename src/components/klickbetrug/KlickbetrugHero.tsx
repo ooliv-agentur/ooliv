@@ -13,7 +13,7 @@ const KlickbetrugHero = () => {
   };
 
   return (
-    <section className={`${getSectionClasses('extraLarge', 'mint')} font-satoshi relative overflow-hidden min-h-screen flex items-center`}>
+    <section className={`${getSectionClasses('large', 'mint')} font-satoshi relative overflow-hidden min-h-screen flex items-center`}>
       {/* Floating circles animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>

@@ -148,9 +148,9 @@ const FloatingActionButtons = () => {
                 <Button
                   ref={(el) => { buttonRefs.current[button.id] = el; }}
                   onClick={button.onClick}
-                  variant={button.variant}
-                  size="floating"
-                  data-button-style={button.variant === 'floating' ? 'floating-primary' : 'floating-light'}
+                  variant={button.variant === 'floating' ? 'primary' : 'primary'}
+                  size="icon"
+                  className="rounded-full shadow-md h-12 w-12"
                   style={{
                     transitionDelay: showAllButtons ? `${index * 100}ms` : '0ms'
                   }}
@@ -175,9 +175,9 @@ const FloatingActionButtons = () => {
           <Button
             ref={toggleRef}
             onClick={toggleExpanded}
-            variant="floating"
-            size="floating"
-            data-button-style="floating-primary"
+            variant="primary"
+            size="icon"
+            className="rounded-full shadow-md h-14 w-14"
             aria-label={isExpanded 
               ? (language === 'de' ? "Menü schließen" : "Close menu")
               : (language === 'de' ? "Menü öffnen" : "Open menu")

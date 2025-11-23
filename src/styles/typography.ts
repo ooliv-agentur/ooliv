@@ -1,34 +1,34 @@
 
-// Typography Design System
+// Typography Design System - Unified for ooliv brand
 // Centralized typography tokens and utility functions
 
 export const typographyStyles = {
   // Headings - consistent across all components
   headings: {
-    h1: "text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] font-medium leading-tight",
-    h2: "text-2xl md:text-3xl lg:text-4xl font-bold leading-tight",
-    h3: "text-xl md:text-2xl font-bold leading-tight",
-    h4: "text-lg md:text-xl font-semibold leading-tight",
-    h5: "text-base md:text-lg font-semibold leading-tight",
-    h6: "text-sm md:text-base font-semibold leading-tight"
+    h1: "text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#0A0A0A]",
+    h2: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0A0A0A]",
+    h3: "text-3xl md:text-4xl font-bold leading-tight text-[#0A0A0A]",
+    h4: "text-2xl md:text-3xl font-semibold leading-tight text-[#0A0A0A]",
+    h5: "text-xl md:text-2xl font-semibold leading-tight text-[#0A0A0A]",
+    h6: "text-lg md:text-xl font-semibold leading-tight text-[#0A0A0A]"
   },
   
   // Body text - consistent sizing and line heights
   body: {
-    large: "text-lg sm:text-xl md:text-2xl leading-relaxed",
-    base: "text-base md:text-lg leading-relaxed",
-    small: "text-sm md:text-base leading-relaxed",
-    caption: "text-xs md:text-sm leading-normal"
+    large: "text-xl md:text-2xl leading-relaxed text-[#555555]",
+    base: "text-base md:text-lg leading-relaxed text-[#555555]",
+    small: "text-sm md:text-base leading-relaxed text-[#7A7A7A]",
+    caption: "text-xs md:text-sm leading-normal text-[#7A7A7A]"
   },
   
   // Color tokens - semantic color usage
   colors: {
-    primary: "text-medico-darkGreen",
-    secondary: "text-gray-700",
-    muted: "text-gray-600",
-    light: "text-gray-500",
-    accent: "text-accent-primary",
-    warning: "text-accent-complementary",
+    primary: "text-[#0A0A0A]",
+    secondary: "text-[#555555]",
+    muted: "text-[#7A7A7A]",
+    light: "text-[#A3A3A3]",
+    accent: "text-[#0BC3C3]",
+    warning: "text-[#0BC3C3]",
     white: "text-white"
   },
   
@@ -56,7 +56,7 @@ export const getHeadingClasses = (level: keyof typeof typographyStyles.headings,
   return `${typographyStyles.headings[level]} ${typographyStyles.colors[color]} ${typographyStyles.alignment[alignment]}`;
 };
 
-export const getBodyClasses = (size: keyof typeof typographyStyles.body, color: keyof typeof typographyStyles.colors = 'primary', alignment: keyof typeof typographyStyles.alignment = 'left') => {
+export const getBodyClasses = (size: keyof typeof typographyStyles.body, color: keyof typeof typographyStyles.colors = 'secondary', alignment: keyof typeof typographyStyles.alignment = 'left') => {
   return `${typographyStyles.body[size]} ${typographyStyles.colors[color]} ${typographyStyles.alignment[alignment]}`;
 };
 

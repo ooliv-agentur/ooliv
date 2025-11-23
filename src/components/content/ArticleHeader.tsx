@@ -65,7 +65,7 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
             <div className="flex gap-4">
               <Button
                 onClick={copyUrlToClipboard}
-                variant="outlineTurquoise"
+                variant="secondary"
                 size="sm"
                 className="font-satoshi font-semibold"
               >
@@ -77,7 +77,7 @@ const ArticleHeader = ({ article }: ArticleHeaderProps) => {
               </Button>
               <Button
                 asChild
-                variant="outlineTurquoise"
+                variant="secondary"
                 size="sm"
                 className="font-satoshi font-semibold"
               >
