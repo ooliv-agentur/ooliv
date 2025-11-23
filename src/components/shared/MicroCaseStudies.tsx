@@ -66,7 +66,7 @@ export const MicroCaseStudies: React.FC<MicroCaseStudiesProps> = ({
 
               {/* Result - Large Turquoise Number */}
               <div className="mb-4">
-                <div className="text-3xl sm:text-4xl font-bold text-[#0BC3C3]">
+                <div className="text-3xl sm:text-4xl font-bold text-[#32b2ab]">
                   {caseStudy.result}
                 </div>
               </div>
@@ -83,7 +83,7 @@ export const MicroCaseStudies: React.FC<MicroCaseStudiesProps> = ({
                 rel="noopener noreferrer"
                 className={cn(
                   "inline-flex items-center gap-2",
-                  "text-[#0BC3C3] hover:text-[#089EA0]",
+                  "text-[#32b2ab] hover:text-[#289690]",
                   "font-medium transition-colors duration-200",
                   "group"
                 )}

@@ -120,13 +120,13 @@ const TeamSection = () => {
                     target.style.display = 'none';
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-[#0BC3C3] opacity-0">
+                <div className="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-[#32b2ab] opacity-0">
                   {member.initials}
                 </div>
               </div>
               <div className="flex-1">
                 <h3 className="text-lg sm:text-xl font-bold mb-1 text-[#0A0A0A]">{member.name}</h3>
-                <p className="text-[#0BC3C3] font-semibold mb-2">{member.role}</p>
+                <p className="text-[#32b2ab] font-semibold mb-2">{member.role}</p>
                 <p className="text-[#555555] text-sm leading-relaxed">{member.description}</p>
               </div>
             </div>

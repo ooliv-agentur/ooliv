@@ -12,7 +12,7 @@ const AboutUsIntroduction = () => {
           <H2 className="text-[#0A0A0A] mb-6" alignment="center">
             Digitale Strategie trifft auf messbare Ergebnisse
           </H2>
-          <LargeParagraph alignment="center" className="font-satoshi max-w-4xl mx-auto text-[#555555]">
+          <LargeParagraph alignment="center" className="max-w-4xl mx-auto text-[#555555]">
             Seit 2008 entwickelt ooliv digitale Strategien, Websites und AI-gestützte Workflows, die Unternehmen messbar voranbringen. Wir sind kein anonymer Agenturapparat, sondern ein erfahrenes Digitalagentur-Team aus Mainz, das Klarheit, Struktur und Ergebnisse liefert.
           </LargeParagraph>
         </div>
