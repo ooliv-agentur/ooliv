@@ -5,13 +5,12 @@ import PageHero from '@/components/PageHero';
 import CTA from '@/components/CTA';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
-import { motion } from 'framer-motion';
+import { StatsBar, PainPointsGrid, FeatureGrid } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { 
-  Target, Users, Workflow, Brain, BarChart3, Zap, TrendingUp,
-  AlertCircle, Search, Map, CheckCircle2, ArrowRight, Layers,
-  GitBranch, Lightbulb, Settings, Clock, Award
+  Target, Users, Award, BarChart3, Map, Workflow, Settings,
+  Search, Zap, Brain, CheckCircle2, ArrowRight
 } from 'lucide-react';
 import {
   Accordion,
@@ -21,6 +20,7 @@ import {
 } from "@/components/ui/accordion";
 import { caseStudiesData } from '@/components/CaseStudiesSection';
 import { typographyStyles } from '@/styles/typography';
+import { motion } from 'framer-motion';
 
 const DigitaleTransformationStrategie = () => {
   const breadcrumbs = [
@@ -37,10 +37,75 @@ const DigitaleTransformationStrategie = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
-  };
+  const trustStats = [
+    { icon: Award, value: "100+", label: "Projekte" },
+    { icon: Users, value: "Senior", label: "Direkter Kontakt zum Gründer" },
+    { icon: Target, value: "Senior", label: "Senior-Level Beratung" },
+    { icon: BarChart3, value: "KPI", label: "Klare KPIs & echte Ergebnisse" }
+  ];
+
+  const painPoints = [
+    {
+      icon: Map,
+      title: "Fehlende digitale Roadmap",
+      description: "Projekte ohne Priorisierung und klare digitale Struktur."
+    },
+    {
+      icon: Workflow,
+      title: "Veraltete Prozesse & Silos",
+      description: "Abteilungen arbeiten gegeneinander statt gemeinsam digital."
+    },
+    {
+      icon: BarChart3,
+      title: "Fehlende datenbasierte Entscheidungen",
+      description: "Bauchgefühl statt Fakten und digitale Kennzahlen."
+    },
+    {
+      icon: Settings,
+      title: "Zu viele Tools, zu wenig digitale Strategie",
+      description: "Technologie ohne klare Ziele und Anwendungsfälle."
+    }
+  ];
+
+  const frameworkFeatures = [
+    {
+      icon: Search,
+      title: "Digitale Analyse & Reifegrad-Modell",
+      items: [
+        "Digitaler Reifegrad bestimmen",
+        "Prozessaufnahme durchführen",
+        "Wettbewerbsanalyse erstellen"
+      ]
+    },
+    {
+      icon: Map,
+      title: "Digitale Strategie & Roadmap erstellen",
+      items: [
+        "Value Proposition definieren",
+        "Digitale Priorisierung festlegen",
+        "KPIs & Zielbilder entwickeln",
+        "Entscheidungsarchitektur aufbauen"
+      ]
+    },
+    {
+      icon: Zap,
+      title: "Digitale Implementierung & Enablement",
+      items: [
+        "Digitale Prozesse optimieren",
+        "Technologie-Einführung begleiten",
+        "Team-Fähigkeiten steigern"
+      ]
+    },
+    {
+      icon: Brain,
+      title: "AI-Workflows & Automatisierung",
+      items: [
+        "AI-Workflows implementieren",
+        "Digitale Prozessautomatisierung umsetzen",
+        "Operative Effizienz steigern"
+      ]
+    }
+  ];
 
   return (
     <PageLayout>
@@ -48,20 +113,8 @@ const DigitaleTransformationStrategie = () => {
         title="Digitale Transformation Beratung | Strategie, Prozesse, AI & Roadmaps – ooliv"
         description="Beratung für digitale Transformation: Roadmaps, Prozessoptimierung, Customer Journey Mapping, digitale Workflows, AI-Integration. Senior-Level Strategie. 200+ Digitalprojekte."
         canonicalUrl="https://ooliv.de/digitale-transformation-strategie"
-        keywords="digitale transformation beratung, digitale transformation strategie, digitale transformation agentur, digitale prozesse optimieren, digitale roadmap erstellen, customer journey mapping, digitale effizienz steigern, organisationsentwicklung digital, digitale prozessautomatisierung, digitale tools einführen, ai-workflows implementieren, digitaler reifegrad, digitale priorisierung, effiziente workflows, digitalisierung unternehmen, strategie workshop digital, change management digital, team enablement digital, prozessdigitalisierung, unternehmensdigitalisierung, digitale transformation mittelstand"
+        keywords="digitale transformation beratung, digitale transformation strategie, digitale transformation agentur, digitale prozesse optimieren, digitale roadmap erstellen"
         breadcrumbs={breadcrumbs}
-        structuredData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Digitale Transformation Beratung",
-            "provider": {
-              "@type": "Organization",
-              "name": "ooliv Werbeagentur",
-              "url": "https://ooliv.de"
-            }
-          }
-        ]}
       />
 
       {/* Hero */}
@@ -84,22 +137,10 @@ const DigitaleTransformationStrategie = () => {
         </Container>
       </Section>
 
-      {/* Trust Bullets */}
+      {/* Trust Stats */}
       <Section background="light" spacing="small">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Award, text: "100+ Projekte" },
-              { icon: Users, text: "Direkter Kontakt zum Gründer" },
-              { icon: Target, text: "Senior-Level Beratung" },
-              { icon: BarChart3, text: "Klare KPIs & echte Ergebnisse" }
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3 justify-center">
-                <item.icon className="w-5 h-5 text-[#0BC3C3] flex-shrink-0" />
-                <p className="text-sm font-medium text-[#0A0A0A]">{item.text}</p>
-              </div>
-            ))}
-          </div>
+          <StatsBar stats={trustStats} variant="horizontal" />
         </Container>
       </Section>
 
@@ -107,10 +148,9 @@ const DigitaleTransformationStrategie = () => {
       <Section id="warum-scheitert" spacing="large">
         <Container>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -119,57 +159,14 @@ const DigitaleTransformationStrategie = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              {
-                icon: Map,
-                title: "Fehlende digitale Roadmap",
-                description: "Projekte ohne Priorisierung und klare digitale Struktur."
-              },
-              {
-                icon: Workflow,
-                title: "Veraltete Prozesse & Silos",
-                description: "Abteilungen arbeiten gegeneinander statt gemeinsam digital."
-              },
-              {
-                icon: BarChart3,
-                title: "Fehlende datenbasierte Entscheidungen",
-                description: "Bauchgefühl statt Fakten und digitale Kennzahlen."
-              },
-              {
-                icon: Settings,
-                title: "Zu viele Tools, zu wenig digitale Strategie",
-                description: "Technologie ohne klare Ziele und Anwendungsfälle."
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center justify-center w-12 h-12 bg-red-50 text-red-600 rounded-lg mb-4">
-                  <item.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-[#0A0A0A] mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-[#555555]">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <PainPointsGrid painPoints={painPoints} columns={4} />
 
           <motion.p
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-xl font-semibold text-[#0A0A0A]"
+            className="text-center text-xl font-semibold text-[#0A0A0A] mt-12"
           >
             Wir lösen nicht nur technische Aufgaben — wir richten Ihr gesamtes digitales Ökosystem neu aus.
           </motion.p>
@@ -180,10 +177,9 @@ const DigitaleTransformationStrategie = () => {
       <Section id="framework" background="light" spacing="large">
         <Container>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -195,73 +191,12 @@ const DigitaleTransformationStrategie = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: Search,
-                title: "Digitale Analyse & Reifegrad-Modell",
-                items: [
-                  "Digitaler Reifegrad bestimmen",
-                  "Prozessaufnahme durchführen",
-                  "Wettbewerbsanalyse erstellen"
-                ]
-              },
-              {
-                icon: Map,
-                title: "Digitale Strategie & Roadmap erstellen",
-                items: [
-                  "Value Proposition definieren",
-                  "Digitale Priorisierung festlegen",
-                  "KPIs & Zielbilder entwickeln",
-                  "Entscheidungsarchitektur aufbauen"
-                ]
-              },
-              {
-                icon: Zap,
-                title: "Digitale Implementierung & Enablement",
-                items: [
-                  "Digitale Prozesse optimieren",
-                  "Technologie-Einführung begleiten",
-                  "Team-Fähigkeiten steigern"
-                ]
-              },
-              {
-                icon: Brain,
-                title: "AI-Workflows & Automatisierung",
-                items: [
-                  "AI-Workflows implementieren",
-                  "Digitale Prozessautomatisierung umsetzen",
-                  "Operative Effizienz steigern"
-                ]
-              }
-            ].map((block, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="flex items-center justify-center w-12 h-12 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg">
-                    <block.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0A0A0A]">
-                    {block.title}
-                  </h3>
-                </div>
-                <div className="space-y-3">
-                  {block.items.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                      <p className="text-base text-[#555555]">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <FeatureGrid 
+            features={frameworkFeatures}
+            columns={2}
+            showCheckmarks={true}
+            variant="default"
+          />
         </Container>
       </Section>
 
@@ -269,10 +204,9 @@ const DigitaleTransformationStrategie = () => {
       <Section id="beispiele" spacing="large">
         <Container>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -308,10 +242,9 @@ const DigitaleTransformationStrategie = () => {
       <Section id="faq" background="light" spacing="large">
         <Container size="narrow">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={fadeInUp}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
