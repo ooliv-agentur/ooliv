@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
@@ -10,15 +9,14 @@ import SEOApproachDE from '@/components/seo/SEOApproachDE';
 import SEOCtaDE from '@/components/seo/SEOCtaDE';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import FAQ from '@/components/FAQ';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
 import { useLanguage } from '@/contexts/LanguageContext';
-
 import GooglePartnerBadgeSEO from '@/components/seo/GooglePartnerBadgeSEO';
 import GEOOptimizationSEO from '@/components/seo/GEOOptimizationSEO';
 import ServiceSchemaGenerator from '@/components/seo/ServiceSchemaGenerator';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
-import TurquoiseCard from '@/components/ui/TurquoiseCard';
-import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
 
 const GermanSEO = () => {
   const { setLanguage } = useLanguage();
@@ -52,17 +50,11 @@ const GermanSEO = () => {
     {
       question: "Wie stellt ihr sicher, dass die technische SEO aktuell ist?",
       answer: "Durch strukturierte Audits, Core Web Vitals Checks und technische Umsetzung durch unser Team."
-    },
-    {
-      question: "Warum sollte ich mit einer spezialisierten SEO Agentur arbeiten?",
-      answer: "Weil fundierte Marktkenntnis, technisches Know-how und strategische SEO-Taktik einen entscheidenden Unterschied machen."
     }
   ];
 
   return (
-    <PageLayout 
-      className="overflow-x-hidden"
-    >
+    <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
         title="SEO Agentur – Strategische Suchmaschinenoptimierung | ooliv"
         description="ooliv Digitalagentur entwickelt SEO-Strategien für B2B-Unternehmen – messbare Lead-Generierung durch technisches SEO, Content und Rankings."
@@ -104,35 +96,35 @@ const GermanSEO = () => {
       <SEOServicesDE />
       <SEOApproachDE />
       
-      {/* Budget-Signal SEO */}
-      <section className="py-12 bg-background">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <TurquoiseCard variant="soft">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">
+      {/* Budget Section */}
+      <Section spacing="medium">
+        <Container size="narrow">
+          <div className="bg-[#E0FBFA] p-8 rounded-lg text-center">
+            <h3 className="text-2xl font-bold mb-4 text-[#0A0A0A]">
               Was kostet professionelle SEO & GEO-Betreuung?
             </h3>
-            <p className="text-lg text-muted-foreground mb-4">
-              Unsere SEO & GEO-Pakete starten bei <span className="text-turquoise font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
-              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-turquoise font-bold">€2.500</span>.
+            <p className="text-lg text-[#555555] mb-4">
+              Unsere SEO & GEO-Pakete starten bei <span className="text-[#0BC3C3] font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
+              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-[#0BC3C3] font-bold">€2.500</span>.
             </p>
-            <TurquoiseBadge variant="outline" size="sm">
+            <div className="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold text-[#0BC3C3] border-2 border-[#0BC3C3]">
               Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote
-            </TurquoiseBadge>
-          </TurquoiseCard>
-        </div>
-      </section>
+            </div>
+          </div>
+        </Container>
+      </Section>
       
       <SEOProcessDE />
 
-      <p className="text-center text-sm text-medico-darkGreen mt-4">
-        Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
+      <p className="text-center text-sm text-[#555555] mt-4 px-4">
+        Mehr über <Link to="/" className="underline hover:no-underline text-[#0BC3C3]">ooliv und unsere Arbeitsweise</Link>.
       </p>
       
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section background="light" spacing="large">
+        <Container>
           <CaseStudiesSection />
-        </div>
-      </section>
+        </Container>
+      </Section>
       
       <FAQ 
         customFaqs={seoFaqs} 
