@@ -17,7 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 
 const UxKonzeption = () => {
   const breadcrumbs = [
@@ -721,102 +721,11 @@ const UxKonzeption = () => {
       </section>
 
       {/* SECTION 10 — Case Study Teaser */}
-      <section id="case-studies" className="py-20 lg:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              UX im Einsatz – echte Beispiele
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                client: "KLAIBER",
-                industry: "Steuerberatung",
-                result: "+180% mehr Anfragen",
-                logo: caseStudiesData.de[0]?.logo,
-                seoTag: "UX Optimierung Steuerberatung"
-              },
-              {
-                client: "COBUS",
-                industry: "Flughafenbusse",
-                result: "Klare Produktnavigation",
-                logo: caseStudiesData.de[1]?.logo,
-                seoTag: "UX für B2B Industrie"
-              },
-              {
-                client: "SPEZ",
-                industry: "Automotive",
-                result: "+90% Conversion",
-                logo: caseStudiesData.de[2]?.logo,
-                seoTag: "Customer Journey Optimierung Handwerk"
-              },
-              {
-                client: "IconPro",
-                industry: "KI-Software",
-                result: "Komplexität reduziert",
-                logo: caseStudiesData.de[3]?.logo,
-                seoTag: "UX für komplexe Software"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
-              >
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
-                  {item.seoTag}
-                </span>
-                <div className="bg-background p-4 rounded-lg mb-4 flex items-center justify-center min-h-[80px]">
-                  {item.logo ? (
-                    <img 
-                      src={item.logo} 
-                      alt={`${item.client} – ${item.seoTag} von ooliv`} 
-                      className="h-10 w-auto" 
-                    />
-                  ) : (
-                    <p className="font-bold text-lg text-foreground">{item.client}</p>
-                  )}
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">{item.industry}</p>
-                <p className="text-base font-semibold text-primary">{item.result}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center mt-12"
-          >
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <Link to="/referenzen">
-                Alle Referenzen ansehen
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <MicroCaseStudies 
+        cases={["scheurich", "leidmann", "medicloud"]}
+        title="UX im Einsatz – echte Beispiele"
+        showTitle={true}
+      />
 
       {/* SECTION 11 — Wie wir arbeiten */}
       <section id="prozess" className="py-20 lg:py-32 bg-muted/30">

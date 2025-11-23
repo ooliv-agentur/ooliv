@@ -18,7 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 import { typographyStyles } from '@/styles/typography';
 import { motion } from 'framer-motion';
 
@@ -201,42 +201,11 @@ const DigitaleTransformationStrategie = () => {
       </Section>
 
       {/* Case Studies */}
-      <Section id="beispiele" spacing="large">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className={typographyStyles.headings.h2}>
-              Digitale Transformation in der Praxis
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {caseStudiesData.de.slice(0, 3).map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-2">{study.client}</h3>
-                <p className="text-sm text-[#555555] mb-4">{study.shortDescription}</p>
-                <Link to="/referenzen">
-                  <Button variant="secondary" size="sm">
-                    Mehr erfahren <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <MicroCaseStudies 
+        cases={["cobus", "iconpro", "spez"]}
+        title="Digitale Transformation in der Praxis"
+        showTitle={true}
+      />
 
       {/* FAQ */}
       <Section id="faq" background="light" spacing="large">
