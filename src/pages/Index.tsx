@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from "@/components/PageLayout";
-import CTA from "@/components/CTA";
+import { Section } from "@/components/layout/Section";
+import { Container } from "@/components/layout/Container";
+import { H1, H2, H3, Paragraph } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Target, LayoutGrid, Code, Search, Brain,
-  CheckCircle2, Award, Users, Zap, TrendingUp
+  CheckCircle2, Award, Users, Zap
 } from 'lucide-react';
 import {
   Accordion,
@@ -19,7 +21,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
 import H1Validator from '@/components/seo/H1Validator';
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { caseStudiesData } from '@/components/CaseStudiesSection';
 
 const GermanIndex = () => {
@@ -52,7 +53,7 @@ const GermanIndex = () => {
   return (
     <>
       <H1Validator />
-      <PageLayout className="overflow-x-hidden">
+      <PageLayout>
         <EnhancedSEOHead
           title="Digitale Transformation Agentur | Strategie, UX, Webdesign & AI – ooliv"
           description="ooliv ist Ihre Digitalagentur für Strategie, UX, Webdesign, SEO und AI-Workflows. 200+ Digitalprojekte. Senior-Strategie statt Junioren. Messbare Ergebnisse."
@@ -94,30 +95,6 @@ const GermanIndex = () => {
                   "@type": "Answer",
                   "text": "Direkter Zugang zur Geschäftsführung, keine Junior-Teams, klare Struktur, messbare Ergebnisse. Ich (Uli) führe jedes Projekt persönlich und arbeite mit einem festen Team aus Senior-Experten zusammen."
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "Machen Sie auch SEO und Content?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ja – technisches SEO ist in jedem Website-Projekt inklusive. Content-SEO, Keyword-Recherche und kontinuierliche Optimierung bieten wir als separaten Service an. AI-gestützte Content-Erstellung ist ebenfalls Teil unseres Angebots."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Kann ich mit Ihnen langfristig zusammenarbeiten?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ja – wir bieten monatlichen Support für SEO, Performance-Optimierung, Content-Updates und technischen Support. Viele Kunden arbeiten Jahre mit uns zusammen."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Unterstützen Sie Unternehmen bei digitaler Transformation jenseits von Websites?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ja — wir begleiten Unternehmen bei der kompletten digitalen Transformation: von der Strategieentwicklung über Prozessoptimierung bis zur Implementierung von AI-Workflows. Unsere Leistung geht weit über Webdesign hinaus."
-                }
               }
             ]
           }}
@@ -141,9 +118,9 @@ const GermanIndex = () => {
         />
         
         {/* HERO SECTION */}
-        <section id="hero" className="relative bg-background overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 py-16 sm:py-20 lg:py-28 items-center min-h-[calc(100vh-80px)]">
+        <Section id="hero" spacing="large" background="white">
+          <Container>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-120px)]">
               
               {/* Left Column - Content */}
               <motion.div
@@ -152,21 +129,17 @@ const GermanIndex = () => {
                 variants={staggerContainer}
                 className="space-y-8"
               >
-                <motion.h1 
-                  variants={fadeInUp}
-                  transition={{ duration: 0.6 }}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
-                >
-                  Digitale Transformation Agentur für messbare Ergebnisse
-                </motion.h1>
+                <motion.div variants={fadeInUp} transition={{ duration: 0.6 }}>
+                  <H1>
+                    Digitale Transformation Agentur für messbare Ergebnisse
+                  </H1>
+                </motion.div>
                 
-                <motion.p 
-                  variants={fadeInUp}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-lg md:text-xl text-muted-foreground leading-relaxed"
-                >
-                  Wir entwickeln digitale Strategien, optimieren digitale Prozesse und bauen AI-gestützte Workflows, die messbar mehr Leads generieren — geführt von Senior-Expertise, nicht von Junioren.
-                </motion.p>
+                <motion.div variants={fadeInUp} transition={{ duration: 0.6, delay: 0.1 }}>
+                  <Paragraph className="text-lg md:text-xl" color="secondary">
+                    Wir entwickeln digitale Strategien, optimieren digitale Prozesse und bauen AI-gestützte Workflows, die messbar mehr Leads generieren — geführt von Senior-Expertise, nicht von Junioren.
+                  </Paragraph>
+                </motion.div>
 
                 <motion.div
                   variants={fadeInUp}
@@ -175,17 +148,16 @@ const GermanIndex = () => {
                 >
                   <Button
                     size="lg"
+                    variant="primary"
                     onClick={handleStartProject}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg"
                   >
                     Projekt starten
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                   <Button
                     size="lg"
-                    variant="outline"
+                    variant="secondary"
                     asChild
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg"
                   >
                     <Link to="/referenzen">Projekte ansehen</Link>
                   </Button>
@@ -204,8 +176,8 @@ const GermanIndex = () => {
                     { icon: Zap, text: "Schnelle Umsetzung" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <item.icon className="w-5 h-5 text-primary flex-shrink-0" />
-                      <p className="text-sm font-medium text-foreground">{item.text}</p>
+                      <item.icon className="w-5 h-5 text-[#0BC3C3] flex-shrink-0" />
+                      <p className="text-sm font-medium text-[#0A0A0A]">{item.text}</p>
                     </div>
                   ))}
                 </motion.div>
@@ -216,22 +188,21 @@ const GermanIndex = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
               >
-                <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[500px]">
+                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Target className="w-24 h-24 text-primary mx-auto mb-6" aria-label="Digitale Transformation Agentur Icon" />
-                    <p className="text-lg text-muted-foreground">Strategische Digitalisierung</p>
+                    <Target className="w-24 h-24 text-[#0BC3C3] mx-auto mb-6" aria-label="Digitale Transformation Icon" />
+                    <p className="text-lg text-[#555555]">Strategische Digitalisierung</p>
                   </div>
                 </div>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* SECTION 2: WIR SIND KEINE TYPISCHE AGENTUR */}
-        <section id="ueber-uns" className="py-20 lg:py-32 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Section id="ueber-uns" spacing="large" background="light">
+          <Container>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -240,12 +211,12 @@ const GermanIndex = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <H2 alignment="center">
                 Wir sind keine typische Agentur.
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              </H2>
+              <Paragraph className="text-lg md:text-xl max-w-3xl mx-auto mt-6" color="secondary" alignment="center">
                 Jedes Projekt wird persönlich von Uli geführt, unterstützt von einem hybriden Team aus UX, Design, Entwicklung, SEO und AI — ohne Outsourcing, ohne Freelancer-Kette.
-              </p>
+              </Paragraph>
             </motion.div>
 
             <motion.div
@@ -276,23 +247,23 @@ const GermanIndex = () => {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-lg p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <H3 className="text-lg mb-2">
                     {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
+                  </H3>
+                  <Paragraph className="text-sm" color="secondary">
                     {item.description}
-                  </p>
+                  </Paragraph>
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* SECTION 3: UNSERE KERNLEISTUNGEN */}
-        <section id="leistungen" className="py-20 lg:py-32 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Section id="leistungen" spacing="large" background="white">
+          <Container>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -301,9 +272,9 @@ const GermanIndex = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <H2 alignment="center">
                 Unsere Kernleistungen für digitale Transformation
-              </h2>
+              </H2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -345,21 +316,21 @@ const GermanIndex = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105 group"
+                  className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all hover:scale-105 group"
                 >
-                  <div className="flex items-center justify-center w-14 h-14 bg-primary/10 text-primary rounded-lg mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="flex items-center justify-center w-14 h-14 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg mb-6 group-hover:bg-[#0BC3C3] group-hover:text-white transition-colors">
                     <service.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <H3 className="mb-3">
                     {service.title}
-                  </h3>
-                  <p className="text-base text-muted-foreground mb-6">
+                  </H3>
+                  <Paragraph className="text-base mb-6" color="secondary">
                     {service.description}
-                  </p>
+                  </Paragraph>
                   <Button
                     asChild
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full"
+                    variant="secondary"
+                    className="w-full"
                   >
                     <Link to={service.link}>
                       Mehr erfahren
@@ -369,12 +340,12 @@ const GermanIndex = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        {/* SECTION 4: IHRE INVESTITION IN DIGITALE KLARHEIT */}
-        <section id="investition" className="py-20 lg:py-32 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION 4: AUSGEWÄHLTE PROJEKTE */}
+        <Section id="projekte" spacing="large" background="light">
+          <Container>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -383,146 +354,9 @@ const GermanIndex = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Ihre Investition in digitale Klarheit
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                Transparente Preise. Klare Leistungen. Messbare Ergebnisse.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[
-                {
-                  title: "Strategie & Konzept",
-                  price: "ab 5.000 €",
-                  features: [
-                    "Digitale Roadmap",
-                    "UX-Konzept & Wireframes",
-                    "Strategieberatung"
-                  ]
-                },
-                {
-                  title: "Website-Projekt",
-                  price: "ab 15.000 €",
-                  features: [
-                    "Komplettes Webdesign",
-                    "WordPress-Entwicklung",
-                    "SEO-Basis inklusive"
-                  ],
-                  highlighted: true
-                },
-                {
-                  title: "Digitale Transformation",
-                  price: "ab 25.000 €",
-                  features: [
-                    "Vollständige Transformation",
-                    "Prozessoptimierung",
-                    "Langfristige Begleitung"
-                  ]
-                }
-              ].map((plan, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`bg-card rounded-lg p-8 border ${plan.highlighted ? 'border-primary shadow-lg' : 'border-border shadow-sm'}`}
-                >
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {plan.title}
-                  </h3>
-                  <p className="text-3xl font-bold text-primary mb-6">
-                    {plan.price}
-                  </p>
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <p className="text-sm text-muted-foreground">{feature}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <Button
-                    onClick={handleStartProject}
-                    className={plan.highlighted ? "bg-primary hover:bg-primary/90 text-primary-foreground w-full" : "w-full"}
-                    variant={plan.highlighted ? "default" : "outline"}
-                  >
-                    Beratung anfragen
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 5: ERGEBNISSE SPRECHEN FÜR SICH */}
-        <section id="ergebnisse" className="py-20 lg:py-32 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Ergebnisse sprechen für sich
-              </h2>
-            </motion.div>
-
-            <BeforeAfterSlider />
-
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="text-lg text-muted-foreground text-center mt-8 max-w-3xl mx-auto"
-            >
-              Wir modernisieren Websites, optimieren digitale Kundenreisen und steigern die digitale Effizienz unserer Kunden — messbar und nachhaltig.
-            </motion.p>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center mt-12"
-            >
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Link to="/referenzen">
-                  Mehr Referenzen ansehen
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 6: AUSGEWÄHLTE PROJEKTE */}
-        <section id="projekte" className="py-20 lg:py-32 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <H2 alignment="center">
                 Ausgewählte Projekte
-              </h2>
+              </H2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -541,31 +375,30 @@ const GermanIndex = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
+                    className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all hover:scale-105"
                   >
-                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
+                    <span className="inline-block px-3 py-1 bg-[#E0FBFA] text-[#0BC3C3] text-xs font-medium rounded-full mb-4">
                       {keywordBadges[index]}
                     </span>
-                    <div className="bg-background p-4 rounded-lg mb-6 flex items-center justify-center min-h-[80px]">
-                      <img src={caseStudy.logo} alt={`${caseStudy.client} – Digitale Transformation Projekt von ooliv`} className="h-10 w-auto" />
+                    <div className="bg-[#F5F7F7] p-4 rounded-lg mb-6 flex items-center justify-center min-h-[80px]">
+                      <img src={caseStudy.logo} alt={`${caseStudy.client} Logo`} className="h-10 w-auto" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
+                    <H3 className="mb-2">
                       {caseStudy.client}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    </H3>
+                    <Paragraph className="text-sm mb-4" color="muted">
                       {caseStudy.industry}
-                    </p>
-                    <p className="text-base font-semibold text-primary mb-4">
+                    </Paragraph>
+                    <p className="text-base font-semibold text-[#0BC3C3] mb-4">
                       {caseStudy.keyMetric}
                     </p>
-                    <p className="text-sm text-muted-foreground mb-6">
+                    <Paragraph className="text-sm mb-6" color="secondary">
                       {caseStudy.headline}
-                    </p>
+                    </Paragraph>
                     <Button
                       asChild
-                      variant="outline"
+                      variant="secondary"
                       size="sm"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     >
                       <Link to="/referenzen">
                         Case Study ansehen
@@ -576,12 +409,12 @@ const GermanIndex = () => {
                 );
               })}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        {/* SECTION 7: ULI SCHÖNLEBER */}
-        <section id="team" className="py-20 lg:py-32 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION 5: ULI SCHÖNLEBER */}
+        <Section id="team" spacing="large" background="white">
+          <Container>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               
               {/* Left: Image */}
@@ -591,11 +424,11 @@ const GermanIndex = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[500px]">
+                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Users className="w-24 h-24 text-primary mx-auto mb-6" aria-label="Uli Schönleber – Senior Digital Strategy Consultant" />
-                    <p className="text-lg text-muted-foreground">Uli Schönleber</p>
-                    <p className="text-sm text-muted-foreground">Senior Digital Strategy Consultant & Gründer</p>
+                    <Users className="w-24 h-24 text-[#0BC3C3] mx-auto mb-6" aria-label="Uli Schönleber Icon" />
+                    <p className="text-lg text-[#555555]">Uli Schönleber</p>
+                    <p className="text-sm text-[#7A7A7A]">Senior Digital Strategy Consultant & Gründer</p>
                   </div>
                 </div>
               </motion.div>
@@ -607,15 +440,15 @@ const GermanIndex = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                <H2 className="mb-6">
                   Ihr Ansprechpartner: Uli Schönleber
-                </h2>
-                <p className="text-lg text-muted-foreground mb-6">
+                </H2>
+                <Paragraph className="text-lg mb-6" color="secondary">
                   Ich führe jedes Projekt persönlich — von der Strategie bis zur Umsetzung. Sie arbeiten direkt mit mir, nicht mit wechselnden Junior-Teams.
-                </p>
-                <p className="text-base text-muted-foreground mb-8">
+                </Paragraph>
+                <Paragraph className="text-base mb-8" color="secondary">
                   Jedes Projekt wird von einem Hybridteam realisiert, das Design, Technik, Strategie und AI zusammenbringt. Wir implementieren AI-gestützte Prozesse, die Ihre Arbeit effizienter machen — keine Freelancer-Kette, keine ausgelagerten Leistungen.
-                </p>
+                </Paragraph>
                 <div className="space-y-3 mb-8">
                   {[
                     "15+ Jahre Digital-Erfahrung",
@@ -624,15 +457,15 @@ const GermanIndex = () => {
                     "Direkter Draht zur Geschäftsführung"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-base text-muted-foreground">{item}</p>
+                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
                 </div>
                 <Button
                   asChild
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  variant="primary"
                 >
                   <Link to="/ueber-uns">
                     Über uns
@@ -641,12 +474,12 @@ const GermanIndex = () => {
                 </Button>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        {/* SECTION 8: WERKZEUGE MIT VERSTAND EINGESETZT */}
-        <section id="tools" className="py-20 lg:py-32 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION 6: WERKZEUGE MIT VERSTAND EINGESETZT */}
+        <Section id="tools" spacing="large" background="light">
+          <Container>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -655,9 +488,9 @@ const GermanIndex = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <H2 alignment="center">
                 Werkzeuge mit Verstand eingesetzt — für optimierte digitale Prozesse
-              </h2>
+              </H2>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
@@ -667,11 +500,11 @@ const GermanIndex = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-card rounded-lg p-8 border border-border shadow-sm"
+                className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm"
               >
-                <h3 className="text-2xl font-bold text-foreground mb-6">
+                <H3 className="mb-6">
                   AI & Research
-                </h3>
+                </H3>
                 <div className="space-y-3">
                   {[
                     "ChatGPT, Claude, Gemini – AI-gestützte Content-Erstellung",
@@ -680,8 +513,8 @@ const GermanIndex = () => {
                     "NotebookLM – Wissensmanagement"
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-base text-muted-foreground">{item}</p>
+                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
                 </div>
@@ -693,11 +526,11 @@ const GermanIndex = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-card rounded-lg p-8 border border-border shadow-sm"
+                className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm"
               >
-                <h3 className="text-2xl font-bold text-foreground mb-6">
+                <H3 className="mb-6">
                   Prozesse & Implementierung
-                </h3>
+                </H3>
                 <div className="space-y-3">
                   {[
                     "Figma – Design & Prototyping",
@@ -706,19 +539,19 @@ const GermanIndex = () => {
                     "Make, Zapier – Automatisierung"
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <p className="text-base text-muted-foreground">{item}</p>
+                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
                 </div>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        {/* SECTION 9: HÄUFIG GESTELLTE FRAGEN */}
-        <section id="faq" className="py-20 lg:py-32 bg-background">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SECTION 7: HÄUFIG GESTELLTE FRAGEN */}
+        <Section id="faq" spacing="large" background="white">
+          <Container size="narrow">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -727,180 +560,106 @@ const GermanIndex = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              <H2 alignment="center">
                 Häufig gestellte Fragen
-              </h2>
+              </H2>
             </motion.div>
 
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-1" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Wie läuft ein Projekt bei ooliv ab?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Strukturierte Analyse → Konzept & Strategie → UX & Wireframes → Design → Entwicklung → Launch & Optimierung. Sie haben während des gesamten Prozesses direkten Kontakt zu mir (Uli) und sehen kontinuierlich Fortschritte.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-2" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Was kostet eine Website?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Business-Websites beginnen ab 15.000 €, umfangreiche Corporate-Projekte ab 25.000 €. Der Preis hängt von Funktionsumfang, Design-Komplexität und Projektdauer ab. Wir bieten eine kostenlose Erstberatung für ein transparentes Angebot.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-3" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Wie lange dauert ein Projekt?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Typische Website-Projekte dauern 8-16 Wochen vom Kickoff bis zum Launch. Digitale Transformationsprojekte benötigen 3-6 Monate. Die genaue Dauer hängt von Komplexität und Feedback-Zyklen ab.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-4" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Was unterscheidet ooliv von anderen Agenturen?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Direkter Zugang zur Geschäftsführung, keine Junior-Teams, klare Struktur, messbare Ergebnisse. Ich (Uli) führe jedes Projekt persönlich und arbeite mit einem festen Team aus Senior-Experten zusammen.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-5" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Machen Sie auch SEO und Content?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Ja – technisches SEO ist in jedem Website-Projekt inklusive. Content-SEO, Keyword-Recherche und kontinuierliche Optimierung bieten wir als separaten Service an. AI-gestützte Content-Erstellung ist ebenfalls Teil unseres Angebots.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-6" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-6" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Kann ich mit Ihnen langfristig zusammenarbeiten?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Ja – wir bieten monatlichen Support für SEO, Performance-Optimierung, Content-Updates und technischen Support. Viele Kunden arbeiten Jahre mit uns zusammen.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-7" className="bg-card border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+              <AccordionItem value="item-7" className="bg-white border border-[#E5E8E8] rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-[#0A0A0A] hover:no-underline">
                   Unterstützen Sie Unternehmen bei digitaler Transformation jenseits von Websites?
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground">
+                <AccordionContent className="text-base text-[#555555]">
                   Ja — wir begleiten Unternehmen bei der kompletten digitalen Transformation: von der Strategieentwicklung über Prozessoptimierung bis zur Implementierung von AI-Workflows. Unsere Leistung geht weit über Webdesign hinaus.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
-        {/* SECTION 10: CTA */}
-        <CTA 
-          title="Bereit für digitale Klarheit?"
-          subtitle="Lassen Sie uns besprechen, wie wir Ihnen helfen können."
-          primaryCta="Projekt starten"
-        />
-
-        {/* FOOTER */}
-        <footer className="py-16 bg-muted/30 border-t border-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {/* Main Footer Grid */}
-            <div className="grid md:grid-cols-3 gap-12 mb-12">
-              
-              {/* Spalte 1: Unternehmen */}
-              <div>
-                <h4 className="text-sm font-bold text-foreground mb-4">Unternehmen</h4>
-                <nav className="space-y-2">
-                  <Link to="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Home
-                  </Link>
-                  <Link to="/ueber-uns" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Über uns
-                  </Link>
-                  <Link to="/referenzen" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Referenzen
-                  </Link>
-                  <Link to="/kontakt" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Kontakt
-                  </Link>
-                  <Link to="/artikel" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Blog
-                  </Link>
-                </nav>
-              </div>
-
-              {/* Spalte 2: Leistungen */}
-              <div>
-                <h4 className="text-sm font-bold text-foreground mb-4">Leistungen</h4>
-                <nav className="space-y-2">
-                  <Link to="/digitale-transformation-strategie" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Digitale Transformation & Strategie
-                  </Link>
-                  <Link to="/ux-konzeption" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    UX & Konzeption
-                  </Link>
-                  <Link to="/webdesign-entwicklung" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Webdesign & Entwicklung
-                  </Link>
-                  <Link to="/seo-performance" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    SEO & Performance
-                  </Link>
-                  <Link to="/ai-workflows" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                    AI-Workflows
-                  </Link>
-                </nav>
-              </div>
-
-              {/* Spalte 3: Kontakt */}
-              <div>
-                <h4 className="text-sm font-bold text-foreground mb-4">Kontakt</h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>
-                    <a href="mailto:info@ooliv.de" className="text-primary hover:underline">
-                      info@ooliv.de
-                    </a>
-                  </p>
-                  <p>06131 – 63 67 801</p>
-                  <p className="mt-4">
-                    Mombacher Str. 25<br />
-                    55122 Mainz
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Marken-Zeile */}
-            <div className="py-6 border-t border-border">
-              <p className="text-center text-sm text-muted-foreground">
-                Digitalagentur Mainz — Zuhause in Mainz. Aktiv in ganz Deutschland und im DACH-Raum.
-              </p>
-            </div>
-
-            {/* Copyright & Legal */}
-            <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-muted-foreground">
-                © 2025 ooliv GmbH. Alle Rechte vorbehalten.
-              </p>
-              <nav className="flex gap-6">
-                <Link to="/impressum" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-                  Impressum
-                </Link>
-                <Link to="/datenschutz" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-                  Datenschutz
-                </Link>
-                <Link to="/cookie-richtlinie" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-                  Cookie-Richtlinie
-                </Link>
-              </nav>
-            </div>
-          </div>
-        </footer>
+        {/* SECTION 8: CTA */}
+        <Section id="cta" spacing="large" background="light">
+          <Container>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <H2 alignment="center" className="mb-6">
+                Bereit für digitale Klarheit?
+              </H2>
+              <Paragraph className="text-xl max-w-2xl mx-auto mb-8" color="secondary" alignment="center">
+                Lassen Sie uns besprechen, wie wir Ihnen helfen können.
+              </Paragraph>
+              <Button
+                size="xl"
+                variant="primary"
+                onClick={handleStartProject}
+              >
+                Projekt starten
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </motion.div>
+          </Container>
+        </Section>
       </PageLayout>
     </>
   );
