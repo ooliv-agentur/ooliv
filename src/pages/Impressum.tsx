@@ -60,7 +60,7 @@ const GermanLegalNotice = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Firmendaten Card */}
-            <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -72,48 +72,48 @@ const GermanLegalNotice = () => {
                 <div className="space-y-6">
                   <div>
                     <p className="text-xl font-semibold text-foreground mb-2">ooliv</p>
-                    <p className="text-sm text-gray-500 mb-3">Meldeadresse (Einzelunternehmen)</p>
-                    <div className="text-gray-600 leading-relaxed">
+                    <p className="text-sm text-muted-foreground mb-3">Meldeadresse (Einzelunternehmen)</p>
+                    <div className="text-muted-foreground leading-relaxed">
                       <p>Eduard von Heuss Str. 29</p>
                       <p>55294 Bodenheim</p>
                       <p>Germany</p>
                     </div>
                   </div>
                   
-                  <div className="pt-4 border-t border-gray-200">
-                    <p className="text-sm text-gray-500 mb-3">Geschäftssitz</p>
-                    <div className="text-gray-600 leading-relaxed">
+                  <div className="pt-4 border-t border-border">
+                    <p className="text-sm text-muted-foreground mb-3">Geschäftssitz</p>
+                    <div className="text-muted-foreground leading-relaxed">
                       <p>Mombacher Str. 25</p>
                       <p>55122 Mainz</p>
                       <p>Germany</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center text-gray-600 space-x-3">
+                  <div className="flex items-center text-muted-foreground space-x-3">
                     <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="font-medium">+49 6131 6367801</span>
                   </div>
                   
-                  <div className="flex items-center text-gray-600 space-x-3">
+                  <div className="flex items-center text-muted-foreground space-x-3">
                     <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                     <span className="font-medium">info@ooliv.de</span>
                   </div>
                   
-                  <div className="pt-4 border-t border-gray-100">
+                  <div className="pt-4 border-t border-border">
                     <p className="font-bold text-foreground mb-1">Inhaber:</p>
-                    <p className="text-gray-600">Uli Schönleber</p>
+                    <p className="text-muted-foreground">Uli Schönleber</p>
                   </div>
                   
                   <div>
                     <p className="font-semibold text-foreground mb-1">USt.-IdNr.:</p>
-                    <p className="text-gray-600">DE265704357</p>
+                    <p className="text-muted-foreground">DE265704357</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Urheberrechtshinweis Card */}
-            <Card className="bg-white border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -122,7 +122,7 @@ const GermanLegalNotice = () => {
                   <h3 className="text-2xl font-bold text-foreground">Urheberrechtshinweis</h3>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-muted-foreground leading-relaxed mb-8">
                   Alle Inhalte und Medien auf dieser Website sind durch das deutsche Urheberrecht und verwandte Schutzrechte geschützt. Jede Form der Wiederverwendung, Vervielfältigung oder Verbreitung außerhalb der Grenzen des Urheberrechts erfordert eine schriftliche Zustimmung. Unbefugte Nutzung wird rechtlich verfolgt.
                 </p>
 
@@ -133,7 +133,7 @@ const GermanLegalNotice = () => {
                   <h4 className="text-lg font-semibold text-foreground">Einspruch gegen Werbe-E-Mails</h4>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   Wir widersprechen ausdrücklich der Nutzung unserer Kontaktdaten für Werbezwecke oder unerwünschte Zusendungen. Wir behalten uns rechtliche Schritte bei Missbrauch vor.
                 </p>
               </CardContent>
