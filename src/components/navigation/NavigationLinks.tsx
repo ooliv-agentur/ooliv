@@ -65,19 +65,17 @@ export const NavigationLinks = ({ layout, onLinkClick }: NavigationLinksProps) =
           <Link 
             to={link.path}
             className={cn(
-              "block font-bold transition-colors duration-250 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#32b2ab]/50 rounded-md font-sans relative",
-              // Animated underline effect
-              "after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[3px] after:bottom-0 after:left-0 after:bg-[#32b2ab] after:origin-bottom-right after:transition-transform after:duration-[250ms] hover:after:scale-x-100 hover:after:origin-bottom-left",
+              "block font-bold transition-colors duration-200 focus:outline-none rounded-md font-sans relative",
               layout === 'desktop' 
                 ? isPrimaryService(index)
-                  ? "text-[46px] leading-[1.1] py-2" // Primary services: 46px
-                  : "text-[38px] leading-[1.2] py-2" // Secondary links: 38px
+                  ? "text-3xl lg:text-4xl xl:text-5xl leading-[1.1] py-1" // Primary: XL Typography
+                  : "text-2xl lg:text-3xl xl:text-4xl leading-[1.15] py-1" // Secondary: L Typography
                 : isPrimaryService(index)
-                  ? "text-[40px] leading-[1.1] py-3" // Mobile primary: 40px
-                  : "text-[32px] leading-[1.2] py-3", // Mobile secondary: 32px
+                  ? "text-4xl leading-[1.1] py-2" // Mobile primary
+                  : "text-3xl leading-[1.15] py-2", // Mobile secondary
               isActive(link.path) 
                 ? "text-[#32b2ab] font-extrabold" // Active state
-                : "text-[#000000] hover:text-[#32b2ab]" // Default state
+                : "text-[#0D0D0D] hover:text-[#32b2ab]" // Default state
             )}
             onClick={handleClick}
           >
