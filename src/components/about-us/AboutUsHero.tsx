@@ -30,12 +30,12 @@ const AboutUsHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
-              Digitale Klarheit seit 2008.
+              Die Digitalagentur aus Mainz, die anders arbeitet.
             </H1>
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Wir entwickeln Strategie, UX und AI-gestützte Workflows für Unternehmen, die digital wachsen wollen — seniorgeführt, strukturiert und ehrlich.
+              Persönlich geführt, strategisch fokussiert und mit einem hybriden Team aus UX, Design, Entwicklung, Content und AI-Workflows.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}

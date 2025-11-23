@@ -6,18 +6,23 @@ const OurApproach = () => {
   const approaches = [
     {
       icon: Target,
-      title: "Strategie vor Design",
-      description: "Klarheit über Ziele, Nutzerlogik, Botschaften und KPIs — bevor Design entsteht."
+      title: "Analyse statt Annahmen",
+      description: "Jede Zusammenarbeit startet mit Struktur, Zielen und KPIs. Wir setzen auf datenbasierte Entscheidungen und messbare Erfolge."
     },
     {
       icon: Minimize2,
-      title: "Reduktion statt Komplexität",
-      description: "Wir entfernen alles, was Nutzer ablenkt. Jede Seite folgt einer klaren Logik."
+      title: "UX-first Ansatz",
+      description: "Inhalte, Design und Informationsarchitektur entstehen simultan. User Experience ist die Basis für alle digitalen Projekte."
     },
     {
       icon: Zap,
-      title: "AI-gestützte Effizienz",
-      description: "Wir nutzen AI für Recherche, Strukturierung, Konzeptionsarbeit, Content und Prozessoptimierung."
+      title: "AI-gestützte Workflows",
+      description: "Für Effizienz, Qualität und bessere Entscheidungen nutzen wir AI-Tools in Recherche, Content-Erstellung und Prozessoptimierung."
+    },
+    {
+      icon: Target,
+      title: "Transparente Kommunikation",
+      description: "Direkter Zugang zum Gründer und Kernteam. Keine Zwischenebenen, keine Sales-Layer — nur ehrliche, klare Abstimmung."
     }
   ];
 
@@ -26,11 +31,11 @@ const OurApproach = () => {
       <div className={getContainerClasses('default')}>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            Unser Ansatz
+            Wie eine moderne Digitalagentur arbeitet
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {approaches.map((approach, index) => (
             <div key={index} className="bg-white p-8 rounded-lg">
               <div className="h-12 w-12 bg-turquoise/10 rounded-full flex items-center justify-center mb-6">

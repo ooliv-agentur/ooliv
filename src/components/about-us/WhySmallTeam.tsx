@@ -22,7 +22,10 @@ const WhySmallTeam = () => {
               "Eine Schnittstelle statt fünf",
               "Entscheider direkt involviert",
               "Kürzere Wege, höhere Qualität",
-              "Fokus auf Wirkung, nicht Stunden"
+              "Fokus auf Wirkung, nicht Stunden",
+              "Senior-Level-Betreuung statt wechselnder Projektteams",
+              "Alle Leistungen in-house: Strategie, UX, Design, Entwicklung, SEO, AI",
+              "Hybrider Teamansatz für ganzheitliche digitale Lösungen"
             ].map((point, index) => (
               <div key={index} className="flex items-start text-left bg-gray-50 p-6 rounded-lg">
                 <Check className="w-6 h-6 text-turquoise mr-3 flex-shrink-0 mt-0.5" />

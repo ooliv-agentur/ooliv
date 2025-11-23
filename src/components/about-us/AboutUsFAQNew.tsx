@@ -10,28 +10,24 @@ import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
 const AboutUsFAQNew = () => {
   const faqs = [
     {
-      question: "Was unterscheidet ooliv von anderen Agenturen?",
-      answer: "Wir arbeiten seniorgeführt, ohne Layer aus Sales oder Junioren. Sie arbeiten direkt mit dem Gründer und einem spezialisierten Kernteam – ehrlich, pragmatisch und auf Ergebnisse fokussiert."
-    },
-    {
-      question: "Welche Leistungen deckt ooliv ab?",
-      answer: "Wir verbinden Strategie, UX-Konzeption, Webentwicklung, SEO, Content und AI-gestützte Workflows zu vollständigen digitalen Systemen. Von der Planung bis zum Launch aus einer Hand."
-    },
-    {
-      question: "Wie läuft ein typisches Projekt ab?",
-      answer: "1) Strategiephase: Ziele, Zielgruppen, Struktur. 2) Konzept: Wireframes, Content-Strategie, Design. 3) Umsetzung: Entwicklung, Content, SEO. 4) Launch & Optimierung. Alles transparent, klar dokumentiert."
-    },
-    {
-      question: "Arbeitet ihr auch mit KI-Tools?",
-      answer: "Ja – wir nutzen AI für Recherche, Content-Strukturierung, SEO-Analysen und Prozessoptimierung. Immer als Werkzeug, nie als Ersatz für Strategie oder menschliche Entscheidungen."
+      question: "Wie läuft ein Projektstart ab?",
+      answer: "Jedes Projekt beginnt mit einem intensiven Kick-off: Ziele definieren, Zielgruppen analysieren, Wettbewerber verstehen, technische Anforderungen klären. Daraus entwickeln wir eine klare Roadmap mit Meilensteinen, KPIs und Zeitplan. Sie wissen von Anfang an, was wann passiert."
     },
     {
       question: "Wer ist mein Ansprechpartner?",
-      answer: "Vom ersten Gespräch bis zum Launch arbeiten Sie direkt mit Uli Schönleber (CEO) sowie den relevanten Spezialisten aus dem Kernteam. Eine Schnittstelle, klare Kommunikation."
+      answer: "Sie arbeiten direkt mit dem CEO und Gründer Uli Schönleber zusammen — unterstützt vom Kernteam aus UX, Design, Entwicklung und SEO. Keine wechselnden Projektmanager, keine Sales-Zwischenschicht. Eine Person koordiniert alles und hat den Überblick."
     },
     {
-      question: "Wie groß ist das Team?",
-      answer: "Wir sind ein kompaktes Team von 10 Spezialisten in Strategie, UX, Entwicklung, Design, Content und SEO – bewusst klein, um Qualität und direkte Zusammenarbeit zu garantieren."
+      question: "Wie arbeitet euer hybrides Team zusammen?",
+      answer: "Unser Team arbeitet nicht sequentiell, sondern parallel. Strategie, UX, Design, Content und Entwicklung greifen ineinander — keine Silos, keine Wartezeiten. Das macht uns schneller und sorgt für bessere Ergebnisse, weil alle Disziplinen von Anfang an mitdenken."
+    },
+    {
+      question: "Wie integriert ihr AI in eure Prozesse?",
+      answer: "AI unterstützt uns bei Recherche, Content-Strukturierung, Copywriting, Bildgenerierung und Prozessoptimierung. Wir nutzen AI-Tools für Effizienz und Qualität — aber nie als Ersatz für strategisches Denken oder kreative Entscheidungen. AI erweitert unsere Fähigkeiten, ersetzt sie nicht."
+    },
+    {
+      question: "Mit welchen Branchen arbeitet ihr besonders erfolgreich?",
+      answer: "Unsere Expertise liegt bei B2B-Unternehmen, Software-Anbietern, mittelständischen Unternehmen und innovativen Dienstleistern. Gemeinsam: Sie haben ambitionierte digitale Ziele, wollen messbare Ergebnisse und brauchen einen Partner, der strategisch mitdenkt — nicht nur umsetzt."
     }
   ];
 
@@ -40,7 +36,7 @@ const AboutUsFAQNew = () => {
       <div className={getContainerClasses('narrow')}>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
-            Häufige Fragen zur Zusammenarbeit
+            Häufige Fragen zur Zusammenarbeit mit unserer Digitalagentur
           </h2>
         </div>
         
