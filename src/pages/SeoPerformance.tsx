@@ -48,7 +48,7 @@ const SeoPerformance = () => {
     <PageLayout>
       <EnhancedSEOHead
         title="SEO Agentur & Technische SEO | ooliv Mainz"
-        description="Technische SEO, Content-Strategie, IA & AI-gestützte Analysen. Senior-Level SEO von Uli Schönleber. Nachhaltige Rankings & messbare Performance."
+        description="Technische SEO, Content-Strategie, IA & AI-gestützte Analysen. Senior-Level SEO mit strategischer Führung. Nachhaltige Rankings & messbare Performance."
         canonicalUrl="https://ooliv.de/seo-performance"
         keywords="seo agentur, seo & performance, technische seo, seo optimierung, seo für unternehmen, sichtbarkeit steigern, pagespeed optimierung, core web vitals optimierung, content optimierung seo, seo analyse, seo audit, crawling & indexing, seo performance monitoring, seo für b2b, conversion optimierung, keyword-recherche, content-struktur, interne verlinkung, backlink-qualität, search intent, seo ux kombination, technische performance"
         breadcrumbs={breadcrumbs}
@@ -140,7 +140,7 @@ const SeoPerformance = () => {
       <section id="hero">
         <PageHero
           title="SEO Agentur für nachhaltige Sichtbarkeit & technische Performance"
-          subtitle="SEO & technische Performance, geführt durch Uli Schönleber als Senior Digital Strategist — kombiniert mit strukturierter UX, Content-Strategie und AI-gestützten Analysen für messbare Ergebnisse."
+          subtitle="SEO & technische Performance unter Senior-Level-Leitung — kombiniert mit strukturierter UX, Content-Strategie und AI-gestützten Analysen für messbare Ergebnisse."
         primaryCta={{
           text: "Kostenloses Konzept sichern",
           link: "#",
