@@ -185,10 +185,10 @@ const AiWorkflows = () => {
               AI bringt nur etwas, wenn sie sauber in Prozesse integriert wird.
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-lg border border-[#E5E8E8]">
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">Typische Herausforderungen</h3>
-                <ul className="space-y-3 text-[#555555]">
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-white p-8 rounded-lg border border-[#E4E6E7]">
+                <h3 className="text-xl font-bold text-[#0B0B0B] mb-4">Typische Herausforderungen</h3>
+                <ul className="space-y-3 text-[#444444]">
                   <li className="flex items-start">
                     <span className="text-red-500 mr-2">•</span>
                     <span>Unternehmen testen Tools, aber haben kein System</span>
