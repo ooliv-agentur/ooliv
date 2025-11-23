@@ -1,6 +1,9 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H3 } from '@/components/ui/typography';
 
 const projekte = [
   {
@@ -105,16 +108,15 @@ const WeitereProjekteTable = () => {
   };
 
   return (
-    <section className="py-20 bg-brand-backgroundAlt">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h3 
-          {...fadeInUp}
-          className="text-2xl md:text-3xl font-bold text-brand-heading mb-12 text-center"
-        >
-          {translations.title}
-        </motion.h3>
+    <Section spacing="large" background="light">
+      <Container size="default">
+        <motion.div {...fadeInUp}>
+          <H3 className="text-[#0A0A0A] mb-12" alignment="center">
+            {translations.title}
+          </H3>
+        </motion.div>
         
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {projekte.map((projekt, index) => (
             <motion.div
               key={projekt.name}
@@ -122,16 +124,16 @@ const WeitereProjekteTable = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow"
+              className="bg-white rounded-lg p-4 sm:p-6 flex items-center justify-between hover:shadow-md transition-shadow"
             >
               <div>
-                <h4 className="font-semibold text-brand-heading text-base mb-1">
+                <h4 className="font-semibold text-[#0A0A0A] text-base mb-1">
                   {projekt.name}
                 </h4>
-                <p className="text-sm text-muted-foreground mb-1">
+                <p className="text-sm text-[#555555] mb-1">
                   {isGerman ? projekt.branche : projekt.brancheEn}
                 </p>
-                <p className="text-xs text-[#999999]">
+                <p className="text-xs text-[#555555]">
                   {projekt.beschreibung}
                 </p>
               </div>
@@ -139,15 +141,15 @@ const WeitereProjekteTable = () => {
                 href={projekt.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-brand-primary/10 text-brand-primary hover:bg-brand-primary/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
+                className="inline-flex items-center px-4 py-2 bg-[#0BC3C3]/10 text-[#0BC3C3] hover:bg-[#0BC3C3]/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
               >
                 Zur Website
               </a>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

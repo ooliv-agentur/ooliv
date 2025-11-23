@@ -1,11 +1,13 @@
 import React from 'react';
 import { Check } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Reveal from '@/components/animations/Reveal';
 import StaggerReveal from '@/components/animations/StaggerReveal';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2, H3, H4, Paragraph, LargeParagraph } from '@/components/ui/typography';
 
 export const caseStudiesData = {
   de: [
@@ -133,21 +135,21 @@ const CaseStudiesSection = ({
   const t = defaultTranslations;
 
   return (
-    <section id="case-studies" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+    <Section id="case-studies" spacing="large" background="white" className="overflow-hidden">
+      <Container size="default">
         {!hideHeaderText && (
           <Reveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text mb-6 leading-tight">
+              <H2 className="text-[#0A0A0A] mb-6" alignment="center">
                 {customTitle || t.title}
-              </h2>
-              <p className="text-lg md:text-xl text-teal max-w-3xl mx-auto mb-4 font-medium leading-relaxed">
+              </H2>
+              <LargeParagraph className="text-[#0BC3C3] max-w-3xl mx-auto mb-4 font-medium" alignment="center">
                 {customSubtitle || t.subtitle}
-              </p>
+              </LargeParagraph>
               {(customBodyText || t.bodyText) && (
-                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
+                <Paragraph className="text-[#555555] max-w-3xl mx-auto" alignment="center">
                   {customBodyText || t.bodyText}
-                </p>
+                </Paragraph>
               )}
             </div>
           </Reveal>
@@ -160,7 +162,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+                <div className="bg-[#F5F7F7] rounded-[20px] p-4 sm:p-6 lg:p-8 border border-gray-100">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -175,23 +177,23 @@ const CaseStudiesSection = ({
                       <span className="inline-block px-3 py-1 bg-[#0BC3C3]/10 text-[#0BC3C3] text-xs font-medium rounded-full mb-2">
                         {study.seoTag}
                       </span>
-                      <p className="text-sm md:text-base text-muted-foreground font-normal">{study.industry}</p>
+                      <p className="text-sm md:text-base text-[#555555] font-normal">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <h3 className="text-xl md:text-2xl font-bold text-primary-text mb-3">
+                  <H3 className="text-[#0A0A0A] mb-3">
                     {study.seoTitle}
-                  </h3>
+                  </H3>
                   
-                  <p className="text-sm md:text-base text-muted-foreground mb-4 font-normal">
+                  <Paragraph className="text-[#555555] mb-4">
                     {study.shortDescription}
-                  </p>
+                  </Paragraph>
                   
-                  <h4 className="text-base md:text-lg font-medium mb-6 text-primary-text leading-relaxed">
+                  <H4 className="mb-6 text-[#0A0A0A]">
                     {study.headline}
-                  </h4>
+                  </H4>
                   
-                  <blockquote className="italic text-muted-foreground text-sm md:text-base border-l-4 border-teal pl-4 my-6 font-normal leading-relaxed">
+                  <blockquote className="italic text-[#555555] text-sm md:text-base border-l-4 border-[#0BC3C3] pl-4 my-6 font-normal leading-relaxed">
                     "{study.quote}"
                   </blockquote>
                   
@@ -201,7 +203,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-teal/10 text-teal hover:bg-teal/20 rounded-lg font-medium text-sm transition-colors"
+                        className="inline-flex items-center px-4 py-2 bg-[#0BC3C3]/10 text-[#0BC3C3] hover:bg-[#0BC3C3]/20 rounded-lg font-medium text-sm transition-colors"
                       >
                         Website ansehen
                       </a>
@@ -211,10 +213,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-teal">
+                        <div className="mr-3 mt-1 text-[#0BC3C3]">
                           <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-sm md:text-base text-muted-foreground font-normal leading-relaxed">{point}</p>
+                        <p className="text-sm md:text-base text-[#555555] font-normal leading-relaxed">{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -236,9 +238,9 @@ const CaseStudiesSection = ({
         
         <Reveal delay={0.2}>
           <div className="mt-24 text-center">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-primary-text mb-8 leading-tight">
+            <H3 className="text-[#0A0A0A] mb-8" alignment="center">
               {t.ctaText}
-            </h3>
+            </H3>
             
             <Button 
               variant="primary"
@@ -253,8 +255,8 @@ const CaseStudiesSection = ({
             </Button>
           </div>
         </Reveal>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
