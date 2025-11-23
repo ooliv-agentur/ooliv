@@ -10,7 +10,7 @@ const AboutUsStory = () => {
       <div className={getContainerClasses('default')}>
         <div className={getContainerClasses('narrow')}>
           <H2 alignment="center" className="mb-6">
-            Wo Leidenschaft auf Leistung trifft
+            Seit 2008 aus Mainz. Heute in DACH aktiv.
           </H2>
           <div className="flex justify-center mb-8">
             <div className="h-12 w-12 flex items-center justify-center bg-turquoise rounded-full">
@@ -18,25 +18,10 @@ const AboutUsStory = () => {
             </div>
           </div>
           <div className={getContainerClasses('narrow')}>
-            <Paragraph className="mb-8">
-              Was mit einer mutigen Gelegenheit begann, wurde zu einer langfristigen Erfolgsgeschichte. Im Jahr 2008, als eine führende Agentur in Mainz ihre Türen schloss, fragten mehrere treue Kunden:
+            <Paragraph className="leading-relaxed">
+              Was als Notlösung für mehrere Unternehmen begann, wurde zu einer langfristigen Erfolgsgeschichte: Als eine Mainzer Agentur 2008 schloss, baten ehemalige Kunden den Gründer Uli Schönleber weiterzumachen.
+              Heute ist ooliv eine strategische Digitalagentur mit klarer Struktur, seniorseitiger Führung und einem hochspezialisierten Remote-Team in Deutschland, Mallorca und der Schweiz.
             </Paragraph>
-            <div className="bg-white rounded-2xl p-6 shadow-sm mb-8 border border-gray-100">
-              <blockquote className="text-xl md:text-2xl font-bold text-turquoise italic leading-tight">
-                "Können Sie mit uns weitermachen?"
-              </blockquote>
-            </div>
-            <Paragraph className="mb-8">
-              Das war der Anfang von ooliv.
-            </Paragraph>
-            <Paragraph className="mb-6">
-              Seitdem haben wir uns zu einer etablierten Digitalagentur mit festem Standort in Mainz und einem hochqualifizierten, eingespielten Team entwickelt – vereint durch eine Denkweise:
-            </Paragraph>
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-              <LargeParagraph className="font-bold">
-                Jede Website sollte echten Unternehmenswert schaffen.
-              </LargeParagraph>
-            </div>
           </div>
         </div>
       </div>

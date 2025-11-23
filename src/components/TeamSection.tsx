@@ -14,62 +14,62 @@ const TeamSection = () => {
   
   const teamMembers: TeamMember[] = [
     { 
-      name: "Uli Schönleber", 
-      role: "CEO · Beratung, Konzept, KI",
+      name: "Uli Schönleber (US)", 
+      role: "CEO · Strategie, Konzept, UX, AI-Prozesse",
       image: "/lovable-uploads/Uli.webp",
       initials: "US" 
     },
     { 
-      name: "Lisa Schönleber", 
-      role: "CEO · Content",
+      name: "Lisa Schönleber (LS)", 
+      role: "Content Lead · Text, Struktur, Messaging",
       image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
     },
     { 
-      name: "Dorinel Nedelcu", 
-      role: "Kreation",
+      name: "Dorinel Nedelcu (DN)", 
+      role: "Kreation · UI-Design, Designsysteme, Visuals",
       image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN" 
     },
     { 
-      name: "Parveen Thakur", 
-      role: "Webentwicklung",
+      name: "Parveen Thakur (PT)", 
+      role: "Lead Developer · WordPress, Headless, Performance",
       image: "/lovable-uploads/Parveen.jpg",
       initials: "PT" 
     },
     { 
-      name: "Kamil Lisiewicz", 
-      role: "Webentwicklung",
+      name: "Kamil Lisiewicz (KL)", 
+      role: "Webentwicklung · Fullstack",
       image: "/lovable-uploads/Kamil.jpg",
       initials: "KL" 
     },
     { 
-      name: "Neeraj Kumar", 
-      role: "App-Entwicklung",
+      name: "Neeraj Kumar (NK)", 
+      role: "App-Entwicklung · Mobile Development",
       image: "/lovable-uploads/Neeraj.jpg",
       initials: "NK" 
     },
     { 
-      name: "Paul Becker", 
-      role: "SEO-Optimierung",
+      name: "Paul Becker (PB)", 
+      role: "SEO Lead · Onpage, Technical SEO, Growth",
       image: "/lovable-uploads/Paul.jpg",
       initials: "PB" 
     },
     { 
-      name: "Giovanni Costa", 
-      role: "Corporate Design",
+      name: "Giovanni Costa (GC)", 
+      role: "Corporate Design · Branding & Visual Identity",
       image: "/lovable-uploads/Giovanni.jpg",
       initials: "GC" 
     },
     { 
-      name: "Beatriz Morales", 
-      role: "Illustratorin",
+      name: "Beatriz Morales (BM)", 
+      role: "Illustration · Visual Modules & Icons",
       image: "/lovable-uploads/Beatriz.jpg",
       initials: "BM" 
     },
     { 
-      name: "Sanja Micro", 
-      role: "Print-Design",
+      name: "Sanja Micro (SM)", 
+      role: "Print Design · Offline-Material, Corporate Layouts",
       image: "/lovable-uploads/Sanja.jpg",
       initials: "SM" 
     }
@@ -83,10 +83,10 @@ const TeamSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-heading mb-4">
-            Das ooliv Team
+            Kleines Team. Volle Kompetenz.
           </h2>
           <p className="text-lg text-brand-text max-w-3xl mx-auto">
-            Gute Leute sind schwer zu finden – wir haben gleich ein ganzes Team davon. Unsere Experten vereinen Strategie, Kreativität und Technologie, um Projekte mit Herzblut umzusetzen.
+            Unser Kernteam arbeitet synchron in Strategie, UX, Entwicklung, Content, SEO, Design und AI-Workflows. Seniorität im Lead — Spezialisten in der Ausführung.
           </p>
         </div>
         
