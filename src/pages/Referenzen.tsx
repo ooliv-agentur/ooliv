@@ -6,21 +6,22 @@ import CaseStudiesSection from '@/components/CaseStudiesSection';
 import CTA from '@/components/CTA';
 import FAQ from '@/components/FAQ';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
 import { CheckCircle2, Target, TrendingUp, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { typographyStyles } from '@/styles/typography';
 
 const GermanCaseStudies = () => {
   const { language } = useLanguage();
   const isGerman = language === 'de';
 
-  // Handler for opening the lead form
   const handleOpenLeadForm = (e: React.MouseEvent) => {
     e.preventDefault();
     window.dispatchEvent(new Event('open-lead-form'));
   };
 
-  // Success pillars
   const successPillars = [
     {
       title: isGerman ? "Strategie-first" : "Strategy-first",
@@ -42,7 +43,6 @@ const GermanCaseStudies = () => {
     }
   ];
 
-  // FAQ items with updated SEO-optimized questions
   const faqItems = [
     {
       question: isGerman ? "Wie messen Sie den Erfolg eines Projekts?" : "How do you measure the success of a project?",
@@ -76,7 +76,6 @@ const GermanCaseStudies = () => {
     }
   ];
   
-  // Force document title update
   useEffect(() => {
     const title = isGerman 
       ? "Webdesign Case Studies & Digitale Projekte | ooliv Referenzen" 
@@ -93,17 +92,6 @@ const GermanCaseStudies = () => {
       ? "Echte Case Studies aus Webdesign, UX, SEO, AI-Workflows und digitaler Transformation. Messbare Ergebnisse, starke Marken und skalierbare Systeme."
       : "Real case studies from web design, UX, SEO, AI workflows and digital transformation. Measurable results, strong brands and scalable systems.";
     metaDescription.setAttribute('content', description);
-    
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    const keywords = isGerman
-      ? "case studies webdesign, digitale projekte referenzen, webdesign referenzen, digitale transformation referenzen, erfolgsprojekte digitalagentur, ux projekte, b2b case studies, webentwicklungsprojekte, seo resultaten, ai workflows in der praxis, erfolgreiche kundencases, digitale sichtbarkeit, conversion-rate optimierung, user journey optimierung, lead generierung b2b, performance webdesign, ux konzeption, webdesign agentur, wordpress entwicklung, technische seo, content strategie"
-      : "case studies web design, digital project references, web design references, digital transformation references, successful projects digital agency, ux projects, b2b case studies, web development projects, seo results, ai workflows in practice, successful customer cases, digital visibility, conversion rate optimization, user journey optimization, lead generation b2b, performance web design, ux conception, web design agency, wordpress development, technical seo, content strategy";
-    metaKeywords.setAttribute('content', keywords);
   }, [isGerman]);
 
   const breadcrumbs = [
@@ -120,8 +108,8 @@ const GermanCaseStudies = () => {
     : "Real case studies from web design, UX, SEO, AI workflows and digital transformation. Measurable results, strong brands and scalable systems.";
   
   const metaKeywords = isGerman
-    ? "case studies webdesign, digitale projekte referenzen, webdesign referenzen, digitale transformation referenzen, erfolgsprojekte digitalagentur, ux projekte, b2b case studies, webentwicklungsprojekte, seo resultaten, ai workflows in der praxis, erfolgreiche kundencases, digitale sichtbarkeit, conversion-rate optimierung, user journey optimierung, lead generierung b2b, performance webdesign, ux konzeption, webdesign agentur, wordpress entwicklung, technische seo, content strategie"
-    : "case studies web design, digital project references, web design references, digital transformation references, successful projects digital agency, ux projects, b2b case studies, web development projects, seo results, ai workflows in practice, successful customer cases, digital visibility, conversion rate optimization, user journey optimization, lead generation b2b, performance web design, ux conception, web design agency, wordpress development, technical seo, content strategy";
+    ? "case studies webdesign, digitale projekte referenzen, webdesign referenzen, digitale transformation referenzen, erfolgsprojekte digitalagentur, ux projekte, b2b case studies"
+    : "case studies web design, digital project references, web design references, digital transformation references";
 
   return (
     <PageLayout className="overflow-x-hidden">
@@ -136,39 +124,7 @@ const GermanCaseStudies = () => {
             "@context": "https://schema.org",
             "@type": "ItemList",
             "name": isGerman ? "Case Studies & Digitale Projekte" : "Case Studies & Digital Projects",
-            "description": isGerman ? "Unsere erfolgreichsten Webdesign, UX, SEO und Digitalprojekte" : "Our most successful web design, UX, SEO and digital projects",
-            "itemListElement": [
-              {
-                "@type": "CreativeWork",
-                "position": 1,
-                "name": "KLAIBER - B2B Webdesign & Markenstrategie",
-                "description": "+92% mehr Sichtbarkeit durch strategische Neupositionierung"
-              },
-              {
-                "@type": "CreativeWork",
-                "position": 2,
-                "name": "COBUS Industries - UX-Redesign & internationale B2B-Struktur",
-                "description": "+160% mehr Interaktionen"
-              },
-              {
-                "@type": "CreativeWork",
-                "position": 3,
-                "name": "SPEZ AG - Markenentwicklung & lokale Lead-Automation",
-                "description": "+300% qualifizierte Anfragen"
-              },
-              {
-                "@type": "CreativeWork",
-                "position": 4,
-                "name": "IconPro - KI-Software UX & AI-Visualisierung",
-                "description": "+45% höheres Engagement"
-              },
-              {
-                "@type": "CreativeWork",
-                "position": 5,
-                "name": "Quartier am Kliff - Immobilienmarke & Conversion-Landingpage",
-                "description": "+40% bessere Conversionrate"
-              }
-            ]
+            "description": isGerman ? "Unsere erfolgreichsten Webdesign, UX, SEO und Digitalprojekte" : "Our most successful web design, UX, SEO and digital projects"
           },
           {
             "@context": "https://schema.org",
@@ -185,13 +141,16 @@ const GermanCaseStudies = () => {
         ]}
       />
       
-      <section id="hero">
-        <CaseStudiesHero />
-      </section>
+      {/* Hero */}
+      <Section id="hero" spacing="large">
+        <Container>
+          <CaseStudiesHero />
+        </Container>
+      </Section>
       
-      {/* Intro Section */}
-      <section id="intro" className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Intro */}
+      <Section id="intro" spacing="large">
+        <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,10 +158,10 @@ const GermanCaseStudies = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#003343] mb-6">
+            <h2 className={typographyStyles.headings.h2}>
               {isGerman ? "Echte Referenzen, echte Ergebnisse" : "Real References, Real Results"}
             </h2>
-            <p className="text-lg text-[#666666] max-w-3xl mx-auto">
+            <p className={`${typographyStyles.body.large} max-w-3xl mx-auto mt-6`}>
               {isGerman 
                 ? "Keine Demo-Prototypen, keine Agentur-Portfolios – nur echte digitale Projekte mit messbaren Ergebnissen."
                 : "No demo prototypes, no agency portfolios – only real digital projects with measurable results."}
@@ -212,19 +171,22 @@ const GermanCaseStudies = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
+                icon: CheckCircle2,
                 title: isGerman ? "Echte digitale Projekte, echte Ergebnisse" : "Real digital projects, real results",
                 description: isGerman 
                   ? "Keine Demo-Prototypen. Jedes Projekt ist live und generiert reale Leads."
                   : "No demo prototypes. Every project is live and generates real leads."
               },
               {
+                icon: Target,
                 title: isGerman ? "Nur reale Kundenprojekte" : "Only real customer projects",
                 description: isGerman 
                   ? "Wir zeigen nur reale Kundenprojekte, kein Agentur-Marketing."
                   : "We only show real customer projects, no agency marketing."
               },
               {
-                title: isGerman ? "Messbare Ergebnisse: Sichtbarkeit, Conversions, Prozesseffizienz" : "Measurable Results: Visibility, Conversions, Process Efficiency",
+                icon: TrendingUp,
+                title: isGerman ? "Messbare Ergebnisse: Sichtbarkeit, Conversions, Prozesseffizienz" : "Measurable Results",
                 description: isGerman 
                   ? "Jede Case Study hat KPIs – von Sichtbarkeit bis Lead-Generierung."
                   : "Every case study has KPIs – from visibility to lead generation."
@@ -236,36 +198,37 @@ const GermanCaseStudies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#F7F8FC] rounded-lg p-8 text-center border border-gray-200"
+                className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-[#0BC3C3]/10 text-[#0BC3C3] rounded-lg mx-auto mb-6">
-                  {index === 0 && <CheckCircle2 className="w-6 h-6" aria-label={item.title} />}
-                  {index === 1 && <Target className="w-6 h-6" aria-label={item.title} />}
-                  {index === 2 && <TrendingUp className="w-6 h-6" aria-label={item.title} />}
+                <div className="flex items-center justify-center w-12 h-12 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg mx-auto mb-6">
+                  <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#003343] mb-3">
+                <h3 className="text-xl font-bold text-[#0A0A0A] mb-3">
                   {item.title}
                 </h3>
-                <p className="text-base text-[#666666]">
+                <p className="text-base text-[#555555]">
                   {item.description}
                 </p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
       
-      <section id="case-studies">
-        <CaseStudiesSection 
-          customTitle={isGerman ? "Echte Ergebnisse aus echten Projekten" : "Real Results from Real Projects"}
-          hideHeaderText={false}
-        />
-      </section>
+      {/* Case Studies */}
+      <Section id="case-studies" background="light" spacing="large">
+        <Container>
+          <CaseStudiesSection 
+            customTitle={isGerman ? "Echte Ergebnisse aus echten Projekten" : "Real Results from Real Projects"}
+            hideHeaderText={false}
+          />
+        </Container>
+      </Section>
       
       {/* Success Pillars */}
-      <section id="success-pillars" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-text mb-16 text-center">
+      <Section id="success-pillars" spacing="large">
+        <Container>
+          <h2 className={`${typographyStyles.headings.h2} text-center mb-16`}>
             {isGerman ? "Warum unsere digitalen Projekte funktionieren" : "Why our digital projects work"}
           </h2>
           
@@ -277,28 +240,28 @@ const GermanCaseStudies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#F4F7F7] rounded-lg p-8 text-center border border-gray-200"
+                className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-[#0BC3C3]/10 rounded-lg mx-auto mb-6">
-                  {index === 0 && <Target className="w-8 h-8 text-[#0BC3C3]" aria-label={pillar.title} />}
-                  {index === 1 && <Users className="w-8 h-8 text-[#0BC3C3]" aria-label={pillar.title} />}
-                  {index === 2 && <Zap className="w-8 h-8 text-[#0BC3C3]" aria-label={pillar.title} />}
+                <div className="flex items-center justify-center w-16 h-16 bg-[#E0FBFA] rounded-lg mx-auto mb-6">
+                  {index === 0 && <Target className="w-8 h-8 text-[#0BC3C3]" />}
+                  {index === 1 && <Users className="w-8 h-8 text-[#0BC3C3]" />}
+                  {index === 2 && <Zap className="w-8 h-8 text-[#0BC3C3]" />}
                 </div>
-                <h3 className="text-xl font-bold text-primary-text mb-4">
+                <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">
                   {pillar.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-[#555555] leading-relaxed">
                   {pillar.description}
                 </p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
       
       {/* Hybrid Team */}
-      <section id="hybrid-team" className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Section id="hybrid-team" background="light" spacing="medium">
+        <Container size="narrow">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -306,41 +269,42 @@ const GermanCaseStudies = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-lg md:text-xl text-[#666666] leading-relaxed">
+            <p className={typographyStyles.body.large}>
               {isGerman 
-                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-[#003343]">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-[#0BC3C3] hover:underline ml-1">Digitale Transformation</a>, <a href="/ux-konzeption" className="text-[#0BC3C3] hover:underline ml-1">UX-Konzeption</a>, <a href="/webdesign-entwicklung" className="text-[#0BC3C3] hover:underline ml-1">Webdesign</a>, <a href="/seo-performance" className="text-[#0BC3C3] hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-[#0BC3C3] hover:underline ml-1">AI-Workflows</a>.</>
-                : <>Our case studies reflect our hybrid approach: <strong className="text-[#003343]">Strategy, UX, Content, Development & AI Workflows</strong> work synchronously – no silo thinking, no outsourcing.</>
+                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-[#0A0A0A]">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-[#0BC3C3] hover:underline ml-1">Digitale Transformation</a>, <a href="/webdesign-entwicklung" className="text-[#0BC3C3] hover:underline ml-1">Webdesign</a>, <a href="/seo-optimierung" className="text-[#0BC3C3] hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-[#0BC3C3] hover:underline ml-1">AI-Workflows</a>.</>
+                : <>Our case studies reflect our hybrid approach: <strong className="text-[#0A0A0A]">Strategy, UX, Content, Development & AI Workflows</strong> work synchronously – no silo thinking, no outsourcing.</>
               }
             </p>
           </motion.div>
-        </div>
-      </section>
+        </Container>
+      </Section>
       
-      <section id="cta">
-        <CTA 
-          title={isGerman 
-            ? "Welche Ergebnisse möchten Sie für Ihr Unternehmen erreichen?" 
-            : "What results do you want to achieve for your company?"
-          }
-          subtitle={isGerman 
-            ? "Case Studies zeigen, was möglich ist. Jetzt Ihr Projekt mit kostenloser Strategieberatung starten." 
-            : "Case studies show what's possible. Start your project now with free strategy consultation."
-          }
-          primaryCta={isGerman ? "Projekt starten" : "Start Project"}
-        />
-      </section>
+      {/* More Projects */}
+      <Section id="weitere-projekte" spacing="large">
+        <Container>
+          <WeitereProjekteTable />
+        </Container>
+      </Section>
       
-      <section id="faq">
-        <FAQ
-          customFaqs={faqItems}
-          customTitle="Häufige Fragen zu Projekten & Case Studies"
-          hideCTA={true}
-        />
-      </section>
+      {/* FAQ */}
+      <Section id="faq" background="light" spacing="large">
+        <Container>
+          <FAQ customFaqs={faqItems} />
+        </Container>
+      </Section>
       
-      <section id="weitere-projekte">
-        <WeitereProjekteTable />
-      </section>
+      {/* CTA */}
+      <Section id="cta" background="dark" spacing="large">
+        <Container>
+          <CTA 
+            title={isGerman ? "Bereit für ein erfolgreiches Projekt?" : "Ready for a successful project?"}
+            subtitle={isGerman ? "Lassen Sie uns gemeinsam ein Projekt entwickeln, das nicht nur gut aussieht, sondern auch messbare Ergebnisse liefert." : "Let's develop a project together that not only looks good, but also delivers measurable results."}
+            primaryCta={isGerman ? "Projekt starten" : "Start Project"}
+            secondaryCta={isGerman ? "Strategiegespräch vereinbaren" : "Schedule Strategy Call"}
+            lightBackground={false}
+          />
+        </Container>
+      </Section>
     </PageLayout>
   );
 };
