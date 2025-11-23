@@ -198,9 +198,9 @@ const GermanCaseStudies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
+                className="bg-secondary rounded-lg p-8 text-center border border-border"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-[#D8F3F1] text-[#32b2ab] rounded-lg mx-auto mb-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mx-auto mb-6">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <H3 className="mb-3">
@@ -240,12 +240,12 @@ const GermanCaseStudies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
+                className="bg-secondary rounded-lg p-8 text-center border border-border"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-[#D8F3F1] rounded-lg mx-auto mb-6">
-                  {index === 0 && <Target className="w-8 h-8 text-[#32b2ab]" />}
-                  {index === 1 && <Users className="w-8 h-8 text-[#32b2ab]" />}
-                  {index === 2 && <Zap className="w-8 h-8 text-[#32b2ab]" />}
+                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mx-auto mb-6">
+                  {index === 0 && <Target className="w-8 h-8 text-primary" />}
+                  {index === 1 && <Users className="w-8 h-8 text-primary" />}
+                  {index === 2 && <Zap className="w-8 h-8 text-primary" />}
                 </div>
                 <H3 className="mb-4">
                   {pillar.title}
@@ -271,8 +271,8 @@ const GermanCaseStudies = () => {
           >
             <LargeParagraph alignment="center" color="secondary">
               {isGerman 
-                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-[#0A0A0A]">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-[#32b2ab] hover:underline ml-1">Digitale Transformation</a>, <a href="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline ml-1">Webdesign</a>, <a href="/seo-performance" className="text-[#32b2ab] hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-[#32b2ab] hover:underline ml-1">AI-Workflows</a>.</>
-                : <>Our case studies reflect our hybrid approach: <strong className="text-[#0A0A0A]">Strategy, UX, Content, Development & AI Workflows</strong> work synchronously – no silo thinking, no outsourcing.</>
+                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-foreground">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-primary hover:underline ml-1">Digitale Transformation</a>, <a href="/webdesign-entwicklung" className="text-primary hover:underline ml-1">Webdesign</a>, <a href="/seo-performance" className="text-primary hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-primary hover:underline ml-1">AI-Workflows</a>.</>
+                : <>Our case studies reflect our hybrid approach: <strong className="text-foreground">Strategy, UX, Content, Development & AI Workflows</strong> work synchronously – no silo thinking, no outsourcing.</>
               }
             </LargeParagraph>
           </motion.div>
