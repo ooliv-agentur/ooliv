@@ -333,7 +333,8 @@ const GermanCaseStudies = () => {
       <section id="faq">
         <FAQ
           customFaqs={faqItems}
-          showCTA={false}
+          customTitle="Häufige Fragen zu Projekten & Case Studies"
+          hideCTA={true}
         />
       </section>
       
