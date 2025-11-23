@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import FooterBottom from './FooterBottom';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
 import BreadcrumbNavigation from './seo/BreadcrumbNavigation';
@@ -141,7 +140,6 @@ const PageLayout = ({ children, className = '', showBreadcrumbs = false }: PageL
             {children}
           </main>
           <Footer />
-          <FooterBottom />
           <FloatingActionButtons />
         </div>
       </MotionConfig>
