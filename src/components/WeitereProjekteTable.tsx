@@ -7,72 +7,84 @@ const projekte = [
     name: "Scheurich",
     branche: "Gartenbedarf",
     brancheEn: "Gardening Supplies",
+    beschreibung: "UX-Optimierung + Webshop-Performance-Boost",
     link: "https://www.scheurich.de",
   },
   {
     name: "Weisenburger",
     branche: "Bauunternehmen",
     brancheEn: "Construction",
+    beschreibung: "Corporate Website mit Lead-Funnel",
     link: "https://www.weisenburger.de",
   },
   {
     name: "Aeratron",
     branche: "E-Commerce",
     brancheEn: "E-Commerce",
+    beschreibung: "Shopify Performance-Optimierung",
     link: "https://aeratron.io",
   },
   {
     name: "Leidmann",
     branche: "E-Commerce",
     brancheEn: "E-Commerce",
+    beschreibung: "E-Commerce Strategie & UX",
     link: "https://www.leidmann.de",
   },
   {
     name: "MediCloud Med",
     branche: "Software",
     brancheEn: "Software",
+    beschreibung: "SaaS Webdesign & Positioning",
     link: "https://www.medicloudmed.ch",
   },
   {
     name: "LIERSCH",
     branche: "Innenausbau",
     brancheEn: "Interior Design",
+    beschreibung: "Markenwebsite mit Portfolio-Struktur",
     link: "https://liersch-retail.com",
   },
   {
     name: "ALC",
     branche: "Logistik",
     brancheEn: "Logistics",
+    beschreibung: "B2B Website mit Service-Fokus",
     link: "https://www.alc-logistic.de",
   },
   {
     name: "NOXUSGROUP",
     branche: "Bau",
     brancheEn: "Construction",
+    beschreibung: "Immobilien-Website & Lead-System",
     link: "https://noxusgroup-hausbau.com",
   },
   {
     name: "MDI",
     branche: "Industrie",
     brancheEn: "Industry",
+    beschreibung: "Technische Website mit Produktfokus",
     link: "https://www.mdi-ap.com",
   },
   {
     name: "enwas",
     branche: "Energie",
     brancheEn: "Energy",
+    beschreibung: "Energieversorger mit lokalem Fokus",
     link: "https://www.enwas.de",
   },
   {
     name: "FIBONA",
     branche: "Immobilien",
     brancheEn: "Real Estate",
+    beschreibung: "Immobilienwebsite mit Objektverwaltung",
     link: "https://www.fibona.de",
   },
   {
     name: "confacts",
     branche: "SaaS",
     brancheEn: "SaaS",
+    beschreibung: "SaaS-Platform Website & Onboarding",
     link: "https://www.confacts.de",
   },
 ];
@@ -82,7 +94,7 @@ const WeitereProjekteTable = () => {
   const isGerman = language === 'de';
 
   const translations = {
-    title: isGerman ? "Weitere Projekte" : "More Projects"
+    title: isGerman ? "Weitere Referenzen & digitale Ergebnisse" : "More References & Digital Results"
   };
 
   const fadeInUp = {
@@ -116,8 +128,11 @@ const WeitereProjekteTable = () => {
                 <h4 className="font-semibold text-brand-heading text-base mb-1">
                   {projekt.name}
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-1">
                   {isGerman ? projekt.branche : projekt.brancheEn}
+                </p>
+                <p className="text-xs text-[#999999]">
+                  {projekt.beschreibung}
                 </p>
               </div>
               <a

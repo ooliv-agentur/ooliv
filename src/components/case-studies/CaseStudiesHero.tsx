@@ -39,8 +39,8 @@ const CaseStudiesHero = () => {
               }}
             >
               {isGerman 
-                ? "Echte Ergebnisse. Echte Unternehmen. Echte Wirkung." 
-                : "Real Results. Real Companies. Real Impact."
+                ? "Digitale Projekte & Case Studies – echte Ergebnisse, echte Wirkung" 
+                : "Digital Projects & Case Studies – Real Results, Real Impact"
               }
             </h1>
             
@@ -50,8 +50,8 @@ const CaseStudiesHero = () => {
               style={{ lineHeight: '1.6' }}
             >
               {isGerman 
-                ? "Wir zeigen nicht nur schöne Screens – sondern messbare Resultate aus Strategie, UX, SEO und digitaler Transformation. Hier sehen Sie, wie Unternehmen durch digitale Klarheit wachsen." 
-                : "We don't just show pretty screens – but measurable results from strategy, UX, SEO, and digital transformation. See how companies grow through digital clarity."
+                ? "Unsere Webdesign-, UX-, SEO- und Digitalprojekte, die messbar wachsen, skalieren und echte Leads generieren – keine Demo-Prototypen, nur reale Kundenprojekte." 
+                : "Our web design, UX, SEO and digital projects that measurably grow, scale and generate real leads – no demo prototypes, only real customer projects."
               }
             </p>
             
@@ -63,7 +63,7 @@ const CaseStudiesHero = () => {
                 className="group w-full sm:w-auto"
                 onClick={handleOpenLeadForm}
               >
-                {isGerman ? "Projekt besprechen" : "Discuss Project"}
+                {isGerman ? "Mein Projekt besprechen" : "Discuss My Project"}
                 <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               

@@ -12,6 +12,9 @@ export const caseStudiesData = {
     {
       client: "KLAIBER",
       industry: "Steuerberatung",
+      seoTitle: "Case Study: KLAIBER – B2B Webdesign & Markenstrategie",
+      seoTag: "+92% Sichtbarkeit",
+      shortDescription: "Neupositionierung & digitale Lead-Architektur für eine Beratung.",
       headline: "Strategische Neupositionierung für mehr Sichtbarkeit und Vertrauen",
       logo: "/lovable-uploads/37da8d9c-7991-413d-beba-789d86fe08c8.png",
       quote: "Unsere neue Website repräsentiert endlich, was uns als Beratung ausmacht: Klarheit, Vertrauen und Dynamik. Die Zusammenarbeit mit ooliv war strukturiert und zielführend.",
@@ -28,6 +31,9 @@ export const caseStudiesData = {
     {
       client: "COBUS Industries",
       industry: "Industrie",
+      seoTitle: "Case Study: COBUS Industries – UX-Redesign & internationale B2B-Struktur",
+      seoTag: "+160% Interaktionen",
+      shortDescription: "Komplette UX-Neustrukturierung für globalen Marktführer.",
       headline: "Strukturierte UX für Technik, Service und internationales Publikum",
       logo: "/lovable-uploads/567e9c1f-f8db-451c-9eb4-3f5865307084.png",
       quote: "Unsere neue Website verbindet Technik, Service und Markenanspruch. Die Zusammenarbeit mit ooliv war strukturiert, kreativ und zielorientiert – passend zu unserem Anspruch als globaler Marktführer.",
@@ -44,6 +50,9 @@ export const caseStudiesData = {
     {
       client: "SPEZ AG",
       industry: "Handwerk",
+      seoTitle: "Case Study: SPEZ – Markenentwicklung & lokale Lead-Automation",
+      seoTag: "+300% qualifizierte Anfragen",
+      shortDescription: "Ganzheitliche Markenentwicklung mit SEO & SEM für lokalen Markt.",
       headline: "Ganzheitliche Markenentwicklung, die konstant qualifizierte Anfragen generiert",
       logo: "/lovable-uploads/a34a156e-10ca-4259-8444-af2e83402461.png",
       quote: "Mit ooliv konnten wir SPEZ sichtbar machen. Die neue Marke überzeugt technisch und emotional – und generiert seit dem Launch konstant qualifizierte Anfragen.",
@@ -60,6 +69,9 @@ export const caseStudiesData = {
     {
       client: "IconPro GmbH",
       industry: "KI-Software",
+      seoTitle: "Case Study: IconPro – KI-Software UX & AI-Visualisierung",
+      seoTag: "+45% Engagement",
+      shortDescription: "Komplexe KI-Software visuell und strukturiert dargestellt.",
       headline: "Komplexe KI-Software klar und visuell verständlich dargestellt",
       logo: "/lovable-uploads/0ac94ae2-4b93-4958-bbb4-76df1bd8c6d6.png",
       quote: "Dank ooliv wirkt unsere Website jetzt genauso wie unsere Software: durchdacht, strukturiert und visuell überzeugend. Besonders Illustrationen und Animationen bringen komplexe Themen auf den Punkt.",
@@ -76,6 +88,9 @@ export const caseStudiesData = {
     {
       client: "Quartier Am Kliff",
       industry: "Immobilien",
+      seoTitle: "Case Study: Quartier am Kliff – Immobilienmarke & Conversion-Landingpage",
+      seoTag: "+40% Conversionrate",
+      shortDescription: "Digitale Markteinführung mit Fokus auf Vertriebsunterstützung.",
       headline: "Digitale Markteinführung, die aktiv im Vertrieb unterstützt",
       logo: "/lovable-uploads/aeb4a03d-670d-4abf-841c-f958a8f9ac2e.png",
       quote: "Mit ooliv haben wir ein Projekt geschaffen, das unsere Architektur, Lage und Vision überzeugend digital inszeniert. Die Seite unterstützt uns aktiv im Vertrieb – auf allen Ebenen.",
@@ -118,7 +133,7 @@ const CaseStudiesSection = ({
   const t = defaultTranslations;
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="case-studies" className="py-24 bg-white overflow-hidden">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
@@ -151,16 +166,26 @@ const CaseStudiesSection = ({
                       <AspectRatio ratio={16/10} className="h-full">
                         <img 
                           src={study.logo} 
-                          alt={`${study.client} logo`} 
+                          alt={`${study.client} Logo – ${study.seoTitle}`} 
                           className="h-full w-full object-contain"
                         />
                       </AspectRatio>
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-primary-text">{study.client}</h3>
+                      <span className="inline-block px-3 py-1 bg-[#0BC3C3]/10 text-[#0BC3C3] text-xs font-medium rounded-full mb-2">
+                        {study.seoTag}
+                      </span>
                       <p className="text-sm md:text-base text-muted-foreground font-normal">{study.industry}</p>
                     </div>
                   </div>
+                  
+                  <h3 className="text-xl md:text-2xl font-bold text-primary-text mb-3">
+                    {study.seoTitle}
+                  </h3>
+                  
+                  <p className="text-sm md:text-base text-muted-foreground mb-4 font-normal">
+                    {study.shortDescription}
+                  </p>
                   
                   <h4 className="text-base md:text-lg font-medium mb-6 text-primary-text leading-relaxed">
                     {study.headline}
