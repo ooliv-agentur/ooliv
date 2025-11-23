@@ -118,20 +118,22 @@ const CaseStudiesSection = ({
   const t = defaultTranslations;
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeaderText && (
           <Reveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-text mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6 leading-tight">
                 {customTitle || t.title}
               </h2>
-              <p className="text-lg md:text-xl text-teal max-w-3xl mx-auto mb-4 font-medium leading-relaxed">
-                {customSubtitle || t.subtitle}
-              </p>
-              {(customBodyText || t.bodyText) && (
-                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
-                  {customBodyText || t.bodyText}
+              {customSubtitle && (
+                <p className="text-lg text-text-secondary max-w-3xl mx-auto mb-4 leading-relaxed">
+                  {customSubtitle}
+                </p>
+              )}
+              {customBodyText && (
+                <p className="text-base text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                  {customBodyText}
                 </p>
               )}
             </div>
@@ -145,7 +147,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-[#F4F7F7] rounded-[20px] p-8 border border-gray-100">
+                <div className="bg-gray-50 rounded-lg p-8 hover:shadow-md transition-shadow">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -157,26 +159,26 @@ const CaseStudiesSection = ({
                       </AspectRatio>
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-primary-text">{study.client}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground font-normal">{study.industry}</p>
+                      <h3 className="text-xl md:text-2xl font-bold text-text-primary">{study.client}</h3>
+                      <p className="text-sm text-text-secondary">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <h4 className="text-base md:text-lg font-medium mb-6 text-primary-text leading-relaxed">
+                  <h4 className="text-base md:text-lg font-medium mb-6 text-text-primary leading-relaxed">
                     {study.headline}
                   </h4>
                   
-                  <blockquote className="italic text-muted-foreground text-sm md:text-base border-l-4 border-teal pl-4 my-6 font-normal leading-relaxed">
-                    "{study.quote}"
+                  <blockquote className="italic text-text-secondary text-sm md:text-base border-l-4 border-turquoise pl-4 my-6 leading-relaxed">
+                    &quot;{study.quote}&quot;
                   </blockquote>
                   
-                   {study.websiteLink && (
+                  {study.websiteLink && (
                     <div className="mb-6">
                       <a 
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-teal/10 text-teal hover:bg-teal/20 rounded-lg font-medium text-sm transition-colors"
+                        className="inline-flex items-center px-4 py-2 bg-turquoise/10 text-turquoise hover:bg-turquoise/20 rounded-lg font-medium text-sm transition-colors"
                       >
                         Website ansehen
                       </a>
@@ -186,10 +188,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-teal">
+                        <div className="mr-3 mt-1 text-turquoise">
                           <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-sm md:text-base text-muted-foreground font-normal leading-relaxed">{point}</p>
+                        <p className="text-sm md:text-base text-text-secondary leading-relaxed">{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -197,7 +199,7 @@ const CaseStudiesSection = ({
               </div>
               
               <div className="w-full md:w-1/2">
-                <div className="rounded-[20px] overflow-hidden border border-gray-100">
+                <div className="rounded-lg overflow-hidden">
                   <img 
                     src={study.image} 
                     alt={`${study.client} case study`} 
@@ -211,7 +213,7 @@ const CaseStudiesSection = ({
         
         <Reveal delay={0.2}>
           <div className="mt-24 text-center">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-primary-text mb-8 leading-tight">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-text-primary mb-8 leading-tight">
               {t.ctaText}
             </h3>
             

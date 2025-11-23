@@ -97,28 +97,28 @@ const GermanCaseStudies = () => {
           hideHeaderText={false}
         />
         
-        <div className="py-20 bg-brand-backgroundAlt">
+        <div className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-brand-heading mb-4">
+              <h2 className="text-3xl font-bold text-text-primary mb-4">
                 Warum unsere Projekte wirken
               </h2>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {successPillars.map((pillar, index) => (
-                <div key={index} className="bg-white p-8 rounded-lg shadow-sm text-center">
-                  <div className="h-16 w-16 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-2xl font-bold text-brand-primary">{index + 1}</span>
+                <div key={index} className="bg-white p-8 rounded-lg hover:shadow-md transition-shadow text-center">
+                  <div className="h-16 w-16 bg-turquoise/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-2xl font-bold text-turquoise">{index + 1}</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-brand-heading">{pillar.title}</h3>
-                  <p className="text-gray-600">{pillar.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-text-primary">{pillar.title}</h3>
+                  <p className="text-text-secondary">{pillar.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        
+
         <CTA 
           title="Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?"
           subtitle="Ob Relaunch, Positionierung oder Conversion-Optimierung – jedes Projekt beginnt mit einem klaren Plan."
