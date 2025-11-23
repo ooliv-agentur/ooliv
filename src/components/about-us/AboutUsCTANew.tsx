@@ -9,13 +9,13 @@ const AboutUsCTANew = () => {
   };
 
   return (
-    <section className={getSectionClasses('large', 'mint')}>
-      <div className={getContainerClasses('narrow')}>
+    <section className="py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
             Lassen Sie uns reden — ohne Agentur-Geschwätz.
           </h2>
-          <p className="text-lg text-brand-text mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
             Sie brauchen Klarheit, Struktur und ein digitales System, das für Sie arbeitet? Dann wird&apos;s Zeit für ein erstes Gespräch.
           </p>
           

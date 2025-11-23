@@ -36,10 +36,10 @@ const AboutUsFAQNew = () => {
   ];
 
   return (
-    <section className={getSectionClasses('large', 'white')}>
-      <div className={getContainerClasses('narrow')}>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Häufige Fragen zur Zusammenarbeit
           </h2>
         </div>
@@ -47,10 +47,10 @@ const AboutUsFAQNew = () => {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-semibold">
+              <AccordionTrigger className="text-left text-lg font-semibold text-text-primary">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-brand-text leading-relaxed">
+              <AccordionContent className="text-text-secondary leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

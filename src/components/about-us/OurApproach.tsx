@@ -22,24 +22,24 @@ const OurApproach = () => {
   ];
 
   return (
-    <section className={getSectionClasses('large', 'mint')}>
-      <div className={getContainerClasses('default')}>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Unser Ansatz
           </h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {approaches.map((approach, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg">
+            <div key={index} className="bg-white p-8 rounded-lg hover:shadow-md transition-shadow">
               <div className="h-12 w-12 bg-turquoise/10 rounded-full flex items-center justify-center mb-6">
                 <approach.icon className="w-6 h-6 text-turquoise" />
               </div>
-              <h3 className="text-xl font-bold text-brand-heading mb-3">
+              <h3 className="text-xl font-bold text-text-primary mb-3">
                 {approach.title}
               </h3>
-              <p className="text-brand-text leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 {approach.description}
               </p>
             </div>

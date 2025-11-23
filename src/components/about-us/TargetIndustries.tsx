@@ -15,22 +15,22 @@ const TargetIndustries = () => {
   ];
 
   return (
-    <section className={getSectionClasses('large', 'mint')}>
-      <div className={getContainerClasses('default')}>
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
             Für wen wir arbeiten
           </h2>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
             Wir unterstützen Unternehmen, die klare Strukturen, digitale Sichtbarkeit und effiziente Workflows benötigen.
           </p>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {industries.map((industry, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg text-center hover:shadow-md transition-shadow">
+            <div key={index} className="bg-gray-50 p-6 rounded-lg text-center hover:bg-turquoise/5 hover:shadow-md transition-all">
               <industry.icon className="w-8 h-8 text-turquoise mx-auto mb-3" />
-              <p className="text-brand-text font-medium text-sm">{industry.label}</p>
+              <p className="text-text-primary font-medium text-sm">{industry.label}</p>
             </div>
           ))}
         </div>
