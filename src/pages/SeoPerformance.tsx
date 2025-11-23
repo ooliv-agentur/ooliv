@@ -47,8 +47,8 @@ const SeoPerformance = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="SEO Agentur für technische SEO & Performance | ooliv"
-        description="Technische SEO, Content-Optimierung, Core Web Vitals & Performance: Wir steigern Sichtbarkeit für Unternehmen. 200+ Projekte. Jetzt SEO-Analyse starten."
+        title="SEO Agentur & Technische SEO | ooliv Mainz"
+        description="Technische SEO, Content-Strategie, IA & AI-gestützte Analysen. Senior-Level SEO von Uli Schönleber. Nachhaltige Rankings & messbare Performance."
         canonicalUrl="https://ooliv.de/seo-performance"
         keywords="seo agentur, seo & performance, technische seo, seo optimierung, seo für unternehmen, sichtbarkeit steigern, pagespeed optimierung, core web vitals optimierung, content optimierung seo, seo analyse, seo audit, crawling & indexing, seo performance monitoring, seo für b2b, conversion optimierung, keyword-recherche, content-struktur, interne verlinkung, backlink-qualität, search intent, seo ux kombination, technische performance"
         breadcrumbs={breadcrumbs}
@@ -140,7 +140,7 @@ const SeoPerformance = () => {
       <section id="hero">
         <PageHero
           title="SEO Agentur für nachhaltige Sichtbarkeit & technische Performance"
-          subtitle="SEO & Performance für Unternehmen: Technische SEO, Content-Optimierung, Core Web Vitals und AI-gestützte Analysen – für messbar mehr Sichtbarkeit und Leads."
+          subtitle="SEO & technische Performance, geführt durch Uli Schönleber als Senior Digital Strategist — kombiniert mit strukturierter UX, Content-Strategie und AI-gestützten Analysen für messbare Ergebnisse."
         primaryCta={{
           text: "Kostenloses Konzept sichern",
           link: "#",
@@ -166,25 +166,25 @@ const SeoPerformance = () => {
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
               <Gauge className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="Technisches SEO + strukturierte Inhalte" />
               <div>
-                <h3 className="font-semibold text-[#0B0B0B] text-sm">Technisches SEO + strukturierte Inhalte</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">Saubere Architektur, klare Informationsstruktur und SEO-Fundament.</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
               <Target className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="UX- und Conversion-fokussiert" />
               <div>
-                <h3 className="font-semibold text-[#0B0B0B] text-sm">UX- und Conversion-fokussiert</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">Suchlogik, Nutzerführung und Funnel-Strukturen integriert.</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
               <Zap className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="AI-gestützte Recherchen & Audits" />
               <div>
-                <h3 className="font-semibold text-[#0B0B0B] text-sm">AI-gestützte Recherchen & Audits</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">Intent-Analysen, Keyword-Cluster & technische Insights.</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
               <BarChart3 className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="Messbare Verbesserungen statt Keyword-Versprechen" />
               <div>
-                <h3 className="font-semibold text-[#0B0B0B] text-sm">Messbare Verbesserungen statt Keyword-Versprechen</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">KPIs, Ranking-Performance & transparente Fortschritte.</h3>
               </div>
             </motion.div>
           </motion.div>
@@ -218,22 +218,22 @@ const SeoPerformance = () => {
               {
                 icon: Search,
                 title: "Keine Sichtbarkeit trotz guter Inhalte",
-                description: "Ihre Inhalte sind hochwertig, aber Google findet sie nicht."
+                description: "Inhalte ohne strukturiertes Intent-Matching bleiben unsichtbar."
               },
               {
                 icon: Gauge,
                 title: "Langsame Website / schlechte Core Web Vitals",
-                description: "Ladezeiten über 3 Sekunden kosten Rankings und Kunden."
+                description: "Ladezeiten & technische Fehler bremsen Nutzer und Rankings."
               },
               {
                 icon: AlertTriangle,
                 title: "Technische Fehler behindern Ranking",
-                description: "Crawling-Probleme, defekte Links oder fehlerhafte Strukturen."
+                description: "Crawling, interne Linklogik und Struktur verhindern Indexierung."
               },
               {
                 icon: Target,
                 title: "Keine klare SEO-Strategie oder Priorisierung",
-                description: "Ohne Plan verzetteln Sie sich in unwichtigen Optimierungen."
+                description: "Ohne Funnel-Logik und Prioritätensystem kein nachhaltiges Wachstum."
               }
             ].map((item, index) => (
               <motion.div
@@ -276,7 +276,7 @@ const SeoPerformance = () => {
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
                 <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
-                <p className="text-[#666666]">Falsche Struktur verhindert Sichtbarkeit</p>
+                <p className="text-[#666666]">Falsche Struktur verhindert Sichtbarkeit & indexierbare Inhalte.</p>
               </motion.div>
               
               <motion.div 
@@ -284,7 +284,7 @@ const SeoPerformance = () => {
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
                 <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
-                <p className="text-[#666666]">Technische Fehler blockieren Ranking</p>
+                <p className="text-[#666666]">Technische Fehler blockieren Crawling & Ranking.</p>
               </motion.div>
               
               <motion.div 
@@ -292,7 +292,7 @@ const SeoPerformance = () => {
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
                 <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
-                <p className="text-[#666666]">Keine klare Content-Priorisierung</p>
+                <p className="text-[#666666]">Fehlende Priorisierung führt zu falschen Maßnahmen.</p>
               </motion.div>
               
               <motion.div 
@@ -300,7 +300,7 @@ const SeoPerformance = () => {
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
                 <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
-                <p className="text-[#666666]">Kein Tracking, keine Datenbasis</p>
+                <p className="text-[#666666]">Ohne Tracking fehlt die Basis für datengetriebene SEO.</p>
               </motion.div>
             </div>
 
@@ -310,7 +310,7 @@ const SeoPerformance = () => {
             >
               <h3 className="text-2xl font-bold mb-4">Die Lösung</h3>
               <p className="text-lg">
-                Wir verbinden technisches SEO, UX, Content-Strategie und AI-gestützte Recherche zu einem System, das Sichtbarkeit und Leads liefert.
+                Wir verbinden technische SEO, UX-Struktur, Content-Strategie und AI-Research zu einem SEO-System, das nachhaltig Sichtbarkeit und Leads erzeugt.
               </p>
             </motion.div>
           </motion.div>
@@ -348,19 +348,19 @@ const SeoPerformance = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Core Web Vitals</span>
+                  <span className="text-[#666666]">Technisches SEO Audit</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Geschwindigkeit & Serverqualität</span>
+                  <span className="text-[#666666]">Crawling, Indexing & Strukturfehler</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Saubere Struktur / Schema / Redirects</span>
+                  <span className="text-[#666666]">Core Web Vitals Optimierung</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Technische Fehleranalyse</span>
+                  <span className="text-[#666666]">Saubere Schema- & Redirect-Architektur</span>
                 </li>
               </ul>
             </motion.div>
@@ -380,15 +380,15 @@ const SeoPerformance = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Themencluster & Content-Strategien</span>
+                  <span className="text-[#666666]">Intent-basierte Keyword-Cluster</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">AI-gestützte Keyword- & Intent-Recherche</span>
+                  <span className="text-[#666666]">Themencluster & Content-Blueprints</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Content-Blueprints</span>
+                  <span className="text-[#666666]">AI-gestützte Briefings & Recherchen</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
@@ -412,19 +412,19 @@ const SeoPerformance = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Logische Seitenstruktur</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Navigation & Kategorien</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">URL-Design</span>
+                  <span className="text-[#666666]">URL-Design & logische Seitenstruktur</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
                   <span className="text-[#666666]">Interne Verlinkung & Funnel-Routen</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#666666]">Category-Logik & Navigation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#666666]">SEO-taugliche Funnel-Architektur</span>
                 </li>
               </ul>
             </motion.div>
@@ -444,19 +444,19 @@ const SeoPerformance = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Tracking & KPI-Dashboards</span>
+                  <span className="text-[#666666]">KPI-Dashboards & Monitoring</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Ranking-Verbesserung & Content-Gaps</span>
+                  <span className="text-[#666666]">Ranking-Analysen & Content-Gaps</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Monitoring & monatliche Audits</span>
+                  <span className="text-[#666666]">Monatliche SEO-Audits</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#666666]">Conversionnahe Optimierung</span>
+                  <span className="text-[#666666]">Conversion-nahe SEO-Optimierung</span>
                 </li>
               </ul>
             </motion.div>
@@ -735,7 +735,7 @@ const SeoPerformance = () => {
               {...fadeInUp}
               className="text-center text-lg text-[#666666] mt-8 max-w-3xl mx-auto"
             >
-              Unser hybrides Team aus Strategie, Content, UX, Entwicklung und SEO sorgt dafür, dass technische Performance und Inhalte perfekt zusammenspielen. Weitere Services: 
+              Uli führt Strategie, SEO-Architektur & Priorisierung; das Hybridteam unterstützt in Content, UX, Development und Performance-Monitoring. Weitere Services: 
               <a href="/digitale-transformation-strategie" className="text-[#0BC3C3] hover:underline ml-2">Digitale Transformation</a>, 
               <a href="/ux-konzeption" className="text-[#0BC3C3] hover:underline ml-2">UX-Konzeption</a>, 
               <a href="/webdesign-entwicklung" className="text-[#0BC3C3] hover:underline ml-2">Webdesign</a>, 
@@ -750,8 +750,8 @@ const SeoPerformance = () => {
         <CTA
           title="Bereit für mehr Sichtbarkeit — und mehr Leads?"
           subtitle="SEO für Unternehmen – nachhaltige Rankings, bessere Performance. Starten Sie jetzt mit einem kostenlosen SEO-Audit."
-          primaryCta="Kostenloses Konzept sichern"
-          primaryCtaLink="/"
+          primaryCta="Kostenloses SEO-Audit anfordern"
+          primaryCtaLink="#"
         />
       </section>
 
