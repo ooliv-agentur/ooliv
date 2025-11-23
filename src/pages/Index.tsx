@@ -55,8 +55,8 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout>
         <EnhancedSEOHead
-          title="Digitale Transformation Agentur | Strategie, UX, Webdesign & AI – ooliv"
-          description="ooliv ist Ihre Digitalagentur für Strategie, UX, Webdesign, SEO und AI-Workflows. 200+ Digitalprojekte. Senior-Strategie statt Junioren. Messbare Ergebnisse."
+        title="Digitale Transformation & UX-Strategie | ooliv Mainz"
+        description="Digitale Transformation, UX-Strategie und AI-Workflows. Senior-Level Beratung von Uli Schönleber. Klare Prozesse, messbare Ergebnisse."
           canonicalUrl="https://ooliv.de/"
           keywords="digitale transformation agentur, digitale transformation beratung, digitale strategie entwickeln, digitalstrategie agentur, digitale kundenreise optimieren, digitale prozesse verbessern, ai-workflows für unternehmen, ux agentur, webdesign agentur mainz, webentwicklung agentur, seo agentur mainz, digitale effizienz steigern, customer journey mapping, digitale roadmap, design systeme, conversion optimierung, digitaler arbeitsablauf, strategie workshop, lead-generierung b2b, webdesign mainz, webdesign wiesbaden, webdesign frankfurt"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
@@ -130,15 +130,15 @@ const GermanIndex = () => {
                 className="space-y-8"
               >
                 <motion.div variants={fadeInUp} transition={{ duration: 0.6 }}>
-                  <H1>
-                    Digitale Transformation Agentur für messbare Ergebnisse
-                  </H1>
+            <H1>
+              Digitale Transformation, die Klarheit schafft
+            </H1>
                 </motion.div>
                 
                 <motion.div variants={fadeInUp} transition={{ duration: 0.6, delay: 0.1 }}>
-                  <Paragraph className="text-lg md:text-xl" color="secondary">
-                    Wir entwickeln digitale Strategien, optimieren digitale Prozesse und bauen AI-gestützte Workflows, die messbar mehr Leads generieren — geführt von Senior-Expertise, nicht von Junioren.
-                  </Paragraph>
+            <Paragraph className="text-lg md:text-xl" color="secondary">
+              Strategische Beratung, UX-Architektur und AI-gestützte Workflows — entwickelt von Uli Schönleber als Senior Digital Strategist, unterstützt durch ein spezialisiertes Hybridteam.
+            </Paragraph>
                 </motion.div>
 
                 <motion.div
@@ -240,8 +240,8 @@ const GermanIndex = () => {
                   description: "Strategie, Design, Entwicklung, SEO — alles aus einer Hand."
                 },
                 {
-                  title: "Keine Agentur-Theater",
-                  description: "Ehrliche Kommunikation. Realistische Timelines."
+                  title: "Ehrliche Umsetzung",
+                  description: "Realistische Timelines und klare Ergebnisse statt Agenturfloskeln."
                 }
               ].map((item, index) => (
                 <motion.div
@@ -282,25 +282,25 @@ const GermanIndex = () => {
                 {
                   icon: Target,
                   title: "Digitale Transformation & Strategie",
-                  description: "Klare Roadmaps, digitale Prozesse und messbare Transformation für Ihr Unternehmen.",
+                  description: "Strategische Roadmaps, digitale Prozesse und wertorientierte Transformation.",
                   link: "/digitale-transformation-strategie"
                 },
                 {
                   icon: LayoutGrid,
                   title: "UX & Konzeption",
-                  description: "Informationsarchitektur, Wireframes und strukturierte User Journeys für bessere Conversion.",
+                  description: "Informationsarchitektur, User Journeys, Wireframes und konversionsstarke Funnels.",
                   link: "/ux-konzeption"
                 },
                 {
                   icon: Code,
                   title: "Webdesign & Entwicklung",
-                  description: "Performance-optimierte WordPress-Websites mit UX-First-Ansatz und SEO-Fundament.",
+                  description: "UX-first WordPress-Entwicklung, klare Strukturen und hohe Performance.",
                   link: "/webdesign-entwicklung"
                 },
                 {
                   icon: Search,
                   title: "SEO & Performance",
-                  description: "Technisches SEO, Content-Optimierung und kontinuierliche Verbesserung für Top-Rankings.",
+                  description: "Technische Optimierung, Content-Strategien und kontinuierliche Performance-Steuerung.",
                   link: "/seo-performance"
                 },
                 {
@@ -381,19 +381,16 @@ const GermanIndex = () => {
                 <H2 className="mb-6">
                   Ihr Ansprechpartner: Uli Schönleber
                 </H2>
-                <Paragraph className="text-lg mb-6" color="secondary">
-                  Ich führe jedes Projekt persönlich — von der Strategie bis zur Umsetzung. Sie arbeiten direkt mit mir, nicht mit wechselnden Junior-Teams.
-                </Paragraph>
-                <Paragraph className="text-base mb-8" color="secondary">
-                  Jedes Projekt wird von einem Hybridteam realisiert, das Design, Technik, Strategie und AI zusammenbringt. Wir implementieren AI-gestützte Prozesse, die Ihre Arbeit effizienter machen — keine Freelancer-Kette, keine ausgelagerten Leistungen.
-                </Paragraph>
+            <Paragraph className="text-lg mb-6" color="secondary">
+              Ich führe jedes Projekt persönlich — von Analyse und Strategie bis zur UX-Architektur. Das Hybridteam übernimmt Design, Entwicklung, SEO und AI-Implementierung. Dadurch bleiben Entscheidungen strategisch sauber und die Umsetzung effizient.
+            </Paragraph>
                 <div className="space-y-3 mb-8">
-                  {[
-                    "15+ Jahre Digital-Erfahrung",
-                    "100+ erfolgreich umgesetzte Projekte",
-                    "Senior-Level Beratung ohne Junioren",
-                    "Direkter Draht zur Geschäftsführung"
-                  ].map((item, index) => (
+            {[
+              "15+ Jahre Erfahrung",
+              "100+ digitale Projekte",
+              "Senior-Level ohne Junioren",
+              "Direkte Zusammenarbeit"
+            ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-[#32B2AB] flex-shrink-0 mt-0.5" />
                       <Paragraph className="text-base" color="secondary">{item}</Paragraph>
@@ -427,7 +424,7 @@ const GermanIndex = () => {
               className="text-center mb-16"
             >
               <H2 alignment="center">
-                Werkzeuge mit Verstand eingesetzt — für optimierte digitale Prozesse
+                Wir setzen Tools dort ein, wo sie echten Mehrwert schaffen
               </H2>
             </motion.div>
 
@@ -443,19 +440,37 @@ const GermanIndex = () => {
                 <H3 className="mb-6">
                   AI & Research
                 </H3>
-                <div className="space-y-3">
-                  {[
-                    "ChatGPT, Claude, Gemini – AI-gestützte Content-Erstellung",
-                    "Perplexity, SearchGPT – Intelligente Recherche",
-                    "Midjourney – AI-Visuals",
-                    "NotebookLM – Wissensmanagement"
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
-                      <Paragraph className="text-base" color="secondary">{item}</Paragraph>
-                    </div>
-                  ))}
-                </div>
+                <Paragraph className="text-base mb-4" color="secondary">
+                  LLMs, ChatGPT, Claude für Content und Recherche. Perplexity für strategische Insights.
+                </Paragraph>
+
+                <H3 className="mb-6 mt-8">
+                  UX & Prototyping
+                </H3>
+                <Paragraph className="text-base mb-4" color="secondary">
+                  Figma für Design, Journeys und Wireframes.
+                </Paragraph>
+
+                <H3 className="mb-6 mt-8">
+                  Technische Umsetzung
+                </H3>
+                <Paragraph className="text-base mb-4" color="secondary">
+                  WordPress, strukturierte Architektur und Performance-Optimierung.
+                </Paragraph>
+
+                <H3 className="mb-6 mt-8">
+                  SEO
+                </H3>
+                <Paragraph className="text-base mb-4" color="secondary">
+                  Ahrefs, Screaming Frog für technische Optimierung.
+                </Paragraph>
+
+                <H3 className="mb-6 mt-8">
+                  Automation
+                </H3>
+                <Paragraph className="text-base mb-4" color="secondary">
+                  Make, Zapier für Workflow-Integration.
+                </Paragraph>
               </motion.div>
 
               {/* Prozesse & Implementierung */}
@@ -464,24 +479,9 @@ const GermanIndex = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm"
+                className="bg-white rounded-lg p-8 border border-[#E4E6E7] shadow-sm"
               >
-                <H3 className="mb-6">
-                  Prozesse & Implementierung
-                </H3>
-                <div className="space-y-3">
-                  {[
-                    "Figma – Design & Prototyping",
-                    "WordPress – CMS & Development",
-                    "Ahrefs, Screaming Frog – SEO-Tools",
-                    "Make, Zapier – Automatisierung"
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
-                      <Paragraph className="text-base" color="secondary">{item}</Paragraph>
-                    </div>
-                  ))}
-                </div>
+                {/* Dieser Block wurde in die linke Spalte integriert */}
               </motion.div>
             </div>
           </Container>
