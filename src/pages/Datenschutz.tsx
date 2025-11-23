@@ -72,34 +72,34 @@ const GermanPrivacyPolicy = () => {
         subtitle="Wie wir Daten erheben, verwenden und schützen – transparent und DSGVO-konform."
       />
 
-      <section className="py-16 lg:py-24 bg-white" ref={policyRef} id="policy">
+      <section className="py-16 lg:py-24 bg-background" ref={policyRef} id="policy">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-turquoise/10 rounded-2xl mb-6">
-              <Lock className="h-8 w-8 text-turquoise" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
+              <Lock className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-satoshi leading-tight">
               Datenschutzerklärung
             </h2>
-            <div className="w-20 h-1 bg-turquoise mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Wir verarbeiten personenbezogene Daten gemäß DSGVO und nur zweckgebunden. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.
             </p>
           </div>
 
           {/* Accordion Section */}
-          <div className="bg-gray-50/50 rounded-2xl p-6 md:p-8 border border-turquoise/20">
+          <div className="bg-muted/50 rounded-2xl p-6 md:p-8 border border-primary/20">
             <Accordion type="single" collapsible className="w-full">
               <div className="space-y-4">
                 <AccordionItem 
                   value="item-1" 
-                  className="bg-white border border-turquoise/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
-                  <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-turquoise focus-visible:ring-opacity-50 [&[data-state=open]]:text-turquoise transition-colors duration-200">
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
-                      <div className="flex-shrink-0 w-12 h-12 bg-turquoise/10 rounded-xl flex items-center justify-center">
-                        <Database className="h-6 w-6 text-turquoise" />
+                      <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Database className="h-6 w-6 text-primary" />
                       </div>
                       <span>Allgemeine Datenerfassung</span>
                     </div>
@@ -115,7 +115,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-2" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -136,7 +136,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-3" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -157,7 +157,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-4" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -210,7 +210,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-5" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -235,7 +235,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-6" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -256,7 +256,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-7" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
@@ -277,7 +277,7 @@ const GermanPrivacyPolicy = () => {
 
                 <AccordionItem 
                   value="item-8" 
-                  className="bg-white border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="bg-card border border-primary/10 rounded-xl px-6 py-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                   <AccordionTrigger className="text-base md:text-lg font-medium text-foreground hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-50 [&[data-state=open]]:text-primary transition-colors duration-200">
                     <div className="flex items-center space-x-4 text-left">
