@@ -176,8 +176,8 @@ const GermanIndex = () => {
                     { icon: Zap, text: "Schnelle Umsetzung" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <item.icon className="w-5 h-5 text-[#32b2ab] flex-shrink-0" />
-                      <p className="text-sm font-medium text-[#0A0A0A]">{item.text}</p>
+                      <item.icon className="w-5 h-5 text-[#32B2AB] flex-shrink-0" />
+                      <p className="text-sm font-medium text-[#0B0B0B]">{item.text}</p>
                     </div>
                   ))}
                 </motion.div>
@@ -189,10 +189,10 @@ const GermanIndex = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
+                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E4E6E7] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Target className="w-24 h-24 text-[#32b2ab] mx-auto mb-6" aria-label="Digitale Transformation Icon" />
-                    <p className="text-lg text-[#555555]">Strategische Digitalisierung</p>
+                    <Target className="w-24 h-24 text-[#32B2AB] mx-auto mb-6" aria-label="Digitale Transformation Icon" />
+                    <p className="text-lg text-[#444444]">Strategische Digitalisierung</p>
                   </div>
                 </div>
               </motion.div>
@@ -247,7 +247,7 @@ const GermanIndex = () => {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="bg-white rounded-lg p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-lg p-6 border border-[#E4E6E7] shadow-sm hover:shadow-md transition-shadow"
                 >
                   <H3 className="text-lg mb-2">
                     {item.title}
@@ -316,9 +316,9 @@ const GermanIndex = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all hover:scale-105 group"
+                  className="bg-white rounded-lg p-8 border border-[#E4E6E7] shadow-sm hover:shadow-md transition-all hover:scale-105 group"
                 >
-                  <div className="flex items-center justify-center w-14 h-14 bg-[#D8F3F1] text-[#32b2ab] rounded-lg mb-6 group-hover:bg-[#32b2ab] group-hover:text-white transition-colors">
+                  <div className="flex items-center justify-center w-14 h-14 bg-[#D8F3F1] text-[#32B2AB] rounded-lg mb-6 group-hover:bg-[#32B2AB] group-hover:text-white transition-colors">
                     <service.icon className="w-7 h-7" />
                   </div>
                   <H3 className="mb-3">
@@ -362,11 +362,11 @@ const GermanIndex = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
+                <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E4E6E7] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Users className="w-24 h-24 text-[#32b2ab] mx-auto mb-6" aria-label="Uli Schönleber Icon" />
-                    <p className="text-lg text-[#555555]">Uli Schönleber</p>
-                    <p className="text-sm text-[#7A7A7A]">Senior Digital Strategy Consultant & Gründer</p>
+                    <Users className="w-24 h-24 text-[#32B2AB] mx-auto mb-6" aria-label="Uli Schönleber Icon" />
+                    <p className="text-lg text-[#444444]">Uli Schönleber</p>
+                    <p className="text-sm text-[#444444]">Senior Digital Strategy Consultant & Gründer</p>
                   </div>
                 </div>
               </motion.div>
@@ -395,7 +395,7 @@ const GermanIndex = () => {
                     "Direkter Draht zur Geschäftsführung"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[#32B2AB] flex-shrink-0 mt-0.5" />
                       <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}

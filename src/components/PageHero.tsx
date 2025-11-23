@@ -128,7 +128,7 @@ const PageHero = ({
       return (
         <div className="mb-8">
           <h1 
-            className="font-bold leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-8 text-primary-text"
+            className="font-bold leading-tight text-left text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] mb-8 text-[#0B0B0B]"
           >
             {title || defaultHomepageTitle}
           </h1>
@@ -137,7 +137,7 @@ const PageHero = ({
           {dynamicSubheadlines && (
             <div className="text-left mb-8">
               <div
-                className="font-medium leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px] text-muted-foreground"
+                className="font-medium leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[50px] text-[#444444]"
               >
                 {dynamicPrefix && <span className="inline">{dynamicPrefix} </span>}
                 <DynamicSubheadlines 
@@ -153,7 +153,7 @@ const PageHero = ({
     } else {
       return (
         <h1 
-          className="font-bold leading-tight text-left mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-primary-text"
+          className="font-bold leading-tight text-left mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px] lg:leading-[76px] text-[#0B0B0B]"
         >
           {title}
         </h1>
@@ -163,7 +163,7 @@ const PageHero = ({
   
   const renderSubtitle = () => {
     return (
-      <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 text-left font-normal leading-relaxed">
+      <p className="text-lg sm:text-xl md:text-2xl text-[#444444] mb-10 text-left font-normal leading-relaxed">
         {subtitle || description || (isHomepage ? defaultHomepageDescription : '')}
       </p>
     );
@@ -263,7 +263,7 @@ const PageHero = ({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1240px]">
           <div className="max-w-4xl flex flex-col justify-center items-start min-h-[60vh]">
             {badge && (
-              <p className="text-sm font-medium mb-6 uppercase tracking-wide text-teal">
+              <p className="text-sm font-medium mb-6 uppercase tracking-wide text-[#32B2AB]">
                 {badge}
               </p>
             )}

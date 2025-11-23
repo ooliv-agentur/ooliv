@@ -164,27 +164,27 @@ const SeoPerformance = () => {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Gauge className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="Technisches SEO + strukturierte Inhalte" />
+              <Gauge className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="Technisches SEO + strukturierte Inhalte" />
               <div>
-                <h3 className="font-semibold text-[#0D0D0D] text-sm">Technisches SEO + strukturierte Inhalte</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">Technisches SEO + strukturierte Inhalte</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Target className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="UX- und Conversion-fokussiert" />
+              <Target className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="UX- und Conversion-fokussiert" />
               <div>
-                <h3 className="font-semibold text-[#0D0D0D] text-sm">UX- und Conversion-fokussiert</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">UX- und Conversion-fokussiert</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Zap className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="AI-gestützte Recherchen & Audits" />
+              <Zap className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="AI-gestützte Recherchen & Audits" />
               <div>
-                <h3 className="font-semibold text-[#0D0D0D] text-sm">AI-gestützte Recherchen & Audits</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">AI-gestützte Recherchen & Audits</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <BarChart3 className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="Messbare Verbesserungen statt Keyword-Versprechen" />
+              <BarChart3 className="w-6 h-6 text-[#32B2AB] flex-shrink-0 mt-1" aria-label="Messbare Verbesserungen statt Keyword-Versprechen" />
               <div>
-                <h3 className="font-semibold text-[#0D0D0D] text-sm">Messbare Verbesserungen statt Keyword-Versprechen</h3>
+                <h3 className="font-semibold text-[#0B0B0B] text-sm">Messbare Verbesserungen statt Keyword-Versprechen</h3>
               </div>
             </motion.div>
           </motion.div>
