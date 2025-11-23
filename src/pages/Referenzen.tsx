@@ -8,10 +8,10 @@ import FAQ from '@/components/FAQ';
 import WeitereProjekteTable from '@/components/WeitereProjekteTable';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
+import { H2, H3, Paragraph, LargeParagraph } from '@/components/ui/typography';
 import { CheckCircle2, Target, TrendingUp, Users, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { typographyStyles } from '@/styles/typography';
 
 const GermanCaseStudies = () => {
   const { language } = useLanguage();
@@ -158,14 +158,14 @@ const GermanCaseStudies = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               {isGerman ? "Echte Referenzen, echte Ergebnisse" : "Real References, Real Results"}
-            </h2>
-            <p className={`${typographyStyles.body.large} max-w-3xl mx-auto mt-6`}>
+            </H2>
+            <LargeParagraph className="max-w-3xl mx-auto" alignment="center" color="secondary">
               {isGerman 
                 ? "Keine Demo-Prototypen, keine Agentur-Portfolios – nur echte digitale Projekte mit messbaren Ergebnissen."
                 : "No demo prototypes, no agency portfolios – only real digital projects with measurable results."}
-            </p>
+            </LargeParagraph>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -200,15 +200,15 @@ const GermanCaseStudies = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg mx-auto mb-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-[#D8F3F1] text-[#32b2ab] rounded-lg mx-auto mb-6">
                   <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-3">
+                <H3 className="mb-3">
                   {item.title}
-                </h3>
-                <p className="text-base text-[#555555]">
+                </H3>
+                <Paragraph color="secondary">
                   {item.description}
-                </p>
+                </Paragraph>
               </motion.div>
             ))}
           </div>
@@ -228,9 +228,9 @@ const GermanCaseStudies = () => {
       {/* Success Pillars */}
       <Section id="success-pillars" spacing="large">
         <Container>
-          <h2 className={`${typographyStyles.headings.h2} text-center mb-16`}>
+          <H2 className="mb-16" alignment="center">
             {isGerman ? "Warum unsere digitalen Projekte funktionieren" : "Why our digital projects work"}
-          </h2>
+          </H2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {successPillars.map((pillar, index) => (
@@ -242,17 +242,17 @@ const GermanCaseStudies = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-[#F5F7F7] rounded-lg p-8 text-center border border-[#E5E8E8]"
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-[#E0FBFA] rounded-lg mx-auto mb-6">
-                  {index === 0 && <Target className="w-8 h-8 text-[#0BC3C3]" />}
-                  {index === 1 && <Users className="w-8 h-8 text-[#0BC3C3]" />}
-                  {index === 2 && <Zap className="w-8 h-8 text-[#0BC3C3]" />}
+                <div className="flex items-center justify-center w-16 h-16 bg-[#D8F3F1] rounded-lg mx-auto mb-6">
+                  {index === 0 && <Target className="w-8 h-8 text-[#32b2ab]" />}
+                  {index === 1 && <Users className="w-8 h-8 text-[#32b2ab]" />}
+                  {index === 2 && <Zap className="w-8 h-8 text-[#32b2ab]" />}
                 </div>
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">
+                <H3 className="mb-4">
                   {pillar.title}
-                </h3>
-                <p className="text-[#555555] leading-relaxed">
+                </H3>
+                <Paragraph color="secondary" className="leading-relaxed">
                   {pillar.description}
-                </p>
+                </Paragraph>
               </motion.div>
             ))}
           </div>
@@ -269,12 +269,12 @@ const GermanCaseStudies = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className={typographyStyles.body.large}>
+            <LargeParagraph alignment="center" color="secondary">
               {isGerman 
-                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-[#0A0A0A]">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-[#0BC3C3] hover:underline ml-1">Digitale Transformation</a>, <a href="/webdesign-entwicklung" className="text-[#0BC3C3] hover:underline ml-1">Webdesign</a>, <a href="/seo-optimierung" className="text-[#0BC3C3] hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-[#0BC3C3] hover:underline ml-1">AI-Workflows</a>.</>
+                ? <>Unsere Case Studies spiegeln unseren hybriden Ansatz wider: <strong className="text-[#0A0A0A]">Strategie, UX, Content, Entwicklung & AI-Workflows</strong> arbeiten synchron – kein Silodenken, keine Fremdvergabe. Weitere Services: <a href="/digitale-transformation-strategie" className="text-[#32b2ab] hover:underline ml-1">Digitale Transformation</a>, <a href="/webdesign-entwicklung" className="text-[#32b2ab] hover:underline ml-1">Webdesign</a>, <a href="/seo-performance" className="text-[#32b2ab] hover:underline ml-1">SEO & Performance</a>, <a href="/ai-workflows" className="text-[#32b2ab] hover:underline ml-1">AI-Workflows</a>.</>
                 : <>Our case studies reflect our hybrid approach: <strong className="text-[#0A0A0A]">Strategy, UX, Content, Development & AI Workflows</strong> work synchronously – no silo thinking, no outsourcing.</>
               }
-            </p>
+            </LargeParagraph>
           </motion.div>
         </Container>
       </Section>
