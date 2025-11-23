@@ -21,7 +21,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import CompleteBusinessSchemaGenerator from '@/components/seo/CompleteBusinessSchemaGenerator';
 import H1Validator from '@/components/seo/H1Validator';
-import { caseStudiesData } from '@/components/CaseStudiesSection';
+import { MicroCaseStudies } from '@/components/shared/MicroCaseStudies';
 
 const GermanIndex = () => {
   const { setLanguage } = useLanguage();
@@ -344,73 +344,11 @@ const GermanIndex = () => {
         </Section>
 
         {/* SECTION 4: AUSGEWÄHLTE PROJEKTE */}
-        <Section id="projekte" spacing="large" background="light">
-          <Container>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <H2 alignment="center">
-                Ausgewählte Projekte
-              </H2>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudiesData.de.slice(0, 4).map((caseStudy, index) => {
-                const keywordBadges = [
-                  "Digitale Transformation Steuerberatung",
-                  "UX Agentur Industrie",
-                  "B2B Webdesign Handwerk",
-                  "Digitalisierung KI-Software"
-                ];
-                
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all hover:scale-105"
-                  >
-                    <span className="inline-block px-3 py-1 bg-[#E0FBFA] text-[#0BC3C3] text-xs font-medium rounded-full mb-4">
-                      {keywordBadges[index]}
-                    </span>
-                    <div className="bg-[#F5F7F7] p-4 rounded-lg mb-6 flex items-center justify-center min-h-[80px]">
-                      <img src={caseStudy.logo} alt={`${caseStudy.client} Logo`} className="h-10 w-auto" />
-                    </div>
-                    <H3 className="mb-2">
-                      {caseStudy.client}
-                    </H3>
-                    <Paragraph className="text-sm mb-4" color="muted">
-                      {caseStudy.industry}
-                    </Paragraph>
-                    <p className="text-base font-semibold text-[#0BC3C3] mb-4">
-                      {caseStudy.keyMetric}
-                    </p>
-                    <Paragraph className="text-sm mb-6" color="secondary">
-                      {caseStudy.headline}
-                    </Paragraph>
-                    <Button
-                      asChild
-                      variant="secondary"
-                      size="sm"
-                    >
-                      <Link to="/referenzen">
-                        Case Study ansehen
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </Container>
-        </Section>
+        <MicroCaseStudies 
+          cases={["klaiber", "cobus", "iconpro"]}
+          title="Ausgewählte Projekte"
+          showTitle={true}
+        />
 
         {/* SECTION 5: ULI SCHÖNLEBER */}
         <Section id="team" spacing="large" background="white">
