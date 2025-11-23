@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import Navbar from './Navbar';
+import Navigation from './Navigation';
 import Footer from './Footer';
 import FloatingActionButtons from './FloatingActionButtons';
 import CustomCursor from './CustomCursor';
@@ -134,7 +134,7 @@ const PageLayout = ({ children, className = '', showBreadcrumbs = false }: PageL
       <MotionConfig reducedMotion="user">
         <div className={`min-h-screen flex flex-col ${className}`}>
           <CustomCursor />
-          <Navbar />
+          <Navigation />
           {showBreadcrumbs && <BreadcrumbNavigation />}
           <main className="flex-grow">
             {children}
