@@ -30,7 +30,7 @@ const WhySmallTeam = () => {
               "Hybrider Teamansatz für ganzheitliche digitale Lösungen"
             ].map((point, index) => (
               <div key={index} className="flex items-start text-left bg-[#F5F7F7] p-4 sm:p-6 rounded-lg">
-                <Check className="w-6 h-6 text-[#0BC3C3] mr-3 flex-shrink-0 mt-0.5" />
+                <Check className="w-6 h-6 text-[#32b2ab] mr-3 flex-shrink-0 mt-0.5" />
                 <span className="text-[#555555] font-medium">{point}</span>
               </div>
             ))}

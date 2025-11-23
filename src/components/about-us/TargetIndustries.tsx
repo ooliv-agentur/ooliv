@@ -31,7 +31,7 @@ const TargetIndustries = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {industries.map((industry, index) => (
             <div key={index} className="bg-white p-4 sm:p-6 rounded-lg text-center hover:shadow-md transition-shadow">
-              <industry.icon className="w-8 h-8 text-[#0BC3C3] mx-auto mb-3" />
+              <industry.icon className="w-8 h-8 text-[#32b2ab] mx-auto mb-3" />
               <p className="text-[#555555] font-medium text-sm">{industry.label}</p>
             </div>
           ))}
