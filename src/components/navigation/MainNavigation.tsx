@@ -87,10 +87,10 @@ const MainNavigation = () => {
         </div>
       </nav>
 
-      {/* Menu overlay with backdrop blur */}
+      {/* Menu overlay backdrop - below menu z-index */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
+          className="fixed inset-0 bg-black/20 z-[99]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
