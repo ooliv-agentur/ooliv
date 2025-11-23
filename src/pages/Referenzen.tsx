@@ -11,16 +11,16 @@ import WeitereProjekteTable from '@/components/WeitereProjekteTable';
 // Success pillars
 const successPillars = [
   {
-    title: "Strategie-First Ansatz",
-    description: "Jede Website beginnt mit klaren Zielen, Struktur und messbaren KPIs."
+    title: "Strategie führt, Design folgt.",
+    description: "Klare Ziele, Struktur und KPIs vor jedem Pixel."
   },
   {
-    title: "Individuelles Design & Content",
-    description: "Wir bauen keine Templates – sondern Websites, die zu Ihrer Marke passen."
+    title: "Individuelle Lösungen statt Templates.",
+    description: "Jede Website entsteht aus Geschäftsmodell, Positionierung und Nutzerbedürfnissen."
   },
   {
-    title: "Technik & SEO für Performance",
-    description: "Schnell, skalierbar und auf nachhaltige Sichtbarkeit ausgerichtet."
+    title: "Technik + SEO für reale Performance.",
+    description: "Schnelle Ladezeiten, saubere Strukturen und nachhaltige Sichtbarkeit."
   }
 ];
 
@@ -53,7 +53,7 @@ const GermanCaseStudies = () => {
   
   // Force document title update to ensure it works across all domains
   useEffect(() => {
-    document.title = "Referenzen & Case Studies | ooliv Digitalagentur";
+    document.title = "Case Studies & Projekte | ooliv – Digitale Transformation & UX";
     
     // Create and update meta description if it doesn't exist
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -62,7 +62,7 @@ const GermanCaseStudies = () => {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen.');
+    metaDescription.setAttribute('content', 'Echte Ergebnisse aus Strategie, UX, SEO und digitaler Transformation. Case Studies aus Steuerberatung, Industrie, KI-Software, Immobilien, Handwerk und E-Commerce.');
     
     // Create and update meta keywords if it doesn't exist
     let metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -71,7 +71,7 @@ const GermanCaseStudies = () => {
       metaKeywords.setAttribute('name', 'keywords');
       document.head.appendChild(metaKeywords);
     }
-    metaKeywords.setAttribute('content', 'Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland');
+    metaKeywords.setAttribute('content', 'Case Studies, Referenzen, Digitale Transformation, UX Projekte, SEO Erfolge, B2B Webdesign');
   }, []);
 
   const breadcrumbs = [
@@ -82,10 +82,10 @@ const GermanCaseStudies = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="Referenzen & Case Studies | ooliv Digitalagentur"
-        description="Erfolgreiche Webdesign & Marketing-Projekte für B2B-Unternehmen bundesweit. Von SEO bis Google Ads – echte Ergebnisse statt leerer Versprechen."
+        title="Case Studies & Projekte | ooliv – Digitale Transformation & UX"
+        description="Echte Ergebnisse aus Strategie, UX, SEO und digitaler Transformation. Case Studies aus Steuerberatung, Industrie, KI-Software, Immobilien, Handwerk und E-Commerce."
         canonicalUrl="https://ooliv.de/referenzen"
-        keywords="Referenzen, Case Studies, B2B Marketing, Webdesign Erfolge, SEO Projekte, Digitalagentur Deutschland"
+        keywords="Case Studies, Referenzen, Digitale Transformation, UX Projekte, SEO Erfolge, B2B Webdesign"
         breadcrumbs={breadcrumbs}
       />
       
@@ -93,20 +93,16 @@ const GermanCaseStudies = () => {
       
       <div className="section-container">
         <CaseStudiesSection 
-          customTitle="Echte Ergebnisse von echten Kunden"
-          customSubtitle="Wir liefern Websites und Strategien, die sichtbar machen, was Ihr Unternehmen besonders macht."
-          customBodyText="Sehen Sie, wie wir Unternehmen durch klare Positionierung, starke Inhalte, SEO-Performance und messbare UX-Optimierung zu nachhaltigem Wachstum verholfen haben."
+          customTitle="Echte Ergebnisse aus echten Projekten"
+          hideHeaderText={false}
         />
         
         <div className="py-20 bg-brand-backgroundAlt">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-heading mb-4">
-                Warum unsere Projekte funktionieren
+                Warum unsere Projekte wirken
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Unsere konstanten Ergebnisse kommen von einem bewährten Ansatz, der Strategie an erste Stelle und Ausführung an zweite Stelle setzt.
-              </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -123,15 +119,9 @@ const GermanCaseStudies = () => {
           </div>
         </div>
         
-        <FAQ 
-          customFaqs={faqItems}
-          customTitle="Häufige Fragen zu Projekten & Marketing Mainz"
-          customCtaText="Weitere Fragen? Kontaktieren Sie uns"
-        />
-
         <CTA 
-          title="Lassen Sie uns Ihre Erfolgsgeschichte schreiben"
-          subtitle="Ob Relaunch, mehr Leads oder bessere Konversionen – jedes Projekt bei ooliv startet mit einem klaren Plan. Gemeinsam setzen wir Ihr Marketing strategisch um."
+          title="Welche Ergebnisse dürfen wir für Ihr Unternehmen erreichen?"
+          subtitle="Ob Relaunch, Positionierung oder Conversion-Optimierung – jedes Projekt beginnt mit einem klaren Plan."
           primaryCta="Projekt starten"
         />
       </div>
