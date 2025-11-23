@@ -48,7 +48,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   };
 
   return (
-    <div className="relative bg-[#F5F7F7] rounded-lg p-8 md:p-12 border border-[#E5E8E8]">
+    <div className="relative bg-[#F5F7F7] rounded-lg p-6 sm:p-8 lg:p-12 border border-[#E5E8E8]">
       {/* Quote Icon */}
       <div className="flex items-center justify-center w-16 h-16 bg-[#0BC3C3] text-white rounded-full mx-auto mb-6">
         <Quote className="w-8 h-8" />
@@ -66,7 +66,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
             transition={{ duration: 0.3 }}
             className="text-center"
           >
-            <blockquote className="text-xl md:text-2xl text-[#0A0A0A] font-medium mb-6 leading-relaxed">
+            <blockquote className="text-lg sm:text-xl lg:text-2xl text-[#0A0A0A] font-medium mb-6 leading-relaxed">
               "{current.quote}"
             </blockquote>
 
@@ -97,7 +97,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
               variant="secondary"
               size="sm"
               onClick={prevTestimonial}
-              className="rounded-full w-10 h-10 p-0"
+              className="rounded-full w-11 h-11 sm:w-10 sm:h-10 p-0"
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -108,7 +108,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all ${
                     index === currentIndex 
                       ? 'bg-[#0BC3C3] w-8' 
                       : 'bg-[#E5E8E8] hover:bg-[#0BC3C3]/50'
@@ -122,7 +122,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
               variant="secondary"
               size="sm"
               onClick={nextTestimonial}
-              className="rounded-full w-10 h-10 p-0"
+              className="rounded-full w-11 h-11 sm:w-10 sm:h-10 p-0"
             >
               <ChevronRight className="w-5 h-5" />
             </Button>

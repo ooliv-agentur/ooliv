@@ -35,7 +35,7 @@ export const BenefitsCards: React.FC<BenefitsCardsProps> = ({
   };
 
   return (
-    <div className={`grid gap-6 ${gridCols}`}>
+    <div className={`grid gap-4 sm:gap-6 ${gridCols}`}>
       {benefits.map((benefit, index) => {
         const IconComponent = benefit.icon;
         
@@ -47,14 +47,14 @@ export const BenefitsCards: React.FC<BenefitsCardsProps> = ({
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`${bgColor} rounded-lg p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all`}
+            className={`${bgColor} rounded-lg p-4 sm:p-6 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all`}
           >
             {variant === 'icon-top' ? (
               <>
                 <div className="flex items-center justify-center w-12 h-12 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg mb-4">
                   <IconComponent className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#0A0A0A] mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-[#0A0A0A] mb-2">
                   {benefit.title}
                 </h3>
                 <p className="text-sm text-[#555555]">
@@ -67,7 +67,7 @@ export const BenefitsCards: React.FC<BenefitsCardsProps> = ({
                   <IconComponent className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-[#0A0A0A] mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-[#0A0A0A] mb-2">
                     {benefit.title}
                   </h3>
                   <p className="text-sm text-[#555555]">
