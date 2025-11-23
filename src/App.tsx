@@ -33,12 +33,6 @@ const GermanAboutUs = lazy(() => import('./pages/UeberUns'));
 const GermanLegalNotice = lazy(() => import('./pages/Impressum'));
 const GermanPrivacyPolicy = lazy(() => import('./pages/Datenschutz'));
 const GermanThankYou = lazy(() => import('./pages/Danke'));
-const GermanWiesbaden = lazy(() => import('./pages/WerbeagenturWiesbaden'));
-const GermanFrankfurt = lazy(() => import('./pages/WerbeagenturFrankfurt'));
-const GermanMainz = lazy(() => import('./pages/WerbeagenturMainz'));
-const GermanDarmstadt = lazy(() => import('./pages/WerbeagenturDarmstadt'));
-const DigitalagenturSchweiz = lazy(() => import('./pages/DigitalagenturSchweiz'));
-const Klickbetrug = lazy(() => import('./pages/Klickbetrug'));
 const Strategie = lazy(() => import('./pages/Strategie'));
 const CookieRichtlinie = lazy(() => import('./pages/CookieRichtlinie'));
 const Artikel = lazy(() => import('./pages/Artikel'));
@@ -69,9 +63,6 @@ const LoadingSpinner = () => (
 
 function App() {
   const [showLeadForm, setShowLeadForm] = React.useState(false);
-  
-  // Initialize seasonal color system
-  const { monthColor } = useSeasonalColors();
 
   // Global theme disabled - using Tailwind classes directly
   // React.useEffect(() => {
@@ -141,14 +132,8 @@ function App() {
                       <Route path="/google-ads" element={<Navigate to="/" replace />} />
                       
                       <Route path="/kontakt" element={<GermanContact />} />
-                      <Route path="/klickbetrug" element={<Klickbetrug />} />
                       <Route path="/referenzen" element={<GermanCaseStudies />} />
                       <Route path="/ueber-uns" element={<GermanAboutUs />} />
-                      <Route path="/werbeagentur-wiesbaden" element={<GermanWiesbaden />} />
-                      <Route path="/werbeagentur-frankfurt" element={<GermanFrankfurt />} />
-                      <Route path="/werbeagentur-mainz" element={<GermanMainz />} />
-                      <Route path="/werbeagentur-darmstadt" element={<GermanDarmstadt />} />
-                      <Route path="/digitalagentur-schweiz" element={<DigitalagenturSchweiz />} />
                       <Route path="/artikel" element={<Artikel />} />
                       <Route path="/neuester-artikel" element={<LatestContent />} />
                       <Route path="/artikel/:slug" element={<SingleArticle />} />

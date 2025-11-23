@@ -74,7 +74,7 @@ const MainNavigation = () => {
             {/* Menu toggle button - hide when menu is open since menu content has its own close button */}
             {!isOpen && (
             <button
-                className="flex items-center justify-center rounded-full bg-[#2DAEAA] hover:bg-[#258A87] transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+                className="flex items-center justify-center rounded-full bg-[#0BC3C3] hover:bg-[#089EA0] transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
                 aria-expanded={isOpen}
