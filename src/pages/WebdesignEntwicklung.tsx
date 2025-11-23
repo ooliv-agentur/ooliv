@@ -34,31 +34,31 @@ const WebdesignEntwicklung = () => {
 
   const trustStats = [
     { icon: Award, value: "100+", label: "Projekte" },
-    { icon: Users, value: "Senior", label: "Senior-Strategie statt Junioren" },
-    { icon: Target, value: "UX", label: "UX-first & SEO-ready" },
-    { icon: Zap, value: "Fast", label: "Performance-optimierte Umsetzung" }
+    { icon: Users, value: "Senior", label: "Senior-Level Führung ohne Junior-Teams" },
+    { icon: Target, value: "UX-first", label: "Struktur, UX & SEO integriert" },
+    { icon: Zap, value: "Perfor-mant", label: "Schnell, skalierbar, wartbar" }
   ];
 
   const painPoints = [
     {
       icon: LayoutGrid,
       title: "Veraltetes Webdesign, das nicht konvertiert",
-      description: "Ihre Website sieht gut aus, aber generiert keine Anfragen."
+      description: "Gutes Design reicht nicht — fehlende Struktur verhindert Anfragen."
     },
     {
       icon: Zap,
       title: "Langsame Websites ohne Performance-Optimierung",
-      description: "Ladezeiten über 3 Sekunden kosten Sie potenzielle Kunden."
+      description: "Jede Sekunde Ladezeit kostet Conversion und Vertrauen."
     },
     {
       icon: Code,
       title: "WordPress-Systeme ohne Systematik & Sicherheit",
-      description: "Unsauberer Code, Sicherheitslücken und fehlende Wartbarkeit."
+      description: "Fehlende Architektur führt zu Sicherheitslücken und schwerer Wartbarkeit."
     },
     {
       icon: Target,
       title: "Kein klares UX-Konzept davor",
-      description: "Design ohne Strategie führt zu verwirrten Nutzern."
+      description: "Ohne Entscheidungs-Logik verlieren Nutzer Orientierung."
     }
   ];
 
@@ -69,9 +69,9 @@ const WebdesignEntwicklung = () => {
       keywords: "UX UI Design • Corporate Webdesign",
       items: [
         "Informationsarchitektur entwickeln",
-        "Wireframes & Prototypen erstellen",
+        "Wireframes & Prototypen",
         "Markenorientiertes UI Design",
-        "Design-Systeme aufbauen"
+        "UX-Designsysteme aufbauen"
       ]
     },
     {
@@ -79,10 +79,10 @@ const WebdesignEntwicklung = () => {
       title: "Webentwicklung & Responsive Design",
       keywords: "Webentwicklung Agentur • Responsive Webdesign",
       items: [
-        "Custom Frontend-Entwicklung",
-        "Mobile-first Optimierung",
-        "Performance-optimierter Code",
-        "Barrierefreie Umsetzung (WCAG)"
+        "Strukturierte Frontend-Entwicklung",
+        "Mobile-first Architektur",
+        "Performance-orientierter Code",
+        "WCAG-orientierte Umsetzung"
       ]
     },
     {
@@ -91,9 +91,9 @@ const WebdesignEntwicklung = () => {
       keywords: "WordPress Agentur • Custom WordPress Themes",
       items: [
         "Custom Theme-Entwicklung",
-        "Gutenberg Block-Entwicklung",
-        "Plugin-Entwicklung",
-        "WordPress Sicherheit & Updates"
+        "Gutenberg-Blocks & modulare Komponenten",
+        "Stabile Plugin-Integrationen",
+        "Security & Update-Architektur"
       ]
     },
     {
@@ -102,9 +102,9 @@ const WebdesignEntwicklung = () => {
       keywords: "Performance Optimierung Website • Technische SEO",
       items: [
         "Core Web Vitals Optimierung",
-        "Lazy Loading & Caching",
-        "Schema.org Markup",
-        "SEO-freundliche URL-Struktur"
+        "Caching & Lazy Loading",
+        "Technische Schema-Strukturen",
+        "Saubere URL- & IA-Architektur"
       ]
     }
   ];
@@ -113,30 +113,30 @@ const WebdesignEntwicklung = () => {
     {
       icon: LayoutGrid,
       title: "UX-Architektur statt Schönfärberei",
-      description: "Struktur und Nutzerführung vor Ästhetik."
+      description: "Struktur, Entscheidungslogik und Nutzerführung vor visueller Ästhetik."
     },
     {
       icon: Brain,
       title: "Conversion-Psychologie integriert",
-      description: "Jedes Element hat einen strategischen Zweck."
+      description: "Jedes Element folgt einer klaren strategischen Funktion."
     },
     {
       icon: Zap,
       title: "Mobile-first & schnelle Ladezeiten",
-      description: "Performance ist kein Kompromiss."
+      description: "Performance wird von Anfang an in die Architektur eingebaut."
     },
     {
       icon: Search,
       title: "SEO-optimierte Struktur von Anfang an",
-      description: "Technisches SEO ist Teil des Fundaments."
+      description: "Technisches SEO und klare Informationsarchitektur sind grundlegende Bausteine."
     }
   ];
 
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Webdesign Agentur & WordPress Entwicklung für Unternehmen | ooliv"
-        description="Professionelles Webdesign & WordPress Entwicklung: UX/UI Design, moderne Webentwicklung, technische SEO, Performance-Optimierung. 200+ Projekte."
+        title="Webdesign & WordPress Entwicklung | ooliv Mainz"
+        description="Strategisches Webdesign, UX-first WordPress-Entwicklung & technische SEO. Senior-Level Umsetzung unter Führung von Uli Schönleber."
         canonicalUrl="https://ooliv.de/webdesign-entwicklung"
         keywords="webdesign agentur, wordpress agentur, webentwicklung agentur, b2b webdesign, responsive webdesign"
         breadcrumbs={breadcrumbs}
@@ -147,7 +147,7 @@ const WebdesignEntwicklung = () => {
         <Container>
           <PageHero
             title="Webdesign Agentur für moderne Websites & performante Entwicklung"
-            subtitle="Professionelle Webdesign & Entwicklung: WordPress Agentur für UX/UI Design, Performance-Optimierung und technische SEO – messbar mehr Leads generieren."
+            subtitle="Strategisches Webdesign & performante WordPress-Entwicklung: UX-first, SEO-ready und strukturiert entwickelt — geführt von Uli Schönleber, umgesetzt durch ein spezialisiertes Hybridteam."
             primaryCta={{
               text: "Projekt starten",
               link: "#",
@@ -238,7 +238,7 @@ const WebdesignEntwicklung = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-xl font-semibold text-[#0A0A0A] mt-12"
+            className="text-center text-xl font-semibold text-[#0B0B0B] mt-12"
           >
             Wir entwickeln Websites, die funktionieren — vom Konzept bis zur Entwicklung.
           </motion.p>
@@ -302,8 +302,7 @@ const WebdesignEntwicklung = () => {
           <CTA 
             title="Bereit für ein professionelles Webdesign?"
             subtitle="Lassen Sie uns gemeinsam eine Website entwickeln, die nicht nur gut aussieht, sondern auch konvertiert."
-            primaryCta="Projekt starten"
-            secondaryCta="Strategiegespräch vereinbaren"
+            primaryCta="Website-Projekt starten"
             lightBackground={false}
           />
         </Container>
