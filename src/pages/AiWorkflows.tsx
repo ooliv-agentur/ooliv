@@ -21,37 +21,37 @@ const AiWorkflows = () => {
   ];
 
   const trustStats = [
-    { icon: Zap, value: "Zeit", label: "AI-Prozesse, die Zeit sparen" },
-    { icon: GitBranch, value: "System", label: "Integration in bestehende Systeme" },
-    { icon: Shield, value: "Struktur", label: "Strukturierte Einführung ohne Chaos" },
-    { icon: GraduationCap, value: "Team", label: "Enablement & Schulung für Teams" }
+    { icon: Zap, value: "Zeit", label: "Repetitive Aufgaben automatisiert & skalierbar machen" },
+    { icon: GitBranch, value: "System", label: "CRM, CMS, ERP & interne Tools sauber verknüpfen" },
+    { icon: Shield, value: "Struktur", label: "AI-Frameworks, Priorisierung & klare Governance" },
+    { icon: GraduationCap, value: "Team", label: "Trainings, Guidelines & sichere AI-Nutzung" }
   ];
 
   const painPoints = [
     {
       icon: AlertTriangle,
       title: "Zeitintensive manuelle Abläufe",
-      description: "Repetitive Aufgaben binden Ressourcen, die strategisch besser eingesetzt werden könnten."
+      description: "Ressourcen werden gebunden statt wertschöpfend eingesetzt."
     },
     {
       icon: Target,
       title: "Kein AI-Framework / keine AI-Adoption",
-      description: "Tools werden getestet, aber nicht systematisch integriert oder skaliert."
+      description: "Tools werden getestet, aber nicht strategisch operationalisiert."
     },
     {
       icon: GitBranch,
       title: "Insellösungen ohne Integration",
-      description: "AI-Tools arbeiten isoliert und nicht in bestehende Workflows eingebunden."
+      description: "Einzel-Tools liefern keinen Wert ohne System-Architektur."
     },
     {
       icon: Database,
       title: "Kein Nutzen aus vorhandenen Daten",
-      description: "Daten liegen vor, werden aber nicht automatisiert analysiert oder genutzt."
+      description: "Daten liegen vor, werden aber nicht strukturiert verarbeitet."
     },
     {
       icon: BarChart3,
       title: "Prozesse zu komplex für Wachstum",
-      description: "Bestehende Abläufe skalieren nicht mit steigenden Anforderungen."
+      description: "Manuelle Abläufe bremsen Skalierung & Qualität."
     }
   ];
 
@@ -62,9 +62,10 @@ const AiWorkflows = () => {
       keywords: "AI Research • Knowledge Extraction",
       items: [
         "Strukturierte LLM-Analysen",
+        "Knowledge Extraction & semantische Muster",
         "Wettbewerbs- & Markt-Insights",
-        "AI-gestützte Content-Recherche",
-        "Komplexe Themen verständlich aufbereitet"
+        "Intent- & Themenanalyse",
+        "Komplexe Inhalte verständlich aufbereitet"
       ]
     },
     {
@@ -72,10 +73,11 @@ const AiWorkflows = () => {
       title: "AI-Content & SEO-Automation",
       keywords: "AI Content Automation • SEO-Optimierung",
       items: [
-        "Blog-Automation",
-        "SEO-Cluster automatisch generieren",
-        "Social Media Content automatisieren",
-        "Qualitätssicherung durch menschliche Kontrolle"
+        "Blog-Automation mit Qualitätskontrolle",
+        "AI-generierte Themencluster",
+        "SEO-Automationen & Content-Blueprints",
+        "Social Media Content automatisiert",
+        "Menschliche Review-Schleifen"
       ]
     },
     {
@@ -84,9 +86,9 @@ const AiWorkflows = () => {
       keywords: "Workflow Automation • Process Mining",
       items: [
         "Wiederkehrende Aufgaben automatisieren",
-        "Lead-Qualifizierung",
-        "Reporting, Monitoring, Alerts",
-        "Internes Projekt-Routing"
+        "Lead-Scoring & Qualifizierung",
+        "Reporting, Alerts & Monitoring",
+        "Prozess-Routing & interne Systeme"
       ]
     },
     {
@@ -94,10 +96,10 @@ const AiWorkflows = () => {
       title: "AI-Integration & Tool-Enablement",
       keywords: "AI Integration • AI Adoption",
       items: [
-        "Vergleich der Tools",
-        "Empfehlung passend zu Teams & Prozessen",
-        "Risiko- und Kostenbewertung",
-        "Integration in bestehende Systeme"
+        "Tool-Vergleiche & Technologieauswahl",
+        "Risiko-, Kosten- & Nutzeneinschätzung",
+        "Systemintegration in bestehende Prozesse",
+        "Governance & Policy-Entwicklung"
       ]
     },
     {
@@ -105,10 +107,10 @@ const AiWorkflows = () => {
       title: "AI-Workflow Integration in Teams",
       keywords: "AI Strategie • API-Integrationen",
       items: [
-        "CRM-Erweiterungen",
-        "CMS-Automationen",
-        "AI-Bots & interne Systeme",
-        "API-gestützte Prozesse"
+        "CRM-Integrationen & API-Prozesse",
+        "CMS-Automationen & interne Bots",
+        "Automatisierte Arbeitsabläufe",
+        "API-gestützte Systeme"
       ]
     },
     {
@@ -116,9 +118,9 @@ const AiWorkflows = () => {
       title: "AI Enablement & Team-Schulung",
       keywords: "Prompt Engineering • Best Practices",
       items: [
-        "Teamtraining",
-        "AI-Guidelines & Policy",
-        "Best-Practice Workflows",
+        "Prompt Engineering & Best Practices",
+        "AI-Guidelines & Sicherheitsrahmen",
+        "Teamtraining & Rollenmodelle",
         "Hands-on Sessions"
       ]
     }
@@ -127,8 +129,8 @@ const AiWorkflows = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="AI-Workflows & Prozessautomatisierung für Unternehmen | ooliv"
-        description="AI-Workflows, Prozessautomatisierung und KI-Integration für Unternehmen. Wir modernisieren Prozesse, steigern Effizienz und schaffen messbare Resultate."
+      title="AI-Workflows & Prozessautomatisierung | ooliv Mainz"
+      description="AI-Workflows, Automatisierung & Prozessoptimierung. Senior-Level AI-Strategie von Uli Schönleber. Effizienz, Skalierbarkeit & klare Strukturen."
         canonicalUrl="https://ooliv.de/ai-workflows"
         keywords="ai workflows, ki workflows, ai integration unternehmen, ai prozessautomatisierung"
         breadcrumbs={breadcrumbs}
@@ -139,7 +141,7 @@ const AiWorkflows = () => {
         <Container>
           <PageHero
             title="AI-Workflows & Automatisierung für Unternehmen – effizient, skalierbar, messbar"
-            subtitle="Wir entwickeln AI-Workflows, automatisieren Prozesse und integrieren KI sinnvoll in bestehende Strukturen – ohne Chaos, ohne Hype."
+            subtitle="Wir entwickeln strukturierte AI-Workflows, automatisieren Prozesse und integrieren KI sinnvoll in bestehende Systeme — geführt von Uli Schönleber als Senior Digital Strategist, umgesetzt durch ein spezialisiertes Hybridteam."
             primaryCta={{ text: "AI-Strategiegespräch vereinbaren", link: "/kontakt" }}
             secondaryCta={{ text: "Beispiel-Workflows ansehen", link: "#leistungen" }}
           />
@@ -211,8 +213,7 @@ const AiWorkflows = () => {
               <div className="bg-[#D8F3F1] p-8 rounded-lg border border-[#32b2ab]/20">
                 <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">Unsere Lösung</h3>
                 <p className="text-[#0A0A0A] leading-relaxed">
-                  Wir entwickeln klare AI-Workflows, die nicht experimentieren, sondern liefern:
-                  Prozessautomatisierung, bessere Entscheidungen, interne Entlastung.
+            Wir entwickeln AI-Workflows, die nicht experimentieren, sondern funktionieren: klare Prozessmodelle, Automatisierungen, datenbasierte Entscheidungen und skalierbare Abläufe.
                 </p>
               </div>
             </div>
@@ -295,14 +296,33 @@ const AiWorkflows = () => {
         </Container>
       </Section>
 
+      {/* Team */}
+      <Section spacing="medium">
+        <Container size="narrow">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className={`${typographyStyles.headings.h3} mb-6`}>
+              Hybride AI-Strategie
+            </h2>
+            <p className="text-lg text-[#666666] leading-relaxed">
+              Uli führt AI-Strategie, Prozessmodellierung & Priorisierung; das Hybridteam unterstützt in Automatisierung, Development, Content & Systemintegration.
+            </p>
+          </motion.div>
+        </Container>
+      </Section>
+
       {/* CTA */}
       <Section id="cta" background="dark" spacing="large">
         <Container>
           <CTA 
             title="Bereit für AI-Workflows?"
             subtitle="Lassen Sie uns gemeinsam AI-Prozesse entwickeln, die Ihre Teams entlasten und messbare Ergebnisse liefern."
-            primaryCta="AI-Strategiegespräch vereinbaren"
-            secondaryCta="Beispiel-Workflows ansehen"
+        primaryCta="AI-Strategiegespräch vereinbaren"
             lightBackground={false}
           />
         </Container>
