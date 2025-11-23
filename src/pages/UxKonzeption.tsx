@@ -48,30 +48,295 @@ const UxKonzeption = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="UX-Konzeption & Struktur | Agentur für Wireframes, IA & Prototyping"
-        description="Wir entwickeln UX-Konzepte, die Entscheidungen beschleunigen: Informationsarchitektur, Wireframes, Prototypen & strukturierte User Journeys. Ideal für B2B & Mittelstand."
+        title="UX Agentur für Konzeption, Customer Journeys & Wireframes | ooliv"
+        description="UX Konzeption für Unternehmen: Informationsarchitektur, Customer Journey Mapping, Wireframes, Prototypen, Conversion-Funnel. 200+ Digitalprojekte. Senior UX Beratung."
         canonicalUrl="https://ooliv.de/ux-konzeption"
-        keywords="UX Konzeption Agentur, Informationsarchitektur, UX für Websites, Wireframes erstellen lassen, Prototyping Agentur, UX Strategie, UX Audit, UX Optimierung, UX B2B, UX Customer Journey, UX Struktur, UX Funnel, UX Design Agentur, User Experience Beratung, UX Workshop, UX Analyse, Conversion Optimierung UX, digitale Nutzerführung"
+        keywords="ux agentur, ux konzeption, ux design agentur, ux optimierung, ux beratung, wireframes & prototypen, information architecture, customer journey mapping, usability optimierung, conversion optimierung, ux research, funnel design, ux strategie, user flows, nutzerführung verbessern, digitale touchpoints, digitale kundenerlebnisse, ux audits, ux für b2b, mobile first ux, ux workshop, ux analyse"
         breadcrumbs={breadcrumbs}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "UX Design & Konzeption",
+            "description": "UX Konzeption für Unternehmen: Informationsarchitektur, Customer Journey Mapping, Wireframes, Prototypen, Conversion-Funnel",
+            "serviceType": "UX Design Service",
+            "provider": {
+              "@type": "Organization",
+              "name": "ooliv",
+              "url": "https://ooliv.de"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Was kostet ein UX-Konzept?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Die Kosten hängen vom Projektumfang ab. Ein UX-Audit für kleinere Websites beginnt ab 2.500 €. Komplette UX-Konzepte mit Informationsarchitektur, Wireframes und Prototyping starten ab 8.000 €. Wir bieten eine kostenlose Erstanalyse, um Ihren Bedarf zu verstehen und ein transparentes Angebot zu erstellen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert UX-Konzeption?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Erste Ergebnisse sind oft nach 2-3 Wochen sichtbar. Ein vollständiges UX-Konzept dauert je nach Komplexität 4-8 Wochen. Wir arbeiten in iterativen Sprints, sodass Sie kontinuierlich Fortschritte sehen und Feedback geben können."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was ist der Unterschied zu UI-Design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "UX (User Experience) fokussiert auf Struktur, Nutzerführung und Funktionalität. UI (User Interface) ist die visuelle Gestaltung. Wir beginnen immer mit UX-Konzeption, bevor wir zum UI-Design übergehen. Gute UX ist die Basis für effektives Design."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Bietet ihr UX-Workshops an?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja! Wir bieten UX-Workshops für Teams an, z.B. User Journey Mapping, Design Sprints oder UX-Audits. Perfekt, um Ihr Team zu involvieren und gemeinsam Lösungen zu entwickeln. Workshops dauern typischerweise 1-2 Tage und können remote oder vor Ort stattfinden."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Macht ihr UX für B2B?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolut. B2B ist sogar unser Schwerpunkt. Wir verstehen die Besonderheiten von B2B-Kaufprozessen: längere Entscheidungswege, mehrere Stakeholder, erklärungsbedürftige Produkte. Unsere UX-Konzepte sind speziell darauf ausgelegt, komplexe B2B-Angebote klar und überzeugend zu präsentieren."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie arbeitet eine UX Agentur?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Eine professionelle UX Agentur beginnt mit der Analyse Ihrer Ziele und Nutzer. Wir entwickeln dann die Informationsarchitektur, erstellen Wireframes und Prototypen, testen diese mit echten Nutzern und optimieren kontinuierlich. Der Prozess ist iterativ und datenbasiert."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie läuft UX Research ab?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "UX Research umfasst Nutzerinterviews, Usability-Tests, Heatmaps, A/B-Tests und Analytics-Auswertungen. Wir kombinieren qualitative und quantitative Methoden, um ein vollständiges Bild Ihrer Nutzer zu erhalten. Die Erkenntnisse fließen direkt in die UX-Konzeption ein."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* SECTION 1 — HERO */}
-      <PageHero
-        title="UX & Konzeption – klare Strukturen für digitale Systeme, die funktionieren"
-        subtitle="Wir entwickeln Informationsarchitektur, Wireframes und userzentrierte Abläufe, die Komplexität reduzieren und Entscheidungen beschleunigen — strategisch, datenbasiert und ohne Agentur-Overload."
-        primaryCta={{
-          text: "Projekt besprechen",
-          link: "#",
-          onClick: handleOpenLeadForm
-        }}
-        secondaryCta={{
-          text: "Arbeitsweise ansehen",
-          link: "#prozess"
-        }}
-      />
+      <section id="hero">
+        <PageHero
+          title="UX Agentur für klare Strukturen & bessere Nutzererlebnisse"
+          subtitle="Professionelle UX-Konzeption: Wireframes, Customer Journeys, Informationsarchitektur und Conversion-Optimierung — strategisch, datenbasiert und messbar."
+          primaryCta={{
+            text: "Projekt besprechen",
+            link: "#",
+            onClick: handleOpenLeadForm
+          }}
+          secondaryCta={{
+            text: "Arbeitsweise ansehen",
+            link: "#prozess"
+          }}
+        />
+      </section>
 
-      {/* SECTION 2 — Was gute UX-Konzeption ausmacht */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      {/* SECTION 2 — Pain Points */}
+      <section id="pain-points" className="py-20 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Warum UX Konzeption entscheidend ist
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              {
+                icon: AlertTriangle,
+                title: "Kein klares UX-Konzept",
+                description: "Ohne Struktur verlieren Nutzer die Orientierung."
+              },
+              {
+                icon: LayoutGrid,
+                title: "Fehlende Informationsarchitektur",
+                description: "Inhalte sind unstrukturiert und schwer findbar."
+              },
+              {
+                icon: Route,
+                title: "Unübersichtliche Nutzerführung",
+                description: "User Flows sind zu komplex oder unklar."
+              },
+              {
+                icon: Target,
+                title: "Ungenaue Customer Journeys",
+                description: "Touchpoints sind nicht aufeinander abgestimmt."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-card rounded-lg p-6 border border-border shadow-sm"
+              >
+                <item.icon className="w-8 h-8 text-primary mb-4" aria-label={item.title} />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — Leistungsübersicht */}
+      <section id="leistungen" className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Unsere UX-Leistungen im Überblick
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-card rounded-lg p-8 border border-border shadow-sm"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                UX Analyse & Research
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">UX Audit</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">UX Beratung</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Customer Journey Mapping</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-primary font-semibold">
+                → Keyword: UX Optimierung
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-card rounded-lg p-8 border border-border shadow-sm"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Informationsarchitektur & Struktur
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Strukturierung</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Content-Hierarchien</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-primary font-semibold">
+                → Keyword: Information Architecture
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-card rounded-lg p-8 border border-border shadow-sm"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Wireframes & Prototyping
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Schnelle Iterationen</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Bessere Entscheidungsgrundlage</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-primary font-semibold">
+                → Keyword: Wireframes & Prototypen
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-card rounded-lg p-8 border border-border shadow-sm"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Funnel Design & Conversion Optimierung
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Kritische Engpässe identifizieren</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-base text-muted-foreground">Nutzerpfade verkürzen</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-primary font-semibold">
+                → Keyword: Conversion Optimierung
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — Was gute UX-Konzeption ausmacht */}
+      <section id="warum-ux" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -121,7 +386,7 @@ const UxKonzeption = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mb-4">
-                  <item.icon className="w-6 h-6" />
+                  <item.icon className="w-6 h-6" aria-label={item.title} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {item.title}
@@ -135,8 +400,8 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — Unser strategischer UX-Ansatz */}
-      <section className="py-20 lg:py-32 bg-background">
+      {/* SECTION 5 — Unser strategischer UX-Ansatz */}
+      <section id="strategie" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -148,7 +413,7 @@ const UxKonzeption = () => {
           >
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                UX beginnt bei der Strategie
+                Customer Journey Mapping – Nutzer verstehen, Entscheidungen lenken
               </h2>
               <div className="space-y-4">
                 {[
@@ -170,9 +435,9 @@ const UxKonzeption = () => {
             </div>
 
             {/* Visual Placeholder */}
-            <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px]">
+            <div className="bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px]">
               <div className="text-center">
-                <Route className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <Route className="w-16 h-16 text-muted-foreground mx-auto mb-4" aria-label="Customer Journey Mapping Diagramm" />
                 <p className="text-sm text-muted-foreground">Customer Journey Diagramm</p>
               </div>
             </div>
@@ -180,8 +445,8 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 4 — Informationsarchitektur & Struktur */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      {/* SECTION 6 — Informationsarchitektur & Struktur */}
+      <section id="informationsarchitektur" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -192,9 +457,9 @@ const UxKonzeption = () => {
             className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
           >
             {/* Visual Placeholder */}
-            <div className="bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px] order-2 lg:order-1">
+            <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px] order-2 lg:order-1">
               <div className="text-center">
-                <LayoutGrid className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <LayoutGrid className="w-16 h-16 text-muted-foreground mx-auto mb-4" aria-label="Sitemap & Informationsarchitektur Visualisierung" />
                 <p className="text-sm text-muted-foreground">Sitemap & Struktur-Visualisierung</p>
               </div>
             </div>
@@ -234,8 +499,8 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — Wireframes & Prototyping */}
-      <section className="py-20 lg:py-32 bg-background">
+      {/* SECTION 7 — Wireframes & Prototyping */}
+      <section id="wireframes" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -246,7 +511,7 @@ const UxKonzeption = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Wireframes & Prototypen, die Entscheidungen schneller machen
+              Wireframes – der schnellste Weg zu Klarheit
             </h2>
           </motion.div>
 
@@ -281,7 +546,7 @@ const UxKonzeption = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-card rounded-lg p-6 border border-border shadow-sm"
               >
-                <item.icon className="w-8 h-8 text-primary mb-4" />
+                <item.icon className="w-8 h-8 text-primary mb-4" aria-label={item.title} />
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {item.title}
                 </h3>
@@ -293,21 +558,31 @@ const UxKonzeption = () => {
           </div>
 
           {/* Wireframe Placeholders */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-muted/50 rounded-lg p-6 border border-border flex items-center justify-center min-h-[300px]">
+              <div key={i} className="bg-background rounded-lg p-6 border border-border flex items-center justify-center min-h-[300px]">
                 <div className="text-center">
-                  <PenTool className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
+                  <PenTool className="w-12 h-12 text-muted-foreground mx-auto mb-3" aria-label={`UX Wireframe Beispiel ${i}`} />
                   <p className="text-sm text-muted-foreground">Wireframe Beispiel {i}</p>
                 </div>
               </div>
             ))}
           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center text-lg text-muted-foreground max-w-3xl mx-auto"
+          >
+            Unsere UX Wireframes und Prototypen ermöglichen schnelle Iterationen und schaffen eine bessere Entscheidungsgrundlage für Ihr Projekt.
+          </motion.p>
         </div>
       </section>
 
-      {/* SECTION 6 — UX für Websites & digitale Produkte */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      {/* SECTION 8 — UX für Websites & digitale Produkte */}
+      <section id="ux-optimierung" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -356,7 +631,7 @@ const UxKonzeption = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
-                <item.icon className="w-10 h-10 text-primary mb-4" />
+                <item.icon className="w-10 h-10 text-primary mb-4" aria-label={item.title} />
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {item.title}
                 </h3>
@@ -374,12 +649,12 @@ const UxKonzeption = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[300px]"
+            className="mt-12 bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[300px]"
           >
             <div className="text-center">
               <div className="flex items-center justify-center gap-6 mb-4">
-                <Monitor className="w-12 h-12 text-muted-foreground" />
-                <Smartphone className="w-8 h-8 text-muted-foreground" />
+                <Monitor className="w-12 h-12 text-muted-foreground" aria-label="Desktop Ansicht UX Design" />
+                <Smartphone className="w-8 h-8 text-muted-foreground" aria-label="Mobile Ansicht UX Design" />
               </div>
               <p className="text-sm text-muted-foreground">Responsive Device Preview</p>
             </div>
@@ -387,8 +662,8 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — Case Study Teaser */}
-      <section className="py-20 lg:py-32 bg-background">
+      {/* SECTION 9 — Conversion-Funnel */}
+      <section id="funnel" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -399,7 +674,65 @@ const UxKonzeption = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              UX-Projekte mit messbarem Erfolg
+              Funnel-Optimierung – Nutzer dahin bringen, wo sie hin sollen
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Professionelles Funnel Design für höhere Conversion-Raten
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "Kritische Engpässe identifizieren",
+                description: "Wir analysieren, wo Nutzer abspringen und optimieren diese Stellen gezielt."
+              },
+              {
+                icon: Route,
+                title: "Nutzerpfade verkürzen",
+                description: "Weniger Klicks, schnellere Entscheidungen, höhere Conversion."
+              },
+              {
+                icon: TrendingUp,
+                title: "Conversion-Raten steigern",
+                description: "Messbare Verbesserungen durch datenbasierte UX-Optimierung."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-card rounded-lg p-8 border border-border shadow-sm"
+              >
+                <item.icon className="w-10 h-10 text-primary mb-4" aria-label={item.title} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-base text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 10 — Case Study Teaser */}
+      <section id="case-studies" className="py-20 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              UX im Einsatz – echte Beispiele
             </h2>
           </motion.div>
 
@@ -409,25 +742,29 @@ const UxKonzeption = () => {
                 client: "KLAIBER",
                 industry: "Steuerberatung",
                 result: "+180% mehr Anfragen",
-                logo: caseStudiesData.de[0]?.logo
+                logo: caseStudiesData.de[0]?.logo,
+                seoTag: "UX Optimierung Steuerberatung"
               },
               {
                 client: "COBUS",
                 industry: "Flughafenbusse",
                 result: "Klare Produktnavigation",
-                logo: caseStudiesData.de[1]?.logo
+                logo: caseStudiesData.de[1]?.logo,
+                seoTag: "UX für B2B Industrie"
               },
               {
                 client: "SPEZ",
                 industry: "Automotive",
                 result: "+90% Conversion",
-                logo: caseStudiesData.de[2]?.logo
+                logo: caseStudiesData.de[2]?.logo,
+                seoTag: "Customer Journey Optimierung Handwerk"
               },
               {
                 client: "IconPro",
                 industry: "KI-Software",
                 result: "Komplexität reduziert",
-                logo: caseStudiesData.de[3]?.logo
+                logo: caseStudiesData.de[3]?.logo,
+                seoTag: "UX für komplexe Software"
               }
             ].map((item, index) => (
               <motion.div
@@ -438,9 +775,16 @@ const UxKonzeption = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
+                  {item.seoTag}
+                </span>
                 <div className="bg-background p-4 rounded-lg mb-4 flex items-center justify-center min-h-[80px]">
                   {item.logo ? (
-                    <img src={item.logo} alt={item.client} className="h-10 w-auto" />
+                    <img 
+                      src={item.logo} 
+                      alt={`${item.client} – ${item.seoTag} von ooliv`} 
+                      className="h-10 w-auto" 
+                    />
                   ) : (
                     <p className="font-bold text-lg text-foreground">{item.client}</p>
                   )}
@@ -474,7 +818,7 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 8 — Wie wir arbeiten */}
+      {/* SECTION 11 — Wie wir arbeiten */}
       <section id="prozess" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -552,8 +896,8 @@ const UxKonzeption = () => {
         </div>
       </section>
 
-      {/* SECTION 9 — Team-Hybrid */}
-      <section className="py-20 lg:py-32 bg-background">
+      {/* SECTION 12 — Team-Hybrid */}
+      <section id="team" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -564,10 +908,13 @@ const UxKonzeption = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Wer an Ihrem UX-Projekt arbeitet
+              Unser hybrider UX-Ansatz
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ein hybrides Team aus Strategie, Design, Entwicklung und Content — für ganzheitliche UX-Konzepte.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Hybrides UX-Team aus: UX Strategie, UX Research, Wireframes, UI Design, Content & Development — für ganzheitliche UX-Konzepte.
+            </p>
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+              Unser Hybridteam für digitale Transformation kombiniert interdisziplinäre digitale Beratung mit praktischer Umsetzung. Das Ergebnis: vollständige UX-Konzepte aus einer Hand.
             </p>
           </motion.div>
 
@@ -608,7 +955,7 @@ const UxKonzeption = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow text-center"
               >
                 <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mx-auto mb-4">
-                  <member.icon className="w-8 h-8" />
+                  <member.icon className="w-8 h-8" aria-label={`${member.name} – ${member.role}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-1">
                   {member.name}
@@ -628,22 +975,27 @@ const UxKonzeption = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center text-lg text-muted-foreground mt-12"
           >
-            Unser hybrider Ansatz: CEO + UX-Designer + Entwickler + Content = vollständige UX-Konzepte.
+            Unser hybrider Ansatz: CEO + UX-Designer + Entwickler + Content = vollständige UX-Konzepte. Unsere hybride Struktur sorgt dafür, dass digitale Transformation nicht nur geplant, sondern vollständig realisiert wird. Weitere Services: {' '}
+            <Link to="/webdesign-entwicklung" className="text-primary hover:underline">Webdesign</Link>, {' '}
+            <Link to="/seo-performance" className="text-primary hover:underline">SEO</Link>, {' '}
+            <Link to="/ai-workflows" className="text-primary hover:underline">AI-Workflows</Link>.
           </motion.p>
         </div>
       </section>
 
-      {/* SECTION 10 — CTA */}
-      <CTA 
-        title="Lassen Sie uns Ihr UX-Projekt starten"
-        subtitle="Kostenlose Erstberatung & UX-Analyse in 48 Stunden"
-        primaryCta="Projekt starten"
-        secondaryCta="Kostenlose 15-Minuten-Einschätzung"
-        secondaryCtaLink="#"
-      />
+      {/* SECTION 13 — CTA */}
+      <section id="cta">
+        <CTA 
+          title="Lassen Sie uns Ihr UX-Projekt starten"
+          subtitle="Kostenlose Erstberatung & UX-Analyse in 48 Stunden"
+          primaryCta="Projekt starten"
+          secondaryCta="Kostenlose 15-Minuten-Einschätzung"
+          secondaryCtaLink="#"
+        />
+      </section>
 
-      {/* SECTION 11 — FAQ */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      {/* SECTION 14 — FAQ */}
+      <section id="faq" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -654,7 +1006,7 @@ const UxKonzeption = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Häufige Fragen zu UX-Konzeption
+              Häufige Fragen zu UX & Konzeption
             </h2>
           </motion.div>
 
@@ -701,6 +1053,24 @@ const UxKonzeption = () => {
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground">
                 Absolut. B2B ist sogar unser Schwerpunkt. Wir verstehen die Besonderheiten von B2B-Kaufprozessen: längere Entscheidungswege, mehrere Stakeholder, erklärungsbedürftige Produkte. Unsere UX-Konzepte sind speziell darauf ausgelegt, komplexe B2B-Angebote klar und überzeugend zu präsentieren.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Wie arbeitet eine UX Agentur?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                Eine professionelle UX Agentur beginnt mit der Analyse Ihrer Ziele und Nutzer. Wir entwickeln dann die Informationsarchitektur, erstellen Wireframes und Prototypen, testen diese mit echten Nutzern und optimieren kontinuierlich. Der Prozess ist iterativ und datenbasiert — Sie sehen kontinuierlich Fortschritte.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                Wie läuft UX Research ab?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                UX Research umfasst Nutzerinterviews, Usability-Tests, Heatmaps, A/B-Tests und Analytics-Auswertungen. Wir kombinieren qualitative und quantitative Methoden, um ein vollständiges Bild Ihrer Nutzer zu erhalten. Die Erkenntnisse fließen direkt in die UX-Konzeption ein.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
