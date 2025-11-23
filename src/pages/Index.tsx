@@ -54,11 +54,73 @@ const GermanIndex = () => {
       <H1Validator />
       <PageLayout className="overflow-x-hidden">
         <EnhancedSEOHead
-          title="ooliv – Digitale Transformation, UX & Webdesign, das verkauft"
-          description="Digitale Strategie, UX, Webdesign, SEO und AI-Workflows – geführt von einem Senior-Strategen. 100+ Projekte. Klare KPIs. Keine Junioren."
+          title="Digitale Transformation Agentur | Strategie, UX, Webdesign & AI – ooliv"
+          description="ooliv ist Ihre Digitalagentur für Strategie, UX, Webdesign, SEO und AI-Workflows. 200+ Digitalprojekte. Senior-Strategie statt Junioren. Messbare Ergebnisse."
           canonicalUrl="https://ooliv.de/"
-          keywords="digitale transformation agentur, digitale strategie beratung, ux agentur, webdesign agentur, website erstellen lassen, seo agentur, ai workflows agentur, digitale transformation unternehmen, digitale customer experience, leadgenerierung website, webdesign mainz, webdesign wiesbaden, webdesign frankfurt"
+          keywords="digitale transformation agentur, digitale transformation beratung, digitale strategie entwickeln, digitalstrategie agentur, digitale kundenreise optimieren, digitale prozesse verbessern, ai-workflows für unternehmen, ux agentur, webdesign agentur mainz, webentwicklung agentur, seo agentur mainz, digitale effizienz steigern, customer journey mapping, digitale roadmap, design systeme, conversion optimierung, digitaler arbeitsablauf, strategie workshop, lead-generierung b2b, webdesign mainz, webdesign wiesbaden, webdesign frankfurt"
           ogImage="/lovable-uploads/cfb33e9a-d195-4aee-a3f5-649636005e5b.png"
+          structuredData={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Wie läuft ein Projekt bei ooliv ab?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Strukturierte Analyse → Konzept & Strategie → UX & Wireframes → Design → Entwicklung → Launch & Optimierung. Sie haben während des gesamten Prozesses direkten Kontakt zu mir (Uli) und sehen kontinuierlich Fortschritte."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was kostet eine Website?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Business-Websites beginnen ab 15.000 €, umfangreiche Corporate-Projekte ab 25.000 €. Der Preis hängt von Funktionsumfang, Design-Komplexität und Projektdauer ab. Wir bieten eine kostenlose Erstberatung für ein transparentes Angebot."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert ein Projekt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typische Website-Projekte dauern 8-16 Wochen vom Kickoff bis zum Launch. Digitale Transformationsprojekte benötigen 3-6 Monate. Die genaue Dauer hängt von Komplexität und Feedback-Zyklen ab."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was unterscheidet ooliv von anderen Agenturen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Direkter Zugang zur Geschäftsführung, keine Junior-Teams, klare Struktur, messbare Ergebnisse. Ich (Uli) führe jedes Projekt persönlich und arbeite mit einem festen Team aus Senior-Experten zusammen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Machen Sie auch SEO und Content?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja – technisches SEO ist in jedem Website-Projekt inklusive. Content-SEO, Keyword-Recherche und kontinuierliche Optimierung bieten wir als separaten Service an. AI-gestützte Content-Erstellung ist ebenfalls Teil unseres Angebots."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kann ich mit Ihnen langfristig zusammenarbeiten?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja – wir bieten monatlichen Support für SEO, Performance-Optimierung, Content-Updates und technischen Support. Viele Kunden arbeiten Jahre mit uns zusammen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Unterstützen Sie Unternehmen bei digitaler Transformation jenseits von Websites?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja — wir begleiten Unternehmen bei der kompletten digitalen Transformation: von der Strategieentwicklung über Prozessoptimierung bis zur Implementierung von AI-Workflows. Unsere Leistung geht weit über Webdesign hinaus."
+                }
+              }
+            ]
+          }}
         />
         
         <CompleteBusinessSchemaGenerator
@@ -79,7 +141,7 @@ const GermanIndex = () => {
         />
         
         {/* HERO SECTION */}
-        <section className="relative bg-background overflow-hidden">
+        <section id="hero" className="relative bg-background overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 py-16 sm:py-20 lg:py-28 items-center min-h-[calc(100vh-80px)]">
               
@@ -95,7 +157,7 @@ const GermanIndex = () => {
                   transition={{ duration: 0.6 }}
                   className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight"
                 >
-                  Digitale Transformation, die verkauft.
+                  Digitale Transformation Agentur für messbare Ergebnisse
                 </motion.h1>
                 
                 <motion.p 
@@ -103,7 +165,7 @@ const GermanIndex = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   className="text-lg md:text-xl text-muted-foreground leading-relaxed"
                 >
-                  Wir entwickeln digitale Strategien, UX-Konzepte und Websites, die messbar mehr Leads generieren — geführt von Senior-Expertise, nicht von Junioren.
+                  Wir entwickeln digitale Strategien, optimieren digitale Prozesse und bauen AI-gestützte Workflows, die messbar mehr Leads generieren — geführt von Senior-Expertise, nicht von Junioren.
                 </motion.p>
 
                 <motion.div
@@ -158,7 +220,7 @@ const GermanIndex = () => {
               >
                 <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Target className="w-24 h-24 text-primary mx-auto mb-6" />
+                    <Target className="w-24 h-24 text-primary mx-auto mb-6" aria-label="Digitale Transformation Agentur Icon" />
                     <p className="text-lg text-muted-foreground">Strategische Digitalisierung</p>
                   </div>
                 </div>
@@ -168,7 +230,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 2: WIR SIND KEINE TYPISCHE AGENTUR */}
-        <section className="py-20 lg:py-32 bg-muted/30">
+        <section id="ueber-uns" className="py-20 lg:py-32 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -182,7 +244,7 @@ const GermanIndex = () => {
                 Wir sind keine typische Agentur.
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Jedes Projekt wird persönlich von Uli geführt, unterstützt von einem eingespielten Team aus UX, Design, Entwicklung und SEO.
+                Jedes Projekt wird persönlich von Uli geführt, unterstützt von einem hybriden Team aus UX, Design, Entwicklung, SEO und AI — ohne Outsourcing, ohne Freelancer-Kette.
               </p>
             </motion.div>
 
@@ -229,7 +291,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 3: UNSERE KERNLEISTUNGEN */}
-        <section className="py-20 lg:py-32 bg-background">
+        <section id="leistungen" className="py-20 lg:py-32 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -240,7 +302,7 @@ const GermanIndex = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Unsere Kernleistungen
+                Unsere Kernleistungen für digitale Transformation
               </h2>
             </motion.div>
 
@@ -311,7 +373,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 4: IHRE INVESTITION IN DIGITALE KLARHEIT */}
-        <section className="py-20 lg:py-32 bg-muted/30">
+        <section id="investition" className="py-20 lg:py-32 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -396,7 +458,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 5: ERGEBNISSE SPRECHEN FÜR SICH */}
-        <section className="py-20 lg:py-32 bg-background">
+        <section id="ergebnisse" className="py-20 lg:py-32 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -412,6 +474,17 @@ const GermanIndex = () => {
             </motion.div>
 
             <BeforeAfterSlider />
+
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              transition={{ duration: 0.6 }}
+              className="text-lg text-muted-foreground text-center mt-8 max-w-3xl mx-auto"
+            >
+              Wir modernisieren Websites, optimieren digitale Kundenreisen und steigern die digitale Effizienz unserer Kunden — messbar und nachhaltig.
+            </motion.p>
 
             <motion.div
               initial="hidden"
@@ -437,7 +510,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 6: AUSGEWÄHLTE PROJEKTE */}
-        <section className="py-20 lg:py-32 bg-muted/30">
+        <section id="projekte" className="py-20 lg:py-32 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -453,49 +526,61 @@ const GermanIndex = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {caseStudiesData.de.slice(0, 4).map((caseStudy, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
-                >
-                  <div className="bg-background p-4 rounded-lg mb-6 flex items-center justify-center min-h-[80px]">
-                    <img src={caseStudy.logo} alt={caseStudy.client} className="h-10 w-auto" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {caseStudy.client}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {caseStudy.industry}
-                  </p>
-                  <p className="text-base font-semibold text-primary mb-4">
-                    {caseStudy.keyMetric}
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-6">
-                    {caseStudy.headline}
-                  </p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              {caseStudiesData.de.slice(0, 4).map((caseStudy, index) => {
+                const keywordBadges = [
+                  "Digitale Transformation Steuerberatung",
+                  "UX Agentur Industrie",
+                  "B2B Webdesign Handwerk",
+                  "Digitalisierung KI-Software"
+                ];
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
                   >
-                    <Link to="/referenzen">
-                      Case Study ansehen
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </Button>
-                </motion.div>
-              ))}
+                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
+                      {keywordBadges[index]}
+                    </span>
+                    <div className="bg-background p-4 rounded-lg mb-6 flex items-center justify-center min-h-[80px]">
+                      <img src={caseStudy.logo} alt={`${caseStudy.client} – Digitale Transformation Projekt von ooliv`} className="h-10 w-auto" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {caseStudy.client}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {caseStudy.industry}
+                    </p>
+                    <p className="text-base font-semibold text-primary mb-4">
+                      {caseStudy.keyMetric}
+                    </p>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      {caseStudy.headline}
+                    </p>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <Link to="/referenzen">
+                        Case Study ansehen
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* SECTION 7: ULI SCHÖNLEBER */}
-        <section className="py-20 lg:py-32 bg-background">
+        <section id="team" className="py-20 lg:py-32 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               
@@ -508,9 +593,9 @@ const GermanIndex = () => {
               >
                 <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Users className="w-24 h-24 text-primary mx-auto mb-6" />
+                    <Users className="w-24 h-24 text-primary mx-auto mb-6" aria-label="Uli Schönleber – Senior Digital Strategy Consultant" />
                     <p className="text-lg text-muted-foreground">Uli Schönleber</p>
-                    <p className="text-sm text-muted-foreground">Gründer & Digital Strategy Lead</p>
+                    <p className="text-sm text-muted-foreground">Senior Digital Strategy Consultant & Gründer</p>
                   </div>
                 </div>
               </motion.div>
@@ -529,7 +614,7 @@ const GermanIndex = () => {
                   Ich führe jedes Projekt persönlich — von der Strategie bis zur Umsetzung. Sie arbeiten direkt mit mir, nicht mit wechselnden Junior-Teams.
                 </p>
                 <p className="text-base text-muted-foreground mb-8">
-                  Ich arbeite eng mit einem festen Team aus Design, Entwicklung, SEO und Content zusammen — keine Freelancer-Kette, keine ausgelagerten Leistungen.
+                  Jedes Projekt wird von einem Hybridteam realisiert, das Design, Technik, Strategie und AI zusammenbringt. Wir implementieren AI-gestützte Prozesse, die Ihre Arbeit effizienter machen — keine Freelancer-Kette, keine ausgelagerten Leistungen.
                 </p>
                 <div className="space-y-3 mb-8">
                   {[
@@ -560,7 +645,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 8: WERKZEUGE MIT VERSTAND EINGESETZT */}
-        <section className="py-20 lg:py-32 bg-muted/30">
+        <section id="tools" className="py-20 lg:py-32 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -571,7 +656,7 @@ const GermanIndex = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Werkzeuge mit Verstand eingesetzt
+                Werkzeuge mit Verstand eingesetzt — für optimierte digitale Prozesse
               </h2>
             </motion.div>
 
@@ -632,7 +717,7 @@ const GermanIndex = () => {
         </section>
 
         {/* SECTION 9: HÄUFIG GESTELLTE FRAGEN */}
-        <section className="py-20 lg:py-32 bg-background">
+        <section id="faq" className="py-20 lg:py-32 bg-background">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial="hidden"
@@ -699,6 +784,15 @@ const GermanIndex = () => {
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-muted-foreground">
                   Ja – wir bieten monatlichen Support für SEO, Performance-Optimierung, Content-Updates und technischen Support. Viele Kunden arbeiten Jahre mit uns zusammen.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7" className="bg-card border border-border rounded-lg px-6">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:no-underline">
+                  Unterstützen Sie Unternehmen bei digitaler Transformation jenseits von Websites?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                  Ja — wir begleiten Unternehmen bei der kompletten digitalen Transformation: von der Strategieentwicklung über Prozessoptimierung bis zur Implementierung von AI-Workflows. Unsere Leistung geht weit über Webdesign hinaus.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -784,7 +878,7 @@ const GermanIndex = () => {
             {/* Marken-Zeile */}
             <div className="py-6 border-t border-border">
               <p className="text-center text-sm text-muted-foreground">
-                Zuhause in Mainz. Aktiv in ganz Deutschland und im DACH-Raum.
+                Digitalagentur Mainz — Zuhause in Mainz. Aktiv in ganz Deutschland und im DACH-Raum.
               </p>
             </div>
 
