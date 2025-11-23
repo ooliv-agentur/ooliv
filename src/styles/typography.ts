@@ -3,33 +3,33 @@
 // Centralized typography tokens and utility functions
 
 export const typographyStyles = {
-  // Headings - consistent across all components
+  // Headings - consistent across all components - Dark Mode ready
   headings: {
-    h1: "text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#0A0A0A]",
-    h2: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#0A0A0A]",
-    h3: "text-3xl md:text-4xl font-bold leading-tight text-[#0A0A0A]",
-    h4: "text-2xl md:text-3xl font-semibold leading-tight text-[#0A0A0A]",
-    h5: "text-xl md:text-2xl font-semibold leading-tight text-[#0A0A0A]",
-    h6: "text-lg md:text-xl font-semibold leading-tight text-[#0A0A0A]"
+    h1: "text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground",
+    h2: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground",
+    h3: "text-3xl md:text-4xl font-bold leading-tight text-foreground",
+    h4: "text-2xl md:text-3xl font-semibold leading-tight text-foreground",
+    h5: "text-xl md:text-2xl font-semibold leading-tight text-foreground",
+    h6: "text-lg md:text-xl font-semibold leading-tight text-foreground"
   },
   
-  // Body text - consistent sizing and line heights
+  // Body text - consistent sizing and line heights - Dark Mode ready
   body: {
-    large: "text-xl md:text-2xl leading-relaxed text-[#555555]",
-    base: "text-base md:text-lg leading-relaxed text-[#555555]",
-    small: "text-sm md:text-base leading-relaxed text-[#7A7A7A]",
-    caption: "text-xs md:text-sm leading-normal text-[#7A7A7A]"
+    large: "text-xl md:text-2xl leading-relaxed text-muted-foreground",
+    base: "text-base md:text-lg leading-relaxed text-muted-foreground",
+    small: "text-sm md:text-base leading-relaxed text-muted-foreground",
+    caption: "text-xs md:text-sm leading-normal text-muted-foreground"
   },
   
-  // Color tokens - semantic color usage
+  // Color tokens - semantic color usage - Dark Mode ready
   colors: {
-    primary: "text-[#0A0A0A]",
-    secondary: "text-[#555555]",
-    muted: "text-[#7A7A7A]",
-    light: "text-[#A3A3A3]",
-    accent: "text-[#0BC3C3]",
-    warning: "text-[#0BC3C3]",
-    white: "text-white"
+    primary: "text-foreground",
+    secondary: "text-muted-foreground",
+    muted: "text-muted-foreground",
+    light: "text-muted-foreground/70",
+    accent: "text-primary",
+    warning: "text-primary",
+    white: "text-primary-foreground"
   },
   
   // Font weights
