@@ -74,7 +74,7 @@ const MainNavigation = () => {
             {/* Menu toggle button - hide when menu is open since menu content has its own close button */}
             {!isOpen && (
             <button
-                className="flex items-center justify-center rounded-full bg-[#0BC3C3] hover:bg-[#089EA0] transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
+                className="flex items-center justify-center rounded-full bg-[#32b2ab] hover:bg-[#289690] transition-all duration-300 shadow-md hover:shadow-lg w-10 h-10 min-w-10 min-h-10"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={language === 'de' ? "Menü öffnen" : "Open menu"}
                 aria-expanded={isOpen}
@@ -87,10 +87,10 @@ const MainNavigation = () => {
         </div>
       </nav>
 
-      {/* Menu overlay */}
+      {/* Menu overlay with backdrop blur */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/40 z-[90]"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[90]"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
