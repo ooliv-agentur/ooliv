@@ -140,14 +140,14 @@ const CaseStudiesSection = ({
         {!hideHeaderText && (
           <Reveal>
             <div className="text-center mb-16">
-              <H2 className="text-[#0A0A0A] mb-6" alignment="center">
+              <H2 className="text-[#0B0B0B] mb-6" alignment="center">
                 {customTitle || t.title}
               </H2>
-              <LargeParagraph className="text-[#0BC3C3] max-w-3xl mx-auto mb-4 font-medium" alignment="center">
+              <LargeParagraph className="text-[#32B2AB] max-w-3xl mx-auto mb-4 font-medium" alignment="center">
                 {customSubtitle || t.subtitle}
               </LargeParagraph>
               {(customBodyText || t.bodyText) && (
-                <Paragraph className="text-[#555555] max-w-3xl mx-auto" alignment="center">
+                <Paragraph className="text-[#444444] max-w-3xl mx-auto" alignment="center">
                   {customBodyText || t.bodyText}
                 </Paragraph>
               )}
@@ -162,7 +162,7 @@ const CaseStudiesSection = ({
               className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="bg-[#F5F7F7] rounded-[20px] p-4 sm:p-6 lg:p-8 border border-gray-100">
+                <div className="bg-[#F5F7F7] rounded-[20px] p-4 sm:p-6 lg:p-8 border border-[#E4E6E7]">
                   <div className="flex items-center mb-6">
                     <div className="flex-shrink-0 mr-4 w-16 h-10">
                       <AspectRatio ratio={16/10} className="h-full">
@@ -174,26 +174,26 @@ const CaseStudiesSection = ({
                       </AspectRatio>
                     </div>
                     <div>
-                      <span className="inline-block px-3 py-1 bg-[#0BC3C3]/10 text-[#0BC3C3] text-xs font-medium rounded-full mb-2">
+                      <span className="inline-block px-3 py-1 bg-[#32B2AB]/10 text-[#32B2AB] text-xs font-medium rounded-full mb-2">
                         {study.seoTag}
                       </span>
-                      <p className="text-sm md:text-base text-[#555555] font-normal">{study.industry}</p>
+                      <p className="text-sm md:text-base text-[#444444] font-normal">{study.industry}</p>
                     </div>
                   </div>
                   
-                  <H3 className="text-[#0A0A0A] mb-3">
+                  <H3 className="text-[#0B0B0B] mb-3">
                     {study.seoTitle}
                   </H3>
                   
-                  <Paragraph className="text-[#555555] mb-4">
+                  <Paragraph className="text-[#444444] mb-4">
                     {study.shortDescription}
                   </Paragraph>
                   
-                  <H4 className="mb-6 text-[#0A0A0A]">
+                  <H4 className="mb-6 text-[#0B0B0B]">
                     {study.headline}
                   </H4>
                   
-                  <blockquote className="italic text-[#555555] text-sm md:text-base border-l-4 border-[#0BC3C3] pl-4 my-6 font-normal leading-relaxed">
+                  <blockquote className="italic text-[#444444] text-sm md:text-base border-l-4 border-[#32B2AB] pl-4 my-6 font-normal leading-relaxed">
                     "{study.quote}"
                   </blockquote>
                   
@@ -203,7 +203,7 @@ const CaseStudiesSection = ({
                         href={`https://${study.websiteLink}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-[#0BC3C3]/10 text-[#0BC3C3] hover:bg-[#0BC3C3]/20 rounded-lg font-medium text-sm transition-colors"
+                        className="inline-flex items-center px-4 py-2 bg-[#32B2AB]/10 text-[#32B2AB] hover:bg-[#32B2AB]/20 rounded-lg font-medium text-sm transition-colors"
                       >
                         Website ansehen
                       </a>
@@ -213,10 +213,10 @@ const CaseStudiesSection = ({
                   <StaggerReveal className="space-y-3 mb-6" stagger={0.05}>
                     {study.impact.map((point, idx) => (
                       <div key={idx} className="flex items-start">
-                        <div className="mr-3 mt-1 text-[#0BC3C3]">
+                        <div className="mr-3 mt-1 text-[#32B2AB]">
                           <Check className="h-5 w-5" />
                         </div>
-                        <p className="text-sm md:text-base text-[#555555] font-normal leading-relaxed">{point}</p>
+                        <p className="text-sm md:text-base text-[#444444] font-normal leading-relaxed">{point}</p>
                       </div>
                     ))}
                   </StaggerReveal>
@@ -224,7 +224,7 @@ const CaseStudiesSection = ({
               </div>
               
               <div className="w-full md:w-1/2">
-                <div className="rounded-[20px] overflow-hidden border border-gray-100">
+                <div className="rounded-[20px] overflow-hidden border border-[#E4E6E7]">
                   <img 
                     src={study.image} 
                     alt={`${study.client} case study`} 
@@ -238,7 +238,7 @@ const CaseStudiesSection = ({
         
         <Reveal delay={0.2}>
           <div className="mt-24 text-center">
-            <H3 className="text-[#0A0A0A] mb-8" alignment="center">
+            <H3 className="text-[#0B0B0B] mb-8" alignment="center">
               {t.ctaText}
             </H3>
             

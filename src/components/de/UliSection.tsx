@@ -10,10 +10,10 @@ const UliSection = () => {
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-text mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0B0B0B] mb-6">
               Ihr Ansprechpartner: Uli Schönleber
             </h2>
-            <p className="text-xl text-teal font-medium">
+            <p className="text-xl text-[#32B2AB] font-medium">
             Digital Strategy Lead seit 2008. 200+ realisierte Digitalprojekte. Klarheit statt Agentur-Theater.
             </p>
           </div>
@@ -35,28 +35,28 @@ const UliSection = () => {
           </div>
 
           <div>
-            <p className="text-lg text-primary-text mb-6 font-normal leading-relaxed">
+            <p className="text-lg text-[#0B0B0B] mb-6 font-normal leading-relaxed">
               Ich führe jedes Projekt persönlich — keine Junioren, keine Übergaben, keine Sales-Schleifen.
             </p>
-            <p className="text-lg text-primary-text mb-6 font-normal leading-relaxed">
+            <p className="text-lg text-[#0B0B0B] mb-6 font-normal leading-relaxed">
               Mein Fokus: präzise Analyse, ehrliche Empfehlungen und messbare Ergebnisse.
             </p>
-            <p className="text-lg text-primary-text mb-8 font-normal leading-relaxed">
+            <p className="text-lg text-[#0B0B0B] mb-8 font-normal leading-relaxed">
               Seit über 15 Jahren verbinde ich Strategie, UX und AI-gestützte Prozesse zu digitalen Systemen, die verkaufen.
             </p>
 
             <div className="space-y-3 mb-8">
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">15+ Jahre Erfahrung</span>
+                <CheckCircle className="w-5 h-5 text-[#32B2AB] mr-3 mt-1 flex-shrink-0" />
+                <span className="text-[#0B0B0B] font-normal">15+ Jahre Erfahrung</span>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">200+ realisierte Digitalprojekte</span>
+                <CheckCircle className="w-5 h-5 text-[#32B2AB] mr-3 mt-1 flex-shrink-0" />
+                <span className="text-[#0B0B0B] font-normal">200+ realisierte Digitalprojekte</span>
               </div>
               <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-[#0BC3C3] mr-3 mt-1 flex-shrink-0" />
-                <span className="text-primary-text font-normal">Zusammenarbeit auf Geschäftsführungsniveau</span>
+                <CheckCircle className="w-5 h-5 text-[#32B2AB] mr-3 mt-1 flex-shrink-0" />
+                <span className="text-[#0B0B0B] font-normal">Zusammenarbeit auf Geschäftsführungsniveau</span>
               </div>
             </div>
 

@@ -10,8 +10,21 @@ export default {
         inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       
-      // Enhanced typography scale
+      // Enhanced typography scale with exact px values
       fontSize: {
+        // Exact design system values
+        'h1': ['68px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'h2': ['48px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'h3': ['32px', { lineHeight: '1.3', fontWeight: '500' }],
+        'h4': ['24px', { lineHeight: '1.4', fontWeight: '500' }],
+        'body': ['20px', { lineHeight: '1.6', fontWeight: '400' }],
+        'meta': ['18px', { lineHeight: '1.5', fontWeight: '400' }],
+        'label': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
+        'mobile-h1': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
+        'mobile-h2': ['28px', { lineHeight: '1.2', fontWeight: '700' }],
+        'mobile-h3': ['24px', { lineHeight: '1.3', fontWeight: '500' }],
+        'mobile-body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+        // Keep existing Tailwind defaults for other uses
         'xs': ['0.75rem', { lineHeight: '1rem' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem' }],
         'base': ['1rem', { lineHeight: '1.5rem' }],

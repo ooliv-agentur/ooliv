@@ -1,58 +1,57 @@
-/* ooliv Design System - Unified Brand Colors */
+/* ooliv Design System - Global Unified Colors */
 
 :root {
   /* === CORE BRAND COLORS === */
-  --brand-turquoise: #32b2ab;
+  --brand-turquoise: #32B2AB;
   --brand-turquoise-dark: #289690;
+  --brand-turquoise-hover: #28A29B; /* 10% darker for hover */
   --brand-turquoise-light: #D8F3F1;
   
   /* === TEXT COLORS === */
-  --text-primary: #0A0A0A;
-  --text-secondary: #555555;
-  --text-muted: #7A7A7A;
+  --text-primary: #0B0B0B;
+  --text-body: #444444;
   
   /* === BACKGROUNDS === */
   --bg-primary: #FFFFFF;
   --bg-secondary: #F5F7F7;
-  --bg-tertiary: #F9FAFA;
   
   /* === BORDERS === */
-  --border-color: #E5E8E8;
+  --border-color: #E4E6E7;
   
-  /* === SHADCN THEME VARIABLES === */
+  /* === SHADCN THEME VARIABLES (HSL) === */
   --background: 0 0% 100%;
-  --foreground: 0 0% 5%;
+  --foreground: 4 4% 4%; /* #0B0B0B */
   
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 5%;
+  --card-foreground: 4 4% 4%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 5%;
+  --popover-foreground: 4 4% 4%;
   
-  --primary: 177 56% 45%; /* Turquoise #32b2ab */
+  --primary: 177 56% 45%; /* #32B2AB */
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 180 11% 96%;
-  --secondary-foreground: 0 0% 5%;
+  --secondary: 180 11% 96%; /* #F5F7F7 */
+  --secondary-foreground: 4 4% 4%;
   
   --muted: 180 11% 96%;
-  --muted-foreground: 0 0% 45%;
+  --muted-foreground: 0 0% 27%; /* #444444 */
   
-  --accent: 177 56% 45%; /* Turquoise accent */
+  --accent: 177 56% 45%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 180 11% 90%;
-  --input: 180 11% 90%;
+  --border: 180 8% 90%; /* #E4E6E7 */
+  --input: 180 8% 90%;
   --ring: 177 56% 45%;
   
-  --radius: 0.625rem;
+  --radius: 0.75rem; /* 12px */
   
   /* === UTILITY CLASSES === */
   --turquoise: 177 56% 45%;
-  --turquoise-hover: 177 56% 37%;
+  --turquoise-hover: 177 56% 37%; /* #28A29B */
   --turquoise-light: 177 56% 90%;
 }
 
@@ -66,8 +65,7 @@
   --popover: 0 0% 12%;
   --popover-foreground: 0 0% 100%;
   
-  /* Primary = Turquoise #32b2ab auch im Dark Mode */
-  --primary: 177 56% 45%; /* Turquoise #32b2ab */
+  --primary: 177 56% 45%;
   --primary-foreground: 0 0% 100%;
   
   --secondary: 0 0% 15%;
@@ -87,6 +85,6 @@
   --ring: 177 56% 45%;
 
   --turquoise: 177 56% 45%;
-  --turquoise-hover: 177 56% 55%; /* Heller für Dark Mode */
-  --turquoise-light: 177 56% 20%; /* Dunkler für Dark Mode Background */
+  --turquoise-hover: 177 56% 55%;
+  --turquoise-light: 177 56% 20%;
 }
