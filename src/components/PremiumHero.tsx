@@ -107,7 +107,7 @@ const PremiumHero = () => {
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm text-[#666666]">
                 <div className="flex items-center gap-2">
                   <span className="text-[#0BC3C3] font-bold">✓</span>
-                  <span>100+ erfolgreiche Projekte</span>
+                  <span>200+ realisierte Digitalprojekte</span>
                 </div>
                 <span className="hidden sm:inline text-[#E5E5E5]">•</span>
                 <div className="flex items-center gap-2">

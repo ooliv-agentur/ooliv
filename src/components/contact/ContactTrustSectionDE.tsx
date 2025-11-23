@@ -8,7 +8,7 @@ const ContactTrustSectionDE = () => {
     "Persönliche Ansprechpartner, keine Zwischenstellen",
     "Klare, messbare Ergebnisse", 
     "Direkte Kommunikation mit der Geschäftsführung",
-    "Über 100 erfolgreiche Projekte"
+    "200+ realisierte Digitalprojekte"
   ];
 
   const handleOpenLeadForm = () => {

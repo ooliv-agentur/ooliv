@@ -33,7 +33,7 @@ const UliSection = () => {
             <div className="space-y-3 mb-8">
               {[
                 "15+ Jahre Erfahrung",
-                "200+ Projekte",
+                "200+ realisierte Digitalprojekte",
                 "Beratung auf Geschäftsführungsniveau"
               ].map((fact, index) => (
                 <div key={index} className="flex items-start">

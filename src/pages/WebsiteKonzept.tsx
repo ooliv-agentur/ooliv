@@ -292,7 +292,7 @@ const WebsiteKonzept = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
               <div>
                 <div className="text-3xl font-bold text-turquoise mb-2">200+</div>
-                <p className="text-sm text-gray-600">Erfolgreiche Projekte</p>
+                <p className="text-sm text-gray-600">Realisierte Digitalprojekte</p>
               </div>
               <div>
                 <div className="text-3xl font-bold text-turquoise mb-2">48h</div>
@@ -619,7 +619,7 @@ const WebsiteKonzept = () => {
           <Reveal delay={0.3} direction="up">
             <div className="text-center pt-6 border-t border-gray-200">
               <p className="text-sm text-foreground mb-2">
-                <strong>200+</strong> erfolgreiche Projekte • <strong>ooliv Werbeagentur Mainz</strong>
+                <strong>200+</strong> realisierte Digitalprojekte • <strong>ooliv Werbeagentur Mainz</strong>
               </p>
               <p className="text-xs text-muted-foreground">
                 www.ooliv.de • 06131 – 63 67 801
