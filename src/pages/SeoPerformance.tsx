@@ -8,8 +8,9 @@ import { Button } from '@/components/ui/button';
 import { 
   Zap, Search, FileText, LayoutGrid, TrendingUp, 
   BarChart3, Target, CheckCircle2, Clock, ArrowRight,
-  AlertTriangle, Gauge, Link as LinkIcon, FileSearch
+  AlertTriangle, Gauge, Link as LinkIcon, FileSearch, PenTool
 } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { caseStudiesData } from '@/components/CaseStudiesSection';
 
 const SeoPerformance = () => {
@@ -46,17 +47,100 @@ const SeoPerformance = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="SEO & Performance Optimierung – Sichtbarkeit, die wirkt | ooliv"
-        description="Strategische SEO & Performance-Optimierung: Technisches SEO, Content-Strategie und UX-fokussierte Suchmaschinenoptimierung für nachhaltige Sichtbarkeit und Leads."
+        title="SEO Agentur für technische SEO & Performance | ooliv"
+        description="Technische SEO, Content-Optimierung, Core Web Vitals & Performance: Wir steigern Sichtbarkeit für Unternehmen. 200+ Projekte. Jetzt SEO-Analyse starten."
         canonicalUrl="https://ooliv.de/seo-performance"
-        keywords="SEO Optimierung, Performance Optimierung, Technisches SEO, Content Strategie, Suchmaschinenoptimierung, SEO Agentur, Core Web Vitals, SEO Consulting"
+        keywords="seo agentur, seo & performance, technische seo, seo optimierung, seo für unternehmen, sichtbarkeit steigern, pagespeed optimierung, core web vitals optimierung, content optimierung seo, seo analyse, seo audit, crawling & indexing, seo performance monitoring, seo für b2b, conversion optimierung, keyword-recherche, content-struktur, interne verlinkung, backlink-qualität, search intent, seo ux kombination, technische performance"
         breadcrumbs={breadcrumbs}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://ooliv.de/seo-performance",
+            "name": "ooliv SEO Agentur",
+            "description": "Technische SEO, Content-Optimierung, Core Web Vitals & Performance für Unternehmen",
+            "url": "https://ooliv.de/seo-performance",
+            "serviceType": "SEO Agency"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "SEO & Performance Optimization",
+            "provider": {
+              "@type": "Organization",
+              "name": "ooliv"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Was kostet SEO-Optimierung?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Die Kosten für professionelle SEO-Optimierung hängen vom Umfang ab: Ein einmaliger SEO-Audit startet bei €2.500, laufende SEO-Betreuung ab €1.500/Monat. Wir erstellen Ihnen ein individuelles Angebot basierend auf Ihrer Website und Ihren Zielen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert es, bis SEO Ergebnisse zeigt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Erste Verbesserungen bei Core Web Vitals und technischer Performance sehen Sie oft nach 4-8 Wochen. Signifikante Ranking-Verbesserungen benötigen in der Regel 3-6 Monate, da Google Zeit braucht, um Änderungen zu crawlen und zu bewerten."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was ist der Unterschied zwischen technischer SEO und Content-SEO?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Technische SEO optimiert die Infrastruktur Ihrer Website (Core Web Vitals, Crawlbarkeit, Schema.org, Seitenstruktur). Content-SEO fokussiert sich auf Inhalte, Keywords, Search Intent und Content-Strategien. Beide Bereiche müssen zusammenarbeiten für nachhaltigen Erfolg."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was sind Core Web Vitals?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Core Web Vitals sind Google's Metriken für Nutzererfahrung: LCP (Largest Contentful Paint) für Ladegeschwindigkeit, FID (First Input Delay) für Interaktivität, und CLS (Cumulative Layout Shift) für visuelle Stabilität. Schlechte Werte können Rankings negativ beeinflussen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche SEO-Tools nutzen Sie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wir arbeiten mit professionellen Tools wie Ahrefs, Semrush, Google Search Console, Screaming Frog für Analysen, Google PageSpeed Insights und Lighthouse für Performance, sowie Google Analytics 4 und custom Dashboards für Monitoring und Reporting."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ist lokale SEO wichtig für mein Unternehmen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wenn Sie Kunden in einer bestimmten Region ansprechen, ist lokale SEO entscheidend. Das umfasst Google My Business Optimierung, lokale Keywords, standortbasierte Landing Pages und strukturierte Daten für lokale Unternehmen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie messen Sie SEO-Erfolg?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wir tracken organischen Traffic, Keyword-Rankings, Core Web Vitals, Conversion-Raten, Sichtbarkeitsindex und Business-KPIs wie generierte Leads. Monatliche Reports zeigen Entwicklung und ROI transparent auf."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* Hero Section */}
-      <PageHero
-        title="SEO & Performance, das wirkt."
-        subtitle="Wir optimieren Struktur, Inhalte und Technik Ihrer Website so, dass Google sie versteht, Nutzer finden und Leads entstehen — datengetrieben, klar und ohne SEO-Mythen."
+      <section id="hero">
+        <PageHero
+          title="SEO Agentur für nachhaltige Sichtbarkeit & technische Performance"
+          subtitle="SEO & Performance für Unternehmen: Technische SEO, Content-Optimierung, Core Web Vitals und AI-gestützte Analysen – für messbar mehr Sichtbarkeit und Leads."
         primaryCta={{
           text: "Kostenloses Konzept sichern",
           link: "#",
@@ -66,10 +150,11 @@ const SeoPerformance = () => {
           text: "SEO-Analyse anfordern",
           link: "#analyse"
         }}
-      />
+        />
+      </section>
 
       {/* USPs Section */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section id="usps" className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
@@ -79,25 +164,25 @@ const SeoPerformance = () => {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Gauge className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />
+              <Gauge className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="Technisches SEO + strukturierte Inhalte" />
               <div>
                 <h3 className="font-semibold text-[#0D0D0D] text-sm">Technisches SEO + strukturierte Inhalte</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Target className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />
+              <Target className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="UX- und Conversion-fokussiert" />
               <div>
                 <h3 className="font-semibold text-[#0D0D0D] text-sm">UX- und Conversion-fokussiert</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <Zap className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />
+              <Zap className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="AI-gestützte Recherchen & Audits" />
               <div>
                 <h3 className="font-semibold text-[#0D0D0D] text-sm">AI-gestützte Recherchen & Audits</h3>
               </div>
             </motion.div>
             <motion.div variants={fadeInUp} className="flex items-start gap-3">
-              <BarChart3 className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" />
+              <BarChart3 className="w-6 h-6 text-[#0BC3C3] flex-shrink-0 mt-1" aria-label="Messbare Verbesserungen statt Keyword-Versprechen" />
               <div>
                 <h3 className="font-semibold text-[#0D0D0D] text-sm">Messbare Verbesserungen statt Keyword-Versprechen</h3>
               </div>
@@ -106,13 +191,75 @@ const SeoPerformance = () => {
         </div>
       </section>
 
+      {/* NEW SECTION — Pain Points */}
+      <section id="pain-points" className="py-20 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
+              Warum SEO & Performance entscheidend sind
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerChildren}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              {
+                icon: Search,
+                title: "Keine Sichtbarkeit trotz guter Inhalte",
+                description: "Ihre Inhalte sind hochwertig, aber Google findet sie nicht."
+              },
+              {
+                icon: Gauge,
+                title: "Langsame Website / schlechte Core Web Vitals",
+                description: "Ladezeiten über 3 Sekunden kosten Rankings und Kunden."
+              },
+              {
+                icon: AlertTriangle,
+                title: "Technische Fehler behindern Ranking",
+                description: "Crawling-Probleme, defekte Links oder fehlerhafte Strukturen."
+              },
+              {
+                icon: Target,
+                title: "Keine klare SEO-Strategie oder Priorisierung",
+                description: "Ohne Plan verzetteln Sie sich in unwichtigen Optimierungen."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-[#F7F8FC] rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all"
+              >
+                <item.icon className="w-8 h-8 text-[#0BC3C3] mb-4" aria-label={item.title} />
+                <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#666666]">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Problem → Lösung Section */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
+      <section id="problem-solution" className="py-20 lg:py-32 bg-[#F7F8FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-8 text-center">
-              SEO ist kein Keyword-Spiel.<br />
-              Es ist Struktur, Content und technische Exzellenz.
+              SEO Optimierung: Struktur, Content & technische Exzellenz
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -120,7 +267,7 @@ const SeoPerformance = () => {
                 variants={fadeInUp}
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
-                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
                 <p className="text-[#666666]">Viele Seiten haben Inhalte, aber keine Suchlogik</p>
               </motion.div>
               
@@ -128,7 +275,7 @@ const SeoPerformance = () => {
                 variants={fadeInUp}
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
-                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
                 <p className="text-[#666666]">Falsche Struktur verhindert Sichtbarkeit</p>
               </motion.div>
               
@@ -136,7 +283,7 @@ const SeoPerformance = () => {
                 variants={fadeInUp}
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
-                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
                 <p className="text-[#666666]">Technische Fehler blockieren Ranking</p>
               </motion.div>
               
@@ -144,7 +291,7 @@ const SeoPerformance = () => {
                 variants={fadeInUp}
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
-                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
                 <p className="text-[#666666]">Keine klare Content-Priorisierung</p>
               </motion.div>
               
@@ -152,7 +299,7 @@ const SeoPerformance = () => {
                 variants={fadeInUp}
                 className="bg-white p-6 rounded-lg border border-gray-200 flex items-start gap-3"
               >
-                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-5 h-5 text-[#FF6B6B] flex-shrink-0 mt-1" aria-label="SEO Problem" />
                 <p className="text-[#666666]">Kein Tracking, keine Datenbasis</p>
               </motion.div>
             </div>
@@ -171,11 +318,11 @@ const SeoPerformance = () => {
       </section>
 
       {/* Leistungs-Bereiche Section */}
-      <section id="analyse" className="py-20 lg:py-32 bg-white">
+      <section id="leistungen" className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-4">
-              Unsere SEO & Performance Leistungen
+              Unsere SEO-Leistungen im Überblick
             </h2>
           </motion.div>
 
@@ -192,9 +339,12 @@ const SeoPerformance = () => {
               className="bg-[#F7F8FC] p-8 rounded-lg border border-gray-200 hover:border-[#0BC3C3] transition-all hover:shadow-lg"
             >
               <div className="bg-white w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                <Gauge className="w-7 h-7 text-[#0BC3C3]" />
+                <Gauge className="w-7 h-7 text-[#0BC3C3]" aria-label="Technische SEO & Core Web Vitals Optimierung" />
               </div>
-              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Technisches SEO</h3>
+              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Technische SEO & Core Web Vitals Optimierung</h3>
+              <p className="text-xs text-[#0BC3C3] font-semibold mb-4">
+                SEO Audit • Crawling & Indexing • Pagespeed Optimierung
+              </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
@@ -221,9 +371,12 @@ const SeoPerformance = () => {
               className="bg-[#F7F8FC] p-8 rounded-lg border border-gray-200 hover:border-[#0BC3C3] transition-all hover:shadow-lg"
             >
               <div className="bg-white w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                <FileText className="w-7 h-7 text-[#0BC3C3]" />
+                <FileText className="w-7 h-7 text-[#0BC3C3]" aria-label="Content & Onpage Optimierung" />
               </div>
-              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Content & Suchlogik</h3>
+              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Content & Onpage Optimierung</h3>
+              <p className="text-xs text-[#0BC3C3] font-semibold mb-4">
+                Keyword-Recherche • Search Intent • Content-Struktur
+              </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
@@ -250,9 +403,12 @@ const SeoPerformance = () => {
               className="bg-[#F7F8FC] p-8 rounded-lg border border-gray-200 hover:border-[#0BC3C3] transition-all hover:shadow-lg"
             >
               <div className="bg-white w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                <LayoutGrid className="w-7 h-7 text-[#0BC3C3]" />
+                <LayoutGrid className="w-7 h-7 text-[#0BC3C3]" aria-label="Informationsarchitektur & UX für SEO" />
               </div>
               <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Informationsarchitektur & UX für SEO</h3>
+              <p className="text-xs text-[#0BC3C3] font-semibold mb-4">
+                Interne Verlinkung • URL-Struktur • Conversion-Optimierung
+              </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
@@ -279,9 +435,12 @@ const SeoPerformance = () => {
               className="bg-[#F7F8FC] p-8 rounded-lg border border-gray-200 hover:border-[#0BC3C3] transition-all hover:shadow-lg"
             >
               <div className="bg-white w-14 h-14 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="w-7 h-7 text-[#0BC3C3]" />
+                <TrendingUp className="w-7 h-7 text-[#0BC3C3]" aria-label="Performance Monitoring & Reporting" />
               </div>
-              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Performance- & Ranking-Optimierung</h3>
+              <h3 className="text-2xl font-bold text-[#0D0D0D] mb-4">Performance Monitoring & Reporting</h3>
+              <p className="text-xs text-[#0BC3C3] font-semibold mb-4">
+                SEO Performance Monitoring • KPI-Dashboards • Ranking-Analysen
+              </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
@@ -316,11 +475,11 @@ const SeoPerformance = () => {
       </section>
 
       {/* Prozess Section */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
+      <section id="prozess" className="py-20 lg:py-32 bg-[#F7F8FC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-4">
-              So entsteht SEO, das wirklich funktioniert.
+              So optimieren wir Ihre SEO & Website-Performance
             </h2>
           </motion.div>
 
@@ -338,9 +497,9 @@ const SeoPerformance = () => {
                   1
                 </div>
                 <div className="mb-4">
-                  <FileSearch className="w-8 h-8 text-[#0BC3C3]" />
+                  <FileSearch className="w-8 h-8 text-[#0BC3C3]" aria-label="SEO Audit & technische Analyse" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">SEO & Performance Audit</h3>
+                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">SEO Audit & technische Analyse</h3>
                 <p className="text-[#666666]">
                   Technische Analyse, Konkurrenzvergleich, Intent-Recherche.
                 </p>
@@ -357,9 +516,9 @@ const SeoPerformance = () => {
                   2
                 </div>
                 <div className="mb-4">
-                  <LayoutGrid className="w-8 h-8 text-[#0BC3C3]" />
+                  <LayoutGrid className="w-8 h-8 text-[#0BC3C3]" aria-label="Technisches Setup & Content-Optimierung" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">Struktur & Content-System</h3>
+                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">Technisches Setup & Content-Optimierung</h3>
                 <p className="text-[#666666]">
                   Informationsarchitektur, Themencluster, Priorisierung.
                 </p>
@@ -376,7 +535,7 @@ const SeoPerformance = () => {
                   3
                 </div>
                 <div className="mb-4">
-                  <Zap className="w-8 h-8 text-[#0BC3C3]" />
+                  <Zap className="w-8 h-8 text-[#0BC3C3]" aria-label="Optimierung & Implementierung" />
                 </div>
                 <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">Optimierung & Implementierung</h3>
                 <p className="text-[#666666]">
@@ -395,9 +554,9 @@ const SeoPerformance = () => {
                   4
                 </div>
                 <div className="mb-4">
-                  <BarChart3 className="w-8 h-8 text-[#0BC3C3]" />
+                  <BarChart3 className="w-8 h-8 text-[#0BC3C3]" aria-label="Performance-Checks & kontinuierliches Monitoring" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">Monitoring & Verbesserungen</h3>
+                <h3 className="text-xl font-bold text-[#0D0D0D] mb-3">Performance-Checks & kontinuierliches Monitoring</h3>
                 <p className="text-[#666666]">
                   Rankings, KPIs, Funnel-Ergebnisse, datengetriebene Updates.
                 </p>
@@ -408,11 +567,11 @@ const SeoPerformance = () => {
       </section>
 
       {/* Case Study Teaser Section */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section id="case-studies" className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-4">
-              Sichtbarkeit ist messbar.
+              SEO-Ergebnisse unserer Kunden
             </h2>
           </motion.div>
 
@@ -423,16 +582,32 @@ const SeoPerformance = () => {
             whileInView="whileInView"
             viewport={{ once: true }}
           >
-            {seoRelatedCases.map((caseStudy, index) => (
+            {[
+              {
+                ...seoRelatedCases[0],
+                seoTag: "SEO Softwareunternehmen"
+              },
+              {
+                ...seoRelatedCases[1],
+                seoTag: "Lokale SEO Optimierung"
+              },
+              {
+                ...seoRelatedCases[2],
+                seoTag: "SEO Steuerberatung"
+              }
+            ].filter(Boolean).map((caseStudy, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 className="bg-[#F7F8FC] p-8 rounded-lg border border-gray-200 hover:border-[#0BC3C3] transition-all hover:shadow-lg hover:scale-[1.02]"
               >
+                <span className="inline-block px-3 py-1 bg-[#0BC3C3]/10 text-[#0BC3C3] text-xs font-medium rounded-full mb-4">
+                  {caseStudy.seoTag}
+                </span>
                 <div className="bg-white p-4 rounded-lg mb-6 flex items-center justify-center h-24">
                   <img 
                     src={caseStudy.logo} 
-                    alt={`${caseStudy.client} Logo`}
+                    alt={`${caseStudy.client} – ${caseStudy.seoTag} von ooliv`}
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
@@ -456,8 +631,73 @@ const SeoPerformance = () => {
         </div>
       </section>
 
+      {/* NEW SECTION — Tools & Technologien */}
+      <section id="tools" className="py-20 lg:py-32 bg-[#F7F8FC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
+              Tools & Technologien für professionelle SEO
+            </h2>
+            <p className="text-lg text-[#666666] max-w-3xl mx-auto">
+              Wir nutzen moderne SEO-Tools, AI-gestützte Analysen und Performance-Monitoring für messbare Ergebnisse.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Search,
+                title: "SEO-Analyse & Research",
+                tools: ["Ahrefs", "Semrush", "Google Search Console", "Screaming Frog"]
+              },
+              {
+                icon: Gauge,
+                title: "Performance & Core Web Vitals",
+                tools: ["Google PageSpeed Insights", "GTmetrix", "Lighthouse", "WebPageTest"]
+              },
+              {
+                icon: BarChart3,
+                title: "Monitoring & Reporting",
+                tools: ["Google Analytics 4", "Looker Studio", "Custom Dashboards", "Rank Tracking"]
+              }
+            ].map((block, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-lg p-8 border border-gray-200"
+              >
+                <div className="flex items-center justify-center w-12 h-12 bg-[#0BC3C3]/10 text-[#0BC3C3] rounded-lg mb-6">
+                  <block.icon className="w-6 h-6" aria-label={block.title} />
+                </div>
+                <h3 className="text-xl font-bold text-[#0D0D0D] mb-4">
+                  {block.title}
+                </h3>
+                <ul className="space-y-2">
+                  {block.tools.map((tool, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#0BC3C3] flex-shrink-0" />
+                      <span className="text-sm text-[#666666]">{tool}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Uli-Teaser Section */}
-      <section className="py-20 lg:py-32 bg-[#F7F8FC]">
+      <section id="team" className="py-20 lg:py-32 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeInUp} className="bg-white p-8 lg:p-12 rounded-lg border border-gray-200">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-6 text-center">
@@ -490,20 +730,116 @@ const SeoPerformance = () => {
                 <a href="/ueber">Uli kennenlernen</a>
               </Button>
             </div>
+            
+            <motion.p
+              {...fadeInUp}
+              className="text-center text-lg text-[#666666] mt-8 max-w-3xl mx-auto"
+            >
+              Unser hybrides Team aus Strategie, Content, UX, Entwicklung und SEO sorgt dafür, dass technische Performance und Inhalte perfekt zusammenspielen. Weitere Services: 
+              <a href="/digitale-transformation-strategie" className="text-[#0BC3C3] hover:underline ml-2">Digitale Transformation</a>, 
+              <a href="/ux-konzeption" className="text-[#0BC3C3] hover:underline ml-2">UX-Konzeption</a>, 
+              <a href="/webdesign-entwicklung" className="text-[#0BC3C3] hover:underline ml-2">Webdesign</a>, 
+              <a href="/ai-workflows" className="text-[#0BC3C3] hover:underline ml-2">AI-Workflows</a>.
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <CTA
-        title="Bereit für mehr Sichtbarkeit — und mehr Leads?"
-        subtitle="Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Sichtbarkeit und Conversion-Rate steigern können."
-        primaryCta="Kostenloses Konzept sichern"
-        primaryCtaLink="/"
-      />
+      <section id="cta">
+        <CTA
+          title="Bereit für mehr Sichtbarkeit — und mehr Leads?"
+          subtitle="SEO für Unternehmen – nachhaltige Rankings, bessere Performance. Starten Sie jetzt mit einem kostenlosen SEO-Audit."
+          primaryCta="Kostenloses Konzept sichern"
+          primaryCtaLink="/"
+        />
+      </section>
+
+      {/* NEW SECTION — FAQ */}
+      <section id="faq" className="py-20 lg:py-32 bg-[#F7F8FC]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D0D0D] mb-6">
+              FAQ: SEO & Performance
+            </h2>
+          </motion.div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Was kostet SEO-Optimierung?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Die Kosten für professionelle SEO-Optimierung hängen vom Umfang ab: Ein einmaliger SEO-Audit startet bei €2.500, laufende SEO-Betreuung ab €1.500/Monat. Wir erstellen Ihnen ein individuelles Angebot basierend auf Ihrer Website und Ihren Zielen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Wie lange dauert es, bis SEO Ergebnisse zeigt?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Erste Verbesserungen bei Core Web Vitals und technischer Performance sehen Sie oft nach 4-8 Wochen. Signifikante Ranking-Verbesserungen benötigen in der Regel 3-6 Monate, da Google Zeit braucht, um Änderungen zu crawlen und zu bewerten.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Was ist der Unterschied zwischen technischer SEO und Content-SEO?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Technische SEO optimiert die Infrastruktur Ihrer Website (Core Web Vitals, Crawlbarkeit, Schema.org, Seitenstruktur). Content-SEO fokussiert sich auf Inhalte, Keywords, Search Intent und Content-Strategien. Beide Bereiche müssen zusammenarbeiten für nachhaltigen Erfolg.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Was sind Core Web Vitals?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Core Web Vitals sind Google's Metriken für Nutzererfahrung: LCP (Largest Contentful Paint) für Ladegeschwindigkeit, FID (First Input Delay) für Interaktivität, und CLS (Cumulative Layout Shift) für visuelle Stabilität. Schlechte Werte können Rankings negativ beeinflussen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Welche SEO-Tools nutzen Sie?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Wir arbeiten mit professionellen Tools wie Ahrefs, Semrush, Google Search Console, Screaming Frog für Analysen, Google PageSpeed Insights und Lighthouse für Performance, sowie Google Analytics 4 und custom Dashboards für Monitoring und Reporting.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Ist lokale SEO wichtig für mein Unternehmen?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Wenn Sie Kunden in einer bestimmten Region ansprechen, ist lokale SEO entscheidend. Das umfasst Google My Business Optimierung, lokale Keywords, standortbasierte Landing Pages und strukturierte Daten für lokale Unternehmen.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7" className="bg-white border border-gray-200 rounded-lg px-6">
+              <AccordionTrigger className="text-lg font-semibold text-[#0D0D0D] hover:no-underline">
+                Wie messen Sie SEO-Erfolg?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#666666]">
+                Wir tracken organischen Traffic, Keyword-Rankings, Core Web Vitals, Conversion-Raten, Sichtbarkeitsindex und Business-KPIs wie generierte Leads. Monatliche Reports zeigen Entwicklung und ROI transparent auf.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
 
       {/* SEO Footer Section */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      <section id="seo-footer" className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h2 className="text-xl font-bold text-[#0D0D0D] mb-4">
