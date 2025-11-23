@@ -99,15 +99,15 @@ const GermanSEO = () => {
       {/* Budget Section */}
       <Section spacing="medium">
         <Container size="narrow">
-          <div className="bg-[#E0FBFA] p-8 rounded-lg text-center">
+          <div className="bg-[#D8F3F1] p-8 rounded-lg text-center">
             <h3 className="text-2xl font-bold mb-4 text-[#0A0A0A]">
               Was kostet professionelle SEO & GEO-Betreuung?
             </h3>
             <p className="text-lg text-[#555555] mb-4">
-              Unsere SEO & GEO-Pakete starten bei <span className="text-[#0BC3C3] font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
-              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-[#0BC3C3] font-bold">€2.500</span>.
+              Unsere SEO & GEO-Pakete starten bei <span className="text-[#32b2ab] font-bold">€800/Monat</span> für laufende Optimierung inkl. Backlinkaufbau, Blog-Artikel und Presseartikel. 
+              Initial-Audits und technische SEO-Setups beginnen bei <span className="text-[#32b2ab] font-bold">€2.500</span>.
             </p>
-            <div className="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold text-[#0BC3C3] border-2 border-[#0BC3C3]">
+            <div className="inline-block bg-white px-4 py-2 rounded-full text-sm font-semibold text-[#32b2ab] border-2 border-[#32b2ab]">
               Für komplexe E-Commerce- oder Enterprise-Projekte erstellen wir individuelle Angebote
             </div>
           </div>
@@ -117,7 +117,7 @@ const GermanSEO = () => {
       <SEOProcessDE />
 
       <p className="text-center text-sm text-[#555555] mt-4 px-4">
-        Mehr über <Link to="/" className="underline hover:no-underline text-[#0BC3C3]">ooliv und unsere Arbeitsweise</Link>.
+        Mehr über <Link to="/" className="underline hover:no-underline text-[#32b2ab]">ooliv und unsere Arbeitsweise</Link>.
       </p>
       
       <MicroCaseStudies 

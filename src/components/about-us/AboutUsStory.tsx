@@ -7,13 +7,13 @@ import { Container } from '@/components/layout/Container';
 
 const AboutUsStory = () => {
   return (
-    <Section spacing="medium" background="light" className="font-satoshi">
+    <Section spacing="medium" background="light">
       <Container size="narrow">
         <H2 alignment="center" className="mb-6 text-[#0A0A0A]">
           Seit 2008 aus Mainz. Heute in DACH aktiv.
         </H2>
         <div className="flex justify-center mb-8">
-          <div className="h-12 w-12 flex items-center justify-center bg-[#0BC3C3] rounded-full">
+          <div className="h-12 w-12 flex items-center justify-center bg-[#32b2ab] rounded-full">
             <Globe className="h-6 w-6 text-white" />
           </div>
         </div>

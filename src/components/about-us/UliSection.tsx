@@ -24,7 +24,7 @@ const UliSection = () => {
             <H2 className="text-[#0A0A0A] mb-4">
               Uli Schönleber — Digital Strategy Lead
             </H2>
-            <H3 className="text-[#0BC3C3] mb-6">
+            <H3 className="text-[#32b2ab] mb-6">
               Strategie, UX & AI aus einer Hand.
             </H3>
             
@@ -39,7 +39,7 @@ const UliSection = () => {
                 "Beratung auf Geschäftsführungsniveau"
               ].map((fact, index) => (
                 <div key={index} className="flex items-start">
-                  <Brain className="w-5 h-5 text-[#0BC3C3] mr-3 flex-shrink-0 mt-0.5" />
+                  <Brain className="w-5 h-5 text-[#32b2ab] mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-[#555555] font-medium">{fact}</span>
                 </div>
               ))}

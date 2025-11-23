@@ -37,12 +37,12 @@ const HybridApproach = () => {
                 <Link
                   key={index}
                   to={link.url}
-                  className="flex items-center justify-between p-4 bg-[#F5F7F7] rounded-lg hover:bg-[#0BC3C3]/10 transition-colors group"
+                  className="flex items-center justify-between p-4 bg-[#F5F7F7] rounded-lg hover:bg-[#32b2ab]/10 transition-colors group"
                 >
-                  <span className="text-[#555555] font-medium group-hover:text-[#0BC3C3]">
+                  <span className="text-[#555555] font-medium group-hover:text-[#32b2ab]">
                     {link.label}
                   </span>
-                  <ArrowRight className="w-5 h-5 text-[#0BC3C3] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <ArrowRight className="w-5 h-5 text-[#32b2ab] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ))}
             </div>

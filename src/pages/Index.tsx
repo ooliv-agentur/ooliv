@@ -176,7 +176,7 @@ const GermanIndex = () => {
                     { icon: Zap, text: "Schnelle Umsetzung" }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-2">
-                      <item.icon className="w-5 h-5 text-[#0BC3C3] flex-shrink-0" />
+                      <item.icon className="w-5 h-5 text-[#32b2ab] flex-shrink-0" />
                       <p className="text-sm font-medium text-[#0A0A0A]">{item.text}</p>
                     </div>
                   ))}
@@ -191,7 +191,7 @@ const GermanIndex = () => {
               >
                 <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Target className="w-24 h-24 text-[#0BC3C3] mx-auto mb-6" aria-label="Digitale Transformation Icon" />
+                    <Target className="w-24 h-24 text-[#32b2ab] mx-auto mb-6" aria-label="Digitale Transformation Icon" />
                     <p className="text-lg text-[#555555]">Strategische Digitalisierung</p>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ const GermanIndex = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-all hover:scale-105 group"
                 >
-                  <div className="flex items-center justify-center w-14 h-14 bg-[#E0FBFA] text-[#0BC3C3] rounded-lg mb-6 group-hover:bg-[#0BC3C3] group-hover:text-white transition-colors">
+                  <div className="flex items-center justify-center w-14 h-14 bg-[#D8F3F1] text-[#32b2ab] rounded-lg mb-6 group-hover:bg-[#32b2ab] group-hover:text-white transition-colors">
                     <service.icon className="w-7 h-7" />
                   </div>
                   <H3 className="mb-3">
@@ -364,7 +364,7 @@ const GermanIndex = () => {
               >
                 <div className="bg-[#F5F7F7] rounded-lg p-8 border border-[#E5E8E8] flex items-center justify-center min-h-[500px]">
                   <div className="text-center">
-                    <Users className="w-24 h-24 text-[#0BC3C3] mx-auto mb-6" aria-label="Uli Schönleber Icon" />
+                    <Users className="w-24 h-24 text-[#32b2ab] mx-auto mb-6" aria-label="Uli Schönleber Icon" />
                     <p className="text-lg text-[#555555]">Uli Schönleber</p>
                     <p className="text-sm text-[#7A7A7A]">Senior Digital Strategy Consultant & Gründer</p>
                   </div>
@@ -395,7 +395,7 @@ const GermanIndex = () => {
                     "Direkter Draht zur Geschäftsführung"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
                       <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
@@ -451,7 +451,7 @@ const GermanIndex = () => {
                     "NotebookLM – Wissensmanagement"
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
                       <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
@@ -477,7 +477,7 @@ const GermanIndex = () => {
                     "Make, Zapier – Automatisierung"
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#0BC3C3] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-[#32b2ab] flex-shrink-0 mt-0.5" />
                       <Paragraph className="text-base" color="secondary">{item}</Paragraph>
                     </div>
                   ))}
