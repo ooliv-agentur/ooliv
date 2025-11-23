@@ -9,6 +9,7 @@ import { StatsBar, PainPointsGrid, FeatureGrid, MicroCaseStudies } from '@/compo
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { typographyStyles } from '@/styles/typography';
 import { motion } from 'framer-motion';
+import { H2, H3, Paragraph, LargeParagraph } from '@/components/ui/typography';
 import { 
   Brain, Zap, Shield, GraduationCap, Search, FileText, Cog, 
   TestTube, GitBranch, Target, AlertTriangle, Database, BarChart3
@@ -165,9 +166,9 @@ const AiWorkflows = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Warum AI-Workflows & Prozessautomatisierung entscheidend sind
-            </h2>
+            </H2>
           </motion.div>
 
           <PainPointsGrid painPoints={painPoints} columns={5} />
@@ -183,38 +184,38 @@ const AiWorkflows = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className={`${typographyStyles.headings.h2} text-center mb-12`}>
+            <H2 className="text-center mb-12" alignment="center">
               AI bringt nur etwas, wenn sie sauber in Prozesse integriert wird.
-            </h2>
+            </H2>
             
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-lg border border-[#E4E6E7]">
-                <h3 className="text-xl font-bold text-[#0B0B0B] mb-4">Typische Herausforderungen</h3>
-                <ul className="space-y-3 text-[#444444]">
+              <div className="bg-background p-8 rounded-lg border border-border">
+                <H3 className="mb-4">Typische Herausforderungen</H3>
+                <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    <span>Unternehmen testen Tools, aber haben kein System</span>
+                    <span className="text-destructive mr-2">•</span>
+                    <Paragraph color="secondary">Unternehmen testen Tools, aber haben kein System</Paragraph>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    <span>Kein Überblick über Kosten, Nutzen, Risiken</span>
+                    <span className="text-destructive mr-2">•</span>
+                    <Paragraph color="secondary">Kein Überblick über Kosten, Nutzen, Risiken</Paragraph>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    <span>Teams fühlen sich überfordert</span>
+                    <span className="text-destructive mr-2">•</span>
+                    <Paragraph color="secondary">Teams fühlen sich überfordert</Paragraph>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">•</span>
-                    <span>Keine klaren AI-Use-Cases</span>
+                    <span className="text-destructive mr-2">•</span>
+                    <Paragraph color="secondary">Keine klaren AI-Use-Cases</Paragraph>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-[#D8F3F1] p-8 rounded-lg border border-[#32b2ab]/20">
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-4">Unsere Lösung</h3>
-                <p className="text-[#0A0A0A] leading-relaxed">
+              <div className="bg-primary/10 p-8 rounded-lg border border-primary/20">
+                <H3 className="mb-4">Unsere Lösung</H3>
+                <Paragraph>
             Wir entwickeln AI-Workflows, die nicht experimentieren, sondern funktionieren: klare Prozessmodelle, Automatisierungen, datenbasierte Entscheidungen und skalierbare Abläufe.
-                </p>
+                </Paragraph>
               </div>
             </div>
           </motion.div>
@@ -231,9 +232,9 @@ const AiWorkflows = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Unsere AI-Workflows für Unternehmen
-            </h2>
+            </H2>
           </motion.div>
 
           <FeatureGrid 
@@ -262,9 +263,9 @@ const AiWorkflows = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className={typographyStyles.headings.h2}>
+            <H2 className="mb-6" alignment="center">
               Häufig gestellte Fragen
-            </h2>
+            </H2>
           </motion.div>
 
           <Accordion type="single" collapsible className="w-full">
@@ -306,12 +307,12 @@ const AiWorkflows = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className={`${typographyStyles.headings.h3} mb-6`}>
+            <H3 className="mb-6" alignment="center">
               Hybride AI-Strategie
-            </h2>
-            <p className="text-lg text-[#666666] leading-relaxed">
+            </H3>
+            <LargeParagraph alignment="center" color="secondary">
               AI-Strategie, Prozessmodellierung & Priorisierung unter Senior-Level-Führung — Umsetzung durch spezialisiertes Hybridteam für Automatisierung, Development, Content & Systemintegration.
-            </p>
+            </LargeParagraph>
           </motion.div>
         </Container>
       </Section>
