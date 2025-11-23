@@ -30,12 +30,12 @@ const AboutUsHero = () => {
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
-              Die meisten Agenturen versprechen zu viel. Wir nicht.
+              Digitale Klarheit seit 2008.
             </H1>
             
             {/* Subtitle - using typography system */}
             <LargeParagraph className="mb-8 sm:mb-10">
-              Keine riesigen Teams, keine Zwischenstellen. Stattdessen: Ein Gründer, der Ihr Projekt persönlich betreut. Ehrliche Beratung statt Verkaufsgespräche.
+              Wir entwickeln Strategie, UX und AI-gestützte Workflows für Unternehmen, die digital wachsen wollen — seniorgeführt, strukturiert und ehrlich.
             </LargeParagraph>
             
             {/* CTA buttons - now using design system */}

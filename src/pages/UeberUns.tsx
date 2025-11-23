@@ -9,16 +9,13 @@ import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import AboutUsHero from '@/components/about-us/AboutUsHero';
 import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
 import AboutUsStory from '@/components/about-us/AboutUsStory';
-import AboutUsWhySmall from '@/components/about-us/AboutUsWhySmall';
-import AboutUsDigitalPartner from '@/components/about-us/AboutUsDigitalPartner';
-import AboutUsIndividual from '@/components/about-us/AboutUsIndividual';
-import AboutUsTeamCapabilities from '@/components/about-us/AboutUsTeamCapabilities';
+import UliSection from '@/components/about-us/UliSection';
+import OurApproach from '@/components/about-us/OurApproach';
 import TeamSection from '@/components/TeamSection';
-import AboutCompactFAQ from '@/components/AboutCompactFAQ';
-import AboutUsDigitalServices from '@/components/about-us/AboutUsDigitalServices';
-import AboutUsTargetBusinesses from '@/components/about-us/AboutUsTargetBusinesses';
-import AboutUsFAQ from '@/components/about-us/AboutUsFAQ';
-import AboutUsCTA from '@/components/about-us/AboutUsCTA';
+import WhySmallTeam from '@/components/about-us/WhySmallTeam';
+import TargetIndustries from '@/components/about-us/TargetIndustries';
+import AboutUsFAQNew from '@/components/about-us/AboutUsFAQNew';
+import AboutUsCTANew from '@/components/about-us/AboutUsCTANew';
 
 const GermanAboutUs = () => {
   const { setLanguage } = useLanguage();
@@ -48,11 +45,11 @@ const GermanAboutUs = () => {
       className="overflow-x-hidden"
     >
       <EnhancedSEOHead
-        title="Über uns | ooliv Werbeagentur Mainz"
-        description="Werbeagentur Mainz seit 2008 – Inhabergeführt, persönlich, ehrlich. Team kennenlernen & erfahren, wie wir B2B-Unternehmen zum Erfolg verhelfen."
+        title="Über ooliv – Digitale Agentur für Strategie, UX & AI seit 2008"
+        description="Lernen Sie das Team hinter ooliv kennen – spezialisiert auf Strategie, UX, Webentwicklung, SEO und AI-gestützte Workflows. Seniorgeführt. Ehrlich. Effizient."
         canonicalUrl="https://ooliv.de/ueber-uns"
         structuredData={structuredData}
-        keywords="Über ooliv, Werbeagentur Mainz, Team, Unternehmen, Digital Marketing"
+        keywords="Über ooliv, Digitalagentur, Team, Strategie, UX, AI-Workflows"
         breadcrumbs={[
           { name: "Home", url: "https://ooliv.de/" },
           { name: "Über uns", url: "https://ooliv.de/ueber-uns" }
@@ -62,20 +59,17 @@ const GermanAboutUs = () => {
       <AboutUsHero />
       <AboutUsIntroduction />
       <AboutUsStory />
-      <AboutUsWhySmall />
-      <AboutUsDigitalPartner />
-      <AboutUsIndividual />
-      <AboutUsTeamCapabilities />
+      <UliSection />
+      <OurApproach />
       
       <div id="team">
         <TeamSection />
       </div>
 
-      <AboutCompactFAQ />
-      <AboutUsDigitalServices />
-      <AboutUsTargetBusinesses />
-      <AboutUsFAQ />
-      <AboutUsCTA />
+      <WhySmallTeam />
+      <TargetIndustries />
+      <AboutUsFAQNew />
+      <AboutUsCTANew />
     </PageLayout>
   );
 };
