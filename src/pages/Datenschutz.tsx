@@ -79,7 +79,7 @@ const GermanPrivacyPolicy = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
               <Lock className="h-8 w-8 text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground font-satoshi leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground leading-tight">
               Datenschutzerklärung
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>

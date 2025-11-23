@@ -22,7 +22,7 @@ interface LegalHeroProps {
 
 const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHeroProps) => {
   return (
-    <section className="relative bg-secondary overflow-hidden font-satoshi min-h-screen flex items-center">
+    <section className="relative bg-secondary overflow-hidden min-h-screen flex items-center">
       {/* Enhanced floating circles animation - same as other hero sections */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -81,7 +81,7 @@ const LegalHero = ({ title, subtitle, primaryCta, secondaryCta, badge }: LegalHe
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="group bg-background text-foreground hover:bg-gray-50 border-2 border-foreground hover:border-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+                    className="group bg-background text-foreground hover:bg-secondary border-2 border-foreground hover:border-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                     onClick={secondaryCta.onClick}
                     asChild={!secondaryCta.onClick}
                   >
