@@ -118,7 +118,7 @@ const GermanIndex = () => {
         />
         
         {/* HERO SECTION */}
-        <Section id="hero" spacing="large" background="white">
+        <Section id="hero" spacing="large" background="light">
           <Container>
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-120px)]">
               
