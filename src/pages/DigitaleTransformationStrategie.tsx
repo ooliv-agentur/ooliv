@@ -53,17 +53,130 @@ const DigitaleTransformationStrategie = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Digitale Transformation & Strategie | Strukturen, Prozesse & Wachstums-Systeme"
-        description="Wir entwickeln digitale Strategien, die Unternehmen transformieren: klare Strukturen, moderne Workflows, Prozessautomatisierung, AI-Integration und messbare digitale Ergebnisse für B2B & Mittelstand."
+        title="Digitale Transformation Beratung | Strategie, Prozesse, AI & Roadmaps – ooliv"
+        description="Beratung für digitale Transformation: Roadmaps, Prozessoptimierung, Customer Journey Mapping, digitale Workflows, AI-Integration. Senior-Level Strategie. 200+ Digitalprojekte."
         canonicalUrl="https://ooliv.de/digitale-transformation-strategie"
-        keywords="digitale transformation agentur, digitale strategie beratung, digitaler reifegrad, digitale roadmap, prozessdigitalisierung, geschäftsprozessoptimierung, customer journey mapping, unternehmensdigitalisierung, ai-integration unternehmen, digitale transformation mittelstand, digitale transformation b2b, digitalisierung beratung, digitale geschäftsmodelle"
+        keywords="digitale transformation beratung, digitale transformation strategie, digitale transformation agentur, digitale prozesse optimieren, digitale roadmap erstellen, customer journey mapping, digitale effizienz steigern, organisationsentwicklung digital, digitale prozessautomatisierung, digitale tools einführen, ai-workflows implementieren, digitaler reifegrad, digitale priorisierung, effiziente workflows, digitalisierung unternehmen, strategie workshop digital, change management digital, team enablement digital, prozessdigitalisierung, unternehmensdigitalisierung, digitale transformation mittelstand"
         breadcrumbs={breadcrumbs}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Digitale Transformation Beratung",
+            "provider": {
+              "@type": "Organization",
+              "name": "ooliv Werbeagentur",
+              "url": "https://ooliv.de"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Deutschland"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Digitale Transformation Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Digitale Strategie & Roadmap"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Customer Journey Mapping"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Prozessdigitalisierung & Automatisierung"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI-Workflows & Integration"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Was ist digitale Transformation wirklich?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Digitale Transformation bedeutet mehr als neue Tools einzuführen. Es geht darum, Geschäftsprozesse, Customer Journeys und Entscheidungswege neu zu denken — mit dem Ziel, schneller, effizienter und datenbasiert zu arbeiten. Wir entwickeln klare Strategien und Roadmaps, die Ihr gesamtes digitales Ökosystem modernisieren."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was kostet eine digitale Transformation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Die Kosten hängen vom Umfang ab. Eine digitale Strategie mit Roadmap beginnt ab 8.000 €. Komplette Transformationsprojekte mit Implementierung starten ab 25.000 €. Wir bieten eine kostenlose Erstanalyse, um Ihren Bedarf zu verstehen und ein transparentes Angebot zu erstellen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert die Umsetzung?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Eine digitale Strategie und Roadmap entwickeln wir in 3-6 Wochen. Die Implementierung erfolgt phasenweise und dauert je nach Komplexität 3-12 Monate. Wir arbeiten iterativ, sodass Sie kontinuierlich Fortschritte sehen und erste Ergebnisse oft nach 30-60 Tagen messbar sind."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Arbeiten Sie auch mit bestehenden Systemen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja! Wir analysieren Ihre bestehende Infrastruktur und entwickeln Lösungen, die sich nahtlos integrieren. Unser Ansatz ist technologieneutral — wir empfehlen nur Tools, die wirklich Mehrwert bringen. Bei Bedarf modernisieren wir schrittweise, ohne Ihren laufenden Betrieb zu stören."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche Branchen betreuen Sie?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wir arbeiten mit B2B-Unternehmen, Mittelstand und Dienstleistern aus verschiedenen Branchen — von Steuerberatung über Industrie bis zu Tech-Unternehmen. Unsere Expertise liegt in der Entwicklung maßgeschneiderter digitaler Strategien, die branchenspezifische Anforderungen berücksichtigen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Was unterscheidet Sie von anderen Agenturen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wir sind keine Junior-getriebene Agentur. Jedes Projekt wird von Senior-Experten geführt und von unserem Hybridteam aus Strategie, UX, Development und Content umgesetzt. Sie arbeiten direkt mit dem Gründer und einem festen Team — ohne Outsourcing, ohne ständig wechselnde Ansprechpartner."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Bieten Sie auch Support nach dem Launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja — digitale Transformation ist ein kontinuierlicher Prozess. Wir bieten Post-Launch-Support, Monitoring und fortlaufende Optimierung. Sie entscheiden, ob Sie eigenständig weitermachen oder uns für langfristige Betreuung und Weiterentwicklung an Bord behalten möchten."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* SECTION 1 — HERO */}
-      <PageHero
-        title="Digitale Transformation, die funktioniert."
-        subtitle="Wir entwickeln klare digitale Strategien, skalierbare Strukturen, effiziente Workflows und AI-gestützte Prozesse — damit Unternehmen schneller entscheiden, besser arbeiten und messbar wachsen."
+      <section id="hero">
+        <PageHero
+          title="Digitale Transformation Beratung für Unternehmen"
+          subtitle="Wir entwickeln klare digitale Strategien, optimieren digitale Prozesse und implementieren AI-gestützte Workflows — damit Unternehmen schneller entscheiden, besser arbeiten und messbar wachsen."
         primaryCta={{
           text: "Projekt starten",
           link: "#",
@@ -74,7 +187,8 @@ const DigitaleTransformationStrategie = () => {
           link: "#",
           onClick: () => scrollToSection('vorgehensweise')
         }}
-      />
+        />
+      </section>
 
       {/* Trust Bullets */}
       <section className="py-12 bg-muted/30 border-b border-border">
@@ -96,7 +210,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 2 — Warum digitale Transformation scheitert */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="warum-scheitert" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -107,7 +221,7 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Digitale Transformation scheitert nicht an Tools — sondern an Strukturen.
+              Die häufigsten Gründe, warum digitale Transformation scheitert
             </h2>
           </motion.div>
 
@@ -121,23 +235,23 @@ const DigitaleTransformationStrategie = () => {
             {[
               {
                 icon: Map,
-                title: "Kein klarer digitaler Fahrplan",
-                description: "Projekte ohne Priorisierung und Struktur."
+                title: "Fehlende digitale Roadmap",
+                description: "Projekte ohne Priorisierung und klare digitale Struktur."
               },
               {
                 icon: Workflow,
                 title: "Veraltete Prozesse & Silos",
-                description: "Abteilungen arbeiten gegeneinander statt gemeinsam."
+                description: "Abteilungen arbeiten gegeneinander statt gemeinsam digital."
               },
               {
                 icon: BarChart3,
-                title: "Entscheidungen ohne Datenbasis",
-                description: "Bauchgefühl statt Fakten und Kennzahlen."
+                title: "Fehlende datenbasierte Entscheidungen",
+                description: "Bauchgefühl statt Fakten und digitale Kennzahlen."
               },
               {
                 icon: Settings,
-                title: "Zu viel Technik, zu wenig Strategie",
-                description: "Tools ohne klare Ziele und Anwendungsfälle."
+                title: "Zu viele Tools, zu wenig digitale Strategie",
+                description: "Technologie ohne klare Ziele und Anwendungsfälle."
               }
             ].map((item, index) => (
               <motion.div
@@ -172,7 +286,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 3 — Unser Transformations-Framework */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="framework" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -183,15 +297,18 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Strukturierter Ansatz für nachhaltige digitale Transformation
+              Unser strukturierter Ansatz für digitale Transformation
             </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Unsere hybride Struktur aus Strategie, UX, Development und Content sorgt dafür, dass digitale Transformation ganzheitlich realisiert wird.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: Search,
-                title: "Analyse & Reifegrad-Modell",
+                title: "Digitale Analyse & Reifegrad-Modell",
                 items: [
                   "Digitaler Reifegrad bestimmen",
                   "Prozessaufnahme durchführen",
@@ -200,29 +317,29 @@ const DigitaleTransformationStrategie = () => {
               },
               {
                 icon: Map,
-                title: "Digitale Strategie & Roadmap",
+                title: "Digitale Strategie & Roadmap erstellen",
                 items: [
                   "Value Proposition definieren",
-                  "Priorisierung festlegen",
+                  "Digitale Priorisierung festlegen",
                   "KPIs & Zielbilder entwickeln",
                   "Entscheidungsarchitektur aufbauen"
                 ]
               },
               {
                 icon: Zap,
-                title: "Implementierung & Enablement",
+                title: "Digitale Implementierung & Enablement",
                 items: [
-                  "Prozessmodernisierung umsetzen",
+                  "Digitale Prozesse optimieren",
                   "Technologie-Einführung begleiten",
                   "Team-Fähigkeiten steigern"
                 ]
               },
               {
                 icon: Brain,
-                title: "AI-Integration & Automatisierung",
+                title: "AI-Workflows & Automatisierung",
                 items: [
-                  "AI-Workflows entwickeln",
-                  "Prozessautomatisierung implementieren",
+                  "AI-Workflows implementieren",
+                  "Digitale Prozessautomatisierung umsetzen",
                   "Operative Effizienz steigern"
                 ]
               }
@@ -258,7 +375,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 4 — Digitale Roadmaps */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="roadmaps" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -270,7 +387,7 @@ const DigitaleTransformationStrategie = () => {
           >
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Digitale Roadmaps, die wirklich umsetzbar sind
+                Digitale Roadmaps, die Teams wirklich nutzen können
               </h2>
               <div className="space-y-4 mb-8">
                 {[
@@ -286,15 +403,18 @@ const DigitaleTransformationStrategie = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-lg font-semibold text-foreground">
+              <p className="text-lg font-semibold text-foreground mb-4">
                 Roadmaps, die Teams verstehen und umsetzen können.
+              </p>
+              <p className="text-base text-muted-foreground">
+                Mit unserer digitalen Strategie-Beratung entwickeln wir Roadmaps, die digitale Effizienz steigern und klare Prioritäten setzen — keine Theorie, sondern umsetzbare digitale Transformation.
               </p>
             </div>
 
             {/* Visual Placeholder */}
             <div className="bg-muted/50 rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px]">
               <div className="text-center">
-                <GitBranch className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <GitBranch className="w-16 h-16 text-muted-foreground mx-auto mb-4" aria-label="Digitale Roadmap Visualisierung für Unternehmen" />
                 <p className="text-sm text-muted-foreground">Digitale Roadmap Visualisierung</p>
               </div>
             </div>
@@ -303,7 +423,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 5 — Customer Journey & Entscheidungsarchitektur */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="customer-journey" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -316,14 +436,14 @@ const DigitaleTransformationStrategie = () => {
             {/* Visual Placeholder */}
             <div className="bg-background rounded-lg p-8 border border-border flex items-center justify-center min-h-[400px] order-2 lg:order-1">
               <div className="text-center">
-                <Target className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <Target className="w-16 h-16 text-muted-foreground mx-auto mb-4" aria-label="Customer Journey Mapping Diagramm" />
                 <p className="text-sm text-muted-foreground">Customer Journey Map</p>
               </div>
             </div>
 
             <div className="order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Customer Journeys, die Nutzer lenken — nicht verwirren
+                Customer Journey Mapping & digitale Nutzerführung
               </h2>
               <div className="space-y-6">
                 <div>
@@ -365,7 +485,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 6 — Digitale Prozesse & Modernisierung */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="prozesse" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -376,10 +496,10 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Prozesse digitalisieren, vereinfachen, beschleunigen
+              Prozesse digitalisieren und automatisieren
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Digitalisierung bedeutet nicht mehr Tools — sondern weniger Komplexität.
+              Digitale Prozessautomatisierung bedeutet nicht mehr Tools — sondern weniger Komplexität und höhere Effizienz.
             </p>
           </motion.div>
 
@@ -428,7 +548,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 7 — AI-Integration & Automation */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="ai-workflows" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -439,7 +559,7 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              AI-gestützte Workflows für schnelleres Arbeiten
+              AI-Workflows für effizientere Teams
             </h2>
           </motion.div>
 
@@ -518,7 +638,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 8 — Case Studies */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="case-studies" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -529,7 +649,7 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Digitale Transformation im Einsatz – echte Ergebnisse
+              Digitale Transformation im Einsatz – echte Beispiele
             </h2>
           </motion.div>
 
@@ -540,28 +660,32 @@ const DigitaleTransformationStrategie = () => {
                 industry: "Steuerberatung",
                 result: "+180% mehr Anfragen",
                 detail: "Digitale Prozesse & moderne Website",
-                logo: caseStudiesData.de[0]?.logo
+                logo: caseStudiesData.de[0]?.logo,
+                seoTag: "Digitale Transformation Steuerberatung"
               },
               {
                 client: "COBUS",
                 industry: "Flughafenbusse",
                 result: "Vollständige digitale Transformation",
                 detail: "B2B-Plattform & Prozessoptimierung",
-                logo: caseStudiesData.de[1]?.logo
+                logo: caseStudiesData.de[1]?.logo,
+                seoTag: "Digitale Transformation Industrie"
               },
               {
                 client: "SPEZ",
                 industry: "Automotive",
                 result: "+90% Conversion",
                 detail: "Optimierte Customer Journey",
-                logo: caseStudiesData.de[2]?.logo
+                logo: caseStudiesData.de[2]?.logo,
+                seoTag: "Customer Journey Optimierung Handwerk"
               },
               {
                 client: "IconPro",
                 industry: "KI-Software",
                 result: "Skalierbare Plattform",
                 detail: "AI-Integration & Automation",
-                logo: caseStudiesData.de[3]?.logo
+                logo: caseStudiesData.de[3]?.logo,
+                seoTag: "AI-Integration SaaS Unternehmen"
               }
             ].map((item, index) => (
               <motion.div
@@ -572,9 +696,12 @@ const DigitaleTransformationStrategie = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
+                  {item.seoTag}
+                </span>
                 <div className="bg-background p-4 rounded-lg mb-4 flex items-center justify-center min-h-[80px]">
                   {item.logo ? (
-                    <img src={item.logo} alt={item.client} className="h-10 w-auto" />
+                    <img src={item.logo} alt={`${item.client} – ${item.seoTag} von ooliv`} className="h-10 w-auto" />
                   ) : (
                     <p className="font-bold text-lg text-foreground">{item.client}</p>
                   )}
@@ -633,13 +760,13 @@ const DigitaleTransformationStrategie = () => {
               {[
                 {
                   number: "01",
-                  title: "Kickoff & Analyse",
-                  description: "Digitaler Reifegrad, Prozessaufnahme, Zieldefinition."
+                  title: "Digitale Analyse & Kickoff",
+                  description: "Digitaler Reifegrad, Prozessaufnahme, Zieldefinition und Potenzialanalyse."
                 },
                 {
                   number: "02",
-                  title: "Digitale Strategie",
-                  description: "Roadmap, Priorisierung, KPIs und Milestones festlegen."
+                  title: "Digitale Strategieentwicklung",
+                  description: "Digitale Roadmap erstellen, Priorisierung, KPIs und Milestones festlegen."
                 },
                 {
                   number: "03",
@@ -648,13 +775,13 @@ const DigitaleTransformationStrategie = () => {
                 },
                 {
                   number: "04",
-                  title: "Implementierung",
-                  description: "Prozessmodernisierung, Tool-Integration, Team-Enablement."
+                  title: "Digitale Implementierung",
+                  description: "Prozessmodernisierung, digitale Tools einführen, Team-Enablement durchführen."
                 },
                 {
                   number: "05",
                   title: "Optimierung & Support",
-                  description: "Kontinuierliche Verbesserung, Monitoring, Skalierung."
+                  description: "Kontinuierliche Verbesserung, Monitoring, Skalierung und digitale Effizienz steigern."
                 }
               ].map((step, index) => (
                 <motion.div
@@ -688,7 +815,7 @@ const DigitaleTransformationStrategie = () => {
       </section>
 
       {/* SECTION 10 — Team-Hybrid */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="team" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -699,10 +826,10 @@ const DigitaleTransformationStrategie = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Wer Ihre Transformation begleitet
+              Wer Ihre digitale Transformation begleitet
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ein hybrides Team aus Strategie, Design, Entwicklung und Content — für vollständige digitale Transformation.
+              Hybridteam für digitale Transformation: Strategie, Design, Entwicklung, Content und AI — interdisziplinäre digitale Beratung für vollständige Transformation.
             </p>
           </motion.div>
 
@@ -754,7 +881,7 @@ const DigitaleTransformationStrategie = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mx-auto mb-4">
-                  <member.icon className="w-8 h-8" />
+                  <member.icon className="w-8 h-8" aria-label={`${member.name} – ${member.role}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-1 text-center">
                   {member.name}
@@ -775,24 +902,26 @@ const DigitaleTransformationStrategie = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center text-lg text-muted-foreground mt-12"
+            className="text-center text-lg font-semibold text-foreground mt-12"
           >
-            Unser hybrider Ansatz: Strategie + Design + Entwicklung + Content = ganzheitliche digitale Transformation.
+            Unsere hybride Struktur sorgt dafür, dass digitale Transformation nicht nur geplant, sondern vollständig realisiert wird — mit einem interdisziplinären Team, das alle Kompetenzen vereint.
           </motion.p>
         </div>
       </section>
 
       {/* SECTION 11 — CTA */}
-      <CTA 
-        title="Bereit für klare digitale Strukturen?"
-        subtitle="Starten Sie Ihre digitale Transformation mit einem kostenlosen Strategiegespräch"
-        primaryCta="Projekt starten"
-        secondaryCta="Kostenlose 15-Minuten-Einschätzung"
-        secondaryCtaLink="#"
-      />
+      <section id="cta">
+        <CTA 
+          title="Bereit für klare digitale Strukturen?"
+          subtitle="Starten Sie Ihre digitale Transformation mit einem kostenlosen Strategiegespräch"
+          primaryCta="Projekt starten"
+          secondaryCta="Kostenlose 15-Minuten-Einschätzung"
+          secondaryCtaLink="#"
+        />
+      </section>
 
       {/* SECTION 12 — FAQ */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="faq" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
