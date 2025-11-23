@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, Building, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import TurquoiseCard from '@/components/ui/TurquoiseCard';
+import { H3, H4, Paragraph, Caption } from '@/components/ui/typography';
 
 const GermanLegalNotice = () => {
   const { setLanguage } = useLanguage();
@@ -66,26 +67,26 @@ const GermanLegalNotice = () => {
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <Building className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Unternehmensangaben</h3>
+                  <H3>Unternehmensangaben</H3>
                 </div>
                 
                 <div className="space-y-6">
                   <div>
-                    <p className="text-xl font-semibold text-foreground mb-2">ooliv</p>
-                    <p className="text-sm text-muted-foreground mb-3">Meldeadresse (Einzelunternehmen)</p>
+                    <Paragraph className="text-xl font-semibold mb-2">ooliv</Paragraph>
+                    <Caption className="mb-3">Meldeadresse (Einzelunternehmen)</Caption>
                     <div className="text-muted-foreground leading-relaxed">
-                      <p>Eduard von Heuss Str. 29</p>
-                      <p>55294 Bodenheim</p>
-                      <p>Germany</p>
+                      <Paragraph>Eduard von Heuss Str. 29</Paragraph>
+                      <Paragraph>55294 Bodenheim</Paragraph>
+                      <Paragraph>Germany</Paragraph>
                     </div>
                   </div>
                   
                   <div className="pt-4 border-t border-border">
-                    <p className="text-sm text-muted-foreground mb-3">Geschäftssitz</p>
+                    <Caption className="mb-3">Geschäftssitz</Caption>
                     <div className="text-muted-foreground leading-relaxed">
-                      <p>Mombacher Str. 25</p>
-                      <p>55122 Mainz</p>
-                      <p>Germany</p>
+                      <Paragraph>Mombacher Str. 25</Paragraph>
+                      <Paragraph>55122 Mainz</Paragraph>
+                      <Paragraph>Germany</Paragraph>
                     </div>
                   </div>
                   
@@ -100,13 +101,13 @@ const GermanLegalNotice = () => {
                   </div>
                   
                   <div className="pt-4 border-t border-border">
-                    <p className="font-bold text-foreground mb-1">Inhaber:</p>
-                    <p className="text-muted-foreground">Uli Schönleber</p>
+                    <Paragraph className="font-bold mb-1">Inhaber:</Paragraph>
+                    <Paragraph color="secondary">Uli Schönleber</Paragraph>
                   </div>
                   
                   <div>
-                    <p className="font-semibold text-foreground mb-1">USt.-IdNr.:</p>
-                    <p className="text-muted-foreground">DE265704357</p>
+                    <Paragraph className="font-semibold mb-1">USt.-IdNr.:</Paragraph>
+                    <Paragraph color="secondary">DE265704357</Paragraph>
                   </div>
                 </div>
               </CardContent>
@@ -119,23 +120,23 @@ const GermanLegalNotice = () => {
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                     <FileText className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">Urheberrechtshinweis</h3>
+                  <H3>Urheberrechtshinweis</H3>
                 </div>
                 
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <Paragraph color="secondary" className="mb-8">
                   Alle Inhalte und Medien auf dieser Website sind durch das deutsche Urheberrecht und verwandte Schutzrechte geschützt. Jede Form der Wiederverwendung, Vervielfältigung oder Verbreitung außerhalb der Grenzen des Urheberrechts erfordert eine schriftliche Zustimmung. Unbefugte Nutzung wird rechtlich verfolgt.
-                </p>
+                </Paragraph>
 
                 <div className="flex items-center space-x-4 mb-6">
                   <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">
                     <AlertTriangle className="h-5 w-5 text-yellow-600" />
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">Einspruch gegen Werbe-E-Mails</h4>
+                  <H4>Einspruch gegen Werbe-E-Mails</H4>
                 </div>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <Paragraph color="secondary">
                   Wir widersprechen ausdrücklich der Nutzung unserer Kontaktdaten für Werbezwecke oder unerwünschte Zusendungen. Wir behalten uns rechtliche Schritte bei Missbrauch vor.
-                </p>
+                </Paragraph>
               </CardContent>
             </Card>
           </div>
