@@ -69,12 +69,12 @@ const CTA = ({
   const defaultFooterNote = "200+ realisierte Digitalprojekte • Vertraut von führenden Unternehmen • KI-gestützte Strategien für maximale Effizienz";
   
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-background">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-[#0B0B0B] leading-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-foreground leading-tight">
           {title}
         </h2>
-        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-[#444444] font-normal leading-relaxed">
+        <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-muted-foreground font-normal leading-relaxed">
           {subtitle}
         </p>
         

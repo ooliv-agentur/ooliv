@@ -86,48 +86,48 @@ const GermanWebDesign = () => {
       {/* Pricing Section */}
       <Section spacing="large">
         <Container size="narrow">
-          <h2 className="text-3xl font-bold mb-6 text-[#0A0A0A] text-center">
+          <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
             Was kostet professionelles Webdesign?
           </h2>
-          <div className="bg-[#E0FBFA] p-8 rounded-lg">
+          <div className="bg-primary/10 p-8 rounded-lg">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0BC3C3] mb-2">€6.000</div>
-                <div className="inline-block bg-white px-3 py-1 rounded-full text-sm font-semibold text-[#0BC3C3] mb-2">
+                <div className="text-4xl font-bold text-primary mb-2">€6.000</div>
+                <div className="inline-block bg-background px-3 py-1 rounded-full text-sm font-semibold text-primary mb-2">
                   Starter-Website
                 </div>
-                <p className="text-sm text-[#555555]">
+                <p className="text-sm text-muted-foreground">
                   Strategischer Onepager mit modernem Design, mobiloptimiert
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0BC3C3] mb-2">€10.000</div>
-                <div className="inline-block bg-white px-3 py-1 rounded-full text-sm font-semibold text-[#0BC3C3] mb-2">
+                <div className="text-4xl font-bold text-primary mb-2">€10.000</div>
+                <div className="inline-block bg-background px-3 py-1 rounded-full text-sm font-semibold text-primary mb-2">
                   Business-Website
                 </div>
-                <p className="text-sm text-[#555555]">
+                <p className="text-sm text-muted-foreground">
                   Mehrere Seiten, SEO-optimiert, Content-Strategie inklusive
                 </p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#0BC3C3] mb-2">€15.000+</div>
-                <div className="inline-block bg-white px-3 py-1 rounded-full text-sm font-semibold text-[#0BC3C3] mb-2">
+                <div className="text-4xl font-bold text-primary mb-2">€15.000+</div>
+                <div className="inline-block bg-background px-3 py-1 rounded-full text-sm font-semibold text-primary mb-2">
                   Enterprise
                 </div>
-                <p className="text-sm text-[#555555]">
+                <p className="text-sm text-muted-foreground">
                   Multilingual, Shop-Integration, komplexe Funktionen
                 </p>
               </div>
             </div>
-            <p className="text-center text-sm text-[#555555] mt-6">
+            <p className="text-center text-sm text-muted-foreground mt-6">
               Alle Preise verstehen sich als Startpunkt. Wir erstellen individuelle Angebote basierend auf Ihren Anforderungen.
             </p>
           </div>
         </Container>
       </Section>
 
-      <p className="text-center text-sm text-[#555555] mt-4 px-4">
-        Mehr über <Link to="/" className="underline hover:no-underline text-[#0BC3C3]">ooliv und unsere Arbeitsweise</Link>.
+      <p className="text-center text-sm text-muted-foreground mt-4 px-4">
+        Mehr über <Link to="/" className="underline hover:no-underline text-primary">ooliv und unsere Arbeitsweise</Link>.
       </p>
       
       {/* Case Studies */}
