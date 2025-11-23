@@ -5,6 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 interface TeamMember {
   name: string;
   role: string;
+  description: string;
   image: string;
   initials: string;
 }
@@ -15,61 +16,71 @@ const TeamSection = () => {
   const teamMembers: TeamMember[] = [
     { 
       name: "Uli Schönleber (US)", 
-      role: "CEO · Strategie, Konzept, UX, AI-Prozesse",
+      role: "Strategy & Transformation",
+      description: "Verantwortlich für digitale Strategie, Positionierung, Informationsarchitektur und AI-gestützte Entscheidungsprozesse.",
       image: "/lovable-uploads/Uli.webp",
       initials: "US" 
     },
     { 
       name: "Lisa Schönleber (LS)", 
-      role: "Content Lead · Text, Struktur, Messaging",
+      role: "Content & Communication",
+      description: "Content-Strategie, Markenkommunikation und AI-unterstütztes Copywriting für konsistente Botschaften.",
       image: "/lovable-uploads/Lisa.jpg",
       initials: "LS" 
     },
     { 
       name: "Dorinel Nedelcu (DN)", 
-      role: "Kreation · UI-Design, Designsysteme, Visuals",
+      role: "UI Design & Visual Systems",
+      description: "Zuständig für UI-Design, Designsysteme und visuelle Identität mit Fokus auf moderne Interfaces.",
       image: "/lovable-uploads/Dorinel.jpg",
       initials: "DN" 
     },
     { 
       name: "Parveen Thakur (PT)", 
-      role: "Lead Developer · WordPress, Headless, Performance",
+      role: "Lead Development",
+      description: "Lead Developer für WordPress, Headless-Architekturen und Performance-Optimierung.",
       image: "/lovable-uploads/Parveen.jpg",
       initials: "PT" 
     },
     { 
       name: "Kamil Lisiewicz (KL)", 
-      role: "Webentwicklung · Fullstack",
+      role: "Fullstack Development",
+      description: "Fullstack-Entwicklung mit Schwerpunkt auf moderne Web-Technologien und API-Integration.",
       image: "/lovable-uploads/Kamil.jpg",
       initials: "KL" 
     },
     { 
       name: "Neeraj Kumar (NK)", 
-      role: "App-Entwicklung · Mobile Development",
+      role: "Mobile Development",
+      description: "Spezialisiert auf native und hybride App-Entwicklung für iOS und Android.",
       image: "/lovable-uploads/Neeraj.jpg",
       initials: "NK" 
     },
     { 
       name: "Paul Becker (PB)", 
-      role: "SEO Lead · Onpage, Technical SEO, Growth",
+      role: "SEO & Growth",
+      description: "SEO Lead für Onpage-Optimierung, Technical SEO und messbare Wachstumsstrategien.",
       image: "/lovable-uploads/Paul.jpg",
       initials: "PB" 
     },
     { 
       name: "Giovanni Costa (GC)", 
-      role: "Corporate Design · Branding & Visual Identity",
+      role: "Branding & Visual Identity",
+      description: "Entwickelt Corporate Designs, Branding-Konzepte und visuelle Identitäten.",
       image: "/lovable-uploads/Giovanni.jpg",
       initials: "GC" 
     },
     { 
       name: "Beatriz Morales (BM)", 
-      role: "Illustration · Visual Modules & Icons",
+      role: "Illustration & Visual Modules",
+      description: "Erstellt Illustrationen, visuelle Module und Icon-Sets für digitale Produkte.",
       image: "/lovable-uploads/Beatriz.jpg",
       initials: "BM" 
     },
     { 
       name: "Sanja Micro (SM)", 
-      role: "Print Design · Offline-Material, Corporate Layouts",
+      role: "Print Design",
+      description: "Spezialisiert auf Print-Design, Offline-Materialien und Corporate Layouts.",
       image: "/lovable-uploads/Sanja.jpg",
       initials: "SM" 
     }
@@ -90,13 +101,13 @@ const TeamSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {displayTeamMembers.map((member, index) => (
             <div 
               key={index} 
-              className="flex flex-col items-center"
+              className="flex items-start gap-6 bg-gray-50 p-6 rounded-lg"
             >
-              <div className="relative mb-4 w-[200px] h-[200px] rounded-full overflow-hidden bg-[#faf5eb] border-2 border-white">
+              <div className="relative flex-shrink-0 w-[120px] h-[120px] rounded-full overflow-hidden bg-[#faf5eb] border-2 border-white">
                 <img 
                   src={member.image} 
                   alt={member.name}
@@ -110,8 +121,11 @@ const TeamSection = () => {
                   {member.initials}
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-1 text-brand-heading">{member.name}</h3>
-              <p className="text-brand-text">{member.role}</p>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold mb-1 text-brand-heading">{member.name}</h3>
+                <p className="text-turquoise font-semibold mb-2">{member.role}</p>
+                <p className="text-brand-text text-sm leading-relaxed">{member.description}</p>
+              </div>
             </div>
           ))}
         </div>

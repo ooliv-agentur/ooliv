@@ -9,10 +9,10 @@ const AboutUsIntroduction = () => {
       <div className={getContainerClasses('default')}>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
-            Kein Agentur-Overhead. Keine Zwischenstellen.
+            Digitale Strategie trifft auf messbare Ergebnisse
           </h2>
           <LargeParagraph alignment="center" className="font-satoshi max-w-4xl mx-auto">
-            Sie arbeiten bei ooliv direkt mit dem Gründer sowie einem spezialisierten Kernteam aus UX, Entwicklung, Content und AI-gestützten Prozessen. Keine Layer aus Sales, Junioren oder Zwischenpositionen — nur klare Kommunikation und schnelle Umsetzung.
+            Seit 2008 entwickelt ooliv digitale Strategien, Websites und AI-gestützte Workflows, die Unternehmen messbar voranbringen. Wir sind kein anonymer Agenturapparat, sondern ein erfahrenes Digitalagentur-Team aus Mainz, das Klarheit, Struktur und Ergebnisse liefert.
           </LargeParagraph>
         </div>
         
