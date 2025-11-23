@@ -39,9 +39,9 @@ const DigitaleTransformationStrategie = () => {
 
   const trustStats = [
     { icon: Award, value: "100+", label: "Projekte" },
-    { icon: Users, value: "Senior", label: "Direkter Kontakt zum Gründer" },
-    { icon: Target, value: "Senior", label: "Senior-Level Beratung" },
-    { icon: BarChart3, value: "KPI", label: "Klare KPIs & echte Ergebnisse" }
+    { icon: Users, value: "Direkt", label: "Direkter Zugang zu Uli Schönleber" },
+    { icon: Target, value: "16+", label: "Jahre digitale Transformations-Erfahrung" },
+    { icon: BarChart3, value: "Messbar", label: "KPIs & strukturierte Erfolgsmessung" }
   ];
 
   const painPoints = [
@@ -70,7 +70,7 @@ const DigitaleTransformationStrategie = () => {
   const frameworkFeatures = [
     {
       icon: Search,
-      title: "Digitale Analyse & Reifegrad-Modell",
+      title: "Digitale Analyse & Reifegrad-Modell (Assessment)",
       items: [
         "Digitaler Reifegrad bestimmen",
         "Prozessaufnahme durchführen",
@@ -79,7 +79,7 @@ const DigitaleTransformationStrategie = () => {
     },
     {
       icon: Map,
-      title: "Digitale Strategie & Roadmap erstellen",
+      title: "Digitale Strategie & Roadmap (Design)",
       items: [
         "Value Proposition definieren",
         "Digitale Priorisierung festlegen",
@@ -89,7 +89,7 @@ const DigitaleTransformationStrategie = () => {
     },
     {
       icon: Zap,
-      title: "Digitale Implementierung & Enablement",
+      title: "Implementierung & Enablement (Delivery)",
       items: [
         "Digitale Prozesse optimieren",
         "Technologie-Einführung begleiten",
@@ -98,7 +98,7 @@ const DigitaleTransformationStrategie = () => {
     },
     {
       icon: Brain,
-      title: "AI-Workflows & Automatisierung",
+      title: "AI-Workflows & Automatisierung (Scale)",
       items: [
         "AI-Workflows implementieren",
         "Digitale Prozessautomatisierung umsetzen",
@@ -110,8 +110,8 @@ const DigitaleTransformationStrategie = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Digitale Transformation Beratung | Strategie, Prozesse, AI & Roadmaps – ooliv"
-        description="Beratung für digitale Transformation: Roadmaps, Prozessoptimierung, Customer Journey Mapping, digitale Workflows, AI-Integration. Senior-Level Strategie. 200+ Digitalprojekte."
+        title="Digitale Transformation & Digitale Strategie | ooliv Mainz"
+        description="Digitale Transformation, Prozessoptimierung und AI-Workflows. Senior-Level Beratung durch Uli Schönleber. Klare Roadmaps, messbare Ergebnisse."
         canonicalUrl="https://ooliv.de/digitale-transformation-strategie"
         keywords="digitale transformation beratung, digitale transformation strategie, digitale transformation agentur, digitale prozesse optimieren, digitale roadmap erstellen"
         breadcrumbs={breadcrumbs}
@@ -122,7 +122,7 @@ const DigitaleTransformationStrategie = () => {
         <Container>
           <PageHero
             title="Digitale Transformation Beratung für Unternehmen"
-            subtitle="Wir entwickeln klare digitale Strategien, optimieren digitale Prozesse und implementieren AI-gestützte Workflows — damit Unternehmen schneller entscheiden, besser arbeiten und messbar wachsen."
+            subtitle="Wir entwickeln klare digitale Strategien, optimieren Prozesse und implementieren AI-Workflows — geführt von Senior-Expertise durch Uli Schönleber, unterstützt durch ein spezialisiertes Hybridteam."
             primaryCta={{
               text: "Projekt starten",
               link: "#",
@@ -166,9 +166,9 @@ const DigitaleTransformationStrategie = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center text-xl font-semibold text-[#0A0A0A] mt-12"
+            className="text-center text-xl font-semibold text-[#0B0B0B] mt-12"
           >
-            Wir lösen nicht nur technische Aufgaben — wir richten Ihr gesamtes digitales Ökosystem neu aus.
+            Wir lösen nicht nur technische Aufgaben — wir strukturieren Ihr digitales Ökosystem strategisch, prozessorientiert und wertbasiert.
           </motion.p>
         </Container>
       </Section>
@@ -257,8 +257,7 @@ const DigitaleTransformationStrategie = () => {
           <CTA 
             title="Bereit für digitale Transformation?"
             subtitle="Lassen Sie uns gemeinsam eine digitale Strategie entwickeln, die Ihre Geschäftsziele erreicht."
-            primaryCta="Projekt starten"
-            secondaryCta="Strategiegespräch vereinbaren"
+        primaryCta="Strategiegespräch vereinbaren"
             lightBackground={false}
           />
         </Container>
