@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2, Paragraph } from '@/components/ui/typography';
 
 const AboutUsCTANew = () => {
   const handleOpenLeadForm = () => {
@@ -9,15 +11,15 @@ const AboutUsCTANew = () => {
   };
 
   return (
-    <section className={getSectionClasses('large', 'mint')}>
-      <div className={getContainerClasses('narrow')}>
+    <Section spacing="large" background="light">
+      <Container size="narrow">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-6">
+          <H2 className="text-[#0A0A0A] mb-6" alignment="center">
             Lassen Sie uns reden — ohne Agentur-Geschwätz.
-          </h2>
-          <p className="text-lg text-brand-text mb-8 max-w-2xl mx-auto">
+          </H2>
+          <Paragraph className="text-lg text-[#555555] mb-8 max-w-2xl mx-auto" alignment="center">
             Sie brauchen Klarheit, Struktur und ein digitales System, das für Sie arbeitet? Dann wird&apos;s Zeit für ein erstes Gespräch.
-          </p>
+          </Paragraph>
           
           <Button 
             variant="primary"
@@ -29,8 +31,8 @@ const AboutUsCTANew = () => {
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

@@ -5,7 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getSectionClasses, getContainerClasses } from '@/styles/spacing';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H2 } from '@/components/ui/typography';
 
 const AboutUsFAQNew = () => {
   const faqs = [
@@ -32,28 +34,28 @@ const AboutUsFAQNew = () => {
   ];
 
   return (
-    <section className={getSectionClasses('large', 'white')}>
-      <div className={getContainerClasses('narrow')}>
+    <Section spacing="large" background="white">
+      <Container size="narrow">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-heading mb-4">
+          <H2 className="text-[#0A0A0A] mb-4" alignment="center">
             Häufige Fragen zur Zusammenarbeit mit unserer Digitalagentur
-          </h2>
+          </H2>
         </div>
         
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-semibold">
+              <AccordionTrigger className="text-left text-lg font-semibold text-[#0A0A0A]">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-brand-text leading-relaxed">
+              <AccordionContent className="text-[#555555] leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

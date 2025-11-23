@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { H1, LargeParagraph } from '@/components/ui/typography';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
 
 const AboutUsHero = () => {
   const handleStartProject = () => {
@@ -11,7 +13,7 @@ const AboutUsHero = () => {
   };
 
   return (
-    <section className="relative bg-gray-50 overflow-hidden font-satoshi min-h-screen flex items-center">
+    <Section className="relative bg-[#F5F7F7] overflow-hidden font-satoshi min-h-screen flex items-center" spacing="large">
       {/* Floating circles animation - consistent with master */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="floating-circle slow w-32 h-32 top-20 left-10 opacity-40"></div>
@@ -26,7 +28,7 @@ const AboutUsHero = () => {
       </div>
       
       <div className="relative z-20 w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <Container size="default">
           <div className="max-w-4xl mx-auto flex flex-col justify-center items-start min-h-[60vh]">
             {/* Main heading - using typography system */}
             <H1 className="mb-6 sm:mb-8">
@@ -63,21 +65,21 @@ const AboutUsHero = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
       
       {/* Visual transition indicator - consistent with master */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-accent-primary/50 to-accent-primary/80 rounded-full animate-pulse"></div>
+          <div className="w-1 h-6 sm:h-8 bg-gradient-to-b from-[#0BC3C3]/50 to-[#0BC3C3]/80 rounded-full animate-pulse"></div>
           <div className="flex space-x-1">
-          <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse"></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-turquoise/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#0BC3C3]/80 rounded-full animate-pulse"></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#0BC3C3]/80 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-[#0BC3C3]/80 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
