@@ -1,10 +1,11 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
 
 import AboutUsHero from '@/components/about-us/AboutUsHero';
 import AboutUsIntroduction from '@/components/about-us/AboutUsIntroduction';
@@ -81,9 +82,7 @@ const GermanAboutUs = () => {
   const structuredData = [organizationSchema, personSchema, aboutPageSchema];
 
   return (
-    <PageLayout 
-      className="overflow-x-hidden"
-    >
+    <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
         title="Über uns | Digitalagentur aus Mainz | ooliv"
         description="Lernen Sie ooliv kennen – die Digitalagentur aus Mainz für Strategie, UX, Webdesign, SEO und AI-Workflows. Persönlich geführt, senior-level, 200+ Digitalprojekte."
@@ -96,49 +95,82 @@ const GermanAboutUs = () => {
         ]}
       />
 
-      <section id="hero">
-        <AboutUsHero />
-      </section>
+      {/* Hero */}
+      <Section id="hero" spacing="large">
+        <Container>
+          <AboutUsHero />
+        </Container>
+      </Section>
       
-      <section id="intro">
-        <AboutUsIntroduction />
-      </section>
+      {/* Introduction */}
+      <Section id="intro" background="light" spacing="large">
+        <Container>
+          <AboutUsIntroduction />
+        </Container>
+      </Section>
       
-      <section id="story">
-        <AboutUsStory />
-      </section>
+      {/* Story */}
+      <Section id="story" spacing="large">
+        <Container>
+          <AboutUsStory />
+        </Container>
+      </Section>
       
-      <section id="uli">
-        <UliSection />
-      </section>
+      {/* Uli Section */}
+      <Section id="uli" background="light" spacing="large">
+        <Container>
+          <UliSection />
+        </Container>
+      </Section>
       
-      <section id="approach">
-        <OurApproach />
-      </section>
+      {/* Approach */}
+      <Section id="approach" spacing="large">
+        <Container>
+          <OurApproach />
+        </Container>
+      </Section>
       
-      <section id="team">
-        <TeamSection />
-      </section>
+      {/* Team */}
+      <Section id="team" background="light" spacing="large">
+        <Container>
+          <TeamSection />
+        </Container>
+      </Section>
 
-      <section id="why-small">
-        <WhySmallTeam />
-      </section>
+      {/* Why Small Team */}
+      <Section id="why-small" spacing="large">
+        <Container>
+          <WhySmallTeam />
+        </Container>
+      </Section>
       
-      <section id="hybrid-approach">
-        <HybridApproach />
-      </section>
+      {/* Hybrid Approach */}
+      <Section id="hybrid-approach" background="light" spacing="large">
+        <Container>
+          <HybridApproach />
+        </Container>
+      </Section>
       
-      <section id="industries">
-        <TargetIndustries />
-      </section>
+      {/* Industries */}
+      <Section id="industries" spacing="large">
+        <Container>
+          <TargetIndustries />
+        </Container>
+      </Section>
       
-      <section id="faq">
-        <AboutUsFAQNew />
-      </section>
+      {/* FAQ */}
+      <Section id="faq" background="light" spacing="large">
+        <Container>
+          <AboutUsFAQNew />
+        </Container>
+      </Section>
       
-      <section id="cta">
-        <AboutUsCTANew />
-      </section>
+      {/* CTA */}
+      <Section id="cta" background="dark" spacing="large">
+        <Container>
+          <AboutUsCTANew />
+        </Container>
+      </Section>
     </PageLayout>
   );
 };
