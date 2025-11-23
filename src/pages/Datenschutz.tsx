@@ -1,10 +1,10 @@
-
 import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Helmet } from 'react-helmet-async';
 import LegalHero from '@/components/legal/LegalHero';
 import { useLanguage } from '@/contexts/LanguageContext';
 import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
+import { H2, Paragraph } from '@/components/ui/typography';
 import { 
   Lock, 
   Database, 
@@ -79,13 +79,13 @@ const GermanPrivacyPolicy = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-2xl mb-6">
               <Lock className="h-8 w-8 text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground leading-tight">
+            <H2 className="mb-6">
               Datenschutzerklärung
-            </h2>
+            </H2>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <Paragraph className="text-lg md:text-xl max-w-2xl mx-auto">
               Wir verarbeiten personenbezogene Daten gemäß DSGVO und nur zweckgebunden. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.
-            </p>
+            </Paragraph>
           </div>
 
           {/* Accordion Section */}
