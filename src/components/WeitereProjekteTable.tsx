@@ -93,11 +93,11 @@ const WeitereProjekteTable = () => {
   };
 
   return (
-    <section className="py-20 bg-brand-backgroundAlt">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h3 
           {...fadeInUp}
-          className="text-2xl md:text-3xl font-bold text-brand-heading mb-12 text-center"
+          className="text-2xl md:text-3xl font-bold text-text-primary mb-12 text-center"
         >
           {translations.title}
         </motion.h3>
@@ -113,10 +113,10 @@ const WeitereProjekteTable = () => {
               className="bg-white rounded-lg p-6 flex items-center justify-between hover:shadow-md transition-shadow"
             >
               <div>
-                <h4 className="font-semibold text-brand-heading text-base mb-1">
+                <h4 className="font-semibold text-text-primary text-base mb-1">
                   {projekt.name}
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-text-secondary">
                   {isGerman ? projekt.branche : projekt.brancheEn}
                 </p>
               </div>
@@ -124,7 +124,7 @@ const WeitereProjekteTable = () => {
                 href={projekt.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 bg-brand-primary/10 text-brand-primary hover:bg-brand-primary/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
+                className="inline-flex items-center px-4 py-2 bg-turquoise/10 text-turquoise hover:bg-turquoise/20 rounded-lg font-medium text-sm transition-colors whitespace-nowrap"
               >
                 Zur Website
               </a>
