@@ -10,7 +10,7 @@ import {
   Target, LayoutGrid, Frame, Code, TrendingUp, Zap, Shield,
   CheckCircle2, ArrowRight, Layers, PenTool, Workflow, Search,
   Users, Award, BarChart3, Brain, Lightbulb, Settings, Monitor,
-  Smartphone
+  Smartphone, AlertTriangle, Route
 } from 'lucide-react';
 import {
   Accordion,
@@ -54,30 +54,114 @@ const WebdesignEntwicklung = () => {
   return (
     <PageLayout>
       <EnhancedSEOHead
-        title="Webdesign & Webentwicklung | UX-Design & Performance-WordPress für B2B & Mittelstand"
-        description="Wir entwickeln Websites, die verkaufen: UX-Konzept, Webdesign, WordPress-Entwicklung, mobile Optimierung, Performance, SEO und Conversion-Funnels – alles aus einer Hand."
+        title="Webdesign Agentur & WordPress Entwicklung für Unternehmen | ooliv"
+        description="Professionelles Webdesign & WordPress Entwicklung: UX/UI Design, moderne Webentwicklung, technische SEO, Performance-Optimierung. 200+ Projekte. Jetzt Projekt starten."
         canonicalUrl="https://ooliv.de/webdesign-entwicklung"
-        keywords="webdesign agentur, ux agentur, webentwicklung wordpress, corporate webdesign, website relaunch, ux ui design, conversion-optimiertes webdesign, wordpress entwicklung, webdesign mainz, webdesign frankfurt, webdesign wiesbaden, website entwicklung, responsive webdesign, mobile-first design"
+        keywords="webdesign agentur, webdesign & entwicklung, wordpress agentur, webentwicklung agentur, wordpress entwicklung, webdesign für unternehmen, b2b webdesign, professionelle website erstellen, responsive webdesign, performance optimierung website, technische seo, headless cms, corporate webdesign, ux ui design, custom wordpress themes, webdesign konzept, digitaler kundenauftritt, website performance, conversion-optimiertes webdesign, webdesign mainz, webdesign frankfurt"
         breadcrumbs={breadcrumbs}
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "WebDesignService",
+            "name": "Webdesign & WordPress Entwicklung",
+            "description": "Professionelles Webdesign & WordPress Entwicklung für Unternehmen",
+            "provider": {
+              "@type": "Organization",
+              "name": "ooliv",
+              "url": "https://ooliv.de"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://ooliv.de",
+            "name": "ooliv Webdesign Agentur"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Was kostet eine Website?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Eine professionelle Business-Website beginnt ab 8.000 €. Umfangreiche Corporate Websites oder E-Commerce-Projekte starten ab 15.000 €. Der Preis hängt von Funktionsumfang, Design-Komplexität und Content-Menge ab."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Wie lange dauert ein Website-Projekt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ein typisches Website-Projekt dauert 8-16 Wochen vom Kickoff bis zum Launch. Die Dauer hängt von der Komplexität, der Anzahl der Seiten und Feedback-Zyklen ab."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Entwickeln Sie mit Templates?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nein. Wir entwickeln jede Website individuell und auf Ihre spezifischen Anforderungen zugeschnitten. Keine vorgefertigten Templates, keine Standardlösungen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Arbeiten Sie mit Baukästen wie Wix oder Squarespace?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nein. Wir entwickeln professionelle Websites mit WordPress und modernen Web-Technologien. Baukästen sind limitiert in Funktionalität, Performance und SEO."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Macht ooliv auch die Texte?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja! Wir haben erfahrene Content-Strategists und Copywriter im Team. Von der Content-Strategie über SEO-optimierte Texte bis hin zu Landingpage-Copywriting."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Haben wir direkten Kontakt zum Gründer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja, absolut. Ich (Uli, Gründer) bin bei jedem Projekt persönlich involviert — vom Kickoff über Strategie-Workshops bis zur finalen Abnahme."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ist SEO inklusive?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Technisches SEO ist bei jedem Website-Projekt inklusive: saubere Code-Struktur, optimierte Performance, Mobile-Optimierung, Schema-Markup."
+                }
+              }
+            ]
+          }
+        ]}
       />
 
       {/* SECTION 1 — HERO */}
-      <PageHero
-        title="Websites, die verkaufen — nicht nur gut aussehen."
-        subtitle="Wir verbinden UX, Design, Conversion-Psychologie und performante WordPress-Entwicklung zu Websites, die messbar mehr Leads generieren."
-        primaryCta={{
-          text: "Projekt starten",
-          link: "#",
-          onClick: handleOpenLeadForm
-        }}
-        secondaryCta={{
-          text: "Beispiele ansehen",
-          link: "#beispiele"
-        }}
-      />
+      <section id="hero">
+        <PageHero
+          title="Webdesign Agentur für moderne Websites & performante Entwicklung"
+          subtitle="Professionelle Webdesign & Entwicklung: WordPress Agentur für UX/UI Design, Performance-Optimierung und technische SEO – messbar mehr Leads generieren."
+          primaryCta={{
+            text: "Projekt starten",
+            link: "#",
+            onClick: handleOpenLeadForm
+          }}
+          secondaryCta={{
+            text: "Beispiele ansehen",
+            link: "#beispiele"
+          }}
+        />
+      </section>
 
       {/* Trust Bullets */}
-      <section className="py-12 bg-muted/30 border-b border-border">
+      <section id="trust-bullets" className="py-12 bg-muted/30 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -87,7 +171,7 @@ const WebdesignEntwicklung = () => {
               { icon: Zap, text: "Performance-optimierte Umsetzung" }
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-3 justify-center">
-                <item.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                <item.icon className="w-5 h-5 text-primary flex-shrink-0" aria-label={item.text} />
                 <p className="text-sm font-medium text-foreground">{item.text}</p>
               </div>
             ))}
@@ -95,8 +179,8 @@ const WebdesignEntwicklung = () => {
         </div>
       </section>
 
-      {/* SECTION 2 — Warum gutes Webdesign heute nicht reicht */}
-      <section className="py-20 lg:py-32 bg-background">
+      {/* NEW SECTION — Pain Points */}
+      <section id="pain-points" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -107,7 +191,168 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Design allein reicht nicht — Struktur, Inhalte und Technik entscheiden.
+              Warum modernes Webdesign entscheidend ist
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              {
+                icon: LayoutGrid,
+                title: "Veraltetes Webdesign, das nicht konvertiert",
+                description: "Ihre Website sieht gut aus, aber generiert keine Anfragen."
+              },
+              {
+                icon: Zap,
+                title: "Langsame Websites ohne Performance-Optimierung",
+                description: "Ladezeiten über 3 Sekunden kosten Sie potenzielle Kunden."
+              },
+              {
+                icon: Code,
+                title: "WordPress-Systeme ohne Systematik & Sicherheit",
+                description: "Unsauberer Code, Sicherheitslücken und fehlende Wartbarkeit."
+              },
+              {
+                icon: Target,
+                title: "Kein klares UX-Konzept davor",
+                description: "Design ohne Strategie führt zu verwirrten Nutzern."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-all"
+              >
+                <item.icon className="w-8 h-8 text-primary mb-4" aria-label={item.title} />
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* NEW SECTION — Leistungsübersicht */}
+      <section id="leistungen" className="py-20 lg:py-32 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Unsere Leistungen: Webdesign & Entwicklung für Unternehmen
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: PenTool,
+                title: "UX & UI Design",
+                keywords: "UX UI Design • Corporate Webdesign",
+                items: [
+                  "Informationsarchitektur entwickeln",
+                  "Wireframes & Prototypen erstellen",
+                  "Markenorientiertes UI Design",
+                  "Design-Systeme aufbauen"
+                ]
+              },
+              {
+                icon: Code,
+                title: "Webentwicklung & Responsive Design",
+                keywords: "Webentwicklung Agentur • Responsive Webdesign",
+                items: [
+                  "Custom Frontend-Entwicklung",
+                  "Mobile-first Optimierung",
+                  "Performance-optimierter Code",
+                  "Barrierefreie Umsetzung (WCAG)"
+                ]
+              },
+              {
+                icon: Code,
+                title: "WordPress Agentur & individuelle Themes",
+                keywords: "WordPress Agentur • Custom WordPress Themes • WordPress Entwicklung",
+                items: [
+                  "Custom Theme-Entwicklung",
+                  "Gutenberg Block-Entwicklung",
+                  "Plugin-Entwicklung",
+                  "WordPress Sicherheit & Updates"
+                ]
+              },
+              {
+                icon: Zap,
+                title: "Performance Optimierung & technische SEO",
+                keywords: "Performance Optimierung Website • Technische SEO",
+                items: [
+                  "Core Web Vitals Optimierung",
+                  "Lazy Loading & Caching",
+                  "Schema.org Markup",
+                  "SEO-freundliche URL-Struktur"
+                ]
+              }
+            ].map((block, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg">
+                    <block.icon className="w-6 h-6" aria-label={block.title} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-1">
+                      {block.title}
+                    </h3>
+                    <p className="text-xs text-primary font-semibold">
+                      {block.keywords}
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  {block.items.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <p className="text-base text-muted-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2 — Warum gutes Webdesign heute nicht reicht */}
+      <section id="warum-webdesign" className="py-20 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Professionelles Webdesign: Struktur, Performance & Conversion
             </h2>
           </motion.div>
 
@@ -146,7 +391,7 @@ const WebdesignEntwicklung = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
               >
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mb-4">
-                  <item.icon className="w-6 h-6" />
+                  <item.icon className="w-6 h-6" aria-label={item.title} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {item.title}
@@ -172,7 +417,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 3 — Unser Ansatz für Webdesign & Entwicklung */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="prozess" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -183,7 +428,7 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Ein klarer Prozess für maximale Wirkung
+              Unser Ansatz: Webdesign & Entwicklung für messbare Ergebnisse
             </h2>
           </motion.div>
 
@@ -191,7 +436,7 @@ const WebdesignEntwicklung = () => {
             {[
               {
                 icon: LayoutGrid,
-                title: "UX-Konzept & Wireframes",
+                title: "UX-Konzept & Wireframes (Webdesign Konzept)",
                 items: [
                   "Informationsarchitektur entwickeln",
                   "Conversion-Flow optimieren",
@@ -240,7 +485,7 @@ const WebdesignEntwicklung = () => {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg">
-                    <block.icon className="w-6 h-6" />
+                    <block.icon className="w-6 h-6" aria-label={block.title} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">
                     {block.title}
@@ -261,7 +506,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 4 — UX-Konzept & Customer Journeys */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="ux-konzept" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -293,7 +538,7 @@ const WebdesignEntwicklung = () => {
 
             <div className="bg-primary/10 rounded-lg p-8 border border-primary/20">
               <div className="mb-4">
-                <Target className="w-12 h-12 text-primary mb-4" />
+                <Target className="w-12 h-12 text-primary mb-4" aria-label="UX-Konzeption" />
                 <h3 className="text-xl font-bold text-foreground mb-2">
                   Mehr über UX-Konzeption erfahren
                 </h3>
@@ -317,7 +562,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 5 — UI Design & visuelle Systeme */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="ui-design" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -366,7 +611,7 @@ const WebdesignEntwicklung = () => {
                 className="bg-background rounded-lg p-6 border border-border flex items-center justify-center min-h-[300px]"
               >
                 <div className="text-center">
-                  <Frame className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
+                  <Frame className="w-12 h-12 text-muted-foreground mx-auto mb-3" aria-label={`Design Mockup ${i}`} />
                   <p className="text-sm text-muted-foreground">Design Mockup {i}</p>
                 </div>
               </motion.div>
@@ -376,7 +621,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 6 — WordPress-Entwicklung */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="wordpress-entwicklung" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -433,7 +678,7 @@ const WebdesignEntwicklung = () => {
                 className="bg-card rounded-lg p-8 border border-border shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center justify-center w-14 h-14 bg-primary/10 text-primary rounded-lg mb-6 mx-auto">
-                  <block.icon className="w-7 h-7" />
+                  <block.icon className="w-7 h-7" aria-label={block.title} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4 text-center">
                   {block.title}
@@ -464,7 +709,7 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Websites, die Ergebnisse liefern
+              Unsere Webdesign-Projekte
             </h2>
           </motion.div>
 
@@ -475,35 +720,40 @@ const WebdesignEntwicklung = () => {
                 industry: "Steuerberatung",
                 metric: "+180% mehr Anfragen",
                 detail: "Kompletter Website-Relaunch mit UX-Optimierung",
-                logo: caseStudiesData.de[0]?.logo
+                logo: caseStudiesData.de[0]?.logo,
+                seoTag: "Webdesign Steuerberatung"
               },
               {
                 client: "COBUS",
                 industry: "Flughafenbusse",
                 metric: "Internationale B2B-Plattform",
                 detail: "Custom WordPress Development",
-                logo: caseStudiesData.de[1]?.logo
+                logo: caseStudiesData.de[1]?.logo,
+                seoTag: "B2B Webdesign Industrie"
               },
               {
                 client: "SPEZ",
                 industry: "Automotive",
                 metric: "+90% Conversion-Rate",
                 detail: "Landing Page Optimierung",
-                logo: caseStudiesData.de[2]?.logo
+                logo: caseStudiesData.de[2]?.logo,
+                seoTag: "Webdesign Handwerk"
               },
               {
                 client: "IconPro",
                 industry: "KI-Software",
                 metric: "Skalierbare SaaS-Platform",
                 detail: "Headless CMS & Custom Development",
-                logo: caseStudiesData.de[3]?.logo
+                logo: caseStudiesData.de[3]?.logo,
+                seoTag: "Webentwicklung Softwarefirma"
               },
               {
                 client: "Am Kliff",
                 industry: "Gastronomie",
                 metric: "+92% organische Sichtbarkeit",
                 detail: "Restaurant-Website mit Buchungssystem",
-                logo: caseStudiesData.de[4]?.logo
+                logo: caseStudiesData.de[4]?.logo,
+                seoTag: "Immobilien Webdesign"
               }
             ].map((item, index) => (
               <motion.div
@@ -514,9 +764,16 @@ const WebdesignEntwicklung = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
               >
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
+                  {item.seoTag}
+                </span>
                 <div className="bg-background p-4 rounded-lg mb-4 flex items-center justify-center min-h-[80px]">
                   {item.logo ? (
-                    <img src={item.logo} alt={item.client} className="h-10 w-auto" />
+                    <img 
+                      src={item.logo} 
+                      alt={`${item.client} – ${item.seoTag} von ooliv`} 
+                      className="h-10 w-auto" 
+                    />
                   ) : (
                     <p className="font-bold text-lg text-foreground">{item.client}</p>
                   )}
@@ -552,7 +809,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 8 — Tools & Technologien */}
-      <section className="py-20 lg:py-32 bg-background">
+      <section id="tech-stack" className="py-20 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -563,8 +820,11 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Unsere Tools für moderne Webentwicklung
+              Tech Stack & moderne Webarchitektur
             </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Wir arbeiten mit modernen Frameworks, Headless CMS und setzen auf technische Nachhaltigkeit für skalierbare Webarchitekturen.
+            </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -578,7 +838,7 @@ const WebdesignEntwicklung = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg">
-                  <PenTool className="w-6 h-6" />
+                  <PenTool className="w-6 h-6" aria-label="Design & UX" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">
                   Design & UX
@@ -610,7 +870,7 @@ const WebdesignEntwicklung = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg">
-                  <Code className="w-6 h-6" />
+                  <Code className="w-6 h-6" aria-label="Entwicklung" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground">
                   Entwicklung
@@ -619,7 +879,7 @@ const WebdesignEntwicklung = () => {
               <div className="space-y-3">
                 {[
                   "WordPress – CMS & Custom Development",
-                  "Headless CMS – Moderne Architekturen",
+                  "Headless CMS – JAMstack & API-First",
                   "HTML/CSS/JavaScript – Clean Code",
                   "Performance Tools – Lighthouse, GTmetrix",
                   "SEO Tools – Ahrefs, Screaming Frog",
@@ -637,7 +897,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 9 — Team-Hybrid */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="team" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -648,10 +908,10 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Wer Ihre Website baut
+              Hybrides Team für professionelle Webentwicklung
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Sie arbeiten direkt mit mir (Uli) und einem eingespielten Team aus UX, Design, Entwicklung & SEO.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+              Hybrides Team aus UX, Design, Entwicklung, Content & SEO — für komplette Webdesign-Projekte. Sie arbeiten direkt mit mir (Uli) als Projektleiter und einem erfahrenen Senior-Team.
             </p>
           </motion.div>
 
@@ -703,7 +963,7 @@ const WebdesignEntwicklung = () => {
                 className="bg-card rounded-lg p-6 border border-border shadow-sm hover:shadow-md transition-all hover:scale-105"
               >
                 <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mx-auto mb-4">
-                  <member.icon className="w-8 h-8" />
+                  <member.icon className="w-8 h-8" aria-label={`${member.name} – ${member.role}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-1 text-center">
                   {member.name}
@@ -717,6 +977,20 @@ const WebdesignEntwicklung = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-center text-lg text-muted-foreground mt-12 max-w-3xl mx-auto"
+          >
+            Unser hybrider Ansatz stellt sicher, dass alle Aspekte Ihres Webdesign-Projekts — von der Strategie über UX/UI bis zur technischen Entwicklung — nahtlos ineinandergreifen. Zusätzliche Services: 
+            <Link to="/digitale-transformation-strategie" className="text-primary hover:underline ml-2">Digitale Transformation</Link>, 
+            <Link to="/seo-performance" className="text-primary hover:underline ml-2">SEO & Performance</Link>, 
+            <Link to="/ai-workflows" className="text-primary hover:underline ml-2">AI-Workflows</Link>.
+          </motion.p>
         </div>
       </section>
 
@@ -732,7 +1006,7 @@ const WebdesignEntwicklung = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              So entsteht Ihre Website
+              So entsteht Ihre Website – Webdesign & Entwicklung Schritt für Schritt
             </h2>
           </motion.div>
 
@@ -749,7 +1023,7 @@ const WebdesignEntwicklung = () => {
                 },
                 {
                   number: "02",
-                  title: "UX-Konzept & Wireframes",
+                  title: "UX-Konzept & Wireframes (Webdesign Konzept)",
                   description: "Informationsarchitektur, User Flows, Low-Fidelity Prototypen."
                 },
                 {
@@ -759,7 +1033,7 @@ const WebdesignEntwicklung = () => {
                 },
                 {
                   number: "04",
-                  title: "Entwicklung",
+                  title: "Webentwicklung & technische Umsetzung",
                   description: "WordPress-Setup, Frontend & Backend, Module programmieren, Testing."
                 },
                 {
@@ -804,16 +1078,18 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* SECTION 11 — CTA */}
-      <CTA 
-        title="Bereit für eine Website, die verkauft?"
-        subtitle="Starten Sie Ihr Projekt mit einer kostenlosen Strategieberatung"
-        primaryCta="Projekt starten"
-        secondaryCta="Kostenlose 15-Minuten-Einschätzung"
-        secondaryCtaLink="#"
-      />
+      <section id="cta">
+        <CTA 
+          title="Bereit für eine Website, die verkauft?"
+          subtitle="Professionelles Webdesign für Unternehmen — starten Sie jetzt Ihr Projekt mit kostenloser Strategieberatung."
+          primaryCta="Projekt starten"
+          secondaryCta="Kostenlose 15-Minuten-Einschätzung"
+          secondaryCtaLink="#"
+        />
+      </section>
 
       {/* SECTION 12 — FAQ */}
-      <section className="py-20 lg:py-32 bg-muted/30">
+      <section id="faq" className="py-20 lg:py-32 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -896,7 +1172,7 @@ const WebdesignEntwicklung = () => {
       </section>
 
       {/* Internal Links Section */}
-      <section className="py-16 bg-background border-t border-border">
+      <section id="weitere-services" className="py-16 bg-background border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-xl font-semibold text-foreground mb-6 text-center">
             Weitere Services
