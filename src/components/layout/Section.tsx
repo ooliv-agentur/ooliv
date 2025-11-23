@@ -17,9 +17,9 @@ export const Section: React.FC<SectionProps> = ({
   children 
 }) => {
   const bgClass = {
-    white: 'bg-white',
-    light: 'bg-[#F5F7F7]',
-    dark: 'bg-[#0B0B0B]'
+    white: 'bg-background',
+    light: 'bg-secondary',
+    dark: 'bg-foreground'
   }[background];
   
   // Global spacing: 120px desktop, 64px mobile
