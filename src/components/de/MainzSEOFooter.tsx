@@ -1,5 +1,8 @@
 import React from 'react';
 import Reveal from '@/components/animations/Reveal';
+import { Section } from '@/components/layout/Section';
+import { Container } from '@/components/layout/Container';
+import { H3, Caption } from '@/components/ui/typography';
 
 const MainzSEOFooter = () => {
   const keywords = [
@@ -13,27 +16,27 @@ const MainzSEOFooter = () => {
   ];
 
   return (
-    <section className="py-12 bg-gray-50 font-satoshi">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Section spacing="large" background="light">
+      <Container>
         <Reveal>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-medico-darkGreen mb-6">
-              Wichtige Themen im Überblick
-            </h3>
-          </div>
+          <H3 className="mb-8" alignment="center">
+            Wichtige Themen im Überblick
+          </H3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {keywords.map((keyword, index) => (
               <div 
                 key={index} 
-                className="text-center py-3 px-4 bg-white rounded-lg border border-gray-200 text-gray-700 text-sm"
+                className="text-center py-3 px-4 bg-background rounded-lg border border-border"
               >
-                {keyword}
+                <Caption color="secondary">
+                  {keyword}
+                </Caption>
               </div>
             ))}
           </div>
         </Reveal>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Star } from 'lucide-react';
+import { H2, H3, LargeParagraph, Paragraph, Caption } from '@/components/ui/typography';
+import StatCard from '@/components/shared/StatCard';
 
 const LandingpageOptimierungProof = () => {
   const caseStudies = [
@@ -25,32 +27,32 @@ const LandingpageOptimierungProof = () => {
     <AnimatedSection className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <H2 className="mb-4" alignment="center">
             Conversion-Ergebnisse, die überzeugen.
-          </h2>
+          </H2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {caseStudies.map((study, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-primary/30 transition-all duration-300"
+              className="bg-background p-8 rounded-2xl border border-border hover:border-primary/30 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <H3 className="mb-3">
                 {study.company}
-              </h3>
-              <p className="text-2xl font-bold text-primary mb-4">
+              </H3>
+              <LargeParagraph className="text-primary font-bold mb-4">
                 {study.result}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
+              </LargeParagraph>
+              <Paragraph color="secondary">
                 {study.description}
-              </p>
+              </Paragraph>
             </div>
           ))}
         </div>
 
         <div className="flex justify-center">
-          <div className="bg-white p-6 rounded-2xl border border-gray-200 inline-flex items-center gap-4">
+          <div className="bg-background p-6 rounded-2xl border border-border inline-flex items-center gap-4">
             <img 
               src="https://d1b8w3i7vp2zxq.cloudfront.net/public/uploads/upload_5e5e76b4f54f41f99e3eb3ec6ac54abf.png"
               alt="Sortlist Badge"
@@ -62,9 +64,9 @@ const LandingpageOptimierungProof = () => {
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">
+              <Caption color="secondary">
                 Top-bewertete Agentur auf Sortlist
-              </p>
+              </Caption>
             </div>
           </div>
         </div>
