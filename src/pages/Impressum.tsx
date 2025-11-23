@@ -21,7 +21,7 @@ const GermanLegalNotice = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ooliv",
-    "description": "Werbeagentur Mainz für Webdesign, SEO und digitales Marketing",
+    "description": "Digitale Strategie, UX-Architektur & Webentwicklung aus Mainz",
     "url": "https://ooliv.de",
     "address": {
       "@type": "PostalAddress",
@@ -42,30 +42,18 @@ const GermanLegalNotice = () => {
   return (
     <PageLayout className="overflow-x-hidden">
       <EnhancedSEOHead
-        title="Impressum | ooliv Werbeagentur Mainz"
-        description="Gesetzliche Anbieterkennzeichnung der ooliv Werbeagentur Mainz gemäß § 5 TMG. Vollständige Unternehmensdaten und Kontaktinformationen."
+        title="Impressum | ooliv – Digitale Strategie & UX"
+        description="Offizielle Unternehmensangaben zu ooliv. Transparente Informationen gemäß §5 TMG und DSGVO."
         canonicalUrl="https://ooliv.de/impressum"
         robotsContent="noindex, follow"
         structuredData={structuredData}
-        keywords="Impressum, ooliv, Werbeagentur Mainz, Anbieterkennzeichnung, TMG"
+        keywords="Impressum, ooliv, Mainz, Digitale Strategie, Anbieterkennzeichnung, TMG"
       />
 
       <LegalHero
         badge="Impressum"
-        title="Impressum & Unternehmensdetails"
-        subtitle="Transparente Unternehmensinformationen gemäß §5 TMG & EU-Verordnungen. Diese Seite enthält alle gesetzlich vorgeschriebenen Informationen über ooliv."
-        primaryCta={{
-          text: "Projekt starten",
-          link: "#",
-          onClick: (e) => {
-            e.preventDefault();
-            window.dispatchEvent(new Event('open-lead-form'));
-          }
-        }}
-        secondaryCta={{
-          text: "Kontakt aufnehmen",
-          link: "/kontakt"
-        }}
+        title="Impressum"
+        subtitle="Gesetzlich vorgeschriebene Informationen zu ooliv. Klar, transparent und vollständig."
       />
 
       <section className="py-20 bg-white">
@@ -78,7 +66,7 @@ const GermanLegalNotice = () => {
                   <div className="flex-shrink-0 w-12 h-12 bg-medico-turquoise/10 rounded-xl flex items-center justify-center">
                     <Building className="h-6 w-6 text-medico-turquoise" />
                   </div>
-                  <h3 className="text-2xl font-bold text-medico-darkGreen">Firmendaten</h3>
+                  <h3 className="text-2xl font-bold text-medico-darkGreen">Unternehmensangaben</h3>
                 </div>
                 
                 <div className="space-y-6">
@@ -103,7 +91,7 @@ const GermanLegalNotice = () => {
                   
                   <div className="flex items-center text-gray-600 space-x-3">
                     <Phone className="h-5 w-5 text-medico-turquoise flex-shrink-0" />
-                    <span className="font-medium">06131-6367801</span>
+                    <span className="font-medium">+49 6131 6367801</span>
                   </div>
                   
                   <div className="flex items-center text-gray-600 space-x-3">
@@ -112,7 +100,7 @@ const GermanLegalNotice = () => {
                   </div>
                   
                   <div className="pt-4 border-t border-gray-100">
-                    <p className="font-semibold text-medico-darkGreen mb-1">Inhaber:</p>
+                    <p className="font-bold text-medico-darkGreen mb-1">Inhaber:</p>
                     <p className="text-gray-600">Uli Schönleber</p>
                   </div>
                   
@@ -146,7 +134,7 @@ const GermanLegalNotice = () => {
                 </div>
                 
                 <p className="text-gray-600 leading-relaxed">
-                  Wir widersprechen der Nutzung unserer veröffentlichten Kontaktdaten für unaufgeforderte Werbung. Wir behalten uns das Recht vor, im Falle unaufgeforderter Werbe-E-Mails (Spam) rechtliche Schritte einzuleiten.
+                  Wir widersprechen ausdrücklich der Nutzung unserer Kontaktdaten für Werbezwecke oder unerwünschte Zusendungen. Wir behalten uns rechtliche Schritte bei Missbrauch vor.
                 </p>
               </CardContent>
             </Card>
@@ -161,7 +149,7 @@ const GermanLegalNotice = () => {
               asChild
             >
               <Link to="/datenschutz">
-                Datenschutzerklärung →
+                Zur Datenschutzerklärung
               </Link>
             </Button>
           </div>
