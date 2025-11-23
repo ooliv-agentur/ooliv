@@ -57,7 +57,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({
               {/* Content */}
               <div className="flex-1 pb-8">
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-xl font-bold text-[#0A0A0A]">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0A0A0A]">
                     {step.title}
                   </h3>
                   {step.duration && (
@@ -79,7 +79,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({
 
   // Horizontal variant
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       {steps.map((step, index) => {
         const IconComponent = step.icon;
         
@@ -107,7 +107,7 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({
 
             {/* Content */}
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-lg font-bold text-[#0A0A0A]">
+              <h3 className="text-base sm:text-lg font-bold text-[#0A0A0A]">
                 {step.title}
               </h3>
               {step.duration && (

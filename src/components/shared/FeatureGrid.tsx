@@ -36,7 +36,7 @@ export const FeatureGrid: React.FC<FeatureGridProps> = ({
   };
 
   return (
-    <div className={`grid gap-8 ${gridCols}`}>
+    <div className={`grid gap-4 sm:gap-6 lg:gap-8 ${gridCols}`}>
       {features.map((feature, index) => {
         const IconComponent = feature.icon;
         
@@ -48,7 +48,7 @@ export const FeatureGrid: React.FC<FeatureGridProps> = ({
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-white rounded-lg p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
+            className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 border border-[#E5E8E8] shadow-sm hover:shadow-md transition-shadow"
           >
             {/* Icon & Title */}
             <div className={variant === 'detailed' ? 'flex items-center gap-4 mb-4' : 'mb-6'}>
@@ -57,7 +57,7 @@ export const FeatureGrid: React.FC<FeatureGridProps> = ({
               </div>
               {variant === 'detailed' && (
                 <div>
-                  <h3 className="text-xl font-bold text-[#0A0A0A] mb-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0A0A0A] mb-1">
                     {feature.title}
                   </h3>
                   {feature.keywords && (
@@ -70,7 +70,7 @@ export const FeatureGrid: React.FC<FeatureGridProps> = ({
             </div>
 
             {variant !== 'detailed' && (
-              <h3 className="text-xl font-bold text-[#0A0A0A] mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-[#0A0A0A] mb-3">
                 {feature.title}
               </h3>
             )}
