@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, Target, TrendingUp, BarChart3, Settings, DollarSign } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { H2, Paragraph } from '@/components/ui/typography';
 
 const GoogleAdsServicesDE = () => {
   const getServiceClass = (title: string) => {
@@ -44,28 +45,28 @@ const GoogleAdsServicesDE = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-heading mb-6">
+          <H2 className="mb-6" alignment="center">
             Google Ads Services für nachhaltigen Erfolg
-          </h2>
-          <p className="text-lg text-brand-text max-w-3xl mx-auto">
+          </H2>
+          <Paragraph className="text-lg max-w-3xl mx-auto" alignment="center">
             Professionelle Google Ads Betreuung, die messbare Ergebnisse liefert und Ihre Sichtbarkeit gezielt erhöht.
-          </p>
+          </Paragraph>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className={`bg-white shadow-sm ${getServiceClass(service.title)}`}>
+            <Card key={index} className={`bg-background shadow-sm border-border ${getServiceClass(service.title)}`}>
               <CardHeader>
                 <div className="mb-4 service-icon">
                   <service.icon className="h-10 w-10" />
                 </div>
-                <CardTitle className="text-xl text-brand-heading">{service.title}</CardTitle>
+                <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-brand-text">{service.description}</p>
+                <Paragraph>{service.description}</Paragraph>
               </CardContent>
             </Card>
           ))}

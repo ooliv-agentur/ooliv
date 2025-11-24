@@ -16,6 +16,7 @@ import EnhancedSEOHead from '@/components/seo/EnhancedSEOHead';
 import { Link } from 'react-router-dom';
 import TurquoiseCard from '@/components/ui/TurquoiseCard';
 import TurquoiseBadge from '@/components/ui/TurquoiseBadge';
+import { H2, H3, Paragraph } from '@/components/ui/typography';
 
 const GermanGoogleAds = () => {
   const { setLanguage } = useLanguage();
@@ -95,12 +96,12 @@ const GermanGoogleAds = () => {
       <GoogleAdsHero />
 
       {/* Problems Section - White background with dark headline */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
+            <H2 className="mb-4" alignment="center">
               Website-Probleme, die Leads kosten – wir lösen sie
-            </h2>
+            </H2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -128,10 +129,10 @@ const GermanGoogleAds = () => {
             ].map((item, i) => (
               <TurquoiseCard key={i} variant="default" hoverLift>
                 <TurquoiseBadge variant="solid" size="sm" className="mb-3">PROBLEM</TurquoiseBadge>
-                <h3 className="text-lg font-bold mb-2 text-foreground">{item.problem}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{item.context}</p>
+                <H3 className="mb-2">{item.problem}</H3>
+                <Paragraph className="text-sm mb-4" color="secondary">{item.context}</Paragraph>
                 <TurquoiseBadge variant="soft" size="sm" className="mb-2">LÖSUNG</TurquoiseBadge>
-                <p className="text-foreground">{item.solution}</p>
+                <Paragraph>{item.solution}</Paragraph>
               </TurquoiseCard>
             ))}
           </div>
@@ -143,12 +144,12 @@ const GermanGoogleAds = () => {
       <GoogleAdsLeadGeneration />
 
       {/* Services Section - White background instead of dark */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
+            <H2 className="mb-4" alignment="center">
               Erweiterte Leistungen für maximale Performance
-            </h2>
+            </H2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,8 +181,8 @@ const GermanGoogleAds = () => {
               }
             ].map((service, index) => (
               <TurquoiseCard key={index} icon={service.icon} hoverLift>
-                <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <H3 className="mb-2">{service.title}</H3>
+                <Paragraph color="secondary">{service.description}</Paragraph>
               </TurquoiseCard>
             ))}
           </div>
@@ -210,36 +211,36 @@ const GermanGoogleAds = () => {
       </section>
 
       {/* Performance Metrics Section */}
-      <section className="py-16 md:py-24 bg-medico-mint">
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-medico-darkGreen">
+            <H2 className="mb-4" alignment="center">
               Performance in Zahlen
-            </h2>
+            </H2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Target className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: <Target className="h-10 w-10 mb-4 text-primary" />,
                 metric: "+3x mehr qualifizierte Leads",
                 description: "dank KI-Targeting & strategischer Landingpages"
               },
               {
-                icon: <LineChart className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: <LineChart className="h-10 w-10 mb-4 text-primary" />,
                 metric: "-40% Absprungrate",
                 description: "durch Conversion-optimierte Texte & bessere UX"
               },
               {
-                icon: <MousePointerClick className="h-10 w-10 mb-4 text-medico-turquoise" />,
+                icon: <MousePointerClick className="h-10 w-10 mb-4 text-primary" />,
                 metric: "+70% höhere CTR",
                 description: "durch bessere Anzeigentexte & Keyword-Strategie"
               }
             ].map((metric, index) => (
-              <div key={index} className="bg-medico-white p-8 rounded-lg shadow-md text-center">
+              <div key={index} className="bg-background p-8 rounded-lg shadow-md text-center border border-border">
                 <div className="inline-flex justify-center">{metric.icon}</div>
-                <h3 className="text-2xl font-bold my-3 text-medico-turquoise">{metric.metric}</h3>
-                <p className="text-medico-darkGreen">{metric.description}</p>
+                <H3 className="my-3 text-primary">{metric.metric}</H3>
+                <Paragraph>{metric.description}</Paragraph>
               </div>
             ))}
           </div>
@@ -247,15 +248,15 @@ const GermanGoogleAds = () => {
       </section>
 
       {/* Case Studies Section - Now with white background */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
 
-      <p className="text-center text-sm text-medico-darkGreen mt-4">
+      <Paragraph className="text-center text-sm mt-4">
         Mehr über <Link to="/" className="underline hover:no-underline">ooliv und unsere Arbeitsweise</Link>.
-      </p>
+      </Paragraph>
 
       <FAQ customFaqs={googleAdsFaqs} customTitle="Häufige Fragen zu Google Ads" />
 
