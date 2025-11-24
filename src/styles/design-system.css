@@ -7,20 +7,6 @@
   --brand-turquoise-hover: #28A29B; /* 10% darker for hover */
   --brand-turquoise-light: #D8F3F1;
   
-  /* === DARK CONTRAST COLORS (Celonis-inspired) === */
-  --brand-navy: #0A1628;
-  --brand-navy-light: #1A2B42;
-  --brand-charcoal: #1C1C1E;
-  
-  /* === ACCENT COLORS === */
-  --accent-violet: #7C3AED;
-  --accent-coral: #FF6B6B;
-  --accent-cyan: #06B6D4;
-  
-  /* === GRADIENTS === */
-  --gradient-hero: linear-gradient(135deg, #0A1628 0%, #1A2B42 100%);
-  --gradient-card: linear-gradient(135deg, rgba(50, 178, 171, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-  
   /* === TEXT COLORS === */
   --text-primary: #0B0B0B;
   --text-body: #444444;
@@ -67,16 +53,6 @@
   --turquoise: 177 56% 45%;
   --turquoise-hover: 177 56% 37%; /* #28A29B */
   --turquoise-light: 177 56% 90%;
-  
-  /* === DARK COLORS (HSL) === */
-  --navy: 215 60% 10%; /* #0A1628 */
-  --navy-light: 215 40% 18%; /* #1A2B42 */
-  --charcoal: 240 7% 11%; /* #1C1C1E */
-  
-  /* === ACCENT COLORS (HSL) === */
-  --violet: 258 90% 58%; /* #7C3AED */
-  --coral: 0 100% 70%; /* #FF6B6B */
-  --cyan: 187 85% 43%; /* #06B6D4 */
 }
 
 .dark {
@@ -111,14 +87,4 @@
   --turquoise: 177 56% 45%;
   --turquoise-hover: 177 56% 55%;
   --turquoise-light: 177 56% 20%;
-  
-  /* === DARK COLORS (HSL) === */
-  --navy: 215 60% 15%; /* Lighter in dark mode */
-  --navy-light: 215 40% 25%;
-  --charcoal: 240 7% 15%;
-  
-  /* === ACCENT COLORS (HSL) === */
-  --violet: 258 90% 65%;
-  --coral: 0 100% 75%;
-  --cyan: 187 85% 50%;
 }

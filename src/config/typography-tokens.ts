@@ -4,23 +4,23 @@
  */
 
 export const typographyTokens = {
-  // Headings with exact px values - BOLD & IMPACTFUL (Celonis-inspired)
+  // Headings with exact px values
   headings: {
     h1: {
-      fontSize: '72px',
-      fontWeight: '800', // extrabold (Celonis-style)
-      letterSpacing: '-0.03em', // -3% tracking (tighter)
-      lineHeight: '1.05',
-      color: '#0B0B0B',
-      mobile: '36px'
-    },
-    h2: {
-      fontSize: '56px',
-      fontWeight: '800', // extrabold (Celonis-style)
-      letterSpacing: '-0.02em', // -2% tracking (tighter)
+      fontSize: '68px',
+      fontWeight: '700', // bold
+      letterSpacing: '-0.02em', // -2% tracking
       lineHeight: '1.1',
       color: '#0B0B0B',
       mobile: '32px'
+    },
+    h2: {
+      fontSize: '48px',
+      fontWeight: '700', // bold
+      letterSpacing: '-0.01em',
+      lineHeight: '1.2',
+      color: '#0B0B0B',
+      mobile: '28px'
     },
     h3: {
       fontSize: '32px',
