@@ -53,7 +53,7 @@ const GermanContentCreation = () => {
       <ContentHero />
       
       {/* 2. New Section: Warum Content entscheidend ist - Light mint background */}
-      <div className="bg-gray-50">
+      <div className="bg-secondary">
         <ContentImportance />
       </div>
       
@@ -70,14 +70,14 @@ const GermanContentCreation = () => {
       <ContentExpertInsight />
       
       {/* 7. Case Studies - White background */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <CaseStudiesSection />
         </div>
       </section>
       
       {/* 8. FAQs - White background */}
-      <div className="bg-white">
+      <div className="bg-background">
         <FAQ 
           customFaqs={contentFaqs}
           customTitle="Häufig gestellte Fragen zur Content-Erstellung" 
@@ -85,7 +85,7 @@ const GermanContentCreation = () => {
       </div>
       
       {/* 9. CTA - Mint background */}
-      <div className="bg-gray-100">
+      <div className="bg-secondary">
         <CTA 
           title="Lassen Sie uns Content erstellen, der konvertiert"
           subtitle="Wir füllen nicht nur Seiten – wir bauen Momentum. Lassen Sie uns als Ihre Content Agentur Mainz Inhalte erstellen, die ranken, resonieren und echte Geschäftsergebnisse liefern."
