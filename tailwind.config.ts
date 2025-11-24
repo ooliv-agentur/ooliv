@@ -10,18 +10,18 @@ export default {
         inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       
-      // Enhanced typography scale with exact px values
+      // Enhanced typography scale with exact px values - BOLD IMPACT
       fontSize: {
-        // Exact design system values
-        'h1': ['68px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'h2': ['48px', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        // Exact design system values (Celonis-inspired)
+        'h1': ['72px', { lineHeight: '1.05', letterSpacing: '-0.03em', fontWeight: '800' }],
+        'h2': ['56px', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
         'h3': ['32px', { lineHeight: '1.3', fontWeight: '500' }],
         'h4': ['24px', { lineHeight: '1.4', fontWeight: '500' }],
         'body': ['20px', { lineHeight: '1.6', fontWeight: '400' }],
         'meta': ['18px', { lineHeight: '1.5', fontWeight: '400' }],
         'label': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
-        'mobile-h1': ['32px', { lineHeight: '1.2', fontWeight: '700' }],
-        'mobile-h2': ['28px', { lineHeight: '1.2', fontWeight: '700' }],
+        'mobile-h1': ['36px', { lineHeight: '1.2', fontWeight: '800' }],
+        'mobile-h2': ['32px', { lineHeight: '1.2', fontWeight: '800' }],
         'mobile-h3': ['24px', { lineHeight: '1.3', fontWeight: '500' }],
         'mobile-body': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
         // Keep existing Tailwind defaults for other uses
@@ -89,9 +89,27 @@ export default {
           turquoiseLight: "#D8F3F1",
         },
         turquoise: {
-          DEFAULT: '#32b2ab',
-          dark: '#289690',
-          light: '#D8F3F1',
+          DEFAULT: 'hsl(var(--turquoise))',
+          hover: 'hsl(var(--turquoise-hover))',
+          light: 'hsl(var(--turquoise-light))',
+        },
+        // Dark contrast colors (Celonis-inspired)
+        navy: {
+          DEFAULT: 'hsl(var(--navy))',
+          light: 'hsl(var(--navy-light))',
+        },
+        charcoal: {
+          DEFAULT: 'hsl(var(--charcoal))',
+        },
+        // Accent colors for drama
+        violet: {
+          DEFAULT: 'hsl(var(--violet))',
+        },
+        coral: {
+          DEFAULT: 'hsl(var(--coral))',
+        },
+        cyan: {
+          DEFAULT: 'hsl(var(--cyan))',
         },
       },
       
